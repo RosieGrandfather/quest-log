@@ -290,7 +290,8 @@ main{margin-top:16px;}
 
     <main id="main">
       <section class="panel" id="panel-log">
-        <button class="btn-primary" id="openLogForm">＋ 记录一次学习</button>
+        <div id="tasksWrap"></div>
+        <button class="btn-ghost" id="openAddTask">＋ 添加自定义学习任务</button>
         <div class="recent">
           <h3>最近记录</h3>
           <div id="recentList" class="entry-list"></div>
@@ -368,6 +369,35 @@ main{margin-top:16px;}
     <div class="modal-actions">
       <button class="btn-ghost" id="cancelRedeemConfirm">取消</button>
       <button class="btn-primary" id="confirmRedeemBtn">确认兑换</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="taskModal" hidden>
+  <div class="modal">
+    <h3 id="taskModalTitle">添加自定义学习任务</h3>
+    <label>任务名称</label>
+    <input id="taskName" type="text" placeholder="比如：读完一篇论文精读笔记">
+    <label>类别</label>
+    <select id="taskCategory"></select>
+    <label>完成一次获得多少积分</label>
+    <input id="taskPoints" type="number" inputmode="numeric" min="0">
+    <div class="form-error" id="taskFormError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelTask">取消</button>
+      <button class="btn-primary" id="submitTask">添加</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="taskConfirmModal" hidden>
+  <div class="modal">
+    <h3>确认完成</h3>
+    <p id="taskConfirmText" style="font-size:14.5px;color:var(--ink-soft);margin:0 0 6px;"></p>
+    <div class="form-error" id="taskConfirmError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelTaskConfirm">取消</button>
+      <button class="btn-primary" id="confirmTaskBtn">确认完成</button>
     </div>
   </div>
 </div>
@@ -465,6 +495,23 @@ function iconForReward(r){
   const key = String(r.id || r.name || 'x');
   return REWARD_ICONS[hashStr(key) % REWARD_ICONS.length];
 }
+
+const TASK_ICONS = [
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H14v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13z"/><path d="M14 4h4.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5H14"/><path d="M7 8h4M7 11h4"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 4.5l4 4L8 20l-4.5 1L4.5 16.5 15.5 4.5z"/><path d="M13 7l4 4"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3z"/><path d="M12 15v6M9 21h6"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-3.5-3.5a7 7 0 1 1 10 0L12 18"/><path d="M9 18v2.5h6V18"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l4-4 3 3 5-6 4 4"/><path d="M4 20h16"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+];
+function iconForTask(t){
+  const key = (t.id || t.name || '') + '';
+  return TASK_ICONS[hashStr(key) % TASK_ICONS.length];
+}
 const LEVELS = [
   {name:'新手上路', min:0},
   {name:'打好地基', min:100},
@@ -482,12 +529,16 @@ const auth = firebase.auth();
 const fs = firebase.firestore();
 
 let uid = null;
-let logCol = null, rewardsCol = null;
-let unsubLog = null, unsubRewards = null;
+let logCol = null, rewardsCol = null, tasksCol = null;
+let unsubLog = null, unsubRewards = null, unsubTasks = null;
 let logEntries = [];
 let rewards = [];
+let tasks = [];
 let pendingDeleteId = null, pendingDeleteTimer = null;
 let editingRewardId = null;
+let pendingDeleteTaskId = null, pendingDeleteTaskTimer = null;
+let editingTaskId = null;
+let taskTarget = null;
 let toastTimer = null;
 
 document.getElementById('signInBtn').addEventListener('click', ()=>{
@@ -499,6 +550,7 @@ document.getElementById('signInBtn').addEventListener('click', ()=>{
 document.getElementById('signOutBtn').addEventListener('click', ()=>{
   if(unsubLog) unsubLog();
   if(unsubRewards) unsubRewards();
+  if(unsubTasks) unsubTasks();
   auth.signOut();
 });
 
@@ -509,13 +561,16 @@ auth.onAuthStateChanged(user=>{
     document.getElementById('appRoot').hidden = false;
     logCol = fs.collection('users').doc(uid).collection('log');
     rewardsCol = fs.collection('users').doc(uid).collection('rewards');
+    tasksCol = fs.collection('users').doc(uid).collection('tasks');
     wireUI();
     ensureSeedRewards();
+    ensureSeedTasks();
     subscribeAll();
   } else {
     uid = null;
     if(unsubLog) unsubLog();
     if(unsubRewards) unsubRewards();
+    if(unsubTasks) unsubTasks();
     document.getElementById('gate').hidden = false;
     document.getElementById('appRoot').hidden = true;
   }
@@ -535,11 +590,32 @@ async function ensureSeedRewards(){
   }catch(e){ console.error('seed rewards failed', e); }
 }
 
+async function ensureSeedTasks(){
+  try{
+    const snap = await tasksCol.limit(1).get();
+    if(snap.empty){
+      const batch = fs.batch();
+      let i = 0;
+      CATEGORIES.forEach(c=>{
+        c.presets.forEach(p=>{
+          const ref = tasksCol.doc();
+          batch.set(ref, {name:p.label, category:c.id, points:p.pts, active:true, ts:++i});
+        });
+      });
+      await batch.commit();
+    }
+  }catch(e){ console.error('seed tasks failed', e); }
+}
+
 function subscribeAll(){
   unsubLog = logCol.orderBy('ts','desc').limit(500).onSnapshot(snap=>{
     logEntries = snap.docs.map(d=>({id:d.id, ...d.data()}));
     render();
   }, err=>{ console.error('log snapshot error', err); });
+  unsubTasks = tasksCol.orderBy('ts','asc').limit(300).onSnapshot(snap=>{
+    tasks = snap.docs.map(d=>({id:d.id, ...d.data()})).filter(t=> t.active!==false);
+    render();
+  }, err=>{ console.error('tasks snapshot error', err); });
   unsubRewards = rewardsCol.orderBy('cost','asc').limit(100).onSnapshot(snap=>{
     rewards = snap.docs.map(d=>({id:d.id, ...d.data()})).filter(r=> r.active!==false);
     render();
@@ -620,6 +696,7 @@ function render(){
   renderRecent();
   renderHistory();
   renderRewards(s.balance);
+  renderTasks();
 }
 
 function entryCardHTML(e){
@@ -718,6 +795,130 @@ function rewardCardHTML(r, balance, tierCls){
 
 function clearPendingDelete(){ pendingDeleteId=null; clearTimeout(pendingDeleteTimer); pendingDeleteTimer=null; }
 
+function renderTasks(){
+  const wrap = document.getElementById('tasksWrap');
+  if(!tasks.length){
+    wrap.innerHTML = '<div class="entry-empty">还没有学习任务，点下面添加第一个吧</div>';
+    return;
+  }
+  const groups = {};
+  CATEGORIES.forEach(c=>{ groups[c.id] = []; });
+  tasks.forEach(t=>{ (groups[t.category] || (groups[t.category]=[])).push(t); });
+  wrap.innerHTML = CATEGORIES.map(c=>{
+    const items = groups[c.id] || [];
+    if(!items.length) return '';
+    return `<div class="tier-block">
+      <div class="tier-title">${escapeHTML(c.label)}</div>
+      <div class="reward-grid">${items.map(taskCardHTML).join('')}</div>
+    </div>`;
+  }).join('');
+  wrap.querySelectorAll('[data-log-task]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onLogTaskClick(btn.getAttribute('data-log-task')));
+  });
+  wrap.querySelectorAll('[data-edit-task]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onEditTaskClick(btn.getAttribute('data-edit-task')));
+  });
+  wrap.querySelectorAll('[data-del-task]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onDeleteTaskClick(btn.getAttribute('data-del-task')));
+  });
+}
+function taskCardHTML(t){
+  const delConfirming = pendingDeleteTaskId === t.id;
+  return `<div class="reward-card">
+    <div class="reward-top">
+      <div class="reward-icon-badge" style="background:var(--teal-soft);color:var(--teal)">${iconForTask(t)}</div>
+      <div class="reward-name-wrap">
+        <div class="reward-name">${escapeHTML(t.name)}</div>
+      </div>
+      <div class="reward-cost mono">+${t.points} 分</div>
+    </div>
+    <div class="reward-btn-row">
+      <button class="btn-edit" data-edit-task="${t.id}">编辑</button>
+      <button class="btn-del ${delConfirming?'confirming':''}" data-del-task="${t.id}">${delConfirming?'确认删除？':'删除'}</button>
+      <button class="btn-redeem" data-log-task="${t.id}">完成 ✓</button>
+    </div>
+  </div>`;
+}
+function clearPendingDeleteTask(){ pendingDeleteTaskId=null; clearTimeout(pendingDeleteTaskTimer); pendingDeleteTaskTimer=null; }
+function onLogTaskClick(id){
+  const t = tasks.find(x=>x.id===id);
+  if(!t) return;
+  openTaskConfirm(t);
+}
+function openTaskConfirm(t){
+  taskTarget = t;
+  document.getElementById('taskConfirmText').textContent =
+    `确定要记录一次「${t.name}」学习任务吗？将获得 ${t.points} 积分。`;
+  document.getElementById('taskConfirmError').hidden = true;
+  document.getElementById('taskConfirmModal').hidden = false;
+}
+function closeTaskConfirm(){
+  document.getElementById('taskConfirmModal').hidden = true;
+  taskTarget = null;
+}
+async function confirmTaskLog(){
+  if(!taskTarget) return;
+  const t = taskTarget;
+  const errEl = document.getElementById('taskConfirmError');
+  const btn = document.getElementById('confirmTaskBtn');
+  btn.disabled = true;
+  try{
+    await logCol.add({kind:'earn', category:t.category||'custom', label:t.name, amount:t.points, note:'', dateISO:localISO(new Date()), ts:Date.now()});
+    closeTaskConfirm();
+    openCelebrate('task', t.name, t.points);
+  }catch(e){
+    errEl.textContent = '记录失败：' + (e && e.message ? e.message : '请重试');
+    errEl.hidden = false;
+  }finally{
+    btn.disabled = false;
+  }
+}
+function onEditTaskClick(id){
+  const t = tasks.find(x=>x.id===id);
+  if(t) openTaskModal(t);
+}
+function onDeleteTaskClick(id){
+  if(pendingDeleteTaskId === id){
+    clearPendingDeleteTask();
+    tasksCol.doc(id).delete().catch(()=>{ showToast('删除失败，请重试'); });
+  } else {
+    clearPendingDeleteTask();
+    pendingDeleteTaskId = id;
+    render();
+    pendingDeleteTaskTimer = setTimeout(()=>{ clearPendingDeleteTask(); render(); }, 4000);
+  }
+}
+function openTaskModal(t){
+  editingTaskId = t ? t.id : null;
+  document.getElementById('taskModalTitle').textContent = t ? '编辑学习任务' : '添加自定义学习任务';
+  document.getElementById('submitTask').textContent = t ? '保存修改' : '添加';
+  document.getElementById('taskCategory').innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${escapeHTML(c.label)}</option>`).join('');
+  document.getElementById('taskName').value = t ? t.name : '';
+  document.getElementById('taskCategory').value = t ? (t.category||'custom') : 'custom';
+  document.getElementById('taskPoints').value = t ? t.points : '';
+  document.getElementById('taskFormError').hidden = true;
+  document.getElementById('taskModal').hidden = false;
+}
+function closeTaskModal(){ document.getElementById('taskModal').hidden = true; editingTaskId = null; }
+function submitTask(){
+  const errEl = document.getElementById('taskFormError');
+  const name = document.getElementById('taskName').value.trim();
+  const category = document.getElementById('taskCategory').value;
+  const rawPoints = document.getElementById('taskPoints').value;
+  const points = Number(rawPoints);
+  if(!name){ errEl.textContent='请填写任务名称'; errEl.hidden=false; return; }
+  if(rawPoints===''||isNaN(points)||points<0){ errEl.textContent='请填写一个不小于 0 的积分数'; errEl.hidden=false; return; }
+  const btn = document.getElementById('submitTask');
+  btn.disabled = true;
+  const payload = {name, category, points};
+  const op = editingTaskId
+    ? tasksCol.doc(editingTaskId).update(payload)
+    : tasksCol.add({...payload, active:true, ts:Date.now()});
+  op.then(()=>{ closeTaskModal(); showToast(editingTaskId ? '已保存修改' : '已添加学习任务'); })
+    .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
+    .finally(()=>{ btn.disabled = false; });
+}
+
 function onRedeemClick(id){
   const reward = rewards.find(r=>r.id===id);
   if(!reward) return;
@@ -745,7 +946,7 @@ async function confirmRedeem(){
   try{
     await logCol.add({kind:'spend', category:'reward', label:reward.name, amount:reward.cost, dateISO:localISO(new Date()), ts:Date.now()});
     closeRedeemConfirm();
-    openCelebrate(reward.name, reward.cost);
+    openCelebrate('reward', reward.name, reward.cost);
   }catch(e){
     errEl.textContent = '兑换失败：' + (e && e.message ? e.message : '请重试');
     errEl.hidden = false;
@@ -753,9 +954,11 @@ async function confirmRedeem(){
     btn.disabled = false;
   }
 }
-function openCelebrate(name, cost){
-  document.getElementById('celebrateText').innerHTML =
-    `「${escapeHTML(name)}」奖励已兑换 🎉<br>已扣除 <span class="mono">${cost}</span> 积分。<br>奖励商店欢迎下次光临！`;
+function openCelebrate(kind, name, amount){
+  const html = kind === 'reward'
+    ? `「${escapeHTML(name)}」奖励已兑换 🎉<br>已扣除 <span class="mono">${amount}</span> 积分。<br>奖励商店欢迎下次光临！`
+    : `你太棒了！完成了一次「${escapeHTML(name)}」学习任务 🎉<br>已添加 <span class="mono">${amount}</span> 积分！`;
+  document.getElementById('celebrateText').innerHTML = html;
   spawnConfetti();
   document.getElementById('celebrateModal').hidden = false;
 }
@@ -911,7 +1114,6 @@ function wireUI(){
     const btn = e.target.closest('.tab');
     if(btn) switchTab(btn.getAttribute('data-tab'));
   });
-  document.getElementById('openLogForm').addEventListener('click', openLogModal);
   document.getElementById('cancelLog').addEventListener('click', closeLogModal);
   document.getElementById('submitLog').addEventListener('click', submitLogEntry);
   document.getElementById('categorySelect').addEventListener('change', onCategoryChange);
@@ -925,6 +1127,13 @@ function wireUI(){
   document.getElementById('confirmRedeemBtn').addEventListener('click', confirmRedeem);
   document.getElementById('redeemConfirmModal').addEventListener('click', e=>{ if(e.target.id==='redeemConfirmModal') closeRedeemConfirm(); });
   document.getElementById('closeCelebrate').addEventListener('click', closeCelebrate);
+  document.getElementById('openAddTask').addEventListener('click', ()=> openTaskModal());
+  document.getElementById('cancelTask').addEventListener('click', closeTaskModal);
+  document.getElementById('submitTask').addEventListener('click', submitTask);
+  document.getElementById('taskModal').addEventListener('click', e=>{ if(e.target.id==='taskModal') closeTaskModal(); });
+  document.getElementById('cancelTaskConfirm').addEventListener('click', closeTaskConfirm);
+  document.getElementById('confirmTaskBtn').addEventListener('click', confirmTaskLog);
+  document.getElementById('taskConfirmModal').addEventListener('click', e=>{ if(e.target.id==='taskConfirmModal') closeTaskConfirm(); });
 }
 </script>
 </body>
