@@ -235,6 +235,12 @@ main{margin-top:16px;}
   margin-top:40px;text-align:center;color:var(--ink-soft);
   border:1px dashed var(--border);border-radius:16px;padding:30px 18px;
 }
+.celebrate-modal{ text-align:center; position:relative; overflow:hidden; }
+.celebrate-emoji{ font-size:44px; margin-bottom:2px; }
+.celebrate-text{ font-size:15px; color:var(--ink-soft); margin:8px 0 20px; line-height:1.6; }
+.confetti-wrap{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.confetti-piece{ position:absolute; top:-14px; width:8px; height:14px; opacity:0.9; border-radius:2px; animation:confetti-fall linear forwards; }
+@keyframes confetti-fall{ to{ transform: translateY(360px) rotate(540deg); opacity:0; } }
 </style>
 </head>
 <body>
@@ -349,6 +355,28 @@ main{margin-top:16px;}
   </div>
 </div>
 
+<div class="modal-backdrop" id="redeemConfirmModal" hidden>
+  <div class="modal">
+    <h3>确认兑换</h3>
+    <p id="redeemConfirmText" style="font-size:14.5px;color:var(--ink-soft);margin:0 0 6px;"></p>
+    <div class="form-error" id="redeemConfirmError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelRedeemConfirm">取消</button>
+      <button class="btn-primary" id="confirmRedeemBtn">确认兑换</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="celebrateModal" hidden>
+  <div class="modal celebrate-modal">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="celebrate-emoji">🎉</div>
+    <h3>恭喜！</h3>
+    <p id="celebrateText" class="celebrate-text"></p>
+    <button class="btn-primary" id="closeCelebrate" style="width:100%">太棒了</button>
+  </div>
+</div>
+
 <div class="toast" id="toast" hidden></div>
 
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
@@ -425,7 +453,6 @@ let logCol = null, rewardsCol = null;
 let unsubLog = null, unsubRewards = null;
 let logEntries = [];
 let rewards = [];
-let pendingRedeemId = null, pendingRedeemTimer = null;
 let pendingDeleteId = null, pendingDeleteTimer = null;
 let toastTimer = null;
 
@@ -629,9 +656,8 @@ function renderRewards(balance){
 function rewardCardHTML(r, balance, tierCls){
   const pct = Math.min(100, Math.round(balance/r.cost*100));
   const afford = balance >= r.cost;
-  const isConfirming = pendingRedeemId === r.id;
   const delConfirming = pendingDeleteId === r.id;
-  const btnLabel = isConfirming ? '确认兑换？' : (afford ? '兑换' : `还差 ${r.cost-balance} 分`);
+  const btnLabel = afford ? '兑换' : `还差 ${r.cost-balance} 分`;
   return `<div class="reward-card">
     <div class="reward-top">
       <div class="reward-name">${escapeHTML(r.name)}</div>
@@ -642,26 +668,72 @@ function rewardCardHTML(r, balance, tierCls){
       <div class="reward-hint">${afford ? '已经攒够啦 🎉' : pct+'% 已攒够'}</div>
       <div class="reward-btn-row">
         <button class="btn-del ${delConfirming?'confirming':''}" data-del="${r.id}">${delConfirming?'确认删除？':'删除'}</button>
-        <button class="btn-redeem ${isConfirming?'confirming':''}" data-redeem="${r.id}" ${afford?'':'disabled'}>${btnLabel}</button>
+        <button class="btn-redeem" data-redeem="${r.id}" ${afford?'':'disabled'}>${btnLabel}</button>
       </div>
     </div>
   </div>`;
 }
 
-function clearPendingRedeem(){ pendingRedeemId=null; clearTimeout(pendingRedeemTimer); pendingRedeemTimer=null; }
 function clearPendingDelete(){ pendingDeleteId=null; clearTimeout(pendingDeleteTimer); pendingDeleteTimer=null; }
 
 function onRedeemClick(id){
   const reward = rewards.find(r=>r.id===id);
   if(!reward) return;
-  if(pendingRedeemId === id){
-    clearPendingRedeem();
-    doRedeem(reward);
-  } else {
-    clearPendingRedeem();
-    pendingRedeemId = id;
-    render();
-    pendingRedeemTimer = setTimeout(()=>{ clearPendingRedeem(); render(); }, 4000);
+  openRedeemConfirm(reward);
+}
+
+let redeemTarget = null;
+function openRedeemConfirm(reward){
+  redeemTarget = reward;
+  document.getElementById('redeemConfirmText').textContent =
+    `确定要兑换「${reward.name}」吗？将扣除 ${reward.cost} 积分。`;
+  document.getElementById('redeemConfirmError').hidden = true;
+  document.getElementById('redeemConfirmModal').hidden = false;
+}
+function closeRedeemConfirm(){
+  document.getElementById('redeemConfirmModal').hidden = true;
+  redeemTarget = null;
+}
+async function confirmRedeem(){
+  if(!redeemTarget) return;
+  const reward = redeemTarget;
+  const errEl = document.getElementById('redeemConfirmError');
+  const btn = document.getElementById('confirmRedeemBtn');
+  btn.disabled = true;
+  try{
+    await logCol.add({kind:'spend', category:'reward', label:reward.name, amount:reward.cost, dateISO:localISO(new Date()), ts:Date.now()});
+    closeRedeemConfirm();
+    openCelebrate(reward.name, reward.cost);
+  }catch(e){
+    errEl.textContent = '兑换失败：' + (e && e.message ? e.message : '请重试');
+    errEl.hidden = false;
+  }finally{
+    btn.disabled = false;
+  }
+}
+function openCelebrate(name, cost){
+  document.getElementById('celebrateText').innerHTML =
+    `「${escapeHTML(name)}」奖励已兑换 🎉<br>已扣除 <span class="mono">${cost}</span> 积分。<br>奖励商店欢迎下次光临！`;
+  spawnConfetti();
+  document.getElementById('celebrateModal').hidden = false;
+}
+function closeCelebrate(){
+  document.getElementById('celebrateModal').hidden = true;
+  document.getElementById('confettiWrap').innerHTML = '';
+}
+function spawnConfetti(){
+  const wrap = document.getElementById('confettiWrap');
+  wrap.innerHTML = '';
+  const colors = ['#E3A63D','#1C7A68','#7C2049','#48B69D','#C07F1F'];
+  for(let i=0;i<28;i++){
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.left = Math.random()*100+'%';
+    el.style.background = colors[i%colors.length];
+    el.style.animationDuration = (1.1+Math.random()*0.9)+'s';
+    el.style.animationDelay = (Math.random()*0.25)+'s';
+    el.style.transform = `rotate(${Math.random()*360}deg)`;
+    wrap.appendChild(el);
   }
 }
 function onDeleteClick(id){
@@ -674,12 +746,6 @@ function onDeleteClick(id){
     render();
     pendingDeleteTimer = setTimeout(()=>{ clearPendingDelete(); render(); }, 4000);
   }
-}
-async function doRedeem(reward){
-  try{
-    await logCol.add({kind:'spend', category:'reward', label:reward.name, amount:reward.cost, dateISO:localISO(new Date()), ts:Date.now()});
-    showToast(`已兑现「${reward.name}」🎉 好好享受！`);
-  }catch(e){ showToast('保存失败，请重试'); }
 }
 
 function switchTab(name){
@@ -757,7 +823,7 @@ function submitLogEntry(){
   btn.disabled = true;
   logCol.add({kind:'earn', category:catId, label, amount:pts, note, dateISO, ts:Date.now()})
     .then(()=>{ closeLogModal(); showToast(`+${pts} 分 · ${label}`); })
-    .catch(()=>{ errEl.textContent='保存失败，请重试'; errEl.hidden=false; })
+    .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
     .finally(()=>{ btn.disabled = false; });
 }
 
@@ -780,7 +846,7 @@ function submitReward(){
   btn.disabled = true;
   rewardsCol.add({name, tier, cost, active:true, ts:Date.now()})
     .then(()=>{ closeRewardModal(); showToast('已添加奖励'); })
-    .catch(()=>{ errEl.textContent='保存失败，请重试'; errEl.hidden=false; })
+    .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
     .finally(()=>{ btn.disabled = false; });
 }
 
@@ -802,6 +868,10 @@ function wireUI(){
   document.getElementById('submitReward').addEventListener('click', submitReward);
   document.getElementById('logModal').addEventListener('click', e=>{ if(e.target.id==='logModal') closeLogModal(); });
   document.getElementById('rewardModal').addEventListener('click', e=>{ if(e.target.id==='rewardModal') closeRewardModal(); });
+  document.getElementById('cancelRedeemConfirm').addEventListener('click', closeRedeemConfirm);
+  document.getElementById('confirmRedeemBtn').addEventListener('click', confirmRedeem);
+  document.getElementById('redeemConfirmModal').addEventListener('click', e=>{ if(e.target.id==='redeemConfirmModal') closeRedeemConfirm(); });
+  document.getElementById('closeCelebrate').addEventListener('click', closeCelebrate);
 }
 </script>
 </body>
