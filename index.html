@@ -202,6 +202,8 @@ main{margin-top:16px;}
 .btn-redeem.confirming{background:var(--danger);color:#fff;}
 .btn-del{background:transparent;border:none;color:var(--ink-faint);font-size:12px;cursor:pointer;padding:6px 4px;}
 .btn-del.confirming{color:var(--danger);font-weight:700;}
+.btn-edit{background:transparent;border:none;color:var(--ink-faint);font-size:12px;cursor:pointer;padding:6px 4px;margin-right:auto;}
+.btn-edit:hover{color:var(--ink);}
 
 /* modal */
 .modal-backdrop{
@@ -339,7 +341,7 @@ main{margin-top:16px;}
 
 <div class="modal-backdrop" id="rewardModal" hidden>
   <div class="modal">
-    <h3>添加自定义奖励</h3>
+    <h3 id="rewardModalTitle">添加自定义奖励</h3>
     <label>奖励名称</label>
     <input id="rewardName" type="text" placeholder="比如：去巴厘岛浮潜三天">
     <label>档位</label>
@@ -349,7 +351,7 @@ main{margin-top:16px;}
       <option value="big">终极大奖</option>
     </select>
     <label>需要多少积分</label>
-    <input id="rewardCost" type="number" inputmode="numeric" min="1">
+    <input id="rewardCost" type="number" inputmode="numeric" min="0">
     <div class="form-error" id="rewardFormError" hidden></div>
     <div class="modal-actions">
       <button class="btn-ghost" id="cancelReward">取消</button>
@@ -485,6 +487,7 @@ let unsubLog = null, unsubRewards = null;
 let logEntries = [];
 let rewards = [];
 let pendingDeleteId = null, pendingDeleteTimer = null;
+let editingRewardId = null;
 let toastTimer = null;
 
 document.getElementById('signInBtn').addEventListener('click', ()=>{
@@ -683,6 +686,9 @@ function renderRewards(balance){
   wrap.querySelectorAll('[data-del]').forEach(btn=>{
     btn.addEventListener('click', ()=> onDeleteClick(btn.getAttribute('data-del')));
   });
+  wrap.querySelectorAll('[data-edit]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onEditClick(btn.getAttribute('data-edit')));
+  });
 }
 function rewardCardHTML(r, balance, tierCls){
   const pct = Math.min(100, Math.round(balance/r.cost*100));
@@ -702,6 +708,7 @@ function rewardCardHTML(r, balance, tierCls){
     <div class="reward-actions">
       <div class="reward-hint">${afford ? '已经攒够啦 🎉' : pct+'% 已攒够'}</div>
       <div class="reward-btn-row">
+        <button class="btn-edit" data-edit="${r.id}">编辑</button>
         <button class="btn-del ${delConfirming?'confirming':''}" data-del="${r.id}">${delConfirming?'确认删除？':'删除'}</button>
         <button class="btn-redeem" data-redeem="${r.id}" ${afford?'':'disabled'}>${btnLabel}</button>
       </div>
@@ -770,6 +777,10 @@ function spawnConfetti(){
     el.style.transform = `rotate(${Math.random()*360}deg)`;
     wrap.appendChild(el);
   }
+}
+function onEditClick(id){
+  const reward = rewards.find(r=>r.id===id);
+  if(reward) openRewardModal(reward);
 }
 function onDeleteClick(id){
   if(pendingDeleteId === id){
@@ -862,25 +873,32 @@ function submitLogEntry(){
     .finally(()=>{ btn.disabled = false; });
 }
 
-function openRewardModal(){
-  document.getElementById('rewardName').value = '';
-  document.getElementById('rewardTier').value = 'small';
-  document.getElementById('rewardCost').value = '';
+function openRewardModal(reward){
+  editingRewardId = reward ? reward.id : null;
+  document.getElementById('rewardModalTitle').textContent = reward ? '编辑奖励' : '添加自定义奖励';
+  document.getElementById('submitReward').textContent = reward ? '保存修改' : '添加';
+  document.getElementById('rewardName').value = reward ? reward.name : '';
+  document.getElementById('rewardTier').value = reward ? reward.tier : 'small';
+  document.getElementById('rewardCost').value = reward ? reward.cost : '';
   document.getElementById('rewardFormError').hidden = true;
   document.getElementById('rewardModal').hidden = false;
 }
-function closeRewardModal(){ document.getElementById('rewardModal').hidden = true; }
+function closeRewardModal(){ document.getElementById('rewardModal').hidden = true; editingRewardId = null; }
 function submitReward(){
   const errEl = document.getElementById('rewardFormError');
   const name = document.getElementById('rewardName').value.trim();
   const tier = document.getElementById('rewardTier').value;
-  const cost = Number(document.getElementById('rewardCost').value);
+  const rawCost = document.getElementById('rewardCost').value;
+  const cost = Number(rawCost);
   if(!name){ errEl.textContent='请填写奖励名称'; errEl.hidden=false; return; }
-  if(!cost || cost<=0){ errEl.textContent='请填写一个大于 0 的积分数'; errEl.hidden=false; return; }
+  if(rawCost===''||isNaN(cost)||cost<0){ errEl.textContent='请填写一个不小于 0 的积分数'; errEl.hidden=false; return; }
   const btn = document.getElementById('submitReward');
   btn.disabled = true;
-  rewardsCol.add({name, tier, cost, active:true, ts:Date.now()})
-    .then(()=>{ closeRewardModal(); showToast('已添加奖励'); })
+  const payload = {name, tier, cost};
+  const op = editingRewardId
+    ? rewardsCol.doc(editingRewardId).update(payload)
+    : rewardsCol.add({...payload, active:true, ts:Date.now()});
+  op.then(()=>{ closeRewardModal(); showToast(editingRewardId ? '已保存修改' : '已添加奖励'); })
     .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
     .finally(()=>{ btn.disabled = false; });
 }
