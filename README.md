@@ -1,25 +1,103 @@
-# 远征日志 — 部署与使用说明
+# 远征日志 — 项目说明（给未来的我 / 未来的 Claude 看）
 
-一个纯前端的学习积分 / 奖励兑换小工具。代码就是这个文件夹里的三个文件，没有服务器、没有构建步骤。数据存在你自己的 Firebase 项目里，不经过 Claude、不经过任何第三方。手机和电脑用同一个 Google 账号登录，就能看到同一份数据。
+一个纯前端的学习积分 / 奖励兑换小工具，帮 Yijia 把 AI 转型学习计划（ARENA、PL-300、Python 练习、自建项目、求职、规划复盘）游戏化：做一件事记一次积分，攒够积分兑换真实奖励。
 
-## 文件说明
-- `index.html` — 整个应用，界面 + 逻辑都在这一个文件里
-- `firebase-config.js` — 你自己 Firebase 项目的连接信息，需要你手动填
-- `README.md` — 就是这份说明
+**技术栈**：纯静态 HTML/CSS/JS（无构建步骤，无框架）+ Firebase（Auth 登录 + Firestore 数据库）+ GitHub Pages 托管。数据只存在 Yijia 自己的 Firebase 项目里，不经过 Claude 或任何第三方；手机和电脑用同一个 Google 账号登录，实时同步。
+
+## 文件
+
+- `index.html` — 整个应用，界面 + 逻辑都在这一个文件里（一个 `<style>`、一段主体 HTML、一个 `<script>`）
+- `firebase-config.js` — Yijia 自己 Firebase 项目的连接信息（apiKey 等，不是密钥，允许公开）
+- `README.md` — 这份文件
+
+**线上地址**：`https://rosiegrandfather.github.io/quest-log/`
+**本地路径（Yijia 电脑上）**：`C:\projects\quest-log-project\quest-log-project\quest-log`（挂载后是 `$HOME/mnt/quest-log/`）
 
 ---
 
-## 第一步：创建你自己的 Firebase 项目（免费）
+## 项目里有什么功能（现状）
 
-1. 打开 https://console.firebase.google.com ，用你自己的 Google 账号登录
-2. 点"添加项目"，起个名字（比如 `yijia-quest-log`），一路默认下一步，不需要开 Google Analytics
-3. 项目建好后，左侧菜单点 **Firestore Database** → "创建数据库" → 选**生产模式** → 选一个离你近的区域（`asia-southeast1`，新加坡）
-4. 左侧菜单点 **Authentication** → "开始使用" → "Sign-in method" → 启用 **Google** 这个登录方式
-5. 左侧菜单点 **项目设置**（齿轮图标）→ 往下翻到"你的应用" → 点网页图标 `</>` → 注册一个网页应用（随便起个名字，不用勾 Hosting）→ 注册后会看到一段 `const firebaseConfig = {...}` 代码，先别关这个页面，等下要用
+### 1. 顶部状态栏
+- 连续打卡天数（🔥 streak，`computeStreak()`）
+- 等级名 + Lv.数字 + 经验条（`levelInfo()`，见下面「等级系统」）
+- 经验条上有一根**会挥舞的魔杖图标**，卡在当前进度百分比的位置上左右摆动（`.xp-flyer` / `.xp-flyer-bob` / `@keyframes xp-flyer-wave`）。**注意**：用户明确要求过不要用哈利波特商标图案（金色飞贼、院徽等），所以魔杖是通用款式，没有照抄任何受版权保护的具体设计，以后加新图标也要遵守这条。
+- 三个统计数字：可用积分 / 累计获得 / 记录次数
 
-## 第二步：设置安全规则（很重要，别跳过）
+### 2. 「记录」Tab —— 学习任务（像奖励商店一样的卡片式）
+这是最新的交互方式，**已经不是**表单弹窗式记录了：
+- 按类别分组显示任务卡片（`CATEGORIES` 数组的 7 个类别：arena/pl300/python/project/job/review/custom）
+- 每张卡片：自动分配的小图标（`iconForTask()`，图标库是 `TASK_ICONS`，10 个通用学习/成就主题图标）+ 任务名 + 积分
+- 卡片按钮：**编辑**（弹窗改名称/类别/积分）、**删除**（点一下变"确认删除？"，4 秒内再点才真删）、**完成 ✓**（点了弹二次确认 → 确认后写入一条 `log` 记录并弹庆祝弹窗+撒花动画，文案："你太棒了！完成了一次「XX」学习任务 🎉 已添加 X 积分！"）
+- 底部「＋ 添加自定义学习任务」可以新增任务，**积分允许填 0**（比如"心安理得摸鱼"类的 0 分任务，用户明确要求过）
+- 首次登录会自动把 `CATEGORIES` 里预设的 16 条里程碑写进 `tasks` 集合当默认任务（`ensureSeedTasks()`），之后改代码里的 `CATEGORIES` 不会覆盖用户已经建过的任务
+- 下面还有「最近记录」列表（`renderRecent()`）
 
-在 Firestore Database → **规则 (Rules)** 标签页，把内容整个换成：
+> 旧版本的「记录一次学习」表单弹窗（类别下拉+里程碑下拉+自定义标题+积分+备注+日期，`openLogModal`/`submitLogEntry`/`CATEGORIES.presets` 那套）**代码还留着但入口按钮已经删掉了**，属于死代码，不会被用户看到，以后如果要彻底清理或者要恢复"手动填表单记录"这种更灵活的记录方式，可以从这里改。
+
+### 3. 「奖励商店」Tab
+- 三档：小奖励 / 中奖励 / 大奖（`TIER_META`），默认种子奖励见 `DEFAULT_REWARDS`（奶茶、打游戏、摸鱼、买书、新加坡周边游、马来西亚租摩托、东南亚穷游、新加坡买摩托车）
+- 每张卡片：自动分配的小图标（`iconForReward()`，图标库 `REWARD_ICONS`，10 个通用魔法/奇幻主题图标——魔杖、药水瓶、咒语书等，**同样是为了避开哈利波特商标图案而设计的通用款**）+ 名称 + 所需积分 + 攒够进度条
+- 兑换：点"兑换"→ 二次确认弹窗 → 确认后从 `log` 里写一条 `spend` 记录 → 弹庆祝弹窗+撒花动画（"「XX」奖励已兑换 🎉 已扣除 X 积分。奖励商店欢迎下次光临！"）
+- 编辑/删除跟学习任务同一套交互
+- 「＋ 添加自定义奖励」可以新增奖励，**积分同样允许填 0**
+
+### 4. 「历史」Tab
+- 所有记录按日期分组显示（`renderHistory()`）
+
+### 5. 等级系统
+`LEVELS` 数组，**现在是 20 级**，按累计获得的总积分（不是可用积分，兑换奖励不扣这个数）从低到高：新手上路(0) → 打好地基(100) → 小试牛刀(250) → 渐入佳境(450) → 独当一面(700) → 融会贯通(1000) → 炉火纯青(1400) → 崭露头角(1900) → 步入正轨(2500) → 渐成气候(3200) → 游刃有余(4000) → 登堂入室(5000) → 自成一派(6200) → 声名鹊起(7600) → 独步一方(9200) → 名扬四海(11000) → 出类拔萃(13000) → 登峰造极(15200) → 一代宗师(17600) → 传奇远征者(20200)。超过最后一级后，`levelInfo()` 会自动按"每 +5000 分再升一级"继续延伸下去，不会封顶。
+
+---
+
+## 数据结构（Firestore）
+
+所有数据都在 `users/{uid}/...` 下面，按 uid 隔离，安全规则只允许本人读写自己的数据（见文末规则原文）。三个子集合：
+
+- `users/{uid}/log`：每条学习记录或兑换记录。字段：`kind`（'earn' 或 'spend'）、`category`、`label`、`amount`、`note`、`dateISO`、`ts`
+- `users/{uid}/rewards`：奖励定义。字段：`name`、`tier`（small/medium/big）、`cost`、`active`、`ts`
+- `users/{uid}/tasks`：学习任务定义。字段：`name`、`category`（对应 `CATEGORIES` 的 id）、`points`、`active`、`ts`
+
+积分/等级/连续打卡都是前端根据 `log` 集合实时算出来的（`computeStats()` / `levelInfo()` / `computeStreak()`），不是存好的字段。
+
+---
+
+## 代码里关键的东西在哪（方便以后改）
+
+- `CATEGORIES`（学习类别 + 预设里程碑，也是任务分组依据）
+- `DEFAULT_REWARDS`（首次登录写入的默认奖励）
+- `TIER_META` / `TIER_ICON_COLORS`（奖励三档的标题/颜色）
+- `LEVELS`（等级门槛，改这里就能调整等级数量/名字/分数线）
+- `REWARD_ICONS` / `iconForReward()`（奖励图标库 + 按 doc id 哈希自动分配，同一个奖励永远同一个图标）
+- `TASK_ICONS` / `iconForTask()`（任务图标库，逻辑同上）
+- `hashStr()`（两个图标分配函数共用的字符串哈希）
+- `renderRewards()` / `rewardCardHTML()`、`renderTasks()` / `taskCardHTML()`（两个 tab 的卡片渲染，结构几乎对称）
+- `openRewardModal()` / `submitReward()`（奖励增/改共用一个表单，`editingRewardId` 判断是新增还是编辑）
+- `openTaskModal()` / `submitTask()`（任务增/改，同理，`editingTaskId`）
+- `openRedeemConfirm()` / `confirmRedeem()`（兑换二次确认）
+- `openTaskConfirm()` / `confirmTaskLog()`（完成任务二次确认）
+- `openCelebrate(kind, name, amount)`（庆祝弹窗+撒花动画，`kind` 传 `'reward'` 或 `'task'` 决定文案）
+- `.xp-flyer` 相关（进度条上挥舞的魔杖图标）
+
+## ⚠️ IP / 版权注意事项
+
+Yijia 喜欢哈利波特主题，多次要求"魔法/巫师"风格的视觉效果（图标、进度条动画等）。**已经明确讨论过并达成共识**：可以做同一氛围的通用奇幻/魔法元素（魔杖、药水瓶、星光、咒语书……），但**不能照抄哈利波特具体的商标视觉设计**（金色飞贼的球+翅膀造型、院徽、闪电疤痕、角色形象等）。以后再加类似的视觉元素，延续这个原则就行，不需要每次都重新问。
+
+---
+
+## 部署 / 怎么改代码立即上线
+
+用的是 GitHub Desktop（不是命令行 git）。流程：
+1. 在这台电脑上直接改 `index.html`（无论是 Yijia 自己改，还是让 Claude 通过设备连接直接改这个本地文件）
+2. 打开 GitHub Desktop，仓库选 `quest-log`，能看到 `Changes` 里列出改动的文件和具体 diff
+3. 左下角填一句 commit 说明 → 点 `Commit 1 file to main`
+4. 点顶部的 `Push origin`，大概 30-60 秒后 GitHub Pages 自动重新部署
+5. 浏览器刷新（必要时强制刷新清缓存）就是最新版本
+
+## Firebase 项目信息
+
+- Firebase 项目：`yaz-quest-log`（Firestore 数据库选的是新加坡 `asia-southeast1`，标准版）
+- 登录方式：仅 Google 登录（`firebase.auth.GoogleAuthProvider`）
+- Firestore 安全规则（**必须点右上角"发布"才生效**，之前踩过一次"粘贴了但没发布"导致 `Missing or insufficient permissions` 的坑）：
 
 ```
 rules_version = '2';
@@ -32,48 +110,8 @@ service cloud.firestore {
 }
 ```
 
-点右上角"发布"。这条规则的意思是：**只有登录后的你自己，能读写自己名下的数据**，别人一个字节都读不到、写不了。
-
-## 第三步：填入你的配置
-
-打开 `firebase-config.js`，把第一步复制的那段配置粘贴进去，替换掉里面的占位符文字。
-
-## 第四步：放到 GitHub 上，开启免费托管
-
-1. 去 github.com 建一个新仓库（比如 `quest-log`），Public 就行（代码本身没有隐私问题，你的数据不在这个仓库里，在 Firebase 里）
-2. 把这个文件夹里的三个文件上传 / 推送进去
-3. 仓库 **Settings → Pages** → Source 选 "Deploy from a branch" → 选 `main` 分支、根目录 `/ (root)` → Save
-4. 等 1-2 分钟，页面顶部会出现一个网址，形如：
-   `https://<你的GitHub用户名>.github.io/quest-log/`
-5. 打开这个网址，点"用 Google 账号登录"，登录后第一次会自动帮你把默认的 8 个奖励写进去
-
 ---
 
-## 以后怎么改代码、怎么立即上线
+## 给下一次接手的 Claude 的话
 
-在你电脑上装一个 Git（Mac/Linux 通常自带，Windows 装 [Git for Windows](https://git-scm.com/download/win)），第一次把仓库克隆下来：
-
-```bash
-git clone https://github.com/<你的用户名>/quest-log.git
-cd quest-log
-```
-
-以后每次想改（比如调整积分数值、加新类别），直接编辑 `index.html`，改完运行：
-
-```bash
-git add -A
-git commit -m "说明这次改了什么"
-git push
-```
-
-`git push` 之后，GitHub Pages 会在大概 **30-60 秒内自动重新部署**——不需要额外的"发布"按钮，push 本身就是部署。刷新网页（可能要强制刷新 / 清一下缓存）就是最新版本。
-
-如果暂时不想装 Git，也可以在 GitHub 网页上直接点开 `index.html` → 铅笔图标编辑 → 改完点 "Commit changes"，效果一样，只是没有本地版本历史。
-
-## 手机怎么用
-
-手机浏览器打开同一个 `https://xxx.github.io/quest-log/`，用**同一个** Google 账号登录，看到的就是电脑上同一份数据，实时同步。可以在浏览器菜单里选"添加到主屏幕"，图标就跟个 App 一样。
-
-## 想加功能怎么办
-
-代码结构很直接：`CATEGORIES`（学习类别和默认分值）、`LEVELS`（等级门槛）、`DEFAULT_REWARDS`（默认奖励，只在你第一次登录、且奖励是空的时候写入一次，之后改代码不会覆盖你已经加过的奖励）都在 `index.html` 顶部的 `<script>` 里，改这几个数组最省事。也可以把这份代码带回来找我改，直接告诉我这个仓库的内容或者贴 `index.html` 就行。
+如果 Yijia 下次把整个文件夹发过来（或者通过设备连接指到这个本地路径），直接读 `index.html` 全文 + 这份 README 就能完整了解现状。改代码时优先用"读现有文件 → 定位精确锚点文本 → 原子替换（全部匹配到才真正写入，否则整体放弃）"这种方式改这一个大文件，比整个重写更安全，避免动到用户已经积累的真实数据结构或引入语法错误。改完一定要跑一次 Node.js 的内联 `<script>` 语法检查（把文件里的 `<script>` 块整个提出来跑 `new Function(code)`），再让用户走 GitHub Desktop 的 commit → push 流程上线。
