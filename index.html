@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>远征日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF1F4;
+  --surface:#FFFFFF;
+  --surface-2:#E3E9EE;
+  --ink:#12202B;
+  --ink-soft:#54626D;
+  --ink-faint:#8894A0;
+  --border:#D6DCE2;
+  --accent:#C07F1F;
+  --accent-ink:#5A3A0E;
+  --accent-soft:#F4E4C8;
+  --teal:#1C7A68;
+  --teal-soft:#DCEFEA;
+  --burgundy:#7C2049;
+  --burgundy-soft:#F1DDE7;
+  --danger:#B23A2E;
+  --shadow:0 1px 2px rgba(18,32,43,0.06),0 10px 28px rgba(18,32,43,0.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E161F; --surface:#16212B; --surface-2:#1C2833; --ink:#E9EEF2; --ink-soft:#9FAEB9; --ink-faint:#6C7A87;
+    --border:#2A3947; --accent:#E3A63D; --accent-ink:#2A1B05; --accent-soft:#3A2C10; --teal:#48B69D; --teal-soft:#123028;
+    --burgundy:#D07AA3; --burgundy-soft:#3A1B29; --danger:#E0705F; --shadow:0 1px 2px rgba(0,0,0,0.35),0 12px 28px rgba(0,0,0,0.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E161F; --surface:#16212B; --surface-2:#1C2833; --ink:#E9EEF2; --ink-soft:#9FAEB9; --ink-faint:#6C7A87;
+  --border:#2A3947; --accent:#E3A63D; --accent-ink:#2A1B05; --accent-soft:#3A2C10; --teal:#48B69D; --teal-soft:#123028;
+  --burgundy:#D07AA3; --burgundy-soft:#3A1B29; --danger:#E0705F; --shadow:0 1px 2px rgba(0,0,0,0.35),0 12px 28px rgba(0,0,0,0.4);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Manrope',system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  padding-inline:16px;
+}
+[hidden]{display:none!important;}
+img{max-width:100%;}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;}
+.app{max-width:640px;margin:0 auto;padding-block:20px 60px;}
+
+/* auth gate */
+.gate{
+  max-width:420px;margin:18vh auto 0;text-align:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:20px;
+  padding:36px 24px;box-shadow:var(--shadow);
+}
+.gate h1{font-family:'Barlow Condensed';font-size:30px;margin:0 0 6px;}
+.gate p{color:var(--ink-soft);font-size:14px;margin:0 0 22px;}
+.btn-google{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--bg);border:none;border-radius:12px;
+  padding:12px 20px;font-weight:700;font-size:15px;cursor:pointer;
+}
+.gate-note{margin-top:16px;font-size:12px;color:var(--ink-faint);}
+
+.topbar{display:flex;justify-content:flex-end;margin-bottom:6px;}
+.signout{background:none;border:none;color:var(--ink-faint);font-size:12.5px;cursor:pointer;text-decoration:underline;}
+
+/* header / hero */
+.hero{
+  background:linear-gradient(155deg,var(--surface) 0%,var(--surface-2) 100%);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:22px 20px 20px;
+  box-shadow:var(--shadow);
+}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.eyebrow{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-size:13px;
+  color:var(--ink-faint);
+}
+.streak{
+  display:flex;align-items:center;gap:6px;
+  background:var(--accent-soft);color:var(--accent-ink);
+  border-radius:999px;padding:5px 12px;
+  font-size:13px;font-weight:700;
+}
+.streak .flame{font-size:14px;}
+.level-block{margin-top:14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.level-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:34px;line-height:1;
+  color:var(--ink);
+}
+.level-sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:14px;color:var(--accent);font-weight:600;
+  background:var(--accent-soft);padding:3px 9px;border-radius:8px;
+}
+.xpbar-wrap{margin-top:14px;}
+.xpbar{height:10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden;}
+.xpbar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--accent));border-radius:999px;transition:width .5s ease;width:0%;}
+.xp-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--ink-faint);}
+.xp-labels .mono{color:var(--ink-soft);}
+.stat-row{display:flex;gap:10px;margin-top:16px;}
+.stat{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px 8px;text-align:center;}
+.stat-num{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:20px;color:var(--ink);}
+.stat-label{font-size:11px;color:var(--ink-faint);margin-top:2px;}
+
+/* tabs */
+.tabs{display:flex;gap:6px;margin-top:18px;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:4px;}
+.tab{flex:1;background:transparent;border:none;border-radius:11px;padding:9px 6px;font-family:'Manrope';font-weight:700;font-size:14px;color:var(--ink-soft);cursor:pointer;}
+.tab.active{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);}
+
+main{margin-top:16px;}
+.panel{display:flex;flex-direction:column;gap:16px;}
+
+.btn-primary{
+  background:var(--ink);color:var(--bg);
+  border:none;border-radius:13px;padding:13px 18px;
+  font-family:'Manrope';font-weight:700;font-size:15px;cursor:pointer;
+  box-shadow:var(--shadow);
+}
+.btn-primary:active{transform:translateY(1px);}
+.btn-ghost{
+  background:transparent;border:1.5px dashed var(--border);color:var(--ink-soft);
+  border-radius:13px;padding:11px 16px;font-weight:700;font-size:14px;cursor:pointer;
+}
+
+.recent h3, .panel h3{font-family:'Barlow Condensed';font-weight:700;font-size:19px;letter-spacing:.01em;margin:0 0 8px;}
+
+.entry-list{display:flex;flex-direction:column;gap:8px;}
+.entry-empty{color:var(--ink-faint);font-size:14px;padding:18px 4px;text-align:center;border:1px dashed var(--border);border-radius:14px;}
+.entry-card{
+  display:flex;align-items:center;gap:10px;
+  background:var(--surface);border:1px solid var(--border);border-radius:13px;
+  padding:11px 13px;
+}
+.entry-chip{
+  font-size:11px;font-weight:700;letter-spacing:.02em;
+  padding:3px 8px;border-radius:7px;white-space:nowrap;
+  background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--border);
+}
+.entry-chip.spend{background:var(--burgundy-soft);color:var(--burgundy);border-color:transparent;}
+.entry-body{flex:1;min-width:0;}
+.entry-label{font-size:14px;font-weight:600;color:var(--ink);overflow-wrap:anywhere;}
+.entry-meta{font-size:11.5px;color:var(--ink-faint);margin-top:1px;}
+.entry-amount{font-family:'IBM Plex Mono';font-weight:600;font-size:14.5px;white-space:nowrap;}
+.entry-amount.earn{color:var(--teal);}
+.entry-amount.spend{color:var(--burgundy);}
+
+.history-day{margin-bottom:4px;}
+.history-day-label{font-family:'IBM Plex Mono';font-size:12px;color:var(--ink-faint);margin:14px 0 6px;letter-spacing:.02em;}
+.history-day-label:first-child{margin-top:0;}
+
+/* rewards */
+.tier-block{margin-bottom:6px;}
+.tier-title{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Barlow Condensed';font-weight:700;font-size:18px;margin:2px 0 10px;
+}
+.tier-dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.tier-dot.small{background:var(--teal);}
+.tier-dot.medium{background:var(--accent);}
+.tier-dot.big{background:var(--burgundy);}
+.reward-grid{display:flex;flex-direction:column;gap:10px;}
+.reward-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:14px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.reward-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
+.reward-name{font-weight:700;font-size:15px;}
+.reward-cost{font-family:'IBM Plex Mono';font-weight:600;font-size:13px;color:var(--ink-soft);white-space:nowrap;}
+.reward-bar{height:7px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden;}
+.reward-bar-fill{height:100%;border-radius:999px;transition:width .4s ease;}
+.reward-bar-fill.small{background:var(--teal);}
+.reward-bar-fill.medium{background:var(--accent);}
+.reward-bar-fill.big{background:var(--burgundy);}
+.reward-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.reward-hint{font-size:12px;color:var(--ink-faint);}
+.reward-btn-row{display:flex;gap:6px;}
+.btn-redeem{
+  border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer;
+  background:var(--ink);color:var(--bg);
+}
+.btn-redeem:disabled{background:var(--surface-2);color:var(--ink-faint);cursor:not-allowed;}
+.btn-redeem.confirming{background:var(--danger);color:#fff;}
+.btn-del{background:transparent;border:none;color:var(--ink-faint);font-size:12px;cursor:pointer;padding:6px 4px;}
+.btn-del.confirming{color:var(--danger);font-weight:700;}
+
+/* modal */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(14,22,31,0.5);
+  display:flex;align-items:flex-end;justify-content:center;z-index:50;
+}
+@media (min-width:520px){ .modal-backdrop{align-items:center;} }
+.modal{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px 20px 0 0;
+  width:100%;max-width:480px;max-height:88vh;overflow-y:auto;
+  padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));
+  box-shadow:var(--shadow);
+}
+@media (min-width:520px){ .modal{border-radius:20px;} }
+.modal h3{font-family:'Barlow Condensed';font-size:21px;font-weight:700;margin:0 0 14px;}
+.modal label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin:12px 0 5px;}
+.modal label:first-of-type{margin-top:0;}
+.modal input, .modal select{
+  width:100%;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;
+  padding:10px 11px;font-size:14.5px;color:var(--ink);font-family:'Manrope';
+}
+.modal-actions{display:flex;gap:10px;margin-top:18px;}
+.modal-actions .btn-ghost, .modal-actions .btn-primary{flex:1;text-align:center;}
+.form-error{color:var(--danger);font-size:13px;margin-top:8px;}
+
+.toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);
+  background:var(--ink);color:var(--bg);
+  padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;
+  box-shadow:var(--shadow);z-index:60;max-width:88vw;text-align:center;
+}
+.db-error{
+  margin-top:40px;text-align:center;color:var(--ink-soft);
+  border:1px dashed var(--border);border-radius:16px;padding:30px 18px;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="gate" id="gate">
+    <h1>远征日志</h1>
+    <p>登录你自己的 Google 账号，数据只属于你，手机电脑自动同步。</p>
+    <button class="btn-google" id="signInBtn">用 Google 账号登录</button>
+    <div class="gate-note" id="gateNote"></div>
+  </div>
+
+  <div id="appRoot" hidden>
+    <div class="topbar">
+      <button class="signout" id="signOutBtn">退出登录</button>
+    </div>
+    <header class="hero">
+      <div class="hero-top">
+        <span class="eyebrow">远征日志 · Yijia 的 AI 转型任务</span>
+        <div class="streak"><span class="flame">🔥</span><span class="mono" id="streakNum">0</span>&nbsp;天连续</div>
+      </div>
+      <div class="level-block">
+        <div class="level-name" id="levelName">新手上路</div>
+        <div class="level-sub" id="levelSub">Lv.1</div>
+      </div>
+      <div class="xpbar-wrap">
+        <div class="xpbar"><div class="xpbar-fill" id="xpFill"></div></div>
+        <div class="xp-labels"><span class="mono" id="xpNowLabel">0 XP</span><span id="xpNextLabel">/ 100 到下一级</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num" id="balanceNum">0</div><div class="stat-label">可用积分</div></div>
+        <div class="stat"><div class="stat-num" id="totalNum">0</div><div class="stat-label">累计获得</div></div>
+        <div class="stat"><div class="stat-num" id="entriesNum">0</div><div class="stat-label">记录次数</div></div>
+      </div>
+    </header>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="log">记录</button>
+      <button class="tab" data-tab="rewards">奖励商店</button>
+      <button class="tab" data-tab="history">历史</button>
+    </nav>
+
+    <main id="main">
+      <section class="panel" id="panel-log">
+        <button class="btn-primary" id="openLogForm">＋ 记录一次学习</button>
+        <div class="recent">
+          <h3>最近记录</h3>
+          <div id="recentList" class="entry-list"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-rewards" hidden>
+        <div id="rewardsWrap"></div>
+        <button class="btn-ghost" id="openAddReward">＋ 添加自定义奖励</button>
+      </section>
+
+      <section class="panel" id="panel-history" hidden>
+        <h3>完整历史</h3>
+        <div id="historyList" class="entry-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="db-error" id="dbError" hidden></div>
+</div>
+
+<div class="modal-backdrop" id="logModal" hidden>
+  <div class="modal">
+    <h3>记录一次学习</h3>
+    <label>类别</label>
+    <select id="categorySelect"></select>
+    <div id="presetWrap">
+      <label>具体里程碑</label>
+      <select id="presetSelect"></select>
+    </div>
+    <div id="customFields">
+      <label>标题</label>
+      <input id="customLabel" type="text" placeholder="比如：读完 3B1B 第 9 集，弄懂 duality">
+    </div>
+    <label>积分</label>
+    <input id="pointsInput" type="number" inputmode="numeric" min="1">
+    <label>备注（可选）</label>
+    <input id="noteInput" type="text" placeholder="写点细节，以后回顾会有意思">
+    <label>日期</label>
+    <input id="dateInput" type="date">
+    <div class="form-error" id="logFormError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelLog">取消</button>
+      <button class="btn-primary" id="submitLog">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="rewardModal" hidden>
+  <div class="modal">
+    <h3>添加自定义奖励</h3>
+    <label>奖励名称</label>
+    <input id="rewardName" type="text" placeholder="比如：去巴厘岛浮潜三天">
+    <label>档位</label>
+    <select id="rewardTier">
+      <option value="small">日常小奖励</option>
+      <option value="medium">中型奖励</option>
+      <option value="big">终极大奖</option>
+    </select>
+    <label>需要多少积分</label>
+    <input id="rewardCost" type="number" inputmode="numeric" min="1">
+    <div class="form-error" id="rewardFormError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelReward">取消</button>
+      <button class="btn-primary" id="submitReward">添加</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+/* ============ 默认奖励（首次登录时自动写入） ============ */
+const DEFAULT_REWARDS = [
+  {name:'一杯喜欢的奶茶/咖啡', tier:'small', cost:80, active:true, ts:1},
+  {name:'痛快打游戏/追剧一晚', tier:'small', cost:120, active:true, ts:2},
+  {name:'心安理得摸鱼半天', tier:'small', cost:150, active:true, ts:3},
+  {name:'想要的书/工具/装备', tier:'medium', cost:350, active:true, ts:4},
+  {name:'新加坡周边一日出行(圣淘沙/离岛/spa)', tier:'medium', cost:400, active:true, ts:5},
+  {name:'马来西亚租摩托车玩几天', tier:'big', cost:1200, active:true, ts:6},
+  {name:'东南亚一次穷游(泰国/印尼等)', tier:'big', cost:2000, active:true, ts:7},
+  {name:'在新加坡买一辆摩托车', tier:'big', cost:5000, active:true, ts:8},
+];
+
+const CATEGORIES = [
+  {id:'arena', label:'ARENA / AI 研究学习', presets:[
+    {label:'完成 0.0 前置 notebook', pts:60},
+    {label:'完成一个 ARENA 章节', pts:100},
+    {label:'独立复现一个实验 / 论文结果', pts:200},
+  ]},
+  {id:'pl300', label:'PL-300 备考', presets:[
+    {label:'完成一个课程模块', pts:30},
+    {label:'通过一次模拟测试', pts:60},
+    {label:'通过 PL-300 正式认证', pts:400},
+  ]},
+  {id:'python', label:'Python 练习', presets:[
+    {label:'完成一个供应链场景练习', pts:20},
+    {label:'完成一个小工具 / 脚本', pts:100},
+  ]},
+  {id:'project', label:'自建项目', presets:[
+    {label:'上线一个新功能 / 模块', pts:80},
+    {label:'完整交付一个小项目', pts:200},
+  ]},
+  {id:'job', label:'求职 / 转型', presets:[
+    {label:'投递一份定制简历', pts:10},
+    {label:'完成一轮面试', pts:50},
+    {label:'拿到 offer', pts:500},
+  ]},
+  {id:'review', label:'规划 / 复盘', presets:[
+    {label:'整理 / 更新 AI 转型 vault', pts:15},
+    {label:'周复盘 / 月复盘', pts:20},
+  ]},
+  {id:'custom', label:'其他（自定义）', presets:[]},
+];
+const CAT_SHORT = {arena:'ARENA', pl300:'PL-300', python:'Python', project:'项目', job:'求职', review:'复盘', custom:'其他', reward:'奖励'};
+const TIER_META = {
+  small:{title:'日常小奖励', cls:'small'},
+  medium:{title:'中型奖励', cls:'medium'},
+  big:{title:'终极大奖', cls:'big'},
+};
+const LEVELS = [
+  {name:'新手上路', min:0},
+  {name:'打好地基', min:100},
+  {name:'小试牛刀', min:300},
+  {name:'渐入佳境', min:700},
+  {name:'独当一面', min:1500},
+  {name:'融会贯通', min:3000},
+  {name:'炉火纯青', min:6000},
+  {name:'大师之路', min:10000},
+];
+
+/* ============ Firebase 初始化 ============ */
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const fs = firebase.firestore();
+
+let uid = null;
+let logCol = null, rewardsCol = null;
+let unsubLog = null, unsubRewards = null;
+let logEntries = [];
+let rewards = [];
+let pendingRedeemId = null, pendingRedeemTimer = null;
+let pendingDeleteId = null, pendingDeleteTimer = null;
+let toastTimer = null;
+
+document.getElementById('signInBtn').addEventListener('click', ()=>{
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).catch(e=>{
+    document.getElementById('gateNote').textContent = '登录失败：' + (e && e.message ? e.message : '请重试');
+  });
+});
+document.getElementById('signOutBtn').addEventListener('click', ()=>{
+  if(unsubLog) unsubLog();
+  if(unsubRewards) unsubRewards();
+  auth.signOut();
+});
+
+auth.onAuthStateChanged(user=>{
+  if(user){
+    uid = user.uid;
+    document.getElementById('gate').hidden = true;
+    document.getElementById('appRoot').hidden = false;
+    logCol = fs.collection('users').doc(uid).collection('log');
+    rewardsCol = fs.collection('users').doc(uid).collection('rewards');
+    wireUI();
+    ensureSeedRewards();
+    subscribeAll();
+  } else {
+    uid = null;
+    if(unsubLog) unsubLog();
+    if(unsubRewards) unsubRewards();
+    document.getElementById('gate').hidden = false;
+    document.getElementById('appRoot').hidden = true;
+  }
+});
+
+async function ensureSeedRewards(){
+  try{
+    const snap = await rewardsCol.limit(1).get();
+    if(snap.empty){
+      const batch = fs.batch();
+      DEFAULT_REWARDS.forEach(r=>{
+        const ref = rewardsCol.doc();
+        batch.set(ref, r);
+      });
+      await batch.commit();
+    }
+  }catch(e){ console.error('seed rewards failed', e); }
+}
+
+function subscribeAll(){
+  unsubLog = logCol.orderBy('ts','desc').limit(500).onSnapshot(snap=>{
+    logEntries = snap.docs.map(d=>({id:d.id, ...d.data()}));
+    render();
+  }, err=>{ console.error('log snapshot error', err); });
+  unsubRewards = rewardsCol.orderBy('cost','asc').limit(100).onSnapshot(snap=>{
+    rewards = snap.docs.map(d=>({id:d.id, ...d.data()})).filter(r=> r.active!==false);
+    render();
+  }, err=>{ console.error('rewards snapshot error', err); });
+}
+
+function localISO(d){
+  const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+function fmtDateLabel(iso){
+  const today = localISO(new Date());
+  const y = new Date(); y.setDate(y.getDate()-1);
+  const yesterday = localISO(y);
+  if(iso===today) return '今天';
+  if(iso===yesterday) return '昨天';
+  return iso;
+}
+
+function computeStats(){
+  let totalEarned=0, totalSpent=0, entriesCount=0;
+  const earnDates = new Set();
+  logEntries.forEach(e=>{
+    if(e.kind==='earn'){ totalEarned += Number(e.amount)||0; entriesCount++; if(e.dateISO) earnDates.add(e.dateISO); }
+    else if(e.kind==='spend'){ totalSpent += Number(e.amount)||0; }
+  });
+  return {totalEarned, totalSpent, balance: totalEarned-totalSpent, entriesCount, streak: computeStreak(earnDates)};
+}
+function computeStreak(datesSet){
+  let cursor = new Date();
+  if(!datesSet.has(localISO(cursor))){
+    cursor.setDate(cursor.getDate()-1);
+    if(!datesSet.has(localISO(cursor))) return 0;
+  }
+  let streak=0;
+  while(datesSet.has(localISO(cursor))){
+    streak++;
+    cursor.setDate(cursor.getDate()-1);
+  }
+  return streak;
+}
+function levelInfo(total){
+  let idx=0;
+  for(let i=0;i<LEVELS.length;i++){ if(total>=LEVELS[i].min) idx=i; }
+  const cur = LEVELS[idx];
+  const next = LEVELS[idx+1];
+  if(next){
+    return {name:cur.name, sub:`Lv.${idx+1}`, curMin:cur.min, nextMin:next.min};
+  }
+  const over = total - cur.min;
+  const stage = Math.floor(over/5000);
+  const stageMin = cur.min + stage*5000;
+  return {name:cur.name, sub:`Lv.${LEVELS.length+stage}`, curMin:stageMin, nextMin:stageMin+5000};
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{ t.hidden = true; }, 2600);
+}
+
+function render(){
+  const s = computeStats();
+  document.getElementById('balanceNum').textContent = s.balance;
+  document.getElementById('totalNum').textContent = s.totalEarned;
+  document.getElementById('entriesNum').textContent = s.entriesCount;
+  document.getElementById('streakNum').textContent = s.streak;
+  const lvl = levelInfo(s.totalEarned);
+  document.getElementById('levelName').textContent = lvl.name;
+  document.getElementById('levelSub').textContent = lvl.sub;
+  const span = lvl.nextMin - lvl.curMin;
+  const pct = span>0 ? Math.min(100, Math.max(0, (s.totalEarned-lvl.curMin)/span*100)) : 100;
+  document.getElementById('xpFill').style.width = pct+'%';
+  document.getElementById('xpNowLabel').textContent = s.totalEarned+' XP';
+  document.getElementById('xpNextLabel').textContent = `/ ${lvl.nextMin} 到下一级`;
+  renderRecent();
+  renderHistory();
+  renderRewards(s.balance);
+}
+
+function entryCardHTML(e){
+  const chipCls = e.kind==='spend' ? 'entry-chip spend' : 'entry-chip';
+  const chipText = e.kind==='spend' ? '兑换' : (CAT_SHORT[e.category]||'其他');
+  const sign = e.kind==='spend' ? '-' : '+';
+  const amtCls = e.kind==='spend' ? 'spend' : 'earn';
+  const meta = [fmtDateLabel(e.dateISO)];
+  if(e.note) meta.push(e.note);
+  return `<div class="entry-card">
+    <span class="${chipCls}">${chipText}</span>
+    <div class="entry-body">
+      <div class="entry-label">${escapeHTML(e.label||'')}</div>
+      <div class="entry-meta">${escapeHTML(meta.join(' · '))}</div>
+    </div>
+    <div class="entry-amount ${amtCls} mono">${sign}${e.amount}</div>
+  </div>`;
+}
+function escapeHTML(s){
+  return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderRecent(){
+  const el = document.getElementById('recentList');
+  const items = logEntries.slice(0,6);
+  el.innerHTML = items.length ? items.map(entryCardHTML).join('') : '<div class="entry-empty">还没有记录，点上面的按钮记下第一笔吧</div>';
+}
+function renderHistory(){
+  const el = document.getElementById('historyList');
+  if(!logEntries.length){ el.innerHTML = '<div class="entry-empty">还没有历史记录</div>'; return; }
+  const byDate = {};
+  logEntries.forEach(e=>{
+    const key = e.dateISO || '未知日期';
+    (byDate[key] = byDate[key]||[]).push(e);
+  });
+  const dates = Object.keys(byDate).sort((a,b)=> a<b?1:-1);
+  el.innerHTML = dates.map(d=>`
+    <div class="history-day">
+      <div class="history-day-label">${fmtDateLabel(d)}</div>
+      ${byDate[d].map(entryCardHTML).join('')}
+    </div>`).join('');
+}
+
+function renderRewards(balance){
+  const wrap = document.getElementById('rewardsWrap');
+  if(!rewards.length){
+    wrap.innerHTML = '<div class="entry-empty">还没有奖励，点下面添加第一个吧</div>';
+    return;
+  }
+  const groups = {small:[], medium:[], big:[]};
+  rewards.forEach(r=>{ if(groups[r.tier]) groups[r.tier].push(r); });
+  wrap.innerHTML = Object.keys(TIER_META).map(tier=>{
+    const items = groups[tier];
+    if(!items.length) return '';
+    const meta = TIER_META[tier];
+    return `<div class="tier-block">
+      <div class="tier-title"><span class="tier-dot ${meta.cls}"></span>${meta.title}</div>
+      <div class="reward-grid">${items.map(r=>rewardCardHTML(r, balance, meta.cls)).join('')}</div>
+    </div>`;
+  }).join('');
+  wrap.querySelectorAll('[data-redeem]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onRedeemClick(btn.getAttribute('data-redeem')));
+  });
+  wrap.querySelectorAll('[data-del]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onDeleteClick(btn.getAttribute('data-del')));
+  });
+}
+function rewardCardHTML(r, balance, tierCls){
+  const pct = Math.min(100, Math.round(balance/r.cost*100));
+  const afford = balance >= r.cost;
+  const isConfirming = pendingRedeemId === r.id;
+  const delConfirming = pendingDeleteId === r.id;
+  const btnLabel = isConfirming ? '确认兑换？' : (afford ? '兑换' : `还差 ${r.cost-balance} 分`);
+  return `<div class="reward-card">
+    <div class="reward-top">
+      <div class="reward-name">${escapeHTML(r.name)}</div>
+      <div class="reward-cost mono">${r.cost} 分</div>
+    </div>
+    <div class="reward-bar"><div class="reward-bar-fill ${tierCls}" style="width:${pct}%"></div></div>
+    <div class="reward-actions">
+      <div class="reward-hint">${afford ? '已经攒够啦 🎉' : pct+'% 已攒够'}</div>
+      <div class="reward-btn-row">
+        <button class="btn-del ${delConfirming?'confirming':''}" data-del="${r.id}">${delConfirming?'确认删除？':'删除'}</button>
+        <button class="btn-redeem ${isConfirming?'confirming':''}" data-redeem="${r.id}" ${afford?'':'disabled'}>${btnLabel}</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function clearPendingRedeem(){ pendingRedeemId=null; clearTimeout(pendingRedeemTimer); pendingRedeemTimer=null; }
+function clearPendingDelete(){ pendingDeleteId=null; clearTimeout(pendingDeleteTimer); pendingDeleteTimer=null; }
+
+function onRedeemClick(id){
+  const reward = rewards.find(r=>r.id===id);
+  if(!reward) return;
+  if(pendingRedeemId === id){
+    clearPendingRedeem();
+    doRedeem(reward);
+  } else {
+    clearPendingRedeem();
+    pendingRedeemId = id;
+    render();
+    pendingRedeemTimer = setTimeout(()=>{ clearPendingRedeem(); render(); }, 4000);
+  }
+}
+function onDeleteClick(id){
+  if(pendingDeleteId === id){
+    clearPendingDelete();
+    rewardsCol.doc(id).delete().catch(()=>{ showToast('删除失败，请重试'); });
+  } else {
+    clearPendingDelete();
+    pendingDeleteId = id;
+    render();
+    pendingDeleteTimer = setTimeout(()=>{ clearPendingDelete(); render(); }, 4000);
+  }
+}
+async function doRedeem(reward){
+  try{
+    await logCol.add({kind:'spend', category:'reward', label:reward.name, amount:reward.cost, dateISO:localISO(new Date()), ts:Date.now()});
+    showToast(`已兑现「${reward.name}」🎉 好好享受！`);
+  }catch(e){ showToast('保存失败，请重试'); }
+}
+
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(b=> b.classList.toggle('active', b.getAttribute('data-tab')===name));
+  document.getElementById('panel-log').hidden = name!=='log';
+  document.getElementById('panel-rewards').hidden = name!=='rewards';
+  document.getElementById('panel-history').hidden = name!=='history';
+}
+
+function populateCategorySelect(){
+  const sel = document.getElementById('categorySelect');
+  sel.innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
+  onCategoryChange();
+}
+function onCategoryChange(){
+  const catId = document.getElementById('categorySelect').value;
+  const cat = CATEGORIES.find(c=>c.id===catId);
+  const presetWrap = document.getElementById('presetWrap');
+  const presetSel = document.getElementById('presetSelect');
+  if(catId==='custom' || !cat.presets.length){
+    presetWrap.hidden = true;
+    showCustomFields(true);
+    document.getElementById('pointsInput').value = '';
+  } else {
+    presetWrap.hidden = false;
+    presetSel.innerHTML = cat.presets.map((p,i)=>`<option value="${i}">${escapeHTML(p.label)}（+${p.pts}）</option>`).join('')
+      + `<option value="__custom__">其他（自定义）</option>`;
+    onPresetChange();
+  }
+}
+function onPresetChange(){
+  const catId = document.getElementById('categorySelect').value;
+  const cat = CATEGORIES.find(c=>c.id===catId);
+  const presetSel = document.getElementById('presetSelect');
+  if(presetSel.value==='__custom__'){
+    showCustomFields(true);
+    document.getElementById('pointsInput').value = '';
+  } else {
+    showCustomFields(false);
+    const preset = cat.presets[Number(presetSel.value)];
+    document.getElementById('pointsInput').value = preset.pts;
+  }
+}
+function showCustomFields(show){ document.getElementById('customFields').hidden = !show; }
+
+function openLogModal(){
+  populateCategorySelect();
+  document.getElementById('customLabel').value = '';
+  document.getElementById('noteInput').value = '';
+  document.getElementById('dateInput').value = localISO(new Date());
+  document.getElementById('logFormError').hidden = true;
+  document.getElementById('logModal').hidden = false;
+}
+function closeLogModal(){ document.getElementById('logModal').hidden = true; }
+
+function submitLogEntry(){
+  const errEl = document.getElementById('logFormError');
+  const catId = document.getElementById('categorySelect').value;
+  const cat = CATEGORIES.find(c=>c.id===catId);
+  const presetWrap = document.getElementById('presetWrap');
+  const presetSel = document.getElementById('presetSelect');
+  let label;
+  const usingCustom = presetWrap.hidden || presetSel.value==='__custom__';
+  if(usingCustom){
+    label = document.getElementById('customLabel').value.trim();
+    if(!label){ errEl.textContent='请填写一个标题'; errEl.hidden=false; return; }
+  } else {
+    label = cat.presets[Number(presetSel.value)].label;
+  }
+  const pts = Number(document.getElementById('pointsInput').value);
+  if(!pts || pts<=0){ errEl.textContent='请填写一个大于 0 的积分数'; errEl.hidden=false; return; }
+  const note = document.getElementById('noteInput').value.trim();
+  const dateISO = document.getElementById('dateInput').value || localISO(new Date());
+  const btn = document.getElementById('submitLog');
+  btn.disabled = true;
+  logCol.add({kind:'earn', category:catId, label, amount:pts, note, dateISO, ts:Date.now()})
+    .then(()=>{ closeLogModal(); showToast(`+${pts} 分 · ${label}`); })
+    .catch(()=>{ errEl.textContent='保存失败，请重试'; errEl.hidden=false; })
+    .finally(()=>{ btn.disabled = false; });
+}
+
+function openRewardModal(){
+  document.getElementById('rewardName').value = '';
+  document.getElementById('rewardTier').value = 'small';
+  document.getElementById('rewardCost').value = '';
+  document.getElementById('rewardFormError').hidden = true;
+  document.getElementById('rewardModal').hidden = false;
+}
+function closeRewardModal(){ document.getElementById('rewardModal').hidden = true; }
+function submitReward(){
+  const errEl = document.getElementById('rewardFormError');
+  const name = document.getElementById('rewardName').value.trim();
+  const tier = document.getElementById('rewardTier').value;
+  const cost = Number(document.getElementById('rewardCost').value);
+  if(!name){ errEl.textContent='请填写奖励名称'; errEl.hidden=false; return; }
+  if(!cost || cost<=0){ errEl.textContent='请填写一个大于 0 的积分数'; errEl.hidden=false; return; }
+  const btn = document.getElementById('submitReward');
+  btn.disabled = true;
+  rewardsCol.add({name, tier, cost, active:true, ts:Date.now()})
+    .then(()=>{ closeRewardModal(); showToast('已添加奖励'); })
+    .catch(()=>{ errEl.textContent='保存失败，请重试'; errEl.hidden=false; })
+    .finally(()=>{ btn.disabled = false; });
+}
+
+let uiWired = false;
+function wireUI(){
+  if(uiWired) return;
+  uiWired = true;
+  document.getElementById('tabs').addEventListener('click', e=>{
+    const btn = e.target.closest('.tab');
+    if(btn) switchTab(btn.getAttribute('data-tab'));
+  });
+  document.getElementById('openLogForm').addEventListener('click', openLogModal);
+  document.getElementById('cancelLog').addEventListener('click', closeLogModal);
+  document.getElementById('submitLog').addEventListener('click', submitLogEntry);
+  document.getElementById('categorySelect').addEventListener('change', onCategoryChange);
+  document.getElementById('presetSelect').addEventListener('change', onPresetChange);
+  document.getElementById('openAddReward').addEventListener('click', openRewardModal);
+  document.getElementById('cancelReward').addEventListener('click', closeRewardModal);
+  document.getElementById('submitReward').addEventListener('click', submitReward);
+  document.getElementById('logModal').addEventListener('click', e=>{ if(e.target.id==='logModal') closeLogModal(); });
+  document.getElementById('rewardModal').addEventListener('click', e=>{ if(e.target.id==='rewardModal') closeRewardModal(); });
+}
+</script>
+</body>
+</html>
