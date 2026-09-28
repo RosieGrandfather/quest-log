@@ -1,0 +1,247 @@
+{
+ "id": "u11",
+ "title": "PyTorch 入门：张量与自动求导",
+ "en": "PyTorch Basics: Tensors & Autograd",
+ "minutes": 45,
+ "objectives": [
+  "说清楚 `torch.Tensor` 是什么，会创建张量、查看形状 / 类型 / 设备",
+  "理解 **自动求导 (autograd)**：`requires_grad`、`.backward()`、梯度存在 `.grad` 里而且会**累加**",
+  "理解 `nn.Parameter`、`nn.Module`、**损失函数 (loss function)**、**优化器 (optimizer)** 各自的角色",
+  "区分 **参数 (parameter)** 和 **超参数 (hyperparameter)**，能读懂一个最小的训练循环"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### ARENA 的自测题\n\nARENA 第 0 章一开始就是 PyTorch 练习。它说：如果你能清楚地回答下面 7 个问题，这部分就可以跳过：\n\n1. 从高层看，`torch.Tensor` 是什么？\n2. `nn.Parameter` 和 `nn.Module` 是什么？\n3. 调用 `.backward()` 之后，梯度存在哪里？\n4. 什么是损失函数？它一般接收什么参数、返回什么？\n5. 优化算法做了什么？\n6. 什么是超参数，它和普通参数有什么区别？\n7. 举几个超参数的例子。\n\n这一节就围绕这 7 个问题展开。**本节安排（约 45 分钟）**：视频一（3 分钟，全局概览）→ 视频二（18 分钟，张量）→ 视频三（14 分钟，自动求导）→ 要点对照 7 个问题（10 分钟）。代码注释里的都是实际运行的输出。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "ORMx45xqWkA",
+   "title": "视频一：PyTorch in 100 Seconds（Fireship）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 3
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "exaWOE8jvy8",
+   "title": "视频二：PyTorch Tutorial 02 - Tensor Basics（Patrick Loeber）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "M0fX15_-xrY",
+   "title": "视频三：The Fundamentals of Autograd（PyTorch 官方）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "text",
+   "md": "### 1. 张量 (tensor)\n\n**张量就是 PyTorch 版的 NumPy 数组**：一个多维数组，另外多了两个能力——**能放在 GPU 上计算**、**能记录计算过程用于自动求导**。\n\n```python\nimport torch as t\nx = t.tensor([[1., 2.], [3., 4.]])\nx.shape, x.dtype, x.device     # torch.Size([2, 2])  torch.float32  cpu\n\nt.zeros(2, 3); t.randn(4); t.arange(5)   # 常用的创建方式\nx.to(\"cuda\")                             # 移到 GPU（有 GPU 时）\nt.from_numpy(np_array)                   # 和 NumPy 互转；.numpy() 转回去\n```\n\n大部分操作和 NumPy 同名，区别主要是 `axis` → `dim`、`copy()` → `clone()`。\n\n### 2. 自动求导：梯度存在哪里\n\n```python\nw = t.tensor(3.0, requires_grad=True)\ny = w ** 2 + 2 * w\ny.backward()\nw.grad          # tensor(8.)   dy/dw = 2w + 2 = 8\n```\n\n- `requires_grad=True` 告诉 PyTorch 记录和这个张量有关的计算，建立 **计算图 (computational graph)**。\n- 对一个**标量**调用 `.backward()`，PyTorch 沿计算图反向应用链式法则（就是第 2 节的反向传播）。\n- **梯度存在叶子张量 (leaf tensor) 的 `.grad` 属性里**——这回答了第 3 个问题。\n\n**梯度会累加，不会自动清零：**\n\n```python\ny2 = w ** 2 + 2 * w\ny2.backward()\nw.grad          # tensor(16.)  8 + 8，累加了！\nw.grad.zero_()  # 手动清零 → tensor(0.)\n```\n\n所以训练循环里每一步都要先 `optimizer.zero_grad()`。另外，`with t.no_grad():` 里的计算不会被记录（`requires_grad` 为 False），用于推理和手动更新参数。\n\n### 3. `nn.Parameter` 与 `nn.Module`\n\n- **`nn.Parameter`**：一种特殊的张量，默认 `requires_grad=True`。把它赋值为模块的属性时，会**自动登记**为这个模块的可训练参数。\n- **`nn.Module`**：所有网络层和模型的基类。在 `__init__` 里定义子层 / 参数，在 `forward` 里写前向计算；`.parameters()` 会递归列出所有参数。\n\n```python\nimport torch.nn as nn\n\nclass TinyNet(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(4, 8)\n        self.fc2 = nn.Linear(8, 1)\n\n    def forward(self, x):\n        return self.fc2(t.relu(self.fc1(x)))\n\nmodel = TinyNet()\nsum(p.numel() for p in model.parameters())   # 49 = (4×8 + 8) + (8×1 + 1)\nmodel.fc1.weight.shape                        # torch.Size([8, 4])  是 nn.Parameter\n```\n\n注意 `nn.Linear(4, 8)` 的权重形状是 `(8, 4)`，也就是 (输出维度, 输入维度)，和第 1 节 $W\\mathbf{a}$ 的写法一致。\n\n### 4. 损失函数、优化器和训练循环\n\n- **损失函数**：接收**模型输出**和**目标**，返回一个**标量**张量（形状为 `torch.Size([])`），越小越好。如 `nn.MSELoss()`、`nn.CrossEntropyLoss()`。\n- **优化器 (optimizer)**：拿着每个参数的 `.grad`，按某种规则**更新参数**。最简单的 SGD 就是 $\\theta \\leftarrow \\theta - \\eta\\,\\nabla\\theta$；常用的还有 Adam。\n\n```python\nopt = t.optim.SGD(model.parameters(), lr=0.05)\nloss_fn = nn.MSELoss()\n\nfor step in range(200):\n    pred = model(X)              # 1. 前向\n    loss = loss_fn(pred, Y)      # 2. 算损失（标量）\n    opt.zero_grad()              # 3. 清空上一步的梯度\n    loss.backward()              # 4. 反向传播，填好每个参数的 .grad\n    opt.step()                   # 5. 优化器更新参数\n# 在一个小玩具任务上，loss 从 3.8 降到 0.027\n```\n\n这 5 步是所有深度学习训练的骨架，ARENA 里会写很多遍。\n\n### 5. 参数 vs 超参数\n\n- **参数 (parameter)**：模型通过训练**学出来**的值，比如权重和偏置。\n- **超参数 (hyperparameter)**：训练之前由人**设定**的值，梯度下降不会去改它。例如：学习率、批量大小 (batch size)、训练轮数 (epochs)、层数和每层宽度、优化器的选择、权重衰减 (weight decay)、dropout 比例。"
+  },
+  {
+   "type": "think",
+   "q": "训练循环里如果忘了写 `opt.zero_grad()`，会发生什么？",
+   "a": "每一步的梯度会**累加**到上一步的 `.grad` 上，参数更新用的是「从头到现在所有梯度之和」，方向和大小都不对，训练通常会变得不稳定甚至发散。\n\n（有时也会**故意**不清零，攒几个小批量的梯度再更新一次，这叫 **梯度累积 (gradient accumulation)**，用来在显存不够时模拟更大的批量。）"
+  },
+  {
+   "type": "think",
+   "q": "为什么 `loss.backward()` 要求 `loss` 是一个标量？",
+   "a": "反向传播算的是「**一个数**对所有参数的偏导数」。如果 `loss` 是向量，就有很多个输出，每个输出对每个参数都有一个导数，PyTorch 不知道你要哪个组合，会报错。\n\n所以损失函数都会把一批样本的损失**求平均或求和**成一个标量。（对非标量调用 `.backward()` 需要显式传入 `gradient` 参数，指定怎么组合。）"
+  },
+  {
+   "type": "think",
+   "q": "学习率是参数还是超参数？神经网络的偏置呢？",
+   "a": "- **学习率**是超参数：训练前人为设定，梯度下降不会更新它。\n- **偏置**是参数：它是 `nn.Parameter`，由梯度下降学出来。\n\n判断标准：**会不会被优化器根据梯度自动更新**。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "张量",
+     "tensor",
+     "可上 GPU、可自动求导的多维数组"
+    ],
+    [
+     "设备",
+     "device",
+     "`cpu` 或 `cuda`"
+    ],
+    [
+     "自动求导",
+     "autograd",
+     "自动沿计算图反向求梯度"
+    ],
+    [
+     "叶子张量",
+     "leaf tensor",
+     "用户直接创建的张量，梯度存在它的 `.grad`"
+    ],
+    [
+     "梯度累加",
+     "gradient accumulation",
+     "`.grad` 不会自动清零"
+    ],
+    [
+     "参数（类）",
+     "nn.Parameter",
+     "会被模块自动登记的可训练张量"
+    ],
+    [
+     "模块",
+     "nn.Module",
+     "所有层和模型的基类，定义 `forward`"
+    ],
+    [
+     "损失函数",
+     "loss function",
+     "输出 + 目标 → 标量"
+    ],
+    [
+     "优化器",
+     "optimizer",
+     "用梯度更新参数，如 SGD、Adam"
+    ],
+    [
+     "超参数",
+     "hyperparameter",
+     "人为设定、不被训练更新的值"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — PyTorch 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "本节 7 个自测题的出处"
+  },
+  {
+   "title": "PyTorch 官方：Learn the Basics",
+   "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+   "note": "ARENA 推荐的入门教程"
+  },
+  {
+   "title": "What is torch.nn really?（Jeremy Howard）",
+   "url": "https://pytorch.org/tutorials/beginner/nn_tutorial.html",
+   "note": "ARENA 选读：从零理解 torch.nn"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "和 NumPy 数组相比，`torch.Tensor` 多了哪两项关键能力？",
+    "options": [
+     "可以存字符串、可以自动排序",
+     "可以放在 GPU 上计算、可以记录计算过程用于自动求导",
+     "可以无限大、可以自动去重",
+     "没有区别"
+    ],
+    "answer": 1,
+    "explain": "张量本质是多维数组，额外支持 GPU 计算和 autograd，这正是深度学习需要的。"
+   },
+   {
+    "q": "对 `w = t.tensor(2.0, requires_grad=True)`，计算 `y = w ** 3` 后调用 `y.backward()`，`w.grad` 是多少？",
+    "options": [
+     "12",
+     "8",
+     "6",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "$dy/dw = 3w^2 = 3 \\times 4 = 12$。"
+   },
+   {
+    "q": "调用 `loss.backward()` 之后，梯度存在哪里？",
+    "options": [
+     "存在 `loss.grad` 里",
+     "作为 `backward()` 的返回值",
+     "直接更新到参数的值里",
+     "存在各个参数（叶子张量）的 `.grad` 属性里"
+    ],
+    "answer": 3,
+    "explain": "`backward()` 没有返回值，也不会修改参数本身，只是把梯度写进每个参数的 `.grad`。更新参数是优化器的事。"
+   },
+   {
+    "q": "对同一个张量连续两次计算并调用 `.backward()`（中间不清零），`.grad` 会？",
+    "options": [
+     "保留第二次的梯度",
+     "保留第一次的梯度",
+     "变成两次梯度之和",
+     "变成 0"
+    ],
+    "answer": 2,
+    "explain": "PyTorch 的梯度默认**累加**。所以训练循环每一步都要 `optimizer.zero_grad()`。"
+   },
+   {
+    "q": "`nn.Parameter` 的作用是？",
+    "options": [
+     "一种会被 `nn.Module` 自动登记为可训练参数的张量，默认 `requires_grad=True`",
+     "设置学习率",
+     "定义损失函数",
+     "一种不能求导的常量"
+    ],
+    "answer": 0,
+    "explain": "把 `nn.Parameter` 赋给模块属性后，`model.parameters()` 就能找到它，优化器就会更新它。"
+   },
+   {
+    "q": "自定义一个 `nn.Module` 时，前向计算写在哪个方法里？",
+    "options": [
+     "`__init__`",
+     "`backward`",
+     "`step`",
+     "`forward`"
+    ],
+    "answer": 3,
+    "explain": "`__init__` 里定义层和参数，`forward` 里写输入怎么变成输出。反向传播由 autograd 自动完成，不用自己写 `backward`。"
+   },
+   {
+    "q": "`nn.Linear(4, 8)` 的 `weight` 形状是？",
+    "options": [
+     "`(4, 8)`",
+     "`(8, 4)`",
+     "`(8,)`",
+     "`(32,)`"
+    ],
+    "answer": 1,
+    "explain": "PyTorch 的线性层权重是 (输出维度, 输入维度)，计算 $\\mathbf{y} = W\\mathbf{x} + \\mathbf{b}$。另外还有一个形状为 `(8,)` 的偏置。"
+   },
+   {
+    "q": "损失函数一般返回什么？",
+    "options": [
+     "和输入同形状的张量",
+     "一个标量张量，衡量预测和目标的差距",
+     "模型的参数",
+     "梯度"
+    ],
+    "answer": 1,
+    "explain": "返回一个标量（`torch.Size([])`），这样才能对它调用 `.backward()`。"
+   },
+   {
+    "q": "一个标准训练步骤的正确顺序是？",
+    "options": [
+     "`backward` → 前向 → `zero_grad` → `step`",
+     "`step` → 前向 → `backward` → `zero_grad`",
+     "前向 → 算损失 → `zero_grad` → `backward` → `step`",
+     "前向 → `step` → 算损失 → `backward`"
+    ],
+    "answer": 2,
+    "explain": "先前向算出损失；清空旧梯度；反向传播填好新梯度；最后优化器用梯度更新参数。`zero_grad` 只要在 `backward` 之前即可。"
+   },
+   {
+    "q": "下面哪一个**不是**超参数？",
+    "options": [
+     "学习率",
+     "批量大小 (batch size)",
+     "隐藏层的宽度",
+     "第一层线性层的权重"
+    ],
+    "answer": 3,
+    "explain": "权重是训练学出来的**参数**；学习率、批量大小、层宽都是训练前人为设定的**超参数**。"
+   }
+  ]
+ }
+}

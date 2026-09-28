@@ -7,20 +7,110 @@
     "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
   },
   "units": [
-    {"id": "u01", "title": "神经网络是什么", "en": "Neural Networks", "minutes": 45, "file": "u01-neural-networks.json"},
-    {"id": "u02", "title": "反向传播", "en": "Backpropagation", "minutes": 45, "file": null},
-    {"id": "u03", "title": "线性变换与矩阵乘法", "en": "Linear Transformations & Matrix Multiplication", "minutes": 45, "file": null},
-    {"id": "u04", "title": "矩阵的基本性质：秩、迹、行列式、转置", "en": "Rank, Trace, Determinant, Transpose", "minutes": 45, "file": null},
-    {"id": "u05", "title": "基与基变换", "en": "Bases & Change of Basis", "minutes": 45, "file": null},
-    {"id": "u06", "title": "特征值与奇异值分解", "en": "Eigenvalues & SVD", "minutes": 45, "file": null},
-    {"id": "u07", "title": "概率与统计：期望、方差、正态分布", "en": "Probability & Statistics", "minutes": 45, "file": null},
-    {"id": "u08", "title": "微积分：导数、链式法则与损失函数", "en": "Calculus for Machine Learning", "minutes": 45, "file": null},
-    {"id": "u09", "title": "信息论：熵、交叉熵、KL 散度", "en": "Information Theory", "minutes": 45, "file": null},
-    {"id": "u10", "title": "Python 与 NumPy 基础", "en": "Python & NumPy", "minutes": 45, "file": null},
-    {"id": "u11", "title": "PyTorch 入门：张量与自动求导", "en": "PyTorch Basics: Tensors & Autograd", "minutes": 45, "file": null},
-    {"id": "u12", "title": "开发工具：VS Code、Jupyter、Git、Conda", "en": "Developer Tools", "minutes": 45, "file": null},
-    {"id": "u13", "title": "einops：重排、归约、重复", "en": "einops: rearrange / reduce / repeat", "minutes": 45, "file": null},
-    {"id": "u14", "title": "广播与张量操作", "en": "Broadcasting & Tensor Manipulation", "minutes": 45, "file": null},
-    {"id": "u15", "title": "einsum 与高级索引", "en": "einsum & Advanced Indexing", "minutes": 45, "file": null}
+    {
+      "id": "u01",
+      "title": "神经网络是什么",
+      "en": "Neural Networks",
+      "minutes": 45,
+      "file": "u01-neural-networks.json"
+    },
+    {
+      "id": "u02",
+      "title": "反向传播",
+      "en": "Backpropagation",
+      "minutes": 45,
+      "file": "u02-backpropagation.json"
+    },
+    {
+      "id": "u03",
+      "title": "线性变换与矩阵乘法",
+      "en": "Linear Transformations & Matrix Multiplication",
+      "minutes": 45,
+      "file": "u03-linear-transformations.json"
+    },
+    {
+      "id": "u04",
+      "title": "矩阵的基本性质：秩、迹、行列式、转置",
+      "en": "Rank, Trace, Determinant, Transpose",
+      "minutes": 45,
+      "file": "u04-matrix-properties.json"
+    },
+    {
+      "id": "u05",
+      "title": "基与基变换",
+      "en": "Bases, Dot Products & Change of Basis",
+      "minutes": 45,
+      "file": "u05-bases.json"
+    },
+    {
+      "id": "u06",
+      "title": "特征值与奇异值分解",
+      "en": "Eigenvalues & SVD",
+      "minutes": 45,
+      "file": "u06-eigen-svd.json"
+    },
+    {
+      "id": "u07",
+      "title": "概率与统计：期望、方差、正态分布",
+      "en": "Probability & Statistics",
+      "minutes": 45,
+      "file": "u07-probability.json"
+    },
+    {
+      "id": "u08",
+      "title": "微积分：导数、链式法则与损失函数",
+      "en": "Calculus for Machine Learning",
+      "minutes": 45,
+      "file": "u08-calculus.json"
+    },
+    {
+      "id": "u09",
+      "title": "信息论：熵、交叉熵、KL 散度",
+      "en": "Information Theory",
+      "minutes": 45,
+      "file": "u09-information-theory.json"
+    },
+    {
+      "id": "u10",
+      "title": "Python 与 NumPy 基础",
+      "en": "Python & NumPy",
+      "minutes": 45,
+      "file": "u10-python-numpy.json"
+    },
+    {
+      "id": "u11",
+      "title": "PyTorch 入门：张量与自动求导",
+      "en": "PyTorch Basics: Tensors & Autograd",
+      "minutes": 45,
+      "file": "u11-pytorch.json"
+    },
+    {
+      "id": "u12",
+      "title": "开发工具：VS Code、Jupyter、Git、Conda",
+      "en": "Developer Tools",
+      "minutes": 45,
+      "file": "u12-dev-tools.json"
+    },
+    {
+      "id": "u13",
+      "title": "einops：重排、归约、重复",
+      "en": "einops: rearrange / reduce / repeat",
+      "minutes": 45,
+      "file": "u13-einops.json"
+    },
+    {
+      "id": "u14",
+      "title": "广播与张量操作",
+      "en": "Broadcasting & Tensor Manipulation",
+      "minutes": 45,
+      "file": "u14-broadcasting.json"
+    },
+    {
+      "id": "u15",
+      "title": "einsum 与高级索引",
+      "en": "einsum & Advanced Indexing",
+      "minutes": 45,
+      "file": "u15-einsum-indexing.json"
+    }
   ]
 }

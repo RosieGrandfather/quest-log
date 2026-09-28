@@ -1,0 +1,244 @@
+{
+ "id": "u14",
+ "title": "广播与张量操作",
+ "en": "Broadcasting & Tensor Manipulation",
+ "minutes": 45,
+ "objectives": [
+  "掌握 **广播 (broadcasting)** 的两条规则，能一眼判断两个形状能不能广播、结果是什么形状",
+  "会用 `unsqueeze` / `squeeze` / `keepdim=True` 让形状对齐",
+  "会写几个高频操作：行归一化、**余弦相似度矩阵**、分类准确率、按概率采样",
+  "理解 **softmax** 的数值稳定写法和 **logsumexp** 技巧，并能手写交叉熵"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么广播这么重要\n\nARENA 0.0 的第二部分，大量练习都在考**广播**和张量操作。ARENA 特别提醒：广播是**非常容易出错**的地方，因为很容易忘记张量的真实形状——而且很多时候**不会报错**，只是悄悄算出了错误的结果。\n\n**本节安排（约 45 分钟）**：视频（13 分钟）→ 广播规则和判断练习（10 分钟）→ 常用操作（20 分钟）→「想一想」。代码输出都是实际运行的结果，用的是 PyTorch（NumPy 规则完全一样）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "oG1t3qlzq14",
+   "title": "视频：Numpy Array Broadcasting In Python Explained（mCoding）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 13
+  },
+  {
+   "type": "text",
+   "md": "### 广播的两条规则\n\n两个张量做**逐元素**运算（`+ - * /`、比较等）时：\n\n1. **从右往左对齐**。维度少的那个，在**前面**补长度为 1 的维度，直到两者维数相同。\n2. 对齐后逐个维度比较：**大小相等，或者其中一个是 1**，就可以广播（长度为 1 的那个被复制到和另一个一样长）；否则报错。\n\n典型例子：数据 `data` 形状 `(N, k)`，加一个长度为 `k` 的向量 `vec`。`vec` 先补成 `(1, k)`，再沿第 0 维复制成 `(N, k)`，结果 `out[i, j] = data[i, j] + vec[j]`。\n\n### 判断练习\n\n| 形状 A | 形状 B | 结果 |\n|---|---|---|\n| `(5, 3)` | `(3,)` | `(5, 3)` |\n| `(3, 4)` | `(1, 4)` | `(3, 4)` |\n| `(2, 1, 4)` | `(3, 1)` | `(2, 3, 4)`：两边都被扩展了 |\n| `(7, 1, 5)` | `(1, 6, 1)` | `(7, 6, 5)` |\n| `(6, 2)` | `(6,)` | **报错**：`(6,)` 对齐的是最后一维 2，不是 6 |\n| `(2, 3, 4)` | `(2, 1)` | **报错**：补成 `(1, 2, 1)` 后，中间一维 3 对 2 |\n| `(4, 1)` | `(4,)` | `(4, 4)`：**不报错，但很可能不是你想要的！** |\n\n最后一行是最危险的 bug：你以为两个都是「长度为 4 的向量」，其实一个是列向量 `(4, 1)`，相加后得到了 `4×4` 的矩阵。ARENA 的建议是：在关键位置写 `assert x.shape == (...)`，不要在一行里堆太多操作。\n\n### 让形状对齐的工具\n\n```python\nx = t.ones(3, 1, 5)\nx.unsqueeze(0).shape    # (1, 3, 1, 5)   在第 0 位插入长度为 1 的维度\nx.unsqueeze(-1).shape   # (3, 1, 5, 1)   在最后插入\nx.squeeze(1).shape      # (3, 5)         去掉第 1 维（它长度为 1）\nx.squeeze(0).shape      # (3, 1, 5)      第 0 维长度是 3，不是 1，所以什么都不做\n\nm = t.arange(12.).reshape(3, 4)\nm.sum(dim=1).shape                 # (3,)\nm.sum(dim=1, keepdim=True).shape   # (3, 1)   保留被归约的维度，方便后面广播\nm - m.mean(dim=1, keepdim=True)    # 每行减去自己的平均值 ✓\n```\n\n`keepdim=True` 是最常用的技巧：归约之后形状变成 `(3, 1)`，可以直接和 `(3, 4)` 广播。如果写成 `(3,)`，它会去对齐最后一维 4，形状对不上直接报错。"
+  },
+  {
+   "type": "text",
+   "md": "### 高频操作\n\n**1. 行归一化 + 余弦相似度矩阵**\n\n把每一行除以自己的 L2 范数，每行长度变成 1；再用矩阵乘法一次算出所有行两两之间的点积，就是余弦相似度矩阵：\n\n```python\nX = t.tensor([[3., 4.], [1., 0.], [0., 2.]])\nXn = X / X.norm(dim=1, keepdim=True)   # 每行长度都是 1\nXn @ Xn.T\n# tensor([[1.0, 0.6, 0.8],\n#         [0.6, 1.0, 0.0],\n#         [0.8, 0.0, 1.0]])\n```\n\n`Xn @ Xn.T` 的 `[i, j]` 位置就是第 $i$ 行和第 $j$ 行的点积。对角线全是 1（和自己最相似）。\n\n**2. 分类准确率**\n\n```python\nscores = t.tensor([[0.1, 2.0, 0.3], [1.5, 0.2, 0.1],\n                   [0.0, 0.1, 3.0], [2.0, 2.5, 0.0]])   # (batch, n_classes)\nlabels = t.tensor([1, 0, 1, 1])\n(scores.argmax(dim=1) == labels).float().mean()      # tensor(0.75)\n```\n\n`argmax(dim=1)` 得到每个样本分数最高的类 `[1, 0, 2, 1]`，和真实标签比较后求平均。\n\n**3. 按概率分布采样（不写循环）**\n\n```python\nprobs = t.tensor([0.2, 0.3, 0.5])\nsamples = (t.rand(n, 1) > probs.cumsum(dim=0)).sum(dim=-1)\n```\n\n累积和是 `[0.2, 0.5, 1.0]`。随机数 $v$ 大于几个累积值，就落在第几个区间：$v < 0.2$ 得 0，$0.2 \\le v < 0.5$ 得 1，否则得 2，正好对应各自的概率。`(n, 1)` 和 `(3,)` 广播成 `(n, 3)`。10 万次采样的频率约为 `[0.199, 0.300, 0.501]`。\n\n**4. Softmax 与数值稳定性**\n\n**Softmax** 把一组任意实数（logits）变成概率分布：$\\text{softmax}(\\mathbf{z})_i = \\dfrac{e^{z_i}}{\\sum_j e^{z_j}}$。\n\n直接算会溢出：\n\n```python\nz = t.tensor([1000., 1001., 1002.])\nt.exp(z) / t.exp(z).sum()      # tensor([nan, nan, nan])   e^1000 溢出成 inf\n```\n\n**技巧**：先减去最大值。分子分母同乘 $e^{-c}$ 结果不变，但最大的指数变成 $e^0 = 1$，不会溢出：\n\n```python\nzs = z - z.max()\nt.exp(zs) / t.exp(zs).sum()    # tensor([0.0900, 0.2447, 0.6652])  和 t.softmax 一致\n```\n\n同理，**logsumexp** $\\log\\sum_i e^{z_i} = c + \\log\\sum_i e^{z_i - c}$（取 $c = \\max z$），算出来是 `1002.4076`，和 `t.logsumexp` 一致。\n\n**5. 手写交叉熵**\n\n$\\log\\text{softmax}(\\mathbf{z})_i = z_i - \\text{logsumexp}(\\mathbf{z})$，再取出正确类别的那一项、取负、求平均：\n\n```python\nlogits = t.tensor([[2.0, 0.5, 0.1], [0.2, 0.2, 3.0]])\ntarget = t.tensor([0, 2])\nlogp = logits - t.logsumexp(logits, dim=1, keepdim=True)\n-logp[t.arange(2), target].mean()   # tensor(0.2158)，和 F.cross_entropy 一致\n```\n\n`logp[t.arange(2), target]` 是 **整数数组索引**：取出 `logp[0, 0]` 和 `logp[1, 2]`。下一节会详细讲。"
+  },
+  {
+   "type": "think",
+   "q": "`a` 形状 `(8, 1, 6, 1)`，`b` 形状 `(7, 1, 5)`。`a + b` 的形状是什么？",
+   "a": "从右往左对齐，`b` 补成 `(1, 7, 1, 5)`：\n\n| | 维 0 | 维 1 | 维 2 | 维 3 |\n|---|---|---|---|---|\n| a | 8 | 1 | 6 | 1 |\n| b | 1 | 7 | 1 | 5 |\n| 结果 | 8 | 7 | 6 | 5 |\n\n每一维都是「相等或有一个是 1」，结果是 `(8, 7, 6, 5)`。"
+  },
+  {
+   "type": "think",
+   "q": "想让矩阵 `M`（形状 `(n, d)`）的每一**列**减去该列的平均值，怎么写？每一**行**呢？",
+   "a": "- 每列减列均值：`M - M.mean(dim=0)`。均值形状 `(d,)`，对齐最后一维，广播没问题（写成 `M.mean(dim=0, keepdim=True)`，形状 `(1, d)`，也可以）。\n- 每行减行均值：`M - M.mean(dim=1, keepdim=True)`。**必须** `keepdim=True` 得到 `(n, 1)`；否则 `(n,)` 会去对齐最后一维 `d`，要么报错，要么（当 $n = d$ 时）悄悄算错。"
+  },
+  {
+   "type": "think",
+   "q": "为什么 softmax 减去最大值之后结果不变？",
+   "a": "$$\\frac{e^{z_i - c}}{\\sum_j e^{z_j - c}} = \\frac{e^{z_i}e^{-c}}{\\sum_j e^{z_j}e^{-c}} = \\frac{e^{z_i}}{\\sum_j e^{z_j}}$$\n\n分子分母的 $e^{-c}$ 约掉了。取 $c = \\max_j z_j$ 时，所有指数都 $\\le 0$，$e^{\\cdot} \\le 1$，不会溢出；而且至少有一项是 $e^0 = 1$，分母不会下溢成 0。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "广播",
+     "broadcasting",
+     "自动复制长度为 1 的维度，让形状对齐"
+    ],
+    [
+     "逐元素运算",
+     "elementwise operation",
+     "对应位置分别计算"
+    ],
+    [
+     "插入 / 去掉维度",
+     "unsqueeze / squeeze",
+     "加上 / 去掉长度为 1 的维度"
+    ],
+    [
+     "保留维度",
+     "keepdim=True",
+     "归约后保留长度为 1 的维度"
+    ],
+    [
+     "L2 范数",
+     "norm",
+     "`x.norm(dim=...)`"
+    ],
+    [
+     "余弦相似度矩阵",
+     "cosine similarity matrix",
+     "`Xn @ Xn.T`"
+    ],
+    [
+     "最大值下标",
+     "argmax",
+     "分数最高的类别"
+    ],
+    [
+     "累积和",
+     "cumsum",
+     "`[0.2, 0.3, 0.5] → [0.2, 0.5, 1.0]`"
+    ],
+    [
+     "Softmax",
+     "softmax",
+     "logits → 概率分布"
+    ],
+    [
+     "对数-求和-指数",
+     "logsumexp",
+     "$\\log\\sum e^{z_i}$ 的稳定算法"
+    ],
+    [
+     "数值稳定性",
+     "numerical stability",
+     "避免溢出 / 下溢"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] — Broadcasting 与 einops 练习部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "广播规则、判断题的出处"
+  },
+  {
+   "title": "ARENA 0.0 练习 Notebook（Colab）",
+   "url": "https://colab.research.google.com/github/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb",
+   "note": "动手做 (B)–(H) 组练习：温度归一化、余弦相似度、采样、softmax、交叉熵"
+  },
+  {
+   "title": "NumPy 官方：Broadcasting",
+   "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html"
+  },
+  {
+   "title": "The Log-Sum-Exp Trick（Gregory Gundersen）",
+   "url": "https://gregorygundersen.com/blog/2020/02/09/log-sum-exp/",
+   "note": "ARENA 推荐的 logsumexp 讲解"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "形状 `(5, 3)` 和 `(3,)` 相加，结果是？",
+    "options": [
+     "`(5, 3)`",
+     "报错",
+     "`(3, 5)`",
+     "`(5,)`"
+    ],
+    "answer": 0,
+    "explain": "`(3,)` 补成 `(1, 3)`，再沿第 0 维复制，每一行都加上这个向量。"
+   },
+   {
+    "q": "形状 `(6, 2)` 和 `(6,)` 相加，结果是？",
+    "options": [
+     "`(6, 2)`",
+     "`(6, 6)`",
+     "报错",
+     "`(6,)`"
+    ],
+    "answer": 2,
+    "explain": "从右往左对齐：`(6,)` 对的是最后一维 2，6 ≠ 2 且都不是 1，报错。想按行加应该用 `(6, 1)`。"
+   },
+   {
+    "q": "形状 `(4, 1)` 和 `(4,)` 相加，会怎样？",
+    "options": [
+     "报错",
+     "得到 `(4,)`",
+     "得到 `(4, 1)`",
+     "得到 `(4, 4)`，不报错，但很可能不是想要的结果"
+    ],
+    "answer": 3,
+    "explain": "`(4,)` 补成 `(1, 4)`，和 `(4, 1)` 互相扩展成 `(4, 4)`。这是最隐蔽的广播 bug。"
+   },
+   {
+    "q": "形状 `(2, 1, 4)` 和 `(3, 1)` 相加，结果是？",
+    "options": [
+     "`(2, 3, 4)`",
+     "报错",
+     "`(2, 1, 4)`",
+     "`(3, 2, 4)`"
+    ],
+    "answer": 0,
+    "explain": "`(3, 1)` 补成 `(1, 3, 1)`，逐维取较大者得 `(2, 3, 4)`：两个张量都被扩展了。"
+   },
+   {
+    "q": "`x` 形状 `(3, 1, 5)`，`x.squeeze(0).shape` 是？",
+    "options": [
+     "`(1, 5)`",
+     "`(3, 1, 5)`",
+     "`(3, 5)`",
+     "报错"
+    ],
+    "answer": 1,
+    "explain": "`squeeze(0)` 只在第 0 维长度为 1 时才去掉它。这里第 0 维是 3，所以什么都不做。去掉第 1 维要写 `squeeze(1)`。"
+   },
+   {
+    "q": "`m` 形状 `(3, 4)`，想让每一**行**减去该行的平均值，正确的写法是？",
+    "options": [
+     "`m - m.mean(dim=1)`",
+     "`m - m.mean()`",
+     "`m - m.mean(dim=0)`",
+     "`m - m.mean(dim=1, keepdim=True)`"
+    ],
+    "answer": 3,
+    "explain": "行均值形状要是 `(3, 1)` 才能沿每行广播。A 的 `(3,)` 会对齐最后一维 4 而报错；C 减的是列均值；B 减的是全局均值。"
+   },
+   {
+    "q": "`Xn` 是行归一化后的矩阵（形状 `(m, d)`），`Xn @ Xn.T` 的 `[i, j]` 元素是什么？",
+    "options": [
+     "第 $i$ 行和第 $j$ 行的余弦相似度",
+     "第 $i$ 行的长度",
+     "第 $i$ 列和第 $j$ 列的差",
+     "总是 1"
+    ],
+    "answer": 0,
+    "explain": "矩阵乘法 `[i, j]` = 第 $i$ 行与 `Xn.T` 第 $j$ 列（即 `Xn` 第 $j$ 行）的点积；两者都是单位向量，所以就是余弦相似度。"
+   },
+   {
+    "q": "直接计算 `t.exp(z) / t.exp(z).sum()`，其中 `z = [1000., 1001., 1002.]`，结果是？",
+    "options": [
+     "正确的概率分布",
+     "`[nan, nan, nan]`，因为 $e^{1000}$ 溢出",
+     "全是 0",
+     "全是 1/3"
+    ],
+    "answer": 1,
+    "explain": "$e^{1000}$ 超出 float32 范围变成 inf，inf / inf = nan。解决办法是先减去最大值。"
+   },
+   {
+    "q": "数值稳定的 softmax 为什么要**减去最大值**？",
+    "options": [
+     "因为这样结果更精确地变成了均匀分布",
+     "因为 softmax 要求输入为负数",
+     "因为分子分母同乘 $e^{-c}$ 结果不变，而减去最大值后指数不会溢出",
+     "因为可以减少计算量"
+    ],
+    "answer": 2,
+    "explain": "减去任何常数 $c$ 都不改变 softmax 的结果；取 $c = \\max z$ 让所有指数 $\\le 0$，避免溢出。"
+   },
+   {
+    "q": "`logp` 形状 `(batch, n_classes)` 是 log-softmax 的结果，`target` 是每个样本的正确类别。交叉熵损失怎么算？",
+    "options": [
+     "`logp.mean()`",
+     "`logp[:, target].sum()`",
+     "`-logp.max(dim=1).values.mean()`",
+     "`-logp[t.arange(batch), target].mean()`"
+    ],
+    "answer": 3,
+    "explain": "用整数数组索引取出每个样本「正确类别」的 log 概率，取负、求平均。B 会取出 `(batch, batch)` 的矩阵，不对；C 取的是最大值而不是正确类别。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "id": "u15",
+ "title": "einsum 与高级索引",
+ "en": "einsum & Advanced Indexing",
+ "minutes": 45,
+ "objectives": [
+  "理解 **爱因斯坦求和约定 (Einstein summation convention)**：重复出现、但不在输出里的下标就求和",
+  "会用 `einops.einsum` 写出迹、矩阵乘向量、矩阵乘法、内积、外积、批量矩阵乘法",
+  "掌握 **整数数组索引 (integer array indexing)**：按下标取行、取列、逐对取元素",
+  "理解 `torch.gather` 的规则 `out[i][j] = input[i][index[i][j]]`"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 最后一块拼图\n\n上两节的 `rearrange` 只能**搬动**数据，`reduce` 只能对**一个**张量做汇总。要把**多个**张量相乘再求和（矩阵乘法、注意力分数……），就需要 **einsum**。ARENA 推荐的读物叫 *einsum is all you need*（有对应的视频，就是本节这个），ARENA 练习里要求用 einsum 实现迹、矩阵乘向量、矩阵乘法、内积、外积。\n\n另一半是**索引**：从张量里按下标取出元素。「取出每个样本正确类别的概率」「按 token id 查词向量」都靠它。\n\n**本节安排（约 45 分钟）**：视频（16 分钟）→ einsum 要点（12 分钟）→ 索引要点（12 分钟）→「想一想」。代码输出都是实际运行的结果。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "pkVwUVEHmfI",
+   "title": "视频：Einsum Is All You Need: NumPy, PyTorch and TensorFlow（Aladdin Persson）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 16
+  },
+  {
+   "type": "text",
+   "md": "### einsum 的规则\n\n以矩阵乘法为例：$C_{ik} = \\sum_j A_{ij}B_{jk}$。**爱因斯坦求和约定**把求和号省掉，只写下标：\n\n```python\nimport einops\neinops.einsum(A, B, \"i j, j k -> i k\")\n```\n\n读法只有两条：\n\n1. **在输入里出现、在输出（箭头右边）里也出现的下标**：保留。\n2. **在输入里出现、但输出里没有的下标**：对它**求和**。\n\n这里 `j` 在两个输入里都出现、输出里没有，所以沿 `j` 相乘再求和，正是矩阵乘法。\n\nARENA 用的是 **einops 版的 einsum**：可以用完整的单词做维度名，用空格分隔（`\"batch seq d_model\"`），比 PyTorch 原生的 `t.einsum(\"ij,jk->ik\", A, B)` 可读得多。两者结果相同。\n\n### 常用写法速查\n\n| 运算 | einsum 写法 | 等价于 |\n|---|---|---|\n| 迹 | `einsum(M, \"i i ->\")` | `t.trace(M)` |\n| 矩阵乘向量 | `einsum(A, v, \"i j, j -> i\")` | `A @ v` |\n| 矩阵乘法 | `einsum(A, B, \"i j, j k -> i k\")` | `A @ B` |\n| 内积 | `einsum(u, v, \"i, i ->\")` | `u @ v` |\n| 外积 | `einsum(u, v, \"i, j -> i j\")` | `u[:, None] * v[None, :]` |\n| 按行求和 | `einsum(A, \"i j -> i\")` | `A.sum(dim=1)` |\n| 逐元素乘 | `einsum(A, B, \"i j, i j -> i j\")` | `A * B` |\n| 批量矩阵乘 | `einsum(x, y, \"b i j, b j k -> b i k\")` | `x @ y` |\n\n几个值得注意的点：\n\n- **迹** `\"i i ->\"`：同一个张量里下标重复，表示取对角线；输出为空，表示全部加起来。\n- **外积** `\"i, j -> i j\"`：没有共同的下标，所以**没有求和**，只是两两相乘得到一个矩阵。\n- **注意力分数**：query 形状 `(batch, q_pos, d)`，key 形状 `(batch, k_pos, d)`：\n\n```python\neinops.einsum(q, k, \"batch q_pos d, batch k_pos d -> batch q_pos k_pos\")\n# 形状 (2, 10, 12)：每个 query 位置和每个 key 位置的点积\n```\n\n`d` 被求和（点积），`batch` 保留（逐批），`q_pos` 和 `k_pos` 两两组合。这就是 $QK^\\top$，ARENA 第 1 章实现 Transformer 时会写这一行。"
+  },
+  {
+   "type": "text",
+   "md": "### 整数数组索引\n\n**1. 用一个下标张量去索引**：结果的形状和下标张量一样。\n\n```python\nprices = t.tensor([2.0, 5.0, 1.5])     # 3 种商品的单价\nitems  = t.tensor([0, 2, 2, 1, 0])     # 买了 5 件，每件是哪种商品\nprices[items]          # tensor([2.0, 1.5, 1.5, 5.0, 2.0])\nprices[items].sum()    # 12.0   总价\n```\n\n查词向量（**词嵌入 (embedding)**）就是这个操作：`W_E[token_ids]`。\n\n**2. 取行、取列、逐对取元素**\n\n```python\nmat = t.arange(12).reshape(3, 4)\nmat[[0, 2]]              # 取第 0、2 行 → [[0, 1, 2, 3], [8, 9, 10, 11]]\nmat[:, [1, 3]]           # 取第 1、3 列 → [[1, 3], [5, 7], [9, 11]]\nmat[t.tensor([0, 1, 2]), t.tensor([3, 0, 1])]   # 逐对取 (0,3) (1,0) (2,1) → [3, 4, 9]\n```\n\n**注意最后一种**：两个下标张量是**配对**使用的（第 k 个元素是 `mat[rows[k], cols[k]]`），**不是**「这些行 × 这些列」组成的子矩阵。上一节手写交叉熵用的 `logp[t.arange(batch), target]` 就是这种写法：每个样本取出自己正确类别的那一项。\n\n如果坐标存成 `(n, 维数)` 的张量，可以转置后拆成元组：`mat[tuple(coords.T)]`。\n\n### `torch.gather`\n\n`gather` 沿一个指定维度，按下标张量取值。对 2 维张量、`dim=1`：\n\n$$\\text{out}[i][j] = \\text{input}[i]\\big[\\text{index}[i][j]\\big]$$\n\n也就是：**每一行在自己这一行里，按 `index` 那一行给的列号取数**。输出形状和 `index` 一样。\n\n```python\nidx = t.tensor([[3, 0], [1, 1], [0, 2]])\nmat.gather(1, idx)\n# tensor([[ 3,  0],     第 0 行取第 3、0 列\n#         [ 5,  5],     第 1 行取第 1、1 列\n#         [ 8, 10]])    第 2 行取第 0、2 列\n```\n\n一维时 `prices.gather(0, items)` 和 `prices[items]` 等价。`gather` 规则比较绕，ARENA 专门留了一道题让你给它写 `assert`（比如「输出形状 == `index` 形状」「`index` 和 `input` 维数相同」）。"
+  },
+  {
+   "type": "think",
+   "q": "写出下面运算的 einsum：给定 `x` 形状 `(batch, d_in)`、`W` 形状 `(d_out, d_in)`，计算线性层 `x @ W.T`。",
+   "a": "```python\neinops.einsum(x, W, \"batch d_in, d_out d_in -> batch d_out\")\n```\n\n`d_in` 在两个输入里都有、输出里没有，所以被求和；不用手动转置 `W`，einsum 按名字对齐维度。"
+  },
+  {
+   "type": "think",
+   "q": "`einsum(A, B, \"i j, i j ->\")` 算的是什么？",
+   "a": "`i` 和 `j` 都不在输出里，全部求和：$\\sum_{i,j} A_{ij}B_{ij}$。这是两个矩阵的**逐元素乘积之和**，也叫 **Frobenius 内积**，等于 $\\text{tr}(A^\\top B)$，代码里也可以写 `(A * B).sum()`。"
+  },
+  {
+   "type": "think",
+   "q": "`scores` 形状 `(batch, n_classes)`，`labels` 形状 `(batch,)`。用 `gather` 取出每个样本正确类别的分数，得到形状 `(batch,)`。",
+   "a": "```python\nscores.gather(1, labels.unsqueeze(1)).squeeze(1)\n```\n\n`gather` 要求 `index` 和 `input` 维数相同，所以先把 `labels` 变成 `(batch, 1)`，取完再去掉那一维。用整数数组索引更简洁：`scores[t.arange(batch), labels]`。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "爱因斯坦求和约定",
+     "Einstein summation convention",
+     "不在输出里的重复下标就求和"
+    ],
+    [
+     "einsum",
+     "einops.einsum",
+     "用维度名描述「相乘再求和」"
+    ],
+    [
+     "内积 / 外积",
+     "inner / outer product",
+     "`\"i, i ->\"` / `\"i, j -> i j\"`"
+    ],
+    [
+     "批量矩阵乘法",
+     "batched matmul",
+     "`\"b i j, b j k -> b i k\"`"
+    ],
+    [
+     "注意力分数",
+     "attention scores",
+     "$QK^\\top$，query 和 key 的点积"
+    ],
+    [
+     "整数数组索引",
+     "integer array indexing",
+     "用下标张量取元素"
+    ],
+    [
+     "词嵌入",
+     "embedding",
+     "`W_E[token_ids]` 查表"
+    ],
+    [
+     "gather",
+     "torch.gather",
+     "`out[i][j] = input[i][index[i][j]]`"
+    ],
+    [
+     "Frobenius 内积",
+     "Frobenius inner product",
+     "$\\sum_{ij} A_{ij}B_{ij}$"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Einsum is All You Need（Tim Rocktäschel）",
+   "url": "https://rockt.github.io/2018/04/30/einsum",
+   "note": "ARENA 推荐，读到 2.10 节即可"
+  },
+  {
+   "title": "einops.einsum 文档",
+   "url": "https://einops.rocks/api/einsum/"
+  },
+  {
+   "title": "NumPy：Integer array indexing",
+   "url": "https://numpy.org/doc/stable/user/basics.indexing.html#integer-array-indexing",
+   "note": "PyTorch 规则相同"
+  },
+  {
+   "title": "torch.gather 文档",
+   "url": "https://pytorch.org/docs/stable/generated/torch.gather.html"
+  },
+  {
+   "title": "ARENA 0.0 练习 Notebook（Colab）",
+   "url": "https://colab.research.google.com/github/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb",
+   "note": "动手做索引 (F)(G)(I) 组和 einsum 组练习"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`einops.einsum(A, B, \"i j, j k -> i k\")` 等价于？",
+    "options": [
+     "`A * B`",
+     "`A @ B`",
+     "`A.T @ B`",
+     "`(A + B).sum()`"
+    ],
+    "answer": 1,
+    "explain": "`j` 在输入中出现、输出中没有，被求和：$C_{ik} = \\sum_j A_{ij}B_{jk}$，就是矩阵乘法。"
+   },
+   {
+    "q": "在 einsum 里，一个下标**会被求和**的条件是？",
+    "options": [
+     "它在输出里出现",
+     "它只在一个输入里出现",
+     "它在输入里出现、但不在输出（箭头右边）里",
+     "它的名字是 `j`"
+    ],
+    "answer": 2,
+    "explain": "规则只有一条：不在输出里的下标就被求和；在输出里的就保留。"
+   },
+   {
+    "q": "`einops.einsum(M, \"i i ->\")` 计算的是？",
+    "options": [
+     "$M$ 的迹（对角线之和）",
+     "$M$ 的行列式",
+     "$M$ 所有元素之和",
+     "$M$ 的转置"
+    ],
+    "answer": 0,
+    "explain": "同一个张量里下标重复 `i i` 表示取对角线元素，输出为空表示把它们加起来，就是迹。所有元素之和要写 `\"i j ->\"`。"
+   },
+   {
+    "q": "`u`、`v` 都是长度为 3 的向量，`einops.einsum(u, v, \"i, j -> i j\")` 的形状是？",
+    "options": [
+     "标量",
+     "`(3,)`",
+     "`(6,)`",
+     "`(3, 3)`"
+    ],
+    "answer": 3,
+    "explain": "没有共同的下标，也就没有求和，结果是 `[i, j] = u[i] * v[j]` 的 3×3 矩阵，即**外积**。"
+   },
+   {
+    "q": "query 形状 `(b, q, d)`，key 形状 `(b, k, d)`，要得到每个 query 和每个 key 的点积，形状 `(b, q, k)`。正确的写法是？",
+    "options": [
+     "`\"b q d, b k d -> b q k\"`",
+     "`\"b q d, b k d -> b d\"`",
+     "`\"b q d, b k d -> q k\"`",
+     "`\"b q d, b q d -> b q\"`"
+    ],
+    "answer": 0,
+    "explain": "`d` 求和（点积），`b` 保留（每个批次分开算），`q` 和 `k` 两两组合。C 会把 batch 也加起来；D 用错了 key 的维度名。"
+   },
+   {
+    "q": "`prices = t.tensor([2., 5., 1.5])`，`items = t.tensor([1, 1, 0])`，`prices[items].sum()` 是多少？",
+    "options": [
+     "8.5",
+     "7.0",
+     "12.0",
+     "3.5"
+    ],
+    "answer": 2,
+    "explain": "`prices[items]` = `[5., 5., 2.]`，求和为 12.0。"
+   },
+   {
+    "q": "`mat` 形状 `(3, 4)`，`mat[t.tensor([0, 2]), t.tensor([1, 3])]` 的结果是？",
+    "options": [
+     "第 0、2 行与第 1、3 列交叉处的 2×2 子矩阵",
+     "两个元素：`mat[0, 1]` 和 `mat[2, 3]`",
+     "报错",
+     "第 0 到 2 行、第 1 到 3 列的切片"
+    ],
+    "answer": 1,
+    "explain": "两个下标张量是**逐对配对**的，得到形状 `(2,)` 的结果。想要 2×2 子矩阵要写 `mat[[0, 2]][:, [1, 3]]`。"
+   },
+   {
+    "q": "对 2 维张量，`input.gather(1, index)` 的规则是？",
+    "options": [
+     "`out[i][j] = input[index[i][j]][j]`",
+     "`out[i][j] = input[i][j] * index[i][j]`",
+     "`out = input[index]`",
+     "`out[i][j] = input[i][index[i][j]]`"
+    ],
+    "answer": 3,
+    "explain": "`dim=1` 表示在第 1 维上按下标取：每一行在自己这一行里取 `index[i][j]` 列的值。A 是 `dim=0` 的规则。"
+   },
+   {
+    "q": "`input.gather(1, index)` 的输出形状是？",
+    "options": [
+     "和 `index` 相同",
+     "和 `input` 相同",
+     "总是一维",
+     "`(input.shape[0],)`"
+    ],
+    "answer": 0,
+    "explain": "输出里每个位置都对应 `index` 里的一个下标，所以形状和 `index` 一样。"
+   },
+   {
+    "q": "`logp` 形状 `(batch, n_classes)`，`target` 形状 `(batch,)`，要取出每个样本正确类别的值，下面哪个写法**正确**？",
+    "options": [
+     "`logp[:, target]`",
+     "`logp[target]`",
+     "`logp[t.arange(batch), target]`",
+     "`logp.gather(0, target)`"
+    ],
+    "answer": 2,
+    "explain": "行下标 `t.arange(batch)` 和列下标 `target` 逐对配对，每个样本取一个值，形状 `(batch,)`。A 会得到 `(batch, batch)`；B 取的是行；D 用错了维度，而且 `index` 的维数也不对。"
+   }
+  ]
+ }
+}

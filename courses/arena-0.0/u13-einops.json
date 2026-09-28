@@ -1,0 +1,238 @@
+{
+ "id": "u13",
+ "title": "einops：重排、归约、重复",
+ "en": "einops: rearrange / reduce / repeat",
+ "minutes": 45,
+ "objectives": [
+  "理解 einops 的核心思想：用**写出维度名字**的字符串描述张量变形，代码即文档",
+  "会用 `rearrange` 做转置、展平、合并 / 拆分维度、增加维度",
+  "会用 `reduce` 做求平均、求和、池化 (pooling)，用 `repeat` 复制数据",
+  "明白 `(b w)` 和 `(w b)` 这种**顺序**的区别"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么用 einops\n\nARENA 原话：熟练掌握 einops 和 einsum 之后，「就可以和 `transpose`、`permute`、`squeeze` 这些别扭的方法说再见了」。第 0 章第 2 天就有 einops 练习，越熟练，后面越快。\n\n对比一下，把一批图片从 `(batch, channel, height, width)` 变成 `(batch, height, width, channel)`：\n\n```python\nx.permute(0, 2, 3, 1)                    # PyTorch：要在脑子里数维度编号\nrearrange(x, \"b c h w -> b h w c\")       # einops：一眼看懂在干什么\n```\n\neinops 的字符串**同时是代码和注释**，而且会检查形状，写错了会直接报错，而不是悄悄算出错误的结果。它同时支持 NumPy 和 PyTorch。\n\n**本节安排（约 45 分钟）**：视频一（3 分钟）→ 视频二（12 分钟）→ 三个函数的要点（15 分钟）→ 动手练习（15 分钟，最好打开 Colab 边敲边看）。下面的输出都是实际运行的结果。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "GiAN41N_gtY",
+   "title": "视频一：Einops Makes Tensor Manipulation in Deep Learning a Breeze（Tales Of Tensors）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 3
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "xGy75Pjsqzo",
+   "title": "视频二：Reshape, Permute, Squeeze, Unsqueeze made simple using einops（Kapil Sachdeva）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### 1. `rearrange`：只改形状，不改数据\n\n```python\nimport numpy as np\nfrom einops import rearrange, reduce, repeat\nx = np.zeros((32, 3, 28, 28))                      # b c h w\n\nrearrange(x, \"b c h w -> b h w c\").shape           # (32, 28, 28, 3)   换顺序（转置）\nrearrange(x, \"b c h w -> b (c h w)\").shape         # (32, 2352)        合并维度（展平）\nrearrange(x, \"b c h w -> c h (b w)\").shape         # (3, 28, 896)      把 32 张图横着拼成一长条\n```\n\n**括号 `( )` 表示把几个维度合成一个。** 反过来，也可以把一个维度**拆开**，这时要告诉 einops 其中一个的大小：\n\n```python\na = np.arange(6)\nrearrange(a, \"(h w) -> h w\", h=2)    # [[0, 1, 2], [3, 4, 5]]\n```\n\n**增加长度为 1 的维度**：直接写 `1`。\n\n```python\nimg = np.arange(16).reshape(4, 4)\nrearrange(img, \"h w -> 1 h w\").shape   # (1, 4, 4)\nrearrange(img, \"h w -> h w 1\").shape   # (4, 4, 1)\n```\n\n### 2. 顺序很重要：`(h w)` 和 `(w h)` 不一样\n\n合并 / 拆分时，**括号里靠左的维度变化得慢，靠右的变化得快**（和普通的行优先顺序一样）：\n\n```python\nrearrange(a, \"(h w) -> h w\", h=2)    # [[0, 1, 2], [3, 4, 5]]   连续的数在同一行\nrearrange(a, \"(w h) -> h w\", h=2)    # [[0, 2, 4], [1, 3, 5]]   连续的数在同一列\n```\n\n### 3. `reduce`：沿某些维度汇总\n\n**箭头右边没出现的维度，就是被归约掉的维度**，第三个参数说明怎么归约（`\"mean\"`、`\"sum\"`、`\"max\"`、`\"min\"`，或者一个函数）：\n\n```python\nreduce(x, \"b c h w -> c\", \"mean\").shape      # (3,)   每个通道的平均值\n\n# 2×2 最大池化：把高和宽各拆成 (块数, 2)，对块内的 2×2 取最大\nreduce(img, \"(h h2) (w w2) -> h w\", \"max\", h2=2, w2=2)\n# [[5, 7], [13, 15]]\n```\n\n### 4. `repeat`：沿新维度复制\n\n**箭头右边多出来的维度，就是要复制出来的维度**：\n\n```python\ngray = np.ones((28, 28))\nrepeat(gray, \"h w -> h w c\", c=3).shape         # (28, 28, 3)   灰度图变三通道\n\nrepeat(np.array([1, 2]), \"d -> (d 3)\")          # [1, 1, 1, 2, 2, 2]  每个元素重复 3 次\nrepeat(np.array([1, 2]), \"d -> (3 d)\")          # [1, 2, 1, 2, 1, 2]  整体重复 3 次\n```\n\n又是顺序问题：新维度 `3` 放在右边变化快（每个元素连续重复），放在左边变化慢（整段重复）。\n\n### 小结\n\n| 函数 | 箭头左右的维度 | 用途 |\n|---|---|---|\n| `rearrange` | 两边维度相同，只是排列 / 合并 / 拆分 | 转置、展平、reshape |\n| `reduce` | 右边**少了**维度 | 求平均、求和、池化 |\n| `repeat` | 右边**多了**维度 | 复制、广播前的扩展 |\n\n形状对不上时（比如把长度 7 拆成 `h=2`），einops 会抛出 `EinopsError`，而不是悄悄算错。"
+  },
+  {
+   "type": "think",
+   "q": "**练习 1**：`a = np.arange(6)`，只用一次 `rearrange` 得到 `[[0, 2, 4], [1, 3, 5]]`。",
+   "a": "```python\nrearrange(a, \"(w h) -> h w\", h=2)\n```\n\n目标里连续的数字（0 和 1）在**同一列**上下相邻，说明 `h` 变化得快，要放在括号右边。"
+  },
+  {
+   "type": "think",
+   "q": "**练习 2**：`temps` 是连续 48 小时的逐小时气温（形状 `(48,)`），用一次 `reduce` 算出每天的平均气温（形状 `(2,)`）。",
+   "a": "```python\nreduce(temps, \"(d 24) -> d\", \"mean\")\n```\n\n把 48 拆成（天数 `d`，每天 24 小时），再对 24 小时这一维求平均。如果 `temps = np.arange(48.)`，结果是 `[11.5, 35.5]`。"
+  },
+  {
+   "type": "think",
+   "q": "**练习 3**：`imgs` 是 6 张 $h \\times w$ 的灰度图，形状 `(6, h, w)`。把它们排成 **2 行 3 列**的大图，形状 `(2h, 3w)`。",
+   "a": "```python\nrearrange(imgs, \"(b1 b2) h w -> (b1 h) (b2 w)\", b1=2)\n```\n\n先把 6 拆成 2 行 × 3 列（`b1=2, b2=3`），再让「行号」和图片高度合并成大图的高、「列号」和宽度合并成大图的宽。`b1` 放在 `h` 左边，表示先按行号、再按行内的像素排——这样每张小图才是完整的。"
+  },
+  {
+   "type": "think",
+   "q": "**练习 4**：`x` 的形状是 `(batch, seq, d_model)`，要把最后一维拆成多个注意力头 `(batch, seq, n_heads, d_head)`，再把头的维度挪到第二位 `(batch, n_heads, seq, d_head)`。怎么写？",
+   "a": "```python\nrearrange(x, \"b s (n d) -> b n s d\", n=n_heads)\n```\n\n一步完成拆分和换位。这正是 ARENA 第 1 章实现多头注意力 (multi-head attention) 时要写的代码。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "重排",
+     "rearrange",
+     "只改形状：转置、合并、拆分、加维度"
+    ],
+    [
+     "归约",
+     "reduce",
+     "右边少掉的维度被汇总（mean / sum / max）"
+    ],
+    [
+     "重复",
+     "repeat",
+     "右边多出的维度被复制"
+    ],
+    [
+     "合并维度",
+     "(a b)",
+     "括号里多个维度合成一个"
+    ],
+    [
+     "展平",
+     "flatten",
+     "把多个维度合并成一维"
+    ],
+    [
+     "池化",
+     "pooling",
+     "对局部区域取最大 / 平均"
+    ],
+    [
+     "置换",
+     "permute / transpose",
+     "PyTorch 里调整维度顺序的方法"
+    ],
+    [
+     "压缩 / 扩展维度",
+     "squeeze / unsqueeze",
+     "去掉 / 加上长度为 1 的维度"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "einops 官方教程：Einops basics",
+   "url": "https://einops.rocks/1-einops-basics/",
+   "note": "ARENA 推荐：读到 \"Fancy examples in random order\" 之前"
+  },
+  {
+   "title": "einops: powerful library for tensor operations（blopig 博客）",
+   "url": "https://www.blopig.com/blog/2022/05/einops-powerful-library-for-tensor-operations-in-deep-learning/",
+   "note": "ARENA 推荐：为什么用 einops"
+  },
+  {
+   "title": "ARENA 0.0 练习 Notebook（Colab）",
+   "url": "https://colab.research.google.com/github/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb",
+   "note": "用图片做的 einops 练习，强烈建议动手做"
+  },
+  {
+   "title": "ARENA [0.0] Prerequisites — Einops 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`x` 的形状是 `(8, 3, 32, 32)`，`rearrange(x, \"b c h w -> b h w c\")` 的形状是？",
+    "options": [
+     "`(8, 32, 32, 3)`",
+     "`(8, 3, 32, 32)`",
+     "`(3, 8, 32, 32)`",
+     "`(8, 3072)`"
+    ],
+    "answer": 0,
+    "explain": "只是把通道维 `c` 挪到最后，其余顺序不变。"
+   },
+   {
+    "q": "同一个 `x`，`rearrange(x, \"b c h w -> b (c h w)\")` 的形状是？",
+    "options": [
+     "`(8, 3, 1024)`",
+     "`(24, 1024)`",
+     "`(8, 3072)`",
+     "`(8, 96, 32)`"
+    ],
+    "answer": 2,
+    "explain": "括号把 `c h w` 合成一维：$3 \\times 32 \\times 32 = 3072$。这就是把每张图展平成向量。"
+   },
+   {
+    "q": "`rearrange(np.arange(6), \"(h w) -> h w\", h=3)` 的结果是？",
+    "options": [
+     "`[[0, 1, 2], [3, 4, 5]]`",
+     "`[[0, 1], [2, 3], [4, 5]]`",
+     "`[[0, 3], [1, 4], [2, 5]]`",
+     "报错"
+    ],
+    "answer": 1,
+    "explain": "拆成 `h=3`、`w=2`，`w` 在括号右边变化快，所以连续的两个数在同一行：`[[0,1],[2,3],[4,5]]`。"
+   },
+   {
+    "q": "`rearrange(np.arange(6), \"(w h) -> h w\", h=3)` 的结果是？",
+    "options": [
+     "`[[0, 1], [2, 3], [4, 5]]`",
+     "`[[0, 1, 2], [3, 4, 5]]`",
+     "报错",
+     "`[[0, 3], [1, 4], [2, 5]]`"
+    ],
+    "answer": 3,
+    "explain": "这次 `h` 在括号右边变化快，所以连续的数在同一列：0、1、2 竖着排在第一列，3、4、5 在第二列。"
+   },
+   {
+    "q": "`reduce(x, \"b c h w -> b c\", \"mean\")` 做了什么？",
+    "options": [
+     "对每张图的每个通道，求所有像素的平均值",
+     "对整个批量求平均",
+     "把 h 和 w 合并",
+     "复制通道维"
+    ],
+    "answer": 0,
+    "explain": "右边少了 `h` 和 `w`，所以沿这两维求平均，这就是 **全局平均池化 (global average pooling)**。"
+   },
+   {
+    "q": "对形状 `(4, 4)` 的图做 2×2 **最大池化**，正确的写法是？",
+    "options": [
+     "`reduce(img, \"h w -> h\", \"max\")`",
+     "`rearrange(img, \"(h h2) (w w2) -> h w\", h2=2, w2=2)`",
+     "`reduce(img, \"(h h2) (w w2) -> h w\", \"max\", h2=2, w2=2)`",
+     "`repeat(img, \"h w -> (h 2) (w 2)\")`"
+    ],
+    "answer": 2,
+    "explain": "把高、宽各拆成（块数，2），右边去掉块内的 `h2`、`w2` 并取最大。B 是 rearrange，右边少了维度会报错；D 是放大而不是池化。"
+   },
+   {
+    "q": "`repeat(np.array([1, 2]), \"d -> (d 2)\")` 的结果是？",
+    "options": [
+     "`[1, 2, 1, 2]`",
+     "`[1, 1, 2, 2]`",
+     "`[[1, 2], [1, 2]]`",
+     "`[2, 4]`"
+    ],
+    "answer": 1,
+    "explain": "新维度 `2` 在 `d` 右边，变化得快：每个元素连续重复 2 次。"
+   },
+   {
+    "q": "哪种情况应该用 `repeat`？",
+    "options": [
+     "把灰度图 `(h, w)` 复制成三通道 `(h, w, 3)`",
+     "对批量求平均",
+     "交换两个维度",
+     "把图片展平"
+    ],
+    "answer": 0,
+    "explain": "箭头右边多出新维度 `c=3`，是复制。求平均用 `reduce`，交换和展平用 `rearrange`。"
+   },
+   {
+    "q": "`rearrange(np.arange(7), \"(h w) -> h w\", h=2)` 会怎样？",
+    "options": [
+     "得到 `(2, 3)`，丢掉最后一个数",
+     "得到 `(2, 4)`，补一个 0",
+     "得到 `(1, 7)`",
+     "抛出 EinopsError，因为 7 不能被 2 整除"
+    ],
+    "answer": 3,
+    "explain": "einops 会检查形状是否对得上，对不上就报错，而不是悄悄算出错误结果。这是它比手写 reshape 更安全的地方。"
+   },
+   {
+    "q": "把 `(batch, seq, 768)` 拆成 12 个注意力头并变成 `(batch, 12, seq, 64)`，正确的写法是？",
+    "options": [
+     "`rearrange(x, \"b s d -> b 12 s 64\")`",
+     "`rearrange(x, \"b s (n d) -> b n s d\", n=12)`",
+     "`reduce(x, \"b s (n d) -> b n s\", \"mean\", n=12)`",
+     "`repeat(x, \"b s d -> b n s d\", n=12)`"
+    ],
+    "answer": 1,
+    "explain": "拆分 768 = 12 × 64，同时把头维度挪到第二位。A 的写法不合法；C 会把 `d` 求平均掉；D 会复制 12 份而不是拆分。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "id": "u09",
+ "title": "信息论：熵、交叉熵、KL 散度",
+ "en": "Information Theory",
+ "minutes": 45,
+ "objectives": [
+  "理解 **信息量 (information / surprisal)** $-\\log p$：越意外的事件，信息量越大",
+  "理解 **熵 (entropy)** 是平均信息量，知道它什么时候最大、什么时候为 0",
+  "理解 **交叉熵 (cross-entropy)** 和 **KL 散度 (KL divergence)** 的定义与关系 $H(P, Q) = H(P) + D_{KL}(P\\|Q)$",
+  "明白为什么语言模型的训练损失就是交叉熵，并会算「均匀猜测」时的损失"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么要学信息论\n\nARENA 说得很直接：信息、熵和 KL 散度「在解释损失函数时扮演关键角色」。语言模型每一步都在预测下一个词的概率分布，训练它用的 **交叉熵损失 (cross-entropy loss)** 就来自信息论。看懂这一节，你就能读懂训练曲线上那个 loss 数字意味着什么。\n\n**本节安排（约 45 分钟）**：导读 → 视频一（17 分钟）→ 要点 → 视频二（11 分钟）→ 要点、和语言模型的联系 →「想一想」。\n\n### 从「惊讶程度」开始\n\n一个事件发生的概率是 $p$，它带来的 **信息量 (information)**，也叫 **惊讶度 (surprisal)**：\n\n$$I(x) = -\\log p(x) = \\log\\frac{1}{p(x)}$$\n\n- 必然发生（$p = 1$）：信息量为 0，毫不意外；\n- 越不可能发生，信息量越大；\n- 两个独立事件同时发生，信息量相加（因为 $\\log$ 把乘法变成加法）。\n\n**单位**：以 2 为底的对数，单位是 **比特 (bit)**；以 $e$ 为底（自然对数）单位是 **奈特 (nat)**。PyTorch 的损失函数用的都是自然对数。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "YtebGVx-Fxw",
+   "title": "视频一：Entropy (for data science) Clearly Explained（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 17
+  },
+  {
+   "type": "text",
+   "md": "### 视频一要点：熵\n\n**熵 (entropy)** 是信息量的**期望**，衡量一个分布的「不确定性」：\n\n$$H(P) = \\mathbb{E}_{x\\sim P}\\big[-\\log P(x)\\big] = -\\sum_x P(x)\\log P(x)$$\n\n- 公平硬币：$H = -(0.5\\log_2 0.5 + 0.5\\log_2 0.5) = 1$ 比特。\n- 正面概率 0.99 的硬币：几乎不确定性，$H \\approx 0.08$ 比特。\n- **确定的分布**（某个结果概率为 1）：$H = 0$。\n- **均匀分布**（$n$ 个结果各 $1/n$）：熵最大，$H = \\log n$。\n\n直觉：熵是「用最优编码方式描述一个结果，平均需要多少比特」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "ErfnhcEV1O8",
+   "title": "视频二：A Short Introduction to Entropy, Cross-Entropy and KL-Divergence（Aurélien Géron）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 11
+  },
+  {
+   "type": "text",
+   "md": "### 视频二要点：交叉熵与 KL 散度\n\n**1. 交叉熵 (cross-entropy)**\n\n真实分布是 $P$，但我们用另一个分布 $Q$（比如模型的预测）来编码 / 预测：\n\n$$H(P, Q) = -\\sum_x P(x)\\log Q(x)$$\n\n它衡量「用 $Q$ 去猜来自 $P$ 的结果，平均有多意外」。$Q$ 越接近 $P$，交叉熵越小，**最小值就是 $H(P)$**（$Q = P$ 时取到）。\n\n**2. KL 散度 (Kullback–Leibler divergence)**\n\n多出来的那部分代价：\n\n$$D_{KL}(P\\,\\|\\,Q) = \\sum_x P(x)\\log\\frac{P(x)}{Q(x)} = H(P, Q) - H(P)$$\n\n- 总是 $\\ge 0$，当且仅当 $P = Q$ 时为 0；\n- **不对称**：$D_{KL}(P\\|Q) \\ne D_{KL}(Q\\|P)$，所以它不是真正的「距离」。\n\n**3. 最小化交叉熵 = 最小化 KL 散度**\n\n训练时 $P$（数据分布）是固定的，$H(P)$ 是常数。所以调整模型 $Q$ 来降低交叉熵，等价于让 $Q$ 在 KL 意义下靠近 $P$。\n\n### 和语言模型的联系\n\n训练数据里，下一个词是确定的（比如是 \"cat\"），相当于 $P$ 是一个 **独热 (one-hot)** 分布：正确词概率为 1，其他为 0。交叉熵只剩一项：\n\n$$H(P, Q) = -\\log Q(\\text{正确的词})$$\n\n这就是语言模型的训练损失：**模型给正确答案的概率取负对数**。模型给正确词 100% 的概率时损失为 0；只给 1% 时损失为 $\\ln 100 \\approx 4.6$。\n\n**ARENA 的思考题**：设词表大小为 $|V|$。\n\n- 模型**均匀地瞎猜**（每个词 $1/|V|$）：$H(P, Q) = -\\sum_x P(x)\\log\\frac{1}{|V|} = \\log|V|$。GPT-2 的词表有 50,257 个词，所以随机初始化的模型损失大约是 $\\ln 50257 \\approx 10.8$——训练刚开始看到这个数，说明一切正常。\n- 模型**完美掌握了语言的真实频率**（$Q = P$）：交叉熵降到 $H(P)$，即自然语言本身的熵。这是任何模型都无法突破的下限。\n\n```python\nimport torch\nimport torch.nn.functional as F\nlogits = torch.zeros(1, 50257)          # 全 0 的 logit = 均匀分布\ntarget = torch.tensor([123])\nprint(F.cross_entropy(logits, target))  # tensor(10.8249) ≈ ln(50257)\n```"
+  },
+  {
+   "type": "think",
+   "q": "一个有 8 个等可能结果的分布，熵是多少比特？如果其中一个结果的概率变成 1 呢？",
+   "a": "均匀分布：$H = \\log_2 8 = 3$ 比特（正好需要 3 个比特来编码 8 种情况）。\n\n某个结果概率为 1：没有任何不确定性，$H = 0$。"
+  },
+  {
+   "type": "think",
+   "q": "$P = (0.5, 0.5)$，$Q = (0.9, 0.1)$。算 $H(P, Q)$ 和 $D_{KL}(P\\|Q)$（用以 2 为底的对数）。",
+   "a": "$$H(P, Q) = -\\big(0.5\\log_2 0.9 + 0.5\\log_2 0.1\\big) \\approx -\\big(0.5 \\times (-0.152) + 0.5 \\times (-3.322)\\big) \\approx 1.737$$\n\n$H(P) = 1$，所以 $D_{KL}(P\\|Q) = H(P,Q) - H(P) \\approx 0.737$ 比特。\n\n用 $Q$ 来猜公平硬币，每次平均多付出约 0.74 比特的「意外」。"
+  },
+  {
+   "type": "think",
+   "q": "训练一个语言模型，loss 从 10.8 降到 3.0。用「概率」来解释这个数字。",
+   "a": "损失是 $-\\ln Q(\\text{正确词})$ 的平均值。\n\n- $10.8 \\approx \\ln 50257$：相当于在五万多个词里瞎猜。\n- $3.0$：$e^{-3} \\approx 0.05$，粗略地说，模型平均给正确的下一个词大约 5% 的概率——相当于在大约 $e^3 \\approx 20$ 个候选词里猜。这个量 $e^{\\text{loss}}$ 叫 **困惑度 (perplexity)**。（严格来说 $e^{-\\text{平均 loss}}$ 是概率的几何平均，不是算术平均。）"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "信息量 / 惊讶度",
+     "information / surprisal",
+     "$-\\log p$，越意外越大"
+    ],
+    [
+     "比特 / 奈特",
+     "bit / nat",
+     "以 2 / 以 $e$ 为底的对数单位"
+    ],
+    [
+     "熵",
+     "entropy $H(P)$",
+     "平均信息量，衡量不确定性"
+    ],
+    [
+     "交叉熵",
+     "cross-entropy $H(P,Q)$",
+     "用 $Q$ 预测 $P$ 的平均意外程度"
+    ],
+    [
+     "KL 散度",
+     "KL divergence",
+     "$H(P,Q) - H(P) \\ge 0$，不对称"
+    ],
+    [
+     "独热分布",
+     "one-hot",
+     "正确类为 1，其他为 0"
+    ],
+    [
+     "交叉熵损失",
+     "cross-entropy loss",
+     "$-\\log Q(\\text{正确答案})$"
+    ],
+    [
+     "困惑度",
+     "perplexity",
+     "$e^{\\text{loss}}$，相当于在多少个词里猜"
+    ],
+    [
+     "词表",
+     "vocabulary $V$",
+     "模型能输出的所有 token"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Information theory 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "含本节「均匀猜测时的交叉熵」思考题"
+  },
+  {
+   "title": "Six (and a half) intuitions for KL divergence（LessWrong）",
+   "url": "https://www.lesswrong.com/posts/no5jDTut5Byjqb4j5/six-and-a-half-intuitions-for-kl-divergence",
+   "note": "ARENA 推荐；先掌握熵再看"
+  },
+  {
+   "title": "Elements of Information Theory（Cover & Thomas）",
+   "url": "http://staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf",
+   "note": "ARENA 提到的经典教材，内容远超所需，不必优先"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个事件发生的概率是 1/8，它的信息量是多少比特？",
+    "options": [
+     "1/8",
+     "3",
+     "8",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "$-\\log_2(1/8) = \\log_2 8 = 3$ 比特。"
+   },
+   {
+    "q": "下面哪个分布的熵**最大**？",
+    "options": [
+     "(1, 0, 0, 0)",
+     "(0.7, 0.1, 0.1, 0.1)",
+     "(0.5, 0.5, 0, 0)",
+     "(0.25, 0.25, 0.25, 0.25)"
+    ],
+    "answer": 3,
+    "explain": "结果数相同时，均匀分布的熵最大（$\\log 4 = 2$ 比特）；(1,0,0,0) 完全确定，熵为 0。"
+   },
+   {
+    "q": "一枚公平硬币的熵是多少比特？",
+    "options": [
+     "1",
+     "0.5",
+     "2",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "$-(0.5\\log_2 0.5 + 0.5\\log_2 0.5) = 1$ 比特。"
+   },
+   {
+    "q": "交叉熵 $H(P, Q)$ 和熵 $H(P)$ 的关系是？",
+    "options": [
+     "$H(P, Q) \\le H(P)$",
+     "两者总是相等",
+     "$H(P, Q) \\ge H(P)$，当 $Q = P$ 时取等号",
+     "$H(P, Q) = H(P) \\times H(Q)$"
+    ],
+    "answer": 2,
+    "explain": "$H(P, Q) = H(P) + D_{KL}(P\\|Q)$，而 KL 散度非负。用错误的分布去预测只会更意外。"
+   },
+   {
+    "q": "关于 KL 散度 $D_{KL}(P\\|Q)$，下面哪个说法**错误**？",
+    "options": [
+     "它总是大于等于 0",
+     "它是对称的：$D_{KL}(P\\|Q) = D_{KL}(Q\\|P)$",
+     "$P = Q$ 时它等于 0",
+     "它等于 $H(P, Q) - H(P)$"
+    ],
+    "answer": 1,
+    "explain": "KL 散度**不对称**，所以它不是真正意义上的距离。"
+   },
+   {
+    "q": "为什么训练时「最小化交叉熵」等价于「最小化 KL 散度」？",
+    "options": [
+     "因为数据分布 $P$ 固定，$H(P)$ 是常数",
+     "因为交叉熵总是等于 0",
+     "因为 KL 散度就是交叉熵",
+     "因为 $P$ 和 $Q$ 总是相等"
+    ],
+    "answer": 0,
+    "explain": "$H(P,Q) = H(P) + D_{KL}(P\\|Q)$，训练只改 $Q$，$H(P)$ 不变，所以两者差一个常数。"
+   },
+   {
+    "q": "下一个词的真实答案是 \"cat\"，模型给 \"cat\" 的概率是 0.25。这一步的交叉熵损失（自然对数）是？",
+    "options": [
+     "0.25",
+     "$-\\ln 0.75$",
+     "$\\ln 0.25$",
+     "$\\ln 4 \\approx 1.39$"
+    ],
+    "answer": 3,
+    "explain": "目标是独热分布，损失只剩 $-\\ln Q(\\text{cat}) = -\\ln 0.25 = \\ln 4$。选项 C 少了负号，是负数。"
+   },
+   {
+    "q": "词表大小为 $|V|$，模型对每个词都给出均匀概率 $1/|V|$，交叉熵损失是多少？",
+    "options": [
+     "0",
+     "$1/|V|$",
+     "$\\log|V|$",
+     "$|V|$"
+    ],
+    "answer": 2,
+    "explain": "$-\\log(1/|V|) = \\log|V|$。GPT-2 词表 50,257 个词，随机初始化时 loss 约为 10.8。"
+   },
+   {
+    "q": "如果模型的预测分布 $Q$ 完全等于语言的真实分布 $P$，交叉熵会降到多少？",
+    "options": [
+     "$H(P)$，即语言本身的熵",
+     "0",
+     "$\\log|V|$",
+     "无穷大"
+    ],
+    "answer": 0,
+    "explain": "$Q = P$ 时 KL 散度为 0，交叉熵等于 $H(P)$。语言本身有不确定性，所以损失不会降到 0。"
+   },
+   {
+    "q": "PyTorch 的 `F.cross_entropy` 默认用的对数是？",
+    "options": [
+     "以 2 为底，单位是比特",
+     "以 10 为底",
+     "没有对数",
+     "自然对数，单位是奈特"
+    ],
+    "answer": 3,
+    "explain": "PyTorch 的损失函数用自然对数 $\\ln$。换算：1 奈特 ≈ 1.44 比特。"
+   }
+  ]
+ }
+}
