@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>学习区 · 远征日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/study.css">
+</head>
+<body>
+
+<div class="app study-app">
+  <div class="gate" id="gate">
+    <h1>学习区</h1>
+    <p>登录后才能看到你的学习进度和笔记，手机电脑自动同步。</p>
+    <button class="btn-google" id="signInBtn">用 Google 账号登录</button>
+    <div class="gate-note" id="gateNote"></div>
+  </div>
+
+  <div id="studyRoot" hidden>
+    <div class="study-topbar">
+      <a class="back-home" href="index.html">← 返回远征日志</a>
+      <a class="study-home-link" href="#/">我的课程</a>
+    </div>
+    <header class="study-hero">
+      <div>
+        <div class="eyebrow">学习区</div>
+        <div class="today-status" id="todayStatus"></div>
+      </div>
+      <div class="streak"><span class="flame">📚</span>学习连续&nbsp;<span class="mono" id="studyStreakNum">0</span>&nbsp;天</div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<!-- 笔记抽屉：每节一篇，自动保存 -->
+<div class="modal-backdrop" id="notesDrawer" hidden>
+  <div class="modal notes-modal">
+    <div class="notes-head">
+      <h3>📝 笔记 · <span id="noteUnitTitle"></span></h3>
+      <button class="btn-del" id="closeNotes">收起</button>
+    </div>
+    <textarea id="noteText" placeholder="写下你的理解、疑问、想回头再看的地方……只有你自己能看到"></textarea>
+    <div class="note-status" id="noteStatus"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="quizPrompt" hidden>
+  <div class="modal">
+    <h3>小测验</h3>
+    <p id="quizPromptText" style="font-size:14.5px;color:var(--ink-soft);margin:0 0 6px;line-height:1.7"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="quizPromptSkip">先跳过</button>
+      <button class="btn-primary" id="quizPromptGo">做测验</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="celebrateModal" hidden>
+  <div class="modal celebrate-modal">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="celebrate-emoji">🎉</div>
+    <h3>恭喜！</h3>
+    <div id="celebrateText" class="celebrate-text"></div>
+    <button class="btn-primary" id="closeCelebrate" style="width:100%">太棒了</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="js/study/main.js"></script>
+</body>
+</html>

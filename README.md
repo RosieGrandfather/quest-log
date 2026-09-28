@@ -6,7 +6,10 @@
 
 ## 文件
 
-- `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑
+- `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑。左上角「📚 学习区」进入学习区
+- `study.html` — **学习区**（独立页面），见下面「学习区」一节
+- `css/study.css` — 学习区专用样式
+- `courses/` — 学习区的课程内容（JSON），**推送即发布**
 - `css/base.css` — 所有页面共用：颜色变量（含深色模式）、登录页、按钮、弹窗、提示、庆祝动画
 - `css/app.css` — 主页面专用：顶部状态栏、Tab、任务 / 奖励卡片、记录列表
 - `js/` — 全部逻辑，浏览器原生 ES 模块（`<script type="module">`），**没有构建步骤**，推上去就能用。结构见下面「代码结构」
@@ -54,6 +57,30 @@
 ### 5. 等级系统
 `LEVELS` 数组，**现在是 20 级**，按累计获得的总积分（不是可用积分，兑换奖励不扣这个数）从低到高：新手上路(0) → 打好地基(100) → 小试牛刀(250) → 渐入佳境(450) → 独当一面(700) → 融会贯通(1000) → 炉火纯青(1400) → 崭露头角(1900) → 步入正轨(2500) → 渐成气候(3200) → 游刃有余(4000) → 登堂入室(5000) → 自成一派(6200) → 声名鹊起(7600) → 独步一方(9200) → 名扬四海(11000) → 出类拔萃(13000) → 登峰造极(15200) → 一代宗师(17600) → 传奇远征者(20200)。超过最后一级后，`levelInfo()` 会自动按"每 +5000 分再升一级"继续延伸下去，不会封顶。
 
+### 6. 学习区（`study.html`）
+独立页面，只放学习内容。学完 / 测验达标 / 连续学习的积分自动写进同一个 `log`，回主页面积分、历史、🔥 连续打卡都会更新。
+- 页面：课程列表 `#/` → 章节列表 `#/c/课程id` → 学习页 `#/c/课程id/u/章节id` → 测验 `…/quiz` → 回顾 `…/review`
+- 章节不锁顺序；已学（绿色 + ✓）、未学（编号）、即将上线（半透明，`file` 为 null）一眼能分出来
+- 学习页内容块：文字（Markdown + KaTeX 公式）、视频（YouTube / B站 嵌入 + 「在 XX 打开」备用链接）、图片、「想一想」折叠题、关键词表；底部「学完了 ✓」
+- **积分规则**（`js/core/study.js`，有测试）：
+  - 学完一节 +100，每节只一次（log 文档 ID `study-{课程}__{章节}`）
+  - 测验可无限重做；**第一次**达到 80 分 +50（`quiz-{课程}__{章节}`），当时跳过、之后补做达标也算
+  - 连续学习：只有「当天首次学完了一节新章节」才算有效学习日。每满 7 天 +100；第 30 天 +500（只一次）；第 100 / 200 / 300 天各 +500；第 365 天 +1000。每次都有庆祝弹窗（`studystreak-{日期}-{天数}-{分值}`）
+  - 学习记录（category `study` / `quiz` / `studystreak`）也算主页面的 🔥 连续打卡
+- 笔记：每节一篇，点右下角「📝 笔记」弹出，停止输入 0.8 秒自动保存，只有本人可见
+- 学习区打开时同样会发每日签到奖励
+
+#### 课程内容怎么加 / 改
+课程是仓库里的 JSON，页面直接从网站读，**推送就上线**，不需要进 Firebase：
+- `courses/index.json`：课程列表 `{"courses":[{"id","path"}]}`
+- `courses/{path}/course.json`：`id`、`title`、`subtitle`、`source`（内容依据，链接）、`units`（`id`、`title`、`en`、`minutes`、`file`——还没写好的节 `file` 为 null）
+- `courses/{path}/{file}`：一节的内容：`objectives`（学完能做到什么）、`blocks`、`references`、`quiz.questions`（`q`、4 个 `options`、`answer` 为正确选项下标、`explain`）
+- block 类型：`text`（`md`）、`video`（`provider` 为 youtube / bilibili，`id`，可选 `start` / `end` 秒、`title`、`lang`、`minutes`）、`image`（`src`、`alt`、`caption`）、`think`（`q`、`a`）、`keywords`（`items`: [中文, English, 说明]）
+- 公式用 `$...$` / `$$...$$`；JSON 里反斜杠要写两个（`\\sigma`）
+- **ARENA 课程不放原文**（ARENA 仓库没有开源授权）：按他们的大纲和知识点、参考链接自编中文讲解，关键词标英文，每节附原文链接
+- 视频链接加进课程前要核实存在、可嵌入（YouTube 可用 `https://www.youtube.com/oembed?url=…` 查，返回 200 即可嵌入）；公司网络会拦 B站，B站 编号请在手机上确认
+- 已上线：ARENA 0.0 第 1 节「神经网络是什么」（样板课）
+
 ---
 
 ## 数据结构（Firestore）
@@ -64,6 +91,8 @@
 - `users/{uid}/rewards`：奖励定义。字段：`name`、`tier`（small/medium/big）、`cost`、`active`、`ts`
 - `users/{uid}/tasks`：任务定义。字段：`name`、`category`（= 所属板块在 `sections` 里的文档 ID）、`points`、`active`、`ts`
 - `users/{uid}/sections`：板块。文档 ID 就是板块 id。字段：`label`、`ts`（排序）、`short`（可选，历史记录小标签用的简称；老板块迁移时带上，改名后删除，之后标签显示全名）
+- `users/{uid}/studyProgress/{课程}__{章节}`：测验成绩。`quizAttempts`、`quizBest`、`quizPassed`、`lastAttempt`（`answers` 数组、`score`、`ts`）、首次学完时的 `completedISO`。**「是否学完」以 log 里有没有 `study-…` 记录为准**
+- `users/{uid}/studyNotes/{课程}__{章节}`：笔记 `text`、`updatedAt`
 - `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
 
 **2026-09 数据迁移（schemaVersion 1 → 2）**：老版本板块写死在代码里。老账号登录时 `migrateLegacySections()` 会：① 把原来 7 个板块（arena/pl300/python/project/job/review/custom，见 `LEGACY_SECTIONS`）用**原 id 当文档 ID** 写进 `sections`（已存在的不覆盖），所以老任务/老记录的 `category` 不用改；②把上一版自定义板块留下的 `'sec_'+文档ID` 格式的 `category`（任务和 log 里都有）统一去掉前缀。每一步都可以重复执行，完成后写 `meta/app`。`log` 里的 `category` 还可能是 `'reward'`（兑换）或 `'daily'`（签到），小标签见 `CAT_SHORT`。
@@ -100,6 +129,15 @@ js/
    ├─ tasks.js          记录 Tab：任务卡片、完成确认、任务增改删
    ├─ sections.js       板块增 / 改名 / 删
    └─ rewards.js        奖励商店 Tab：卡片、兑换确认、奖励增改删
+js/core/study.js        学习区规则：积分常量、scoreQuiz、studyStreak、streakBonuses
+js/data/study.js        completeUnit / submitQuiz（都用 awardOnce）、笔记读写
+js/study/               学习区页面
+   ├─ main.js           入口：登录 → 订阅 study 记录和测验进度 → 按 # 路由渲染
+   ├─ views.js          各界面（课程 / 章节列表 / 学习页 / 测验 / 回顾）；进度变化时只刷新学习页底部，不打断阅读和视频
+   ├─ content.js        读 courses/ 下的 JSON（带缓存）
+   ├─ render-content.js 内容块 → HTML；Markdown 用 marked，公式用 KaTeX（study.html 从 jsDelivr 引入）
+   ├─ notes.js          笔记抽屉 + 自动保存
+   └─ state.js          学习区共享状态 T
 ```
 
 **本地预览**：ES 模块不能双击 `index.html` 用 `file://` 打开（浏览器会拦），要在项目目录跑 `npm run serve`（即 `python -m http.server 8000`），再打开 `http://localhost:8000`。注意 Google 登录要求域名在 Firebase 控制台 → Authentication → 设置 → 已授权网域 里，`localhost` 默认就在。

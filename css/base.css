@@ -62,7 +62,8 @@ img{max-width:100%;}
 }
 .gate-note{margin-top:16px;font-size:12px;color:var(--ink-faint);}
 
-.topbar{display:flex;justify-content:flex-end;margin-bottom:6px;}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.study-entry{background:var(--ink);color:var(--bg);text-decoration:none;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;box-shadow:var(--shadow);}
 .signout{background:none;border:none;color:var(--ink-faint);font-size:12.5px;cursor:pointer;text-decoration:underline;}
 
 .btn-primary{

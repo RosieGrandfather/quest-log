@@ -20,5 +20,7 @@ export function userCols(uid){
     tasks: u.collection('tasks'),
     sections: u.collection('sections'),
     meta: u.collection('meta').doc('app'),
+    studyProgress: u.collection('studyProgress'),   // 文档 ID = unitKey(courseId, unitId)
+    studyNotes: u.collection('studyNotes'),         // 同上，每节一篇笔记
   };
 }

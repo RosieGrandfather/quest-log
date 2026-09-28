@@ -1,0 +1,40 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { scoreQuiz, studyStreak, streakBonuses, unitKey } from '../js/core/study.js';
+
+const Q = [{answer:0},{answer:1},{answer:2},{answer:3},{answer:0}];
+
+test('测验得分', ()=>{
+  assert.equal(scoreQuiz(Q, [0,1,2,3,0]), 100);
+  assert.equal(scoreQuiz(Q, [0,1,2,3,1]), 80);
+  assert.equal(scoreQuiz(Q, [0,1,2,null,1]), 60);
+  assert.equal(scoreQuiz([], []), 0);
+});
+test('测验得分四舍五入（3 题对 2 题 = 67）', ()=>{
+  assert.equal(scoreQuiz([{answer:0},{answer:0},{answer:0}], [0,0,1]), 67);
+});
+
+test('连续学习天数：重复日期只算一天', ()=>{
+  const now = new Date(2026, 8, 28);
+  assert.equal(studyStreak(['2026-09-28','2026-09-28','2026-09-27'], now), 2);
+  assert.equal(studyStreak([], now), 0);
+});
+
+test('里程碑奖励', ()=>{
+  assert.deepEqual(streakBonuses(1), []);
+  assert.deepEqual(streakBonuses(7).map(b=>b.amount), [100]);
+  assert.deepEqual(streakBonuses(14).map(b=>b.amount), [100]);
+  assert.deepEqual(streakBonuses(29), []);
+  assert.deepEqual(streakBonuses(30).map(b=>b.amount), [500]);
+  assert.deepEqual(streakBonuses(60), []);
+  assert.deepEqual(streakBonuses(63).map(b=>b.amount), [100]);
+  assert.deepEqual(streakBonuses(100).map(b=>b.amount), [500]);
+  assert.deepEqual(streakBonuses(200).map(b=>b.amount), [500]);
+  assert.deepEqual(streakBonuses(300).map(b=>b.amount), [500]);
+  assert.deepEqual(streakBonuses(365).map(b=>b.amount), [1000]);
+  assert.deepEqual(streakBonuses(0), []);
+});
+
+test('unitKey', ()=>{
+  assert.equal(unitKey('arena-0.0','u01'), 'arena-0.0__u01');
+});
