@@ -20,8 +20,9 @@
 ### 1. 顶部状态栏
 - 连续打卡天数（🔥 streak，`computeStreak()`）
 - 等级名 + Lv.数字 + 经验条（`levelInfo()`，见下面「等级系统」）
-- 经验条上有一根**会挥舞的魔杖图标**，卡在当前进度百分比的位置上左右摆动（`.xp-flyer` / `.xp-flyer-bob` / `@keyframes xp-flyer-wave`）。**注意**：用户明确要求过不要用哈利波特商标图案（金色飞贼、院徽等），所以魔杖是通用款式，没有照抄任何受版权保护的具体设计，以后加新图标也要遵守这条。
+- 经验条（纯进度条，之前的魔杖挥舞特效已按用户要求移除，不要再加回来）
 - 三个统计数字：可用积分 / 累计获得 / 记录次数
+- **每日上线奖励**：每天第一次打开（登录状态下）自动 +5 分（`DAILY_LOGIN_POINTS`，`ensureDailyLoginBonus()`）。写进 `log` 集合，文档 ID 固定为 `daily-YYYY-MM-DD`，用事务保证多设备同时打开每天也只加一次；页面跨零点或从后台切回时会补发。`category:'daily'` 的记录只计积分，**不计入「记录次数」和连续打卡天数**。
 
 ### 2. 「记录」Tab —— 学习任务（像奖励商店一样的卡片式）
 这是最新的交互方式，**已经不是**表单弹窗式记录了：
@@ -76,7 +77,6 @@
 - `openRedeemConfirm()` / `confirmRedeem()`（兑换二次确认）
 - `openTaskConfirm()` / `confirmTaskLog()`（完成任务二次确认）
 - `openCelebrate(kind, name, amount)`（庆祝弹窗+撒花动画，`kind` 传 `'reward'` 或 `'task'` 决定文案）
-- `.xp-flyer` 相关（进度条上挥舞的魔杖图标）
 
 ## ⚠️ IP / 版权注意事项
 

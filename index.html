@@ -112,9 +112,6 @@ img{max-width:100%;}
 .xpbar-wrap{margin-top:14px;position:relative;}
 .xpbar{height:10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden;}
 .xpbar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--accent));border-radius:999px;transition:width .5s ease;width:0%;}
-.xp-flyer{position:absolute;top:50%;width:22px;height:22px;margin-left:-16px;margin-top:-15px;transition:left .5s ease;pointer-events:none;}
-.xp-flyer-bob{display:block;width:100%;height:100%;color:var(--accent);transform-origin:18% 88%;animation:xp-flyer-wave 1s ease-in-out infinite;}
-@keyframes xp-flyer-wave{0%,100%{transform:rotate(-20deg);}50%{transform:rotate(20deg);}}
 .xp-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--ink-faint);}
 .xp-labels .mono{color:var(--ink-soft);}
 .stat-row{display:flex;gap:10px;margin-top:16px;}
@@ -276,9 +273,6 @@ main{margin-top:16px;}
       </div>
       <div class="xpbar-wrap">
         <div class="xpbar"><div class="xpbar-fill" id="xpFill"></div></div>
-        <div class="xp-flyer" id="xpFlyer" style="left:0%">
-          <span class="xp-flyer-bob"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><line x1="4" y1="21" x2="17.5" y2="7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="18.6" cy="6.4" r="1.3" fill="currentColor"/><path d="M18.6 2.6v1.6M18.6 8.6v1.6M14.8 6.4h1.6M20.8 6.4h1.6M15.9 3.7l1.1 1.1M20.2 8l1.1 1.1M20.2 4.8l1.1-1.1M15.9 9.1l1.1-1.1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".7"/></svg></span>
-        </div>
         <div class="xp-labels"><span class="mono" id="xpNowLabel">0 XP</span><span id="xpNextLabel">/ 100 到下一级</span></div>
       </div>
       <div class="stat-row">
@@ -467,7 +461,8 @@ const CATEGORIES = [
   ]},
   {id:'custom', label:'其他（自定义）', presets:[]},
 ];
-const CAT_SHORT = {arena:'ARENA', pl300:'PL-300', python:'Python', project:'项目', job:'求职', review:'复盘', custom:'其他', reward:'奖励'};
+const CAT_SHORT = {arena:'ARENA', pl300:'PL-300', python:'Python', project:'项目', job:'求职', review:'复盘', custom:'其他', reward:'奖励', daily:'签到'};
+const DAILY_LOGIN_POINTS = 5;
 const TIER_META = {
   small:{title:'日常小奖励', cls:'small'},
   medium:{title:'中型奖励', cls:'medium'},
@@ -569,6 +564,7 @@ document.getElementById('signOutBtn').addEventListener('click', ()=>{
   if(unsubLog) unsubLog();
   if(unsubRewards) unsubRewards();
   if(unsubTasks) unsubTasks();
+  dailyCheckedISO = null;
   auth.signOut();
 });
 
@@ -584,8 +580,11 @@ auth.onAuthStateChanged(user=>{
     ensureSeedRewards();
     ensureSeedTasks();
     subscribeAll();
+    ensureDailyLoginBonus();
   } else {
     uid = null;
+    logCol = null;
+    dailyCheckedISO = null;
     if(unsubLog) unsubLog();
     if(unsubRewards) unsubRewards();
     if(unsubTasks) unsubTasks();
@@ -625,6 +624,32 @@ async function ensureSeedTasks(){
   }catch(e){ console.error('seed tasks failed', e); }
 }
 
+/* 每日上线奖励：每天第一次打开就加 DAILY_LOGIN_POINTS 分，每天最多一次。
+   用固定的文档 ID（daily-YYYY-MM-DD）+ 事务，手机和电脑同时打开也只会记一次。 */
+let dailyCheckedISO = null;
+async function ensureDailyLoginBonus(){
+  if(!logCol) return;
+  const today = localISO(new Date());
+  if(dailyCheckedISO===today) return;
+  dailyCheckedISO = today;
+  const ref = logCol.doc('daily-'+today);
+  try{
+    const created = await fs.runTransaction(async tx=>{
+      const snap = await tx.get(ref);
+      if(snap.exists) return false;
+      tx.set(ref, {kind:'earn', category:'daily', label:'每日上线', amount:DAILY_LOGIN_POINTS, note:'', dateISO:today, ts:Date.now()});
+      return true;
+    });
+    if(created) showToast(`今日上线 +${DAILY_LOGIN_POINTS} 积分 ✨`);
+  }catch(e){
+    dailyCheckedISO = null;
+    console.error('daily login bonus failed', e);
+  }
+}
+/* 页面一直开着跨过零点，或者从后台切回来时，也补发当天的奖励 */
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) ensureDailyLoginBonus(); });
+setInterval(ensureDailyLoginBonus, 60*1000);
+
 function subscribeAll(){
   unsubLog = logCol.orderBy('ts','desc').limit(500).onSnapshot(snap=>{
     logEntries = snap.docs.map(d=>({id:d.id, ...d.data()}));
@@ -657,7 +682,11 @@ function computeStats(){
   let totalEarned=0, totalSpent=0, entriesCount=0;
   const earnDates = new Set();
   logEntries.forEach(e=>{
-    if(e.kind==='earn'){ totalEarned += Number(e.amount)||0; entriesCount++; if(e.dateISO) earnDates.add(e.dateISO); }
+    if(e.kind==='earn'){
+      totalEarned += Number(e.amount)||0;
+      // 每日上线奖励只算积分，不算"记录次数"，也不算学习连续打卡
+      if(e.category!=='daily'){ entriesCount++; if(e.dateISO) earnDates.add(e.dateISO); }
+    }
     else if(e.kind==='spend'){ totalSpent += Number(e.amount)||0; }
   });
   return {totalEarned, totalSpent, balance: totalEarned-totalSpent, entriesCount, streak: computeStreak(earnDates)};
@@ -709,7 +738,6 @@ function render(){
   const span = lvl.nextMin - lvl.curMin;
   const pct = span>0 ? Math.min(100, Math.max(0, (s.totalEarned-lvl.curMin)/span*100)) : 100;
   document.getElementById('xpFill').style.width = pct+'%';
-  document.getElementById('xpFlyer').style.left = pct+'%';
   document.getElementById('xpNowLabel').textContent = s.totalEarned+' XP';
   document.getElementById('xpNextLabel').textContent = `/ ${lvl.nextMin} 到下一级`;
   renderRecent();
