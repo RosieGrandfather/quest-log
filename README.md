@@ -6,7 +6,12 @@
 
 ## 文件
 
-- `index.html` — 整个应用，界面 + 逻辑都在这一个文件里（一个 `<style>`、一段主体 HTML、一个 `<script>`）
+- `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑
+- `css/base.css` — 所有页面共用：颜色变量（含深色模式）、登录页、按钮、弹窗、提示、庆祝动画
+- `css/app.css` — 主页面专用：顶部状态栏、Tab、任务 / 奖励卡片、记录列表
+- `js/` — 全部逻辑，浏览器原生 ES 模块（`<script type="module">`），**没有构建步骤**，推上去就能用。结构见下面「代码结构」
+- `tests/core.test.js` — `js/core/` 纯逻辑的测试，跑 `npm test`（只需要装了 Node.js，不需要 npm install）
+- `package.json` — 只用来声明 ES 模块和 `npm test` / `npm run serve` 两个命令，没有依赖
 - `firebase-config.js` — Yijia 自己 Firebase 项目的连接信息（apiKey 等，不是密钥，允许公开）
 - `firestore.rules` — Firestore 安全规则的存档（**真正生效的是 Firebase 控制台里的那份**，改规则要去控制台发布，然后同步回这里）
 - `README.md` — 这份文件
@@ -67,22 +72,37 @@
 
 ---
 
-## 代码里关键的东西在哪（方便以后改）
+## 代码结构
 
-- `SEED_SECTIONS` / `SEED_TASKS` / `SEED_REWARDS`（新用户模板）、`LEGACY_SECTIONS`（只给老账号迁移用）、`SCHEMA_VERSION`
-- `ensureUserData()` / `seedNewUser()` / `migrateLegacySections()`（登录后先跑，完成后才开始订阅数据）
-- `openSectionModal()` / `submitSection()` / `onDeleteSectionClick()`（板块增/改名/删）
-- `TIER_META` / `TIER_ICON_COLORS`（奖励三档的标题/颜色）
-- `LEVELS`（等级门槛，改这里就能调整等级数量/名字/分数线）
-- `REWARD_ICONS` / `iconForReward()`（奖励图标库 + 按 doc id 哈希自动分配，同一个奖励永远同一个图标）
-- `TASK_ICONS` / `iconForTask()`（任务图标库，逻辑同上）
-- `hashStr()`（两个图标分配函数共用的字符串哈希）
-- `renderRewards()` / `rewardCardHTML()`、`renderTasks()` / `taskCardHTML()`（两个 tab 的卡片渲染，结构几乎对称）
-- `openRewardModal()` / `submitReward()`（奖励增/改共用一个表单，`editingRewardId` 判断是新增还是编辑）
-- `openTaskModal()` / `submitTask()`（任务增/改，同理，`editingTaskId`）
-- `openRedeemConfirm()` / `confirmRedeem()`（兑换二次确认）
-- `openTaskConfirm()` / `confirmTaskLog()`（完成任务二次确认）
-- `openCelebrate(kind, name, amount)`（庆祝弹窗+撒花动画，`kind` 传 `'reward'` 或 `'task'` 决定文案）
+依赖方向：`core`（纯逻辑，不碰浏览器和 Firebase，可以测试） ← `data`（读写 Firebase） ← `ui` / `app`（界面）。以后的学习区页面（`study.html`）可以复用 `core` / `data` / `ui`。
+
+```
+js/
+├─ firebase.js          初始化；auth、fs、FieldValue；userCols(uid) 返回 users/{uid}/ 下所有集合
+├─ core/                纯逻辑
+│  ├─ constants.js      SEED_*（新用户模板）、LEGACY_SECTIONS（老账号迁移）、SCHEMA_VERSION、
+│  │                    CAT_SHORT、DAILY_LOGIN_POINTS、TIER_META、TIER_ICON_COLORS
+│  ├─ levels.js         LEVELS 等级表 + levelInfo()
+│  ├─ stats.js          computeStats() / computeStreak()（都接受可选的 now，方便测试）
+│  ├─ dates.js          localISO() / fmtDateLabel()
+│  ├─ icons.js          REWARD_ICONS / TASK_ICONS + 按 id 哈希分配图标
+│  └─ html.js           escapeHTML()
+├─ data/
+│  ├─ userData.js       ensureUserData()：新用户写模板 / 老账号迁移，写 meta/app
+│  ├─ awards.js         awardOnce(logCol, docId, entry)：固定文档 ID + 事务，保证只加一次分
+│  └─ dailyBonus.js     每日签到（用 awardOnce）
+├─ ui/
+│  └─ common.js         showToast、openCelebrate(html)、closeOnBackdrop、makeConfirmDelete（点两次才删）
+└─ app/                 主页面
+   ├─ main.js           入口：登录 → ensureUserData → 实时订阅 → render；签到定时检查
+   ├─ state.js          共享状态 S（uid、cols、logEntries、tasks、sections、rewards）
+   ├─ render.js         render()：状态栏、最近记录、历史，再调各 Tab 的渲染
+   ├─ tasks.js          记录 Tab：任务卡片、完成确认、任务增改删
+   ├─ sections.js       板块增 / 改名 / 删
+   └─ rewards.js        奖励商店 Tab：卡片、兑换确认、奖励增改删
+```
+
+**本地预览**：ES 模块不能双击 `index.html` 用 `file://` 打开（浏览器会拦），要在项目目录跑 `npm run serve`（即 `python -m http.server 8000`），再打开 `http://localhost:8000`。注意 Google 登录要求域名在 Firebase 控制台 → Authentication → 设置 → 已授权网域 里，`localhost` 默认就在。
 
 ## ⚠️ IP / 版权注意事项
 
@@ -93,31 +113,26 @@ Yijia 喜欢哈利波特主题，多次要求"魔法/巫师"风格的视觉效�
 ## 部署 / 怎么改代码立即上线
 
 用的是 GitHub Desktop（不是命令行 git）。流程：
-1. 在这台电脑上直接改 `index.html`（无论是 Yijia 自己改，还是让 Claude 通过设备连接直接改这个本地文件）
+1. 在这台电脑上改代码（`index.html` / `css/` / `js/`，无论是 Yijia 自己改，还是让 Claude 直接改本地文件）
 2. 打开 GitHub Desktop，仓库选 `quest-log`，能看到 `Changes` 里列出改动的文件和具体 diff
-3. 左下角填一句 commit 说明 → 点 `Commit 1 file to main`
+3. 左下角填一句 commit 说明 → 点 `Commit to main`
 4. 点顶部的 `Push origin`，大概 30-60 秒后 GitHub Pages 自动重新部署
-5. 浏览器刷新（必要时强制刷新清缓存）就是最新版本
+5. 浏览器强制刷新（Ctrl+Shift+R）就是最新版本。**推送后别马上登录测试**：GitHub Pages 部署要 1-2 分钟，浏览器还会缓存旧文件约 10 分钟，这段时间打开的可能还是旧版（2026-09-28 踩过：用旧版登录的新账号被写进了旧模板）
 
 ## Firebase 项目信息
 
 - Firebase 项目：`yaz-quest-log`（Firestore 数据库选的是新加坡 `asia-southeast1`，标准版）
 - 登录方式：仅 Google 登录（`firebase.auth.GoogleAuthProvider`）
-- Firestore 安全规则（**必须点右上角"发布"才生效**，之前踩过一次"粘贴了但没发布"导致 `Missing or insufficient permissions` 的坑）：
-
-```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{uid}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
-    }
-  }
-}
-```
+- Firestore 安全规则：原文见仓库里的 `firestore.rules`。**改规则要去控制台粘贴并点"发布"才生效**（之前踩过一次"粘贴了但没发布"导致 `Missing or insufficient permissions` 的坑），发布后同步更新 `firestore.rules`
 
 ---
 
 ## 给下一次接手的 Claude 的话
 
-如果 Yijia 下次把整个文件夹发过来（或者通过设备连接指到这个本地路径），直接读 `index.html` 全文 + 这份 README 就能完整了解现状。改代码时优先用"读现有文件 → 定位精确锚点文本 → 原子替换（全部匹配到才真正写入，否则整体放弃）"这种方式改这一个大文件，比整个重写更安全，避免动到用户已经积累的真实数据结构或引入语法错误。改完一定要跑一次 Node.js 的内联 `<script>` 语法检查（把文件里的 `<script>` 块整个提出来跑 `new Function(code)`），再让用户走 GitHub Desktop 的 commit → push 流程上线。
+先读这份 README，再按「代码结构」找到要改的模块。改完：
+1. `node --check` 检查改过的 JS 文件，`npm test` 跑核心逻辑测试
+2. 涉及界面或数据读写的改动，用假的 Firebase（内存实现 compat SDK 用到的那部分接口）在浏览器里实际跑一遍——Yijia 的真实 Firebase 我们连不上，也不该在真实数据上试
+3. 涉及数据结构变化的，要考虑老账号迁移（参考 `ensureUserData()` + `SCHEMA_VERSION` 的做法，每一步都要能安全重复执行）
+4. 让 Yijia 自己 commit → push（她用 GitHub Desktop / 网页，不需要 Claude 推送）
+
+已知历史 bug：2026-09-28 之前「＋ 添加自定义奖励」会把点击事件当成要编辑的奖励传进弹窗，导致新奖励存成空档位（`tier:''`）、页面上不显示。已修复；`renderRewards()` 会把空档位的奖励放进小奖励里显示，编辑一次就能改成正确档位。
