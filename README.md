@@ -8,6 +8,7 @@
 
 - `index.html` — 整个应用，界面 + 逻辑都在这一个文件里（一个 `<style>`、一段主体 HTML、一个 `<script>`）
 - `firebase-config.js` — Yijia 自己 Firebase 项目的连接信息（apiKey 等，不是密钥，允许公开）
+- `firestore.rules` — Firestore 安全规则的存档（**真正生效的是 Firebase 控制台里的那份**，改规则要去控制台发布，然后同步回这里）
 - `README.md` — 这份文件
 
 **线上地址**：`https://rosiegrandfather.github.io/quest-log/`
@@ -24,23 +25,22 @@
 - 三个统计数字：可用积分 / 累计获得 / 记录次数
 - **每日上线奖励**：每天第一次打开（登录状态下）自动 +5 分（`DAILY_LOGIN_POINTS`，`ensureDailyLoginBonus()`）。写进 `log` 集合，文档 ID 固定为 `daily-YYYY-MM-DD`，用事务保证多设备同时打开每天也只加一次；页面跨零点或从后台切回时会补发。`category:'daily'` 的记录计入积分和连续打卡天数（每天上线就算连续），但**不计入「记录次数」**。
 
-### 2. 「记录」Tab —— 学习任务（像奖励商店一样的卡片式）
-这是最新的交互方式，**已经不是**表单弹窗式记录了：
-- 按类别分组显示任务卡片（`CATEGORIES` 数组的 7 个类别：arena/pl300/python/project/job/review/custom）
+### 2. 「记录」Tab —— 任务（像奖励商店一样的卡片式）
+- 按板块分组显示任务卡片。**板块全部存在数据库 `sections` 集合里**（代码里没有写死的板块了），按 `ts` 排序
 - 每张卡片：自动分配的小图标（`iconForTask()`，图标库是 `TASK_ICONS`，10 个通用学习/成就主题图标）+ 任务名 + 积分
 - 卡片按钮：**编辑**（弹窗改名称/类别/积分）、**删除**（点一下变"确认删除？"，4 秒内再点才真删）、**完成 ✓**（点了弹二次确认 → 确认后写入一条 `log` 记录并弹庆祝弹窗+撒花动画，文案："你太棒了！完成了一次「XX」任务 🎉 已添加 X 积分！"）
-- **自定义板块**：底部「＋ 添加自定义板块」可以新建板块（存在 Firestore `sections` 集合，任务的 `category` 为 `'sec_'+文档id`，`allSections()` 把预设 `CATEGORIES` 和自定义板块合并，自定义的排在「其他」前面）。自定义板块没任务也会显示，标题右侧可「改名」「删除板块」（板块里还有任务时不让删；万一任务的板块找不到了会归到「其他」）。预设板块不能改名/删除。
+- **板块管理**：底部「＋ 添加自定义板块」新建板块；每个板块标题右侧有「改名」「删除板块」（删除同样要点两次；板块里还有任务时不让删）。空板块也会显示。万一有任务找不到所属板块，会显示在最后一个「未分类」组里（不可改名/删除）
 - 底部「＋ 添加自定义任务」可以新增任务，**积分允许填 0**（比如"心安理得摸鱼"类的 0 分任务，用户明确要求过）
-- 首次登录会自动把 `CATEGORIES` 里预设的 16 条里程碑写进 `tasks` 集合当默认任务（`ensureSeedTasks()`），之后改代码里的 `CATEGORIES` 不会覆盖用户已经建过的任务
+- 新用户首次登录：`ensureUserData()` → `seedNewUser()` 把 `SEED_SECTIONS` / `SEED_TASKS` / `SEED_REWARDS` 写进这个用户自己的数据库（3 个板块：精神食粮 / 身体 / 生活，每个 2 条任务；4 个通用奖励）。之后只读数据库，改代码里的模板不影响已有用户
 - 下面还有「最近记录」列表（`renderRecent()`）
 
-> 旧版本的「记录一次学习」表单弹窗（类别下拉+里程碑下拉+自定义标题+积分+备注+日期，`openLogModal`/`submitLogEntry`/`CATEGORIES.presets` 那套）**代码还留着但入口按钮已经删掉了**，属于死代码，不会被用户看到，以后如果要彻底清理或者要恢复"手动填表单记录"这种更灵活的记录方式，可以从这里改。
+> 旧版本的「记录一次学习」表单弹窗（`openLogModal` / `submitLogEntry` 那套）已经彻底删除。要恢复"手动填表单记录"得重新写。
 
 ### 3. 「奖励商店」Tab
-- 三档：小奖励 / 中奖励 / 大奖（`TIER_META`），默认种子奖励见 `DEFAULT_REWARDS`（奶茶、打游戏、摸鱼、买书、新加坡周边游、马来西亚租摩托、东南亚穷游、新加坡买摩托车）
+- 三档：小奖励 / 中奖励 / 大奖（`TIER_META`），新用户默认奖励见 `SEED_REWARDS`（奶茶/咖啡、看电影、买小东西、一次旅行）
 - 每张卡片：自动分配的小图标（`iconForReward()`，图标库 `REWARD_ICONS`，10 个通用魔法/奇幻主题图标——魔杖、药水瓶、咒语书等，**同样是为了避开哈利波特商标图案而设计的通用款**）+ 名称 + 所需积分 + 攒够进度条
 - 兑换：点"兑换"→ 二次确认弹窗 → 确认后从 `log` 里写一条 `spend` 记录 → 弹庆祝弹窗+撒花动画（"「XX」奖励已兑换 🎉 已扣除 X 积分。奖励商店欢迎下次光临！"）
-- 编辑/删除跟学习任务同一套交互
+- 编辑/删除跟任务同一套交互
 - 「＋ 添加自定义奖励」可以新增奖励，**积分同样允许填 0**
 
 ### 4. 「历史」Tab
@@ -53,11 +53,15 @@
 
 ## 数据结构（Firestore）
 
-所有数据都在 `users/{uid}/...` 下面，按 uid 隔离，安全规则只允许本人读写自己的数据（见文末规则原文）。三个子集合：
+所有数据都在 `users/{uid}/...` 下面，按 uid 隔离，安全规则只允许本人读写自己的数据（规则原文见 `firestore.rules`，2026-09-28 用规则测试平台验证过：别的账号读取被拒绝）。子集合：
 
 - `users/{uid}/log`：每条学习记录或兑换记录。字段：`kind`（'earn' 或 'spend'）、`category`、`label`、`amount`、`note`、`dateISO`、`ts`
 - `users/{uid}/rewards`：奖励定义。字段：`name`、`tier`（small/medium/big）、`cost`、`active`、`ts`
-- `users/{uid}/tasks`：学习任务定义。字段：`name`、`category`（对应 `CATEGORIES` 的 id）、`points`、`active`、`ts`
+- `users/{uid}/tasks`：任务定义。字段：`name`、`category`（= 所属板块在 `sections` 里的文档 ID）、`points`、`active`、`ts`
+- `users/{uid}/sections`：板块。文档 ID 就是板块 id。字段：`label`、`ts`（排序）、`short`（可选，历史记录小标签用的简称；老板块迁移时带上，改名后删除，之后标签显示全名）
+- `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
+
+**2026-09 数据迁移（schemaVersion 1 → 2）**：老版本板块写死在代码里。老账号登录时 `migrateLegacySections()` 会：① 把原来 7 个板块（arena/pl300/python/project/job/review/custom，见 `LEGACY_SECTIONS`）用**原 id 当文档 ID** 写进 `sections`（已存在的不覆盖），所以老任务/老记录的 `category` 不用改；②把上一版自定义板块留下的 `'sec_'+文档ID` 格式的 `category`（任务和 log 里都有）统一去掉前缀。每一步都可以重复执行，完成后写 `meta/app`。`log` 里的 `category` 还可能是 `'reward'`（兑换）或 `'daily'`（签到），小标签见 `CAT_SHORT`。
 
 积分/等级/连续打卡都是前端根据 `log` 集合实时算出来的（`computeStats()` / `levelInfo()` / `computeStreak()`），不是存好的字段。
 
@@ -65,8 +69,9 @@
 
 ## 代码里关键的东西在哪（方便以后改）
 
-- `CATEGORIES`（学习类别 + 预设里程碑，也是任务分组依据）
-- `DEFAULT_REWARDS`（首次登录写入的默认奖励）
+- `SEED_SECTIONS` / `SEED_TASKS` / `SEED_REWARDS`（新用户模板）、`LEGACY_SECTIONS`（只给老账号迁移用）、`SCHEMA_VERSION`
+- `ensureUserData()` / `seedNewUser()` / `migrateLegacySections()`（登录后先跑，完成后才开始订阅数据）
+- `openSectionModal()` / `submitSection()` / `onDeleteSectionClick()`（板块增/改名/删）
 - `TIER_META` / `TIER_ICON_COLORS`（奖励三档的标题/颜色）
 - `LEVELS`（等级门槛，改这里就能调整等级数量/名字/分数线）
 - `REWARD_ICONS` / `iconForReward()`（奖励图标库 + 按 doc id 哈希自动分配，同一个奖励永远同一个图标）

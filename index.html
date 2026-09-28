@@ -319,32 +319,6 @@ main{margin-top:16px;}
   <div class="db-error" id="dbError" hidden></div>
 </div>
 
-<div class="modal-backdrop" id="logModal" hidden>
-  <div class="modal">
-    <h3>记录一次学习</h3>
-    <label>类别</label>
-    <select id="categorySelect"></select>
-    <div id="presetWrap">
-      <label>具体里程碑</label>
-      <select id="presetSelect"></select>
-    </div>
-    <div id="customFields">
-      <label>标题</label>
-      <input id="customLabel" type="text" placeholder="比如：读完 3B1B 第 9 集，弄懂 duality">
-    </div>
-    <label>积分</label>
-    <input id="pointsInput" type="number" inputmode="numeric" min="1">
-    <label>备注（可选）</label>
-    <input id="noteInput" type="text" placeholder="写点细节，以后回顾会有意思">
-    <label>日期</label>
-    <input id="dateInput" type="date">
-    <div class="form-error" id="logFormError" hidden></div>
-    <div class="modal-actions">
-      <button class="btn-ghost" id="cancelLog">取消</button>
-      <button class="btn-primary" id="submitLog">保存</button>
-    </div>
-  </div>
-</div>
 
 <div class="modal-backdrop" id="rewardModal" hidden>
   <div class="modal">
@@ -438,61 +412,49 @@ main{margin-top:16px;}
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
 <script src="firebase-config.js"></script>
 <script>
-/* ============ 默认奖励（首次登录时自动写入） ============ */
-const DEFAULT_REWARDS = [
-  {name:'一杯喜欢的奶茶/咖啡', tier:'small', cost:80, active:true, ts:1},
-  {name:'痛快打游戏/追剧一晚', tier:'small', cost:120, active:true, ts:2},
-  {name:'心安理得摸鱼半天', tier:'small', cost:150, active:true, ts:3},
-  {name:'想要的书/工具/装备', tier:'medium', cost:350, active:true, ts:4},
-  {name:'新加坡周边一日出行(圣淘沙/离岛/spa)', tier:'medium', cost:400, active:true, ts:5},
-  {name:'马来西亚租摩托车玩几天', tier:'big', cost:1200, active:true, ts:6},
-  {name:'东南亚一次穷游(泰国/印尼等)', tier:'big', cost:2000, active:true, ts:7},
-  {name:'在新加坡买一辆摩托车', tier:'big', cost:5000, active:true, ts:8},
+/* ============ 新用户模板（首次登录时写进这个用户自己的数据库，之后只读数据库） ============
+   文档 ID 固定，这样即使手机和电脑同时首次登录，重复写入也只是覆盖成同样的内容。 */
+const SEED_SECTIONS = [
+  {id:'mind', label:'精神食粮', ts:1},
+  {id:'body', label:'身体', ts:2},
+  {id:'life', label:'生活', ts:3},
+];
+const SEED_TASKS = [
+  {id:'seed-t1', name:'读 10 页书', category:'mind', points:10, ts:1},
+  {id:'seed-t2', name:'学会一个新知识点', category:'mind', points:15, ts:2},
+  {id:'seed-t3', name:'运动 30 分钟', category:'body', points:15, ts:3},
+  {id:'seed-t4', name:'23:00 前睡觉', category:'body', points:10, ts:4},
+  {id:'seed-t5', name:'整理房间 15 分钟', category:'life', points:10, ts:5},
+  {id:'seed-t6', name:'自己做一顿饭', category:'life', points:10, ts:6},
+];
+const SEED_REWARDS = [
+  {id:'seed-r1', name:'一杯奶茶 / 咖啡', tier:'small', cost:50, ts:1},
+  {id:'seed-r2', name:'看一场电影', tier:'small', cost:100, ts:2},
+  {id:'seed-r3', name:'买一件想要的小东西', tier:'medium', cost:300, ts:3},
+  {id:'seed-r4', name:'一次旅行', tier:'big', cost:1000, ts:4},
 ];
 
-const CATEGORIES = [
-  {id:'arena', label:'ARENA / AI 研究学习', presets:[
-    {label:'完成 0.0 前置 notebook', pts:60},
-    {label:'完成一个 ARENA 章节', pts:100},
-    {label:'独立复现一个实验 / 论文结果', pts:200},
-  ]},
-  {id:'pl300', label:'PL-300 备考', presets:[
-    {label:'完成一个课程模块', pts:30},
-    {label:'通过一次模拟测试', pts:60},
-    {label:'通过 PL-300 正式认证', pts:400},
-  ]},
-  {id:'python', label:'Python 练习', presets:[
-    {label:'完成一个供应链场景练习', pts:20},
-    {label:'完成一个小工具 / 脚本', pts:100},
-  ]},
-  {id:'project', label:'自建项目', presets:[
-    {label:'上线一个新功能 / 模块', pts:80},
-    {label:'完整交付一个小项目', pts:200},
-  ]},
-  {id:'job', label:'求职 / 转型', presets:[
-    {label:'投递一份定制简历', pts:10},
-    {label:'完成一轮面试', pts:50},
-    {label:'拿到 offer', pts:500},
-  ]},
-  {id:'review', label:'规划 / 复盘', presets:[
-    {label:'整理 / 更新 AI 转型 vault', pts:15},
-    {label:'周复盘 / 月复盘', pts:20},
-  ]},
-  {id:'custom', label:'其他（自定义）', presets:[]},
+/* 老版本写死在代码里的 7 个板块。只在老账号迁移（schemaVersion < 2）时用一次：
+   用原来的 id 当文档 ID 写进 sections，所以老任务 / 老记录的 category 不用改。 */
+const LEGACY_SECTIONS = [
+  {id:'arena', label:'ARENA / AI 研究学习', short:'ARENA'},
+  {id:'pl300', label:'PL-300 备考', short:'PL-300'},
+  {id:'python', label:'Python 练习', short:'Python'},
+  {id:'project', label:'自建项目', short:'项目'},
+  {id:'job', label:'求职 / 转型', short:'求职'},
+  {id:'review', label:'规划 / 复盘', short:'复盘'},
+  {id:'custom', label:'其他（自定义）', short:'其他'},
 ];
-const CAT_SHORT = {arena:'ARENA', pl300:'PL-300', python:'Python', project:'项目', job:'求职', review:'复盘', custom:'其他', reward:'奖励', daily:'签到'};
+const SCHEMA_VERSION = 2;
+
+/* 不属于任何板块的记录类型的小标签 */
+const CAT_SHORT = {reward:'奖励', daily:'签到'};
 const DAILY_LOGIN_POINTS = 5;
-/* 任务板块 = 代码里预设的 CATEGORIES + 用户自己在 sections 集合里建的板块。
-   自定义板块的 id 是 'sec_' + Firestore 文档 id，排在「其他（自定义）」前面。 */
-function allSections(){
-  const builtIn = CATEGORIES.filter(c=>c.id!=='custom');
-  const other = CATEGORIES.filter(c=>c.id==='custom');
-  return [...builtIn, ...sections, ...other];
-}
+/* 板块全部来自数据库的 sections 集合（按 ts 排序），任务的 category = 板块文档 ID */
 function categoryShort(id){
   if(CAT_SHORT[id]) return CAT_SHORT[id];
   const sec = sections.find(x=>x.id===id);
-  return sec ? sec.label : '其他';
+  return sec ? (sec.short || sec.label) : '其他';
 }
 const TIER_META = {
   small:{title:'日常小奖励', cls:'small'},
@@ -613,10 +575,11 @@ auth.onAuthStateChanged(user=>{
     tasksCol = fs.collection('users').doc(uid).collection('tasks');
     sectionsCol = fs.collection('users').doc(uid).collection('sections');
     wireUI();
-    ensureSeedRewards();
-    ensureSeedTasks();
-    subscribeAll();
-    ensureDailyLoginBonus();
+    ensureUserData().finally(()=>{
+      if(uid !== user.uid) return;
+      subscribeAll();
+      ensureDailyLoginBonus();
+    });
   } else {
     uid = null;
     logCol = null;
@@ -630,35 +593,46 @@ auth.onAuthStateChanged(user=>{
   }
 });
 
-async function ensureSeedRewards(){
+/* 登录后先跑一次：新用户写入模板；老账号把代码里的板块迁移进数据库。
+   完成后在 meta/app 里记 schemaVersion，之后不再执行。每一步都可以安全地重复执行。 */
+async function ensureUserData(){
+  const metaRef = fs.collection('users').doc(uid).collection('meta').doc('app');
   try{
-    const snap = await rewardsCol.limit(1).get();
-    if(snap.empty){
-      const batch = fs.batch();
-      DEFAULT_REWARDS.forEach(r=>{
-        const ref = rewardsCol.doc();
-        batch.set(ref, r);
-      });
-      await batch.commit();
-    }
-  }catch(e){ console.error('seed rewards failed', e); }
+    const meta = await metaRef.get();
+    if(meta.exists && (meta.data().schemaVersion||0) >= SCHEMA_VERSION) return;
+    const [t, r, sec] = await Promise.all([tasksCol.limit(1).get(), rewardsCol.limit(1).get(), sectionsCol.get()]);
+    if(t.empty && r.empty && sec.empty) await seedNewUser();
+    else await migrateLegacySections(sec);
+    await metaRef.set({schemaVersion:SCHEMA_VERSION, migratedAt:Date.now()}, {merge:true});
+  }catch(e){ console.error('ensureUserData failed', e); }
 }
-
-async function ensureSeedTasks(){
-  try{
-    const snap = await tasksCol.limit(1).get();
-    if(snap.empty){
-      const batch = fs.batch();
-      let i = 0;
-      CATEGORIES.forEach(c=>{
-        c.presets.forEach(p=>{
-          const ref = tasksCol.doc();
-          batch.set(ref, {name:p.label, category:c.id, points:p.pts, active:true, ts:++i});
-        });
-      });
-      await batch.commit();
-    }
-  }catch(e){ console.error('seed tasks failed', e); }
+async function seedNewUser(){
+  const batch = fs.batch();
+  SEED_SECTIONS.forEach(({id, ...d})=> batch.set(sectionsCol.doc(id), d));
+  SEED_TASKS.forEach(({id, ...d})=> batch.set(tasksCol.doc(id), {...d, active:true}));
+  SEED_REWARDS.forEach(({id, ...d})=> batch.set(rewardsCol.doc(id), {...d, active:true}));
+  await batch.commit();
+}
+async function migrateLegacySections(existingSnap){
+  const existing = new Set(existingSnap.docs.map(d=>d.id));
+  const writes = [];
+  // 7 个老板块，已存在的（比如已经改过名）不覆盖。「其他」排在已有自定义板块后面
+  LEGACY_SECTIONS.forEach((c, i)=>{
+    if(existing.has(c.id)) return;
+    const ts = c.id==='custom' ? Date.now() : i+1;
+    writes.push(b=> b.set(sectionsCol.doc(c.id), {label:c.label, short:c.short, ts}));
+  });
+  // 上一版自定义板块在任务 / 记录里存成 'sec_' + 文档 ID，统一成直接用文档 ID
+  const prefixed = col => col.where('category','>=','sec_').where('category','<','sec_\uf8ff').get();
+  const [pt, pl] = await Promise.all([prefixed(tasksCol), prefixed(logCol)]);
+  [...pt.docs, ...pl.docs].forEach(d=>{
+    writes.push(b=> b.update(d.ref, {category: d.data().category.slice(4)}));
+  });
+  for(let i=0; i<writes.length; i+=400){
+    const batch = fs.batch();
+    writes.slice(i, i+400).forEach(w=> w(batch));
+    await batch.commit();
+  }
 }
 
 /* 每日上线奖励：每天第一次打开就加 DAILY_LOGIN_POINTS 分，每天最多一次。
@@ -697,7 +671,7 @@ function subscribeAll(){
     render();
   }, err=>{ console.error('tasks snapshot error', err); });
   unsubSections = sectionsCol.orderBy('ts','asc').limit(100).onSnapshot(snap=>{
-    sections = snap.docs.map(d=>({id:'sec_'+d.id, docId:d.id, label:d.data().label||'未命名板块', userDefined:true, ts:d.data().ts}));
+    sections = snap.docs.map(d=>({id:d.id, label:d.data().label||'未命名板块', short:d.data().short||'', ts:d.data().ts}));
     render();
   }, err=>{ console.error('sections snapshot error', err); });
   unsubRewards = rewardsCol.orderBy('cost','asc').limit(100).onSnapshot(snap=>{
@@ -887,21 +861,20 @@ function clearPendingDelete(){ pendingDeleteId=null; clearTimeout(pendingDeleteT
 function renderTasks(){
   const wrap = document.getElementById('tasksWrap');
   if(!tasks.length && !sections.length){
-    wrap.innerHTML = '<div class="entry-empty">还没有任务，点下面添加第一个吧</div>';
+    wrap.innerHTML = '<div class="entry-empty">还没有板块，点下面「添加自定义板块」开始吧</div>';
     return;
   }
-  const list = allSections();
-  const known = new Set(list.map(c=>c.id));
-  const groups = {};
-  list.forEach(c=>{ groups[c.id] = []; });
-  // 板块被删掉或找不到的任务，归到「其他」里，不会丢
-  tasks.forEach(t=>{ groups[known.has(t.category) ? t.category : 'custom'].push(t); });
+  const ORPHAN = '__orphan__';
+  const known = new Set(sections.map(c=>c.id));
+  const groups = {[ORPHAN]:[]};
+  sections.forEach(c=>{ groups[c.id] = []; });
+  // 找不到板块的任务（理论上不该出现）放进「未分类」，不会丢
+  tasks.forEach(t=>{ groups[known.has(t.category) ? t.category : ORPHAN].push(t); });
+  const list = groups[ORPHAN].length ? [...sections, {id:ORPHAN, label:'未分类', fixed:true}] : sections;
   wrap.innerHTML = list.map(c=>{
     const items = groups[c.id] || [];
-    // 自定义板块即使还没有任务也显示出来，方便往里加
-    if(!items.length && !c.userDefined) return '';
     const delConfirming = pendingDeleteSectionId === c.id;
-    const actions = c.userDefined ? `<span class="sec-actions">
+    const actions = !c.fixed ? `<span class="sec-actions">
         <button class="btn-del" data-rename-sec="${c.id}">改名</button>
         <button class="btn-del ${delConfirming?'confirming':''}" data-del-sec="${c.id}">${delConfirming?'确认删除？':'删除板块'}</button>
       </span>` : '';
@@ -996,14 +969,14 @@ function onDeleteTaskClick(id){
   }
 }
 function openTaskModal(t){
+  if(!sections.length){ showToast('请先添加一个板块'); return; }
   editingTaskId = t ? t.id : null;
   document.getElementById('taskModalTitle').textContent = t ? '编辑任务' : '添加自定义任务';
   document.getElementById('submitTask').textContent = t ? '保存修改' : '添加';
-  const list = allSections();
-  document.getElementById('taskCategory').innerHTML = list.map(c=>`<option value="${c.id}">${escapeHTML(c.label)}</option>`).join('');
+  document.getElementById('taskCategory').innerHTML = sections.map(c=>`<option value="${c.id}">${escapeHTML(c.label)}</option>`).join('');
   document.getElementById('taskName').value = t ? t.name : '';
-  const cur = t ? (t.category||'custom') : 'custom';
-  document.getElementById('taskCategory').value = list.some(c=>c.id===cur) ? cur : 'custom';
+  const cur = t && t.category;
+  document.getElementById('taskCategory').value = sections.some(c=>c.id===cur) ? cur : sections[0].id;
   document.getElementById('taskPoints').value = t ? t.points : '';
   document.getElementById('taskFormError').hidden = true;
   document.getElementById('taskModal').hidden = false;
@@ -1029,7 +1002,7 @@ function submitTask(){
 }
 
 function openSectionModal(sec){
-  editingSectionId = sec ? sec.docId : null;
+  editingSectionId = sec ? sec.id : null;
   document.getElementById('sectionModalTitle').textContent = sec ? '板块改名' : '添加自定义板块';
   document.getElementById('submitSection').textContent = sec ? '保存修改' : '添加';
   document.getElementById('sectionName').value = sec ? sec.label : '';
@@ -1042,13 +1015,13 @@ function submitSection(){
   const errEl = document.getElementById('sectionFormError');
   const label = document.getElementById('sectionName').value.trim();
   if(!label){ errEl.textContent='请填写板块名称'; errEl.hidden=false; return; }
-  const dup = allSections().some(c=> c.label===label && c.docId!==editingSectionId);
+  const dup = sections.some(c=> c.label===label && c.id!==editingSectionId);
   if(dup){ errEl.textContent='已经有同名板块了'; errEl.hidden=false; return; }
   const btn = document.getElementById('submitSection');
   btn.disabled = true;
   const wasEditing = !!editingSectionId;
   const op = wasEditing
-    ? sectionsCol.doc(editingSectionId).update({label})
+    ? sectionsCol.doc(editingSectionId).update({label, short:firebase.firestore.FieldValue.delete()})
     : sectionsCol.add({label, ts:Date.now()});
   op.then(()=>{ closeSectionModal(); showToast(wasEditing ? '已保存修改' : '已添加板块'); })
     .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
@@ -1064,7 +1037,7 @@ function onDeleteSectionClick(id){
   }
   if(pendingDeleteSectionId === id){
     clearPendingDeleteSection();
-    sectionsCol.doc(sec.docId).delete().catch(()=>{ showToast('删除失败，请重试'); });
+    sectionsCol.doc(sec.id).delete().catch(()=>{ showToast('删除失败，请重试'); });
   } else {
     clearPendingDeleteSection();
     pendingDeleteSectionId = id;
@@ -1158,78 +1131,6 @@ function switchTab(name){
   document.getElementById('panel-history').hidden = name!=='history';
 }
 
-function populateCategorySelect(){
-  const sel = document.getElementById('categorySelect');
-  sel.innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
-  onCategoryChange();
-}
-function onCategoryChange(){
-  const catId = document.getElementById('categorySelect').value;
-  const cat = CATEGORIES.find(c=>c.id===catId);
-  const presetWrap = document.getElementById('presetWrap');
-  const presetSel = document.getElementById('presetSelect');
-  if(catId==='custom' || !cat.presets.length){
-    presetWrap.hidden = true;
-    showCustomFields(true);
-    document.getElementById('pointsInput').value = '';
-  } else {
-    presetWrap.hidden = false;
-    presetSel.innerHTML = cat.presets.map((p,i)=>`<option value="${i}">${escapeHTML(p.label)}（+${p.pts}）</option>`).join('')
-      + `<option value="__custom__">其他（自定义）</option>`;
-    onPresetChange();
-  }
-}
-function onPresetChange(){
-  const catId = document.getElementById('categorySelect').value;
-  const cat = CATEGORIES.find(c=>c.id===catId);
-  const presetSel = document.getElementById('presetSelect');
-  if(presetSel.value==='__custom__'){
-    showCustomFields(true);
-    document.getElementById('pointsInput').value = '';
-  } else {
-    showCustomFields(false);
-    const preset = cat.presets[Number(presetSel.value)];
-    document.getElementById('pointsInput').value = preset.pts;
-  }
-}
-function showCustomFields(show){ document.getElementById('customFields').hidden = !show; }
-
-function openLogModal(){
-  populateCategorySelect();
-  document.getElementById('customLabel').value = '';
-  document.getElementById('noteInput').value = '';
-  document.getElementById('dateInput').value = localISO(new Date());
-  document.getElementById('logFormError').hidden = true;
-  document.getElementById('logModal').hidden = false;
-}
-function closeLogModal(){ document.getElementById('logModal').hidden = true; }
-
-function submitLogEntry(){
-  const errEl = document.getElementById('logFormError');
-  const catId = document.getElementById('categorySelect').value;
-  const cat = CATEGORIES.find(c=>c.id===catId);
-  const presetWrap = document.getElementById('presetWrap');
-  const presetSel = document.getElementById('presetSelect');
-  let label;
-  const usingCustom = presetWrap.hidden || presetSel.value==='__custom__';
-  if(usingCustom){
-    label = document.getElementById('customLabel').value.trim();
-    if(!label){ errEl.textContent='请填写一个标题'; errEl.hidden=false; return; }
-  } else {
-    label = cat.presets[Number(presetSel.value)].label;
-  }
-  const pts = Number(document.getElementById('pointsInput').value);
-  if(!pts || pts<=0){ errEl.textContent='请填写一个大于 0 的积分数'; errEl.hidden=false; return; }
-  const note = document.getElementById('noteInput').value.trim();
-  const dateISO = document.getElementById('dateInput').value || localISO(new Date());
-  const btn = document.getElementById('submitLog');
-  btn.disabled = true;
-  logCol.add({kind:'earn', category:catId, label, amount:pts, note, dateISO, ts:Date.now()})
-    .then(()=>{ closeLogModal(); showToast(`+${pts} 分 · ${label}`); })
-    .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
-    .finally(()=>{ btn.disabled = false; });
-}
-
 function openRewardModal(reward){
   editingRewardId = reward ? reward.id : null;
   document.getElementById('rewardModalTitle').textContent = reward ? '编辑奖励' : '添加自定义奖励';
@@ -1268,14 +1169,9 @@ function wireUI(){
     const btn = e.target.closest('.tab');
     if(btn) switchTab(btn.getAttribute('data-tab'));
   });
-  document.getElementById('cancelLog').addEventListener('click', closeLogModal);
-  document.getElementById('submitLog').addEventListener('click', submitLogEntry);
-  document.getElementById('categorySelect').addEventListener('change', onCategoryChange);
-  document.getElementById('presetSelect').addEventListener('change', onPresetChange);
   document.getElementById('openAddReward').addEventListener('click', openRewardModal);
   document.getElementById('cancelReward').addEventListener('click', closeRewardModal);
   document.getElementById('submitReward').addEventListener('click', submitReward);
-  document.getElementById('logModal').addEventListener('click', e=>{ if(e.target.id==='logModal') closeLogModal(); });
   document.getElementById('rewardModal').addEventListener('click', e=>{ if(e.target.id==='rewardModal') closeRewardModal(); });
   document.getElementById('cancelRedeemConfirm').addEventListener('click', closeRedeemConfirm);
   document.getElementById('confirmRedeemBtn').addEventListener('click', confirmRedeem);
