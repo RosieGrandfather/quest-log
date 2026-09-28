@@ -684,8 +684,9 @@ function computeStats(){
   logEntries.forEach(e=>{
     if(e.kind==='earn'){
       totalEarned += Number(e.amount)||0;
-      // 每日上线奖励只算积分，不算"记录次数"，也不算学习连续打卡
-      if(e.category!=='daily'){ entriesCount++; if(e.dateISO) earnDates.add(e.dateISO); }
+      if(e.dateISO) earnDates.add(e.dateISO);
+      // 每日上线奖励算积分和连续打卡，但不算"记录次数"
+      if(e.category!=='daily') entriesCount++;
     }
     else if(e.kind==='spend'){ totalSpent += Number(e.amount)||0; }
   });
