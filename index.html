@@ -171,6 +171,9 @@ main{margin-top:16px;}
   display:flex;align-items:center;gap:8px;
   font-family:'Barlow Condensed';font-weight:700;font-size:18px;margin:2px 0 10px;
 }
+.tier-title .sec-actions{margin-left:auto;display:flex;gap:2px;font-family:inherit;}
+.add-btn-row{display:flex;gap:8px;flex-wrap:wrap;}
+.add-btn-row .btn-ghost{flex:1;min-width:140px;}
 .tier-dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
 .tier-dot.small{background:var(--teal);}
 .tier-dot.medium{background:var(--accent);}
@@ -291,7 +294,10 @@ main{margin-top:16px;}
     <main id="main">
       <section class="panel" id="panel-log">
         <div id="tasksWrap"></div>
-        <button class="btn-ghost" id="openAddTask">＋ 添加自定义学习任务</button>
+        <div class="add-btn-row">
+          <button class="btn-ghost" id="openAddTask">＋ 添加自定义任务</button>
+          <button class="btn-ghost" id="openAddSection">＋ 添加自定义板块</button>
+        </div>
         <div class="recent">
           <h3>最近记录</h3>
           <div id="recentList" class="entry-list"></div>
@@ -375,7 +381,7 @@ main{margin-top:16px;}
 
 <div class="modal-backdrop" id="taskModal" hidden>
   <div class="modal">
-    <h3 id="taskModalTitle">添加自定义学习任务</h3>
+    <h3 id="taskModalTitle">添加自定义任务</h3>
     <label>任务名称</label>
     <input id="taskName" type="text" placeholder="比如：读完一篇论文精读笔记">
     <label>类别</label>
@@ -386,6 +392,19 @@ main{margin-top:16px;}
     <div class="modal-actions">
       <button class="btn-ghost" id="cancelTask">取消</button>
       <button class="btn-primary" id="submitTask">添加</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="sectionModal" hidden>
+  <div class="modal">
+    <h3 id="sectionModalTitle">添加自定义板块</h3>
+    <label>板块名称</label>
+    <input id="sectionName" type="text" maxlength="30" placeholder="比如：英语学习 / 健身 / 读书">
+    <div class="form-error" id="sectionFormError" hidden></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelSection">取消</button>
+      <button class="btn-primary" id="submitSection">添加</button>
     </div>
   </div>
 </div>
@@ -463,6 +482,18 @@ const CATEGORIES = [
 ];
 const CAT_SHORT = {arena:'ARENA', pl300:'PL-300', python:'Python', project:'项目', job:'求职', review:'复盘', custom:'其他', reward:'奖励', daily:'签到'};
 const DAILY_LOGIN_POINTS = 5;
+/* 任务板块 = 代码里预设的 CATEGORIES + 用户自己在 sections 集合里建的板块。
+   自定义板块的 id 是 'sec_' + Firestore 文档 id，排在「其他（自定义）」前面。 */
+function allSections(){
+  const builtIn = CATEGORIES.filter(c=>c.id!=='custom');
+  const other = CATEGORIES.filter(c=>c.id==='custom');
+  return [...builtIn, ...sections, ...other];
+}
+function categoryShort(id){
+  if(CAT_SHORT[id]) return CAT_SHORT[id];
+  const sec = sections.find(x=>x.id===id);
+  return sec ? sec.label : '其他';
+}
 const TIER_META = {
   small:{title:'日常小奖励', cls:'small'},
   medium:{title:'中型奖励', cls:'medium'},
@@ -542,8 +573,11 @@ const auth = firebase.auth();
 const fs = firebase.firestore();
 
 let uid = null;
-let logCol = null, rewardsCol = null, tasksCol = null;
-let unsubLog = null, unsubRewards = null, unsubTasks = null;
+let logCol = null, rewardsCol = null, tasksCol = null, sectionsCol = null;
+let unsubLog = null, unsubRewards = null, unsubTasks = null, unsubSections = null;
+let sections = [];
+let editingSectionId = null;
+let pendingDeleteSectionId = null, pendingDeleteSectionTimer = null;
 let logEntries = [];
 let rewards = [];
 let tasks = [];
@@ -564,6 +598,7 @@ document.getElementById('signOutBtn').addEventListener('click', ()=>{
   if(unsubLog) unsubLog();
   if(unsubRewards) unsubRewards();
   if(unsubTasks) unsubTasks();
+  if(unsubSections) unsubSections();
   dailyCheckedISO = null;
   auth.signOut();
 });
@@ -576,6 +611,7 @@ auth.onAuthStateChanged(user=>{
     logCol = fs.collection('users').doc(uid).collection('log');
     rewardsCol = fs.collection('users').doc(uid).collection('rewards');
     tasksCol = fs.collection('users').doc(uid).collection('tasks');
+    sectionsCol = fs.collection('users').doc(uid).collection('sections');
     wireUI();
     ensureSeedRewards();
     ensureSeedTasks();
@@ -588,6 +624,7 @@ auth.onAuthStateChanged(user=>{
     if(unsubLog) unsubLog();
     if(unsubRewards) unsubRewards();
     if(unsubTasks) unsubTasks();
+    if(unsubSections) unsubSections();
     document.getElementById('gate').hidden = false;
     document.getElementById('appRoot').hidden = true;
   }
@@ -659,6 +696,10 @@ function subscribeAll(){
     tasks = snap.docs.map(d=>({id:d.id, ...d.data()})).filter(t=> t.active!==false);
     render();
   }, err=>{ console.error('tasks snapshot error', err); });
+  unsubSections = sectionsCol.orderBy('ts','asc').limit(100).onSnapshot(snap=>{
+    sections = snap.docs.map(d=>({id:'sec_'+d.id, docId:d.id, label:d.data().label||'未命名板块', userDefined:true, ts:d.data().ts}));
+    render();
+  }, err=>{ console.error('sections snapshot error', err); });
   unsubRewards = rewardsCol.orderBy('cost','asc').limit(100).onSnapshot(snap=>{
     rewards = snap.docs.map(d=>({id:d.id, ...d.data()})).filter(r=> r.active!==false);
     render();
@@ -749,7 +790,7 @@ function render(){
 
 function entryCardHTML(e){
   const chipCls = e.kind==='spend' ? 'entry-chip spend' : 'entry-chip';
-  const chipText = e.kind==='spend' ? '兑换' : (CAT_SHORT[e.category]||'其他');
+  const chipText = e.kind==='spend' ? '兑换' : categoryShort(e.category);
   const sign = e.kind==='spend' ? '-' : '+';
   const amtCls = e.kind==='spend' ? 'spend' : 'earn';
   const meta = [fmtDateLabel(e.dateISO)];
@@ -845,21 +886,39 @@ function clearPendingDelete(){ pendingDeleteId=null; clearTimeout(pendingDeleteT
 
 function renderTasks(){
   const wrap = document.getElementById('tasksWrap');
-  if(!tasks.length){
-    wrap.innerHTML = '<div class="entry-empty">还没有学习任务，点下面添加第一个吧</div>';
+  if(!tasks.length && !sections.length){
+    wrap.innerHTML = '<div class="entry-empty">还没有任务，点下面添加第一个吧</div>';
     return;
   }
+  const list = allSections();
+  const known = new Set(list.map(c=>c.id));
   const groups = {};
-  CATEGORIES.forEach(c=>{ groups[c.id] = []; });
-  tasks.forEach(t=>{ (groups[t.category] || (groups[t.category]=[])).push(t); });
-  wrap.innerHTML = CATEGORIES.map(c=>{
+  list.forEach(c=>{ groups[c.id] = []; });
+  // 板块被删掉或找不到的任务，归到「其他」里，不会丢
+  tasks.forEach(t=>{ groups[known.has(t.category) ? t.category : 'custom'].push(t); });
+  wrap.innerHTML = list.map(c=>{
     const items = groups[c.id] || [];
-    if(!items.length) return '';
+    // 自定义板块即使还没有任务也显示出来，方便往里加
+    if(!items.length && !c.userDefined) return '';
+    const delConfirming = pendingDeleteSectionId === c.id;
+    const actions = c.userDefined ? `<span class="sec-actions">
+        <button class="btn-del" data-rename-sec="${c.id}">改名</button>
+        <button class="btn-del ${delConfirming?'confirming':''}" data-del-sec="${c.id}">${delConfirming?'确认删除？':'删除板块'}</button>
+      </span>` : '';
+    const body = items.length
+      ? `<div class="reward-grid">${items.map(taskCardHTML).join('')}</div>`
+      : `<div class="entry-empty">这个板块还没有任务，点下面「添加自定义任务」选它就行</div>`;
     return `<div class="tier-block">
-      <div class="tier-title">${escapeHTML(c.label)}</div>
-      <div class="reward-grid">${items.map(taskCardHTML).join('')}</div>
+      <div class="tier-title">${escapeHTML(c.label)}${actions}</div>
+      ${body}
     </div>`;
   }).join('');
+  wrap.querySelectorAll('[data-rename-sec]').forEach(btn=>{
+    btn.addEventListener('click', ()=> openSectionModal(sections.find(x=>x.id===btn.getAttribute('data-rename-sec'))));
+  });
+  wrap.querySelectorAll('[data-del-sec]').forEach(btn=>{
+    btn.addEventListener('click', ()=> onDeleteSectionClick(btn.getAttribute('data-del-sec')));
+  });
   wrap.querySelectorAll('[data-log-task]').forEach(btn=>{
     btn.addEventListener('click', ()=> onLogTaskClick(btn.getAttribute('data-log-task')));
   });
@@ -896,7 +955,7 @@ function onLogTaskClick(id){
 function openTaskConfirm(t){
   taskTarget = t;
   document.getElementById('taskConfirmText').textContent =
-    `确定要记录一次「${t.name}」学习任务吗？将获得 ${t.points} 积分。`;
+    `确定要记录一次「${t.name}」任务吗？将获得 ${t.points} 积分。`;
   document.getElementById('taskConfirmError').hidden = true;
   document.getElementById('taskConfirmModal').hidden = false;
 }
@@ -938,11 +997,13 @@ function onDeleteTaskClick(id){
 }
 function openTaskModal(t){
   editingTaskId = t ? t.id : null;
-  document.getElementById('taskModalTitle').textContent = t ? '编辑学习任务' : '添加自定义学习任务';
+  document.getElementById('taskModalTitle').textContent = t ? '编辑任务' : '添加自定义任务';
   document.getElementById('submitTask').textContent = t ? '保存修改' : '添加';
-  document.getElementById('taskCategory').innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${escapeHTML(c.label)}</option>`).join('');
+  const list = allSections();
+  document.getElementById('taskCategory').innerHTML = list.map(c=>`<option value="${c.id}">${escapeHTML(c.label)}</option>`).join('');
   document.getElementById('taskName').value = t ? t.name : '';
-  document.getElementById('taskCategory').value = t ? (t.category||'custom') : 'custom';
+  const cur = t ? (t.category||'custom') : 'custom';
+  document.getElementById('taskCategory').value = list.some(c=>c.id===cur) ? cur : 'custom';
   document.getElementById('taskPoints').value = t ? t.points : '';
   document.getElementById('taskFormError').hidden = true;
   document.getElementById('taskModal').hidden = false;
@@ -962,9 +1023,54 @@ function submitTask(){
   const op = editingTaskId
     ? tasksCol.doc(editingTaskId).update(payload)
     : tasksCol.add({...payload, active:true, ts:Date.now()});
-  op.then(()=>{ closeTaskModal(); showToast(editingTaskId ? '已保存修改' : '已添加学习任务'); })
+  op.then(()=>{ closeTaskModal(); showToast(editingTaskId ? '已保存修改' : '已添加任务'); })
     .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
     .finally(()=>{ btn.disabled = false; });
+}
+
+function openSectionModal(sec){
+  editingSectionId = sec ? sec.docId : null;
+  document.getElementById('sectionModalTitle').textContent = sec ? '板块改名' : '添加自定义板块';
+  document.getElementById('submitSection').textContent = sec ? '保存修改' : '添加';
+  document.getElementById('sectionName').value = sec ? sec.label : '';
+  document.getElementById('sectionFormError').hidden = true;
+  document.getElementById('sectionModal').hidden = false;
+  document.getElementById('sectionName').focus();
+}
+function closeSectionModal(){ document.getElementById('sectionModal').hidden = true; editingSectionId = null; }
+function submitSection(){
+  const errEl = document.getElementById('sectionFormError');
+  const label = document.getElementById('sectionName').value.trim();
+  if(!label){ errEl.textContent='请填写板块名称'; errEl.hidden=false; return; }
+  const dup = allSections().some(c=> c.label===label && c.docId!==editingSectionId);
+  if(dup){ errEl.textContent='已经有同名板块了'; errEl.hidden=false; return; }
+  const btn = document.getElementById('submitSection');
+  btn.disabled = true;
+  const wasEditing = !!editingSectionId;
+  const op = wasEditing
+    ? sectionsCol.doc(editingSectionId).update({label})
+    : sectionsCol.add({label, ts:Date.now()});
+  op.then(()=>{ closeSectionModal(); showToast(wasEditing ? '已保存修改' : '已添加板块'); })
+    .catch((err)=>{ errEl.textContent='保存失败：'+(err&&err.message?err.message:'请重试'); errEl.hidden=false; })
+    .finally(()=>{ btn.disabled = false; });
+}
+function clearPendingDeleteSection(){ pendingDeleteSectionId=null; clearTimeout(pendingDeleteSectionTimer); pendingDeleteSectionTimer=null; }
+function onDeleteSectionClick(id){
+  const sec = sections.find(x=>x.id===id);
+  if(!sec) return;
+  if(tasks.some(t=>t.category===id)){
+    showToast('板块里还有任务，先把任务删掉或移到别的板块');
+    return;
+  }
+  if(pendingDeleteSectionId === id){
+    clearPendingDeleteSection();
+    sectionsCol.doc(sec.docId).delete().catch(()=>{ showToast('删除失败，请重试'); });
+  } else {
+    clearPendingDeleteSection();
+    pendingDeleteSectionId = id;
+    render();
+    pendingDeleteSectionTimer = setTimeout(()=>{ clearPendingDeleteSection(); render(); }, 4000);
+  }
 }
 
 function onRedeemClick(id){
@@ -1005,7 +1111,7 @@ async function confirmRedeem(){
 function openCelebrate(kind, name, amount){
   const html = kind === 'reward'
     ? `「${escapeHTML(name)}」奖励已兑换 🎉<br>已扣除 <span class="mono">${amount}</span> 积分。<br>奖励商店欢迎下次光临！`
-    : `你太棒了！完成了一次「${escapeHTML(name)}」学习任务 🎉<br>已添加 <span class="mono">${amount}</span> 积分！`;
+    : `你太棒了！完成了一次「${escapeHTML(name)}」任务 🎉<br>已添加 <span class="mono">${amount}</span> 积分！`;
   document.getElementById('celebrateText').innerHTML = html;
   spawnConfetti();
   document.getElementById('celebrateModal').hidden = false;
@@ -1179,6 +1285,11 @@ function wireUI(){
   document.getElementById('cancelTask').addEventListener('click', closeTaskModal);
   document.getElementById('submitTask').addEventListener('click', submitTask);
   document.getElementById('taskModal').addEventListener('click', e=>{ if(e.target.id==='taskModal') closeTaskModal(); });
+  document.getElementById('openAddSection').addEventListener('click', ()=> openSectionModal());
+  document.getElementById('cancelSection').addEventListener('click', closeSectionModal);
+  document.getElementById('submitSection').addEventListener('click', submitSection);
+  document.getElementById('sectionName').addEventListener('keydown', e=>{ if(e.key==='Enter') submitSection(); });
+  document.getElementById('sectionModal').addEventListener('click', e=>{ if(e.target.id==='sectionModal') closeSectionModal(); });
   document.getElementById('cancelTaskConfirm').addEventListener('click', closeTaskConfirm);
   document.getElementById('confirmTaskBtn').addEventListener('click', confirmTaskLog);
   document.getElementById('taskConfirmModal').addEventListener('click', e=>{ if(e.target.id==='taskConfirmModal') closeTaskConfirm(); });
