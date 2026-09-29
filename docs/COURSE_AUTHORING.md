@@ -1,0 +1,115 @@
+# 出课流程（给之后继续出课的 Claude 看）
+
+这份文档记录 2026-09-28 出 **ARENA 0.0 前置知识**（15 节）时的做法。之后出新课、补章节，照这个流程和格式来。课程 JSON 的字段说明见 README「学习区 → 课程内容怎么加 / 改」。
+
+---
+
+## 一、Yijia 定下的规则（不要改，除非她说要改）
+
+**内容**
+- 讲解用**中文**，关键词标英文，写成 `**中文 (English)**`，比如 **梯度下降 (gradient descent)**
+- **不转载原文**。ARENA 的仓库没有开源授权，只能按它的大纲和知识点、参考链接**自己写讲解**；ARENA 原文里的思考题可以换成自己的话讲，并注明「ARENA 的思考题」。每节第一条参考资料放 ARENA 原文的对应部分
+- 练习题要**自己出**，不照搬原课程的练习。可以附上原课程的练习 Notebook 链接，让她自己去做
+- 每节约 **45 分钟**（在公交上学完一节）：视频 + 阅读加起来算
+- 视频可以用 YouTube 或 B站，中英文都行。**嵌入播放 + 「在 XX 打开」备用按钮**（页面已经自动带了按钮）。视频不是必须的，没有合适的就只用文字 / 图片
+
+**积分（代码里已经实现，出课不用管）**：学完一节 +100；测验 10 分钟左右，可跳过、可无限重做，第一次达到 80 分 +50；做完能看每题的答案和讲解。
+
+---
+
+## 二、流程
+
+### 1. 读原始材料，定大纲
+- 把原课程材料完整读一遍（ARENA 的在 GitHub：`ARENA-education/ARENA_materials`，页面源文件在 `chapter*/instructions/pages/*.md`，用 `raw.githubusercontent.com` 下载）
+- 按知识点切成若干节，每节约 45 分钟；**顺序按学习依赖排**（ARENA 0.0 是：神经网络 → 反向传播 → 线性代数 4 节 → 概率 → 微积分 → 信息论 → Python/NumPy → PyTorch → 工具 → einops → 广播 → einsum）
+- 先把整门课的大纲写进 `course.json`，还没写好的节 `file` 为 `null`（页面显示「即将上线」），让 Yijia 先看大纲
+- **先做一节样板课**，让她在手机上走一遍完整流程确认格式，再批量出
+
+### 2. 找视频并核实
+```bash
+python tools/course/yt.py search "3blue1brown eigenvectors" "statquest entropy"
+python tools/course/yt.py verify PFDu9oVAE-g YtebGVx-Fxw
+```
+- **优先原课程推荐的视频**（ARENA 推荐 3Blue1Brown），其次口碑好的频道：3Blue1Brown、StatQuest、Khan Academy、官方频道（PyTorch、VS Code）
+- 每节 1–3 个视频，合计 **13–37 分钟**，留出阅读时间
+- **每个视频都必须用 `yt.py verify` 核实**：能返回标题才说明存在且允许嵌入。**不要凭记忆写视频 id**。`minutes` 写真实时长四舍五入
+- 除了 3B1B，其他视频只根据标题和频道挑选，没逐个看完——交付时要告诉她，看了觉得不好就换
+- **B站**：公司网络（Zscaler）会拦截 B站，在她的工作电脑上核实不了。要加 B站 视频，请她在手机上确认 BV 号
+
+### 3. 写内容（每节固定结构）
+复制 `tools/course/unit_template.py` 成 `tools/course/uXX.py` 再写。每节依次包含：
+
+1. **学习目标** `objectives`：3–4 条「学完这节你能……」
+2. **导读**：为什么学（ARENA 原文怎么说、后面哪里会用到）+ **本节时间安排**
+3. **视频 → 要点** 交替：要点对照视频，用自己的话、分点、带公式；不要只是复述视频标题
+4. **补充讲解**：视频没覆盖、但原文要求的知识点（比如转置 / 迹没有好视频，就用文字写）
+5. **3 个「想一想」**：最好是一道计算题、一道概念辨析、一道和深度学习 / ARENA 后续内容的联系
+6. **关键词表**：8–12 个，中文 / English / 一句话说明
+7. **参考资料**：第一条是 ARENA 原文对应部分，其余是原文推荐的读物、官方文档
+
+**写法细节**
+- 公式：`$...$` 行内、`$$...$$` 单独一行（KaTeX 渲染）。在 Python 脚本里用 `r"""..."""` 原始字符串写，JSON 里反斜杠会自动变成两个
+- 表格、代码块用标准 Markdown
+- **代码块里注释写的输出，必须是真的跑出来的**（见第 4 步）
+- 和后续内容建立联系：比如「这就是 ARENA 第 1 章实现多头注意力时要写的代码」
+
+### 4. 跑代码、算数字
+- 所有代码示例、测验里的数字（形状、计算结果）都要**实际运行**确认。2026-09-28 用的环境：Python 3.12 + numpy 2.5 + torch 2.14 (CPU) + einops 0.8，装在一个短路径的虚拟环境里（Windows 路径太长 torch 会装失败）：
+```bash
+python -m venv %TEMP%\qlv
+%TEMP%\qlv\Scripts\python -m pip install numpy einops
+%TEMP%\qlv\Scripts\python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+- 做法：每节写一个 `uXX_check.py`，把本节所有代码段依次跑一遍，把输出抄进代码块注释
+
+### 5. 出测验（10 题）
+- 正好 **10 题**，每题 **4 个选项**，考本节的**基础概念**（不考偏题、不考视频里的细枝末节）
+- 题型搭配：概念理解、小计算（形状 / 数值）、辨析常见误区、「下面哪个说法**错误**」
+- **正确答案分散在 A–D**，每个位置最多 4 次（`validate` 会检查）。写完看一眼答案序列，别有规律
+- **讲解**：说明为什么对，并点出最有迷惑性的错误选项错在哪
+- 涉及计算的答案都用代码验证
+
+### 6. 检查
+```bash
+python tools/course/uXX.py              # 写出 JSON，写之前自动检查
+python tools/course/validate.py          # 检查所有课程
+python tools/course/validate.py --online # 另外核实所有视频和参考链接（联网）
+npm test                                 # 页面逻辑的单元测试
+```
+然后把 `course.json` 里这一节的 `file` 填上（标题、`en`、`minutes` 要和章节文件一致）。
+
+### 7. 在浏览器里验收
+- 真实的 Firebase 连不上，用**假的 Firebase**（内存实现 compat SDK 用到的接口）搭一个测试页，`python -m http.server` 起本地服务，用浏览器面板打开 `study.html`
+- 逐节检查：KaTeX 错误数为 0（`.katex-error`）、正文里没有残留的 `$` 或 `\frac` 之类的源码、表格 / 代码块 / 视频 / 「想一想」都在
+- 每节用正确答案提交一次测验，应该 100 分，回顾页正常
+- 用手机尺寸（375 宽）看一下，页面不能横向溢出
+- 公司网络会拦 YouTube 播放器，视频在这里是黑的，能不能播放要她在手机上确认
+
+### 8. 交付
+- 在 `CHANGELOG.md` 最上面记一笔（改了什么、文件、注意事项）
+- 告诉 Yijia：要推送哪些文件；哪些核实过、哪些没核实（比如视频是否真能播放、非 3B1B 视频没逐个看）
+- **不要替她 commit / push**，她自己用 GitHub 推
+
+---
+
+## 三、参考：ARENA 0.0 的实际数据
+
+| 节 | 视频 | 视频时长 |
+|---|---|---|
+| u01 神经网络 | 3B1B 深度学习 1、2 | 39 分钟 |
+| u02 反向传播 | 3B1B 深度学习 3、4 | 23 |
+| u03 线性变换 | 3B1B 线代 3、4、8 | 26 |
+| u04 矩阵性质 | 3B1B 线代 6、7 | 22 |
+| u05 基与基变换 | 3B1B 线代 2、9、13 | 37 |
+| u06 特征值与 SVD | 3B1B 线代 14 + Visual Kernel | 33 |
+| u07 概率统计 | StatQuest × 3 | 33 |
+| u08 微积分 | 3B1B 微积分 4 + Khan Academy | 27 |
+| u09 信息论 | StatQuest + Aurélien Géron | 28 |
+| u10 Python/NumPy | Python Simplified | 24 |
+| u11 PyTorch | Fireship + Patrick Loeber + PyTorch 官方 | 35 |
+| u12 开发工具 | VS Code 官方 + Fireship + JAX Lab | 26 |
+| u13 einops | Tales Of Tensors + Kapil Sachdeva | 15 |
+| u14 广播 | mCoding | 13 |
+| u15 einsum 与索引 | Aladdin Persson | 16 |
+
+代码多的节（u10–u15）视频短、正文长（约 2500–3500 字）；数学节视频长、正文约 2000–2800 字。

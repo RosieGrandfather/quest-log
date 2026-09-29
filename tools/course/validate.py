@@ -1,0 +1,50 @@
+"""检查 courses/ 下所有课程。
+
+  python tools/course/validate.py            # 格式、公式、测验、文件是否对得上
+  python tools/course/validate.py --online   # 另外核实所有视频可嵌入、所有参考链接能打开（要联网，较慢）
+"""
+import json, os, sys, urllib.request, concurrent.futures as cf
+sys.path.insert(0, os.path.dirname(__file__))
+from unitlib import COURSES, validate_unit
+from yt import verify
+
+def main(online):
+    errors, videos, links = [], set(), set()
+    index = json.load(open(os.path.join(COURSES, 'index.json'), encoding='utf-8'))
+    for entry in index['courses']:
+        cdir = os.path.join(COURSES, entry['path'])
+        course = json.load(open(os.path.join(cdir, 'course.json'), encoding='utf-8'))
+        if course['id'] != entry['id']: errors.append(f"index.json 的 id {entry['id']} ≠ course.json 的 {course['id']}")
+        ids = [u['id'] for u in course['units']]
+        if len(ids) != len(set(ids)): errors.append(f"{course['id']}: 章节 id 重复")
+        done = 0
+        for u in course['units']:
+            if not u.get('file'): continue
+            path = os.path.join(cdir, u['file'])
+            if not os.path.exists(path): errors.append(f"{course['id']}/{u['id']}: 找不到文件 {u['file']}"); continue
+            unit = json.load(open(path, encoding='utf-8'))
+            if unit['id'] != u['id']: errors.append(f"{u['file']}: 文件里的 id {unit['id']} ≠ course.json 的 {u['id']}")
+            if unit['title'] != u['title']: errors.append(f"{u['file']}: 标题和 course.json 不一致")
+            errors += validate_unit(unit)
+            videos |= {b['id'] for b in unit['blocks'] if b['type'] == 'video' and b['provider'] == 'youtube'}
+            links |= {r['url'] for r in unit.get('references', [])}
+            done += 1
+        print(f"{course['id']}：{done} / {len(course['units'])} 节有内容")
+    if online:
+        print(f'核实 {len(videos)} 个 YouTube 视频、{len(links)} 个链接 …')
+        with cf.ThreadPoolExecutor(8) as ex:
+            for r in ex.map(verify, sorted(videos)):
+                if r[1] == 'NOT EMBEDDABLE / MISSING': errors.append(f'视频 {r[0]} 不存在或不能嵌入')
+            def ok(u):
+                try:
+                    req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 Chrome/126'})
+                    with urllib.request.urlopen(req, timeout=25) as r: return u, r.status
+                except Exception as e: return u, getattr(e, 'code', type(e).__name__)
+            for u, s in ex.map(ok, sorted(links)):
+                if s != 200: errors.append(f'链接打不开（{s}）：{u}')
+    if errors:
+        print('\n发现问题：'); [print('  -', x) for x in errors]; sys.exit(1)
+    print('全部通过 ✓')
+
+if __name__ == '__main__':
+    main('--online' in sys.argv)

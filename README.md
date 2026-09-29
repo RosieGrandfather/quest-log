@@ -4,6 +4,12 @@
 
 **技术栈**：纯静态 HTML/CSS/JS（无构建步骤，无框架）+ Firebase（Auth 登录 + Firestore 数据库）+ GitHub Pages 托管。数据只存在 Yijia 自己的 Firebase 项目里，不经过 Claude 或任何第三方；手机和电脑用同一个 Google 账号登录，实时同步。
 
+## ⚠️ 改动日志规则（每次都要遵守）
+
+**每次改动（代码、课程内容、数据结构、配置）都要在 [`CHANGELOG.md`](CHANGELOG.md) 最上面记一笔**，写清楚：日期、一句话标题（和 commit 说明一致）、用户能看到的变化、改了哪些文件 / 数据结构、需要注意的事（迁移、要手动做的操作、已知问题）。没记日志的改动不算完成。
+
+**出新课程 / 补章节**：按 [`docs/COURSE_AUTHORING.md`](docs/COURSE_AUTHORING.md) 的流程和格式来，工具在 `tools/course/`。
+
 ## 文件
 
 - `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑。左上角「📚 学习区」进入学习区
@@ -18,6 +24,9 @@
 - `firebase-config.js` — Yijia 自己 Firebase 项目的连接信息（apiKey 等，不是密钥，允许公开）
 - `firestore.rules` — Firestore 安全规则的存档（**真正生效的是 Firebase 控制台里的那份**，改规则要去控制台发布，然后同步回这里）
 - `README.md` — 这份文件
+- `CHANGELOG.md` — **改动日志**，从第一版到现在每次改了什么（最新在上）
+- `docs/COURSE_AUTHORING.md` — **出课流程**：怎么选视频、写内容、出测验、检查、验收
+- `tools/course/` — 出课工具（Python，不参与网页运行）：`yt.py` 搜索 / 核实 YouTube 视频，`unitlib.py` 写章节的辅助函数和检查，`validate.py` 检查所有课程，`unit_template.py` 新章节模板
 
 **线上地址**：`https://rosiegrandfather.github.io/quest-log/`
 **本地路径（Yijia 电脑上）**：`C:\projects\quest-log-project\quest-log-project\quest-log`（挂载后是 `$HOME/mnt/quest-log/`）
@@ -71,6 +80,8 @@
 - 学习区打开时同样会发每日签到奖励
 
 #### 课程内容怎么加 / 改
+> 完整流程见 [`docs/COURSE_AUTHORING.md`](docs/COURSE_AUTHORING.md)；改完跑 `python tools/course/validate.py`。
+
 课程是仓库里的 JSON，页面直接从网站读，**推送就上线**，不需要进 Firebase：
 - `courses/index.json`：课程列表 `{"courses":[{"id","path"}]}`
 - `courses/{path}/course.json`：`id`、`title`、`subtitle`、`source`（内容依据，链接）、`units`（`id`、`title`、`en`、`minutes`、`file`——还没写好的节 `file` 为 null）
@@ -172,6 +183,7 @@ Yijia 喜欢哈利波特主题，多次要求"魔法/巫师"风格的视觉效�
 1. `node --check` 检查改过的 JS 文件，`npm test` 跑核心逻辑测试
 2. 涉及界面或数据读写的改动，用假的 Firebase（内存实现 compat SDK 用到的那部分接口）在浏览器里实际跑一遍——Yijia 的真实 Firebase 我们连不上，也不该在真实数据上试
 3. 涉及数据结构变化的，要考虑老账号迁移（参考 `ensureUserData()` + `SCHEMA_VERSION` 的做法，每一步都要能安全重复执行）
-4. 让 Yijia 自己 commit → push（她用 GitHub Desktop / 网页，不需要 Claude 推送）
+4. **在 `CHANGELOG.md` 最上面记一笔**（见上面「改动日志规则」）
+5. 让 Yijia 自己 commit → push（她用 GitHub Desktop / 网页，不需要 Claude 推送）
 
 已知历史 bug：2026-09-28 之前「＋ 添加自定义奖励」会把点击事件当成要编辑的奖励传进弹窗，导致新奖励存成空档位（`tier:''`）、页面上不显示。已修复；`renderRewards()` 会把空档位的奖励放进小奖励里显示，编辑一次就能改成正确档位。
