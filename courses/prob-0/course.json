@@ -1,0 +1,53 @@
+{
+  "id": "prob-0",
+  "title": "概率统计补漏",
+  "subtitle": "条件概率、期望方差、常见分布、中心极限定理、最大似然、假设检验 —— 把成绩单里没夯实的概率统计地基补上",
+  "source": {
+    "name": "MIT OCW 6.041 Probabilistic Systems Analysis 与 Harvard Statistics 110（作为大纲依据）",
+    "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/"
+  },
+  "units": [
+    {
+      "id": "u01",
+      "title": "条件概率与贝叶斯（含诊断测验）",
+      "en": "Conditional Probability & Bayes",
+      "minutes": 45,
+      "file": "u01-conditional-bayes.json"
+    },
+    {
+      "id": "u02",
+      "title": "随机变量、期望与方差",
+      "en": "Random Variables, Expectation & Variance",
+      "minutes": 45,
+      "file": null
+    },
+    {
+      "id": "u03",
+      "title": "常见分布：二项、泊松、正态",
+      "en": "Common Distributions",
+      "minutes": 45,
+      "file": null
+    },
+    {
+      "id": "u04",
+      "title": "大数定律与中心极限定理",
+      "en": "Law of Large Numbers & CLT",
+      "minutes": 45,
+      "file": null
+    },
+    {
+      "id": "u05",
+      "title": "最大似然估计与交叉熵",
+      "en": "Maximum Likelihood & Cross-Entropy",
+      "minutes": 45,
+      "file": null
+    },
+    {
+      "id": "u06",
+      "title": "置信区间与假设检验",
+      "en": "Confidence Intervals & Hypothesis Tests",
+      "minutes": 45,
+      "file": null
+    }
+  ]
+}
