@@ -1,0 +1,798 @@
+"""py-0 第 3 节（u09）：条件、循环与读懂报错"""
+from unitlib import *
+from y09c import *
+
+unit = {
+ "id": "u09",
+ "title": "条件、循环与读懂报错",
+ "en": "Control Flow, Loops & Reading Errors",
+ "minutes": 100,
+ "objectives": [
+  "知道 **缩进 (indentation)** 是 Python 的语法而不是排版，会写 `if / elif / else`，会判断一个值是真还是假（**真值 (truthiness)**），理解 `and / or` 的 **短路求值 (short-circuit evaluation)**",
+  "理解 **`for` 循环 (for loop)** 循环的是「容器里的每一个元素，一次一个」，会用 `range`、`enumerate`、`zip`、`.items()`，会用 `break` / `continue` / `for-else`；会写必定会结束的 **`while` 循环**",
+  "会用「累加、计数、过滤、找最大、分组统计」五种循环模式处理一批订单数据",
+  "会读 **回溯信息 (traceback)**：先看最后一行的错误类型，再找最下面属于自己代码的那一行；认得 `SyntaxError`、`IndentationError`、`NameError`、`TypeError`、`ValueError`、`KeyError`、`IndexError`、`AttributeError`、`ZeroDivisionError` 并知道怎么修",
+  "会用 **`try / except`** 处理可预期的错误（多个 `except`、`except (A, B)`、`as e`、`else`、`finally`），会用 `raise` 和 `assert`，知道为什么不能滥用 `except Exception`，也知道 `eval` 是什么、为什么实际代码里不要用",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一节要干什么
+
+前面的课里你学会了「值」（数字、字符串）和「装值的容器」（列表、元组、字典、集合）。但程序不能只是摆放数据，它要**做决定**（库存够不够？这单是大单还是小单？）和**重复做事**（对每一个订单做同样的检查）。这一节讲的就是这两件事：**条件**和**循环**。
+
+这一节还有第二个任务：教你**读一行代码、读一段报错**。很多人卡住不是因为不会写，而是报错一出来就慌了。其实报错是 Python 在用一种很固定的格式告诉你「哪里、什么类型、为什么」，学会读它，你就能自己解决大部分问题。
+
+**学完它你就能看懂这几件事：**
+
+- 任何一份 Python 代码里最常见的骨架：`for item in items:` 里面套 `if ...:`，再 `append` 或累加；
+- `for bad in (...): try: ... except TypeError as e: ...` 这样的写法：谁在循环、`try` 在试什么、`except` 在接什么；
+- 一屏 traceback 出来之后，**该看哪一行**，以及 `KeyError`、`TypeError`、`IndexError` 各自在说什么；
+- 为什么有人说「不要写 `except Exception: pass`」「不要用 `eval`」。
+
+**本节安排（约 100 分钟）**：缩进与条件（约 15 分钟）→ `for` 与 `while`（约 25 分钟，含视频一）→ 常见循环模式（约 10 分钟）→ 读懂报错（约 15 分钟）→ `try / except`、`raise`、`assert`（约 18 分钟，含视频二）→ `eval` 与调试入门（约 10 分钟）→ 总结与「想一想」（约 7 分钟）。
+
+**怎么学这一节：** 每个知识点都是「一个问题 → 一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一节里，前面的块定义的变量，后面的块可以直接用，所以请**按顺序**往下跑。**每一块先猜输出，再运行对照**，比直接看答案记得牢得多。
+
+> 说明：不同版本的 Python，报错信息的措辞和格式会有小差别（新版本会多出 `^^^^` 标记出错位置，有时还会补一句 `Did you mean ...?`）。本节里的预期输出是用 Python 3.10 生成的，你在网页里运行（Python 3.13）看到的可能略有不同，意思是一样的，学会读意思就行。
+
+### 代码块与缩进
+
+> **标准定义 · 代码块与缩进 (block & indentation)**
+>
+> **代码块 (block)** 是一组作为整体一起执行的语句。Python 用**冒号 `:` 加缩进**表示代码块：`if`、`elif`、`else`、`for`、`while`、`try`、`except` 等语句的行末要有冒号，属于它的语句写在下面，并且比它**往右缩进**；同一个块里每一行的缩进量必须相同；缩进回到原来的位置，这个块就结束了。
+>
+> *English: Python marks a block with a colon and indentation. All statements in a block are indented by the same amount; returning to the earlier indentation ends the block.*
+
+**白话版：「缩进就是 Python 的括号」。** 很多语言（C、Java、JavaScript）用花括号 `{ }` 圈出「这几行是一伙的」；Python 选择用**缩进**（indent，就是「往里缩一格」）来圈。所以缩进在 Python 里不是为了好看，**少一个空格、多一个空格，程序的意思就变了，甚至直接报错**。
+
+**Python 硬性规定 vs 大家的习惯：**
+
+| 硬性规定（违反就报错或改变意思） | 习惯 / 约定（不遵守也能跑，但大家都这么写） |
+|---|---|
+| `if`、`for`、`while`、`try`、`except` 等行末必须有冒号 `:` | 每一级缩进用 **4 个空格**（官方风格指南 PEP 8 的建议） |
+| 同一个块里的每一行缩进量必须一致 | 在编辑器里按 Tab 键，让编辑器替你输入 4 个空格 |
+| 冒号后面必须有至少一条缩进的语句（暂时不想写就写 `pass`，意思是「什么也不做」） | 一行尽量不超过 79 个字符 |
+| 不要把 Tab 和空格混着用来缩进（容易报 `TabError`） | 变量名用小写加下划线，如 `stock_qty` |
+
+**问题一：条件语句怎么决定「哪几行只在条件成立时才执行」？**
+
+""" + C_IF_BASIC + r"""
+
+**读输出：** `stock` 是 12，`need` 是 20，条件 `stock >= need` 的值是 `False`，所以跳过 `if` 下面缩进的那块，执行 `else` 下面缩进的两行：先打印 `库存不够`，再打印 `缺 8 箱`（20 减 12）。最后一行 `print("这一行没有缩进……")` 回到了最左边，不属于 `if/else`，所以无论条件真假都会执行。
+
+**如果没有 `else`，条件不成立时会怎样？**
+
+""" + C_IF_NOELSE + r"""
+
+**读输出：** 只打印了最后一行 `无论如何都会打印`。`qty > 0` 是假，`if` 下面两行缩进的 `print` 都被整块跳过了；最后一行没缩进，不归 `if` 管。**判断一行代码归谁管，只看它缩进了几格。**
+
+**常见疑问：缩进写错了会怎样？** 有两种情况。一种是**改变意思但不报错**（比如上面那个最后一行，缩进了就只在条件成立时执行）；另一种是**直接报错** `IndentationError`。下面两段代码存成 `demo.py` 在终端里运行（为什么不放进网页的运行块？因为语法错误发生在 Python「读代码」的阶段，整份代码一行都没开始运行，所以这类错只能用整个文件来演示）：
+
+""" + INDENT_EXPECT + r"""
+
+**读输出：** `IndentationError: expected an indented block after 'if' statement on line 2`：`if` 的行末有冒号，Python 期待下一行是缩进的块，结果第 3 行没有缩进。
+
+""" + INDENT_UNMATCH + r"""
+
+**读输出：** `unindent does not match any outer indentation level`：第 3 行缩进了 8 格，第 4 行想「退回去」却只缩进了 4 格，而这个层级前面从来没出现过（出现过的只有 0 格和 8 格），Python 不知道你想属于哪个块。（报错信息的措辞随 Python 版本略有不同。）
+
+### 比较与 `if / elif / else`
+
+> **标准定义 · 条件语句 (conditional statement)**
+>
+> `if 条件:` 后面缩进的块，只有当条件的值为真时才执行。后面可以接任意多个 `elif 条件:`（`else if` 的缩写）和至多一个 `else:`。**Python 从上到下依次检查，执行第一个条件为真的分支，其余分支全部跳过**；所有条件都不成立时执行 `else`（没有 `else` 就什么也不做）。
+>
+> *English: An if statement runs the first branch whose condition is true and skips the rest; else runs when none is true.*
+
+**白话版：「分诊台」。** 从上到下一个窗口一个窗口地问：「你是缺货吗？」「是低库存吗？」……**答「是」的第一个窗口就办理，办完直接走，后面的窗口不再看。** 所以条件的**顺序**很重要。
+
+**问题二：三种以上的情况怎么分？**
+
+""" + C_IFELIF + r"""
+
+**读输出：** `35 -> 正常`。检查过程：`35 == 0` 为假；`35 < 20` 为假；`35 < 100` 为真，于是 `status` 被设为 `"正常"`，后面的 `else` 不再看。试试把 `stock` 改成 0、15、500 再运行，看会走哪个分支。
+
+**条件顺序写反会怎样？**
+
+""" + C_IFORDER + r"""
+
+**读输出：** `500 -> 小单`：500 箱明明是大单，却被第一条 `qty >= 1` 抢先匹配了，第二条永远走不到。**规则：先写更严格、更特殊的条件**（先 `>= 100`，再 `>= 1`），或者把每个条件写成不重叠的区间。
+
+**比较运算符。** 条件的值是**布尔值 (Boolean)**，只有 `True` 和 `False` 两个（以数学家 George Boole 命名）。常见的比较：
+
+| 写法 | 意思 | 写法 | 意思 |
+|---|---|---|---|
+| `==` | 等于 | `!=` | 不等于 |
+| `<` `>` | 小于、大于 | `<=` `>=` | 小于等于、大于等于 |
+| `in` | 在……里面 | `not in` | 不在……里面 |
+| `is` | 是同一个对象 | `is not` | 不是同一个对象 |
+
+""" + C_COMPARE + r"""
+
+**读输出：** 第一行 `True False True False`：12 等于 12，不「不等于」12，大于 10，不小于等于 10。第二行 `True True True`：`"ab" in "cabd"`（字符串里有没有这个片段）、`3 in [1, 2, 3]`（列表里有没有这个元素）、`"SKU-A" in {...}`（**对字典，`in` 查的是键**）。第三行 `True`：`not in` 是反过来问。第四、五行都是 `True`：`0 < qty <= 100` 是**比较链 (chained comparison)**，数学里怎么写，Python 里就能怎么写，等价于 `0 < qty and qty <= 100`。
+
+**常见疑问一：`=` 和 `==` 有什么区别？** `=` 是**赋值**（把右边的值贴上左边的名字），`==` 是**比较**（问两边是否相等）。在条件里写成 `=` 是语法错误：
+
+""" + SYNTAX_ASSIGN + r"""
+
+**读输出：** Python 很贴心地猜到你可能想写 `==`。（这是一个 `SyntaxError`，下面「读懂报错」会系统讲。）
+
+**常见疑问二：`qty == 1 or 2` 为什么不对？** 中文说「qty 是 1 或 2」，但 Python 里 `or` 两边各自是一个**完整的条件**：
+
+""" + C_OR_PITFALL + r"""
+
+**读输出：** 第一行 `2`：`qty == 1 or 2` 被读成 `(qty == 1) or (2)`；`qty` 是 7，左边为假，于是结果是右边的 `2`。第二行 `True`：`2` 是非零数，当作真，所以这个条件**永远为真**，不管 `qty` 是多少。第三行 `False False`：正确写法是 `qty == 1 or qty == 2`，或者更简洁的 `qty in (1, 2)`。
+
+### 真值：任何东西都能当条件
+
+> **标准定义 · 真值 (truthiness)**
+>
+> 在 `if`、`while`、`and`、`or`、`not` 里，**任何对象**都会被当作真或假。**假值 (falsy)** 只有这些：`False`、`None`、数字零（`0`、`0.0`）、空字符串 `""`、空容器（`[]`、`()`、`{}`、`set()`、`range(0)`）。**其余一切都是真值 (truthy)**。
+>
+> *English: Every object has a truth value. None, zero, and empty strings or containers are false; everything else is true.*
+
+**白话版：「有没有东西」。** 0、空、什么都没有，就当「假」；有内容就当「真」。
+
+""" + C_TRUTHY + r"""
+
+**读输出：** 第一行六个 `False`：零、空字符串、空列表、空字典、`None` 都是「没东西」。第二行五个 `True`：**注意 `"0"`、`" "`（一个空格）、`[0]`、`"False"` 都是真**，因为它们**不是空的**，真假只看「有没有内容」，不看内容是什么。
+
+**这有什么用？** 最常见的写法：
+
+""" + C_TRUTHY_USE + r"""
+
+**读输出：** `今天没有订单`：空列表是假，所以 `if orders:` 等价于「列表里有东西吗」。最后一行 `True True`：判断「是不是 `None`」，习惯写成 `is None`（`is` 问的是「是不是同一个对象」，而 `None` 全世界只有一个）；`== None` 通常也能得到一样的结果，但这是一个**约定**而不是硬性规定，大家都用 `is None`，你读别人的代码也会一直看到它。
+
+### `and`、`or`、`not` 与短路
+
+> **标准定义 · 逻辑运算符与短路求值 (logical operators & short-circuit evaluation)**
+>
+> `A and B`：如果 A 为假，结果是 A（**不再计算 B**）；否则结果是 B。`A or B`：如果 A 为真，结果是 A（**不再计算 B**）；否则结果是 B。`not A`：永远得到 `True` 或 `False`。这种「左边已经能决定结果，就不再看右边」的做法叫**短路求值**。优先级从高到低是 `not`、`and`、`or`。
+>
+> *English: and / or return one of their operands, and they stop evaluating as soon as the result is decided (short-circuit).*
+
+**白话版：「`or` 是『A 不行就用 B』，`and` 是『A 过关了才看 B』」。**
+
+""" + C_ANDOR + r"""
+
+**读输出：** 第一行 `5 默认 A`：`0 or 5` 左边为假，给右边的 5；`"" or "默认"` 同理；`"A" or "B"` 左边为真，直接给 `"A"`。第二行 `7 0 []`：`3 and 7` 左边为真，给右边的 7；`0 and 7` 左边为假，给 `0`；`[] and 7` 给 `[]`。注意 `and` / `or` 返回的是**其中一个操作数本身**，不一定是 `True` / `False`。第三行 `True False`。最后一行 `名字：未填写`：`name or "未填写"` 是给空值一个默认值的常见写法。
+
+**短路最重要的用途：把「安全检查」放在左边。**
+
+""" + C_SHORT + r"""
+
+**读输出：** `跳过，没有报错`：`len(items) > 0` 是 `False`，`and` 看到左边为假，就不再计算右边的 `items[0] > 5`（否则空列表取第 0 个会出错）。下面一行输出 `True`，并且**没有**打印 `我不会被打印`：`True or ...` 左边为真，右边整个跳过。
+
+**把顺序反过来会怎样？**
+
+""" + C_SHORT_ERR + r"""
+
+**读输出：** `IndexError: list index out of range`：先执行了 `items[0]`，空列表没有第 0 个元素，程序在这里停下了（这是你见到的第一个 traceback，后面「读懂报错」会专门教怎么读）。**写 `and` 时，让「先检查能不能用」的条件在左边。**
+
+**优先级：** 不确定的时候，加括号。
+
+""" + C_PREC + r"""
+
+**读输出：** `True`、`False`。第一行 `and` 先算：`False and False` 得 `False`，再 `True or False` 得 `True`。第二行括号先算：`(True or False)` 是 `True`，再 `True and False` 得 `False`。同样的三个值，括号位置不同，结果相反。**加括号是一条好习惯：读代码的人不用背优先级。**
+
+**最后一个小工具：条件表达式（一行里二选一）。**
+
+""" + C_CONDEXPR + r"""
+
+**读输出：** `缺货`：`A if 条件 else B` 在条件为真时取 A，否则取 B，适合给一个变量二选一赋值。
+"""),
+  T(r"""
+### `for` 循环：一次拿一个
+
+> **标准定义 · `for` 循环 (for loop)**
+>
+> `for 变量 in 容器:` 让**变量依次取到容器里的每一个元素**（容器可以是列表、元组、字符串、字典、`range(...)` 等），每取到一个，就把缩进的块执行一遍；元素取完，循环结束。**被循环的是「容器里的每个元素」，一次一个。**变量的名字可以随便起，它只是一个标签。
+>
+> *English: A for loop binds the loop variable to each element of a sequence (or other iterable) in turn and runs the block once per element.*
+
+**白话版：「传送带」。** 容器像传送带上一排箱子，变量就是你手里拿着的那一个：每一轮拿一个、处理、再换下一个，传送带空了就收工。「循环（loop）」就是「回到开头再来一遍」；`for x in xs` 读成「**对于** xs 里的**每一个** x」。
+
+**这条规则也能解释你见过的那句 `for bad in (...)`：** 括号里是一个元组，里面每个元素是一个字符串，`bad` 是一个**普通的名字**（不是 Python 的关键字），每一轮依次是其中一个字符串。循环的是括号里的那几个元素，**不是「在循环错误信息」**，错误信息是循环体里的 `try / except` 产生和处理的（后面「`eval`」那一小节会逐行拆开）。
+
+| 硬性规定 | 习惯 / 约定 |
+|---|---|
+| `for` 和 `in` 是关键字，行末要有冒号，循环体要缩进 | 变量名用**容器名的单数**：`for order in orders`、`for sku in skus` |
+| 循环变量在循环结束后**依然存在**，停在最后一个值 | 只想重复几次、不使用变量时，习惯写 `for _ in range(3)`（`_` 表示「我不用这个值」） |
+
+**问题三：循环里的变量每一轮是什么？**
+
+""" + C_FOR1 + r"""
+
+**读输出：** 四轮，`qty` 依次是 `12`、`0`、`35`、`8`，每轮打印一行；循环结束后再打印，`qty` 还是 `8`：循环变量**不会消失**，停在最后一个值上。
+
+**字符串、元组也一样：**
+
+""" + C_FOR_STR + r"""
+
+**读输出：** `S|K|U|-|4|2|`：字符串是「字符的序列」，一次拿一个字符（`end="|"` 的意思是打印完不换行，改成接一个竖线）。后面两行 `SKU-A`、`SKU-B`：元组一次拿一个元素。
+
+**问题四：只想「重复 N 次」，或者要一串数字，怎么办？**
+
+> **标准定义 · `range` 对象**
+>
+> `range(start, stop, step)` 表示整数序列 `start, start + step, start + 2·step, …`，**到 `stop` 之前为止，不包含 `stop`**（左闭右开）。省略 `start` 时从 0 开始，省略 `step` 时步长为 1，`step` 为负数时倒着数。`range` 对象只是对「这个范围」的描述，需要看到全部数字时用 `list(...)` 展开。
+>
+> *English: range(start, stop, step) yields integers from start up to but not including stop.*
+
+**白话版：「数数」。** 为什么不包含 `stop`、为什么从 0 开始？这样 `range(5)` 刚好是 5 个数，`range(a, b)` 有 `b - a` 个数，而且 `range(a, b)` 和 `range(b, c)` 接起来**不重不漏**。
+
+""" + C_RANGE + r"""
+
+**读输出：** `range(0, 5)`：直接打印 `range` 只会看到它的描述，不是列表（所以要看内容要套 `list(...)`）。接着 `[0, 1, 2, 3, 4]`（5 不在里面）、`[2, 3, 4, 5]`、`[0, 3, 6, 9]`（步长 3，12 超过了 10 不要）、`[5, 4, 3, 2, 1]`（步长 -1，数到 0 之前停，0 不在里面）。最后 `4 []`：`range(2, 6)` 有 4 个数；起点等于终点时是空的。
+
+""" + C_RANGE_USE + r"""
+
+**读输出：** `第 1 次盘点`、`第 2 次盘点`、`第 3 次盘点`：`i` 其实是 0、1、2，所以打印的是 `i + 1`。
+
+**问题五：既要序号又要值，怎么写？**
+
+""" + C_ENUM + r"""
+
+**读输出：** 第一个循环先打印 `0 12`、`1 0`、`2 35`、`3 8`：用 `range(len(orders))` 造下标，再用 `orders[i]` 取值，能用但绕。第二个循环用 `enumerate(orders, start=1)`，打印 `订单 1 : 12 箱` 到 `订单 4 : 8 箱`。最后一行 `[(1, 'a'), (2, 'b')]` 把秘密露出来了：**`enumerate` 每一轮给出一对 `(序号, 元素)`**。
+
+**那 `for i, qty in ...` 里的 `i, qty` 是一个变量吗？** **不是，是两个变量。** 变量名本身不能有空格，但**逗号把两个名字隔开**，这叫**多重赋值 / 解包 (unpacking)**（「容器：列表、元组、字典与集合」那一节讲过 `lo, hi = ...`）：每一轮拿到的那对 `(序号, 元素)` 被拆开，第一个值贴上 `i`，第二个贴上 `qty`。
+
+**问题六：遍历字典会拿到什么？**
+
+""" + C_DICT_ITER + r"""
+
+**读输出：** 直接 `for sku in stock` 只拿到**键**：`SKU-A`、`SKU-B`、`SKU-C`。`stock.items()` 每一轮给出一对 `(键, 值)`，用 `sku, qty` 解包，于是打印 `SKU-A 还有 120 箱` 等三行。最后 `[120, 0, 35]`：`.values()` 只要值。（`items`、`values`、`keys` 都是**字典这个类型自带的方法**，列表没有它们。）
+
+**问题七：同时遍历两个序列？**
+
+""" + C_ZIP + r"""
+
+**读输出：** `SKU-A 120`、`SKU-B 0`、`SKU-C 35`：`zip` 像拉链，把两个序列的第 1 个配第 1 个、第 2 个配第 2 个……每轮给出一对。最后 `[(1, 'a'), (2, 'b')]`：**遇到最短的序列就停**，`3` 没有配对，被丢掉了。
+
+**`continue`、`break` 和 `for-else`。**
+
+> **标准定义 · `break` 与 `continue`**
+>
+> `continue`：立即结束**当前这一轮**，回到循环开头取下一个元素。`break`：立即结束**整个循环**，从循环之后的第一行继续。循环可以带一个 `else:` 块，**只有当循环没有被 `break` 打断（自然走完）时**才执行。
+>
+> *English: continue skips to the next iteration; break exits the loop; a loop's else block runs only if the loop finished without break.*
+
+""" + C_CONTINUE + r"""
+
+**读输出：** `处理 12 箱`、`处理 35 箱`、`处理 8 箱`：遇到 `0` 时 `continue` 跳过了这一轮剩下的 `print`，直接取下一个。
+
+""" + C_BREAK + r"""
+
+**读输出：** `检查过 12`、`检查过 0`，然后轮到 `35`，满足 `qty > 30`，打印 `找到第一个超过 30 箱的订单： 35` 并 `break`，整个循环结束，不会再看最后的 `8`；最后打印 `循环之后`。
+
+""" + C_FORELSE + r"""
+
+**读输出：** `没有任何订单超过 100 箱`：循环从头走到尾，**没有**遇到 `break`，所以执行了 `else`。**`else` 的意思不是「否则」，而是「没被打断」**，一个常见用法是「在列表里找东西，找不到就走 `else`」。这个名字确实容易让人误会，记住「没被打断才执行」就行。
+
+**常见疑问：能一边遍历一边删除元素吗？**
+
+""" + C_MODIFY + r"""
+
+**读输出：** 第一行 `[1, 2, 3]`：想删掉所有 2，结果还剩一个。原因是遍历时 Python 按**位置**往后走：删掉第一个 2 之后，后面的元素整体往前挪了一格，下一轮的位置恰好跳过了第二个 2。第二行 `[1, 3]`：**不要在遍历一个容器的同时改它的大小**，造一个新列表，把要留的放进去。
+
+**嵌套循环：循环里面再套循环。**
+
+""" + C_NESTED + r"""
+
+**读输出：** `发货单 1 共 5 件`（2 + 3）、`发货单 2 共 5 件`、`发货单 3 共 0 件`。**外层每来一轮，内层从头完整跑一遍**；第三张发货单是空列表，内层一次都没执行，`total` 保持 0。
+
+### `while` 循环：只要条件成立就继续
+
+> **标准定义 · `while` 循环 (while loop)**
+>
+> `while 条件:` 每次执行块之前**先检查条件**，为真就执行一遍块，然后回头再检查；条件变假时循环结束。**块里必须有某个东西最终让条件变假（或者用 `break` 跳出），否则就是无法结束的死循环 (infinite loop)。**
+>
+> *English: A while loop repeats its block as long as the condition is true; something inside must eventually make it false.*
+
+**白话版：「只要水位还高于 30，就继续抽水」。** 区别于 `for`：**知道要遍历哪些东西就用 `for`；不知道要几轮，只知道「直到某件事发生」就用 `while`。**
+
+""" + C_WHILE1 + r"""
+
+**读输出：** `100 > 30` 为真，发走 40 箱，剩 60；`60 > 30` 为真，再发，剩 20；`20 > 30` 为假，停止。所以只打印了两行 `发走 40 箱，剩 ...`，再打印 `停止`。
+
+**写 `while` 最重要的检查：「块里有没有东西让条件变假？」** 下面是一个典型的死循环（不要运行）：
+
+""" + TEXT_INFINITE + r"""
+
+`n` 本来想倒数，结果把减号写成了加号，`n` 越来越大，`n > 0` 永远为真。**怎么停？** 在终端里按 `Ctrl + C`，Python 会抛出 `KeyboardInterrupt` 并停下；网页里的运行块如果一直转个不停，直接刷新页面（刷新之后前面的块要重新按顺序运行）。
+
+**两种常用的写法：**
+
+""" + C_WHILE_BREAK + r"""
+
+**读输出：** `第 8 次尝试后停止`：`while True:` 看起来永远为真，靠里面的 `break` 退出。`7 ** 2 = 49` 还不够 50，`8 ** 2 = 64` 达到了，所以 `attempts` 是 8 时停下。`while True` + `break` 适合「循环到某个事件发生」，但一定要确保 `break` 能被走到。
+
+""" + C_WHILE_SAFE + r"""
+
+**读输出：** `20 5`：`stock` 从 5 开始每轮加 3（8、11、14、17、20），五轮之后不再小于 20，循环结束，`tries` 是 5。条件里加一个 `tries < 10` 是一道**保险**：万一前面的逻辑写错，最多也只会转 10 轮，不会卡死。
+"""),
+  V("6iF8Xb7Z3wQ", "视频一：Python Tutorial for Beginners 7: Loops and Iterations - For/While Loops（Corey Schafer）", 10),
+  T(r"""
+### 常见循环模式：一批订单
+
+绝大多数循环都是下面五种模式之一。它们的共同点是：**循环之前先准备一个起点（`0`、空列表、空字典……），循环里更新它，循环之后使用它**。数据换成一批订单（每个订单是一个字典，前面讲过）：
+
+""" + C_PAT_DATA + r"""
+
+**读输出：** `5 A101 12`：一共 5 个订单；第一个订单的编号是 `A101`，箱数 12。（这里把前面的 `orders` 换成了字典列表。）
+
+**模式一：累加（求和、求平均）。**
+
+""" + C_PAT_SUM + r"""
+
+**读输出：** `总箱数 75`（12 + 0 + 35 + 8 + 20），`平均每单 15.0`。累加器 `total` 在循环**之前**放一个 `0`，每轮加上一个订单的箱数。`total += x` 就是 `total = total + x` 的简写。
+
+**常见疑问：累加器放在循环里面会怎样？**
+
+""" + C_PAT_RESET + r"""
+
+**读输出：** `20`，不是 75。每一轮开头都把 `total` 清零，最后只剩最后一个订单（A105，20 箱）。**起点要在循环之前设，不要放进循环里。**
+
+**模式二：计数。**
+
+""" + C_PAT_COUNT + r"""
+
+**读输出：** `待处理订单数 2`：满足条件时才加 1（A104、A105）。
+
+**模式三：过滤（挑出满足条件的，放进新列表）。**
+
+""" + C_PAT_FILTER + r"""
+
+**读输出：** `['A101', 'A103', 'A105']`：箱数不少于 10 的三个订单的编号。先造空列表，循环里满足条件的才 `append`。（后面「推导式、迭代器与生成器」那一节会教你把这三行压成一行，但先要会写这个版本。）
+
+**模式四：找最大（或最小）。**
+
+""" + C_PAT_MAX + r"""
+
+**读输出：** `A103 35`。先假设第一个最大，从第二个开始逐个比较，更大就换掉。`orders[1:]` 是切片，表示「从下标 1 开始到结尾」。**常见疑问：** 如果 `orders` 是空列表，`orders[0]` 会报 `IndexError`，所以实际写之前要先检查 `if orders:`。（只是对数字列表求最大，直接用内置的 `max(...)` 就行；知道它背后是这个循环，遇到「按某个字段找最大」就不会卡住。）
+
+**模式五：分组统计（用字典）。**
+
+""" + C_PAT_COUNTDICT + r"""
+
+**读输出：** `{'shipped': 2, 'cancelled': 1, 'pending': 2}`：每种状态出现几次。关键一行是 `by_status.get(s, 0) + 1`：
+
+> **标准定义 · 字典的 `.get` 方法**
+>
+> `d.get(key, default)`：如果 `key` 在字典里，返回对应的值；否则返回 `default`（不写 `default` 时是 `None`），**不会抛出 `KeyError`**。
+>
+> *English: dict.get(key, default) returns the value for key if present, otherwise default; it never raises KeyError.*
+
+**白话版：「查不到就用备用答案」。** 这里第一次遇到某个状态时，字典里还没有它，`get` 给 0，加 1 后存进去；以后再遇到就在原来的数上加 1。**`get` 是字典这种类型自带的方法**，名字里的 `default` 只是它第二个参数的意思，不是 Python 的某个全局概念；列表没有 `.get`，字符串也没有，各种类型有各自的方法（列表有 `.append`，字符串有 `.upper`，字典有 `.get`、`.items`、`.setdefault`、`.pop`）。同一件事还有一种写法：
+
+""" + C_PAT_GROUP + r"""
+
+**读输出：** `{'shipped': ['A101', 'A103'], 'cancelled': ['A102'], 'pending': ['A104', 'A105']}`：按状态把订单编号分组。`setdefault(键, 默认值)` 的意思是「这个键没有就先放进默认值，然后把这个键对应的值（不论刚放的还是原有的）返回给我」，所以后面可以直接 `.append`。
+
+### 读懂报错：traceback
+
+> **标准定义 · 回溯 (traceback) 与异常 (exception)**
+>
+> 程序运行中遇到无法继续的情况时，Python 会**抛出 (raise) 一个异常**；如果没有人处理它，程序就停下，并打印一份**回溯信息 (traceback)**：第一行是 `Traceback (most recent call last):`，接着是若干段「`File "文件", line 行号, in 位置`」加上对应的那一行源码，**最后一行是错误类型和说明**。「most recent call last」的意思是**最近的调用写在最后**，所以最重要的信息在最下面。
+>
+> *English: An unhandled exception stops the program and prints a traceback: the call stack, oldest call first, ending with the exception type and message.*
+
+**白话版：「事故报告」。** 最后一行是**结论**（出了什么事故），往上是**事发经过**（一路从哪里走到了这里）。所以读报错要**从最后一行往上读**。
+
+**读报错的三步：**
+
+1. **读最后一行**：冒号前面是**错误类型**（`ZeroDivisionError`），冒号后面是**说明**（`division by zero`）。
+2. **找最下面一条属于你自己代码的 `File ... line N`**，去看第 N 行。
+3. **在那一行里找原因**（用下面的类型表对照）。
+
+先看最简单的：
+
+""" + C_ERR_ZERO + r"""
+
+**读输出：** 只有一段「文件 + 行号」：`File "<cell>", line 3, in <module>`，下面是那一行源码 `average = total / count`；最后一行 `ZeroDivisionError: division by zero`。`<cell>` 是网页笔记本给这个代码块起的文件名（终端里会是你的文件名）；`<module>` 表示这行代码在最外层，不在任何函数里。原因：`count` 是 0，除以零。
+
+**如果是一连串调用呢？** 下面的代码里有 `def`，你现在只要把 `def 名字(...)` 看成「给一段代码起个名字，别的地方可以叫它来干活」（怎么写在「函数、作用域与递归」那一节讲）：
+
+""" + C_TRACE_CHAIN + r"""
+
+**读输出：** 第一次调用成功，打印 `('SKU-A', 12)`。第二次调用报错，回溯有三段：最上面 `line 9, in <module>`：你的代码调用了 `read_order`；中间 `line 6, in read_order`：它又调用了 `load_qty`；最下面 `line 2, in load_qty`：执行 `int(text)` 时出的错。最后一行 `ValueError: invalid literal for int() with base 10: '12箱'`：`'12箱'` 不能转成整数。读法：**最后一行告诉你出了什么错，最下面一段告诉你在哪里出的错，往上的几段告诉你是怎么一路走到那里的。** 注意：错发生在最下面那一行，但**真正的原因有时在上面**（比如传进来的数据本身就不对）。
+
+**错误类型对照表：**
+
+| 错误类型 | 白话意思 | 最常见的原因 | 通常怎么修 |
+|---|---|---|---|
+| `SyntaxError` | 这句话没写对，**整份代码一行都没开始运行** | 缺冒号、括号 / 引号没配对、`=` 写成 `==` | 看报错指的那一行，**也看它的上一行** |
+| `IndentationError` | 缩进不对（`SyntaxError` 的一种） | 缩进量不一致，或冒号后没缩进 | 统一用 4 个空格 |
+| `NameError` | 用了一个没定义过的名字 | 拼错、先用后定义、没运行前面的块 | 检查拼写，确认先赋值再使用 |
+| `TypeError` | 这种类型不能做这种操作 | 字符串加数字、对不可调用的东西加括号 | 先转换类型，或检查值是什么类型 |
+| `ValueError` | 类型对，但**值**不合适 | `int("abc")`、解包时个数不对 | 先清洗 / 检查值，再转换 |
+| `KeyError` | 字典里没有这个键 | 键拼错或根本没有 | `.get(键, 默认值)`，或先用 `in` 检查 |
+| `IndexError` | 下标超出了范围 | 下标写大了，或列表是空的 | 下标最大是 `len - 1`，或先检查是否为空 |
+| `AttributeError` | 这个对象没有这个「点号后面的名字」 | 以为是别的类型；变量其实是 `None` | 打印 `type(x)`，查这个类型有哪些方法 |
+| `ZeroDivisionError` | 除数是 0 | 总数 / 个数时个数为 0 | 除之前先判断 |
+
+**语法错误和缩进错误：** 它们和其他的不同：**不是运行到某一行才出错，而是 Python 读代码时就读不懂**，所以整份代码一行都没执行。同样用 `demo.py` 演示：
+
+""" + SYNTAX_COLON + r"""
+
+**读输出：** `SyntaxError: expected ':'`：`if` 的行末少了冒号，`^` 指向行末。
+
+""" + SYNTAX_PAREN + r"""
+
+**读输出：** `SyntaxError: '(' was never closed`：第 1 行的括号没有闭合，`^` 指着那个没配对的 `(`。**语法错误常常被报在真正出错位置的后面一点**（Python 读到下一行才发现不对劲），所以看报错的那一行，也要看它的上一行。
+
+**NameError：名字没定义。**
+
+""" + C_E_NAME + r"""
+
+**读输出：** `NameError: name 'stok' is not defined`：`stock` 拼成了 `stok`。常见的三种原因：拼错了；**先用后定义**（变量必须先赋值，才能使用）；在网页里**没运行前面的块**，导致前面块里定义的变量还不存在。这也解释了为什么同一节里的块要按顺序运行：后面的块用到前面定义的变量。（对函数同理，函数要先定义，才能调用。）新版本的 Python 会补一句 `Did you mean: 'stock'?`。
+
+**TypeError：类型不合适。**
+
+""" + C_E_TYPE + r"""
+
+**读输出：** `TypeError: can only concatenate str (not "int") to str`：字符串只能和字符串用 `+` 拼接，`qty` 是整数。修法：`str(qty)` 转成字符串，或者用逗号 `print("箱数：", qty)`，或者 f-string。`TypeError` 的其他常见形式：对数字调用 `len(5)`、给函数传错个数的参数。
+
+**ValueError：类型对，值不行。**
+
+""" + C_E_VALUE + r"""
+
+**读输出：** `ValueError: invalid literal for int() with base 10: '12箱'`：`int()` 可以接受字符串（类型对），但 `'12箱'` 不是一个整数的写法（值不对）。**区分 `TypeError` 和 `ValueError`**：`int(None)` 是类型不对（`TypeError`），`int("abc")` 是类型对、值不对（`ValueError`）。
+
+""" + C_E_UNPACK + r"""
+
+**读输出：** `ValueError: too many values to unpack (expected 2)`：右边有 3 个值，左边只有 2 个名字。解包要求**左右个数一致**。修法：改成三个名字；暂时不需要的值，习惯用 `_` 占位，如 `sku, qty, _ = ...`。
+
+**KeyError：字典里没有这个键。**
+
+""" + C_E_KEY + r"""
+
+**读输出：** `KeyError: 'SKU-B'`：冒号后面直接是**缺的那个键**。修法：`stock.get("SKU-B", 0)`，或者先写 `if "SKU-B" in stock:`。
+
+**IndexError：下标出界。**
+
+""" + C_E_INDEX + r"""
+
+**读输出：** `IndexError: list index out of range`：`orders` 有 4 个元素，合法的下标是 0 到 3，`orders[4]` 出界。修法：最后一个元素是 `orders[len(orders) - 1]` 或 `orders[-1]`；空列表要先判断。
+
+**AttributeError：对象没有这个属性。**
+
+""" + C_E_ATTR + r"""
+
+**读输出：** 先打印 `None`，然后 `AttributeError: 'NoneType' object has no attribute 'append'`。**属性 (attribute)** 就是点号后面的名字（`.append`、`.sort`）。`nums.sort()` 是**原地排序**，改的是 `nums` 本身，**返回值是 `None`**，所以 `result` 是 `None`，而 `None` 没有 `.append`。这是新手最常见的坑之一：别把原地修改的方法（`sort`、`append`、`reverse`）的返回值赋给变量。想要「排好序的新列表」用 `sorted(...)`。
+
+""" + C_E_ATTR2 + r"""
+
+**读输出：** `AttributeError: 'str' object has no attribute 'append'`：字符串没有 `.append`，**方法是属于某个类型的**：`.append` 属于列表，`.upper` 属于字符串，`.get` 属于字典。看到 `'X' object has no attribute 'y'`，意思就是「你手里的东西是 X 类型，而 X 没有 y 这个方法」，赶紧用 `type(...)` 看看它到底是什么类型。
+
+**把前面几个错都修好：**
+
+""" + C_FIXES + r"""
+
+**读输出：** `箱数：12`；`12 12`（先清洗再转换）；`0`（`get` 给了默认值）；`8 8`（两种取最后一个的写法）；`[1, 2, 3] [1, 2, 3]`（原地排序和 `sorted` 各给一份）；最后 `0`：先判断 `count` 不是零，才做除法，否则给 0。
+
+### `try / except`：提前说好出错了怎么办
+
+前面所有的报错，结果都是程序**当场停下**。但有些错是**可以预料到的**：表格里的数据有人填了 `"12箱"`，一批订单里有一条箱数是空的。这时你不希望整个程序停下，而是「出了这种错，就这样处理，然后继续」。
+
+**几个新词：**
+
+- **异常 (exception)**：Python 里「出错了」的正式叫法。每种错是一个对象，有类型（`ValueError`……）和说明。
+- **抛出 (raise)**：出错的那一刻，Python「把异常扔出来」。
+- **捕获 (catch / handle)**：用 `try / except` 把它接住，不让它把程序停掉。
+- `try` 的意思是「试一试」；`except` 本来是「除……之外」「例外」的意思，在这里读成「**如果出现这种例外，就……**」。
+
+> **标准定义 · `try / except` 语句**
+>
+> `try:` 块里的代码正常执行；一旦其中某条语句抛出异常，**`try` 块里剩下的语句立刻放弃**，Python 自上而下查找第一个类型匹配的 `except`，执行它的块，然后从整个 `try` 语句**之后**继续。`except 类型 as 名字:` 会把异常对象绑定到这个名字上；没有任何 `except` 匹配时，异常继续往外抛（程序停下，打印 traceback）。
+>
+> *English: Code in try runs normally; if it raises, the rest of the try block is abandoned and the first matching except block runs, after which execution continues after the whole statement.*
+
+**白话版：「杂技演员下面的安全网」。** 演员（`try` 里的代码）表演时失手掉下来，会落在网（`except`）里，演出不用终止。但网只接**它写明要接的那种**。
+
+| 硬性规定 | 习惯 / 约定 |
+|---|---|
+| `try` 后面必须至少带一个 `except` 或 `finally` | 异常对象习惯起名 `e`（exception）或 `err` |
+| `except` 后面写的必须是异常类型（`ValueError`、`(ValueError, TypeError)` 等） | **`try` 块里只放可能出错的那一两行**，别把几十行都塞进去 |
+| 多个 `except` 从上到下找，**第一个匹配的**执行，后面的不看 | 具体的错误写前面，范围大的（`Exception`）放最后 |
+
+**问题八：把「会出错的转换」包起来。**
+
+""" + C_TRY1 + r"""
+
+**读输出：** `"12箱"` 让 `int(text)` 抛出 `ValueError`，Python 立刻放弃 `try` 块里剩下的语句（所以**没有**打印 `转换成功`），跳进 `except ValueError`，把 `qty` 设成 0 并打印 `不是纯数字，按 0 处理`；然后继续执行 `try` 语句之后的代码：`程序继续往下走，qty = 0`。
+
+**一次看清执行顺序：**
+
+""" + C_TRY_FLOW + r"""
+
+**读输出：** `1. 开始`、`3. 进入 except`、`4. 回到正常流程`。第 2 行被跳过了：出错的那一行（`1 / 0`）**之后**的语句都不会执行，这就是「立刻放弃」。
+
+**`as e` 是什么？**
+
+""" + C_TRY_AS + r"""
+
+**读输出：** `as e` 把被接住的异常对象贴上名字 `e`（`as` 的意思就是「当作 / 取名为」）。`type(e).__name__` 是类型的名字，`ValueError`；直接打印 `e` 得到说明 `invalid literal for int() with base 10: 'abc'`；`repr(e)` 把两者合在一起，写成 `ValueError("...")`。
+
+**问题九：一个 `try` 后面可以跟多个 `except` 吗？** 可以，每个处理一种错：
+
+""" + C_TRY_MULTI + r"""
+
+**读输出：** 四次循环，每次走不同的路：`'12'` 正常，`100 // 12` 是 8（`//` 是整除），打印 `'12' -> 8`；`'abc'` 的 `int` 抛 `ValueError`；`'0'` 能转成整数 0，但 `100 // 0` 抛 `ZeroDivisionError`；`None` 的 `int(None)` 抛 `TypeError`。Python 从上到下找第一个匹配的 `except`，其他的不看。
+
+**两种错想用同一种处理？** 把类型放进一个元组：
+
+""" + C_TRY_TUPLE + r"""
+
+**读输出：** `输入有问题： ValueError`、`输入有问题： TypeError`，最后 `20`（`100 // 5`）。`except (ValueError, TypeError)` 的圆括号是一个元组，意思是「这两种之一」。
+
+**为什么说「具体的在前，范围大的在后」？因为异常有「家谱」：**
+
+""" + C_MRO + r"""
+
+**读输出：** `KeyError -> LookupError -> Exception -> BaseException -> object`：`KeyError` 是 `LookupError` 的子类，`LookupError` 是 `Exception` 的子类，往上是 `BaseException`。`except 某类型` 会接住**这个类型以及它所有的子类**。所以 `except LookupError` 能同时接住 `KeyError` 和 `IndexError`（它俩都是 `LookupError` 的子类）；`except Exception` 能接住几乎所有「普通错误」。
+
+""" + C_TRY_ORDER + r"""
+
+**读输出：** `被 LookupError 接住了（KeyError 是它的子类）`：范围大的 `LookupError` 写在前面，抢先把 `KeyError` 接走了，下面的 `except KeyError` **永远走不到**，而且 Python 不会报错提醒你。所以**具体的写在前面，`Exception` 放在最后**。
+
+**问题十：如果我不在乎具体是什么错，想统一处理呢？** 可以，用 `except Exception as e`，并把类型和说明都打印出来：
+
+""" + C_TRY_EXC + r"""
+
+**读输出：** `8`，然后三行：`ValueError: ...`、`ZeroDivisionError: ...`、`TypeError: ...`。`type(e).__name__` 给出错误类型，`e` 给出说明（具体的措辞随 Python 版本略有不同）。这个写法在**调试**时特别有用：不知道会出什么错，先一律接住、打印出来看看。
+
+**但是，不能滥用 `except Exception`：**
+
+""" + C_TRY_ABUSE + r"""
+
+**读输出：** `总数 0`：没有任何报错，结果却是错的。原因是 `toal`（手误，少打了一个字母）本该抛出 `NameError`，却被 `except Exception: pass` 悄悄吞掉了。**最糟糕的 bug 就是「没有报错但结果不对」**，因为你连线索都没有。使用规则：
+
+1. **只接你预料到、并且知道该怎么处理的错**（比如 `ValueError`）；
+2. `except Exception` 只放在最外层，例如「一批任务里某一个失败了不要拖累其他，并且把错误打印或记录下来」；
+3. **永远不要 `except Exception: pass`**；也不要写光秃秃的 `except:`，它会接住 `BaseException`，连你按 `Ctrl + C` 想停下程序的 `KeyboardInterrupt` 都吞了。
+
+**`else` 和 `finally`：**
+
+> **标准定义 · `try` 语句的 `else` 与 `finally`**
+>
+> `else:` 块在 `try` 块**没有抛出异常**时执行；`finally:` 块**无论如何都会执行**（有没有异常、异常有没有被接住、`try` 里有没有 `return` / `break`）。
+>
+> *English: else runs if the try block raised nothing; finally always runs, for cleanup.*
+
+""" + C_TRY_ELSE + r"""
+
+**读输出：** `'12'` 这一轮：转换没出错，所以跳过 `except`，执行 `else`（`没出错，qty = 12`），最后 `finally`。`'abc'` 这一轮：`int` 抛错，进入 `except`（`转换失败`），跳过 `else`，最后还是 `finally`。**为什么要有 `else`？** 把「可能出错的那一两行」放 `try`，「成功之后接着做的事」放 `else`：这样 `else` 里如果出了别的错，不会被这个 `except` 误接。**`finally` 用来收尾**（关闭文件、释放连接等），无论成败都要做的事放这里。
+
+### `raise` 与 `assert`
+
+**`raise`：自己抛出异常。** 为什么要自己抛？程序发现数据不合理时，**尽早停下并说清楚**，比带着坏数据继续跑、最后得到一个莫名其妙的结果好得多。
+
+""" + C_RAISE + r"""
+
+**读输出：** `接住了： 箱数不能为负：-3`：`raise ValueError(说明)` 主动抛出一个 `ValueError`，被下面的 `except ValueError as e` 接住，`e` 就是我们写的那句说明。选类型的习惯：值不合适用 `ValueError`，类型不对用 `TypeError`。
+
+没有人接住的话：
+
+""" + C_RAISE_ERR + r"""
+
+**读输出：** 程序停下，最后一行就是我们自己写的 `ValueError: 箱数不能为负：-3`，上面一行指出是第 3 行的 `raise`。
+
+**`assert`：断言「这里一定成立」。**
+
+> **标准定义 · 断言 (assert)**
+>
+> `assert 条件, 说明`：如果条件为假，就抛出 `AssertionError(说明)`；条件为真则什么也不发生。它用来表达**程序员自己的假设**：断言失败意味着程序有 bug。
+>
+> *English: assert cond, msg raises AssertionError if cond is false. It documents assumptions that must hold in a correct program.*
+
+""" + C_ASSERT + r"""
+
+**读输出：** `断言通过`：条件为真，什么都没发生。
+
+""" + C_ASSERT_ERR + r"""
+
+**读输出：** `AssertionError: 库存不应为负`：条件为假，抛出了 `AssertionError`。**`assert` 和 `raise` 的区别：** `assert` 用来检查「我自己的代码里，这里应该永远成立」，在以 `python -O` 方式运行时，断言会被**整个跳过**，所以**不能用 `assert` 检查用户输入或外部数据**；那种检查要用 `if ...: raise ...`。（「异常、调试、测试与类型注解」那一节会讲得更深：自定义异常、异常链、单元测试。）
+"""),
+  V("NIWwJbo-9_8", "视频二：Python Tutorial: Using Try/Except Blocks for Error Handling（Corey Schafer）", 11),
+  T(r"""
+### `eval`：把字符串当代码运行
+
+**你问过的那一行：** `for bad in (...): try: eval(bad) except TypeError as e: print(...)`。现在逐个词拆开：
+
+- `for bad in (...)`：括号里是一个元组，每个元素是**一个字符串**，字符串的内容是一小段**会出错的 Python 代码**；`bad` 每一轮依次是其中一个字符串。
+- `try:`：试着做缩进的这一行，别让它把整个程序停掉。
+- `eval(bad)`：把字符串 `bad` **当作 Python 代码运行并求值**。
+- `except ... as e:`：出了这类错就接住，`e` 是那个错误对象，然后 `print(...)` 说明。
+
+> **标准定义 · `eval`**
+>
+> `eval(字符串)` 把字符串当作一个 Python **表达式 (expression)** 来**求值**，并返回结果。名字是 evaluate（求值）的缩写。
+>
+> *English: eval(s) parses the string s as a Python expression, evaluates it, and returns the value.*
+
+**白话版：「把写在纸条上的一句话，当真去执行」。**
+
+""" + C_EVAL1 + r"""
+
+**读输出：** `7`（先乘后加：`2 * 3 + 1`）、`20`（`eval` 能看到你程序里的变量 `x`）、`2`（`[1, 2, 3][1]` 取下标 1）。字符串里写的是什么，它就真的算什么。
+
+**为什么教学例子里会出现 `eval`？** 想演示「会出错的代码」。如果把它们直接写进循环体，第一个错就会让程序停下，后面几个看不到了。写成字符串再 `eval`，就可以放在 `try` 里一个个试，错了也不影响循环继续。**这只是一个教学捷径。**
+
+""" + C_EVAL_LOOP + r"""
+
+**读输出：** 四个字符串依次触发了四种不同的错：`TypeError`（整数加字符串）、`ValueError`（`int('x')`）、`IndexError`（下标 5 出界）、`KeyError`（空字典里没有键 `'k'`）。这里用的是 `except Exception as e`，所以四种都能接住，循环一次不停地跑完。如果这里写成 `except TypeError`，那只有第一个会被接住，第二个的 `ValueError` 会直接冒出来，把程序停下。这也是你问的「`try` 后面能不能跟很多 `except`」的答案：可以，你需要几种就写几个，或者统一用 `Exception`。
+
+**为什么实际代码里不要用 `eval`？** 因为它会运行字符串里**任何** Python 代码：
+
+""" + C_EVAL_DANGER + r"""
+
+**读输出：** `仓库门禁码 1234`：字符串 `"secret"` 被当作代码，读到了程序里的变量。字符串换成「读文件」「删文件」的代码，一样会被执行。**只要字符串的来源不是你自己（用户输入、网页、文件、网络），`eval` 就等于把电脑交给别人。** 而且 `eval` 出错的信息很难读，也很慢。需要解析数据时的替代品：
+
+- 字符串转数字：`int("12")`、`float("3.5")`；
+- 字符串里写的是 Python 字面量（数字、字符串、列表、字典）：`ast.literal_eval`；
+- 字符串是 JSON 格式：`json.loads`。
+
+""" + C_LITERAL + r"""
+
+**读输出：** `[1, 2, {'a': 3}]`：`literal_eval` 能把「字面量」转成对应的值。`ast.literal_eval("secret")` 被拒绝了（`ValueError`）：它只认字面量，不认变量名，更不会执行代码。（`import ast` 是把标准库里的工具拿过来用，「文件、模块与环境」那一节会讲。和 `eval` 同类的还有 `exec`，能运行多条语句，同样危险。）
+
+### 调试入门：没有报错但结果不对怎么办
+
+最难的 bug 是**没有报错，但结果不对**。三个习惯能解决大部分问题：**看、缩、拆**。
+
+**习惯一：用 `print` 看中间值。** 先看一个没有报错、结果却不对的例子：
+
+""" + C_DBG_BUG + r"""
+
+**读输出：** `平均 2.0`，但 `(12 + 0 + 35 + 8) / 4` 应该是 13.75。没有报错，不知道错在哪。**在循环里加一行 `print` 看每一轮的值：**
+
+""" + C_DBG_PRINT + r"""
+
+**读输出：** `total` 每一轮就是 `q` 本身（12、0、35、8），根本没有累计。累计起来的话应该是 12、12、47、55。线索一目了然：`total = q` 是赋值，不是累加，应该写成 `total += q`。
+
+""" + C_DBG_FIX + r"""
+
+**读输出：** `平均 13.75`，对了。（这个例子里 `print` 帮你**看见了中间值**，把「感觉哪里不对」变成了「这一行不对」。）
+
+**习惯二：怀疑一个值时，看它的类型和 `repr`。** `print` 会把空格、引号「藏起来」：
+
+""" + C_DBG_REPR + r"""
+
+**读输出：** 第一行 `12  False`（两个空格：数字后面本来有一个空格，加上 `print` 的分隔空格）：看上去是 12，却不等于 `"12"`。第二行 `'12 ' str 3`：`repr` 把引号和空格都显示了出来，类型是字符串，长度 3 而不是 2。第三行 `qty='12 '`：`f"{qty=}"` 是快捷写法（Python 3.8 起），同时打印变量名和它的 `repr`。
+
+**习惯三：二分排查。** 一段长代码结果不对，在**中间**加一个 `print` 或检查：中间值对，说明 bug 在后半段；中间值不对，说明在前半段。再对半、再对半，20 行代码大约 5 次就能定位，比从头一行行猜快得多。
+
+**习惯四：缩成最小的可复现例子 (minimal reproducible example)。** 把出问题的代码一点点删，直到剩下**最少的几行、单独就能运行、仍然出现同一个错**。这个过程中你自己往往就发现原因了；如果还是不明白，要向别人（同事、论坛、Claude）求助，把这个最小例子连同**完整的 traceback** 和**你期望的结果**一起发过去，别人才帮得上忙。比如上面 `平均 2.0` 的问题，最小例子可以缩成：
+
+```text
+total = 0
+for q in [12, 0, 35, 8]:
+    total = q
+print(total)          # 得到 8，期望 55
+```
+
+**习惯五：读完整的报错，一次只改一处。** 不要只看最后一行就自己猜；改一处、运行一次，确认问题是不是变了，而不是一口气改五个地方。
+
+### 这一节你要带走的三句话
+
+1. **缩进是 Python 的语法**：块由冒号加缩进圈出来；`if / elif / else` 从上到下执行第一个为真的分支；`0`、空容器、`None` 当作假；`and` / `or` 会短路，把「安全检查」放左边。
+2. **`for` 循环的是「容器里的每一个元素」，一次拿一个**；`range`、`enumerate`、`zip`、`.items()` 决定拿什么；`while` 必须让条件最终变假。
+3. **读报错：先看最后一行（类型加说明），再找最下面一条属于自己代码的行**；`try / except` 只接具体的、预料到的错，不要滥用 `except Exception`；**不要用 `eval`**。
+"""),
+  THINK("**（实践题）** 用本节的模式写代码：对「常见循环模式」里的订单列表 `orders`（每个订单是含 `id`、`qty`、`status` 的字典），(1) 求「已发货（shipped）订单」的总箱数；(2) 找出所有 `qty` 大于平均每单箱数的订单编号；(3) 如果列表里混进了一个没有 `qty` 这个键的订单，怎样让程序不崩，并把有问题的订单编号打印出来？", r"""
+(1) 累加模式加条件：
+
+```python-static
+shipped_total = 0
+for order in orders:
+    if order["status"] == "shipped":
+        shipped_total += order["qty"]
+```
+
+对示例数据是 `12 + 35 = 47`。
+
+(2) 要先算平均，再过滤（两趟循环）：
+
+```python-static
+total = 0
+for order in orders:
+    total += order["qty"]
+average = total / len(orders)        # 先确认 orders 不是空的
+above = []
+for order in orders:
+    if order["qty"] > average:
+        above.append(order["id"])
+```
+
+示例数据平均 15.0，结果 `['A103', 'A105']`。
+
+(3) 缺 `qty` 会抛 `KeyError`。用 `try / except KeyError` 接住并记录，或者用 `order.get("qty")` 再判断是不是 `None`：
+
+```python-static
+for order in orders:
+    try:
+        total += order["qty"]
+    except KeyError:
+        print("这个订单缺少 qty：", order.get("id"))
+```
+
+注意：只接 `KeyError`，因为那是你预料到的错；如果 `qty` 的值是字符串，会得到 `TypeError`，应该让它暴露出来，而不是被悄悄吞掉。
+"""),
+  THINK("**（概念辨析）** 一段代码写成 `for bad in (\"1 + 'a'\", \"int('x')\"): try: eval(bad) except TypeError as e: print(e)`（缩进正确）。运行时会发生什么？为什么？要让两个都能接住，有哪两种改法，各有什么取舍？", r"""
+第一个字符串 `1 + 'a'` 抛出 `TypeError`，被 `except TypeError` 接住，打印出说明；第二个 `int('x')` 抛出的是 **`ValueError`**，不是 `TypeError`，没有任何 `except` 匹配，**异常继续往外抛，程序停下并打印 traceback**，循环也就不会再继续。
+
+改法一：写两个 `except`（`except TypeError ...` 和 `except ValueError ...`），或者 `except (TypeError, ValueError) as e`：**明确**说出你预料到哪些错，其他没预料到的错仍然会暴露出来，这是推荐的做法。改法二：`except Exception as e` 然后打印 `type(e).__name__` 和 `e`：省事，适合调试和「一批任务逐个跑、一个失败不要拖累其他」的最外层，但会把你没想到的错（比如手误的 `NameError`）也一起吞掉，所以不要在逻辑的深处滥用。
+"""),
+  THINK("**（和后面内容的联系）** 清洗一份有几十万行的数据时，有人在循环里写 `try: ... except Exception: pass` 来「跳过坏行」。这样会有什么问题？更好的写法是什么？这和训练模型时 `for epoch in range(...)`、`for batch in loader` 这种嵌套循环里的 bug 排查有什么关系？", r"""
+问题：**坏行被悄悄丢掉，没人知道丢了多少、丢了哪些、为什么坏**；更危险的是代码本身的 bug（拼错变量名、逻辑写错）也被一并吞掉，结果是「没有报错，但数据不对」，之后训练出的模型质量差，却找不到原因。
+
+更好的写法：只接具体的、预料到的错（`except ValueError`）；**计数并记录坏行**（例如把行号和原因放进一个列表，最后打印数量，必要时把坏行写进另一个文件）；比例异常高时主动 `raise` 停下来检查。
+
+联系：训练循环是 `for epoch in range(...)` 里套 `for batch in loader`，一个 bug 可能在跑了几个小时后才出现（比如某个 batch 出现 `NaN`）。这时就用到本节的方法：先读 traceback 找到出错的行；在循环里 `print` 或 `assert not math.isnan(loss)` 看中间值，尽早失败；二分定位是哪个 batch；缩成一个能复现的最小例子。「常见循环模式」里的累加、计数、找最大这些模式，也正是日志里统计 loss、准确率的写法。
+"""),
+  KW(("缩进","indentation","用行首空格表示代码块的层级，是 Python 的语法"),
+     ("代码块","block","同一缩进层级、一起执行的一组语句"),
+     ("布尔值","Boolean","`True` 和 `False` 两个值，条件的结果"),
+     ("真值","truthiness","任何对象在条件里被当作真或假；`0`、空容器、`None` 为假"),
+     ("短路求值","short-circuit evaluation","`and` / `or` 左边能决定结果时，不再计算右边"),
+     ("循环变量","loop variable","`for` 每一轮依次取到容器里的一个元素的那个名字"),
+     ("`range`","range","生成 `start` 到 `stop` 之前（不含 `stop`）的整数序列"),
+     ("解包","unpacking","把一对或一组值同时赋给多个变量，如 `for i, x in enumerate(xs)`"),
+     ("累加器","accumulator","循环之前先设好、循环里不断更新的变量，如总数、计数、空列表"),
+     ("死循环","infinite loop","条件永远不会变假、无法结束的循环；终端里用 Ctrl + C 停"),
+     ("回溯","traceback","未处理的异常停下程序时打印的调用记录，最后一行是错误类型和说明"),
+     ("异常","exception","Python 里「出错」的正式叫法；用 `try / except` 捕获，用 `raise` 抛出"),
+     ("`try / except`","try / except","试着做，出现指定类型的错就改做另一件事，程序继续"),
+     ("断言","assert","`assert 条件, 说明`：声明「这里一定成立」，不成立就抛 `AssertionError`"),
+     ("`eval`","eval","把字符串当 Python 表达式运行；字符串来源不可信时非常危险，不要用"),
+  ),
+ ],
+ "references": [
+  {"title": "Think Python 3e（Downey）— 第 5 章 Conditionals and Recursion 与第 7 章 Iteration and Search", "url": "https://allendowney.github.io/ThinkPython/chap07.html", "note": "本节大纲依据之一：条件、循环和 while，CC BY-NC-SA 4.0；第 5 章在 chap05.html"},
+  {"title": "Python 官方教程：Errors and Exceptions", "url": "https://docs.python.org/3/tutorial/errors.html", "note": "语法错误、异常、try / except / else / finally、raise 的官方说明"},
+  {"title": "Python 官方教程：More Control Flow Tools", "url": "https://docs.python.org/3/tutorial/controlflow.html", "note": "if、for、range、break / continue / 循环的 else，官方说明"},
+  {"title": "Python 文档：Built-in Exceptions", "url": "https://docs.python.org/3/library/exceptions.html", "note": "所有内置异常的列表和继承关系（上面「家谱」的完整版），遇到没见过的错误类型时来查"},
+  {"title": "Harvard CS50P：Lecture 3 Exceptions（讲义）", "url": "https://cs50.harvard.edu/python/2022/notes/3/", "note": "大学课程原版，try / except / else、raise 与输入检查的讲义和习题"},
+ ],
+ "quiz": {"questions": [
+  Q("下面这段代码会打印什么？\n\n```text\nqty = 0\nif qty > 0:\n    print(\"A\")\n    print(\"B\")\nprint(\"C\")\n```",
+    ["什么都不打印", "只打印 `C`", "打印 `A`、`B`、`C`", "只打印 `B` 和 `C`"], 1,
+    "`qty > 0` 是假，`if` 下面缩进的两行 `print` 作为一个整体被跳过；`print(\"C\")` 没有缩进，不属于 `if`，所以无论如何都会执行。判断一行归谁管，看缩进。"),
+  Q("下面哪一个值在 `if` 里会被当作**真**？",
+    ["`[]`", "`\"\"`", "`[0]`", "`None`"], 2,
+    "真假只看「有没有内容」：空列表、空字符串、`None` 都是假；`[0]` 是一个含有一个元素的列表，不是空的，所以是真（不管里面那个元素本身是不是 0）。"),
+  Q("`0 or \"默认\"` 的结果是什么？",
+    ["`0`", "`False`", "`True`", "`\"默认\"`"], 3,
+    "`or` 返回第一个为真的操作数，都为假则返回最后一个。左边的 `0` 是假，所以结果是右边的 `\"默认\"`。注意 `and` / `or` 返回的是操作数本身，不一定是 `True` / `False`。"),
+  Q("`items = []`，那么 `if len(items) > 0 and items[0] > 5:` 为什么不会报 `IndexError`？",
+    ["因为 Python 会自动把空列表补成有一个元素", "因为 `and` 的左边是 `False`，右边没有被计算（短路求值）", "因为 `if` 会自动捕获 `IndexError`", "因为 `items[0]` 在空列表上返回 `None`"], 1,
+    "`and` 看到左边为假，结果已经确定，就不再计算右边，所以 `items[0]` 没有被执行。如果把两个条件的顺序反过来，就会因为先执行 `items[0]` 而报 `IndexError`。"),
+  Q("`for bad in (\"a\", \"b\", \"c\"):` 这行代码里，变量 `bad` 是什么？",
+    ["一个固定的关键字，必须叫这个名字", "每一轮依次取到括号里的一个元素（`\"a\"`、`\"b\"`、`\"c\"`）", "整个元组 `(\"a\", \"b\", \"c\")`", "循环的次数"], 1,
+    "`for` 循环的是容器里的每一个元素，一次一个，`bad` 只是我们给「当前这一个」起的名字，可以换成任何合法的变量名。"),
+  Q("`list(range(2, 10, 3))` 的结果是？",
+    ["`[2, 5, 8]`", "`[2, 5, 8, 11]`", "`[3, 6, 9]`", "`[2, 3, 4, 5, 6, 7, 8, 9]`"], 0,
+    "从 2 开始，每次加 3：2、5、8，下一个是 11，已经超过了 stop（10），不包含。`range` 到 stop 之前为止，stop 本身也不包含。"),
+  Q("下面哪段代码一定会形成死循环（条件永远不会变假，也没有 `break`）？",
+    ["`n` 从 5 开始，`while n > 0:` 的循环体里每轮执行 `n -= 1`", "`n` 从 5 开始，`while n > 0:` 的循环体里只有 `print(n)`，不改变 `n`", "`for n in range(5):` 的循环体里 `print(n)`", "`n` 从 0 开始，`while n < 5:` 的循环体里每轮执行 `n += 1`"], 1,
+    "只打印、不改变 `n` 的那个 `while`：`n` 永远是 5，条件 `n > 0` 永远为真，循环体里又没有改变 `n` 的语句，也没有 `break`，永远不会结束。其他几个写法里，`while` 的条件都会随着循环体对变量的修改最终变假，`for` 则是遍历一个有限的范围。"),
+  Q("运行后出现 `KeyError: 'SKU-B'`，这句话的意思是？",
+    ["列表的下标 `'SKU-B'` 出界了", "字符串 `'SKU-B'` 不能转成整数", "字典里没有 `'SKU-B'` 这个键", "`'SKU-B'` 这个名字没有定义"], 2,
+    "`KeyError` 表示字典里查不到这个键，冒号后面就是缺的那个键。列表下标出界是 `IndexError`；不能转成整数是 `ValueError`；名字没定义是 `NameError`。修法之一：`d.get('SKU-B', 默认值)`。"),
+  Q("下面的代码里，`except` 的顺序有什么问题？\n\n```text\ntry:\n    d = {}\n    d[\"k\"]\nexcept LookupError:\n    print(\"1\")\nexcept KeyError:\n    print(\"2\")\n```",
+    ["语法错误，Python 不允许这样写", "运行时会报 `NameError`", "没有语法问题，但会打印 `1`，第二个 `except` 永远走不到，因为 `KeyError` 是 `LookupError` 的子类", "会同时打印 `1` 和 `2`"], 2,
+    "`except` 从上到下找第一个匹配的，`LookupError` 能接住它的所有子类（包括 `KeyError`），所以第一个就匹配了，第二个永远不会执行，而且 Python 不会提示。原则：具体的写前面，范围大的写后面。"),
+  Q("为什么在实际程序里不应该用 `eval` 去处理来自用户输入或文件的字符串？",
+    ["因为 `eval` 只能计算数字", "因为 `eval` 会把字符串当作 Python 代码执行，字符串里的任何代码都会被运行，等于把电脑交给写字符串的人", "因为 `eval` 总是比 `int()` 慢一百倍", "因为 `eval` 会让程序进入死循环"], 1,
+    "`eval` 的能力是执行任意代码，包括读你的变量、读写或删除文件。数字用 `int()` / `float()`，字面量用 `ast.literal_eval`，JSON 用 `json.loads`。慢是次要的缺点，不是主要原因。"),
+ ]},
+}
+
+TARGET = [2, 0, 3, 1, 2, 0, 3, 1, 2, 0]
+for q, t in zip(unit["quiz"]["questions"], TARGET):
+    q["options"][q["answer"]], q["options"][t] = q["options"][t], q["options"][q["answer"]]
+    q["answer"] = t
+
+if __name__ == '__main__':
+    dump(unit, "py-0", "u09-control-flow-errors.json")

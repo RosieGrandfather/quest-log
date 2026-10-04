@@ -32,6 +32,13 @@ print(a.__dict__)
 print(type(a), type(Student), isinstance(a, Student))
 ''')
 
+C_BUILTIN = nb.cell('''
+# 内置类型的方法也是同一回事：点号前面的对象就是 self
+print("abc".upper(), str.upper("abc"))                  # 字符串的方法
+print([3, 1, 3].count(3), list.count([3, 1, 3], 3))     # 列表的方法
+print([m for m in dir({}) if not m.startswith("_")])    # dir(x)：列出 x 上所有的属性名（筛掉下划线开头的）
+''')
+
 C_CLSATTR = nb.cell('''
 print(a.school, b.school, Student.school)       # 读：实例上没有就去类上找
 

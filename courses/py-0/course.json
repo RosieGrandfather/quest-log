@@ -1,53 +1,245 @@
 {
   "id": "py-0",
   "title": "Python 软件基础",
-  "subtitle": "函数与递归、推导式与迭代器、类与对象、异常调试与测试、文件模块与环境、综合小项目 —— 对应 NUS IT5001 的核心内容并补上读 ML 代码需要的部分（装饰器、生成器、特殊方法、dataclass、虚拟环境），已经会的可以直接跳过",
+  "subtitle": "先补基础（变量与字符串、容器、条件循环与报错），再学函数与递归、推导式与迭代器、类与对象、异常调试与测试、文件模块与环境，最后做一个综合小项目 —— 对应 NUS IT5001 的核心内容并补上读 ML 代码需要的部分（装饰器、生成器、特殊方法、dataclass、虚拟环境）；每个小节不超过 50 分钟，已经会的可以直接跳过",
   "source": {
     "name": "Think Python 3e（Downey，CC BY-NC-SA 4.0）与 Harvard CS50P（作为大纲依据）",
     "url": "https://allendowney.github.io/ThinkPython/"
   },
   "units": [
     {
+      "id": "u07",
+      "title": "变量、数据类型与字符串（1/3）",
+      "en": "Variables, Types & Strings (1/3)",
+      "minutes": 40,
+      "file": "u07-variables-types.json",
+      "whole": "u07-variables-types.json"
+    },
+    {
+      "id": "u07b",
+      "title": "变量、数据类型与字符串（2/3）",
+      "en": "Variables, Types & Strings (2/3)",
+      "minutes": 40,
+      "file": "u07b-variables-types.json",
+      "whole": "u07-variables-types.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u07c",
+      "title": "变量、数据类型与字符串（3/3）",
+      "en": "Variables, Types & Strings (3/3)",
+      "minutes": 40,
+      "file": "u07c-variables-types.json",
+      "whole": "u07-variables-types.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u08",
+      "title": "容器：列表、元组、字典与集合（1/3）",
+      "en": "Lists, Tuples, Dicts & Sets (1/3)",
+      "minutes": 30,
+      "file": "u08-containers.json",
+      "whole": "u08-containers.json"
+    },
+    {
+      "id": "u08b",
+      "title": "容器：列表、元组、字典与集合（2/3）",
+      "en": "Lists, Tuples, Dicts & Sets (2/3)",
+      "minutes": 40,
+      "file": "u08b-containers.json",
+      "whole": "u08-containers.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u08c",
+      "title": "容器：列表、元组、字典与集合（3/3）",
+      "en": "Lists, Tuples, Dicts & Sets (3/3)",
+      "minutes": 40,
+      "file": "u08c-containers.json",
+      "whole": "u08-containers.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u09",
+      "title": "条件、循环与读懂报错（1/3）",
+      "en": "Control Flow, Loops & Reading Errors (1/3)",
+      "minutes": 35,
+      "file": "u09-control-flow-errors.json",
+      "whole": "u09-control-flow-errors.json"
+    },
+    {
+      "id": "u09b",
+      "title": "条件、循环与读懂报错（2/3）",
+      "en": "Control Flow, Loops & Reading Errors (2/3)",
+      "minutes": 40,
+      "file": "u09b-control-flow-errors.json",
+      "whole": "u09-control-flow-errors.json",
+      "part_of": "u09"
+    },
+    {
+      "id": "u09c",
+      "title": "条件、循环与读懂报错（3/3）",
+      "en": "Control Flow, Loops & Reading Errors (3/3)",
+      "minutes": 40,
+      "file": "u09c-control-flow-errors.json",
+      "whole": "u09-control-flow-errors.json",
+      "part_of": "u09"
+    },
+    {
       "id": "u01",
-      "title": "函数、作用域与递归",
-      "en": "Functions, Scope & Recursion",
-      "minutes": 100,
-      "file": "u01-functions-recursion.json"
+      "title": "函数、作用域与递归（1/3）",
+      "en": "Functions, Scope & Recursion (1/3)",
+      "minutes": 40,
+      "file": "u01-functions-recursion.json",
+      "whole": "u01-functions-recursion.json"
+    },
+    {
+      "id": "u01b",
+      "title": "函数、作用域与递归（2/3）",
+      "en": "Functions, Scope & Recursion (2/3)",
+      "minutes": 40,
+      "file": "u01b-functions-recursion.json",
+      "whole": "u01-functions-recursion.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u01c",
+      "title": "函数、作用域与递归（3/3）",
+      "en": "Functions, Scope & Recursion (3/3)",
+      "minutes": 40,
+      "file": "u01c-functions-recursion.json",
+      "whole": "u01-functions-recursion.json",
+      "part_of": "u01"
     },
     {
       "id": "u02",
-      "title": "推导式、迭代器与生成器",
-      "en": "Comprehensions, Iterators & Generators",
-      "minutes": 90,
-      "file": "u02-comprehensions-iterators.json"
+      "title": "推导式、迭代器与生成器（1/3）",
+      "en": "Comprehensions, Iterators & Generators (1/3)",
+      "minutes": 25,
+      "file": "u02-comprehensions-iterators.json",
+      "whole": "u02-comprehensions-iterators.json"
+    },
+    {
+      "id": "u02b",
+      "title": "推导式、迭代器与生成器（2/3）",
+      "en": "Comprehensions, Iterators & Generators (2/3)",
+      "minutes": 45,
+      "file": "u02b-comprehensions-iterators.json",
+      "whole": "u02-comprehensions-iterators.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u02c",
+      "title": "推导式、迭代器与生成器（3/3）",
+      "en": "Comprehensions, Iterators & Generators (3/3)",
+      "minutes": 40,
+      "file": "u02c-comprehensions-iterators.json",
+      "whole": "u02-comprehensions-iterators.json",
+      "part_of": "u02"
     },
     {
       "id": "u03",
-      "title": "类与对象",
-      "en": "Classes & Objects",
-      "minutes": 100,
-      "file": "u03-classes-objects.json"
+      "title": "类与对象（1/3）",
+      "en": "Classes & Objects (1/3)",
+      "minutes": 40,
+      "file": "u03-classes-objects.json",
+      "whole": "u03-classes-objects.json"
+    },
+    {
+      "id": "u03b",
+      "title": "类与对象（2/3）",
+      "en": "Classes & Objects (2/3)",
+      "minutes": 40,
+      "file": "u03b-classes-objects.json",
+      "whole": "u03-classes-objects.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u03c",
+      "title": "类与对象（3/3）",
+      "en": "Classes & Objects (3/3)",
+      "minutes": 35,
+      "file": "u03c-classes-objects.json",
+      "whole": "u03-classes-objects.json",
+      "part_of": "u03"
     },
     {
       "id": "u04",
-      "title": "异常、调试、测试与类型注解",
-      "en": "Exceptions, Debugging, Testing & Type Hints",
-      "minutes": 100,
-      "file": "u04-exceptions-testing.json"
+      "title": "异常、调试、测试与类型注解（1/3）",
+      "en": "Exceptions, Debugging, Testing & Type Hints (1/3)",
+      "minutes": 45,
+      "file": "u04-exceptions-testing.json",
+      "whole": "u04-exceptions-testing.json"
+    },
+    {
+      "id": "u04b",
+      "title": "异常、调试、测试与类型注解（2/3）",
+      "en": "Exceptions, Debugging, Testing & Type Hints (2/3)",
+      "minutes": 40,
+      "file": "u04b-exceptions-testing.json",
+      "whole": "u04-exceptions-testing.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u04c",
+      "title": "异常、调试、测试与类型注解（3/3）",
+      "en": "Exceptions, Debugging, Testing & Type Hints (3/3)",
+      "minutes": 45,
+      "file": "u04c-exceptions-testing.json",
+      "whole": "u04-exceptions-testing.json",
+      "part_of": "u04"
     },
     {
       "id": "u05",
-      "title": "文件、模块与环境",
-      "en": "Files, Modules & Environments",
-      "minutes": 90,
-      "file": "u05-files-modules-envs.json"
+      "title": "文件、模块与环境（1/3）",
+      "en": "Files, Modules & Environments (1/3)",
+      "minutes": 40,
+      "file": "u05-files-modules-envs.json",
+      "whole": "u05-files-modules-envs.json"
+    },
+    {
+      "id": "u05b",
+      "title": "文件、模块与环境（2/3）",
+      "en": "Files, Modules & Environments (2/3)",
+      "minutes": 35,
+      "file": "u05b-files-modules-envs.json",
+      "whole": "u05-files-modules-envs.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u05c",
+      "title": "文件、模块与环境（3/3）",
+      "en": "Files, Modules & Environments (3/3)",
+      "minutes": 30,
+      "file": "u05c-files-modules-envs.json",
+      "whole": "u05-files-modules-envs.json",
+      "part_of": "u05"
     },
     {
       "id": "u06",
-      "title": "综合小项目：从零实现 k 近邻分类器",
-      "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch",
-      "minutes": 120,
-      "file": "u06-capstone-knn.json"
+      "title": "综合小项目：从零实现 k 近邻分类器（1/3）",
+      "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch (1/3)",
+      "minutes": 50,
+      "file": "u06-capstone-knn.json",
+      "whole": "u06-capstone-knn.json"
+    },
+    {
+      "id": "u06b",
+      "title": "综合小项目：从零实现 k 近邻分类器（2/3）",
+      "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch (2/3)",
+      "minutes": 45,
+      "file": "u06b-capstone-knn.json",
+      "whole": "u06-capstone-knn.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u06c",
+      "title": "综合小项目：从零实现 k 近邻分类器（3/3）",
+      "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch (3/3)",
+      "minutes": 45,
+      "file": "u06c-capstone-knn.json",
+      "whole": "u06-capstone-knn.json",
+      "part_of": "u06"
     }
   ],
   "order": 1,

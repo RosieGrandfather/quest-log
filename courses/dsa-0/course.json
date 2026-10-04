@@ -9,80 +9,217 @@
   "units": [
     {
       "id": "u01",
-      "title": "复杂度：Big-O 怎么看",
-      "en": "Algorithm Complexity & Big-O",
-      "minutes": 70,
-      "file": "u01-complexity.json"
+      "title": "复杂度：Big-O 怎么看（1/2）",
+      "en": "Algorithm Complexity & Big-O (1/2)",
+      "minutes": 30,
+      "file": "u01-complexity.json",
+      "whole": "u01-complexity.json"
+    },
+    {
+      "id": "u01b",
+      "title": "复杂度：Big-O 怎么看（2/2）",
+      "en": "Algorithm Complexity & Big-O (2/2)",
+      "minutes": 45,
+      "file": "u01b-complexity.json",
+      "whole": "u01-complexity.json",
+      "part_of": "u01"
     },
     {
       "id": "u02",
-      "title": "数组与链表",
-      "en": "Arrays & Linked Lists",
-      "minutes": 75,
-      "file": "u02-arrays-linked-lists.json"
+      "title": "数组与链表（1/2）",
+      "en": "Arrays & Linked Lists (1/2)",
+      "minutes": 35,
+      "file": "u02-arrays-linked-lists.json",
+      "whole": "u02-arrays-linked-lists.json"
+    },
+    {
+      "id": "u02b",
+      "title": "数组与链表（2/2）",
+      "en": "Arrays & Linked Lists (2/2)",
+      "minutes": 45,
+      "file": "u02b-arrays-linked-lists.json",
+      "whole": "u02-arrays-linked-lists.json",
+      "part_of": "u02"
     },
     {
       "id": "u03",
-      "title": "栈、队列与双端队列",
-      "en": "Stacks, Queues & Deques",
-      "minutes": 70,
-      "file": "u03-stacks-queues.json"
+      "title": "栈、队列与双端队列（1/2）",
+      "en": "Stacks, Queues & Deques (1/2)",
+      "minutes": 30,
+      "file": "u03-stacks-queues.json",
+      "whole": "u03-stacks-queues.json"
+    },
+    {
+      "id": "u03b",
+      "title": "栈、队列与双端队列（2/2）",
+      "en": "Stacks, Queues & Deques (2/2)",
+      "minutes": 45,
+      "file": "u03b-stacks-queues.json",
+      "whole": "u03-stacks-queues.json",
+      "part_of": "u03"
     },
     {
       "id": "u04",
-      "title": "哈希表与集合",
-      "en": "Hash Tables & Sets",
-      "minutes": 75,
-      "file": "u04-hash-tables.json"
+      "title": "哈希表与集合（1/2）",
+      "en": "Hash Tables & Sets (1/2)",
+      "minutes": 45,
+      "file": "u04-hash-tables.json",
+      "whole": "u04-hash-tables.json"
+    },
+    {
+      "id": "u04b",
+      "title": "哈希表与集合（2/2）",
+      "en": "Hash Tables & Sets (2/2)",
+      "minutes": 35,
+      "file": "u04b-hash-tables.json",
+      "whole": "u04-hash-tables.json",
+      "part_of": "u04"
     },
     {
       "id": "u05",
-      "title": "递归进阶：分治与回溯",
-      "en": "Divide & Conquer, Backtracking",
-      "minutes": 75,
-      "file": "u05-divide-backtrack.json"
+      "title": "递归进阶：分治与回溯（1/2）",
+      "en": "Divide & Conquer, Backtracking (1/2)",
+      "minutes": 40,
+      "file": "u05-divide-backtrack.json",
+      "whole": "u05-divide-backtrack.json"
+    },
+    {
+      "id": "u05b",
+      "title": "递归进阶：分治与回溯（2/2）",
+      "en": "Divide & Conquer, Backtracking (2/2)",
+      "minutes": 45,
+      "file": "u05b-divide-backtrack.json",
+      "whole": "u05-divide-backtrack.json",
+      "part_of": "u05"
     },
     {
       "id": "u06",
-      "title": "排序与二分查找",
-      "en": "Sorting & Binary Search",
-      "minutes": 70,
-      "file": "u06-sorting-binary-search.json"
+      "title": "排序与二分查找（1/2）",
+      "en": "Sorting & Binary Search (1/2)",
+      "minutes": 35,
+      "file": "u06-sorting-binary-search.json",
+      "whole": "u06-sorting-binary-search.json"
+    },
+    {
+      "id": "u06b",
+      "title": "排序与二分查找（2/2）",
+      "en": "Sorting & Binary Search (2/2)",
+      "minutes": 40,
+      "file": "u06b-sorting-binary-search.json",
+      "whole": "u06-sorting-binary-search.json",
+      "part_of": "u06"
     },
     {
       "id": "u07",
-      "title": "树与二叉搜索树",
-      "en": "Trees & Binary Search Trees",
-      "minutes": 80,
-      "file": "u07-trees-bst.json"
+      "title": "树与二叉搜索树（1/2）",
+      "en": "Trees & Binary Search Trees (1/2)",
+      "minutes": 35,
+      "file": "u07-trees-bst.json",
+      "whole": "u07-trees-bst.json"
+    },
+    {
+      "id": "u07b",
+      "title": "树与二叉搜索树（2/2）",
+      "en": "Trees & Binary Search Trees (2/2)",
+      "minutes": 50,
+      "file": "u07b-trees-bst.json",
+      "whole": "u07-trees-bst.json",
+      "part_of": "u07"
     },
     {
       "id": "u08",
-      "title": "堆与优先队列",
-      "en": "Heaps & Priority Queues",
-      "minutes": 70,
-      "file": "u08-heaps.json"
+      "title": "堆与优先队列（1/2）",
+      "en": "Heaps & Priority Queues (1/2)",
+      "minutes": 40,
+      "file": "u08-heaps.json",
+      "whole": "u08-heaps.json"
+    },
+    {
+      "id": "u08b",
+      "title": "堆与优先队列（2/2）",
+      "en": "Heaps & Priority Queues (2/2)",
+      "minutes": 40,
+      "file": "u08b-heaps.json",
+      "whole": "u08-heaps.json",
+      "part_of": "u08"
     },
     {
       "id": "u09",
-      "title": "图：表示、BFS、DFS 与拓扑排序",
-      "en": "Graphs: Representation, BFS, DFS & Topological Sort",
-      "minutes": 90,
-      "file": "u09-graphs-bfs-dfs.json"
+      "title": "图：表示、BFS、DFS 与拓扑排序（1/3）",
+      "en": "Graphs: Representation, BFS, DFS & Topological Sort (1/3)",
+      "minutes": 30,
+      "file": "u09-graphs-bfs-dfs.json",
+      "whole": "u09-graphs-bfs-dfs.json"
+    },
+    {
+      "id": "u09b",
+      "title": "图：表示、BFS、DFS 与拓扑排序（2/3）",
+      "en": "Graphs: Representation, BFS, DFS & Topological Sort (2/3)",
+      "minutes": 35,
+      "file": "u09b-graphs-bfs-dfs.json",
+      "whole": "u09-graphs-bfs-dfs.json",
+      "part_of": "u09"
+    },
+    {
+      "id": "u09c",
+      "title": "图：表示、BFS、DFS 与拓扑排序（3/3）",
+      "en": "Graphs: Representation, BFS, DFS & Topological Sort (3/3)",
+      "minutes": 35,
+      "file": "u09c-graphs-bfs-dfs.json",
+      "whole": "u09-graphs-bfs-dfs.json",
+      "part_of": "u09"
     },
     {
       "id": "u10",
-      "title": "加权图：最短路径、最小生成树与并查集",
-      "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find",
-      "minutes": 90,
-      "file": "u10-shortest-paths-mst.json"
+      "title": "加权图：最短路径、最小生成树与并查集（1/3）",
+      "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find (1/3)",
+      "minutes": 40,
+      "file": "u10-shortest-paths-mst.json",
+      "whole": "u10-shortest-paths-mst.json"
+    },
+    {
+      "id": "u10b",
+      "title": "加权图：最短路径、最小生成树与并查集（2/3）",
+      "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find (2/3)",
+      "minutes": 25,
+      "file": "u10b-shortest-paths-mst.json",
+      "whole": "u10-shortest-paths-mst.json",
+      "part_of": "u10"
+    },
+    {
+      "id": "u10c",
+      "title": "加权图：最短路径、最小生成树与并查集（3/3）",
+      "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find (3/3)",
+      "minutes": 35,
+      "file": "u10c-shortest-paths-mst.json",
+      "whole": "u10-shortest-paths-mst.json",
+      "part_of": "u10"
     },
     {
       "id": "u11",
-      "title": "动态规划",
-      "en": "Dynamic Programming",
-      "minutes": 90,
-      "file": "u11-dynamic-programming.json"
+      "title": "动态规划（1/3）",
+      "en": "Dynamic Programming (1/3)",
+      "minutes": 40,
+      "file": "u11-dynamic-programming.json",
+      "whole": "u11-dynamic-programming.json"
+    },
+    {
+      "id": "u11b",
+      "title": "动态规划（2/3）",
+      "en": "Dynamic Programming (2/3)",
+      "minutes": 35,
+      "file": "u11b-dynamic-programming.json",
+      "whole": "u11-dynamic-programming.json",
+      "part_of": "u11"
+    },
+    {
+      "id": "u11c",
+      "title": "动态规划（3/3）",
+      "en": "Dynamic Programming (3/3)",
+      "minutes": 30,
+      "file": "u11c-dynamic-programming.json",
+      "whole": "u11-dynamic-programming.json",
+      "part_of": "u11"
     }
   ],
   "order": 4,

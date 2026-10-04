@@ -1,0 +1,91 @@
+{
+ "id": "u06c",
+ "title": "序列与状态空间模型（3/3）",
+ "en": "Sequence & State-space Models (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "能手算一步 **GRU**，理解 RNN 的隐状态是一种 **学出来的信念 (learned belief)**，并能说出 **潜在动力学模型 (latent dynamics model)** 与后面 Dreamer 的 RSSM 的关系"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「序列与状态空间模型」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：RNN / GRU 的隐状态：学出来的信念（约 20 分钟） → 潜在动力学模型：把它们接在一起（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### RNN / GRU 的隐状态：学出来的信念\n\nHMM 和卡尔曼滤波有一个共同的前提：你得**事先知道**模型（$A,B,Q,R$）。现实里这些通常未知，状态可能是一张图像背后的物体位置，没有任何公式。深度学习的做法是放弃显式的概率解释，用循环神经网络 (RNN) 把历史压进一个向量 $h_t$：\n\n$$h_t=f_\\theta(h_{t-1},x_t)$$\n\n这和滤波的结构完全相同：「旧的信念 + 新的输入 → 新的信念」。普通 RNN 在长序列上有梯度消失的问题，**GRU** 用门控解决：\n\n> **标准定义 · 门控循环单元 (GRU)**\n>\n> 输入 $x_t$、上一步隐状态 $h_{t-1}$，GRU 先算两个门（$\\sigma$ 是 sigmoid），再算候选状态，最后加权混合（这里采用 PyTorch 的约定）：\n>\n> $$z_t=\\sigma(W_zx_t+U_zh_{t-1}+b_z),\\qquad r_t=\\sigma(W_rx_t+U_rh_{t-1}+b_r)$$\n>\n> $$n_t=\\tanh\\big(W_nx_t+U_n(r_t\\odot h_{t-1})+b_n\\big),\\qquad h_t=(1-z_t)\\odot n_t+z_t\\odot h_{t-1}$$\n>\n> **更新门** $z_t$ 越接近 1，越保留旧状态；**重置门** $r_t$ 决定计算候选状态时用多少旧状态。不同论文和实现对 $z_t$ 的约定可能相反（有的写成 $z_t\\odot n_t+(1-z_t)\\odot h_{t-1}$），读代码前要先确认。另外 PyTorch 的 `nn.GRU` 把重置门放在矩阵乘法之后：$n_t=\\tanh(W_nx_t+b_{in}+r_t\\odot(U_nh_{t-1}+b_{hn}))$，和上式的 $U_n(r_t\\odot h_{t-1})$ 略有不同（我用 `nn.GRUCell` 做过数值核对，差别是真实存在的）。\n>\n> *English: A GRU keeps a hidden state h_t and updates it through an update gate z_t and a reset gate r_t: the new state is an element-wise blend of the old state and a candidate state. Conventions differ on whether z or 1−z multiplies the old state.*\n\n**白话版：「会做笔记的人」。** 每读一句话（输入），他决定：这条新信息值不值得写进笔记（候选状态 $n_t$）？旧笔记要保留多少（更新门）？写新笔记前要不要先忘掉一部分旧内容（重置门）？笔记（隐状态）的长度是固定的，不管读了多少句。\n\n先手算一步，确认每个公式的含义（用很小的维度：输入 2 维、隐状态 3 维）：\n\n```python\nimport numpy as np\n\nsigmoid = lambda x: 1 / (1 + np.exp(-x))\nrng = np.random.default_rng(5)\nd_in, d_h = 2, 3\n# 三组参数：更新门 z、重置门 r、候选状态 n；每组有 W（输入）、U（隐状态）、b（偏置）\nWz, Uz, bz = rng.normal(0, 0.8, (d_h, d_in)), rng.normal(0, 0.8, (d_h, d_h)), np.zeros(d_h)\nWr, Ur, br = rng.normal(0, 0.8, (d_h, d_in)), rng.normal(0, 0.8, (d_h, d_h)), np.zeros(d_h)\nWn, Un, bn = rng.normal(0, 0.8, (d_h, d_in)), rng.normal(0, 0.8, (d_h, d_h)), np.zeros(d_h)\n\ndef gru_step(x, h):\n    z = sigmoid(Wz @ x + Uz @ h + bz)            # 更新门：越接近 1 越保留旧状态\n    r = sigmoid(Wr @ x + Ur @ h + br)            # 重置门：决定算候选状态时用多少旧状态\n    n = np.tanh(Wn @ x + Un @ (r * h) + bn)      # 候选新状态\n    return (1 - z) * n + z * h, z, r, n          # 新状态 = 新旧两种状态的逐元素加权平均\n\nx = np.array([1.0, -1.0]); h = np.array([0.5, -0.5, 0.0])\nh_new, z, r, n = gru_step(x, h)\nprint(\"更新门 z =\", np.round(z, 4)); print(\"重置门 r =\", np.round(r, 4)); print(\"候选 n   =\", np.round(n, 4))\nprint(\"新隐状态 h' =\", np.round(h_new, 4))\n\n# 手算核对第 0 维：全部用标量乘加，不用矩阵乘法\nz0 = sigmoid(sum(Wz[0, j] * x[j] for j in range(d_in)) + sum(Uz[0, j] * h[j] for j in range(d_h)))\nr_all = [sigmoid(sum(Wr[i, j] * x[j] for j in range(d_in)) + sum(Ur[i, j] * h[j] for j in range(d_h))) for i in range(d_h)]\nn0 = np.tanh(sum(Wn[0, j] * x[j] for j in range(d_in)) + sum(Un[0, j] * r_all[j] * h[j] for j in range(d_h)))\nprint(\"第 0 维手算 h'[0] =\", round((1 - z0) * n0 + z0 * h[0], 4), \" 与矩阵版一致：\", np.isclose((1 - z0) * n0 + z0 * h[0], h_new[0]))\n\n# 更新门的作用：把偏置 bz 调到很大（z 接近 1）= 几乎不更新；调到很小（z 接近 0）= 完全用新状态覆盖\nfor name, bias in [(\"z 偏大 (bz=+8)\", 8.0), (\"z 偏小 (bz=-8)\", -8.0)]:\n    bz[:] = bias\n    hh = np.array([0.5, -0.5, 0.0])\n    for t in range(5):\n        hh, *_ = gru_step(rng.normal(0, 1, d_in), hh)\n    print(name, \"：喂 5 个随机输入后 h =\", np.round(hh, 3))\n# 输出：更新门 z = [0.625  0.5024 0.4496]\n# 输出：重置门 r = [0.255  0.3554 0.6153]\n# 输出：候选 n   = [-0.7473 -0.0663 -0.6433]\n# 输出：新隐状态 h' = [ 0.0323 -0.2842 -0.3541]\n# 输出：第 0 维手算 h'[0] = 0.0323  与矩阵版一致： True\n# 输出：z 偏大 (bz=+8) ：喂 5 个随机输入后 h = [ 0.5   -0.5    0.004]\n# 输出：z 偏小 (bz=-8) ：喂 5 个随机输入后 h = [ 0.317 -0.172  0.18 ]\n```\n\n读输出：给定输入 $x=(1,-1)$ 和旧状态 $h=(0.5,-0.5,0)$，三个更新门是 $(0.625,0.5024,0.4496)$，重置门是 $(0.255,0.3554,0.6153)$，候选状态是 $(-0.7473,-0.0663,-0.6433)$，新状态是 $(0.0323,-0.2842,-0.3541)$。例如第 0 维：$(1-0.625)\\times(-0.7473)+0.625\\times0.5\\approx0.0323$，和代码一致，也和全部用标量乘加的手算一致。后两行展示了门的作用：把更新门偏置调到 $+8$（$z\\approx1$）后喂入 5 个随机输入，状态几乎没变，仍是 $(0.5,-0.5,0.004)$（第三维从 0 开始，剩下的 0.004 是极小的泄漏）；调到 $-8$（$z\\approx0$）则完全被新输入覆盖，变成了 $(0.317,-0.172,0.18)$。**门控让网络自己决定「记多久」。**\n\n下面这个实验验证「隐状态里确实装着历史」。还是那个环形走廊，但这次**完全不做贝叶斯推断**：用一个随机初始化、一次都没训练过的 GRU 读观测序列，只用最小二乘训练最后一层线性读出，看能否猜出真实的格子，并与「只用当前观测」比较：\n\n```python\nimport numpy as np\n\n# 实验：隐状态能不能装下「历史」？还是用环形走廊（观测只有门/墙，动作永远是向右走），\n# 用一个随机权重的 GRU 当「编码器」，只训练最后一层线性读出，看能否从隐状态猜出真实格子。\nsigmoid = lambda x: 1 / (1 + np.exp(-x))\nN, P_OK = 8, 0.9\ndoor = np.array([1, 0, 0, 1, 0, 1, 0, 0])\nrng = np.random.default_rng(0)\nd_in, d_h = 2, 64\nWz, Wr, Wn = [rng.normal(0, 1.0, (d_h, d_in)) for _ in range(3)]\nUz, Ur, Un = [rng.normal(0, 1.0 / np.sqrt(d_h), (d_h, d_h)) for _ in range(3)]\nbz, br, bn = np.zeros(d_h), np.zeros(d_h), np.zeros(d_h)\n\ndef gru_step(x, h):\n    z = sigmoid(Wz @ x + Uz @ h + bz); r = sigmoid(Wr @ x + Ur @ h + br)\n    n = np.tanh(Wn @ x + Un @ (r * h) + bn)\n    return (1 - z) * n + z * h\n\ndef episode(T=20):\n    cell = rng.integers(N); h = np.zeros(d_h); xs, hs, cells = [], [], []\n    for t in range(T):\n        if t > 0: cell = (cell + rng.choice([1, 0, 2], p=[0.8, 0.1, 0.1])) % N\n        o = int(rng.random() < (P_OK if door[cell] else 1 - P_OK))\n        x = np.eye(2)[o]; h = gru_step(x, h)\n        xs.append(x); hs.append(h.copy()); cells.append(cell)\n    return np.array(xs), np.array(hs), np.array(cells)\n\ndef dataset(n):\n    X, Hs, Y = [], [], []\n    for _ in range(n):\n        xs, hs, c = episode(); X += list(xs[5:]); Hs += list(hs[5:]); Y += list(c[5:])   # 丢掉前 5 步的预热期\n    return np.array(X), np.array(Hs), np.array(Y)\n\nXtr, Htr, Ytr = dataset(300); Xte, Hte, Yte = dataset(100)\n\ndef ridge_readout(F, Y, lam=1e-2):                  # 最小二乘线性读出（岭回归），目标是格子的独热编码\n    F1 = np.c_[F, np.ones(len(F))]\n    return np.linalg.solve(F1.T @ F1 + lam * np.eye(F1.shape[1]), F1.T @ np.eye(N)[Y])\n\ndef acc(F, Y, W): return float(((np.c_[F, np.ones(len(F))] @ W).argmax(1) == Y).mean())\n\nprint(\"随机猜（1/8）:\", 1 / N)\nprint(\"只用当前观测做特征 :\", round(acc(Xte, Yte, ridge_readout(Xtr, Ytr)), 3))\nprint(\"用 GRU 隐状态做特征:\", round(acc(Hte, Yte, ridge_readout(Htr, Ytr)), 3))\n# 输出：随机猜（1/8）: 0.125\n# 输出：只用当前观测做特征 : 0.207\n# 输出：用 GRU 隐状态做特征: 0.409\n```\n\n读输出：随机猜是 0.125；只用当前观测做特征，线性读出只能达到 0.207；而同一份观测序列经过 GRU 的隐状态后，线性读出达到 0.409，约为前者的两倍。**循环的隐状态把过去的观测压进了一个向量里**，使得线性读出就能利用历史。这个数字（0.409）低于上面贝叶斯滤波的 0.4855（那是另一组设置：12 步、从均匀信念开始），因为这里的 GRU 一次都没有被训练，真正训练过的网络会更接近最优信念。\n\n**一个重要的区别**：卡尔曼滤波和 HMM 的信念有明确的概率意义，可以保证它是历史的充分统计量；GRU 的隐状态只是被训练目标塑造成「对预测有用」，**没有任何保证**它是精确的后验。能否装下足够多的信息，取决于网络容量、训练数据和目标。把 $h_t$ 称作「学出来的信念」是一个有用的类比，而不是严格的等式。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "hkJNjxlEO-s",
+   "title": "视频三：Gated Recurrent Unit (GRU) Equations Explained（DataMListic）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### 潜在动力学模型：把它们接在一起\n\n现在可以把上面三条线合并成世界模型真正要学的对象。\n\n> **标准定义 · 潜在动力学模型 (latent dynamics model)**\n>\n> 在观测（比如图像）$o_t$ 之上引入低维的潜状态 $z_t$，用三个部分描述环境：\n>\n> $$\\underbrace{p(z_{t+1}\\mid z_t,a_t)}_{\\text{转移（动力学）}},\\qquad\\underbrace{p(o_t\\mid z_t)}_{\\text{观测模型（解码器）}},\\qquad\\underbrace{q(z_t\\mid o_{\\le t},a_{<t})}_{\\text{推断（编码器 / 滤波）}}$$\n>\n> 训练用序列版本的 **ELBO**，对每个时间步，既要重建观测，又要让推断出的后验与「只靠动力学的预测」靠近：\n>\n> $$\\mathcal L=\\sum_t\\Big(\\mathbb E_{q}\\big[\\log p(o_t\\mid z_t)\\big]-D_{KL}\\big(q(z_t\\mid o_{\\le t},a_{<t})\\,\\big\\|\\,p(z_t\\mid z_{t-1},a_{t-1})\\big)\\Big)$$\n>\n> *English: A latent dynamics model learns a transition p(z_{t+1} | z_t, a_t), an observation model p(o_t | z_t) and an inference network q(z_t | o_≤t, a_<t), trained with a sequential ELBO: reconstruct the observation while keeping the posterior close to the dynamics prior.*\n\n**白话版：「在脑子里放电影」。** 转移模型是「剧本」：给定现在的场景和我的动作，下一幕可能是什么；观测模型是「放映机」：把潜状态渲染成图像；推断网络是「侦探」：看了真实画面后，判断此刻剧本演到哪儿了。训练时让侦探的结论和剧本的预测尽量一致（KL 项），同时画面要还原得像（重建项）。**上一节的 VAE 在这里被一帧接一帧地串起来了**，每一步的先验不再是固定的 $\\mathcal N(0,I)$，而是由上一步的状态和动作算出来的。\n\n这里的 $p(z_{t+1}\\mid z_t,a_t)$ 是一个**分布**而不是确定的函数，下面的小例子里用一维非线性模型采样不同的未来：\n\n```python\nimport numpy as np\n\n# 潜在动力学模型：p(z_{t+1} | z_t, a_t)。这里是一个一维、非线性、带噪声的例子，\n# 同样的起点和动作序列，每次采样出来的未来都不同：它描述的是一个「分布」，不是一个确定的数。\nrng = np.random.default_rng(0)\ndef step(z, a, noise=0.1):\n    return z + 0.5 * np.sin(z) + a + noise * rng.normal(size=z.shape)\n\ndef rollout(actions, n=5000, z0=0.0):\n    z = np.full(n, z0)\n    for a in actions:\n        z = step(z, a)\n    return z\n\nfor name, acts in [(\"动作 (+0.3, +0.3, +0.3)\", [0.3] * 3), (\"动作 (-0.3, -0.3, -0.3)\", [-0.3] * 3)]:\n    z3 = rollout(acts)\n    print(f\"{name}: 3 步后 z 的均值 {z3.mean():+.3f}，标准差 {z3.std():.3f}\")\n\n# 观测模型 p(o | z)：潜变量到观测的「渲染」。这里 o = 2z + 噪声，由模型把观测和潜变量连起来\nz3 = rollout([0.3] * 3, n=5)\nprint(\"5 个采样的潜变量 z_3 :\", np.round(z3, 3))\nprint(\"对应的观测样本 o_3   :\", np.round(2 * z3 + 0.2 * rng.normal(size=5), 3))\n# 输出：动作 (+0.3, +0.3, +0.3): 3 步后 z 的均值 +1.384，标准差 0.262\n# 输出：动作 (-0.3, -0.3, -0.3): 3 步后 z 的均值 -1.381，标准差 0.261\n# 输出：5 个采样的潜变量 z_3 : [1.196 1.441 1.007 1.739 1.905]\n# 输出：对应的观测样本 o_3   : [2.406 3.063 1.465 3.352 3.725]\n```\n\n读输出：同一个起点、同样的噪声强度，动作序列 $(+0.3,+0.3,+0.3)$ 的 3 步后均值是 $+1.384$，$(-0.3,-0.3,-0.3)$ 是 $-1.381$，对称，标准差都是 0.26 左右；也就是说**动作改变了未来的分布，噪声给每种动作后的未来加上了散布**。这正是「规划」的前提：不同的动作序列在潜在动力学里对应不同的未来，我们可以比较它们。下面两行说明观测模型把潜变量变成观测样本（5 个 $z_3$ 对应 5 个 $o_3$，约为其 2 倍加噪声）。\n\n**和 PlaNet / Dreamer 的关系（第 8 节会细讲）**：RSSM 把潜状态拆成两部分：一个确定性的循环部分 $h_t$（像 GRU，负责长期记忆，对应本节的「学出来的信念」）和一个随机部分 $z_t$（负责不确定性，对应卡尔曼/HMM 里的「噪声」）。推断网络 $q(z_t\\mid h_t,o_t)$ 是滤波，转移 $p(z_t\\mid h_t)$ 是预测。本节学过的所有东西都在里面。\n\n### 这一节你要带走的三句话\n\n1. **观测不等于状态**：只看当前观测会感知混淆；维护**信念** $p(z_t\\mid o_{1:t},a_{1:t-1})$（预测 + 更新两步）才能在部分可观测下决策，POMDP 的信念是历史的充分统计量。\n2. **HMM 的前向算法和卡尔曼滤波是同一件事的离散 / 连续版本**：预测（过动力学）、更新（乘观测似然）；前向算法 $O(TK^2)$，卡尔曼增益是「相信观测的程度」，更新步一定不增大方差。\n3. **RNN / GRU 的隐状态是学出来的信念**：它把历史压成固定长度的向量，但没有精确后验的保证；**潜在动力学模型**把转移 $p(z_{t+1}\\mid z_t,a_t)$、观测模型和推断网络合起来，用序列 ELBO 训练，是世界模型的核心。"
+  },
+  {
+   "type": "think",
+   "q": "**联系机器学习**：DQN 在 Atari 上把最近 4 帧叠起来作为输入，Dreamer 则用循环的隐状态。从「信念」的角度，各自在解决什么问题？各自的局限是什么？",
+   "a": "单帧图像看不出球的运动方向和速度（速度是状态的一部分，但不在单个观测里），所以状态不是马尔可夫的。\n\n- **叠 4 帧**：用一个固定长度的历史窗口当作信念的近似。简单，但窗口之外的信息全部丢掉，窗口内的帧数又靠人工指定；\n- **循环隐状态（RNN / GRU / RSSM）**：让网络自己决定把哪些历史压进 $h_t$，理论上可以记住任意久以前的事，但没有精确后验的保证，训练也更难（梯度消失、需要序列数据）。\n\n两者都是对「信念」这个充分统计量的近似。Dreamer 的 RSSM 更进一步：确定性部分负责长期记忆，随机部分负责不确定性，并且有明确的概率模型（ELBO）可以训练。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Kaelbling, Littman & Cassandra《Planning and acting in partially observable stochastic domains》（Artificial Intelligence 101, 1998）",
+   "url": "https://people.csail.mit.edu/lpk/papers/aij98-pomdp.pdf",
+   "note": "本节「信念作为历史的充分统计量」的经典来源；篇幅较长，读前几节即可"
+  },
+  {
+   "title": "Hafner 等《Learning Latent Dynamics for Planning from Pixels》（PlaNet，ICML 2019）",
+   "url": "https://arxiv.org/abs/1811.04551",
+   "note": "RSSM 的出处，第 8 节会细读；现在可以先看它的模型图"
+  },
+  {
+   "title": "Cho 等《Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation》（EMNLP 2014）",
+   "url": "https://arxiv.org/abs/1406.1078",
+   "note": "GRU 的出处"
+  },
+  {
+   "title": "Rabiner《A tutorial on hidden Markov models and selected applications in speech recognition》（1989）",
+   "url": "http://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf",
+   "note": "HMM 的经典教程（前向 / 后向 / Viterbi）；链接可打开，书目信息我没有逐项核实"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "隐藏状态有 $K$ 个取值，观测序列长 $T$。前向算法的时间复杂度是多少？",
+    "options": [
+     "$O(TK)$",
+     "$O(K^T)$",
+     "$O(T^2K)$",
+     "$O(TK^2)$"
+    ],
+    "answer": 3,
+    "explain": "每一步要对 $K$ 个新状态各做一次 $K$ 项求和，所以每步 $O(K^2)$，总共 $O(TK^2)$。枚举全部隐藏路径需要 $K^T$ 条，是指数级的；前向算法的作用就是用动态规划把它压到多项式。"
+   },
+   {
+    "q": "PyTorch 约定下，GRU 的新状态是 $h_t=(1-z_t)\\odot n_t+z_t\\odot h_{t-1}$。某一维的更新门 $z_t$ 接近 1，意味着什么？",
+    "options": [
+     "这一维几乎被候选状态覆盖，旧记忆被丢掉",
+     "这一维几乎保持不变，旧记忆被保留",
+     "这一维的梯度必然为 0",
+     "这一维的重置门也必然为 1"
+    ],
+    "answer": 1,
+    "explain": "$z_t\\to1$ 时 $h_t\\approx h_{t-1}$，相当于「这一步不更新」，这也是 GRU 能把信息保存很多步的原因。不同论文和实现对 $z$ 的约定可能相反，读代码时要先看清。"
+   },
+   {
+    "q": "潜在动力学模型写成 $p(z_{t+1}\\mid z_t,a_t)$。这里把动作 $a_t$ 作为条件的主要目的是？",
+    "options": [
+     "让潜状态不再有随机性",
+     "省掉观测模型 $p(o\\mid z)$",
+     "让模型能回答「如果我采取这个动作，下一个潜状态会怎样」，从而可以用来规划",
+     "保证规划时多步预测不会产生任何误差"
+    ],
+    "answer": 2,
+    "explain": "带动作条件的动力学才能被用来「想象」不同动作序列的后果，这正是规划和想象中训练的基础。随机性来自分布本身（它是一个分布而不是确定函数），与是否带动作无关；观测模型仍然需要。"
+   }
+  ]
+ }
+}

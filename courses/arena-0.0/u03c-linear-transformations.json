@@ -1,0 +1,96 @@
+{
+ "id": "u03c",
+ "title": "线性变换与矩阵乘法（3/3）",
+ "en": "Linear Transformations & Matrix Multiplication (3/3)",
+ "minutes": 30,
+ "objectives": [
+  "能从输入输出数据里**恢复**（学出）一个线性变换，把「线性回归 = 学一个矩阵」和神经网络训练联系起来"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「线性变换与矩阵乘法」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：矩阵乘法 = 变换的复合（续）（约 5 分钟） → 非方阵与形状规则（约 10 分钟） → 动手实验：从数据里学出一个矩阵（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**结合律的实际价值：** 同一个乘积 $ABC$ 可以先算 $AB$ 或先算 $BC$，结果一样，但**计算量可能差很多**。例如 $A$ 是 $1000\\times2$、$B$ 是 $2\\times1000$、$C$ 是 $1000\\times1$：先算 $(AB)C$ 要先造一个 $1000\\times1000$ 的大矩阵，再乘；先算 $A(BC)$，$BC$ 只是 $2\\times1$，$A(BC)$ 只是 $1000\\times1$，便宜得多。Transformer 的注意力里，这类「先乘哪边」的选择会直接影响显存。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "v8VSDg_WQlA",
+   "title": "视频三：Nonsquare matrices as transformations between dimensions（线性代数的本质 第 8 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "text",
+   "md": "### 非方阵与形状规则\n\n> **标准定义 · 矩阵的形状与非方阵 (shape & non-square matrix)**\n>\n> $m\\times n$ 矩阵（$m$ 行 $n$ 列）有 $n$ 列、每列是 $m$ 维向量，所以它把 $n$ 维空间映射到 $m$ 维空间：$\\mathbb{R}^n\\to\\mathbb{R}^m$。矩阵乘法可行的条件与结果形状是：\n>\n> $$\\underbrace{A}_{(n,\\ m)}\\ \\underbrace{B}_{(m,\\ l)}=\\underbrace{AB}_{(n,\\ l)}$$\n>\n> 中间的维度必须相等，结果取两头。\n>\n> *English: An m×n matrix maps R^n to R^m. The product (n,m)·(m,l) is defined and has shape (n,l); the inner dimensions must match.*\n\n**白话版：「接口对接」。** 想成两节管道：前一节的出口粗细（$m$）必须和后一节的入口粗细一样，整条管道才通；整条管道的入口是 $B$ 的入口 $l$（作为输入维度），出口是 $A$ 的出口 $n$。写代码时遇到形状报错，**先把每个矩阵的形状写出来，检查中间两个数字**，这是最快的排查办法。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\nA = rng.normal(size=(3, 4))\nB = rng.normal(size=(4, 5))\nprint(\"(3,4) @ (4,5) ->\", (A @ B).shape)\ntry:\n    B @ A                                           # (4,5) @ (3,4)：中间维度 5 != 3\nexcept ValueError as e:\n    print(\"(4,5) @ (3,4) 报错：\", str(e)[:60])\n\n# 非方阵 = 在不同维度之间的变换。M 是 3x2：把二维平面送进三维空间\nM = np.array([[1., 0.], [0., 1.], [1., 1.]])        # 两列各是一个三维向量\npts2d = rng.normal(size=(2, 1000))                  # 1000 个二维点（每列一个）\npts3d = M @ pts2d\nprint(\"输入形状\", pts2d.shape, \"-> 输出形状\", pts3d.shape)\nprint(\"所有输出都落在平面 z = x + y 上：\", bool(np.allclose(pts3d[2], pts3d[0] + pts3d[1])))\nprint(\"输出点云的秩（占几维）：\", np.linalg.matrix_rank(pts3d), \"（三维空间里只有一个平面）\")\n\n# 神经网络的写法：一批样本，每行一个样本，W 的形状是 (输出维数, 输入维数)\nW = rng.normal(size=(16, 784))\nX = rng.normal(size=(32, 784))\nprint(\"单个样本 W @ x:\", (W @ X[0]).shape, \"；一批 X @ W.T:\", (X @ W.T).shape)\nprint(\"两种写法的结果一致：\", bool(np.allclose((X @ W.T)[0], W @ X[0])))\n# 输出：(3,4) @ (4,5) -> (3, 5)\n# 输出：(4,5) @ (3,4) 报错： matmul: Input operand 1 has a mismatch in its core dimension\n# 输出：输入形状 (2, 1000) -> 输出形状 (3, 1000)\n# 输出：所有输出都落在平面 z = x + y 上： True\n# 输出：输出点云的秩（占几维）： 2 （三维空间里只有一个平面）\n# 输出：单个样本 W @ x: (16,) ；一批 X @ W.T: (32, 16)\n# 输出：两种写法的结果一致： True\n```\n\n读输出：$(3,4)\\times(4,5)\\to(3,5)$；反过来乘 $(4,5)\\times(3,4)$ 直接报错，因为中间的 5 和 3 对不上。一个 $3\\times2$ 的矩阵把二维平面映射到三维空间：1000 个二维点变成了 1000 个三维点，形状 `(2, 1000)` → `(3, 1000)`。但这些三维点**并没有铺满三维空间**，而是全部落在平面 $z=x+y$ 上（因为输出只是两个三维列向量的线性组合），点云的**秩**是 2。这个「输出能铺满几维」的问题，下一节用**秩 (rank)** 来回答。最后两行是神经网络的约定：`W` 的形状是 `(16, 784)`（输出维数在前），一个样本 `W @ x` 得到 `(16,)`；**一批样本是行向量堆叠，所以写成 `X @ W.T`**，得到 `(32, 16)`，两种写法对每个样本的结果相同。PyTorch 的 `nn.Linear(784, 16)` 就是这么存的：`weight` 的形状是 `(16, 784)`，计算 `x @ weight.T + bias`。\n\n### 动手实验：从数据里学出一个矩阵\n\n最后把这些串起来做个小实验：有一个「黑箱」线性变换 $A$，你看不到它的矩阵，只能喂输入、看输出。两种办法找出它：\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\nA_true = np.array([[2.0, -1.0], [0.5, 3.0]])     # 一个「黑箱」线性变换，我们假装不知道它\n\n# 办法一：直接问它「i_hat 和 j_hat 去哪了」，得到的就是两列\nprint(\"把 (1,0) 和 (0,1) 喂进去，输出按列排好：\\n\", np.column_stack([A_true @ [1, 0], A_true @ [0, 1]]))\n\n# 办法二：只能拿到带噪声的随机样本，用最小二乘从数据里「学」出矩阵\nX = rng.normal(size=(50, 2))                        # 50 个输入，每行一个样本\nY = X @ A_true.T + 0.05 * rng.normal(size=(50, 2))  # 观测到的输出，带一点噪声\nW_hat = np.linalg.lstsq(X, Y, rcond=None)[0].T      # 解 X W^T = Y\nprint(\"最小二乘恢复的矩阵：\\n\", np.round(W_hat, 3))\n\n# 办法三：梯度下降（和神经网络训练同一个思路）。代价 = 平均平方误差\nW = np.zeros((2, 2))\nfor step in range(200):\n    pred = X @ W.T\n    grad = 2 / len(X) * (pred - Y).T @ X            # dC/dW，用上一节的链式法则推出\n    W -= 0.1 * grad\nprint(\"梯度下降 200 步后：\\n\", np.round(W, 3))\nprint(\"两种办法接近：\", bool(np.allclose(W, W_hat, atol=1e-3)))\n# 输出：把 (1,0) 和 (0,1) 喂进去，输出按列排好：\n# 输出： [[ 2.  -1. ]\n# 输出： [ 0.5  3. ]]\n# 输出：最小二乘恢复的矩阵：\n# 输出： [[ 2.003 -1.016]\n# 输出： [ 0.506  3.004]]\n# 输出：梯度下降 200 步后：\n# 输出： [[ 2.003 -1.016]\n# 输出： [ 0.506  3.004]]\n# 输出：两种办法接近： True\n```\n\n读输出：**办法一**最直接：把 $\\hat\\imath=(1,0)$ 和 $\\hat\\jmath=(0,1)$ 喂进去，输出的两个向量按列排好，就是 $A$ 本身，这正是「矩阵的列 = 基向量的去向」。**办法二**是现实的情形：只有带噪声的随机样本，用**最小二乘 (least squares)** 解出 $\\begin{bmatrix}2.003&-1.016\\\\0.506&3.004\\end{bmatrix}$，很接近真值 $\\begin{bmatrix}2&-1\\\\0.5&3\\end{bmatrix}$，误差来自噪声。**办法三**用**梯度下降**从全 0 的矩阵出发，200 步就走到了和最小二乘同样的位置（两者在 $10^{-3}$ 内一致）。\n\n这个小实验里有三个很重要的联系：**线性回归**（多输出）就是「从数据里学一个矩阵」；**训练神经网络**用的梯度下降，和办法三的循环是同一种东西，只是代价函数更复杂、层数更多（梯度要靠上一节的反向传播算）；而办法二是「有封闭解」的特殊情形，神经网络因为有非线性，没有这样的公式，只能靠迭代。\n\n### 这一节你要带走的三句话\n\n1. **线性变换 = 网格保持平行等距、原点不动**；它完全由基向量的去向决定，**矩阵的列就是基向量变换后的位置**，矩阵乘向量就是各列的线性组合。\n2. **矩阵乘法 = 变换的复合**，顺序从右往左读；满足结合律、一般不满足交换律；形状规则 $(n,m)\\cdot(m,l)=(n,l)$，写代码先对中间两个数字。\n3. **非方阵在不同维度之间变换**；神经网络的一层就是 `(out, in)` 形状的矩阵乘法（加偏置、过激活函数）；去掉非线性，多层就能合并成一个矩阵。"
+  },
+  {
+   "type": "think",
+   "q": "**联系后续内容**：已知 $W_Q$、$W_K$ 的形状都是 `(d_model, d_head)`，一批 token 向量 $X$ 的形状是 `(seq, d_model)`，注意力分数是 $(XW_Q)(XW_K)^\\top$。写出每一步的形状，并说明最后得到的分数矩阵是什么形状、每个元素是什么。",
+   "a": "- $XW_Q$：`(seq, d_model) @ (d_model, d_head)` → `(seq, d_head)`，每个 token 一个 query 向量（第 $i$ 行）；\n- $XW_K$：同理 `(seq, d_head)`，每个 token 一个 key 向量；\n- $(XW_K)^\\top$：`(d_head, seq)`；\n- 相乘：`(seq, d_head) @ (d_head, seq)` → **`(seq, seq)`**。\n\n分数矩阵的第 $(i,j)$ 个元素 $=\\mathbf{q}_i\\cdot\\mathbf{k}_j$：第 $i$ 个 token 的 query 和第 $j$ 个 token 的 key 的点积，表示「第 $i$ 个 token 对第 $j$ 个 token 的关注程度」（还要除以 $\\sqrt{d_{\\text{head}}}$ 再做 softmax）。两个乘法的中间维度都对上了（$d_{\\text{model}}$ 和 $d_{\\text{head}}$），转置的作用正是让「每对 token 的点积」一次性算出来。ARENA 第 1 章实现注意力时，每一步都应该先写下这样的形状。"
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "本节依据的原文大纲和思考题（讲解为自写，未转载原文）"
+  },
+  {
+   "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+   "note": "ARENA 推荐的系列，本节用了第 3、4、8 章"
+  },
+  {
+   "title": "mlwiki：Matrix-Matrix Multiplication",
+   "url": "http://mlwiki.org/index.php/Matrix-Matrix_Multiplication",
+   "note": "ARENA 推荐的矩阵乘法讲解，含行列视角的几种读法"
+  },
+  {
+   "title": "MIT 18.06 Linear Algebra（Gilbert Strang，OpenCourseWare）",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+   "note": "选看：前几讲讲矩阵乘法的五种看法，是硕士阶段常用的线性代数教材课程"
+  },
+  {
+   "title": "Mathematics for Machine Learning（Deisenroth 等，免费电子书）",
+   "url": "https://mml-book.github.io/",
+   "note": "选读：第 2 章线性代数，第 3 章解析几何；与本节和下面几节对应"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "$A$ 的形状是 $(3, 4)$，$B$ 的形状是 $(4, 2)$，$AB$ 的形状是？",
+    "options": [
+     "$(4, 4)$",
+     "$(3, 4)$",
+     "$(4, 2)$",
+     "$(3, 2)$"
+    ],
+    "answer": 3,
+    "explain": "$(n, m) \\times (m, l) = (n, l)$：中间的 4 消掉，结果取两头 $(3, 2)$。"
+   },
+   {
+    "q": "$A$ 的形状是 $(3, 4)$，$C$ 的形状是 $(3, 4)$，`A @ C` 会怎样？",
+    "options": [
+     "得到 $(3, 3)$",
+     "报错，因为 $A$ 的列数 4 ≠ $C$ 的行数 3",
+     "得到 $(4, 4)$",
+     "得到 $(3, 4)$"
+    ],
+    "answer": 1,
+    "explain": "矩阵乘法要求左边的列数等于右边的行数。想得到 $(3, 3)$ 应该写 `A @ C.T`（$C$ 的转置是 $(4, 3)$）。"
+   },
+   {
+    "q": "一个 $2 \\times 5$ 的矩阵作为变换，把什么空间映射到什么空间？",
+    "options": [
+     "二维空间 → 二维空间",
+     "二维空间 → 五维空间",
+     "五维空间 → 二维空间",
+     "五维空间 → 五维空间"
+    ],
+    "answer": 2,
+    "explain": "它有 5 列（输入是 5 维向量），每列是 2 维向量（输出在 2 维）。$m \\times n$ 矩阵把 $n$ 维映射到 $m$ 维。"
+   }
+  ]
+ }
+}

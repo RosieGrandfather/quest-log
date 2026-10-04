@@ -1,0 +1,146 @@
+{
+ "id": "u03b",
+ "title": "常见分布：二项、泊松、正态（2/2）",
+ "en": "Common Distributions: Binomial, Poisson, Normal (2/2)",
+ "minutes": 35,
+ "objectives": [
+  "认识 **正态分布 (normal distribution)**，记住 **68-95-99.7 法则**，会算 **z 分数 (z-score)**",
+  "知道每种分布各自适合描述什么样的现象，并能说出它们在机器学习里的位置"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「常见分布：二项、泊松、正态」分成的第 2 个小节（共 2 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：泊松分布（约 10 分钟） → 正态分布（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 泊松分布\n\n> **标准定义 · 泊松分布 (Poisson distribution)**\n>\n> 在固定的时间（或空间）范围内，某类稀有事件平均发生 $\\lambda$ 次，且各次发生彼此独立，则事件发生的次数 $X$ 服从参数为 $\\lambda$ 的 **泊松分布**，记作 $X\\sim\\text{Poisson}(\\lambda)$，\n>\n> $$P(X=k)=\\frac{e^{-\\lambda}\\lambda^k}{k!},\\quad k=0,1,2,\\dots$$\n>\n> 期望与方差都等于 $\\lambda$：$E[X]=\\text{Var}(X)=\\lambda$。\n>\n> *English: The Poisson(λ) distribution counts how many rare, independent events occur in a fixed interval when the average is λ; its mean and variance are both λ.*\n\n**白话版：数「稀有事件发生了几次」。** 一小时内一家店接到的电话数，一页书里的错别字数，一天里一个路口的事故数。它们的共同点是：**可能发生的机会很多（每分钟、每个字、每辆车），但每个机会发生的概率都很小**。\n\n泊松分布和二项分布是亲戚：如果 $n$ 很大、$p$ 很小，二项分布就非常接近泊松分布，其中 $\\lambda=np$。看一个数值对比：\n\n```python\nfrom math import comb, exp, factorial\n\n# 一座大城市：1000 个路口，每个路口一天出事故的概率只有 0.003（很小）\nn, p = 1000, 0.003\nlam = n * p                          # λ = 平均每天的事故数 = 3\n\ndef binom(k):  return comb(n, k) * p**k * (1 - p)**(n - k)\ndef poisson(k): return exp(-lam) * lam**k / factorial(k)   # 泊松公式\n\nprint(\"k   二项     泊松\")\nfor k in range(7):\n    print(k, \" \", round(binom(k), 4), \" \", round(poisson(k), 4))\n# 输出：k   二项     泊松\n# 输出：0   0.0496   0.0498\n# 输出：1   0.1491   0.1494\n# 输出：2   0.2242   0.224\n# 输出：3   0.2244   0.224\n# 输出：4   0.1683   0.168\n# 输出：5   0.1009   0.1008\n# 输出：6   0.0503   0.0504\n```\n\n两列数几乎一模一样。好处是：泊松分布只需要一个参数 $\\lambda$，计算更简单。**均值等于方差**是它的特征：如果你看到一组计数数据，方差远大于均值，就说明泊松分布不够用了（实际工作中叫「过度离散」 overdispersion）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "jmqZG6roVqU",
+   "title": "视频三：An Introduction to the Poisson Distribution（jbstatistics）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### 正态分布\n\n> **标准定义 · 正态分布 (normal / Gaussian distribution)**\n>\n> 若连续随机变量 $X$ 的概率密度为\n>\n> $$f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\!\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)$$\n>\n> 则称 $X$ 服从均值为 $\\mu$、方差为 $\\sigma^2$ 的 **正态分布**，记作 $X\\sim\\mathcal N(\\mu,\\sigma^2)$。$\\mu=0,\\sigma=1$ 时称为 **标准正态分布 (standard normal distribution)**。\n>\n> *English: A normal (Gaussian) distribution is the bell-shaped distribution fully specified by its mean μ and variance σ².*\n\n**白话版：钟形曲线。** 它以均值 $\\mu$ 为中心，左右对称，离中心越远越罕见。**$\\mu$ 决定钟的位置，$\\sigma$ 决定钟的胖瘦。** 身高、测量误差、很多「由许多小因素叠加而成」的量，都近似服从它（下一节的中心极限定理会解释为什么）。\n\n> **标准定义 · 68-95-99.7 法则 与 z 分数 (z-score)**\n>\n> 对 $X\\sim\\mathcal N(\\mu,\\sigma^2)$：落在 $\\mu\\pm\\sigma$、$\\mu\\pm2\\sigma$、$\\mu\\pm3\\sigma$ 之内的概率分别约为 $68\\%$、$95\\%$、$99.7\\%$。**z 分数** 定义为\n>\n> $$z=\\frac{x-\\mu}{\\sigma}$$\n>\n> 它表示 $x$ 比均值高（或低）了几个标准差。若 $X\\sim\\mathcal N(\\mu,\\sigma^2)$，则 $z$ 服从标准正态分布。\n>\n> *English: About 68%, 95% and 99.7% of a normal distribution lies within 1, 2 and 3 standard deviations of the mean. The z-score measures how many standard deviations a value is above the mean.*\n\n**白话版：** 这是正态分布的「口诀」：大多数值离均值不超过 2 个标准差，超过 3 个标准差的几乎不存在。z 分数把任何正态数据换算到同一把尺子（标准正态）上，这样「语文 85 分」和「数学 90 分」就可以比较了：哪门课的 z 分数高，哪门课你考得更好。这和上一节学的**标准化**完全是同一件事。\n\n```python\nfrom statistics import NormalDist\n\nZ = NormalDist(0, 1)                 # 标准正态分布：均值 0，标准差 1\n\n# 注意：连续分布里，「密度」不是概率\nprint(\"密度 f(0) =\", round(Z.pdf(0), 4), \"（可以不到 1，也可以超过 1，它不是概率）\")\n\n# 概率 = 曲线下方的面积 = 累积分布函数 cdf 的差\nfor k in (1, 2, 3):\n    print(f\"落在均值 ±{k} 个标准差内：\", round(Z.cdf(k) - Z.cdf(-k), 4))\n\n# 一次考试：均值 70，标准差 10。考了 85 分，换算成 z 分数，再看超过了多少人\nexam = NormalDist(70, 10)\nz = (85 - exam.mean) / exam.stdev\nprint(\"85 分的 z 分数：\", z)\nprint(\"超过的人所占比例：\", round(exam.cdf(85), 4))\n# 输出：密度 f(0) = 0.3989 （可以不到 1，也可以超过 1，它不是概率）\n# 输出：落在均值 ±1 个标准差内： 0.6827\n# 输出：落在均值 ±2 个标准差内： 0.9545\n# 输出：落在均值 ±3 个标准差内： 0.9973\n# 输出：85 分的 z 分数： 1.5\n# 输出：超过的人所占比例： 0.9332\n```\n\n输出里的 0.6827、0.9545、0.9973 就是口诀的精确值。这次考试 85 分，z 分数是 1.5，比 93% 左右的人高。注意第一行：标准正态在 0 处的密度约 0.3989，说明「密度」不是概率。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "rzFX5NWojp0",
+   "title": "视频四：The Normal Distribution, Clearly Explained!!!（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### 这一节你要带走的三句话\n\n1. **二项数「成功几次」，泊松数「稀有事件几次」，正态描述「许多小因素叠加出来的连续量」**；它们各有一个简单的公式，参数只有一两个。\n2. **二项**：$E=np$、$\\text{Var}=np(1-p)$；**泊松**：$E=\\text{Var}=\\lambda$；**正态**：由 $\\mu$ 和 $\\sigma$ 完全决定，$z=(x-\\mu)/\\sigma$。\n3. **连续分布里，概率 = 面积，不是函数值**；单点的概率是 0。\n\n在机器学习里：二分类对应伯努利、多分类对应类别分布，权重初始化与噪声建模常用正态，计数数据（点击、事件）常用泊松。"
+  },
+  {
+   "type": "think",
+   "q": "有人说：「一个公平的硬币，抛 10 次，正面的次数一定是 5 次附近，不太可能是 8 次或 9 次。」用二项分布检查一下：10 次里恰好 5 次、恰好 8 次的概率各是多少？这句话对不对？",
+   "a": "$P(X=5)=\\binom{10}{5}/2^{10}=252/1024\\approx0.246$，$P(X=8)=\\binom{10}{8}/2^{10}=45/1024\\approx0.044$。\n\n所以「恰好 5 次」也只有约 25% 的把握，不到四分之一；8 次虽然少见（约 4.4%），但绝不是不可能。这句话「一定」说得过头了。标准差是 $\\sqrt{10\\times0.5\\times0.5}\\approx1.58$，8 次比均值多 3 次，约 1.9 个标准差，属于「少见但会发生」。**随机性比直觉预期的要大。**"
+  },
+  {
+   "type": "think",
+   "q": "一个模型输出「这封邮件是垃圾邮件的概率是 0.9」。如果你有 100 封这样被模型给出 0.9 的邮件，其中垃圾邮件的数量服从什么分布？「校准良好」意味着什么？",
+   "a": "把每封看成独立的伯努利试验，成功概率 $p=0.9$，那么 100 封里真正的垃圾邮件数服从 $\\text{Binomial}(100,0.9)$，均值 90，标准差 $\\sqrt{100\\times0.9\\times0.1}=3$。\n\n**校准良好 (well-calibrated)** 就是：模型说 0.9 的这一类邮件里，真的垃圾的比例约为 90%，也就是在 87 到 93 之间的数（大约一个标准差内）上下波动。如果实际只有 70 封是垃圾，就说明模型「过度自信」。这是本模块后面要用到的核心想法：**把预测的概率当成伯努利参数，用数据检验。**"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "泊松分布",
+     "Poisson distribution",
+     "稀有事件在固定范围内发生的次数；均值 = 方差 = $\\lambda$"
+    ],
+    [
+     "过度离散",
+     "overdispersion",
+     "方差明显大于均值，说明泊松不合适"
+    ],
+    [
+     "正态分布",
+     "normal / Gaussian distribution",
+     "钟形曲线，由 $\\mu$ 和 $\\sigma^2$ 决定"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Harvard Statistics 110 Lecture 11：The Poisson distribution（大学课程原视频，约 43 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=TD1N4hxqMzY",
+   "note": "泊松分布的来龙去脉，以及它与二项分布的关系"
+  },
+  {
+   "title": "Harvard Statistics 110 Lecture 13：Normal distribution（选看）",
+   "url": "https://www.youtube.com/watch?v=72QjzHnYvL0",
+   "note": "正态分布的严格讲法"
+  },
+  {
+   "title": "MIT OCW 6.041 Probabilistic Systems Analysis（课程主页，含讲义与习题）",
+   "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+   "note": "选做其中常见分布的习题"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "$X\\sim\\text{Poisson}(\\lambda)$，下面哪个正确？",
+    "options": [
+     "均值 $\\lambda$，方差 $\\lambda$",
+     "均值 $\\lambda$，方差 $\\sqrt\\lambda$",
+     "均值 $\\lambda$，方差 $\\lambda^2$",
+     "均值 $\\lambda^2$，方差 $\\lambda$"
+    ],
+    "answer": 0,
+    "explain": "泊松分布的特点：均值等于方差，都是 $\\lambda$。"
+   },
+   {
+    "q": "某地成年男性身高近似服从均值 170 cm、标准差 6 cm 的正态分布。约 95% 的人身高落在哪个区间？",
+    "options": [
+     "170 到 182",
+     "164 到 176",
+     "152 到 188",
+     "158 到 182"
+    ],
+    "answer": 3,
+    "explain": "95% 对应均值 ±2 个标准差：$170\\pm12$，即 158 到 182。164 到 176 是 ±1 个标准差（约 68%）。"
+   },
+   {
+    "q": "考试均值 70、标准差 10。小明考了 85 分，他的 z 分数是多少？",
+    "options": [
+     "15",
+     "1.5",
+     "−1.5",
+     "0.15"
+    ],
+    "answer": 1,
+    "explain": "$z=(85-70)/10=1.5$，表示比均值高 1.5 个标准差。15 只是分数差，没有除以标准差。"
+   },
+   {
+    "q": "$X$ 是连续随机变量，$P(X=3)$ 等于多少？",
+    "options": [
+     "等于密度函数 $f(3)$ 的值",
+     "$1/3$",
+     "0",
+     "无法判断"
+    ],
+    "answer": 2,
+    "explain": "连续变量取单个值的概率是 0，概率只在区间上才有（等于面积）。密度 $f(3)$ 不是概率。"
+   },
+   {
+    "q": "$X\\sim\\text{Binomial}(1000,0.003)$。下面哪个是它最合适的近似？",
+    "options": [
+     "泊松分布，$\\lambda=3$",
+     "标准正态分布",
+     "伯努利分布，$p=0.003$",
+     "泊松分布，$\\lambda=1000$"
+    ],
+    "answer": 0,
+    "explain": "$n$ 很大、$p$ 很小时，二项分布近似泊松分布，$\\lambda=np=3$。"
+   }
+  ]
+ }
+}

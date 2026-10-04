@@ -1,0 +1,272 @@
+{
+ "id": "u01",
+ "title": "复杂度：Big-O 怎么看",
+ "en": "Algorithm Complexity & Big-O",
+ "minutes": 70,
+ "objectives": [
+  "说出 **Big-O、Big-Ω、Big-Θ** 的形式化定义，会用「找常数 $c$ 和 $n_0$」证明一个界",
+  "分清 **最坏 (worst)、平均 (average)、最好 (best)** 情况，以及 **摊还分析 (amortized analysis)** 想解决什么问题",
+  "能读代码判断复杂度：单循环、嵌套循环、折半循环、三角形循环、先后顺序",
+  "知道 Python 常用操作（列表、集合、字典）的复杂度，并理解 `x in set` 比 `x in list` 快的原因",
+  "知道 **空间复杂度 (space complexity)**，会在时间和空间之间做取舍"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么先学复杂度\n\n数据结构与算法这门课（NUS 的 IT5003、MIT 的 6.006、你之后会遇到的技术面试）所有的比较，都建立在一个问题上：**数据量变大时，这段代码会慢多少？**\n\n- 写机器学习代码时，数据是几十万甚至上亿条，$O(n^2)$ 和 $O(n)$ 的差别是「几分钟」和「几天」；\n- 后面每一节（数组、哈希表、排序、树、图）都用复杂度来比较做法的好坏；\n- Transformer 里的 **自注意力 (self-attention)** 对序列长度是 $O(n^2)$，这是「长上下文为什么贵」的根本原因，也是大量改进工作（稀疏注意力、线性注意力）要解决的问题；\n- 面试里最常被问的概念，没有之一。\n\n**本节安排（约 70 分钟）**：导读与标准定义（15 分钟）→ 视频一（5 分钟）→ 怎样读复杂度（15 分钟）→ 视频二（6 分钟）→ Python 操作的复杂度与动手数步数（15 分钟）→ 摊还分析与空间复杂度（10 分钟）→ 视频三（12 分钟，选看）→「想一想」。\n\n### Big-O、Big-Ω、Big-Θ\n\n> **标准定义 · 渐近记号 (asymptotic notation)**\n>\n> 设 $f(n)$、$g(n)$ 是定义在正整数上的非负函数。\n>\n> **Big-O（上界）：** $f(n)=O(g(n))$，当且仅当存在常数 $c>0$ 和 $n_0$，使得对所有 $n\\ge n_0$，都有 $f(n)\\le c\\cdot g(n)$。\n>\n> **Big-Ω（下界）：** $f(n)=\\Omega(g(n))$，当且仅当存在常数 $c>0$ 和 $n_0$，使得对所有 $n\\ge n_0$，都有 $f(n)\\ge c\\cdot g(n)$。\n>\n> **Big-Θ（紧界）：** $f(n)=\\Theta(g(n))$，当且仅当 $f(n)=O(g(n))$ 且 $f(n)=\\Omega(g(n))$。\n>\n> *English: f(n) = O(g(n)) means f grows no faster than g up to a constant factor, for all sufficiently large n. Ω gives a lower bound; Θ means both bounds hold, i.e. f and g grow at the same rate.*\n\n**白话版：给增长速度画一个「天花板」。** $f(n)$ 是你的代码要做的步数。$O(g(n))$ 的意思是：只要 $n$ 足够大，把 $g(n)$ 乘上某个固定的倍数，就能一直压在 $f(n)$ 上面，$f(n)$ 的增长不会比 $g(n)$ 快。$\\Omega$ 是「地板」，$\\Theta$ 是「天花板和地板同时存在」，也就是增长速度完全一个量级。\n\n两点提醒。**第一**，$O$ 只是上界，说一个 $O(n)$ 的算法「是 $O(n^2)$」在数学上也没错，只是不紧；日常说「复杂度是 $O(\\cdot)$」，一般指**最紧的那个**，严格说应该用 $\\Theta$。**第二**，常数 $c$ 和门槛 $n_0$ 是证明的核心。比如证明 $3n^2+100n+5=O(n^2)$：\n\n```python\n# 验证定义：3n² + 100n + 5 = O(n²)。要找常数 c 和门槛 n0，使得 n ≥ n0 之后恒有 f(n) ≤ c·n²\nf = lambda n: 3 * n**2 + 100 * n + 5\nc = 4\nbad = [n for n in range(1, 100_000) if f(n) > c * n**2]   # 不满足不等式的 n\nprint(\"c = 4 时，不满足不等式的最大的 n =\", max(bad))\nprint(\"所以取 n0 =\", max(bad) + 1, \"，从这里开始永远有 f(n) ≤ 4n²\")\n# 输出：c = 4 时，不满足不等式的最大的 n = 100\n# 输出：所以取 n0 = 101 ，从这里开始永远有 f(n) ≤ 4n²\n```\n\n也就是说取 $c=4$、$n_0=101$ 就成立：$3n^2+100n+5\\le4n^2$ 等价于 $n^2-100n-5\\ge0$，当 $n\\ge101$ 时成立。所以**常数系数和低阶项在 $n$ 很大时都不重要**：$5n$ 和 $n$ 都记作 $O(n)$。\n\n> **标准定义 · 最坏、平均、最好情况 (worst / average / best case)**\n>\n> 对同一规模 $n$ 的输入，算法的运行步数取决于具体的输入。**最坏情况复杂度**是所有规模为 $n$ 的输入中步数的最大值；**最好情况**是最小值；**平均情况**是在某种输入分布下的期望。除非特别说明，Big-O 默认描述最坏情况。\n>\n> *English: Worst-case complexity is the maximum number of steps over all inputs of size n; best case is the minimum; average case is the expected number of steps under an assumed input distribution.*\n\n**白话版：同一份代码，运气不同，快慢不同。** 在一个列表里找某个数：运气好，第一个就找到（最好 $O(1)$）；运气最差，找到最后一个或者根本没有（最坏 $O(n)$）。我们默认看最坏情况，因为它是一个**保证**：「无论输入怎样，不会比这更糟」。平均情况要先假设输入长什么样，所以往往更难分析，在哈希表（第 4 节）和快速排序（第 6 节）里会遇到。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "__vX2sjlpXU",
+   "title": "视频一：Big-O notation in 5 minutes（Michael Sambol）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "text",
+   "md": "### 怎么从代码里读出复杂度\n\n**步数的数法**就是下面几条：\n\n- 一个简单语句：$O(1)$；\n- 遍历 $n$ 个元素的循环：$O(n)$；\n- 循环套循环：**相乘**（各 $n$ 次就是 $O(n^2)$）；\n- 先后顺序执行的两段代码：**相加**，取较大的那个；\n- 每一步把问题缩小一半：$O(\\log n)$（以 2 为底；Big-O 里底数不重要，因为换底只差一个常数）；\n- 内层循环次数随外层变化（三角形）：把各层次数加起来再看量级，$0+1+\\dots+(n-1)=n(n-1)/2=O(n^2)$。\n\n用代码数一数，看每种循环的真实步数：\n\n```python\ndef count_steps(n):\n    a = b = c = 0\n    for i in range(n):          # 一层循环：n 步\n        a += 1\n    for i in range(n):          # 两层嵌套循环：n × n 步\n        for j in range(n):\n            b += 1\n    i = n\n    while i > 1:                # 每次减半：约 log2(n) 步\n        i //= 2\n        c += 1\n    return a, b, c\n\nfor n in (8, 64, 512):\n    print(n, count_steps(n))\n\n# 三角形的循环：内层循环次数随 i 变化，总数是 0+1+...+(n-1) = n(n-1)/2，仍然是 O(n²)\nn = 100\ntri = sum(1 for i in range(n) for j in range(i))\nprint(\"三角形循环 n=100：\", tri, \"= n(n-1)/2 =\", n * (n - 1) // 2)\n# 输出：8 (8, 64, 3)\n# 输出：64 (64, 4096, 6)\n# 输出：512 (512, 262144, 9)\n# 输出：三角形循环 n=100： 4950 = n(n-1)/2 = 4950\n```\n\n读输出：$n$ 变成 8 倍（8 到 64），一层循环变成 8 倍，两层循环变成 64 倍，折半循环只多了 3 步（$\\log_2 8=3$ 到 $\\log_2 64=6$）。三角形循环 $n=100$ 时是 4950 步，恰好等于 $n(n-1)/2$，所以也是 $O(n^2)$，只是常数是 $1/2$。\n\n**从快到慢的常见量级**\n\n| 记号 | 名称 | $n=10^6$ 时的步数量级 | 典型例子 |\n|---|---|---|---|\n| $O(1)$ | 常数 | 1 | 取列表第 i 个元素 |\n| $O(\\log n)$ | 对数 | 约 20 | 二分查找 |\n| $O(n)$ | 线性 | $10^6$ | 遍历一遍列表 |\n| $O(n\\log n)$ | 线性对数 | 约 $2\\times10^7$ | 好的排序算法 |\n| $O(n^2)$ | 平方 | $10^{12}$ | 两层嵌套循环；自注意力 |\n| $O(2^n)$ | 指数 | 天文数字 | 朴素的斐波那契递归；暴力枚举子集 |\n| $O(n!)$ | 阶乘 | 更大 | 枚举所有排列 |\n\n一个直观的感受：假如电脑每秒做 $10^8$ 步，$n=10^6$ 时 $O(n)$ 要 0.01 秒，$O(n^2)$ 要 $10^{12}/10^8=10^4$ 秒，约 2.8 小时。**一个粗略的经验：$10^8$ 步大约是一秒的预算，所以输入大小 $n\\le10^5$ 时可以接受 $O(n\\log n)$，$n\\le10^4$ 时可以接受 $O(n^2)$。**"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "XMUe3zFhM5c",
+   "title": "视频二：Learn Big O notation in 6 minutes（Bro Code）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### Python 常用操作的复杂度\n\n选对数据结构，本质上就是选对操作的复杂度。下面是最常用的（平均情况）：\n\n| 操作 | `list` | `set` / `dict` |\n|---|---|---|\n| 按下标取值 `a[i]` | $O(1)$ | — |\n| 尾部添加 `append` | $O(1)$（摊还） | — |\n| 头部插入 `insert(0, x)` | $O(n)$（要把后面所有元素后移） | — |\n| 判断元素在不在 `x in ...` | **$O(n)$** | **$O(1)$** |\n| 添加 / 删除元素 | 删除中间元素 $O(n)$ | $O(1)$ |\n| 排序 `sort()` | $O(n\\log n)$ | — |\n| 遍历全部 | $O(n)$ | $O(n)$ |\n\n最关键的一行是 `x in list` 是 $O(n)$、`x in set` 是 $O(1)$。原因是集合和字典内部用**哈希表 (hash table)**，可以「直接算出位置」而不是挨个找，第 4 节会专门讲。\n\n### 动手：数步数\n\n不用秒表（秒数每次不一样），直接**数比较了多少次**。先看 **线性查找 (linear search)** 和 **二分查找 (binary search)**，二分要求列表已经排好序：\n\n```python\ndef linear(a, x):\n    steps = 0\n    for v in a:                       # 从头到尾挨个比较\n        steps += 1\n        if v == x:\n            return steps\n    return steps\n\ndef binary(a, x):                     # 要求 a 已经排好序\n    lo, hi, steps = 0, len(a) - 1, 0\n    while lo <= hi:\n        steps += 1\n        mid = (lo + hi) // 2          # 取中间的位置\n        if a[mid] == x:\n            return steps\n        if a[mid] < x:\n            lo = mid + 1             # 目标在右半边，丢掉左半边\n        else:\n            hi = mid - 1             # 目标在左半边，丢掉右半边\n    return steps\n\nfor n in (1000, 1_000_000):\n    a = list(range(n))\n    print(n, linear(a, n), binary(a, n))      # 查一个不存在的数 n，是最坏情况\n# 输出：1000 1000 10\n# 输出：1000000 1000000 20\n```\n\n$n$ 变成 1000 倍，线性查找的步数也是 1000 倍，二分查找只多了 10 步（$\\log_2 1000\\approx10$，$\\log_2 10^6\\approx20$）。\n\n再看一个经典问题：**列表里有没有重复元素**。\n\n```python\ndef dup_slow(a):                      # 两两比较，O(n²)\n    steps = 0\n    for i in range(len(a)):\n        for j in range(i + 1, len(a)):\n            steps += 1\n            if a[i] == a[j]:\n                return True, steps\n    return False, steps\n\ndef dup_fast(a):                      # 用集合记住见过的元素，O(n)\n    seen, steps = set(), 0\n    for v in a:\n        steps += 1\n        if v in seen:\n            return True, steps\n        seen.add(v)\n    return False, steps\n\nfor n in (100, 1000, 5000):\n    a = list(range(n))                # 没有重复，最坏情况\n    print(n, dup_slow(a), dup_fast(a))\n# 输出：100 (False, 4950) (False, 100)\n# 输出：1000 (False, 499500) (False, 1000)\n# 输出：5000 (False, 12497500) (False, 5000)\n```\n\n$n$ 从 1000 变成 5000（5 倍），`dup_slow` 的步数变成约 25 倍（$O(n^2)$），`dup_fast` 只变成 5 倍（$O(n)$）。**用集合把一层循环省掉，是最常见的优化。** 但它是用**空间换时间**：`dup_fast` 多用了一个最大 $n$ 个元素的集合。\n\n> 小提醒：Big-O 说的是**趋势**。数据很小时，$O(n^2)$ 的简单写法可能反而更快；但数据一大，趋势一定占上风。\n\n### 摊还分析与空间复杂度\n\n> **标准定义 · 摊还分析 (amortized analysis)**\n>\n> 一个操作序列共 $n$ 次操作的总代价为 $T(n)$，则每次操作的 **摊还代价** 为 $T(n)/n$。摊还分析给出的是**整个序列**上的最坏保证，而不是单次操作的最坏代价。\n>\n> *English: The amortized cost of an operation is the total cost of a worst-case sequence of n operations divided by n.*\n\n**白话版：偶尔贵一次，平均下来很便宜。** Python 列表的 `append` 在底层是一个**动态数组 (dynamic array)**：先预留一块空间，装满了才申请一块更大的、把旧元素全部复制过去。某一次 `append` 可能要复制 $n$ 个元素（$O(n)$），但这样的昂贵操作很少。关键是**每次扩容多少**。看下面的模拟，数一数复制的总次数：\n\n```python\n# 模拟动态数组：容量满了就扩容、并把旧元素全部复制过去。统计「复制了多少个元素」\ndef total_copies(n, grow):\n    cap, size, copies = 1, 0, 0\n    for _ in range(n):                # 连续 append n 次\n        if size == cap:               # 满了，需要扩容\n            copies += size            # 把已有的 size 个元素复制到新数组\n            cap = grow(cap)\n        size += 1\n    return copies\n\nfor n in (1000, 100_000):\n    dbl = total_copies(n, lambda c: c * 2)       # 策略 A：容量翻倍\n    inc = total_copies(n, lambda c: c + 10)      # 策略 B：每次只多留 10 个位置\n    print(f\"n={n:>7}  翻倍：复制 {dbl:>10} 次（{dbl / n:.2f} 次/个）   +10：复制 {inc:>12} 次（{inc / n:.1f} 次/个）\")\n# 输出：n=   1000  翻倍：复制       1023 次（1.02 次/个）   +10：复制        49600 次（49.6 次/个）\n# 输出：n= 100000  翻倍：复制     131071 次（1.31 次/个）   +10：复制    499960000 次（4999.6 次/个）\n```\n\n容量**翻倍**：不管 $n$ 多大，平均每个元素只被复制 1 到 1.3 次（总复制次数小于 $2n$，上面两个 $n$ 下分别是 1.02 和 1.31），所以 `append` 是摊还 $O(1)$。如果每次只**加固定的 10 个位置**：$n=10^5$ 时平均每个元素要被复制约 5000 次，总代价是 $O(n^2)$。所以关键不在于「偶尔扩容」，而在于**按比例**扩容。（原因：翻倍时，各次扩容复制的元素数是 $1+2+4+\\dots+n/2<n$，这是一个等比数列。）\n\n> **标准定义 · 空间复杂度 (space complexity)**\n>\n> 算法在运行过程中，除了输入本身以外，**额外**需要的存储空间随输入规模 $n$ 增长的趋势，同样用 Big-O 表示。\n>\n> *English: Space complexity measures the extra memory an algorithm uses, as a function of the input size n.*\n\n**白话版：占多少内存。** `dup_slow` 只用了几个变量，额外空间是 $O(1)$；`dup_fast` 的集合最多存 $n$ 个元素，额外空间是 $O(n)$。时间和空间经常要**取舍**：多用内存换速度（比如缓存、哈希表），或者省内存多花时间。训练大模型时，「显存放不下」往往比「算得慢」更先成为瓶颈，所以空间复杂度也要看。\n\n### 这一节你要带走的三句话\n\n1. **Big-O 是上界，Big-Θ 是紧界**；证明时找 $c$ 和 $n_0$；常数和低阶项都可以丢掉。\n2. **默认看最坏情况**；循环嵌套相乘，顺序执行相加，折半就是 $\\log n$。\n3. **选对数据结构 = 选对操作的复杂度**；`append` 是摊还 $O(1)$，因为按比例扩容；时间和空间常常要取舍。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "MTl8djZFWE0",
+   "title": "视频三（选看）：What is Amortized Time Complexity? - Dynamic Array（Gaurav Sen）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "think",
+   "q": "一个列表有 $10^6$ 个已排序的元素。用二分查找最多比较多少次？如果改成 $2\\times10^6$ 个，会多出几次？",
+   "a": "最多 $\\lceil\\log_2(10^6+1)\\rceil=20$ 次（上面代码里实际跑出来也是 20）。数据翻倍，只多 **1** 次，因为每多一次比较，能处理的数据量就翻一倍。这就是 $O(\\log n)$ 如此强大的原因。"
+  },
+  {
+   "type": "think",
+   "q": "有人写了 `for x in a: if x in b: ...`，其中 `a`、`b` 都是长度 $n$ 的列表。这段代码的复杂度是多少？怎么改能降到 $O(n)$？额外代价是什么？",
+   "a": "外层遍历 $n$ 次，内层 `x in b` 对列表是 $O(n)$，所以总共是 $O(n^2)$。只需要把 `b` 先转成集合：`b_set = set(b)`，再写 `if x in b_set`，内层变成 $O(1)$，总共 $O(n)$（建集合也是 $O(n)$）。\n\n**代价**是额外的 $O(n)$ 空间，来存这个集合，这就是「空间换时间」。另一个细节：集合只能处理**可哈希**的元素（数字、字符串、元组可以，列表不行）。"
+  },
+  {
+   "type": "think",
+   "q": "摊还分析说 `append` 是 $O(1)$。那么「某一次 `append` 其实花了 $O(n)$ 的时间」这句话矛盾吗？在什么场景下，这种「偶尔很慢」会成为问题？",
+   "a": "不矛盾。摊还 $O(1)$ 的意思是：连续 $n$ 次 `append` **总共**花 $O(n)$ 的时间，平均每次 $O(1)$；但**某一次**确实可能花 $O(n)$（正好遇到扩容）。\n\n在大多数场景里平均就够了。但在**实时系统**里（比如游戏每一帧必须在 16 毫秒内完成，或者交易系统要求每一次响应都有延迟上界），偶尔的一次卡顿就是故障，这时需要的是单次操作的最坏保证，而不是摊还保证，可能要选其他数据结构，或者提前预分配好容量。"
+  },
+  {
+   "type": "think",
+   "q": "$f(n)=n^2$ 是不是 $O(n^3)$？是不是 $\\Omega(n)$？是不是 $\\Theta(n^3)$？",
+   "a": "是 $O(n^3)$：$n^2\\le1\\cdot n^3$ 对所有 $n\\ge1$ 成立，天花板够高就行。是 $\\Omega(n)$：$n^2\\ge n$ 对 $n\\ge1$ 成立，地板够低也行。但**不是** $\\Theta(n^3)$：$n^2$ 不可能一直压在 $c\\cdot n^3$ 上面，因为 $n^2/n^3=1/n\\to0$，即 $n^2$ 不会有下界 $c\\cdot n^3$。\n\n这个例子说明：$O$ 和 $\\Omega$ 只给出一侧的界，可以很松；$\\Theta$ 要求两侧一起。所以「最紧的上界」才是我们真正想要的。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "渐近记号",
+     "asymptotic notation",
+     "用 Big-O、Ω、Θ 描述函数 n 很大时的增长趋势"
+    ],
+    [
+     "Big-O 记号",
+     "Big-O notation",
+     "上界：存在 $c$、$n_0$，使 $n\\ge n_0$ 时 $f\\le c\\,g$"
+    ],
+    [
+     "Big-Ω",
+     "Big-Omega",
+     "下界：$f(n)\\ge c\\,g(n)$"
+    ],
+    [
+     "Big-Θ",
+     "Big-Theta",
+     "紧界：同时是 $O$ 和 $\\Omega$"
+    ],
+    [
+     "最坏 / 平均 / 最好情况",
+     "worst / average / best case",
+     "同一规模输入中步数的最大 / 期望 / 最小"
+    ],
+    [
+     "时间复杂度",
+     "time complexity",
+     "操作步数随输入规模 $n$ 增长的趋势"
+    ],
+    [
+     "空间复杂度",
+     "space complexity",
+     "额外占用的存储空间随 $n$ 增长的趋势"
+    ],
+    [
+     "线性查找",
+     "linear search",
+     "从头到尾挨个找，$O(n)$"
+    ],
+    [
+     "二分查找",
+     "binary search",
+     "在已排序数据里每次排除一半，$O(\\log n)$"
+    ],
+    [
+     "摊还分析",
+     "amortized analysis",
+     "把偶尔的高代价平均到整个操作序列上"
+    ],
+    [
+     "动态数组",
+     "dynamic array",
+     "装满就按比例扩容的数组，Python 的 list 就是；`append` 摊还 $O(1)$"
+    ],
+    [
+     "哈希表",
+     "hash table",
+     "通过哈希函数直接算出位置，查找平均 $O(1)$（第 4 节展开）"
+    ],
+    [
+     "时空权衡",
+     "time–space tradeoff",
+     "多用内存换速度，或者反过来"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Problem Solving with Algorithms and Data Structures using Python — Big-O Notation",
+   "url": "https://runestone.academy/ns/books/published/pythonds/AlgorithmAnalysis/BigONotation.html",
+   "note": "本节的大纲依据，含变位词检测的四种写法对比，推荐动手复现（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "大学课程原版，第 1、2 讲讲算法与计算模型，难度比本节高；想要更严格的证明时看"
+  },
+  {
+   "title": "Python Wiki：TimeComplexity（内置类型操作的复杂度表）",
+   "url": "https://wiki.python.org/moin/TimeComplexity",
+   "note": "查表用，不用背"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面哪一个是 $3n^2+100n+5$ 用 Big-Θ 表示的结果？",
+    "options": [
+     "$\\Theta(n)$",
+     "$\\Theta(3n^2)$",
+     "$\\Theta(n^3)$",
+     "$\\Theta(n^2)$"
+    ],
+    "answer": 3,
+    "explain": "只保留增长最快的一项 $n^2$ 并去掉常数系数，上下界都是 $n^2$ 的量级，所以是 $\\Theta(n^2)$。$\\Theta(3n^2)$ 数学上等价，但按约定要去掉常数。"
+   },
+   {
+    "q": "$f(n)=O(g(n))$ 的形式化定义是？",
+    "options": [
+     "对所有 $n$ 都有 $f(n)\\le g(n)$",
+     "存在 $c>0$ 和 $n_0$，使得对所有 $n\\ge n_0$，$f(n)\\le c\\cdot g(n)$",
+     "当 $n\\to\\infty$ 时 $f(n)=g(n)$",
+     "存在 $c>0$ 使得 $f(n)\\ge c\\cdot g(n)$"
+    ],
+    "answer": 1,
+    "explain": "关键是「存在常数 $c$ 和门槛 $n_0$」，且只要求 $n$ 足够大之后成立。最后一个选项是 $\\Omega$（下界）的定义。"
+   },
+   {
+    "q": "有两层嵌套的 `for` 循环，外层遍历 $i$ 从 0 到 $n-1$，内层遍历 $j$ 从 0 到 $i-1$，循环体是简单语句。总步数的 Big-Θ 是？",
+    "options": [
+     "$\\Theta(n)$",
+     "$\\Theta(n^2)$",
+     "$\\Theta(n\\log n)$",
+     "$\\Theta(2^n)$"
+    ],
+    "answer": 1,
+    "explain": "总步数 $0+1+\\dots+(n-1)=n(n-1)/2$，最高项是 $n^2/2$，所以是 $\\Theta(n^2)$。三角形循环只是常数少了一半。"
+   },
+   {
+    "q": "在一个已经排序、有 $10^6$ 个元素的列表里做二分查找，最坏情况大约要比较多少次？",
+    "options": [
+     "约 20 次",
+     "约 1000 次",
+     "约 $10^6$ 次",
+     "约 $5\\times10^5$ 次"
+    ],
+    "answer": 0,
+    "explain": "每次排除一半，$\\log_2 10^6\\approx20$。上面代码实测也是 20。"
+   },
+   {
+    "q": "对 Python 的列表 `a` 和集合 `s`，下面说法正确的是？",
+    "options": [
+     "`x in a` 和 `x in s` 平均都是 $O(1)$",
+     "`x in a` 是 $O(1)$，`x in s` 是 $O(n)$",
+     "`x in a` 是 $O(n)$，`x in s` 平均是 $O(1)$",
+     "两者都是 $O(\\log n)$"
+    ],
+    "answer": 2,
+    "explain": "列表要挨个比较，是 $O(n)$；集合基于哈希表，平均 $O(1)$。这是「把列表换成集合来提速」最常见的理由。"
+   },
+   {
+    "q": "一个 $O(n^2)$ 的算法，输入规模从 $n=1000$ 变成 $n=5000$，步数大约变成原来的多少倍？",
+    "options": [
+     "5 倍",
+     "10 倍",
+     "50 倍",
+     "25 倍"
+    ],
+    "answer": 3,
+    "explain": "$(5000/1000)^2=25$。上面 `dup_slow` 从 499500 步变成 12497500 步，约 25 倍。"
+   },
+   {
+    "q": "动态数组每次装满后把容量 **翻倍**，连续 `append` $n$ 次，总的元素复制次数是？",
+    "options": [
+     "$O(n^2)$",
+     "$O(n\\log n)$",
+     "$O(n)$",
+     "$O(1)$"
+    ],
+    "answer": 2,
+    "explain": "各次扩容复制的元素数是 $1+2+4+\\dots+n/2<n$（等比数列），总共 $O(n)$，所以单次 `append` 摊还 $O(1)$。每次只加固定个数则是 $O(n^2)$。"
+   },
+   {
+    "q": "下面哪个操作的平均复杂度是 $O(n)$ 而不是 $O(1)$？",
+    "options": [
+     "`a[5]`（取列表第 6 个元素）",
+     "`a.append(x)`",
+     "`s.add(x)`（`s` 是集合）",
+     "`a.insert(0, x)`（在列表开头插入）"
+    ],
+    "answer": 3,
+    "explain": "在开头插入，要把后面的 $n$ 个元素全部后移一位，是 $O(n)$。如果要频繁在两端操作，第 3 节会学到更合适的 `deque`。"
+   },
+   {
+    "q": "先执行一段 $O(n)$ 的代码，再执行一段 $O(n^2)$ 的代码（先后顺序，不是嵌套）。整体复杂度是？",
+    "options": [
+     "$O(n^3)$",
+     "$O(n+n^2)$ 且不能再简化",
+     "$O(n^2)$",
+     "$O(n)$"
+    ],
+    "answer": 2,
+    "explain": "先后顺序是相加 $n+n^2$，只保留增长最快的项，所以是 $O(n^2)$。相乘才会得到 $n^3$，那是嵌套的情形。"
+   },
+   {
+    "q": "要判断一个长度为 $n$ 的列表里有没有重复元素，下面哪种做法的时间复杂度最低？",
+    "options": [
+     "两两比较所有元素对",
+     "先转成集合，比较集合和列表的长度是否相等",
+     "每个元素用 `in` 在剩下的列表里找一遍",
+     "把列表复制一份再逐个比较"
+    ],
+    "answer": 1,
+    "explain": "转成集合是 $O(n)$，比较长度是 $O(1)$，整体 $O(n)$（代价是 $O(n)$ 的额外空间）。其余三种本质上都是两层循环，$O(n^2)$。"
+   }
+  ]
+ }
+}

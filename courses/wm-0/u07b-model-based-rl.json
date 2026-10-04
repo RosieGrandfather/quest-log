@@ -1,0 +1,82 @@
+{
+ "id": "u07b",
+ "title": "基于模型的强化学习（2/3）",
+ "en": "Model-based RL (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "理解并实现 **随机射击 (random shooting)**、**交叉熵方法 (CEM)** 和 **模型预测控制 (MPC)**，知道为什么重新规划能容忍模型误差",
+  "理解 **累积误差 (compounding error)** 与 **分布偏移 (distribution shift)**：为什么一步预测准的模型，多步滚动也会错得离谱，并用实验测出误差随步数的增长"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「基于模型的强化学习」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：规划：在模型里搜索好动作（约 30 分钟） → 学动力学模型与累积误差（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 规划：在模型里搜索好动作\n\n当动作是连续的（力矩、速度），不能像迷宫那样枚举，就要在模型里**搜索动作序列**。给定当前状态 $s_t$ 和模型，规划要解的问题是\n\n$$a^*_{t:t+H-1}=\\arg\\max_{a_{t:t+H-1}}\\ \\sum_{h=0}^{H-1}\\hat r(\\hat s_{t+h},a_{t+h}),\\qquad \\hat s_{t+h+1}\\sim\\hat p_\\theta(\\cdot\\mid\\hat s_{t+h},a_{t+h})$$\n\n这是一个在 $H\\times\\dim(a)$ 维空间里的优化问题，**不需要梯度**也能做，下面是三个最常见的做法。\n\n> **标准定义 · 随机射击、CEM 与 MPC (random shooting, CEM, MPC)**\n>\n> **随机射击 (random shooting)**：随机采样 $N$ 条长度为 $H$ 的动作序列，用模型滚动评估每条的累计代价，选最好的。\n>\n> **交叉熵方法 (cross-entropy method, CEM)**：维护一个高斯分布 $\\mathcal N(\\mu,\\sigma^2)$ 作为动作序列的采样分布，反复做：采样 $N$ 条序列 → 评估 → 选出代价最低的 $K$ 条**精英 (elite)** → 用精英的均值和标准差更新 $\\mu,\\sigma$。\n>\n> **模型预测控制 (model predictive control, MPC)**：每一个时间步都重新规划，只**执行第一个动作**，然后根据真实观测到的新状态重新规划。它是「闭环」的；与之相对，一次规划完整条轨迹然后闭眼执行叫「开环」。\n>\n> *English: Random shooting samples action sequences and keeps the best; CEM iteratively refits a Gaussian to the elite sequences; MPC re-plans at every step and executes only the first action.*\n\n**白话版：「导航软件」。** 随机射击像是闭着眼随便试几百条路线挑最短的；CEM 像是每试一批就把注意力集中到前几名附近，再试一批；MPC 像是你每走一步，导航都根据你**真实所在位置**重新规划路线：就算它对路况（模型）的判断有偏差，你偏离了它也会及时纠正。\n\nPlaNet 就是用 CEM + MPC 在学到的潜空间里规划的（论文里每次规划 1000 个候选、10 轮迭代、取前 100 个精英、规划长度 12，这是我读 PlaNet 论文核实过的）。下面的实验里，一个一维点质量要回到原点并停下，模型和真实世界可以不一样：\n\n```python\nimport numpy as np\n\n# 一维点质量，状态 (位置 x, 速度 v)，动作是推力 a（限制在 [-1, 1]），带阻力。目标：回到 x=0 并停下\ndt = 0.1\ndef dynamics(x, v, a, mass=1.0, wind=0.0):\n    v2 = v + dt * ((a - 0.3 * v) / mass + wind)\n    return x + dt * v2, v2\nstep_cost = lambda x, v, a: x ** 2 + 0.1 * v ** 2 + 0.01 * a ** 2\n\ndef rollout_cost(x0, v0, A, model):\n    \"\"\"A 的形状是 (候选数 N, 时长 H)：用模型把 N 条动作序列同时「想象」一遍，返回各自的总代价\"\"\"\n    N, H = A.shape\n    x, v, J = np.full(N, x0), np.full(N, v0), np.zeros(N)\n    for h in range(H):\n        x, v = model(x, v, A[:, h]); J += step_cost(x, v, A[:, h])\n    return J\n\ndef plan(x0, v0, model, rng, H=15, N=200, method=\"shoot\", iters=5, elite=20):\n    if method == \"shoot\":                                   # 随机射击：随机抽 N 条，选最好的\n        A = rng.uniform(-1, 1, (N, H)); J = rollout_cost(x0, v0, A, model); i = J.argmin()\n        return A[i], J[i]\n    mu, sd = np.zeros(H), np.ones(H) * 0.7                  # CEM：反复「抽样 → 选精英 → 用精英重新拟合高斯」\n    for _ in range(iters):\n        A = np.clip(mu + sd * rng.normal(size=(N, H)), -1, 1)\n        idx = np.argsort(rollout_cost(x0, v0, A, model))[:elite]\n        mu, sd = A[idx].mean(0), A[idx].std(0) + 1e-3\n    return mu, rollout_cost(x0, v0, mu[None, :], model)[0]\n\n# 1) 同样的模型、同样的预算（每次约 200 条候选），计划的质量\nfor m in [\"shoot\", \"cem\"]:\n    best = [plan(1.0, 0.0, dynamics, np.random.default_rng(s), method=m)[1] for s in range(20)]\n    print(f\"{m:5s} 找到的计划在模型里的代价（越低越好，20 次平均）：{np.mean(best):.2f}\")\n\n# 2) 开环 vs 滚动重规划(MPC)。「真实世界」和模型不一样：质量是 1.5（模型以为是 1.0），还有一股持续的风\nworld = {\"模型完全正确\": lambda x, v, a: dynamics(x, v, a),\n         \"模型有误差  \": lambda x, v, a: dynamics(x, v, a, mass=1.5, wind=-0.15)}\ndef execute(method, mode, w, seed, T=60):\n    rng = np.random.default_rng(seed); x, v, tot = 1.0, 0.0, 0.0\n    if mode == \"开环\": A, _ = plan(x, v, dynamics, rng, H=T, N=300, method=method, iters=8)   # 一次规划完整个 60 步，之后闭眼执行\n    for t in range(T):\n        if mode == \"开环\": a = A[t]\n        else: a = plan(x, v, dynamics, rng, H=15, method=method)[0][0]          # MPC：每一步都重新规划，只执行第一个动作\n        xa, va = world[w](np.array([x]), np.array([v]), np.array([a])); x, v = float(xa[0]), float(va[0])\n        tot += step_cost(x, v, a)\n    return tot\nprint(\"60 步总代价（10 个种子平均）：\")\nfor method in [\"shoot\", \"cem\"]:\n    for mode in [\"开环\", \"MPC\"]:\n        print(f\"  {method:5s} {mode:3s}\", \"  \".join(f\"{w}: {np.mean([execute(method, mode, w, s) for s in range(10)]):6.2f}\" for w in world))\n# 输出：shoot 找到的计划在模型里的代价（越低越好，20 次平均）：10.08\n# 输出：cem   找到的计划在模型里的代价（越低越好，20 次平均）：7.96\n# 输出：60 步总代价（10 个种子平均）：\n# 输出：  shoot 开环  模型完全正确:  13.79  模型有误差  :  53.85\n# 输出：  shoot MPC 模型完全正确:   9.04  模型有误差  :  11.04\n# 输出：  cem   开环  模型完全正确:   8.49  模型有误差  :  49.28\n# 输出：  cem   MPC 模型完全正确:   7.85  模型有误差  :   9.07\n```\n\n读输出：\n\n- **搜索算法**：同样用约 200 条候选，随机射击找到的计划代价是 10.08，CEM 是 7.96，**CEM 更好**，因为它把预算集中到有希望的区域。\n- **模型正确时**，MPC 与开环差别不大：CEM 开环 8.49，CEM-MPC 7.85。随机射击的开环 13.79 偏高，是因为要在 60 维空间里随机碰运气，难度远高于 15 维。\n- **模型有误差时**（真实质量是 1.5、还有一股风，模型不知道）：开环执行的代价暴涨，随机射击 53.85、CEM 49.28；MPC 只是小幅上升，随机射击 11.04、CEM 9.07。**重规划把累积的误差一直拉回到真实状态上**，所以 MPC 对模型误差稳健得多。这就是几乎所有基于模型的深度强化学习方法都用 MPC 的原因之一。\n- 代价是每个时间步都要做一次完整的搜索，计算量大；Dreamer 的思路之一，就是把规划「摊销」到一个策略网络里（第 8 节）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "2o1yrkbpcUk",
+   "title": "视频二：L6 Model-based RL（Foundations of Deep RL 系列，Pieter Abbeel）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  },
+  {
+   "type": "text",
+   "md": "### 学动力学模型与累积误差\n\n规划需要一个模型，现实里模型要从数据里学。最简单的做法是把它当作监督学习：用已经收集的转移 $(s_t,a_t,s_{t+1})$，学一个函数 $f_\\theta$，让 $f_\\theta(s_t,a_t)\\approx s_{t+1}$（常常预测增量 $s_{t+1}-s_t$，数值更稳）。误差指标是**单步预测误差**。\n\n但是规划用的是**多步滚动 (multi-step rollout)**：把模型自己的输出再喂给自己，$\\hat s_{t+2}=f_\\theta(\\hat s_{t+1},a_{t+1})$。每一步的小误差会进入下一步的输入。\n\n> **标准定义 · 累积误差与分布偏移 (compounding error & distribution shift)**\n>\n> 设模型每一步的预测误差不超过 $\\epsilon$，真实动力学对状态的 Lipschitz 常数是 $L$（状态差异每一步最多被放大 $L$ 倍）。则 $k$ 步滚动后的误差 $e_k$ 满足\n>\n> $$e_{k+1}\\le L\\,e_k+\\epsilon\\quad\\Longrightarrow\\quad e_k\\le\\epsilon\\,\\frac{L^k-1}{L-1}\\quad(L\\neq1)$$\n>\n> $L>1$ 时误差**指数增长**，$L=1$ 时线性增长，$L<1$ 时有上界。另外，滚动到的状态可能落在训练数据之外，模型在那里没被训练过，误差更大，这就是**分布偏移**。\n>\n> *English: If the one-step model error is at most ε and the true dynamics are L-Lipschitz, the k-step error is bounded by ε(L^k − 1)/(L − 1): errors grow exponentially when L > 1. In addition, rolled-out states can leave the training distribution, where the model is unreliable.*\n\n**白话版：「传话游戏」。** 第一个人传得差一点点，第二个人在此基础上又差一点点……传十轮后面目全非。系统本身越敏感（$L$ 越大），放大的越厉害。\n\n先用最小的例子感受一下这个公式（这个界是我自己用递推写出来的，不是引自某篇论文）：\n\n```python\nimport numpy as np\n\n# 累积误差的最小模型：真实系统 x_{k+1} = a x_k，学到的模型 x_{k+1} = (a + 0.02) x_k，\n# 每一步的误差只有 0.02 倍的状态，看看多步滚动之后差多少\nx0 = 1.0\nprint(\"步数 k        :\", [1, 5, 10, 20, 50])\nfor a in [0.9, 1.0, 1.1]:\n    errs = [abs(a ** k - (a + 0.02) ** k) * x0 for k in [1, 5, 10, 20, 50]]\n    print(f\"a={a:<4}  |误差|  :\", [round(e, 4) for e in errs])\n\n# 递推：误差 e_{k+1} = a e_k + 0.02 x_k。a>1 时旧误差被放大，a<1 时被衰减\nfor a in [0.9, 1.1]:\n    x, e = x0, 0.0\n    for k in range(20):\n        e = a * e + 0.02 * x; x = a * x\n    print(f\"a={a}: 20 步后的绝对误差 {e:.4f}，相对误差 {e / x:.4f}\")\n# 输出：步数 k        : [1, 5, 10, 20, 50]\n# 输出：a=0.9   |误差|  : [0.02, 0.0686, 0.0857, 0.0671, 0.0103]\n# 输出：a=1.0   |误差|  : [0.02, 0.1041, 0.219, 0.4859, 1.6916]\n# 输出：a=1.1   |误差|  : [0.02, 0.1518, 0.5121, 2.9188, 171.6113]\n# 输出：a=0.9: 20 步后的绝对误差 0.0540，相对误差 0.4444\n# 输出：a=1.1: 20 步后的绝对误差 2.4464，相对误差 0.3636\n```\n\n读输出：真实系统是 $x_{k+1}=ax_k$，模型把系数多估了 0.02，每一步的误差都很小。"
+  },
+  {
+   "type": "think",
+   "q": "**联系世界模型**：Dreamer 在潜空间里的想象长度只有 15 步左右（这是从论文核实过的），用价值函数估计之后的回报。结合本节，说说为什么不直接想象 1000 步，以及价值函数起什么作用。",
+   "a": "想象越长，累积误差越大，想象的轨迹越不可信，模型也更容易被利用；而且想象的每一步都要算梯度或采样，计算量与长度成正比。\n\n价值函数 $v(s)$ 估计「从状态 $s$ 之后的总回报」。在想象轨迹的末端用 $v(s_{t+H})$ 代替后面的所有奖励，就能在**只想象 $H$ 步**的情况下，让智能体考虑更长远的后果。长度 $H$ 的选择是在「累积误差」与「偏差」（价值函数本身不准）之间的取舍。这和 MBPO 的「短分支 rollout」是同一个思想。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "相比随机射击 (random shooting)，交叉熵方法 (CEM) 多做了什么？",
+    "options": [
+     "它反复用「代价最低的一批精英序列」重新拟合采样分布，让搜索越来越集中在好的区域",
+     "它要求动力学模型必须是线性的",
+     "它只评估一条动作序列",
+     "它用真实环境而不是模型来评估动作序列"
+    ],
+    "answer": 0,
+    "explain": "随机射击只是一次性随机采样、选最好的；CEM 迭代地采样 → 选精英 → 重新拟合高斯，同样的预算下通常能找到代价更低的计划（实验里 7.96 对 10.08）。两者都是在模型里评估，都不要求线性模型。"
+   },
+   {
+    "q": "模型预测控制 (MPC) 对模型误差比「开环执行整条计划」更稳健，主要原因是？",
+    "options": [
+     "它使用的模型比开环方法更精确",
+     "它把动作空间离散化了",
+     "它不需要任何模型",
+     "它每一步都用真实观测到的新状态重新规划，只执行第一个动作，误差没有机会累积下去"
+    ],
+    "answer": 3,
+    "explain": "MPC 的模型和开环方法可以完全相同，区别在于闭环：每一步都从真实状态重新出发，模型只需要对「接下来几步」足够好。实验里模型有误差时，开环代价 49 到 54，MPC 只有 9 到 11。"
+   },
+   {
+    "q": "设一步预测误差为 $\\epsilon=0.01$，误差按 $e_{k+1}=Le_k+\\epsilon$ 递推（$e_0=0$），$L=2$。5 步滚动后的误差是多少？",
+    "options": [
+     "$0.05$",
+     "$0.31$",
+     "$0.16$",
+     "$0.02$"
+    ],
+    "answer": 1,
+    "explain": "$e_1=0.01,\\,e_2=0.03,\\,e_3=0.07,\\,e_4=0.15,\\,e_5=0.31$，即 $\\epsilon(L^5-1)/(L-1)=0.01\\times31$。误差不是线性增长 $5\\epsilon=0.05$，因为旧误差每一步还会被放大 $L$ 倍。"
+   },
+   {
+    "q": "规划器在学到的模型里找到「看起来回报极高」、但在真实环境里表现很差的动作序列。这种现象叫什么？",
+    "options": [
+     "过拟合到验证集",
+     "梯度消失",
+     "模型利用 (model exploitation)：优化器专门找模型的漏洞",
+     "探索不足"
+    ],
+    "answer": 2,
+    "explain": "优化器会主动寻找模型预测过于乐观的区域，而这些区域往往恰好是数据没覆盖、模型最不准的地方。缓解方法包括模型集成估计不确定性、缩短想象长度、频繁重规划、给世界模型加随机性。"
+   }
+  ]
+ }
+}

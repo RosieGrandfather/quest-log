@@ -9,59 +9,220 @@
   "units": [
     {
       "id": "u01",
-      "title": "马尔可夫决策过程：智能体与环境",
-      "en": "Markov Decision Processes",
-      "minutes": 90,
-      "file": "u01-mdp.json"
+      "title": "马尔可夫决策过程：智能体与环境（1/3）",
+      "en": "Markov Decision Processes (1/3)",
+      "minutes": 20,
+      "file": "u01-mdp.json",
+      "whole": "u01-mdp.json"
+    },
+    {
+      "id": "u01b",
+      "title": "马尔可夫决策过程：智能体与环境（2/3）",
+      "en": "Markov Decision Processes (2/3)",
+      "minutes": 35,
+      "file": "u01b-mdp.json",
+      "whole": "u01-mdp.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u01c",
+      "title": "马尔可夫决策过程：智能体与环境（3/3）",
+      "en": "Markov Decision Processes (3/3)",
+      "minutes": 45,
+      "file": "u01c-mdp.json",
+      "whole": "u01-mdp.json",
+      "part_of": "u01"
     },
     {
       "id": "u02",
-      "title": "贝尔曼方程与动态规划求解",
-      "en": "Bellman Equations & Dynamic Programming",
-      "minutes": 100,
-      "file": "u02-bellman-dp.json"
+      "title": "贝尔曼方程与动态规划求解（1/3）",
+      "en": "Bellman Equations & Dynamic Programming (1/3)",
+      "minutes": 35,
+      "file": "u02-bellman-dp.json",
+      "whole": "u02-bellman-dp.json"
+    },
+    {
+      "id": "u02b",
+      "title": "贝尔曼方程与动态规划求解（2/3）",
+      "en": "Bellman Equations & Dynamic Programming (2/3)",
+      "minutes": 40,
+      "file": "u02b-bellman-dp.json",
+      "whole": "u02-bellman-dp.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u02c",
+      "title": "贝尔曼方程与动态规划求解（3/3）",
+      "en": "Bellman Equations & Dynamic Programming (3/3)",
+      "minutes": 40,
+      "file": "u02c-bellman-dp.json",
+      "whole": "u02-bellman-dp.json",
+      "part_of": "u02"
     },
     {
       "id": "u03",
-      "title": "无模型学习：蒙特卡洛、TD 与 Q-learning",
-      "en": "Model-free RL: Monte Carlo, TD & Q-learning",
-      "minutes": 105,
-      "file": "u03-model-free.json"
+      "title": "无模型学习：蒙特卡洛、TD 与 Q-learning（1/3）",
+      "en": "Model-free RL: Monte Carlo, TD & Q-learning (1/3)",
+      "minutes": 40,
+      "file": "u03-model-free.json",
+      "whole": "u03-model-free.json"
+    },
+    {
+      "id": "u03b",
+      "title": "无模型学习：蒙特卡洛、TD 与 Q-learning（2/3）",
+      "en": "Model-free RL: Monte Carlo, TD & Q-learning (2/3)",
+      "minutes": 45,
+      "file": "u03b-model-free.json",
+      "whole": "u03-model-free.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u03c",
+      "title": "无模型学习：蒙特卡洛、TD 与 Q-learning（3/3）",
+      "en": "Model-free RL: Monte Carlo, TD & Q-learning (3/3)",
+      "minutes": 35,
+      "file": "u03c-model-free.json",
+      "whole": "u03-model-free.json",
+      "part_of": "u03"
     },
     {
       "id": "u04",
-      "title": "策略梯度与深度强化学习",
-      "en": "Policy Gradient & Deep RL",
-      "minutes": 120,
-      "file": "u04-policy-gradient.json"
+      "title": "策略梯度与深度强化学习（1/3）",
+      "en": "Policy Gradient & Deep RL (1/3)",
+      "minutes": 45,
+      "file": "u04-policy-gradient.json",
+      "whole": "u04-policy-gradient.json"
+    },
+    {
+      "id": "u04b",
+      "title": "策略梯度与深度强化学习（2/3）",
+      "en": "Policy Gradient & Deep RL (2/3)",
+      "minutes": 45,
+      "file": "u04b-policy-gradient.json",
+      "whole": "u04-policy-gradient.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u04c",
+      "title": "策略梯度与深度强化学习（3/3）",
+      "en": "Policy Gradient & Deep RL (3/3)",
+      "minutes": 40,
+      "file": "u04c-policy-gradient.json",
+      "whole": "u04-policy-gradient.json",
+      "part_of": "u04"
     },
     {
       "id": "u05",
-      "title": "潜变量模型与 VAE",
-      "en": "Latent Variable Models & VAE",
-      "minutes": 120,
-      "file": "u05-vae.json"
+      "title": "潜变量模型与 VAE（1/4）",
+      "en": "Latent Variable Models & VAE (1/4)",
+      "minutes": 45,
+      "file": "u05-vae.json",
+      "whole": "u05-vae.json"
+    },
+    {
+      "id": "u05b",
+      "title": "潜变量模型与 VAE（2/4）",
+      "en": "Latent Variable Models & VAE (2/4)",
+      "minutes": 30,
+      "file": "u05b-vae.json",
+      "whole": "u05-vae.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u05c",
+      "title": "潜变量模型与 VAE（3/4）",
+      "en": "Latent Variable Models & VAE (3/4)",
+      "minutes": 30,
+      "file": "u05c-vae.json",
+      "whole": "u05-vae.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u05d",
+      "title": "潜变量模型与 VAE（4/4）",
+      "en": "Latent Variable Models & VAE (4/4)",
+      "minutes": 30,
+      "file": "u05d-vae.json",
+      "whole": "u05-vae.json",
+      "part_of": "u05"
     },
     {
       "id": "u06",
-      "title": "序列与状态空间模型",
-      "en": "Sequence & State-space Models",
-      "minutes": 100,
-      "file": "u06-state-space.json"
+      "title": "序列与状态空间模型（1/3）",
+      "en": "Sequence & State-space Models (1/3)",
+      "minutes": 40,
+      "file": "u06-state-space.json",
+      "whole": "u06-state-space.json"
+    },
+    {
+      "id": "u06b",
+      "title": "序列与状态空间模型（2/3）",
+      "en": "Sequence & State-space Models (2/3)",
+      "minutes": 30,
+      "file": "u06b-state-space.json",
+      "whole": "u06-state-space.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u06c",
+      "title": "序列与状态空间模型（3/3）",
+      "en": "Sequence & State-space Models (3/3)",
+      "minutes": 40,
+      "file": "u06c-state-space.json",
+      "whole": "u06-state-space.json",
+      "part_of": "u06"
     },
     {
       "id": "u07",
-      "title": "基于模型的强化学习",
-      "en": "Model-based RL",
-      "minutes": 100,
-      "file": "u07-model-based-rl.json"
+      "title": "基于模型的强化学习（1/3）",
+      "en": "Model-based RL (1/3)",
+      "minutes": 25,
+      "file": "u07-model-based-rl.json",
+      "whole": "u07-model-based-rl.json"
+    },
+    {
+      "id": "u07b",
+      "title": "基于模型的强化学习（2/3）",
+      "en": "Model-based RL (2/3)",
+      "minutes": 45,
+      "file": "u07b-model-based-rl.json",
+      "whole": "u07-model-based-rl.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u07c",
+      "title": "基于模型的强化学习（3/3）",
+      "en": "Model-based RL (3/3)",
+      "minutes": 40,
+      "file": "u07c-model-based-rl.json",
+      "whole": "u07-model-based-rl.json",
+      "part_of": "u07"
     },
     {
       "id": "u08",
-      "title": "世界模型：Dreamer、JEPA 与读论文",
-      "en": "World Models: Dreamer, JEPA & Reading Papers",
-      "minutes": 110,
-      "file": "u08-world-models.json"
+      "title": "世界模型：Dreamer、JEPA 与读论文（1/3）",
+      "en": "World Models: Dreamer, JEPA & Reading Papers (1/3)",
+      "minutes": 45,
+      "file": "u08-world-models.json",
+      "whole": "u08-world-models.json"
+    },
+    {
+      "id": "u08b",
+      "title": "世界模型：Dreamer、JEPA 与读论文（2/3）",
+      "en": "World Models: Dreamer, JEPA & Reading Papers (2/3)",
+      "minutes": 35,
+      "file": "u08b-world-models.json",
+      "whole": "u08-world-models.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u08c",
+      "title": "世界模型：Dreamer、JEPA 与读论文（3/3）",
+      "en": "World Models: Dreamer, JEPA & Reading Papers (3/3)",
+      "minutes": 40,
+      "file": "u08c-world-models.json",
+      "whole": "u08-world-models.json",
+      "part_of": "u08"
     }
   ],
   "order": 5,

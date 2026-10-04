@@ -1,0 +1,60 @@
+{
+ "id": "u10b",
+ "title": "Python 与 NumPy 基础（2/4）",
+ "en": "Python & NumPy (2/4)",
+ "minutes": 40,
+ "objectives": [
+  "熟练使用 **索引与切片 (indexing & slicing)**、**布尔掩码 (boolean mask)** 和 **整数数组索引 (fancy indexing)**，并分清 **视图 (view)** 与 **副本 (copy)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「Python 与 NumPy 基础」分成的第 2 个小节（共 4 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：Python：容易被忽略的几个语法（续）（约 35 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n下面是几个更容易出错的点：\n\n> **标准定义 · 装饰器与默认参数 (decorator & default arguments)**\n>\n> **装饰器**是一个「接收函数、返回新函数」的函数，`@d` 写在 `def f` 之上等价于 `f = d(f)`。函数的**默认参数在定义函数时只求值一次**，所以默认值若是可变对象（列表、字典），所有调用会共享同一个对象。`for ... else` 里的 `else` 在循环**没有被 `break` 打断**（正常跑完）时执行。\n>\n> *English: A decorator is a function that takes a function and returns a new one; @d above def f means f = d(f). Default argument values are evaluated once at definition time, so a mutable default is shared across calls. The else clause of a for loop runs only if the loop finished without hitting break.*\n\n**白话版：「给函数套个外壳；默认值是只印一次的表格；没找到才有 else」。** 装饰器像给函数套个外壳，能在调用前后做点事（计时、计数、关闭梯度）；可变默认参数像办公室里只印了一份的空白表，第一个人填了，第二个人拿到的就是已经填过的；`for/else` 的 `else` 读作「如果没有 break」，适合写「找了一圈没找到」的逻辑。\n\n```python\nimport functools\nfrom dataclasses import dataclass\n\n# 5. for / else：else 在循环「没有被 break 打断」时执行\ndef first_even(xs):\n    for x in xs:\n        if x % 2 == 0:\n            print(\"找到偶数\", x)\n            break\n    else:\n        print(\"没有偶数\")\nfirst_even([1, 3, 5])\nfirst_even([1, 4, 5])\n\n# 6. 可变默认参数的坑：默认值只在函数「定义时」创建一次\ndef add_item(item, box=[]):\n    box.append(item)\n    return box\nprint(add_item(1), add_item(2))            # 两次调用共用了同一个列表\n\ndef add_item_ok(item, box=None):\n    if box is None:\n        box = []\n    box.append(item)\n    return box\nprint(add_item_ok(1), add_item_ok(2))\n\n# 7. 装饰器：接收函数、返回新函数；这里给函数加一个「调用计数」\ndef count_calls(fn):\n    @functools.wraps(fn)                   # 保留原函数的名字和文档\n    def wrapper(*args, **kwargs):\n        wrapper.calls += 1\n        return fn(*args, **kwargs)\n    wrapper.calls = 0\n    return wrapper\n\n@count_calls\ndef double(x):\n    return 2 * x\n\nprint(double(4), double(5), \"调用了\", double.calls, \"次，函数名仍是\", double.__name__)\n\n# 8. 其他常用的：dataclass、f-string、上下文管理器、类型提示\n@dataclass\nclass Config:\n    lr: float = 0.1\n    layers: int = 2\nprint(Config(layers=4))                    # 自动生成了 __init__ 和 __repr__\n\nloss = 0.123456\nprint(f\"loss={loss:.3f}, 百分比 {0.256:.1%}\")\n\nimport tempfile, os\npath = os.path.join(tempfile.mkdtemp(), \"a.txt\")\nwith open(path, \"w\") as fh:               # with 结束时自动关闭文件\n    fh.write(\"hello\")\nprint(fh.closed, open(path).read())\n# 输出：没有偶数\n# 输出：找到偶数 4\n# 输出：[1, 2] [1, 2]\n# 输出：[1] [2]\n# 输出：8 10 调用了 2 次，函数名仍是 double\n# 输出：Config(lr=0.1, layers=4)\n# 输出：loss=0.123, 百分比 25.6%\n# 输出：True hello\n```\n\n读输出：`first_even([1, 3, 5])` 没有 `break`，所以执行 `else`，打印「没有偶数」；`[1, 4, 5]` 中途 `break`，不执行 `else`。**可变默认参数的陷阱**：`add_item(1), add_item(2)` 两次都返回 `[1, 2]`，因为它们共用同一个列表；正确写法（默认 `None`，函数里再创建）得到 `[1] [2]`。装饰器 `count_calls` 把 `double` 包了一层：调用两次，计数是 2，`functools.wraps` 保证函数名仍是 `double`。`@dataclass` 自动生成了 `__init__` 和打印格式，`with open(...)` 在块结束后自动关闭文件（`fh.closed` 为 `True`）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "lLRBYKwP8GQ",
+   "title": "视频：Ultimate Guide to NumPy Arrays（Python Simplified）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 24
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "装饰器",
+     "decorator",
+     "用 `@` 包装函数，如 `@torch.no_grad()`"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`for ... else` 结构中，`else` 块什么时候执行？",
+    "options": [
+     "循环正常结束、**没有**被 `break` 打断时",
+     "循环中出现异常时",
+     "循环被 `break` 打断时",
+     "循环体至少执行一次时"
+    ],
+    "answer": 0,
+    "explain": "`else` 只在循环「跑完了没被 break」时执行，常用来写「找了一圈没找到」的逻辑。"
+   },
+   {
+    "q": "`def add(item, box=[])` 连续调用 `add(1)`、`add(2)`，第二次返回什么？",
+    "options": [
+     "`[2]`",
+     "`[1]`",
+     "报错",
+     "`[1, 2]`"
+    ],
+    "answer": 3,
+    "explain": "默认值 `[]` 只在定义时创建一次，两次调用共用同一个列表。这是经典的可变默认参数陷阱。"
+   }
+  ]
+ }
+}

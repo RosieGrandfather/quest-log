@@ -6,6 +6,20 @@ from runlib import Notebook
 # ───────────── 一、网页里可以运行的小演示（k-NN 的核心思想、划分）─────────────
 nb = Notebook()
 
+C_SYN = nb.cell('''
+# 两个语法热身：嵌套解包、f-string 的格式说明
+sample = ((0.0, 1.5), "A")                   # 一个元组：(特征, 标签)，特征本身又是一个元组
+(a, b), tag = sample                         # 嵌套解包：左边的形状要和右边一样
+print(a, b, tag)
+
+pairs = [((0.0, 0.0), "A"), ((1.0, 0.0), "B")]
+for i, (feat, lab) in enumerate(pairs):      # enumerate 给出 (下标, 元素)，元素又是 (特征, 标签)
+    print(i, feat, lab)
+
+v = 3.14159
+print(f"{v:.3f}|{v:8.2f}|{7:<3}|{7:>3}|")    # .3f 三位小数；8.2f 占 8 格、两位小数；<3 左对齐占 3 格；>3 右对齐
+''')
+
 C_DIST = nb.cell('''
 import heapq, math
 from collections import Counter
@@ -65,6 +79,12 @@ print(len(tr1), len(te1))
 print("同一个种子，划分相同：", (tr1, te1) == (tr2, te2))
 print("不同种子，测试集不同：", te1 != te3)
 print("训练集与测试集没有交集：", not set(tr1) & set(te1))
+''')
+
+C_DICTCOMP = nb.cell('''
+conf = {("A", "A"): 3, ("B", "C"): 1}        # 混淆矩阵的样子：(真实, 预测) -> 次数
+print(sorted(conf.items()))                  # .items() 给出 (键, 值) 的配对，这里的键本身又是元组
+print({f"{t}->{p}": n for (t, p), n in sorted(conf.items())})   # 字典推导式 + 嵌套解包
 ''')
 
 # ───────────── 二、项目文件（每个键一个文件；值是「块」的列表，块之间拼起来就是完整文件）─────────────

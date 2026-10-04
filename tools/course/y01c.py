@@ -79,6 +79,12 @@ def good(x, bucket=None):
 print(good(1), good(2))
 ''')
 
+C_COMPPRE = nb.cell('''
+# 列表推导式：[表达式 for 变量 in 序列]，一行造出一个新列表
+squares = [n * n for n in range(4)]
+print(squares)
+''')
+
 C_GRID = nb.cell('''
 # 同样的原因：[[0]*3]*3 得到的是 3 个「同一个」列表
 grid_bad = [[0] * 3] * 3
@@ -130,6 +136,13 @@ print(c1(), c1(), c1(), c2())          # 每个闭包有自己独立的 count
 print("闭包保存的变量：", c1.__closure__[0].cell_contents)
 ''')
 
+C_LAMBDA = nb.cell('''
+# lambda 参数: 表达式   等价于   def 某名字(参数): return 表达式
+add = lambda a, b: a + b
+double = lambda x: x * 2
+print(add(2, 3), double(5), (lambda: 7)())    # 最后一个：没有参数的 lambda，写完立刻调用
+''')
+
 C_LATE = nb.cell('''
 # 经典陷阱：闭包「晚绑定」(late binding)——它记住的是变量，不是当时的值
 funcs_bad = [lambda: i for i in range(3)]
@@ -149,6 +162,13 @@ C_KEY = nb.cell('''
 words = ["banana", "Cherry", "apple", "date"]
 print(sorted(words), sorted(words, key=str.lower), sorted(words, key=len, reverse=True))
 print(list(map(lambda w: w.upper(), filter(lambda w: len(w) > 4, words))))
+''')
+
+C_IMPORT = nb.cell('''
+import math                        # 引入整个 math 模块，之后用「模块名.名字」
+print(math.sqrt(16), round(math.pi, 5))
+from math import floor             # 只取 floor 这一个名字，之后直接用
+print(floor(3.7))
 ''')
 
 C_DECO = nb.cell('''

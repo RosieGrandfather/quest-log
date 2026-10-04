@@ -1,0 +1,117 @@
+{
+ "id": "u05b",
+ "title": "递归进阶：分治与回溯（2/2）",
+ "en": "Divide & Conquer, Backtracking (2/2)",
+ "minutes": 45,
+ "objectives": [
+  "掌握 **回溯 (backtracking)** 的「选择、探索、撤销」模板，会用 **剪枝 (pruning)** 提速，会写子集、排列与 N 皇后",
+  "看出朴素递归里「子问题重复」的问题，为第 11 节的动态规划做铺垫"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「递归进阶：分治与回溯」分成的第 2 个小节（共 2 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：回溯（约 35 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 回溯\n\n> **标准定义 · 回溯 (backtracking) 与剪枝 (pruning)**\n>\n> **回溯**是系统地搜索「一连串选择」的所有可能：每一步**选择 (choose)** 一个候选，**探索 (explore)** 它之后的所有可能（递归），然后**撤销选择 (un-choose)**，回到之前的状态，再试下一个候选。若发现当前部分方案**不可能**导出合法解，就立即放弃它，不再往下探索，称为**剪枝**。\n>\n> *English: Backtracking builds a solution incrementally by choosing, exploring, and undoing the choice; pruning abandons a partial solution as soon as it cannot lead to a valid answer.*\n\n**白话版：走迷宫，碰壁就退回上一个岔路口。** 每个岔路口你选一条走下去，走到死胡同就退回来，换另一条。回溯的核心就是**「撤销」**：递归返回之后，要把状态恢复成进入之前的样子，这样才能干净地试下一个选择。模板只有三行：\n\n```text\n选择    ← path.append(x)\n探索    ← dfs(下一步)\n撤销选择 ← path.pop()\n```\n\n下面用三个经典例子来看：**子集**（每个元素选或不选，共 $2^n$ 个）、**排列**（$n!$ 个）、**N 皇后**（在 $n\\times n$ 棋盘上放 $n$ 个互不攻击的皇后）。前两个枚举全部可能，不需要剪枝；N 皇后要剪枝。\n\n```python\ndef subsets(nums):\n    res, path = [], []\n    def dfs(i):                          # 对第 i 个元素：选，还是不选\n        if i == len(nums):\n            res.append(path[:])          # 一个完整的选择方案；path[:] 是拷贝，否则后面会被改掉\n            return\n        dfs(i + 1)                       # 不选 nums[i]\n        path.append(nums[i])             # 选择 nums[i]\n        dfs(i + 1)                       # 探索\n        path.pop()                       # 撤销选择，回到之前的状态\n    dfs(0)\n    return res\n\ndef permutations(nums):\n    res, path, used = [], [], [False] * len(nums)\n    def dfs():\n        if len(path) == len(nums):\n            res.append(path[:])\n            return\n        for i in range(len(nums)):\n            if used[i]:\n                continue\n            used[i] = True               # 选择：把 nums[i] 放在当前位置\n            path.append(nums[i])\n            dfs()                        # 探索：继续安排下一个位置\n            path.pop()                   # 撤销选择\n            used[i] = False\n    dfs()\n    return res\n\nprint(subsets([1, 2, 3]))\nprint(permutations([1, 2, 3]))\nprint(len(subsets(list(range(10)))), len(permutations(list(range(6)))))   # 2^10 和 6!\n# 输出：[[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]\n# 输出：[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]\n# 输出：1024 720\n```\n\n子集共 $2^{10}=1024$ 个、排列共 $6!=720$ 个。这类题的复杂度本身就是**指数 / 阶乘级**：答案的数量就这么多，没办法更少，所以回溯只适合 $n$ 很小（通常 $n\\le20$）的场合。\n\nN 皇后：每行放一个皇后，逐行放；若某一格的列、主对角线、副对角线被占了，就**剪枝**，不用再往下看。\n\n```python\ndef solve(n):\n    cols, d1, d2 = set(), set(), set()   # 已被占用的列、主对角线 (r-c)、副对角线 (r+c)\n    path, sols, nodes = [], [], 0\n    def place(r):                        # 在第 r 行放一个皇后\n        nonlocal nodes\n        nodes += 1\n        if r == n:\n            sols.append(path[:])\n            return\n        for c in range(n):\n            if c in cols or r - c in d1 or r + c in d2:\n                continue                 # 剪枝：这一格会被已有的皇后攻击，整棵子树都不用看了\n            path.append(c); cols.add(c); d1.add(r - c); d2.add(r + c)     # 选择\n            place(r + 1)                                                  # 探索\n            path.pop(); cols.discard(c); d1.discard(r - c); d2.discard(r + c)   # 撤销\n    place(0)\n    return sols, nodes\n\nprint(\"n  解的个数  剪枝后访问的节点  不剪枝时的节点总数\")\nfor n in range(4, 9):\n    sols, nodes = solve(n)\n    full = (n ** (n + 1) - 1) // (n - 1)         # 不剪枝：每行 n 种放法，整棵树的节点数\n    print(f\"{n}  {len(sols):>8}  {nodes:>14}  {full:>16}\")\n\nsols, _ = solve(6)\nprint(\"n=6 的第一个解：\")\nfor c in sols[0]:\n    print(\"\".join(\"Q\" if j == c else \".\" for j in range(6)))\n# 输出：n  解的个数  剪枝后访问的节点  不剪枝时的节点总数\n# 输出：4         2              17               341\n# 输出：5        10              54              3906\n# 输出：6         4             153             55987\n# 输出：7        40             552            960800\n# 输出：8        92            2057          19173961\n# 输出：n=6 的第一个解：\n# 输出：.Q....\n# 输出：...Q..\n# 输出：.....Q\n# 输出：Q.....\n# 输出：..Q...\n# 输出：....Q.\n```\n\n$n=8$ 时有 92 个解；剪枝版访问了约 2000 个节点，而不剪枝要访问约 1900 万个。**剪枝让搜索范围缩小了几个数量级。** 但要注意，回溯在最坏情况下仍然是指数级的，剪枝只是让常见情形快得多。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "p9m2LHBW81M",
+   "title": "视频二：Solve ANY Backtracking Problem on Leetcode (Template + Explanation)（Bitflip）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Ph95IHmRp5M",
+   "title": "视频三（选看）：N-Queens - Backtracking - Leetcode 51 - Python（NeetCode）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  },
+  {
+   "type": "text",
+   "md": "### 这一节你要带走的三句话\n\n1. **递归 = 基准情形 + 向基准靠近的递归情形**；复杂度看递归树的节点总数，或者写递推关系式（$T(n)=aT(n/b)+f(n)$）再套主定理。\n2. **分治 = 分、治、合**，子问题**互相独立**；若子问题**重叠**（如朴素斐波那契），要用记忆化 / 动态规划。\n3. **回溯 = 选择、探索、撤销选择**；**剪枝**能大幅缩小搜索空间，但最坏情况仍是指数级。"
+  },
+  {
+   "type": "think",
+   "q": "回溯里「撤销选择」这一步如果忘了写（比如子集代码里漏掉 `path.pop()`），会出什么问题？",
+   "a": "`path` 是一个**共享的列表**，所有层的递归都在同一个对象上操作。不撤销的话，当一层递归结束返回后，它加进去的元素仍然留在 `path` 里，下一个分支在此基础上继续追加，**状态被污染了**：后面生成的「方案」里会混进不该有的元素，数量和内容都会错。\n\n另一个常见错误是保存结果时写 `res.append(path)`（没有拷贝）：`res` 里存的全是同一个 `path` 对象的引用，最后它被所有回溯操作改回空列表，`res` 就变成一堆空列表。要写 `res.append(path[:])` 或 `list(path)`，存一份快照。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Recursion（章节目录）",
+   "url": "https://runestone.academy/ns/books/published/pythonds/Recursion/index.html",
+   "note": "本节的大纲依据之一，含递归三定律、汉诺塔、动态规划引入（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "大学课程原版，讲分治的递推式与主定理的严格推导，难度更高"
+  },
+  {
+   "title": "Python 文档：itertools（permutations / combinations / product）",
+   "url": "https://docs.python.org/3/library/itertools.html",
+   "note": "标准库已经提供了排列组合的现成实现，实际使用时直接用它"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个正确的递归函数必须包含？",
+    "options": [
+     "基准情形，否则会无限递归",
+     "一个 `for` 循环",
+     "全局变量",
+     "一个列表"
+    ],
+    "answer": 0,
+    "explain": "没有基准情形，递归永远不会停止，Python 会抛出 `RecursionError`。同时递归情形必须使问题向基准情形靠近。"
+   },
+   {
+    "q": "给朴素斐波那契加上记忆化（把算过的结果存进字典）后，调用次数变成？",
+    "options": [
+     "指数级",
+     "$O(n^2)$",
+     "$O(\\log n)$",
+     "$O(n)$"
+    ],
+    "answer": 3,
+    "explain": "每个子问题 $F(0),\\dots,F(n)$ 只会真正计算一次，总调用次数是 $2n-1$ 这个量级，即 $O(n)$。"
+   },
+   {
+    "q": "回溯算法每一步的三个动作是？",
+    "options": [
+     "排序、查找、返回",
+     "选择、探索（递归）、撤销选择",
+     "分解、求解、合并",
+     "输入、处理、输出"
+    ],
+    "answer": 1,
+    "explain": "选择一个候选，递归探索之后的所有可能，然后撤销选择，回到原来的状态再试下一个。分解、求解、合并是分治的三步。"
+   },
+   {
+    "q": "回溯中的「剪枝」指的是？",
+    "options": [
+     "把递归改写成循环",
+     "把算过的结果缓存起来",
+     "一旦发现当前方案不可能得到合法解，就不再往下探索",
+     "合并两个子问题的答案"
+    ],
+    "answer": 2,
+    "explain": "剪枝是提前放弃没有希望的分支。N 皇后里发现某一格被攻击就跳过，能把搜索范围缩小几个数量级。缓存结果是记忆化。"
+   },
+   {
+    "q": "对 $n=10$ 个不同元素，全部子集的个数和全部排列的个数分别是？",
+    "options": [
+     "1024 和 3628800",
+     "1024 和 100",
+     "100 和 1000",
+     "3628800 和 1024"
+    ],
+    "answer": 0,
+    "explain": "子集 $2^{10}=1024$，排列 $10!=3628800$。这类枚举本身就是指数或阶乘级，所以只适合小规模的 $n$。"
+   }
+  ]
+ }
+}

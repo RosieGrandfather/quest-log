@@ -1,0 +1,70 @@
+{
+ "id": "u02b",
+ "title": "推导式、迭代器与生成器（2/3）",
+ "en": "Comprehensions, Iterators & Generators (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "会写 **生成器 (generator)**（`yield`、生成器表达式、`yield from`），理解 **惰性求值 (lazy evaluation)** 为什么能省内存、能表示无限序列"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「推导式、迭代器与生成器」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：推导式（续）（约 20 分钟） → 迭代器：`for` 循环背后的协议（约 15 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**推导式比 `for` + `append` 快吗？**\n\n```python\n# 推导式和 for + append 算出的结果完全一样；差别只在写法和（通常很小的）速度\nn = 1000\na = [x * x for x in range(n)]\nr = []\nfor x in range(n):\n    r.append(x * x)\nprint(\"两种写法结果一样：\", a == r)\n# 输出：两种写法结果一样： True\n```\n\n**读输出：** `两种写法结果一样： True`。至于谁更快：在常见的 CPython 里，推导式通常比 `for` + `append` 略快（少了每次查找 `append` 方法并调用它的开销），但差别不大，而且随 Python 版本和运行环境而变（网页里的 Python 就可能看不出差别）。所以选推导式的理由是**更短、更清楚**，不是为了速度。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "3dt4OGnU5sM",
+   "title": "视频一：Python Tutorial: Comprehensions - How they work and why you should be using them（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  },
+  {
+   "type": "text",
+   "md": "### 迭代器：`for` 循环背后的协议\n\n> **标准定义 · 可迭代对象与迭代器 (iterable & iterator)**\n>\n> **可迭代对象 (iterable)**：实现了 `__iter__()`，能返回一个迭代器的对象（列表、元组、字符串、字典、集合、文件、`range`……），可以放在 `for` 的 `in` 后面。**迭代器 (iterator)**：实现了 `__next__()` 与 `__iter__()`（返回自己）的对象；每次 `next()` 返回下一个元素，**没有更多元素时抛出 `StopIteration`**。`for x in obj` 的执行过程是：调用 `iter(obj)` 得到迭代器，反复调用 `next()`，直到遇到 `StopIteration` 为止。\n>\n> *English: An iterable has __iter__() returning an iterator; an iterator has __next__() which returns the next item or raises StopIteration. A for loop calls iter() once and next() repeatedly.*\n\n**白话版：「书」与「书签」。** 可迭代对象像一本**书**，可以反复读；迭代器像夹在书里的**书签**，记着你读到哪一页，往前翻一页（`next`）就不能再回头，翻到最后一页再翻就是 `StopIteration`。同一本书可以同时有多个书签，互不影响；`iter(lst)` 每次给你一个新书签。\n\n**先回答一个最基本的问题：`for x in 东西` 遍历的到底是什么？** 答案是：`东西` 是一个**可迭代对象**，`x` 就是它**依次交出来的每一个元素**。「元素」是什么，取决于 `东西` 是什么类型（`for` 循环本身在「条件、循环与读懂报错」讲过）：\n\n```python\n# for x in 东西：x 是「东西」依次交出来的每一个元素\nfor ch in \"abc\":                         # 字符串 → 一个个字符\n    print(\"字符\", ch)\nfor key in {\"a\": 1, \"b\": 2}:             # 字典 → 它的键\n    print(\"键\", key)\nfor k, v in {\"a\": 1, \"b\": 2}.items():    # .items() → 一个个 (键, 值) 元组，再解包给 k, v\n    print(\"键值对\", k, v)\nfor i in range(3):                       # range → 整数\n    print(\"数\", i)\n# 输出：字符 a\n# 输出：字符 b\n# 输出：字符 c\n# 输出：键 a\n# 输出：键 b\n# 输出：键值对 a 1\n# 输出：键值对 b 2\n# 输出：数 0\n# 输出：数 1\n# 输出：数 2\n```\n\n**读输出：** 同样是 `for`，交出来的东西不一样：字符串交出一个个**字符**（`字符 a`、`字符 b`、`字符 c`），字典交出它的**键**（`键 a`、`键 b`），`.items()` 交出一个个 `(键, 值)` **元组**（`for k, v in ...` 把每个元组解包成两个变量：`键值对 a 1`、`键值对 b 2`），`range(3)` 交出整数（`数 0`、`数 1`、`数 2`）。所以「`for` 在循环什么」要看 `in` 后面那个东西。再强调一次：`for bad in (...)` 这种写法，循环的是括号里的那些元素（字符串、数字、什么都可以），**不是**在循环报错；`except ... as e` 里的 `e` 是 `except` 接住的那个错误对象，和 `for` 没有关系。\n\n**问题一：列表和「列表的迭代器」是同一种东西吗？用完之后会怎样？** 下面会用到 `type(x).__name__`：`type(x)` 返回 `x` 的类型（直接打印是 `<class 'list'>`），再取 `.__name__` 就只剩类型名这个字符串，后面会反复出现。\n\n```python\n# 可迭代对象 (iterable)：能被 for 遍历；迭代器 (iterator)：记得自己遍历到哪了\nlst = [10, 20, 30]\nit = iter(lst)                      # 向可迭代对象要一个迭代器\nprint(type(lst).__name__, type(it).__name__)\nprint(next(it), next(it), next(it))\ntry:\n    next(it)\nexcept StopIteration:\n    print(\"StopIteration：迭代器用完了\")\n# 输出：list list_iterator\n# 输出：10 20 30\n# 输出：StopIteration：迭代器用完了\n```\n\n**读输出：** 第一行 `list list_iterator`：列表是 `list`，`iter(lst)` 得到的是另一种对象 `list_iterator`，所以列表是**可迭代对象**，不是迭代器。接着三次 `next` 依次给出 `10 20 30`；第四次 `next(it)` 已经没有元素了，抛出 `StopIteration`，所以打印了「StopIteration：迭代器用完了」（这里的 `try` / `except StopIteration` 和「条件、循环与读懂报错」里的写法一样：`next(it)` 抛出 `StopIteration` 这个错误，被 `except` 接住）。\n\n**问题二：`for` 循环到底做了什么？**（`while True:` 是「一直重复」的循环，只能靠里面的 `break` 跳出；`break` 的意思是「立刻结束当前这个循环」。）\n\n```python\n# for 循环其实就是下面这个流程\nit = iter(lst)\nwhile True:\n    try:\n        x = next(it)\n    except StopIteration:\n        break\n    print(\"取到\", x)\n# 输出：取到 10\n# 输出：取到 20\n# 输出：取到 30\n```\n\n**读输出：** 依次打印 `取到 10`、`取到 20`、`取到 30`，之后第四次 `next` 抛出 `StopIteration`，被 `except` 接住后 `break` 退出。这个 `while` + `try` 就是 `for x in lst:` 背后做的事：`iter()` 一次，`next()` 反复，直到 `StopIteration`。\n\n**问题三：迭代器能反复用吗？**\n\n```python\n# 迭代器是「一次性」的\nit = iter(lst)\nprint(list(it), list(it))           # 第二次是空的！\nprint(list(lst), list(lst))         # 列表本身可以反复遍历\n# 输出：[10, 20, 30] []\n# 输出：[10, 20, 30] [10, 20, 30]\n```\n\n**读输出：** 第一行 `[10, 20, 30] []`：**迭代器是一次性的**，第一次 `list(it)` 把它耗尽，第二次得到空列表，因为书签已经翻到底了。第二行 `[10, 20, 30] [10, 20, 30]`：列表本身每次 `iter()` 都得到新的迭代器，可以反复遍历。\n\n**问题四：怎么自己写一个迭代器？** 实现 `__iter__` 与 `__next__` 两个方法。这是这门课里第一次出现 **`class`**，这一节只需要读懂下面几点（完整的写法在后面「类与对象」那一节讲）：\n\n- `class Countdown:` 定义了一种新的类型，`Countdown(5)` 就创建一个这种类型的对象；\n- 类里面的 `def` 叫**方法**，第一个参数 `self` 是「这个对象自己」；`__init__` 在创建对象时自动运行，`self.n = start` 把数据存在对象身上；\n- `__iter__`、`__next__` 这种两头带双下划线的名字是 Python 约定好的**特殊方法**：`iter(obj)` 会去调用 `obj.__iter__()`，`next(obj)` 会去调用 `obj.__next__()`；\n- `raise StopIteration` 是**主动抛出**这个错误（`raise` 就是「现在报这个错」，与 `except` 接住错误正好是一对）。\n\n```python\n# 自己写一个迭代器：实现 __iter__ 和 __next__\nclass Countdown:\n    def __init__(self, start):\n        self.n = start\n    def __iter__(self):\n        return self\n    def __next__(self):\n        if self.n <= 0:\n            raise StopIteration\n        self.n -= 1\n        return self.n + 1\n\nprint(list(Countdown(5)))\nprint(sum(Countdown(100)), max(Countdown(3)))\n# 输出：[5, 4, 3, 2, 1]\n# 输出：5050 3\n```\n\n**读输出：** `[5, 4, 3, 2, 1]`：`Countdown(5)` 每次 `__next__` 返回当前的数并减一，到 0 时抛出 `StopIteration`，`list` 就停止收集。第二行 `5050 3`：同一个迭代器协议让它可以直接交给 `sum`（$100+99+\\dots+1 = 5050$）和 `max`（`Countdown(3)` 产出 3、2、1，最大是 3）。凡是实现了这个协议的对象，所有接收可迭代对象的函数都能用。（`class` 的完整写法在「类与对象」那一节讲。）"
+  },
+  {
+   "type": "think",
+   "q": "`for` 循环遍历一个**列表**时，同时在循环里往这个列表里 `append` 元素，会发生什么？遍历一个**字典**时，往字典里加新键呢？为什么？",
+   "a": "对**列表**：列表的迭代器记录的是「下标」，每次检查「下标是否小于当前长度」。如果循环里不断 `append`，长度一直在增加，循环可能**永远不会结束**（比如 `for x in lst: lst.append(x)`）。对**字典**：Python 检测到「遍历过程中字典大小改变」，会直接抛出 `RuntimeError: dictionary changed size during iteration`，因为哈希表插入新键可能触发扩容、重排，迭代器的位置就失效了（数据结构第 4 节讲过哈希表的扩容）。\n\n规则：**不要在遍历一个容器的同时修改它的大小**。想边遍历边增删，就遍历它的**副本**（`for x in list(lst)`），或者先把要做的修改收集起来，遍历结束后再统一执行，或者直接构造一个新的容器（用推导式）。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面哪一种说法**正确**描述了可迭代对象与迭代器？",
+    "options": [
+     "可迭代对象通过 `iter()` 得到迭代器，迭代器通过 `next()` 逐个给出元素，用完抛 `StopIteration`",
+     "迭代器可以反复遍历很多次",
+     "列表是迭代器",
+     "`for` 循环只能用于列表"
+    ],
+    "answer": 0,
+    "explain": "列表是可迭代对象（不是迭代器）；迭代器是一次性的。`for` 循环就是反复调用 `next()` 并在 `StopIteration` 时停止。"
+   },
+   {
+    "q": "`z = zip([1, 2], 'ab')`，执行 `list(z)` 之后再执行 `list(z)`，第二次得到？",
+    "options": [
+     "`[(1, 'a'), (2, 'b')]`",
+     "`[(1, 'a')]`",
+     "报错",
+     "空列表 `[]`"
+    ],
+    "answer": 3,
+    "explain": "`zip` 返回的是迭代器，被第一次 `list` 消耗完了；要多次使用，先 `list()` 存起来。"
+   },
+   {
+    "q": "生成器对象**不能**做的事是？",
+    "options": [
+     "用 `for` 遍历",
+     "用 `len(g)` 求长度，或用 `g[0]` 按下标访问",
+     "传给 `sum`、`list`",
+     "用 `next(g)` 取元素"
+    ],
+    "answer": 1,
+    "explain": "生成器是惰性的一次性迭代器，不知道总长度，也不支持下标。需要这些就先转成列表。"
+   }
+  ]
+ }
+}

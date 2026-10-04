@@ -1,0 +1,89 @@
+{
+ "id": "u11c",
+ "title": "动态规划（3/3）",
+ "en": "Dynamic Programming (3/3)",
+ "minutes": 30,
+ "objectives": [
+  "知道 DP 与**贪心 (greedy)**、与**图上的最短路径**的关系，以及它在机器学习里的位置（Viterbi、强化学习的贝尔曼方程）"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「动态规划」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：字符串上的 DP：LCS 与编辑距离（约 15 分钟） → 一维的 DP：最大子数组和与最长递增子序列（约 5 分钟） → DP 题怎么练（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 字符串上的 DP：LCS 与编辑距离\n\n> **标准定义 · 最长公共子序列 (longest common subsequence, LCS)**\n>\n> 序列 $a$ 的**子序列 (subsequence)** 是从 $a$ 中删掉若干元素（可以不删）、保持其余元素的**相对顺序**得到的序列（**不要求连续**，这与「子串 substring」不同）。**LCS** 是两个序列 $a,b$ 的公共子序列中最长的那个。\n>\n> **状态：** $dp[i][j]$ = $a[:i]$ 与 $b[:j]$ 的 LCS 长度。**转移：** 若 $a_i=b_j$，$dp[i][j]=dp[i-1][j-1]+1$；否则 $dp[i][j]=\\max(dp[i-1][j],\\ dp[i][j-1])$。时间、空间 $O(mn)$。\n>\n> *English: A longest common subsequence of two sequences is the longest sequence that appears, in order but not necessarily contiguously, in both. Let dp[i][j] be the LCS length of the first i and j elements.*\n\n> **标准定义 · 编辑距离 (edit distance / Levenshtein distance)**\n>\n> 把字符串 $a$ 变成字符串 $b$ 所需的**最少操作次数**，操作包括：**插入**一个字符、**删除**一个字符、**替换**一个字符。\n>\n> **状态：** $dp[i][j]$ = 把 $a[:i]$ 变成 $b[:j]$ 的最少操作数。**转移：** 若 $a_i=b_j$，$dp[i][j]=dp[i-1][j-1]$；否则 $dp[i][j]=1+\\min\\big(dp[i-1][j],\\ dp[i][j-1],\\ dp[i-1][j-1]\\big)$（分别对应删除、插入、替换）。初值 $dp[i][0]=i$，$dp[0][j]=j$。\n>\n> *English: The edit distance between two strings is the minimum number of insertions, deletions and substitutions needed to turn one into the other.*\n\n**白话版：** LCS 是「两个序列最长的共同骨架」，比如两份文档的修改记录里，没有被改动的行；编辑距离是「改一个词最少要敲几下键盘」。两个问题的表格都是**二维表 $dp[i][j]$，每格只依赖左、上、左上三个邻居**，所以按行从左到右填就行。\n\n```python\nimport itertools, random\nfrom functools import lru_cache\n\ndef lcs(a, b):\n    m, n = len(a), len(b)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]       # dp[i][j] = a[:i] 与 b[:j] 的最长公共子序列长度\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n    # 还原一个具体的 LCS\n    i, j, out = m, n, []\n    while i > 0 and j > 0:\n        if a[i - 1] == b[j - 1]:\n            out.append(a[i - 1]); i -= 1; j -= 1\n        elif dp[i - 1][j] >= dp[i][j - 1]:\n            i -= 1\n        else:\n            j -= 1\n    return dp[m][n], \"\".join(reversed(out)), dp\n\nL, s, table = lcs(\"ABCBDAB\", \"BDCABA\")\nprint(\"LCS 长度\", L, \"，一个 LCS：\", s)\nfor row in table:\n    print(row)\n\ndef edit_distance(a, b):\n    m, n = len(a), len(b)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1): dp[i][0] = i              # a[:i] 变成空串：删 i 次\n    for j in range(n + 1): dp[0][j] = j              # 空串变成 b[:j]：插 j 次\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n            else:\n                dp[i][j] = 1 + min(dp[i - 1][j],     # 删除\n                                   dp[i][j - 1],     # 插入\n                                   dp[i - 1][j - 1]) # 替换\n    return dp[m][n]\n\nprint(\"kitten → sitting 的编辑距离：\", edit_distance(\"kitten\", \"sitting\"))\nprint(\"intention → execution：\", edit_distance(\"intention\", \"execution\"))\n\n# 验证：LCS 与「枚举 a 的所有子序列」比较；编辑距离与朴素递归比较\ndef lcs_brute(a, b):\n    best = 0\n    for r in range(len(a) + 1):\n        for sub in itertools.combinations(a, r):\n            it = iter(b)\n            if all(ch in it for ch in sub):          # 判断 sub 是不是 b 的子序列\n                best = max(best, r)\n    return best\n\ndef ed_rec(a, b):\n    @lru_cache(maxsize=None)\n    def f(i, j):\n        if i == 0: return j\n        if j == 0: return i\n        if a[i-1] == b[j-1]: return f(i-1, j-1)\n        return 1 + min(f(i-1, j), f(i, j-1), f(i-1, j-1))\n    return f(len(a), len(b))\n\nrandom.seed(2)\nok1 = ok2 = True\nfor _ in range(300):\n    a = \"\".join(random.choice(\"ABC\") for _ in range(random.randint(0, 8)))\n    b = \"\".join(random.choice(\"ABC\") for _ in range(random.randint(0, 8)))\n    ok1 &= (lcs(a, b)[0] == lcs_brute(a, b))\n    ok2 &= (edit_distance(a, b) == ed_rec(a, b))\nprint(\"LCS 与暴力枚举一致：\", ok1, \"；编辑距离与记忆化递归一致：\", ok2)\n# 输出：LCS 长度 4 ，一个 LCS： BCBA\n# 输出：[0, 0, 0, 0, 0, 0, 0]\n# 输出：[0, 0, 0, 0, 1, 1, 1]\n# 输出：[0, 1, 1, 1, 1, 2, 2]\n# 输出：[0, 1, 1, 2, 2, 2, 2]\n# 输出：[0, 1, 1, 2, 2, 3, 3]\n# 输出：[0, 1, 2, 2, 2, 3, 3]\n# 输出：[0, 1, 2, 2, 3, 3, 4]\n# 输出：[0, 1, 2, 2, 3, 4, 4]\n# 输出：kitten → sitting 的编辑距离： 3\n# 输出：intention → execution： 5\n# 输出：LCS 与暴力枚举一致： True ；编辑距离与记忆化递归一致： True\n```\n\n输出里的 8 行数字就是 LCS 的表（每行对应 `a` 的前 $i$ 个字符，每列对应 `b` 的前 $j$ 个字符），右下角的 4 就是答案；`BCBA` 是回溯得到的一个具体的 LCS（LCS 不一定唯一）。编辑距离那两个经典例子：`kitten → sitting` 要 3 步（k→s、e→i、末尾加 g）。表里每个格子「多一步」的三个来源，就是三种操作。\n\n**回过头看一个共同的结构：** 这些 DP 的状态组成一个**有向无环图 (DAG)**：每个状态指向它依赖的、更小的状态。**DP 就是在这个隐含的 DAG 上，按拓扑序求最优值**，这就是上一节「DAG 上的最短（长）路径」与这一节的联系。\n\n### 一维的 DP：最大子数组和与最长递增子序列\n\n```python\nimport random, bisect\n\n# 最大子数组和（Kadane）：dp[i] = 以 i 结尾的最大子数组和 = max(a[i], dp[i-1] + a[i])\ndef kadane(a):\n    best = cur = a[0]\n    for x in a[1:]:\n        cur = max(x, cur + x)         # 要么从 x 重新开始，要么接在前面后面\n        best = max(best, cur)\n    return best\n\n# 最长递增子序列 (LIS)：O(n^2) 的 DP 与 O(n log n) 的「耐心排序」\ndef lis_dp(a):\n    dp = [1] * len(a)                 # dp[i] = 以 a[i] 结尾的 LIS 长度\n    for i in range(len(a)):\n        for j in range(i):\n            if a[j] < a[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp, default=0)\n\ndef lis_fast(a):\n    tails = []                        # tails[k] = 长度为 k+1 的递增子序列里，最小的结尾\n    for x in a:\n        i = bisect.bisect_left(tails, x)\n        if i == len(tails): tails.append(x)\n        else: tails[i] = x\n    return len(tails)\n\nprint(\"Kadane：\", kadane([-2, 1, -3, 4, -1, 2, 1, -5, 4]))\nprint(\"LIS：\", lis_dp([10, 9, 2, 5, 3, 7, 101, 18]), lis_fast([10, 9, 2, 5, 3, 7, 101, 18]))\n\n# 验证\ndef kadane_brute(a):\n    return max(sum(a[i:j]) for i in range(len(a)) for j in range(i + 1, len(a) + 1))\nrandom.seed(3)\nok = True\nfor _ in range(500):\n    a = [random.randint(-10, 10) for _ in range(random.randint(1, 12))]\n    ok &= (kadane(a) == kadane_brute(a))\n    ok &= (lis_dp(a) == lis_fast(a))\nprint(\"Kadane 与暴力一致、两种 LIS 一致（500 组）：\", ok)\n# 输出：Kadane： 6\n# 输出：LIS： 4 4\n# 输出：Kadane 与暴力一致、两种 LIS 一致（500 组）： True\n```\n\n**Kadane 算法**求最大子数组和：状态是「以第 $i$ 个元素**结尾**的最大子数组和」$cur$，转移是 $cur=\\max(x,\\ cur+x)$（要么从当前元素重新开始，要么接在前面的后面）。一次遍历，$O(n)$。**注意状态的定义是「以 $i$ 结尾」而不是「前 $i$ 个里」：这个小改动是许多一维 DP 题的关键技巧。** **LIS** 同理，$dp[i]$ 是以 $a_i$ 结尾的最长递增子序列，$O(n^2)$；还可以用二分把它优化到 $O(n\\log n)$（用上第 6 节的二分查找）。\n\n### DP 题怎么练\n\n- **先问「状态是什么」**：常见的有：前 $i$ 个元素（一维）、两个序列的前 $i$、前 $j$ 个（二维）、区间 $[i,j]$、背包容量、已选集合（状态压缩）、位置 + 状态（比如「持有股票 / 不持有」）；\n- **先写出暴力递归，找出重复的子问题**，再加记忆化，最后需要时改成自底向上；\n- **一定要用小例子手算一遍表**，并且和暴力解法对比验证（本节每段代码都这么做了）；\n- 复杂度 = **状态数 × 每个状态的转移数**。\n\n### 这一节你要带走的三句话\n\n1. **DP = 把递归中重复的子问题只算一次**：条件是**重叠子问题 + 最优子结构**；写法有**记忆化（自顶向下）**与**制表（自底向上）**两种。\n2. **解题四步：定义状态 → 写转移 → 定初值与顺序 → 找答案**；用 `choice` / 回溯**还原方案**，用「滚动数组」做**空间优化**（注意循环方向）。\n3. **贪心不一定对，DP 一定对（只要状态定义对）**；DP 的状态图是 DAG，所以它与最短路径、拓扑序是一回事；机器学习里的 Viterbi、贝尔曼方程都是 DP。"
+  },
+  {
+   "type": "think",
+   "q": "从强化学习的角度：一个机器人在网格里每步有若干选择，每个状态的最优价值 $V(s)=\\max_a[r+\\gamma V(s')]$。这和 DP 有什么关系？为什么说它「满足最优子结构」？",
+   "a": "这就是 DP：状态是 $s$（机器人的位置），转移方程是**贝尔曼最优方程 (Bellman optimality equation)**。**最优子结构**体现在：从 $s$ 出发的最优策略，在选了第一步 $a$ 到达 $s'$ 之后，**后面的部分必须也是从 $s'$ 出发的最优策略**，否则可以换成更好的后续，从而整体更优，矛盾。所以 $V(s)$ 只需要用 $V(s')$ 和第一步的收益来表示。\n\n价值迭代 (value iteration) 就是把这个方程反复当作更新规则：像 Bellman-Ford 一样反复松弛，直到收敛。有环的状态图里不能「按拓扑序」一遍搞定，所以要迭代，折扣因子 $\\gamma<1$ 保证它会收敛。当状态太多无法存表时，就用神经网络近似 $V$ 或 $Q$（深度强化学习，DQN）。**所以这一节的方程，几乎就是强化学习的核心。**"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "滚动数组",
+     "space optimisation / rolling array",
+     "只保留依赖的那几行，降低空间"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Dynamic Programming（pythonds 第 5 章相关小节）",
+   "url": "https://runestone.academy/ns/books/published/pythonds/Recursion/DynamicProgramming.html",
+   "note": "找零问题的递归、记忆化与 DP 三种写法的对照（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "MIT 6.006 Lecture 21：Dynamic Programming III（含编辑距离、背包，约 53 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=ocZMDMZwhCY",
+   "note": "大学课程原版，系统讲「子问题、依赖关系、拓扑序」的 DP 框架"
+  },
+  {
+   "title": "编辑距离的完整讲解视频（Back To Back SWE，约 16 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=MiqoA-yF-0M",
+   "note": "逐格讲编辑距离表的填法，对状态含义不清楚时回看"
+  },
+  {
+   "title": "VisuAlgo：Dynamic Programming（交互动画）",
+   "url": "https://visualgo.net/en/recursion",
+   "note": "新加坡国立大学的算法可视化网站，可以看递归树与记忆化后的差别"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "最长公共子序列 (LCS) 的转移里，当 $a_i\\ne b_j$ 时，$dp[i][j]$ 等于？",
+    "options": [
+     "$dp[i-1][j-1]+1$",
+     "$dp[i-1][j-1]$",
+     "$0$",
+     "$\\max(dp[i-1][j],\\ dp[i][j-1])$"
+    ],
+    "answer": 3,
+    "explain": "不相等时，$a_i$ 与 $b_j$ 至少有一个不在公共子序列的结尾，所以取「去掉 $a_i$」或「去掉 $b_j$」两种情形的较大值。"
+   },
+   {
+    "q": "**编辑距离**的三种基本操作是？",
+    "options": [
+     "排序、翻转、拼接",
+     "插入、删除、替换",
+     "只有插入和删除",
+     "查找、替换、复制"
+    ],
+    "answer": 1,
+    "explain": "对应 $dp[i][j]$ 的三个来源：$dp[i][j-1]$（插入）、$dp[i-1][j]$（删除）、$dp[i-1][j-1]$（替换）。"
+   },
+   {
+    "q": "Kadane 算法求最大子数组和时，状态 $cur$ 的定义是？",
+    "options": [
+     "整个数组的最大值",
+     "前 $i$ 个元素的和",
+     "以第 $i$ 个元素**结尾**的最大子数组和",
+     "数组的平均值"
+    ],
+    "answer": 2,
+    "explain": "「以 $i$ 结尾」这个定义让转移变得简单：$cur=\\max(x,\\ cur+x)$。如果定义成「前 $i$ 个里最好的」，就很难直接转移。"
+   }
+  ]
+ }
+}

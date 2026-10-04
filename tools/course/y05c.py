@@ -3,6 +3,18 @@ from runlib import Notebook
 
 nb = Notebook()
 
+# ───────────── 先认识 import ─────────────
+C_IMPORT = nb.cell('''
+import math                                  # 写法一：拿来整个模块，用「模块名.名字」调用
+print(math.sqrt(16), math.pi)
+
+from math import sqrt                        # 写法二：只取出需要的名字，直接用
+print(sqrt(25))
+
+import math as m                             # 写法三：给模块起一个短别名
+print(m.floor(2.7), type(m).__name__)
+''')
+
 # ───────────── 文件与路径 ─────────────
 C_PATH = nb.cell('''
 import tempfile

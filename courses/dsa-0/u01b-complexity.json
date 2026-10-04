@@ -1,0 +1,139 @@
+{
+ "id": "u01b",
+ "title": "复杂度：Big-O 怎么看（2/2）",
+ "en": "Algorithm Complexity & Big-O (2/2)",
+ "minutes": 45,
+ "objectives": [
+  "知道 Python 常用操作（列表、集合、字典）的复杂度，并理解 `x in set` 比 `x in list` 快的原因",
+  "知道 **空间复杂度 (space complexity)**，会在时间和空间之间做取舍"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「复杂度：Big-O 怎么看」分成的第 2 个小节（共 2 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：怎么从代码里读出复杂度（续）（约 10 分钟） → Python 常用操作的复杂度（约 5 分钟） → 动手：数步数（约 10 分钟） → 摊还分析与空间复杂度（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**从快到慢的常见量级**\n\n| 记号 | 名称 | $n=10^6$ 时的步数量级 | 典型例子 |\n|---|---|---|---|\n| $O(1)$ | 常数 | 1 | 取列表第 i 个元素 |\n| $O(\\log n)$ | 对数 | 约 20 | 二分查找 |\n| $O(n)$ | 线性 | $10^6$ | 遍历一遍列表 |\n| $O(n\\log n)$ | 线性对数 | 约 $2\\times10^7$ | 好的排序算法 |\n| $O(n^2)$ | 平方 | $10^{12}$ | 两层嵌套循环；自注意力 |\n| $O(2^n)$ | 指数 | 天文数字 | 朴素的斐波那契递归；暴力枚举子集 |\n| $O(n!)$ | 阶乘 | 更大 | 枚举所有排列 |\n\n一个直观的感受：假如电脑每秒做 $10^8$ 步，$n=10^6$ 时 $O(n)$ 要 0.01 秒，$O(n^2)$ 要 $10^{12}/10^8=10^4$ 秒，约 2.8 小时。**一个粗略的经验：$10^8$ 步大约是一秒的预算，所以输入大小 $n\\le10^5$ 时可以接受 $O(n\\log n)$，$n\\le10^4$ 时可以接受 $O(n^2)$。**"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "XMUe3zFhM5c",
+   "title": "视频二：Learn Big O notation in 6 minutes（Bro Code）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### Python 常用操作的复杂度\n\n选对数据结构，本质上就是选对操作的复杂度。下面是最常用的（平均情况）：\n\n| 操作 | `list` | `set` / `dict` |\n|---|---|---|\n| 按下标取值 `a[i]` | $O(1)$ | — |\n| 尾部添加 `append` | $O(1)$（摊还） | — |\n| 头部插入 `insert(0, x)` | $O(n)$（要把后面所有元素后移） | — |\n| 判断元素在不在 `x in ...` | **$O(n)$** | **$O(1)$** |\n| 添加 / 删除元素 | 删除中间元素 $O(n)$ | $O(1)$ |\n| 排序 `sort()` | $O(n\\log n)$ | — |\n| 遍历全部 | $O(n)$ | $O(n)$ |\n\n最关键的一行是 `x in list` 是 $O(n)$、`x in set` 是 $O(1)$。原因是集合和字典内部用**哈希表 (hash table)**，可以「直接算出位置」而不是挨个找，第 4 节会专门讲。\n\n### 动手：数步数\n\n不用秒表（秒数每次不一样），直接**数比较了多少次**。先看 **线性查找 (linear search)** 和 **二分查找 (binary search)**，二分要求列表已经排好序：\n\n```python\ndef linear(a, x):\n    steps = 0\n    for v in a:                       # 从头到尾挨个比较\n        steps += 1\n        if v == x:\n            return steps\n    return steps\n\ndef binary(a, x):                     # 要求 a 已经排好序\n    lo, hi, steps = 0, len(a) - 1, 0\n    while lo <= hi:\n        steps += 1\n        mid = (lo + hi) // 2          # 取中间的位置\n        if a[mid] == x:\n            return steps\n        if a[mid] < x:\n            lo = mid + 1             # 目标在右半边，丢掉左半边\n        else:\n            hi = mid - 1             # 目标在左半边，丢掉右半边\n    return steps\n\nfor n in (1000, 1_000_000):\n    a = list(range(n))\n    print(n, linear(a, n), binary(a, n))      # 查一个不存在的数 n，是最坏情况\n# 输出：1000 1000 10\n# 输出：1000000 1000000 20\n```\n\n$n$ 变成 1000 倍，线性查找的步数也是 1000 倍，二分查找只多了 10 步（$\\log_2 1000\\approx10$，$\\log_2 10^6\\approx20$）。\n\n再看一个经典问题：**列表里有没有重复元素**。\n\n```python\ndef dup_slow(a):                      # 两两比较，O(n²)\n    steps = 0\n    for i in range(len(a)):\n        for j in range(i + 1, len(a)):\n            steps += 1\n            if a[i] == a[j]:\n                return True, steps\n    return False, steps\n\ndef dup_fast(a):                      # 用集合记住见过的元素，O(n)\n    seen, steps = set(), 0\n    for v in a:\n        steps += 1\n        if v in seen:\n            return True, steps\n        seen.add(v)\n    return False, steps\n\nfor n in (100, 1000, 5000):\n    a = list(range(n))                # 没有重复，最坏情况\n    print(n, dup_slow(a), dup_fast(a))\n# 输出：100 (False, 4950) (False, 100)\n# 输出：1000 (False, 499500) (False, 1000)\n# 输出：5000 (False, 12497500) (False, 5000)\n```\n\n$n$ 从 1000 变成 5000（5 倍），`dup_slow` 的步数变成约 25 倍（$O(n^2)$），`dup_fast` 只变成 5 倍（$O(n)$）。**用集合把一层循环省掉，是最常见的优化。** 但它是用**空间换时间**：`dup_fast` 多用了一个最大 $n$ 个元素的集合。\n\n> 小提醒：Big-O 说的是**趋势**。数据很小时，$O(n^2)$ 的简单写法可能反而更快；但数据一大，趋势一定占上风。\n\n### 摊还分析与空间复杂度\n\n> **标准定义 · 摊还分析 (amortized analysis)**\n>\n> 一个操作序列共 $n$ 次操作的总代价为 $T(n)$，则每次操作的 **摊还代价** 为 $T(n)/n$。摊还分析给出的是**整个序列**上的最坏保证，而不是单次操作的最坏代价。\n>\n> *English: The amortized cost of an operation is the total cost of a worst-case sequence of n operations divided by n.*\n\n**白话版：偶尔贵一次，平均下来很便宜。** Python 列表的 `append` 在底层是一个**动态数组 (dynamic array)**：先预留一块空间，装满了才申请一块更大的、把旧元素全部复制过去。某一次 `append` 可能要复制 $n$ 个元素（$O(n)$），但这样的昂贵操作很少。关键是**每次扩容多少**。看下面的模拟，数一数复制的总次数：\n\n```python\n# 模拟动态数组：容量满了就扩容、并把旧元素全部复制过去。统计「复制了多少个元素」\ndef total_copies(n, grow):\n    cap, size, copies = 1, 0, 0\n    for _ in range(n):                # 连续 append n 次\n        if size == cap:               # 满了，需要扩容\n            copies += size            # 把已有的 size 个元素复制到新数组\n            cap = grow(cap)\n        size += 1\n    return copies\n\nfor n in (1000, 100_000):\n    dbl = total_copies(n, lambda c: c * 2)       # 策略 A：容量翻倍\n    inc = total_copies(n, lambda c: c + 10)      # 策略 B：每次只多留 10 个位置\n    print(f\"n={n:>7}  翻倍：复制 {dbl:>10} 次（{dbl / n:.2f} 次/个）   +10：复制 {inc:>12} 次（{inc / n:.1f} 次/个）\")\n# 输出：n=   1000  翻倍：复制       1023 次（1.02 次/个）   +10：复制        49600 次（49.6 次/个）\n# 输出：n= 100000  翻倍：复制     131071 次（1.31 次/个）   +10：复制    499960000 次（4999.6 次/个）\n```\n\n容量**翻倍**：不管 $n$ 多大，平均每个元素只被复制 1 到 1.3 次（总复制次数小于 $2n$，上面两个 $n$ 下分别是 1.02 和 1.31），所以 `append` 是摊还 $O(1)$。如果每次只**加固定的 10 个位置**：$n=10^5$ 时平均每个元素要被复制约 5000 次，总代价是 $O(n^2)$。所以关键不在于「偶尔扩容」，而在于**按比例**扩容。（原因：翻倍时，各次扩容复制的元素数是 $1+2+4+\\dots+n/2<n$，这是一个等比数列。）\n\n> **标准定义 · 空间复杂度 (space complexity)**\n>\n> 算法在运行过程中，除了输入本身以外，**额外**需要的存储空间随输入规模 $n$ 增长的趋势，同样用 Big-O 表示。\n>\n> *English: Space complexity measures the extra memory an algorithm uses, as a function of the input size n.*\n\n**白话版：占多少内存。** `dup_slow` 只用了几个变量，额外空间是 $O(1)$；`dup_fast` 的集合最多存 $n$ 个元素，额外空间是 $O(n)$。时间和空间经常要**取舍**：多用内存换速度（比如缓存、哈希表），或者省内存多花时间。训练大模型时，「显存放不下」往往比「算得慢」更先成为瓶颈，所以空间复杂度也要看。\n\n### 这一节你要带走的三句话\n\n1. **Big-O 是上界，Big-Θ 是紧界**；证明时找 $c$ 和 $n_0$；常数和低阶项都可以丢掉。\n2. **默认看最坏情况**；循环嵌套相乘，顺序执行相加，折半就是 $\\log n$。\n3. **选对数据结构 = 选对操作的复杂度**；`append` 是摊还 $O(1)$，因为按比例扩容；时间和空间常常要取舍。"
+  },
+  {
+   "type": "think",
+   "q": "一个列表有 $10^6$ 个已排序的元素。用二分查找最多比较多少次？如果改成 $2\\times10^6$ 个，会多出几次？",
+   "a": "最多 $\\lceil\\log_2(10^6+1)\\rceil=20$ 次（上面代码里实际跑出来也是 20）。数据翻倍，只多 **1** 次，因为每多一次比较，能处理的数据量就翻一倍。这就是 $O(\\log n)$ 如此强大的原因。"
+  },
+  {
+   "type": "think",
+   "q": "有人写了 `for x in a: if x in b: ...`，其中 `a`、`b` 都是长度 $n$ 的列表。这段代码的复杂度是多少？怎么改能降到 $O(n)$？额外代价是什么？",
+   "a": "外层遍历 $n$ 次，内层 `x in b` 对列表是 $O(n)$，所以总共是 $O(n^2)$。只需要把 `b` 先转成集合：`b_set = set(b)`，再写 `if x in b_set`，内层变成 $O(1)$，总共 $O(n)$（建集合也是 $O(n)$）。\n\n**代价**是额外的 $O(n)$ 空间，来存这个集合，这就是「空间换时间」。另一个细节：集合只能处理**可哈希**的元素（数字、字符串、元组可以，列表不行）。"
+  },
+  {
+   "type": "think",
+   "q": "摊还分析说 `append` 是 $O(1)$。那么「某一次 `append` 其实花了 $O(n)$ 的时间」这句话矛盾吗？在什么场景下，这种「偶尔很慢」会成为问题？",
+   "a": "不矛盾。摊还 $O(1)$ 的意思是：连续 $n$ 次 `append` **总共**花 $O(n)$ 的时间，平均每次 $O(1)$；但**某一次**确实可能花 $O(n)$（正好遇到扩容）。\n\n在大多数场景里平均就够了。但在**实时系统**里（比如游戏每一帧必须在 16 毫秒内完成，或者交易系统要求每一次响应都有延迟上界），偶尔的一次卡顿就是故障，这时需要的是单次操作的最坏保证，而不是摊还保证，可能要选其他数据结构，或者提前预分配好容量。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "线性查找",
+     "linear search",
+     "从头到尾挨个找，$O(n)$"
+    ],
+    [
+     "二分查找",
+     "binary search",
+     "在已排序数据里每次排除一半，$O(\\log n)$"
+    ],
+    [
+     "动态数组",
+     "dynamic array",
+     "装满就按比例扩容的数组，Python 的 list 就是；`append` 摊还 $O(1)$"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Problem Solving with Algorithms and Data Structures using Python — Big-O Notation",
+   "url": "https://runestone.academy/ns/books/published/pythonds/AlgorithmAnalysis/BigONotation.html",
+   "note": "本节的大纲依据，含变位词检测的四种写法对比，推荐动手复现（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "大学课程原版，第 1、2 讲讲算法与计算模型，难度比本节高；想要更严格的证明时看"
+  },
+  {
+   "title": "Python Wiki：TimeComplexity（内置类型操作的复杂度表）",
+   "url": "https://wiki.python.org/moin/TimeComplexity",
+   "note": "查表用，不用背"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在一个已经排序、有 $10^6$ 个元素的列表里做二分查找，最坏情况大约要比较多少次？",
+    "options": [
+     "约 20 次",
+     "约 1000 次",
+     "约 $10^6$ 次",
+     "约 $5\\times10^5$ 次"
+    ],
+    "answer": 0,
+    "explain": "每次排除一半，$\\log_2 10^6\\approx20$。上面代码实测也是 20。"
+   },
+   {
+    "q": "一个 $O(n^2)$ 的算法，输入规模从 $n=1000$ 变成 $n=5000$，步数大约变成原来的多少倍？",
+    "options": [
+     "5 倍",
+     "10 倍",
+     "50 倍",
+     "25 倍"
+    ],
+    "answer": 3,
+    "explain": "$(5000/1000)^2=25$。上面 `dup_slow` 从 499500 步变成 12497500 步，约 25 倍。"
+   },
+   {
+    "q": "动态数组每次装满后把容量 **翻倍**，连续 `append` $n$ 次，总的元素复制次数是？",
+    "options": [
+     "$O(n^2)$",
+     "$O(n)$",
+     "$O(n\\log n)$",
+     "$O(1)$"
+    ],
+    "answer": 1,
+    "explain": "各次扩容复制的元素数是 $1+2+4+\\dots+n/2<n$（等比数列），总共 $O(n)$，所以单次 `append` 摊还 $O(1)$。每次只加固定个数则是 $O(n^2)$。"
+   },
+   {
+    "q": "下面哪个操作的平均复杂度是 $O(n)$ 而不是 $O(1)$？",
+    "options": [
+     "`a[5]`（取列表第 6 个元素）",
+     "`a.append(x)`",
+     "`a.insert(0, x)`（在列表开头插入）",
+     "`s.add(x)`（`s` 是集合）"
+    ],
+    "answer": 2,
+    "explain": "在开头插入，要把后面的 $n$ 个元素全部后移一位，是 $O(n)$。如果要频繁在两端操作，第 3 节会学到更合适的 `deque`。"
+   },
+   {
+    "q": "要判断一个长度为 $n$ 的列表里有没有重复元素，下面哪种做法的时间复杂度最低？",
+    "options": [
+     "先转成集合，比较集合和列表的长度是否相等",
+     "两两比较所有元素对",
+     "每个元素用 `in` 在剩下的列表里找一遍",
+     "把列表复制一份再逐个比较"
+    ],
+    "answer": 0,
+    "explain": "转成集合是 $O(n)$，比较长度是 $O(1)$，整体 $O(n)$（代价是 $O(n)$ 的额外空间）。其余三种本质上都是两层循环，$O(n^2)$。"
+   }
+  ]
+ }
+}

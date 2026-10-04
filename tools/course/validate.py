@@ -30,7 +30,10 @@ def main(online):
             unit = json.load(open(path, encoding='utf-8'))
             if unit['id'] != u['id']: errors.append(f"{u['file']}: 文件里的 id {unit['id']} ≠ course.json 的 {u['id']}")
             if unit['title'] != u['title']: errors.append(f"{u['file']}: 标题和 course.json 不一致")
-            errors += validate_unit(unit)
+            nq = len(unit['quiz']['questions']) if u.get('whole') else 10     # 拆分出来的小节，每个 3–5 题
+            if u.get('whole') and not 2 <= nq <= 5: errors.append(f"{u['id']}: 拆分小节的测验应有 2–5 题，现在 {nq} 题")
+            if u['minutes'] > 50: errors.append(f"{course['id']}/{u['id']}: 一节 {u['minutes']} 分钟，超过 50 分钟（用 tools/course/split.py 拆开）")
+            errors += validate_unit(unit, n_questions=nq)
             for j, lang, n, _ in python_cells(unit):
                 if n > MAX_CELL:
                     msg = f"{course['id']}/{u['id']} 块{j}: 代码块 {n} 行，太长（拆成一个知识点一段，解释紧跟其后）"

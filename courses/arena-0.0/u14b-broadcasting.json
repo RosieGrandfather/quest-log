@@ -1,0 +1,74 @@
+{
+ "id": "u14b",
+ "title": "广播与张量操作（2/3）",
+ "en": "Broadcasting & Tensor Manipulation (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "会写几个机器学习里最高频的张量操作：特征标准化、行归一化与 **余弦相似度矩阵 (cosine similarity matrix)**、**两两距离矩阵 (pairwise distance)**、分类准确率、按概率采样",
+  "理解 **softmax** 的平移不变性与数值稳定写法，会写 **logsumexp**，并能手写 **交叉熵 (cross-entropy)** 损失"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「广播与张量操作」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：广播是「视图」：它不占内存（约 5 分钟） → 让形状对齐的工具（约 5 分钟） → 隐蔽 bug：不报错，但算错了（约 5 分钟） → 高频操作一：特征标准化（约 5 分钟） → 高频操作二：行归一化与余弦相似度矩阵（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 广播是「视图」：它不占内存\n\n> **标准定义 · 步长 (stride) 与零步长**\n>\n> NumPy / PyTorch 数组在内存里是一段连续的数据，加上每个维度的**步长 (stride)**：沿这一维走一格，要在内存里跳过多少字节。广播把长度为 1 的维度「拉伸」，靠的是把那一维的步长设为 **0**：不管走到第几格，读的都是同一块内存。因此广播本身**不复制数据**。\n>\n> *English: Arrays are stored as one block of memory plus a stride per dimension (bytes to skip per step along that axis). Broadcasting stretches a size-1 dimension by giving it stride 0, so every position reads the same memory, and no data is copied.*\n\n**白话版：「复印一千份不用真的复印，只要每次都翻回同一页」。** 用 `np.broadcast_to` 可以亲眼看到：\n\n```python\nimport numpy as np\n\n# 广播是「视图」：并没有真的把 vec 复制 1000 份\nvec = np.arange(5.)\nbig = np.broadcast_to(vec, (1000, 5))\nprint(\"形状:\", big.shape, \" 每个维度跳多少字节 strides:\", big.strides)\nprint(\"vec 自己的 strides:\", vec.strides)\nprint(\"big 和 vec 共用同一块内存:\", np.shares_memory(big, vec), \"  big 是只读的:\", not big.flags.writeable)\n\n# 真正复制一份：内存才会变大\ncopy = np.tile(vec, (1000, 1))\nprint(\"复制版本的 strides:\", copy.strides, \" 实际占用字节数:\", copy.nbytes, \" 和 vec 共用内存:\", np.shares_memory(copy, vec))\n# 输出：形状: (1000, 5)  每个维度跳多少字节 strides: (0, 8)\n# 输出：vec 自己的 strides: (8,)\n# 输出：big 和 vec 共用同一块内存: True   big 是只读的: True\n# 输出：复制版本的 strides: (40, 8)  实际占用字节数: 40000  和 vec 共用内存: False\n```\n\n读输出：把长度 5 的 `vec` 广播成 `(1000, 5)`，`strides` 是 `(0, 8)`：沿第 0 维走一格跳过 0 字节（每一行都是同一份数据），沿第 1 维每格 8 字节（`float64` 占 8 字节）。`np.shares_memory` 为 `True`，而且这个视图是**只读**的。对比真正复制的 `np.tile`：`strides` 变成 `(40, 8)`，实际占用 40000 字节，和原数组不共用内存。**要点**：`data + vec` 这样的广播运算本身很省内存（但**结果**是一个完整的新数组）；真正吃内存的，是你自己用 `repeat` / `tile` 手动复制，或者让广播产生一个巨大的中间张量（后面「两两距离」的实验会看到）。\n\n### 让形状对齐的工具\n\n规则只管「兼容不兼容」，要让两个形状**变得**兼容，靠这几个工具：\n\n| 想做的事 | NumPy | PyTorch |\n|---|---|---|\n| 在位置 0 插入长度为 1 的维度 | `x[None]` 或 `np.expand_dims(x, 0)` | `x.unsqueeze(0)` |\n| 在最后插入长度为 1 的维度 | `x[..., None]` | `x.unsqueeze(-1)` |\n| 去掉长度为 1 的维度 | `np.squeeze(x, axis=1)` | `x.squeeze(1)` |\n| 归约后保留被归约的维度 | `x.sum(axis=1, keepdims=True)` | `x.sum(dim=1, keepdim=True)` |\n\n```python\nimport numpy as np\n\nx = np.ones((3, 1, 5))\nprint(\"x[None].shape        :\", x[None].shape)          # 等价于 unsqueeze(0)：在最前面插入长度为 1 的维度\nprint(\"x[..., None].shape   :\", x[..., None].shape)     # 等价于 unsqueeze(-1)：在最后插入\nprint(\"np.squeeze(x, 1)     :\", np.squeeze(x, axis=1).shape)   # 去掉第 1 维（长度为 1）\ntry:\n    np.squeeze(x, axis=0)                               # 第 0 维长度是 3，NumPy 会报错\nexcept ValueError as e:\n    print(\"squeeze 第 0 维      : 报错 ->\", e)\n\nm = np.arange(12.).reshape(3, 4)\nprint(\"sum(axis=1) 形状      :\", m.sum(axis=1).shape)\nprint(\"sum(axis=1, keepdims) :\", m.sum(axis=1, keepdims=True).shape)\ncentered = m - m.mean(axis=1, keepdims=True)           # 每行减去自己的平均值\nprint(\"每行减均值后，各行的均值:\", centered.mean(axis=1))\n\n# 如果忘了 keepdims：(3,) 对齐最后一维 4，直接报错\ntry:\n    m - m.mean(axis=1)\nexcept ValueError as e:\n    print(\"忘了 keepdims -> 报错:\", e)\n# 输出：x[None].shape        : (1, 3, 1, 5)\n# 输出：x[..., None].shape   : (3, 1, 5, 1)\n# 输出：np.squeeze(x, 1)     : (3, 5)\n# 输出：squeeze 第 0 维      : 报错 -> cannot select an axis to squeeze out which has size not equal to one\n# 输出：sum(axis=1) 形状      : (3,)\n# 输出：sum(axis=1, keepdims) : (3, 1)\n# 输出：每行减均值后，各行的均值: [0. 0. 0.]\n# 输出：忘了 keepdims -> 报错: operands could not be broadcast together with shapes (3,4) (3,)\n```\n\n读输出：`x` 是 `(3, 1, 5)`。在最前面插入得 `(1, 3, 1, 5)`，在最后插入得 `(3, 1, 5, 1)`，`squeeze` 第 1 维得 `(3, 5)`。一个**框架之间的差别**：对第 0 维（长度是 3，不是 1）做 `squeeze`，NumPy 会报错，而 PyTorch 的 `squeeze(0)` 会**什么也不做**，不报错（本节最后的 PyTorch 块会演示）。同样是 `sum`，不加 `keepdims` 得 `(3,)`，加了得 `(3, 1)`。后者才能和 `(3, 4)` 的原矩阵直接广播，每行减去自己的均值之后，各行的均值是 0。最后一行展示了忘记 `keepdims` 时 NumPy 的报错：`(3,4)` 对 `(3,)`。\n\n### 隐蔽 bug：不报错，但算错了\n\n广播最令人头疼的是：很多时候它**不报错**。\n\n```python\nimport numpy as np\n\n# 最危险的情况：形状恰好是方阵，不报错但算错\nM = np.arange(9.).reshape(3, 3)            # 3x3，n = d = 3\nwrong = M - M.mean(axis=1)                  # 忘了 keepdims：(3,) 被当成「每一列减一个数」\nright = M - M.mean(axis=1, keepdims=True)  # 正确：每一行减自己的均值\nprint(\"两个结果相等吗：\", np.allclose(wrong, right))\nprint(\"正确做法下每行均值：\", right.mean(axis=1))\nprint(\"错误做法下每行均值：\", wrong.mean(axis=1))\n\n# 用 assert 守住关键形状，让错误当场暴露\nrow_mean = M.mean(axis=1, keepdims=True)\nassert row_mean.shape == (3, 1)\nprint(\"assert 通过，形状 =\", row_mean.shape)\n\n# 另一个经典：(4,1) + (4,) 悄悄变成 (4,4)\ncol = np.arange(4.).reshape(4, 1)\nrow = np.arange(4.)\nprint(\"(4,1) + (4,) 的形状：\", (col + row).shape)\n# 输出：两个结果相等吗： False\n# 输出：正确做法下每行均值： [0. 0. 0.]\n# 输出：错误做法下每行均值： [-3.  0.  3.]\n# 输出：assert 通过，形状 = (3, 1)\n# 输出：(4,1) + (4,) 的形状： (4, 4)\n```\n\n读输出：\n\n1. `M` 是 $3\\times3$ 的方阵。忘了 `keepdims` 时，`M.mean(axis=1)` 是形状 `(3,)` 的向量，它被当成「对齐最后一维」，也就是**每一列**减一个数，而不是每一行。形状恰好是方阵，所以 `3 == 3`，**不报错**。\n2. 两种写法的结果不相等（`False`）。正确做法下每行均值都是 0；错误做法下每行均值是 `[-3. 0. 3.]`，说明行根本没有被居中。\n3. 如果这一行出现在训练代码里，模型照样能训练，只是效果莫名其妙变差，很难查。\n4. `(4, 1) + (4,)` 得到 `(4, 4)`：你以为是两个长度为 4 的向量相加，实际是一个列向量加一个行向量。\n\n**防御办法**（ARENA 的建议）：**关键位置写 `assert x.shape == (...)`**；不要把很多操作挤在一行里；调试时测试用**不相等的维度**（比如 `n=3, d=4`），这样形状错误会当场变成报错，而不是悄悄算错。\n\n> **一个自检习惯**：每写一行广播，先默念两个形状，右对齐，再想「结果应该是什么形状」。对不上就停下来。\n\n### 高频操作一：特征标准化\n\n> **标准定义 · 标准化 (standardization)**\n>\n> 对数据矩阵 $X\\in\\mathbb{R}^{N\\times d}$（每行一个样本，每列一个特征），按**列**计算均值 $\\mu_j$ 和标准差 $\\sigma_j$，令 $Z_{ij}=(X_{ij}-\\mu_j)/\\sigma_j$。结果每一列均值为 0、标准差为 1。\n>\n> *English: Standardization subtracts each column's mean and divides by its standard deviation, so every feature has mean 0 and standard deviation 1.*\n\n**白话版：「把不同单位的量，换算到同一把尺子上」。** 身高用厘米、体重用公斤、收入用万元，数字大小天差地别，直接喂给模型，数字大的特征会「压过」小的。标准化就是把每一列都换成「比平均高出几个标准差」。一次写下来只要一行广播：`(X - X.mean(axis=0)) / X.std(axis=0)`，`(N, d)` 对 `(d,)`。\n\n```python\nimport numpy as np\n\n# 小实验：对「特征」做标准化（每一列减均值、除标准差）。这就是机器学习里最常见的数据预处理\nrng = np.random.default_rng(3)\nX = rng.normal(loc=[0, 100, -5], scale=[1, 20, 0.1], size=(1000, 3))   # 三个量纲差别极大的特征\nfmt = lambda v: [round(float(x), 2) + 0.0 for x in v]\nprint(\"标准化前 每列均值:\", fmt(X.mean(axis=0)))\nprint(\"标准化前 每列标准差:\", fmt(X.std(axis=0)))\nZ = (X - X.mean(axis=0)) / X.std(axis=0)             # (1000,3) 与 (3,) 广播\nprint(\"标准化后 每列均值:\", fmt(Z.mean(axis=0)))\nprint(\"标准化后 每列标准差:\", fmt(Z.std(axis=0)))\n\n# 如果错把 axis 写成按行（每一行自己减自己的均值），三列的差别并没有被消除\nZ_bad = (X - X.mean(axis=1, keepdims=True)) / X.std(axis=1, keepdims=True)\nprint(\"按行标准化后 每列均值:\", fmt(Z_bad.mean(axis=0)))\nprint(\"按行标准化后 每列标准差:\", fmt(Z_bad.std(axis=0)))\n# 输出：标准化前 每列均值: [0.01, 100.49, -5.0]\n# 输出：标准化前 每列标准差: [1.0, 19.95, 0.1]\n# 输出：标准化后 每列均值: [0.0, 0.0, 0.0]\n# 输出：标准化后 每列标准差: [1.0, 1.0, 1.0]\n# 输出：按行标准化后 每列均值: [-0.65, 1.41, -0.76]\n# 输出：按行标准化后 每列标准差: [0.02, 0.0, 0.02]\n```\n\n读输出：三个特征的均值分别是 0.01、100.49、-5.0，标准差分别是 1.0、19.95、0.1，量纲差了几百倍。按列标准化后，三列均值都是 0、标准差都是 1（这是**广播**的功劳：`(1000, 3)` 减去 `(3,)`）。最后两行是**反例**：如果错把方向写成按行（每一行减自己的均值），三个特征的差别根本没有被消除：第二列几乎总是同一个值（标准差约 0.0），因为一行里 100 左右的那个数占了绝对主导，信息全被抹掉了。**`axis` 选哪一个，是由「你想让哪个方向上的东西可比」决定的**，不能随便写。\n\n### 高频操作二：行归一化与余弦相似度矩阵\n\n> **标准定义 · 余弦相似度 (cosine similarity)**\n>\n> 两个非零向量 $\\mathbf{a},\\mathbf{b}$ 的余弦相似度为 $\\cos\\theta=\\dfrac{\\mathbf{a}\\cdot\\mathbf{b}}{\\|\\mathbf{a}\\|\\,\\|\\mathbf{b}\\|}$，取值在 $[-1,1]$，只看**方向**、不看长度。若先把每一行除以自己的 $L_2$ 范数 $\\|\\mathbf{x}\\|_2=\\sqrt{\\sum_i x_i^2}$，得到行归一化矩阵 $\\hat X$，则 $\\hat X\\hat X^\\top$ 的第 $(i,j)$ 个元素就是第 $i$ 行与第 $j$ 行的余弦相似度。\n>\n> *English: Cosine similarity is a·b / (‖a‖‖b‖), depending only on direction. After normalising each row to unit length, X̂X̂ᵀ is the matrix of all pairwise cosine similarities.*\n\n**白话版：「只比方向，不比长短」。** 两篇文章，一篇是另一篇的两倍长，词频向量的长度差很多，但方向一样，余弦相似度就是 1。词向量、句向量检索、对比学习都用它。\n\n```python\nimport numpy as np\n\n# 1. 行归一化 + 余弦相似度矩阵\nX = np.array([[3., 4.], [1., 0.], [0., 2.]])\nnorms = np.linalg.norm(X, axis=1, keepdims=True)    # 每行的 L2 范数，形状 (3, 1)\nXn = X / norms                                      # 每行长度变成 1\nprint(\"行范数:\", norms.ravel())\nprint(\"归一化后每行范数:\", np.linalg.norm(Xn, axis=1))\nprint(np.round(Xn @ Xn.T, 3))                       # [i, j] = 第 i 行和第 j 行的余弦相似度\n\n# 2. 分类准确率\nscores = np.array([[0.1, 2.0, 0.3], [1.5, 0.2, 0.1], [0.0, 0.1, 3.0], [2.0, 2.5, 0.0]])\nlabels = np.array([1, 0, 1, 1])\npred = scores.argmax(axis=1)\nprint(\"预测:\", pred, \" 准确率:\", (pred == labels).mean())\n# 输出：行范数: [5. 1. 2.]\n# 输出：归一化后每行范数: [1. 1. 1.]\n# 输出：[[1.  0.6 0.8]\n# 输出： [0.6 1.  0. ]\n# 输出： [0.8 0.  1. ]]\n# 输出：预测: [1 0 2 1]  准确率: 0.75\n```\n\n读输出：三个向量的范数是 5、1、2，其中 `(3, 4)` 的范数是 $\\sqrt{9+16}=5$。归一化后每行的范数都是 1。相似度矩阵里：对角线全是 1（和自己方向相同）；第 0 行和第 1 行是 0.6（$\\frac{3\\times1+4\\times0}{5\\times1}=0.6$）；第 0 行和第 2 行是 0.8（$\\frac{3\\times0+4\\times2}{5\\times2}=0.8$）；$(1,0)$ 和 $(0,2)$ 垂直，相似度是 0。这里的 `keepdims=True` 非常关键：范数的形状是 `(3, 1)`，才能让 `(3, 2) / (3, 1)` 按行相除。\n\n后半段是**分类准确率**：`argmax(axis=1)` 取出每个样本得分最高的类别，得到 `[1 0 2 1]`，和真实标签 `[1 0 1 1]` 比较，4 个里对了 3 个，准确率 0.75。"
+  },
+  {
+   "type": "think",
+   "q": "想让矩阵 `M`（形状 `(n, d)`）的每一**列**减去该列的平均值，怎么写？每一**行**呢？如果 $n=d$，漏掉 `keepdims=True` 会发生什么，为什么比 $n\\neq d$ 更危险？",
+   "a": "- **每列减列均值**：`M - M.mean(axis=0)`。均值形状 `(d,)`，对齐最后一维，广播没问题（写成 `keepdims=True` 得到 `(1, d)` 也可以）。\n- **每行减行均值**：`M - M.mean(axis=1, keepdims=True)`。**必须** `keepdims=True` 得到 `(n, 1)`。\n- 漏掉时，`(n,)` 要去对齐最后一维 `d`：$n\\neq d$ 时直接报错，你会马上发现；**$n=d$ 时不报错**，变成「每一列减去一个本来属于某一行的数」，结果是错的（本节代码里 $3\\times3$ 的例子，行均值变成了 `[-3. 0. 3.]`）。**报错是好事，不报错的错误才可怕**，所以测试时用互不相等的维度。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "步长",
+     "stride",
+     "沿某一维走一格要跳过的内存字节数；广播的维度步长为 0"
+    ],
+    [
+     "最大值下标",
+     "argmax",
+     "分数最高的类别，用于分类预测和准确率"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`x` 形状 `(3, 1, 5)`，`x.squeeze(0).shape` 是？",
+    "options": [
+     "`(3, 1, 5)`",
+     "`(1, 5)`",
+     "`(3, 5)`",
+     "报错"
+    ],
+    "answer": 0,
+    "explain": "`squeeze(0)` 只在第 0 维长度为 1 时才去掉它。这里第 0 维是 3，所以什么都不做。去掉第 1 维要写 `squeeze(1)`。"
+   },
+   {
+    "q": "`m` 形状 `(3, 4)`，想让每一**行**减去该行的平均值，正确的写法是？",
+    "options": [
+     "`m - m.mean(dim=1)`",
+     "`m - m.mean()`",
+     "`m - m.mean(dim=0)`",
+     "`m - m.mean(dim=1, keepdim=True)`"
+    ],
+    "answer": 3,
+    "explain": "行均值的形状必须是 `(3, 1)` 才能沿每一行广播。不写 `keepdim=True` 得到 `(3,)`，它会去对齐最后一维 4，形状对不上而报错；`mean(dim=0)` 减的是列均值；不带参数的 `mean()` 减的是全局均值。"
+   },
+   {
+    "q": "`Xn` 是行归一化后的矩阵（形状 `(m, d)`），`Xn @ Xn.T` 的 `[i, j]` 元素是什么？",
+    "options": [
+     "第 $i$ 行的长度",
+     "第 $i$ 行和第 $j$ 行的余弦相似度",
+     "第 $i$ 列和第 $j$ 列的差",
+     "总是 1"
+    ],
+    "answer": 1,
+    "explain": "矩阵乘法 `[i, j]` = 第 $i$ 行与 `Xn.T` 第 $j$ 列（即 `Xn` 第 $j$ 行）的点积；两者都是单位向量，所以就是余弦相似度。"
+   }
+  ]
+ }
+}

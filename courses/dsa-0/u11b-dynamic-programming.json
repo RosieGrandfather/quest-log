@@ -1,0 +1,75 @@
+{
+ "id": "u11b",
+ "title": "动态规划（2/3）",
+ "en": "Dynamic Programming (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "会按「**定义状态 → 写转移方程 → 定初值与顺序 → 找答案**」四步解题，并会**还原方案**、做**空间优化**",
+  "会做经典题：**硬币找零、0/1 背包、最长公共子序列 (LCS)、编辑距离、最大子数组和、最长递增子序列 (LIS)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「动态规划」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：0/1 背包（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 0/1 背包\n\n> **标准定义 · 0/1 背包问题 (0/1 knapsack problem)**\n>\n> 有 $n$ 件物品，第 $i$ 件重量为 $w_i$、价值为 $v_i$，背包容量为 $W$。每件物品**最多选一次**（选或不选，所以叫「0/1」），在总重量不超过 $W$ 的前提下，使总价值最大。\n>\n> **状态：** $dp[i][c]$ = 只考虑前 $i$ 件物品、背包容量为 $c$ 时的最大价值。**转移：** $dp[i][c]=\\max\\big(dp[i-1][c],\\ dp[i-1][c-w_i]+v_i\\big)$（不拿第 $i$ 件 / 拿第 $i$ 件）。时间 $O(nW)$。\n>\n> *English: In the 0/1 knapsack problem, each item can be taken at most once; maximise total value subject to a weight limit W. Let dp[i][c] be the best value using the first i items with capacity c.*\n\n**白话版：「每一件东西，只面临一个选择：带，还是不带。」** 把「选或不选」这个决策，一件一件往后做；$dp$ 表记下「做到第 $i$ 件、剩余容量 $c$」时最好的结果。\n\n```python\nimport itertools, random\n\n# 0/1 背包：n 件物品，各有重量 w、价值 v，背包容量 W，每件至多拿一次，求最大价值\ndef knapsack_2d(ws, vs, W):\n    n = len(ws)\n    dp = [[0] * (W + 1) for _ in range(n + 1)]       # dp[i][c] = 只用前 i 件、容量 c 时的最大价值\n    for i in range(1, n + 1):\n        for c in range(W + 1):\n            dp[i][c] = dp[i - 1][c]                  # 不拿第 i 件\n            if ws[i - 1] <= c:                       # 拿第 i 件\n                dp[i][c] = max(dp[i][c], dp[i - 1][c - ws[i - 1]] + vs[i - 1])\n    # 还原：从 dp[n][W] 往回走\n    picked, c = [], W\n    for i in range(n, 0, -1):\n        if dp[i][c] != dp[i - 1][c]:\n            picked.append(i - 1); c -= ws[i - 1]\n    return dp[n][W], sorted(picked)\n\ndef knapsack_1d(ws, vs, W):\n    dp = [0] * (W + 1)                               # 只保留一行：空间从 O(nW) 降到 O(W)\n    for w, v in zip(ws, vs):\n        for c in range(W, w - 1, -1):                # 容量要「从大到小」遍历！\n            dp[c] = max(dp[c], dp[c - w] + v)\n    return dp[W]\n\ndef knapsack_wrong(ws, vs, W):\n    dp = [0] * (W + 1)\n    for w, v in zip(ws, vs):\n        for c in range(w, W + 1):                    # 「从小到大」：同一件物品可能被重复拿\n            dp[c] = max(dp[c], dp[c - w] + v)\n    return dp[W]\n\nws, vs, W = [1, 3, 4, 5], [1, 4, 5, 7], 7\nprint(\"二维 DP：\", knapsack_2d(ws, vs, W))\nprint(\"一维 DP：\", knapsack_1d(ws, vs, W))\n# 只有一件「重 3、值 5」的物品、容量 7：正确答案 5（只能拿一次）\nprint(\"一件物品、容量 7：正确\", knapsack_1d([3], [5], 7), \"；方向写反\", knapsack_wrong([3], [5], 7), \"（同一件被拿了两次）\")\n\n# 验证：枚举所有 2^n 个子集\ndef brute(ws, vs, W):\n    best = 0\n    for mask in range(1 << len(ws)):\n        w = sum(ws[i] for i in range(len(ws)) if mask >> i & 1)\n        if w <= W:\n            best = max(best, sum(vs[i] for i in range(len(ws)) if mask >> i & 1))\n    return best\n\nrandom.seed(1)\nok = True\nfor _ in range(300):\n    n = random.randint(1, 8)\n    a = [random.randint(1, 9) for _ in range(n)]\n    b = [random.randint(1, 20) for _ in range(n)]\n    Wc = random.randint(0, 25)\n    ok &= (knapsack_2d(a, b, Wc)[0] == knapsack_1d(a, b, Wc) == brute(a, b, Wc))\nprint(\"二维 = 一维 = 暴力枚举（300 组随机输入）：\", ok)\n# 输出：二维 DP： (9, [1, 2])\n# 输出：一维 DP： 9\n# 输出：一件物品、容量 7：正确 5 ；方向写反 10 （同一件被拿了两次）\n# 输出：二维 = 一维 = 暴力枚举（300 组随机输入）： True\n```\n\n三点要点：**一，还原方案**：从 $dp[n][W]$ 往回走，如果 $dp[i][c]\\ne dp[i-1][c]$，说明第 $i$ 件被拿了。**二，空间优化**：$dp[i]$ 这一行只依赖 $dp[i-1]$ 那一行，所以可以只保留一行，从 $O(nW)$ 降到 $O(W)$。**三，一个常见的 bug**：一维版里，容量**必须从大到小**遍历。因为 $dp[c-w]$ 要的是「上一轮（还没考虑这件物品）」的值，从大到小才能保证没被这一轮覆盖；从小到大会让同一件物品被重复拿，变成「每件无限个」的**完全背包**（上面的演示里，一件重 3 的物品，容量 7 时被拿了两次，答案 10，是错的）。\n\n**一个重要的提醒：$O(nW)$ 不是多项式时间！** 复杂度里的 $W$ 是**数值**，不是**输入的长度**（表示 $W$ 只要 $\\log W$ 位）。输入长度是 $\\log W$，所以 $O(nW)$ 对输入长度是指数级的。这叫**伪多项式时间 (pseudo-polynomial time)**。0/1 背包是 **NP 难**问题，有这样的 DP 解法，不矛盾：只在 $W$ 不太大时才好用。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "xOlhR_2QCXY",
+   "title": "视频三：0-1 Knapsack Problem (Dynamic Programming)（CS Dojo）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "4ClOkX0SWW4",
+   "title": "视频四：Longest Common Subsequence Problem Visually Explained（ByteQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "think",
+   "q": "0/1 背包的 $O(nW)$ 时间看起来是多项式，为什么说它不是「真正的」多项式时间？这和背包问题是 NP 难并不矛盾吗？",
+   "a": "**不矛盾。** 判断「多项式时间」是看**输入长度**。输入里的容量 $W$ 是一个数，用二进制写只需要 $\\log_2 W$ 位。当 $W$ 很大时（比如 $2^{64}$），$O(nW)$ 在输入长度 $\\log W$ 面前是**指数**的，所以叫**伪多项式 (pseudo-polynomial)**：对「数值」是多项式，对「长度」是指数。\n\n真正的 NP 难性体现在：如果 $W$ 非常大、没有范围限制（相当于需要处理很多位的数），就没有已知的多项式时间算法。实际应用里 $W$ 往往不大（比如几千），所以 DP 解法依然非常有用；同时也要知道它的适用范围。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个问题适合用**动态规划**解，需要具备哪两个性质？",
+    "options": [
+     "重叠子问题与最优子结构",
+     "可以排序、可以二分",
+     "无环与连通",
+     "输入是有序数组、答案是整数"
+    ],
+    "answer": 0,
+    "explain": "重叠子问题让「存起来」有意义；最优子结构让「用子问题的最优解拼出整体最优解」成立。"
+   },
+   {
+    "q": "0/1 背包的一维滚动数组写法里，容量的循环方向为什么**必须从大到小**？",
+    "options": [
+     "为了让算法更快",
+     "这只是习惯，从小到大也一样",
+     "因为数组下标不能为负",
+     "从大到小才不会让同一件物品被重复使用，因为 `dp[c - w]` 要用的是处理这件物品之前的值"
+    ],
+    "answer": 3,
+    "explain": "从小到大时，`dp[c-w]` 可能已被这件物品更新过，等于同一件被拿了多次，变成完全背包。"
+   },
+   {
+    "q": "0/1 背包的 DP 时间 $O(nW)$ 被称为**伪多项式时间**，原因是？",
+    "options": [
+     "因为它其实是指数时间的算法",
+     "$W$ 是数值而不是输入长度（只需 $\\log W$ 位），所以对输入长度来说是指数的",
+     "因为 $n$ 很大",
+     "因为用了二维数组"
+    ],
+    "answer": 1,
+    "explain": "输入长度是 $\\log W$ 量级，而 $W=2^{\\log W}$。所以只有当 $W$ 的数值不太大时，这个 DP 才实用。"
+   }
+  ]
+ }
+}

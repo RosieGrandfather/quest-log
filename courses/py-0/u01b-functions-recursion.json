@@ -1,0 +1,92 @@
+{
+ "id": "u01b",
+ "title": "函数、作用域与递归（2/3）",
+ "en": "Functions, Scope & Recursion (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解 **作用域 (scope)** 的 **LEGB** 查找规则、`global` / `nonlocal`，以及 **闭包 (closure)** 与其「晚绑定」陷阱",
+  "理解函数是 **一等公民 (first-class object)**，会写 **lambda**、`sorted(key=)`，会写简单与带参数的 **装饰器 (decorator)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「函数、作用域与递归」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：Python 怎么传参：传的是「对象的引用」（续）（约 5 分钟） → 作用域与闭包（约 25 分钟） → 函数是一等公民，以及装饰器（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n```python\n# 同样的原因：[[0]*3]*3 得到的是 3 个「同一个」列表\ngrid_bad = [[0] * 3] * 3\ngrid_bad[0][0] = 1\ngrid_ok = [[0] * 3 for _ in range(3)]\ngrid_ok[0][0] = 1\nprint(grid_bad, grid_ok)\nprint(\"is 比较身份：\", grid_bad[0] is grid_bad[1], grid_ok[0] is grid_ok[1])\n# 输出：[[1, 0, 0], [1, 0, 0], [1, 0, 0]] [[1, 0, 0], [0, 0, 0], [0, 0, 0]]\n# 输出：is 比较身份： True False\n```\n\n**读输出：** 第一行：`grid_bad` 改了 `[0][0]` 之后变成 `[[1, 0, 0], [1, 0, 0], [1, 0, 0]]`，三行同时变了，因为 `*3` 复制的是**引用**，得到 3 个**同一个**内部列表；`grid_ok` 只有第一行变成 `[[1, 0, 0], [0, 0, 0], [0, 0, 0]]`，因为列表推导式每次循环创建一个新列表（上面刚认识过推导式的读法）。第二行 `True False` 用 `is`（比较**身份**，即是不是同一个对象）证实了这一点：`grid_bad[0] is grid_bad[1]` 为 `True`，`grid_ok` 的为 `False`；`==` 比较的则是值是否相等。**在 NumPy / PyTorch 里，切片返回的是「视图 (view)」，与原数组共享内存，也是同样的道理。**\n\n### 作用域与闭包\n\n> **标准定义 · 作用域 (scope) 与 LEGB 规则**\n>\n> 一个名字在代码中**有效的范围**叫做它的**作用域**。Python 查找名字的顺序是 **L**ocal（当前函数内）→ **E**nclosing（外层函数）→ **G**lobal（模块级）→ **B**uilt-in（内置名字，如 `len`），找到就停。在函数内**对名字赋值**，会使它成为该函数的**局部变量**；要修改外层或全局的变量，需用 `nonlocal` 或 `global` 声明。\n>\n> *English: Python resolves names by the LEGB rule: Local, Enclosing, Global, Built-in. Assigning to a name inside a function makes it local unless declared global or nonlocal.*\n\n> **标准定义 · 闭包 (closure)**\n>\n> 当一个**内层函数**引用了**外层函数的变量**，并且这个内层函数被**返回或传出**，那么即使外层函数已经执行完毕，内层函数仍然能访问这些变量。这种「函数 + 它所捕获的外层变量」的组合叫做**闭包**。\n>\n> *English: A closure is an inner function together with the variables from its enclosing scope that it captured; it keeps access to them after the outer function has returned.*\n\n**白话版：「函数带着自己的小背包出门」。** 外层函数创建时，把一些变量装进背包交给内层函数；内层函数被带到别处使用时，背包还在，里面的东西还能读（`nonlocal` 声明之后还能改）。\n\n**问题一：同一个名字 `x` 在三层里都有定义，函数读到的是哪一个？**\n\n```python\nx = \"global\"\n\ndef outer():\n    x = \"enclosing\"\n    def inner():\n        return x                       # 本地没有 → 去外层函数找（Enclosing）\n    return inner()\n\ndef uses_global():\n    return x                           # 找到全局（Global）\n\nprint(outer(), uses_global())\n# 输出：enclosing global\n```\n\n**读输出：** `enclosing global`。`outer` 里的 `inner` 自己没有 `x`，就去外层函数找，找到了 `\"enclosing\"`（Enclosing）；`uses_global` 自己和外层都没有，找到模块级的 `\"global\"`（Global）。\n\n**问题二：在函数里修改一个外面的变量会怎样？**（这里是**故意**让它出错、再把错误接住打印出来，`try` / `except UnboundLocalError as e` 的写法见「条件、循环与读懂报错」。）\n\n```python\ndef tries_to_modify():\n    try:\n        x += \"!\"                       # 赋值使 x 成为局部变量，但它还没有值\n    except UnboundLocalError as e:\n        return \"UnboundLocalError: \" + str(e)\n\nprint(tries_to_modify())\n# 输出：UnboundLocalError: local variable 'x' referenced before assignment\n```\n\n**读输出：** 得到 `UnboundLocalError`（具体错误文字随 Python 版本不同）：函数里有 `x += \"!\"` 这条赋值，Python 在**编译函数时**就判定 `x` 是局部变量，于是执行时读取一个还没有值的局部变量。解决办法是 `global x` / `nonlocal x`（或者更好：别修改全局状态，把值当作参数传进来、结果返回出去）。\n\n**问题三：外层函数已经返回了，内层函数还能用它的变量吗？** 这就是闭包：\n\n```python\n# 闭包 (closure)：内层函数「记住」了外层函数的变量，即使外层已经返回\ndef make_counter():\n    count = 0\n    def counter():\n        nonlocal count                 # 声明要修改的是外层的 count\n        count += 1\n        return count\n    return counter\n\nc1, c2 = make_counter(), make_counter()\nprint(c1(), c1(), c1(), c2())          # 每个闭包有自己独立的 count\nprint(\"闭包保存的变量：\", c1.__closure__[0].cell_contents)\n# 输出：1 2 3 1\n# 输出：闭包保存的变量： 3\n```\n\n**读输出：** `1 2 3 1`：`c1` 被调用三次，计数依次是 1、2、3；`c2` 是另一次 `make_counter()` 创建的闭包，有自己独立的 `count`，所以第一次调用就是 1（`c1, c2 = make_counter(), make_counter()` 是多重赋值：调用两次，得到两个互不相干的计数器）。**闭包给每次调用留下一份独立的状态**，这是不用类、用函数保存状态的方式，装饰器就是它的重要应用。第二行 `闭包保存的变量： 3` 是直接从 `c1.__closure__` 里读出来的：`c1` 背包里的 `count` 现在是 3（`__closure__` 是函数对象上存放「背包」的内部属性，是个元组，`[0]` 取第一个，`.cell_contents` 取里面装的值）。`nonlocal count` 是必需的，否则 `count += 1` 会和上一个例子一样触发 `UnboundLocalError`。\n\n**问题四：闭包记住的是「当时的值」，还是「变量本身」？** 这个例子里会第一次出现 **`lambda`**，先认识一下：`lambda 参数: 表达式` 是写**小函数**的缩写，等价于 `def 某名字(参数): return 表达式`，只能放**一个表达式**，而且没有名字（所以叫匿名函数）。后面「函数是一等公民」那一小节会讲它的主要用途。\n\n```python\n# lambda 参数: 表达式   等价于   def 某名字(参数): return 表达式\nadd = lambda a, b: a + b\ndouble = lambda x: x * 2\nprint(add(2, 3), double(5), (lambda: 7)())    # 最后一个：没有参数的 lambda，写完立刻调用\n# 输出：5 10 7\n```\n\n**读输出：** `5 10 7`：`add`、`double` 的用法和用 `def` 写的函数完全一样；`(lambda: 7)()` 里，前一对括号包住一个**没有参数**的 lambda，后一对括号立刻**调用**它，得到 7。下面要读的 `lambda: i` 就是这种没有参数、返回变量 `i` 的 lambda。现在回到问题：\n\n```python\n# 经典陷阱：闭包「晚绑定」(late binding)——它记住的是变量，不是当时的值\nfuncs_bad = [lambda: i for i in range(3)]\nfuncs_ok = [lambda i=i: i for i in range(3)]       # 用默认参数把当时的值固定下来\nprint([f() for f in funcs_bad], [f() for f in funcs_ok])\n# 输出：[2, 2, 2] [0, 1, 2]\n```\n\n**读输出：** `[2, 2, 2] [0, 1, 2]`。**闭包的晚绑定陷阱：** 闭包捕获的是**变量**，而不是创建那一刻的**值**。`[lambda: i for i in range(3)]` 里三个 lambda 共享同一个 `i`，等循环结束时 `i` 是 2，所以调用结果是 `[2, 2, 2]`。用默认参数 `i=i` 把当时的值固定下来（因为默认值在定义时求值），就得到 `[0, 1, 2]`。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "swU3c34d2NQ",
+   "title": "视频一：Programming Terms: Closures - How to Use Them and Why They Are Useful（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### 函数是一等公民，以及装饰器\n\n> **标准定义 · 一等函数 (first-class function) 与高阶函数 (higher-order function)**\n>\n> 在 Python 里，函数是**对象**，与整数、列表一样可以：赋给变量、放进数据结构、作为参数传给别的函数、作为返回值。**接收函数作为参数、或返回函数的函数**叫**高阶函数**。**lambda** 表达式是创建匿名的、只含一个表达式的小函数的语法。\n>\n> *English: Functions in Python are objects: they can be assigned, stored, passed as arguments and returned. A higher-order function takes or returns functions. A lambda is an anonymous single-expression function.*\n\n> **标准定义 · 装饰器 (decorator)**\n>\n> **装饰器**是一个接收一个函数、返回一个（通常是「包装过的」）新函数的高阶函数。语法 `@deco` 写在 `def` 上方，等价于 `f = deco(f)`。包装函数通常用 `*args, **kwargs` 接收任意参数，并用 `functools.wraps` 保留原函数的名字与文档字符串。\n>\n> *English: A decorator is a function that takes a function and returns a (usually wrapped) function. `@deco` above a `def` is shorthand for `f = deco(f)`.*\n\n**白话版：「给函数套一层外壳」。** 不修改函数内部，给它**外面**加上新功能：计时、记日志、检查权限、缓存结果、关闭梯度计算。每个功能写一次，用 `@` 贴到任何函数上。\n\n**问题一：函数真的能像数据一样放进列表吗？**（`abs` 是内置函数，求绝对值；`str` 是把东西变成字符串的内置函数。它们在列表里**都没有加括号**：不加括号就是「函数本身」，加了括号才是「调用它」。`def square(x): return x * x` 是把函数体写在同一行的短写法，`[f(-3) for f in ops]` 是前面「陷阱二」里认识过的列表推导式。）\n\n```python\n# 函数是「一等公民」：可以赋给变量、放进列表、当参数传、当返回值\ndef square(x): return x * x\nops = [square, abs, str]\nprint([f(-3) for f in ops])\n# 输出：[9, 3, '-3']\n```\n\n**读输出：** `[9, 3, '-3']`：`ops` 里放的是三个函数 `square`、`abs`、`str`，推导式对每个 `f` 调用 `f(-3)`，依次得到 `9`、`3` 和字符串 `'-3'`。"
+  },
+  {
+   "type": "think",
+   "q": "写一个装饰器 `count_calls`，让被装饰的函数每被调用一次，就把计数加 1，并且能通过 `func.calls` 读取次数。提示：函数本身也是对象，可以给它加属性。",
+   "a": "```python\nimport functools\n\ndef count_calls(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        wrapper.calls += 1\n        return func(*args, **kwargs)\n    wrapper.calls = 0\n    return wrapper\n\n@count_calls\ndef hello():\n    return \"hi\"\n\nhello(); hello()\nprint(hello.calls)   # 2\n```\n\n关键：**计数器放在 `wrapper` 这个函数对象的属性上**，每次调用时加 1。用 `*args, **kwargs` 让它能装饰任何参数形式的函数；`functools.wraps` 保留原函数的名字。另一种写法是用闭包里的变量加 `nonlocal`，但那样外面读不到次数，除非再多暴露一个读取的函数。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "晚绑定",
+     "late binding",
+     "闭包捕获变量而不是值，调用时才取值"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`grid = [[0] * 3] * 3`，然后 `grid[0][0] = 1`，`grid` 变成什么？",
+    "options": [
+     "`[[1,0,0],[1,0,0],[1,0,0]]`（三行是同一个列表）",
+     "`[[1,0,0],[0,0,0],[0,0,0]]`",
+     "`[[1,1,1],[1,1,1],[1,1,1]]`",
+     "报错"
+    ],
+    "answer": 0,
+    "explain": "`*3` 复制的是引用，三行是同一个对象。要用 `[[0]*3 for _ in range(3)]`。"
+   },
+   {
+    "q": "Python 查找一个名字的 **LEGB** 顺序是？",
+    "options": [
+     "Global → Local → Built-in → Enclosing",
+     "Local → Global → Enclosing → Built-in",
+     "Built-in → Global → Enclosing → Local",
+     "Local → Enclosing → Global → Built-in"
+    ],
+    "answer": 3,
+    "explain": "先找当前函数（Local），再找外层函数（Enclosing），然后模块级（Global），最后内置（Built-in）。"
+   },
+   {
+    "q": "在内层函数里想**修改**外层函数里定义的变量 `count`（`count += 1`），需要？",
+    "options": [
+     "什么都不用",
+     "在内层函数里声明 `nonlocal count`",
+     "`global count`",
+     "把 `count` 改名"
+    ],
+    "answer": 1,
+    "explain": "不声明的话，赋值会让 `count` 成为内层函数的局部变量，读取时会 `UnboundLocalError`。`global` 对应的是模块级变量。"
+   },
+   {
+    "q": "装饰器语法 `@deco` 写在 `def f(): ...` 上方，等价于？",
+    "options": [
+     "`f = deco`",
+     "`deco(f())`",
+     "`f = deco(f)`",
+     "`deco = f(deco)`"
+    ],
+    "answer": 2,
+    "explain": "装饰器接收原函数，返回新函数，并替换原来的名字。"
+   }
+  ]
+ }
+}

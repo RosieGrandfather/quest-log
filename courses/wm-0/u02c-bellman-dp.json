@@ -1,0 +1,91 @@
+{
+ "id": "u02c",
+ "title": "贝尔曼方程与动态规划求解（3/3）",
+ "en": "Bellman Equations & Dynamic Programming (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "说清 MDP 的动态规划与 dsa-0 第 11 节「动态规划」的联系和区别：最优子结构、状态转移方程、为什么 MDP 要迭代到不动点"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「贝尔曼方程与动态规划求解」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：策略改进与策略迭代（续）（约 20 分钟） → 和 dsa-0 第 11 节「动态规划」的联系（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n策略迭代轮数很少（9 轮），但每轮要做完整评估；价值迭代轮数多，但每轮便宜。哪个更快取决于问题，实践里两者都用，也常常折中成「评估只做几次扫描」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "_j6pvGEchWU",
+   "title": "视频二：Bellman Equations, Dynamic Programming, Generalized Policy Iteration — Reinforcement Learning Part 2（Mutual Information）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 22
+  },
+  {
+   "type": "text",
+   "md": "### 和 dsa-0 第 11 节「动态规划」的联系\n\ndsa-0 第 11 节讲过动态规划的三件事：**最优子结构**（大问题的最优解包含子问题的最优解）、**重叠子问题**（同一个子问题被反复用到）、**状态与转移方程**（用子问题的值写出大问题的值）。贝尔曼方程正是它们在 MDP 上的体现：\n\n- 状态 = MDP 的状态；**转移方程 = 贝尔曼最优方程**，$v_*(s)$ 由后继状态的 $v_*(s')$ 算出；\n- **最优子结构**：最优策略从任何一个中间状态之后的部分，仍然是那个状态出发的最优策略（Bellman 称之为「最优性原理」）；\n- **重叠子问题**：从不同的路径走到同一个状态，后面的价值是同一个数，算一次存起来，这就是用 $v$ 表而不是枚举轨迹的意义。轨迹的条数随步数指数增长，价值表只有 $|S|$ 个数。\n\n**一个关键的区别**：dsa-0 里的动态规划（最长公共子序列、背包、编辑距离）的子问题依赖关系是**有向无环图**，按拓扑顺序一遍就能填完表。MDP 的状态图是**有环的**：撞墙留在原地、可以来回走，$v(s)$ 依赖 $v(s')$，$v(s')$ 又可能依赖 $v(s)$，没有「先算谁」。所以要**迭代**，靠收缩映射保证收敛到不动点，而不是一遍制表。\n\n但只要把时间展开，环就消失了：定义 $V_k(s)$ 为「最多再走 $k$ 步」的最优折扣回报，则 $V_k$ 只依赖 $V_{k-1}$，依赖关系是无环的，可以自底向上制表，也可以自顶向下写带记忆化的递归。**价值迭代的第 $k$ 次扫描，恰好就是这张表的第 $k$ 行**。\n\n```python\nimport numpy as np\n\n# ---- 网格世界的模型：与上一节同一个环境，这次把 P 和 R 完整写成数组 ----\nN, A = 5, 4\nMOVES = [(-1, 0), (1, 0), (0, -1), (0, 1)]          # 上 下 左 右\nGOAL, TRAP, START = (4, 4), (2, 3), (0, 0)\nS = N * N\nidx = lambda r, c: r * N + c\nP = np.zeros((S, A, S))                               # P[s, a, s']：转移概率\nR = np.zeros((S, A))                                  # R[s, a]：期望即时奖励\nterminal = [idx(*GOAL), idx(*TRAP)]\nfor r in range(N):\n    for c in range(N):\n        s = idx(r, c)\n        if s in terminal:\n            P[s, :, s] = 1.0                          # 终止状态：吸收态，奖励 0\n            continue\n        for a, (dr, dc) in enumerate(MOVES):\n            r2, c2 = min(max(r + dr, 0), N - 1), min(max(c + dc, 0), N - 1)\n            P[s, a, idx(r2, c2)] = 1.0                # 这个环境的转移是确定的\n            R[s, a] = 10.0 if (r2, c2) == GOAL else (-10.0 if (r2, c2) == TRAP else 0.0)\ngamma = 0.9\ndef show(v, fmt=\"{:7.3f}\"):                           # 把长度 25 的向量按 5x5 打印\n    for r in range(N):\n        print(\" \".join(fmt.format(v[idx(r, c)]) for c in range(N)))\n\nfrom functools import lru_cache\n\n# 把「最多再走 k 步」当作一个带时间的动态规划：V_k(s) = max_a [ R(s,a) + gamma * sum_s' P(s'|s,a) V_{k-1}(s') ]，V_0 = 0\n# 写法一：自底向上制表（k 从 1 到 K 一行一行填）\nK = 100\ntable = np.zeros((K + 1, S))\nfor k in range(1, K + 1):\n    table[k] = (R + gamma * np.einsum(\"sat,t->sa\", P, table[k - 1])).max(axis=1)\n\n# 写法二：自顶向下带记忆化的递归（和 dsa-0 第 11 节的斐波那契、背包是同一类写法）\n@lru_cache(maxsize=None)\ndef V(k, s):\n    if k == 0:\n        return 0.0\n    return max(R[s, a] + gamma * sum(P[s, a, t] * V(k - 1, t) for t in range(S) if P[s, a, t] > 0) for a in range(A))\n\nprint(\"两种写法在 k=30 时一致：\", all(abs(V(30, s) - table[30, s]) < 1e-9 for s in range(S)))\nv_star = table[K]\nprint(\"k    V_k(起点)\")\nfor k in (1, 4, 7, 8, 9, 20, 50, 100):\n    print(f\"{k:<4d} {table[k, idx(*START)]:.4f}\")\nprint(\"v*(起点) =\", round(float(v_star[idx(*START)]), 4), \"，k=100 与 v* 的最大差距：\", float(np.abs(table[100] - v_star).max()))\n# 输出：两种写法在 k=30 时一致： True\n# 输出：k    V_k(起点)\n# 输出：1    0.0000\n# 输出：4    0.0000\n# 输出：7    0.0000\n# 输出：8    4.7830\n# 输出：9    4.7830\n# 输出：20   4.7830\n# 输出：50   4.7830\n# 输出：100  4.7830\n# 输出：v*(起点) = 4.783 ，k=100 与 v* 的最大差距： 0.0\n```\n\n读输出：两种写法（制表 / 记忆化递归）在 $k=30$ 时逐状态一致。$V_k(\\text{起点})$ 在 $k\\le7$ 时是 0：「最多走 7 步」到不了终点，拿不到任何奖励；$k=8$ 时变成 4.7830，之后不再变化，并且 $k=100$ 时和 $v_*$ 的最大差距是 0.0。这就是「有限视野 DP 随视野增大逼近无限视野的最优价值」，也是价值迭代的另一种读法。\n\n**动态规划的局限，正是这门课后面要解决的问题**：(1) 它需要**完整的模型** $P$ 和 $R$；(2) 每次扫描要遍历**全部**状态，状态数一大（比如像素图像）就不可能。下一节讲没有模型时怎么从交互样本学习价值（蒙特卡洛、TD、Q-learning）；第 7 节讲先学一个模型、再用模型规划。\n\n### 这一节你要带走的三句话\n\n1. **贝尔曼期望方程**：$v_\\pi=r_\\pi+\\gamma P_\\pi v_\\pi$，价值 = 眼前奖励 + 折扣后的后继价值；可以解线性方程组，也可以当更新规则迭代（策略评估）。\n2. **收缩映射保证收敛**：备份算子每次把任意两个价值向量的最大距离缩小到 $\\gamma$ 倍，所以迭代收敛到唯一不动点，误差按 $\\gamma^k$ 衰减，$\\gamma$ 越接近 1 越慢。\n3. **最优方程把「平均」换成「最大」**：价值迭代求 $v_*$，策略迭代交替「评估 + 贪心改进」，二者是广义策略迭代的两个极端；DP 需要已知模型，这也是世界模型要提供的东西。"
+  },
+  {
+   "type": "think",
+   "q": "**概念辨析**：(1) 贝尔曼期望方程和最优方程差在哪一步？为什么前者是线性方程组而后者不是？(2) 当 $\\gamma$ 从 0.9 提高到 0.99，按收缩界 $\\gamma^k$，要把初始误差压到 $10^{-6}$ 倍以内，各需要多少次扫描？",
+   "a": "(1) 差在「对动作怎么处理」：期望方程按策略概率**加权平均**，对 $v$ 是线性的；最优方程取 $\\max$，$\\max$ 是非线性的，没法写成 $v=r+\\gamma Pv$ 这种矩阵形式，只能迭代（或用线性规划）。\n\n(2) 需要 $\\gamma^k\\le10^{-6}$，即 $k\\ge\\ln(10^{-6})/\\ln\\gamma$。$\\gamma=0.9$：$13.8155/0.10536\\approx131.1$，至少 **132** 次；$\\gamma=0.99$：$13.8155/0.01005\\approx1374.6$，至少 **1375** 次，约多了 10 倍。长远规划（$\\gamma$ 大）收敛慢，这也是实际训练里远期回报难学的数学原因之一。（这是上界，真实扫描次数可能少，如上面的网格世界。）"
+  }
+ ],
+ "references": [
+  {
+   "title": "Sutton & Barto《Reinforcement Learning: An Introduction》第二版（2018），第 4 章 Dynamic Programming（4.1 Policy Evaluation、4.2 Policy Improvement、4.3 Policy Iteration、4.4 Value Iteration、4.6 Generalized Policy Iteration）；贝尔曼方程见 3.5–3.6",
+   "url": "http://incompleteideas.net/book/RLbook2020.pdf",
+   "note": "本节依据的开放教材（作者免费公开）；讲解为自写，未转载原文"
+  },
+  {
+   "title": "David Silver：RL Course, Lecture 3: Planning by Dynamic Programming（DeepMind / UCL，约 99 分钟）",
+   "url": "https://www.youtube.com/watch?v=Nd1-UUMVfz4",
+   "note": "选看：同一主题的大学课堂版本，含收缩映射的证明"
+  },
+  {
+   "title": "Hugging Face Deep RL Course, Unit 2: The Bellman Equation",
+   "url": "https://huggingface.co/learn/deep-rl-course/unit2/bellman-equation",
+   "note": "免费课程里用很短的篇幅讲贝尔曼方程，可以当复习"
+  },
+  {
+   "title": "OpenAI Spinning Up：Key Concepts in RL（含 Bellman Equations 一节）",
+   "url": "https://spinningup.openai.com/en/latest/spinningup/rl_intro.html",
+   "note": "简明的符号对照表，读论文时可以回头查"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为什么说贝尔曼备份算子是「收缩映射」，这带来了什么好处？",
+    "options": [
+     "只有从全 0 初始化才能保证收敛",
+     "$\\gamma=1$ 时收敛最快",
+     "收敛的速度和 $\\gamma$ 无关",
+     "任意两个价值向量套用一次备份后，最大距离至少缩小到原来的 $\\gamma$ 倍；所以从任何初始值迭代都收敛到唯一的不动点"
+    ],
+    "answer": 3,
+    "explain": "收缩性给出两件事：不动点唯一（所以 $v_\\pi$、$v_*$ 是良定义的），迭代误差按 $\\gamma^k$ 衰减。$\\gamma$ 越接近 1，收缩得越慢，需要的扫描次数越多；初始值可以任意。"
+   },
+   {
+    "q": "为什么求 MDP 的价值函数不能像最长公共子序列那样，按固定顺序一遍制表就填完？",
+    "options": [
+     "因为 MDP 没有最优子结构",
+     "状态之间的依赖有环（可以回到原来的状态），没有天然的先后顺序，要迭代到不动点",
+     "因为 MDP 的状态个数总是太少",
+     "因为奖励可能是负数"
+    ],
+    "answer": 1,
+    "explain": "MDP 满足最优子结构（贝尔曼方程就是它的状态转移方程），但状态图里有环：撞墙留在原地、来回走动，$v(s)$ 依赖 $v(s')$，而 $v(s')$ 又可能依赖 $v(s)$。把时间展开成「最多再走 $k$ 步」后依赖变成无环，才可以制表。"
+   },
+   {
+    "q": "动态规划（策略迭代、价值迭代）求解 MDP 需要什么前提？",
+    "options": [
+     "大量真实环境交互产生的样本",
+     "一个训练好的神经网络",
+     "知道环境的完整模型，即转移概率 $P$ 和奖励 $R$",
+     "策略的梯度"
+    ],
+    "answer": 2,
+    "explain": "动态规划是**规划 (planning)**：模型已知，直接在脑子里算。现实中 $P$ 往往未知，所以要么像下一节那样从样本学习价值，要么像世界模型那样先学一个 $P$ 再规划。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "id": "u06b",
+ "title": "综合小项目：从零实现 k 近邻分类器（2/3）",
+ "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "理解 **训练集 / 测试集划分 (train / test split)**，能解释为什么「训练准确率 100%」没有意义、为什么**测试结果有随机波动**",
+  "体会**测试的作用**：故意引入一个 bug，看测试怎样把它抓出来"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「综合小项目：从零实现 k 近邻分类器」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：通读代码（约 35 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 通读代码\n\n**数据：`knn/data.py`。** 先看 `knn/__init__.py`，它只有一行文档字符串（「一个只用标准库实现的 k 近邻分类器。」），作用是让 `knn` 成为一个包（「文件、模块与环境」那一节讲过）。再看数据：\n\n**文件 `knn/data.py`**\n\n```python-static\n\"\"\"数据：样本与数据集（从 CSV 读取）。\"\"\"\nimport csv\nfrom dataclasses import dataclass\nfrom pathlib import Path\n\n\n@dataclass(frozen=True)\nclass Sample:\n    features: tuple[float, ...]\n    label: str\n\n\nclass Dataset:\n    def __init__(self, samples: list[Sample]) -> None:\n        self.samples = list(samples)\n\n    def __len__(self) -> int:\n        return len(self.samples)\n\n    def __getitem__(self, i: int) -> Sample:\n        return self.samples[i]\n\n    @classmethod\n    def from_csv(cls, path: str | Path) -> \"Dataset\":\n        \"\"\"读取 CSV：最后一列叫 label，其余列都是数值特征。\"\"\"\n        samples = []\n        with open(path, encoding=\"utf-8\", newline=\"\") as f:\n            for lineno, row in enumerate(csv.DictReader(f), start=2):\n                label = row.pop(\"label\")\n                try:\n                    features = tuple(float(v) for v in row.values())\n                except ValueError as e:\n                    raise ValueError(f\"第 {lineno} 行含有非数字的特征：{row}\") from e\n                samples.append(Sample(features, label))\n        return cls(samples)\n```\n\n**读代码：** `Sample` 是不可变的数据类（`frozen=True`，所以可哈希，可以放进集合）；`Dataset` 只实现 `__len__` 和 `__getitem__`（「类与对象」里的「暗号」），这样 `len(ds)`、`ds[i]` 就能用；`from_csv` 是**替代构造函数**（`@classmethod`），最后一列叫 `label`，其余列都是数值特征。注意**错误信息**：CSV 里某一行有非数字时，抛出的 `ValueError` 会写明**第几行**，并用 `raise ... from e` 保留原始异常。再看几处新写法：`with open(...) as f` 保证读完关闭文件（「异常、调试、测试与类型注解」讲过上下文管理器）；`csv.DictReader(f)` 每行给出一个字典；`enumerate(..., start=2)` 让行号从 2 开始（第 1 行是表头）；`row.pop(\"label\")` 是字典的 `.pop`：取出并删掉 `label` 这一项，剩下的就都是特征；`tuple(float(v) for v in row.values())` 是生成器表达式，把每个值转成 `float` 再收成元组；`str | Path`、`tuple[float, ...]`（任意长度的 float 元组）是类型注解的写法。\n\n**划分：`knn/split.py`。**\n\n**文件 `knn/split.py`**\n\n```python-static\n\"\"\"划分训练集与测试集。\"\"\"\nimport random\n\nfrom .data import Dataset\n\n\ndef train_test_split(ds: Dataset, test_ratio: float, seed: int) -> tuple[Dataset, Dataset]:\n    \"\"\"随机划分；同一个 seed 得到同样的划分（可复现）。\"\"\"\n    if not 0 < test_ratio < 1:\n        raise ValueError(\"test_ratio 必须在 0 和 1 之间\")\n    idx = list(range(len(ds)))\n    random.Random(seed).shuffle(idx)\n    n_test = int(len(idx) * test_ratio)\n    test = [ds[i] for i in idx[:n_test]]\n    train = [ds[i] for i in idx[n_test:]]\n    return Dataset(train), Dataset(test)\n```\n\n**读代码：** 这就是前面演示过的划分，只是换成了 `Dataset`：先检查 `test_ratio` 在 0 和 1 之间（让错误尽早暴露），用**固定种子的 `random.Random(seed)`** 洗牌下标，前 `n_test` 个做测试集、其余做训练集，保证同一个种子得到同一个划分。注意第一行 `from .data import Dataset` 开头的 `.`：它表示「同一个包（`knn`）里的 `data` 模块」，这叫**相对导入**，包内的模块互相导入时用它。\n\n**投票：`knn/vote.py`。**\n\n**文件 `knn/vote.py`**\n\n```python-static\n\"\"\"投票规则（单独成一个模块，方便单独检验）。\"\"\"\nfrom collections import Counter\n\n\ndef majority_vote(labels: list[str]) -> str:\n    \"\"\"labels 按距离从近到远排列；返回得票最多的标签，平票时取其中最近的那个。\"\"\"\n    votes = Counter(labels)\n    top = max(votes.values())\n    for label in labels:          # 平票时，选「得票最多的标签里最近的那个」\n        if votes[label] == top:\n            return label\n    raise AssertionError(\"不可能到达这里\")\n```\n\n**读代码：** 这是前面 `predict` 函数里「投票」的那一半，单独成了一个模块：`Counter` 统计投票；`labels` 已经按距离从近到远排好，所以**平票时，从头往后找第一个「得票最多」的标签**，就是「得票最多的标签里最近的那个」。这个规则看起来是细节，但**必须有明确的规定**，我们后面会用一个测试把它固定下来。把它单独放在一个文件里，是为了能单独检验、单独修改。\n\n**模型：`knn/model.py`。**\n\n**文件 `knn/model.py`**\n\n```python-static\n\"\"\"模型：k 近邻分类器。\"\"\"\nimport heapq\nimport math\n\nfrom .data import Dataset\nfrom .vote import majority_vote\n\n\nclass KNN:\n    def __init__(self, k: int = 3) -> None:\n        if k < 1:\n            raise ValueError(\"k 必须 >= 1\")\n        self.k = k\n        self._train: Dataset | None = None\n\n    def fit(self, dataset: Dataset) -> \"KNN\":\n        if len(dataset) == 0:\n            raise ValueError(\"训练集是空的\")\n        self._train = dataset\n        return self\n\n    def predict_one(self, x: tuple[float, ...]) -> str:\n        if self._train is None:\n            raise RuntimeError(\"请先调用 fit\")\n        # 取距离最小的 k 个：堆（heapq.nsmallest）是 O(n log k)；下标 i 用来在距离相同时稳定排序\n        nearest = heapq.nsmallest(\n            self.k,\n            ((math.dist(x, s.features), i, s.label) for i, s in enumerate(self._train.samples)),\n        )\n        return majority_vote([label for _, _, label in nearest])\n\n    def predict(self, xs: list[tuple[float, ...]]) -> list[str]:\n        return [self.predict_one(x) for x in xs]\n```\n\n**读代码：** `fit` 只是保存训练集并**返回 `self`**（所以可以链式写 `KNN(5).fit(train)`），这就是「惰性学习」。`predict_one` 里用 **`heapq.nsmallest(k, ...)`** 取距离最小的 $k$ 个，这是数据结构第 8 节的「用堆求 top-$k$」，时间 $O(n\\log k)$，比先全部排序的 $O(n\\log n)$ 好；元组 `(距离, 下标, 标签)` 里放**下标**，是为了距离相同时能稳定地比较（不会去比较字符串标签）；取出标签后交给 `majority_vote`。**构造函数和 `predict_one` 里的各种 `raise`**（`k < 1`、训练集为空、没有 `fit` 就预测）都是让错误尽早、清楚地暴露。另外两处写法：`nsmallest` 的第二个参数是一个**生成器表达式**（「推导式、迭代器与生成器」），不会先建出一个完整的列表；`self._train: Dataset | None = None` 是带类型注解的赋值，名字开头的下划线是「内部使用」的约定。\n\n**指标：`knn/metrics.py`。**\n\n**文件 `knn/metrics.py`**\n\n```python-static\n\"\"\"评估指标。\"\"\"\nfrom collections import Counter\n\n\ndef accuracy(y_true: list[str], y_pred: list[str]) -> float:\n    if len(y_true) != len(y_pred):\n        raise ValueError(f\"长度不一致：{len(y_true)} vs {len(y_pred)}\")\n    if not y_true:\n        raise ValueError(\"没有样本\")\n    return sum(t == p for t, p in zip(y_true, y_pred)) / len(y_true)\n\n\ndef confusion(y_true: list[str], y_pred: list[str]) -> dict[tuple[str, str], int]:\n    \"\"\"(真实标签, 预测标签) -> 次数\"\"\"\n    return dict(Counter(zip(y_true, y_pred)))\n```\n\n**读代码：** `accuracy` 对「长度不一致」和「空输入」都主动抛出 `ValueError`：这是「异常、调试、测试与类型注解」里的原则，**让错误尽早、清楚地暴露**（空输入时静默地返回 0 或者除以零，都会掩盖问题）。`confusion` 返回「（真实标签，预测标签）→ 次数」，也就是**混淆矩阵 (confusion matrix)**。`sum(t == p for t, p in zip(y_true, y_pred))` 里，`zip` 把两个列表一对一配起来，`t == p` 是 `True` / `False`，`sum` 把它们当作 1 / 0 加起来，得到「预测对的个数」。\n\n**数据生成：`gen_data.py`。**\n\n**文件 `gen_data.py`**\n\n```python-static\n\"\"\"生成三个高斯团的人工数据并存成 CSV（用固定种子，保证每次一样）。\"\"\"\nimport csv\nimport random\nimport sys\n\nCENTERS = {\"A\": (0.0, 0.0), \"B\": (3.0, 0.0), \"C\": (1.5, 2.5)}\n\n\ndef main(path: str, n_per_class: int = 100, seed: int = 0) -> None:\n    rng = random.Random(seed)\n    rows = []\n    for label, (cx, cy) in CENTERS.items():\n        for _ in range(n_per_class):\n            rows.append((round(rng.gauss(cx, 1.0), 3), round(rng.gauss(cy, 1.0), 3), label))\n    rng.shuffle(rows)\n    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as f:\n        w = csv.writer(f)\n        w.writerow([\"x1\", \"x2\", \"label\"])\n        w.writerows(rows)\n\n\nif __name__ == \"__main__\":\n    main(sys.argv[1])\n```\n\n**读代码：** 数据是三个相互有重叠的二维高斯团（各 100 个点，标准差都是 1，圆心 A (0, 0)、B (3, 0)、C (1.5, 2.5)，故意让它们有重叠，这样分类不是百分之百可能）。用固定种子，保证每次生成的数据一样。`for label, (cx, cy) in CENTERS.items()` 又是嵌套解包：字典的 `.items()` 给出 `(键, 值)`，值本身是一个坐标元组；`rng.gauss(cx, 1.0)` 按均值 `cx`、标准差 1 生成一个正态分布的随机数。末尾的 `if __name__ == \"__main__\"`（「文件、模块与环境」讲过）让它既能当脚本运行（`python gen_data.py blobs.csv`），又能被导入。\n\n**入口：`train.py`。** 这个文件稍长，分成两部分展示，**按顺序拼起来就是完整的 `train.py`**。第一部分是 `run`，它做事情：\n\n**文件 `train.py`**（第 1 部分，共 2 部分）\n\n```python-static\n\"\"\"命令行入口：读数据 -> 划分 -> 训练 -> 评估 -> 保存结果。\"\"\"\nimport argparse\nimport json\nimport logging\nfrom pathlib import Path\n\nfrom knn.data import Dataset\nfrom knn.metrics import accuracy, confusion\nfrom knn.model import KNN\nfrom knn.split import train_test_split\n\nlog = logging.getLogger(\"train\")\n\n\ndef run(data: str, k: int, test_ratio: float, seed: int) -> dict:\n    ds = Dataset.from_csv(data)\n    train, test = train_test_split(ds, test_ratio, seed)\n    log.info(\"样本总数 %d：训练 %d，测试 %d\", len(ds), len(train), len(test))\n    model = KNN(k).fit(train)\n    feats = lambda d: [s.features for s in d.samples]\n    labels = lambda d: [s.label for s in d.samples]\n    pred = model.predict(feats(test))\n    return {\n        \"k\": k,\n        \"seed\": seed,\n        \"train_accuracy\": accuracy(labels(train), model.predict(feats(train))),\n        \"test_accuracy\": accuracy(labels(test), pred),\n        \"confusion\": {f\"{t}->{p}\": n for (t, p), n in sorted(confusion(labels(test), pred).items())},\n    }\n```\n\n**读代码：** `run` 的流程是：读数据 → 划分 → 训练 → 评估，返回一个字典（准确率和混淆矩阵）。它不碰命令行，所以别的代码（包括测试、实验脚本）能**不通过命令行**就调用它。`logging` 记录样本数（「异常、调试、测试与类型注解」讲过）。`feats = lambda d: [...]` 是把一个 `lambda`（没有名字的小函数，「函数、作用域与递归」讲过）赋给变量，等价于 `def feats(d): return [...]`。返回的字典里 `{f\"{t}->{p}\": n for (t, p), n in sorted(...items())}` 是**字典推导式**加嵌套解包，先用一个小例子看看它做了什么：\n\n```python\nconf = {(\"A\", \"A\"): 3, (\"B\", \"C\"): 1}        # 混淆矩阵的样子：(真实, 预测) -> 次数\nprint(sorted(conf.items()))                  # .items() 给出 (键, 值) 的配对，这里的键本身又是元组\nprint({f\"{t}->{p}\": n for (t, p), n in sorted(conf.items())})   # 字典推导式 + 嵌套解包\n# 输出：[(('A', 'A'), 3), (('B', 'C'), 1)]\n# 输出：{'A->A': 3, 'B->C': 1}\n```\n\n读输出：`conf.items()` 给出 `((真实, 预测), 次数)` 的配对，`sorted` 让它们按键排好；推导式里的 `(t, p), n` 把键和值一层层解包，再把 `t` 和 `p` 拼成 `'A->A'` 这样的字符串当作新字典的键，值是次数 `n`。JSON 的键必须是字符串，所以 `run` 要先做这一步转换（前面「文件、模块与环境」讲过 JSON 里键一律是字符串）。第二部分是 `main`，它解析参数、配置日志：\n\n**文件 `train.py`**（第 2 部分，共 2 部分）\n\n```python-static\ndef main(argv: list[str] | None = None) -> None:\n    p = argparse.ArgumentParser(prog=\"train.py\", description=\"k 近邻分类\")\n    p.add_argument(\"data\", help=\"CSV 文件路径（最后一列 label）\")\n    p.add_argument(\"--k\", type=int, default=5)\n    p.add_argument(\"--test-ratio\", type=float, default=0.3)\n    p.add_argument(\"--seed\", type=int, default=0)\n    p.add_argument(\"--out\", default=None, help=\"把结果写成 JSON 文件\")\n    args = p.parse_args(argv)\n\n    logging.basicConfig(level=logging.INFO, format=\"%(levelname)s %(message)s\")\n    result = run(args.data, args.k, args.test_ratio, args.seed)\n    log.info(\"训练准确率 %.3f，测试准确率 %.3f\", result[\"train_accuracy\"], result[\"test_accuracy\"])\n    if args.out:\n        Path(args.out).write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n        log.info(\"结果已保存到 %s\", args.out)\n\n\nif __name__ == \"__main__\":\n    main()\n```\n\n**读代码：** `main` 用 `argparse`（「文件、模块与环境」讲过）声明了 `data`、`--k`、`--test-ratio`、`--seed`、`--out`，解析后调用 `run`，用日志打印准确率，如果给了 `--out` 就把结果写成 JSON。这是教科书式的结构：**`run` 做事情，`main` 解析参数、配置日志**，最后用 `if __name__ == \"__main__\"` 守卫。"
+  },
+  {
+   "type": "think",
+   "q": "这个项目里，你在哪些地方用了「让错误尽早、清楚地暴露」的原则？举三处，并说明如果不这样做会怎样。",
+   "a": "至少有这几处：\n\n1. **`KNN.__init__` 对 `k < 1` 抛出 `ValueError`**：否则 `k=0` 时 `nsmallest` 返回空，`max()` 在空序列上抛出一个莫名其妙的错误（或在别处悄悄得到错误结果）。\n2. **`predict_one` 在没有 `fit` 时抛出 `RuntimeError(\"请先调用 fit\")`**：否则会得到 `'NoneType' object has no attribute 'samples'` 这种指不到真正原因的报错。\n3. **`Dataset.from_csv` 把「第几行有非数字」写进错误信息，并用 `raise ... from e` 保留原因**：否则只会看到 `could not convert string to float: 'oops'`，在三万行的文件里找不到出错的位置。\n4. **`accuracy` 对「长度不一致」「空输入」抛出异常**：否则 `zip` 会默默截断较长的那个，或者除以零；得到一个看起来正常、实际上错误的数字，下游的人会信以为真。\n5. **`split` 检查 `test_ratio` 的范围**。\n\n共同点：**错误在离原因最近的地方被发现，并且信息里写明了「是什么、在哪里」**。这样调试的时间从「几小时」变成「几秒钟」。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "混淆矩阵",
+     "confusion matrix",
+     "（真实标签，预测标签）的计数表"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "k-NN 为什么被称为**惰性学习**？",
+    "options": [
+     "因为 `fit` 只存储训练数据，所有计算都推迟到预测时才进行",
+     "因为它运行得很慢",
+     "因为它不需要数据",
+     "因为它只能处理很小的数据集"
+    ],
+    "answer": 0,
+    "explain": "k-NN 没有「训练」出参数的过程；每次预测都要重新计算与全部训练点的距离，所以预测慢。"
+   },
+   {
+    "q": "在 `heapq.nsmallest(k, ...)` 中，元组里加一个**下标**作为第二项，主要目的是？",
+    "options": [
+     "因为 `nsmallest` 要求元组有三个元素",
+     "为了加快速度",
+     "为了节省内存",
+     "距离相同时用它决定先后，行为确定，也避免去比较标签"
+    ],
+    "answer": 3,
+    "explain": "元组比较先比第一项，相同才比下一项。加一个单调的计数器是常见的「决胜项」技巧。"
+   },
+   {
+    "q": "要找出 $n$ 个距离里最小的 $k$ 个，用 `heapq.nsmallest` 的时间复杂度大约是？与完整排序相比？",
+    "options": [
+     "$O(k)$",
+     "$O(n\\log k)$，在 $k\\ll n$ 时比完整排序的 $O(n\\log n)$ 更有利",
+     "$O(n^2)$",
+     "和排序完全一样，没有区别"
+    ],
+    "answer": 1,
+    "explain": "用大小为 $k$ 的堆扫一遍，每个元素的堆操作是 $O(\\log k)$。"
+   }
+  ]
+ }
+}

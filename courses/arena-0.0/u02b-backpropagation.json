@@ -1,0 +1,85 @@
+{
+ "id": "u02b",
+ "title": "反向传播（2/3）",
+ "en": "Backpropagation (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解为什么必须**从后往前**算、一个神经元的梯度为什么要对**所有路径求和**（矩阵形式就是乘 $W^\\top$），能用 NumPy 写出一个两层网络的反向传播并做**梯度检验 (gradient checking)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「反向传播」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：单神经元链：把链式法则写出来（约 20 分钟） → 多个神经元：矩阵形式的反向传播（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 单神经元链：把链式法则写出来\n\n先看最简单的网络：**每层只有一个神经元**。对最后一层 $L$，一个训练样本的前向过程是三步，每一步只依赖前一步：\n\n> **标准定义 · 加权输入与前向链 (weighted input & forward chain)**\n>\n> 对第 $l$ 层的神经元，**加权输入 (weighted input)** $z^{(l)}=w^{(l)}a^{(l-1)}+b^{(l)}$，激活值 $a^{(l)}=\\sigma\\big(z^{(l)}\\big)$；最后一层的平方误差代价 $C_0=\\big(a^{(L)}-y\\big)^2$。依赖关系是 $w^{(L)}\\to z^{(L)}\\to a^{(L)}\\to C_0$，所以对权重、偏置、上一层激活值的偏导数各是三个因子（或两个因子）的乘积：\n>\n> $$\\frac{\\partial C_0}{\\partial w^{(L)}}=\\underbrace{a^{(L-1)}}_{\\partial z/\\partial w}\\cdot\\underbrace{\\sigma'\\big(z^{(L)}\\big)}_{\\partial a/\\partial z}\\cdot\\underbrace{2\\big(a^{(L)}-y\\big)}_{\\partial C_0/\\partial a}$$\n>\n> *English: With weighted input z = w·a_prev + b and activation a = σ(z), the cost C0 = (a − y)² depends on w through z and a. The chain rule gives ∂C0/∂w = a_prev · σ'(z) · 2(a − y); similarly ∂C0/∂b = σ'(z) · 2(a − y) and ∂C0/∂a_prev = w · σ'(z) · 2(a − y).*\n\n**白话版：「三个放大倍数连乘」。** $w$ 变一点，$z$ 变多少？倍数是上一层的激活值 $a^{(L-1)}$（上一层越亮，这个权重越有话语权，与视频一致）；$z$ 变一点，$a$ 变多少？倍数是 Sigmoid 在这一点的斜率 $\\sigma'(z)$；$a$ 变一点，代价变多少？倍数是 $2(a-y)$（错得越多越敏感）。偏置的第一个因子是 1（$\\partial z/\\partial b=1$）；而对上一层激活值，第一个因子是 $w$，这个量就是「往前传的要求」。Sigmoid 的导数有个好用的形式 $\\sigma'(z)=\\sigma(z)\\big(1-\\sigma(z)\\big)=a(1-a)$，不用再算指数。\n\n```python\nimport numpy as np\n\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\n# 最简单的网络：每层只有一个神经元，只看最后一层\na_prev, y = 0.5, 1.0               # 上一层的激活值、正确答案\nw, b = 0.8, 0.1                    # 这一层唯一的权重和偏置\n\ndef cost(w, b, a_prev):\n    z = w * a_prev + b             # 加权输入 z\n    a = sigmoid(z)                 # 激活值 a\n    return (a - y) ** 2            # 平方误差 C0\n\n# 前向：把中间量都存下来（反向传播要用）\nz = w * a_prev + b\na = sigmoid(z)\nsp = a * (1 - a)                   # sigmoid 的导数 sigma'(z) = a(1-a)\ndC_da = 2 * (a - y)                # dC/da\n\n# 反向：链式法则，三个因子相乘\ndC_dw = a_prev * sp * dC_da        # dz/dw * da/dz * dC/da\ndC_db = 1.0    * sp * dC_da        # dz/db = 1\ndC_dprev = w   * sp * dC_da        # dz/da_prev = w（这个就是「往前传」的量）\n\n# 用「微调一下看代价变多少」（中心差分）核对\nh = 1e-6\nnum_w = (cost(w + h, b, a_prev) - cost(w - h, b, a_prev)) / (2 * h)\nnum_b = (cost(w, b + h, a_prev) - cost(w, b - h, a_prev)) / (2 * h)\nnum_p = (cost(w, b, a_prev + h) - cost(w, b, a_prev - h)) / (2 * h)\n\nprint(\"z =\", round(z, 4), \" a =\", round(float(a), 4), \" C0 =\", round(float((a - y) ** 2), 4))\nprint(\"dC/dw  公式\", round(float(dC_dw), 6), \" 数值\", round(float(num_w), 6))\nprint(\"dC/db  公式\", round(float(dC_db), 6), \" 数值\", round(float(num_b), 6))\nprint(\"dC/da' 公式\", round(float(dC_dprev), 6), \" 数值\", round(float(num_p), 6))\n# 输出：z = 0.5  a = 0.6225  C0 = 0.1425\n# 输出：dC/dw  公式 -0.088723  数值 -0.088723\n# 输出：dC/db  公式 -0.177447  数值 -0.177447\n# 输出：dC/da' 公式 -0.141958  数值 -0.141958\n```\n\n读输出：$z=0.8\\times0.5+0.1=0.5$，激活值 0.6225，离正确答案 1 还差一截，代价 $0.1425$。三个导数都是负的：**增大 $w$、增大 $b$、增大上一层激活值，都会让代价下降**。公式算出来的数和「真的微调一下」算出来的数在小数点后六位全部吻合，这种「用数值微调核对解析公式」的做法就叫**梯度检验**，后面会用它来验证更大的网络。注意 $\\partial C_0/\\partial b$ 恰好是 $\\partial C_0/\\partial w$ 的 $1/a^{(L-1)}=2$ 倍：$-0.177447=2\\times(-0.088723)$，因为这里 $a^{(L-1)}=0.5$，两个梯度只差第一个因子。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "tIeHLnjs5U8",
+   "title": "视频四：Backpropagation calculus（深度学习第 4 集）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "这一集把上面的推导走一遍，并推广到每层有多个神经元的情形。听的时候抓住两点：一是「往前传」的那一项 $\\partial C_0/\\partial a^{(L-1)}$ 会成为下一轮推导的起点，所以同一个公式可以**一层一层往前套**；二是上一层神经元要对**所有**下一层神经元求和。\n\n### 多个神经元：矩阵形式的反向传播\n\n> **标准定义 · 误差项与反向传播公式 (error term δ & backpropagation equations)**\n>\n> 定义第 $l$ 层的**误差项 (error term)** $\\boldsymbol{\\delta}^{(l)}=\\dfrac{\\partial C}{\\partial\\mathbf{z}^{(l)}}$。对 $\\mathbf{z}^{(l)}=W^{(l)}\\mathbf{a}^{(l-1)}+\\mathbf{b}^{(l)}$，$\\mathbf{a}^{(l)}=\\sigma(\\mathbf{z}^{(l)})$，有：\n>\n> $$\\boldsymbol{\\delta}^{(l)}=\\dfrac{\\partial C}{\\partial\\mathbf{a}^{(l)}}\\odot\\sigma'\\big(\\mathbf{z}^{(l)}\\big),\\quad\\dfrac{\\partial C}{\\partial W^{(l)}}=\\boldsymbol{\\delta}^{(l)}\\big(\\mathbf{a}^{(l-1)}\\big)^{\\top},\\quad\\dfrac{\\partial C}{\\partial\\mathbf{b}^{(l)}}=\\boldsymbol{\\delta}^{(l)},\\quad\\dfrac{\\partial C}{\\partial\\mathbf{a}^{(l-1)}}=\\big(W^{(l)}\\big)^{\\top}\\boldsymbol{\\delta}^{(l)}$$\n>\n> 其中 $\\odot$ 表示逐元素相乘。最后一个式子把梯度传到前一层，是对所有路径求和的矩阵写法：$\\dfrac{\\partial C}{\\partial a^{(l-1)}_k}=\\sum_j W^{(l)}_{jk}\\,\\delta^{(l)}_j$。\n>\n> *English: Define the error term δ = ∂C/∂z at each layer. Then δ = (∂C/∂a) ⊙ σ'(z), ∂C/∂W = δ aᵀ_prev, ∂C/∂b = δ, and the gradient passed to the previous layer is ∂C/∂a_prev = Wᵀ δ, a sum over all paths written as a matrix product.*\n\n**白话版：「每层收一次账，再把账单寄回上一层」。** 每一层做四件事：①拿到从后面寄来的「对我的输出的要求」$\\partial C/\\partial\\mathbf{a}$；②乘上本层激活函数的斜率，得到「对我的加权输入的要求」$\\boldsymbol\\delta$；③这份 $\\boldsymbol\\delta$ 乘上上一层的激活值，就是我自己权重的梯度（上一层越亮，梯度越大）；④把 $W^\\top\\boldsymbol\\delta$ 寄给上一层。**乘 $W^\\top$ 就是「对所有路径求和」**：上一层第 $k$ 个神经元的账单，是它通向每个下一层神经元的权重，乘以那个神经元的 $\\delta$，再全部加起来。注意形状：$\\boldsymbol\\delta$ 是长度为 $m$ 的向量，$\\mathbf{a}^{(l-1)}$ 是长度为 $n$ 的向量，外积 $\\boldsymbol\\delta\\,\\mathbf{a}^\\top$ 恰好是 $m\\times n$，和 $W$ 的形状完全相同，这就是为什么 PyTorch 里 `weight.grad` 的形状总是和 `weight` 一样。\n\n下面用 NumPy 把这四步写成代码：一个 3→4→2 的小网络（共 26 个参数），反向传播算出全部梯度，再用梯度检验证明没写错。\n\n```python\nimport numpy as np\n\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\nrng = np.random.default_rng(0)\nsizes = [3, 4, 2]                                       # 输入 3 维 -> 隐藏 4 -> 输出 2（共 26 个参数）\nWs = [rng.normal(size=(sizes[i + 1], sizes[i])) for i in range(2)]\nbs = [rng.normal(size=sizes[i + 1]) for i in range(2)]\nx = np.array([0.2, -0.5, 0.9])\ny = np.array([1.0, 0.0])\n\ndef forward(Ws, bs, x):\n    \"\"\"前向传播：把每层的 z 和 a 都存下来\"\"\"\n    a_list, z_list = [x], []\n    for W, b in zip(Ws, bs):\n        z_list.append(W @ a_list[-1] + b)\n        a_list.append(sigmoid(z_list[-1]))\n    return a_list, z_list\n\ndef cost(Ws, bs, x, y):\n    return float(np.sum((forward(Ws, bs, x)[0][-1] - y) ** 2))\n\ndef backward(Ws, bs, x, y):\n    \"\"\"反向传播：从最后一层往前，每层复用后一层已经算好的量\"\"\"\n    a_list, z_list = forward(Ws, bs, x)\n    dW, db = [None] * len(Ws), [None] * len(Ws)\n    dC_da = 2 * (a_list[-1] - y)                        # 起点：代价对输出激活值的导数\n    for l in reversed(range(len(Ws))):\n        a = a_list[l + 1]\n        delta = dC_da * a * (1 - a)                     # delta = dC/dz：乘上 sigma'(z)\n        dW[l] = np.outer(delta, a_list[l])              # dC/dW[j,k] = delta[j] * 上一层激活值[k]\n        db[l] = delta                                   # dC/db[j] = delta[j]\n        dC_da = Ws[l].T @ delta                         # 往前传：对所有路径求和 = 乘 W 的转置\n    return dW, db\n\ndW, db = backward(Ws, bs, x, y)\nprint(\"梯度的形状：\", [g.shape for g in dW], [g.shape for g in db])\n\n# 梯度检验：对每个参数各做一次「加 h、减 h」，数值地算偏导数\nh, worst, n_forward = 1e-6, 0.0, 0\nfor l in range(2):\n    for arr, grad in [(Ws[l], dW[l]), (bs[l], db[l])]:\n        for idx in np.ndindex(arr.shape):\n            old = arr[idx]\n            arr[idx] = old + h; c1 = cost(Ws, bs, x, y)\n            arr[idx] = old - h; c2 = cost(Ws, bs, x, y)\n            arr[idx] = old\n            n_forward += 2\n            worst = max(worst, abs((c1 - c2) / (2 * h) - grad[idx]))\nprint(\"数值梯度共做了\", n_forward, \"次前向传播；与反向传播的最大差：\", f\"{worst:.1e}\")\nprint(\"反向传播只需 1 次前向 + 1 次反向\")\n# 输出：梯度的形状： [(4, 3), (2, 4)] [(4,), (2,)]\n# 输出：数值梯度共做了 52 次前向传播；与反向传播的最大差： 1.1e-10\n# 输出：反向传播只需 1 次前向 + 1 次反向\n```\n\n读输出：梯度的形状 `(4, 3)`、`(2, 4)` 和权重一样，`(4,)`、`(2,)` 和偏置一样。梯度检验里数值方法对 26 个参数各做「加 $h$、减 $h$」，共 52 次前向传播，得到的偏导数与反向传播的结果最大只差 $1.1\\times10^{-10}$，这已经是浮点误差的量级，说明公式和代码都对。**以后你自己写任何求导代码，都应该先做这个检验**：它简单、可靠，是排查「训练不收敛到底是不是梯度写错了」的第一步。反向传播本身只用了 1 次前向 + 1 次反向。"
+  },
+  {
+   "type": "think",
+   "q": "**计算题**：单神经元链里，取 $a^{(L-1)}=1$、$w=1$、$b=0$、正确答案 $y=0$，激活函数是 Sigmoid。求 $\\partial C_0/\\partial w$ 和 $\\partial C_0/\\partial b$。（可以对照上面的链式公式，先自己算再看答案）",
+   "a": "前向：$z=wa^{(L-1)}+b=1$，$a=\\sigma(1)\\approx0.7311$。\n\n三个因子：$\\partial z/\\partial w=a^{(L-1)}=1$；$\\sigma'(z)=a(1-a)\\approx0.7311\\times0.2689\\approx0.1966$；$\\partial C_0/\\partial a=2(a-y)=2\\times0.7311=1.4622$。\n\n所以\n\n$$\\frac{\\partial C_0}{\\partial w}=1\\times0.1966\\times1.4622\\approx0.2875$$\n\n偏置的第一个因子是 1，所以 $\\partial C_0/\\partial b=0.1966\\times1.4622\\approx0.2875$，**这里恰好和 $\\partial C_0/\\partial w$ 相等，因为 $a^{(L-1)}=1$**。两个导数都是正的：增大 $w$ 或 $b$ 会让输出更大、离正确答案 0 更远，所以梯度下降会把它们**减小**。可以用 `np` 写几行中心差分验证，结果是 0.28747。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "加权输入",
+     "weighted input $z$",
+     "$z=wa+b$，进激活函数之前的值"
+    ],
+    [
+     "误差项",
+     "error term $\\delta$",
+     "$\\delta=\\partial C/\\partial z$，每层往前传的量"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为什么叫「反向」传播？",
+    "options": [
+     "因为它从输出层开始往前算，每一层复用后一层算好的导数",
+     "因为它把训练数据倒过来喂给网络",
+     "因为它让代价函数变大",
+     "因为它随机打乱参数的顺序"
+    ],
+    "answer": 0,
+    "explain": "先算出代价对输出层的导数，再用链式法则一层层往前推。复用后一层的结果，是它高效的关键。"
+   },
+   {
+    "q": "上一层的神经元 $a^{(L-1)}_k$ 连接着下一层的多个神经元。计算 $\\partial C / \\partial a^{(L-1)}_k$ 时要怎么做？",
+    "options": [
+     "只看权重最大的那条连接",
+     "取所有路径影响的平均值",
+     "它对代价没有影响，结果为 0",
+     "把经过下一层每个神经元的所有路径的影响加起来"
+    ],
+    "answer": 3,
+    "explain": "$a_k$ 通过每一个下一层神经元影响代价，总影响是各条路径之和：$\\sum_j w_{jk}\\,\\sigma'(z_j)\\,\\partial C/\\partial a_j$。"
+   },
+   {
+    "q": "单个样本的代价 $C_0 = (a^{(L)} - y)^2$，那么 $\\dfrac{\\partial C_0}{\\partial a^{(L)}}$ 等于？",
+    "options": [
+     "$(a^{(L)} - y)^2$",
+     "$2(a^{(L)} - y)$",
+     "$2y$",
+     "$a^{(L)} - y$"
+    ],
+    "answer": 1,
+    "explain": "对 $(a-y)^2$ 求导得 $2(a-y)$。这是反向传播的「起点」：输出离目标越远，往回传的信号越强。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "id": "u07b",
+ "title": "变量、数据类型与字符串（2/3）",
+ "en": "Variables, Types & Strings (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "认识基本 **类型 (type)**：`int`、`float`、`str`、`bool`、`None`；会用 `type()`、`isinstance()`，会用算术、比较、逻辑运算符，知道 `==` 与 `=` 的区别、`is None`、以及 `0.1 + 0.2` 为什么不等于 `0.3`",
+  "会做 **类型转换 (type conversion)**（`int()`、`float()`、`str()`），能读懂 `TypeError` 与 `ValueError` 报错长什么样"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「变量、数据类型与字符串」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：类型转换，以及报错长什么样（续）（约 10 分钟） → 字符串：一串字符（约 5 分钟） → 点号与方法：`x.method()` 是什么意思（约 5 分钟） → 字符串的常用方法（约 5 分钟） → f-string：把变量放进文字里（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**为什么必须手动转？看看 `+` 在字符串上做什么：**\n\n```python\nprint(\"5\" + \"3\")      # 字符串相加：拼接\nprint(\"5\" * 3)        # 字符串乘整数：重复\nprint(5 + 3)          # 整数相加：算术\nprint(\"-\" * 20)       # 画分隔线\n# 输出：53\n# 输出：555\n# 输出：8\n# 输出：--------------------\n```\n\n**读输出：** `\"5\" + \"3\"` 得 `53`：字符串的 `+` 是**拼接**；`\"5\" * 3` 得 `555`：字符串乘整数是**重复**；`5 + 3` 是 `8`，是算术；`\"-\" * 20` 打出一条 20 个横线的分隔线。同样一个 `+`，因为两边的**类型不同**，做的事情完全不同，所以 Python 不会替你猜。\n\n**两种最常见的报错：**\n\n```python\nprint(\"箱数：\" + qty)       # 字符串 + 整数，Python 不会替你猜\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(\"箱数：\" + qty)       # 字符串 + 整数，Python 不会替你猜\n# 输出：TypeError: can only concatenate str (not \"int\") to str\n```\n\n**读输出：** 怎么读一个报错：**从最后一行往上读**。最后一行 `TypeError: can only concatenate str (not \"int\") to str`：**种类**是 `TypeError`（类型不对），**原因**是「只能把字符串拼到字符串上，不能拼整数」。往上是 `File \"<cell>\", line 1`：出错在**第 1 行**，再上面是那一行代码本身。解决办法：先把整数转成字符串 `\"箱数：\" + str(qty)`，或者用后面的 f-string。\n\n```python\nprint(int(\"abc\"))           # 类型对（字符串可以交给 int），内容不行\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(int(\"abc\"))           # 类型对（字符串可以交给 int），内容不行\n# 输出：ValueError: invalid literal for int() with base 10: 'abc'\n```\n\n**读输出：** `ValueError: invalid literal for int() with base 10: 'abc'`：**这次是 `ValueError`**：给 `int()` 的是字符串，类型没问题（`int(\"42\")` 就行），但 `'abc'` 这个**内容**没法当成整数。区别记住：**`TypeError` 是「种类」不对，`ValueError` 是「种类对、内容不对」。**\n\n```python\nprint(int(\"3.5\"))           # \"3.5\" 不是整数的写法\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(int(\"3.5\"))           # \"3.5\" 不是整数的写法\n# 输出：ValueError: invalid literal for int() with base 10: '3.5'\n```\n\n**读输出：** 同样的 `ValueError`：`\"3.5\"` 看起来像数，但**不是整数的写法**，`int()` 不接受。要把 `\"3.5\"` 变成整数，先转成 `float`：\n\n```python\nprint(int(float(\"3.5\")))    # 先转 float，再转 int\n# 输出：3\n```\n\n**读输出：** `3`。`int(float(\"3.5\"))` 先得 `3.5`，再砍掉小数得 `3`。后面还会看到 `NameError`、`IndexError`、`AttributeError` 等等，读法都一样：**最后一行 = 种类 + 原因，往上 = 出错的位置**。「条件、循环与读懂报错」那一节会专门练习怎么读和怎么处理它们。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "KrToaEvDzdk",
+   "title": "视频一：Python Tutorial for Beginners: Understand Python Data Types in 10 minutes（365 Data Science）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### 字符串：一串字符\n\n> **标准定义 · 字符串 (string, `str`)**\n>\n> **字符串**是**有顺序的一串字符**，用单引号 `'…'`、双引号 `\"…\"` 或三个连续的引号（`'''…'''`，三个双引号也行）括起来。字符串里每个字符有一个**下标 (index)**，**从 0 开始**；负数下标从末尾倒着数。字符串是**不可变的 (immutable)**：创建之后不能修改其中的字符，只能创建新的字符串。\n>\n> *English: A string is an ordered sequence of characters written in quotes. Characters are indexed from 0 (negative indexes count from the end). Strings are immutable: you cannot change them in place, only build new ones.*\n\n**白话版：「一排编了号的格子，每格一个字，焊死了」。** 你可以数第几格是什么字（索引、切片），但不能把某一格拆下来换一个（不可变）。\n\n**引号：** 单引号、双引号**完全等价**，选哪个看里面的内容：\n\n```python\na = 'single'\nb = \"double\"\nprint(a, b, a == 'single')    # 单引号双引号完全等价\nc = \"It's fine\"               # 内容里有单引号，就用双引号包起来\nd = 'say \"hi\"'\nprint(c, d)\n# 输出：single double True\n# 输出：It's fine say \"hi\"\n```\n\n**读输出：** `single double True`：`'single'` 和 `\"single\"` 是同一个字符串。`\"It's fine\"` 里有单引号，所以用双引号把它包起来；`'say \"hi\"'` 里有双引号，就用单引号包。显示 `It's fine say \"hi\"`。\n\n**转义：** 如果想在字符串里放一个「有特殊含义的字符」，用反斜杠 `\\` 开头的**转义序列 (escape sequence)**：\n\n```python\nprint(\"line1\\nline2\")       # \\n：换行\nprint(\"a\\tb\")               # \\t：制表符（Tab）\nprint(\"C:\\\\data\")          # \\\\：一个真正的反斜杠\nprint(\"\"\"多行字符串\n可以直接换行\"\"\")           # 三个引号：里面可以直接换行\n# 输出：line1\n# 输出：line2\n# 输出：a\tb\n# 输出：C:\\data\n# 输出：多行字符串\n# 输出：可以直接换行\n```\n\n**读输出：** `\\n` 是**换行**，所以 `line1`、`line2` 分成了两行；`\\t` 是**制表符**（Tab），显示成一段空白；`\\\\` 是**一个真正的反斜杠**，所以 `\"C:\\\\data\"` 显示 `C:\\data`（Windows 路径里的反斜杠要写两个）；用**三个引号**括起来的字符串可以直接跨行，两行文字原样显示。\n\n**下标：** \n\n```python\nsku = \"OMRON-0042\"\nprint(sku[0], sku[1], sku[-1], sku[-2])    # 下标从 0 开始；负数从末尾倒着数\nprint(len(sku))                            # len：字符个数\n# 输出：O M 2 4\n# 输出：10\n```\n\n**读输出：** `OMRON-0042` 的字符依次是 `O`(0) `M`(1) `R`(2) `O`(3) `N`(4) `-`(5) `0`(6) `0`(7) `4`(8) `2`(9)，所以 `sku[0]` 是 `O`、`sku[1]` 是 `M`；负数从末尾倒着数：`sku[-1]` 是最后一个字符 `2`，`sku[-2]` 是倒数第二个 `4`，显示 `O M 2 4`。`len(sku)` 是 `10`：一共 10 个字符。**下标从 0 开始**，所以最后一个字符的下标是 `len - 1`，不是 `len`。\n\n**切片：** 取一段，用 `[start:stop:step]`：\n\n> **标准定义 · 切片 (slice)**\n>\n> `s[start:stop]` 取下标从 `start` 到 `stop - 1` 的字符，**含头不含尾**；`start` 省略表示从头开始，`stop` 省略表示一直到末尾；`s[start:stop:step]` 中的 `step` 是**步长**，负数表示倒着走。切片的结果是一个**新的字符串**。\n>\n> *English: s[start:stop] returns the characters from index start up to but not including stop. Omitted ends default to the beginning or end; step sets the stride (negative = backwards).*\n\n**白话版：「像切面包」**：「含头不含尾」就是刀落在两个字符**之间**，数字标的是刀的位置。\n\n```python\nprint(sku[0:5])       # 下标 0,1,2,3,4：含头不含尾\nprint(sku[:5])        # 省略开头 = 从头开始\nprint(sku[6:])        # 省略结尾 = 一直到最后\nprint(sku[-4:])       # 最后 4 个字符\nprint(sku[::2])       # 步长 2：隔一个取一个\nprint(sku[::-1])      # 步长 -1：倒过来\nprint(sku[3:99])      # 切片越界不报错，取到哪算哪\n# 输出：OMRON\n# 输出：OMRON\n# 输出：0042\n# 输出：0042\n# 输出：ORN04\n# 输出：2400-NORMO\n# 输出：ON-0042\n```\n\n**读输出：** `sku[0:5]` 是下标 0 到 4，`OMRON`；`sku[:5]` 省略开头，同样 `OMRON`；`sku[6:]` 从下标 6 到最后，`0042`；`sku[-4:]` 是最后 4 个字符，也是 `0042`；`sku[::2]` 步长 2，取下标 0、2、4、6、8，得 `ORN04`；`sku[::-1]` 步长 -1，倒过来得 `2400-NORMO`；`sku[3:99]` 越界的切片**不报错**，取到末尾为止，`ON-0042`。**单个下标越界会报错**：\n\n```python\nprint(sku[99])        # 单个下标越界，会报错\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(sku[99])        # 单个下标越界，会报错\n# 输出：IndexError: string index out of range\n```\n\n**读输出：** `IndexError: string index out of range`：「下标超出范围」。`IndexError` 以后会在列表上看到更多。\n\n**不可变：**\n\n```python\nsku[0] = \"X\"          # 想直接改第 0 个字符\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    sku[0] = \"X\"          # 想直接改第 0 个字符\n# 输出：TypeError: 'str' object does not support item assignment\n```\n\n**读输出：** `TypeError: 'str' object does not support item assignment`：「字符串对象不支持对其中某一项赋值」，也就是不能就地修改。想要「改」，只能造一个**新字符串**，再让名字指向它：\n\n```python\nnew_sku = \"X\" + sku[1:]     # 用切片拼出一个新字符串\nprint(new_sku, sku)         # 原来的 sku 没有变\nsku = \"OMRON-0043\"          # 想「改」，就是把名字贴到新字符串上\nprint(sku)\n# 输出：XMRON-0042 OMRON-0042\n# 输出：OMRON-0043\n```\n\n**读输出：** `XMRON-0042 OMRON-0042`：`\"X\" + sku[1:]` 拼出新字符串（`X` 加上从下标 1 开始的剩余部分），原来的 `sku` 还是 `OMRON-0042`，没被改动。然后 `sku = \"OMRON-0043\"` 把名字贴到另一个新字符串上，`print(sku)` 显示 `OMRON-0043`。这就是「**标签可以换，字符串本身不能改**」。\n\n**`len` 与 `in`：**\n\n```python\nprint(len(\"OMRON\"), len(\"\"), len(\"仓库\"))\nprint(\"RON\" in sku, \"ron\" in sku, \"XYZ\" not in sku)    # in：是不是它的一部分\n# 输出：5 0 2\n# 输出：True False True\n```\n\n**读输出：** `len(\"OMRON\")` 是 `5`，`len(\"\")`（空字符串）是 `0`，`len(\"仓库\")` 是 `2`：一个汉字也算一个字符。`\"RON\" in sku` 是 `True`（`RON` 是 `OMRON-0043` 的一部分），`\"ron\" in sku` 是 `False`（区分大小写），`\"XYZ\" not in sku` 是 `True`。`in` 检查「是不是它的一部分」。\n\n### 点号与方法：`x.method()` 是什么意思\n\n前面一直在用 `len(s)` 这种「函数名(东西)」的写法。接下来要读懂另一种写法：`s.upper()`，**东西、点号、名字、括号**。\n\n> **标准定义 · 方法 (method) 与点号 (dot)**\n>\n> Python 里每个值都是一个**对象 (object)**，它有自己的**类型**；每种类型自带一组**方法 (method)**：属于这个类型的专用函数。**`对象.方法名(参数)`** 的意思是：「**用这个对象，调用它的类型里的这个方法**」。点号可以读成「**的**」或「**里面的**」：`s.upper` = 「s 的 upper」。**函数 (function)** 则不属于某个类型，直接 `函数名(参数)` 调用，如 `len(s)`、`print(x)`。\n>\n> *English: Every value is an object of some type, and each type comes with methods. `obj.method(args)` calls that type's method on obj. A function like len() or print() is not tied to a type.*\n\n**白话版：「对象会的技能」。** `len(s)` 像是外面请来的通用工具：谁来都能量长度；`s.upper()` 则是**这个字符串自己会的技能**：只有字符串会 `upper`，整数不会。`.get`、`.upper` 都是方法。名字「方法」来自面向对象编程：「对象有什么办法」。\n\n```python\nname = \"  omron healthcare  \"\nprint(name.upper())\nprint(name.strip())               # strip：去掉两头的空白\nprint(name)                       # 原字符串没变（字符串不可变）\nclean = name.strip().upper()      # 方法可以连着用，从左往右一步步算\nprint(clean)\nprint(\"SG-DC\".lower())\n# 输出：  OMRON HEALTHCARE  \n# 输出：omron healthcare\n# 输出：  omron healthcare  \n# 输出：OMRON HEALTHCARE\n# 输出：sg-dc\n```\n\n**读输出：** `name.upper()` 全部变大写，注意两头的空格还在；`name.strip()` 去掉两头的空白；然后 `print(name)` 显示的还是**原来带空格的字符串**：方法**不会修改原字符串**（字符串不可变），而是**返回一个新字符串**。`name.strip().upper()` 是**连着调用**，从左往右一步步算：先 `strip` 得到 `\"omron healthcare\"`，再对这个新字符串 `upper`，得到 `OMRON HEALTHCARE`。最后 `\"SG-DC\".lower()` 直接对一个字符串字面值调用方法，得 `sg-dc`，完全可以。\n\n**方法其实就是「属于某个类型的函数」。**\n\n```python\nprint(\"abc\".upper())\nprint(str.upper(\"abc\"))      # 同一件事的完整写法：类型名.方法名(对象)\n# 输出：ABC\n# 输出：ABC\n```\n\n**读输出：** 两行都是 `ABC`：`\"abc\".upper()` 就是 `str.upper(\"abc\")` 的简写：「类型名.方法名(对象)」，所以才说 `upper` 是 `str` 这个类型的方法。\n\n**不是这个类型的值，没有这个方法：**\n\n```python\nn = 5\nprint(n.upper())      # 整数没有 upper 方法\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 2, in <module>\n# 输出：    print(n.upper())      # 整数没有 upper 方法\n# 输出：AttributeError: 'int' object has no attribute 'upper'\n```\n\n**读输出：** `AttributeError: 'int' object has no attribute 'upper'`：「整数对象没有叫 `upper` 的属性」。**属性 (attribute)** 是对象「身上带的东西」的总称，方法是其中一种。这就是「方法属于类型」的证据：`str` 有 `upper`，`int` 没有。\n\n**怎么知道一个类型有哪些方法？用 `dir()` 和 `help()`：**\n\n```python\nprint(dir(\"abc\")[-10:])      # 字符串类型的方法名，最后 10 个（按字母排序）\nprint(dir(dict)[-11:])       # dict 是字典类型的名字（「容器」那一节讲），它的方法里有 get\n# 输出：['rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']\n# 输出：['clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']\n```\n\n**读输出：** `dir(x)` 列出 `x`（可以是一个值，也可以是一个类型）的所有**属性名**，按字母排序。第一行是 `str` 的最后 10 个：`rstrip`、`split`、`splitlines`、`startswith`、`strip`、`swapcase`、`title`、`translate`、`upper`、`zfill`；排在前面的、两头带**双下划线**的（如 `__len__`）是 Python 内部使用的，先忽略。第二行是**字典**（`dict`，「容器」那一节才讲）的方法：`clear`、`copy`、`fromkeys`、`get`、`items`、`keys`、`pop`、`popitem`、`setdefault`、`update`、`values`。所以 `d.get(...)` 里的 `get` **不是 Python 里一个叫「默认值」的特殊功能**，它就是**字典类型自带的一个方法，名字叫 `get`**（它的第二个参数可以给「找不到时的默认值」），和 `str` 有 `upper` 是同一回事；除了 `get`，字典还有 `keys`、`values`、`items`、`pop`、`update` 等，这一节不展开，下一节再讲。\n\n```python\nhelp(str.strip)\n# 输出：Help on method_descriptor:\n# 输出：\n# 输出：strip(self, chars=None, /)\n# 输出：    Return a copy of the string with leading and trailing whitespace removed.\n# 输出：    \n# 输出：    If chars is given and not None, remove characters in chars instead.\n```\n\n**读输出：** `help(...)` 打印某个东西的**官方说明**（英文）：`strip(self, chars=None, /)` 是它的「签名」，下面一行说「返回一个去掉首尾空白的**副本**」（再次强调：返回副本，不改原字符串）；`chars=None` 说明有一个**可选参数**，给了就去掉这些字符。（不同 Python 版本，这里的措辞和格式会略有不同。）**遇到不认识的方法，先 `dir()` 找名字，再 `help()` 看用法**，这是你以后不靠问别人、自己学习 Python 的基本功。\n\n**点号的另一种用法：** 前面的 `keyword.kwlist` 里也有点号，那里点号左边是**模块（工具箱）**，意思同样是「里面的」。以后在 `math.sqrt(2)`、`x.shape` 里看到的也是同一个符号：**`A.B` 就是「A 里面（或 A 自带）的 B」**，如果后面跟括号，就是调用它。\n\n### 字符串的常用方法\n\n| 方法 | 作用 | 例子 → 结果 |\n|---|---|---|\n| `s.upper()` / `s.lower()` | 全部大写 / 小写 | `\"Sg\".upper()` → `'SG'` |\n| `s.strip()` | 去掉两头的空白（`lstrip` / `rstrip` 只去一头） | `\" a \".strip()` → `'a'` |\n| `s.split(sep)` | 按 `sep` 切开，得到一串字符串 | `\"a,b\".split(\",\")` → `['a', 'b']` |\n| `sep.join(parts)` | 用 `sep` 把一串字符串连起来 | `\"-\".join([\"a\", \"b\"])` → `'a-b'` |\n| `s.replace(old, new)` | 把每个 `old` 换成 `new` | `\"a-b\".replace(\"-\", \"_\")` → `'a_b'` |\n| `s.startswith(x)` / `s.endswith(x)` | 是否以 `x` 开头 / 结尾 | `\"sg-1\".startswith(\"sg\")` → `True` |\n| `s.find(x)` | 第一次出现的下标，找不到是 `-1` | `\"sg-1\".find(\"1\")` → `3` |\n| `s.count(x)` | `x` 出现几次 | `\"a-b-c\".count(\"-\")` → `2` |\n\n```python\nprint(\"sg-dc-01\".replace(\"-\", \"_\"))                       # 把每个 \"-\" 换成 \"_\"\nprint(\"sg-dc-01\".startswith(\"sg\"), \"sg-dc-01\".endswith(\"02\"))\nprint(\"sg-dc-01\".find(\"dc\"), \"sg-dc-01\".find(\"xx\"))       # 找到返回位置；找不到返回 -1\nprint(\"sg-dc-01\".count(\"-\"))                              # 数出现几次\n# 输出：sg_dc_01\n# 输出：True False\n# 输出：3 -1\n# 输出：2\n```\n\n**读输出：** `replace(\"-\", \"_\")` 把 `sg-dc-01` 里每个 `-` 换成 `_`，得 `sg_dc_01`；`startswith(\"sg\")` 是 `True`，`endswith(\"02\")` 是 `False`（它以 `01` 结尾）；`find(\"dc\")` 是 `3`（`dc` 从下标 3 开始），`find(\"xx\")` 找不到，返回 `-1`（不报错，所以用它做判断时要记得和 `-1` 比较）；`count(\"-\")` 是 `2`。\n\n**`split` 与 `join` 是一对反操作：**\n\n```python\nline = \"SKU-001,24,Singapore\"\nparts = line.split(\",\")          # 按逗号切开，得到一串字符串（列表，「容器」那一节细讲）\nprint(parts)\nprint(\" | \".join(parts))         # join：用左边这个字符串，把它们连起来\nprint(\"a  b   c\".split())        # 不给参数：按任意空白切，多余空格自动忽略\n# 输出：['SKU-001', '24', 'Singapore']\n# 输出：SKU-001 | 24 | Singapore\n# 输出：['a', 'b', 'c']\n```\n\n**读输出：** `line.split(\",\")` 把一行「用逗号隔开」的文字切成三段，得到 `['SKU-001', '24', 'Singapore']`：方括号包起来的一串值叫**列表 (list)**，「容器」那一节细讲。`\" | \".join(parts)` 把这三段用 ` | ` 连起来：`SKU-001 | 24 | Singapore`，注意 `join` 是**分隔符的方法**，写在前面。`\"a  b   c\".split()` 不给参数：按任意长度的空白切，多余的空格自动忽略，得 `['a', 'b', 'c']`。读文本数据时 `split` 几乎每次都用。\n\n**新手最常犯的错：忘了接住返回值。**\n\n```python\ntitle = \" hello \"\ntitle.strip()              # 算出了新字符串，但没有人接住它\nprint(repr(title))         # repr：连引号一起显示，能看出空格还在\ntitle = title.strip()      # 想保留结果，要把它赋值回去\nprint(repr(title))\n# 输出：' hello '\n# 输出：'hello'\n```\n\n**读输出：** `' hello '` 然后 `'hello'`。`repr(x)` 显示带引号的形式，能看出空格。第一次 `title.strip()` 算出了新字符串，但**没有赋值给任何名字**，结果就丢了，所以 `title` 还是 `' hello '`。要保留，必须 `title = title.strip()`。**因为字符串不可变，所有「看起来像在修改」的方法，都是在返回新字符串。**\n\n### f-string：把变量放进文字里\n\n> **标准定义 · f-string（格式化字符串字面值）**\n>\n> 在字符串前面加 **`f`**（formatted 的缩写），字符串里 **`{表达式}`** 的位置会被表达式的值替换：`f\"{name}: {qty} pcs\"`。大括号里冒号后面可以跟**格式说明 (format spec)**：`{x:.2f}`（保留 2 位小数）、`{x:,}`（千分位）、`{x:>8}`（右对齐，总宽 8）、`{x:<8}` 左对齐、`{x:^8}` 居中、`{x:03d}`（整数补零到 3 位）、`{x:.1%}`（百分数）。\n>\n> *English: An f-string is a string prefixed with f; each {expression} inside is evaluated and inserted. After a colon you can add a format spec such as .2f, comma grouping, or alignment.*\n\n**白话版：「填空模板」。** 比 `\"箱数：\" + str(qty)` 简单得多，也不用手动转类型。\n\n```python\nname, qty, price = \"BP monitor\", 24, 18.5\nprint(f\"{name}: {qty} pcs\")\nprint(f\"总价 = {qty * price}\")       # 大括号里可以是任何表达式\nprint(f\"{name.upper()[:2]}\")         # 可以调用方法、切片\nprint(f\"{qty=}\")                      # 调试好用：同时显示名字和值\nprint(f\"{{qty}} 双大括号显示成一个字面的大括号\")\n# 输出：BP monitor: 24 pcs\n# 输出：总价 = 444.0\n# 输出：BP\n# 输出：qty=24\n# 输出：{qty} 双大括号显示成一个字面的大括号\n```\n\n**读输出：** `{name}` 和 `{qty}` 被替换成变量的值，`BP monitor: 24 pcs`；大括号里**可以放任何表达式**：`{qty * price}` 是 24 × 18.5 = `444.0`；`{name.upper()[:2]}` 先 `upper` 再切片取前两个字符，`BP`；`{qty=}` 是调试用的小技巧，同时显示名字和值 `qty=24`；想显示一个真正的大括号，要写两个 `{{ }}`。"
+  },
+  {
+   "type": "think",
+   "q": "**和后续内容的联系：** 以后在 PyTorch 代码里会看到 `x.shape`、`x.sum()`、`x.to('cuda')`、`loss.item()`。(1) 用这一节学的词汇，说明点号在这些表达式里是什么意思，以及遇到不认识的 `x.something(...)` 怎么自己查。(2) 为什么比较两个浮点数张量是否「相等」，通常不用 `==`？",
+   "a": "(1) `x.shape`、`x.sum()` 和 `s.upper()` 是**同一种结构**：`x` 是一个对象（张量），点号读作「x 的」，`shape` 是它身上带的一个**属性**（没有括号，是个值），`sum()`、`to(...)`、`item()` 是它的类型（`Tensor`）里定义的**方法**（有括号，是调用）。方法属于类型：张量有 `.sum()`，整数没有，对整数 `n.sum()` 会得到 `AttributeError`。遇到不认识的，用 `dir(x)` 列出所有属性和方法名，用 `help(x.sum)` 看说明，也可以去 PyTorch 官方文档查 `Tensor` 的页面。\n\n(2) 浮点数在二进制里只能存近似值，运算之后会有微小误差，像 `0.1 + 0.2 != 0.3`；`float32` 精度比 Python 的 `float`（64 位）还低，误差更明显。所以比较两个张量应当问「是不是**足够接近**」（如 `torch.allclose(a, b)`，原理就是 `abs(a - b) < 容差`），而不是问「是不是**完全相等**」。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "切片",
+     "slice",
+     "`s[start:stop:step]`，含头不含尾，得到新字符串"
+    ],
+    [
+     "不可变",
+     "immutable",
+     "创建后不能就地修改（字符串）；想改只能造新的"
+    ],
+    [
+     "方法",
+     "method",
+     "属于某个类型的函数，用 `对象.方法名(...)` 调用"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`int(\"abc\")` 和 `\"abc\" + 1` 各会抛出什么错误？",
+    "options": [
+     "前者 `ValueError`（内容不能转成整数），后者 `TypeError`（字符串和整数不能相加）",
+     "都是 `ValueError`",
+     "都是 `TypeError`",
+     "前者 `TypeError`，后者 `ValueError`"
+    ],
+    "answer": 0,
+    "explain": "`int(\"abc\")`：字符串可以交给 `int`，但 `\"abc\"` 的内容不合法，所以是 `ValueError`。`\"abc\" + 1`：字符串和整数之间不支持 `+`，种类不对，所以是 `TypeError`。"
+   },
+   {
+    "q": "`sku = \"OMRON-0042\"`，那么 `sku[-4:]` 的结果是？",
+    "options": [
+     "`'OMRON'`",
+     "`'N-00'`",
+     "`'004'`",
+     "`'0042'`"
+    ],
+    "answer": 3,
+    "explain": "负数下标从末尾倒着数，`-4` 是倒数第 4 个字符（`0`），省略结尾表示一直取到最后，所以得到最后 4 个字符 `'0042'`。"
+   },
+   {
+    "q": "`name = \"  hi  \"`，单独执行一行 `name.upper()` 之后，`name` 的值是？",
+    "options": [
+     "`'  HI  '`",
+     "`'  hi  '`，没有变化",
+     "`'HI'`",
+     "报错，因为字符串不可变"
+    ],
+    "answer": 1,
+    "explain": "字符串不可变，方法返回的是一个新字符串，不会修改 `name`。那一行把新字符串算出来后没有被任何名字接住，就丢掉了；想保留要写 `name = name.upper()`。方法本身并不报错。"
+   }
+  ]
+ }
+}

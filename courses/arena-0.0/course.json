@@ -1,118 +1,403 @@
 {
- "id": "arena-0.0",
- "title": "ARENA 0.0 前置知识",
- "subtitle": "神经网络、线性代数、概率、微积分、信息论、Python / PyTorch、einops —— 进入 ARENA 之前要打好的地基",
- "source": {
-  "name": "ARENA [0.0] Prerequisites",
-  "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
- },
- "units": [
-  {
-   "id": "u01",
-   "title": "神经网络是什么",
-   "en": "Neural Networks",
-   "minutes": 85,
-   "file": "u01-neural-networks.json"
+  "id": "arena-0.0",
+  "title": "ARENA 0.0 前置知识",
+  "subtitle": "神经网络、线性代数、概率、微积分、信息论、Python / PyTorch、einops —— 进入 ARENA 之前要打好的地基",
+  "source": {
+    "name": "ARENA [0.0] Prerequisites",
+    "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
   },
-  {
-   "id": "u02",
-   "title": "反向传播",
-   "en": "Backpropagation",
-   "minutes": 100,
-   "file": "u02-backpropagation.json"
-  },
-  {
-   "id": "u03",
-   "title": "线性变换与矩阵乘法",
-   "en": "Linear Transformations & Matrix Multiplication",
-   "minutes": 95,
-   "file": "u03-linear-transformations.json"
-  },
-  {
-   "id": "u04",
-   "title": "矩阵的基本性质：秩、迹、行列式、转置",
-   "en": "Rank, Trace, Determinant, Transpose",
-   "minutes": 100,
-   "file": "u04-matrix-properties.json"
-  },
-  {
-   "id": "u05",
-   "title": "基与基变换",
-   "en": "Bases, Dot Products & Change of Basis",
-   "minutes": 105,
-   "file": "u05-bases.json"
-  },
-  {
-   "id": "u06",
-   "title": "特征值与奇异值分解",
-   "en": "Eigenvalues & SVD",
-   "minutes": 110,
-   "file": "u06-eigen-svd.json"
-  },
-  {
-   "id": "u07",
-   "title": "概率与统计：期望、方差、正态分布",
-   "en": "Probability & Statistics",
-   "minutes": 115,
-   "file": "u07-probability.json"
-  },
-  {
-   "id": "u08",
-   "title": "微积分：导数、链式法则与损失函数",
-   "en": "Calculus for Machine Learning",
-   "minutes": 95,
-   "file": "u08-calculus.json"
-  },
-  {
-   "id": "u09",
-   "title": "信息论：熵、交叉熵、KL 散度",
-   "en": "Information Theory",
-   "minutes": 90,
-   "file": "u09-information-theory.json"
-  },
-  {
-   "id": "u10",
-   "title": "Python 与 NumPy 基础",
-   "en": "Python & NumPy",
-   "minutes": 110,
-   "file": "u10-python-numpy.json"
-  },
-  {
-   "id": "u11",
-   "title": "PyTorch 入门：张量与自动求导",
-   "en": "PyTorch Basics: Tensors & Autograd",
-   "minutes": 100,
-   "file": "u11-pytorch.json"
-  },
-  {
-   "id": "u12",
-   "title": "开发工具：VS Code、Jupyter、Git、Conda",
-   "en": "Developer Tools",
-   "minutes": 95,
-   "file": "u12-dev-tools.json"
-  },
-  {
-   "id": "u13",
-   "title": "einops：重排、归约、重复",
-   "en": "einops: rearrange / reduce / repeat",
-   "minutes": 85,
-   "file": "u13-einops.json"
-  },
-  {
-   "id": "u14",
-   "title": "广播与张量操作",
-   "en": "Broadcasting & Tensor Manipulation",
-   "minutes": 100,
-   "file": "u14-broadcasting.json"
-  },
-  {
-   "id": "u15",
-   "title": "einsum 与高级索引",
-   "en": "einsum & Advanced Indexing",
-   "minutes": 95,
-   "file": "u15-einsum-indexing.json"
-  }
- ],
- "order": 3,
- "order_note": "主线技术课，学完前两门再开始（它的第 10–15 节与 Python 基础有重叠，熟了可以略读）"
+  "units": [
+    {
+      "id": "u01",
+      "title": "神经网络是什么（1/2）",
+      "en": "Neural Networks (1/2)",
+      "minutes": 45,
+      "file": "u01-neural-networks.json",
+      "whole": "u01-neural-networks.json"
+    },
+    {
+      "id": "u01b",
+      "title": "神经网络是什么（2/2）",
+      "en": "Neural Networks (2/2)",
+      "minutes": 45,
+      "file": "u01b-neural-networks.json",
+      "whole": "u01-neural-networks.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u02",
+      "title": "反向传播（1/3）",
+      "en": "Backpropagation (1/3)",
+      "minutes": 35,
+      "file": "u02-backpropagation.json",
+      "whole": "u02-backpropagation.json"
+    },
+    {
+      "id": "u02b",
+      "title": "反向传播（2/3）",
+      "en": "Backpropagation (2/3)",
+      "minutes": 40,
+      "file": "u02b-backpropagation.json",
+      "whole": "u02-backpropagation.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u02c",
+      "title": "反向传播（3/3）",
+      "en": "Backpropagation (3/3)",
+      "minutes": 35,
+      "file": "u02c-backpropagation.json",
+      "whole": "u02-backpropagation.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u03",
+      "title": "线性变换与矩阵乘法（1/3）",
+      "en": "Linear Transformations & Matrix Multiplication (1/3)",
+      "minutes": 40,
+      "file": "u03-linear-transformations.json",
+      "whole": "u03-linear-transformations.json"
+    },
+    {
+      "id": "u03b",
+      "title": "线性变换与矩阵乘法（2/3）",
+      "en": "Linear Transformations & Matrix Multiplication (2/3)",
+      "minutes": 40,
+      "file": "u03b-linear-transformations.json",
+      "whole": "u03-linear-transformations.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u03c",
+      "title": "线性变换与矩阵乘法（3/3）",
+      "en": "Linear Transformations & Matrix Multiplication (3/3)",
+      "minutes": 30,
+      "file": "u03c-linear-transformations.json",
+      "whole": "u03-linear-transformations.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u04",
+      "title": "矩阵的基本性质：秩、迹、行列式、转置（1/3）",
+      "en": "Rank, Trace, Determinant, Transpose (1/3)",
+      "minutes": 45,
+      "file": "u04-matrix-properties.json",
+      "whole": "u04-matrix-properties.json"
+    },
+    {
+      "id": "u04b",
+      "title": "矩阵的基本性质：秩、迹、行列式、转置（2/3）",
+      "en": "Rank, Trace, Determinant, Transpose (2/3)",
+      "minutes": 30,
+      "file": "u04b-matrix-properties.json",
+      "whole": "u04-matrix-properties.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u04c",
+      "title": "矩阵的基本性质：秩、迹、行列式、转置（3/3）",
+      "en": "Rank, Trace, Determinant, Transpose (3/3)",
+      "minutes": 35,
+      "file": "u04c-matrix-properties.json",
+      "whole": "u04-matrix-properties.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u05",
+      "title": "基与基变换（1/3）",
+      "en": "Bases, Dot Products & Change of Basis (1/3)",
+      "minutes": 30,
+      "file": "u05-bases.json",
+      "whole": "u05-bases.json"
+    },
+    {
+      "id": "u05b",
+      "title": "基与基变换（2/3）",
+      "en": "Bases, Dot Products & Change of Basis (2/3)",
+      "minutes": 45,
+      "file": "u05b-bases.json",
+      "whole": "u05-bases.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u05c",
+      "title": "基与基变换（3/3）",
+      "en": "Bases, Dot Products & Change of Basis (3/3)",
+      "minutes": 40,
+      "file": "u05c-bases.json",
+      "whole": "u05-bases.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u06",
+      "title": "特征值与奇异值分解（1/3）",
+      "en": "Eigenvalues & SVD (1/3)",
+      "minutes": 40,
+      "file": "u06-eigen-svd.json",
+      "whole": "u06-eigen-svd.json"
+    },
+    {
+      "id": "u06b",
+      "title": "特征值与奇异值分解（2/3）",
+      "en": "Eigenvalues & SVD (2/3)",
+      "minutes": 45,
+      "file": "u06b-eigen-svd.json",
+      "whole": "u06-eigen-svd.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u06c",
+      "title": "特征值与奇异值分解（3/3）",
+      "en": "Eigenvalues & SVD (3/3)",
+      "minutes": 35,
+      "file": "u06c-eigen-svd.json",
+      "whole": "u06-eigen-svd.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u07",
+      "title": "概率与统计：期望、方差、正态分布（1/3）",
+      "en": "Probability & Statistics (1/3)",
+      "minutes": 40,
+      "file": "u07-probability.json",
+      "whole": "u07-probability.json"
+    },
+    {
+      "id": "u07b",
+      "title": "概率与统计：期望、方差、正态分布（2/3）",
+      "en": "Probability & Statistics (2/3)",
+      "minutes": 45,
+      "file": "u07b-probability.json",
+      "whole": "u07-probability.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u07c",
+      "title": "概率与统计：期望、方差、正态分布（3/3）",
+      "en": "Probability & Statistics (3/3)",
+      "minutes": 45,
+      "file": "u07c-probability.json",
+      "whole": "u07-probability.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u08",
+      "title": "微积分：导数、链式法则与损失函数（1/3）",
+      "en": "Calculus for Machine Learning (1/3)",
+      "minutes": 35,
+      "file": "u08-calculus.json",
+      "whole": "u08-calculus.json"
+    },
+    {
+      "id": "u08b",
+      "title": "微积分：导数、链式法则与损失函数（2/3）",
+      "en": "Calculus for Machine Learning (2/3)",
+      "minutes": 30,
+      "file": "u08b-calculus.json",
+      "whole": "u08-calculus.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u08c",
+      "title": "微积分：导数、链式法则与损失函数（3/3）",
+      "en": "Calculus for Machine Learning (3/3)",
+      "minutes": 40,
+      "file": "u08c-calculus.json",
+      "whole": "u08-calculus.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u09",
+      "title": "信息论：熵、交叉熵、KL 散度（1/3）",
+      "en": "Information Theory (1/3)",
+      "minutes": 35,
+      "file": "u09-information-theory.json",
+      "whole": "u09-information-theory.json"
+    },
+    {
+      "id": "u09b",
+      "title": "信息论：熵、交叉熵、KL 散度（2/3）",
+      "en": "Information Theory (2/3)",
+      "minutes": 30,
+      "file": "u09b-information-theory.json",
+      "whole": "u09-information-theory.json",
+      "part_of": "u09"
+    },
+    {
+      "id": "u09c",
+      "title": "信息论：熵、交叉熵、KL 散度（3/3）",
+      "en": "Information Theory (3/3)",
+      "minutes": 35,
+      "file": "u09c-information-theory.json",
+      "whole": "u09-information-theory.json",
+      "part_of": "u09"
+    },
+    {
+      "id": "u10",
+      "title": "Python 与 NumPy 基础（1/4）",
+      "en": "Python & NumPy (1/4)",
+      "minutes": 15,
+      "file": "u10-python-numpy.json",
+      "whole": "u10-python-numpy.json"
+    },
+    {
+      "id": "u10b",
+      "title": "Python 与 NumPy 基础（2/4）",
+      "en": "Python & NumPy (2/4)",
+      "minutes": 40,
+      "file": "u10b-python-numpy.json",
+      "whole": "u10-python-numpy.json",
+      "part_of": "u10"
+    },
+    {
+      "id": "u10c",
+      "title": "Python 与 NumPy 基础（3/4）",
+      "en": "Python & NumPy (3/4)",
+      "minutes": 35,
+      "file": "u10c-python-numpy.json",
+      "whole": "u10-python-numpy.json",
+      "part_of": "u10"
+    },
+    {
+      "id": "u10d",
+      "title": "Python 与 NumPy 基础（4/4）",
+      "en": "Python & NumPy (4/4)",
+      "minutes": 35,
+      "file": "u10d-python-numpy.json",
+      "whole": "u10-python-numpy.json",
+      "part_of": "u10"
+    },
+    {
+      "id": "u11",
+      "title": "PyTorch 入门：张量与自动求导（1/3）",
+      "en": "PyTorch Basics: Tensors & Autograd (1/3)",
+      "minutes": 40,
+      "file": "u11-pytorch.json",
+      "whole": "u11-pytorch.json"
+    },
+    {
+      "id": "u11b",
+      "title": "PyTorch 入门：张量与自动求导（2/3）",
+      "en": "PyTorch Basics: Tensors & Autograd (2/3)",
+      "minutes": 35,
+      "file": "u11b-pytorch.json",
+      "whole": "u11-pytorch.json",
+      "part_of": "u11"
+    },
+    {
+      "id": "u11c",
+      "title": "PyTorch 入门：张量与自动求导（3/3）",
+      "en": "PyTorch Basics: Tensors & Autograd (3/3)",
+      "minutes": 35,
+      "file": "u11c-pytorch.json",
+      "whole": "u11-pytorch.json",
+      "part_of": "u11"
+    },
+    {
+      "id": "u12",
+      "title": "开发工具：VS Code、Jupyter、Git、Conda（1/3）",
+      "en": "Developer Tools (1/3)",
+      "minutes": 35,
+      "file": "u12-dev-tools.json",
+      "whole": "u12-dev-tools.json"
+    },
+    {
+      "id": "u12b",
+      "title": "开发工具：VS Code、Jupyter、Git、Conda（2/3）",
+      "en": "Developer Tools (2/3)",
+      "minutes": 35,
+      "file": "u12b-dev-tools.json",
+      "whole": "u12-dev-tools.json",
+      "part_of": "u12"
+    },
+    {
+      "id": "u12c",
+      "title": "开发工具：VS Code、Jupyter、Git、Conda（3/3）",
+      "en": "Developer Tools (3/3)",
+      "minutes": 35,
+      "file": "u12c-dev-tools.json",
+      "whole": "u12-dev-tools.json",
+      "part_of": "u12"
+    },
+    {
+      "id": "u13",
+      "title": "einops：重排、归约、重复（1/3）",
+      "en": "einops: rearrange / reduce / repeat (1/3)",
+      "minutes": 35,
+      "file": "u13-einops.json",
+      "whole": "u13-einops.json"
+    },
+    {
+      "id": "u13b",
+      "title": "einops：重排、归约、重复（2/3）",
+      "en": "einops: rearrange / reduce / repeat (2/3)",
+      "minutes": 30,
+      "file": "u13b-einops.json",
+      "whole": "u13-einops.json",
+      "part_of": "u13"
+    },
+    {
+      "id": "u13c",
+      "title": "einops：重排、归约、重复（3/3）",
+      "en": "einops: rearrange / reduce / repeat (3/3)",
+      "minutes": 30,
+      "file": "u13c-einops.json",
+      "whole": "u13-einops.json",
+      "part_of": "u13"
+    },
+    {
+      "id": "u14",
+      "title": "广播与张量操作（1/3）",
+      "en": "Broadcasting & Tensor Manipulation (1/3)",
+      "minutes": 35,
+      "file": "u14-broadcasting.json",
+      "whole": "u14-broadcasting.json"
+    },
+    {
+      "id": "u14b",
+      "title": "广播与张量操作（2/3）",
+      "en": "Broadcasting & Tensor Manipulation (2/3)",
+      "minutes": 40,
+      "file": "u14b-broadcasting.json",
+      "whole": "u14-broadcasting.json",
+      "part_of": "u14"
+    },
+    {
+      "id": "u14c",
+      "title": "广播与张量操作（3/3）",
+      "en": "Broadcasting & Tensor Manipulation (3/3)",
+      "minutes": 40,
+      "file": "u14c-broadcasting.json",
+      "whole": "u14-broadcasting.json",
+      "part_of": "u14"
+    },
+    {
+      "id": "u15",
+      "title": "einsum 与高级索引（1/3）",
+      "en": "einsum & Advanced Indexing (1/3)",
+      "minutes": 40,
+      "file": "u15-einsum-indexing.json",
+      "whole": "u15-einsum-indexing.json"
+    },
+    {
+      "id": "u15b",
+      "title": "einsum 与高级索引（2/3）",
+      "en": "einsum & Advanced Indexing (2/3)",
+      "minutes": 35,
+      "file": "u15b-einsum-indexing.json",
+      "whole": "u15-einsum-indexing.json",
+      "part_of": "u15"
+    },
+    {
+      "id": "u15c",
+      "title": "einsum 与高级索引（3/3）",
+      "en": "einsum & Advanced Indexing (3/3)",
+      "minutes": 35,
+      "file": "u15c-einsum-indexing.json",
+      "whole": "u15-einsum-indexing.json",
+      "part_of": "u15"
+    }
+  ],
+  "order": 3,
+  "order_note": "主线技术课，学完前两门再开始（它的第 10–15 节与 Python 基础有重叠，熟了可以略读）"
 }

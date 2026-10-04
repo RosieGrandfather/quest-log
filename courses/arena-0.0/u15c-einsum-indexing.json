@@ -1,0 +1,94 @@
+{
+ "id": "u15c",
+ "title": "einsum 与高级索引（3/3）",
+ "en": "einsum & Advanced Indexing (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "理解 **词嵌入 (embedding)** 本质上是查表，并知道 `x[idx] += 1` 遇到重复下标时的陷阱"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「einsum 与高级索引」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：视图 vs 副本，以及重复下标的陷阱（约 5 分钟） → 词嵌入就是查表（约 5 分钟） → gather（约 10 分钟） → PyTorch 对照（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 视图 vs 副本，以及重复下标的陷阱\n\n```python\nimport numpy as np\n\n# 切片是视图（改它会改原数组），整数数组索引是副本\na = np.arange(6)\nview = a[1:4]\nview[0] = 100\nprint(\"切片是视图，原数组被改了:\", a)\n\nb = np.arange(6)\ncopy = b[[1, 2, 3]]\ncopy[0] = 100\nprint(\"数组索引是副本，原数组没变:\", b)\n\n# 往数组索引的位置「赋值」是可以的；但下标重复时，+= 只生效一次\nz = np.zeros(4)\nidx = np.array([0, 1, 1, 1, 3])\nz[idx] += 1\nprint(\"z[idx] += 1            :\", z, \"  <- 下标 1 出现了 3 次，却只加了 1\")\nz2 = np.zeros(4)\nnp.add.at(z2, idx, 1)\nprint(\"np.add.at 才会累加     :\", z2)\nprint(\"等价于 bincount        :\", np.bincount(idx, minlength=4).astype(float))\n# 输出：切片是视图，原数组被改了: [  0 100   2   3   4   5]\n# 输出：数组索引是副本，原数组没变: [0 1 2 3 4 5]\n# 输出：z[idx] += 1            : [1. 1. 0. 1.]   <- 下标 1 出现了 3 次，却只加了 1\n# 输出：np.add.at 才会累加     : [1. 3. 0. 1.]\n# 输出：等价于 bincount        : [1. 3. 0. 1.]\n```\n\n读输出：**切片**（`a[1:4]`）是视图：改它，原数组也变了（`[0 100 2 3 4 5]`）；**整数数组索引**（`b[[1, 2, 3]]`）是副本：改它，原数组不变。这一点在 PyTorch 里同样成立。第二个陷阱更隐蔽：`z[idx] += 1`，下标 1 出现了 3 次，结果却只加了 1（`[1. 1. 0. 1.]`）。原因是 `z[idx] += 1` 先把 `z[idx]` 读出来（副本），加 1，再写回去，对重复的下标，后写的覆盖先写的，不会累加。要累加必须用 `np.add.at`（PyTorch 里对应 `index_add_` 或 `scatter_add_`），得到 `[1. 3. 0. 1.]`，与 `np.bincount` 一致。**反向传播里，词嵌入的梯度回传到嵌入表上，就要用这种「按下标累加」的操作**：同一个词在一个句子里出现多次，它的梯度要加起来。\n\n### 词嵌入就是查表\n\n```python\nimport numpy as np\n\n# 词嵌入 = 查表：W_E 形状 (词表大小, 嵌入维度)；token_ids 形状 (batch, seq)\nrng = np.random.default_rng(4)\nvocab, d_model = 50, 6\nW_E = rng.normal(size=(vocab, d_model))\ntoken_ids = np.array([[3, 7, 7, 0], [49, 1, 3, 3]])      # 2 句话，每句 4 个 token\nemb = W_E[token_ids]                                     # 下标数组形状 + 取出的行形状\nprint(\"token_ids 形状:\", token_ids.shape, \"-> 嵌入形状:\", emb.shape)\nprint(\"相同 token 得到相同的向量:\", np.array_equal(emb[0, 1], emb[0, 2]))\n\n# 等价写法：独热向量 @ 矩阵（慢得多，只是为了说明「查表 = 乘以独热向量」）\none_hot = np.eye(vocab)[token_ids]                       # (2, 4, 50)\nemb2 = one_hot @ W_E                                     # (2, 4, 50) @ (50, 6) -> (2, 4, 6)\nprint(\"独热矩阵乘法结果相同:\", np.allclose(emb, emb2))\nprint(\"独热张量元素数:\", one_hot.size, \" 查表读取的元素数:\", emb.size)\n\n# 取出「每个样本正确类别的概率」：和上一节手写交叉熵是同一个操作\nprobs = np.array([[0.7, 0.2, 0.1], [0.1, 0.1, 0.8]])\ntarget = np.array([0, 2])\nprint(\"probs[arange, target]:\", probs[np.arange(2), target])\nprint(\"独热点乘求和版本     :\", (probs * np.eye(3)[target]).sum(axis=1))\n# 输出：token_ids 形状: (2, 4) -> 嵌入形状: (2, 4, 6)\n# 输出：相同 token 得到相同的向量: True\n# 输出：独热矩阵乘法结果相同: True\n# 输出：独热张量元素数: 400  查表读取的元素数: 48\n# 输出：probs[arange, target]: [0.7 0.8]\n# 输出：独热点乘求和版本     : [0.7 0.8]\n```\n\n读输出：`W_E` 是 `(50, 6)` 的嵌入表，`token_ids` 是 `(2, 4)` 的整数数组。`W_E[token_ids]` 的形状是「下标数组的形状 + 取出的那一行的形状」，也就是 `(2, 4, 6)`。同一个 token（`7`，第 0 句的第 1、2 个位置）得到同样的向量（`True`）。它等价于「独热向量乘以矩阵」：`np.eye(50)[token_ids] @ W_E`，结果一样（`True`），但独热张量有 400 个元素，而查表只读取 48 个，**查表更省**。这就解释了 `nn.Embedding` 为什么不是矩阵乘法，而是查表。后半段把「取出每个样本正确类别的概率」写成了索引和独热点乘求和两种形式，结果一致，都是 `[0.7 0.8]`。\n\n### gather\n\n> **标准定义 · gather**\n>\n> 对 2 维张量，`dim=1` 的 `gather`：$\\text{out}[i][j]=\\text{input}[i]\\big[\\text{index}[i][j]\\big]$。每一行在自己这一行里，按 `index` 那一行给的**列号**取数；输出形状**和 `index` 一样**；`index` 的维数必须与 `input` 相同。`dim=0` 时则是 $\\text{out}[i][j]=\\text{input}[\\text{index}[i][j]][j]$。NumPy 里对应 `np.take_along_axis`。\n>\n> *English: torch.gather(input, 1, index) returns out[i][j] = input[i][index[i][j]]. The output has the shape of index, and index must have the same number of dimensions as input.*\n\n**白话版：「每一行各自翻自己的字典」。** `index` 的每一行说「我要这一行的第几列、第几列」。\n\n```python\nimport numpy as np\n\nmat = np.arange(12).reshape(3, 4)\nidx = np.array([[3, 0], [1, 1], [0, 2]])\n\n# torch.gather(input, 1, index) 在 NumPy 里叫 take_along_axis\nout = np.take_along_axis(mat, idx, axis=1)\nprint(out.tolist())\nprint(\"输出形状和 index 一样:\", out.shape == idx.shape)\n\n# 按定义手写：out[i][j] = input[i][index[i][j]]\nmanual = np.empty_like(idx)\nfor i in range(idx.shape[0]):\n    for j in range(idx.shape[1]):\n        manual[i, j] = mat[i, idx[i, j]]\nprint(\"和定义一致:\", np.array_equal(out, manual))\n\n# 用 gather 取每个样本正确类别的分数：index 必须和 input 维数相同，所以要先加一维\nscores = np.array([[0.1, 2.0, 0.3], [1.5, 0.2, 0.1], [0.0, 0.1, 3.0]])\nlabels = np.array([1, 0, 2])\nvia_gather = np.take_along_axis(scores, labels[:, None], axis=1)[:, 0]\nvia_index = scores[np.arange(3), labels]\nprint(\"gather 版:\", via_gather, \" 数组索引版:\", via_index, \" 一致:\", np.array_equal(via_gather, via_index))\n\n# 对拍：随机形状下 gather 与定义一致\nrng = np.random.default_rng(5)\nok = True\nfor _ in range(200):\n    n, m, k = rng.integers(1, 6, size=3)\n    X = rng.normal(size=(n, m))\n    I = rng.integers(0, m, size=(n, k))\n    ref = np.array([[X[i, I[i, j]] for j in range(k)] for i in range(n)])\n    ok &= np.array_equal(np.take_along_axis(X, I, axis=1), ref)\nprint(\"200 组随机对拍通过:\", bool(ok))\n# 输出：[[3, 0], [5, 5], [8, 10]]\n# 输出：输出形状和 index 一样: True\n# 输出：和定义一致: True\n# 输出：gather 版: [2.  1.5 3. ]  数组索引版: [2.  1.5 3. ]  一致: True\n# 输出：200 组随机对拍通过: True\n```\n\n读输出：`mat` 是 $3\\times4$ 的 `0..11`，`idx` 的每一行是列号：第 0 行取第 3、0 列得 `[3, 0]`，第 1 行取第 1、1 列得 `[5, 5]`，第 2 行取第 0、2 列得 `[8, 10]`。输出形状和 `idx` 一样（`True`），和按定义写的双重循环一致（`True`）。取每个样本「正确类别的分数」：`gather` 要求 `index` 和 `input` 维数相同，所以要把 `labels` 变成 `(3, 1)`，取完再去掉那一维；用整数数组索引 `scores[np.arange(3), labels]` 更简洁，结果相同（都是 `[2. 1.5 3.]`）。最后随机生成 200 组不同形状的数据，和按定义写的结果对拍，全部通过。\n\n### PyTorch 对照\n\neinops 的 `einsum` 同样支持 `torch` 张量；`gather`、整数数组索引和 `nn.Embedding` 也与上面的 NumPy 对应。\n\n```python\nimport torch as t\nimport einops\nfrom einops import einsum\n\n# einops.einsum 对 torch 张量同样适用\nA, B = t.randn(3, 4), t.randn(4, 2)\nprint(\"矩阵乘法:\", t.allclose(einsum(A, B, \"i j, j k -> i k\"), A @ B, atol=1e-6))\nM = t.randn(4, 4)\nprint(\"迹:\", t.allclose(einsum(M, \"i i ->\"), t.trace(M), atol=1e-6))\n\nq, k = t.randn(2, 10, 8), t.randn(2, 12, 8)\nprint(\"注意力分数形状:\", tuple(einsum(q, k, \"batch q_pos d, batch k_pos d -> batch q_pos k_pos\").shape))\n\n# 整数数组索引与 gather\nmat = t.arange(12).reshape(3, 4)\nidx = t.tensor([[3, 0], [1, 1], [0, 2]])\nprint(\"gather:\", mat.gather(1, idx).tolist())\nprint(\"逐对索引:\", mat[t.tensor([0, 1, 2]), t.tensor([3, 0, 1])].tolist())\n\n# gather 与数组索引取「正确类别」的分数\nscores = t.tensor([[0.1, 2.0, 0.3], [1.5, 0.2, 0.1], [0.0, 0.1, 3.0]])\nlabels = t.tensor([1, 0, 2])\na = scores.gather(1, labels.unsqueeze(1)).squeeze(1)\nb = scores[t.arange(3), labels]\nprint(\"gather:\", a.tolist(), \" 数组索引:\", b.tolist(), \" 一致:\", bool((a == b).all()))\n\n# 词嵌入：nn.Embedding 的本质就是查表\nemb = t.nn.Embedding(50, 6)\nids = t.tensor([[3, 7, 7, 0], [49, 1, 3, 3]])\nprint(\"Embedding 输出形状:\", tuple(emb(ids).shape), \" 等价于 weight[ids]:\", bool((emb(ids) == emb.weight[ids]).all()))\n# 输出：矩阵乘法: True\n# 输出：迹: True\n# 输出：注意力分数形状: (2, 10, 12)\n# 输出：gather: [[3, 0], [5, 5], [8, 10]]\n# 输出：逐对索引: [3, 4, 9]\n# 输出：gather: [2.0, 1.5, 3.0]  数组索引: [2.0, 1.5, 3.0]  一致: True\n# 输出：Embedding 输出形状: (2, 4, 6)  等价于 weight[ids]: True\n```\n\n### 这一节你要带走的三句话\n\n1. **einsum = 每个下标一层循环，输入元素相乘，累加到输出；不在输出里的下标被求和**；用单词命名下标，比用 `@` 和 `transpose` 更不容易出形状错。多个张量连乘时，计算顺序决定速度。\n2. **整数数组索引是「逐对」取元素**，结果形状由下标数组决定，返回副本；多个下标数组会先广播；重复下标的 `+=` 不会累加，要用 `add.at` 一类的专门操作。\n3. **`gather` 的规则是 `out[i][j] = input[i][index[i][j]]`**，输出形状等于 `index`；取每个样本的正确类别，`scores[arange, labels]` 和 `gather` 等价，`nn.Embedding` 本质是查表。"
+  },
+  {
+   "type": "think",
+   "q": "`scores` 形状 `(batch, n_classes)`，`labels` 形状 `(batch,)`。(1) 用 `gather` 取出每个样本正确类别的分数，得到形状 `(batch,)`；(2) 用整数数组索引再写一遍；(3) 如果 `labels` 里有重复的样本，这两种写法哪个会受重复下标的影响，为什么？",
+   "a": "(1) `scores.gather(1, labels.unsqueeze(1)).squeeze(1)`。`gather` 要求 `index` 与 `input` 维数相同，所以先把 `labels` 变成 `(batch, 1)`，取完再去掉那一维。\n\n(2) `scores[t.arange(batch), labels]`，行下标 `arange` 和列下标 `labels` 逐对配对。\n\n(3) 两种**读取**都不受重复下标影响：读的时候重复下标只是把同一个值读多次。会出问题的是**写入累加**：例如词嵌入的梯度回传，同一个 token 在句子里出现多次，如果写成 `grad[ids] += g`，重复的下标只会生效一次，必须用 `index_add_` / `scatter_add_` 这类按下标累加的操作（本节「视图 vs 副本」的代码块演示过）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "独热向量",
+     "one-hot vector",
+     "只有一个位置为 1；独热乘矩阵等价于查表"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — einsum 与索引练习部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "本节依据的原文大纲和练习（讲解为自写，未转载原文）"
+  },
+  {
+   "title": "Einsum is All You Need（Tim Rocktäschel）",
+   "url": "https://rockt.github.io/2018/04/30/einsum",
+   "note": "ARENA 推荐，读到 2.10 节即可"
+  },
+  {
+   "title": "einops.einsum 文档",
+   "url": "https://einops.rocks/api/einsum/",
+   "note": "ARENA 使用的 einsum，下标可用完整单词"
+  },
+  {
+   "title": "NumPy：Indexing on ndarrays（含 Advanced indexing）",
+   "url": "https://numpy.org/doc/stable/user/basics.indexing.html#integer-array-indexing",
+   "note": "整数数组索引、视图与副本的规则；PyTorch 相同"
+  },
+  {
+   "title": "torch.gather 文档",
+   "url": "https://pytorch.org/docs/stable/generated/torch.gather.html",
+   "note": "gather 的规则和维度要求"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "对 2 维张量，`input.gather(1, index)` 的规则是？",
+    "options": [
+     "`out[i][j] = input[index[i][j]][j]`",
+     "`out[i][j] = input[i][j] * index[i][j]`",
+     "`out = input[index]`",
+     "`out[i][j] = input[i][index[i][j]]`"
+    ],
+    "answer": 3,
+    "explain": "`dim=1` 表示在第 1 维上按下标取：每一行在自己这一行里取 `index[i][j]` 列的值。A 是 `dim=0` 的规则。"
+   },
+   {
+    "q": "`input.gather(1, index)` 的输出形状是？",
+    "options": [
+     "和 `input` 相同",
+     "和 `index` 相同",
+     "总是一维",
+     "`(input.shape[0],)`"
+    ],
+    "answer": 1,
+    "explain": "输出里每个位置都对应 `index` 里的一个下标，所以形状和 `index` 一样。"
+   },
+   {
+    "q": "`logp` 形状 `(batch, n_classes)`，`target` 形状 `(batch,)`，要取出每个样本正确类别的值，下面哪个写法**正确**？",
+    "options": [
+     "`logp[:, target]`",
+     "`logp[target]`",
+     "`logp[t.arange(batch), target]`",
+     "`logp.gather(0, target)`"
+    ],
+    "answer": 2,
+    "explain": "行下标 `t.arange(batch)` 和列下标 `target` 逐对配对，每个样本取一个值，形状 `(batch,)`。`logp[:, target]` 会得到 `(batch, batch)`；`logp[target]` 取的是整行；`gather(0, target)` 用错了维度，而且 `index` 的维数也不对。"
+   }
+  ]
+ }
+}

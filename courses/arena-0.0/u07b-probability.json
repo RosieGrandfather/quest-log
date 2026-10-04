@@ -1,0 +1,96 @@
+{
+ "id": "u07b",
+ "title": "概率与统计：期望、方差、正态分布（2/3）",
+ "en": "Probability & Statistics (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "理解 **方差 (variance)**、**标准差 (standard deviation)**，掌握 $\\operatorname{Var}(aX+c)=a^2\\operatorname{Var}(X)$，并说清为什么样本方差要除以 $n-1$（**贝塞尔校正 (Bessel's correction)**）",
+  "掌握独立与相关时的方差加法 $\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\operatorname{Cov}(X,Y)$，以及平均值的方差 $\\sigma^2/n$"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「概率与统计：期望、方差、正态分布」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：随机变量与期望（约 20 分钟） → 方差与标准差（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 随机变量与期望\n\n> **标准定义 · 随机变量与期望 (random variable & expected value)**\n>\n> **随机变量 (random variable)** $X$ 是把随机试验的结果映射成数的函数（如骰子的点数）。离散随机变量的**期望 (expected value)** 是按概率加权的平均：$\\mathbb{E}[X]=\\sum_x x\\,P(X=x)$；对函数 $g(X)$，$\\mathbb{E}[g(X)]=\\sum_x g(x)P(X=x)$。**期望的线性性 (linearity)**：对任意随机变量（**不要求独立**）和常数，$\\mathbb{E}[aX+bY+c]=a\\,\\mathbb{E}[X]+b\\,\\mathbb{E}[Y]+c$。\n>\n> *English: The expected value E[X] = Σ x·P(X=x) is the probability-weighted average. It is linear, E[aX+bY+c] = aE[X]+bE[Y]+c, with no independence needed. In general E[g(X)] ≠ g(E[X]).*\n\n**白话版：「长期平均下来会是多少」。** 期望不是「最可能出现的值」，也不一定是能取到的值（骰子的期望是 3.5）。它是把一个随机过程重复很多很多次后，平均值会稳定到的位置，这个事实叫**大数定律 (law of large numbers)**。\n\n```python\nfrom fractions import Fraction\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 离散随机变量：公平骰子，每个点数概率 1/6\nxs = range(1, 7)\nE = sum(Fraction(x, 6) for x in xs)                    # E[X] = sum x P(X=x)\nprint(\"E[X] =\", E, \"=\", float(E))\n\n# 大数定律：模拟的平均值随次数增加而逼近期望\nrolls = rng.integers(1, 7, size=1_000_000)\nfor n in (10, 100, 10_000, 1_000_000):\n    print(f\"掷 {n:>7d} 次，平均 = {rolls[:n].mean():.4f}\")\n\n# 期望的线性性：不需要独立。让 Y = 7 - X（完全依赖于 X）\nX = rolls\nY = 7 - X\nprint(\"E[3X - Y + 1] 的公式值 =\", 3 * float(E) - float(7 - E) + 1, \"  模拟值 =\", round(float((3 * X - Y + 1).mean()), 3))\n\n# 注意：E[g(X)] 一般不等于 g(E[X])\nprint(\"E[X^2] =\", sum(Fraction(x * x, 6) for x in xs), \"=\", round(float(sum(x * x for x in xs)) / 6, 4), \"  但 E[X]^2 =\", float(E) ** 2)\n# 输出：E[X] = 7/2 = 3.5\n# 输出：掷      10 次，平均 = 2.8000\n# 输出：掷     100 次，平均 = 3.6200\n# 输出：掷   10000 次，平均 = 3.5045\n# 输出：掷 1000000 次，平均 = 3.5022\n# 输出：E[3X - Y + 1] 的公式值 = 8.0   模拟值 = 8.009\n# 输出：E[X^2] = 91/6 = 15.1667   但 E[X]^2 = 12.25\n```\n\n读输出：公平骰子 $\\mathbb{E}[X]=7/2=3.5$。掷的次数越多，平均值越接近 3.5：10 次是 2.8000，100 次是 3.6200，10000 次是 3.5045，一百万次是 3.5022（再多一些会更近，但每次都有随机波动）。**线性性不需要独立**：令 $Y=7-X$（$Y$ 完全由 $X$ 决定，极度相关），公式值 $3\\times3.5-3.5+1=8.0$，模拟值 8.009，吻合。最后一行提醒：$\\mathbb{E}[X^2]=91/6\\approx15.1667$，而 $(\\mathbb{E}[X])^2=12.25$，**函数的期望不等于期望的函数**，两者的差正是下面的方差。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "SzZ6GpcfoQY",
+   "title": "视频二：Calculating the Mean, Variance and Standard Deviation（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "text",
+   "md": "### 方差与标准差\n\n> **标准定义 · 方差与标准差 (variance & standard deviation)**\n>\n> 记 $\\mu=\\mathbb{E}[X]$，**方差 (variance)** $\\operatorname{Var}(X)=\\mathbb{E}\\big[(X-\\mu)^2\\big]=\\mathbb{E}[X^2]-\\mu^2$ 衡量取值偏离均值的平方的平均；**标准差 (standard deviation)** $\\sigma=\\sqrt{\\operatorname{Var}(X)}$，单位与 $X$ 相同。缩放与平移：$\\operatorname{Var}(aX+c)=a^2\\operatorname{Var}(X)$。对 $n$ 个样本，**样本方差**用 $\\dfrac{1}{n-1}\\sum_i(x_i-\\bar{x})^2$ 来估计总体方差（**贝塞尔校正 (Bessel's correction)**），除以 $n-1$ 才是**无偏 (unbiased)** 的。\n>\n> *English: Var(X) = E[(X−μ)²] = E[X²] − μ²; the standard deviation is its square root. Var(aX+c) = a²Var(X). The sample variance divides by n−1 (Bessel's correction) so that it is an unbiased estimator of the population variance.*\n\n**白话版：「离均值平均有多远（平方后）」。** 平移整组数据，不会改变它们的分散程度；放大 $a$ 倍，分散程度（标准差）放大 $|a|$ 倍，方差放大 $a^2$ 倍。**为什么样本方差要除以 $n-1$？** 因为样本均值 $\\bar{x}$ 是从这同一批数据算出来的，已经「贴着」这批数据，所以数据离 $\\bar{x}$ 的距离比离真实均值的距离平均要小一些，除以 $n$ 会系统性地**低估**方差；少除一个 1，恰好补回来。\n\n```python\nfrom fractions import Fraction\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 公平骰子的方差：Var(X) = E[X^2] - (E[X])^2\nEX = Fraction(7, 2)\nEX2 = sum(Fraction(x * x, 6) for x in range(1, 7))\nvar = EX2 - EX ** 2\nprint(\"Var(X) =\", var, \"=\", round(float(var), 4), \"  标准差 =\", round(float(var) ** 0.5, 4))\n\n# 缩放与平移：Var(aX + c) = a^2 Var(X)\nX = rng.integers(1, 7, size=1_000_000).astype(float)\nprint(\"Var(X) 模拟      :\", round(float(X.var()), 3))\nprint(\"Var(3X + 7) 模拟 :\", round(float((3 * X + 7).var()), 3), \"  公式 9 Var(X) =\", round(9 * float(var), 3))\n\n# 总体方差 vs 样本方差：除以 n 还是除以 n-1？\n# 从 N(0, 4) 里反复抽 5 个样本，估计方差，看平均估计得准不准\nsamples = rng.normal(0, 2, size=(200_000, 5))          # 真实方差 = 4\nprint(\"真实方差 = 4\")\nprint(\"除以 n   (ddof=0) 的平均估计 =\", round(float(samples.var(axis=1, ddof=0).mean()), 3))\nprint(\"除以 n-1 (ddof=1) 的平均估计 =\", round(float(samples.var(axis=1, ddof=1).mean()), 3))\nprint(\"NumPy 的 np.var 默认 ddof =\", 0, \"，所以默认是前者\")\n# 输出：Var(X) = 35/12 = 2.9167   标准差 = 1.7078\n# 输出：Var(X) 模拟      : 2.917\n# 输出：Var(3X + 7) 模拟 : 26.257   公式 9 Var(X) = 26.25\n# 输出：真实方差 = 4\n# 输出：除以 n   (ddof=0) 的平均估计 = 3.196\n# 输出：除以 n-1 (ddof=1) 的平均估计 = 3.995\n# 输出：NumPy 的 np.var 默认 ddof = 0 ，所以默认是前者\n```\n\n读输出：骰子的 $\\operatorname{Var}(X)=35/12=2.9167$，标准差 1.7078，和模拟值（2.917）一致。缩放：$\\operatorname{Var}(3X+7)$ 模拟得 26.257，公式 $9\\operatorname{Var}(X)=26.25$，平移的 7 没有任何影响。**贝塞尔校正实验**：从方差为 4 的正态分布里反复抽 5 个样本，除以 $n$ 的估计平均只有 3.196（正好约是 $4\\times\\frac45=3.2$，系统性偏低），除以 $n-1$ 的平均是 3.995，几乎恰好是真实值 4。**工程提醒**：NumPy 的 `np.var` 默认除以 $n$，PyTorch 的 `torch.var` 默认除以 $n-1$，而 LayerNorm 内部用的是除以 $n$（有偏）的方差；ARENA 的练习里会遇到，对 `torch.var` 要传 `unbiased=False`（或 `correction=0`）才能和 LayerNorm 对上。这一点这里没有运行（VM 里没有 PyTorch），请在做 ARENA 练习时核对。"
+  },
+  {
+   "type": "think",
+   "q": "$X_1\\sim\\mathcal{N}(1,4)$ 和 $X_2\\sim\\mathcal{N}(2,9)$，相关系数 $\\rho=0.5$。求 $X_1+X_2$ 的期望和方差。如果它们独立呢？如果 $\\rho=-1$ 呢？（ARENA 的思考题）",
+   "a": "期望不依赖相关性：$\\mathbb{E}[X_1+X_2]=1+2=3$。方差：$\\sigma_1=2$，$\\sigma_2=3$，$\\operatorname{Cov}=\\rho\\sigma_1\\sigma_2=0.5\\times2\\times3=3$，所以 $\\operatorname{Var}=4+9+2\\times3=19$。\n\n独立：协方差为 0，方差是 $4+9=13$（而且和仍是正态，$\\mathcal{N}(3,13)$）。$\\rho=-1$：$\\operatorname{Cov}=-6$，方差是 $4+9-12=1$，标准差为 $|\\sigma_1-\\sigma_2|=1$：两者完全反向时，波动大部分抵消，只剩标准差之差。**相关时，和不一定还是正态的**，除非它们是**联合**正态（这里默认是）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "随机变量",
+     "random variable",
+     "把随机结果映射成数"
+    ],
+    [
+     "线性性",
+     "linearity of expectation",
+     "$\\mathbb{E}[aX+bY]=a\\mathbb{E}[X]+b\\mathbb{E}[Y]$，不需独立"
+    ],
+    [
+     "大数定律",
+     "law of large numbers",
+     "样本平均随次数增加逼近期望"
+    ],
+    [
+     "标准差",
+     "standard deviation",
+     "方差的平方根，单位与数据相同"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "随机变量 $X$ 取 0 的概率是 0.7，取 10 的概率是 0.3，$\\mathbb{E}[X]$ 是多少？",
+    "options": [
+     "3",
+     "5",
+     "7",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "$0 \\times 0.7 + 10 \\times 0.3 = 3$。"
+   },
+   {
+    "q": "$\\mathbb{E}[X] = 2$，$\\mathbb{E}[Y] = 5$，则 $\\mathbb{E}[3X - Y + 1]$ 等于？",
+    "options": [
+     "只有 $X$、$Y$ 独立时才能算",
+     "12",
+     "6",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "期望是线性的，**不需要独立**：$3 \\times 2 - 5 + 1 = 2$。"
+   },
+   {
+    "q": "$\\text{Var}(X) = 4$，则 $\\text{Var}(3X + 7)$ 等于？",
+    "options": [
+     "19",
+     "36",
+     "43",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "平移不影响方差，缩放 3 倍让方差变成 $3^2 = 9$ 倍：$9 \\times 4 = 36$。"
+   }
+  ]
+ }
+}

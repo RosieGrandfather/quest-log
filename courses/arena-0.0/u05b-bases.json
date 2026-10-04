@@ -1,0 +1,92 @@
+{
+ "id": "u05b",
+ "title": "基与基变换（2/3）",
+ "en": "Bases, Dot Products & Change of Basis (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "会用 $B\\mathbf{c}$ 和 $B^{-1}\\mathbf{x}$ 做 **基变换 (change of basis)**，会把变换翻译成 $B^{-1}MB$，并知道换基不改变迹和行列式",
+  "认识 **正交矩阵 (orthogonal matrix)** 与 **标准正交基 (orthonormal basis)**：逆就是转置、保长度保夹角、坐标就是点积"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「基与基变换」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：点积、范数与余弦相似度（约 25 分钟） → 基变换（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 点积、范数与余弦相似度\n\n> **标准定义 · 点积、范数、余弦相似度 (dot product, norm, cosine similarity)**\n>\n> 两个向量的**点积 (dot product)** 有两个等价的定义：\n>\n> $$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_i u_iv_i=\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\cos\\theta$$\n>\n> 其中 $\\|\\mathbf{u}\\|=\\sqrt{\\mathbf{u}\\cdot\\mathbf{u}}$ 是**长度**（**L2 范数 (L2 norm)**），$\\theta$ 是两向量的夹角。点积为 0 就称它们**正交 (orthogonal)**。把点积除以两个长度，得到**余弦相似度 (cosine similarity)** $\\cos\\theta=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|}\\in[-1,1]$。$\\mathbf{u}$ 在 $\\mathbf{v}$ 方向上的**投影 (projection)** 长度是 $\\mathbf{u}\\cdot\\hat{\\mathbf{v}}$，其中 $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$。\n>\n> *English: The dot product is Σ uᵢvᵢ = ‖u‖‖v‖cos θ. Dividing by both lengths gives cosine similarity, which depends only on direction. The projection of u onto v has length u·v̂.*\n\n**白话版：「两个方向有多顺路」。** 点积大于 0 表示大致同向，等于 0 表示垂直，小于 0 表示大致反向。**余弦相似度只看方向、不看长度**，所以比较两篇文章的主题时，长文章和短文章不会因为长度而吃亏。\n\n```python\nimport numpy as np\n\n# 构造两个已知夹角的向量：u 长 2、方向 30 度；v 长 3、方向 80 度，夹角 50 度\nth_u, th_v = np.deg2rad(30), np.deg2rad(80)\nu = 2 * np.array([np.cos(th_u), np.sin(th_u)])\nv = 3 * np.array([np.cos(th_v), np.sin(th_v)])\n\n# 定义一：对应分量相乘再相加；定义二：长度 x 长度 x cos(夹角)\nprint(\"分量定义 :\", round(float(u @ v), 4))\nprint(\"几何定义 :\", round(float(2 * 3 * np.cos(np.deg2rad(50))), 4))\n\n# 余弦相似度：点积除以两个长度，只剩方向\ndef cos_sim(a, b):\n    return a @ b / (np.linalg.norm(a) * np.linalg.norm(b))\n\nprint(\"夹角 =\", round(float(np.degrees(np.arccos(cos_sim(u, v)))), 1), \"度\")\n\n# 投影：u 在 v 方向上的「影子」长度 = u 和 v 的单位向量的点积\nv_hat = v / np.linalg.norm(v)\nprint(\"u 在 v 上的投影长度 =\", round(float(u @ v_hat), 4))\n\n# 缩放长度不改变余弦相似度；点积却会跟着变\nprint(\"v 放大 10 倍：点积\", round(float(u @ (10 * v)), 2), \" 余弦\", round(float(cos_sim(u, 10 * v)), 4))\n\n# 玩具「词向量」（4 维，手编的）\nwords = {\"cat\": [0.9, 0.8, 0.1, 0.0], \"dog\": [0.8, 0.9, 0.2, 0.1], \"car\": [0.1, 0.0, 0.9, 0.8]}\nw = {k: np.array(x) for k, x in words.items()}\nprint(\"cat-dog:\", round(float(cos_sim(w[\"cat\"], w[\"dog\"])), 3), \" cat-car:\", round(float(cos_sim(w[\"cat\"], w[\"car\"])), 3))\n\n# (3,4) 与 (4,-3)：点积 0，正交\nprint(\"(3,4)·(4,-3) =\", np.dot([3, 4], [4, -3]))\n# 输出：分量定义 : 3.8567\n# 输出：几何定义 : 3.8567\n# 输出：夹角 = 50.0 度\n# 输出：u 在 v 上的投影长度 = 1.2856\n# 输出：v 放大 10 倍：点积 38.57  余弦 0.6428\n# 输出：cat-dog: 0.987  cat-car: 0.123\n# 输出：(3,4)·(4,-3) = 0\n```\n\n读输出：同一对向量，用「分量相乘再相加」和「长度乘长度乘 $\\cos50^\\circ$」都得到 3.8567，两个定义确实等价；由点积反推出的夹角正好是 50.0 度。$\\mathbf{u}$ 在 $\\mathbf{v}$ 方向上的「影子」长 1.2856（就是 $2\\cos50^\\circ$）。把 $\\mathbf{v}$ 放大 10 倍，点积也放大 10 倍（38.57），而余弦相似度仍是 0.6428：**点积会随长度变化，余弦不会**。这就是检索系统常用余弦的原因。玩具词向量里，cat 和 dog 的余弦相似度 0.987（几乎同向），cat 和 car 只有 0.123（接近垂直）。最后一行是经典的 $(3,4)\\cdot(4,-3)=0$，两者正交。\n\n**对偶性 (duality)**：和一个固定向量 $\\mathbf{v}$ 做点积，本身就是一个「把向量变成一个数」的线性变换，它的矩阵是 $1\\times n$ 的 $\\mathbf{v}^\\top$，所以 $\\mathbf{u}\\cdot\\mathbf{v}=\\mathbf{v}^\\top\\mathbf{u}$。这也是为什么矩阵乘法 $A\\mathbf{x}$ 可以读成「$A$ 的每一行和 $\\mathbf{x}$ 做点积」：**矩阵乘法就是一批点积**。注意力里的 $QK^\\top$ 就是每个查询向量和每个键向量的点积；当维度 $d$ 很大时，点积的方差随 $d$ 增大（第 7 节会看到），所以要除以 $\\sqrt{d}$。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "LyGKycYT2v0",
+   "title": "视频二：Dot products and duality（线性代数的本质 第 9 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "text",
+   "md": "### 基变换\n\n> **标准定义 · 基变换 (change of basis)**\n>\n> 设另一组基 $\\mathbf{b}_1,\\dots,\\mathbf{b}_n$ 用标准坐标写出，把它们作为**列**排成可逆矩阵 $B=[\\mathbf{b}_1\\ \\cdots\\ \\mathbf{b}_n]$。一个向量在新基下的坐标为 $\\mathbf{c}$，在标准坐标下就是 $\\mathbf{x}=B\\mathbf{c}$；反过来 $\\mathbf{c}=B^{-1}\\mathbf{x}$。如果 $M$ 是用标准坐标写的线性变换，那么**同一个变换**在新基坐标下的矩阵是 $M_B=B^{-1}MB$。换基不改变变换本身，所以 $\\operatorname{tr}(M_B)=\\operatorname{tr}(M)$，$\\det(M_B)=\\det(M)$。\n>\n> *English: If the columns of B are a new basis written in standard coordinates, then x = Bc converts new coordinates to standard ones and c = B⁻¹x converts back. The same linear map M has matrix B⁻¹MB in the new basis; its trace and determinant are unchanged.*\n\n**白话版：「翻译官」。** 想象另一个人用自己的一套尺子说话：他说「$(3,2)$」，意思是「3 个他的第一把尺加 2 个他的第二把尺」。$B$ 是把他的话翻译成我们的话的翻译官，$B^{-1}$ 翻译回去。要让他的坐标系里做一个变换：**先翻译成我们的话（$B$），用我们的方法做（$M$），再翻译回去（$B^{-1}$）**，从右往左读 $B^{-1}MB$。\n\n```python\nimport numpy as np\n\n# 对方的基向量，用「我们的」坐标写出：b1 = (2,1)，b2 = (-1,1)；它们当作 B 的列\nB = np.array([[2.0, -1.0], [1.0, 1.0]])\nc = np.array([3.0, 2.0])                     # 对方说的坐标：「3 个 b1 加 2 个 b2」\nx = B @ c                                    # 翻译成我们的坐标\nprint(\"我们的坐标 x =\", x)\nprint(\"再翻译回去 B^-1 x =\", np.linalg.inv(B) @ x)\n\n# 一个用我们的坐标写的变换：逆时针旋转 90 度\nM = np.array([[0.0, -1.0], [1.0, 0.0]])\nM_B = np.linalg.inv(B) @ M @ B               # 同一个变换，在对方坐标下的矩阵\nprint(\"M_B =\")\nprint(np.round(M_B, 3))\n\n# 检验：两条路线得到同一个结果\n# 路线一：先翻译成我们的坐标，用 M，再翻译回去\nroute1 = np.linalg.inv(B) @ (M @ (B @ c))\n# 路线二：直接在对方坐标里用 M_B\nroute2 = M_B @ c\nprint(\"两条路线一致：\", bool(np.allclose(route1, route2)), route2)\n\n# 相似矩阵：换基不改变迹和行列式（它们描述的是变换本身，不是坐标）\nprint(\"迹：\", np.trace(M), round(float(np.trace(M_B)), 6) + 0.0, \"  行列式：\", round(float(np.linalg.det(M)), 6), round(float(np.linalg.det(M_B)), 6))\n# 输出：我们的坐标 x = [4. 5.]\n# 输出：再翻译回去 B^-1 x = [3. 2.]\n# 输出：M_B =\n# 输出：[[ 0.333 -0.667]\n# 输出： [ 1.667 -0.333]]\n# 输出：两条路线一致： True [-0.33333333  4.33333333]\n# 输出：迹： 0.0 0.0   行列式： 1.0 1.0\n```\n\n读输出：对方基是 $\\mathbf{b}_1=(2,1)$、$\\mathbf{b}_2=(-1,1)$，他说的 $(3,2)$ 在我们这里是 $3(2,1)+2(-1,1)=(4,5)$，再用 $B^{-1}$ 翻回来得到 $(3,2)$。「逆时针转 90 度」这个变换，在他的坐标里变成了看起来完全不同的矩阵 $M_B$（元素是 0.333、$-0.667$、1.667、$-0.333$）；用两条路线算同一个向量，结果都是 $(-0.333, 4.333)$。最后一行验证：换基后迹仍是 0、行列式仍是 1，因为它们是**变换本身的性质**，不依赖坐标。"
+  },
+  {
+   "type": "think",
+   "q": "向量 $\\mathbf{x}=(5,1)$，新基 $\\mathbf{b}_1=(1,1)$、$\\mathbf{b}_2=(1,-1)$。(a) 求 $\\mathbf{x}$ 在新基下的坐标；(b) 这组基是不是标准正交基？如果不是，怎样改成标准正交基，坐标又会怎样变？",
+   "a": "(a) $B=\\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}$，解 $B\\mathbf{c}=\\mathbf{x}$：$c_1+c_2=5$，$c_1-c_2=1$，得 $\\mathbf{c}=(3,2)$。验证：$3(1,1)+2(1,-1)=(5,1)$。\n\n(b) 两个向量点积 $1\\cdot1+1\\cdot(-1)=0$，垂直；但长度都是 $\\sqrt2$，不是单位向量，所以只是**正交基**。把它们各除以 $\\sqrt2$ 就成了标准正交基，此时坐标就是点积：$\\mathbf{x}\\cdot\\hat{\\mathbf{b}}_1=6/\\sqrt2\\approx4.243$，$\\mathbf{x}\\cdot\\hat{\\mathbf{b}}_2=4/\\sqrt2\\approx2.828$。基向量缩短了 $\\sqrt2$ 倍，坐标就放大了 $\\sqrt2$ 倍（$3\\sqrt2\\approx4.243$，$2\\sqrt2\\approx2.828$）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "投影",
+     "projection",
+     "一个向量在另一个方向上的「影子」"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "$(1, 2, 3) \\cdot (4, -1, 2)$ 等于？",
+    "options": [
+     "8",
+     "0",
+     "6",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "$1 \\times 4 + 2 \\times (-1) + 3 \\times 2 = 4 - 2 + 6 = 8$。"
+   },
+   {
+    "q": "两个非零向量的点积为 0，说明什么？",
+    "options": [
+     "它们方向相同",
+     "它们长度相等",
+     "其中一个是零向量",
+     "它们互相垂直（正交）"
+    ],
+    "answer": 3,
+    "explain": "$\\mathbf{u}\\cdot\\mathbf{v} = \\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta = 0$，而长度都不为 0，所以 $\\cos\\theta = 0$，夹角 90°。"
+   },
+   {
+    "q": "$\\mathbf{u} = (1, 0)$，$\\mathbf{v} = (1, 1)$，余弦相似度是多少？",
+    "options": [
+     "$1$",
+     "$1/\\sqrt{2} \\approx 0.707$",
+     "$\\sqrt{2}$",
+     "$0$"
+    ],
+    "answer": 1,
+    "explain": "点积为 1，长度分别为 1 和 $\\sqrt{2}$，所以 $\\cos\\theta = 1/\\sqrt{2}$，夹角 45°。"
+   },
+   {
+    "q": "变换 $M$ 用标准坐标写出，基变换矩阵为 $B$。在新基坐标下，同一个变换的矩阵是？",
+    "options": [
+     "$BMB^{-1}$",
+     "$MB$",
+     "$B^{-1}MB$",
+     "$B^\\top M$"
+    ],
+    "answer": 2,
+    "explain": "从右往左：先用 $B$ 把新基坐标翻译成标准坐标，再做 $M$，最后用 $B^{-1}$ 翻译回新基坐标。"
+   }
+  ]
+ }
+}

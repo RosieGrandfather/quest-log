@@ -1,0 +1,99 @@
+{
+ "id": "u07c",
+ "title": "基于模型的强化学习（3/3）",
+ "en": "Model-based RL (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解 **模型利用 (model exploitation)** 与 **想象中训练 (training in imagination)**：为什么要用短的、从真实状态出发的想象，以及集成与随机性如何缓解模型偏差"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「基于模型的强化学习」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：学动力学模型与累积误差（续）（约 20 分钟） → 想象中训练与基于模型方法的取舍（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n- $a=1.0$（临界）：误差线性放大，第 10 步 0.219、第 50 步 1.6916，已经和状态本身（$x=1$）一样大。\n- $a=1.1$（不稳定）：误差指数增长，第 20 步 2.9188，第 50 步 171.6113。\n- $a=0.9$（稳定）：绝对误差先升后降（第 10 步 0.0857，第 50 步 0.0103），因为状态本身趋于 0；但**相对误差仍然不小**：20 步后相对误差 0.4444。\n- 递推 $e_{k+1}=ae_k+0.02x_k$ 给出的结果，和直接用 $|a^k-(a+0.02)^k|$ 算出来的一致：$a=1.1$ 时 20 步后误差 2.4464（相对误差 0.3636）。\n\n接下来用一个真实一点的例子：带阻尼的单摆。我们把它当黑箱，在状态空间里随机撒点收集 $(s,a,s')$，分别学一个线性模型和一个两层 tanh 小网络（NumPy 手写反向传播和 Adam），再比较从没见过的初始状态出发、用同一串随机动作滚动 $k$ 步后，模型状态与真实状态的差距（RMS）：\n\n```python\nimport numpy as np, time\n# 「真实世界」：一个带阻尼的单摆，状态 s=(角度 th, 角速度 om)，动作 a 是力矩。我们把它当黑箱，只用它产生数据\ndt, AMAX = 0.05, 8.0\ndef pend(s, a):\n    th, om = s[..., 0], s[..., 1]\n    om2 = om + dt * (-9.8 * np.sin(th) - 0.1 * om + a)\n    return np.stack([th + dt * om2, om2], -1)\n\nrng = np.random.default_rng(0)\ndef collect(n):                              # 在状态空间里随机撒点、随机施加动作，记录 (s, a, s')\n    S = np.c_[rng.uniform(-2.5, 2.5, n), rng.uniform(-5, 5, n)]\n    A = rng.uniform(-AMAX, AMAX, n)\n    return S, A, pend(S, A)\n\ndef fit_linear(S, A, S2):                    # 线性模型：s' - s = [s, a, 1] @ W，用最小二乘解\n    W = np.linalg.lstsq(np.c_[S, A, np.ones(len(S))], S2 - S, rcond=None)[0]\n    return lambda s, a: s + np.c_[s, a, np.ones(len(s))] @ W\n\ndef fit_mlp(S, A, S2, h=48, epochs=2000, lr=3e-3, seed=1):   # 两层 tanh 网络，预测 s' - s；手写反向传播 + Adam\n    X, Y = np.c_[S, A], S2 - S\n    mu, sd, ysd = X.mean(0), X.std(0), Y.std(0); Xn, Yn = (X - mu) / sd, Y / ysd\n    r = np.random.default_rng(seed)\n    P = [r.normal(0, 1 / np.sqrt(3), (3, h)), np.zeros(h), r.normal(0, 1 / np.sqrt(h), (h, h)), np.zeros(h),\n         r.normal(0, 1 / np.sqrt(h), (h, 2)), np.zeros(2)]\n    def fwd(Xn):\n        h1 = np.tanh(Xn @ P[0] + P[1]); h2 = np.tanh(h1 @ P[2] + P[3]); return h1, h2, h2 @ P[4] + P[5]\n    m = [np.zeros_like(p) for p in P]; v = [np.zeros_like(p) for p in P]\n    for ep in range(1, epochs + 1):\n        h1, h2, out = fwd(Xn); d = 2 * (out - Yn) / len(Xn)          # 均方误差的梯度\n        dh2 = (d @ P[4].T) * (1 - h2 ** 2); dh1 = (dh2 @ P[2].T) * (1 - h1 ** 2)\n        G = [Xn.T @ dh1, dh1.sum(0), h1.T @ dh2, dh2.sum(0), h2.T @ d, d.sum(0)]\n        for i in range(6):\n            m[i] = 0.9 * m[i] + 0.1 * G[i]; v[i] = 0.999 * v[i] + 0.001 * G[i] ** 2\n            P[i] -= lr * (m[i] / (1 - 0.9 ** ep)) / (np.sqrt(v[i] / (1 - 0.999 ** ep)) + 1e-8)\n    return lambda s, a: s + fwd((np.c_[s, a] - mu) / sd)[2] * ysd\n\nS, A, S2 = collect(5000)\nmodels = {\"线性(5000 条)\": fit_linear(S, A, S2),\n          \"小网络(200 条)\": fit_mlp(S[:200], A[:200], S2[:200]),\n          \"小网络(5000 条)\": fit_mlp(S, A, S2)}\n\n# 评估：从 500 个没见过的初始状态出发，施加同一串随机动作，比较「真实世界」和「模型」的多步滚动\nSte = np.c_[rng.uniform(-2, 2, 500), rng.uniform(-3, 3, 500)]\nAte = rng.uniform(-AMAX, AMAX, (500, 50))\ndef rollout_error(model):\n    st, sm, errs = Ste.copy(), Ste.copy(), []\n    for k in range(50):\n        st = pend(st, Ate[:, k]); sm = model(sm, Ate[:, k])           # 模型从自己上一步的输出继续滚动（不再回到真实状态）\n        errs.append(np.sqrt(((st - sm) ** 2).sum(1).mean()))\n    return np.array(errs)\nks = [0, 2, 4, 9, 19, 49]\nprint(\"滚动步数 k            :\", [k + 1 for k in ks])\nfor name, mod in models.items():\n    print(f\"{name:14s} 误差(RMS) :\", np.round(rollout_error(mod)[ks], 4))\n\n# 为什么 50 步时「小网络(5000 条)」的 RMS 误差忽然跳到 0.5？拆开看：区分「滚动中真实状态是否离开过训练数据的范围」\nst, sm, left = Ste.copy(), Ste.copy(), np.zeros(500, bool)\nfor k in range(50):\n    st = pend(st, Ate[:, k]); sm = models[\"小网络(5000 条)\"](sm, Ate[:, k])\n    left |= (np.abs(st[:, 0]) > 2.5) | (np.abs(st[:, 1]) > 5)      # 训练数据覆盖 th 在 +-2.5、om 在 +-5 之内\ne = np.sqrt(((st - sm) ** 2).sum(1))\nprint(\"第 50 步：误差中位数 %.4f；离开过训练范围的轨迹占 %.1f%%\" % (np.median(e), 100 * left.mean()))\nprint(\"  没离开范围的轨迹 RMS = %.4f；离开过的轨迹 RMS = %.4f\" % (np.sqrt((e[~left] ** 2).mean()), np.sqrt((e[left] ** 2).mean())))\n# 输出：滚动步数 k            : [1, 3, 5, 10, 20, 50]\n# 输出：线性(5000 条)     误差(RMS) : [0.1171 0.3447 0.5523 0.8578 1.0551 2.7687]\n# 输出：小网络(200 条)     误差(RMS) : [0.0059 0.0133 0.0195 0.0314 0.048  0.5184]\n# 输出：小网络(5000 条)    误差(RMS) : [0.0025 0.005  0.0069 0.011  0.0157 0.496 ]\n# 输出：第 50 步：误差中位数 0.0173；离开过训练范围的轨迹占 20.2%\n# 输出：  没离开范围的轨迹 RMS = 0.0207；离开过的轨迹 RMS = 1.1029\n```\n\n读输出（$k$ 是滚动步数）：\n\n- **线性模型**：一步误差就有 0.1171（单摆是非线性的，线性模型没法拟合 $\\sin\\theta$），滚动 10 步 0.8578，20 步 1.0551，50 步 2.7687。\n- **小网络**：一步误差只有 0.0025（5000 条数据）或 0.0059（200 条数据），比线性模型小 20 到 50 倍。但是它也在**累积**：5000 条数据的模型从 $k=1$ 的 0.0025 涨到 $k=10$ 的 0.011（约 4.4 倍）、$k=20$ 的 0.0157（约 6.3 倍）。数据量少（200 条）的小网络误差整体更大，且增长更快（$k=20$ 是 0.048）。\n- **第 50 步，RMS 误差忽然跳到 0.5**（5000 条数据的小网络 0.496，200 条的 0.5184）。这是分布偏移：下面的拆解里，第 50 步误差的中位数只有 0.0173，没有离开训练范围的轨迹 RMS 只有 0.0207，而滚动中真实状态离开过训练数据范围（$|\\theta|>2.5$ 或 $|\\omega|>5$）的那 20% 轨迹，RMS 高达 1.1029。**少数轨迹跑到了模型没见过的区域，一两条的巨大误差就足以拉高整体均值。**\n- 结论：一步误差很小，并不能保证多步滚动可靠。评价模型要看多步误差，并且要看它会不会被带到数据之外。\n\n现在问：这些误差对**控制**有多大影响？用这几个模型规划，去控制真实的单摆（把它从 $\\theta=-0.5$ 推到 $\\theta=0.6$ 并保持），分别用 MPC 和「只规划一次的开环」：\n\n```python\nimport numpy as np, time\n# 「真实世界」：一个带阻尼的单摆，状态 s=(角度 th, 角速度 om)，动作 a 是力矩。我们把它当黑箱，只用它产生数据\ndt, AMAX = 0.05, 8.0\ndef pend(s, a):\n    th, om = s[..., 0], s[..., 1]\n    om2 = om + dt * (-9.8 * np.sin(th) - 0.1 * om + a)\n    return np.stack([th + dt * om2, om2], -1)\n\nrng = np.random.default_rng(0)\ndef collect(n):                              # 在状态空间里随机撒点、随机施加动作，记录 (s, a, s')\n    S = np.c_[rng.uniform(-2.5, 2.5, n), rng.uniform(-5, 5, n)]\n    A = rng.uniform(-AMAX, AMAX, n)\n    return S, A, pend(S, A)\n\ndef fit_linear(S, A, S2):                    # 线性模型：s' - s = [s, a, 1] @ W，用最小二乘解\n    W = np.linalg.lstsq(np.c_[S, A, np.ones(len(S))], S2 - S, rcond=None)[0]\n    return lambda s, a: s + np.c_[s, a, np.ones(len(s))] @ W\n\ndef fit_mlp(S, A, S2, h=48, epochs=2000, lr=3e-3, seed=1):   # 两层 tanh 网络，预测 s' - s；手写反向传播 + Adam\n    X, Y = np.c_[S, A], S2 - S\n    mu, sd, ysd = X.mean(0), X.std(0), Y.std(0); Xn, Yn = (X - mu) / sd, Y / ysd\n    r = np.random.default_rng(seed)\n    P = [r.normal(0, 1 / np.sqrt(3), (3, h)), np.zeros(h), r.normal(0, 1 / np.sqrt(h), (h, h)), np.zeros(h),\n         r.normal(0, 1 / np.sqrt(h), (h, 2)), np.zeros(2)]\n    def fwd(Xn):\n        h1 = np.tanh(Xn @ P[0] + P[1]); h2 = np.tanh(h1 @ P[2] + P[3]); return h1, h2, h2 @ P[4] + P[5]\n    m = [np.zeros_like(p) for p in P]; v = [np.zeros_like(p) for p in P]\n    for ep in range(1, epochs + 1):\n        h1, h2, out = fwd(Xn); d = 2 * (out - Yn) / len(Xn)          # 均方误差的梯度\n        dh2 = (d @ P[4].T) * (1 - h2 ** 2); dh1 = (dh2 @ P[2].T) * (1 - h1 ** 2)\n        G = [Xn.T @ dh1, dh1.sum(0), h1.T @ dh2, dh2.sum(0), h2.T @ d, d.sum(0)]\n        for i in range(6):\n            m[i] = 0.9 * m[i] + 0.1 * G[i]; v[i] = 0.999 * v[i] + 0.001 * G[i] ** 2\n            P[i] -= lr * (m[i] / (1 - 0.9 ** ep)) / (np.sqrt(v[i] / (1 - 0.999 ** ep)) + 1e-8)\n    return lambda s, a: s + fwd((np.c_[s, a] - mu) / sd)[2] * ysd\n\nS, A, S2 = collect(5000)\nmodels = {\"线性(5000 条)\": fit_linear(S, A, S2),\n          \"小网络(200 条)\": fit_mlp(S[:200], A[:200], S2[:200]),\n          \"小网络(5000 条)\": fit_mlp(S, A, S2)}\n\n# 用这三个模型来控制真实的单摆：把它从 th=-0.5 推到 th=0.6 并保持，用 CEM 规划\nTARGET = 0.6\ncost = lambda s, a: (s[..., 0] - TARGET) ** 2 + 0.05 * s[..., 1] ** 2 + 0.001 * a ** 2\n\ndef cem(s0, model, r, H=10, N=100, iters=3, elite=10):\n    mu, sd = np.zeros(H), np.ones(H) * AMAX / 2\n    for _ in range(iters):\n        Aseq = np.clip(mu + sd * r.normal(size=(N, H)), -AMAX, AMAX); s = np.tile(s0, (N, 1)); J = np.zeros(N)\n        for h in range(H): s = model(s, Aseq[:, h]); J += cost(s, Aseq[:, h])\n        idx = np.argsort(J)[:elite]; mu, sd = Aseq[idx].mean(0), Aseq[idx].std(0) + 1e-3\n    return mu\n\ndef mpc_episode(model, seed, T=40):                 # 每一步重新规划，只执行第一个动作\n    r = np.random.default_rng(seed); s = np.array([-0.5, 0.0]); tot = 0.0\n    for t in range(T):\n        a = r.uniform(-AMAX, AMAX) if model is None else cem(s, model, r)[0]\n        s = pend(s, a); tot += cost(s, a)\n    return tot\n\ndef open_loop_episode(model, seed, T=40):           # 只在开头规划一次完整的 40 步，然后闭眼执行\n    r = np.random.default_rng(seed); s0 = np.array([-0.5, 0.0]); mu, sd = np.zeros(T), np.ones(T) * AMAX / 2\n    for _ in range(6):\n        Aseq = np.clip(mu + sd * r.normal(size=(200, T)), -AMAX, AMAX); s = np.tile(s0, (200, 1)); J = np.zeros(200)\n        for h in range(T): s = model(s, Aseq[:, h]); J += cost(s, Aseq[:, h])\n        idx = np.argsort(J)[:20]; mu, sd = Aseq[idx].mean(0), Aseq[idx].std(0) + 1e-3\n    s, tot = s0.copy(), 0.0\n    for t in range(T): s = pend(s, mu[t]); tot += cost(s, mu[t])\n    return tot\n\nprint(\"随机动作的总代价      :\", round(float(np.mean([mpc_episode(None, sd) for sd in range(5)])), 2))\nprint(\"模型              MPC    开环（40 步总代价，越低越好）\")\nfor name, mod in [(\"真实动力学\", pend)] + list(models.items()):\n    m = np.mean([mpc_episode(mod, sd) for sd in range(5)]); o = np.mean([open_loop_episode(mod, sd) for sd in range(5)])\n    print(f\"{name:14s} {m:6.2f} {o:7.2f}\")\n# 输出：随机动作的总代价      : 20.21\n# 输出：模型              MPC    开环（40 步总代价，越低越好）\n# 输出：真实动力学            7.82    8.22\n# 输出：线性(5000 条)       7.88   14.76\n# 输出：小网络(200 条)       7.82    8.22\n# 输出：小网络(5000 条)      7.83    8.19\n```\n\n读输出：随机动作的总代价是 20.21，真实动力学的 MPC 是 7.82，开环是 8.22。\n\n- **MPC 下几乎看不出模型的差别**：线性模型 7.88，200 条数据的小网络 7.82，5000 条的 7.83。线性模型的一步误差比小网络大几十倍，但每一步只用它预测接下来的 10 步，又会立刻用真实状态纠正，所以控制效果几乎一样。\n- **开环下差别立刻显出**：线性模型 14.76，几乎是真实动力学开环（8.22）的 1.8 倍；小网络仍是 8.22 与 8.19。\n- **数据效率**：只有 200 条转移的小网络，控制效果已经和真实动力学一样好（7.82）。这就是基于模型方法**样本效率高**的体现：对这个任务，200 条数据足以学出够用的模型，而无模型方法通常需要成千上万条。但请注意这个任务简单（只有 2 维状态、1 维动作，且只要保持在训练范围内）；换到高维图像输入，数据需求会大得多。\n\n### 想象中训练与基于模型方法的取舍\n\n有了模型，另一种用法是**不做在线搜索，而是用模型产生大量想象经验，拿它们训练一个策略**（像 Dyna-Q 一样，只是把表换成了网络）。这就是 **「在想象中训练」(training in imagination)**。它的好处是：训练出来的策略不需要每一步都规划，部署时很快；缺点是**策略会针对这个模型过拟合**。\n\n这里要警惕**模型利用 (model exploitation)**：优化器的任务是找让模型预测的回报最高的动作，而模型预测最乐观的地方，往往正是数据最少、模型错得最厉害的地方。结果是策略在想象里表现惊人，在真实环境里却失败。常用的应对方法有：\n\n- **短的、从真实状态出发的想象**。MBPO（Janner 等，NeurIPS 2019）的论文摘要里的说法是：理论分析显示，「从真实数据分支出去的、短的模型生成 rollout」能同时享有复杂的基于模型方法的好处，又不会遭遇它们的缺点；\n- **模型集成与不确定性**。PETS（Chua 等，NeurIPS 2018）用概率神经网络捕捉**偶然不确定性 (aleatoric)**（系统本身的噪声），用自助法集成捕捉**认知不确定性 (epistemic)**（数据不足造成的无知），论文称在 half-cheetah 上用的样本比 SAC 少 8 倍、比 PPO 少 125 倍；\n- **在模型里加随机性**。Ha 和 Schmidhuber 的《World Models》里，用一个温度参数 $\\tau$ 控制 M 模型采样的不确定性，较高的 $\\tau$ 让梦境更随机，防止智能体钻模型的空子（第 8 节细讲）；\n- **MPC 式的频繁重规划**，前面实验已经看到。\n\n下面用单摆的小网络（200 条数据训练）做一个对照：想象预算固定为 500 条合成转移，一种做法是 100 个真实起点各滚动 5 步，另一种是 10 个真实起点各滚动 50 步。\n\n```python\nimport numpy as np, time\n# 「真实世界」：一个带阻尼的单摆，状态 s=(角度 th, 角速度 om)，动作 a 是力矩。我们把它当黑箱，只用它产生数据\ndt, AMAX = 0.05, 8.0\ndef pend(s, a):\n    th, om = s[..., 0], s[..., 1]\n    om2 = om + dt * (-9.8 * np.sin(th) - 0.1 * om + a)\n    return np.stack([th + dt * om2, om2], -1)\n\nrng = np.random.default_rng(0)\ndef collect(n):                              # 在状态空间里随机撒点、随机施加动作，记录 (s, a, s')\n    S = np.c_[rng.uniform(-2.5, 2.5, n), rng.uniform(-5, 5, n)]\n    A = rng.uniform(-AMAX, AMAX, n)\n    return S, A, pend(S, A)\n\ndef fit_linear(S, A, S2):                    # 线性模型：s' - s = [s, a, 1] @ W，用最小二乘解\n    W = np.linalg.lstsq(np.c_[S, A, np.ones(len(S))], S2 - S, rcond=None)[0]\n    return lambda s, a: s + np.c_[s, a, np.ones(len(s))] @ W\n\ndef fit_mlp(S, A, S2, h=48, epochs=2000, lr=3e-3, seed=1):   # 两层 tanh 网络，预测 s' - s；手写反向传播 + Adam\n    X, Y = np.c_[S, A], S2 - S\n    mu, sd, ysd = X.mean(0), X.std(0), Y.std(0); Xn, Yn = (X - mu) / sd, Y / ysd\n    r = np.random.default_rng(seed)\n    P = [r.normal(0, 1 / np.sqrt(3), (3, h)), np.zeros(h), r.normal(0, 1 / np.sqrt(h), (h, h)), np.zeros(h),\n         r.normal(0, 1 / np.sqrt(h), (h, 2)), np.zeros(2)]\n    def fwd(Xn):\n        h1 = np.tanh(Xn @ P[0] + P[1]); h2 = np.tanh(h1 @ P[2] + P[3]); return h1, h2, h2 @ P[4] + P[5]\n    m = [np.zeros_like(p) for p in P]; v = [np.zeros_like(p) for p in P]\n    for ep in range(1, epochs + 1):\n        h1, h2, out = fwd(Xn); d = 2 * (out - Yn) / len(Xn)          # 均方误差的梯度\n        dh2 = (d @ P[4].T) * (1 - h2 ** 2); dh1 = (dh2 @ P[2].T) * (1 - h1 ** 2)\n        G = [Xn.T @ dh1, dh1.sum(0), h1.T @ dh2, dh2.sum(0), h2.T @ d, d.sum(0)]\n        for i in range(6):\n            m[i] = 0.9 * m[i] + 0.1 * G[i]; v[i] = 0.999 * v[i] + 0.001 * G[i] ** 2\n            P[i] -= lr * (m[i] / (1 - 0.9 ** ep)) / (np.sqrt(v[i] / (1 - 0.999 ** ep)) + 1e-8)\n    return lambda s, a: s + fwd((np.c_[s, a] - mu) / sd)[2] * ysd\n\nS, A, S2 = collect(200)\nmodel = fit_mlp(S, A, S2)\n\n# 「想象」预算固定为 500 条合成转移：(a) 从 100 个真实状态出发各滚动 5 步；(b) 从 10 个真实状态出发各滚动 50 步\n# 度量：每条合成转移 (s, a) -> s'_模型 与真实 s'_真 的距离，以及模型所处的状态偏离「真实轨迹」多远\ndef imagine(n_start, length, seed=3):\n    r = np.random.default_rng(seed)\n    s_real = np.c_[r.uniform(-2, 2, n_start), r.uniform(-3, 3, n_start)]      # 来自真实数据分布的起点\n    s_img = s_real.copy(); trans_err, drift = [], []\n    for k in range(length):\n        a = r.uniform(-AMAX, AMAX, n_start)\n        s_next_model = model(s_img, a)\n        trans_err.append(np.sqrt(((s_next_model - pend(s_img, a)) ** 2).sum(1)))   # 在「想象出来的状态」上，模型这一步错多少\n        s_real = pend(s_real, a); s_img = s_next_model\n        drift.append(np.sqrt(((s_img - s_real) ** 2).sum(1)))                       # 想象轨迹偏离真实轨迹多少\n    return float(np.concatenate(trans_err).mean()), float(np.concatenate(drift).mean())\n\nfor n_start, length in [(100, 5), (10, 50)]:\n    te, dr = imagine(n_start, length)\n    print(f\"{n_start:3d} 个起点 x 滚动 {length:2d} 步（共 {n_start * length} 条）：单步误差均值 {te:.4f}，偏离真实轨迹均值 {dr:.4f}\")\n# 输出：100 个起点 x 滚动  5 步（共 500 条）：单步误差均值 0.0038，偏离真实轨迹均值 0.0079\n# 输出： 10 个起点 x 滚动 50 步（共 500 条）：单步误差均值 0.0041，偏离真实轨迹均值 0.0316\n```\n\n读输出：两种做法里，**模型在想象状态上的单步误差几乎一样**（0.0038 对 0.0041），但想象出的轨迹偏离真实轨迹的程度差了四倍：短滚动 0.0079，长滚动 0.0316。而且 100 个起点比 10 个起点覆盖的状态更多样。**同样的预算，多起点、短滚动更可靠**，这是 MBPO 的直觉。代价是想象的视野短，无法直接训练需要很长远规划的任务；价值函数（上一章学过的 $V$ 或 $Q$）可以在想象轨迹的末端「接上」长期回报，这正是 Dreamer 做的事（第 8 节）。\n\n**小结：取舍在哪里？**\n\n| 方面 | 无模型 | 基于模型 |\n|---|---|---|\n| 真实样本需求 | 多 | 少（实验：Dyna-Q 约三分之一） |\n| 每步计算量 | 小 | 大（规划、想象） |\n| 最终性能上限 | 不受模型误差限制 | 可能被模型偏差限制 |\n| 主要风险 | 样本消耗 | 累积误差、分布偏移、模型利用 |\n\n### 这一节你要带走的三句话\n\n1. **基于模型 = 学一个环境模型 + 在模型里规划 / 想象**：样本效率高（迷宫里 Dyna-Q 只用约三分之一的真实步数），但最终性能可能被模型偏差限制。\n2. **规划的三件套**：随机射击、CEM（迭代地拟合精英）、MPC（每步重规划，只执行第一个动作）；MPC 的闭环让它对模型误差稳健（模型有误差时开环代价 49 到 54，MPC 只有 9 到 11）。\n3. **模型的三个毛病**：多步滚动的累积误差（$e_k\\le\\epsilon(L^k-1)/(L-1)$）、分布偏移（走出训练数据就崩）、被优化器利用；对策是短想象、重规划、集成与随机性，这些都是第 8 节世界模型设计的出发点。"
+  },
+  {
+   "type": "think",
+   "q": "MPC 每一步只执行规划出的第一个动作，后面 $H-1$ 个动作白白丢掉了。既然丢掉，为什么不干脆把整条计划执行完？什么时候这样做才合理？",
+   "a": "因为模型有误差、环境有随机性：计划是基于模型对未来的预测做的，执行到第 $k$ 步时真实状态早已偏离模型的预测（实验里开环代价是 MPC 的 5 倍左右）。重新规划相当于把「真实状态」作为反馈，**闭环控制**。丢掉的那些动作是用来评估「第一个动作的长期后果」的，它们的价值已经体现在第一个动作的选择里了。\n\n执行整条计划（开环）合理的情形：模型非常准、环境确定且没有扰动，或者重规划的计算代价太高、不得不降低重规划频率（折中做法是每执行几步再重规划一次）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "模型利用",
+     "model exploitation",
+     "优化器专门钻模型误差的空子"
+    ],
+    [
+     "模型集成",
+     "model ensemble",
+     "训练多个模型，用分歧估计不确定性"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Sutton & Barto《Reinforcement Learning: An Introduction》第 8 章 Planning and Learning with Tabular Methods（作者免费公开）",
+   "url": "http://incompleteideas.net/book/the-book-2nd.html",
+   "note": "Dyna-Q 与规划的标准教材讲法；本节的迷宫实验是自己设计的，并非书里的原图"
+  },
+  {
+   "title": "Berkeley CS285 Deep Reinforcement Learning（课程主页）",
+   "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+   "note": "有基于模型强化学习的课件与视频，可对照本节的内容（本节没有逐讲核对大纲）"
+  },
+  {
+   "title": "Janner 等《When to Trust Your Model: Model-Based Policy Optimization》（MBPO，NeurIPS 2019）",
+   "url": "https://arxiv.org/abs/1906.08253",
+   "note": "短的、从真实状态分支的模型 rollout；读摘要和引言即可"
+  },
+  {
+   "title": "Chua 等《Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models》（PETS，NeurIPS 2018）",
+   "url": "https://arxiv.org/abs/1805.12114",
+   "note": "概率集成模型 + 轨迹采样，MPC 的深度强化学习版本"
+  },
+  {
+   "title": "选看：Model Based RL Finally Works!（Edan Meyer，约 28 分钟，YouTube）",
+   "url": "https://www.youtube.com/watch?v=vfpZu0R1s1Y",
+   "note": "按标题和频道挑选，我没有看过内容，视频是否贴合请自行判断"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "MBPO 一类方法选择从「真实状态」出发做**很短**的模型滚动，而不是从初始状态一路想象到底。这样做的主要目的是？",
+    "options": [
+     "让模型不需要训练",
+     "让规划器可以丢掉奖励函数",
+     "保证想象与真实环境完全一致",
+     "把累积误差控制在较小的范围，同时让想象的数据覆盖真实数据分布里更多样的状态"
+    ],
+    "answer": 3,
+    "explain": "从真实状态出发，每次想象的起点都在数据分布内，短滚动又限制了误差累积。迷宫之外的单摆实验里，同样 500 条合成转移，100 个起点滚 5 步的偏离只有 10 个起点滚 50 步的约四分之一。"
+   },
+   {
+    "q": "为什么基于模型的强化学习通常要在循环里「用当前策略或规划器收集新数据，再重新拟合模型」，而不是一次性用随机数据学好模型就结束？",
+    "options": [
+     "因为随机数据不能用来训练神经网络",
+     "因为规划器会访问到随机数据里很少出现的状态，模型在那里很不准（分布偏移）",
+     "因为模型一旦训练好参数就会自动变化",
+     "因为这样可以不再需要奖励"
+    ],
+    "answer": 1,
+    "explain": "规划器会把智能体带到它自己感兴趣的状态，这些状态可能不在最初的随机数据里，模型在那里没有被训练过，预测不可靠。把新数据加进来重新拟合，让模型在「会被用到的地方」变准。"
+   },
+   {
+    "q": "实验里，用线性模型做 MPC 和用小网络做 MPC，总代价几乎一样（都约 7.8）；但改成「只在开头规划一次、闭眼执行」，线性模型的代价明显变差。这个结果说明什么？",
+    "options": [
+     "开环执行比 MPC 更好",
+     "线性模型比小网络更准确",
+     "闭环重规划掩盖了模型的误差，开环执行则暴露了它",
+     "代价与模型无关"
+    ],
+    "answer": 2,
+    "explain": "线性模型一步预测误差大（0.117，小网络是 0.0025），但每步重规划只依赖它「下一小段」的预测，真实状态不断被拉回来，所以总代价影响不大；开环执行时误差一路累积，代价从 8.2 升到 14.76。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "id": "u13b",
+ "title": "einops：重排、归约、重复（2/3）",
+ "en": "einops: rearrange / reduce / repeat (2/3)",
+ "minutes": 30,
+ "objectives": [
+  "会用 **`reduce`** 做平均、求和、最大和 **池化 (pooling)**，用 **`repeat`** 沿新维度复制，知道三者靠「箭头右边少了 / 多了哪些维度」区分",
+  "能把一个 **reshape / permute** 的写法改写成 einops，并用 NumPy 或 PyTorch 对拍验证两者结果一致"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「einops：重排、归约、重复」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：括号里的顺序：谁变化得快（续）（约 15 分钟） → reduce：把几个维度汇总掉（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n下面的拼图例子是这个规则最典型的用法：6 张 $2\\times2$ 的小图，第 $k$ 张的像素是 $4k$ 到 $4k+3$，用 `\"(r c) h w -> (r h) (c w)\"` 拼成 2 行 3 列。结果是 `(4, 6)` 的大图：第 0 行 `[0 1 4 5 8 9]`，是三张图（0、1、2 号）各自的第 0 行并排；第 1 行 `[2 3 6 7 10 11]` 是它们各自的第 1 行。关键在 `(r h)` 里 `r`（第几行小图）在左边、`h`（小图内的行）在右边：先走完一张小图的所有行，再换下一行小图。写反成 `(h r)` 后，小图被撕碎，第一行变成 `[0 4 8 1]`，来自不同图片的像素混在一起，**形状仍然是对的，但图是错的**。所以用 einops 时的心法是：**合并时问自己「哪个应该变化得更快」，快的放右边。**"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "xGy75Pjsqzo",
+   "title": "视频二：Reshape, Permute, Squeeze, Unsqueeze made simple using einops（Kapil Sachdeva）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### reduce：把几个维度汇总掉\n\n> **标准定义 · 归约 (reduce)**\n>\n> `reduce(x, \"左边 -> 右边\", 操作)` 对**出现在左边、没有出现在右边**的维度做汇总：`\"mean\"`（平均）、`\"sum\"`（求和）、`\"max\"`、`\"min\"`，或者一个自己写的函数。出现在右边的维度保留。把一个维度拆成 `(块数 块内位置)` 并对「块内位置」汇总，就得到**池化 (pooling)**。\n>\n> *English: reduce(x, \"lhs -> rhs\", op) aggregates over the axes that appear on the left but not on the right, using \"mean\", \"sum\", \"max\", \"min\" or a custom function. Splitting an axis into (blocks, within-block) and reducing the second part gives pooling.*\n\n**白话版：「班级成绩单，留下想看的列」。** 全校有「年级、班、人」三层成绩，你只想看每个年级的平均分，就把「班」和「人」两个维度从右边拿掉，并说「求平均」。**右边没写的，就是被汇总掉的。**\n\n```python\nimport numpy as np\nfrom einops import reduce\n\nrng = np.random.default_rng(0)\nx = rng.normal(size=(8, 3, 4, 4))                      # b c h w\n\nprint(reduce(x, \"b c h w -> c\", \"mean\").shape)         # 右边没写 b、h、w：这三个维度被求平均\nprint(reduce(x, \"b c h w -> b c\", \"mean\").shape)       # 全局平均池化：每张图每个通道一个数\nprint(reduce(x, \"b c h w -> b\", \"sum\").shape)\n\n# 与 NumPy 对拍\nprint(np.allclose(reduce(x, \"b c h w -> c\", \"mean\"), x.mean(axis=(0, 2, 3))))\nprint(np.allclose(reduce(x, \"b c h w -> b c\", \"max\"), x.max(axis=(2, 3))))\n\n# 2x2 池化：把 h、w 各拆成 (块数, 块内位置)，再对块内位置汇总\nimg = np.arange(16).reshape(4, 4)\nprint(img)\nprint(reduce(img, \"(h h2) (w w2) -> h w\", \"max\", h2=2, w2=2))\nprint(reduce(img.astype(float), \"(h h2) (w w2) -> h w\", \"mean\", h2=2, w2=2))\n\n# 用最笨的双重循环对拍随机矩阵\nbig = rng.normal(size=(6, 8))\nfast = reduce(big, \"(h h2) (w w2) -> h w\", \"max\", h2=2, w2=2)\nslow = np.array([[big[2 * i:2 * i + 2, 2 * j:2 * j + 2].max() for j in range(4)] for i in range(3)])\nprint(fast.shape, np.array_equal(fast, slow))\n# 输出：(3,)\n# 输出：(8, 3)\n# 输出：(8,)\n# 输出：True\n# 输出：True\n# 输出：[[ 0  1  2  3]\n# 输出： [ 4  5  6  7]\n# 输出： [ 8  9 10 11]\n# 输出： [12 13 14 15]]\n# 输出：[[ 5  7]\n# 输出： [13 15]]\n# 输出：[[ 2.5  4.5]\n# 输出： [10.5 12.5]]\n# 输出：(3, 4) True\n```\n\n读输出：`\"b c h w -> c\"` 把 `b`、`h`、`w` 三个维度都平均掉，剩下 `(3,)`，与 `x.mean(axis=(0, 2, 3))` 对拍结果为 `True`；`\"b c h w -> b c\"` 只平均 `h` 和 `w`，得到 `(8, 3)`：这就是 CNN 里常见的**全局平均池化 (global average pooling)**；`\"-> b\"` 配 `\"sum\"` 则把后三个维度都加起来。\n\n池化那个例子，把 $4\\times4$ 的图拆成 $2\\times2$ 个块，每块 $2\\times2$：取最大得到 `[[5 7], [13 15]]`（左上块 $\\{0,1,4,5\\}$ 的最大值是 5，右上块 $\\{2,3,6,7\\}$ 是 7，依此类推），取平均得到 `[[2.5 4.5], [10.5 12.5]]`。最后的双重循环对拍（形状 `(3, 4)`，输出 `True`）说明 `reduce` 与「手写循环」一致。注意 `\"mean\"` 要求输入是浮点数，整数数组需要先 `astype(float)`，否则 einops 会报错。"
+  },
+  {
+   "type": "think",
+   "q": "**计算题**：`temps` 是连续 3 天、每天 24 小时的逐小时气温，形状 `(72,)`。用一次 `reduce` 算出每天的平均气温，再说明如果要得到每天**最高**气温该改哪里。",
+   "a": "```python\nreduce(temps, \"(d 24) -> d\", \"mean\")   # 形状 (3,)\nreduce(temps, \"(d 24) -> d\", \"max\")    # 最高气温：只改第三个参数\n```\n\n把 72 拆成（天数 `d`，每天 24 小时），`d` 在左边变化慢，所以第 0–23 个数属于第 1 天，依此类推；右边没有「24」这一维，它就被汇总掉。如果误写成 `\"(24 d) -> d\"`，就变成「每隔 3 小时取一个数」的汇总，形状还是 `(3,)`，但含义错了。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`x` 的形状是 `(8, 3, 32, 32)`，`rearrange(x, \"b c h w -> b h w c\")` 的形状是？",
+    "options": [
+     "`(8, 32, 32, 3)`",
+     "`(8, 3, 32, 32)`",
+     "`(3, 8, 32, 32)`",
+     "`(8, 3072)`"
+    ],
+    "answer": 0,
+    "explain": "只是把通道维 `c` 挪到最后，其余顺序不变。"
+   },
+   {
+    "q": "`reduce(x, \"b c h w -> b c\", \"mean\")` 做了什么？",
+    "options": [
+     "复制通道维",
+     "对整个批量求平均",
+     "把 h 和 w 合并",
+     "对每张图的每个通道，求所有像素的平均值"
+    ],
+    "answer": 3,
+    "explain": "右边少了 `h` 和 `w`，所以沿这两维求平均，这就是 **全局平均池化 (global average pooling)**。"
+   },
+   {
+    "q": "对形状 `(4, 4)` 的图做 2×2 **最大池化**，正确的写法是？",
+    "options": [
+     "`reduce(img, \"h w -> h\", \"max\")`",
+     "`reduce(img, \"(h h2) (w w2) -> h w\", \"max\", h2=2, w2=2)`",
+     "`rearrange(img, \"(h h2) (w w2) -> h w\", h2=2, w2=2)`",
+     "`repeat(img, \"h w -> (h 2) (w 2)\")`"
+    ],
+    "answer": 1,
+    "explain": "池化要把高、宽各拆成（块数，块内位置），箭头右边去掉块内的 `h2`、`w2` 并取最大。只写 `rearrange` 的版本右边少了维度，会报错；用 `repeat` 写成 `(h 2)` 的版本是放大而不是池化；把 `h w` 直接归约成 `h` 则是对整行取最大。"
+   }
+  ]
+ }
+}

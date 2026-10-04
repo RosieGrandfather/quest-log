@@ -1,0 +1,112 @@
+{
+ "id": "u07c",
+ "title": "概率与统计：期望、方差、正态分布（3/3）",
+ "en": "Probability & Statistics (3/3)",
+ "minutes": 45,
+ "objectives": [
+  "认识 **正态分布 (normal distribution)**、**标准化 (standardization)**、**中心极限定理 (central limit theorem)**，并能用「方差相加」推出为什么权重初始化的方差要取 $1/n$（Xavier / Kaiming）"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「概率与统计：期望、方差、正态分布」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：独立、协方差与方差的加法（约 15 分钟） → 正态分布、标准化与中心极限定理（约 10 分钟） → 一个小实验：为什么初始化的方差要取 $1/n$（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 独立、协方差与方差的加法\n\n> **标准定义 · 协方差与方差的加法 (covariance & variance of a sum)**\n>\n> **协方差 (covariance)** $\\operatorname{Cov}(X,Y)=\\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)]$；**相关系数 (correlation)** $\\rho=\\operatorname{Cov}(X,Y)/(\\sigma_X\\sigma_Y)\\in[-1,1]$。**独立**的变量协方差为 0（反过来不一定成立）。对任意 $X,Y$：\n>\n> $$\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\operatorname{Cov}(X,Y)$$\n>\n> 独立时最后一项为 0。对 $n$ 个独立同分布、方差为 $\\sigma^2$ 的变量，**平均值**的方差是 $\\sigma^2/n$。\n>\n> *English: Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y). For independent variables the covariance term vanishes. The mean of n i.i.d. variables with variance σ² has variance σ²/n.*\n\n**白话版：「同向的波动会叠加，反向的会抵消」。** 两个独立的东西各自晃，合起来晃得更大一点（方差相加）；如果它们总是同时往一个方向晃（正相关），合起来晃得更厉害；如果一个上去另一个下来（负相关），就互相抵消。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\nN = 1_000_000\n\n# 构造相关系数为 rho 的两个标准正态变量 X、Y，各自方差 1\ndef make(rho):\n    X = rng.normal(size=N)\n    Z = rng.normal(size=N)\n    return X, rho * X + np.sqrt(1 - rho ** 2) * Z\n\nprint(\"Var(X+Y) = Var(X) + Var(Y) + 2 Cov(X,Y) = 2 + 2 rho\")\nfor rho in (0.0, 0.8, -0.8, 1.0, -1.0):\n    X, Y = make(rho)\n    cov = round(float(np.cov(X, Y)[0, 1]), 2) + 0.0\n    print(f\"rho = {rho:+.1f}：协方差 = {cov:+.2f}，Var(X+Y) 模拟 = {(X + Y).var():.3f}，公式 = {2 + 2 * rho:.1f}，Var(X-Y) = {(X - Y).var():.3f}\")\n\n# 独立同分布变量的平均：方差 sigma^2/n，标准差 sigma/sqrt(n)\nprint(\"\\n独立变量（sigma = 1）的平均值的标准差：\")\nfor n in (1, 4, 16, 64):\n    means = rng.normal(size=(100_000, n)).mean(axis=1)\n    print(f\"n = {n:2d}：模拟 {means.std():.3f}，公式 1/sqrt(n) = {1 / np.sqrt(n):.3f}\")\n# 输出：Var(X+Y) = Var(X) + Var(Y) + 2 Cov(X,Y) = 2 + 2 rho\n# 输出：rho = +0.0：协方差 = +0.00，Var(X+Y) 模拟 = 1.999，公式 = 2.0，Var(X-Y) = 2.000\n# 输出：rho = +0.8：协方差 = +0.80，Var(X+Y) 模拟 = 3.598，公式 = 3.6，Var(X-Y) = 0.400\n# 输出：rho = -0.8：协方差 = -0.80，Var(X+Y) 模拟 = 0.400，公式 = 0.4，Var(X-Y) = 3.598\n# 输出：rho = +1.0：协方差 = +1.00，Var(X+Y) 模拟 = 3.996，公式 = 4.0，Var(X-Y) = 0.000\n# 输出：rho = -1.0：协方差 = -1.00，Var(X+Y) 模拟 = 0.000，公式 = 0.0，Var(X-Y) = 3.992\n# 输出：\n# 输出：独立变量（sigma = 1）的平均值的标准差：\n# 输出：n =  1：模拟 1.003，公式 1/sqrt(n) = 1.000\n# 输出：n =  4：模拟 0.501，公式 1/sqrt(n) = 0.500\n# 输出：n = 16：模拟 0.251，公式 1/sqrt(n) = 0.250\n# 输出：n = 64：模拟 0.125，公式 1/sqrt(n) = 0.125\n```\n\n读输出：令 $X,Y$ 都是方差 1 的正态变量，相关系数为 $\\rho$。独立（$\\rho=0$）时 $\\operatorname{Var}(X+Y)=2$（模拟 1.999）；正相关 $\\rho=0.8$ 时变大到 3.6（模拟 3.598）；负相关 $\\rho=-0.8$ 时缩到 0.4（模拟 0.400）。极端情况：$\\rho=1$ 时 $Y=X$，$X+Y=2X$，方差是 $4\\sigma^2=4$（模拟 3.996）；$\\rho=-1$ 时 $X+Y$ 恒等于 0，方差为 0。**减法也不例外**：$\\operatorname{Var}(X-Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)-2\\operatorname{Cov}(X,Y)$，独立时同样是 2.000，**方差永远不会因为「减」而相减**。**平均值**的标准差按 $1/\\sqrt{n}$ 缩小：$n=4$ 时 0.501、$n=16$ 时 0.251、$n=64$ 时 0.125。这就是为什么**小批量越大，梯度估计越准，但收益递减**：批量扩大 4 倍，噪声只减半。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "rzFX5NWojp0",
+   "title": "视频三：The Normal Distribution, Clearly Explained（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "text",
+   "md": "### 正态分布、标准化与中心极限定理\n\n> **标准定义 · 正态分布与中心极限定理 (normal distribution & central limit theorem)**\n>\n> **正态分布 (normal / Gaussian distribution)** $X\\sim\\mathcal{N}(\\mu,\\sigma^2)$ 的概率密度是 $f(x)=\\dfrac{1}{\\sigma\\sqrt{2\\pi}}e^{-(x-\\mu)^2/(2\\sigma^2)}$，由均值 $\\mu$ 和**方差** $\\sigma^2$ 完全决定（注意第二个参数是方差，不是标准差）。约 68% / 95% / 99.7% 的值落在 $\\mu\\pm\\sigma$ / $\\pm2\\sigma$ / $\\pm3\\sigma$ 内。**标准化 (standardization)** $Z=(X-\\mu)/\\sigma$ 把它变成标准正态 $\\mathcal{N}(0,1)$。独立正态变量之和仍是正态：$\\mathcal{N}(\\mu_1,\\sigma_1^2)+\\mathcal{N}(\\mu_2,\\sigma_2^2)=\\mathcal{N}(\\mu_1+\\mu_2,\\sigma_1^2+\\sigma_2^2)$。**中心极限定理 (central limit theorem)**：很多独立同分布、方差有限的随机变量之和（或平均），经过标准化后趋近正态分布，不管原来的分布长什么样。\n>\n> *English: X ~ N(μ, σ²) is fully determined by its mean and variance; about 68/95/99.7% of the mass lies within 1/2/3 standard deviations. Sums of independent normals are normal, and by the central limit theorem standardized sums of many i.i.d. variables approach a normal distribution.*\n\n**白话版：「很多小随机叠在一起，就是钟形」。** 身高、测量误差、一堆随机权重的加权和，都是「很多小因素叠加」的结果，所以长得像钟形曲线。**标准化**就是换成「以标准差为单位、以均值为原点」的尺子，LayerNorm 对每个样本的特征做的就是这件事。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 68-95-99.7 法则\nz = rng.normal(size=1_000_000)\nfor k in (1, 2, 3):\n    print(f\"|Z| < {k}：占 {(np.abs(z) < k).mean():.4f}\")\n\n# 标准化：减均值、除以标准差，得到均值 0、方差 1（LayerNorm 对每个样本的特征做的就是这件事，分母另加一个小常数）\nx = rng.normal(loc=5.0, scale=3.0, size=100_000)\nx_std = (x - x.mean()) / x.std()\nprint(\"标准化前：均值 %.3f，标准差 %.3f\" % (x.mean(), x.std()))\nprint(\"标准化后：均值 %.3f，标准差 %.3f\" % (x_std.mean(), x_std.std()))\n\n# 中心极限定理：把 n 个均匀分布 U(0,1) 的数加起来，和越来越像正态分布\nprint(\"\\nn 个 U(0,1) 之和，落在均值 +- 1 / 2 个标准差内的比例（正态分布是 0.683 / 0.954）：\")\nfor n in (1, 2, 3, 30):\n    s = rng.random(size=(200_000, n)).sum(axis=1)\n    mu, sd = n / 2, np.sqrt(n / 12)                    # 均匀分布均值 1/2、方差 1/12，独立相加\n    print(f\"n = {n:2d}：{(np.abs(s - mu) < sd).mean():.3f} / {(np.abs(s - mu) < 2 * sd).mean():.3f}\")\n# 输出：|Z| < 1：占 0.6823\n# 输出：|Z| < 2：占 0.9544\n# 输出：|Z| < 3：占 0.9973\n# 输出：标准化前：均值 4.999，标准差 2.996\n# 输出：标准化后：均值 0.000，标准差 1.000\n# 输出：\n# 输出：n 个 U(0,1) 之和，落在均值 +- 1 / 2 个标准差内的比例（正态分布是 0.683 / 0.954）：\n# 输出：n =  1：0.577 / 1.000\n# 输出：n =  2：0.651 / 0.967\n# 输出：n =  3：0.668 / 0.959\n# 输出：n = 30：0.681 / 0.955\n```\n\n读输出：标准正态里，$|Z|<1$ 占 0.6823，$|Z|<2$ 占 0.9544，$|Z|<3$ 占 0.9973，和 68–95–99.7 法则吻合。标准化：$\\mathcal{N}(5,3^2)$ 的数据，处理前均值 4.999、标准差 2.996，处理后均值 0.000、标准差 1.000。**中心极限定理实验**：$n=1$ 个均匀分布的数本身根本不是钟形，落在 $\\pm1\\sigma$ 内的比例是 0.577、$\\pm2\\sigma$ 内是 1.000（均匀分布有「硬边界」）；加起来 $n=2$ 是 0.651 / 0.967，$n=3$ 是 0.668 / 0.959，$n=30$ 时是 0.681 / 0.955，已经几乎和正态分布的 0.683 / 0.954 无法区分。\n\n### 一个小实验：为什么初始化的方差要取 $1/n$\n\n把上面的方差法则用到真实问题上。一个神经元的预激活是 $z=\\sum_{i=1}^n w_ix_i$。设 $w_i$、$x_i$ 独立、均值为 0，$x_i$ 方差为 1，则每一项 $w_ix_i$ 的均值为 0、方差为 $\\operatorname{Var}(w_i)\\cdot1$，$n$ 项独立相加，**方差相加**：$\\operatorname{Var}(z)=n\\operatorname{Var}(w)$。要让 $z$ 的方差保持在 1，就需要 $\\operatorname{Var}(w)=1/n$。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 一个神经元的预激活 z = sum_i w_i x_i，n = 768 个输入\nn = 768\nx = rng.normal(size=(2000, n))                          # 输入：均值 0、方差 1\nfor name, w_var in [(\"w 方差 = 1\", 1.0), (\"w 方差 = 1/n\", 1.0 / n)]:\n    w = rng.normal(scale=np.sqrt(w_var), size=(n, 500))   # 500 个神经元\n    z = x @ w\n    print(f\"{name:12s}：z 的方差 = {z.var():8.2f}，标准差 = {z.std():6.2f}\")\n\n# 10 层、宽度 512 的 ReLU 网络，只看每层输出的均方根（RMS）：权重方差取 c / n\nwidth, layers = 512, 10\nx0 = rng.normal(size=(200, width))\nprint(\"\\n各层输出的 RMS（第 1 / 5 / 10 层）：\")\nfor name, c in [(\"c = 1   (1/n)\", 1.0), (\"c = 2   (Kaiming)\", 2.0), (\"c = 4\", 4.0), (\"c = n   (方差 1)\", float(width))]:\n    h = x0\n    rms = []\n    for layer in range(1, layers + 1):\n        W = rng.normal(scale=np.sqrt(c / width), size=(width, width))\n        h = np.maximum(0, h @ W)                       # 线性层 + ReLU\n        if layer in (1, 5, 10):\n            rms.append(np.sqrt((h ** 2).mean()))\n    print(f\"{name:18s}：\" + \"  \".join(f\"{r:10.3g}\" for r in rms))\n# 输出：w 方差 = 1    ：z 的方差 =   766.81，标准差 =  27.69\n# 输出：w 方差 = 1/n  ：z 的方差 =     1.00，标准差 =   1.00\n# 输出：\n# 输出：各层输出的 RMS（第 1 / 5 / 10 层）：\n# 输出：c = 1   (1/n)     ：     0.705       0.168      0.0293\n# 输出：c = 2   (Kaiming) ：     0.999       0.928       0.754\n# 输出：c = 4             ：      1.41        5.15        33.6\n# 输出：c = n   (方差 1)    ：      15.9    1.03e+06    1.06e+12\n```\n\n读输出：$n=768$ 时，权重方差取 1，$z$ 的方差 766.81，标准差 27.69，每个神经元的输出比输入大了近 28 倍；权重方差取 $1/n$，方差 1.00，标准差 1.00，完全稳定。第二个实验是 10 层、宽度 512 的 ReLU 网络，看每层输出的均方根（RMS），权重方差取 $c/n$：**$c=1$**（方差 $1/n$）时，因为 ReLU 把一半的值截成 0，信号逐层衰减：第 1、5、10 层分别是 0.705、0.168、0.0293；**$c=2$**（Kaiming 初始化，恰好补回被 ReLU 截掉的那一半）最稳定：0.999、0.928、0.754（10 层后有一些漂移，因为这是随机的，但量级没变）；**$c=4$** 开始爆炸：1.41、5.15、33.6；**方差取 1（$c=n$）**直接冲到 $10^{12}$：15.9、$1.03\\times10^6$、$1.06\\times10^{12}$。**一个看似无关紧要的「方差取多少」，决定了 10 层网络能不能训练。** 同样的计算也解释了注意力里的 $\\sqrt{d_k}$：若查询和键的分量独立、方差为 1，$\\mathbf{q}\\cdot\\mathbf{k}$ 有 $d_k$ 项相加，方差是 $d_k$，所以要除以 $\\sqrt{d_k}$ 把方差拉回 1，否则 softmax 会饱和。\n\n### 这一节你要带走的三句话\n\n1. **期望是线性的（不需要独立），方差不是**：$\\operatorname{Var}(aX+c)=a^2\\operatorname{Var}(X)$，$\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\operatorname{Cov}(X,Y)$；独立时协方差为 0，$n$ 个独立变量的平均值的方差是 $\\sigma^2/n$。\n2. **正态分布由均值和方差决定**；独立正态变量之和仍是正态（均值相加、方差相加）；中心极限定理解释了它为什么无处不在；标准化就是减均值、除以标准差。\n3. **方差的加法法则能直接推出初始化**：$n$ 项独立相加，方差变成 $n$ 倍，所以权重方差要取 $1/n$（ReLU 网络取 $2/n$）；样本方差除以 $n-1$ 是无偏的，LayerNorm 里用的是除以 $n$。"
+  },
+  {
+   "type": "think",
+   "q": "你训练一个模型，用小批量估计梯度，每个样本的梯度噪声标准差是 $\\sigma$，样本之间独立。(a) 批量大小 $B=32$ 时，梯度估计的噪声标准差是多少？(b) 要把噪声减半，批量要增大多少倍？(c) 注意力里为什么要把 $\\mathbf{q}\\cdot\\mathbf{k}$ 除以 $\\sqrt{d_k}$？",
+   "a": "(a) 小批量梯度是 $B$ 个样本梯度的平均，方差是 $\\sigma^2/B$，标准差是 $\\sigma/\\sqrt{B}=\\sigma/\\sqrt{32}\\approx0.177\\sigma$。\n\n(b) 标准差按 $1/\\sqrt{B}$ 缩小，要减半，需要 $B$ 增大 **4 倍**（例如 32 到 128）；要缩小到十分之一，需要 100 倍。所以批量越大收益越递减，这也是大批量训练常要调高学习率的原因之一。\n\n(c) 若 $\\mathbf{q}$、$\\mathbf{k}$ 的各个分量独立、均值 0、方差 1，则 $\\mathbf{q}\\cdot\\mathbf{k}=\\sum_{i=1}^{d_k}q_ik_i$ 是 $d_k$ 个方差为 1 的独立项之和，方差为 $d_k$。除以 $\\sqrt{d_k}$ 后方差回到 1，softmax 的输入尺度不随维度变化，避免 softmax 饱和成接近 one-hot（那样梯度几乎为 0）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "标准化",
+     "standardization",
+     "减均值、除以标准差，变成均值 0、方差 1"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Probability & Statistics 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "含「正态变量之和」思考题（讲解为自写，未转载原文）"
+  },
+  {
+   "title": "Expected Value, Variance, and Standard Deviation（Medium）",
+   "url": "https://medium.com/jun94-devpblog/prob-stats-3-expected-value-variance-and-standard-deviation-bce9303d8da8",
+   "note": "ARENA 推荐的入门文章"
+  },
+  {
+   "title": "StatQuest：Population and Estimated Parameters（选看，讲 n−1）",
+   "url": "https://www.youtube.com/watch?v=vikkiwjQqfU",
+   "note": "为什么样本方差除以 n−1"
+  },
+  {
+   "title": "MIT 6.041 Probabilistic Systems Analysis and Applied Probability",
+   "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+   "note": "选看：概率论的标准大学课程，对应本节的基本规则、期望方差与正态分布"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "$X$、$Y$ **独立**，$\\text{Var}(X) = 2$，$\\text{Var}(Y) = 3$，$\\text{Var}(X - Y)$ 等于？",
+    "options": [
+     "−1",
+     "1",
+     "6",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "$\\text{Var}(X - Y) = \\text{Var}(X) + (-1)^2\\,\\text{Var}(Y) = 2 + 3 = 5$。方差永远不会因为「减」而相减。"
+   },
+   {
+    "q": "$X_1 \\sim \\mathcal{N}(1, 4)$ 和 $X_2 \\sim \\mathcal{N}(2, 9)$ 独立，$X_1 + X_2$ 服从什么分布？",
+    "options": [
+     "$\\mathcal{N}(3, 5)$",
+     "$\\mathcal{N}(3, 13)$",
+     "$\\mathcal{N}(3, 36)$",
+     "$\\mathcal{N}(1.5, 6.5)$"
+    ],
+    "answer": 1,
+    "explain": "独立正态变量之和仍是正态，均值相加 $1 + 2 = 3$，方差相加 $4 + 9 = 13$。注意 $\\mathcal{N}(\\mu, \\sigma^2)$ 的第二个参数是**方差**。"
+   },
+   {
+    "q": "10,000 个独立变量，每个方差为 1。它们的**平均值**的标准差是多少？",
+    "options": [
+     "1",
+     "100",
+     "0.01",
+     "0.0001"
+    ],
+    "answer": 2,
+    "explain": "平均值的方差 $= 1/10000$，标准差 $= \\sqrt{1/10000} = 0.01$。平均越多，越稳定。"
+   },
+   {
+    "q": "为了让 $\\sum_{i=1}^{n} w_ix_i$ 的方差保持在 1 附近（$x_i$ 方差为 1，各项独立、均值为 0），权重 $w_i$ 的方差应该设为？",
+    "options": [
+     "$1/n$",
+     "$n$",
+     "0",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "和的方差 $= n \\cdot \\text{Var}(w) \\cdot \\text{Var}(x) = n\\,\\text{Var}(w)$，要等于 1 就需要 $\\text{Var}(w) = 1/n$。这是 Xavier / Kaiming 初始化的核心思想。"
+   }
+  ]
+ }
+}

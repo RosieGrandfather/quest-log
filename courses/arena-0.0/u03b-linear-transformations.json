@@ -1,0 +1,82 @@
+{
+ "id": "u03b",
+ "title": "线性变换与矩阵乘法（2/3）",
+ "en": "Linear Transformations & Matrix Multiplication (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解 **矩阵乘法 (matrix multiplication)** = 变换的**复合 (composition)**：顺序从右往左读，满足**结合律 (associativity)**、一般不满足**交换律 (commutativity)**",
+  "会判断矩阵乘法的**形状 (shape)**：$(n,m)$ 乘 $(m,l)$ 得 $(n,l)$；理解**非方阵**是在不同维度之间的变换，以及 `nn.Linear` 的 `weight` 为什么是 `(out, in)`"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「线性变换与矩阵乘法」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：矩阵的「列」就是基向量的去向（约 20 分钟） → 矩阵乘法 = 变换的复合（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 矩阵的「列」就是基向量的去向\n\n既然线性变换由基向量的去向决定，那只需把这两个去向记下来，就能描述整个变换，这就是矩阵：\n\n> **标准定义 · 矩阵与矩阵乘向量 (matrix & matrix–vector product)**\n>\n> 线性变换 $T$ 的**矩阵**，是把 $T(\\hat\\imath)$、$T(\\hat\\jmath)$ 作为**列**并排得到的：$A=\\big[\\,T(\\hat\\imath)\\ \\ T(\\hat\\jmath)\\,\\big]$。矩阵乘向量就是应用这个变换：\n>\n> $$\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=x\\begin{bmatrix}a\\\\c\\end{bmatrix}+y\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}ax+by\\\\cx+dy\\end{bmatrix}$$\n>\n> 结果是**矩阵各列的线性组合**，系数就是向量的各个坐标。\n>\n> *English: The matrix of a linear map has the images T(î), T(ĵ) as its columns. Multiplying a matrix by a vector gives a linear combination of the columns, with the vector's coordinates as coefficients.*\n\n**白话版：「列是新坐标轴，向量是配方」。** 变换之后，原来的 $\\hat\\imath$、$\\hat\\jmath$ 变成了两个新箭头（矩阵的两列）；向量 $(x,y)$ 的「配方」没变，还是 $x$ 份第一个、$y$ 份第二个，只是原料换成了新箭头。所以：**矩阵乘向量 = 用新的原料重新做一遍配方。** 也可以按「行」读：每个输出分量是一行与向量的点积。两种读法结果相同，但**按列读**更能看出这个变换在做什么，后面讲秩、列空间时全靠它。\n\n```python\nimport numpy as np\n\n# 矩阵的列 = 基向量变换之后落到的位置\ni_new = np.array([0, 1])       # 逆时针转 90 度后，i_hat (1,0) 落在 (0,1)\nj_new = np.array([-1, 0])      # j_hat (0,1) 落在 (-1,0)\nR = np.column_stack([i_new, j_new])\nprint(\"把两个落点当作两列：\\n\", R)\n\nv = np.array([3, -2])\nprint(\"R @ v          =\", R @ v)\nprint(\"3*列1 + (-2)*列2 =\", 3 * R[:, 0] + (-2) * R[:, 1], \"（矩阵乘向量 = 各列的线性组合）\")\n\n# 同一个结果的另一种读法：每个输出分量 = 一行与 v 的点积\nprint(\"按行读：\", [int(R[0] @ v), int(R[1] @ v)])\n\n# 单位正方形的四个角被送到哪里？面积变了吗？\nS = np.array([[1, 1], [0, 1]])                  # 剪切\ncorners = np.array([[0, 0], [1, 0], [1, 1], [0, 1]]).T      # 每列是一个角\nprint(\"剪切后的四个角（每列一个）：\\n\", S @ corners)\nprint(\"剪切前后面积都是 1：\", abs(np.linalg.det(S)))\n# 输出：把两个落点当作两列：\n# 输出： [[ 0 -1]\n# 输出： [ 1  0]]\n# 输出：R @ v          = [2 3]\n# 输出：3*列1 + (-2)*列2 = [2 3] （矩阵乘向量 = 各列的线性组合）\n# 输出：按行读： [2, 3]\n# 输出：剪切后的四个角（每列一个）：\n# 输出： [[0 1 2 1]\n# 输出： [0 0 1 1]]\n# 输出：剪切前后面积都是 1： 1.0\n```\n\n读输出：逆时针转 90 度后，$\\hat\\imath$ 落在 $(0,1)$、$\\hat\\jmath$ 落在 $(-1,0)$，把它们当列并排得到旋转矩阵 $\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}$。拿它去乘 $(3,-2)$ 得到 $(2,3)$：「按列读」$3\\times$第一列 $-2\\times$第二列，和「按行读」逐行点积，答案一样。最后看剪切：单位正方形的四个角 $(0,0),(1,0),(1,1),(0,1)$ 被送到 $(0,0),(1,0),(2,1),(1,1)$，正方形变成了平行四边形，**网格线还是平行且等距的**，面积没变，仍是 1（面积变化倍数就是行列式，下一节讲）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "XkY2DOUCWMU",
+   "title": "视频二：Matrix multiplication as composition（线性代数的本质 第 4 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 矩阵乘法 = 变换的复合\n\n> **标准定义 · 矩阵乘法 (matrix multiplication)**\n>\n> 先做变换 $B$ 再做变换 $A$，总效果仍是线性变换，其矩阵记作 $AB$，满足 $A(B\\mathbf{v})=(AB)\\mathbf{v}$。**顺序从右往左读**，与函数复合 $f(g(x))$ 相同。乘积的元素是\n>\n> $$(AB)_{ij}=\\sum_k A_{ik}B_{kj}$$\n>\n> 即 $A$ 的第 $i$ 行与 $B$ 的第 $j$ 列的点积；等价地，$AB$ 的第 $j$ 列 $=A\\times(B\\text{ 的第 }j\\text{ 列})$。**结合律**：$(AB)C=A(BC)$ 总成立；**交换律**：$AB=BA$ 一般不成立。\n>\n> *English: AB is the matrix of \"first B, then A\": A(Bv) = (AB)v, read right to left like function composition. (AB)_ij = Σ_k A_ik B_kj, i.e. row i of A dotted with column j of B. Matrix multiplication is associative but in general not commutative.*\n\n**白话版：「流水线」。** $B$ 是第一道工序，$A$ 是第二道工序，$AB$ 是把两道工序合成一道。**换顺序，产品就不一样了**：先转桌子再推歪，和先推歪再转桌子，桌子最后的位置不同（$AB\\neq BA$）；但三道工序 $C,B,A$，你先把后两道并成一道、还是先把前两道并成一道，结果一样（结合律）。下面的实验把这几件事都验证一遍：\n\n```python\nimport numpy as np\n\nR = np.array([[0, -1], [1, 0]])               # 旋转 90 度\nS = np.array([[1, 1], [0, 1]])                # 剪切\nv = np.array([3, -2])\n\nprint(\"先旋转再剪切 S@R =\\n\", S @ R)\nprint(\"先剪切再旋转 R@S =\\n\", R @ S)\nprint(\"S@R == R@S ？\", bool((S @ R == R @ S).all()), \"；对 v：\", S @ R @ v, \"和\", R @ S @ v)\nprint(\"(S@R)@v 与 S@(R@v) 相同：\", bool(((S @ R) @ v == S @ (R @ v)).all()))\n\n# AB 的第 j 列 = A 乘以 B 的第 j 列\nA = np.random.default_rng(0).integers(-3, 4, size=(3, 3))\nB = np.random.default_rng(1).integers(-3, 4, size=(3, 3))\nprint(\"AB 的第 j 列 = A @ B 的第 j 列：\", all((A @ B)[:, j].tolist() == (A @ B[:, j]).tolist() for j in range(3)))\n\n# 结合律成立；交换律一般不成立：随机试 1000 对 3x3 矩阵\nr = np.random.default_rng(2)\nassoc, comm = 0, 0\nfor _ in range(1000):\n    X, Y, Z = (r.integers(-3, 4, size=(3, 3)) for _ in range(3))\n    assoc += bool(((X @ Y) @ Z == X @ (Y @ Z)).all())\n    comm += bool((X @ Y == Y @ X).all())\nprint(\"1000 次里 结合律成立：\", assoc, \"次；交换律成立：\", comm, \"次\")\n\n# 上一节的结论：去掉激活函数，三层网络合并成一个矩阵（形状只看两头）\nW1, W2, W3 = (np.random.default_rng(k).normal(size=s) for k, s in [(3, (16, 784)), (4, (16, 16)), (5, (10, 16))])\nprint(\"W3 @ W2 @ W1 的形状：\", (W3 @ W2 @ W1).shape)\n# 输出：先旋转再剪切 S@R =\n# 输出： [[ 1 -1]\n# 输出： [ 1  0]]\n# 输出：先剪切再旋转 R@S =\n# 输出： [[ 0 -1]\n# 输出： [ 1  1]]\n# 输出：S@R == R@S ？ False ；对 v： [5 3] 和 [2 1]\n# 输出：(S@R)@v 与 S@(R@v) 相同： True\n# 输出：AB 的第 j 列 = A @ B 的第 j 列： True\n# 输出：1000 次里 结合律成立： 1000 次；交换律成立： 0 次\n# 输出：W3 @ W2 @ W1 的形状： (10, 784)\n```\n\n读输出：\n- 旋转 $R$ 和剪切 $S$ 的两个乘积 $SR=\\begin{bmatrix}1&-1\\\\1&0\\end{bmatrix}$、$RS=\\begin{bmatrix}0&-1\\\\1&1\\end{bmatrix}$ 不同；作用在 $(3,-2)$ 上，一个得到 $(5,3)$，一个得到 $(2,1)$；\n- $(SR)\\mathbf{v}$ 和 $S(R\\mathbf{v})$ 相同：这就是「乘积矩阵 = 复合变换」；\n- 「$AB$ 的第 $j$ 列等于 $A$ 乘 $B$ 的第 $j$ 列」成立：$B$ 把基向量送到哪，$A$ 再把它送到哪；\n- 随机的 1000 对 $3\\times3$ 整数矩阵里，**结合律 1000 次全部成立，交换律 0 次成立**（这是随机整数矩阵的结果；某些特殊矩阵，如单位矩阵、旋转和同角度旋转，是可交换的，但那是例外）；\n- 最后一行呼应上一节：$W_3W_2W_1$ 是 $(10,784)$，形状只看最两头。这正是「没有激活函数，三层网络压缩成一个矩阵」的算式。"
+  },
+  {
+   "type": "think",
+   "q": "**计算题**：取 $A=\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}$、$B=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}$。(a) 算 $AB$ 和 $BA$；(b) $B$ 在做什么几何变换？(c) 用「列的线性组合」的读法，说出 $AB$ 的两列各是什么。",
+   "a": "(a) 按 $(AB)_{ij}=\\sum_kA_{ik}B_{kj}$：\n\n$$AB=\\begin{bmatrix}1\\cdot0+2\\cdot1&1\\cdot1+2\\cdot0\\\\0\\cdot0+1\\cdot1&0\\cdot1+1\\cdot0\\end{bmatrix}=\\begin{bmatrix}2&1\\\\1&0\\end{bmatrix},\\qquad BA=\\begin{bmatrix}0&1\\\\1&2\\end{bmatrix}$$\n\n两者不同，再次说明 $AB\\ne BA$。\n\n(b) $B$ 把 $\\hat\\imath=(1,0)$ 送到 $(0,1)$、把 $\\hat\\jmath=(0,1)$ 送到 $(1,0)$：交换两个坐标，几何上是沿直线 $y=x$ 的**反射 (reflection)**。\n\n(c) $AB$ 的第 $j$ 列 $=A\\times B$ 的第 $j$ 列。$B$ 的第一列是 $(0,1)$，$A(0,1)^\\top=0\\cdot(1,0)+1\\cdot(2,1)=(2,1)$；$B$ 的第二列是 $(1,0)$，$A(1,0)^\\top=(1,0)$。所以 $AB$ 的两列是 $(2,1)$ 和 $(1,0)$，和 (a) 一致。从「按列读」看：右乘一个交换矩阵，等于**把 $A$ 的两列交换位置**（$AB$ 是 $A$ 的列互换），左乘（$BA$）则是**把行互换**。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个 2×2 矩阵的**第一列**表示什么？",
+    "options": [
+     "$\\hat{\\imath}$ 变换后的位置",
+     "$\\hat{\\jmath}$ 变换后的位置",
+     "变换后原点的位置",
+     "矩阵的行列式"
+    ],
+    "answer": 0,
+    "explain": "矩阵的第 $j$ 列就是第 $j$ 个基向量变换后落到的位置。第一列对应 $\\hat{\\imath}$，第二列对应 $\\hat{\\jmath}$。"
+   },
+   {
+    "q": "矩阵乘积 $AB$ 作用在向量上，表示的变换顺序是？",
+    "options": [
+     "顺序无所谓",
+     "先做 $A$，再做 $B$",
+     "同时做 $A$ 和 $B$",
+     "先做 $B$，再做 $A$"
+    ],
+    "answer": 3,
+    "explain": "$(AB)\\mathbf{v} = A(B\\mathbf{v})$：$B$ 离向量最近，先作用。和函数复合 $f(g(x))$ 一样从右往左读。"
+   },
+   {
+    "q": "关于矩阵乘法，下面哪个说法正确？",
+    "options": [
+     "总是满足 $AB = BA$",
+     "满足结合律 $(AB)C = A(BC)$，但一般不满足交换律",
+     "既不满足结合律也不满足交换律",
+     "只有方阵才能相乘"
+    ],
+    "answer": 1,
+    "explain": "结合律成立（都是先 $C$ 再 $B$ 再 $A$）；交换律一般不成立，比如先旋转后剪切 ≠ 先剪切后旋转。非方阵只要形状匹配也能相乘。"
+   },
+   {
+    "q": "$(AB)_{ij}$ 的计算方法是？",
+    "options": [
+     "$A_{ij} \\times B_{ij}$",
+     "$A$ 的第 $j$ 列和 $B$ 的第 $i$ 行对应相乘再相加",
+     "$A$ 的第 $i$ 行和 $B$ 的第 $j$ 列对应相乘再相加",
+     "$A_{ij} + B_{ij}$"
+    ],
+    "answer": 2,
+    "explain": "$(AB)_{ij} = \\sum_k A_{ik}B_{kj}$。$A_{ij}\\times B_{ij}$ 是**逐元素乘积**（Hadamard 积，NumPy 里写 `A * B`），和矩阵乘法 `A @ B` 是两回事，写代码时常混淆。"
+   }
+  ]
+ }
+}

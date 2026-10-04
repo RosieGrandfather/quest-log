@@ -1,0 +1,91 @@
+{
+ "id": "u05c",
+ "title": "基与基变换（3/3）",
+ "en": "Bases, Dot Products & Change of Basis (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解「高维随机方向几乎正交」和「概念方向不一定是神经元轴」这两个事实，这是 ARENA 后面 **特权基 (privileged basis)** 与 **叠加 (superposition)** 的数学基础"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「基与基变换」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：基变换（续）（约 15 分钟） → 特殊矩阵：对称、正交、旋转（约 10 分钟） → 一个小实验：高维几何与「概念方向」（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n这件事和下一节直接相连：**对角化 $A=PDP^{-1}$ 就是选一组「恰好让矩阵变成对角」的基**，也就是 $B^{-1}MB$ 的特例。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "P2LTAUO1TdA",
+   "title": "视频三：Change of basis（线性代数的本质 第 13 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 13
+  },
+  {
+   "type": "text",
+   "md": "### 特殊矩阵：对称、正交、旋转\n\n> **标准定义 · 正交矩阵与标准正交基 (orthogonal matrix & orthonormal basis)**\n>\n> 若方阵 $Q$ 满足 $Q^\\top Q=I$（等价于 $Q^{-1}=Q^\\top$），就称为**正交矩阵 (orthogonal matrix)**；它的列是两两垂直的**单位向量**，称为**标准正交基 (orthonormal basis)**。正交矩阵保持长度和点积：$\\|Q\\mathbf{x}\\|=\\|\\mathbf{x}\\|$，$(Q\\mathbf{x})\\cdot(Q\\mathbf{y})=\\mathbf{x}\\cdot\\mathbf{y}$，行列式为 $\\pm1$（$+1$ 是旋转，$-1$ 含反射）。**对称矩阵 (symmetric matrix)** 满足 $A^\\top=A$。\n>\n> *English: Q is orthogonal if QᵀQ = I, i.e. its columns form an orthonormal basis. Orthogonal maps preserve lengths and angles; det = +1 means a rotation, −1 includes a reflection.*\n\n**白话版：「刚体运动」。** 正交矩阵就是不拉伸、不压扁、只把整个空间当作刚体转一下（或照一下镜子）。**最大的好处：用标准正交基时，坐标就是点积，不用求逆。**\n\n```python\nimport numpy as np\n\nth = np.deg2rad(30)\nQ = np.array([[np.cos(th), -np.sin(th)], [np.sin(th), np.cos(th)]])   # 逆时针转 30 度\n\nprint(\"Q^T Q =\")\nprint(np.round(Q.T @ Q, 6))                                  # 单位矩阵：Q 是正交矩阵\nprint(\"逆 = 转置：\", bool(np.allclose(np.linalg.inv(Q), Q.T)), \" 行列式 =\", round(float(np.linalg.det(Q)), 3))\n\nrng = np.random.default_rng(0)\nx = rng.normal(size=2)\nprint(\"长度保持：\", round(float(np.linalg.norm(x)), 4), \"->\", round(float(np.linalg.norm(Q @ x)), 4))\ny = rng.normal(size=2)\nprint(\"点积保持：\", round(float(x @ y), 4), \"->\", round(float((Q @ x) @ (Q @ y)), 4))\n\n# 标准正交基：坐标就是点积，不用求逆\nq1, q2 = Q[:, 0], Q[:, 1]                                    # Q 的两列是一组标准正交基\ndots = np.array([x @ q1, x @ q2])\nprint(\"点积法坐标：\", np.round(dots, 4), \" 求逆法坐标：\", np.round(np.linalg.solve(Q, x), 4))\n\n# 对比：不正交的基，点积不是坐标\nB = np.array([[1.0, 1.0], [0.0, 1.0]])                       # 列 (1,0) 和 (1,1)，不垂直\nprint(\"非正交基 点积：\", np.round(B.T @ x, 4), \" 真实坐标：\", np.round(np.linalg.solve(B, x), 4))\n\n# 反射矩阵：也是正交的，但行列式 -1\nF = np.array([[1.0, 0.0], [0.0, -1.0]])\nprint(\"反射 F^T F = I：\", bool(np.allclose(F.T @ F, np.eye(2))), \" det =\", np.linalg.det(F))\n# 输出：Q^T Q =\n# 输出：[[1. 0.]\n# 输出： [0. 1.]]\n# 输出：逆 = 转置： True  行列式 = 1.0\n# 输出：长度保持： 0.1824 -> 0.1824\n# 输出：点积保持： 0.0667 -> 0.0667\n# 输出：点积法坐标： [ 0.0428 -0.1773]  求逆法坐标： [ 0.0428 -0.1773]\n# 输出：非正交基 点积： [ 0.1257 -0.0064]  真实坐标： [ 0.2578 -0.1321]\n# 输出：反射 F^T F = I： True  det = -1.0\n```\n\n读输出：$30^\\circ$ 的旋转矩阵 $Q$ 满足 $Q^\\top Q=I$，行列式为 1，逆等于转置；随机向量 $\\mathbf{x}$ 的长度在旋转前后都是 0.1824，两个向量的点积旋转前后都是 0.0667（长度和夹角都保持）。关键对比：用 $Q$ 的列作基，坐标直接用点积得到 $(0.0428,-0.1773)$，和「解方程」的结果完全一样；但换成不垂直的基（列 $(1,0)$ 和 $(1,1)$），点积 $(0.1257,-0.0064)$ 就**不是**真实坐标 $(0.2578,-0.1321)$。最后，反射矩阵也满足 $F^\\top F=I$，但行列式是 $-1$。\n\n**对称矩阵**（$A^\\top=A$）也值得记：协方差矩阵、$X^\\top X$ 都是对称的，它们的特征值全是实数、特征向量可以选成互相正交（谱定理），下一节会用到。\n\n### 一个小实验：高维几何与「概念方向」\n\n这一节的最后，用两个实验把上面的工具用到 ARENA 后面真正会遇到的问题上。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 实验一：高维空间里，随机方向几乎互相垂直\ndef mean_abs_cos(d, n_pairs=2000):\n    a = rng.normal(size=(n_pairs, d)); b = rng.normal(size=(n_pairs, d))\n    cos = (a * b).sum(1) / (np.linalg.norm(a, axis=1) * np.linalg.norm(b, axis=1))\n    return np.abs(cos).mean()\n\nfor d in [2, 10, 100, 1000]:\n    print(f\"d = {d:5d}  随机两向量 |cos| 的平均 = {mean_abs_cos(d):.3f}\")\n\n# 实验二：在 d=50 维里塞进 200 个随机方向，最坏的一对有多接近？\nd, k = 50, 200\nV = rng.normal(size=(k, d)); V /= np.linalg.norm(V, axis=1, keepdims=True)\nG = V @ V.T; np.fill_diagonal(G, 0)\nprint(\"200 个方向，d=50：平均 |cos| =\", round(float(np.abs(G).mean()), 3), \" 最大 |cos| =\", round(float(np.abs(G).max()), 3))\n\n# 实验三：两个独立「概念」，方向不是神经元轴，而是旋转后的一对正交方向\nf1 = np.array([0.6, 0.8]); f2 = np.array([-0.8, 0.6])\ns1, s2 = rng.normal(size=5000), rng.normal(size=5000)        # 每个样本里两个概念各有多强\nacts = s1[:, None] * f1 + s2[:, None] * f2                   # 两个「神经元」的激活值（标准基下的坐标）\ndef corr(a, b):\n    return round(float(np.corrcoef(a, b)[0, 1]), 2)\nprint(\"神经元 1 与概念 1、概念 2 的相关：\", corr(acts[:, 0], s1), corr(acts[:, 0], s2))\nprint(\"神经元 2 与概念 1、概念 2 的相关：\", corr(acts[:, 1], s1), corr(acts[:, 1], s2))\nR = np.stack([f1, f2])                                       # 换基：R 的行是新基，正交，所以坐标 = 点积\nnew = acts @ R.T\nprint(\"沿 f1 的坐标与概念 1、概念 2 的相关：\", corr(new[:, 0], s1), corr(new[:, 0], s2))\nprint(\"沿 f2 的坐标与概念 1、概念 2 的相关：\", corr(new[:, 1], s1), corr(new[:, 1], s2))\n# 输出：d =     2  随机两向量 |cos| 的平均 = 0.645\n# 输出：d =    10  随机两向量 |cos| 的平均 = 0.260\n# 输出：d =   100  随机两向量 |cos| 的平均 = 0.078\n# 输出：d =  1000  随机两向量 |cos| 的平均 = 0.025\n# 输出：200 个方向，d=50：平均 |cos| = 0.112  最大 |cos| = 0.51\n# 输出：神经元 1 与概念 1、概念 2 的相关： 0.61 -0.79\n# 输出：神经元 2 与概念 1、概念 2 的相关： 0.81 0.59\n# 输出：沿 f1 的坐标与概念 1、概念 2 的相关： 1.0 0.01\n# 输出：沿 f2 的坐标与概念 1、概念 2 的相关： 0.01 1.0\n```\n\n读输出：**实验一**，随机取两个方向，夹角的余弦绝对值的平均：$d=2$ 时 0.645，$d=10$ 时 0.260，$d=100$ 时 0.078，$d=1000$ 时 0.025，大致按 $1/\\sqrt{d}$ 缩小，**维度越高，随机方向越接近正交**。**实验二**：在只有 50 维的空间里放 200 个随机方向（比维数多得多），平均 $|\\cos|$ 只有 0.112，最坏的一对也只有 0.51。这说明「比维数更多的、近似互相独立的方向」是可以塞得下的，这正是 ARENA 可解释性章节里 **叠加 (superposition)** 的几何基础：基最多只有 $d$ 个严格正交的方向，但近似正交的方向可以多得多。\n\n**实验三**：两个「概念」强度独立，它们的方向是标准轴旋转后的一对正交方向 $f_1=(0.6,0.8)$ 和 $f_2=(-0.8,0.6)$。看**单个神经元**，神经元 1 同时和概念 1（相关 0.61）、概念 2（相关 $-0.79$）纠缠在一起，神经元 2 也一样；换到以 $f_1,f_2$ 为基的坐标，沿 $f_1$ 的坐标只和概念 1 相关（1.0 对 0.01），沿 $f_2$ 的只和概念 2 相关。**同一份数据，换一组基，结构就清晰了。** 如果网络的激活函数是逐元素的（如 ReLU），神经元的轴就是**特权基 (privileged basis)**，概念有机会对齐它；但像残差流这类没有逐元素操作的地方，没有哪组基是特殊的，要找概念就得「换基去找」。\n\n### 这一节你要带走的三句话\n\n1. **基 = 线性无关 + 张成全空间**，$n$ 维空间的基恰好 $n$ 个；判断时看矩阵的秩或可逆性。\n2. **点积衡量「顺路程度」**：$\\mathbf{u}\\cdot\\mathbf{v}=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$，余弦相似度只看方向；矩阵乘法就是一批点积。\n3. **换基是翻译**：$\\mathbf{x}=B\\mathbf{c}$，变换变成 $B^{-1}MB$；正交矩阵的基最好用，逆就是转置，坐标就是点积。"
+  },
+  {
+   "type": "think",
+   "q": "一层网络有 $d=768$ 个神经元。一个研究者发现某个「概念」对应的方向是 $\\mathbf{f}=0.6\\,\\mathbf{e}_3+0.8\\,\\mathbf{e}_7$（$\\mathbf{e}_i$ 是神经元轴）。他只看神经元 3 和神经元 7 的激活值，会漏掉什么？该怎么测量这个概念？",
+   "a": "概念的强度应该是激活向量 $\\mathbf{a}$ 在方向 $\\mathbf{f}$ 上的坐标，即点积 $\\mathbf{a}\\cdot\\mathbf{f}=0.6a_3+0.8a_7$（$\\mathbf{f}$ 是单位向量，因为 $0.6^2+0.8^2=1$）。单独看 $a_3$ 或 $a_7$，每一个都只含有概念信号的一部分，而且还混着别的概念的贡献（上面实验三里神经元 1 同时与两个概念相关）。正确做法是**换基**，把 $\\mathbf{f}$ 当作一条新坐标轴再读数。如果网络有很多这样的概念方向，而且数量超过 768，它们只能近似正交，这就是叠加；那时即使换成某一组基也不能同时把所有概念分开。"
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "「基与基变换」「不同类型的矩阵」两条（讲解为自写，未转载原文）"
+  },
+  {
+   "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+   "note": "本节三集视频所在的完整系列"
+  },
+  {
+   "title": "NumPy 文档：numpy.linalg（matrix_rank、solve、inv、lstsq）",
+   "url": "https://numpy.org/doc/stable/reference/routines.linalg.html",
+   "note": "本节代码用到的线性代数函数"
+  },
+  {
+   "title": "MIT 18.06 Linear Algebra（Gilbert Strang）",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+   "note": "选看：线性代数的标准大学课程，对应基、正交、基变换各讲"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "两个**共线**的二维向量（比如 $(1, 2)$ 和 $(2, 4)$）的张成空间是什么？",
+    "options": [
+     "整个二维平面",
+     "一个正方形区域",
+     "只有原点",
+     "一条经过原点的直线"
+    ],
+    "answer": 3,
+    "explain": "$(2, 4) = 2 \\times (1, 2)$，两者线性相关，所有组合都落在同一条直线上。"
+   },
+   {
+    "q": "关于**正交矩阵** $Q$，下面哪个说法正确？",
+    "options": [
+     "它的所有元素都是 0 或 1",
+     "它的逆矩阵等于它的转置，并且保持向量的长度",
+     "它的行列式一定为 0",
+     "它一定是对称矩阵"
+    ],
+    "answer": 1,
+    "explain": "$Q^\\top Q = I$ 意味着 $Q^{-1} = Q^\\top$；它把向量长度和夹角都保持不变（旋转或反射），行列式为 ±1。"
+   },
+   {
+    "q": "矩阵 $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$ 是哪一类？",
+    "options": [
+     "对称矩阵",
+     "奇异矩阵（不可逆）",
+     "旋转矩阵（逆时针 90°），也是正交矩阵",
+     "单位矩阵"
+    ],
+    "answer": 2,
+    "explain": "代入 $\\theta = 90°$：$\\cos\\theta = 0$，$\\sin\\theta = 1$。它的转置是它的逆（顺时针转回去）；它不对称，因为转置后 $-1$ 和 $1$ 互换了位置。"
+   }
+  ]
+ }
+}

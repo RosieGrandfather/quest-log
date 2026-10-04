@@ -1,19 +1,17 @@
 {
  "id": "u02",
- "title": "随机变量、期望与方差",
- "en": "Random Variables, Expectation & Variance",
- "minutes": 60,
+ "title": "随机变量、期望与方差（1/2）",
+ "en": "Random Variables, Expectation & Variance (1/2)",
+ "minutes": 20,
  "objectives": [
   "说出 **随机变量 (random variable)** 和 **概率质量函数 (PMF)** 的定义，会列出简单随机变量的分布表",
   "会算 **期望 (expected value)**，并理解它是「长期平均」而不是「最可能的值」",
-  "会用 **期望的线性性 (linearity of expectation)** 简化计算",
-  "会算 **方差 (variance)** 和 **标准差 (standard deviation)**，知道 $\\text{Var}(aX+b)=a^2\\text{Var}(X)$",
-  "理解 **样本方差 (sample variance)** 为什么除以 $n-1$"
+  "会用 **期望的线性性 (linearity of expectation)** 简化计算"
  ],
  "blocks": [
   {
    "type": "text",
-   "md": "### 先说这一节要干什么\n\n上一节讲的是「事件」：下雨、有病、抛出正面。但机器学习里处理的大多是**数**：一个像素的亮度、一个预测的误差、一个模型的损失 (loss)。这一节学怎么用概率描述「一个会随机变化的数」，并且用两个数把它概括出来：**平均是多少（期望）**、**波动有多大（方差）**。\n\n**学完它你就能看懂这几件事：**\n\n- 训练时的 **损失 (loss)** 其实是「期望」：真正想最小化的是 $E[\\text{损失}]$，实际算的小批量平均只是它的估计；\n- 为什么要做 **标准化 (standardization)**：减均值、除以标准差，就是把数据变成「均值 0、方差 1」；\n- 为什么 **权重初始化 (weight initialization)** 要看方差：层数一深，方差一旦乘错倍数就会爆炸或消失。\n\n**本节安排（约 60 分钟）**：导读与随机变量（8 分钟）→ 视频一（6 分钟）→ 期望（12 分钟）→ 视频二（14 分钟）→ 方差与代码（12 分钟）→ 视频三（14 分钟，选看）→「想一想」（5 分钟）。\n\n### 随机变量与概率质量函数\n\n> **标准定义 · 随机变量 (random variable)**\n>\n> 设一次随机试验的样本空间为 $\\Omega$。**随机变量** $X$ 是一个函数 $X:\\Omega\\to\\mathbb{R}$，它把试验的每一个结果映射成一个实数。若 $X$ 只取有限个或可列个值，称为 **离散随机变量 (discrete random variable)**。\n>\n> *English: A random variable is a function that assigns a real number to each outcome of a random experiment.*\n\n**白话版：给每个结果贴一个数字标签。** 抛两个骰子，结果可能是「(3, 5)」，这不是一个数。但你可以规定 $X=$「两个点数之和」，于是 (3, 5) 就变成 8。你并没有改变随机性，只是**决定关心结果的哪一方面**，并把它变成数。\n\n名字里的「变量」容易误导：它其实是个**函数**；「随机」是因为输入（试验结果）是随机的。习惯上，大写 $X$ 表示随机变量本身，小写 $x$ 表示它取到的某个具体值。\n\n> **标准定义 · 概率质量函数 (probability mass function, PMF)**\n>\n> 离散随机变量 $X$ 的 **概率质量函数** 为 $p_X(x)=P(X=x)$。它满足 $p_X(x)\\ge 0$，且所有取值的概率之和 $\\sum_x p_X(x)=1$。\n>\n> *English: The PMF gives the probability that a discrete random variable takes each particular value; the probabilities sum to 1.*\n\n**白话版：一张「取每个值的概率」的表。** 下面让电脑数一数，两个骰子点数之和的分布：\n\n```python\nfrom collections import Counter\nfrom fractions import Fraction\n\n# 两个骰子共有 6 × 6 = 36 种等可能的结果，数一数每个「点数之和」出现几次\ncounts = Counter(a + b for a in range(1, 7) for b in range(1, 7))\n\n# 次数 ÷ 36，就是每个取值的概率（用分数显示，更清楚）\npmf = {s: Fraction(c, 36) for s, c in sorted(counts.items())}\nfor s, p in pmf.items():\n    print(s, p)\n\n# 所有概率加起来必须等于 1\nprint(\"合计\", sum(pmf.values()))\n# 输出：2 1/36\n# 输出：3 1/18\n# 输出：4 1/12\n# 输出：5 1/9\n# 输出：6 5/36\n# 输出：7 1/6\n# 输出：8 5/36\n# 输出：9 1/9\n# 输出：10 1/12\n# 输出：11 1/18\n# 输出：12 1/36\n# 输出：合计 1\n```\n\n看输出：和为 7 的概率最大（$6/36=1/6$），和为 2 或 12 的最小（$1/36$）。每个值的概率都是「有几种组合 ÷ 36」。这张表就是 $X$ 的**分布 (distribution)**，随机变量的一切性质都来自它。"
+   "md": "### 先说这一节要干什么\n\n上一节讲的是「事件」：下雨、有病、抛出正面。但机器学习里处理的大多是**数**：一个像素的亮度、一个预测的误差、一个模型的损失 (loss)。这一节学怎么用概率描述「一个会随机变化的数」，并且用两个数把它概括出来：**平均是多少（期望）**、**波动有多大（方差）**。\n\n**学完它你就能看懂这几件事：**\n\n- 训练时的 **损失 (loss)** 其实是「期望」：真正想最小化的是 $E[\\text{损失}]$，实际算的小批量平均只是它的估计；\n- 为什么要做 **标准化 (standardization)**：减均值、除以标准差，就是把数据变成「均值 0、方差 1」；\n- 为什么 **权重初始化 (weight initialization)** 要看方差：层数一深，方差一旦乘错倍数就会爆炸或消失。\n\n**这一节分成 2 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 20 分钟）**：随机变量与概率质量函数（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 随机变量与概率质量函数\n\n> **标准定义 · 随机变量 (random variable)**\n>\n> 设一次随机试验的样本空间为 $\\Omega$。**随机变量** $X$ 是一个函数 $X:\\Omega\\to\\mathbb{R}$，它把试验的每一个结果映射成一个实数。若 $X$ 只取有限个或可列个值，称为 **离散随机变量 (discrete random variable)**。\n>\n> *English: A random variable is a function that assigns a real number to each outcome of a random experiment.*\n\n**白话版：给每个结果贴一个数字标签。** 抛两个骰子，结果可能是「(3, 5)」，这不是一个数。但你可以规定 $X=$「两个点数之和」，于是 (3, 5) 就变成 8。你并没有改变随机性，只是**决定关心结果的哪一方面**，并把它变成数。\n\n名字里的「变量」容易误导：它其实是个**函数**；「随机」是因为输入（试验结果）是随机的。习惯上，大写 $X$ 表示随机变量本身，小写 $x$ 表示它取到的某个具体值。\n\n> **标准定义 · 概率质量函数 (probability mass function, PMF)**\n>\n> 离散随机变量 $X$ 的 **概率质量函数** 为 $p_X(x)=P(X=x)$。它满足 $p_X(x)\\ge 0$，且所有取值的概率之和 $\\sum_x p_X(x)=1$。\n>\n> *English: The PMF gives the probability that a discrete random variable takes each particular value; the probabilities sum to 1.*\n\n**白话版：一张「取每个值的概率」的表。** 下面让电脑数一数，两个骰子点数之和的分布：\n\n```python\nfrom collections import Counter\nfrom fractions import Fraction\n\n# 两个骰子共有 6 × 6 = 36 种等可能的结果，数一数每个「点数之和」出现几次\ncounts = Counter(a + b for a in range(1, 7) for b in range(1, 7))\n\n# 次数 ÷ 36，就是每个取值的概率（用分数显示，更清楚）\npmf = {s: Fraction(c, 36) for s, c in sorted(counts.items())}\nfor s, p in pmf.items():\n    print(s, p)\n\n# 所有概率加起来必须等于 1\nprint(\"合计\", sum(pmf.values()))\n# 输出：2 1/36\n# 输出：3 1/18\n# 输出：4 1/12\n# 输出：5 1/9\n# 输出：6 5/36\n# 输出：7 1/6\n# 输出：8 5/36\n# 输出：9 1/9\n# 输出：10 1/12\n# 输出：11 1/18\n# 输出：12 1/36\n# 输出：合计 1\n```\n\n看输出：和为 7 的概率最大（$6/36=1/6$），和为 2 或 12 的最小（$1/36$）。每个值的概率都是「有几种组合 ÷ 36」。这张表就是 $X$ 的**分布 (distribution)**，随机变量的一切性质都来自它。"
   },
   {
    "type": "video",
@@ -24,43 +22,9 @@
    "minutes": 6
   },
   {
-   "type": "text",
-   "md": "### 期望\n\n> **标准定义 · 期望 (expected value / expectation)**\n>\n> 离散随机变量 $X$ 的 **期望** 定义为\n>\n> $$E[X]=\\sum_x x\\,P(X=x)$$\n>\n> *English: The expected value E[X] is the probability-weighted average of the values X can take.*\n\n**白话版：长期平均。** 把每个可能的值，按它出现的概率加权，再加起来。它回答的是：「这件事重复无数次，平均每次得到多少？」\n\n注意三点。**第一，期望不一定是能取到的值**：骰子的期望是 3.5，但你永远掷不出 3.5。**第二，期望不是「最可能的值」**。**第三，它是「长期」的平均**，只掷一次不保证接近它。下面用代码看，并算一个抽奖游戏：\n\n```python\nimport random\n\n# 公平骰子：每个点数的概率都是 1/6\nfaces = [1, 2, 3, 4, 5, 6]\nE = sum(x * (1 / 6) for x in faces)       # 期望 = Σ 取值 × 概率\nprint(\"按定义算：\", round(E, 4))\n\n# 用模拟验证：掷 10 万次，看平均值\nrandom.seed(0)                            # 固定随机种子，每次运行结果相同\nrolls = [random.choice(faces) for _ in range(100_000)]\nprint(\"掷 10 万次的平均：\", round(sum(rolls) / len(rolls), 3))\n\n# 一个小游戏：花 2 元抽奖，1% 的概率中 100 元\nprize, price, p_win = 100, 2, 0.01\nprint(\"每玩一次平均赚：\", round(prize * p_win - price, 2), \"元\")\n# 输出：按定义算： 3.5\n# 输出：掷 10 万次的平均： 3.489\n# 输出：每玩一次平均赚： -1.0 元\n```\n\n模拟的平均值非常接近 3.5。抽奖游戏每玩一次平均**亏 1 元**：中奖那 1% 的 100 元，只抵得上 2 元的成本里的 1 元。**偶尔赢一次，长期是亏的。** 看一个游戏值不值得玩，要看期望，不是看奖金多大。\n\n> **标准定义 · 期望的线性性 (linearity of expectation)**\n>\n> 对任意随机变量 $X$、$Y$ 和常数 $a$、$b$：\n>\n> $$E[aX+bY]=aE[X]+bE[Y]$$\n>\n> 这个等式**不要求 $X$ 与 $Y$ 独立**。\n>\n> *English: Expectation is linear: E[aX + bY] = aE[X] + bE[Y], and this holds whether or not X and Y are independent.*\n\n**白话版：平均可以拆开算。** 两个骰子之和的期望，就是各自的期望相加：$3.5+3.5=7$，不用把 36 种结果都列一遍。这条规则最厉害的地方是**不管两个变量有没有关系都成立**。下面故意让 $Y$ 完全由 $X$ 决定（$Y=7-X$，强相关），看看还成不成立：\n\n```python\nimport random\nrandom.seed(1)\n\n# 线性性：两个骰子之和的期望 = 各自期望之和，哪怕它们不独立也成立\n# 这里让 Y 完全依赖 X（Y = 7 - X，也是一个骰子点数），看 E[X + Y]\nxs = [random.randint(1, 6) for _ in range(100_000)]\nys = [7 - x for x in xs]                       # Y 完全由 X 决定，两者强相关\nmean = lambda v: sum(v) / len(v)\nprint(\"E[X] =\", round(mean(xs), 3), \" E[Y] =\", round(mean(ys), 3))\nprint(\"E[X+Y] =\", round(mean([x + y for x, y in zip(xs, ys)]), 3))\n# 输出：E[X] = 3.499  E[Y] = 3.501\n# 输出：E[X+Y] = 7.0\n```\n\n$E[X]$ 和 $E[Y]$ 都约等于 3.5，而 $X+Y$ 恒等于 7，期望正好是 $3.5+3.5=7$。**平均能拆开，但后面会看到，方差就没有这么好的性质。**"
-  },
-  {
-   "type": "video",
-   "provider": "youtube",
-   "id": "KLs_7b7SKi4",
-   "title": "视频二：Expected Values, Main Ideas!!!（StatQuest）",
-   "lang": "英文，可开中文字幕",
-   "minutes": 14
-  },
-  {
-   "type": "text",
-   "md": "### 方差与标准差\n\n只知道平均是不够的。看这个例子：两位射手，每人打 5 枪，平均环数一样，但表现显然不同。\n\n> **标准定义 · 方差 (variance) 与标准差 (standard deviation)**\n>\n> 设 $\\mu=E[X]$。$X$ 的 **方差** 定义为\n>\n> $$\\text{Var}(X)=E\\big[(X-\\mu)^2\\big]=E[X^2]-(E[X])^2$$\n>\n> **标准差** 为 $\\sigma=\\sqrt{\\text{Var}(X)}$。\n>\n> *English: The variance is the expected squared deviation from the mean; the standard deviation is its square root.*\n\n**白话版：数据平均离「平均值」有多远。** 做法：每个值减去平均数（得到「偏差」），平方（避免正负抵消，也让大偏差更突出），再取平均。平方之后单位也被平方了（环数变成环数²），所以再开方得到**标准差**，单位就回到和原数据相同。\n\n```python\nimport statistics as st\n\n# 两位射手，每人 5 枪，平均环数都是 8\nA = [7, 8, 8, 8, 9]       # 射手 A：很稳\nB = [4, 6, 8, 10, 12]     # 射手 B：忽高忽低\n\nfor name, s in [(\"A\", A), (\"B\", B)]:\n    print(name, \"平均\", st.mean(s),\n          \"方差\", round(st.pvariance(s), 2),         # pvariance：除以 n 的方差\n          \"标准差\", round(st.pstdev(s), 2))\n# 输出：A 平均 8 方差 0.4 标准差 0.63\n# 输出：B 平均 8 方差 8 标准差 2.83\n```\n\n两个人平均都是 8，但射手 B 的方差（8.0）比射手 A（0.4）大得多。**期望告诉你「中心在哪」，方差告诉你「散得多开」。**\n\n> **标准定义 · 方差的运算规则 (properties of variance)**\n>\n> 1. $\\text{Var}(aX+b)=a^2\\,\\text{Var}(X)$（加常数不改变方差；乘以 $a$，方差乘以 $a^2$）。\n> 2. 若 $X$、$Y$ **独立 (independent)**，则 $\\text{Var}(X+Y)=\\text{Var}(X)+\\text{Var}(Y)$，且 $\\text{Var}(X-Y)=\\text{Var}(X)+\\text{Var}(Y)$。\n>\n> *English: Var(aX + b) = a² Var(X). For independent X and Y, variances add: Var(X ± Y) = Var(X) + Var(Y).*\n\n**白话版：** 规则一：给所有数都加 2，整体平移，散布程度不变；把所有数都放大 3 倍，距离也放大 3 倍，平方后是 9 倍。规则二：两个**独立**的波动叠在一起，总波动是**相加**的（注意减法也是加！因为「波动」不会因为你做减法而抵消）。**这条只有独立才成立**；没有独立，需要再加上一个「协方差」项，后面的课会讲。下面用精确的分数验证：\n\n```python\nfrom fractions import Fraction\n\n# 以骰子点数 X 为例，用精确的分数计算\nfaces = range(1, 7)\np = Fraction(1, 6)\nE = sum(x * p for x in faces)\nvar = sum((x - E) ** 2 * p for x in faces)      # 方差 = E[(X − E[X])²]\nprint(\"Var(X) =\", var, \"≈\", round(float(var), 4))\n\n# 规则一：Var(aX + b) = a² Var(X)，加常数 b 不影响，乘 a 倍则方差乘 a²\na, b = 3, 2\nvals = [a * x + b for x in faces]\nEv = sum(v * p for v in vals)\nvar_ab = sum((v - Ev) ** 2 * p for v in vals)\nprint(\"Var(3X+2) =\", var_ab, \"= 9 × Var(X) =\", 9 * var)\n\n# 规则二：两个独立骰子之和，方差相加（枚举 36 种结果验证）\nsums = [x + y for x in faces for y in faces]\nEs = Fraction(sum(sums), 36)\nvar_sum = sum((s - Es) ** 2 for s in sums) / 36\nprint(\"Var(X+Y) =\", var_sum, \"= 2 × Var(X) =\", 2 * var)\n# 输出：Var(X) = 35/12 ≈ 2.9167\n# 输出：Var(3X+2) = 105/4 = 9 × Var(X) = 105/4\n# 输出：Var(X+Y) = 35/6 = 2 × Var(X) = 35/6\n```\n\n规则一和规则二都验证成立。一个提醒：$\\text{Var}(X+X)$ 不是 $2\\text{Var}(X)$，因为 $X$ 和它自己**一点也不独立**，$\\text{Var}(X+X)=\\text{Var}(2X)=4\\text{Var}(X)$。\n\n### 样本方差为什么除以 n−1\n\n> **标准定义 · 样本方差 (sample variance)**\n>\n> 给定样本 $x_1,\\dots,x_n$，样本均值 $\\bar x=\\frac1n\\sum x_i$，**样本方差** 定义为\n>\n> $$s^2=\\frac{1}{n-1}\\sum_{i=1}^n (x_i-\\bar x)^2$$\n>\n> 除以 $n-1$ 使它成为总体方差的 **无偏估计 (unbiased estimator)**：$E[s^2]=\\sigma^2$。\n>\n> *English: The sample variance divides by n − 1 (Bessel's correction) so that it is an unbiased estimator of the population variance.*\n\n**白话版：** 真实的均值 $\\mu$ 我们不知道，只能用样本自己的平均 $\\bar x$ 代替。但样本均值天然「贴着」样本点，所以量出来的偏差**总是偏小**。除以 $n-1$ 而不是 $n$，正是为了把这个偏小补回来。用代码看这是不是真的：\n\n```python\nimport random, statistics as st\nrandom.seed(0)\n\n# 总体：标准正态分布，真实方差是 1。每次只抽 5 个样本，重复 10 万次\nn, trials = 5, 100_000\nsum_n = sum_n1 = 0\nfor _ in range(trials):\n    s = [random.gauss(0, 1) for _ in range(n)]\n    sum_n += st.pvariance(s)       # 除以 n\n    sum_n1 += st.variance(s)       # 除以 n − 1\nprint(\"除以 n   的平均：\", round(sum_n / trials, 3))\nprint(\"除以 n-1 的平均：\", round(sum_n1 / trials, 3))\nprint(\"真实方差：1\")\n# 输出：除以 n   的平均： 0.8\n# 输出：除以 n-1 的平均： 1.0\n# 输出：真实方差：1\n```\n\n除以 $n$ 的平均只有 0.8 左右，系统性偏小（$(n-1)/n=4/5$）；除以 $n-1$ 的平均接近真实值 1。当样本很大时，两者差别可以忽略。Python 里 `statistics.variance` 默认除以 $n-1$，而 NumPy 的 `np.var` 默认除以 $n$，要用 `ddof=1`，这是常见的坑。\n\n### 这一节你要带走的三句话\n\n1. **随机变量 = 给试验结果贴数字标签的函数**；它的分布（PMF）就是「每个值的概率表」。\n2. **期望 = 长期平均**，对任意随机变量都能「拆开算」（线性性）。\n3. **方差 = 离平均的平均平方距离**：$\\text{Var}(aX+b)=a^2\\text{Var}(X)$；独立时方差相加；用样本估计要除以 $n-1$。"
-  },
-  {
-   "type": "video",
-   "provider": "youtube",
-   "id": "SzZ6GpcfoQY",
-   "title": "视频三（选看）：Calculating the Mean, Variance and Standard Deviation, Clearly Explained!!!（StatQuest）",
-   "lang": "英文，可开中文字幕",
-   "minutes": 15
-  },
-  {
    "type": "think",
    "q": "买一张彩票 2 元，中奖概率 1%，奖金 100 元。只买一次，你可能赚 98 元，也可能亏 2 元。期望是亏 1 元，那「买一次」的结果和期望是什么关系？如果有一万个人各买一次，总体会怎样？",
    "a": "只买一次，结果只能是「赚 98」或「亏 2」，**永远不会正好是亏 1 元**，期望并不是你会得到的值。\n\n但一万个人各买一次，每个人的结果是独立的，平均每人亏接近 1 元，总共亏约 1 万元，而且这个「长期平均」会越来越稳。这就是期望的意义：**不预测单次，描述大量重复的平均**。（这个现象在下一节叫「大数定律」。）保险公司、赌场的生意，靠的就是这一点。"
-  },
-  {
-   "type": "think",
-   "q": "你要给模型的输入做标准化：对每个特征减去均值、再除以标准差。如果原数据均值是 $\\mu$、方差是 $\\sigma^2$，处理后的数据均值和方差分别是多少？用本节的规则推一推。",
-   "a": "设新变量 $Z=(X-\\mu)/\\sigma=\\frac1\\sigma X-\\frac\\mu\\sigma$，这是 $aX+b$ 的形式，其中 $a=1/\\sigma$。\n\n均值：由线性性，$E[Z]=\\frac1\\sigma\\mu-\\frac\\mu\\sigma=0$。方差：由规则一，$\\text{Var}(Z)=\\frac1{\\sigma^2}\\sigma^2=1$（减去常数不改变方差）。所以处理后均值 0、方差 1，这正是「标准化」的名字来源。"
-  },
-  {
-   "type": "think",
-   "q": "为什么用样本估计总体方差时，样本量 $n=1$ 的时候除以 $n-1$ 会出问题？这件事说明了什么？",
-   "a": "$n=1$ 时，样本只有一个数，样本均值就是这个数本身，偏差必然是 0，分子是 0，分母 $n-1=0$，变成 $0/0$，**没有定义**。\n\n这件事的含义是：**只有一个数据点，根本看不出「波动」**。你至少需要 2 个点才能谈散布。更一般地，估计均值用掉了 1 个「自由度 (degrees of freedom)」，剩下的 $n-1$ 个才是真正用于判断波动的信息，这也是除以 $n-1$ 的另一种理解。"
   },
   {
    "type": "keywords",
@@ -91,34 +55,9 @@
      "按概率加权的平均值，长期平均：$E[X]=\\sum xP(X=x)$"
     ],
     [
-     "线性性",
-     "linearity of expectation",
-     "$E[aX+bY]=aE[X]+bE[Y]$，无需独立"
-    ],
-    [
      "方差",
      "variance",
      "偏离均值的平方的期望：$E[(X-\\mu)^2]$"
-    ],
-    [
-     "标准差",
-     "standard deviation",
-     "方差的平方根，单位与数据相同"
-    ],
-    [
-     "独立",
-     "independence",
-     "一个变量的取值不提供另一个的信息；独立时方差可以相加"
-    ],
-    [
-     "样本方差",
-     "sample variance",
-     "用样本估计总体方差，除以 $n-1$"
-    ],
-    [
-     "无偏估计",
-     "unbiased estimator",
-     "估计量的期望等于真实值"
     ],
     [
      "自由度",
@@ -128,23 +67,7 @@
    ]
   }
  ],
- "references": [
-  {
-   "title": "Harvard Statistics 110 Lecture 9：Expectation, Indicator Random Variables, Linearity（大学课程原视频，约 50 分钟，选看）",
-   "url": "https://www.youtube.com/watch?v=LX2q356N2rU",
-   "note": "期望与线性性的严格讲法，附很多巧妙的例子"
-  },
-  {
-   "title": "Harvard Statistics 110 Lecture 8：Random Variables and Their Distributions（选看）",
-   "url": "https://www.youtube.com/watch?v=k2BB0p8byGA",
-   "note": "随机变量与分布的完整讲法"
-  },
-  {
-   "title": "MIT OCW 6.041 Probabilistic Systems Analysis（课程主页，含讲义与习题）",
-   "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
-   "note": "选做其中离散随机变量、期望与方差的习题"
-  }
- ],
+ "references": [],
  "quiz": {
   "questions": [
    {
@@ -201,61 +124,6 @@
     ],
     "answer": 2,
     "explain": "均值 $\\mu=5$，每个值与均值的距离都是 5，平方是 25，所以 $\\text{Var}(X)=25$。5 是标准差，不是方差。"
-   },
-   {
-    "q": "已知 $\\text{Var}(X)=4$，则 $\\text{Var}(3X-2)$ 等于？",
-    "options": [
-     "36",
-     "10",
-     "34",
-     "12"
-    ],
-    "answer": 0,
-    "explain": "$\\text{Var}(aX+b)=a^2\\text{Var}(X)=9\\times4=36$。减 2 是平移，不改变方差；乘以 3 要把 3 平方。"
-   },
-   {
-    "q": "$X$、$Y$ 相互独立，$\\text{Var}(X)=3$，$\\text{Var}(Y)=5$，则 $\\text{Var}(X-Y)$ 等于？",
-    "options": [
-     "2",
-     "8",
-     "15",
-     "$\\sqrt{8}$"
-    ],
-    "answer": 1,
-    "explain": "独立时方差相加，**减法也是加**：$\\text{Var}(X-Y)=\\text{Var}(X)+\\text{Var}(Y)=8$。$-Y$ 的方差仍是 $(-1)^2\\text{Var}(Y)=5$。"
-   },
-   {
-    "q": "下面哪个说法是**错的**？",
-    "options": [
-     "$E[X+Y]=E[X]+E[Y]$ 对任意随机变量 $X$、$Y$ 都成立",
-     "$X$、$Y$ 独立时，$\\text{Var}(X+Y)=\\text{Var}(X)+\\text{Var}(Y)$",
-     "标准差和 $X$ 本身的单位相同",
-     "方差可以是负数"
-    ],
-    "answer": 3,
-    "explain": "方差是「平方的平均」，永远 $\\ge 0$，不可能是负数。其余三句都对：期望的线性性不需要独立；独立时方差可加；标准差是方差开方，单位回到原来的单位。"
-   },
-   {
-    "q": "用样本估计总体方差时，通常除以 $n-1$ 而不是 $n$，主要原因是？",
-    "options": [
-     "样本均值贴着样本点，使离差平方和偏小，除以 $n-1$ 可以修正这个偏差",
-     "除以 $n-1$ 总是让结果更大，所以更保险",
-     "样本里有一个数据必须扔掉",
-     "因为除以 $n-1$ 计算起来更简单"
-    ],
-    "answer": 0,
-    "explain": "用样本均值代替未知的真实均值，会让偏差系统性偏小；除以 $n-1$ 后，$s^2$ 的期望正好等于总体方差（无偏）。不是「更保险」，也不是扔数据。"
-   },
-   {
-    "q": "$\\text{Var}(X)=1$，则 $\\text{Var}(X+X)$ 等于？",
-    "options": [
-     "2",
-     "4",
-     "1",
-     "0"
-    ],
-    "answer": 1,
-    "explain": "$X+X=2X$，所以 $\\text{Var}(2X)=4\\text{Var}(X)=4$。注意 $X$ 和它自己完全相关，不独立，所以不能直接把两个方差相加得 2。"
    }
   ]
  }

@@ -1,0 +1,91 @@
+{
+ "id": "u12b",
+ "title": "开发工具：VS Code、Jupyter、Git、Conda（2/3）",
+ "en": "Developer Tools (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "掌握 **Git** 的三个区域（工作区、暂存区、仓库）与日常操作：`add`、`commit`、`switch -c`、`restore`、`stash`、`push`，分清 `commit` 与 `push`",
+  "理解为什么要用 **虚拟环境 (virtual environment)**（`conda` / `venv`），会创建、激活、记录依赖，知道「装的环境和运行的环境不是同一个」是最常见的 `ModuleNotFoundError` 原因"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「开发工具：VS Code、Jupyter、Git、Conda」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：VS Code：快捷键、代码单元、调试器、类型提示（续）（约 10 分钟） → Jupyter Notebook 与 Colab（约 5 分钟） → Git：给文件夹加上「存档」功能（约 15 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**3. 调试器 (debugger)**\n\n> **标准定义 · 断点与调试器 (breakpoint & debugger)**\n>\n> **断点**是你在某一行设下的暂停标记；用调试器运行程序时，执行到该行就**暂停**，此时可以查看所有变量的值（包括张量的 `.shape`、`.dtype`）、逐行执行、查看调用栈。VS Code 里在行号左边点一下设断点，按 F5 开始调试；命令行里 Python 自带的调试器是 `pdb`（`python -m pdb 文件名.py`，或在代码里写 `breakpoint()`）。\n>\n> *English: A breakpoint pauses execution at a chosen line so you can inspect variables (including tensor shapes), step through code and see the call stack. VS Code provides a graphical debugger; in the terminal Python ships with pdb.*\n\n**白话版：「按下暂停键看现场」。** 比起到处插 `print`、改完再重跑，调试器让你在出事的那一刻停住，随便问：「这个变量现在是多少？」\n\n下面用 `pdb` 的命令行版演示（VS Code 的图形界面做的是同一件事）：一个「把每列减去均值」的函数，轴写错了：\n\n```python\nimport subprocess, sys, tempfile, os\n\nscript = \"\"\"import numpy as np\n\ndef center(x):\n    mean = x.mean(axis=1)\n    return x - mean\n\nprint(center(np.arange(6.).reshape(2, 3)))\n\"\"\"\nwith tempfile.TemporaryDirectory() as d:\n    open(os.path.join(d, \"buggy.py\"), \"w\").write(script)\n    # 先不用调试器，直接运行：看报错\n    r = subprocess.run([sys.executable, \"buggy.py\"], cwd=d, capture_output=True, text=True)\n    print(r.stderr.strip().splitlines()[-1])\n    # 再用调试器：在第 5 行（return x - mean）设断点，运行到那里，查看两个变量的形状，然后退出\n    cmds = \"b 5\\nc\\np x.shape\\np mean.shape\\nq\\n\"\n    r = subprocess.run([sys.executable, \"-m\", \"pdb\", \"buggy.py\"], cwd=d, input=cmds, capture_output=True, text=True)\n    for line in r.stdout.replace(d, \".\").splitlines():\n        if line.startswith(\"(Pdb)\") or line.startswith(\"> \") or line.startswith(\"-> \"):\n            print(line)\n# 输出：ValueError: operands could not be broadcast together with shapes (2,3) (2,)\n# 输出：> ./buggy.py(1)<module>()\n# 输出：-> import numpy as np\n# 输出：(Pdb) Breakpoint 1 at ./buggy.py:5\n# 输出：(Pdb) > ./buggy.py(5)center()\n# 输出：-> return x - mean\n# 输出：(Pdb) (2, 3)\n# 输出：(Pdb) (2,)\n# 输出：(Pdb)\n```\n\n读输出：直接运行，报 `ValueError: operands could not be broadcast together with shapes (2,3) (2,)`，说 `(2,3)` 和 `(2,)` 对不上。这条信息提示了问题，但没说是哪两个变量。用调试器在第 5 行（`return x - mean`）设断点（`b 5`）、继续运行（`c`）到那里暂停（`> ./buggy.py(5)center()`），再用 `p` 打印两个变量的形状：`x` 是 `(2, 3)`，`mean` 是 `(2,)`。一眼就看出来了：`axis=1` 是对每一**行**求平均，得到 2 个数；想减去每列均值应该是 `axis=0`，得到 3 个数、`(3,)` 能广播到 `(2, 3)`。这种「暂停、看形状」的方法，下一节广播和后面 Transformer 的形状 bug 里会反复用到。\n\n**4. 类型提示与类型检查**\n\n> **标准定义 · 类型提示 (type hints)**\n>\n> 在函数参数和返回值后面写上期望的类型（`def f(x: float, k: int) -> float`），称为**类型提示**。Python 运行时**不检查**它们，它们是给读代码的人和**静态类型检查器**（如 mypy、VS Code 的 Pylance）看的：检查器在**不运行代码**的情况下，就能指出类型对不上的调用。\n>\n> *English: Type hints annotate expected types of parameters and return values. Python does not enforce them at runtime; static checkers such as mypy or Pylance use them to flag mismatches without running the code.*\n\n**白话版：「写在药瓶上的用法说明」。** 说明书不会阻止你吃错药，但会让药剂师（检查器）在你吃之前发现问题。\n\n```python\nfrom typing import get_type_hints\n\ndef scale(x: float, k: int) -> float:       # 类型提示：给人和工具看的标注\n    return x * k\n\nprint(get_type_hints(scale))\nprint(scale(2.0, 3))                         # 类型对：6.0\nprint(scale(\"ab\", 3))                        # 类型错了，Python 运行时并不会拦你：字符串 * 整数也合法\n# 如果在 VS Code 里打开类型检查（Pylance basic，或命令行 mypy），上一行会被标出：\n# 参数 \"x\" 期望 float，实际是 str。这类错误在运行前就能发现。\n# 输出：{'x': <class 'float'>, 'k': <class 'int'>, 'return': <class 'float'>}\n# 输出：6.0\n# 输出：ababab\n```\n\n读输出：`get_type_hints` 读出的就是我们写的标注；`scale(2.0, 3)` 得 6.0；而 `scale(\"ab\", 3)` 违反了标注（`x` 应该是 `float`），Python 却照样运行，因为字符串乘整数是合法的，得到 `ababab`。只有开了类型检查（在 VS Code 的 `settings.json` 里设 `\"python.analysis.typeCheckingMode\": \"basic\"`，或命令行运行 mypy）才会在运行之前把它标出来。**这里的 mypy 提示没有实际运行**，因为它不是标准库；你装好 mypy 后对这个文件运行 `mypy 文件名.py` 可以自己验证。ARENA 的练习函数大多带类型提示，读标注就能知道每个参数该传什么形状和类型。\n\nVS Code 其他常用功能：内置测试面板（配合 `pytest`）、通过 SSH 在远程 GPU 机器上写代码、Copilot 等 AI 辅助。\n\n### Jupyter Notebook 与 Colab\n\n- **Jupyter**：适合**探索和可视化**，边试边看图。缺点是容易堆出几百个单元，代码难复用。\n- **Google Colab**：在线版 Jupyter，**免费提供 GPU**。自学 ARENA、手边没有 GPU 的话，Colab 是最好的选择；本课程每一节的动手练习都可以在 Colab 里做。\n\nnotebook 最大的陷阱是**隐藏状态**：所有单元共用同一个内核的变量，而你可以按**任意顺序**运行单元，屏幕上从上到下的代码，未必就是产生当前结果的顺序。\n\n```python\n# 模拟 notebook：每个单元修改同一个「全局状态」，运行顺序不同，结果就不同\ncells = {\n    \"A\": \"lr = 0.1\",\n    \"B\": \"loss = 10 * lr\",\n    \"C\": \"lr = 0.01\",\n}\n\ndef run(order):\n    ns = {}                          # 相当于 notebook 的内核变量\n    for name in order:\n        exec(cells[name], ns)\n    return ns[\"loss\"]\n\nprint(\"从上到下运行 A B C :\", run(\"ABC\"))     # 读代码的人以为 loss 是用 lr=0.01 算的\nprint(\"实际点击顺序 A C B :\", run(\"ACB\"))     # 但你先改了 lr 再算 loss，得到另一个数\n# 输出：从上到下运行 A B C : 1.0\n# 输出：实际点击顺序 A C B : 0.1\n```\n\n读输出：从上到下运行，`loss` 是 $10\\times0.1=1.0$（因为 `lr` 在 `loss` 之后才被改成 0.01）；但如果你实际点击的顺序是 A、C、B（先改了 `lr` 再算 `loss`），`loss` 就是 $10\\times0.01=0.1$，差了 10 倍。别人读你的 notebook，看到的是前一种，你的结果却来自后一种。**对策：交付前用「重启内核并全部运行 (Restart & Run All)」跑一遍**，结果一致才算数；要复用的代码写进 `.py` 文件。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "hwP7WQkmECE",
+   "title": "视频二：Git Explained in 100 Seconds（Fireship）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 2
+  },
+  {
+   "type": "text",
+   "md": "### Git：给文件夹加上「存档」功能\n\n> **标准定义 · Git 与它的三个区域**\n>\n> **Git** 是**版本控制 (version control)** 系统：记录项目文件的每一次**提交 (commit)**（一次带说明的完整快照），可以回到任意历史版本，并支持多条**分支 (branch)** 并行开发。本地有三个区域：**工作区 (working tree)**（你正在编辑的文件）、**暂存区 (staging area / index)**（`git add` 选出的、准备放进下次提交的改动）、**仓库 (repository)**（已经提交的历史）。**远程仓库 (remote)**（如 GitHub 上的那份）通过 `push` 上传、`pull` / `clone` 下载。\n>\n> *English: Git is a version control system that records snapshots (commits) of a project and supports parallel branches. Changes flow from the working tree, through the staging area (git add), into the repository (git commit); a remote such as GitHub is synchronised with push and pull/clone.*\n\n**白话版：「游戏存档」。** 工作区是你正在玩的进度；`add` 是挑选哪些进度要存；`commit` 是真的存一个档并写备注；分支是「存档的平行宇宙」，在里面随便冒险，不影响主线；`push` 是把存档上传到云端。**`commit` 只是本地存档，没有网络也能做；不 `push`，GitHub 上什么都看不到。**\n\n下面用一个本地「假 GitHub」（一个临时的裸仓库）把整个流程真实走一遍，包括改坏了怎么回退：\n\n```python\nimport subprocess, tempfile, os\n\ndef g(cwd, *args):\n    r = subprocess.run([\"git\", \"-c\", \"user.name=demo\", \"-c\", \"user.email=demo@example.com\", *args],\n                       cwd=cwd, capture_output=True, text=True)\n    out = r.stdout.rstrip()\n    print(\"> git\", \" \".join(args).replace(ROOT[0], \"<远程>\"))      # 临时目录的路径每次不同，显示时替换掉\n    if out:\n        print(out)\n    elif args[0] == \"status\":\n        print(\"（空：没有任何改动）\")\n\nROOT = [\"@@\"]\n\ndef write(cwd, name, text):\n    open(os.path.join(cwd, name), \"w\").write(text)\n\nwith tempfile.TemporaryDirectory() as root:\n    ROOT[0] = root\n    remote = os.path.join(root, \"remote.git\"); work = os.path.join(root, \"work\")\n    subprocess.run([\"git\", \"init\", \"--bare\", \"-q\", \"-b\", \"main\", remote])      # 假装这是 GitHub 上的仓库\n    os.mkdir(work)\n    g(work, \"init\", \"-q\", \"-b\", \"main\")\n    write(work, \"solutions.py\", \"x = 1\\n\")\n    g(work, \"add\", \"solutions.py\")                                            # 放进暂存区\n    g(work, \"status\", \"--short\")                                              # A = 已暂存的新文件\n    g(work, \"commit\", \"-q\", \"-m\", \"first version\")                            # 存档\n    g(work, \"remote\", \"add\", \"origin\", remote)\n    g(work, \"push\", \"-q\", \"-u\", \"origin\", \"main\")                             # 上传到「GitHub」\n\n    g(work, \"switch\", \"-c\", \"exp\")                                            # 新分支，随便试\n    write(work, \"solutions.py\", \"x = 2\\n\")\n    g(work, \"status\", \"--short\")                                              # M = 已修改、未暂存\n    g(work, \"commit\", \"-q\", \"-am\", \"try x = 2\")\n    g(work, \"log\", \"--format=%s\")                                             # 提交历史，新的在上\n    g(work, \"switch\", \"-q\", \"main\")\n    g(work, \"branch\", \"--show-current\")\n    g(work, \"diff\", \"exp\", \"--stat\", \"--format=\")                             # main 与 exp 的差别\n\n    write(work, \"solutions.py\", \"broken!!\\n\")                                 # 在 main 上改坏了，还没提交\n    g(work, \"restore\", \"solutions.py\")                                        # 放弃未提交的修改\n    g(work, \"status\", \"--short\")                                              # 空：回到干净状态\n\n    write(work, \"solutions.py\", \"x = 3\\n\")\n    g(work, \"stash\", \"-q\")                                                    # 先把改动收起来\n    g(work, \"status\", \"--short\")\n    g(work, \"stash\", \"pop\", \"-q\")                                             # 再取回来\n    g(work, \"status\", \"--short\")\n\n    g(work, \"push\", \"-q\", \"origin\", \"exp\")\n    g(work, \"branch\", \"-r\")                                                   # 远程有哪些分支\n# 输出：> git init -q -b main\n# 输出：> git add solutions.py\n# 输出：> git status --short\n# 输出：A  solutions.py\n# 输出：> git commit -q -m first version\n# 输出：> git remote add origin <远程>/remote.git\n# 输出：> git push -q -u origin main\n# 输出：> git switch -c exp\n# 输出：> git status --short\n# 输出： M solutions.py\n# 输出：> git commit -q -am try x = 2\n# 输出：> git log --format=%s\n# 输出：try x = 2\n# 输出：first version\n# 输出：> git switch -q main\n# 输出：> git branch --show-current\n# 输出：main\n# 输出：> git diff exp --stat --format=\n# 输出： solutions.py | 2 +-\n# 输出： 1 file changed, 1 insertion(+), 1 deletion(-)\n# 输出：> git restore solutions.py\n# 输出：> git status --short\n# 输出：（空：没有任何改动）\n# 输出：> git stash -q\n# 输出：> git status --short\n# 输出：（空：没有任何改动）\n# 输出：> git stash pop -q\n# 输出：> git status --short\n# 输出： M solutions.py\n# 输出：> git push -q origin exp\n# 输出：> git branch -r\n# 输出：  origin/exp\n# 输出：  origin/main\n```\n\n读输出，逐步看：**一**，`git add` 之后 `git status --short` 显示 `A  solutions.py`（第一列 `A` 表示新文件已**暂存**）；`commit` 之后才有历史，`push -u origin main` 把它上传到远程。**二**，`git switch -c exp` 新建并切到 `exp` 分支；改文件后状态是 ` M solutions.py`（第二列的 `M` = 工作区已修改、**未暂存**）；`commit -am` 把已跟踪文件的修改暂存并提交。`git log --format=%s` 显示历史是 `try x = 2` 在上、`first version` 在下（新的在上）。**三**，切回 `main`，`git diff exp --stat` 显示 `solutions.py` 与 `exp` 有 1 行不同。**四，改坏了**：在 `main` 上把文件写成 `broken!!`、没有提交，`git restore solutions.py` 放弃修改，`status` 显示「空：没有任何改动」；注意 `restore` 会**丢掉**未提交的改动，不能撤销。**五，想保留但先去做别的事**：`git stash` 把改动收起来（`status` 为空），`git stash pop` 取回来（又是 ` M solutions.py`）。**六**，`git push origin exp` 之后，`git branch -r` 列出远程有 `origin/exp` 和 `origin/main`。日常最常用的就是："
+  },
+  {
+   "type": "think",
+   "q": "你在 `main` 分支上改坏了代码，还没有提交。怎么回到上一次提交的状态？如果想保留这些修改、先去做别的事呢？",
+   "a": "- **放弃未提交的修改**：`git restore 文件名`（`git restore .` 恢复所有文件）。上面的实验里 `broken!!` 就是这样被丢掉的。注意这会**丢掉**这些改动，没法撤销。\n- **想保留修改、先切走**：`git stash` 把改动暂存起来，工作区恢复干净；回来后 `git stash pop` 取回。\n- 更好的习惯：动手改之前先 `git switch -c 新分支`，在分支上随便试，出问题了直接切回 `main`。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "隐藏状态",
+     "hidden state",
+     "notebook 里单元运行顺序造成的变量状态"
+    ],
+    [
+     "版本控制",
+     "version control",
+     "记录每一次修改，可回退可协作"
+    ],
+    [
+     "远程仓库",
+     "remote",
+     "GitHub 上的那份，`push` 上传、`pull` 下载"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "自学 ARENA 但自己电脑没有 GPU，最方便的选择是？",
+    "options": [
+     "用 Google Colab，它免费提供 GPU",
+     "只用 CPU 慢慢跑所有内容",
+     "用 VS Code 的 Copilot",
+     "不做需要 GPU 的练习"
+    ],
+    "answer": 0,
+    "explain": "ARENA 也提到：线上自学的同学无法获得他们提供的算力，Colab 是最佳选择。"
+   },
+   {
+    "q": "`git add` 的作用是？",
+    "options": [
+     "下载别人的更新",
+     "把代码上传到 GitHub",
+     "新建一个分支",
+     "把改动放进暂存区，准备下一次提交"
+    ],
+    "answer": 3,
+    "explain": "`add` 只是暂存；`commit` 才生成一次存档；`push` 才上传到远程。"
+   },
+   {
+    "q": "`git commit` 和 `git push` 的区别是？",
+    "options": [
+     "两者完全一样",
+     "`commit` 在本地生成一次存档；`push` 把本地的提交上传到远程仓库",
+     "`commit` 上传，`push` 存档",
+     "`push` 只能用于 main 分支"
+    ],
+    "answer": 1,
+    "explain": "提交是本地操作，没有网络也能做；推送才把提交同步到 GitHub。"
+   }
+  ]
+ }
+}

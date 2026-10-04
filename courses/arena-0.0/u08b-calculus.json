@@ -1,0 +1,77 @@
+{
+ "id": "u08b",
+ "title": "微积分：导数、链式法则与损失函数（2/3）",
+ "en": "Calculus for Machine Learning (2/3)",
+ "minutes": 30,
+ "objectives": [
+  "理解 **偏导数 (partial derivative)**、**梯度 (gradient)** 和 **雅可比矩阵 (Jacobian)**，会用一阶 **泰勒展开 (Taylor expansion)** 解释梯度下降为什么有效、学习率太大为什么会失效",
+  "会推导 **均方误差 (MSE)** 和 **二元交叉熵 (BCE)** 的导数，知道对 **logit** 求导为什么得到 $\\sigma(z)-y$"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「微积分：导数、链式法则与损失函数」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：链式法则、乘积法则与梯度消失（约 10 分钟） → 偏导数、梯度与雅可比矩阵（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 链式法则、乘积法则与梯度消失\n\n视频用面积和「推动一串连锁变化」的画面讲了两条规则。先把它们写成严谨的形式：\n\n> **标准定义 · 乘积法则与链式法则 (product rule & chain rule)**\n>\n> **加法法则** $(f+g)'=f'+g'$。**乘积法则** $(fg)'=f'g+fg'$。**链式法则**：对复合函数 $f(g(x))$，有\n>\n> $$\\frac{d}{dx}f\\big(g(x)\\big)=f'\\big(g(x)\\big)\\cdot g'(x)$$\n>\n> 写成莱布尼茨记号，若 $y=f(u)$、$u=g(x)$，则 $\\dfrac{dy}{dx}=\\dfrac{dy}{du}\\cdot\\dfrac{du}{dx}$。复合了 $L$ 层函数，导数就是 $L$ 个局部导数的**乘积**。\n>\n> *English: The product rule gives (fg)' = f'g + fg'. The chain rule gives (f∘g)'(x) = f'(g(x))·g'(x); for a composition of L functions the derivative is the product of the L local derivatives.*\n\n**白话版：「齿轮传动比」。** 一串齿轮，第一个转一圈，第二个转 $g'$ 圈，第三个再把它乘上 $f'$ 圈：总传动比是各级传动比相乘。乘积法则则像长方形的面积：边长 $f$、$g$ 各变一点点，面积的变化来自两条细长条 $f'g$ 和 $fg'$（那个角上的小方块是更高阶的小量，可以忽略）。\n\n先验证几个公式（手推和数值微分对一下），然后做一件重要的事：把 Sigmoid 一层层套起来，看链式法则「一路相乘」会发生什么。\n\n```python\nimport numpy as np\n\ndef num_deriv(f, x, h=1e-5):\n    return (f(x + h) - f(x - h)) / (2 * h)\n\nx = 0.7\n# 链式法则：d/dx sin(x^2) = cos(x^2) * 2x\nf = lambda x: np.sin(x ** 2)\nprint(\"sin(x^2)   公式:\", round(float(np.cos(x**2) * 2 * x), 6), \" 数值:\", round(float(num_deriv(f, x)), 6))\n# d/dx e^{-x^2} = e^{-x^2} * (-2x)\ng = lambda x: np.exp(-x ** 2)\nprint(\"e^(-x^2)   公式:\", round(float(np.exp(-x**2) * (-2 * x)), 6), \" 数值:\", round(float(num_deriv(g, x)), 6))\n# 乘积法则：(u*v)' = u'v + uv'，取 u = x^2, v = sin x\nh = lambda x: x ** 2 * np.sin(x)\nprint(\"x^2 sin x  公式:\", round(float(2 * x * np.sin(x) + x**2 * np.cos(x)), 6), \" 数值:\", round(float(num_deriv(h, x)), 6))\n\n# 链式法则 = 一路相乘。把 Sigmoid 一层层套起来：y = s(s(s(...s(x))))，共 L 层\n# 每过一层，就把「这一层的局部导数 s'(t) = s(1-s)」乘进去\nsigmoid = lambda t: 1 / (1 + np.exp(-t))\ndef deep_grad(x, L):\n    d = 1.0\n    for _ in range(L):\n        s = sigmoid(x)\n        d *= s * (1 - s)                   # 乘上这一层的局部导数\n        x = s                              # 输出变成下一层的输入\n    return d\n\n# 先核对：L=3 层时，链式法则的结果和数值微分一致\nf3 = lambda t: sigmoid(sigmoid(sigmoid(t)))\nprint(\"L=3 核对  链式:\", round(float(deep_grad(0.5, 3)), 6), \" 数值:\", round(float(num_deriv(f3, 0.5)), 6))\n\nprint(\"--- 套 L 层 Sigmoid 之后，dy/dx 还剩多少？ ---\")\nfor L in [1, 2, 5, 10, 20, 50]:\n    print(f\"L={L:<2d}  dy/dx = {deep_grad(0.5, L):.3e}\")\nprint(\"每层的导数最大 0.25，所以 10 层的乘积不会超过 0.25^10 =\", f\"{0.25 ** 10:.3e}\")\n# 输出：sin(x^2)   公式: 1.235266  数值: 1.235266\n# 输出：e^(-x^2)   公式: -0.857677  数值: -0.857677\n# 输出：x^2 sin x  公式: 1.276677  数值: 1.276677\n# 输出：L=3 核对  链式: 0.012033  数值: 0.012033\n# 输出：--- 套 L 层 Sigmoid 之后，dy/dx 还剩多少？ ---\n# 输出：L=1   dy/dx = 2.350e-01\n# 输出：L=2   dy/dx = 5.341e-02\n# 输出：L=5   dy/dx = 6.080e-04\n# 输出：L=10  dy/dx = 3.483e-07\n# 输出：L=20  dy/dx = 1.143e-13\n# 输出：L=50  dy/dx = 4.040e-33\n# 输出：每层的导数最大 0.25，所以 10 层的乘积不会超过 0.25^10 = 9.537e-07\n```\n\n读输出：前三行，链式法则（$\\cos(x^2)\\cdot2x$、$e^{-x^2}\\cdot(-2x)$）和乘积法则（$2x\\sin x+x^2\\cos x$）算出的值和数值微分完全一致（1.235266、-0.857677、1.276677）。第 4 行 $L=3$ 层嵌套的 Sigmoid，把三层的局部导数相乘得 0.012033，也和数值微分一致。\n\n**最后一段是重点**：每过一层 Sigmoid，导数最多是 0.25，所以层数一多，乘积就迅速缩小：1 层是 0.235，5 层是 $6.08\\times10^{-4}$，10 层是 $3.48\\times10^{-7}$，20 层 $1.14\\times10^{-13}$，50 层 $4.04\\times10^{-33}$。**输入端的参数几乎收不到任何梯度信号**，这就是**梯度消失 (vanishing gradient)**。反过来，如果每层的局部导数都大于 1，乘积就会指数增长，叫**梯度爆炸 (exploding gradient)**。这也是 ReLU（正区间导数恒为 1）、残差连接、归一化层这些设计被发明的动机。\n\n### 偏导数、梯度与雅可比矩阵\n\n现实里的函数不止一个输入：一个网络有成千上万个参数。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "AXqhWeUEtQU",
+   "title": "视频二：Partial derivatives, introduction（Khan Academy）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 11
+  },
+  {
+   "type": "think",
+   "q": "**概念辨析**：Sigmoid 的导数最大值是多少？在哪里取到？为什么说「Sigmoid 网络叠很多层难训练，ReLU 好一些」？",
+   "a": "$\\sigma'(x)=\\sigma(x)(1-\\sigma(x))$，当 $\\sigma(x)=0.5$（即 $x=0$）时取最大值 $0.5\\times0.5=0.25$，其余地方更小（两端趋近 0）。\n\n链式法则让 $L$ 层的梯度是 $L$ 个局部导数的乘积，Sigmoid 每层的因子最多 0.25，所以 10 层后至多 $0.25^{10}\\approx9.5\\times10^{-7}$（实验里是 $3.5\\times10^{-7}$）：梯度消失，前面的层几乎学不到东西。ReLU 在正区间导数恒为 1，乘积不会缩小，所以更好训练。代价是输入为负时导数为 0，神经元可能「死掉」。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "数值微分",
+     "numerical differentiation",
+     "用差商近似导数，用来检验，不用来训练"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "$f(x) = x^3$ 的导数是？",
+    "options": [
+     "$3x^2$",
+     "$x^2$",
+     "$3x^3$",
+     "$x^4/4$"
+    ],
+    "answer": 0,
+    "explain": "幂函数求导：$(x^n)' = nx^{n-1}$，所以 $3x^2$。$x^4/4$ 是积分（不定积分）的结果，不是导数。"
+   },
+   {
+    "q": "$f(x, y) = x^2y + 3y$，$\\dfrac{\\partial f}{\\partial y}$ 等于？",
+    "options": [
+     "$2xy$",
+     "$2x + 3$",
+     "$x^2y$",
+     "$x^2 + 3$"
+    ],
+    "answer": 3,
+    "explain": "对 $y$ 求偏导时把 $x$ 当常数：$x^2 \\cdot 1 + 3$。$2xy$ 是对 $x$ 的偏导数 $\\partial f / \\partial x$。"
+   },
+   {
+    "q": "均方误差 $L = \\frac{1}{2}(x - y)^2$ 对 $x$ 的导数是？",
+    "options": [
+     "$(x - y)^2$",
+     "$x - y$",
+     "$y - x$",
+     "$2(x - y)$"
+    ],
+    "answer": 1,
+    "explain": "$\\frac{1}{2} \\cdot 2(x - y) = x - y$。前面乘 $\\frac{1}{2}$ 就是为了约掉这个 2。"
+   }
+  ]
+ }
+}

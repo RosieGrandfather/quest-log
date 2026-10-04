@@ -1,0 +1,104 @@
+{
+ "id": "u12c",
+ "title": "开发工具：VS Code、Jupyter、Git、Conda（3/3）",
+ "en": "Developer Tools (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "会用常见 **Unix 命令** 与 **管道 (pipe)**、**重定向 (redirection)**，并能用 **pytest** 给函数写最小的测试"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「开发工具：VS Code、Jupyter、Git、Conda」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：Git：给文件夹加上「存档」功能（续）（约 10 分钟） → 虚拟环境：每个项目一个独立的「Python + 库」（约 5 分钟） → pytest：让机器替你检查对不对（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n```bash\ngit clone <地址>            # 下载仓库（未运行，需要网络上的真实仓库）\ngit switch -c my-feature    # 新建并切换分支（老写法 git checkout -b）\ngit status                  # 看改了什么\ngit add 文件名              # 暂存\ngit commit -m \"说明\"        # 本地提交\ngit push -u origin my-feature   # 上传分支\ngit pull                    # 拉取别人的更新\n```\n\n**最好的习惯：动手改之前先开一个新分支**，改坏了切回 `main` 就是干净的。（上面的 `clone` 示例需要真实的远程仓库，没有在本节运行。）"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "1VVCd0eSkYc",
+   "title": "视频三：Master the basics of Conda environments in Python（The Jackson Laboratory）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### 虚拟环境：每个项目一个独立的「Python + 库」\n\n> **标准定义 · 虚拟环境 (virtual environment)**\n>\n> **虚拟环境**是一个独立的目录，里面有自己的 Python **解释器 (interpreter)** 和自己的已安装库。激活后，`python` 和 `pip` 指向这个环境，装、卸库只影响它，不影响系统 Python 和其他环境。Python 自带 `venv`；**Conda** 是另一套环境管理器，除了 Python 库，还能管理 Python 版本本身和非 Python 的依赖。**依赖清单**（`requirements.txt` 或 `environment.yml`）记录了环境里的包和版本，别人据此可以重建同样的环境。\n>\n> *English: A virtual environment is an isolated directory with its own interpreter and installed packages; activating it makes python and pip refer to it. venv ships with Python; conda also manages the Python version and non-Python dependencies. A requirements file lets others rebuild the same environment.*\n\n**白话版：「每个项目一个独立的工具箱」。** 项目 A 要 PyTorch 2.1，项目 B 要 1.13，混在一个工具箱里必然打架；给每个项目单独一个工具箱，各用各的。下面真实创建一个虚拟环境，观察它是不是真的「独立」：\n\n```python\nimport os, subprocess, sys, tempfile\n\nenv = {k: v for k, v in os.environ.items() if k != \"PYTHONPATH\"}      # 去掉额外的搜索路径，保证看到的是环境本身\nwith tempfile.TemporaryDirectory() as d:\n    venv = os.path.join(d, \"arena-env\")\n    subprocess.run([sys.executable, \"-m\", \"venv\", venv], check=True)     # 创建虚拟环境（conda create 做的是同类的事）\n    py = os.path.join(venv, \"bin\", \"python\")                             # Windows 下是 Scripts\\\\python.exe\n\n    def run(*args):\n        r = subprocess.run([py, *args], capture_output=True, text=True, env=env)\n        return r.stdout.strip(), r.returncode\n\n    out, _ = run(\"-c\", \"import sys; print(sys.prefix != sys.base_prefix)\")\n    print(\"python 位于独立环境内（sys.prefix 与系统 Python 不同）：\", out)\n    print(\"装 einops 之前能 import 吗：\", run(\"-c\", \"import einops\")[1] == 0)\n    subprocess.run([py, \"-m\", \"pip\", \"install\", \"-q\", \"einops\"], capture_output=True, env=env)\n    print(\"装 einops 之后能 import 吗：\", run(\"-c\", \"import einops\")[1] == 0)\n    freeze, _ = run(\"-m\", \"pip\", \"freeze\")\n    print(\"pip freeze 的包名：\", [line.split(\"==\")[0] for line in freeze.splitlines()])\n# 输出：python 位于独立环境内（sys.prefix 与系统 Python 不同）： True\n# 输出：装 einops 之前能 import 吗： False\n# 输出：装 einops 之后能 import 吗： True\n# 输出：pip freeze 的包名： ['einops']\n```\n\n读输出：新建的环境里，`sys.prefix` 与系统 Python 不同（`True`），说明它确实是独立的目录；刚建好的环境里**没有** einops（`import` 失败，`False`）；用环境自己的 `pip` 装完之后才能导入（`True`）；`pip freeze` 只列出 `einops` 一个包，说明这个环境里干净得只有我们装的东西（连 numpy 都没有）。把 `pip freeze > requirements.txt` 的结果交给别人，他用 `pip install -r requirements.txt` 就能在新环境里重建同样的依赖，这就是「可复现」。（这段代码需要联网安装 einops。）\n\nConda 的对应命令（**未在本节运行**，因为需要安装 Conda；它们和上面的 `venv` 做的是同类的事）：\n\n```bash\nconda create -n arena python=3.11   # 创建名为 arena 的环境，并指定 Python 版本\nconda activate arena                # 激活（命令行前面会显示 (arena)）\npip install -r requirements.txt     # 在环境里装项目依赖\nconda env list                      # 列出所有环境\nconda deactivate                    # 退出\n```\n\n**最常见的坑**：你在命令行里 `conda activate arena` 后装了 PyTorch，但 VS Code 右下角选的是另一个 Python 解释器，于是 `import torch` 报 `ModuleNotFoundError`。排查方法：在代码里运行 `import sys; print(sys.executable)`，看当前到底在用哪个 Python；在 VS Code 里按 Ctrl + Shift + P → *Python: Select Interpreter* 选对环境。\n\n### pytest：让机器替你检查对不对\n\nARENA 的练习配有测试函数：你写完函数，运行测试，就知道对不对。理解测试怎么写，对你以后做自己的项目很重要。\n\n> **标准定义 · 单元测试与 pytest (unit test & pytest)**\n>\n> **单元测试**是一个小函数，用 `assert 条件` 断言被测代码在某个输入下的行为；条件为假就算失败。**pytest** 会自动收集名字以 `test_` 开头的函数并运行，汇总通过 / 失败的数量；`@pytest.mark.parametrize` 能用一组参数重复运行同一个测试。运行结束的**退出码**是 0 表示全部通过，非 0 表示有失败。\n>\n> *English: A unit test asserts that code behaves as expected on some input. pytest collects functions named test_*, runs them, and reports passes and failures; parametrize reruns a test over several inputs. The exit code is 0 if everything passes.*\n\n**白话版：「自动批改作业的答案卷」。** 你先写好「标准答案」，以后每次改了代码，一条命令就能自动批改一遍。\n\n```python\nimport re, subprocess, sys, tempfile, os\n\ntests = \"\"\"import numpy as np\nimport pytest\n\ndef softmax(x):\n    e = np.exp(x - x.max())          # 减去最大值，防止 exp 溢出\n    return e / e.sum()\n\ndef test_sums_to_one():\n    assert np.isclose(softmax(np.array([1.0, 2.0, 3.0])).sum(), 1.0)\n\ndef test_stable_for_large_inputs():\n    assert np.all(np.isfinite(softmax(np.array([1000.0, 1001.0]))))\n\n@pytest.mark.parametrize(\"n\", [2, 5, 10])\ndef test_uniform_input_gives_uniform_output(n):\n    assert np.allclose(softmax(np.zeros(n)), 1.0 / n)\n\ndef test_wrong_expectation():\n    assert softmax(np.array([0.0, 0.0]))[0] == 0.6      # 故意写错的期望值\n\"\"\"\nwith tempfile.TemporaryDirectory() as d:\n    open(os.path.join(d, \"test_softmax.py\"), \"w\").write(tests)\n    r = subprocess.run([sys.executable, \"-m\", \"pytest\", \"-q\", \"-rf\", \"-p\", \"no:cacheprovider\", \"--tb=no\"],\n                       cwd=d, capture_output=True, text=True)\n    for line in r.stdout.splitlines():\n        line = re.sub(r\" in [0-9.]+s\", \"\", line)\n        print(line.split(\" - \")[0])\n    print(\"退出码：\", r.returncode)\n# 输出：.....F                                                                   [100%]\n# 输出：=========================== short test summary info ============================\n# 输出：FAILED test_softmax.py::test_wrong_expectation\n# 输出：1 failed, 5 passed\n# 输出：退出码： 1\n```\n\n读输出：我们为一个数值稳定的 softmax 写了 4 个测试函数，其中一个用 `parametrize` 展开成 3 个，共 6 个用例：「和为 1」「对 1000 这样的大输入不溢出」「对全 0 输入输出均匀分布（试了 $n=2,5,10$）」都通过了；最后一个**故意写错**的期望值（两个相同输入的输出应该是 0.5，写成了 0.6）失败，进度行里 `.....F` 的 `F` 就是它。末行 `1 failed, 5 passed`，退出码为 1，说明有失败；全部通过时退出码为 0。判断「数值对不对」要用 `np.isclose` / `np.allclose`（张量用 `torch.allclose`），不要用 `==`：第 11 节里看到 `float32` 的 0.1 并不精确等于 0.1。\n\n### 这一节你要带走的三句话\n\n1. **命令行靠管道把小命令连成流水线，靠退出码判断成败；VS Code 的 `# %%` 单元让一个 `.py` 文件兼有 notebook 的交互和脚本的可复用，调试器能让你在出事的那一行直接看形状。**\n2. **Git 有工作区、暂存区、仓库三层，`commit` 只是本地存档，`push` 才上传；动手前先开分支，改坏了用 `restore`，要保留就 `stash`。**\n3. **每个项目一个虚拟环境，并用依赖清单记录；「装的环境」和「运行的环境」不一致是 `ModuleNotFoundError` 最常见的原因；交付 notebook 前要重启并全部运行，用 pytest 检查关键函数。**"
+  },
+  {
+   "type": "think",
+   "q": "`pip install torch` 之后，在 VS Code 里运行却报 `ModuleNotFoundError: No module named 'torch'`。最可能的原因是什么？怎么排查？",
+   "a": "**装的环境和运行的环境不是同一个。** 比如你在命令行里 `conda activate arena` 后装了 torch，但 VS Code 用的是另一个 Python 解释器。\n\n排查：在代码里运行 `import sys; print(sys.executable)` 看当前用的是哪个 Python；`python -m pip list` 看它里面装了什么。解决：在 VS Code 里按 Ctrl + Shift + P → *Python: Select Interpreter* 选 `arena` 环境。顺带一个好习惯：用 `python -m pip install ...` 而不是裸的 `pip install ...`，这样装库用的一定是你正在用的那个 Python。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "单元测试",
+     "unit test (pytest)",
+     "用 `assert` 自动检查函数行为"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Software Engineering 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "VS Code 快捷键表、Git 要求的出处（讲解为自写，未转载原文）"
+  },
+  {
+   "title": "Learn Git Branching（交互式练习）",
+   "url": "https://learngitbranching.js.org/",
+   "note": "ARENA 推荐，强烈建议做前几关"
+  },
+  {
+   "title": "VS Code：Python 交互式窗口（# %% 单元）",
+   "url": "https://code.visualstudio.com/docs/python/jupyter-support-py"
+  },
+  {
+   "title": "Conda 官方：Getting started",
+   "url": "https://conda.io/projects/conda/en/latest/user-guide/getting-started.html"
+  },
+  {
+   "title": "UC Berkeley UNIX Tutorial",
+   "url": "https://people.ischool.berkeley.edu/~kevin/unix-tutorial/toc.html",
+   "note": "ARENA 推荐：看到第 4 节就够"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "想新建一个叫 `exp` 的分支并切换过去，用哪条命令？",
+    "options": [
+     "`git branch -d exp`",
+     "`git push exp`",
+     "`git commit exp`",
+     "`git switch -c exp`"
+    ],
+    "answer": 3,
+    "explain": "`git switch -c exp`（老写法 `git checkout -b exp`）。`branch -d` 是删除分支。"
+   },
+   {
+    "q": "为什么要为不同项目使用不同的虚拟环境？",
+    "options": [
+     "为了让代码运行更快",
+     "避免不同项目需要的库版本互相冲突",
+     "为了节省硬盘空间",
+     "因为 Python 只能装一个库"
+    ],
+    "answer": 1,
+    "explain": "每个环境有自己独立的 Python 和库版本，一个项目升级 PyTorch 不会搞坏另一个项目。"
+   },
+   {
+    "q": "在命令行里激活名为 `arena` 的 conda 环境，用哪条命令？",
+    "options": [
+     "`pip install arena`",
+     "`conda create arena`",
+     "`conda activate arena`",
+     "`cd arena`"
+    ],
+    "answer": 2,
+    "explain": "`conda create -n arena ...` 是创建；`conda activate arena` 是激活，激活后提示符前面会显示 `(arena)`。"
+   }
+  ]
+ }
+}

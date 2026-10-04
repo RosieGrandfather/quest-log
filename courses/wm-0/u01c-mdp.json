@@ -1,0 +1,112 @@
+{
+ "id": "u01c",
+ "title": "马尔可夫决策过程：智能体与环境（3/3）",
+ "en": "Markov Decision Processes (3/3)",
+ "minutes": 45,
+ "objectives": [
+  "分清 **回合制任务 (episodic)** 与 **持续任务 (continuing)**，知道 **部分可观测 MDP (POMDP)** 和 **信念 (belief)**，明白它们为什么是通往世界模型的第一站"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「马尔可夫决策过程：智能体与环境」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：回报与折扣：「未来」有多重要（约 10 分钟） → 回合制任务与持续任务（约 5 分钟） → 策略与价值函数（约 5 分钟） → 动手实验：网格世界里估计价值，看 $\\gamma$ 的影响（约 10 分钟） → 部分可观测：智能体看到的不一定是状态（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 回报与折扣：「未来」有多重要\n\n> **标准定义 · 回报与折扣 (return & discounting)**\n>\n> 时刻 $t$ 之后的**折扣回报 (discounted return)** 是未来奖励的加权和：\n>\n> $$G_t=R_{t+1}+\\gamma R_{t+2}+\\gamma^2R_{t+3}+\\cdots=\\sum_{k=0}^{\\infty}\\gamma^kR_{t+k+1}$$\n>\n> 它满足**递推关系**\n>\n> $$G_t=R_{t+1}+\\gamma\\,G_{t+1}$$\n>\n> 若奖励有界 $|R|\\le R_{\\max}$ 且 $\\gamma<1$，则 $|G_t|\\le R_{\\max}/(1-\\gamma)$，回报一定有限。\n>\n> *English: The discounted return is G_t = Σ_k γ^k R_{t+k+1}. It obeys the recursion G_t = R_{t+1} + γ G_{t+1}, and is finite whenever rewards are bounded and γ < 1.*\n\n**白话版：「明天的一块钱不如今天的一块钱」。** $\\gamma$ 决定未来的奖励值多少钱：$\\gamma=0$ 时只看眼前（完全短视），$\\gamma$ 越接近 1 越有远见。$k$ 步之后的奖励要乘 $\\gamma^k$，所以大约 $1/(1-\\gamma)$ 步之外的奖励基本可以忽略，这个数叫**有效视野 (effective horizon)**：$\\gamma=0.9$ 约 10 步，$\\gamma=0.99$ 约 100 步。折扣有两个用处：一是让无限长的持续任务回报变成有限数；二是表达「越早拿到越好」的偏好。\n\n递推式 $G_t=R_{t+1}+\\gamma G_{t+1}$ 的推导只有一行：把 $\\gamma R_{t+2}+\\gamma^2R_{t+3}+\\cdots$ 提出一个 $\\gamma$，括号里恰好是 $G_{t+1}$。**这一行是整门课最重要的等式之一**：它说「现在的回报 = 眼前的奖励 + 折扣后的未来回报」，贝尔曼方程、时序差分学习、Q-learning 全是它的变形。\n\n```python\nimport numpy as np\n\ndef discounted_return(rewards, gamma):\n    # 直接按定义：G = R1 + gamma*R2 + gamma^2*R3 + ...\n    return sum(gamma ** k * r for k, r in enumerate(rewards))\n\ndef discounted_return_backward(rewards, gamma):\n    # 递归形式 G_t = R_{t+1} + gamma * G_{t+1}：从后往前算，一遍扫完（后面所有算法都靠这个递推）\n    g = 0.0\n    for r in reversed(rewards):\n        g = r + gamma * g\n    return g\n\nrewards = [0, 0, 0, 10]           # 前 3 步没有奖励，第 4 步拿到 10\nfor gamma in [1.0, 0.9, 0.5, 0.0]:\n    print(f\"gamma={gamma:<4}  G = {discounted_return(rewards, gamma):6.2f}   递推算出 {discounted_return_backward(rewards, gamma):6.2f}\")\n\n# 随机对拍：两种写法在随机奖励序列上一致\nrng = np.random.default_rng(0)\nok = all(abs(discounted_return(x, 0.95) - discounted_return_backward(x, 0.95)) < 1e-9\n         for x in (rng.normal(size=int(rng.integers(1, 30))) for _ in range(500)))\nprint(\"500 条随机奖励序列，两种写法一致：\", ok)\n\n# 持续任务：每步奖励恒为 1、永不结束。gamma = 1 时回报发散；gamma < 1 时有限，等于 1/(1-gamma)\nfor gamma in [0.5, 0.9, 0.99]:\n    G = discounted_return([1.0] * 5000, gamma)\n    print(f\"gamma={gamma:<5} 持续任务回报 {G:8.3f}   1/(1-gamma) = {1 / (1 - gamma):8.3f}   有效视野约 {1 / (1 - gamma):.0f} 步\")\nprint(\"gamma=1 时，前 100 步的和是\", sum([1.0] * 100), \"，前 5000 步的和是\", sum([1.0] * 5000), \"（一直涨，没有极限）\")\n# 输出：gamma=1.0   G =  10.00   递推算出  10.00\n# 输出：gamma=0.9   G =   7.29   递推算出   7.29\n# 输出：gamma=0.5   G =   1.25   递推算出   1.25\n# 输出：gamma=0.0   G =   0.00   递推算出   0.00\n# 输出：500 条随机奖励序列，两种写法一致： True\n# 输出：gamma=0.5   持续任务回报    2.000   1/(1-gamma) =    2.000   有效视野约 2 步\n# 输出：gamma=0.9   持续任务回报   10.000   1/(1-gamma) =   10.000   有效视野约 10 步\n# 输出：gamma=0.99  持续任务回报  100.000   1/(1-gamma) =  100.000   有效视野约 100 步\n# 输出：gamma=1 时，前 100 步的和是 100.0 ，前 5000 步的和是 5000.0 （一直涨，没有极限）\n```\n\n读输出：奖励序列 $(0,0,0,10)$（第 4 步才拿到 10）：$\\gamma=1$ 时回报是 10；$\\gamma=0.9$ 时是 $0.9^3\\times10=7.29$；$\\gamma=0.5$ 时是 1.25；$\\gamma=0$ 时是 0，因为眼前什么都没有。从前往后按定义算，和从后往前用递推式算，数字完全相同，500 条随机奖励序列上的对拍也是 `True`。\n\n下面是持续任务：每步奖励恒为 1，永不结束。$\\gamma=0.5,0.9,0.99$ 时回报分别是 2、10、100，恰好是 $1/(1-\\gamma)$（几何级数求和），有效视野也是 2、10、100 步。而 $\\gamma=1$ 时，前 100 步的和是 100，前 5000 步的和是 5000，一直涨、没有极限，回报没有定义。这就是持续任务必须 $\\gamma<1$ 的原因。\n\n### 回合制任务与持续任务\n\n> **标准定义 · 回合制与持续任务 (episodic vs continuing tasks)**\n>\n> **回合制任务**：交互自然地分成一个个有限长的**回合 (episode)**，每个回合在某个**终止状态 (terminal state)** 结束，之后重新从起点开始（棋局、迷宫、一局游戏）。**持续任务**：交互永不终止（长期运行的控制器、库存管理）。统一写法：把终止状态看成一个**吸收态**——进去之后永远留在原地、奖励恒为 0，这样两类任务都可以写成 $G_t=\\sum_{k\\ge0}\\gamma^kR_{t+k+1}$，回合制任务里 $\\gamma=1$ 也合法。\n>\n> *English: Episodic tasks end in a terminal state and restart; continuing tasks never end. Both can be written with the same return formula by treating the terminal state as an absorbing state with zero reward.*\n\n**白话版：「一盘棋」对「一辈子」。** 下棋有输赢结束的时候，运营一家商店没有。实践中还有第三种情形：任务本来没有终点，但训练时为了方便被**截断 (truncation)** 成固定长度，比如「最多 1000 步」。这时回合是因为**时间到了**结束，而不是因为**走到了终点**。Gymnasium 把这两种结束分成 `terminated`（真正的终止状态）和 `truncated`（超时被截断）：前者之后的价值确实是 0，后者之后世界还在继续，价值不该当成 0。后面 Q-learning 做「自举」的时候就要用到这个区分。\n\n### 策略与价值函数\n\n> **标准定义 · 策略与价值函数 (policy, state value, action value)**\n>\n> **策略** $\\pi(a\\mid s)=\\Pr(A_t=a\\mid S_t=s)$ 是智能体的行为规则：在每个状态下选各个动作的概率（确定性策略是它的特例）。给定策略 $\\pi$，**状态价值函数**是从 $s$ 出发、之后一直按 $\\pi$ 行动所得回报的期望：\n>\n> $$v_\\pi(s)=\\mathbb{E}_\\pi\\big[G_t\\mid S_t=s\\big]$$\n>\n> **动作价值函数**是在 $s$ 先做动作 $a$、之后再按 $\\pi$ 行动的期望回报：\n>\n> $$q_\\pi(s,a)=\\mathbb{E}_\\pi\\big[G_t\\mid S_t=s,A_t=a\\big]$$\n>\n> 两者的关系：$v_\\pi(s)=\\sum_a\\pi(a\\mid s)\\,q_\\pi(s,a)$。\n>\n> *English: A policy maps states to action probabilities. The state value v_π(s) is the expected return starting from s and following π; the action value q_π(s,a) is the expected return after taking a in s and then following π. v_π(s) is the π-weighted average of q_π(s,a).*\n\n**白话版：「这个位置值多少钱」。** 下围棋时，一个局面是不是好，取决于「接下来你怎么下」，所以价值总是**相对于一个策略**的。$v_\\pi(s)$ 是「从这里开始照 $\\pi$ 玩，平均能拿多少分」，$q_\\pi(s,a)$ 多问了一步：「如果我这一步偏要走 $a$，之后再照 $\\pi$ 玩，平均能拿多少分」。选动作的时候看 $q$ 更方便，因为它直接告诉你每个动作值多少；这就是 Q-learning 学 $q$ 而不学 $v$ 的原因（第 3 节）。\n\n价值函数的定义里有一个期望，期望可以用**平均**来近似：让策略真的玩很多局，把每局的回报平均。这就是**蒙特卡洛 (Monte Carlo)** 的思想，也是下面实验的做法。\n\n### 动手实验：网格世界里估计价值，看 $\\gamma$ 的影响\n\n用随机策略从起点出发玩 20000 局，把每一局的回报按不同的 $\\gamma$ 算出来再取平均，得到 $v_\\pi(\\text{起点})$ 的估计；然后强制第一步做某个动作，之后继续随机，得到起点的 $q_\\pi$。注意同一批轨迹可以同时算多个 $\\gamma$ 的回报，因为 $\\gamma$ 只出现在「怎么把奖励加起来」里，不影响环境本身。\n\n```python\nimport numpy as np\n\nclass GridWorld:\n    N = 5\n    MOVES = [(-1, 0), (1, 0), (0, -1), (0, 1)]\n    GOAL, TRAP, START = (4, 4), (2, 3), (0, 0)\n    def reset(self, start=None):\n        self.pos = start or self.START\n    def step(self, a):\n        r, c = self.pos\n        dr, dc = self.MOVES[a]\n        self.pos = (min(max(r + dr, 0), self.N - 1), min(max(c + dc, 0), self.N - 1))\n        if self.pos == self.GOAL: return 10.0, True\n        if self.pos == self.TRAP: return -10.0, True\n        return 0.0, False\n\nenv = GridWorld()\nrng = np.random.default_rng(0)\ngammas = [0.5, 0.9, 0.99, 1.0]\n\ndef rollout(first_action=None, max_steps=500):\n    \"\"\"用随机策略玩一局，返回奖励序列（可以指定第一步的动作，用来估计 q）\"\"\"\n    env.reset(); rewards = []\n    for t in range(max_steps):\n        a = first_action if (t == 0 and first_action is not None) else int(rng.integers(4))\n        r, done = env.step(a); rewards.append(r)\n        if done: return rewards, True\n    return rewards, False\n\ndef mc_returns(episodes, gamma):\n    return np.array([sum(gamma ** k * r for k, r in enumerate(ep)) for ep in episodes])\n\n# 1) 状态价值：从起点出发，用随机策略玩 20000 局，回报的平均值就是 v_pi(起点) 的蒙特卡洛估计\nepisodes, finished = zip(*[rollout() for _ in range(20000)])\nprint(\"20000 局里在 500 步内结束的比例：\", np.mean(finished))\nprint(\"episode 长度：平均\", round(np.mean([len(e) for e in episodes]), 1), \" 最长\", max(len(e) for e in episodes))\nprint(\"gamma   v(起点) 估计    标准误\")\nfor g in gammas:\n    G = mc_returns(episodes, g)\n    print(f\"{g:<6}  {G.mean():8.3f}      {G.std() / np.sqrt(len(G)):.3f}\")\n\n# 2) 动作价值：先强制做第一个动作 a，之后按随机策略；每个动作玩 5000 局（gamma=0.9）\nprint(\"起点的动作价值 q(起点, a)，gamma=0.9：\")\nq = []\nfor a, name in enumerate([\"上\", \"下\", \"左\", \"右\"]):\n    eps, _ = zip(*[rollout(first_action=a) for _ in range(5000)])\n    q.append(mc_returns(eps, 0.9).mean())\n    print(f\"  q(起点, {name}) = {q[-1]:.3f}\")\nprint(\"四个动作的平均（随机策略下 v = sum_a pi(a|s) q(s,a)）：\", round(float(np.mean(q)), 3))\n# 输出：20000 局里在 500 步内结束的比例： 1.0\n# 输出：episode 长度：平均 41.3  最长 316\n# 输出：gamma   v(起点) 估计    标准误\n# 输出：0.5       -0.013      0.001\n# 输出：0.9       -0.822      0.012\n# 输出：0.99      -4.323      0.041\n# 输出：1.0       -5.959      0.057\n# 输出：起点的动作价值 q(起点, a)，gamma=0.9：\n# 输出：  q(起点, 上) = -0.695\n# 输出：  q(起点, 下) = -0.808\n# 输出：  q(起点, 左) = -0.747\n# 输出：  q(起点, 右) = -1.017\n# 输出：四个动作的平均（随机策略下 v = sum_a pi(a|s) q(s,a)）： -0.817\n```\n\n读输出：\n\n- 20000 局全部在 500 步内结束，平均长度 41.3 步，最长 316 步（随机走路有时会绕很久），所以「500 步截断」几乎没有影响。\n- $\\gamma=0.5$：$v\\approx-0.013$。起点离终点和陷阱都至少 6 步，$0.5^6\\approx0.016$，远处的奖励被折扣得几乎看不见，价值接近 0。\n- $\\gamma$ 从 0.5 增大到 0.9、0.99、1.0，估计值依次是 $-0.822$、$-4.323$、$-5.959$：折扣越小，未来的 $\\pm10$ 越不重要。$\\gamma=1$ 时回报就是 $10\\times(\\text{先到终点的概率}-\\text{先掉进陷阱的概率})$，$-5.959$ 说明随机走路大约 80% 先掉进陷阱、20% 先到终点（因为全部回合都结束了），所以越在乎远处，价值越负。标准误最大约 0.06，这些差别远大于采样噪声。\n- 起点的动作价值（$\\gamma=0.9$）：上 $-0.695$、下 $-0.808$、左 $-0.747$、右 $-1.017$。每个动作 5000 局，标准误大约 0.02 到 0.03，所以「向右」明显最差，上、左、下之间的差距要小心解读（下一节会精确算出来：上和左都是撞墙、留在起点，真实的 $q$ 值其实完全相等，这里的差别只是采样噪声）。四个值的平均是 $-0.817$，与上面直接估计的 $v=-0.822$ 相差在误差之内，印证了 $v_\\pi(s)=\\sum_a\\pi(a\\mid s)q_\\pi(s,a)$（这里 $\\pi$ 是均匀的，所以就是算术平均）。\n\n**自己试试**：把陷阱挪到别处（改 `TRAP`），或者给每步加 $-0.1$ 的奖励，看 $v$ 怎么变；把 `gammas` 改成 `[0.8, 0.95]`。这个实验的缺点是：每个状态都要玩上万局，状态多了根本算不过来。**下一节会看到，用贝尔曼方程可以不玩一局就精确算出同样的数字**。\n\n### 部分可观测：智能体看到的不一定是状态\n\n前面默认智能体**看到的就是状态**。真实世界里往往不是：摄像头只给出一帧画面，看不出球的速度；对话里用户的真实意图藏在话后面。这时智能体拿到的是**观测 (observation)** $O_t$，状态 $S_t$ 藏在背后。\n\n> **标准定义 · 部分可观测马尔可夫决策过程 (POMDP)**\n>\n> POMDP 在 MDP 的基础上增加**观测集合** $\\Omega$ 和**观测概率** $O(o\\mid s',a)$：智能体看不到状态，只看到观测。因为观测通常不满足马尔可夫性，智能体需要维护一个**信念状态 (belief state)** $b_t(s)=\\Pr(S_t=s\\mid O_{1:t},A_{0:t-1})$，即「根据到目前为止所有观测和动作，状态是各个 $s$ 的概率」，并按贝叶斯规则更新：\n>\n> $$b'(s')\\;\\propto\\;O(o\\mid s',a)\\sum_sP(s'\\mid s,a)\\,b(s)$$\n>\n> 信念本身满足马尔可夫性，所以「POMDP 是以信念为状态的（连续状态）MDP」。\n>\n> *English: A POMDP adds observations and an observation model. The agent maintains a belief, a posterior over hidden states given the history, updated by Bayes' rule; the belief itself is a Markov state.*\n\n**白话版：「侦探的脑内嫌疑人名单」。** 侦探看不到真相，只有一条条线索（观测）。他不断更新「每个嫌疑人是真凶的概率」，这张名单就是信念。看更多线索，名单越来越集中。\n\n下面的实验是最简单的情形：宝藏在左或右房间（真实状态固定），传感器 80% 准确。每看到一个观测，就按贝叶斯规则更新一次信念。\n\n```python\nimport numpy as np\n\n# 部分可观测：真实状态 z 只有两种 {0:\"左房间\", 1:\"右房间\"}，宝藏在其中一个房间里，智能体不知道在哪个。\n# 传感器有噪声：宝藏在左房间时，传感器 80% 报告「左」；在右房间时，80% 报告「右」。\n# 智能体不能直接看到 z，只能维护一个「信念 (belief)」b = P(z = 左 | 目前所有观测)\nrng = np.random.default_rng(5)\nz = 0                                        # 真实情况：宝藏在左房间（智能体不知道）\nsensor = np.array([[0.8, 0.2],               # sensor[z, o] = P(观测 o | 真实状态 z)\n                   [0.2, 0.8]])\nbelief = np.array([0.5, 0.5])                # 一开始完全不知道\nprint(\"真实状态是 0（左）。每次观测后用贝叶斯公式更新信念：\")\nfor t in range(8):\n    o = int(rng.choice(2, p=sensor[z]))      # 带噪声的观测\n    belief = belief * sensor[:, o]           # 贝叶斯：先验 × 似然\n    belief /= belief.sum()                   # 归一化\n    print(f\"t={t}  观测={'左' if o == 0 else '右'}  信念 P(左)={belief[0]:.3f}\")\n# 一次观测并不是「状态」，但「观测的历史 -> 信念」可以当作新的状态：它满足马尔可夫性\n# 输出：真实状态是 0（左）。每次观测后用贝叶斯公式更新信念：\n# 输出：t=0  观测=右  信念 P(左)=0.200\n# 输出：t=1  观测=右  信念 P(左)=0.059\n# 输出：t=2  观测=左  信念 P(左)=0.200\n# 输出：t=3  观测=左  信念 P(左)=0.500\n# 输出：t=4  观测=左  信念 P(左)=0.800\n# 输出：t=5  观测=左  信念 P(左)=0.941\n# 输出：t=6  观测=左  信念 P(左)=0.985\n# 输出：t=7  观测=左  信念 P(左)=0.996\n```\n\n读输出：真实状态是「左」，起初信念是 0.5 对 0.5。前两次观测碰巧都是「右」（20% 的错误读数），信念 $P(\\text{左})$ 降到 0.200、0.059，**智能体被误导了**；之后连续看到「左」，信念经过 0.200、0.500、0.800 一路升到 0.941、0.985、0.996。**单个观测可能骗人，历史累积起来的信念却越来越可靠**，这就是为什么部分可观测的问题里要**记住历史**，而不是只盯着当前这一帧。\n\n**这和世界模型有什么关系？** 现代的世界模型（本课第 6、8 节）做的正是用神经网络来近似「观测历史 → 潜在状态」这一步：循环网络或状态空间模型把历史压缩成一个向量，充当学出来的信念。DQN 把最近 4 帧叠在一起当输入，是同一件事最朴素的做法。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "4Fqt2Nk2lhY",
+   "title": "视频二：Markov Decision Process (MDP) - 5 Minutes with Cyrill（Cyrill Stachniss）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 4
+  },
+  {
+   "type": "text",
+   "md": "### 这一节你要带走的三句话\n\n1. **MDP $=(S,A,P,R,\\gamma)$ 加上马尔可夫性**：状态是够用的存档，$P$ 和 $R$ 是环境的动力学，世界模型要学的正是这两样。\n2. **回报 $G_t=R_{t+1}+\\gamma G_{t+1}$**：折扣因子 $\\gamma$ 让持续任务的回报有限，有效视野约 $1/(1-\\gamma)$ 步；这个递推式是后面所有算法的出发点。\n3. **价值是回报的期望**：$v_\\pi(s)=\\sum_a\\pi(a\\mid s)q_\\pi(s,a)$；可以用蒙特卡洛平均来估计，但计算量大，下一节用贝尔曼方程精确求解；看不到完整状态时是 POMDP，要靠信念或潜在状态。"
+  },
+  {
+   "type": "think",
+   "q": "奖励序列是 $R_1=0,R_2=0,R_3=5,R_4=0,R_5=10$（之后回合结束），$\\gamma=0.9$。分别用定义和递推式 $G_t=R_{t+1}+\\gamma G_{t+1}$ 算 $G_0$。",
+   "a": "按定义：$G_0=\\gamma^2\\times5+\\gamma^4\\times10=0.81\\times5+0.6561\\times10=4.05+6.561=10.611$。\n\n按递推式从后往前：$G_5=0$（回合结束）；$G_4=R_5+\\gamma G_5=10$；$G_3=R_4+\\gamma G_4=0+9=9$；$G_2=R_3+\\gamma G_3=5+8.1=13.1$；$G_1=R_2+\\gamma G_2=11.79$；$G_0=R_1+\\gamma G_1=10.611$。两种算法一致。可以用上面的 `discounted_return([0, 0, 5, 0, 10], 0.9)` 核对。递推式的好处是**一遍扫描就把所有 $G_t$ 算出来了**，这正是训练时处理一整局数据的做法。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "蒙特卡洛",
+     "Monte Carlo",
+     "用大量采样的平均来近似期望"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Sutton & Barto《Reinforcement Learning: An Introduction》第二版（2018），第 3 章 Finite Markov Decision Processes（3.1–3.6）；17.3 Observations and State",
+   "url": "http://incompleteideas.net/book/RLbook2020.pdf",
+   "note": "本节内容依据的开放教材（作者免费公开）；讲解为自写，未转载原文"
+  },
+  {
+   "title": "David Silver：RL Course, Lecture 2: Markov Decision Process（DeepMind / UCL，约 102 分钟）",
+   "url": "https://www.youtube.com/watch?v=lfHX2hHRMVQ",
+   "note": "选看：同一主题的大学课堂版本，想系统听一遍时用；课程主页见 davidsilver.uk/teaching"
+  },
+  {
+   "title": "David Silver 的强化学习课程主页（讲义 PDF 与视频）",
+   "url": "https://www.davidsilver.uk/teaching/",
+   "note": "整套 10 讲课程的讲义"
+  },
+  {
+   "title": "Hugging Face Deep RL Course, Unit 1: Introduction to Deep Reinforcement Learning",
+   "url": "https://huggingface.co/learn/deep-rl-course/unit1/introduction",
+   "note": "免费课程，带可运行的练习，适合在手机之外动手"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面哪个是回报的递推式？",
+    "options": [
+     "$G_t=R_t+\\gamma G_t$",
+     "$G_t=\\gamma\\,(R_{t+1}+G_{t+1})$",
+     "$G_t=R_{t+1}+G_{t+1}/\\gamma$",
+     "$G_t=R_{t+1}+\\gamma G_{t+1}$"
+    ],
+    "answer": 3,
+    "explain": "把 $G_t=R_{t+1}+\\gamma R_{t+2}+\\gamma^2R_{t+3}+\\cdots$ 的后面部分提出一个 $\\gamma$，括号里正好是 $G_{t+1}$。这个递推式是贝尔曼方程和所有时序差分算法的出发点。"
+   },
+   {
+    "q": "持续任务里每一步奖励都是 1，$\\gamma=0.99$，回报是多少？",
+    "options": [
+     "99",
+     "100",
+     "1",
+     "无穷大（发散）"
+    ],
+    "answer": 1,
+    "explain": "几何级数 $\\sum_{k\\ge0}\\gamma^k=1/(1-\\gamma)=100$。只有 $\\gamma=1$ 时才会发散；$\\gamma<1$ 并且奖励有界时，持续任务的回报一定是有限的。"
+   },
+   {
+    "q": "关于折扣因子 $\\gamma$，下面哪个说法**错误**？",
+    "options": [
+     "$\\gamma<1$ 且奖励有界时，持续任务的回报是有限的",
+     "$\\gamma=0$ 时，智能体只关心即时奖励",
+     "$\\gamma$ 越接近 1，智能体越「短视」，越只关心眼前的奖励",
+     "$\\gamma$ 越接近 1，需要考虑的「有效视野」越长"
+    ],
+    "answer": 2,
+    "explain": "恰恰相反：$\\gamma$ 越接近 1，远处的奖励打的折扣越小，智能体越有远见；$\\gamma=0$ 才是完全短视。有效视野大约是 $1/(1-\\gamma)$ 步。"
+   },
+   {
+    "q": "状态价值函数 $v_\\pi(s)$ 的含义是？",
+    "options": [
+     "从状态 $s$ 出发，之后一直按策略 $\\pi$ 行动，所得回报的期望",
+     "在状态 $s$ 下的最优动作",
+     "状态 $s$ 被访问到的概率",
+     "在状态 $s$ 一步得到的即时奖励"
+    ],
+    "answer": 0,
+    "explain": "价值是**回报的期望**，而不是单步奖励：它把未来所有奖励（打过折扣）都算进来，而且依赖于所用的策略 $\\pi$。"
+   }
+  ]
+ }
+}

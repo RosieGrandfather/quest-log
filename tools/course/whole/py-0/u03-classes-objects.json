@@ -1,0 +1,281 @@
+{
+ "id": "u03",
+ "title": "类与对象",
+ "en": "Classes & Objects",
+ "minutes": 105,
+ "objectives": [
+  "会定义 **类 (class)**，分清 **实例属性 / 类属性**、**实例方法 / 类方法 / 静态方法**，理解 `self` 与 `__init__`，避开「可变类属性被共享」的陷阱",
+  "会用 **特殊方法 (special / dunder methods)**（`__repr__`、`__len__`、`__getitem__`、`__add__`、`__eq__`、`__call__`、`__enter__` / `__exit__`）让自己的类像内置类型一样工作",
+  "理解 **继承 (inheritance)**、`super()`、**方法重写 (override)**、**多态 (polymorphism)** 与 **组合 (composition)**，能读懂 `nn.Module` 式的类结构",
+  "会用 **`@property`** 做校验与计算属性，会用 **`@dataclass`** 写数据容器"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n面向对象编程 (OOP) 是几乎所有大型 Python 代码库的组织方式。对你来说它尤其重要：**PyTorch 里的每个模型都是一个类**（继承 `nn.Module`），每个数据集也是一个类（继承 `Dataset`）。读不懂类，就读不懂 ML 代码；而读得懂，你会发现它们的结构就是这一节的几个简单套路。\n\n**学完它你就能看懂这几件事：**\n\n- `class Net(nn.Module): def __init__(self): super().__init__() ... def forward(self, x): ...`：每个词都是什么意思，为什么 `model(x)` 会调用 `forward`；\n- `class MyDataset(Dataset): def __len__ ...; def __getitem__ ...`：为什么只要写这两个方法，就能被 `DataLoader` 使用；\n- `@dataclass class Config`：实验配置的标准写法（Hugging Face、很多研究代码里都有）；\n- `model.parameters()`、`optimizer.step()`、`tensor.shape`：这些点号后面的东西是方法还是属性（`@property`）。\n\n**开始之前你要会**（这一节默认你已经学完前面的基础课与前两节；下面每一项第一次用到时，我还会在原地回指一次）：\n\n- 函数、`*args`、**装饰器**（`@classmethod`、`@property`、`@dataclass` 都是装饰器）、`lambda`、`import` →「函数、作用域与递归」；\n- 列表推导式、`zip`、生成器（`yield`）、迭代器协议 →「推导式、迭代器与生成器」；\n- **方法与点号**（`\"abc\".upper()`）、f-string、内置函数（`len`、`sum`、`type`）→「变量、数据类型与字符串」；\n- 字典、元组与**解包**（`name, scores = s.split(\":\")`）→「容器：列表、元组、字典与集合」；\n- `try` / `except ... as e`，以及怎样读报错信息 →「条件、循环与读懂报错」。\n\n**本节安排（约 105 分钟）**：类的基本概念（25 分钟，含视频一）→ 特殊方法（25 分钟，含视频二）→ 继承与多态（20 分钟）→ `@property` 与 `@dataclass`（20 分钟，含视频三）→ 总结与「想一想」（15 分钟）。\n\n下面每一个知识点都是同一个节奏：**先提一个问题 → 一小段代码 → 马上读它的输出**。网页里每段代码都能点「▶ 运行」，后面的代码块可以直接用前面定义的变量，所以请**按顺序**往下读、往下跑。\n\n### 类与对象的基本概念\n\n> **标准定义 · 类 (class) 与实例 (instance)**\n>\n> **类**是创建对象的**模板**，定义了一类对象共有的**属性 (attribute)**（数据）与**方法 (method)**（函数）。由类创建出来的具体对象叫做**实例**。`__init__` 是**构造方法**，创建实例时自动调用，用来初始化**实例属性**。方法的第一个参数 `self` 表示**调用它的那个实例**。直接写在类体里的变量是**类属性**，由所有实例**共享**；写在 `self.xxx = ...` 的是**实例属性**，每个实例各自一份。\n>\n> *English: A class is a template for objects; an instance is a concrete object created from it. __init__ initialises instance attributes; self refers to the instance. Class attributes are shared by all instances; instance attributes belong to each instance.*\n\n**白话版：「类是图纸，实例是房子」。** 图纸上写了「房子有几个房间（属性）、能开关门（方法）」；照图纸盖出来的每一栋房子是一个实例，每栋有自己的颜色、地址（实例属性）；「这个小区的名字」是大家共用的（类属性）。\n\n**问题一：怎样定义一个类，并让每个实例各存各的数据？** 先写一个最小的 `Student`，一个类属性、两个实例属性、一个实例方法。（代码里 `f\"Student({self.name!r}, {self.scores})\"` 是 f-string：`{}` 里放变量，`!r` 表示「用 `repr` 的形式显示」，字符串会带上引号，所以显示成 `'Ann'`；`sum(...)`、`len(...)` 是内置函数。）\n\n```python\nclass Student:\n    school = \"NUS\"                          # 类属性：所有实例共享\n\n    def __init__(self, name, scores):       # 构造方法：创建实例时自动调用\n        self.name = name                    # 实例属性：每个实例各自一份\n        self.scores = scores\n\n    def average(self):                      # 实例方法：第一个参数 self 是调用它的那个实例\n        return sum(self.scores) / len(self.scores)\n\n    def __repr__(self):                     # 让 print / 交互环境显示得有意义\n        return f\"Student({self.name!r}, {self.scores})\"\n\na = Student(\"Ann\", [90, 80])                # 创建实例：自动调用 __init__\nb = Student(\"Bob\", [50, 60, 70])\nprint(a, b)\nprint(a.average(), b.average())\n# 输出：Student('Ann', [90, 80]) Student('Bob', [50, 60, 70])\n# 输出：85.0 60.0\n```\n\n读输出：`Student('Ann', [90, 80])` 和 `Student('Bob', [50, 60, 70])` 是我们写的 `__repr__` 的结果（不写的话只会看到 `<__main__.Student object at 0x…>` 这种没有信息的内容）。`Student(\"Ann\", [90, 80])` 会自动调用 `__init__`，Python 把新建的实例作为 `self` 传进去，所以两个实例各自保存了自己的 `name` 和 `scores`；`average()` 也就各算各的：`(90 + 80) / 2 = 85.0`，`(50 + 60 + 70) / 3 = 60.0`。代码里有三类东西：`school` 是**类属性**，`name`、`scores` 是**实例属性**，`average` 是**实例方法**。\n\n**问题二：`self` 到底是谁？** 它不是什么魔法，就是点号前面的那个对象：\n\n```python\n# 方法调用只是语法糖：a.average() 等价于 Student.average(a)\nprint(Student.average(a) == a.average())\n\n# 实例的属性存放在 __dict__ 字典里；类本身也是对象\nprint(a.__dict__)\nprint(type(a), type(Student), isinstance(a, Student))\n# 输出：True\n# 输出：{'name': 'Ann', 'scores': [90, 80]}\n# 输出：<class '__main__.Student'> <class 'type'> True\n```\n\n读输出：第一行 `True`，说明 `a.average()` 只是语法糖，等价于 `Student.average(a)`：`self` 就是点号前面的对象，这个理解很重要。第二行 `{'name': 'Ann', 'scores': [90, 80]}` 是 `a.__dict__`：**实例的属性就存放在这个字典里**；注意里面没有 `school`，因为它是类属性，存在类上而不在实例上。第三行说明 `a` 的类型是 `Student`，而 `Student` 自己的类型是 `type`，`isinstance(a, Student)` 为 `True`：**类本身也是对象**。\n\n**顺便回答一个你在前面基础课里已经遇到的问题：`\"abc\".upper()`、`d.get(...)`、`lst.append(1)` 这些「点号 + 名字」到底是什么？** 现在你能自己解释了：字符串、字典、列表也都是**类**（`str`、`dict`、`list`），`.upper`、`.get`、`.append` 就是这些类里定义的**方法**，点号前面的对象就是 `self`：\n\n```python\n# 内置类型的方法也是同一回事：点号前面的对象就是 self\nprint(\"abc\".upper(), str.upper(\"abc\"))                  # 字符串的方法\nprint([3, 1, 3].count(3), list.count([3, 1, 3], 3))     # 列表的方法\nprint([m for m in dir({}) if not m.startswith(\"_\")])    # dir(x)：列出 x 上所有的属性名（筛掉下划线开头的）\n# 输出：ABC ABC\n# 输出：2 2\n# 输出：['clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']\n```\n\n**读输出：** `ABC ABC`：`\"abc\".upper()` 与 `str.upper(\"abc\")` 完全等价，和上面 `a.average()` 等于 `Student.average(a)` 是同一回事；`2 2` 同理（数列表里有几个 3）。第三行列出了字典这个类里所有「不以下划线开头」的方法，`get` 只是其中之一（所以「`get` 是 Python 默认的吗」的答案是：它是 `dict` 这种内置类型自带的方法，别的类型没有叫 `get` 的方法，除非那个类自己定义）。`dir(x)` 会列出对象 `x` 上所有的属性名，是在陌生对象上「查看它能做什么」的常用办法；以下划线开头的是特殊名字，所以我们用 `startswith(\"_\")` 把它们筛掉了（这里的列表推导式在「推导式、迭代器与生成器」那一节讲过）。\n\n**问题三：实例上没有的属性去哪里找？给实例赋值会改动类属性吗？**\n\n```python\nprint(a.school, b.school, Student.school)       # 读：实例上没有就去类上找\n\n# 给实例属性赋值，只影响这个实例；它「遮住」了同名的类属性\na.school = \"NTU\"\nprint(a.school, b.school, Student.school)\nprint(\"school\" in a.__dict__, \"school\" in b.__dict__)\n# 输出：NUS NUS NUS\n# 输出：NTU NUS NUS\n# 输出：True False\n```\n\n读输出：第一行三处都是 `NUS`：`a` 和 `b` 的 `__dict__` 里没有 `school`，Python 就**去类上找**，所以读到的是同一个类属性。给 `a.school` 赋值之后，输出变成 `NTU NUS NUS`：赋值只会在**这个实例**上新建一个实例属性，**遮住**同名的类属性；`b.school` 和 `Student.school` 不受影响，类属性并没有被改动。最后一行 `True False` 印证了这一点：只有 `a` 的 `__dict__` 里多了 `school`。\n\n**问题四：除了实例方法，还有什么方法？** 想「换一种方式创建实例」，或者想把一个**不依赖实例**的函数放在类里面，就用类方法与静态方法。为了不改动上面的 `Student`，我们另写一个小类 `Record`。（`@classmethod` 和 `@staticmethod` 都是**装饰器**，「函数、作用域与递归」那一节讲过：`@deco` 写在 `def` 上面，等价于 `f = deco(f)`；`name, scores = s.split(\":\")` 是把切出来的两段**解包**给两个变量；`[int(x) for x in ...]` 是列表推导式，`int(x)` 把字符串变成整数。）\n\n```python\nclass Record:\n    def __init__(self, name, scores):\n        self.name, self.scores = name, scores\n\n    def __repr__(self):\n        return f\"Record({self.name!r}, {self.scores})\"\n\n    @classmethod\n    def from_string(cls, s):                # 类方法：第一个参数是类本身，常用作「替代构造函数」\n        name, scores = s.split(\":\")\n        return cls(name, [int(x) for x in scores.split(\",\")])\n\n    @staticmethod\n    def is_pass(score):                     # 静态方法：和类放在一起，但不需要 self 或 cls\n        return score >= 50\n\nr = Record.from_string(\"Bob:50,60,70\")      # 用类调用，得到一个新实例\nprint(r)\nprint(Record.is_pass(49), r.is_pass(50))    # 静态方法用类或实例调用都行\n# 输出：Record('Bob', [50, 60, 70])\n# 输出：False True\n```\n\n读输出：**类方法** `@classmethod` 的第一个参数是 `cls`，也就是**类本身**；`Record.from_string(\"Bob:50,60,70\")` 里 `cls` 就是 `Record`，`cls(name, [...])` 等价于 `Record(name, [...])`，于是得到 `Record('Bob', [50, 60, 70])`。这种方法常用作**替代构造函数**（PyTorch 里的 `torch.from_numpy`、Hugging Face 的 `from_pretrained` 都是这种风格），用 `cls` 而不是写死类名，子类调用时造出来的就是子类的实例。**静态方法** `@staticmethod` 不需要 `self` 或 `cls`，只是放在类里面的普通函数：`is_pass(49)` 是 `False`，`is_pass(50)` 是 `True`，用类或实例调用都可以。\n\n**问题五：类属性放可变对象，会出什么事？** 这是初学者最常踩的陷阱：\n\n```python\nclass Bad:\n    items = []                              # 类属性：可变对象，所有实例共用同一个\n    def add(self, x): self.items.append(x)\n\np, q = Bad(), Bad()\np.add(1); q.add(2)\nprint(\"共享的类属性：\", p.items, q.items, p.items is q.items)\n\nclass Good:\n    def __init__(self): self.items = []     # 每个实例各自一份\n    def add(self, x): self.items.append(x)\n\np, q = Good(), Good()\np.add(1); q.add(2)\nprint(\"实例属性：\", p.items, q.items, p.items is q.items)\n# 输出：共享的类属性： [1, 2] [1, 2] True\n# 输出：实例属性： [1] [2] False\n```\n\n读输出：`Bad` 里 `items = []` 是类属性，`p.add(1)` 和 `q.add(2)` 改的是**同一个列表**，所以两边都是 `[1, 2]`，最后的 `p.items is q.items` 为 `True`。`Good` 在 `__init__` 里用 `self.items = []`，每个实例各自一份：`[1]` 和 `[2]`，`is` 为 `False`。这和「函数、作用域与递归」那一节的「可变默认参数」是同一个道理：**可变的数据应该在 `__init__` 里创建**，类属性只放所有实例共享的常量。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "ZDa-Z5JzLYM",
+   "title": "视频一：Python OOP Tutorial 1: Classes and Instances（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 15
+  },
+  {
+   "type": "text",
+   "md": "### 特殊方法：让你的类像内置类型一样工作\n\n> **标准定义 · 特殊方法 (special methods / dunder methods)**\n>\n> 名字以**双下划线**开头和结尾的方法（**d**ouble **under**score，所以叫 **dunder**），如 `__init__`、`__repr__`。你一般**不直接调用**它们，而是由 Python 的**语法或内置函数在背后调用**：`len(x)` 调 `x.__len__()`，`x[i]` 调 `x.__getitem__(i)`，`x + y` 调 `x.__add__(y)`，`x == y` 调 `x.__eq__(y)`，`x(...)` 调 `x.__call__(...)`，`with x:` 调 `__enter__` 与 `__exit__`。这套约定称为 Python 的**数据模型 (data model)**。\n>\n> *English: Dunder (double-underscore) methods are hooks that Python calls implicitly: len(x) calls __len__, x[i] calls __getitem__, x + y calls __add__, x(...) calls __call__. Implementing them lets your class behave like a built-in type.*\n\n**白话版：「对接口」。** Python 的内置函数和语法提前约定好了暗号：「谁实现了 `__len__`，我就能数它有多长」。你的类只要把相应的暗号方法写出来，就能被 `len`、`for`、`+`、`with` 这些语法直接使用。\n\n**问题一：怎样让自己的类支持 `len(v)` 和 `v[i]`？** 只写两个暗号方法试试。（`__init__(self, *xs)` 里的 `*xs` 就是「函数、作用域与递归」讲的「打包」：把所有位置实参收进一个元组；`\", \".join(map(str, self.xs))` 用到字符串方法 `.join`：把一个字符串序列用 `\", \"` 连成一个字符串，`map(str, ...)` 先把每个数变成字符串。）\n\n```python\nclass Vector:\n    def __init__(self, *xs):\n        self.xs = list(xs)\n    def __repr__(self):         return f\"Vector({', '.join(map(str, self.xs))})\"\n    def __len__(self):          return len(self.xs)         # len(v)\n    def __getitem__(self, i):   return self.xs[i]           # v[i]\n\nv = Vector(1, 2, 3)\nprint(v, len(v), v[1])\nprint([x for x in v], sum(v), max(v))      # 只定义了 __getitem__，for / sum / max 都能用\n# 输出：Vector(1, 2, 3) 3 2\n# 输出：[1, 2, 3] 6 3\n```\n\n读输出：`len(v)` 调用了 `__len__`，得到 `3`；`v[1]` 调用了 `__getitem__`，得到 `2`。更有意思的是第二行：我们**没有**写 `__iter__`，`for` 循环、`sum`、`max` 却都能用（`[1, 2, 3]`、`6`、`3`）。原因是 Python 在没有 `__iter__` 时，会退而用 `__getitem__` 从 0 开始逐个取，直到抛出 `IndexError` 为止。\n\n**问题二：怎样让 `v + w`、`v * 3`、`v == w`、`bool(v)` 有意义？** 每个运算符对应一个暗号方法。（`Vec(*[a + b for a, b in zip(self.xs, other.xs)])` 把前两节的东西叠在一起：`zip` 把两个序列并排配对，推导式对每一对相加，最外层的 `*` 把结果列表**拆开**成 `Vec(...)` 的多个位置实参；`isinstance(other, Vec) and ...` 里 `and` 是「两边都为真才为真」，`isinstance(x, 类)` 问「`x` 是不是这个类的实例」；`any(self.xs)` 是内置函数，只要有一个元素为真就返回 `True`，所以全是 0 的 `Vec(0, 0)` 是假。）\n\n```python\nclass Vec:\n    def __init__(self, *xs):\n        self.xs = list(xs)\n    def __repr__(self):         return f\"Vec({', '.join(map(str, self.xs))})\"\n    def __add__(self, other):   return Vec(*[a + b for a, b in zip(self.xs, other.xs)])   # v + w\n    def __mul__(self, k):       return Vec(*[a * k for a in self.xs])                      # v * 3\n    def __eq__(self, other):    return isinstance(other, Vec) and self.xs == other.xs      # v == w\n    def __bool__(self):         return any(self.xs)                                        # bool(v)\n\nv, w = Vec(1, 2, 3), Vec(10, 20, 30)\nprint(v + w, v * 3)\nprint(v == Vec(1, 2, 3), v is Vec(1, 2, 3), bool(Vec(0, 0)))\nprint(Vec.__hash__)                          # 只定义 __eq__：__hash__ 被设成 None\n# 输出：Vec(11, 22, 33) Vec(3, 6, 9)\n# 输出：True False False\n# 输出：None\n```\n\n读输出：`v + w` 调用 `__add__`，逐元素相加得到 `Vec(11, 22, 33)`；`v * 3` 调用 `__mul__`，得到 `Vec(3, 6, 9)`。第二行是 **`==` 与 `is` 的区别**：`v == Vec(1, 2, 3)` 为 `True`，因为我们用 `__eq__` 定义了「内容相同就相等」；`v is Vec(1, 2, 3)` 为 `False`，因为 `is` 问的是「是不是**同一个对象**」，这里每次 `Vec(...)` 都新建了一个。（不定义 `__eq__` 时，`==` 默认也只比较是不是同一个对象。）`bool(Vec(0, 0))` 是 `False`，来自我们写的 `__bool__`。最后一行 `None` 是个提醒：**只定义了 `__eq__`、没有定义 `__hash__`，`__hash__` 就被设成了 `None`**。后果是什么？（`type(e).__name__` 是错误对象 `e` 的**类型名**，在「推导式、迭代器与生成器」那一节里用 `type(x).__name__` 看过类型名；`str(e)` 是它的报错信息，`\"unhashable\" in str(e)` 问「报错信息里有没有这个词」；`as e` 的写法在「条件、循环与读懂报错」。）\n\n```python\ntry:\n    {Vec(1, 2): \"a\"}                         # 想把实例当字典的键 / 放进集合\nexcept TypeError as e:\n    print(type(e).__name__, \"| 信息里提到 unhashable：\", \"unhashable\" in str(e))\n# 输出：TypeError | 信息里提到 unhashable： True\n```\n\n读输出：想把 `Vec(1, 2)` 当字典的键，会得到 `TypeError`，错误信息里写的是 `unhashable type: 'Vec'`（不同 Python 版本措辞略有差异，所以这里只检查有没有「unhashable」，输出 `True`）。**定义了 `__eq__` 而不定义 `__hash__`，这个类的实例就不再可哈希**（不能放进集合、不能做字典的键）：因为「相等的对象必须有相同的哈希值」，一旦自定义了相等的含义，默认的基于身份的哈希就不再满足这条规则。数据结构第 4 节讲过哈希表对此的要求。\n\n**问题三：怎样让对象像函数一样被调用？** 这就是 `__call__`：\n\n```python\nclass Scaler:\n    def __init__(self, k):\n        self.k = k\n    def __call__(self, x):                   # 让实例像函数一样被调用\n        return x * self.k\n\ntriple = Scaler(3)\nprint(triple(5), triple([1, 2]), callable(triple))\nprint(triple.__call__(5) == triple(5))       # triple(5) 就是 triple.__call__(5)\n# 输出：15 [1, 2, 1, 2, 1, 2] True\n# 输出：True\n```\n\n读输出：`triple = Scaler(3)` 是一个对象，却可以写成 `triple(5)`，得到 `15`；传入列表 `[1, 2]` 时 `x * self.k` 是列表的重复，得到 `[1, 2, 1, 2, 1, 2]`（`__call__` 里就是普通代码，想写什么都行）；`callable(triple)` 是 `True`（内置函数 `callable(x)` 问「`x` 能不能像函数一样被调用」）；`triple(5)` 与 `triple.__call__(5)` 完全等价（输出 `True`）。**`model(x)` 之所以能写，是因为 `nn.Module` 实现了 `__call__`**，它在里面调用你写的 `forward`（下一小节演示）。\n\n**问题四：为什么只写 `__len__` 和 `__getitem__`，就成了一个 PyTorch 风格的 `Dataset`？** 先写数据集：\n\n```python\nclass Dataset:                               # 只要实现 __len__ 和 __getitem__\n    def __init__(self, n):\n        self.xs = list(range(n))\n    def __len__(self):\n        return len(self.xs)\n    def __getitem__(self, i):\n        return self.xs[i], self.xs[i] ** 2   # (输入, 标签)\n\nds = Dataset(7)\nprint(len(ds), ds[3], ds[6])\n# 输出：7 (3, 9) (6, 36)\n```\n\n读输出：`len(ds)` 是 `7`，来自 `__len__`；`ds[3]` 是 `(3, 9)`，`ds[6]` 是 `(6, 36)`，来自 `__getitem__`，每一条是 `(输入, 标签)`，这里的标签是输入的平方。**数据集只需要告诉别人「有多少条」和「第 $i$ 条是什么」**，仅此而已。再写一个迷你 `DataLoader`，它只靠这两个方法就能把数据按批取出。（读代码前先看三点：`xs, ys = zip(*batch)`：`batch` 是一串 `(输入, 标签)` 元组，`*` 把它们拆开交给 `zip`，`zip` 把输入凑成一组、标签凑成一组，也就是「转置」；`-(-n // m)` 是**向上取整**的小技巧，`//` 是向下取整的除法，两个负号相消；`[... for j in range(...)]` 是列表推导式。）\n\n```python\nclass MiniLoader:                            # 迷你 DataLoader：把数据集按 batch 取出\n    def __init__(self, dataset, batch_size):\n        self.ds, self.bs = dataset, batch_size\n    def __iter__(self):                      # 让它成为可迭代对象，内部用生成器\n        for i in range(0, len(self.ds), self.bs):\n            batch = [self.ds[j] for j in range(i, min(i + self.bs, len(self.ds)))]\n            xs, ys = zip(*batch)\n            yield list(xs), list(ys)\n    def __len__(self):\n        return -(-len(self.ds) // self.bs)   # 向上取整\n\nloader = MiniLoader(ds, batch_size=3)        # 直接用上一块的 ds\nprint(\"batch 数：\", len(loader))\nfor xs, ys in loader:\n    print(xs, ys)\n# 输出：batch 数： 3\n# 输出：[0, 1, 2] [0, 1, 4]\n# 输出：[3, 4, 5] [9, 16, 25]\n# 输出：[6] [36]\n```\n\n读输出：数据集有 7 条、`batch_size=3`，所以 `len(loader)` 是 $\\lceil 7/3 \\rceil = 3$ 个 batch：前两批各 3 条（`[0, 1, 2]` 与 `[3, 4, 5]`），最后一批只剩 `[6]`。每个 batch 是 `(xs, ys)`，例如第一批 `xs = [0, 1, 2]`、`ys = [0, 1, 4]`。`MiniLoader` 实现了 `__iter__`（里面用的是「推导式、迭代器与生成器」那一节的生成器），所以能直接被 `for` 遍历。真实的 `DataLoader` 还加上了打乱 (shuffle)、多进程加载、拼接 batch，但接口就是这两个方法。\n\n**问题五：`with` 语句背后是什么？** 先说 `with` 是什么：`with 对象 as 名字:` 后面缩进的整块代码，运行**之前**会先「进入」这个对象，运行**之后**（不管有没有出错）会「退出」它。最常见的是文件：`with open(\"a.txt\") as f:`，块结束时文件**自动关闭**（文件的完整用法在后面「文件、模块与环境」那一节）。「进入」和「退出」其实就是调用对象的 `__enter__` 与 `__exit__`，我们分别看「正常」和「出错」两种情况（`try` / `except ZeroDivisionError` 的写法见「条件、循环与读懂报错」；`print(...); return self` 里的分号是把两条语句写在同一行）：\n\n```python\nclass Timer:                                 # 上下文管理器 = __enter__ / __exit__\n    def __enter__(self):\n        print(\"进入\"); return self\n    def __exit__(self, exc_type, exc, tb):\n        print(\"退出，是否出错：\", exc_type is not None)\n        return False                         # False：不吞掉异常\n\nwith Timer():\n    print(\"块内：一切正常\")\n\ntry:\n    with Timer():\n        1 / 0                                # 块内出错\nexcept ZeroDivisionError:\n    print(\"异常照常向外传播\")\n# 输出：进入\n# 输出：块内：一切正常\n# 输出：退出，是否出错： False\n# 输出：进入\n# 输出：退出，是否出错： True\n# 输出：异常照常向外传播\n```\n\n读输出：进入 `with` 时先调用 `__enter__`（打印「进入」），块里的代码运行完后调用 `__exit__`，此时 `exc_type` 是 `None`，所以是「是否出错： False」。第二次块里 `1 / 0` 出了错，**`__exit__` 仍然被调用了**，而且这次拿到了异常信息，「是否出错： True」；因为我们返回 `False`，异常没有被吞掉，继续向外传播，被外面的 `except` 抓住了。这就是为什么文件、锁、数据库连接、`torch.no_grad()` 都用它：**不管块里是否出错，`__exit__` 都一定会被调用**，保证「用完一定收尾」。\n\n**`__repr__` 与 `__str__`**：前者面向开发者（调试时看到的，应当尽量清晰、能还原对象），后者面向用户（`print` 用的）；只写一个的话，写 `__repr__`。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "3ohzBxoFHAY",
+   "title": "视频二：Python OOP Tutorial 5: Special (Magic/Dunder) Methods（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "text",
+   "md": "### 继承、重写与多态\n\n> **标准定义 · 继承 (inheritance) 与多态 (polymorphism)**\n>\n> **继承**：子类 (subclass) 自动拥有父类 (superclass) 的属性与方法，可以**新增**，也可以**重写 (override)** 同名方法来改变行为；`super()` 用来调用父类的方法（通常是 `super().__init__(...)`）。**多态**：不同类型的对象对**同一个调用**（比如 `.forward(x)`）给出**各自的行为**，调用者不需要关心对象的具体类型。**组合 (composition)** 是另一种复用方式：一个对象**包含**其他对象作为自己的属性（「有一个」，has-a），而继承是「是一种」（is-a）。\n>\n> *English: A subclass inherits attributes and methods from its superclass and can override them; super() calls the parent's version. Polymorphism lets different types respond differently to the same call. Composition means an object contains other objects (has-a), in contrast to inheritance (is-a).*\n\n**白话版：「继承是『是一种』，组合是『有一个』」。** 狗**是一种**动物（继承）；汽车**有一个**发动机（组合）。多态像遥控器上的「播放」键：对电视、音箱、投影仪按下去，各自播放各自的东西，你不需要知道里面是什么。\n\n下面用一个**迷你版 `nn.Module`** 把这些串起来，它的结构和 PyTorch 的几乎一样，我们分四步搭起来。\n\n**第一步：基类与第一个子类。怎样让 `net(x)` 调用你写的 `forward`？** 代码里有几处前面学过的东西：`raise NotImplementedError(...)` 是主动抛出一个错误，意思是「这个方法子类必须自己写」；`type(self).__name__` 是当前对象的类型名；`Linear.forward` 里 `sum(... for wi, xi in zip(row, x))` 是**生成器表达式**（「推导式、迭代器与生成器」那一节），`for row, bi in zip(...)` 的 `row, bi` 是解包；`def __call__(self, *args)` 里的 `*args` 把所有位置实参收成元组，再用 `self.forward(*args)` 原样拆开传给 `forward`。\n\n```python\nclass Module:                                # 基类：模仿 PyTorch 的 nn.Module 的结构\n    def __call__(self, *args):\n        return self.forward(*args)           # 调用对象 == 调用 forward\n    def forward(self, *args):\n        raise NotImplementedError(f\"{type(self).__name__} 没有实现 forward\")\n    def __repr__(self):\n        return f\"{type(self).__name__}()\"\n\nclass Linear(Module):                        # 继承：Linear 是一种 Module\n    def __init__(self, w, b):\n        super().__init__()                   # 调用父类的 __init__\n        self.w, self.b = w, b\n    def forward(self, x):                    # 子类实现自己的 forward\n        return [sum(wi * xi for wi, xi in zip(row, x)) + bi for row, bi in zip(self.w, self.b)]\n    def __repr__(self):\n        return f\"Linear({len(self.w[0])} -> {len(self.w)})\"\n\nlin = Linear([[1, 2]], [0])\nprint(lin)\nprint(lin([3, -4]), lin.forward([3, -4]))    # lin(x) 等价于 lin.forward(x)\n# 输出：Linear(2 -> 1)\n# 输出：[-5] [-5]\n```\n\n读输出：`print(lin)` 显示 `Linear(2 -> 1)`：权重 `w` 只有一行（1 个输出），每行有 2 个数（2 个输入）。`lin([3, -4])` 是 $3 \\times 1 + (-4) \\times 2 + 0 = -5$，得到 `[-5]`，和直接调用 `lin.forward([3, -4])` 的结果一样：**`Module.__call__` 调用 `self.forward`，所以 `lin(x)` 等价于 `lin.forward(x)`**。真正的 `nn.Module.__call__` 在调用 `forward` 前后还做了钩子 (hooks) 等处理，这就是**为什么要写 `model(x)` 而不是 `model.forward(x)`**。`Linear` 是 `Module` 的**子类**，它新增了属性 `w`、`b`，实现了自己的 `forward`；`Linear.__init__` 里的 `super().__init__()` 在 PyTorch 里是**必须写**的（它初始化了参数登记等内部结构，忘了写会得到一个令人困惑的报错）。\n\n**第二步：再来一个子类。同一个调用，不同的行为，这叫什么？**\n\n```python\nclass ReLU(Module):\n    def forward(self, x):\n        return [max(0, v) for v in x]        # 重写 (override)：每个子类有自己的 forward\n\n# 多态 (polymorphism)：同一个调用，不同类型有不同行为\nfor m in (lin, ReLU()):\n    print(type(m).__name__, m([3, -4]))\n# 输出：Linear [-5]\n# 输出：ReLU [3, 0]\n```\n\n读输出：`ReLU` **重写 (override)** 了 `forward`：对每个元素取 `max(0, v)`。循环里两次都是同一个调用 `m([3, -4])`，`Linear` 给出 `[-5]`，`ReLU` 给出 `[3, 0]`（`-4` 被截成 `0`）。**同一个调用、不同类型有各自的行为，这就是多态**，循环不需要关心 `m` 具体是哪一种。\n\n**第三步：怎样把多个层串起来？** 让一个 `Module` 里面**装着**一串 `Module`：\n\n```python\nclass Sequential(Module):                    # 组合：一个 Module 里面装着一串 Module\n    def __init__(self, *layers):\n        super().__init__()\n        self.layers = layers\n    def forward(self, x):\n        for layer in self.layers:\n            x = layer(x)\n        return x\n    def __repr__(self):\n        return \"Sequential(\" + \", \".join(map(repr, self.layers)) + \")\"\n\nnet = Sequential(Linear([[1, -1], [2, 0], [0, 3]], [0, 0, -5]), ReLU(), Linear([[1, 1, 1]], [0]))\nprint(net)\nprint(net([2, 1]))            # 第一层 [1, 4, -2] → ReLU [1, 4, 0] → 求和 [5]\n# 输出：Sequential(Linear(2 -> 3), ReLU(), Linear(3 -> 1))\n# 输出：[5]\n```\n\n读输出：`print(net)` 显示 `Sequential(Linear(2 -> 3), ReLU(), Linear(3 -> 1))`，每个子模块的 `__repr__` 被依次调用。`net([2, 1])` 的计算过程：第一层 $[1 \\cdot 2 - 1 \\cdot 1,\\ 2 \\cdot 2 + 0 \\cdot 1,\\ 0 \\cdot 2 + 3 \\cdot 1 - 5] = [1, 4, -2]$，经过 `ReLU` 变成 `[1, 4, 0]`，第二层把三个数相加，得到 `[5]`。`Sequential` 就是**组合**：它的属性 `layers` 里装着一串 `Module`，再依次调用；这也是为什么大模型是「模块里套模块」的层层结构。\n\n**第四步：没有实现 `forward` 会怎样？继承链是什么样的？**（`class Broken(Module): pass` 里的 `pass` 是「占位，什么都不做」，用来写一个暂时没有内容的类；`Broken()(1)` 有两对括号：`Broken()` 创建对象，紧接着 `(1)` 调用这个对象，也就是调用 `__call__`；`except NotImplementedError as e` 里的 `e` 就是上面 `raise` 抛出的那个错误对象。）\n\n```python\nclass Broken(Module): pass                   # 没有实现 forward 的子类\ntry:\n    Broken()(1)\nexcept NotImplementedError as e:\n    print(\"NotImplementedError:\", e)\n\n# 类型检查与继承链\nprint(isinstance(net, Module), issubclass(ReLU, Module))\nprint([c.__name__ for c in Linear.__mro__])\n# 输出：NotImplementedError: Broken 没有实现 forward\n# 输出：True True\n# 输出：['Linear', 'Module', 'object']\n```\n\n读输出：`Broken` 没有重写 `forward`，调用的是基类里的版本，抛出 `NotImplementedError: Broken 没有实现 forward`：这是定义「抽象接口」的常用写法。`isinstance(net, Module)` 与 `issubclass(ReLU, Module)` 都是 `True`：子类的实例也是父类的实例。最后一行 `['Linear', 'Module', 'object']` 是 `__mro__`（方法解析顺序 method resolution order），列出了继承链：Python 沿这个顺序查找方法，先找 `Linear`，再找 `Module`，最后是所有类的根 `object`。\n\n**继承还是组合？** 经验法则：**优先用组合，只有真的「是一种」才用继承**。深层的继承树让人难以理解「这个方法到底从哪来的」；PyTorch 里 `nn.Module` 一层继承（你的模型继承 `nn.Module`）加上大量组合（模型里装着 `Linear`、`Conv2d`……），是一个比较健康的例子。\n\n### `@property` 与 `@dataclass`\n\n> **标准定义 · 属性装饰器 (`@property`)**\n>\n> `@property` 把一个**方法**变成**像属性一样访问**的东西（不用写括号）。可以再配上 `@x.setter` 定义赋值时的行为。用途：**在赋值时做校验**、**计算属性**（由其他属性算出来，如 `fahrenheit`）、**只读属性**，且调用者的写法不用变，可以先用普通属性写，需要校验时再改成 `property`，不会破坏已有代码。\n>\n> *English: @property lets a method be accessed like an attribute; with a setter it can validate assignments. It provides computed and read-only attributes without changing how callers write the code.*\n\n> **标准定义 · 数据类 (`@dataclass`)**\n>\n> `@dataclass` 装饰器根据类体里的**带类型注解的字段**，**自动生成** `__init__`、`__repr__`、`__eq__` 等方法。选项：`frozen=True` 实例不可修改（同时可哈希）；`order=True` 自动生成比较运算符；字段的可变默认值要用 `field(default_factory=...)`；`__post_init__` 在自动生成的 `__init__` 之后调用，用于计算派生字段。\n>\n> *English: @dataclass generates __init__, __repr__ and __eq__ from annotated fields. frozen=True makes instances immutable and hashable, order=True adds comparisons, field(default_factory=...) is used for mutable defaults, and __post_init__ runs after __init__.*\n\n**白话版：** `@property` 是「**对外看起来是一个变量，对内其实是一段代码**」，像自动门：你走过去（读写属性），背后的传感器（校验逻辑）自动工作。`@dataclass` 是「**只存数据的类**」的模板：你只写有哪些字段，样板代码由它代写。\n\n**问题一：怎样在「赋值」时做校验，而调用者的写法不用变？**\n\n```python\nclass Temperature:\n    def __init__(self, celsius):\n        self.celsius = celsius                  # 这一句也会走下面的 setter，从而被校验\n    @property\n    def celsius(self):                          # 读：t.celsius\n        return self._celsius\n    @celsius.setter\n    def celsius(self, value):                   # 写：t.celsius = ...\n        if value < -273.15:\n            raise ValueError(\"低于绝对零度\")\n        self._celsius = value\n    @property\n    def fahrenheit(self):                       # 只读的「计算属性」\n        return self._celsius * 9 / 5 + 32\n\nt = Temperature(25)\nprint(t.celsius)                                # 看起来是读属性，背后在跑 getter\nt.celsius = 100                                 # 看起来是赋值，背后在跑 setter\nprint(t.celsius)\ntry:\n    t.celsius = -300\nexcept ValueError as e:\n    print(\"ValueError:\", e)\ntry:\n    Temperature(-500)                           # 构造时也被校验\nexcept ValueError as e:\n    print(\"构造时：\", e)\n# 输出：25\n# 输出：100\n# 输出：ValueError: 低于绝对零度\n# 输出：构造时： 低于绝对零度\n```\n\n读输出：`t.celsius` 读出 `25`，`t.celsius = 100` 之后读出 `100`：写法和普通属性完全一样，背后跑的却是 getter 和 setter。`t.celsius = -300` 被 setter 拒绝，抛出 `ValueError: 低于绝对零度`；`Temperature(-500)` 在**构造时**也被拒绝，因为 `__init__` 里的 `self.celsius = celsius` 同样会经过 `setter`。数据实际存在 `_celsius` 里（单下划线是「内部使用，请勿直接访问」的约定，Python 没有真正的私有）。\n\n**问题二：怎样让一个属性由别的属性「现算」出来，而且不允许直接赋值？**\n\n```python\nprint(t.celsius, t.fahrenheit)                  # fahrenheit 由 celsius 现算出来\nt.celsius = 0\nprint(t.celsius, t.fahrenheit)                  # celsius 变了，fahrenheit 自动跟着变\ntry:\n    t.fahrenheit = 0\nexcept AttributeError:\n    print(\"AttributeError：只读属性不能赋值\")\nprint(t.__dict__)                               # 实际存放数据的是 _celsius\n# 输出：100 212.0\n# 输出：0 32.0\n# 输出：AttributeError：只读属性不能赋值\n# 输出：{'_celsius': 0}\n```\n\n读输出：`fahrenheit` 只有 getter 没有 setter，是只读的**计算属性**：`celsius` 是 `100` 时它是 `212.0`（$100 \\times 9/5 + 32$），把 `celsius` 改成 `0` 之后它自动变成 `32.0`，不需要手动同步。给它赋值会抛出 `AttributeError`。最后一行 `{'_celsius': 0}` 说明实例里真正存的只有 `_celsius`，`celsius` 和 `fahrenheit` 都是类上定义的 `property`，访问时才现算。\n\n**问题三：「只存数据」的类，能不能不写那一堆样板代码？** 用 `@dataclass`，你只写字段。（代码里 `lr: float = 1e-3` 的写法第一次出现：冒号后面的 `float` 是**类型注解 (type annotation)**，读作「`lr` 是一个浮点数，默认值 `1e-3`（即 0.001，科学计数法）」。注解**只是标签**，Python 运行时不会因为你传了别的类型而报错，但 `@dataclass` 要靠它找出「哪些是字段」；类型注解的系统讲解在后面「异常、调试、测试与类型注解」那一节。`from dataclasses import dataclass, field` 是 `import` 的写法（见「函数、作用域与递归」），`field(default_factory=lambda: [64, 64])` 里的 `lambda` 是一个小函数，每次需要默认值时就调用它新建一个列表。）\n\n```python\nfrom dataclasses import dataclass, field\n\n@dataclass\nclass Config:\n    lr: float = 1e-3\n    layers: list = field(default_factory=lambda: [64, 64])   # 可变默认值要用 default_factory\n    name: str = \"run\"\n\nc1, c2 = Config(), Config(lr=0.1, name=\"fast\")\nprint(c1)                                       # 自动生成的 __repr__\nprint(c2)\nprint(c1 == Config(), c1 == c2)                 # 自动生成的 __eq__：逐字段比较\nc1.layers.append(8)\nprint(\"每个实例各自的列表：\", c1.layers, Config().layers)\n# 输出：Config(lr=0.001, layers=[64, 64], name='run')\n# 输出：Config(lr=0.1, layers=[64, 64], name='fast')\n# 输出：True False\n# 输出：每个实例各自的列表： [64, 64, 8] [64, 64]\n```\n\n读输出：自动生成的 `__repr__` 把每个字段都显示出来（`lr=0.001` 是 `1e-3` 的显示形式）。`c1 == Config()` 是 `True`，`c1 == c2` 是 `False`：自动生成的 `__eq__` **逐字段比较**，这在实验配置里非常方便。`layers` 用的是 `default_factory`，所以每次创建实例都会新建一个列表：`c1.layers.append(8)` 之后 `c1.layers` 是 `[64, 64, 8]`，而新建的 `Config().layers` 仍然是 `[64, 64]`，互不影响。\n\n**如果直接把可变默认值写成 `layers: list = []` 呢？**\n\n```python\ntry:\n    @dataclass\n    class Wrong:\n        layers: list = []                       # 直接写可变默认值\nexcept ValueError as e:\n    print(\"ValueError:\", e)\n# 输出：ValueError: mutable default <class 'list'> for field layers is not allowed: use default_factory\n```\n\n读输出：Python 直接拒绝了这种写法，抛出 `ValueError: mutable default <class 'list'> for field layers is not allowed: use default_factory`，并且提示改用 `default_factory`。否则所有实例会共享同一个列表（又是可变默认值的陷阱）。\n\n**问题四：怎样让对象创建后不能被修改，并且能比较大小、放进集合？**（`@dataclass(frozen=True, order=True)` 是**带参数的装饰器**，和「函数、作用域与递归」里的 `@repeat(3)` 是同一类；`except Exception as e` 里的 `Exception` 是「几乎所有普通错误」的共同父类（继承的概念就在上面「继承、重写与多态」那一小节），所以能接住 `FrozenInstanceError`。）\n\n```python\n@dataclass(frozen=True, order=True)\nclass Version:                                  # frozen：创建后不能修改；order：自动生成比较\n    major: int\n    minor: int\n\nprint(Version(1, 2) < Version(1, 10))\nprint(sorted([Version(2, 0), Version(1, 5), Version(1, 2)]))\ntry:\n    Version(1, 0).major = 5\nexcept Exception as e:\n    print(type(e).__name__)\nprint(hash(Version(1, 2)) == hash(Version(1, 2)), len({Version(1, 2), Version(1, 2)}))\n# 输出：True\n# 输出：[Version(major=1, minor=2), Version(major=1, minor=5), Version(major=2, minor=0)]\n# 输出：FrozenInstanceError\n# 输出：True 1\n```\n\n读输出：`order=True` 自动生成了比较运算符，按 `(major, minor)` 依次比较：`Version(1, 2) < Version(1, 10)` 是 `True`（比较的是整数 `2 < 10`，不是字符串），`sorted` 的结果是 `1.2`、`1.5`、`2.0` 的顺序。`frozen=True` 的对象创建后不可修改，尝试修改会抛出 `FrozenInstanceError`。最后一行 `True 1`：`frozen=True` 同时生成了 `__hash__`，所以两个内容相同的 `Version(1, 2)` 哈希值相同，放进集合后只剩 `1` 个。这样的对象适合做配置、做字典的键。\n\n**问题五：有些字段要在创建之后由别的字段算出来，放在哪里？**\n\n```python\n@dataclass\nclass Point:\n    x: float\n    y: float\n    def __post_init__(self):                    # 自动生成的 __init__ 之后调用\n        self.norm = (self.x ** 2 + self.y ** 2) ** 0.5\n\np = Point(3, 4)\nprint(p, p.norm)\n# 输出：Point(x=3, y=4) 5.0\n```\n\n读输出：`__post_init__` 在自动生成的 `__init__` 之后调用，这里算出 `norm`：$\\sqrt{3^2 + 4^2} = 5.0$。`print(p)` 里只有 `x` 和 `y`，没有 `norm`：因为 `norm` 是在 `__post_init__` 里加的普通属性，不是用类型注解声明的字段，所以不进入自动生成的 `__repr__` 和 `__eq__`。\n\n### 这一节你要带走的三句话\n\n1. **类 = 模板，实例 = 具体的对象**；`self` 就是点号前面的那个对象，实例属性在 `__init__` 里创建，**可变的数据不要放在类属性里**。\n2. **特殊方法是 Python 的「暗号」**：实现 `__len__` + `__getitem__` 就是一个 `Dataset`，实现 `__call__` 就能像函数一样调用，实现 `__enter__` / `__exit__` 就能用 `with`。\n3. **继承 = 「是一种」，重写让子类有自己的行为（多态），组合 = 「有一个」**；`nn.Module` 就是「继承 + `__call__` 调用 `forward` + 模块里套模块」；`@property` 做校验与计算属性，`@dataclass` 省掉样板代码。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "vBH6GRJ1REM",
+   "title": "视频三：Python dataclasses will save you HOURS, also featuring attrs（mCoding）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "think",
+   "q": "下面这段代码有什么问题？会输出什么？\n\n`class Bag: items = []` / `def add(self, x): self.items.append(x)` / `a, b = Bag(), Bag(); a.add(1); print(b.items)`。",
+   "a": "`items` 写在类体里，是**类属性**，被所有实例共享：`a.add(1)` 实际修改的是 `Bag.items` 这个**同一个**列表，所以 `b.items` 也是 `[1]`。问题和「可变默认参数」一样：**可变对象被共享了**。修改：在 `__init__` 里写 `self.items = []`，让每个实例创建自己的列表。\n\n判断规则：类属性适合放**所有实例共享的常量**或计数器（如 `school = \"NUS\"`）；每个实例自己的、尤其是可变的数据，一定放在 `__init__` 里。"
+  },
+  {
+   "type": "think",
+   "q": "你要写一个 `Dataset`，数据存在一个很大的磁盘文件夹里（几十万张图片）。`__init__`、`__len__`、`__getitem__` 里分别应该做什么？为什么不把所有图片都在 `__init__` 里读进内存？",
+   "a": "- `__init__`：只做**轻量**的事，比如记录文件夹路径、列出所有文件名（一个字符串列表）、保存预处理函数。\n- `__len__`：返回文件个数（`len(self.files)`）。\n- `__getitem__(i)`：**这时才**读取第 $i$ 张图片、做预处理（缩放、归一化等），返回 `(图像, 标签)`。\n\n不在 `__init__` 里全部读入，是因为几十万张图片会占用几十到几百 GB 内存，装不下。放在 `__getitem__` 里**按需读取**，每次只在内存里放一个 batch，这又是**惰性求值**的思想，和「推导式、迭代器与生成器」那一节的生成器一脉相承。`DataLoader` 还可以开多个**工作进程 (workers)** 并行调用 `__getitem__`，让数据读取和 GPU 计算重叠，这是为什么用 `Dataset` 接口、而不是自己写一个大列表。"
+  },
+  {
+   "type": "think",
+   "q": "`@dataclass` 生成的 `__eq__` 会逐字段比较。如果一个类定义了 `__eq__`，却没有定义 `__hash__`，会有什么后果？怎样让一个 dataclass 的实例能放进集合或当字典的键？",
+   "a": "Python 的规则：**只定义 `__eq__`、不定义 `__hash__` 的类，`__hash__` 会被设为 `None`，实例不可哈希**，放进 `set` 或当 `dict` 的键会报 `TypeError: unhashable type`。原因是：「相等的对象必须有相同的哈希值」，一旦自定义了相等的含义，默认的基于身份的哈希就不再满足这条规则。\n\n对 `dataclass`：**`@dataclass(frozen=True)`**（或 `unsafe_hash=True`）会根据字段生成 `__hash__`。用 `frozen=True` 最安全：对象不可修改，哈希值就不会变（可变对象的哈希值如果变了，在集合 / 字典里就找不到它了，数据结构第 4 节讲过原因）。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "类 / 实例",
+     "class / instance",
+     "模板 / 由模板创建的具体对象"
+    ],
+    [
+     "属性 / 方法",
+     "attribute / method",
+     "对象的数据 / 对象的函数"
+    ],
+    [
+     "`self`",
+     "self",
+     "方法的第一个参数，代表调用它的实例"
+    ],
+    [
+     "构造方法",
+     "`__init__`",
+     "创建实例时自动调用，初始化实例属性"
+    ],
+    [
+     "类属性 / 实例属性",
+     "class attribute / instance attribute",
+     "所有实例共享 / 每个实例各自一份"
+    ],
+    [
+     "类方法 / 静态方法",
+     "classmethod / staticmethod",
+     "第一个参数是 `cls` / 不需要 `self` 或 `cls`"
+    ],
+    [
+     "特殊方法",
+     "special (dunder) method",
+     "`__len__`、`__getitem__`、`__call__` 等，由语法或内置函数在背后调用"
+    ],
+    [
+     "`__repr__` / `__str__`",
+     "repr / str",
+     "给开发者看的表示 / 给用户看的表示"
+    ],
+    [
+     "继承 / 重写",
+     "inheritance / override",
+     "子类获得父类的功能 / 子类改写同名方法"
+    ],
+    [
+     "多态",
+     "polymorphism",
+     "同一个调用，不同类型有不同行为"
+    ],
+    [
+     "组合",
+     "composition",
+     "对象包含其他对象作为属性（has-a）"
+    ],
+    [
+     "方法解析顺序",
+     "MRO (method resolution order)",
+     "Python 查找方法所沿着的继承链顺序"
+    ],
+    [
+     "`@property`",
+     "property",
+     "让方法像属性一样访问，可加校验"
+    ],
+    [
+     "`@dataclass`",
+     "dataclass",
+     "根据带类型注解的字段自动生成 `__init__`、`__repr__`、`__eq__`"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Think Python 3e（Downey）— 第 14–17 章：Classes and Functions / Classes and Methods / Classes and Objects / Inheritance",
+   "url": "https://allendowney.github.io/ThinkPython/chap16.html",
+   "note": "本节大纲依据之一，从零开始构建类、方法与继承（此为第 16 章，前后章节相连），CC BY-NC-SA 4.0"
+  },
+  {
+   "title": "Python OOP Tutorial 4: Inheritance - Creating Subclasses（Corey Schafer，约 20 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=RSl87lqOXDE",
+   "note": "继承、`super()`、`isinstance` 的详细演示"
+  },
+  {
+   "title": "Python OOP Tutorial 6: Property Decorators（Corey Schafer，约 10 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=jCzT9XFZ5bw",
+   "note": "getter、setter、deleter 的完整讲解"
+  },
+  {
+   "title": "Python 文档：Data model（特殊方法一览）",
+   "url": "https://docs.python.org/3/reference/datamodel.html",
+   "note": "所有特殊方法的权威说明，需要时查阅"
+  },
+  {
+   "title": "PyTorch 教程：Datasets & DataLoaders",
+   "url": "https://pytorch.org/tutorials/beginner/basics/data_tutorial.html",
+   "note": "自定义 Dataset（`__len__`、`__getitem__`）的官方示例，学完这一节后可以直接读懂"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`a.average()` 与 `Student.average(a)` 的关系是？",
+    "options": [
+     "完全无关",
+     "前者调用类方法，后者调用静态方法",
+     "等价：方法调用的 `self` 就是点号前面的对象",
+     "后者会报错"
+    ],
+    "answer": 2,
+    "explain": "`a.average()` 是语法糖，Python 自动把 `a` 作为第一个参数 `self` 传入。"
+   },
+   {
+    "q": "类体里直接写 `items = []`（类属性），而不是在 `__init__` 里写 `self.items = []`，会有什么问题？",
+    "options": [
+     "所有实例共享同一个列表，一个实例的修改会影响其他实例",
+     "没有任何问题",
+     "无法在方法里访问",
+     "会让类无法被实例化"
+    ],
+    "answer": 0,
+    "explain": "类属性被所有实例共享，可变对象的修改对所有实例可见。每个实例独有的可变数据应在 `__init__` 里创建。"
+   },
+   {
+    "q": "`@classmethod` 的第一个参数 `cls` 代表什么？常见用途是？",
+    "options": [
+     "调用它的实例；做校验",
+     "类本身；作为替代构造函数，如 `from_string`",
+     "父类；调用父类方法",
+     "模块；导入"
+    ],
+    "answer": 1,
+    "explain": "类方法的第一个参数是类本身，所以 `cls(...)` 能创建（子类的）实例，常用作替代构造函数。"
+   },
+   {
+    "q": "为了让一个对象支持 `len(obj)` 和 `obj[i]`，需要实现哪两个特殊方法？",
+    "options": [
+     "`__init__` 与 `__repr__`",
+     "`__str__` 与 `__eq__`",
+     "`__call__` 与 `__enter__`",
+     "`__len__` 与 `__getitem__`"
+    ],
+    "answer": 3,
+    "explain": "这两个方法也正是 PyTorch 的 `Dataset` 所需要的接口。"
+   },
+   {
+    "q": "`model(x)` 能运行，是因为 `nn.Module` 实现了哪个特殊方法？它再调用什么？",
+    "options": [
+     "`__call__`，它调用你定义的 `forward`",
+     "`__init__`，它调用 `backward`",
+     "`__getitem__`，它调用 `fit`",
+     "`__enter__`，它调用 `train`"
+    ],
+    "answer": 0,
+    "explain": "`__call__` 让对象可像函数一样调用；在里面会调用 `forward`，并处理钩子等额外逻辑，所以应该写 `model(x)` 而不是 `model.forward(x)`。"
+   },
+   {
+    "q": "`with open(path) as f:` 能保证文件一定被关闭，即使块内出错，依赖的是？",
+    "options": [
+     "`__len__` 与 `__getitem__`",
+     "`__add__`",
+     "上下文管理器协议：`__enter__` 与 `__exit__`",
+     "`__hash__`"
+    ],
+    "answer": 2,
+    "explain": "不管 `with` 块是否出现异常，`__exit__` 都一定会被调用，从而完成关闭等收尾工作。"
+   },
+   {
+    "q": "在子类的 `__init__` 里写 `super().__init__()` 的作用是？",
+    "options": [
+     "删除父类",
+     "创建新的实例",
+     "让子类变成静态方法",
+     "调用父类的构造方法，让父类部分也得到初始化"
+    ],
+    "answer": 3,
+    "explain": "不调用时，父类 `__init__` 里做的初始化不会发生。在 PyTorch 里忘了它，`nn.Module` 内部的参数登记会缺失。"
+   },
+   {
+    "q": "「一个模型里包含若干个层作为属性」属于？而「`Linear` 是一种 `Module`」属于？",
+    "options": [
+     "前者继承，后者组合",
+     "前者组合（has-a），后者继承（is-a）",
+     "两者都是继承",
+     "两者都是多态"
+    ],
+    "answer": 1,
+    "explain": "「有一个」是组合；「是一种」是继承。一般优先用组合，真的是「是一种」时才用继承。"
+   },
+   {
+    "q": "`@property` 的典型用途**不包括**？",
+    "options": [
+     "让类的所有实例共享同一个可变列表",
+     "定义由其他属性计算出来的只读属性",
+     "让调用者以属性的写法访问，同时背后运行代码",
+     "在赋值时校验数值范围"
+    ],
+    "answer": 0,
+    "explain": "共享可变数据是类属性（且通常是陷阱）。`property` 的价值是校验、计算属性和只读属性。"
+   },
+   {
+    "q": "`@dataclass` 里想给字段设置「可变」的默认值，例如一个空列表，正确写法是？",
+    "options": [
+     "`layers: list = []`",
+     "`layers: list = None`，什么都不用做",
+     "`layers: list = field(default_factory=list)`",
+     "dataclass 里不能放列表"
+    ],
+    "answer": 2,
+    "explain": "直接写 `[]` 会被 `dataclass` 拒绝（否则所有实例共享同一个列表）；`default_factory` 为每个实例创建新列表。"
+   }
+  ]
+ }
+}

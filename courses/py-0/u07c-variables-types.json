@@ -1,0 +1,96 @@
+{
+ "id": "u07c",
+ "title": "变量、数据类型与字符串（3/3）",
+ "en": "Variables, Types & Strings (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "会处理 **字符串 (string)**：引号与转义、索引与 **切片 (slice)**、不可变性、常用方法、**f-string** 格式化；理解 `x.method()` 里**点号与方法 (method)** 的含义，会用 `dir()` / `help()` 自己查；认识常用**内置函数 (built-in function)**，知道 `eval` 是什么、为什么先别用"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「变量、数据类型与字符串」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：f-string：把变量放进文字里（续）（约 25 分钟） → 内置函数速览（约 5 分钟） → `eval`：把字符串当代码运行（先别用）（约 5 分钟） → 读一行代码的办法（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**格式说明：**\n\n```python\nprice, qty = 1234.5, 7\nprint(f\"{price:.2f}\")        # 冒号后面是格式：保留 2 位小数\nprint(f\"{price:,.2f}\")       # 加千分位逗号\nprint(f\"{1234567:,}\")\nprint(f\"[{qty:>6}]\")         # 右对齐，总宽 6\nprint(f\"[{qty:<6}]\")         # 左对齐\nprint(f\"[{qty:^6}]\")         # 居中\nprint(f\"{qty:03d}\")          # 整数，补零到 3 位\nprint(f\"{0.075:.1%}\")        # 百分数，1 位小数\n# 输出：1234.50\n# 输出：1,234.50\n# 输出：1,234,567\n# 输出：[     7]\n# 输出：[7     ]\n# 输出：[  7   ]\n# 输出：007\n# 输出：7.5%\n```\n\n**读输出：** 冒号后面是格式。`{price:.2f}` 保留 2 位小数 `1234.50`（`.2f` = 小数点后 2 位的 float）；`{price:,.2f}` 再加千分位逗号 `1,234.50`；`{1234567:,}` 得 `1,234,567`；`[{qty:>6}]` 把 7 **右对齐**放进宽度 6 的格子，`[     7]`；`<` 左对齐得 `[7     ]`；`^` 居中得 `[  7   ]`；`{qty:03d}` 补零成 `007`；`{0.075:.1%}` 把 0.075 变成百分数 `7.5%`。外面套的方括号只是为了让你看清空格有多宽。\n\n**用对齐格式打一张小表：**\n\n```python\nprint(f\"{'item':<10}{'qty':>5}{'price':>10}\")\nprint(f\"{'Monitor':<10}{24:>5}{18.5:>10.2f}\")\nprint(f\"{'Cuff':<10}{150:>5}{3.2:>10.2f}\")\n# 输出：item        qty     price\n# 输出：Monitor      24     18.50\n# 输出：Cuff        150      3.20\n```\n\n**读输出：** 三行的列都对齐了：`:<10` 是 10 格左对齐，`:>5` 是 5 格右对齐，`:>10.2f` 是 10 格右对齐并保留 2 位小数。（注意 f-string 里面如果还要写字符串，要用**和外面不同种类**的引号：外面 `\"…\"`，里面 `'item'`。）你以后会看到另外两种旧的格式化写法：`\"{} {}\".format(a, b)` 和 `\"%d %s\" % (a, b)`，意思相同，新代码一律用 f-string。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "k9TUPpGqYTo",
+   "title": "视频二：Python Tutorial for Beginners 2: Strings - Working with Textual Data（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 21
+  },
+  {
+   "type": "text",
+   "md": "### 内置函数速览\n\n> **标准定义 · 内置函数 (built-in function)**\n>\n> **内置函数**是 Python 自带的函数，**不需要定义、不需要导入，随时可以直接调用**。常用的有：`print` `len` `type` `isinstance` `int` `float` `str` `bool` `abs` `round` `min` `max` `sum` `pow` `divmod` `range` `sorted` `dir` `help` `repr` `eval`。完整列表见 Python 文档的「Built-in Functions」。\n>\n> *English: Built-in functions are always available without importing anything, e.g. print, len, type, range, sum, min, max, abs, round, sorted.*\n\n**白话版：「出厂自带的工具」。** 这也是为什么命名约定里说别拿它们的名字当变量名：自己贴的标签会盖住出厂的工具。\n\n```python\nprint(abs(-7), abs(-2.5))\nprint(round(3.14159, 2), round(2.5), round(3.5))    # round(2.5) 是 2，不是 3\nprint(min(3, 9, 5), max(3, 9, 5))\nprint(pow(2, 10), 2 ** 10)\nprint(type(len))\n# 输出：7 2.5\n# 输出：3.14 2 4\n# 输出：3 9\n# 输出：1024 1024\n# 输出：<class 'builtin_function_or_method'>\n```\n\n**读输出：** `abs` 取绝对值：`7 2.5`；`round(x, n)` 四舍五入到 `n` 位小数，`round(3.14159, 2)` 得 `3.14`；**注意** `round(2.5)` 得 `2`、`round(3.5)` 得 `4`：Python 的 `round` 在恰好在中间时，取**最近的偶数**（「银行家舍入」），不是你在小学学的「四舍五入」；`min` 和 `max` 可以直接给几个值：`3 9`；`pow(2, 10)` 和 `2 ** 10` 都是 `1024`；最后 `type(len)` 显示 `<class 'builtin_function_or_method'>`，说明 `len` 本身也是一个值，类型是「内置函数」。\n\n```python\nprint(list(range(5)))                 # range(5)：0,1,2,3,4；list 把它们摆成一串\nprint(list(range(2, 10, 3)))          # range(起点, 终点, 步长)，同样含头不含尾\nprint(sum(range(1, 101)))             # 1 + 2 + ... + 100\nprint(sorted(\"banana\"))               # 排序，返回列表\nprint(sorted(\"banana\", reverse=True)) # name=value 的参数：关键字参数\n# 输出：[0, 1, 2, 3, 4]\n# 输出：[2, 5, 8]\n# 输出：5050\n# 输出：['a', 'a', 'a', 'b', 'n', 'n']\n# 输出：['n', 'n', 'b', 'a', 'a', 'a']\n```\n\n**读输出：** `range(5)` 产生 0、1、2、3、4（**含头不含尾**，和切片一样），外面套 `list(...)` 才能把它们摆开显示；`range(2, 10, 3)` 是「从 2 开始，每次加 3，到 10 之前停」：`[2, 5, 8]`；`sum(range(1, 101))` 把 1 到 100 加起来，`5050`；`sorted(\"banana\")` 把字符串里的字符排序，**返回一个新的列表**：`['a', 'a', 'a', 'b', 'n', 'n']`；加上 `reverse=True` 是倒序。这个 `reverse=True` 是 `名字=值` 形式的参数，叫**关键字参数 (keyword argument)**，是在调用时「指名道姓」地传参，函数那一节会详细讲。\n\n**这些函数到底从哪来？** 它们全都在一个叫 `builtins` 的模块里，Python 启动时自动准备好：\n\n```python\nimport builtins\nprint(\"max\" in dir(builtins), \"TypeError\" in dir(builtins), \"upper\" in dir(builtins))\n# 输出：True True False\n```\n\n**读输出：** `True True False`：`max` 在 `builtins` 里（内置函数），`TypeError` 也在（那是报错的种类，也是内置的名字，首字母大写），`upper` **不在**，因为 `upper` 是 `str` 类型的**方法**，要通过字符串才能用，不是独立存在的内置函数。（这里 `in` 检查「某个值是否在一串值里」，对字符串和对列表都成立。）这也再次说明了**函数和方法的区别**。\n\n### `eval`：把字符串当代码运行（先别用）\n\n> **标准定义 · `eval`**\n>\n> `eval(s)` 把**字符串 `s`** 当作一个 **Python 表达式**来运行，并返回结果。`eval(\"2 + 3\")` 得 `5`。\n>\n> *English: eval(s) evaluates the string s as a Python expression and returns its value.*\n\n```python\nprint(eval(\"2 + 3 * 4\"))          # eval：把字符串当成 Python 表达式去算\nprice = 18.5\nprint(eval(\"price * 2\"))          # 它能看到当前的变量\nprint(eval(\"len('abc') + 1\"))\n# 输出：14\n# 输出：37.0\n# 输出：4\n```\n\n**读输出：** `eval(\"2 + 3 * 4\")` 把字符串里的文字当代码算，得 `14`；`eval(\"price * 2\")` 能看到当前定义过的变量 `price`，得 `37.0`；`eval(\"len('abc') + 1\")` 得 `4`。\n\n```python\nprint(eval(\"1 + 'a'\"))            # 字符串里的代码，一样会报错\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(eval(\"1 + 'a'\"))            # 字符串里的代码，一样会报错\n# 输出：  File \"<string>\", line 1, in <module>\n# 输出：TypeError: unsupported operand type(s) for +: 'int' and 'str'\n```\n\n**读输出：** 字符串里的代码和其他代码一样会遵守规则：`1 + 'a'` 抛出 `TypeError: unsupported operand type(s) for +: 'int' and 'str'`（`int` 和 `str` 之间不支持 `+`）。报错里多出一行 `File \"<string>\"`，说明出错的是 `eval` 里面那段字符串。**所以 `eval` 常常被用来「故意造出各种报错」做演示**，你「条件、循环与读懂报错」那一节会看到。\n\n**为什么初学者别用它做正经事？**\n\n- **危险**：`eval` 能执行**任何** Python 表达式。如果字符串来自用户输入、文件或网络，对方可以让它删文件、读密码，你的程序等于对外敞开了大门。\n- **难调试**：代码藏在字符串里，编辑器没法帮你检查，出错的行号也不好找。\n- **几乎总有更好的办法**：要把 `\"42\"` 变成数字，用 `int(\"42\")`；要把 `\"3.5\"` 变成小数，用 `float(\"3.5\")`；要读一个字面值（如 `\"[1, 2]\"`），标准库有更安全的 `ast.literal_eval`。\n\n### 读一行代码的办法\n\n现在你已经认识了变量、类型、运算符、字符串、方法、内置函数。**怎么读一行没见过的代码？** 按这四步：**(1)** 看有没有 `=`：有的话，先看**右边**，算完再贴给左边的名字；**(2)** 在右边，把每个词分类：是**字面值**（数字、引号里的字符串）、**变量名**、**内置函数 / 函数调用**（名字后面有括号）、还是 **`x.method()`**（点号）；**(3)** 遇到点号，先问「点号左边是什么类型的值？」再去 `dir()` / `help()` 查那个类型的方法；**(4)** 从最里面的括号往外一层层算。\n\n```python\nsku, qty, rate = \"omron-hem\", 8, \"0.075\"\nlabel = f\"{sku.upper()}-{qty:05d}\"\ntax = round(qty * float(rate), 2)\nprint(label, tax)\n# 输出：OMRON-HEM-00008 0.6\n```\n\n**读输出：** `OMRON-HEM-00008 0.6`。拆开读：第一行 `sku, qty, rate = \"omron-hem\", 8, \"0.075\"` 是多重赋值，三个变量依次是字符串、整数、**字符串**（注意 `rate` 是带引号的字符串）；第二行 `label = f\"{sku.upper()}-{qty:05d}\"`：f-string 里 `sku.upper()` 是字符串的方法，得 `OMRON-HEM`，`{qty:05d}` 把 8 补零成 `00008`，拼成 `OMRON-HEM-00008`；第三行 `tax = round(qty * float(rate), 2)`：从最里面算：`float(rate)` 把字符串 `\"0.075\"` 转成小数 0.075，乘以 8 得 0.6，再 `round(..., 2)` 保留 2 位小数，得 `0.6`。\n\n### 这一节你要带走的三句话\n\n1. **变量是贴在值上的标签**，`=` 是「先算右边，再贴给左边」，不是数学里的等号；`a, b = 1, 2` 是**两个**变量，逗号把名字分开；**命名的硬性规定**（字母数字下划线、不能数字开头、区分大小写、不能用关键字、不能有空格）违反会报错，**约定**（`snake_case`、有意义）违反只是难读。\n2. **每个值都有类型**（`int`、`float`、`str`、`bool`、`None`），类型决定能做什么；Python 不会在字符串和数字之间自动转换，**`TypeError` 是种类不对，`ValueError` 是内容不对**；小数不要用 `==` 比。\n3. **`x.method()` 是「这个对象所属类型的方法」**，不是魔法：用 `dir()` 查有哪些，用 `help()` 看怎么用；字符串**不可变**，方法返回的是新字符串，要用就赋值接住；`print`、`len`、`range`……是内置函数，随时可用，别拿它们的名字当变量名，`eval` 先别用。"
+  },
+  {
+   "type": "think",
+   "q": "**计算与实践：** 仓库里有 `1000` 件货，每箱装 `24` 件，单价 `3.2` 元。写代码求：整箱数、剩余件数，并用 f-string 打印总价（保留 2 位小数、带千分位）。再判断 `0.1 * 3 == 0.3` 的结果，并说明为什么。",
+   "a": "用 `divmod` 一次求出整箱数和余数，再解包：\n\n```python-static\nqty, per_box, unit_price = 1000, 24, 3.2\nboxes, leftover = divmod(qty, per_box)\nprint(boxes, leftover)                          # 41 16\nprint(f\"总价 = {qty * unit_price:,.2f} 元\")        # 总价 = 3,200.00 元\nprint(0.1 * 3 == 0.3)                           # False\n```\n\n`1000 = 41 × 24 + 16`，所以整箱 41 箱，剩 16 件；总价 $1000 \\times 3.2 = 3200.0$，`:,.2f` 加上千分位和两位小数，显示 `3,200.00`。`0.1 * 3 == 0.3` 是 `False`：0.1 在二进制里是无限循环小数，只能存近似值，`0.1 * 3` 得到的是 `0.30000000000000004`，和 `0.3` 的近似值差了一点点。要比较小数，用 `abs(a - b) < 1e-9`，或者金额用整数的分来算。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Think Python 3e（Downey）— 第 2 章 Variables and Statements",
+   "url": "https://allendowney.github.io/ThinkPython/chap02.html",
+   "note": "本节大纲依据之一：变量、赋值、表达式、语句，CC BY-NC-SA 4.0；第 1 章 Welcome 也值得一读"
+  },
+  {
+   "title": "Harvard CS50P：Introduction to Programming with Python（课程主页）",
+   "url": "https://cs50.harvard.edu/python/",
+   "note": "大学课程原版：第 0 讲 Functions, Variables 与第 2 讲 Strings 对应本节内容，附讲义和习题"
+  },
+  {
+   "title": "Python 官方教程 — An Informal Introduction to Python（数字、字符串）",
+   "url": "https://docs.python.org/3/tutorial/introduction.html",
+   "note": "官方教程里数字、字符串、索引与切片的权威讲解"
+  },
+  {
+   "title": "Python 文档：Built-in Types（含 str 的全部方法）",
+   "url": "https://docs.python.org/3/library/stdtypes.html",
+   "note": "查字符串每个方法的用法与例子；搜 `str.split`、`str.replace` 之类"
+  },
+  {
+   "title": "Python 文档：Built-in Functions",
+   "url": "https://docs.python.org/3/library/functions.html",
+   "note": "全部内置函数的官方列表，`eval`、`round`、`sorted` 的细节都在这里"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为什么 `0.1 + 0.2 == 0.3` 的结果是 `False`？",
+    "options": [
+     "Python 的加法有 bug",
+     "因为 `0.3` 是字符串",
+     "`==` 只能比较整数",
+     "`0.1` 和 `0.2` 在二进制里无法精确表示，只存了近似值，加起来有微小误差"
+    ],
+    "answer": 3,
+    "explain": "二进制里 0.1、0.2 是无限循环小数，`float` 只能存近似值，所以 `0.1 + 0.2` 实际是 0.30000000000000004。这是浮点数的通用特性，不是 Python 的 bug；比较小数应看差是否足够小。"
+   },
+   {
+    "q": "`price = 1234.5`，`f\"{price:,.2f}\"` 的结果是？",
+    "options": [
+     "`'1,234.5'`",
+     "`'1,234.50'`",
+     "`'1,234.500'`",
+     "`'1234.50'`"
+    ],
+    "answer": 1,
+    "explain": "冒号后面的 `,` 加千分位，`.2f` 保留 2 位小数，所以是 `1,234.50`。`1234.50` 缺了千分位，`1,234.5` 缺了第二位小数。"
+   },
+   {
+    "q": "为什么初学者不应该随便对来自用户输入或文件的字符串使用 `eval`？",
+    "options": [
+     "因为 `eval` 太慢，一秒只能算一次",
+     "因为 `eval` 只能计算整数",
+     "因为 `eval` 能执行任意 Python 表达式，不可信的字符串可能做出删文件、读数据等危险操作，而且代码藏在字符串里很难调试",
+     "因为 `eval` 会修改所有变量"
+    ],
+    "answer": 2,
+    "explain": "`eval` 把字符串当代码运行，权限和你写的代码一样大。字符串来自外部时就是安全隐患。转数字用 `int()` / `float()`，读字面值有更安全的 `ast.literal_eval`。"
+   }
+  ]
+ }
+}

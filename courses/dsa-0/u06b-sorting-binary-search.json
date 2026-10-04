@@ -1,0 +1,129 @@
+{
+ "id": "u06b",
+ "title": "排序与二分查找（2/2）",
+ "en": "Sorting & Binary Search (2/2)",
+ "minutes": 40,
+ "objectives": [
+  "会写**无 bug** 的二分查找：区间 $[lo,hi)$ 与循环不变量、`lower_bound` / `upper_bound`，会用标准库 `bisect`",
+  "掌握 **在答案上二分 (binary search on the answer)**：只要「可行性」有单调性，就能把最优化问题变成判定问题"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「排序与二分查找」分成的第 2 个小节（共 2 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：排序的下界与计数排序（约 5 分钟） → 二分查找（约 10 分钟） → 在答案上二分（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 排序的下界与计数排序\n\n> **标准定义 · 比较排序的下界**\n>\n> 任何基于比较的排序算法，最坏情况下至少需要 $\\Omega(n\\log n)$ 次比较。\n>\n> *English: Any comparison-based sorting algorithm needs Ω(n log n) comparisons in the worst case.*\n\n**白话版：想象一场「猜顺序」的游戏。** $n$ 个元素有 $n!$ 种可能的排列，每次比较的结果只有「大」或「小」两种，最多能把可能性砍掉一半，所以要区分 $n!$ 种情形，至少要比较 $\\log_2(n!)$ 次，而 $\\log_2(n!)\\approx n\\log_2n$。也就是说，**归并排序和堆排序在比较排序里已经是最优的了**。\n\n但这个下界只针对「只能比较」的算法。如果元素是**范围有限的整数**，就可以不比较：**计数排序**直接数每个值出现了几次，再按顺序输出，$O(n+k)$（$k$ 是取值范围）。\n\n```python\nimport random\nfrom math import factorial, log2, ceil\n\ndef counting_sort(a, k):                 # 计数排序：元素都是 0..k-1 的整数，不做任何比较\n    count = [0] * k\n    for x in a:\n        count[x] += 1                    # 数每个值出现了几次\n    out = []\n    for v in range(k):\n        out += [v] * count[v]            # 按值从小到大，依次输出\n    return out\n\nrandom.seed(0)\na = [random.randrange(10) for _ in range(20)]\nprint(a)\nprint(counting_sort(a, 10), counting_sort(a, 10) == sorted(a))\n\n# 基于比较的排序，最坏情况至少要比较 ⌈log2(n!)⌉ 次（n! 种顺序，每次比较至多排除一半）\nfor n in (4, 10, 20, 100):\n    print(f\"n={n:<4} 至少要比较 {ceil(log2(factorial(n)))} 次   n·log2(n) = {n * log2(n):.0f}\")\n# 输出：[6, 6, 0, 4, 8, 7, 6, 4, 7, 5, 9, 3, 8, 2, 4, 2, 1, 9, 4, 8]\n# 输出：[0, 1, 2, 2, 3, 4, 4, 4, 4, 5, 6, 6, 6, 7, 7, 8, 8, 8, 9, 9] True\n# 输出：n=4    至少要比较 5 次   n·log2(n) = 8\n# 输出：n=10   至少要比较 22 次   n·log2(n) = 33\n# 输出：n=20   至少要比较 62 次   n·log2(n) = 86\n# 输出：n=100  至少要比较 525 次   n·log2(n) = 664\n```\n\n最后一部分输出验证了下界：$n=10$ 至少要 22 次比较，$n=100$ 至少要 525 次，比较接近 $n\\log_2n$。计数排序突破了这个下界，因为它**用了「元素是小整数」这个额外信息**。类似的有基数排序 (radix sort)。\n\n### 二分查找\n\n> **标准定义 · 二分查找 (binary search) 与循环不变量 (loop invariant)**\n>\n> 在**已排序**的数组里，每次比较中间元素，排除一半的候选，直到找到或区间为空，$O(\\log n)$。写二分查找最容易出 bug，办法是**始终明确区间的含义，并保持循环不变量**，例如：「答案一定在半开区间 $[lo,hi)$ 里」。\n>\n> *English: Binary search halves the candidate range each step. A loop invariant, such as \"the answer lies in [lo, hi)\", keeps the implementation correct.*\n\n**白话版：猜数字游戏。** 我心里想一个 1 到 100 的数，你猜 50，我说「大了」，你就知道答案在 1 到 49，下一次猜 25……每次排除一半，最多猜 7 次。\n\n写成代码最好用「找边界」的形式：**`lower_bound`** 是第一个**大于等于** $x$ 的位置，**`upper_bound`** 是第一个**大于** $x$ 的位置。几乎所有二分问题（查找、插入位置、统计出现次数）都能用这两个函数表达。\n\n```python\nfrom bisect import bisect_left, bisect_right\nimport random\n\ndef lower_bound(a, x):                   # 第一个 >= x 的位置；所有元素都比 x 小则返回 len(a)\n    lo, hi = 0, len(a)                   # 搜索区间 [lo, hi)，答案一定在区间里（含 hi）\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if a[mid] < x:\n            lo = mid + 1                 # a[mid] 太小了，答案在 mid 右边\n        else:\n            hi = mid                     # a[mid] 够大了，答案是 mid 或者更靠左\n    return lo\n\ndef upper_bound(a, x):                   # 第一个 > x 的位置\n    lo, hi = 0, len(a)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if a[mid] <= x:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n\na = [1, 2, 2, 2, 5, 8, 8, 10]\nprint(lower_bound(a, 2), upper_bound(a, 2), lower_bound(a, 3), lower_bound(a, 11))\nprint(\"x=2 出现\", upper_bound(a, 2) - lower_bound(a, 2), \"次\")      # 两个边界相减 = 出现次数\n\nrandom.seed(0)\nok = True\nfor _ in range(2000):\n    arr = sorted(random.randint(0, 10) for _ in range(random.randint(0, 12)))\n    x = random.randint(-1, 11)\n    ok &= lower_bound(arr, x) == bisect_left(arr, x) and upper_bound(arr, x) == bisect_right(arr, x)\nprint(\"与标准库 bisect 一致：\", ok)\n# 输出：1 4 4 8\n# 输出：x=2 出现 3 次\n# 输出：与标准库 bisect 一致： True\n```\n\n读输出：对 `[1, 2, 2, 2, 5, 8, 8, 10]`，2 的 `lower_bound` 是 1、`upper_bound` 是 4，所以 2 出现了 $4-1=3$ 次；查 3 时 `lower_bound` 返回 4，正好是「如果要插入 3，应该放在哪」；查 11 返回 8（等于数组长度，表示放在末尾）。**这两个函数和标准库 `bisect.bisect_left` / `bisect_right` 完全一致**，实际使用直接用标准库就行。\n\n**三条防 bug 规则：** ①用半开区间 $[lo,hi)$，循环条件是 `lo < hi`；②`mid = (lo + hi) // 2` 后，一定要保证 `lo` 或 `hi` 至少有一个**真的在缩小**（`lo = mid + 1` 或 `hi = mid`），否则会死循环；③写完用随机数据和标准库对拍（就像上面做的）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "fDKIpRe8GW4",
+   "title": "视频三：Binary search in 4 minutes（Michael Sambol）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 4
+  },
+  {
+   "type": "text",
+   "md": "### 在答案上二分\n\n二分查找最有用的推广：**不是在数组里找东西，而是在「答案的取值范围」里找最优的那个**。条件是：对于答案 $x$，有一个**判定函数**「$x$ 可行吗？」，并且它**有单调性**：如果 $x$ 可行，那么所有更大的 $x$ 也都可行（或者反过来）。这时最优化问题（「最小的可行 $x$ 是多少」）就变成了对判定函数的二分查找。\n\n**例子：运货。** 有一串货物，必须按顺序运，每天运的总重量不能超过运力 $c$，问：想在 $D$ 天内运完，**最小的运力**是多少？运力越大，越容易在 $D$ 天内运完（单调），所以对运力二分；判定函数 `can(c)` 只需要扫一遍货物，$O(n)$。总复杂度 $O(n\\log(\\text{sum}))$。\n\n```python\nimport random\n\ndef can(weights, days, cap):             # 判断：运力是 cap 的话，能不能在 days 天内按顺序运完\n    need, load = 1, 0\n    for w in weights:\n        if load + w > cap:               # 今天装不下了，换下一天\n            need += 1\n            load = 0\n        load += w\n    return need <= days\n\ndef min_capacity(weights, days):         # 二分查找「答案」：最小的、够用的运力\n    lo, hi = max(weights), sum(weights)  # 答案一定在 [最重的一件, 全部重量] 之间\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if can(weights, days, mid):\n            hi = mid                     # 够用，看看能不能更小\n        else:\n            lo = mid + 1                 # 不够，必须更大\n    return lo\n\nprint(min_capacity([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5))\n\ndef brute(weights, days):                # 对照：从小到大逐个试\n    cap = max(weights)\n    while not can(weights, days, cap):\n        cap += 1\n    return cap\n\nrandom.seed(0)\nok = True\nfor _ in range(500):\n    w = [random.randint(1, 20) for _ in range(random.randint(1, 8))]\n    d = random.randint(1, len(w))\n    ok &= min_capacity(w, d) == brute(w, d)\nprint(\"500 组随机数据，与逐个试的结果一致：\", ok)\n# 输出：15\n# 输出：500 组随机数据，与逐个试的结果一致： True\n```\n\n`[1..10]` 要在 5 天内运完，最小运力是 15（比如 `1 2 3 4 5`、`6 7`、`8`、`9`、`10`）。**你不需要想明白这个答案怎么凑出来，只要写好判定函数，再二分即可。** 这个套路在算法题和工程里都很常见：比如「最小的批量大小使得显存不爆」「最小的阈值使得误报率低于 5%」「最小的 $k$ 使得……」。\n\n### 这一节你要带走的三句话\n\n1. **插入排序 $O(n^2)$（对几乎有序的输入快）；归并 $O(n\\log n)$ 稳定但要 $O(n)$ 空间；快排平均 $O(n\\log n)$，要随机选基准防最坏情况**；基于比较的排序下界是 $\\Omega(n\\log n)$，计数排序靠「小整数」突破它。\n2. **Python 的 `sorted` 是稳定的 Timsort**：用 `key` 排序，用稳定性分多次排。\n3. **二分查找 = 半开区间 + 循环不变量 + `lower_bound`**；有单调性的最优化问题，都可以**在答案上二分**。"
+  },
+  {
+   "type": "think",
+   "q": "二分查找要求数组有序。如果你要在一个**没有排序**、但只会被查询一次的数组里找某个值，应该先排序再二分吗？",
+   "a": "**不应该。** 先排序要 $O(n\\log n)$，再二分 $O(\\log n)$，总共 $O(n\\log n)$；而直接线性扫描一遍只要 $O(n)$。只查一次时线性更快。\n\n如果要**反复查询**很多次（$q$ 次），情况就变了：线性是 $O(nq)$，排序一次再每次二分是 $O(n\\log n+q\\log n)$，$q$ 较大时二分占优。（再用上一节的哈希表，建表 $O(n)$、每次查询 $O(1)$，总共 $O(n+q)$，通常更快，只是哈希表不支持「找第一个大于等于 $x$ 的」这种有序查询。）这是**预处理 + 多次查询**的取舍，和前缀和、哈希表是同一个模式。"
+  },
+  {
+   "type": "think",
+   "q": "在答案上二分，必须要求判定函数有单调性。请举一个没有单调性、不能用二分的例子，并说明为什么二分会出错。",
+   "a": "例如：「找一个整数 $x$ 使得 $x$ 的各位数字之和是偶数」，判定函数在 $x$ 变大时是「是、否、是、否……」交替的，没有单调性。二分的前提是：比较 `mid` 之后，能**肯定地丢掉一半**。这里 `mid` 不可行，并不能推出 `mid` 左边或右边整片都不可行，所以丢掉哪一半都可能丢掉答案。\n\n可行性必须具有这样的结构：**可行的值集合是一个连续的区间，且连着一端**（如 $[x^*,\\infty)$）。这时看到一个可行值，就能肯定地丢掉它右边的（不会更小），看到一个不可行的值，就能肯定地丢掉它左边的。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "计数排序",
+     "counting sort",
+     "对小整数计数后输出，$O(n+k)$，不靠比较"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Sorting and Searching（章节目录）",
+   "url": "https://runestone.academy/ns/books/published/pythonds/SortSearch/index.html",
+   "note": "本节的大纲依据，含顺序查找、二分查找、冒泡 / 选择 / 插入 / 归并 / 快速排序的 Python 实现（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "Python 文档：Sorting HOW TO",
+   "url": "https://docs.python.org/3/howto/sorting.html",
+   "note": "`key`、`reverse`、多关键字排序、稳定性，Python 里排序的权威指南"
+  },
+  {
+   "title": "Python 文档：bisect — Array bisection algorithm",
+   "url": "https://docs.python.org/3/library/bisect.html",
+   "note": "标准库的二分查找，`bisect_left` / `bisect_right` / `insort`"
+  },
+  {
+   "title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "大学课程原版，含排序下界、计数 / 基数排序的严格讲法"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "基于比较的排序算法，最坏情况下比较次数的下界是？",
+    "options": [
+     "$\\Omega(n\\log n)$",
+     "$\\Omega(\\log n)$",
+     "$\\Omega(n^2)$",
+     "$\\Omega(n)$"
+    ],
+    "answer": 0,
+    "explain": "$n$ 个元素有 $n!$ 种顺序，每次比较至多排除一半，所以至少 $\\log_2(n!)\\approx n\\log_2n$ 次。"
+   },
+   {
+    "q": "`lower_bound(a, x)` 返回的是？",
+    "options": [
+     "最后一个小于等于 $x$ 的位置",
+     "第一个大于等于 $x$ 的位置（所有元素都小于 $x$ 时返回 `len(a)`）",
+     "$x$ 的任意一个出现位置",
+     "$x$ 不存在时返回 $-1$"
+    ],
+    "answer": 1,
+    "explain": "它就是「$x$ 应当插入的最靠左的位置」。Python 里对应 `bisect.bisect_left`。"
+   },
+   {
+    "q": "在一个有 $10^9$ 个元素的有序数组里做二分查找，最多比较大约多少次？",
+    "options": [
+     "约 10 次",
+     "约 30 次",
+     "约 1000 次",
+     "约 100 次"
+    ],
+    "answer": 1,
+    "explain": "$\\log_2 10^9\\approx29.9$，约 30 次。数据量增加 1000 倍，只多 10 次比较。"
+   },
+   {
+    "q": "计数排序（元素是 $0$ 到 $k-1$ 的整数）的时间复杂度是 $O(n+k)$，它为什么没有违反「比较排序下界 $\\Omega(n\\log n)$」？",
+    "options": [
+     "因为它是递归实现的",
+     "下界在 $k$ 很小时不成立",
+     "它不是基于比较的排序，利用了「元素是小整数」这一额外信息",
+     "它其实也是 $O(n\\log n)$"
+    ],
+    "answer": 2,
+    "explain": "下界只对「仅靠比较元素大小」的算法成立。计数排序直接用元素的值当下标，不比较。代价是需要额外的 $O(k)$ 空间，且 $k$ 不能太大。"
+   },
+   {
+    "q": "「在答案上二分」要求判定函数（「$x$ 是否可行」）满足什么条件？",
+    "options": [
+     "具有单调性：若 $x$ 可行，则所有更大（或更小）的值也可行",
+     "答案必须是整数",
+     "数组必须有序",
+     "必须用递归实现"
+    ],
+    "answer": 0,
+    "explain": "有单调性，看到一个可行或不可行的值，才能肯定地丢掉一半区间。数组本身不需要存在，答案范围就是搜索空间。"
+   }
+  ]
+ }
+}

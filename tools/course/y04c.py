@@ -2,7 +2,25 @@ from runlib import Notebook
 
 nb = Notebook()
 
-# ───────────── 一、异常处理 ─────────────
+# ───────────── 一、异常处理：回顾与进阶 ─────────────
+C_REVIEW = nb.cell('''
+# 回顾：try / except ... as e，以及怎样问「这是什么异常」
+def safe_div(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError as e:          # as e：把异常对象交给变量 e
+        print("捕获到：", type(e).__name__, "|", e)
+        return None
+
+print(safe_div(6, 3))
+print(safe_div(1, 0))
+
+try:
+    int("abc")
+except (ValueError, TypeError) as e:        # 一个 except 可以用元组同时接几种类型
+    print(type(e).__name__, "|", e)
+''')
+
 C_EXC = nb.cell('''
 def parse_age(s):
     try:
@@ -47,6 +65,28 @@ try:
     check_score(120)
 except ValueError as e:                     # InvalidScore 是 ValueError 的子类，所以能被抓到
     print(type(e).__name__, "|", e)
+''')
+
+C_CUSTOM2 = nb.cell('''
+# 进阶：给一个项目设计一套自己的异常层级
+class DataError(Exception):                  # 项目的「根异常」：其他自定义异常都继承它
+    pass
+
+class MissingColumn(DataError):
+    def __init__(self, name, available):
+        super().__init__(f"缺少列 {name!r}，现有列：{available}")   # 把信息交给父类保存
+        self.name = name                     # 还可以带上额外的字段，方便调用者使用
+
+def get_col(row, name):
+    if name not in row:
+        raise MissingColumn(name, sorted(row))
+    return row[name]
+
+try:
+    get_col({"x1": 1, "x2": 2}, "label")
+except DataError as e:                       # 只抓「根异常」，就能抓住这个项目里所有的数据错误
+    print(type(e).__name__, "|", e)
+    print("缺的列：", e.name, "| 是 DataError 吗：", isinstance(e, DataError))
 ''')
 
 C_FROM = nb.cell('''
@@ -100,6 +140,45 @@ def risky(x):
         return None                          # 看不出是除零、类型错误还是别的
 
 print(risky(0), risky("a"))                  # 两种完全不同的错误，得到同样的 None
+''')
+
+# ───────────── 上下文管理器与 with ─────────────
+C_WITH1 = nb.cell('''
+class Section:                               # 最小的上下文管理器：有 __enter__ 和 __exit__ 两个方法
+    def __init__(self, name):
+        self.name = name
+
+    def __enter__(self):                     # 进入 with 时调用；返回值交给 as 后面的名字
+        print(f"[进入] {self.name}")
+        return self
+
+    def __exit__(self, exc_type, exc, tb):   # 离开 with 时一定调用，哪怕里面出了异常
+        print(f"[离开] {self.name}，异常：{exc_type.__name__ if exc_type else None}")
+        return False                         # False：不吞掉异常，让它继续向外传
+
+with Section("正常") as s:
+    print("  做事情，s.name =", s.name)
+
+try:
+    with Section("出错"):
+        1 / 0
+except ZeroDivisionError:
+    print("异常继续传出来了")
+''')
+
+C_WITH2 = nb.cell('''
+from contextlib import contextmanager
+
+@contextmanager                              # 装饰器：把一个「只 yield 一次的生成器」变成上下文管理器
+def opened(name):
+    print("打开", name)
+    try:
+        yield name.upper()                   # yield 之前 = __enter__；yield 的值交给 as
+    finally:
+        print("关闭", name)                  # yield 之后 = __exit__；finally 保证一定执行
+
+with opened("data.csv") as n:
+    print("使用", n)
 ''')
 
 # ───────────── 二、读 traceback 与调试 ─────────────

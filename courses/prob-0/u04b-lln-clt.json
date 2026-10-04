@@ -1,0 +1,119 @@
+{
+ "id": "u04b",
+ "title": "大数定律与中心极限定理（2/2）",
+ "en": "Law of Large Numbers & Central Limit Theorem (2/2)",
+ "minutes": 30,
+ "objectives": [
+  "知道「样本量翻 4 倍，误差才减半」这条规律，并能用它解释民意调查的误差范围",
+  "理解它们在机器学习里的意义：为什么小批量 (mini-batch) 梯度是真梯度的估计，为什么验证集不能太小"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「大数定律与中心极限定理」分成的第 2 个小节（共 2 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：中心极限定理（约 15 分钟） → 标准误（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 中心极限定理\n\n> **标准定义 · 中心极限定理 (central limit theorem, CLT)**\n>\n> 设 $X_1,\\dots,X_n$ 独立同分布，期望为 $\\mu$，方差 $\\sigma^2$ 有限。则当 $n$ 足够大时，样本均值 $\\bar X_n$ 的分布近似于正态分布：\n>\n> $$\\bar X_n\\;\\approx\\;\\mathcal N\\!\\left(\\mu,\\ \\frac{\\sigma^2}{n}\\right)$$\n>\n> 等价地，标准化后的 $\\dfrac{\\bar X_n-\\mu}{\\sigma/\\sqrt n}$ 的分布趋近标准正态分布 $\\mathcal N(0,1)$。**这个结论不要求总体本身服从正态分布。**\n>\n> *English: For large n, the sample mean of i.i.d. observations is approximately normally distributed with mean μ and variance σ²/n, regardless of the shape of the original distribution.*\n\n**白话版：不管原来的数据长什么样，平均之后都像钟形。** 大数定律告诉你样本均值**往哪里走**（真值），中心极限定理告诉你它在真值附近**怎么晃**（钟形，晃动的大小是 $\\sigma/\\sqrt n$）。有了这个形状，我们才能说「有 95% 的把握，误差不超过多少」（下一节的置信区间就建立在这上面）。\n\n下面做一个很有说服力的实验：用一个严重偏斜的分布（指数分布，一边陡一边拖着长尾）当总体，看它的样本均值怎么变：\n\n```python\nimport random, statistics as st\nrandom.seed(2)\n\n# 总体：指数分布，均值 1，标准差 1。它严重偏斜，一点也不像钟形\n# 每次抽 n 个数取平均，重复 20000 次，看这些「样本均值」的分布\ntrials = 20_000\nprint(\"n   样本均值的均值  样本均值的标准差  1/√n   落在 均值±1个标准差 内的比例\")\nfor n in (1, 5, 30, 200):\n    means = [sum(random.expovariate(1.0) for _ in range(n)) / n for _ in range(trials)]\n    mu, sd = st.mean(means), st.pstdev(means)\n    within = sum(abs(m - mu) <= sd for m in means) / trials\n    print(f\"{n:<4}{mu:>10.3f}{sd:>16.3f}{n ** -0.5:>10.3f}{within:>14.3f}\")\n# 输出：n   样本均值的均值  样本均值的标准差  1/√n   落在 均值±1个标准差 内的比例\n# 输出：1        1.000           1.004     1.000         0.864\n# 输出：5        1.002           0.445     0.447         0.700\n# 输出：30       0.999           0.182     0.183         0.685\n# 输出：200      1.000           0.071     0.071         0.680\n```\n\n看最后一列：$n=1$ 时是原始的偏斜分布，「落在均值 ±1 个标准差内」的比例是 0.86 左右，离正态分布的 0.683 差得远；随着 $n$ 变大，这个比例降到 0.68 左右，钟形越来越像样。中间两列也验证了前面的结论：样本均值的均值保持在 1，标准差等于 $1/\\sqrt n$。\n\n这也解释了第 3 节的疑问：**为什么那么多量近似正态？** 身高、测量误差，本身是很多小因素「加起来」（等价于「平均」）的结果，中心极限定理保证了这样的和接近钟形。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "XNgt7F6FqDU",
+   "title": "视频三：The standard error, Clearly Explained!!!（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### 标准误\n\n> **标准定义 · 标准误 (standard error, SE)**\n>\n> **样本均值的标准差** 称为 **标准误**：\n>\n> $$\\text{SE}(\\bar X_n)=\\frac{\\sigma}{\\sqrt n}$$\n>\n> 实际中总体标准差 $\\sigma$ 未知，用样本标准差 $s$ 代替，得到估计的标准误 $s/\\sqrt n$。\n>\n> *English: The standard error is the standard deviation of the sampling distribution of the mean: σ/√n.*\n\n**白话版：** 「标准差」描述**一个个数据**散得多开；「标准误」描述**样本均值**会抖多大。两者不要混。因为分母是 $\\sqrt n$，所以：要让误差**减半**，样本量要**变成 4 倍**；要缩小到十分之一，要 100 倍的样本。**数据越多越好，但边际收益递减。** 用代码验证，并算一个民调的例子：\n\n```python\nimport random, statistics as st\nfrom math import sqrt\nrandom.seed(3)\n\nsigma = 2.0                                  # 总体标准差\nfor n in (25, 100, 400):\n    # 重复 5000 次：每次从 N(10, 2²) 抽 n 个数，取平均\n    means = [st.mean(random.gauss(10, sigma) for _ in range(n)) for _ in range(5000)]\n    print(f\"n={n:<4} 模拟的标准差 {st.pstdev(means):.3f}   公式 σ/√n = {sigma / sqrt(n):.3f}\")\n\n# 民调：1000 人，支持率约 50%。标准误 = sqrt(p(1-p)/n)\np, n = 0.5, 1000\nse = sqrt(p * (1 - p) / n)\nprint(\"民调标准误：\", round(se, 4), \"  95% 误差范围 ±\", round(1.96 * se * 100, 1), \"%\")\n# 输出：n=25   模拟的标准差 0.397   公式 σ/√n = 0.400\n# 输出：n=100  模拟的标准差 0.202   公式 σ/√n = 0.200\n# 输出：n=400  模拟的标准差 0.098   公式 σ/√n = 0.100\n# 输出：民调标准误： 0.0158   95% 误差范围 ± 3.1 %\n```\n\n模拟出的标准差和公式几乎完全一致。民调的例子：1000 人，支持率约 50% 时，95% 的误差范围约 ±3%，所以新闻里常见的「误差 ±3%」就是这么来的。想把误差降到 ±1.5%，需要约 4000 人。\n\n### 这一节你要带走的三句话\n\n1. **大数定律**：样本越多，样本均值越接近真值；它说的是比例稳定，不是「补回来」。\n2. **中心极限定理**：样本均值近似服从 $\\mathcal N(\\mu,\\sigma^2/n)$，**不管总体长什么样**。\n3. **标准误 $\\sigma/\\sqrt n$**：误差按 $1/\\sqrt n$ 缩小，要误差减半就要 4 倍数据。"
+  },
+  {
+   "type": "think",
+   "q": "模型在一个只有 25 个样本的验证集上准确率是 80%。把这个准确率看作 25 次伯努利试验的平均，它的标准误大约是多少？这个 80% 可信吗？如果验证集扩到 400 个，又怎样？",
+   "a": "每个样本「对 / 错」是伯努利变量，$p\\approx0.8$，标准差 $\\sqrt{0.8\\times0.2}=0.4$。25 个样本时，标准误 $=0.4/\\sqrt{25}=0.08$，也就是 **±8 个百分点**，95% 区间大约是 $80\\%\\pm16\\%$，从 64% 到 96%，非常宽。所以这个 80% 其实不可信，也看不出它比准确率 75% 的模型好多少。\n\n扩到 400 个，标准误 $=0.4/\\sqrt{400}=0.02$，95% 区间约 $80\\%\\pm4\\%$。样本量变成 16 倍，误差缩为 $1/4$。**这就是为什么对比两个模型时，要先看测试集够不够大。**"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "误差范围",
+     "margin of error",
+     "约 $1.96\\times$ 标准误（95% 时）"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Harvard Statistics 110 Lecture 29：Law of Large Numbers and Central Limit Theorem（大学课程原视频，约 50 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=OprNqnHsVIA",
+   "note": "两个定理的严格讲法与证明思路"
+  },
+  {
+   "title": "3Blue1Brown：But what is the Central Limit Theorem?（选看，约 31 分钟）",
+   "url": "https://www.youtube.com/watch?v=zeJD6dqJ5lo",
+   "note": "用动画解释为什么「求和」会变成钟形，直觉最好"
+  },
+  {
+   "title": "MIT OCW 6.041 Probabilistic Systems Analysis（课程主页，含讲义与习题）",
+   "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+   "note": "选做其中极限定理的习题"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "总体标准差 $\\sigma=10$，样本量 $n=25$，样本均值的标准误是？",
+    "options": [
+     "2",
+     "0.4",
+     "10",
+     "50"
+    ],
+    "answer": 0,
+    "explain": "$\\text{SE}=\\sigma/\\sqrt n=10/5=2$。0.4 是 $10/25$（忘了开根号），10 是总体标准差，50 是 $\\sigma\\times\\sqrt n$（乘反了）。"
+   },
+   {
+    "q": "要让样本均值的标准误 **减半**，样本量需要？",
+    "options": [
+     "翻倍",
+     "增加到 3 倍",
+     "变成 16 倍",
+     "变成 4 倍"
+    ],
+    "answer": 3,
+    "explain": "SE $=\\sigma/\\sqrt n$，要使 SE 变成一半，$\\sqrt n$ 要变成 2 倍，所以 $n$ 要变成 4 倍。"
+   },
+   {
+    "q": "中心极限定理说，当样本量足够大时，样本均值的分布近似于？",
+    "options": [
+     "总体本身的分布",
+     "正态分布",
+     "均匀分布",
+     "泊松分布"
+    ],
+    "answer": 1,
+    "explain": "无论总体是什么形状（只要方差有限），样本均值的分布都近似正态，这正是它的威力。"
+   },
+   {
+    "q": "一个民意调查随机访问了 1000 人，支持率约 50%。它的 95% 误差范围大致是？",
+    "options": [
+     "±10%",
+     "±1%",
+     "±3%",
+     "±0.3%"
+    ],
+    "answer": 2,
+    "explain": "$\\text{SE}=\\sqrt{0.5\\times0.5/1000}\\approx0.0158$，$1.96\\times\\text{SE}\\approx0.031$，约 ±3%。"
+   },
+   {
+    "q": "下面关于中心极限定理的说法，哪个是**错的**？",
+    "options": [
+     "总体必须是正态分布，中心极限定理才成立",
+     "样本量越大，标准误越小",
+     "样本均值的期望等于总体均值",
+     "样本均值的方差是 $\\sigma^2/n$"
+    ],
+    "answer": 0,
+    "explain": "中心极限定理的威力正在于**不要求总体是正态分布**，其余三句都对。"
+   }
+  ]
+ }
+}

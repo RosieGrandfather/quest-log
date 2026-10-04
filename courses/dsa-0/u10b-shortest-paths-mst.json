@@ -1,0 +1,82 @@
+{
+ "id": "u10b",
+ "title": "加权图：最短路径、最小生成树与并查集（2/3）",
+ "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find (2/3)",
+ "minutes": 25,
+ "objectives": [
+  "理解 **松弛 (relaxation)** 这个所有最短路径算法共用的操作，会按「有无负权、是不是 DAG」选对算法",
+  "会写 **Kruskal** 与 **Prim** 求**最小生成树 (minimum spanning tree, MST)**，理解正确性的**切割性质 (cut property)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「加权图：最短路径、最小生成树与并查集」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 25 分钟）**：Bellman-Ford 算法：允许负权边（约 10 分钟） → DAG 上的最短路径：按拓扑序松弛一遍（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### Bellman-Ford 算法：允许负权边\n\n> **标准定义 · Bellman-Ford 算法**\n>\n> 把**所有边**松弛 $V-1$ 遍。**为什么 $V-1$ 遍够用：** 一条不含环的最短路径最多包含 $V-1$ 条边；第 $k$ 遍结束后，所有「最多含 $k$ 条边」的最短路径都已经被正确求出。若第 $V$ 遍还能松弛成功，说明存在从起点可达的**负环 (negative cycle)**（环上权重之和为负，可以无限绕圈让距离越来越小，最短路径没有意义）。时间 $O(VE)$，**允许负权边**。\n>\n> *English: Bellman-Ford relaxes every edge V-1 times; it handles negative weights, and a further successful relaxation on the V-th pass reveals a negative cycle. Time O(VE).*\n\n**白话版：「把所有的路都反复核对，直到没有更近的为止」。** 它不聪明，但很稳。**慢（$O(VE)$ 对 $O((V+E)\\log V)$），但能处理负权**。\n\n```python\ndef bellman_ford(n, edges, s):\n    \"\"\"edges = [(u, v, w)]，有向边，w 可以为负。返回 (dist, 是否有从 s 可达的负环)\"\"\"\n    INF = float(\"inf\")\n    dist = [INF] * n\n    dist[s] = 0\n    for i in range(n - 1):                 # 最多 n-1 轮：最短路径最多 n-1 条边\n        changed = False\n        for u, v, w in edges:\n            if dist[u] + w < dist[v]:\n                dist[v] = dist[u] + w\n                changed = True\n        if not changed:                    # 提前结束\n            break\n    # 第 n 轮还能更新，说明有负环\n    neg = any(dist[u] + w < dist[v] for u, v, w in edges)\n    return dist, neg\n\n# 有负权边但没有负环\nedges = [(0, 1, 4), (0, 2, 5), (1, 2, -3), (2, 3, 4), (1, 3, 6)]\nprint(\"无负环：\", bellman_ford(4, edges, 0))\n\n# 加一条 3→1 权重 -2 的边，形成负环 1→2→3→1（总权重 -3+4-2 = -1）\nedges2 = edges + [(3, 1, -2)]\nprint(\"有负环：\", bellman_ford(4, edges2, 0))\n\n# 汇率套利就是负环：把汇率取对数再取负，一个环上乘积 >1 就是和 <0\nimport math\nrates = {(\"USD\",\"EUR\"): 0.9, (\"EUR\",\"GBP\"): 0.9, (\"GBP\",\"USD\"): 1.30}\nnames = [\"USD\", \"EUR\", \"GBP\"]\nidx = {x: i for i, x in enumerate(names)}\nes = [(idx[a], idx[b], -math.log(r)) for (a, b), r in rates.items()]\nprint(\"汇率环乘积 =\", round(0.9 * 0.9 * 1.30, 3), \"，存在套利（负环）：\", bellman_ford(3, es, 0)[1])\n\n# 验证：非负权图上 Bellman-Ford 应与 Dijkstra 一致\nimport heapq, random\ndef dijkstra(n, edges, s):\n    adj = [[] for _ in range(n)]\n    for u, v, w in edges: adj[u].append((v, w))\n    dist = [float(\"inf\")] * n; dist[s] = 0\n    pq = [(0, s)]\n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]: continue\n        for v, w in adj[u]:\n            if d + w < dist[v]:\n                dist[v] = d + w; heapq.heappush(pq, (dist[v], v))\n    return dist\n\nrandom.seed(1)\nok = True\nfor _ in range(300):\n    n = random.randint(2, 9)\n    es = [(random.randrange(n), random.randrange(n), random.randint(0, 20)) for _ in range(random.randint(0, 3 * n))]\n    d1, neg = bellman_ford(n, es, 0)\n    ok &= (d1 == dijkstra(n, es, 0)) and not neg\nprint(\"非负权图上 Bellman-Ford 与 Dijkstra 一致：\", ok)\n# 输出：无负环： ([0, 4, 1, 5], False)\n# 输出：有负环： ([0, 1, -1, 3], True)\n# 输出：汇率环乘积 = 1.053 ，存在套利（负环）： True\n# 输出：非负权图上 Bellman-Ford 与 Dijkstra 一致： True\n```\n\n负环的一个现实例子是**货币套利**：`USD→EUR→GBP→USD` 汇率乘积若大于 1，绕一圈就赚钱。把每个汇率取 $-\\log$，乘积大于 1 就变成了「和小于 0」，套利就是**负环检测**。负环时算出的距离没有意义（程序里 `[0, 1, -1, 3]` 只是中途停下来的值），所以一般的用法是先判断有没有负环，有就报错。\n\n### DAG 上的最短路径：按拓扑序松弛一遍\n\n如果图是 **DAG**（上一节的拓扑排序），就不需要堆，也不怕负权边：**按拓扑序处理每个点，松弛它的出边，一遍即可**，$O(V+E)$。理由：拓扑序保证处理 $u$ 时，所有能到达 $u$ 的点都已经处理完，$d[u]$ 已经最终确定。\n\n```python\n# DAG 上的最短（最长）路径：按拓扑序松弛一遍，O(V+E)，负权也没问题\nfrom collections import deque\n\ndef dag_shortest(n, edges, s):\n    adj = [[] for _ in range(n)]; indeg = [0] * n\n    for u, v, w in edges:\n        adj[u].append((v, w)); indeg[v] += 1\n    q = deque(i for i in range(n) if indeg[i] == 0)\n    order = []\n    while q:\n        u = q.popleft(); order.append(u)\n        for v, _ in adj[u]:\n            indeg[v] -= 1\n            if indeg[v] == 0: q.append(v)\n    dist = [float(\"inf\")] * n; dist[s] = 0\n    for u in order:\n        if dist[u] == float(\"inf\"): continue\n        for v, w in adj[u]:\n            dist[v] = min(dist[v], dist[u] + w)\n    return dist\n\nedges = [(0, 1, 5), (0, 2, 3), (1, 3, 6), (1, 2, 2), (2, 4, 4), (2, 5, 2), (2, 3, 7), (3, 5, 1), (3, 4, -1), (4, 5, -2)]\nprint(\"含负权的 DAG 最短路径：\", dag_shortest(6, edges, 1))\n# 项目排期：把权重取负做最短路 = 最长路（关键路径）\nneg = [(u, v, -w) for u, v, w in [(0,1,3),(0,2,2),(1,3,4),(2,3,1),(3,4,2)]]\nprint(\"关键路径长度（任务 0→...→4）：\", -dag_shortest(5, neg, 0)[4])\n# 输出：含负权的 DAG 最短路径： [inf, 0, 2, 6, 5, 3]\n# 输出：关键路径长度（任务 0→...→4）： 9\n```\n\n把权重取负再求最短路，就是**最长路**。这在 DAG 上是成立的（一般图里最长路是 NP 难问题）。项目管理里的**关键路径 (critical path)**，即完成整个项目至少要多久，就是任务依赖图（DAG）上的最长路径。**这也是下一节动态规划的预告：DP 的「状态转移」，本质上就是在一个隐含的 DAG 上按拓扑序求最优路径。**\n\n**怎么选算法（背这张表就够了）：**\n\n| 情形 | 算法 | 时间 |\n|---|---|---|\n| 边权相同（无权图） | BFS | $O(V+E)$ |\n| 边权 $\\ge0$ | Dijkstra | $O((V+E)\\log V)$ |\n| 有负权边 | Bellman-Ford | $O(VE)$ |\n| DAG（允许负权） | 拓扑序松弛 | $O(V+E)$ |\n| 所有点对 | Floyd-Warshall | $O(V^3)$ |"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "obWXjtg0L64",
+   "title": "视频三：Bellman-Ford in 5 minutes — Step by step example（Michael Sambol）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "think",
+   "q": "一个城市有一些道路，要找一个办法让所有路口连通，总修建成本最小（MST）；另一个问题是从家到公司的最短路径。这两个问题的答案「树」会是同一棵吗？举一个反例。",
+   "a": "**不一定。** 取三个点 $A,B,C$，边：$AB=2,\\ BC=2,\\ AC=3$。MST 是 $\\{AB, BC\\}$，总权重 4。但以 $A$ 为起点的**最短路径树**：到 $B$ 的最短是 2（经 $AB$），到 $C$ 的最短是 3（直接 $AC$，因为经 $B$ 要 4）。最短路径树是 $\\{AB, AC\\}$，总权重 5，比 MST 更重。\n\n两个问题的目标不同：MST 要求**所有边加起来最小**，最短路径树要求**每个点到起点的距离最小**。这也是为什么「铺光缆」用 MST，「导航」用 Dijkstra。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "负环",
+     "negative cycle",
+     "权重之和为负的环；存在时最短路径无意义"
+    ],
+    [
+     "关键路径",
+     "critical path",
+     "任务依赖 DAG 上的最长路径，决定项目最短工期"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "Bellman-Ford 把所有边松弛 $V-1$ 遍，原因是？",
+    "options": [
+     "不含环的最短路径最多有 $V-1$ 条边，每遍至少多确定一条边",
+     "为了让时间复杂度变成 $O(V^2)$",
+     "图里最多有 $V-1$ 个环",
+     "堆的大小最多是 $V-1$"
+    ],
+    "answer": 0,
+    "explain": "第 $k$ 遍后，所有最多含 $k$ 条边的最短路径都已正确。最短路径（无环）最多含 $V-1$ 条边，所以 $V-1$ 遍足够。"
+   },
+   {
+    "q": "如何用 Bellman-Ford 检测**负环**？",
+    "options": [
+     "看最终距离是否为负数",
+     "统计边数",
+     "看是否有负权边",
+     "再多做第 $V$ 遍，若还能松弛成功，则存在从起点可达的负环"
+    ],
+    "answer": 3,
+    "explain": "没有负环时，$V-1$ 遍后所有距离已稳定；还能更新说明路径可以靠绕负环无限变短。有负权边不一定有负环。"
+   },
+   {
+    "q": "在**有向无环图（DAG）**上求单源最短路径（允许负权），最合适的做法是？",
+    "options": [
+     "Bellman-Ford，因为它是唯一能处理负权的",
+     "按拓扑序依次松弛每个顶点的出边，$O(V+E)$",
+     "Dijkstra",
+     "Floyd-Warshall"
+    ],
+    "answer": 1,
+    "explain": "拓扑序保证处理 $u$ 时所有指向 $u$ 的边都已松弛过，不需要堆，也不怕负权。"
+   }
+  ]
+ }
+}

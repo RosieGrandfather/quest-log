@@ -71,8 +71,8 @@ def validate_unit(unit, n_questions=10):
         for s in [q['q'], q['explain'], *q['options']]: _check_math(s, w, e)
     if qs:
         dist = Counter(q['answer'] for q in qs)
-        if max(dist.values()) > len(qs) * 0.4: e.append(f'{uid}: 正确答案太集中 {dict(dist)}')
-        if len(dist) < 3: e.append(f'{uid}: 正确答案只用了 {len(dist)} 个位置 {dict(dist)}')
+        if max(dist.values()) > (len(qs) * 0.4 if len(qs) >= 10 else (len(qs) + 1) // 2): e.append(f'{uid}: 正确答案太集中 {dict(dist)}')
+        if len(dist) < min(3, len(qs)): e.append(f'{uid}: 正确答案只用了 {len(dist)} 个位置 {dict(dist)}')
     for j, b in enumerate(unit['blocks']):
         for k in ('md', 'q', 'a'):
             if k in b: _check_math(b[k], f'{uid} 块{j+1}', e)

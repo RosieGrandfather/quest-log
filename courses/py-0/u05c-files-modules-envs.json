@@ -1,0 +1,106 @@
+{
+ "id": "u05c",
+ "title": "文件、模块与环境（3/3）",
+ "en": "Files, Modules & Environments (3/3)",
+ "minutes": 30,
+ "objectives": [
+  "理解 **虚拟环境 (virtual environment)** 与包管理（`venv`、`pip`、`requirements.txt`、`uv`）：为什么每个项目要有自己的环境，怎样复现别人的环境"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「文件、模块与环境」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：命令行程序与环境变量（约 10 分钟） → 虚拟环境与包管理（约 15 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport csv, io\n\ntext = \"name,score\\nAnn,90\\nBob,85\\nCy,\\n\"\nrows = list(csv.DictReader(io.StringIO(text)))       # DictReader：按列名取值（这里用 StringIO 代替文件）\nprint(rows)\nprint(\"读出来都是字符串：\", type(rows[0][\"score\"]).__name__)\nscores = [int(r[\"score\"]) for r in rows if r[\"score\"]]   # 类型要自己转，缺失值要自己处理\nprint(scores, sum(scores) / len(scores))\n```\n\n### 命令行程序与环境变量\n\n> **标准定义 · 命令行参数与环境变量**\n>\n> **`sys.argv`** 是运行脚本时命令行里的各个词组成的列表（第 0 项是脚本名）。标准库 **`argparse`** 在此基础上提供：**位置参数**、**可选参数**（`--lr 0.01`）、类型转换、默认值、自动生成的 `--help` 说明与错误提示。**环境变量 (environment variable)** 是操作系统传给进程的一组键值对，`os.environ` 读取；常用来放**不适合写进代码的配置**，如 API 密钥、数据路径。\n>\n> *English: sys.argv holds the command-line words; argparse adds typed, documented options with defaults and automatic --help. Environment variables are key-value pairs passed by the OS, read via os.environ, and are used for secrets and deployment-specific config.*\n\n**白话版：** 命令行参数是「**每次运行时告诉程序怎么做**」（学习率多少、训多少轮），环境变量是「**这台机器 / 这个环境的设定**」（密钥是什么）。把它们从代码里分离出来，同一份代码才能不改动地跑不同的实验、在不同的机器上跑。\n\n**用 `argparse` 声明参数。** 我们用一个列表模拟用户在终端里输入的内容。（`p.add_argument(...)` 是 `p` 这个对象的方法，一次声明一个参数，用关键字参数 `help=`、`default=` 等设置它；`type=float` 是把「转换函数」交给 `argparse`，它会对命令行里的字符串调用 `float(...)`，和 `float(\"0.01\")` 是一回事，类型转换在「变量、数据类型与字符串」讲过；`\"--no-shuffle\"` 在结果里变成属性 `no_shuffle`，连字符换成下划线；这里的 `args` 是 arguments（参数）的缩写，和函数里的 `*args` 是同一个词，只是这里它是一个装着解析结果的对象。）\n\n```python\nimport argparse\n\ndef build_parser():\n    p = argparse.ArgumentParser(prog=\"train.py\", description=\"训练脚本\")\n    p.add_argument(\"data\", help=\"数据文件路径\")                              # 位置参数\n    p.add_argument(\"--lr\", type=float, default=1e-3, help=\"学习率\")        # 可选参数\n    p.add_argument(\"--epochs\", type=int, default=10)\n    p.add_argument(\"--no-shuffle\", action=\"store_true\")                    # 开关\n    return p\n\np = build_parser()\nargs = p.parse_args([\"train.csv\", \"--lr\", \"0.01\", \"--no-shuffle\"])        # 用列表模拟终端里输入的内容\nprint(args)\nprint(args.data, args.lr, args.epochs, args.no_shuffle)\n# 输出：Namespace(data='train.csv', lr=0.01, epochs=10, no_shuffle=True)\n# 输出：train.csv 0.01 10 True\n```\n\n**读输出：** `parse_args` 把命令行转成一个对象：位置参数 `data` 是 `train.csv`；`--lr 0.01` 已经被转成了 `float`；没有写的 `--epochs` 用了默认值 10；开关 `--no-shuffle` 出现了，所以是 `True`。**所有 ML 项目的训练脚本几乎都是这个结构**：`python train.py --lr 0.01 --epochs 5`。\n\n**参数不对时：** （`with contextlib.redirect_stderr(msg):` 是上下文管理器，把标准错误临时改道进 `msg` 这个假文件，离开时恢复；`except SystemExit as e` 接住 `argparse` 退出时抛出的 `SystemExit`，`e.code` 是退出码。）\n\n```python\nimport contextlib\n\nmsg = io.StringIO()\ntry:\n    with contextlib.redirect_stderr(msg):            # argparse 把错误说明打印到标准错误\n        p.parse_args([\"train.csv\", \"--epochs\", \"abc\"])\nexcept SystemExit as e:\n    print(\"argparse 打印用法说明后退出（SystemExit），退出码\", e.code)\nprint(msg.getvalue().strip().splitlines()[-1])\n# 输出：argparse 打印用法说明后退出（SystemExit），退出码 2\n# 输出：train.py: error: argument --epochs: invalid int value: 'abc'\n```\n\n**读输出：** 类型错了（`--epochs abc` 不是整数），`argparse` 会打印用法说明和一句清楚的错误信息，然后以 `SystemExit`（退出码 2）退出，而不是让程序在后面莫名其妙地崩溃。\n\n**环境变量：配置与密钥。**\n\n```python\nimport os, sys\n\nos.environ[\"MY_API_KEY\"] = \"demo-not-a-real-key\"     # 实际中由终端或 .env 提供，不写进代码\nprint(os.environ.get(\"MY_API_KEY\"), os.environ.get(\"NOT_SET\", \"默认值\"))\nprint(\"sys.argv 是一个：\", type(sys.argv).__name__)\n# 输出：demo-not-a-real-key 默认值\n# 输出：sys.argv 是一个： list\n```\n\n**读输出：** `os.environ` 像一个字典：设置过的 `MY_API_KEY` 能取出来，没设置的 `NOT_SET` 用 `.get` 给了默认值 `默认值`（`.get` 就是「容器：列表、元组、字典与集合」里讲过的字典方法）；`sys.argv` 是一个列表。**绝对不要把密钥写进代码、更不要提交到 Git**：用环境变量（或 `.env` 文件，并把它加进 `.gitignore`）。（这里的 `os.environ[...] = ...` 只是为了演示，真正的密钥由终端或 `.env` 提供。）\n\n### 虚拟环境与包管理\n\n> **标准定义 · 虚拟环境 (virtual environment) 与包管理**\n>\n> **第三方包**是别人写好的库（NumPy、PyTorch……），用包管理器安装：`pip install numpy`。**虚拟环境**是一个**独立的文件夹**，里面有自己的 Python 解释器与自己安装的包，**每个项目一个环境**，互不干扰。创建：`python -m venv .venv`，激活后（Windows：`.venv\\Scripts\\activate`；macOS / Linux：`source .venv/bin/activate`）`pip install` 就装进这个环境。**`requirements.txt`** 记录依赖及版本（`pip freeze > requirements.txt` 生成，`pip install -r requirements.txt` 复现）。**`uv`** 是更快的新一代工具，把虚拟环境、依赖安装与锁定合在一起（`uv venv`、`uv add numpy`、`uv run train.py`）。\n>\n> *English: Third-party packages are installed with pip. A virtual environment is an isolated directory with its own interpreter and packages, one per project. requirements.txt records dependencies; uv is a fast modern alternative combining environment and dependency management.*\n\n**白话版：「每个项目一间独立的工作室」。** 如果所有项目共用一套全局安装的包：项目 A 需要 NumPy 1.x、项目 B 需要 NumPy 2.x，只能有一个赢；升级一个包，另一个项目就坏了。每个项目一个虚拟环境，各装各的，互不影响，删掉环境文件夹就干净了。\n\n一个典型的流程（在终端里，这些命令改变的是你电脑上的环境，所以只展示、不在网页里运行）：\n\n```bash\npython -m venv .venv                  # 1. 创建环境（只做一次）\nsource .venv/bin/activate             # 2. 激活（Windows：.venv\\Scripts\\activate）\npip install numpy pandas              # 3. 装依赖（现在装进了 .venv）\npip freeze > requirements.txt         # 4. 记录依赖及版本\n# ……换一台机器，或者别人想复现你的环境：\npip install -r requirements.txt\n```\n\n**读这五行：** 第 1 步在项目目录里建一个 `.venv` 文件夹，里面有一份独立的 Python；第 2 步「激活」之后，终端里的 `python` 和 `pip` 都指向这个环境（命令行前面会多出 `(.venv)`）；第 3 步装的包只进这个环境；第 4 步把「装了什么、什么版本」写进 `requirements.txt`；最后一步是别人（或你换了电脑之后）按照这份清单复现同样的环境。\n\n**几条经验：** **一**，**每个项目一个虚拟环境**，不要往全局 Python 里装包；**二**，`requirements.txt`（或 `pyproject.toml`）要提交到 Git，而虚拟环境文件夹**不要提交**（写进 `.gitignore`）；**三**，**固定版本**（`numpy==1.26.4`）能让结果可复现，ML 结果受库版本影响的事很常见；**四**，遇到 `ModuleNotFoundError`，先检查「**现在运行的是不是装了这个包的那个 Python**」（`which python` / `python -c \"import sys; print(sys.executable)\"`）：装在了 A 环境、却在 B 环境里运行，是最常见的原因；**五**，GPU 版本的 PyTorch 对 CUDA 版本有要求，要按官网给的命令安装；**六**，需要可复现的环境时，还有 **conda**（数据科学里常用）与 **Docker**（连操作系统层一起打包）可选，思路相同。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Y21OR1OPC9A",
+   "title": "视频三：Python Virtual Environments - Full Tutorial for Beginners（Tech With Tim）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### 这一节你要带走的三句话\n\n1. **文件用 `with open(..., encoding=\"utf-8\")`，路径用 `pathlib`**；大文件逐行迭代；JSON 适合层次化数据（类型对应有损），CSV 读出来全是字符串。\n2. **模块 = `.py` 文件，包 = 带 `__init__.py` 的文件夹**；导入只执行一次；`if __name__ == \"__main__\"` 让同一个文件既能被导入又能直接运行；命令行参数交给 `argparse`，密钥放环境变量。\n3. **每个项目一个虚拟环境，依赖写进 `requirements.txt`（固定版本）**，`ModuleNotFoundError` 通常是「运行的 Python 不是装包的那个」。"
+  },
+  {
+   "type": "think",
+   "q": "同事发来一个项目，你 `pip install -r requirements.txt` 之后运行，仍然报 `ModuleNotFoundError: No module named 'torch'`。你会怎么排查？",
+   "a": "按这个顺序：\n\n1. **你装包用的 Python 和运行用的 Python 是不是同一个？** 终端里 `which python`（Windows：`where python`）与 `which pip`，或者用 `python -m pip install ...`（**保证装到的是这个 `python` 对应的环境**）；在 Python 里 `import sys; print(sys.executable)` 看当前解释器；\n2. **虚拟环境有没有激活？** 命令行前面有没有 `(.venv)`；在 VS Code / PyCharm 里，**项目选择的解释器**是不是这个环境（IDE 的运行按钮可能用的是另一个 Python）；\n3. **安装是不是真的成功了？** 往上翻看有没有报错（尤其是 `torch` 这类大包，可能因为网络、磁盘空间、Python 版本不兼容而失败）；`pip list | grep torch`；\n4. `requirements.txt` 里**有没有 `torch`**（有的项目要求按官网命令单独安装 GPU 版）。\n\n第 1 点是占绝大多数的原因。总结：**「找不到模块」几乎总是环境问题，不是代码问题。**"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "`argparse`",
+     "argparse",
+     "解析命令行参数的标准库"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Think Python 3e（Downey）— 第 13 章 Files and Databases",
+   "url": "https://allendowney.github.io/ThinkPython/chap13.html",
+   "note": "本节大纲依据之一，文件读写与路径，CC BY-NC-SA 4.0"
+  },
+  {
+   "title": "Python Tutorial: Pathlib - The Modern Way to Handle File Paths（Corey Schafer，约 35 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=yxa-DJuuTBI",
+   "note": "pathlib 的完整演示，需要大量处理文件路径时看"
+  },
+  {
+   "title": "Python Tutorial: Working with JSON Data（Corey Schafer，约 21 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=9N6a-VLBa2I",
+   "note": "json 模块的演示，含从网络读取数据"
+  },
+  {
+   "title": "Python Tutorial: UV - A Faster, All-in-One Package Manager（Corey Schafer，约 27 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=AMdG7IjgSPM",
+   "note": "uv 的完整介绍，可以替代 pip 与 venv"
+  },
+  {
+   "title": "Python 官方教程：Modules 与 Virtual Environments",
+   "url": "https://docs.python.org/3/tutorial/modules.html",
+   "note": "模块、包与导入的官方说明；同一教程里有 venv 与 pip 的章节"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个文件夹要被 Python 当作**包**使用，通常需要包含？",
+    "options": [
+     "`main.py`",
+     "`config.json`",
+     "`setup.exe`",
+     "`__init__.py`"
+    ],
+    "answer": 3,
+    "explain": "含 `__init__.py` 的文件夹是常规包，导入包时它会被执行，可以放包的版本号与对外暴露的名字。"
+   },
+   {
+    "q": "每个项目使用独立的**虚拟环境**，主要的原因是？",
+    "options": [
+     "让 Python 运行更快",
+     "不同项目可以安装各自需要的包与版本，互不干扰，并且容易复现",
+     "为了节省硬盘",
+     "因为全局环境不能装包"
+    ],
+    "answer": 1,
+    "explain": "否则项目 A 与 B 需要不同版本的同一个库时只能有一个能正常运行，升级一个包还可能破坏另一个。"
+   },
+   {
+    "q": "装了包，运行时却报 `ModuleNotFoundError`，**最常见**的原因是？",
+    "options": [
+     "代码有语法错误",
+     "包太大",
+     "运行代码用的 Python 与安装包用的不是同一个环境",
+     "需要重启电脑"
+    ],
+    "answer": 2,
+    "explain": "用 `python -m pip install` 保证装到当前 `python` 对应的环境；检查 `sys.executable` 与 IDE 选择的解释器。"
+   }
+  ]
+ }
+}

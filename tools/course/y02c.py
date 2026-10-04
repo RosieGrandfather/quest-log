@@ -64,6 +64,18 @@ print("两种写法结果一样：", a == r)
 
 
 # ───── 迭代器 ─────
+C_FORWHAT = nb.cell('''
+# for x in 东西：x 是「东西」依次交出来的每一个元素
+for ch in "abc":                         # 字符串 → 一个个字符
+    print("字符", ch)
+for key in {"a": 1, "b": 2}:             # 字典 → 它的键
+    print("键", key)
+for k, v in {"a": 1, "b": 2}.items():    # .items() → 一个个 (键, 值) 元组，再解包给 k, v
+    print("键值对", k, v)
+for i in range(3):                       # range → 整数
+    print("数", i)
+''')
+
 C_ITER = nb.cell('''
 # 可迭代对象 (iterable)：能被 for 遍历；迭代器 (iterator)：记得自己遍历到哪了
 lst = [10, 20, 30]
@@ -204,7 +216,7 @@ print(list(chain([1, 2], [3], "ab")))
 print(list(product([0, 1], repeat=2)))                 # 笛卡尔积
 print(list(combinations("ABC", 2)))                   # 不计顺序的选 2 个
 print(len(list(permutations(range(4)))), "= 4! =", 4*3*2*1)
-print(list(accumulate([1, 2, 3, 4])))                 # 前缀和（上一节讲过的思路）
+print(list(accumulate([1, 2, 3, 4])))                 # 前缀和：每一项是「到这里为止的累加」
 print(list(zip(count(1), "abc")))                     # count 是无限计数器
 ''')
 

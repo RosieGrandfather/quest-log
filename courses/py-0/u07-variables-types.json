@@ -1,0 +1,140 @@
+{
+ "id": "u07",
+ "title": "变量、数据类型与字符串（1/3）",
+ "en": "Variables, Types & Strings (1/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解 **变量 (variable)** 是「给值贴标签」而不是数学里的等式；会赋值、改名、做 **多重赋值与交换 (multiple assignment & swap)**，知道 `a, b = 1, 2` 里是**两个**变量",
+  "分清变量命名的**硬性规定**（字母数字下划线、不能数字开头、区分大小写、不能用 **关键字 (keyword)**、不能有空格）和**约定**（`snake_case`、有意义的名字）"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n写程序，是在跟计算机说「把这个数据存起来、算一算、再显示出来」。这一节讲的是所有 Python 代码都绕不开的**最基础的词汇**：数据存在哪里（**变量**）、数据有哪几种（**类型**）、怎么对它们做运算，以及最常处理的一种数据：**文字（字符串）**。后面几节的内容（容器、循环、函数、类）都是用这些词汇搭起来的，这一节的目标是让你拿到任何一行 Python，都能**一个词一个词地读懂它**。\n\n**学完它你就能看懂这几件事：**\n\n- `lo, hi = 3, 9` 和 `a, b = b, a` 这种一行赋给多个变量的写法，以及为什么 `a, b` 是**两个**变量、变量名里为什么不能有空格；\n- `s.upper()`、`name.strip().title()`、以后见到的 `d.get(...)`、`x.shape` 里**点号**到底是什么意思，遇到不认识的点号用法时怎么自己查；\n- 报错里的 `TypeError`、`ValueError`、`NameError` 各是什么意思，`0.1 + 0.2` 为什么不是 `0.3`，`f\"{price:,.2f}\"` 这类格式怎么读；\n- `print`、`len`、`type`、`range`、`sum`、`sorted`、`eval` 这些「不用定义就能用」的函数是从哪来的。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 40 分钟）**：一行代码长什么样：语句、表达式、调用（约 5 分钟） → 注释与缩进（约 5 分钟） → 变量：给值贴标签（约 5 分钟） → 多重赋值与交换：`a, b = 1, 2`（约 5 分钟） → 命名规则：硬性规定 vs 约定（约 5 分钟） → 类型：每个值都有「种类」（约 5 分钟） → 运算符：算术、比较、逻辑（约 5 分钟） → 类型转换，以及报错长什么样（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 一行代码长什么样：语句、表达式、调用\n\n> **标准定义 · 语句与表达式 (statement & expression)**\n>\n> **表达式 (expression)** 是能算出一个**值 (value)** 的一小段代码，如 `7 * 6`、`\"OMRON\" + \"-1\"`、`len(\"abc\")`。**语句 (statement)** 是让 Python 做一件事的一整行（或几行）代码，如赋值、`print(...)`。Python 把程序**从上到下、一行一行**地执行。\n>\n> *English: An expression is a piece of code that evaluates to a value; a statement is an instruction that does something. Python runs a program top to bottom, one statement at a time.*\n\n**白话版：「表达式是名词短语，语句是一整句话」。** `7 * 6` 只是「42 这个值」，`print(7 * 6)` 才是一句完整的命令：「显示 42」。\n\n**问题一：怎么让 Python 说点什么？**\n\n```python\nprint(\"Hello, 仓库\")            # 调用 print：把括号里的东西显示出来\nprint(7 * 6)                   # 括号里可以是一个要先算的式子\nprint(\"箱数：\", 7, \"每箱\", 6)   # 多个东西用逗号隔开，显示时中间自动加一个空格\n# 输出：Hello, 仓库\n# 输出：42\n# 输出：箱数： 7 每箱 6\n```\n\n**读输出：** `print(...)` 是**函数调用 (call)**：名字 `print` 加一对括号，括号里的东西叫**参数 (argument)**，就是交给它处理的材料。「调用」的意思就是「叫它来干活」。第一行显示 `Hello, 仓库`（引号不显示）；第二行 `print(7 * 6)` 先把括号里的表达式算出来，显示 `42`；第三行给了四个参数，用逗号隔开，显示时中间自动补一个空格，得到 `箱数： 7 每箱 6`。你会一直看到这种「名字 + 括号」的写法，函数怎么自己写，在「函数、作用域与递归」那一节讲，现在先会**用**。\n\n**问题二：`print` 显示的和「最后一行的值」有什么不同？**\n\n```python\nprint(\"OMRON Healthcare\")      # print 显示的是内容本身\n\"OMRON Healthcare\"             # 最后一行的值：网页会替你显示，带引号 = 这是字符串\n# 输出：OMRON Healthcare\n# 输出：'OMRON Healthcare'\n```\n\n**读输出：** 第一行 `OMRON Healthcare` 没有引号：`print` 显示的是文字内容本身。第二行 `'OMRON Healthcare'` **带引号**：这是网页（和 Jupyter 一样）把**最后一行表达式的值**直接显示出来，用引号告诉你「这是一个字符串」。注意只有**最后一行**会这样，上面几行单独写一个表达式，值算完就丢了。本课所有「输出」里，带引号的是字符串本身，不带引号的是 `print` 的结果。\n\n### 注释与缩进\n\n> **标准定义 · 注释 (comment) 与缩进 (indentation)**\n>\n> **注释**是以 `#` 开头、一直到行末的文字，Python 完全忽略，只写给人看。**缩进**是一行开头的空格数。普通代码从**最左边顶格**写；以后讲 `if`、`for`、函数时，Python 用「缩进多少」来表示「这几行属于同一块」。\n>\n> *English: A comment starts with # and is ignored by Python. Indentation is the whitespace at the start of a line; Python uses it to group statements into blocks.*\n\n```python\n# 这一行是注释：Python 完全忽略它，写给人看的\nprint(12.5 * 4)    # 行尾也能写注释：单价 × 数量\n# print(999)       # 在一行前面加 # ，这行就「暂时不运行」了\n# 输出：50.0\n```\n\n**读输出：** 只显示了 `50.0`（12.5 × 4，注意 `12.5` 是小数，所以结果是 `50.0`）。第一行注释被忽略；第二行行尾的注释也被忽略；第三行前面加了 `#`，整行被「注释掉」，所以 `999` 没有显示。这是调试时最常用的小技巧：想让某一行暂时不运行，在前面加 `#`。\n\n**缩进是 Python 的硬性规则，不是随便排版：** 现在只需要记住一点，**不要无缘无故在行首加空格**：\n\n```text\nprint(\"第一行\")\n    print(\"第二行\")    # 这一行凭空多了 4 个空格\n\n# Python 报错：IndentationError: unexpected indent\n```\n\n**读输出：** （这类错误整段代码根本不会开始运行，所以这个块只展示，没有「运行」按钮。）`IndentationError: unexpected indent`：「出现了不该有的缩进」。Python 在运行之前先通读全部代码，发现第 2 行莫名其妙缩进了，整段代码一行都没有运行（所以连「第一行」也没有显示）。缩进怎么正确使用，「条件、循环与读懂报错」那一节会天天用到。\n\n### 变量：给值贴标签\n\n> **标准定义 · 变量与赋值 (variable & assignment)**\n>\n> **变量 (variable)** 是一个**名字**，指向内存里的某个值。**赋值语句 (assignment)** `name = expression` 的执行顺序是：**先算出右边表达式的值，再让左边的名字指向这个值**。给已有的名字再次赋值，就是让它改指向另一个值。\n>\n> *English: A variable is a name that refers to a value. In `name = expression`, Python first evaluates the right-hand side, then binds the name to the result.*\n\n**白话版：「贴标签，不是装箱子」。** 很多人以为变量是一个「盒子，把值装进去」。更准确的画面是：值是一件货物，变量名是一张**标签**，贴在货物上；可以把标签撕下来贴到别的货物上，也可以同一件货物贴两张标签。变量（variable）这个词来自数学里的「变量」，意思是「它指向的值**可以变**」，别的和数学的变量没有关系。\n\n**问题一：赋值到底做了什么？**\n\n```python\nqty = 24          # 把名字 qty 贴到整数 24 上\nprint(qty)\nqty = 30          # 把标签撕下来，贴到另一个值 30 上\nprint(qty)\nqty = qty + 6     # 先算右边 30 + 6，再把 qty 贴到结果 36 上\nprint(qty)\n# 输出：24\n# 输出：30\n# 输出：36\n```\n\n**读输出：** 依次显示 `24`、`30`、`36`。第一次 `qty = 24` 创建名字 `qty` 并指向 24；第二次 `qty = 30` 让它改指向 30；第三次 `qty = qty + 6` 是最值得停一下的一行：**先算右边**，此刻 `qty` 指着 30，所以右边是 `30 + 6 = 36`，**再**把 `qty` 贴到 36 上。所以 **`=` 不是数学里的「等于」**：数学里 `qty = qty + 6` 是一个永远不成立的方程，在 Python 里它是一个「更新」动作。读 `=` 的时候，请在心里把它读成「**指向 / 贴到**」，或者「**变成**」。\n\n**问题二：把一个变量赋给另一个变量，它们会一直联动吗？**\n\n```python\na = 5\nb = a          # b 贴到「a 此刻指着的值」5 上，不是「b 永远等于 a」\na = 10         # 只把 a 挪走了，b 不受影响\nprint(a, b)\n# 输出：10 5\n```\n\n**读输出：** `10 5`。`b = a` 的意思是「让 `b` 也指向 `a` 现在指着的那个值（5）」，之后 `a = 10` 只是把 `a` 这张标签挪到了 10 上，`b` 还留在 5 上。**变量之间不是等式，不会联动**。\n\n**问题三：「`qty = qty + 1`」太常见了，有没有简写？**\n\n```python\nstock = 100\nstock += 20       # 等价于 stock = stock + 20\nstock -= 5        # 等价于 stock = stock - 5\nstock *= 2        # 等价于 stock = stock * 2\nprint(stock)\n# 输出：230\n```\n\n**读输出：** `230`。`+=`、`-=`、`*=` 叫**增量赋值 (augmented assignment)**，`stock += 20` 就是 `stock = stock + 20` 的简写：100 → 120 → 115 → 230。\n\n**问题四：用一个没有赋过值的名字会怎样？**\n\n```python\nprint(price_per_box)      # 这个名字还没有被赋过值\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    print(price_per_box)      # 这个名字还没有被赋过值\n# 输出：NameError: name 'price_per_box' is not defined\n```\n\n**读输出：** 最后一行 `NameError: name 'price_per_box' is not defined`：「名字 `price_per_box` 没有被**定义**」。**定义 (define)** 就是第一次给这个名字赋值。**Python 运行到哪一行，才知道到哪一行为止有哪些名字**，用之前必须先赋值。（这也是为什么本页的代码块要**按顺序**运行：后面的块用到前面定义的变量，如果前面的块没跑，就会得到 `NameError`。后面讲函数时，「先定义、后调用」是同一个道理。）\n\n```python\nprice_per_box = 18.5      # 第一次赋值，名字才算「定义」了\nprint(price_per_box * 4)\n# 输出：74.0\n```\n\n**读输出：** `74.0`（18.5 × 4）。赋过值之后，这个名字就能用了。\n\n### 多重赋值与交换：`a, b = 1, 2`\n\n**常见疑问：「`lo, hi = 3, 9` 里 `lo, hi` 是一个变量吗？变量名不是不能有空格吗？」** 答案：它是**两个变量** `lo` 和 `hi`，**逗号**把它们分开（逗号不属于变量名，空格也只是为了好看，写成 `lo,hi=3,9` 完全一样）。\n\n> **标准定义 · 多重赋值（解包）(multiple assignment / unpacking)**\n>\n> 等号左边写**用逗号隔开的几个名字**，右边写**同样个数的值**（也可以是一个装着这些值的整体），Python 会**按位置一一对应**地赋值。把一个整体「拆开」分给多个名字，叫**解包 (unpacking)**。\n>\n> *English: Writing several names separated by commas on the left of `=` assigns the values on the right to them by position. Splitting a collection of values into names is called unpacking.*\n\n```python\nlo, hi = 3, 9        # 左边两个变量 lo 和 hi，右边两个值，按位置一一对应\nprint(lo)\nprint(hi)\n# 输出：3\n# 输出：9\n```\n\n**读输出：** `3` 和 `9`：`lo` 对应第一个值 3，`hi` 对应第二个值 9，按位置对应，名字的顺序决定谁拿到谁。\n\n**用多重赋值交换两个变量：**\n\n```python\nlo, hi = hi, lo      # 右边先整体算好 (9, 3)，再按位置贴回去：交换\nprint(lo, hi)\n# 输出：9 3\n```\n\n**读输出：** `9 3`。上一块之后 `lo` 是 3、`hi` 是 9。这一行 `lo, hi = hi, lo`：**右边先整体算好** `(9, 3)`（此时 `hi` 是 9，`lo` 是 3），**再**按位置贴回去：`lo` 变成 9，`hi` 变成 3。如果用两行 `lo = hi`、`hi = lo` 来写，第一行之后 `lo` 和 `hi` 都指向 9，原来的 3 就丢了，所以别的语言里交换要借助第三个变量；在 Python 里，一行搞定。\n\n**右边那一串到底是什么？**\n\n```python\npair = 24, 6                 # 右边用逗号隔开的一串，本身就是一个整体\nprint(pair, type(pair))\nbox_qty, per_box = pair      # 再按位置拆给两个变量\nprint(box_qty, per_box)\n# 输出：(24, 6) <class 'tuple'>\n# 输出：24 6\n```\n\n**读输出：** `(24, 6) <class 'tuple'>`：`24, 6` 用逗号隔开的一串，**本身就是一个值**，类型叫 **元组 (tuple)**（名字来自数学里的「二元组、三元组……n 元组」：n 个东西组成的有序一组），显示时带括号。「容器」那一节会细讲。第二行 `24 6`：再把这个元组解包给两个变量。以后你会在函数里看到 `return a, b, c`，它返回的就是一个三元组；也会看到 `lo, hi = some_function(...)`，意思是「函数返回一个二元组，一次拆给 `lo` 和 `hi`」。这一节的 `divmod` 就是一个现成的例子，运算符那一段马上见到。\n\n**左右个数必须对得上：**\n\n```python\na, b = 1, 2, 3     # 左边 2 个名字，右边 3 个值：对不上\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 1, in <module>\n# 输出：    a, b = 1, 2, 3     # 左边 2 个名字，右边 3 个值：对不上\n# 输出：ValueError: too many values to unpack (expected 2)\n```\n\n**读输出：** `ValueError: too many values to unpack (expected 2)`：「要拆成 2 个，但值太多了」。左边 2 个名字、右边 3 个值，对不上。报错的最后一行总是最重要的：先是**报错的种类**（`ValueError`），冒号后面是**具体原因**。\n\n### 命名规则：硬性规定 vs 约定\n\n给变量起名时，有两类要求，**要分清**：**硬性规定**是 Python 语法，违反了会直接报错；**约定**是大家的习惯，违反了程序照样跑，但别人读起来会很累，是否遵守是「专业不专业」的区别。\n\n> **硬性规定（违反 = 报错）**\n>\n> 1. 只能包含**字母、数字、下划线 `_`**（汉字等 Unicode 字母也算「字母」）；**不能有空格**，也不能有 `-`、`.`、`!` 这类符号。\n> 2. **不能以数字开头**（`2nd_box` 不行，`box2` 可以）。\n> 3. **区分大小写**：`qty`、`Qty`、`QTY` 是三个不同的名字。\n> 4. **不能用关键字 (keyword)**：关键字是 Python 语法本身占用的词，如 `class`、`if`、`for`、`True`。\n>\n> **约定（违反 = 照样跑，但会被人皱眉）**\n>\n> 1. 用 **`snake_case`**（小写字母，单词之间用下划线，像一条蛇趴在地上）：`order_qty`、`price_per_box`。\n> 2. 名字要**有意义**：`qty` 比 `x` 好，`price_per_box` 比 `p` 好；\n> 3. **常量**（程序里不打算改的值）习惯全大写：`MAX_BOX = 24`；\n> 4. 不要用汉字当变量名，也不要用 `l`、`O` 这类容易和数字混淆的单字母；\n> 5. 不要拿**内置函数的名字**（`max`、`sum`、`len`、`list`、`type`、`str`……）做变量名，下面会看到为什么。\n>\n> *English: Hard rules (enforced by Python): letters, digits and underscores only; no spaces; cannot start with a digit; case-sensitive; no keywords. Conventions (PEP 8): snake_case, meaningful names, UPPER_CASE for constants.*\n\n**先看一组合法的名字：**\n\n```python\ntotal_qty = 120        # 约定的写法：小写字母 + 下划线（snake_case）\nTotal_qty = 7          # 合法，但和上一行是两个不同的名字（区分大小写）\nbox2 = 5               # 数字可以出现在中间或末尾\n_tmp = 0               # 下划线可以开头\n数量 = 8               # 汉字也是「字母」，合法（但不建议用）\nprint(total_qty, Total_qty, box2, _tmp, 数量)\n# 输出：120 7 5 0 8\n```\n\n**读输出：** `120 7 5 0 8`。`total_qty` 和 `Total_qty` 是**两个不同的变量**（区分大小写）；`box2` 里的数字在末尾没问题；`_tmp` 以下划线开头没问题；`数量` 也合法，因为汉字算「字母」，但约定上不推荐，因为在不同的输入法、键盘和别人的电脑上不方便。\n\n**再看三条硬性规定被违反时的样子：**\n\n```text\nmy qty = 3         # 名字里有空格\n\n# Python 报错：SyntaxError: invalid syntax\n```\n\n**读输出：** `SyntaxError: invalid syntax`。**为什么不能有空格？** 因为 Python 靠空格把代码拆成一个个「词」：`my qty = 3` 会被读成两个词 `my` 和 `qty` 并排放在一起，Python 不知道这是什么意思。一个变量名必须是**一个词**，想表达两个单词，用下划线连起来：`my_qty`。（同理，`lo, hi = ...` 里的逗号和空格把 `lo`、`hi` 拆成了两个词，每个词是一个独立的变量。）`SyntaxError` 叫**语法错误**，是「这句话不合语法」，Python 在运行前就拒绝了。\n\n```text\n2nd_box = 5        # 以数字开头\n\n# Python 报错：SyntaxError: invalid decimal literal\n```\n\n**读输出：** `SyntaxError: invalid decimal literal`：以数字开头，Python 以为你要写一个数字（`2`），后面跟的 `nd_box` 就不合语法了。\n\n```text\nclass = 1          # class 是 Python 的关键字\n\n# Python 报错：SyntaxError: invalid syntax\n```\n\n**读输出：** `SyntaxError: invalid syntax`：`class` 是关键字，Python 在等它后面跟一个类的定义（那是「类与对象」那一节的内容），而不是一个等号。**所有关键字**可以这样查：\n\n```python\nimport keyword                 # 先照抄：把标准库里的「keyword 工具箱」拿来用\nprint(keyword.kwlist)          # 全部关键字（方括号里的一串值叫列表，「容器」那一节讲）\n# 输出：['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']\n```\n\n**读输出：** 打印出 35 个关键字（方括号里一串值叫列表，「容器」那一节讲）：`True`、`False`、`None`、`if`、`else`、`for`、`while`、`def`、`class`、`return`、`import`、`try`、`except`、`and`、`or`、`not`、`in`、`is` 等。这里的 `import keyword` 是把标准库里的一个「工具箱」拿来用，`keyword.kwlist` 的点号是「工具箱 `keyword` 里面的 `kwlist`」，用法在「文件、模块与环境」那一节讲。你**不需要背**这个表，用到哪个自然就认识了；碰到 `invalid syntax` 而你的名字看起来没问题，就来查一下它是不是关键字。\n\n**约定里最容易踩的坑，是覆盖内置函数的名字：**\n\n```python\nprint(max(3, 9))      # 内置函数 max：取最大值\nmax = 5               # 合法！但 max 这个名字现在贴到了整数 5 上\nprint(max)\ndel max               # del：把名字撕掉，内置的 max 又回来了\nprint(max(3, 9))\n# 输出：9\n# 输出：5\n# 输出：9\n```\n\n**读输出：** `9`、`5`、`9`。第一行 `max(3, 9)` 是内置函数，取最大值，得 9。第二行 `max = 5` **完全合法**，Python 不拦你，但是这之后 `max` 这个名字指向的是整数 5，原来的函数被「遮住」了。所以 `print(max)` 显示 5；如果此时再写 `max(3, 9)`，会得到 `TypeError: 'int' object is not callable`（整数不能被「调用」）。`del max` 把我们自己贴的标签撕掉，内置的 `max` 就又出现了，最后一行又得到 9。**如果你的程序里突然冒出 `object is not callable`，先想想是不是把某个内置名字当变量名用了。**\n\n### 类型：每个值都有「种类」\n\n> **标准定义 · 类型 (type)**\n>\n> Python 里**每一个值都有一个类型**，类型决定了这个值**能做哪些运算、占多少内存、怎么显示**。最基本的几种：**`int`** 整数（`24`、`-3`）、**`float`** 浮点数 / 小数（`3.5`、`1e3`）、**`str`** 字符串（`\"box\"`）、**`bool`** 布尔值（只有 `True` 和 `False` 两个）、**`NoneType`** 只有一个值 **`None`**，表示「没有值」。`type(x)` 查看 `x` 的类型。\n>\n> *English: Every value has a type, which determines what operations it supports. Basic types: int, float, str, bool, and NoneType (the single value None). type(x) returns the type of x.*\n\n**白话版：「货物的品类」。** 数字、文字、真假，就像货物的品类，品类决定了你能对它做什么：数字能相加，文字能拼接，但「数字 + 文字」就不知道该怎么办了。名字的由来：**`int`** = integer（整数）；**`float`** = floating-point（浮点数，因为小数点的位置在内部是「浮动」的）；**`str`** = string（一串字符）；**`bool`** = Boolean，以数学家乔治·布尔 (George Boole) 命名，他研究真和假的逻辑。\n\n```python\nprint(type(24))\nprint(type(3.5))\nprint(type(\"box\"))\nprint(type(True))\nprint(type(None))\n# 输出：<class 'int'>\n# 输出：<class 'float'>\n# 输出：<class 'str'>\n# 输出：<class 'bool'>\n# 输出：<class 'NoneType'>\n```\n\n**读输出：** `type` 返回的是类型本身，显示成 `<class 'int'>`：`24` 是 `int`，`3.5` 是 `float`，`\"box\"` 是 `str`，`True` 是 `bool`，`None` 是 `NoneType`（「None 这个值的类型」）。注意 `True`、`False`、`None` **首字母大写**，写成 `true` 会被当成一个没定义的变量名，得到 `NameError`。\n\n**`int` 与 `float` 的几个细节：**\n\n```python\nprint(2 ** 100)            # int 没有大小上限\nprint(1_000_000)           # 数字里可以用下划线分组，方便人读，值不变\nprint(3.0, 1e3, 2.5e-3)    # float：带小数点，或科学计数法（1e3 就是 1×10³）\nprint(type(3.0), type(3))  # 3.0 和 3 是不同的类型\n# 输出：1267650600228229401496703205376\n# 输出：1000000\n# 输出：3.0 1000.0 0.0025\n# 输出：<class 'float'> <class 'int'>\n```\n\n**读输出：** `2 ** 100` 得到 31 位的大整数 `1267650600228229401496703205376`：Python 的 `int` **没有大小上限**。`1_000_000` 里下划线只是方便人读，值还是 `1000000`。`3.0` 是 `float`、`3` 是 `int`，哪怕数值相等，类型也不同；`1e3` 是**科学计数法**，表示 $1 \\times 10^3$，结果是 `float`，显示为 `1000.0`；`2.5e-3` 是 0.0025。\n\n**变量有类型吗？**\n\n```python\nx = 5\nprint(type(x))\nx = \"five\"\nprint(type(x))     # 同一个名字，后来贴到了另一种类型的值上\n# 输出：<class 'int'>\n# 输出：<class 'str'>\n```\n\n**读输出：** `<class 'int'>` 然后是 `<class 'str'>`。**类型属于「值」，不属于「变量名」**：变量名只是标签，同一个标签可以先贴在整数上，再贴到字符串上。（Python 因此被称为**动态类型 (dynamically typed)** 语言。）所以你写 `type(x)` 查到的，是 `x` **此刻指着的那个值**的类型。\n\n**`type()` 之外，还有 `isinstance()`：**\n\n```python\nprint(isinstance(24, int), isinstance(24, float))\nprint(isinstance(24, (int, float)))    # 第二个参数写成 (类型, 类型)：是其中任何一种吗\nprint(isinstance(True, int))           # bool 其实算 int 的一种\nprint(True + True)\n# 输出：True False\n# 输出：True\n# 输出：True\n# 输出：2\n```\n\n**读输出：** `isinstance(值, 类型)` 回答「这个值是不是这个类型」：`24` 是 `int`（`True`）、不是 `float`（`False`）；第二个参数写成 `(int, float)` 表示「是其中任意一种」，得 `True`。最后两行有点出人意料：`isinstance(True, int)` 也是 `True`，`True + True` 等于 `2`：`bool` 在 Python 里算 `int` 的一种，`True` 就是 1，`False` 就是 0。判断类型时，**优先用 `isinstance`**，而不是 `type(x) == int`，因为它能识别这种「属于某一类」的关系。\n\n**`bool` 的小知识：什么算「真」，什么算「假」？**\n\n```python\nprint(bool(0), bool(0.0), bool(\"\"), bool(None))     # 这四个是「假」\nprint(bool(1), bool(-3), bool(\"0\"), bool(\"a\"))      # 其余基本都是「真」\n# 输出：False False False False\n# 输出：True True True True\n```\n\n**读输出：** `bool(x)` 把任何值转成真/假。**假**的只有这几个：`0`、`0.0`、空字符串 `\"\"`、`None`（以后还有空的容器）；其余几乎都是**真**，包括 `-3` 和字符串 `\"0\"`（它是一个非空字符串）。「是否为空 / 为零」决定真假，下一节的 `if` 会反复用到这个规则。\n\n### 运算符：算术、比较、逻辑\n\n**问题一：除法有几种？**\n\n```python\na, b = 17, 5\nprint(a + b, a - b, a * b)\nprint(a / b)       # 真除法：结果永远是 float\nprint(a // b)      # 整除：只要商的整数部分\nprint(a % b)       # 取余：除完剩下的\nprint(a ** 2)      # 乘方：17 的平方\nprint(10 / 2)      # 注意：能整除时，/ 的结果也是 float\n# 输出：22 12 85\n# 输出：3.4\n# 输出：3\n# 输出：2\n# 输出：289\n# 输出：5.0\n```\n\n**读输出：** `22 12 85` 是 17 与 5 的和、差、积。`17 / 5` 是 `3.4`：`/` 叫**真除法**，**结果永远是 `float`**（最后一行 `10 / 2` 得 `5.0` 而不是 `5` 就是证据）。`17 // 5` 得 `3`：`//` 叫**整除（地板除）**，只要商的整数部分。`17 % 5` 得 `2`：`%` 叫**取余 (modulo)**，是除完剩下的数，因为 $17 = 3 \\times 5 + 2$。`17 ** 2` 得 `289`：`**` 是**乘方**（不是 `^`，在 Python 里 `^` 是另一个运算）。\n\n**问题二：箱数和余数怎么一起算？**\n\n```python\nqty, per_box = 110, 24\nprint(qty // per_box, qty % per_box)       # 整箱数、零散数\nboxes, leftover = divmod(qty, per_box)     # divmod 一次给出 (商, 余数)，正好拆给两个变量\nprint(boxes, leftover)\nprint(-7 // 2, -7 % 2)                     # 负数：// 向「更小」的方向取整\n# 输出：4 14\n# 输出：4 14\n# 输出：-4 1\n```\n\n**读输出：** 110 件、每箱 24 件：`110 // 24` 是 `4`（整箱数），`110 % 24` 是 `14`（零散件数），因为 $110 = 4 \\times 24 + 14$。第二行 `divmod(110, 24)` 一次返回 `(商, 余数)`，用上面学的解包拆给 `boxes` 和 `leftover`，得到同样的 `4 14`。最后一行 `-7 // 2` 得 `-4` 而不是 `-3`：整除是**向「更小」的方向取整**（地板），不是「砍掉小数」；对应地，`-7 % 2` 是 `1`。负数的整除是新手常见的意外，知道有这件事就行。\n\n**问题三：先算哪个？**\n\n```python\nprint(2 + 3 * 4, (2 + 3) * 4)    # 先乘除后加减，括号优先\nprint(2 ** 3 ** 2)               # ** 从右往左算：2 ** (3 ** 2)\nprint(-3 ** 2)                   # 先乘方、再取负\n# 输出：14 20\n# 输出：512\n# 输出：-9\n```\n\n**读输出：** `14 20`：先乘除后加减，和数学一样，括号优先；`2 ** 3 ** 2` 得 `512`：`**` 是**从右往左**算的，先 `3 ** 2 = 9`，再 `2 ** 9 = 512`；`-3 ** 2` 得 `-9`：先乘方、再取负。拿不准的时候，**加括号**，既不会错，也更容易读。\n\n**问题四：怎么比较两个值？**\n\n```python\nx = 5                  # 一个 =：赋值，把 x 贴到 5 上\nprint(x == 5)          # 两个 =：比较，x 等于 5 吗？结果是 bool\nprint(x != 5, x < 3, x >= 5)\nprint(1 < x < 10)      # 连着比：1 < x 并且 x < 10\nprint(3 == 3.0, \"a\" == \"A\", \"3\" == 3)\n# 输出：True\n# 输出：False False True\n# 输出：True\n# 输出：True False False\n```\n\n**读输出：** 这是最容易混的一对：**一个 `=` 是赋值**（`x = 5`：把 `x` 贴到 5 上，不产生值），**两个 `==` 是比较**（`x == 5`：问「`x` 等于 5 吗」，得到一个 `bool`，这里是 `True`）。接着：`x != 5`（不等于）是 `False`，`x < 3` 是 `False`，`x >= 5` 是 `True`；`1 < x < 10` 是**连着比**，等价于「`1 < x` 并且 `x < 10`」，`True`。最后一行：`3 == 3.0` 是 `True`（数值相等），`\"a\" == \"A\"` 是 `False`（大小写不同），`\"3\" == 3` 也是 `False`（字符串和整数永远不相等）。\n\n**问题五：怎么组合多个条件？**\n\n```python\nstock, on_hold = 120, False\nprint(stock > 100 and not on_hold)    # 库存充足 并且 没有被冻结\nprint(stock < 50 or on_hold)          # 库存不足 或者 被冻结\nprint(not True)\n# 输出：True\n# 输出：False\n# 输出：False\n```\n\n**读输出：** `and`（并且）、`or`（或者）、`not`（取反）。库存 120、没被冻结：「库存 > 100 **并且** 没被冻结」是 `True`；「库存 < 50 **或者** 被冻结」两边都不成立，是 `False`；`not True` 是 `False`。`and` 要**两边都真**才真，`or` 只要**有一边真**就真。\n\n**问题六：怎么判断「没有值」？**\n\n```python\nresult = None\nprint(result is None, result is not None)\nprint(result == 0, result == \"\")      # None 不等于 0，也不等于空字符串\n# 输出：True False\n# 输出：False False\n```\n\n**读输出：** `None` 表示「这里没有值」。判断一个变量是不是 `None`，用 **`is None`**（或 `is not None`）：`True False`。`is` 问的是「它们是不是**同一个东西**」，而 `None` 全世界只有一个，所以 PEP 8 约定用 `is None`，不用 `== None`。第二行显示：`None` 不等于 `0`，也不等于空字符串，三者是不同的东西，`False False`。\n\n**问题七：为什么 `0.1 + 0.2` 不等于 `0.3`？**\n\n```python\nprint(0.1 + 0.2)\nprint(0.1 + 0.2 == 0.3)\nprint(abs((0.1 + 0.2) - 0.3) < 1e-9)    # 比较小数：看「差」是否小到可以忽略\nprint(round(0.1 + 0.2, 2) == 0.3)       # 或者先四舍五入再比\nprint(0.5 + 0.25)                       # 0.5、0.25 恰好能精确表示\n# 输出：0.30000000000000004\n# 输出：False\n# 输出：True\n# 输出：True\n# 输出：0.75\n```\n\n**读输出：** 第一行不是 `0.3` 而是 `0.30000000000000004`，所以 `0.1 + 0.2 == 0.3` 是 `False`。原因：计算机用**二进制**存小数，而 0.1、0.2 在二进制里是**无限循环小数**（就像十进制里 1/3 = 0.3333…），只能存一个极接近的近似值，加起来就有了微小的误差。这**不是 Python 的 bug**，所有语言的 `float` 都这样。办法：**不要用 `==` 比较小数**，改成看「差是否足够小」（`abs(...) < 1e-9`，`1e-9` 是 0.000000001），或者先 `round` 再比，得到 `True True`。最后一行 `0.5 + 0.25 = 0.75` 没问题，是因为 0.5、0.25 恰好是 2 的负整数次幂，二进制里能精确表示。\n\n**金额怎么办？**\n\n```python\nprice_cents = 1999                 # 金额用整数（分）来算，不会有误差\ntotal_cents = price_cents * 3\nprint(total_cents, total_cents / 100)\nprint(0.1 * 3)                     # 小数直接乘，又出现了误差\n# 输出：5997 59.97\n# 输出：0.30000000000000004\n```\n\n**读输出：** `5997 59.97`：把金额用**整数的「分」**来存，加减乘都没有误差，只在最后显示时 `/ 100`。`0.1 * 3` 也得到 `0.30000000000000004`，和上面是同一个原因。（深度学习里的 `float32`、`float16` 精度更低，误差更明显，这也是为什么 PyTorch 里比较两个张量用 `torch.allclose`，而不是 `==`。）\n\n### 类型转换，以及报错长什么样\n\n> **标准定义 · 类型转换 (type conversion)**\n>\n> 用**类型名当函数**把一个值转成另一种类型：`int(x)`、`float(x)`、`str(x)`、`bool(x)`。Python **不会自动**在字符串和数字之间转换，需要你显式地转。转换不成功会抛出**异常 (exception)**，也就是我们看到的报错：**`TypeError`**（类型不对，这两种类型之间不支持这个操作）或 **`ValueError`**（类型对，但值的内容不合法）。\n>\n> *English: Use the type name as a function to convert: int(), float(), str(), bool(). Python does not convert between strings and numbers implicitly. TypeError means the operation does not support this type; ValueError means the type is right but the value is not acceptable.*\n\n```python\nprint(int(\"42\") + 1)          # 字符串 → 整数\nprint(int(3.9), int(-3.9))    # 小数 → 整数：直接砍掉小数部分，不是四舍五入\nprint(float(\"3.5\") * 2)\nprint(str(24) + \" pcs\")       # 整数 → 字符串\nprint(bool(\"False\"))          # 非空字符串都是真，哪怕内容写着 False\n# 输出：43\n# 输出：3 -3\n# 输出：7.0\n# 输出：24 pcs\n# 输出：True\n```\n\n**读输出：** `int(\"42\") + 1` 是 `43`：字符串先转成整数再相加；`int(3.9)` 是 `3`、`int(-3.9)` 是 `-3`：**砍掉小数部分，不是四舍五入**；`float(\"3.5\") * 2` 是 `7.0`；`str(24) + \" pcs\"` 是 `24 pcs`；最后 `bool(\"False\")` 是 `True`：非空字符串都是真，哪怕内容写着 `False`。"
+  },
+  {
+   "type": "think",
+   "q": "**概念辨析：** 下面这些变量名，哪些违反了 Python 的**硬性规定**（会报错）？哪些合法但不符合**约定**？哪些既合法又符合约定？`total_qty`、`TotalQty`、`2nd_box`、`my qty`、`class`、`数量`、`MAX_BOX`、`l`。再回答：`a, b = 1, 2` 里有几个变量？`a_b = 1, 2` 呢？",
+   "a": "- **硬性规定被违反（报错）**：`2nd_box`（数字开头）、`my qty`（有空格）、`class`（关键字）。\n- **合法但不符合约定**：`TotalQty`（驼峰写法，Python 变量约定是 `snake_case`）、`数量`（汉字，合法但不推荐）、`l`（单个小写 L 容易和数字 1 混淆，名字也没有含义）。\n- **合法又符合约定**：`total_qty`（`snake_case`、有意义）、`MAX_BOX`（全大写，约定表示常量）。\n\n`a, b = 1, 2` 里有 **2 个变量**：`a` 和 `b`，逗号把它们分开，按位置分别得到 1 和 2。`a_b = 1, 2` 里只有 **1 个变量**，名字是 `a_b`（下划线是名字的一部分），它指向的值是元组 `(1, 2)`。这就是「**逗号分开的是两个词，下划线连起来的是一个词**」。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "变量",
+     "variable",
+     "给值贴的名字标签；赋值让名字指向一个值"
+    ],
+    [
+     "赋值",
+     "assignment",
+     "`name = expr`：先算右边，再让左边的名字指向结果"
+    ],
+    [
+     "表达式 / 语句",
+     "expression / statement",
+     "能算出值的一小段代码 / 让 Python 做一件事的一行"
+    ],
+    [
+     "函数调用",
+     "call",
+     "`名字(参数)`：叫函数来干活；括号里的材料叫参数"
+    ],
+    [
+     "解包",
+     "unpacking",
+     "`a, b = pair`：把一个整体按位置拆给多个名字"
+    ],
+    [
+     "元组",
+     "tuple",
+     "用逗号隔开的一串值，本身是一个值，如 `(24, 6)`"
+    ],
+    [
+     "关键字",
+     "keyword",
+     "Python 语法占用的词（`class`、`if`……），不能当变量名"
+    ],
+    [
+     "`snake_case`",
+     "snake_case",
+     "变量命名约定：小写字母加下划线，如 `order_qty`"
+    ],
+    [
+     "类型",
+     "type",
+     "值的种类（`int`、`float`、`str`、`bool`、`None`），决定能做什么运算"
+    ],
+    [
+     "浮点误差",
+     "floating-point error",
+     "小数在二进制里只存近似值，所以 `0.1 + 0.2 != 0.3`"
+    ],
+    [
+     "类型转换",
+     "type conversion",
+     "`int()`、`float()`、`str()`：显式地把值转成另一种类型"
+    ],
+    [
+     "`TypeError` / `ValueError`",
+     "TypeError / ValueError",
+     "种类不对，不支持这个操作 / 种类对，但内容不合法"
+    ],
+    [
+     "内置函数",
+     "built-in function",
+     "Python 自带、不用导入就能用的函数，如 `len`、`print`、`range`"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "执行 `a = 5`，`b = a`，`a = 10` 之后，`b` 的值是？",
+    "options": [
+     "10",
+     "15",
+     "5",
+     "报错"
+    ],
+    "answer": 2,
+    "explain": "`b = a` 让 `b` 指向 `a` 当时指着的值 5；之后 `a = 10` 只是把 `a` 这张标签挪到了 10 上，`b` 不受影响。变量之间不是等式，不会联动。"
+   },
+   {
+    "q": "关于 `lo, hi = 3, 9`，下面哪个说法**正确**？",
+    "options": [
+     "这是两个变量：`lo` 得到 3，`hi` 得到 9，逗号把名字分开",
+     "`lo` 和 `hi` 都得到 `(3, 9)`",
+     "`lo, hi` 是一个变量名，里面带逗号",
+     "因为变量名不能有空格，所以这一行会报错"
+    ],
+    "answer": 0,
+    "explain": "多重赋值按位置一一对应：`lo` 得到第一个值 3，`hi` 得到第二个值 9。逗号不属于变量名；变量名里不能有空格，是因为空格会把一个名字拆成两个词，而这里正是想写两个词。"
+   },
+   {
+    "q": "下面哪一个变量名**违反了 Python 的硬性规定**（会报错），而不只是不符合习惯？",
+    "options": [
+     "`maxQty`（驼峰写法）",
+     "`x`（太短、没有意义）",
+     "`数量`（汉字）",
+     "`2nd_box`（以数字开头）"
+    ],
+    "answer": 3,
+    "explain": "变量名不能以数字开头。驼峰写法、没有意义的名字、汉字变量名虽然不符合习惯，但在语法上都合法。"
+   },
+   {
+    "q": "`17 // 5`、`17 % 5`、`17 / 5` 依次得到？",
+    "options": [
+     "`3.4`、`2`、`3`",
+     "`3`、`2`、`3.4`",
+     "`3`、`3`、`3.4`",
+     "`2`、`3`、`3.4`"
+    ],
+    "answer": 1,
+    "explain": "`//` 是整除（只要商的整数部分，3），`%` 是余数（$17 = 3 \\times 5 + 2$，所以是 2），`/` 是真除法，结果永远是 float（3.4）。"
+   }
+  ]
+ }
+}

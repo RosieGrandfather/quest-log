@@ -1,0 +1,66 @@
+{
+ "id": "u03b",
+ "title": "类与对象（2/3）",
+ "en": "Classes & Objects (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "理解 **继承 (inheritance)**、`super()`、**方法重写 (override)**、**多态 (polymorphism)** 与 **组合 (composition)**，能读懂 `nn.Module` 式的类结构"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「类与对象」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：特殊方法：让你的类像内置类型一样工作（约 30 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 特殊方法：让你的类像内置类型一样工作\n\n> **标准定义 · 特殊方法 (special methods / dunder methods)**\n>\n> 名字以**双下划线**开头和结尾的方法（**d**ouble **under**score，所以叫 **dunder**），如 `__init__`、`__repr__`。你一般**不直接调用**它们，而是由 Python 的**语法或内置函数在背后调用**：`len(x)` 调 `x.__len__()`，`x[i]` 调 `x.__getitem__(i)`，`x + y` 调 `x.__add__(y)`，`x == y` 调 `x.__eq__(y)`，`x(...)` 调 `x.__call__(...)`，`with x:` 调 `__enter__` 与 `__exit__`。这套约定称为 Python 的**数据模型 (data model)**。\n>\n> *English: Dunder (double-underscore) methods are hooks that Python calls implicitly: len(x) calls __len__, x[i] calls __getitem__, x + y calls __add__, x(...) calls __call__. Implementing them lets your class behave like a built-in type.*\n\n**白话版：「对接口」。** Python 的内置函数和语法提前约定好了暗号：「谁实现了 `__len__`，我就能数它有多长」。你的类只要把相应的暗号方法写出来，就能被 `len`、`for`、`+`、`with` 这些语法直接使用。\n\n**问题一：怎样让自己的类支持 `len(v)` 和 `v[i]`？** 只写两个暗号方法试试。（`__init__(self, *xs)` 里的 `*xs` 就是「函数、作用域与递归」讲的「打包」：把所有位置实参收进一个元组；`\", \".join(map(str, self.xs))` 用到字符串方法 `.join`：把一个字符串序列用 `\", \"` 连成一个字符串，`map(str, ...)` 先把每个数变成字符串。）\n\n```python\nclass Vector:\n    def __init__(self, *xs):\n        self.xs = list(xs)\n    def __repr__(self):         return f\"Vector({', '.join(map(str, self.xs))})\"\n    def __len__(self):          return len(self.xs)         # len(v)\n    def __getitem__(self, i):   return self.xs[i]           # v[i]\n\nv = Vector(1, 2, 3)\nprint(v, len(v), v[1])\nprint([x for x in v], sum(v), max(v))      # 只定义了 __getitem__，for / sum / max 都能用\n# 输出：Vector(1, 2, 3) 3 2\n# 输出：[1, 2, 3] 6 3\n```\n\n读输出：`len(v)` 调用了 `__len__`，得到 `3`；`v[1]` 调用了 `__getitem__`，得到 `2`。更有意思的是第二行：我们**没有**写 `__iter__`，`for` 循环、`sum`、`max` 却都能用（`[1, 2, 3]`、`6`、`3`）。原因是 Python 在没有 `__iter__` 时，会退而用 `__getitem__` 从 0 开始逐个取，直到抛出 `IndexError` 为止。\n\n**问题二：怎样让 `v + w`、`v * 3`、`v == w`、`bool(v)` 有意义？** 每个运算符对应一个暗号方法。（`Vec(*[a + b for a, b in zip(self.xs, other.xs)])` 把前两节的东西叠在一起：`zip` 把两个序列并排配对，推导式对每一对相加，最外层的 `*` 把结果列表**拆开**成 `Vec(...)` 的多个位置实参；`isinstance(other, Vec) and ...` 里 `and` 是「两边都为真才为真」，`isinstance(x, 类)` 问「`x` 是不是这个类的实例」；`any(self.xs)` 是内置函数，只要有一个元素为真就返回 `True`，所以全是 0 的 `Vec(0, 0)` 是假。）\n\n```python\nclass Vec:\n    def __init__(self, *xs):\n        self.xs = list(xs)\n    def __repr__(self):         return f\"Vec({', '.join(map(str, self.xs))})\"\n    def __add__(self, other):   return Vec(*[a + b for a, b in zip(self.xs, other.xs)])   # v + w\n    def __mul__(self, k):       return Vec(*[a * k for a in self.xs])                      # v * 3\n    def __eq__(self, other):    return isinstance(other, Vec) and self.xs == other.xs      # v == w\n    def __bool__(self):         return any(self.xs)                                        # bool(v)\n\nv, w = Vec(1, 2, 3), Vec(10, 20, 30)\nprint(v + w, v * 3)\nprint(v == Vec(1, 2, 3), v is Vec(1, 2, 3), bool(Vec(0, 0)))\nprint(Vec.__hash__)                          # 只定义 __eq__：__hash__ 被设成 None\n# 输出：Vec(11, 22, 33) Vec(3, 6, 9)\n# 输出：True False False\n# 输出：None\n```\n\n读输出：`v + w` 调用 `__add__`，逐元素相加得到 `Vec(11, 22, 33)`；`v * 3` 调用 `__mul__`，得到 `Vec(3, 6, 9)`。第二行是 **`==` 与 `is` 的区别**：`v == Vec(1, 2, 3)` 为 `True`，因为我们用 `__eq__` 定义了「内容相同就相等」；`v is Vec(1, 2, 3)` 为 `False`，因为 `is` 问的是「是不是**同一个对象**」，这里每次 `Vec(...)` 都新建了一个。（不定义 `__eq__` 时，`==` 默认也只比较是不是同一个对象。）`bool(Vec(0, 0))` 是 `False`，来自我们写的 `__bool__`。最后一行 `None` 是个提醒：**只定义了 `__eq__`、没有定义 `__hash__`，`__hash__` 就被设成了 `None`**。后果是什么？（`type(e).__name__` 是错误对象 `e` 的**类型名**，在「推导式、迭代器与生成器」那一节里用 `type(x).__name__` 看过类型名；`str(e)` 是它的报错信息，`\"unhashable\" in str(e)` 问「报错信息里有没有这个词」；`as e` 的写法在「条件、循环与读懂报错」。）\n\n```python\ntry:\n    {Vec(1, 2): \"a\"}                         # 想把实例当字典的键 / 放进集合\nexcept TypeError as e:\n    print(type(e).__name__, \"| 信息里提到 unhashable：\", \"unhashable\" in str(e))\n# 输出：TypeError | 信息里提到 unhashable： True\n```\n\n读输出：想把 `Vec(1, 2)` 当字典的键，会得到 `TypeError`，错误信息里写的是 `unhashable type: 'Vec'`（不同 Python 版本措辞略有差异，所以这里只检查有没有「unhashable」，输出 `True`）。**定义了 `__eq__` 而不定义 `__hash__`，这个类的实例就不再可哈希**（不能放进集合、不能做字典的键）：因为「相等的对象必须有相同的哈希值」，一旦自定义了相等的含义，默认的基于身份的哈希就不再满足这条规则。数据结构第 4 节讲过哈希表对此的要求。\n\n**问题三：怎样让对象像函数一样被调用？** 这就是 `__call__`：\n\n```python\nclass Scaler:\n    def __init__(self, k):\n        self.k = k\n    def __call__(self, x):                   # 让实例像函数一样被调用\n        return x * self.k\n\ntriple = Scaler(3)\nprint(triple(5), triple([1, 2]), callable(triple))\nprint(triple.__call__(5) == triple(5))       # triple(5) 就是 triple.__call__(5)\n# 输出：15 [1, 2, 1, 2, 1, 2] True\n# 输出：True\n```\n\n读输出：`triple = Scaler(3)` 是一个对象，却可以写成 `triple(5)`，得到 `15`；传入列表 `[1, 2]` 时 `x * self.k` 是列表的重复，得到 `[1, 2, 1, 2, 1, 2]`（`__call__` 里就是普通代码，想写什么都行）；`callable(triple)` 是 `True`（内置函数 `callable(x)` 问「`x` 能不能像函数一样被调用」）；`triple(5)` 与 `triple.__call__(5)` 完全等价（输出 `True`）。**`model(x)` 之所以能写，是因为 `nn.Module` 实现了 `__call__`**，它在里面调用你写的 `forward`（下一小节演示）。\n\n**问题四：为什么只写 `__len__` 和 `__getitem__`，就成了一个 PyTorch 风格的 `Dataset`？** 先写数据集：\n\n```python\nclass Dataset:                               # 只要实现 __len__ 和 __getitem__\n    def __init__(self, n):\n        self.xs = list(range(n))\n    def __len__(self):\n        return len(self.xs)\n    def __getitem__(self, i):\n        return self.xs[i], self.xs[i] ** 2   # (输入, 标签)\n\nds = Dataset(7)\nprint(len(ds), ds[3], ds[6])\n# 输出：7 (3, 9) (6, 36)\n```\n\n读输出：`len(ds)` 是 `7`，来自 `__len__`；`ds[3]` 是 `(3, 9)`，`ds[6]` 是 `(6, 36)`，来自 `__getitem__`，每一条是 `(输入, 标签)`，这里的标签是输入的平方。**数据集只需要告诉别人「有多少条」和「第 $i$ 条是什么」**，仅此而已。再写一个迷你 `DataLoader`，它只靠这两个方法就能把数据按批取出。（读代码前先看三点：`xs, ys = zip(*batch)`：`batch` 是一串 `(输入, 标签)` 元组，`*` 把它们拆开交给 `zip`，`zip` 把输入凑成一组、标签凑成一组，也就是「转置」；`-(-n // m)` 是**向上取整**的小技巧，`//` 是向下取整的除法，两个负号相消；`[... for j in range(...)]` 是列表推导式。）\n\n```python\nclass MiniLoader:                            # 迷你 DataLoader：把数据集按 batch 取出\n    def __init__(self, dataset, batch_size):\n        self.ds, self.bs = dataset, batch_size\n    def __iter__(self):                      # 让它成为可迭代对象，内部用生成器\n        for i in range(0, len(self.ds), self.bs):\n            batch = [self.ds[j] for j in range(i, min(i + self.bs, len(self.ds)))]\n            xs, ys = zip(*batch)\n            yield list(xs), list(ys)\n    def __len__(self):\n        return -(-len(self.ds) // self.bs)   # 向上取整\n\nloader = MiniLoader(ds, batch_size=3)        # 直接用上一块的 ds\nprint(\"batch 数：\", len(loader))\nfor xs, ys in loader:\n    print(xs, ys)\n# 输出：batch 数： 3\n# 输出：[0, 1, 2] [0, 1, 4]\n# 输出：[3, 4, 5] [9, 16, 25]\n# 输出：[6] [36]\n```\n\n读输出：数据集有 7 条、`batch_size=3`，所以 `len(loader)` 是 $\\lceil 7/3 \\rceil = 3$ 个 batch：前两批各 3 条（`[0, 1, 2]` 与 `[3, 4, 5]`），最后一批只剩 `[6]`。每个 batch 是 `(xs, ys)`，例如第一批 `xs = [0, 1, 2]`、`ys = [0, 1, 4]`。`MiniLoader` 实现了 `__iter__`（里面用的是「推导式、迭代器与生成器」那一节的生成器），所以能直接被 `for` 遍历。真实的 `DataLoader` 还加上了打乱 (shuffle)、多进程加载、拼接 batch，但接口就是这两个方法。\n\n**问题五：`with` 语句背后是什么？** 先说 `with` 是什么：`with 对象 as 名字:` 后面缩进的整块代码，运行**之前**会先「进入」这个对象，运行**之后**（不管有没有出错）会「退出」它。最常见的是文件：`with open(\"a.txt\") as f:`，块结束时文件**自动关闭**（文件的完整用法在后面「文件、模块与环境」那一节）。「进入」和「退出」其实就是调用对象的 `__enter__` 与 `__exit__`，我们分别看「正常」和「出错」两种情况（`try` / `except ZeroDivisionError` 的写法见「条件、循环与读懂报错」；`print(...); return self` 里的分号是把两条语句写在同一行）：\n\n```python\nclass Timer:                                 # 上下文管理器 = __enter__ / __exit__\n    def __enter__(self):\n        print(\"进入\"); return self\n    def __exit__(self, exc_type, exc, tb):\n        print(\"退出，是否出错：\", exc_type is not None)\n        return False                         # False：不吞掉异常\n\nwith Timer():\n    print(\"块内：一切正常\")\n\ntry:\n    with Timer():\n        1 / 0                                # 块内出错\nexcept ZeroDivisionError:\n    print(\"异常照常向外传播\")\n# 输出：进入\n# 输出：块内：一切正常\n# 输出：退出，是否出错： False\n# 输出：进入\n# 输出：退出，是否出错： True\n# 输出：异常照常向外传播\n```\n\n读输出：进入 `with` 时先调用 `__enter__`（打印「进入」），块里的代码运行完后调用 `__exit__`，此时 `exc_type` 是 `None`，所以是「是否出错： False」。第二次块里 `1 / 0` 出了错，**`__exit__` 仍然被调用了**，而且这次拿到了异常信息，「是否出错： True」；因为我们返回 `False`，异常没有被吞掉，继续向外传播，被外面的 `except` 抓住了。这就是为什么文件、锁、数据库连接、`torch.no_grad()` 都用它：**不管块里是否出错，`__exit__` 都一定会被调用**，保证「用完一定收尾」。\n\n**`__repr__` 与 `__str__`**：前者面向开发者（调试时看到的，应当尽量清晰、能还原对象），后者面向用户（`print` 用的）；只写一个的话，写 `__repr__`。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "3ohzBxoFHAY",
+   "title": "视频二：Python OOP Tutorial 5: Special (Magic/Dunder) Methods（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "think",
+   "q": "`@dataclass` 生成的 `__eq__` 会逐字段比较。如果一个类定义了 `__eq__`，却没有定义 `__hash__`，会有什么后果？怎样让一个 dataclass 的实例能放进集合或当字典的键？",
+   "a": "Python 的规则：**只定义 `__eq__`、不定义 `__hash__` 的类，`__hash__` 会被设为 `None`，实例不可哈希**，放进 `set` 或当 `dict` 的键会报 `TypeError: unhashable type`。原因是：「相等的对象必须有相同的哈希值」，一旦自定义了相等的含义，默认的基于身份的哈希就不再满足这条规则。\n\n对 `dataclass`：**`@dataclass(frozen=True)`**（或 `unsafe_hash=True`）会根据字段生成 `__hash__`。用 `frozen=True` 最安全：对象不可修改，哈希值就不会变（可变对象的哈希值如果变了，在集合 / 字典里就找不到它了，数据结构第 4 节讲过原因）。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为了让一个对象支持 `len(obj)` 和 `obj[i]`，需要实现哪两个特殊方法？",
+    "options": [
+     "`__len__` 与 `__getitem__`",
+     "`__str__` 与 `__eq__`",
+     "`__call__` 与 `__enter__`",
+     "`__init__` 与 `__repr__`"
+    ],
+    "answer": 0,
+    "explain": "这两个方法也正是 PyTorch 的 `Dataset` 所需要的接口。"
+   },
+   {
+    "q": "`model(x)` 能运行，是因为 `nn.Module` 实现了哪个特殊方法？它再调用什么？",
+    "options": [
+     "`__enter__`，它调用 `train`",
+     "`__init__`，它调用 `backward`",
+     "`__getitem__`，它调用 `fit`",
+     "`__call__`，它调用你定义的 `forward`"
+    ],
+    "answer": 3,
+    "explain": "`__call__` 让对象可像函数一样调用；在里面会调用 `forward`，并处理钩子等额外逻辑，所以应该写 `model(x)` 而不是 `model.forward(x)`。"
+   },
+   {
+    "q": "`with open(path) as f:` 能保证文件一定被关闭，即使块内出错，依赖的是？",
+    "options": [
+     "`__len__` 与 `__getitem__`",
+     "上下文管理器协议：`__enter__` 与 `__exit__`",
+     "`__add__`",
+     "`__hash__`"
+    ],
+    "answer": 1,
+    "explain": "不管 `with` 块是否出现异常，`__exit__` 都一定会被调用，从而完成关闭等收尾工作。"
+   }
+  ]
+ }
+}

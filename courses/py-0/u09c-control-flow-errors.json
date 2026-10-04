@@ -1,0 +1,96 @@
+{
+ "id": "u09c",
+ "title": "条件、循环与读懂报错（3/3）",
+ "en": "Control Flow, Loops & Reading Errors (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "会用 **`try / except`** 处理可预期的错误（多个 `except`、`except (A, B)`、`as e`、`else`、`finally`），会用 `raise` 和 `assert`，知道为什么不能滥用 `except Exception`，也知道 `eval` 是什么、为什么实际代码里不要用"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「条件、循环与读懂报错」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：`try / except`：提前说好出错了怎么办（续）（约 10 分钟） → `raise` 与 `assert`（约 15 分钟） → `eval`：把字符串当代码运行（约 5 分钟） → 调试入门：没有报错但结果不对怎么办（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**问题八：把「会出错的转换」包起来。**\n\n```python\ntext = \"12箱\"\ntry:\n    qty = int(text)\n    print(\"转换成功：\", qty)\nexcept ValueError:\n    qty = 0\n    print(\"不是纯数字，按 0 处理\")\nprint(\"程序继续往下走，qty =\", qty)\n# 输出：不是纯数字，按 0 处理\n# 输出：程序继续往下走，qty = 0\n```\n\n**读输出：** `\"12箱\"` 让 `int(text)` 抛出 `ValueError`，Python 立刻放弃 `try` 块里剩下的语句（所以**没有**打印 `转换成功`），跳进 `except ValueError`，把 `qty` 设成 0 并打印 `不是纯数字，按 0 处理`；然后继续执行 `try` 语句之后的代码：`程序继续往下走，qty = 0`。\n\n**一次看清执行顺序：**\n\n```python\ntry:\n    print(\"1. 开始\")\n    x = 1 / 0\n    print(\"2. 这一行不会执行\")\nexcept ZeroDivisionError:\n    print(\"3. 进入 except\")\nprint(\"4. 回到正常流程\")\n# 输出：1. 开始\n# 输出：3. 进入 except\n# 输出：4. 回到正常流程\n```\n\n**读输出：** `1. 开始`、`3. 进入 except`、`4. 回到正常流程`。第 2 行被跳过了：出错的那一行（`1 / 0`）**之后**的语句都不会执行，这就是「立刻放弃」。\n\n**`as e` 是什么？**\n\n```python\ntry:\n    int(\"abc\")\nexcept ValueError as e:\n    print(type(e).__name__)\n    print(e)\n    print(repr(e))\n# 输出：ValueError\n# 输出：invalid literal for int() with base 10: 'abc'\n# 输出：ValueError(\"invalid literal for int() with base 10: 'abc'\")\n```\n\n**读输出：** `as e` 把被接住的异常对象贴上名字 `e`（`as` 的意思就是「当作 / 取名为」）。`type(e).__name__` 是类型的名字，`ValueError`；直接打印 `e` 得到说明 `invalid literal for int() with base 10: 'abc'`；`repr(e)` 把两者合在一起，写成 `ValueError(\"...\")`。\n\n**问题九：一个 `try` 后面可以跟多个 `except` 吗？** 可以，每个处理一种错：\n\n```python\nfor raw in [\"12\", \"abc\", \"0\", None]:\n    try:\n        per_box = 100 // int(raw)\n        print(repr(raw), \"->\", per_box)\n    except ValueError:\n        print(repr(raw), \"-> 不是整数\")\n    except ZeroDivisionError:\n        print(repr(raw), \"-> 不能为 0\")\n    except TypeError:\n        print(repr(raw), \"-> 类型不对\")\n# 输出：'12' -> 8\n# 输出：'abc' -> 不是整数\n# 输出：'0' -> 不能为 0\n# 输出：None -> 类型不对\n```\n\n**读输出：** 四次循环，每次走不同的路：`'12'` 正常，`100 // 12` 是 8（`//` 是整除），打印 `'12' -> 8`；`'abc'` 的 `int` 抛 `ValueError`；`'0'` 能转成整数 0，但 `100 // 0` 抛 `ZeroDivisionError`；`None` 的 `int(None)` 抛 `TypeError`。Python 从上到下找第一个匹配的 `except`，其他的不看。\n\n**两种错想用同一种处理？** 把类型放进一个元组：\n\n```python\nfor raw in [\"abc\", None, \"5\"]:\n    try:\n        print(100 // int(raw))\n    except (ValueError, TypeError) as e:       # 圆括号里是一个元组：这几种错误一起处理\n        print(\"输入有问题：\", type(e).__name__)\n# 输出：输入有问题： ValueError\n# 输出：输入有问题： TypeError\n# 输出：20\n```\n\n**读输出：** `输入有问题： ValueError`、`输入有问题： TypeError`，最后 `20`（`100 // 5`）。`except (ValueError, TypeError)` 的圆括号是一个元组，意思是「这两种之一」。\n\n**为什么说「具体的在前，范围大的在后」？因为异常有「家谱」：**\n\n```python\nfor cls in (KeyError, ZeroDivisionError, ValueError):\n    names = []\n    for c in cls.__mro__:                      # __mro__：这个类的「家谱」，从自己一路往上\n        names.append(c.__name__)\n    print(\" -> \".join(names))\n# 输出：KeyError -> LookupError -> Exception -> BaseException -> object\n# 输出：ZeroDivisionError -> ArithmeticError -> Exception -> BaseException -> object\n# 输出：ValueError -> Exception -> BaseException -> object\n```\n\n**读输出：** `KeyError -> LookupError -> Exception -> BaseException -> object`：`KeyError` 是 `LookupError` 的子类，`LookupError` 是 `Exception` 的子类，往上是 `BaseException`。`except 某类型` 会接住**这个类型以及它所有的子类**。所以 `except LookupError` 能同时接住 `KeyError` 和 `IndexError`（它俩都是 `LookupError` 的子类）；`except Exception` 能接住几乎所有「普通错误」。\n\n```python\nstock = {\"SKU-A\": 120}\ntry:\n    print(stock[\"SKU-B\"])\nexcept LookupError:                            # 范围大的写在前面\n    print(\"被 LookupError 接住了（KeyError 是它的子类）\")\nexcept KeyError:\n    print(\"永远走不到这里\")\n# 输出：被 LookupError 接住了（KeyError 是它的子类）\n```\n\n**读输出：** `被 LookupError 接住了（KeyError 是它的子类）`：范围大的 `LookupError` 写在前面，抢先把 `KeyError` 接走了，下面的 `except KeyError` **永远走不到**，而且 Python 不会报错提醒你。所以**具体的写在前面，`Exception` 放在最后**。\n\n**问题十：如果我不在乎具体是什么错，想统一处理呢？** 可以，用 `except Exception as e`，并把类型和说明都打印出来：\n\n```python\nfor raw in [\"12\", \"abc\", \"0\", None]:\n    try:\n        print(100 // int(raw))\n    except Exception as e:                     # 不管是什么错，一律报告类型和信息\n        print(type(e).__name__ + \":\", e)\n# 输出：8\n# 输出：ValueError: invalid literal for int() with base 10: 'abc'\n# 输出：ZeroDivisionError: integer division or modulo by zero\n# 输出：TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'\n```\n\n**读输出：** `8`，然后三行：`ValueError: ...`、`ZeroDivisionError: ...`、`TypeError: ...`。`type(e).__name__` 给出错误类型，`e` 给出说明（具体的措辞随 Python 版本略有不同）。这个写法在**调试**时特别有用：不知道会出什么错，先一律接住、打印出来看看。\n\n**但是，不能滥用 `except Exception`：**\n\n```python\ntotal = 0\nfor qty in [12, 0, 35]:\n    try:\n        total = toal + qty         # 手误：total 拼成了 toal\n    except Exception:\n        pass                       # 吞掉所有错误，什么也不说\nprint(\"总数\", total)\n# 输出：总数 0\n```\n\n**读输出：** `总数 0`：没有任何报错，结果却是错的。原因是 `toal`（手误，少打了一个字母）本该抛出 `NameError`，却被 `except Exception: pass` 悄悄吞掉了。**最糟糕的 bug 就是「没有报错但结果不对」**，因为你连线索都没有。使用规则：\n\n1. **只接你预料到、并且知道该怎么处理的错**（比如 `ValueError`）；\n2. `except Exception` 只放在最外层，例如「一批任务里某一个失败了不要拖累其他，并且把错误打印或记录下来」；\n3. **永远不要 `except Exception: pass`**；也不要写光秃秃的 `except:`，它会接住 `BaseException`，连你按 `Ctrl + C` 想停下程序的 `KeyboardInterrupt` 都吞了。\n\n**`else` 和 `finally`：**\n\n> **标准定义 · `try` 语句的 `else` 与 `finally`**\n>\n> `else:` 块在 `try` 块**没有抛出异常**时执行；`finally:` 块**无论如何都会执行**（有没有异常、异常有没有被接住、`try` 里有没有 `return` / `break`）。\n>\n> *English: else runs if the try block raised nothing; finally always runs, for cleanup.*\n\n```python\nfor raw in [\"12\", \"abc\"]:\n    print(\"--- 处理\", repr(raw))\n    try:\n        qty = int(raw)\n    except ValueError:\n        print(\"except：转换失败\")\n    else:\n        print(\"else：没出错，qty =\", qty)\n    finally:\n        print(\"finally：无论如何都会执行\")\n# 输出：--- 处理 '12'\n# 输出：else：没出错，qty = 12\n# 输出：finally：无论如何都会执行\n# 输出：--- 处理 'abc'\n# 输出：except：转换失败\n# 输出：finally：无论如何都会执行\n```\n\n**读输出：** `'12'` 这一轮：转换没出错，所以跳过 `except`，执行 `else`（`没出错，qty = 12`），最后 `finally`。`'abc'` 这一轮：`int` 抛错，进入 `except`（`转换失败`），跳过 `else`，最后还是 `finally`。**为什么要有 `else`？** 把「可能出错的那一两行」放 `try`，「成功之后接着做的事」放 `else`：这样 `else` 里如果出了别的错，不会被这个 `except` 误接。**`finally` 用来收尾**（关闭文件、释放连接等），无论成败都要做的事放这里。\n\n### `raise` 与 `assert`\n\n**`raise`：自己抛出异常。** 为什么要自己抛？程序发现数据不合理时，**尽早停下并说清楚**，比带着坏数据继续跑、最后得到一个莫名其妙的结果好得多。\n\n```python\nqty = -3\ntry:\n    if qty < 0:\n        raise ValueError(\"箱数不能为负：\" + str(qty))     # 自己抛出一个错误\n    print(\"箱数合法\")\nexcept ValueError as e:\n    print(\"接住了：\", e)\n# 输出：接住了： 箱数不能为负：-3\n```\n\n**读输出：** `接住了： 箱数不能为负：-3`：`raise ValueError(说明)` 主动抛出一个 `ValueError`，被下面的 `except ValueError as e` 接住，`e` 就是我们写的那句说明。选类型的习惯：值不合适用 `ValueError`，类型不对用 `TypeError`。\n\n没有人接住的话：\n\n```python\nqty = -3\nif qty < 0:\n    raise ValueError(\"箱数不能为负：\" + str(qty))\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 3, in <module>\n# 输出：    raise ValueError(\"箱数不能为负：\" + str(qty))\n# 输出：ValueError: 箱数不能为负：-3\n```\n\n**读输出：** 程序停下，最后一行就是我们自己写的 `ValueError: 箱数不能为负：-3`，上面一行指出是第 3 行的 `raise`。\n\n**`assert`：断言「这里一定成立」。**\n\n> **标准定义 · 断言 (assert)**\n>\n> `assert 条件, 说明`：如果条件为假，就抛出 `AssertionError(说明)`；条件为真则什么也不发生。它用来表达**程序员自己的假设**：断言失败意味着程序有 bug。\n>\n> *English: assert cond, msg raises AssertionError if cond is false. It documents assumptions that must hold in a correct program.*\n\n```python\nstock = 35\nassert stock >= 0, \"库存不应为负\"      # 条件为真：什么都不发生\nprint(\"断言通过\")\n# 输出：断言通过\n```\n\n**读输出：** `断言通过`：条件为真，什么都没发生。\n\n```python\nstock = -5\nassert stock >= 0, \"库存不应为负\"\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 2, in <module>\n# 输出：    assert stock >= 0, \"库存不应为负\"\n# 输出：AssertionError: 库存不应为负\n```\n\n**读输出：** `AssertionError: 库存不应为负`：条件为假，抛出了 `AssertionError`。**`assert` 和 `raise` 的区别：** `assert` 用来检查「我自己的代码里，这里应该永远成立」，在以 `python -O` 方式运行时，断言会被**整个跳过**，所以**不能用 `assert` 检查用户输入或外部数据**；那种检查要用 `if ...: raise ...`。（「异常、调试、测试与类型注解」那一节会讲得更深：自定义异常、异常链、单元测试。）"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "NIWwJbo-9_8",
+   "title": "视频二：Python Tutorial: Using Try/Except Blocks for Error Handling（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 11
+  },
+  {
+   "type": "text",
+   "md": "### `eval`：把字符串当代码运行\n\n**你问过的那一行：** `for bad in (...): try: eval(bad) except TypeError as e: print(...)`。现在逐个词拆开：\n\n- `for bad in (...)`：括号里是一个元组，每个元素是**一个字符串**，字符串的内容是一小段**会出错的 Python 代码**；`bad` 每一轮依次是其中一个字符串。\n- `try:`：试着做缩进的这一行，别让它把整个程序停掉。\n- `eval(bad)`：把字符串 `bad` **当作 Python 代码运行并求值**。\n- `except ... as e:`：出了这类错就接住，`e` 是那个错误对象，然后 `print(...)` 说明。\n\n> **标准定义 · `eval`**\n>\n> `eval(字符串)` 把字符串当作一个 Python **表达式 (expression)** 来**求值**，并返回结果。名字是 evaluate（求值）的缩写。\n>\n> *English: eval(s) parses the string s as a Python expression, evaluates it, and returns the value.*\n\n**白话版：「把写在纸条上的一句话，当真去执行」。**\n\n```python\nprint(eval(\"1 + 2 * 3\"))\nx = 10\nprint(eval(\"x * 2\"))               # eval 能看到你程序里的变量\nprint(eval(\"[1, 2, 3][1]\"))\n# 输出：7\n# 输出：20\n# 输出：2\n```\n\n**读输出：** `7`（先乘后加：`2 * 3 + 1`）、`20`（`eval` 能看到你程序里的变量 `x`）、`2`（`[1, 2, 3][1]` 取下标 1）。字符串里写的是什么，它就真的算什么。\n\n**为什么教学例子里会出现 `eval`？** 想演示「会出错的代码」。如果把它们直接写进循环体，第一个错就会让程序停下，后面几个看不到了。写成字符串再 `eval`，就可以放在 `try` 里一个个试，错了也不影响循环继续。**这只是一个教学捷径。**\n\n```python\nbad_snippets = (\"1 + 'a'\", \"int('x')\", \"[1, 2][5]\", \"{}['k']\")\nfor bad in bad_snippets:                   # bad 依次是这四个字符串\n    try:\n        eval(bad)                          # 把字符串当 Python 表达式运行\n    except Exception as e:                 # 出了错就接住，循环继续\n        print(repr(bad), \"->\", type(e).__name__ + \":\", e)\n# 输出：\"1 + 'a'\" -> TypeError: unsupported operand type(s) for +: 'int' and 'str'\n# 输出：\"int('x')\" -> ValueError: invalid literal for int() with base 10: 'x'\n# 输出：'[1, 2][5]' -> IndexError: list index out of range\n# 输出：\"{}['k']\" -> KeyError: 'k'\n```\n\n**读输出：** 四个字符串依次触发了四种不同的错：`TypeError`（整数加字符串）、`ValueError`（`int('x')`）、`IndexError`（下标 5 出界）、`KeyError`（空字典里没有键 `'k'`）。这里用的是 `except Exception as e`，所以四种都能接住，循环一次不停地跑完。如果这里写成 `except TypeError`，那只有第一个会被接住，第二个的 `ValueError` 会直接冒出来，把程序停下。这也是你问的「`try` 后面能不能跟很多 `except`」的答案：可以，你需要几种就写几个，或者统一用 `Exception`。\n\n**为什么实际代码里不要用 `eval`？** 因为它会运行字符串里**任何** Python 代码：\n\n```python\nsecret = \"仓库门禁码 1234\"\nuser_text = \"secret\"            # 假设这是别人在表单里填的一段文字\nprint(eval(user_text))          # 别人写的字符串，读到了你程序里的变量\n# 输出：仓库门禁码 1234\n```\n\n**读输出：** `仓库门禁码 1234`：字符串 `\"secret\"` 被当作代码，读到了程序里的变量。字符串换成「读文件」「删文件」的代码，一样会被执行。**只要字符串的来源不是你自己（用户输入、网页、文件、网络），`eval` 就等于把电脑交给别人。** 而且 `eval` 出错的信息很难读，也很慢。需要解析数据时的替代品：\n\n- 字符串转数字：`int(\"12\")`、`float(\"3.5\")`；\n- 字符串里写的是 Python 字面量（数字、字符串、列表、字典）：`ast.literal_eval`；\n- 字符串是 JSON 格式：`json.loads`。\n\n```python\nimport ast\nprint(ast.literal_eval(\"[1, 2, {'a': 3}]\"))      # 只认字面量：数字、字符串、列表、字典……\ntry:\n    ast.literal_eval(\"secret\")\nexcept ValueError as e:\n    print(\"literal_eval 拒绝了：\", type(e).__name__)\n# 输出：[1, 2, {'a': 3}]\n# 输出：literal_eval 拒绝了： ValueError\n```\n\n**读输出：** `[1, 2, {'a': 3}]`：`literal_eval` 能把「字面量」转成对应的值。`ast.literal_eval(\"secret\")` 被拒绝了（`ValueError`）：它只认字面量，不认变量名，更不会执行代码。（`import ast` 是把标准库里的工具拿过来用，「文件、模块与环境」那一节会讲。和 `eval` 同类的还有 `exec`，能运行多条语句，同样危险。）\n\n### 调试入门：没有报错但结果不对怎么办\n\n最难的 bug 是**没有报错，但结果不对**。三个习惯能解决大部分问题：**看、缩、拆**。\n\n**习惯一：用 `print` 看中间值。** 先看一个没有报错、结果却不对的例子：\n\n```python\nqtys = [12, 0, 35, 8]\ntotal = 0\nfor q in qtys:\n    total = q                       # 想累加，却写成了赋值\nprint(\"平均\", total / len(qtys))    # 期望 13.75\n# 输出：平均 2.0\n```\n\n**读输出：** `平均 2.0`，但 `(12 + 0 + 35 + 8) / 4` 应该是 13.75。没有报错，不知道错在哪。**在循环里加一行 `print` 看每一轮的值：**\n\n```python\ntotal = 0\nfor q in qtys:\n    total = q\n    print(\"q =\", q, \" total =\", total)    # 在循环里打印中间值\n# 输出：q = 12  total = 12\n# 输出：q = 0  total = 0\n# 输出：q = 35  total = 35\n# 输出：q = 8  total = 8\n```\n\n**读输出：** `total` 每一轮就是 `q` 本身（12、0、35、8），根本没有累计。累计起来的话应该是 12、12、47、55。线索一目了然：`total = q` 是赋值，不是累加，应该写成 `total += q`。\n\n```python\ntotal = 0\nfor q in qtys:\n    total += q\nprint(\"平均\", total / len(qtys))\n# 输出：平均 13.75\n```\n\n**读输出：** `平均 13.75`，对了。（这个例子里 `print` 帮你**看见了中间值**，把「感觉哪里不对」变成了「这一行不对」。）\n\n**习惯二：怀疑一个值时，看它的类型和 `repr`。** `print` 会把空格、引号「藏起来」：\n\n```python\nqty = \"12 \"                          # 从表格里复制来的，末尾带了一个空格\nprint(qty, qty == \"12\")\nprint(repr(qty), type(qty).__name__, len(qty))\nprint(f\"{qty=}\")                     # 快捷写法：同时打印变量名和 repr\n# 输出：12  False\n# 输出：'12 ' str 3\n# 输出：qty='12 '\n```\n\n**读输出：** 第一行 `12  False`（两个空格：数字后面本来有一个空格，加上 `print` 的分隔空格）：看上去是 12，却不等于 `\"12\"`。第二行 `'12 ' str 3`：`repr` 把引号和空格都显示了出来，类型是字符串，长度 3 而不是 2。第三行 `qty='12 '`：`f\"{qty=}\"` 是快捷写法（Python 3.8 起），同时打印变量名和它的 `repr`。\n\n**习惯三：二分排查。** 一段长代码结果不对，在**中间**加一个 `print` 或检查：中间值对，说明 bug 在后半段；中间值不对，说明在前半段。再对半、再对半，20 行代码大约 5 次就能定位，比从头一行行猜快得多。\n\n**习惯四：缩成最小的可复现例子 (minimal reproducible example)。** 把出问题的代码一点点删，直到剩下**最少的几行、单独就能运行、仍然出现同一个错**。这个过程中你自己往往就发现原因了；如果还是不明白，要向别人（同事、论坛、Claude）求助，把这个最小例子连同**完整的 traceback** 和**你期望的结果**一起发过去，别人才帮得上忙。比如上面 `平均 2.0` 的问题，最小例子可以缩成：\n\n```text\ntotal = 0\nfor q in [12, 0, 35, 8]:\n    total = q\nprint(total)          # 得到 8，期望 55\n```\n\n**习惯五：读完整的报错，一次只改一处。** 不要只看最后一行就自己猜；改一处、运行一次，确认问题是不是变了，而不是一口气改五个地方。\n\n### 这一节你要带走的三句话\n\n1. **缩进是 Python 的语法**：块由冒号加缩进圈出来；`if / elif / else` 从上到下执行第一个为真的分支；`0`、空容器、`None` 当作假；`and` / `or` 会短路，把「安全检查」放左边。\n2. **`for` 循环的是「容器里的每一个元素」，一次拿一个**；`range`、`enumerate`、`zip`、`.items()` 决定拿什么；`while` 必须让条件最终变假。\n3. **读报错：先看最后一行（类型加说明），再找最下面一条属于自己代码的行**；`try / except` 只接具体的、预料到的错，不要滥用 `except Exception`；**不要用 `eval`**。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 一段代码写成 `for bad in (\"1 + 'a'\", \"int('x')\"): try: eval(bad) except TypeError as e: print(e)`（缩进正确）。运行时会发生什么？为什么？要让两个都能接住，有哪两种改法，各有什么取舍？",
+   "a": "第一个字符串 `1 + 'a'` 抛出 `TypeError`，被 `except TypeError` 接住，打印出说明；第二个 `int('x')` 抛出的是 **`ValueError`**，不是 `TypeError`，没有任何 `except` 匹配，**异常继续往外抛，程序停下并打印 traceback**，循环也就不会再继续。\n\n改法一：写两个 `except`（`except TypeError ...` 和 `except ValueError ...`），或者 `except (TypeError, ValueError) as e`：**明确**说出你预料到哪些错，其他没预料到的错仍然会暴露出来，这是推荐的做法。改法二：`except Exception as e` 然后打印 `type(e).__name__` 和 `e`：省事，适合调试和「一批任务逐个跑、一个失败不要拖累其他」的最外层，但会把你没想到的错（比如手误的 `NameError`）也一起吞掉，所以不要在逻辑的深处滥用。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Think Python 3e（Downey）— 第 5 章 Conditionals and Recursion 与第 7 章 Iteration and Search",
+   "url": "https://allendowney.github.io/ThinkPython/chap07.html",
+   "note": "本节大纲依据之一：条件、循环和 while，CC BY-NC-SA 4.0；第 5 章在 chap05.html"
+  },
+  {
+   "title": "Python 官方教程：Errors and Exceptions",
+   "url": "https://docs.python.org/3/tutorial/errors.html",
+   "note": "语法错误、异常、try / except / else / finally、raise 的官方说明"
+  },
+  {
+   "title": "Python 官方教程：More Control Flow Tools",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html",
+   "note": "if、for、range、break / continue / 循环的 else，官方说明"
+  },
+  {
+   "title": "Python 文档：Built-in Exceptions",
+   "url": "https://docs.python.org/3/library/exceptions.html",
+   "note": "所有内置异常的列表和继承关系（上面「家谱」的完整版），遇到没见过的错误类型时来查"
+  },
+  {
+   "title": "Harvard CS50P：Lecture 3 Exceptions（讲义）",
+   "url": "https://cs50.harvard.edu/python/2022/notes/3/",
+   "note": "大学课程原版，try / except / else、raise 与输入检查的讲义和习题"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`for bad in (\"a\", \"b\", \"c\"):` 这行代码里，变量 `bad` 是什么？",
+    "options": [
+     "一个固定的关键字，必须叫这个名字",
+     "整个元组 `(\"a\", \"b\", \"c\")`",
+     "循环的次数",
+     "每一轮依次取到括号里的一个元素（`\"a\"`、`\"b\"`、`\"c\"`）"
+    ],
+    "answer": 3,
+    "explain": "`for` 循环的是容器里的每一个元素，一次一个，`bad` 只是我们给「当前这一个」起的名字，可以换成任何合法的变量名。"
+   },
+   {
+    "q": "下面的代码里，`except` 的顺序有什么问题？\n\n```text\ntry:\n    d = {}\n    d[\"k\"]\nexcept LookupError:\n    print(\"1\")\nexcept KeyError:\n    print(\"2\")\n```",
+    "options": [
+     "语法错误，Python 不允许这样写",
+     "没有语法问题，但会打印 `1`，第二个 `except` 永远走不到，因为 `KeyError` 是 `LookupError` 的子类",
+     "运行时会报 `NameError`",
+     "会同时打印 `1` 和 `2`"
+    ],
+    "answer": 1,
+    "explain": "`except` 从上到下找第一个匹配的，`LookupError` 能接住它的所有子类（包括 `KeyError`），所以第一个就匹配了，第二个永远不会执行，而且 Python 不会提示。原则：具体的写前面，范围大的写后面。"
+   },
+   {
+    "q": "为什么在实际程序里不应该用 `eval` 去处理来自用户输入或文件的字符串？",
+    "options": [
+     "因为 `eval` 总是比 `int()` 慢一百倍",
+     "因为 `eval` 只能计算数字",
+     "因为 `eval` 会把字符串当作 Python 代码执行，字符串里的任何代码都会被运行，等于把电脑交给写字符串的人",
+     "因为 `eval` 会让程序进入死循环"
+    ],
+    "answer": 2,
+    "explain": "`eval` 的能力是执行任意代码，包括读你的变量、读写或删除文件。数字用 `int()` / `float()`，字面量用 `ast.literal_eval`，JSON 用 `json.loads`。慢是次要的缺点，不是主要原因。"
+   }
+  ]
+ }
+}

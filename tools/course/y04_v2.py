@@ -1,0 +1,357 @@
+"""py-0 第 4 节：异常、调试、测试、日志与类型注解"""
+from unitlib import *
+from y04c import (C_EXC, C_HIER, C_RAISE, C_FROM, C_EAFP, C_FINALLY, C_BARE,
+                  C_TB, C_ASSERT,
+                  C_MEDIAN, C_UNIT, C_UNITRUN, C_FLOAT,
+                  C_PYT_SRC, C_PYT_TEST, C_PYT_RUN, C_PYT_BUG,
+                  C_LOG, C_LOGEXC, C_LOGLEVEL, C_TYPE, C_TYPE2, C_TYPE3)
+
+unit = {
+ "id": "u04",
+ "title": "异常、调试、测试与类型注解",
+ "en": "Exceptions, Debugging, Testing & Type Hints",
+ "minutes": 100,
+ "objectives": [
+  "会用 `try` / `except` / `else` / `finally` 处理 **异常 (exception)**，会 `raise`、写**自定义异常**、用 `raise ... from`，知道不能写「裸 except」",
+  "会**读 traceback（从下往上）**，掌握系统的调试步骤：复现 → 缩小 → 假设 → 验证；会用 `assert`、`print` / `logging`、`breakpoint()` (**pdb**)",
+  "会写**单元测试 (unit test)**：`unittest` 与 `pytest` 的基本写法、测边界情况与异常、浮点数比较，理解「测试能先于代码」的价值",
+  "会用 **`logging`** 代替 `print` 记录运行信息，知道日志级别",
+  "会写 **类型注解 (type hints)**，知道它在运行时**不会被强制检查**，是给人和工具（IDE、`mypy`）看的",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一节要干什么
+
+写代码，出错是常态，不是例外。**专业与业余的区别，不是少出错，而是出错之后能快速找到原因、并且能让同样的错不再出现。** 这一节讲的是这套「工程素养」：怎么处理错误，怎么读报错，怎么定位 bug，怎么用测试把行为「固定」下来。
+
+**学完它你就能看懂这几件事：**
+
+- ML 代码里最常见的几种报错：`RuntimeError: shape mismatch`、`KeyError`（配置里缺字段）、`FileNotFoundError`（数据路径错了）、`CUDA out of memory`：知道是**什么类型的异常**、**在哪一行抛的**、**为什么**；
+- 训练跑了 6 小时 loss 变成 `nan`：怎么用 `assert`、日志与断点排查；
+- 研究代码库里的 `tests/` 文件夹、`logging.getLogger(__name__)`、`def f(x: torch.Tensor) -> torch.Tensor`：每一样都是这一节的内容；
+- 面试里常被问到的「你怎么测试你的代码」「你怎么调试」。
+
+**本节安排（约 100 分钟）**：异常处理与视频一（25 分钟）→ 读 traceback 与调试、视频二（20 分钟）→ 单元测试与视频三（30 分钟）→ 日志与类型注解（15 分钟）→ 总结与「想一想」（10 分钟）。
+
+下面每一个知识点都是同一个节奏：**先提一个问题 → 一小段代码 → 马上读它的输出**。网页里每段代码都能点「▶ 运行」，后面的代码块可以直接用前面定义的变量，所以请**按顺序**往下读、往下跑。
+
+### 异常处理
+
+> **标准定义 · 异常 (exception)**
+>
+> **异常**是程序运行中出现错误时，Python 创建并**抛出 (raise)** 的对象。如果没人处理，它会沿着**调用栈向外逐层传播**，直到程序终止并打印 traceback。`try` 块里放可能出错的代码；`except 异常类型 as e` 处理对应类型的异常（可以有多个，也能匹配子类）；`else` 在**没有**异常时执行；`finally` **无论如何**都执行，用于清理。`raise` 主动抛出异常；`raise NewError(...) from e` 在抛出新异常的同时保留**原因**。自定义异常通过继承 `Exception`（或它的子类）创建。
+>
+> *English: An exception is an object raised when an error occurs and propagates up the call stack until handled. try/except/else/finally handle it; raise throws one; raise ... from keeps the cause; custom exceptions subclass Exception.*
+
+**白话版：「出了事故，先喊一声，谁能处理谁来接手」。** 函数 A 调函数 B，B 里出了事故，B 不处理，就向上喊给 A；A 也不处理，就喊给 A 的调用者……一直喊到有人 `except` 它，或者喊到最外面，程序停止。`finally` 像「不管事故发生没发生，离开房间前都要把灯关掉」。
+
+**问题一：`try` / `except` / `else` / `finally` 四个分支，各在什么时候执行？** 用三种输入试一试：正常的 `"25"`、不是整数的 `"abc"`、会除零的 `"0"`。
+
+""" + C_EXC + r"""
+
+读输出：`"25"`：`int("25")` 和 `100 // 25` 都没出错，所以走 `else` 分支，返回 `100 // age = 4`。`"abc"`：`int("abc")` 抛出 `ValueError`，被第一个 `except` 抓住，信息是 `invalid literal for int() with base 10: 'abc'`。`"0"`：`int("0")` 没问题，`100 // 0` 抛出 `ZeroDivisionError`，被第二个 `except` 抓住，返回 `年龄不能是 0`。三种情形下都先打印了一行 `[finally 执行了]`，再显示函数的返回值：**`finally` 无论如何都会执行**，而且是在函数真正返回之前。
+
+**问题二：`except` 是怎么决定「抓不抓得住」的？** 因为异常是**有继承关系的类**：
+
+""" + C_HIER + r"""
+
+读输出：第一行是 `ZeroDivisionError` 的继承链（去掉它自己）：`ArithmeticError` → `Exception` → `BaseException`，也就是说 `ZeroDivisionError` 是 `ArithmeticError` 的子类。第二行 `True True`：`KeyError` 是 `LookupError` 的子类，`FileNotFoundError` 是 `OSError` 的子类。第三行说明 `except ArithmeticError` **也能抓住它的子类** `ZeroDivisionError`。所以多个 `except` 并列时，**具体的异常写前面，宽泛的写后面**：如果把宽泛的写在前面，后面具体的分支就永远走不到了。
+
+**问题三：怎样主动抛出异常，并让它有自己的名字？** 用 `raise`，并继承内置异常来自定义：
+
+""" + C_RAISE + r"""
+
+读输出：`check_score(60)` 正常返回 `60`。`check_score(120)` 不在范围内，`raise InvalidScore(...)` 抛出了我们自定义的异常。`InvalidScore` 继承自 `ValueError`，所以 `except ValueError` 能抓住它；`type(e).__name__` 显示它的真实类型是 `InvalidScore`，后面是我们写的错误信息。自定义异常的好处：调用者既可以抓宽泛的 `ValueError`，也可以只抓你定义的 `InvalidScore`，而且名字本身就说明了出了什么事。
+
+**问题四：把底层异常包装成更有意义的异常时，怎样不丢掉「根因」？** 用 `raise ... from ...`：
+
+""" + C_FROM + r"""
+
+读输出：外层抓到的是包装后的 `RuntimeError`，信息是 `配置缺少 'lr'`，比 `KeyError: 'lr'` 更容易看懂；而 `e.__cause__` 保留了原始的 `KeyError('lr')`。排查时两层信息都在：**既知道「业务上出了什么事」，也知道「底层到底是什么错」**。
+
+**问题五：该「先检查再做」，还是「先做，出错再处理」？**
+
+""" + C_EAFP + r"""
+
+读输出：三种写法结果都是 `0`。第一种是 **EAFP**（Easier to Ask Forgiveness than Permission，「先做，出错再处理」），Python 推崇这种风格，例如直接 `d[key]` 并 `except KeyError`；第二种是 **LBYL**（Look Before You Leap，「先检查再做」）；第三种 `d.get("b", 0)` 对字典来说最简洁，简单情况优先用它。
+
+**问题六：`finally` 和 `return` 同时出现，谁先谁后？**
+
+""" + C_FINALLY + r"""
+
+读输出：先打印了「清理工作先于返回完成」，然后才得到返回值 `try 的返回值`：`try` 里的 `return` 先算出返回值，但函数真正返回之前，`finally` 一定会先运行。这正是它适合做清理（关文件、释放资源）的原因。
+
+**问题七：把所有错误都 `except` 掉，会有什么后果？** 这是最常见的坏习惯：
+
+""" + C_BARE + r"""
+
+读输出：`risky(0)`（除零）和 `risky("a")`（类型错误）是两种完全不同的错误，却都得到 `None`，你根本看不出哪种出了事，真正的 bug 被吞掉了。**不要写裸 `except:` 或笼统的 `except Exception: return None`；只抓你知道怎么处理的、范围尽量窄的异常**；处理不了就让它继续向上传。
+
+**什么时候该让程序崩溃？** 一个常见的错误观念是「程序不能崩」。事实上，**让错误尽早、清楚地暴露**，比悄悄吞掉然后在下游产生错误结果要好得多：训练出一个静默地用了错误数据的模型，比训练一开始就报错糟糕得多。
+"""),
+  V("NIWwJbo-9_8", "视频一：Python Tutorial: Using Try/Except Blocks for Error Handling（Corey Schafer）", 11),
+  T(r"""
+### 读 traceback 与系统地调试
+
+> **标准定义 · 回溯 (traceback) 与调试 (debugging)**
+>
+> **traceback** 是异常发生时 Python 打印的**调用栈快照**：从最外层的调用开始，一层层列到**抛出异常的那一行**，最后一行是**异常类型与信息**。**调试**是找出并修复错误原因的过程。
+>
+> *English: A traceback is the call-stack snapshot printed when an exception is raised: calls from the outermost to the line that raised, ending with the exception type and message. Debugging is the process of finding and fixing the cause of a bug.*
+
+**白话版：「事故现场的路线图」。** 它告诉你：程序从哪里开始，经过哪些函数，在哪一行出的事，出了什么事。**读法：先看最后一行**（出了什么异常、说了什么），再**从下往上**看（最下面是出错的位置，往上是「谁调用了它」）。
+
+**问题：一份真实的 traceback 该怎么读？** 我们把一个小脚本当作 `train.py` 运行，让它因为配置里缺 `lr` 而出错，再把调用栈打印出来：
+
+""" + C_TB + r"""
+
+读输出：最后一行 `KeyError: 'lr'` 说「字典里没有键 `lr`」；倒数第二行 `line 3, in load_config` 是出错的位置，代码是 `d["lr"] * 2`；再往上，`train` 在第 6 行调用了 `load_config`，整个脚本在第 8 行调用了 `train`。（我们去掉了最外面运行这段脚本的那一层外壳，只留下 `train.py` 里的调用栈，真实的 traceback 第一行就是你的脚本入口。）**根因不一定在最后一行**：那里只是「事情暴露的地方」，真正的问题是「调用者传进来的配置里没有 `lr`」。
+
+**系统地调试：**
+
+1. **复现**：先找到一个**稳定触发**错误的最小输入。不能稳定复现，就先想办法让它稳定（固定随机种子、固定数据顺序）。
+2. **缩小范围**：用**二分**的思想：在中间位置打印或断言，判断错误是在前半段还是后半段产生的，不断二分。
+3. **提出假设，再验证**：不要随机改代码碰运气。先说出「我认为是因为 X」，然后设计一个实验验证它。
+4. **修复后写一个测试**，让同样的错误以后不会悄悄回来。
+
+**工具一：`print`** 最快，但容易在代码里留下一堆。**工具二：`assert condition, "message"`** 在**假设被破坏时立即报错**，ML 里常用来检查张量形状（`assert x.shape == (batch, dim)`）和数值（`assert not torch.isnan(loss)`）。下面用嵌套列表模拟一个 4 行 3 列的批数据：
+
+""" + C_ASSERT + r"""
+
+读输出：形状对的时候，两个 `assert` 都通过，函数正常返回 `形状检查通过`。当我们声称 batch 是 5、而实际只有 4 行时，第一个 `assert` 立刻抛出 `AssertionError`，信息正是我们写的 `batch 大小不对：4 != 5`：**问题在它第一次出现的地方就被抓住了**，而不是传到后面变成一个莫名其妙的错误。**`assert` 只是调试用的**：用 `python -O` 运行会被忽略，所以**不要用它来检查用户输入**（那种情况应该 `raise ValueError`）。
+
+**工具三：`breakpoint()`** 在这一行暂停程序，进入交互式调试器 **pdb**。它需要一个真正的终端来输入命令，所以这段代码不在网页里运行，请在本地终端或 IDE 里试：
+
+```text
+def f(x):
+    y = x * 2
+    breakpoint()        # 程序在这里停下，进入 (Pdb) 提示符
+    return y + 1
+```
+
+在 `(Pdb)` 提示符下常用命令：`p 变量名`（打印）、`n`（执行下一行）、`s`（进入函数）、`c`（继续运行）、`l`（显示附近代码）、`q`（退出）。VS Code、PyCharm 等 IDE 也有图形化的断点调试，用法相同。
+"""),
+  V("bHx8A8tbj2c", "视频二：Start Python Debugging With pdb（Real Python）", 4),
+  T(r"""
+### 单元测试
+
+> **标准定义 · 单元测试 (unit test)**
+>
+> 针对程序里**一个小单元**（通常是一个函数或方法）的自动化检查：给定输入，断言输出等于预期。一组测试可以**一键运行**，每次修改代码后重新运行，确认没有破坏原有功能，这叫**回归测试 (regression testing)**。Python 标准库自带 `unittest`；第三方的 **`pytest`** 更简洁（直接写以 `test_` 开头的函数和 `assert`），是业界最常用的。好的测试覆盖：**典型输入**、**边界情况 (edge cases)**（空输入、单个元素、最大最小值）、**错误情况**（应当抛出异常）。
+>
+> *English: A unit test is an automated check of one small unit: for a given input, assert the expected output. Running the suite after every change catches regressions. unittest is in the standard library; pytest is the popular third-party framework. Good tests cover typical inputs, edge cases and error cases.*
+
+**白话版：「给代码配一个自动验收员」。** 你写了一个函数，除了手动试几个输入，不如把「输入 → 期望输出」写成代码，让机器一次跑完。以后每次改动，点一下就知道有没有改坏。
+
+**问题一：手动试几个输入，够不够？** 先写一个求中位数的函数，再故意写一个有 bug 的版本（偶数个元素时只取了后一个中间值）：
+
+""" + C_MEDIAN + r"""
+
+读输出：`median` 对 `[3, 1, 2]` 得到 `2`，对 `[4, 1, 3, 2]` 得到 `2.5`（排序后 `[1, 2, 3, 4]`，取中间两个的平均 $(2 + 3) / 2$）。`buggy_median` 对奇数个元素也得到 `2`，对偶数个元素却得到 `3`（只取了后一个中间值），错了。手动试能发现这个错，但**只能验证「现在」**，每次改动都要重新手动试、用眼睛去比。更好的办法是把「输入 → 期望输出」写成代码。
+
+**问题二：怎样把这些检查写成可以一键运行的测试？** 用标准库 `unittest`：一个测试类，每个 `test_` 开头的方法是一个用例。
+
+""" + C_UNIT + r"""
+
+读输出：这一段只是**定义**了测试，所以没有输出。`TestMedian` 里有 5 个用例：`test_odd` 和 `test_even` 测典型的奇数、偶数个元素，`test_single` 测只有一个元素，`test_empty_raises` 用 `assertRaises` 断言「空列表应当抛出 `IndexError`」，`test_float` 用 `assertAlmostEqual` 比较浮点数。`TestBuggyMedian` 继承了 `TestMedian`（上一节的继承），**只把被测的函数换成有 bug 的版本**，同一套 5 个用例就能对两个版本各跑一遍。
+
+**问题三：运行测试，测试能告诉我们什么？**
+
+""" + C_UNITRUN + r"""
+
+读输出：同一套 5 个测试，**有 bug 的版本失败 2 个**：`test_even` 直接指出 `3 != 2.5`（得到 3，期望 2.5），`test_float` 指出 `0.2 != 0.15`（`[0.1, 0.2]` 也是偶数个元素）；其余 3 个用例（奇数个、单个元素、空列表抛出异常）在 bug 版本上碰巧通过，所以**只测奇数个元素，是发现不了这个 bug 的**，这就是为什么要测偶数个这种边界情况。**测试把 bug 定位到了具体的用例**；正确的 `median` 5 个全部通过，失败 0 个。
+
+**问题四：为什么 `test_float` 不直接用 `==`？**
+
+""" + C_FLOAT + r"""
+
+读输出：`0.1 + 0.2 == 0.3` 是 `False`：**浮点数有舍入误差，不要用 `==` 比较**。在容差范围内比较（`abs(a - b) < 1e-9`）得到 `True`，标准库的 `math.isclose` 是现成的写法，也是 `True`。`unittest` 里用 `assertAlmostEqual`，`pytest` 里用 `pytest.approx`。
+
+**问题五：同样的测试，用 `pytest` 写出来是什么样？** `pytest` 不需要写类，直接写以 `test_` 开头的函数和 `assert`。真实项目里，被测代码放在 `stats.py`，测试放在 `test_stats.py`，在终端里运行：
+
+```bash
+pytest                    # 在项目目录运行，自动发现并运行所有 test_*.py
+pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
+```
+
+网页里没有终端，也不能启动命令行进程，所以下面改用 `pytest.main([...])` 在代码里运行（效果和命令行一样）。先把被测模块写到磁盘上：
+
+""" + C_PYT_SRC + r"""
+
+读输出：`stats.py` 已经写好（就是上面的 `median`，共 6 行：一个空行加 5 行函数）。再写 `test_stats.py`：
+
+""" + C_PYT_TEST + r"""
+
+读输出：文件里有 5 个测试函数。要点：**一**，直接写 `assert median(...) == ...`，不用记 `assertEqual` 这类方法名，失败时 `pytest` 会自动显示 `assert` 两边的值。**二**，`pytest.approx(0.15)` 处理浮点数比较。**三**，`@pytest.mark.parametrize` 把「一组输入」自动展开成多个测试：这里 3 组 `(xs, expected)` 变成 3 个用例，所以实际运行的用例会是 7 个。**四**，`pytest.raises(IndexError)` 对应 `assertRaises`。现在运行它们：
+
+""" + C_PYT_RUN + r"""
+
+读输出：`pytest.main` 的退出码 `0` 表示**全部通过**。7 个用例：`test_odd`、`test_even`、`test_float`、被参数化展开的 `test_many[xs0-1]`、`test_many[xs1-1.5]`、`test_many[xs2-3]`，以及 `test_empty`，全部 `passed`。（为了让输出稳定，我们用一个小插件收集每个用例的结果；平时在终端里运行 `pytest` 会直接显示进度和统计。）再把 `stats.py` 换成有 bug 的版本，用**同一份**测试跑一遍：
+
+""" + C_PYT_BUG + r"""
+
+读输出：退出码变成 `1`，表示**有测试失败**。失败了 3 个：`test_even`（`assert 3 == 2.5`）、`test_float`（`assert 0.2 == 0.15 ± 1.5e-07`，`± 1.5e-07` 是 `pytest.approx` 默认的容差）、参数化用例 `test_many[xs1-1.5]`（`[1, 2]` 的中位数应该是 `1.5`，得到 `assert 2 == 1.5`）；另外 4 个通过。`pytest` 的失败信息**直接给出 `assert` 两边的值**，还能看出是参数化的哪一组出了问题，修 bug 时非常省事。
+
+**怎么想测试用例：** 典型值、**空输入**、**只有一个元素**、**重复元素**、**非常大 / 非常小的数**、**应该报错的输入**。**测试优先 (test-driven development, TDD)**：先写测试（它定义了「正确」是什么），再写代码让它通过。在 ML 里，测试同样有价值：测数据预处理函数的输入输出形状、测损失函数在已知输入上的值、测「一个 batch 能过拟合」（模型和训练循环是否正确的最小检验）。
+
+**写测试 vs 手动试：** 手动试只能验证「现在」，测试保证「以后也对」。数据结构那一门课里，每一段代码我们都用「随机输入 + 与暴力解法对比」验证过，这就是一种测试方法（**基于性质的测试 property-based testing** 的雏形）。
+"""),
+  V("mzlH8lp4ISA", "视频三：getting started with pytest (beginner - intermediate)（anthonywritescode）", 13),
+  T(r"""
+### 日志 (logging)
+
+> **标准定义 · 日志 (logging)**
+>
+> `logging` 模块用**分级的消息**记录程序运行情况。从低到高的五个**级别 (level)**：`DEBUG`（细节）、`INFO`（正常的进度）、`WARNING`（异常但可继续）、`ERROR`（出错了）、`CRITICAL`（严重故障）。设定一个级别后，**低于它的消息不会输出**。每个模块用 `logging.getLogger(__name__)` 得到自己的 logger；`log.exception(...)` 在 `except` 块里使用，会**自动附上完整的 traceback**。
+>
+> *English: The logging module records messages at levels DEBUG, INFO, WARNING, ERROR and CRITICAL; messages below the configured level are dropped. log.exception inside an except block includes the traceback.*
+
+**白话版：「有开关的 print」。** `print` 要调试完一个个删掉；日志则是把所有信息按重要程度分级打出，**上线时调高级别，不改代码就能让调试信息消失**，还可以同时输出到文件、带上时间。
+
+**问题一：怎样分级输出信息，并让低级别的消息不显示？** 先配置日志（级别设为 `INFO`），再各发一条：
+
+""" + C_LOG + r"""
+
+读输出：`log.debug` 那一条**没有显示**（`DEBUG` 低于 `INFO`），`info` 和 `warning` 显示了，格式正是我们在 `format` 里写的 `级别 名字: 消息`。**用 `%s` 占位符传参**（`log.info("lr=%s", lr)`）而不是 f-string：只有消息真的要输出时才会格式化，省去不必要的开销。（代码里的 `setup()` 只是为了在网页里反复运行时每次都重新配置；真实脚本只在入口处配置一次。）**训练脚本里应该用日志记录超参数、每个 epoch 的 loss、保存模型的路径**：几天后回头看，你才知道「这个结果是怎么跑出来的」。
+
+**问题二：出错时，怎样把完整的 traceback 也记下来？** 在 `except` 块里用 `log.exception`：
+
+""" + C_LOGEXC + r"""
+
+读输出：先是一行 `ERROR   train: 训练出错`，紧接着是**自动附上的完整 traceback**，最后一行 `ZeroDivisionError: division by zero` 说明了原因（中间的文件名、行号因运行环境而异）。这样日志里既有你写的说明，也有定位问题所需的全部信息。
+
+**问题三：怎样在不改代码的情况下，让不太重要的消息消失？** 调高级别：
+
+""" + C_LOGLEVEL + r"""
+
+读输出：把级别设成 `ERROR` 之后，`warning` 也被屏蔽了，只有 `ERROR` 及以上的那一条显示出来。**上线时调高级别、调试时调低级别，代码本身不用改。**
+
+### 类型注解 (type hints)
+
+> **标准定义 · 类型注解 (type hints / type annotations)**
+>
+> 在函数参数、返回值与变量后面标注**预期的类型**：`def f(x: int, y: list[float] = None) -> str:`。常用写法：`list[int]`、`dict[str, float]`、`tuple[int, ...]`、`Optional[int]`（等同于 `int | None`）、`Callable[[int], str]`、联合 `int | str`（Python 3.10+）。**注解在运行时不会被强制检查**，Python 解释器不管它；它的作用是给**读代码的人**、**IDE 的补全**和**静态检查工具（如 `mypy`、`pyright`）**看。
+>
+> *English: Type hints annotate expected types of parameters, return values and variables. They are not enforced at runtime; they serve readers, IDEs and static checkers such as mypy and pyright.*
+
+**白话版：「给函数贴上说明标签」。** 标签写的是「这个槽请放整数」，但没有安检员拦着，你放一个字符串进去，Python 也照样运行（直到某一处真的出错）。**真正的安检员是 `mypy` 之类的工具，在你运行代码之前就能指出「这里类型对不上」。**
+
+**问题一：常见的类型注解怎么写？**
+
+""" + C_TYPE + r"""
+
+读输出：第一行是四个调用的结果：`mean([1, 2, 3])` 是 `2.0`；`find` 找不到键 `"b"`，返回 `None`（所以返回类型是 `Optional[int]`）；`apply` 把 `[1, 2]` 每个加 1 得到 `[2, 3]`；`parse("7")` 得到 `7`。第二行 `mean.__annotations__` 显示注解只是**保存在函数对象里的信息**：参数 `xs` 的注解是 `list[float]`，返回值是 `float`。
+
+**问题二：写错了类型，Python 会拦住吗？**
+
+""" + C_TYPE2 + r"""
+
+读输出：传入 `["a", "b"]` 时报的 `TypeError` 来自 `sum` 内部的加法（`0 + "a"`，整数加字符串），而**不是**因为注解被检查了。`parse(3.9)` 不符合 `str | int`，却照常运行，得到 `3`。**注解运行时不会被强制检查**；要在运行前发现这类问题，用 `mypy` / `pyright`。
+
+**问题三：注解还有什么别的用处？** 上一节的 `@dataclass` 就是靠字段的类型注解来知道有哪些字段：
+
+""" + C_TYPE3 + r"""
+
+读输出：`Sample([0.1, 0.2])` 的 `label` 取默认值 `None`；`Sample.__annotations__` 显示字段 `x` 的类型是 `list[float]`，`label` 是 `int | None`（既可以是整数，也可以是 `None`）。**在 ML 代码里，类型注解（尤其是 `torch.Tensor`、`np.ndarray`）是最好的文档之一**：一眼看出函数要什么、返回什么。
+
+### 这一节你要带走的三句话
+
+1. **异常会沿调用栈向上传播**；只抓你知道怎么处理的、范围尽量窄的异常，**不要吞掉错误**；`finally` 做清理，`raise ... from` 保留原因。
+2. **读 traceback：先看最后一行，再从下往上**；调试 = 复现、缩小、假设、验证；`assert`、日志和 `breakpoint()` 是三件基本工具。
+3. **测试把「正确」写成代码**：测典型值、边界值、错误情况，浮点数不要用 `==`；修复 bug 之后补一个测试。日志代替 `print`，类型注解是写给人和工具看的。
+"""),
+  THINK("下面这段代码有什么问题？代码是：`try: model = load_model(path)`，`except Exception: model = None`，后面直接 `model.predict(x)`。", r"""
+**问题：用笼统的 `except Exception` 吞掉了真正的错误，并把问题推迟到了后面。** 如果 `path` 写错了（`FileNotFoundError`）、文件损坏了、内存不足了，都会静默地变成 `model = None`，然后在 `model.predict(x)` 处抛出 `AttributeError: 'NoneType' object has no attribute 'predict'`：报错的位置和真正的原因相隔很远，你会花很长时间去查「为什么 model 是 None」。
+
+更好的做法：**只抓能处理的具体异常**，并给出有用的信息；处理不了就让它向上抛：
+
+```text
+try:
+    model = load_model(path)
+except FileNotFoundError as e:
+    raise SystemExit(f"找不到模型文件：{path}") from e
+```
+
+原则：**越早、越清楚地失败越好**（fail fast）。
+"""),
+  THINK("你为一个计算「验证集准确率」的函数写测试：`accuracy(preds, labels)`。除了「正常的几个例子」，你至少还会测哪几种情况？", r"""
+至少这几类：
+
+- **全对、全错**：准确率应该是 1.0 与 0.0，检查边界；
+- **只有一个样本**：长度为 1 的输入；
+- **空输入**：`preds` 和 `labels` 都是空列表，除以零！应该报错还是返回 0？这是**需要先决定的规格**，测试会迫使你想清楚；
+- **长度不一致**：`preds` 与 `labels` 长度不同，应该抛出 `ValueError`，用 `assertRaises` 测；
+- **类别不平衡的数据**：95% 都是类别 0，一个「全猜 0」的预测得到 0.95，函数没错，但这提醒你准确率不是好的指标（统计学里讲过）；
+- **浮点比较**：用 `approx` 而不是 `==`。
+
+测试本身就是一份「规格说明」：写的过程会暴露你对「这个函数应该做什么」的模糊之处。
+"""),
+  THINK("类型注解不会在运行时被检查，那为什么大家还要写？如果想在运行时真的检查类型，有什么办法？", r"""
+价值在**别处**：**一，文档**：`def predict(x: np.ndarray, k: int = 5) -> list[int]` 一眼看出怎么用；**二，IDE 补全与导航**：知道 `x` 是什么类型，编辑器才能提示它有哪些方法；**三，静态检查**：`mypy` / `pyright` 在不运行代码的情况下发现类型不匹配，把一类 bug 提前到写代码时；**四，大型代码库的重构**更安全。
+
+要在运行时检查，可以：手写 `isinstance` 检查，或者 `assert isinstance(x, int)`；也可以用第三方库，比如 **Pydantic**（根据类型注解校验并转换数据，FastAPI 与很多配置库都用它）、`beartype`、`typeguard`。ML 项目里的常见做法：**对外的边界（读配置、API 入口）用 Pydantic 校验，内部函数用注解 + `mypy` 静态检查。**
+"""),
+  KW(("异常","exception","运行时出错时抛出的对象，沿调用栈向外传播"),
+     ("`try` / `except` / `else` / `finally`","try / except / else / finally","处理异常 / 无异常时执行 / 无论如何都执行"),
+     ("`raise` / `raise ... from`","raise / raise from","主动抛出 / 抛出时保留原因"),
+     ("自定义异常","custom exception","继承 `Exception` 创建的异常类"),
+     ("EAFP / LBYL","EAFP / LBYL","先做、出错再处理 / 先检查再做"),
+     ("回溯","traceback","异常发生时的调用栈快照；先看最后一行，再从下往上"),
+     ("断言","assertion (`assert`)","假设被破坏时立即报错，用于调试，不用于检查用户输入"),
+     ("断点 / pdb","breakpoint / pdb","`breakpoint()` 暂停程序并进入交互式调试器"),
+     ("单元测试","unit test","对一个小单元的自动化检查；`unittest`、`pytest`"),
+     ("回归测试","regression testing","修改代码后重跑测试，确认没有破坏原有功能"),
+     ("边界情况","edge case","空输入、单元素、极值等容易出错的输入"),
+     ("日志级别","log level","DEBUG < INFO < WARNING < ERROR < CRITICAL"),
+     ("类型注解","type hints","标注预期类型；运行时不强制检查，供人与工具使用"),
+     ("静态类型检查","static type checking","`mypy` / `pyright` 在运行前检查类型是否匹配"),
+  ),
+ ],
+ "references": [
+  {"title": "Python 官方教程：Errors and Exceptions", "url": "https://docs.python.org/3/tutorial/errors.html", "note": "语法错误与异常、`try` / `except` / `finally`、自定义异常、异常链的官方说明"},
+  {"title": "Harvard CS50P：Exceptions 与 Unit Tests（课程主页）", "url": "https://cs50.harvard.edu/python/", "note": "大学课程原版，异常处理与 pytest 的讲义与习题"},
+  {"title": "Python Tutorial: Type Hints（Corey Schafer，约 41 分钟，选看）", "url": "https://www.youtube.com/watch?v=RwH2UzC2rIo", "note": "从基本注解到泛型的完整讲解，需要写大型项目时再看"},
+  {"title": "pytest 官方文档：Get Started", "url": "https://docs.pytest.org/en/stable/getting-started.html", "note": "安装、写第一个测试、断言与 fixtures 的入门"},
+  {"title": "Python 文档：Logging HOWTO", "url": "https://docs.python.org/3/howto/logging.html", "note": "基础与进阶两部分，含 logger、handler、formatter 的概念"},
+ ],
+ "quiz": {"questions": [
+  Q("`try / except / else / finally` 里，`finally` 块什么时候执行？",
+    ["只有发生异常时", "只有没发生异常时", "无论是否发生异常、是否 `return`，都会执行", "只在最后一次循环"], 2,
+    "`finally` 用于清理工作，保证一定会执行（除非进程被强制终止）。`else` 才是「没有异常时执行」。"),
+  Q("为什么 `except Exception: return None` 这种写法通常是**坏习惯**？",
+    ["因为它会让程序崩溃", "因为它把不同种类的错误（包括你的 bug）都吞掉了，问题会在更远的地方以更难懂的方式暴露", "因为 Python 不允许", "因为它运行很慢"], 1,
+    "原则：只抓你知道怎么处理的具体异常；让其余的错误尽早、清楚地暴露（fail fast）。"),
+  Q("`ZeroDivisionError` 是 `ArithmeticError` 的子类。`except ArithmeticError:` 能抓住 `ZeroDivisionError` 吗？",
+    ["不能", "能，`except` 会匹配指定类型及其子类", "只能抓住 `KeyError`", "取决于 Python 版本"], 1,
+    "异常是有继承关系的类，所以应当把具体的异常写在前面、宽泛的写在后面。"),
+  Q("读 traceback 的正确方法是？",
+    ["只看第一行", "先看最后一行（异常类型与信息），再从下往上看（最下面是出错的位置，往上是调用链）", "忽略它，直接重写代码", "只看中间一行"], 1,
+    "最后一行说明出了什么错，倒数第二行指出出错的位置，再往上是「谁调用了它」。根因不一定在最后一行。"),
+  Q("下面哪项**不是**系统调试的合理步骤？",
+    ["找到稳定复现错误的最小输入", "用二分的思想缩小出错的范围", "提出假设再设计实验验证", "随机改动代码，看哪次能运行就保留哪次"], 3,
+    "随机改动是碰运气，而且可能在不理解原因的情况下掩盖问题。应先提出假设并验证。"),
+  Q("下面哪种情况**不应该**用 `assert` 来检查？",
+    ["检查一个内部函数收到的张量形状是否符合预期", "检查训练中 loss 不是 `nan`", "检查用户从命令行传入的参数是否合法", "检查「这里不应该到达」的分支"], 2,
+    "`python -O` 会忽略 `assert`，所以不要用它检查外部输入；应该 `raise ValueError` 等异常。"),
+  Q("测试一个浮点数计算的结果，推荐的做法是？",
+    ["`assert result == 0.3`", "用 `assertAlmostEqual` / `pytest.approx` / 容差比较", "把结果转成字符串再比较", "不需要测试浮点数"], 1,
+    "`0.1 + 0.2 == 0.3` 是 `False`，浮点数有舍入误差，应当在容差范围内比较。"),
+  Q("为一个 `median(xs)` 函数写测试，下面哪组**最能**暴露潜在 bug？",
+    ["只测 `[1, 2, 3]`", "测奇数个、偶数个、单个元素、空列表、有重复元素的输入", "只测很大的列表", "只测已排序的输入"], 1,
+    "典型值 + 边界情况 + 错误情况。偶数个元素和空列表是最容易出错的边界。"),
+  Q("`logging` 里，设置级别为 `INFO` 后，哪些消息会输出？",
+    ["只有 `INFO`", "`DEBUG` 及以上所有", "`INFO`、`WARNING`、`ERROR`、`CRITICAL`", "只有 `ERROR`"], 2,
+    "低于设定级别的消息（这里是 `DEBUG`）被丢弃，设定级别及以上的都会输出。"),
+  Q("关于 Python 的类型注解，下面说法**正确**的是？",
+    ["传错类型时 Python 会自动抛出 `TypeError`", "注解运行时不强制检查，主要供阅读者、IDE 与 `mypy` 等工具使用", "加了注解程序会变快", "没有注解的代码无法运行"], 1,
+    "注解只是保存在 `__annotations__` 里的信息。要在运行前发现类型问题，用 `mypy` / `pyright`；要在运行时校验，用 Pydantic 等库。"),
+ ]},
+}
+
+TARGET = [1, 2, 0, 3, 1, 0, 3, 2, 1, 0]
+for q, t in zip(unit["quiz"]["questions"], TARGET):
+    q["options"][q["answer"]], q["options"][t] = q["options"][t], q["options"][q["answer"]]
+    q["answer"] = t
+
+if __name__ == '__main__':
+    dump(unit, "py-0", "u04-exceptions-testing.json")

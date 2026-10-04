@@ -1,6 +1,6 @@
-"""py-0 第 4 节：异常、调试、测试、日志与类型注解"""
+"""py-0「异常、调试、测试与类型注解」：回顾 try/except，进阶到异常层级、上下文管理器、日志、测试与类型注解"""
 from unitlib import *
-from y04c import (C_EXC, C_HIER, C_RAISE, C_FROM, C_EAFP, C_FINALLY, C_BARE,
+from y04c import (C_REVIEW, C_CUSTOM2, C_WITH1, C_WITH2, C_EXC, C_HIER, C_RAISE, C_FROM, C_EAFP, C_FINALLY, C_BARE,
                   C_TB, C_ASSERT,
                   C_MEDIAN, C_UNIT, C_UNITRUN, C_FLOAT,
                   C_PYT_SRC, C_PYT_TEST, C_PYT_RUN, C_PYT_BUG,
@@ -10,9 +10,10 @@ unit = {
  "id": "u04",
  "title": "异常、调试、测试与类型注解",
  "en": "Exceptions, Debugging, Testing & Type Hints",
- "minutes": 100,
+ "minutes": 115,
  "objectives": [
-  "会用 `try` / `except` / `else` / `finally` 处理 **异常 (exception)**，会 `raise`、写**自定义异常**、用 `raise ... from`，知道不能写「裸 except」",
+  "**回顾并升级** `try` / `except`：补全 `else` / `finally`，理解 **异常 (exception)** 的**继承层级**，会 `raise`、写**自定义异常（一整套异常层级）**、用 `raise ... from` 保留原因，知道不能写「裸 except」",
+  "理解 **上下文管理器 (context manager)** 与 `with` 的机制：会用 `__enter__` / `__exit__` 或 `@contextmanager` 写一个，知道 `with open(...)`、`assertRaises` 为什么能自动清理 / 检查",
   "会**读 traceback（从下往上）**，掌握系统的调试步骤：复现 → 缩小 → 假设 → 验证；会用 `assert`、`print` / `logging`、`breakpoint()` (**pdb**)",
   "会写**单元测试 (unit test)**：`unittest` 与 `pytest` 的基本写法、测边界情况与异常、浮点数比较，理解「测试能先于代码」的价值",
   "会用 **`logging`** 代替 `print` 记录运行信息，知道日志级别",
@@ -31,13 +32,35 @@ unit = {
 - 研究代码库里的 `tests/` 文件夹、`logging.getLogger(__name__)`、`def f(x: torch.Tensor) -> torch.Tensor`：每一样都是这一节的内容；
 - 面试里常被问到的「你怎么测试你的代码」「你怎么调试」。
 
-**本节安排（约 100 分钟）**：异常处理与视频一（25 分钟）→ 读 traceback 与调试、视频二（20 分钟）→ 单元测试与视频三（30 分钟）→ 日志与类型注解（15 分钟）→ 总结与「想一想」（10 分钟）。
+**开始之前你要会：**
+
+- `try` / `except 类型 as e`、用 `type(e).__name__` 看异常叫什么、读一份简单的报错：「条件、循环与读懂报错」
+- 内置函数（`len`、`sorted`、`type`……）、字符串方法与 f-string、`eval` 这类「把字符串当代码」的函数：「变量、数据类型与字符串」
+- 字典的 `.get` 等方法、元组与解包（`a, b = ...`）：「容器：列表、元组、字典与集合」
+- 函数的定义、参数与返回值、`lambda`、装饰器：「函数、作用域与递归」；生成器与 `yield`：「推导式、迭代器与生成器」
+- 类、继承、`@dataclass`：「类与对象」
+
+**本节安排（约 115 分钟）**：异常处理的回顾与进阶、视频一（30 分钟）→ 上下文管理器与 `with`（10 分钟）→ 读 traceback 与调试、视频二（20 分钟）→ 单元测试与视频三（30 分钟）→ 日志与类型注解（15 分钟）→ 总结与「想一想」（10 分钟）。
 
 下面每一个知识点都是同一个节奏：**先提一个问题 → 一小段代码 → 马上读它的输出**。网页里每段代码都能点「▶ 运行」，后面的代码块可以直接用前面定义的变量，所以请**按顺序**往下读、往下跑。
 
-### 异常处理
+### 异常处理：回顾与进阶
 
-> **标准定义 · 异常 (exception)**
+**回顾。** 「条件、循环与读懂报错」那一节已经讲过 `try` / `except`，这里不再从零讲，先把要点捋一遍：
+
+- 把可能出错的代码放进 `try`；出错时 Python 会抛出一个**异常对象**，立刻跳到能匹配它的 `except`；
+- `except 类型 as e` 里，`e` 就是那个异常对象：`print(e)` 看信息，`type(e).__name__` 看它叫什么；
+- 一个 `except` 可以用元组一次接几种类型；没有匹配的 `except`，异常就继续向外传，最后变成 traceback。
+
+下面这个小块把这三点各跑一遍（`type(e)` 得到 `e` 所属的类，`.__name__` 是这个类的名字，所以 `type(e).__name__` 就是「这个异常叫什么」）。看得懂就往下走；看不懂，先回到那一节再来。
+
+""" + C_REVIEW + r"""
+
+读输出：`safe_div(6, 3)` 没有出错，直接返回 `2.0`。`safe_div(1, 0)` 里 `a / b` 抛出 `ZeroDivisionError`，被 `except ZeroDivisionError as e` 接住：先打印 `捕获到： ZeroDivisionError | division by zero`（异常的名字和信息），再返回 `None`，所以最后一个 `print` 是 `None`。最后一段里，`int("abc")` 抛出的是 `ValueError`，被 `except (ValueError, TypeError)` 这一个 `except` 接住，`e` 的类型名正是 `ValueError`。
+
+**进阶。** 这一节要往上再走几步：异常其实是**有继承关系的类**（所以 `except` 能按「种类」接）；补全 `else` 和 `finally`；设计**自己的一套异常**；用 `raise ... from` 保留根因；再用**上下文管理器**把「出错也要清理」变成一个固定写法。下面先把定义补全：
+
+> **标准定义 · 异常 (exception)（回顾并补全）**
 >
 > **异常**是程序运行中出现错误时，Python 创建并**抛出 (raise)** 的对象。如果没人处理，它会沿着**调用栈向外逐层传播**，直到程序终止并打印 traceback。`try` 块里放可能出错的代码；`except 异常类型 as e` 处理对应类型的异常（可以有多个，也能匹配子类）；`else` 在**没有**异常时执行；`finally` **无论如何**都执行，用于清理。`raise` 主动抛出异常；`raise NewError(...) from e` 在抛出新异常的同时保留**原因**。自定义异常通过继承 `Exception`（或它的子类）创建。
 >
@@ -45,31 +68,37 @@ unit = {
 
 **白话版：「出了事故，先喊一声，谁能处理谁来接手」。** 函数 A 调函数 B，B 里出了事故，B 不处理，就向上喊给 A；A 也不处理，就喊给 A 的调用者……一直喊到有人 `except` 它，或者喊到最外面，程序停止。`finally` 像「不管事故发生没发生，离开房间前都要把灯关掉」。
 
-**问题一：`try` / `except` / `else` / `finally` 四个分支，各在什么时候执行？** 用三种输入试一试：正常的 `"25"`、不是整数的 `"abc"`、会除零的 `"0"`。
+**问题一：`try` / `except` / `else` / `finally` 四个分支，各在什么时候执行？** 用三种输入试一试：正常的 `"25"`、不是整数的 `"abc"`、会除零的 `"0"`。（`try` / `except` 你已经会了，这里补上 `else` 和 `finally`；代码里 `//` 是整除，`repr(s)` 把值按「带引号的写法」显示，用来分清字符串 `"25"` 和数字 `25`；`{e}` 是 f-string 里直接放进异常的信息，f-string 在「变量、数据类型与字符串」里讲过。）
 
 """ + C_EXC + r"""
 
 读输出：`"25"`：`int("25")` 和 `100 // 25` 都没出错，所以走 `else` 分支，返回 `100 // age = 4`。`"abc"`：`int("abc")` 抛出 `ValueError`，被第一个 `except` 抓住，信息是 `invalid literal for int() with base 10: 'abc'`。`"0"`：`int("0")` 没问题，`100 // 0` 抛出 `ZeroDivisionError`，被第二个 `except` 抓住，返回 `年龄不能是 0`。三种情形下都先打印了一行 `[finally 执行了]`，再显示函数的返回值：**`finally` 无论如何都会执行**，而且是在函数真正返回之前。
 
-**问题二：`except` 是怎么决定「抓不抓得住」的？** 因为异常是**有继承关系的类**：
+**问题二：`except` 是怎么决定「抓不抓得住」的？** 因为异常是**有继承关系的类**（继承在「类与对象」讲过）。代码里 `ZeroDivisionError.__mro__` 是「方法解析顺序 (method resolution order)」，对异常类来说就是它的继承链，从它自己一路列到最顶上的 `object`；`[1:4]` 是切片，跳过第 0 项（它自己），取接下来三项（切片在「容器：列表、元组、字典与集合」讲过）；`issubclass(A, B)` 问「A 是不是 B 的子类」：
 
 """ + C_HIER + r"""
 
 读输出：第一行是 `ZeroDivisionError` 的继承链（去掉它自己）：`ArithmeticError` → `Exception` → `BaseException`，也就是说 `ZeroDivisionError` 是 `ArithmeticError` 的子类。第二行 `True True`：`KeyError` 是 `LookupError` 的子类，`FileNotFoundError` 是 `OSError` 的子类。第三行说明 `except ArithmeticError` **也能抓住它的子类** `ZeroDivisionError`。所以多个 `except` 并列时，**具体的异常写前面，宽泛的写后面**：如果把宽泛的写在前面，后面具体的分支就永远走不到了。
 
-**问题三：怎样主动抛出异常，并让它有自己的名字？** 用 `raise`，并继承内置异常来自定义：
+**问题三：怎样主动抛出异常，并让它有自己的名字？** 用 `raise`，并继承内置异常来自定义。（`0 <= x <= 100` 是连着写的比较，等价于 `0 <= x and x <= 100`；`type(e).__name__` 前面的回顾里刚用过。）
 
 """ + C_RAISE + r"""
 
 读输出：`check_score(60)` 正常返回 `60`。`check_score(120)` 不在范围内，`raise InvalidScore(...)` 抛出了我们自定义的异常。`InvalidScore` 继承自 `ValueError`，所以 `except ValueError` 能抓住它；`type(e).__name__` 显示它的真实类型是 `InvalidScore`，后面是我们写的错误信息。自定义异常的好处：调用者既可以抓宽泛的 `ValueError`，也可以只抓你定义的 `InvalidScore`，而且名字本身就说明了出了什么事。
 
-**问题四：把底层异常包装成更有意义的异常时，怎样不丢掉「根因」？** 用 `raise ... from ...`：
+**进阶：给一个项目设计一整套异常。** 真实的项目里不会只有一个自定义异常，而是先定义一个**根异常**（比如 `DataError`），再让各种具体的错误继承它。这样调用者想「只处理本项目的数据错误」时，只写一个 `except DataError` 就够了；想区分具体种类时，再抓子类。下面的 `MissingColumn` 还带了一个额外的字段 `name`（`__init__` 里的 `super().__init__(...)` 是把错误信息交给父类 `Exception` 保存，`super()` 在「类与对象」里讲过）：
+
+""" + C_CUSTOM2 + r"""
+
+读输出：`get_col` 发现 `label` 不在这一行里，抛出 `MissingColumn`；外面只写了 `except DataError`，却照样抓住了它，因为 `MissingColumn` 是 `DataError` 的子类，`isinstance(e, DataError)` 打印 `True`（`isinstance(对象, 类)` 问「这个对象是不是这个类、或者它的子类的实例」）。错误信息里的 `{name!r}` 是 f-string 的 `!r`：用 `repr` 的方式显示，字符串会带上引号，所以看到的是 `'label'`，一眼就能分清「缺的是叫 label 的列」。`e.name` 取出了我们存进去的额外字段 `label`，调用者不必再从信息文字里去解析它。
+
+**问题四：把底层异常包装成更有意义的异常时，怎样不丢掉「根因」？** 用 `raise ... from ...`（`{key!r}` 就是上面刚讲的 `!r`）：
 
 """ + C_FROM + r"""
 
 读输出：外层抓到的是包装后的 `RuntimeError`，信息是 `配置缺少 'lr'`，比 `KeyError: 'lr'` 更容易看懂；而 `e.__cause__` 保留了原始的 `KeyError('lr')`。排查时两层信息都在：**既知道「业务上出了什么事」，也知道「底层到底是什么错」**。
 
-**问题五：该「先检查再做」，还是「先做，出错再处理」？**
+**问题五：该「先检查再做」，还是「先做，出错再处理」？** （`d.get("b", 0)` 里的 `.get` 是字典的方法：键存在就返回对应的值，不存在就返回第二个参数、**不报错**，「容器：列表、元组、字典与集合」讲过；`v2 = d["b"] if "b" in d else 0` 是**条件表达式**，格式是 `值1 if 条件 else 值2`，`"b" in d` 问「键 `"b"` 在不在字典里」。）
 
 """ + C_EAFP + r"""
 
@@ -91,6 +120,30 @@ unit = {
 """),
   V("NIWwJbo-9_8", "视频一：Python Tutorial: Using Try/Except Blocks for Error Handling（Corey Schafer）", 11),
   T(r"""
+### 上下文管理器与 `with`
+
+> **标准定义 · 上下文管理器 (context manager)**
+>
+> 实现了 `__enter__` 与 `__exit__` 两个方法的对象。`with 管理器 as 名字:` 先调用 `__enter__`（返回值交给 `名字`），然后执行缩进的代码块，**无论代码块是正常结束、`return` 还是抛出了异常，离开时都会调用 `__exit__(异常类型, 异常对象, 回溯)`**（没有异常时三个参数都是 `None`）。`__exit__` 返回真值表示「这个异常我处理掉了」，返回假值则异常继续向外传。标准库的 `contextlib.contextmanager` 装饰器可以把一个只 `yield` 一次的生成器函数变成上下文管理器：`yield` 之前相当于 `__enter__`，之后相当于 `__exit__`。
+>
+> *English: A context manager defines __enter__ and __exit__. A with statement calls __enter__, runs the block, and always calls __exit__ on the way out, even if an exception was raised; __exit__ may swallow the exception by returning a true value. contextlib.contextmanager turns a generator with one yield into a context manager.*
+
+**白话版：「进门开灯，出门关灯，不管你是怎么出来的」。** 上一小节的 `finally` 解决了「出错也要清理」，但每个用到资源的地方都要写一遍 `try / finally`。`with` 把这个固定写法打包成了一个**可复用的零件**：谁负责「进门」、谁负责「出门」，写在管理器里，使用的人只写 `with ...:`。你已经见过它的几种用法：`with open(...) as f:` 保证文件被关闭（「文件、模块与环境」那一节会用得很多），后面的测试里还有 `with self.assertRaises(...)`、`with pytest.raises(...)`。
+
+**问题一：`__enter__` 和 `__exit__` 在什么时候被调用？** 写一个最小的管理器，用「正常结束」和「里面出错」两种情况各试一次：
+
+""" + C_WITH1 + r"""
+
+读输出：第一个 `with` 正常结束：先打印 `[进入] 正常`（`__enter__`，它返回 `self`，所以 `as s` 里的 `s` 就是这个对象，`s.name` 是 `正常`），再执行缩进的代码，最后打印 `[离开] 正常，异常：None`（`__exit__` 收到的异常类型是 `None`）。第二个 `with` 里 `1 / 0` 抛出了 `ZeroDivisionError`，但 `[离开] 出错` 照样先打印了，而且 `__exit__` 收到的异常类型正是 `ZeroDivisionError`（`exc_type.__name__ if exc_type else None` 是条件表达式：有异常就取名字，没有就是 `None`）；因为 `__exit__` 返回 `False`，异常没有被吞掉，继续向外传，被外面的 `except` 接住，所以最后一行是 `异常继续传出来了`。这正是 `finally` 的效果，只是被打包了起来。
+
+**问题二：每次都要写一个类，太麻烦，有没有更短的写法？** 用 `contextlib.contextmanager`：把「进门」「出门」写在**一个函数**里，中间用 `yield` 隔开（装饰器在「函数、作用域与递归」讲过，生成器与 `yield` 在「推导式、迭代器与生成器」讲过）：
+
+""" + C_WITH2 + r"""
+
+读输出：`with opened("data.csv") as n:` 先运行函数里 `yield` 之前的部分：打印 `打开 data.csv`，`yield` 出去的值 `"DATA.CSV"` 交给了 `n`；然后执行缩进的代码，打印 `使用 DATA.CSV`；离开时回到函数里 `yield` 之后的部分，`finally` 里打印 `关闭 data.csv`。**`yield` 外面包一层 `try / finally`，是这种写法的惯用套路**：这样即使缩进的代码出了错，「关闭」也一定会执行。
+
+**回头看你已经见过的 `with`：** `with open(path) as f:` 的 `__exit__` 负责关闭文件；测试里的 `with self.assertRaises(IndexError):` 的 `__enter__` 准备好「接住异常」，`__exit__` 检查「里面是不是真的抛出了 `IndexError`」，抛了就把它吞掉（返回真值）、测试通过，没抛就让测试失败；后面还会看到 `with contextlib.redirect_stdout(...)`，它把屏幕输出临时改道，离开时再改回来。**凡是「用完要归还、出错也要归还」的东西**（文件、锁、数据库连接、临时改动的设置），都适合写成上下文管理器。
+
 ### 读 traceback 与系统地调试
 
 > **标准定义 · 回溯 (traceback) 与调试 (debugging)**
@@ -101,7 +154,7 @@ unit = {
 
 **白话版：「事故现场的路线图」。** 它告诉你：程序从哪里开始，经过哪些函数，在哪一行出的事，出了什么事。**读法：先看最后一行**（出了什么异常、说了什么），再**从下往上**看（最下面是出错的位置，往上是「谁调用了它」）。
 
-**问题：一份真实的 traceback 该怎么读？** 我们把一个小脚本当作 `train.py` 运行，让它因为配置里缺 `lr` 而出错，再把调用栈打印出来：
+**问题：一份真实的 traceback 该怎么读？** 我们把一个小脚本当作 `train.py` 运行，让它因为配置里缺 `lr` 而出错，再把调用栈打印出来。先看几个第一次出现的写法：第一行 `import sys, traceback` 是 **`import` 语句**，把标准库里的两个模块拿来用（`sys` 管解释器和输出，`traceback` 管打印调用栈），之后用 `模块名.名字` 调用它们，`import` 的机制在「文件、模块与环境」那一节细讲，这里先会用；`src = ` 后面那段用三个双引号括起来的是**多行字符串**（「变量、数据类型与字符串」讲过）；`exec(compile(src, "train.py", "exec"))` 把这个字符串当作一个叫 `train.py` 的脚本运行，它和 `eval` 是一类东西：`eval` 只算一个表达式，`exec` 能执行整段语句，都是「把字符串当代码执行」，**平时不要对来路不明的字符串用**，这里只是为了演示；`traceback.print_exception(类型, 异常, 回溯)` 把异常的调用栈按 traceback 的格式打印出来：
 
 """ + C_TB + r"""
 
@@ -114,7 +167,7 @@ unit = {
 3. **提出假设，再验证**：不要随机改代码碰运气。先说出「我认为是因为 X」，然后设计一个实验验证它。
 4. **修复后写一个测试**，让同样的错误以后不会悄悄回来。
 
-**工具一：`print`** 最快，但容易在代码里留下一堆。**工具二：`assert condition, "message"`** 在**假设被破坏时立即报错**，ML 里常用来检查张量形状（`assert x.shape == (batch, dim)`）和数值（`assert not torch.isnan(loss)`）。下面用嵌套列表模拟一个 4 行 3 列的批数据：
+**工具一：`print`** 最快，但容易在代码里留下一堆。**工具二：`assert condition, "message"`** 在**假设被破坏时立即报错**，ML 里常用来检查张量形状（`assert x.shape == (batch, dim)`）和数值（`assert not torch.isnan(loss)`）。下面用嵌套列表模拟一个 4 行 3 列的批数据（`[[0.0] * 3 for _ in range(4)]` 里的 `_` 是约定俗成的「不用的变量名」，意思是「只想重复 4 次，不关心循环变量」；`all(...)` 是内置函数，里面全部为真才返回 `True`，内置函数在「变量、数据类型与字符串」里讲过）：
 
 """ + C_ASSERT + r"""
 
@@ -143,25 +196,25 @@ def f(x):
 
 **白话版：「给代码配一个自动验收员」。** 你写了一个函数，除了手动试几个输入，不如把「输入 → 期望输出」写成代码，让机器一次跑完。以后每次改动，点一下就知道有没有改坏。
 
-**问题一：手动试几个输入，够不够？** 先写一个求中位数的函数，再故意写一个有 bug 的版本（偶数个元素时只取了后一个中间值）：
+**问题一：手动试几个输入，够不够？** 先写一个求中位数的函数，再故意写一个有 bug 的版本（偶数个元素时只取了后一个中间值）。（`n // 2` 是整除，`n % 2` 是取余，`n % 2 == 1` 用来判断奇偶；`a if 条件 else b` 是条件表达式；`sorted` 是内置函数，返回排好序的新列表。）
 
 """ + C_MEDIAN + r"""
 
 读输出：`median` 对 `[3, 1, 2]` 得到 `2`，对 `[4, 1, 3, 2]` 得到 `2.5`（排序后 `[1, 2, 3, 4]`，取中间两个的平均 $(2 + 3) / 2$）。`buggy_median` 对奇数个元素也得到 `2`，对偶数个元素却得到 `3`（只取了后一个中间值），错了。手动试能发现这个错，但**只能验证「现在」**，每次改动都要重新手动试、用眼睛去比。更好的办法是把「输入 → 期望输出」写成代码。
 
-**问题二：怎样把这些检查写成可以一键运行的测试？** 用标准库 `unittest`：一个测试类，每个 `test_` 开头的方法是一个用例。
+**问题二：怎样把这些检查写成可以一键运行的测试？** 用标准库 `unittest`：一个测试类，每个 `test_` 开头的方法是一个用例。代码里有两处要先说明：`with self.assertRaises(IndexError):` 用的就是前面「上下文管理器与 `with`」那一小节的 `with`，它是一个上下文管理器，离开时检查「里面是不是真的抛出了 `IndexError`」；`fn = staticmethod(median)` 里的 `staticmethod` 是一个装饰器的写法，作用是让 `self.fn(...)` 调用时**不会把 `self` 当作第一个参数传进去**（否则 `median` 会收到多余的参数）。
 
 """ + C_UNIT + r"""
 
-读输出：这一段只是**定义**了测试，所以没有输出。`TestMedian` 里有 5 个用例：`test_odd` 和 `test_even` 测典型的奇数、偶数个元素，`test_single` 测只有一个元素，`test_empty_raises` 用 `assertRaises` 断言「空列表应当抛出 `IndexError`」，`test_float` 用 `assertAlmostEqual` 比较浮点数。`TestBuggyMedian` 继承了 `TestMedian`（上一节的继承），**只把被测的函数换成有 bug 的版本**，同一套 5 个用例就能对两个版本各跑一遍。
+读输出：这一段只是**定义**了测试，所以没有输出。`TestMedian` 里有 5 个用例：`test_odd` 和 `test_even` 测典型的奇数、偶数个元素，`test_single` 测只有一个元素，`test_empty_raises` 用 `assertRaises` 断言「空列表应当抛出 `IndexError`」，`test_float` 用 `assertAlmostEqual` 比较浮点数。`TestBuggyMedian` 继承了 `TestMedian`（「类与对象」里的继承），**只把被测的函数换成有 bug 的版本**，同一套 5 个用例就能对两个版本各跑一遍。
 
-**问题三：运行测试，测试能告诉我们什么？**
+**问题三：运行测试，测试能告诉我们什么？** （`io.StringIO()` 是一个**存在内存里的假文件**：`TextTestRunner` 默认把进度打印到屏幕，我们把它改成写进这个假文件，免得打乱输出；`res.failures` 是一个列表，每一项是 `(用例, 报错信息)` 的元组，所以能写 `for t, msg in res.failures`，这就是「容器：列表、元组、字典与集合」里的解包；`t.id().split(".")[-1]` 用字符串的 `.split` 切开，取最后一段。）
 
 """ + C_UNITRUN + r"""
 
 读输出：同一套 5 个测试，**有 bug 的版本失败 2 个**：`test_even` 直接指出 `3 != 2.5`（得到 3，期望 2.5），`test_float` 指出 `0.2 != 0.15`（`[0.1, 0.2]` 也是偶数个元素）；其余 3 个用例（奇数个、单个元素、空列表抛出异常）在 bug 版本上碰巧通过，所以**只测奇数个元素，是发现不了这个 bug 的**，这就是为什么要测偶数个这种边界情况。**测试把 bug 定位到了具体的用例**；正确的 `median` 5 个全部通过，失败 0 个。
 
-**问题四：为什么 `test_float` 不直接用 `==`？**
+**问题四：为什么 `test_float` 不直接用 `==`？** （`1e-9` 是科学计数法，等于 0.000000001；`abs` 取绝对值；`math` 是标准库里的数学模块。）
 
 """ + C_FLOAT + r"""
 
@@ -174,7 +227,7 @@ pytest                    # 在项目目录运行，自动发现并运行所有 
 pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
 ```
 
-网页里没有终端，也不能启动命令行进程，所以下面改用 `pytest.main([...])` 在代码里运行（效果和命令行一样）。先把被测模块写到磁盘上：
+网页里没有终端，也不能启动命令行进程，所以下面改用 `pytest.main([...])` 在代码里运行（效果和命令行一样）。先把被测模块写到磁盘上。代码里的 `Path` 来自 `pathlib`，是「文件、模块与环境」那一节的主角，这里只用它的一个功能：`Path("文件名").write_text(内容)` 把一个字符串写成文件（`.read_text()` 读回来）；内容放在三个双引号括起来的多行字符串里：
 
 """ + C_PYT_SRC + r"""
 
@@ -182,7 +235,7 @@ pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
 
 """ + C_PYT_TEST + r"""
 
-读输出：文件里有 5 个测试函数。要点：**一**，直接写 `assert median(...) == ...`，不用记 `assertEqual` 这类方法名，失败时 `pytest` 会自动显示 `assert` 两边的值。**二**，`pytest.approx(0.15)` 处理浮点数比较。**三**，`@pytest.mark.parametrize` 把「一组输入」自动展开成多个测试：这里 3 组 `(xs, expected)` 变成 3 个用例，所以实际运行的用例会是 7 个。**四**，`pytest.raises(IndexError)` 对应 `assertRaises`。现在运行它们：
+读输出：文件里有 5 个测试函数。要点：**一**，直接写 `assert median(...) == ...`，不用记 `assertEqual` 这类方法名，失败时 `pytest` 会自动显示 `assert` 两边的值。**二**，`pytest.approx(0.15)` 处理浮点数比较。**三**，`@pytest.mark.parametrize`（`@` 开头的是装饰器，这个装饰器带了参数）把「一组输入」自动展开成多个测试：这里 3 组 `(xs, expected)` 变成 3 个用例，所以实际运行的用例会是 7 个。**四**，`pytest.raises(IndexError)` 对应 `assertRaises`。现在运行它们。下面这一块比较长，它是为了让输出稳定而写的「脚手架」，**不需要逐行看懂**，只要知道几点：`class Collect` 是一个 pytest 插件，负责把每个用例的结果收集起来；`sys.modules.pop(...)` 清掉 Python 缓存的旧模块，好让它重新读取刚改过的 `stats.py`（模块缓存在「文件、模块与环境」那一节讲）；`with contextlib.redirect_stdout(io.StringIO()):` 又是一个上下文管理器，把 pytest 自己的打印丢进假文件，离开时再改回来：
 
 """ + C_PYT_RUN + r"""
 
@@ -212,7 +265,7 @@ pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
 
 """ + C_LOG + r"""
 
-读输出：`log.debug` 那一条**没有显示**（`DEBUG` 低于 `INFO`），`info` 和 `warning` 显示了，格式正是我们在 `format` 里写的 `级别 名字: 消息`。**用 `%s` 占位符传参**（`log.info("lr=%s", lr)`）而不是 f-string：只有消息真的要输出时才会格式化，省去不必要的开销。（代码里的 `setup()` 只是为了在网页里反复运行时每次都重新配置；真实脚本只在入口处配置一次。）**训练脚本里应该用日志记录超参数、每个 epoch 的 loss、保存模型的路径**：几天后回头看，你才知道「这个结果是怎么跑出来的」。
+读输出：`log.debug` 那一条**没有显示**（`DEBUG` 低于 `INFO`），`info` 和 `warning` 显示了，格式正是我们在 `format` 里写的 `级别 名字: 消息`。**用 `%s` 占位符传参**（`log.info("lr=%s", lr)`）而不是 f-string：只有消息真的要输出时才会格式化，省去不必要的开销。（代码里的 `setup()` 只是为了在网页里反复运行时每次都重新配置；真实脚本只在入口处配置一次。`format` 里的 `%(levelname)-7s` 是模板：`%(levelname)s` 会被换成级别名，`-7` 表示「左对齐、占 7 格」，所以 `INFO` 后面补了空格；`1e-3` 就是 0.001。）**训练脚本里应该用日志记录超参数、每个 epoch 的 loss、保存模型的路径**：几天后回头看，你才知道「这个结果是怎么跑出来的」。
 
 **问题二：出错时，怎样把完整的 traceback 也记下来？** 在 `except` 块里用 `log.exception`：
 
@@ -236,7 +289,7 @@ pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
 
 **白话版：「给函数贴上说明标签」。** 标签写的是「这个槽请放整数」，但没有安检员拦着，你放一个字符串进去，Python 也照样运行（直到某一处真的出错）。**真正的安检员是 `mypy` 之类的工具，在你运行代码之前就能指出「这里类型对不上」。**
 
-**问题一：常见的类型注解怎么写？**
+**问题一：常见的类型注解怎么写？** （`d.get(key)` 是字典的 `.get` 方法，键不存在就返回 `None`，「容器：列表、元组、字典与集合」讲过；`lambda x: x + 1` 是没有名字的小函数，「函数、作用域与递归」讲过；`str | int` 里的 `|` 读作「或」；`from typing import ...` 是 `import` 的另一种写法，只取模块里的指定名字。）
 
 """ + C_TYPE + r"""
 
@@ -248,7 +301,7 @@ pytest -q test_stats.py   # 只运行这一个文件，输出更简洁
 
 读输出：传入 `["a", "b"]` 时报的 `TypeError` 来自 `sum` 内部的加法（`0 + "a"`，整数加字符串），而**不是**因为注解被检查了。`parse(3.9)` 不符合 `str | int`，却照常运行，得到 `3`。**注解运行时不会被强制检查**；要在运行前发现这类问题，用 `mypy` / `pyright`。
 
-**问题三：注解还有什么别的用处？** 上一节的 `@dataclass` 就是靠字段的类型注解来知道有哪些字段：
+**问题三：注解还有什么别的用处？** 「类与对象」里的 `@dataclass` 就是靠字段的类型注解来知道有哪些字段：
 
 """ + C_TYPE3 + r"""
 

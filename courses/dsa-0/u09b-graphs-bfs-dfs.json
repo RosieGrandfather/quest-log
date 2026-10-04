@@ -1,0 +1,82 @@
+{
+ "id": "u09b",
+ "title": "图：表示、BFS、DFS 与拓扑排序（2/3）",
+ "en": "Graphs: Representation, BFS, DFS & Topological Sort (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "会写 **BFS** 与 **DFS**（含迭代版），知道各自的复杂度 $O(V+E)$、用什么结构，以及 BFS 如何求**无权图的最短路径**",
+  "会用遍历解决：**连通分量**、网格问题（岛屿数量、迷宫最短路）、**二分图判定**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「图：表示、BFS、DFS 与拓扑排序」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：广度优先搜索 (BFS)（约 10 分钟） → 深度优先搜索 (DFS)（约 10 分钟） → 用遍历解决问题：连通分量、网格、迷宫（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 广度优先搜索 (BFS)\n\n> **标准定义 · 广度优先搜索 (breadth-first search, BFS)**\n>\n> 从起点 $s$ 出发，**先访问距离 $s$ 为 1 的所有顶点，再访问距离为 2 的……**，一层一层向外扩展。实现上使用**队列 (queue)**，并用一个集合（或距离字典）记录已经**发现**的顶点，防止重复访问。时间 $O(V+E)$（每个顶点入队一次、每条边检查常数次），空间 $O(V)$。\n>\n> **性质：** 在**无权图**中，BFS 第一次到达某个顶点时经过的边数，就是起点到它的**最短距离**。\n>\n> *English: BFS explores the graph layer by layer using a queue; in an unweighted graph it finds shortest paths from the source.*\n\n**白话版：往水里扔一块石头，水波一圈一圈扩散。** 第一圈是你的直接好友，第二圈是好友的好友（二度人脉）……每个人第一次被波浪碰到的那一圈，就是他和你之间的最短关系链。因为先入队的先处理，所以所有距离为 $d$ 的点，都会在距离为 $d+1$ 的点之前被处理。\n\n```python\nfrom collections import deque, defaultdict\n\nedges = [(0, 1), (0, 2), (1, 3), (2, 3), (3, 4), (4, 5), (2, 6)]\nadj = defaultdict(list)\nfor u, v in edges:\n    adj[u].append(v)\n    adj[v].append(u)\n\ndef bfs(adj, s):\n    dist, parent, order = {s: 0}, {s: None}, []\n    q = deque([s])                       # 队列：先发现的先处理，所以是一层一层向外扩\n    while q:\n        u = q.popleft()\n        order.append(u)\n        for v in adj[u]:\n            if v not in dist:            # 第一次到达 v：此刻的层数就是 s 到 v 的最短距离\n                dist[v] = dist[u] + 1\n                parent[v] = u            # 记住是从谁那里来的，可以倒推出路径\n                q.append(v)\n    return order, dist, parent\n\ndef path(parent, t):                     # 沿 parent 倒着走回起点，再反转\n    p = []\n    while t is not None:\n        p.append(t)\n        t = parent[t]\n    return p[::-1]\n\norder, dist, parent = bfs(adj, 0)\nprint(\"访问顺序：\", order)\nprint(\"到各点的最短距离：\", dist)\nprint(\"0 到 5 的最短路径：\", path(parent, 5))\n# 输出：访问顺序： [0, 1, 2, 3, 6, 4, 5]\n# 输出：到各点的最短距离： {0: 0, 1: 1, 2: 1, 3: 2, 6: 2, 4: 3, 5: 4}\n# 输出：0 到 5 的最短路径： [0, 1, 3, 4, 5]\n```\n\n输出：访问顺序 `[0, 1, 2, 3, 6, 4, 5]` 是一层一层的：第 0 层 `0`，第 1 层 `1, 2`，第 2 层 `3, 6`，第 3 层 `4`，第 4 层 `5`。`dist` 字典同时起到「**已发现**」和「**距离**」的作用；`parent` 记下每个点是从谁那里被发现的，所以可以倒着走回起点，还原出最短路径 `[0, 1, 3, 4, 5]`。**注意是在「发现」时就标记已访问（入队时标记），而不是出队时标记**，否则同一个点可能被重复入队很多次。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Urx87-NMm6c",
+   "title": "视频二：Depth-first search in 4 minutes（Michael Sambol）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 4
+  },
+  {
+   "type": "text",
+   "md": "### 深度优先搜索 (DFS)\n\n> **标准定义 · 深度优先搜索 (depth-first search, DFS)**\n>\n> 从起点出发，**沿着一条路径一直走到不能再走为止，再回溯到上一个有未访问邻居的顶点**，继续探索。实现上用**递归**（隐含地使用调用栈）或**显式的栈**，同样要记录已访问的顶点。时间 $O(V+E)$，空间 $O(V)$。\n>\n> *English: DFS follows one path as deep as possible, then backtracks; it can be implemented recursively or with an explicit stack.*\n\n**白话版：走迷宫，一条路走到黑，碰壁再退回上一个岔路口。** 和 BFS 的「波浪」相反，DFS 像一个探险者，每到一个路口就选一条没走过的路一直走下去。\n\n```python\nfrom collections import defaultdict\n\nedges = [(0, 1), (0, 2), (1, 3), (2, 3), (3, 4), (4, 5), (2, 6)]\nadj = defaultdict(list)\nfor u, v in edges:\n    adj[u].append(v)\n    adj[v].append(u)\n\ndef dfs_rec(adj, u, seen, order):        # 递归版：一条路走到底，走不通再回头\n    seen.add(u)\n    order.append(u)\n    for v in adj[u]:\n        if v not in seen:\n            dfs_rec(adj, v, seen, order)\n\ndef dfs_iter(adj, s):                    # 迭代版：自己维护一个栈，不会受递归深度限制\n    seen, order, stack = set(), [], [s]\n    while stack:\n        u = stack.pop()\n        if u in seen:\n            continue\n        seen.add(u)\n        order.append(u)\n        for v in reversed(adj[u]):       # 反过来压栈，这样访问顺序和递归版一致\n            stack.append(v)\n    return order\n\norder = []\ndfs_rec(adj, 0, set(), order)\nprint(\"递归版访问顺序：\", order)\nprint(\"迭代版访问顺序：\", dfs_iter(adj, 0), \"与递归版相同：\", dfs_iter(adj, 0) == order)\n\n# 一条很长的链：0-1-2-...-4999。递归版会爆栈，迭代版没问题\nchain = defaultdict(list)\nfor i in range(4999):\n    chain[i].append(i + 1)\ntry:\n    dfs_rec(chain, 0, set(), [])\nexcept RecursionError:\n    print(\"递归版：RecursionError\")\nprint(\"迭代版访问了\", len(dfs_iter(chain, 0)), \"个节点\")\n# 输出：递归版访问顺序： [0, 1, 3, 2, 6, 4, 5]\n# 输出：迭代版访问顺序： [0, 1, 3, 2, 6, 4, 5] 与递归版相同： True\n# 输出：递归版：RecursionError\n# 输出：迭代版访问了 5000 个节点\n```\n\n迭代版和递归版访问顺序一样（注意迭代版要**反过来压栈**，因为栈是后进先出）。最后那条长度 5000 的链，递归版触发了 `RecursionError`，迭代版没有问题：**图很大或很深时，用显式栈**（还记得第 3 节的调用栈吗）。\n\n| | BFS | DFS |\n|---|---|---|\n| 容器 | **队列** | **栈**（或递归） |\n| 访问顺序 | 一层一层向外 | 一条路走到底再回溯 |\n| 复杂度 | $O(V+E)$ | $O(V+E)$ |\n| 能求最短路径（无权图） | **能** | 不能保证 |\n| 典型用途 | 最短路径、层次关系 | 连通分量、环检测、拓扑排序、回溯 |\n| 内存 | 可能同时存一整层（很宽的图较大） | 存当前路径（很深的图较大） |\n\n**BFS 与 DFS 的关系：** 完全是同一个模板，只是把「队列」换成「栈」。回溯（第 5 节）本质上就是在**隐式的图**（所有选择构成的状态图）上做 DFS。\n\n### 用遍历解决问题：连通分量、网格、迷宫\n\n很多问题表面上没有「图」，但**只要定义清楚「什么是点、什么是边」**，就能用遍历。**例一：岛屿数量**，把网格里的每个陆地格子看成一个点，上下左右相邻的陆地之间有边；一个岛屿就是一个**连通分量**，数连通分量的个数：遍历所有格子，遇到一个没访问过的陆地，就用 DFS（或 BFS）把整座岛屿「淹掉」，计数加 1。**例二：迷宫最短步数**，每个空格是一个点，相邻的空格之间有一条权重为 1 的边，用 BFS 求最短路径。\n\n```python\nfrom collections import deque\n\ndef count_islands(grid):                 # 连通分量：每遇到一块没访问过的陆地，就把它整块「淹掉」，计数加 1\n    R, C = len(grid), len(grid[0])\n    seen, count = set(), 0\n    for r in range(R):\n        for c in range(C):\n            if grid[r][c] == \"1\" and (r, c) not in seen:\n                count += 1\n                seen.add((r, c))\n                stack = [(r, c)]\n                while stack:\n                    x, y = stack.pop()\n                    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):    # 上下左右四个邻居\n                        nx, ny = x + dx, y + dy\n                        if 0 <= nx < R and 0 <= ny < C and grid[nx][ny] == \"1\" and (nx, ny) not in seen:\n                            seen.add((nx, ny))\n                            stack.append((nx, ny))\n    return count\n\ngrid = [\"11000\",\n        \"11000\",\n        \"00100\",\n        \"00011\"]\nprint(\"岛屿数量：\", count_islands(grid))\n\ndef maze_steps(maze):                    # 网格迷宫的最短步数：把每个格子看成一个点，用 BFS\n    R, C = len(maze), len(maze[0])\n    for r in range(R):\n        for c in range(C):\n            if maze[r][c] == \"S\":\n                start = (r, c)\n    dist, q = {start: 0}, deque([start])\n    while q:\n        x, y = q.popleft()\n        if maze[x][y] == \"E\":\n            return dist[(x, y)]\n        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):\n            nx, ny = x + dx, y + dy\n            if 0 <= nx < R and 0 <= ny < C and maze[nx][ny] != \"#\" and (nx, ny) not in dist:\n                dist[(nx, ny)] = dist[(x, y)] + 1\n                q.append((nx, ny))\n    return -1                            # 走不到终点\n\nmaze = [\"S.#....\",\n        \".##.##.\",\n        \"...#...\",\n        \".#...#E\"]\nprint(\"迷宫最短步数：\", maze_steps(maze))\n# 输出：岛屿数量： 3\n# 输出：迷宫最短步数： 11\n```\n\n岛屿的例子里有 3 个连通的 `1` 块。迷宫里，从 S 走到 E 最少要走多少步，BFS 的第一次到达就给出了答案；如果 BFS 结束了都没到 E，就说明不可达，返回 `-1`。这类「把状态当成点，把一次操作当成边」的建模方式很强大：单词接龙、华容道、魔方的最少步数，都是 BFS。"
+  },
+  {
+   "type": "think",
+   "q": "社交网络里要找「你和某个陌生人之间的最少几度关系」。可以用 BFS 从你出发搜索。但如果网络有 10 亿人，BFS 会非常慢。有什么办法加速？",
+   "a": "一个经典办法是**双向 BFS (bidirectional BFS)**：同时从**你**和**对方**出发，各自 BFS，两边的波浪相遇就找到了最短路径。直觉上，单向 BFS 要探索到深度 $d$，每层大约扩展 $b$ 倍（$b$ 是平均好友数），要访问约 $b^d$ 个点；双向 BFS 每边只需要探索到深度 $d/2$，一共访问约 $2b^{d/2}$ 个点，**指数级的节省**。比如 $b=100,\\ d=6$：单向约 $10^{12}$，双向约 $2\\times10^6$。\n\n这个思路也是很多搜索、路径规划算法（A\\* 搜索、Dijkstra 的双向版本）的基础。另外，如果能提前预处理（比如给图建立某种索引），也能加速，但那就是更高级的话题了。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "用邻接表表示的图，BFS 的时间复杂度是？",
+    "options": [
+     "$O(V+E)$",
+     "$O(V\\cdot E)$",
+     "一定是 $O(V^2)$",
+     "$O(E\\log V)$"
+    ],
+    "answer": 0,
+    "explain": "每个顶点入队、出队一次，每条边在检查邻居时被看到常数次，所以是 $O(V+E)$。"
+   },
+   {
+    "q": "在**无权图**里求一个起点到其他所有点的最短路径，最合适的算法是？",
+    "options": [
+     "DFS",
+     "必须用 Dijkstra",
+     "Floyd-Warshall",
+     "BFS：第一次到达某点时的层数就是最短距离"
+    ],
+    "answer": 3,
+    "explain": "BFS 一层层向外，先到达的一定经过的边最少。DFS 不保证最短；Dijkstra 是针对带权图的；Floyd 是求所有点对，更慢。"
+   },
+   {
+    "q": "BFS 和 DFS 分别使用什么数据结构？",
+    "options": [
+     "BFS 用栈，DFS 用队列",
+     "BFS 用队列，DFS 用栈（或递归）",
+     "都用队列",
+     "都用堆"
+    ],
+    "answer": 1,
+    "explain": "BFS 先发现的先处理，是先进先出的队列；DFS 要沿最近发现的路径继续，是后进先出的栈（递归的调用栈）。"
+   },
+   {
+    "q": "在一个很深（比如一条长链）的大图上，用递归写 DFS 可能出现什么问题？",
+    "options": [
+     "结果不正确",
+     "时间变成 $O(V^2)$",
+     "递归过深，会触发 `RecursionError`；可以改写成显式栈的迭代版",
+     "无法访问到所有节点"
+    ],
+    "answer": 2,
+    "explain": "Python 的递归深度有限（默认约 1000）。把递归改成显式栈，就没有深度限制了。"
+   }
+  ]
+ }
+}

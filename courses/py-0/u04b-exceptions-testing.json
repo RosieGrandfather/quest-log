@@ -1,0 +1,102 @@
+{
+ "id": "u04b",
+ "title": "异常、调试、测试与类型注解（2/3）",
+ "en": "Exceptions, Debugging, Testing & Type Hints (2/3)",
+ "minutes": 40,
+ "objectives": [
+  "会**读 traceback（从下往上）**，掌握系统的调试步骤：复现 → 缩小 → 假设 → 验证；会用 `assert`、`print` / `logging`、`breakpoint()` (**pdb**)",
+  "会写**单元测试 (unit test)**：`unittest` 与 `pytest` 的基本写法、测边界情况与异常、浮点数比较，理解「测试能先于代码」的价值"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「异常、调试、测试与类型注解」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：上下文管理器与 `with`（约 10 分钟） → 读 traceback 与系统地调试（约 10 分钟） → 单元测试（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 上下文管理器与 `with`\n\n> **标准定义 · 上下文管理器 (context manager)**\n>\n> 实现了 `__enter__` 与 `__exit__` 两个方法的对象。`with 管理器 as 名字:` 先调用 `__enter__`（返回值交给 `名字`），然后执行缩进的代码块，**无论代码块是正常结束、`return` 还是抛出了异常，离开时都会调用 `__exit__(异常类型, 异常对象, 回溯)`**（没有异常时三个参数都是 `None`）。`__exit__` 返回真值表示「这个异常我处理掉了」，返回假值则异常继续向外传。标准库的 `contextlib.contextmanager` 装饰器可以把一个只 `yield` 一次的生成器函数变成上下文管理器：`yield` 之前相当于 `__enter__`，之后相当于 `__exit__`。\n>\n> *English: A context manager defines __enter__ and __exit__. A with statement calls __enter__, runs the block, and always calls __exit__ on the way out, even if an exception was raised; __exit__ may swallow the exception by returning a true value. contextlib.contextmanager turns a generator with one yield into a context manager.*\n\n**白话版：「进门开灯，出门关灯，不管你是怎么出来的」。** 上一小节的 `finally` 解决了「出错也要清理」，但每个用到资源的地方都要写一遍 `try / finally`。`with` 把这个固定写法打包成了一个**可复用的零件**：谁负责「进门」、谁负责「出门」，写在管理器里，使用的人只写 `with ...:`。你已经见过它的几种用法：`with open(...) as f:` 保证文件被关闭（「文件、模块与环境」那一节会用得很多），后面的测试里还有 `with self.assertRaises(...)`、`with pytest.raises(...)`。\n\n**问题一：`__enter__` 和 `__exit__` 在什么时候被调用？** 写一个最小的管理器，用「正常结束」和「里面出错」两种情况各试一次：\n\n```python\nclass Section:                               # 最小的上下文管理器：有 __enter__ 和 __exit__ 两个方法\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):                     # 进入 with 时调用；返回值交给 as 后面的名字\n        print(f\"[进入] {self.name}\")\n        return self\n\n    def __exit__(self, exc_type, exc, tb):   # 离开 with 时一定调用，哪怕里面出了异常\n        print(f\"[离开] {self.name}，异常：{exc_type.__name__ if exc_type else None}\")\n        return False                         # False：不吞掉异常，让它继续向外传\n\nwith Section(\"正常\") as s:\n    print(\"  做事情，s.name =\", s.name)\n\ntry:\n    with Section(\"出错\"):\n        1 / 0\nexcept ZeroDivisionError:\n    print(\"异常继续传出来了\")\n# 输出：[进入] 正常\n# 输出：  做事情，s.name = 正常\n# 输出：[离开] 正常，异常：None\n# 输出：[进入] 出错\n# 输出：[离开] 出错，异常：ZeroDivisionError\n# 输出：异常继续传出来了\n```\n\n读输出：第一个 `with` 正常结束：先打印 `[进入] 正常`（`__enter__`，它返回 `self`，所以 `as s` 里的 `s` 就是这个对象，`s.name` 是 `正常`），再执行缩进的代码，最后打印 `[离开] 正常，异常：None`（`__exit__` 收到的异常类型是 `None`）。第二个 `with` 里 `1 / 0` 抛出了 `ZeroDivisionError`，但 `[离开] 出错` 照样先打印了，而且 `__exit__` 收到的异常类型正是 `ZeroDivisionError`（`exc_type.__name__ if exc_type else None` 是条件表达式：有异常就取名字，没有就是 `None`）；因为 `__exit__` 返回 `False`，异常没有被吞掉，继续向外传，被外面的 `except` 接住，所以最后一行是 `异常继续传出来了`。这正是 `finally` 的效果，只是被打包了起来。\n\n**问题二：每次都要写一个类，太麻烦，有没有更短的写法？** 用 `contextlib.contextmanager`：把「进门」「出门」写在**一个函数**里，中间用 `yield` 隔开（装饰器在「函数、作用域与递归」讲过，生成器与 `yield` 在「推导式、迭代器与生成器」讲过）：\n\n```python\nfrom contextlib import contextmanager\n\n@contextmanager                              # 装饰器：把一个「只 yield 一次的生成器」变成上下文管理器\ndef opened(name):\n    print(\"打开\", name)\n    try:\n        yield name.upper()                   # yield 之前 = __enter__；yield 的值交给 as\n    finally:\n        print(\"关闭\", name)                  # yield 之后 = __exit__；finally 保证一定执行\n\nwith opened(\"data.csv\") as n:\n    print(\"使用\", n)\n# 输出：打开 data.csv\n# 输出：使用 DATA.CSV\n# 输出：关闭 data.csv\n```\n\n读输出：`with opened(\"data.csv\") as n:` 先运行函数里 `yield` 之前的部分：打印 `打开 data.csv`，`yield` 出去的值 `\"DATA.CSV\"` 交给了 `n`；然后执行缩进的代码，打印 `使用 DATA.CSV`；离开时回到函数里 `yield` 之后的部分，`finally` 里打印 `关闭 data.csv`。**`yield` 外面包一层 `try / finally`，是这种写法的惯用套路**：这样即使缩进的代码出了错，「关闭」也一定会执行。\n\n**回头看你已经见过的 `with`：** `with open(path) as f:` 的 `__exit__` 负责关闭文件；测试里的 `with self.assertRaises(IndexError):` 的 `__enter__` 准备好「接住异常」，`__exit__` 检查「里面是不是真的抛出了 `IndexError`」，抛了就把它吞掉（返回真值）、测试通过，没抛就让测试失败；后面还会看到 `with contextlib.redirect_stdout(...)`，它把屏幕输出临时改道，离开时再改回来。**凡是「用完要归还、出错也要归还」的东西**（文件、锁、数据库连接、临时改动的设置），都适合写成上下文管理器。\n\n### 读 traceback 与系统地调试\n\n> **标准定义 · 回溯 (traceback) 与调试 (debugging)**\n>\n> **traceback** 是异常发生时 Python 打印的**调用栈快照**：从最外层的调用开始，一层层列到**抛出异常的那一行**，最后一行是**异常类型与信息**。**调试**是找出并修复错误原因的过程。\n>\n> *English: A traceback is the call-stack snapshot printed when an exception is raised: calls from the outermost to the line that raised, ending with the exception type and message. Debugging is the process of finding and fixing the cause of a bug.*\n\n**白话版：「事故现场的路线图」。** 它告诉你：程序从哪里开始，经过哪些函数，在哪一行出的事，出了什么事。**读法：先看最后一行**（出了什么异常、说了什么），再**从下往上**看（最下面是出错的位置，往上是「谁调用了它」）。\n\n**问题：一份真实的 traceback 该怎么读？** 我们把一个小脚本当作 `train.py` 运行，让它因为配置里缺 `lr` 而出错，再把调用栈打印出来。先看几个第一次出现的写法：第一行 `import sys, traceback` 是 **`import` 语句**，把标准库里的两个模块拿来用（`sys` 管解释器和输出，`traceback` 管打印调用栈），之后用 `模块名.名字` 调用它们，`import` 的机制在「文件、模块与环境」那一节细讲，这里先会用；`src = ` 后面那段用三个双引号括起来的是**多行字符串**（「变量、数据类型与字符串」讲过）；`exec(compile(src, \"train.py\", \"exec\"))` 把这个字符串当作一个叫 `train.py` 的脚本运行，它和 `eval` 是一类东西：`eval` 只算一个表达式，`exec` 能执行整段语句，都是「把字符串当代码执行」，**平时不要对来路不明的字符串用**，这里只是为了演示；`traceback.print_exception(类型, 异常, 回溯)` 把异常的调用栈按 traceback 的格式打印出来：\n\n```python\nimport sys, traceback\n\nsrc = \"\"\"\ndef load_config(d):\n    return d[\"lr\"] * 2\n\ndef train(cfg):\n    return load_config(cfg)\n\ntrain({\"epochs\": 3})\n\"\"\"\ntry:\n    exec(compile(src, \"train.py\", \"exec\"))          # 把上面的脚本当作 train.py 运行\nexcept KeyError as e:\n    # 跳过最外面一层（我们这个 exec 外壳），只打印 train.py 里的调用栈\n    traceback.print_exception(type(e), e, e.__traceback__.tb_next, file=sys.stdout)\n# 输出：Traceback (most recent call last):\n# 输出：  File \"train.py\", line 8, in <module>\n# 输出：  File \"train.py\", line 6, in train\n# 输出：  File \"train.py\", line 3, in load_config\n# 输出：KeyError: 'lr'\n```\n\n读输出：最后一行 `KeyError: 'lr'` 说「字典里没有键 `lr`」；倒数第二行 `line 3, in load_config` 是出错的位置，代码是 `d[\"lr\"] * 2`；再往上，`train` 在第 6 行调用了 `load_config`，整个脚本在第 8 行调用了 `train`。（我们去掉了最外面运行这段脚本的那一层外壳，只留下 `train.py` 里的调用栈，真实的 traceback 第一行就是你的脚本入口。）**根因不一定在最后一行**：那里只是「事情暴露的地方」，真正的问题是「调用者传进来的配置里没有 `lr`」。\n\n**系统地调试：**\n\n1. **复现**：先找到一个**稳定触发**错误的最小输入。不能稳定复现，就先想办法让它稳定（固定随机种子、固定数据顺序）。\n2. **缩小范围**：用**二分**的思想：在中间位置打印或断言，判断错误是在前半段还是后半段产生的，不断二分。\n3. **提出假设，再验证**：不要随机改代码碰运气。先说出「我认为是因为 X」，然后设计一个实验验证它。\n4. **修复后写一个测试**，让同样的错误以后不会悄悄回来。\n\n**工具一：`print`** 最快，但容易在代码里留下一堆。**工具二：`assert condition, \"message\"`** 在**假设被破坏时立即报错**，ML 里常用来检查张量形状（`assert x.shape == (batch, dim)`）和数值（`assert not torch.isnan(loss)`）。下面用嵌套列表模拟一个 4 行 3 列的批数据（`[[0.0] * 3 for _ in range(4)]` 里的 `_` 是约定俗成的「不用的变量名」，意思是「只想重复 4 次，不关心循环变量」；`all(...)` 是内置函数，里面全部为真才返回 `True`，内置函数在「变量、数据类型与字符串」里讲过）：\n\n```python\ndef check_batch(x, batch, dim):\n    # assert 条件, \"出错信息\"：条件不成立时立刻抛出 AssertionError\n    assert len(x) == batch, f\"batch 大小不对：{len(x)} != {batch}\"\n    assert all(len(row) == dim for row in x), \"每一行的长度应该是 dim\"\n    return \"形状检查通过\"\n\nx = [[0.0] * 3 for _ in range(4)]            # 4 行 3 列\nprint(check_batch(x, 4, 3))\ntry:\n    check_batch(x, 5, 3)\nexcept AssertionError as e:\n    print(\"AssertionError:\", e)\n# 输出：形状检查通过\n# 输出：AssertionError: batch 大小不对：4 != 5\n```\n\n读输出：形状对的时候，两个 `assert` 都通过，函数正常返回 `形状检查通过`。当我们声称 batch 是 5、而实际只有 4 行时，第一个 `assert` 立刻抛出 `AssertionError`，信息正是我们写的 `batch 大小不对：4 != 5`：**问题在它第一次出现的地方就被抓住了**，而不是传到后面变成一个莫名其妙的错误。**`assert` 只是调试用的**：用 `python -O` 运行会被忽略，所以**不要用它来检查用户输入**（那种情况应该 `raise ValueError`）。\n\n**工具三：`breakpoint()`** 在这一行暂停程序，进入交互式调试器 **pdb**。它需要一个真正的终端来输入命令，所以这段代码不在网页里运行，请在本地终端或 IDE 里试：\n\n```text\ndef f(x):\n    y = x * 2\n    breakpoint()        # 程序在这里停下，进入 (Pdb) 提示符\n    return y + 1\n```\n\n在 `(Pdb)` 提示符下常用命令：`p 变量名`（打印）、`n`（执行下一行）、`s`（进入函数）、`c`（继续运行）、`l`（显示附近代码）、`q`（退出）。VS Code、PyCharm 等 IDE 也有图形化的断点调试，用法相同。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "bHx8A8tbj2c",
+   "title": "视频二：Start Python Debugging With pdb（Real Python）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 4
+  },
+  {
+   "type": "text",
+   "md": "### 单元测试\n\n> **标准定义 · 单元测试 (unit test)**\n>\n> 针对程序里**一个小单元**（通常是一个函数或方法）的自动化检查：给定输入，断言输出等于预期。一组测试可以**一键运行**，每次修改代码后重新运行，确认没有破坏原有功能，这叫**回归测试 (regression testing)**。Python 标准库自带 `unittest`；第三方的 **`pytest`** 更简洁（直接写以 `test_` 开头的函数和 `assert`），是业界最常用的。好的测试覆盖：**典型输入**、**边界情况 (edge cases)**（空输入、单个元素、最大最小值）、**错误情况**（应当抛出异常）。\n>\n> *English: A unit test is an automated check of one small unit: for a given input, assert the expected output. Running the suite after every change catches regressions. unittest is in the standard library; pytest is the popular third-party framework. Good tests cover typical inputs, edge cases and error cases.*\n\n**白话版：「给代码配一个自动验收员」。** 你写了一个函数，除了手动试几个输入，不如把「输入 → 期望输出」写成代码，让机器一次跑完。以后每次改动，点一下就知道有没有改坏。\n\n**问题一：手动试几个输入，够不够？** 先写一个求中位数的函数，再故意写一个有 bug 的版本（偶数个元素时只取了后一个中间值）。（`n // 2` 是整除，`n % 2` 是取余，`n % 2 == 1` 用来判断奇偶；`a if 条件 else b` 是条件表达式；`sorted` 是内置函数，返回排好序的新列表。）\n\n```python\ndef median(xs):\n    s = sorted(xs)\n    n = len(s)\n    mid = n // 2\n    return s[mid] if n % 2 == 1 else (s[mid - 1] + s[mid]) / 2\n\ndef buggy_median(xs):                        # 故意写错的版本：偶数个时只取了后一个\n    s = sorted(xs)\n    return s[len(s) // 2]\n\n# 手动试几个输入：只能验证「现在」，每次都要人眼去比\nprint(median([3, 1, 2]), median([4, 1, 3, 2]))\nprint(buggy_median([3, 1, 2]), buggy_median([4, 1, 3, 2]))\n# 输出：2 2.5\n# 输出：2 3\n```\n\n读输出：`median` 对 `[3, 1, 2]` 得到 `2`，对 `[4, 1, 3, 2]` 得到 `2.5`（排序后 `[1, 2, 3, 4]`，取中间两个的平均 $(2 + 3) / 2$）。`buggy_median` 对奇数个元素也得到 `2`，对偶数个元素却得到 `3`（只取了后一个中间值），错了。手动试能发现这个错，但**只能验证「现在」**，每次改动都要重新手动试、用眼睛去比。更好的办法是把「输入 → 期望输出」写成代码。\n\n**问题二：怎样把这些检查写成可以一键运行的测试？** 用标准库 `unittest`：一个测试类，每个 `test_` 开头的方法是一个用例。代码里有两处要先说明：`with self.assertRaises(IndexError):` 用的就是前面「上下文管理器与 `with`」那一小节的 `with`，它是一个上下文管理器，离开时检查「里面是不是真的抛出了 `IndexError`」；`fn = staticmethod(median)` 里的 `staticmethod` 是一个装饰器的写法，作用是让 `self.fn(...)` 调用时**不会把 `self` 当作第一个参数传进去**（否则 `median` 会收到多余的参数）。\n\n```python\nimport unittest\n\nclass TestMedian(unittest.TestCase):         # 一个测试类；每个 test_ 开头的方法是一个用例\n    fn = staticmethod(median)                # 被测的函数，放在类属性里，方便换成别的版本\n    def test_odd(self):\n        self.assertEqual(self.fn([3, 1, 2]), 2)\n    def test_even(self):\n        self.assertEqual(self.fn([4, 1, 3, 2]), 2.5)\n    def test_single(self):\n        self.assertEqual(self.fn([7]), 7)\n    def test_empty_raises(self):\n        with self.assertRaises(IndexError):  # 断言：这里应当抛出 IndexError\n            self.fn([])\n    def test_float(self):\n        self.assertAlmostEqual(self.fn([0.1, 0.2]), 0.15)     # 浮点数不要用 ==\n\nclass TestBuggyMedian(TestMedian):           # 继承：同一套测试，换成有 bug 的函数\n    fn = staticmethod(buggy_median)\n```\n\n读输出：这一段只是**定义**了测试，所以没有输出。`TestMedian` 里有 5 个用例：`test_odd` 和 `test_even` 测典型的奇数、偶数个元素，`test_single` 测只有一个元素，`test_empty_raises` 用 `assertRaises` 断言「空列表应当抛出 `IndexError`」，`test_float` 用 `assertAlmostEqual` 比较浮点数。`TestBuggyMedian` 继承了 `TestMedian`（「类与对象」里的继承），**只把被测的函数换成有 bug 的版本**，同一套 5 个用例就能对两个版本各跑一遍。\n\n**问题三：运行测试，测试能告诉我们什么？** （`io.StringIO()` 是一个**存在内存里的假文件**：`TextTestRunner` 默认把进度打印到屏幕，我们把它改成写进这个假文件，免得打乱输出；`res.failures` 是一个列表，每一项是 `(用例, 报错信息)` 的元组，所以能写 `for t, msg in res.failures`，这就是「容器：列表、元组、字典与集合」里的解包；`t.id().split(\".\")[-1]` 用字符串的 `.split` 切开，取最后一段。）\n\n```python\nimport io\n\ndef run(label, case):\n    suite = unittest.defaultTestLoader.loadTestsFromTestCase(case)\n    res = unittest.TextTestRunner(stream=io.StringIO(), verbosity=0).run(suite)\n    print(f\"{label}: 运行 {res.testsRun} 个测试，失败 {len(res.failures)} 个，出错 {len(res.errors)} 个\")\n    for t, msg in res.failures:\n        print(\"  失败的用例：\", t.id().split(\".\")[-1], \"|\", msg.strip().splitlines()[-1])\n\nrun(\"buggy_median\", TestBuggyMedian)\nrun(\"median\", TestMedian)\n# 输出：buggy_median: 运行 5 个测试，失败 2 个，出错 0 个\n# 输出：  失败的用例： test_even | AssertionError: 3 != 2.5\n# 输出：  失败的用例： test_float | AssertionError: 0.2 != 0.15 within 7 places (0.05000000000000002 difference)\n# 输出：median: 运行 5 个测试，失败 0 个，出错 0 个\n```\n\n读输出：同一套 5 个测试，**有 bug 的版本失败 2 个**：`test_even` 直接指出 `3 != 2.5`（得到 3，期望 2.5），`test_float` 指出 `0.2 != 0.15`（`[0.1, 0.2]` 也是偶数个元素）；其余 3 个用例（奇数个、单个元素、空列表抛出异常）在 bug 版本上碰巧通过，所以**只测奇数个元素，是发现不了这个 bug 的**，这就是为什么要测偶数个这种边界情况。**测试把 bug 定位到了具体的用例**；正确的 `median` 5 个全部通过，失败 0 个。\n\n**问题四：为什么 `test_float` 不直接用 `==`？** （`1e-9` 是科学计数法，等于 0.000000001；`abs` 取绝对值；`math` 是标准库里的数学模块。）\n\n```python\nimport math\n\nprint(0.1 + 0.2 == 0.3)                      # 浮点数有舍入误差\nprint(abs((0.1 + 0.2) - 0.3) < 1e-9)         # 在容差范围内比较\nprint(math.isclose(0.1 + 0.2, 0.3))          # 标准库现成的写法\n# 输出：False\n# 输出：True\n# 输出：True\n```\n\n读输出：`0.1 + 0.2 == 0.3` 是 `False`：**浮点数有舍入误差，不要用 `==` 比较**。在容差范围内比较（`abs(a - b) < 1e-9`）得到 `True`，标准库的 `math.isclose` 是现成的写法，也是 `True`。`unittest` 里用 `assertAlmostEqual`，`pytest` 里用 `pytest.approx`。\n\n**问题五：同样的测试，用 `pytest` 写出来是什么样？** `pytest` 不需要写类，直接写以 `test_` 开头的函数和 `assert`。真实项目里，被测代码放在 `stats.py`，测试放在 `test_stats.py`，在终端里运行：\n\n```bash\npytest                    # 在项目目录运行，自动发现并运行所有 test_*.py\npytest -q test_stats.py   # 只运行这一个文件，输出更简洁\n```\n\n网页里没有终端，也不能启动命令行进程，所以下面改用 `pytest.main([...])` 在代码里运行（效果和命令行一样）。先把被测模块写到磁盘上。代码里的 `Path` 来自 `pathlib`，是「文件、模块与环境」那一节的主角，这里只用它的一个功能：`Path(\"文件名\").write_text(内容)` 把一个字符串写成文件（`.read_text()` 读回来）；内容放在三个双引号括起来的多行字符串里：\n\n```python\nfrom pathlib import Path\n\n# 先写被测的模块 stats.py（真实项目里它就是一个普通的 .py 文件）\nPath(\"stats.py\").write_text(\"\"\"\ndef median(xs):\n    s = sorted(xs)\n    n = len(s)\n    mid = n // 2\n    return s[mid] if n % 2 == 1 else (s[mid - 1] + s[mid]) / 2\n\"\"\")\nprint(\"stats.py 已写入，共\", len(Path(\"stats.py\").read_text().splitlines()), \"行\")\n# 输出：stats.py 已写入，共 6 行\n```\n\n读输出：`stats.py` 已经写好（就是上面的 `median`，共 6 行：一个空行加 5 行函数）。再写 `test_stats.py`："
+  },
+  {
+   "type": "think",
+   "q": "你为一个计算「验证集准确率」的函数写测试：`accuracy(preds, labels)`。除了「正常的几个例子」，你至少还会测哪几种情况？",
+   "a": "至少这几类：\n\n- **全对、全错**：准确率应该是 1.0 与 0.0，检查边界；\n- **只有一个样本**：长度为 1 的输入；\n- **空输入**：`preds` 和 `labels` 都是空列表，除以零！应该报错还是返回 0？这是**需要先决定的规格**，测试会迫使你想清楚；\n- **长度不一致**：`preds` 与 `labels` 长度不同，应该抛出 `ValueError`，用 `assertRaises` 测；\n- **类别不平衡的数据**：95% 都是类别 0，一个「全猜 0」的预测得到 0.95，函数没错，但这提醒你准确率不是好的指标（统计学里讲过）；\n- **浮点比较**：用 `approx` 而不是 `==`。\n\n测试本身就是一份「规格说明」：写的过程会暴露你对「这个函数应该做什么」的模糊之处。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "断言",
+     "assertion (`assert`)",
+     "假设被破坏时立即报错，用于调试，不用于检查用户输入"
+    ],
+    [
+     "回归测试",
+     "regression testing",
+     "修改代码后重跑测试，确认没有破坏原有功能"
+    ],
+    [
+     "边界情况",
+     "edge case",
+     "空输入、单元素、极值等容易出错的输入"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "读 traceback 的正确方法是？",
+    "options": [
+     "先看最后一行（异常类型与信息），再从下往上看（最下面是出错的位置，往上是调用链）",
+     "只看中间一行",
+     "忽略它，直接重写代码",
+     "只看第一行"
+    ],
+    "answer": 0,
+    "explain": "最后一行说明出了什么错，倒数第二行指出出错的位置，再往上是「谁调用了它」。根因不一定在最后一行。"
+   },
+   {
+    "q": "下面哪项**不是**系统调试的合理步骤？",
+    "options": [
+     "找到稳定复现错误的最小输入",
+     "用二分的思想缩小出错的范围",
+     "提出假设再设计实验验证",
+     "随机改动代码，看哪次能运行就保留哪次"
+    ],
+    "answer": 3,
+    "explain": "随机改动是碰运气，而且可能在不理解原因的情况下掩盖问题。应先提出假设并验证。"
+   },
+   {
+    "q": "测试一个浮点数计算的结果，推荐的做法是？",
+    "options": [
+     "`assert result == 0.3`",
+     "用 `assertAlmostEqual` / `pytest.approx` / 容差比较",
+     "把结果转成字符串再比较",
+     "不需要测试浮点数"
+    ],
+    "answer": 1,
+    "explain": "`0.1 + 0.2 == 0.3` 是 `False`，浮点数有舍入误差，应当在容差范围内比较。"
+   },
+   {
+    "q": "为一个 `median(xs)` 函数写测试，下面哪组**最能**暴露潜在 bug？",
+    "options": [
+     "只测 `[1, 2, 3]`",
+     "只测很大的列表",
+     "测奇数个、偶数个、单个元素、空列表、有重复元素的输入",
+     "只测已排序的输入"
+    ],
+    "answer": 2,
+    "explain": "典型值 + 边界情况 + 错误情况。偶数个元素和空列表是最容易出错的边界。"
+   }
+  ]
+ }
+}

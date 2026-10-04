@@ -1,55 +1,115 @@
 {
- "id": "prob-0",
- "title": "概率统计补漏",
- "subtitle": "条件概率、期望方差、常见分布、中心极限定理、最大似然、假设检验 —— 把成绩单里没夯实的概率统计地基补上",
- "source": {
-  "name": "MIT OCW 6.041 Probabilistic Systems Analysis 与 Harvard Statistics 110（作为大纲依据）",
-  "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/"
- },
- "units": [
-  {
-   "id": "u01",
-   "title": "条件概率与贝叶斯（含诊断测验）",
-   "en": "Conditional Probability & Bayes",
-   "minutes": 55,
-   "file": "u01-conditional-bayes.json"
+  "id": "prob-0",
+  "title": "概率统计补漏",
+  "subtitle": "条件概率、期望方差、常见分布、中心极限定理、最大似然、假设检验 —— 把成绩单里没夯实的概率统计地基补上",
+  "source": {
+    "name": "MIT OCW 6.041 Probabilistic Systems Analysis 与 Harvard Statistics 110（作为大纲依据）",
+    "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/"
   },
-  {
-   "id": "u02",
-   "title": "随机变量、期望与方差",
-   "en": "Random Variables, Expectation & Variance",
-   "minutes": 60,
-   "file": "u02-random-variables.json"
-  },
-  {
-   "id": "u03",
-   "title": "常见分布：二项、泊松、正态",
-   "en": "Common Distributions",
-   "minutes": 70,
-   "file": "u03-distributions.json"
-  },
-  {
-   "id": "u04",
-   "title": "大数定律与中心极限定理",
-   "en": "Law of Large Numbers & CLT",
-   "minutes": 60,
-   "file": "u04-lln-clt.json"
-  },
-  {
-   "id": "u05",
-   "title": "最大似然估计与交叉熵",
-   "en": "Maximum Likelihood & Cross-Entropy",
-   "minutes": 65,
-   "file": "u05-mle-cross-entropy.json"
-  },
-  {
-   "id": "u06",
-   "title": "置信区间与假设检验",
-   "en": "Confidence Intervals & Hypothesis Tests",
-   "minutes": 70,
-   "file": "u06-ci-hypothesis-tests.json"
-  }
- ],
- "order": 2,
- "order_note": "学完 Python 后接着学。ARENA 的概率、信息论要用到"
+  "units": [
+    {
+      "id": "u01",
+      "title": "条件概率与贝叶斯（含诊断测验）（1/2）",
+      "en": "Conditional Probability & Bayes (1/2)",
+      "minutes": 25,
+      "file": "u01-conditional-bayes.json",
+      "whole": "u01-conditional-bayes.json"
+    },
+    {
+      "id": "u01b",
+      "title": "条件概率与贝叶斯（含诊断测验）（2/2）",
+      "en": "Conditional Probability & Bayes (2/2)",
+      "minutes": 35,
+      "file": "u01b-conditional-bayes.json",
+      "whole": "u01-conditional-bayes.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u02",
+      "title": "随机变量、期望与方差（1/2）",
+      "en": "Random Variables, Expectation & Variance (1/2)",
+      "minutes": 20,
+      "file": "u02-random-variables.json",
+      "whole": "u02-random-variables.json"
+    },
+    {
+      "id": "u02b",
+      "title": "随机变量、期望与方差（2/2）",
+      "en": "Random Variables, Expectation & Variance (2/2)",
+      "minutes": 45,
+      "file": "u02b-random-variables.json",
+      "whole": "u02-random-variables.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u03",
+      "title": "常见分布：二项、泊松、正态（1/2）",
+      "en": "Common Distributions: Binomial, Poisson, Normal (1/2)",
+      "minutes": 40,
+      "file": "u03-distributions.json",
+      "whole": "u03-distributions.json"
+    },
+    {
+      "id": "u03b",
+      "title": "常见分布：二项、泊松、正态（2/2）",
+      "en": "Common Distributions: Binomial, Poisson, Normal (2/2)",
+      "minutes": 35,
+      "file": "u03b-distributions.json",
+      "whole": "u03-distributions.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u04",
+      "title": "大数定律与中心极限定理（1/2）",
+      "en": "Law of Large Numbers & Central Limit Theorem (1/2)",
+      "minutes": 40,
+      "file": "u04-lln-clt.json",
+      "whole": "u04-lln-clt.json"
+    },
+    {
+      "id": "u04b",
+      "title": "大数定律与中心极限定理（2/2）",
+      "en": "Law of Large Numbers & Central Limit Theorem (2/2)",
+      "minutes": 30,
+      "file": "u04b-lln-clt.json",
+      "whole": "u04-lln-clt.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u05",
+      "title": "最大似然估计与交叉熵（1/2）",
+      "en": "Maximum Likelihood & Cross-Entropy (1/2)",
+      "minutes": 40,
+      "file": "u05-mle-cross-entropy.json",
+      "whole": "u05-mle-cross-entropy.json"
+    },
+    {
+      "id": "u05b",
+      "title": "最大似然估计与交叉熵（2/2）",
+      "en": "Maximum Likelihood & Cross-Entropy (2/2)",
+      "minutes": 30,
+      "file": "u05b-mle-cross-entropy.json",
+      "whole": "u05-mle-cross-entropy.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u06",
+      "title": "置信区间与假设检验（1/2）",
+      "en": "Confidence Intervals & Hypothesis Tests (1/2)",
+      "minutes": 40,
+      "file": "u06-ci-hypothesis-tests.json",
+      "whole": "u06-ci-hypothesis-tests.json"
+    },
+    {
+      "id": "u06b",
+      "title": "置信区间与假设检验（2/2）",
+      "en": "Confidence Intervals & Hypothesis Tests (2/2)",
+      "minutes": 35,
+      "file": "u06b-ci-hypothesis-tests.json",
+      "whole": "u06-ci-hypothesis-tests.json",
+      "part_of": "u06"
+    }
+  ],
+  "order": 2,
+  "order_note": "学完 Python 后接着学。ARENA 的概率、信息论要用到"
 }

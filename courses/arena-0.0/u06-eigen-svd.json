@@ -1,19 +1,16 @@
 {
  "id": "u06",
- "title": "特征值与奇异值分解",
- "en": "Eigenvalues & SVD",
- "minutes": 110,
+ "title": "特征值与奇异值分解（1/3）",
+ "en": "Eigenvalues & SVD (1/3)",
+ "minutes": 40,
  "objectives": [
   "理解 **特征向量 (eigenvector)** 与 **特征值 (eigenvalue)**：变换后仍留在原直线上的向量，与它被拉伸的倍数；会用 $\\det(A-\\lambda I)=0$ 和 `np.linalg.eig` 求它们",
-  "理解 **对角化 (diagonalization)** $A=PDP^{-1}$：它就是上一节的基变换，并用它快速算矩阵的幂（斐波那契例子、幂迭代）",
-  "知道 **对称矩阵 (symmetric matrix)** 的 **谱定理 (spectral theorem)**，并用协方差矩阵的特征分解理解 **主成分分析 (PCA)**",
-  "理解 **奇异值分解 (SVD)** $A=U\\Sigma V^\\top$：旋转 → 缩放 → 旋转，奇异值是椭圆的半轴长，它与秩、与 $A^\\top A$ 的特征值的关系",
-  "会做 **低秩近似 (low-rank approximation)** 并解释 **Eckart–Young 定理**，知道它怎样节省参数（LoRA 的数学基础）、怎样用来分析权重矩阵"
+  "理解 **对角化 (diagonalization)** $A=PDP^{-1}$：它就是上一节的基变换，并用它快速算矩阵的幂（斐波那契例子、幂迭代）"
  ],
  "blocks": [
   {
    "type": "text",
-   "md": "### 先说这一节要干什么\n\n上一节说的是：同一个变换，换一组基，矩阵就会变。那有没有一组**最好的基**，让矩阵变得最简单？答案是有的：对很多矩阵，存在一组基让它变成**对角矩阵**，每个方向只是单纯被拉长或压短，这就是**特征分解**。而对于一般的、甚至不是方阵的矩阵，**奇异值分解 (SVD)** 给出了同样漂亮的结构：旋转、沿轴缩放、再旋转。\n\nARENA 把这两个主题列为「建议了解」，原因是后面分析 Transformer 的权重时，会用 SVD 找出一个矩阵「最重要的方向」，会用低秩结构理解注意力头在做什么。对打算做数据和 AI 的人来说，它们也是 PCA、推荐系统、LoRA 微调、数据压缩背后共同的数学。\n\n**学完它你就能看懂这几件事：**\n\n- **PCA**：「把数据投影到方差最大的方向」，就是协方差矩阵的特征分解，一行 `eigh` 或一次 SVD 就能做；\n- **LoRA**：微调大模型时，不改 $768\\times3072$ 的大矩阵，只学一个秩为 8 的修正量 $BA$，参数少了约 77 倍（本节代码会算）；\n- **训练为什么会发散**：反复乘同一个矩阵，结果由**最大特征值**决定，大于 1 就爆炸、小于 1 就消失（循环网络和深层网络里的梯度爆炸 / 消失）；\n- ARENA 后面的可解释性工作怎样对 $W_{QK}$、$W_{OV}$ 这类矩阵做 SVD，来看它们「读什么、写什么」。\n\n**本节安排（约 110 分钟）**：导读与特征向量（15 分钟）→ 视频一（17 分钟）→ 对角化与矩阵的幂（12 分钟）→ 对称矩阵与 PCA（12 分钟）→ 视频二（16 分钟）→ SVD 的代码与几何（15 分钟）→ 低秩近似实验（13 分钟）→「想一想」。视频是英文的，可以打开 YouTube 的中文字幕；视频二的动画很直观，建议全屏看。\n\n### 特征向量与特征值\n\n> **标准定义 · 特征向量与特征值 (eigenvector & eigenvalue)**\n>\n> 对方阵 $A$，若存在**非零**向量 $\\mathbf{v}$ 和标量 $\\lambda$ 使得 $A\\mathbf{v}=\\lambda\\mathbf{v}$，则 $\\mathbf{v}$ 称为 $A$ 的**特征向量**，$\\lambda$ 称为对应的**特征值**。等价地，$(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$ 有非零解，即 $A-\\lambda I$ 不可逆，所以特征值是**特征方程** $\\det(A-\\lambda I)=0$ 的根。$n\\times n$ 矩阵的特征值（含重数、复数）之和等于**迹** $\\operatorname{tr}(A)$，之积等于**行列式** $\\det(A)$。\n>\n> *English: An eigenvector v of a square matrix A satisfies Av = λv with v ≠ 0; λ is its eigenvalue. Eigenvalues are the roots of det(A − λI) = 0; their sum is tr(A) and their product is det(A).*\n\n**白话版：「变换里不转弯的方向」。** 大多数向量经过变换后，方向都会偏；但总有几条特殊的直线，向量留在这条直线上，只是被拉长 ($\\lambda>1$)、压短 ($0<\\lambda<1$)、翻到反方向 ($\\lambda<0$)，或者被压到原点 ($\\lambda=0$)。这些直线就是变换的「骨架」。\n\n```python\nimport numpy as np\n\nA = np.array([[3.0, 1.0], [0.0, 2.0]])\nvals, vecs = np.linalg.eig(A)                 # vals：特征值；vecs 的每一「列」是对应的特征向量（已归一化）\nprint(\"特征值：\", vals)\nprint(\"特征向量（列）：\")\nprint(np.round(vecs, 3))\n\n# 验证定义 A v = lambda v\nfor lam, v in zip(vals, vecs.T):\n    print(f\"lambda = {lam:.0f}:  A v = lambda v ？\", bool(np.allclose(A @ v, lam * v)))\n\n# 特征多项式 det(A - lambda I) = lambda^2 - 5 lambda + 6，它的根就是特征值\nprint(\"特征多项式系数：\", np.poly(A), \" 根：\", np.roots(np.poly(A)))\nprint(\"迹 =\", np.trace(A), \"= 特征值之和\", vals.sum(), \"；行列式 =\", round(float(np.linalg.det(A)), 3), \"= 特征值之积\", vals.prod())\n\n# 对比：一般向量经过 A 之后，方向通常会变；特征向量不会\ndef angle(a, b):\n    return np.degrees(np.arccos(a @ b / (np.linalg.norm(a) * np.linalg.norm(b))))\nfor x in [vecs[:, 0], vecs[:, 1], np.array([0.0, 1.0]), np.array([1.0, 1.0])]:\n    print(\"x =\", np.round(x, 2), \" 与 A x 的夹角 =\", round(float(angle(x, A @ x)), 1), \"度\")\n\n# 没有实特征向量的情形：逆时针旋转 90 度\nR = np.array([[0.0, -1.0], [1.0, 0.0]])\nprint(\"旋转 90 度的特征值：\", np.linalg.eigvals(R))\n# 输出：特征值： [3. 2.]\n# 输出：特征向量（列）：\n# 输出：[[ 1.    -0.707]\n# 输出： [ 0.     0.707]]\n# 输出：lambda = 3:  A v = lambda v ？ True\n# 输出：lambda = 2:  A v = lambda v ？ True\n# 输出：特征多项式系数： [ 1. -5.  6.]  根： [3. 2.]\n# 输出：迹 = 5.0 = 特征值之和 5.0 ；行列式 = 6.0 = 特征值之积 6.0\n# 输出：x = [1. 0.]  与 A x 的夹角 = 0.0 度\n# 输出：x = [-0.71  0.71]  与 A x 的夹角 = 0.0 度\n# 输出：x = [0. 1.]  与 A x 的夹角 = 26.6 度\n# 输出：x = [1. 1.]  与 A x 的夹角 = 18.4 度\n# 输出：旋转 90 度的特征值： [0.+1.j 0.-1.j]\n```\n\n读输出：$A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}$ 的特征值是 3 和 2，对应特征向量 $(1,0)$ 和 $(-0.707,0.707)$（`eig` 返回的是归一化后的列，符号可以任意）。特征多项式是 $\\lambda^2-5\\lambda+6$，系数 $[1,-5,6]$，根是 3 和 2；迹 5 等于特征值之和，行列式 6 等于特征值之积。看夹角那几行：两个特征向量经过 $A$ 之后方向完全不变（夹角 0.0 度），而一般的向量 $(0,1)$ 和 $(1,1)$ 会被「掰弯」26.6 度和 18.4 度。最后一行：逆时针转 90 度的矩阵每个向量都被转离原直线，它**没有实特征向量**，特征值是复数 $\\pm i$。\n\n**实用提醒**：实数矩阵可以有复数特征值；几何上，复数特征值对应「旋转」的成分。"
+   "md": "### 先说这一节要干什么\n\n上一节说的是：同一个变换，换一组基，矩阵就会变。那有没有一组**最好的基**，让矩阵变得最简单？答案是有的：对很多矩阵，存在一组基让它变成**对角矩阵**，每个方向只是单纯被拉长或压短，这就是**特征分解**。而对于一般的、甚至不是方阵的矩阵，**奇异值分解 (SVD)** 给出了同样漂亮的结构：旋转、沿轴缩放、再旋转。\n\nARENA 把这两个主题列为「建议了解」，原因是后面分析 Transformer 的权重时，会用 SVD 找出一个矩阵「最重要的方向」，会用低秩结构理解注意力头在做什么。对打算做数据和 AI 的人来说，它们也是 PCA、推荐系统、LoRA 微调、数据压缩背后共同的数学。\n\n**学完它你就能看懂这几件事：**\n\n- **PCA**：「把数据投影到方差最大的方向」，就是协方差矩阵的特征分解，一行 `eigh` 或一次 SVD 就能做；\n- **LoRA**：微调大模型时，不改 $768\\times3072$ 的大矩阵，只学一个秩为 8 的修正量 $BA$，参数少了约 77 倍（本节代码会算）；\n- **训练为什么会发散**：反复乘同一个矩阵，结果由**最大特征值**决定，大于 1 就爆炸、小于 1 就消失（循环网络和深层网络里的梯度爆炸 / 消失）；\n- ARENA 后面的可解释性工作怎样对 $W_{QK}$、$W_{OV}$ 这类矩阵做 SVD，来看它们「读什么、写什么」。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 40 分钟）**：特征向量与特征值（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 特征向量与特征值\n\n> **标准定义 · 特征向量与特征值 (eigenvector & eigenvalue)**\n>\n> 对方阵 $A$，若存在**非零**向量 $\\mathbf{v}$ 和标量 $\\lambda$ 使得 $A\\mathbf{v}=\\lambda\\mathbf{v}$，则 $\\mathbf{v}$ 称为 $A$ 的**特征向量**，$\\lambda$ 称为对应的**特征值**。等价地，$(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$ 有非零解，即 $A-\\lambda I$ 不可逆，所以特征值是**特征方程** $\\det(A-\\lambda I)=0$ 的根。$n\\times n$ 矩阵的特征值（含重数、复数）之和等于**迹** $\\operatorname{tr}(A)$，之积等于**行列式** $\\det(A)$。\n>\n> *English: An eigenvector v of a square matrix A satisfies Av = λv with v ≠ 0; λ is its eigenvalue. Eigenvalues are the roots of det(A − λI) = 0; their sum is tr(A) and their product is det(A).*\n\n**白话版：「变换里不转弯的方向」。** 大多数向量经过变换后，方向都会偏；但总有几条特殊的直线，向量留在这条直线上，只是被拉长 ($\\lambda>1$)、压短 ($0<\\lambda<1$)、翻到反方向 ($\\lambda<0$)，或者被压到原点 ($\\lambda=0$)。这些直线就是变换的「骨架」。\n\n```python\nimport numpy as np\n\nA = np.array([[3.0, 1.0], [0.0, 2.0]])\nvals, vecs = np.linalg.eig(A)                 # vals：特征值；vecs 的每一「列」是对应的特征向量（已归一化）\nprint(\"特征值：\", vals)\nprint(\"特征向量（列）：\")\nprint(np.round(vecs, 3))\n\n# 验证定义 A v = lambda v\nfor lam, v in zip(vals, vecs.T):\n    print(f\"lambda = {lam:.0f}:  A v = lambda v ？\", bool(np.allclose(A @ v, lam * v)))\n\n# 特征多项式 det(A - lambda I) = lambda^2 - 5 lambda + 6，它的根就是特征值\nprint(\"特征多项式系数：\", np.poly(A), \" 根：\", np.roots(np.poly(A)))\nprint(\"迹 =\", np.trace(A), \"= 特征值之和\", vals.sum(), \"；行列式 =\", round(float(np.linalg.det(A)), 3), \"= 特征值之积\", vals.prod())\n\n# 对比：一般向量经过 A 之后，方向通常会变；特征向量不会\ndef angle(a, b):\n    return np.degrees(np.arccos(a @ b / (np.linalg.norm(a) * np.linalg.norm(b))))\nfor x in [vecs[:, 0], vecs[:, 1], np.array([0.0, 1.0]), np.array([1.0, 1.0])]:\n    print(\"x =\", np.round(x, 2), \" 与 A x 的夹角 =\", round(float(angle(x, A @ x)), 1), \"度\")\n\n# 没有实特征向量的情形：逆时针旋转 90 度\nR = np.array([[0.0, -1.0], [1.0, 0.0]])\nprint(\"旋转 90 度的特征值：\", np.linalg.eigvals(R))\n# 输出：特征值： [3. 2.]\n# 输出：特征向量（列）：\n# 输出：[[ 1.    -0.707]\n# 输出： [ 0.     0.707]]\n# 输出：lambda = 3:  A v = lambda v ？ True\n# 输出：lambda = 2:  A v = lambda v ？ True\n# 输出：特征多项式系数： [ 1. -5.  6.]  根： [3. 2.]\n# 输出：迹 = 5.0 = 特征值之和 5.0 ；行列式 = 6.0 = 特征值之积 6.0\n# 输出：x = [1. 0.]  与 A x 的夹角 = 0.0 度\n# 输出：x = [-0.71  0.71]  与 A x 的夹角 = 0.0 度\n# 输出：x = [0. 1.]  与 A x 的夹角 = 26.6 度\n# 输出：x = [1. 1.]  与 A x 的夹角 = 18.4 度\n# 输出：旋转 90 度的特征值： [0.+1.j 0.-1.j]\n```\n\n读输出：$A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}$ 的特征值是 3 和 2，对应特征向量 $(1,0)$ 和 $(-0.707,0.707)$（`eig` 返回的是归一化后的列，符号可以任意）。特征多项式是 $\\lambda^2-5\\lambda+6$，系数 $[1,-5,6]$，根是 3 和 2；迹 5 等于特征值之和，行列式 6 等于特征值之积。看夹角那几行：两个特征向量经过 $A$ 之后方向完全不变（夹角 0.0 度），而一般的向量 $(0,1)$ 和 $(1,1)$ 会被「掰弯」26.6 度和 18.4 度。最后一行：逆时针转 90 度的矩阵每个向量都被转离原直线，它**没有实特征向量**，特征值是复数 $\\pm i$。\n\n**实用提醒**：实数矩阵可以有复数特征值；几何上，复数特征值对应「旋转」的成分。"
   },
   {
    "type": "video",
@@ -24,39 +21,9 @@
    "minutes": 17
   },
   {
-   "type": "text",
-   "md": "### 对角化与矩阵的幂\n\n> **标准定义 · 对角化 (diagonalization)**\n>\n> 若 $n\\times n$ 矩阵 $A$ 有 $n$ 个线性无关的特征向量（构成**特征基 (eigenbasis)**），把它们作为列排成 $P$，对应特征值放在对角矩阵 $D$ 上，则 $A=PDP^{-1}$。这正是上一节的基变换 $B^{-1}MB$ 取了「特征基」：在特征基下，$A$ 只是沿各坐标轴缩放。于是 $A^k=PD^kP^{-1}$，而 $D^k$ 只需把对角线上的每个数各自求 $k$ 次方。\n>\n> *English: If A has n linearly independent eigenvectors, then A = PDP⁻¹ with the eigenvectors as columns of P and eigenvalues on the diagonal of D. Then A^k = P D^k P⁻¹, so powers reduce to powers of numbers.*\n\n**白话版：「换一副眼镜，复杂变简单」。** 在标准基下 $A$ 是个乱糟糟的矩阵；换上特征基这副眼镜，它就变成「每个方向各自放大几倍」。重复做 $k$ 次，就是各个方向各自放大 $k$ 次方倍，绝对值最大的特征值会很快压倒其他方向。\n\n```python\nimport numpy as np\n\nA = np.array([[3.0, 1.0], [0.0, 2.0]])\nvals, P = np.linalg.eig(A)                    # A = P D P^-1\nD = np.diag(vals)\nprint(\"A = P D P^-1 ？\", bool(np.allclose(A, P @ D @ np.linalg.inv(P))))\n\n# 算幂：A^10 = P D^10 P^-1，只需把对角线上的数各自求 10 次方\nA10 = P @ np.diag(vals ** 10) @ np.linalg.inv(P)\nprint(\"A^10 =\")\nprint(np.round(A10, 1))\nprint(\"和连乘 10 次一致：\", bool(np.allclose(A10, np.linalg.matrix_power(A, 10))))\n\n# 一个有名的例子：斐波那契。[[1,1],[1,0]]^n 的左下角就是第 n 个斐波那契数\nF = np.array([[1.0, 1.0], [1.0, 0.0]])\nlam, Q = np.linalg.eig(F)\nprint(\"特征值：\", np.round(lam, 6), \"（最大的是黄金分割比 1.618…）\")\nF30 = Q @ np.diag(lam ** 30) @ np.linalg.inv(Q)\nprint(\"F(30) =\", int(round(F30[1, 0])))\nprint(\"F(31)/F(30) =\", round(float(np.linalg.matrix_power(F, 31)[1, 0] / np.linalg.matrix_power(F, 30)[1, 0]), 6))\n\n# 幂迭代：反复乘 A 再归一化，方向会收敛到「绝对值最大的特征值」的特征向量\nx = np.array([1.0, 5.0])\nfor step in range(1, 31):\n    x = A @ x\n    x /= np.linalg.norm(x)\n    if step in (1, 5, 30):\n        print(f\"第 {step:2d} 步：x =\", np.round(x, 4), \" Rayleigh 商 x^T A x =\", round(float(x @ A @ x), 4))\n# 输出：A = P D P^-1 ？ True\n# 输出：A^10 =\n# 输出：[[59049. 58025.]\n# 输出： [    0.  1024.]]\n# 输出：和连乘 10 次一致： True\n# 输出：特征值： [ 1.618034 -0.618034] （最大的是黄金分割比 1.618…）\n# 输出：F(30) = 832040\n# 输出：F(31)/F(30) = 1.618034\n# 输出：第  1 步：x = [0.6247 0.7809]  Rayleigh 商 x^T A x = 2.878\n# 输出：第  5 步：x = [0.9925 0.1223]  Rayleigh 商 x^T A x = 3.1065\n# 输出：第 30 步：x = [1. 0.]  Rayleigh 商 x^T A x = 3.0\n```\n\n读输出：第一行验证了 $A=PDP^{-1}$。$A^{10}$ 的结果是 $\\begin{bmatrix}59049&58025\\\\0&1024\\end{bmatrix}$：对角线上就是 $3^{10}=59049$ 和 $2^{10}=1024$，与连乘 10 次一致。**斐波那契**例子：矩阵 $\\begin{bmatrix}1&1\\\\1&0\\end{bmatrix}$ 的特征值是 1.618034（黄金分割比）和 $-0.618034$；用 $PD^{30}P^{-1}$ 一次算出 $F(30)=832040$，而且相邻两项之比 $F(31)/F(30)=1.618034$，这是因为最大的特征值最终压倒了另一个。**幂迭代 (power iteration)**：从 $(1,5)$ 出发反复乘 $A$ 再归一化，第 1 步方向是 $(0.6247,0.7809)$，第 5 步是 $(0.9925,0.1223)$，第 30 步已经收敛到 $(1,0)$，即最大特征值 3 的特征向量；Rayleigh 商 $\\mathbf{x}^\\top A\\mathbf{x}$ 也收敛到 3.0。**这就是为什么深层网络或循环网络里，信号会随层数指数地爆炸或消失：由最大特征值（的绝对值）是大于 1 还是小于 1 决定。**\n\n### 对称矩阵、谱定理与 PCA\n\n> **标准定义 · 谱定理与主成分分析 (spectral theorem & PCA)**\n>\n> **谱定理 (spectral theorem)**：实对称矩阵 $S=S^\\top$ 的特征值全是实数，并且可以选出一组**标准正交**的特征向量，即 $S=Q\\Lambda Q^\\top$（$Q$ 是正交矩阵，$\\Lambda$ 是对角矩阵）。对数据矩阵 $X$（每行一个样本、已中心化），**协方差矩阵** $C=\\frac{1}{n-1}X^\\top X$ 是对称的；它的特征向量叫**主成分方向 (principal components)**，特征值就是数据沿该方向的**方差**。**主成分分析 (PCA)** 就是把数据投影到特征值最大的前几个方向上。\n>\n> *English: A real symmetric matrix has real eigenvalues and an orthonormal eigenbasis, S = QΛQᵀ. The eigenvectors of the covariance matrix are the principal components, and the eigenvalues are the variances along them.*\n\n**白话版：「找一个最能展开数据的视角」。** 一团斜着分布的数据，沿着它最长的方向看，数据最分散（方差最大）；沿着垂直方向看，几乎挤成一条线。这两个方向，就是协方差矩阵的两个特征向量，而且它们**互相垂直**。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 生成二维相关数据：两个特征同升同降\ncov_true = np.array([[3.0, 1.5], [1.5, 1.0]])\nX = rng.multivariate_normal([0, 0], cov_true, size=2000)\nC = np.cov(X.T)                                # 样本协方差矩阵：对称矩阵\nprint(\"协方差矩阵：\")\nprint(np.round(C, 2))\n\nvals, V = np.linalg.eigh(C)                    # eigh 专门用于对称矩阵：特征值从小到大，特征向量互相正交\nvals, V = vals[::-1], V[:, ::-1]               # 改成从大到小\nprint(\"特征值：\", np.round(vals, 3))\nprint(\"V^T V = I（特征向量互相正交）：\", bool(np.allclose(V.T @ V, np.eye(2))))\n\n# 沿第一个特征向量投影，得到的一维数据的方差就是最大特征值（这就是 PCA 的第一主成分）\nfor i in range(2):\n    proj = X @ V[:, i]\n    print(f\"沿特征向量 {i + 1} 的方差 = {proj.var(ddof=1):.3f}  （特征值 {vals[i]:.3f}）\")\nprint(\"第一主成分解释的方差比例：\", round(float(vals[0] / vals.sum()), 3))\n\n# 任意其他方向的方差都介于两个特征值之间\nangles = np.linspace(0, np.pi, 181)\nvar_by_angle = [(X @ np.array([np.cos(t), np.sin(t)])).var(ddof=1) for t in angles]\nprint(\"所有方向里方差的最大值 =\", round(float(max(var_by_angle)), 3), \" 最小值 =\", round(float(min(var_by_angle)), 3))\n# 输出：协方差矩阵：\n# 输出：[[2.99 1.53]\n# 输出： [1.53 1.03]]\n# 输出：特征值： [3.821 0.195]\n# 输出：V^T V = I（特征向量互相正交）： True\n# 输出：沿特征向量 1 的方差 = 3.821  （特征值 3.821）\n# 输出：沿特征向量 2 的方差 = 0.195  （特征值 0.195）\n# 输出：第一主成分解释的方差比例： 0.951\n# 输出：所有方向里方差的最大值 = 3.821  最小值 = 0.195\n```\n\n读输出：2000 个样本的协方差矩阵约为 $\\begin{bmatrix}2.99&1.53\\\\1.53&1.03\\end{bmatrix}$（真实值是 $\\begin{bmatrix}3&1.5\\\\1.5&1\\end{bmatrix}$）。对称矩阵用 `eigh`：特征值 3.821 和 0.195，特征向量满足 $V^\\top V=I$（正交）。把数据沿两个特征向量投影，方差分别是 3.821 和 0.195，**与特征值完全相同**；所有方向里方差的最大值和最小值也恰好就是这两个特征值。所以第一主成分一个方向就解释了 0.951 的总方差：这两个特征互相相关，其实「本质上是一维的」，PCA 把它压缩了。"
-  },
-  {
-   "type": "video",
-   "provider": "youtube",
-   "id": "vSczTbgc8Rc",
-   "title": "视频二：SVD Visualized, Singular Value Decomposition explained（Visual Kernel）",
-   "lang": "英文，可开中文字幕",
-   "minutes": 16
-  },
-  {
-   "type": "text",
-   "md": "### 奇异值分解 (SVD)\n\n> **标准定义 · 奇异值分解 (singular value decomposition, SVD)**\n>\n> 任何 $m\\times n$ 实矩阵 $A$ 都可以写成 $A=U\\Sigma V^\\top$，其中 $U\\in\\mathbb{R}^{m\\times m}$ 和 $V\\in\\mathbb{R}^{n\\times n}$ 是**正交矩阵**，$\\Sigma\\in\\mathbb{R}^{m\\times n}$ 只有对角线上有非零元素 $\\sigma_1\\ge\\sigma_2\\ge\\dots\\ge0$，称为**奇异值 (singular values)**。几何上，这是三步：$V^\\top$ 在输入空间**旋转 / 反射**，$\\Sigma$ 沿坐标轴**缩放**，$U$ 在输出空间再**旋转 / 反射**。$A$ 的**秩**等于非零奇异值的个数；$A^\\top A$ 的特征值恰好是 $\\sigma_i^2$，$V$ 的列是它的特征向量。常用的**精简版 (thin SVD)** 只保留 $\\min(m,n)$ 个奇异值，所以 $U$ 是 $m\\times k$、$\\Sigma$ 是 $k\\times k$、$V^\\top$ 是 $k\\times n$（$k=\\min(m,n)$）。\n>\n> *English: Every real m×n matrix factors as A = UΣVᵀ with orthogonal U, V and non-negative diagonal Σ. Geometrically: rotate, scale along the axes, rotate again. The rank equals the number of nonzero singular values, and σᵢ² are the eigenvalues of AᵀA.*\n\n**白话版：「任何变换，都是『转一下、拉一拉、再转一下』」。** 把单位圆放进去，$V^\\top$ 先把它转一转（圆还是圆），$\\Sigma$ 把圆拉成椭圆，$U$ 再把椭圆转到最终位置。**奇异值就是椭圆各半轴的长度。**（对方阵，奇异值之积等于 $|\\det|$：面积放大了多少倍。）\n\n特征分解只适用于方阵，而且不是每个方阵都能对角化；SVD 对**任何形状**的矩阵都成立，奇异值总是非负实数，数值计算也很稳定。神经网络里的权重矩阵大多不是方阵（如 $768\\times3072$），所以 SVD 才是分析它们的主力工具。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(1)\n\n# 一个 5x3 的矩阵：不是方阵，没有特征分解，但有 SVD\nA = rng.normal(size=(5, 3))\nU, S, Vt = np.linalg.svd(A, full_matrices=False)   # 精简版 SVD\nprint(\"形状 U, S, Vt：\", U.shape, S.shape, Vt.shape)\nprint(\"奇异值（从大到小）：\", np.round(S, 3))\nprint(\"重建 A = U diag(S) Vt ？\", bool(np.allclose(U @ np.diag(S) @ Vt, A)))\nprint(\"U 的列正交、Vt 的行正交：\", bool(np.allclose(U.T @ U, np.eye(3))), bool(np.allclose(Vt @ Vt.T, np.eye(3))))\n\n# 与特征值的联系：A^T A 的特征值 = 奇异值的平方\neig = np.sort(np.linalg.eigvalsh(A.T @ A))[::-1]\nprint(\"A^T A 的特征值：\", np.round(eig, 3))\nprint(\"奇异值的平方  ：\", np.round(S ** 2, 3))\n\n# 秩 = 非零奇异值的个数：造一个秩为 2 的 5x3 矩阵\nB = rng.normal(size=(5, 2)) @ rng.normal(size=(2, 3))\nprint(\"B 的奇异值：\", np.round(np.linalg.svd(B, compute_uv=False), 6), \" 秩 =\", np.linalg.matrix_rank(B))\n\n# 几何：单位圆经过 M 变成椭圆，半轴长就是奇异值\nM = np.array([[3.0, 1.0], [0.0, 2.0]])\nt = np.linspace(0, 2 * np.pi, 3601)\ncircle = np.stack([np.cos(t), np.sin(t)])           # 单位圆上的点（每列一个）\nlengths = np.linalg.norm(M @ circle, axis=0)        # 变换后各点到原点的距离\nprint(\"椭圆最长半轴 =\", round(float(lengths.max()), 3), \" 最短半轴 =\", round(float(lengths.min()), 3))\nprint(\"M 的奇异值   =\", np.round(np.linalg.svd(M, compute_uv=False), 3))\nprint(\"奇异值之积 =\", round(float(np.prod(np.linalg.svd(M, compute_uv=False))), 3), \"= |det M| =\", abs(round(float(np.linalg.det(M)), 3)))\n# 输出：形状 U, S, Vt： (5, 3) (3,) (3, 3)\n# 输出：奇异值（从大到小）： [1.909 1.299 0.486]\n# 输出：重建 A = U diag(S) Vt ？ True\n# 输出：U 的列正交、Vt 的行正交： True True\n# 输出：A^T A 的特征值： [3.645 1.686 0.236]\n# 输出：奇异值的平方  ： [3.645 1.686 0.236]\n# 输出：B 的奇异值： [7.46238  1.433355 0.      ]  秩 = 2\n# 输出：椭圆最长半轴 = 3.257  最短半轴 = 1.842\n# 输出：M 的奇异值   = [3.257 1.842]\n# 输出：奇异值之积 = 6.0 = |det M| = 6.0\n```\n\n读输出：一个 $5\\times3$ 的随机矩阵，`svd` 返回的形状是 $U:(5,3)$、$S:(3,)$、$V^\\top:(3,3)$，奇异值是 1.909、1.299、0.486，用 $U\\operatorname{diag}(S)V^\\top$ 能精确重建 $A$，$U$ 的列和 $V^\\top$ 的行都是标准正交的。**与特征值的联系**：$A^\\top A$ 的特征值 3.645、1.686、0.236，正是奇异值 1.909、1.299、0.486 的平方。**秩**：把两个小矩阵相乘得到的 $5\\times3$ 矩阵 $B$，奇异值是 7.46238、1.433355、0，**第三个是 0，秩为 2**。**几何**：矩阵 $\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}$ 把单位圆变成的椭圆，最长半轴 3.257、最短半轴 1.842，正好是它的两个奇异值；两者之积 6.0 等于行列式的绝对值 6.0。**注意：这个矩阵的特征值是 3 和 2，奇异值却是 3.257 和 1.842。非对称矩阵的奇异值和特征值一般不一样；只有对称半正定矩阵，两者才相同。**\n\n### 低秩近似与 Eckart–Young 定理\n\n> **标准定义 · 低秩近似 (low-rank approximation)**\n>\n> 把 SVD 写成「秩 1 矩阵之和」：$A=\\sum_i\\sigma_i\\mathbf{u}_i\\mathbf{v}_i^\\top$。只保留最大的 $k$ 项，得到 $A_k=\\sum_{i=1}^{k}\\sigma_i\\mathbf{u}_i\\mathbf{v}_i^\\top$。**Eckart–Young 定理**：在所有秩不超过 $k$ 的矩阵中，$A_k$ 离 $A$ 最近（在 Frobenius 范数和谱范数下都是），并且 Frobenius 误差为 $\\|A-A_k\\|_F=\\sqrt{\\sigma_{k+1}^2+\\sigma_{k+2}^2+\\cdots}$。一个秩 $k$ 的 $m\\times n$ 矩阵可以存成 $\\mathbf{u}$ 和 $\\mathbf{v}$ 共 $k(m+n)$ 个数（外加 $k$ 个奇异值），比 $mn$ 少得多。\n>\n> *English: Keeping only the top-k singular triples gives the best rank-k approximation of A (Eckart–Young), with Frobenius error equal to the root of the sum of the discarded σ². A rank-k matrix needs only about k(m+n) numbers instead of mn.*\n\n**白话版：「保留最大的几个笔画」。** 一幅画，先勾出最粗的几条主线，就已经很像了；奇异值就是每个「笔画」的粗细。大的奇异值是主线，小的是细节和噪声。如果奇异值掉得很快，说明矩阵「本质上」只有很少的自由度。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 造一个「本质上秩为 3」的 100x80 权重矩阵，再加一点噪声\nm, n, r = 100, 80, 3\nW = rng.normal(size=(m, r)) @ np.diag([30.0, 20.0, 10.0]) @ rng.normal(size=(r, n)) / 10 + 0.05 * rng.normal(size=(m, n))\nU, S, Vt = np.linalg.svd(W, full_matrices=False)\nprint(\"前 6 个奇异值：\", np.round(S[:6], 2))\nprint(\"第 4 个以后的最大奇异值：\", round(float(S[3]), 3))\n\ndef rank_k(k):\n    return U[:, :k] @ np.diag(S[:k]) @ Vt[:k]            # 只保留最大的 k 个奇异值\n\ntotal = np.linalg.norm(W)                               # Frobenius 范数\nfor k in [1, 2, 3, 5, 10]:\n    err = np.linalg.norm(W - rank_k(k))\n    theory = np.sqrt((S[k:] ** 2).sum())               # 被丢掉的奇异值的平方和再开方\n    print(f\"k = {k:2d}  相对误差 = {err / total:.4f}  公式 = {theory / total:.4f}\")\n\n# Eckart-Young：随机选一个 3 维列空间做投影，一定比 SVD 的秩 3 近似差\nQ, _ = np.linalg.qr(rng.normal(size=(m, 3)))\nprint(\"随机 3 维投影的相对误差 =\", round(float(np.linalg.norm(W - Q @ Q.T @ W) / total), 4))\n\n# 省了多少参数\nprint(\"秩 3 分解的参数数：\", 3 * (m + n + 1), \"，原矩阵：\", m * n)\nprint(\"768x3072 的矩阵，秩 8：\", 8 * (768 + 3072), \"对\", 768 * 3072, \"，约为\", round(768 * 3072 / (8 * (768 + 3072))), \"分之一\")\n# 输出：前 6 个奇异值： [279.12 175.79  91.08   0.91   0.89   0.88]\n# 输出：第 4 个以后的最大奇异值： 0.911\n# 输出：k =  1  相对误差 = 0.5787  公式 = 0.5787\n# 输出：k =  2  相对误差 = 0.2664  公式 = 0.2664\n# 输出：k =  3  相对误差 = 0.0126  公式 = 0.0126\n# 输出：k =  5  相对误差 = 0.0121  公式 = 0.0121\n# 输出：k = 10  相对误差 = 0.0108  公式 = 0.0108\n# 输出：随机 3 维投影的相对误差 = 0.9905\n# 输出：秩 3 分解的参数数： 543 ，原矩阵： 8000\n# 输出：768x3072 的矩阵，秩 8： 30720 对 2359296 ，约为 77 分之一\n```\n\n读输出：造了一个本质上秩为 3 的 $100\\times80$ 矩阵，再加一点噪声。奇异值是 279.12、175.79、91.08，然后突然掉到 0.91、0.89、0.88，**前三个远大于其余的**，这就是「近似秩 3」的信号。保留 $k$ 项的相对误差：$k=1$ 时 0.5787，$k=2$ 时 0.2664，$k=3$ 时只剩 0.0126，再多保留 5 项、10 项也只降到 0.0121、0.0108（剩下的都是噪声）；每一行的「公式」列（丢掉的奇异值平方和再开方）与实际误差完全一致。对比实验：随便选一个 3 维列空间投影，误差高达 0.9905，远比 SVD 的最优近似差，这就是 Eckart–Young 的意思。**省多少参数**：秩 3 分解只需要 543 个数，原矩阵有 8000 个；对一个 $768\\times3072$ 的权重矩阵，秩 8 只需要 30720 个数，原来要 2359296 个，约少了 77 倍。**LoRA**（低秩适配）微调大模型的想法正是：假设「微调带来的变化」是低秩的，只训练这两个又瘦又长的小矩阵。\n\n**在可解释性里的用法**：对注意力头的 $W_{OV}$ 之类的矩阵做 SVD，如果奇异值只有少数几个很大，就只需要弄懂这几对「读 / 写」方向（$\\mathbf{v}_i$ 是它读取的输入方向，$\\mathbf{u}_i$ 是它写出的输出方向），就理解了这个矩阵的大部分行为。"
-  },
-  {
-   "type": "text",
-   "md": "### 这一节你要带走的三句话\n\n1. **特征向量是变换里不转弯的方向**：$A\\mathbf{v}=\\lambda\\mathbf{v}$；对角化就是换到特征基，矩阵的幂变成数的幂，最大特征值主导长期行为；对称矩阵（如协方差）的特征向量互相正交，这是 PCA。\n2. **SVD 对任何矩阵都成立**：$A=U\\Sigma V^\\top$，旋转 → 缩放 → 旋转；奇异值是椭圆半轴长，非零奇异值的个数是秩，$A^\\top A$ 的特征值是 $\\sigma_i^2$。\n3. **保留最大的 $k$ 个奇异值是最优的秩 $k$ 近似**（Eckart–Young）；奇异值掉得快，说明矩阵近似低秩，可以压缩，LoRA 和权重分析都基于这一点。"
-  },
-  {
    "type": "think",
    "q": "求 $A=\\begin{bmatrix}2&1\\\\1&2\\end{bmatrix}$ 的特征值和特征向量，并写出 $A^{n}$ 的表达式。再说明：它的奇异值是多少？",
    "a": "特征方程 $\\det(A-\\lambda I)=(2-\\lambda)^2-1=0$，得 $\\lambda=3$ 或 $\\lambda=1$（检查：迹 4 = 3+1，行列式 3 = 3×1）。$\\lambda=3$ 时解 $(A-3I)\\mathbf{v}=0$ 得 $\\mathbf{v}=(1,1)/\\sqrt2$；$\\lambda=1$ 时 $\\mathbf{v}=(1,-1)/\\sqrt2$。因为 $A$ 是对称矩阵，两个特征向量互相正交，$A=Q\\operatorname{diag}(3,1)Q^\\top$，所以 $A^n=Q\\operatorname{diag}(3^n,1)Q^\\top=\\frac12\\begin{bmatrix}3^n+1&3^n-1\\\\3^n-1&3^n+1\\end{bmatrix}$。\n\n因为 $A$ 对称且特征值都为正（半正定），它的奇异值**就等于**特征值：3 和 1。对一般矩阵（比如上面的 $\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}$）这一点不成立。"
-  },
-  {
-   "type": "think",
-   "q": "为什么 SVD 比特征分解更通用？什么情况下，一个矩阵「能特征分解」但「不适合特征分解来做 PCA」，你该用哪一个？",
-   "a": "特征分解要求**方阵**，且需要有足够多的线性无关特征向量（可能还需要复数）；神经网络的权重矩阵大多不是方阵（如 $768\\times3072$），旋转矩阵没有实特征向量，有的方阵（如 $\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}$）连足够的特征向量都没有。SVD 对**任意形状的实矩阵都存在**，$U,V$ 总是正交矩阵，奇异值总是非负实数。\n\n做 PCA 时，数据矩阵 $X$ 是 $n\\times d$，不是方阵；既可以对协方差矩阵 $X^\\top X/(n-1)$ 做 `eigh`（特征值就是方差），也可以直接对中心化后的 $X$ 做 SVD（奇异值 $\\sigma_i$ 满足方差 $=\\sigma_i^2/(n-1)$）。**后者数值更稳定**，因为避免了先算 $X^\\top X$（会把条件数平方），实际的库（如 scikit-learn）用的就是 SVD。"
-  },
-  {
-   "type": "think",
-   "q": "一个 $1000\\times1000$ 的权重矩阵，奇异值从大到小是 50, 30, 20, 0.1, 0.1, …（后面都很小）。(a) 这说明什么？(b) 如果要为它设计一个低秩近似，选 $k=3$，大致的相对误差是多少？(c) 参数能节省多少？",
-   "a": "(a) 前 3 个奇异值远大于其余，说明这个矩阵**近似是秩 3 的**：它主要沿 3 个方向起作用，其余方向的影响几乎可以忽略。\n\n(b) 误差由被丢掉的奇异值决定：$\\sqrt{\\sum_{i>3}\\sigma_i^2}$。假设剩下 997 个都约为 0.1，则误差约 $\\sqrt{997}\\times0.1\\approx3.16$；总范数约 $\\sqrt{50^2+30^2+20^2+\\dots}\\approx\\sqrt{3800+10}\\approx61.7$，相对误差约 $3.16/61.7\\approx5\\%$。（实际数字取决于后面那些奇异值，这里是估算。）\n\n(c) 秩 3 近似只需 $3\\times(1000+1000)=6000$ 个数（再加 3 个奇异值），原矩阵 $10^6$ 个，约少 166 倍。对可解释性来说，只需要弄懂 3 对输入 / 输出方向，就理解了这个矩阵的大部分行为。"
   },
   {
    "type": "keywords",
@@ -82,29 +49,14 @@
      "分别等于特征值之和、之积"
     ],
     [
-     "特征基",
-     "eigenbasis",
-     "由特征向量组成的基，在它下面矩阵是对角的"
-    ],
-    [
      "对角化",
      "diagonalization",
      "$A=PDP^{-1}$，换基的特例，便于算幂"
     ],
     [
-     "幂迭代",
-     "power iteration",
-     "反复乘 $A$ 并归一化，收敛到最大特征值的特征向量"
-    ],
-    [
      "对称矩阵",
      "symmetric matrix",
      "$A^\\top=A$，特征值为实数、特征向量可取正交"
-    ],
-    [
-     "谱定理",
-     "spectral theorem",
-     "对称矩阵可写成 $Q\\Lambda Q^\\top$"
     ],
     [
      "协方差矩阵",
@@ -139,144 +91,41 @@
    ]
   }
  ],
- "references": [
-  {
-   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
-   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
-   "note": "特征值、SVD 为建议了解的内容（讲解为自写，未转载原文）"
-  },
-  {
-   "title": "Six (and a half) intuitions for SVD（LessWrong）",
-   "url": "https://www.lesswrong.com/posts/iupCxk3ddiJBAJkts/six-and-a-half-intuitions-for-svd",
-   "note": "ARENA 推荐的 SVD 直觉文章"
-  },
-  {
-   "title": "The Singular Value Decompositions of Transformer Weight Matrices are Highly Interpretable（LessWrong）",
-   "url": "https://www.lesswrong.com/posts/mkbGjzxD8d8XqKHzA/the-singular-value-decompositions-of-transformer-weight",
-   "note": "ARENA 引用的应用案例"
-  },
-  {
-   "title": "3Blue1Brown：A quick trick for computing eigenvalues（第 15 章，选看）",
-   "url": "https://www.youtube.com/watch?v=e50Bj7jn9IQ",
-   "note": "2×2 矩阵求特征值的快速方法"
-  },
-  {
-   "title": "MIT 18.06 Linear Algebra（Gilbert Strang）",
-   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
-   "note": "选看：特征值、对称矩阵、SVD 的标准大学课程"
-  }
- ],
+ "references": [],
  "quiz": {
   "questions": [
-   {
-    "q": "特征向量 $\\mathbf{v}$ 满足 $A\\mathbf{v} = \\lambda\\mathbf{v}$，几何上意味着什么？",
-    "options": [
-     "变换后 $\\mathbf{v}$ 仍在原来经过原点的那条直线上，只是被缩放了 $\\lambda$ 倍",
-     "$\\mathbf{v}$ 在变换后长度不变",
-     "$\\mathbf{v}$ 被旋转了 $\\lambda$ 度",
-     "$\\mathbf{v}$ 被送到原点"
-    ],
-    "answer": 0,
-    "explain": "特征向量的方向保持不变（或正好反向），只被缩放。长度不变只在 $|\\lambda| = 1$ 时成立。"
-   },
-   {
-    "q": "$A = \\begin{bmatrix} 4 & 0 \\\\ 0 & -1 \\end{bmatrix}$ 的特征值是？",
-    "options": [
-     "4 和 1",
-     "0 和 3",
-     "4 和 −1",
-     "只有 4"
-    ],
-    "answer": 2,
-    "explain": "对角矩阵的特征值就是对角线元素：4 和 −1。$\\lambda = -1$ 表示 $\\hat{\\jmath}$ 方向被翻转。"
-   },
    {
     "q": "求特征值时解的方程是？",
     "options": [
      "$\\det(A) = \\lambda$",
      "$\\text{tr}(A - \\lambda I) = 0$",
-     "$A - \\lambda = 0$",
-     "$\\det(A - \\lambda I) = 0$"
+     "$\\det(A - \\lambda I) = 0$",
+     "$A - \\lambda = 0$"
     ],
-    "answer": 3,
+    "answer": 2,
     "explain": "$(A - \\lambda I)\\mathbf{v} = \\mathbf{0}$ 有非零解 ⇔ $A - \\lambda I$ 不可逆 ⇔ 行列式为 0。"
    },
    {
     "q": "二维平面里的 90° 旋转矩阵有实数特征向量吗？",
     "options": [
-     "有，是 $\\hat{\\imath}$",
      "没有，每个非零向量都被转离了原来的直线",
+     "有，是 $\\hat{\\imath}$",
      "有无穷多个",
      "有，是 $\\hat{\\jmath}$"
     ],
-    "answer": 1,
+    "answer": 0,
     "explain": "旋转 90° 后没有任何非零向量留在原来的直线上，所以没有实特征向量（特征值是复数 $\\pm i$）。"
    },
    {
     "q": "一个 2×2 矩阵的特征值是 2 和 5，它的迹和行列式分别是？",
     "options": [
-     "迹 7，行列式 10",
+     "迹 7，行列式 3",
      "迹 10，行列式 7",
      "迹 3，行列式 10",
-     "迹 7，行列式 3"
+     "迹 7，行列式 10"
     ],
-    "answer": 0,
+    "answer": 3,
     "explain": "迹 = 特征值之和 = 7；行列式 = 特征值之积 = 10。"
-   },
-   {
-    "q": "对角化 $A = PDP^{-1}$ 中，$P$ 的列是什么？",
-    "options": [
-     "特征值",
-     "$A$ 的行",
-     "$A$ 的奇异值",
-     "$A$ 的特征向量"
-    ],
-    "answer": 3,
-    "explain": "$P$ 把特征基坐标翻译回标准坐标，所以它的列是特征向量；$D$ 的对角线是对应的特征值。"
-   },
-   {
-    "q": "SVD $A = U\\Sigma V^\\top$ 的几何含义是？",
-    "options": [
-     "平移 → 缩放 → 平移",
-     "旋转（或反射）→ 沿坐标轴缩放 → 旋转（或反射）",
-     "缩放 → 剪切 → 缩放",
-     "只是一次旋转"
-    ],
-    "answer": 1,
-    "explain": "$V^\\top$ 和 $U$ 都是正交矩阵（旋转 / 反射），$\\Sigma$ 沿坐标轴缩放。从右往左：先 $V^\\top$，再 $\\Sigma$，最后 $U$。"
-   },
-   {
-    "q": "关于 SVD，下面哪个说法正确？",
-    "options": [
-     "只适用于方阵",
-     "只适用于对称矩阵",
-     "对任意形状的实矩阵都存在",
-     "奇异值可能是负数"
-    ],
-    "answer": 2,
-    "explain": "SVD 对任何 $m \\times n$ 实矩阵都存在，奇异值总是非负的。这正是它比特征分解更通用的地方。"
-   },
-   {
-    "q": "一个矩阵的奇异值是 5, 2, 0, 0，它的秩是多少？",
-    "options": [
-     "2",
-     "4",
-     "0",
-     "7"
-    ],
-    "answer": 0,
-    "explain": "秩 = 非零奇异值的个数 = 2。"
-   },
-   {
-    "q": "保留最大的 $k$ 个奇异值得到的 $\\sum_{i=1}^k \\sigma_i\\mathbf{u}_i\\mathbf{v}_i^\\top$ 有什么意义？",
-    "options": [
-     "它就是 $A$ 的逆矩阵",
-     "它是 $A$ 的特征向量",
-     "它的行列式等于 $A$ 的行列式",
-     "它是所有秩为 $k$ 的矩阵中对 $A$ 最好的近似"
-    ],
-    "answer": 3,
-    "explain": "这就是低秩近似（Eckart–Young 定理），PCA、图像压缩、分析 Transformer 权重都用到它。"
    }
   ]
  }

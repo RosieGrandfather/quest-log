@@ -1,0 +1,50 @@
+{
+ "id": "u05c",
+ "title": "潜变量模型与 VAE（3/4）",
+ "en": "Latent Variable Models & VAE (3/4)",
+ "minutes": 30,
+ "objectives": [
+  "能写出 **VAE** 的编码器、解码器和损失，读懂 **重构项 (reconstruction)** 与 **KL 项** 的拉扯，知道 **后验坍缩 (posterior collapse)** 是什么"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「潜变量模型与 VAE」分成的第 3 个小节（共 4 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 30 分钟）**：重参数化技巧（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 重参数化技巧\n\nELBO 里有一个期望 $\\mathbb E_{z\\sim q_\\phi(z\\mid x)}[\\,\\cdot\\,]$，$q_\\phi$ 由编码器的参数 $\\phi$ 决定。训练要对 $\\phi$ 求梯度，困难在于：**采样 $z\\sim q_\\phi$ 这个操作本身不可导**，反向传播走到这里就断了。有两种办法。\n\n> **标准定义 · 重参数化技巧 (reparameterization trick)**\n>\n> 把 $z$ 写成参数和一个**与参数无关**的噪声的确定性函数。对高斯：\n>\n> $$z=\\mu_\\phi(x)+\\sigma_\\phi(x)\\odot\\varepsilon,\\qquad\\varepsilon\\sim\\mathcal N(0,I)$$\n>\n> 于是 $\\mathbb E_{z\\sim q_\\phi}[f(z)]=\\mathbb E_{\\varepsilon\\sim\\mathcal N(0,I)}\\big[f(\\mu_\\phi+\\sigma_\\phi\\odot\\varepsilon)\\big]$，期望里的分布不再依赖 $\\phi$，梯度可以直接穿过 $z$：\n>\n> $$\\nabla_\\phi\\,\\mathbb E_{z\\sim q_\\phi}[f(z)]=\\mathbb E_{\\varepsilon}\\big[\\nabla_\\phi f(\\mu_\\phi+\\sigma_\\phi\\odot\\varepsilon)\\big]$$\n>\n> *English: Express the sample as a deterministic, differentiable function of the parameters and an independent noise variable ε. The distribution being averaged over no longer depends on the parameters, so gradients can be backpropagated through the sample.*\n\n**白话版：「把掷骰子这一步外包」。** 原来是「编码器决定一个分布，然后掷骰子」，骰子在编码器后面，梯度过不去。现在改成「先在外面掷好一个标准骰子 $\\varepsilon$，再让编码器决定怎么平移和缩放它」：骰子的随机性已经固定了，$\\mu$ 和 $\\sigma$ 只是普通的可导函数，梯度就能走通。\n\n**另一种办法是上一节的评分函数估计**：$\\nabla_\\phi\\mathbb E_{q_\\phi}[f(z)]=\\mathbb E_{q_\\phi}[f(z)\\,\\nabla_\\phi\\log q_\\phi(z)]$，这和策略梯度是**同一个**公式（$q_\\phi$ 是策略，$f$ 是回报）。它只要求能采样、能算 $\\log q_\\phi$，不要求 $f$ 可导，所以可用于离散变量和不可导的奖励；但方差大。重参数化要求 $f$ 可导、$z$ 能写成这种形式，一旦满足，方差小得多。下面用 $f(z)=z^2$ 实验（此时 $\\mathbb E[f]=\\mu^2+\\sigma^2$，精确梯度 $(2\\mu,2\\sigma)$ 已知）：\n\n```python\nimport numpy as np\n\n# 要算 d/d(mu, sigma) E_{z~N(mu, sigma^2)}[f(z)]，取 f(z) = z^2。此时 E[f] = mu^2 + sigma^2，精确梯度是 (2 mu, 2 sigma)。\nrng = np.random.default_rng(0)\nmu, sigma = 1.0, 0.5\nf = lambda z: z ** 2; fp = lambda z: 2 * z\nprint(\"精确梯度: d/dmu =\", 2 * mu, \"  d/dsigma =\", 2 * sigma)\n\ntrials, n = 20000, 10                           # 重复 20000 次实验，每次只用 10 个样本估计梯度\neps = rng.normal(size=(trials, n)); z = mu + sigma * eps       # z = mu + sigma * eps，eps ~ N(0,1)：重参数化\n# 评分函数估计（REINFORCE）：f(z) * d log q(z) / d(参数)，只需要 f 的数值，不需要 f 可导\nsf_mu = (f(z) * (z - mu) / sigma ** 2).mean(1)\nsf_sg = (f(z) * ((z - mu) ** 2 / sigma ** 3 - 1 / sigma)).mean(1)\n# 重参数化估计：把 z 写成参数的函数，直接用链式法则：d f(z) / d mu = f'(z)，d f(z) / d sigma = f'(z) * eps\nrp_mu = fp(z).mean(1); rp_sg = (fp(z) * eps).mean(1)\nfor name, a in [(\"评分函数  d/dmu   \", sf_mu), (\"重参数化  d/dmu   \", rp_mu), (\"评分函数  d/dsigma\", sf_sg), (\"重参数化  d/dsigma\", rp_sg)]:\n    print(f\"{name} 20000 次估计的均值 {a.mean():.4f}   标准差 {a.std():.4f}\")\n# 输出：精确梯度: d/dmu = 2.0   d/dsigma = 1.0\n# 输出：评分函数  d/dmu    20000 次估计的均值 2.0035   标准差 1.4672\n# 输出：重参数化  d/dmu    20000 次估计的均值 2.0001   标准差 0.3154\n# 输出：评分函数  d/dsigma 20000 次估计的均值 1.0081   标准差 2.9506\n# 输出：重参数化  d/dsigma 20000 次估计的均值 1.0027   标准差 0.7679\n```\n\n读输出：取 $\\mu=1,\\sigma=0.5$，精确梯度是 $\\partial_\\mu=2.0$、$\\partial_\\sigma=1.0$。20000 次实验、每次 10 个样本，**两种估计的均值都等于精确值**（2.0035、2.0001；1.0081、1.0027），都是无偏的。差别在标准差：对 $\\mu$，评分函数估计是 1.4672，重参数化是 0.3154，**小约 4.7 倍**；对 $\\sigma$，评分函数是 2.9506，重参数化是 0.7679，**小约 3.8 倍**。要得到同样的精度，评分函数估计大约需要多 15~20 倍的样本（方差比约 22 和 15），这就是 VAE 能用单个样本 $\\varepsilon$ 就稳定训练的原因。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "vy8q-WnHa9A",
+   "title": "视频二：The Reparameterization Trick（ML & DL Explained）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "贝叶斯公式 $p(z\\mid x)=\\dfrac{p(x\\mid z)p(z)}{p(x)}$ 里，真正让后验难以精确计算的是哪个量？",
+    "options": [
+     "没有任何一项难算",
+     "分子里的 $p(x\\mid z)$",
+     "分子里的 $p(z)$",
+     "分母 $p(x)$，也就是边缘似然"
+    ],
+    "answer": 3,
+    "explain": "分子是两个已知函数的乘积，随时能算；分母需要对 $z$ 积分，难算，所以后验也难算。这正是变分推断要绕开的地方：用一个可以随便采样、随便算密度的 $q(z)$ 去近似后验。"
+   },
+   {
+    "q": "重参数化技巧把 $z\\sim\\mathcal N(\\mu,\\sigma^2)$ 写成 $z=\\mu+\\sigma\\varepsilon$（$\\varepsilon\\sim\\mathcal N(0,1)$）。这样做的主要目的是？",
+    "options": [
+     "让 $z$ 变成确定性的",
+     "让随机性只来自与参数无关的 $\\varepsilon$，这样梯度可以沿着 $z$ 一路反传到 $\\mu$ 和 $\\sigma$",
+     "让采样变得更快",
+     "让 $z$ 的方差变小"
+    ],
+    "answer": 1,
+    "explain": "采样这个操作本身不可导；重参数化把「采样」挪到一个与参数无关的噪声上，剩下的 $\\mu+\\sigma\\varepsilon$ 是普通的可导函数。它不是为了提速，也没有让 $z$ 变确定；相比评分函数估计，方差小是它的额外好处。"
+   }
+  ]
+ }
+}

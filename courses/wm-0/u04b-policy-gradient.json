@@ -1,0 +1,81 @@
+{
+ "id": "u04b",
+ "title": "策略梯度与深度强化学习（2/3）",
+ "en": "Policy Gradient & Deep RL (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "能推导 **策略梯度定理 (policy gradient theorem)**：对数导数技巧、为什么环境的转移概率会消失、为什么可以用「未来回报」代替整条轨迹的回报；会写 **REINFORCE**",
+  "理解 **基线 (baseline)** 为什么不改变梯度的期望却能大幅降低方差，以及 **优势函数 (advantage)** 与 **actor-critic** 的偏差—方差取舍"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「策略梯度与深度强化学习」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：策略梯度：直接对策略求导（约 30 分钟） → REINFORCE：最朴素的策略梯度算法（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 策略梯度：直接对策略求导\n\nDQN 是「先学价值，再取 $\\arg\\max$ 得到策略」。这条路有局限：动作连续时 $\\max_a$ 本身就是个优化问题；$\\arg\\max$ 给出的是确定性策略，没法自然地表达「在这个状态下 70% 向左 30% 向右」。**策略梯度**换了一条路：把策略本身参数化成 $\\pi_\\theta(a\\mid s)$（例如神经网络输出的 softmax），直接对「期望回报」做梯度上升。\n\n> **标准定义 · 策略梯度定理 (policy gradient theorem)**\n>\n> 设策略 $\\pi_\\theta$ 产生轨迹 $\\tau=(s_0,a_0,r_0,s_1,\\dots)$，目标是期望回报 $J(\\theta)=\\mathbb E_{\\tau\\sim\\pi_\\theta}[R(\\tau)]$。则\n>\n> $$\\nabla_\\theta J(\\theta)=\\mathbb E_{\\tau\\sim\\pi_\\theta}\\Big[\\sum_{t}\\nabla_\\theta\\log\\pi_\\theta(a_t\\mid s_t)\\,G_t\\Big],\\qquad G_t=\\sum_{k\\ge t}\\gamma^{k-t}r_k$$\n>\n> 其中 $\\nabla_\\theta\\log\\pi_\\theta(a\\mid s)$ 叫**评分函数 (score function)**。右边只含策略的对数梯度和采到的回报，**不含环境的转移概率 $P(s'\\mid s,a)$**。（严格推导里每一项还有一个 $\\gamma^t$ 因子；实践中绝大多数实现把它省掉。）\n>\n> *English: The gradient of the expected return equals the expectation, over trajectories sampled from the policy, of the score function ∇log π(a_t|s_t) weighted by the return from time t onward. It does not involve the environment's transition probabilities.*\n\n**白话版：「奖励高的动作，下次多做一点」。** 评分函数 $\\nabla_\\theta\\log\\pi(a\\mid s)$ 指向「让动作 $a$ 在状态 $s$ 下更可能」的方向；乘上回报 $G_t$ 就是：回报高的，朝这个方向走得多；回报为负的，反方向走。定理保证这个「凭感觉的做法」恰好就是 $J$ 的真实梯度（期望意义下）。\n\n**推导的思路**（五步，每一步只用一个想法）：\n\n1. 一条轨迹的概率是 $p_\\theta(\\tau)=p(s_0)\\prod_t\\pi_\\theta(a_t\\mid s_t)\\,P(s_{t+1}\\mid s_t,a_t)$，策略和环境交替出现；\n2. $J(\\theta)=\\sum_\\tau p_\\theta(\\tau)R(\\tau)$，对 $\\theta$ 求导只有 $p_\\theta$ 依赖 $\\theta$，所以 $\\nabla J=\\sum_\\tau\\nabla p_\\theta(\\tau)\\,R(\\tau)$；\n3. **对数导数技巧 (log-derivative trick)**：$\\nabla p=p\\,\\nabla\\log p$，于是 $\\nabla J=\\sum_\\tau p_\\theta(\\tau)\\,\\nabla\\log p_\\theta(\\tau)\\,R(\\tau)=\\mathbb E_\\tau[\\nabla\\log p_\\theta(\\tau)\\,R(\\tau)]$，**把求和重新变成了可以靠采样估计的期望**；\n4. 取对数后乘积变求和：$\\log p_\\theta(\\tau)=\\log p(s_0)+\\sum_t\\log\\pi_\\theta(a_t\\mid s_t)+\\sum_t\\log P(s_{t+1}\\mid s_t,a_t)$，只有中间一项依赖 $\\theta$，其余两项的梯度是 0，**环境的转移概率就这样消失了**，这是「无模型」的数学根源；\n5. **因果性**：时刻 $k$ 的奖励 $r_k$ 不会被之后的动作 $a_t\\,(t>k)$ 影响，而 $\\mathbb E[\\nabla\\log\\pi(a_t\\mid s_t)\\mid\\text{过去}]=0$（见下面基线一节的证明），所以乘 $r_k$ 的那些项期望为 0，可以去掉，整条轨迹的回报 $R(\\tau)$ 被换成「从 $t$ 开始的未来回报」$G_t$，方差更小。\n\n下面在最简单的情形（一个状态、三个动作的老虎机）上把定理验证一遍：策略是 $\\pi=\\text{softmax}(\\theta)$，此时 $\\nabla_\\theta\\log\\pi(a)=\\mathbf e_a-\\pi$（$\\mathbf e_a$ 是独热向量），而 $J=\\sum_i\\pi_i\\mu_i$ 的精确梯度是 $\\pi_i(\\mu_i-J)$，可以用三种办法算，互相对拍：\n\n```python\nimport numpy as np\n\n# 三臂老虎机：只有一个状态，拉哪个臂得到 N(mu, 1) 的奖励。策略 pi = softmax(theta)。\nMU = np.array([10.0, 10.5, 11.0])\ndef softmax(z): e = np.exp(z - z.max()); return e / e.sum()\ntheta = np.array([0.5, 0.0, -0.5]); pi = softmax(theta)\n\n# (1) 精确梯度：J = sum_i pi_i * mu_i，对 softmax 求导得 dJ/dtheta_i = pi_i * (mu_i - J)\nJ = pi @ MU; exact = pi * (MU - J)\nprint(\"pi =\", np.round(pi, 4), \" J =\", round(float(J), 4))\nprint(\"精确梯度  :\", np.round(exact, 4))\n\n# (2) 有限差分\nJf = lambda th: softmax(th) @ MU\nfd = np.array([(Jf(theta + 1e-6 * np.eye(3)[i]) - Jf(theta - 1e-6 * np.eye(3)[i])) / 2e-6 for i in range(3)])\nprint(\"有限差分  :\", np.round(fd, 4))\n\n# (3) 评分函数（score function）估计：抽 a ~ pi，r ~ N(mu_a, 1)，g = r * grad log pi(a)\n# 对 softmax 策略，grad_theta log pi(a) = onehot(a) - pi\nrng = np.random.default_rng(0); n = 200000\na = rng.choice(3, size=n, p=pi); r = rng.normal(MU[a], 1.0)\nscore = np.eye(3)[a] - pi\ng = score * r[:, None]\nprint(\"MC 估计   :\", np.round(g.mean(0), 4), \" 标准误:\", np.round(g.std(0) / np.sqrt(n), 4))\nprint(\"E[score]  :\", np.round(score.mean(0), 4), \"（理论上是 0，这是基线不改变期望的原因）\")\n# 输出：pi = [0.5065 0.3072 0.1863]  J = 10.3399\n# 输出：精确梯度  : [-0.1722  0.0492  0.123 ]\n# 输出：有限差分  : [-0.1722  0.0492  0.123 ]\n# 输出：MC 估计   : [-0.1534  0.0531  0.1003]  标准误: [0.0116 0.0108 0.0094]\n# 输出：E[score]  : [ 0.0018  0.0003 -0.0021] （理论上是 0，这是基线不改变期望的原因）\n```\n\n读输出：$\\pi=(0.5065,0.3072,0.1863)$，$J=10.3399$。**精确梯度**是 $(-0.1722,0.0492,0.123)$：平均奖励 10.5、11.0 的两个臂比 $J$ 高，梯度为正，鼓励它们；10.0 的臂比 $J$ 低，被压低。**有限差分**给出完全相同的四位数，说明精确公式写对了。**评分函数的蒙特卡洛估计**（20 万个样本）是 $(-0.1534,0.0531,0.1003)$，和精确值的差在 1~2.5 个标准误（0.0116、0.0108、0.0094）之内，没有系统性偏差，只是有采样噪声。最后一行 $\\mathbb E[\\text{score}]\\approx(0.0018,0.0003,-0.0021)$，接近 0，下一节的基线就靠它。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "5P7I-xPq8u8",
+   "title": "视频二：An introduction to Policy Gradient methods - Deep Reinforcement Learning（Arxiv Insights）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 20
+  },
+  {
+   "type": "text",
+   "md": "### REINFORCE：最朴素的策略梯度算法\n\n> **标准定义 · REINFORCE（蒙特卡洛策略梯度）**\n>\n> 重复：①用当前策略采样一个完整回合；②对回合中每个时刻 $t$ 计算未来回报 $G_t$；③沿梯度估计的方向更新：\n>\n> $$\\theta\\leftarrow\\theta+\\alpha\\sum_t G_t\\,\\nabla_\\theta\\log\\pi_\\theta(a_t\\mid s_t)$$\n>\n> 这是对策略梯度定理右边的单样本蒙特卡洛估计，无偏，但方差大（算法来自 Williams 1987、1992 年的工作；也见 Sutton & Barto 第 13.3 节）。\n>\n> *English: REINFORCE samples an episode, computes the return-to-go G_t at each step, and moves θ along G_t ∇log π(a_t|s_t). It is an unbiased but high-variance estimate of the policy gradient.*\n\n**白话版：「打完一局，复盘每一步」。** 一局结束之后，对每一步问：这步之后我总共拿到多少分？分高，就把当时选的动作调大概率；分低，调小。没有价值函数，也没有环境模型。\n\n用一个 4×4 的网格世界：从左上角出发，每走一步奖励 $-1$，右下角是终点，撞墙原地不动，最多 40 步。**策略是表格式的 softmax**：每个状态 4 个 logit（上下左右）。最短路径是 6 步：\n\n```python\nimport numpy as np\n\n# 4x4 网格，从左上角 (0,0) 出发，目标是右下角。每走一步奖励 -1，撞墙原地不动，最多走 40 步。\n# 最短路径是 6 步，所以最好的策略平均每个回合 6 步。\nN = 4; MOVES = [(-1, 0), (1, 0), (0, -1), (0, 1)]       # 上 下 左 右\ndef step(s, a):\n    r, c = divmod(s, N); dr, dc = MOVES[a]\n    r = min(max(r + dr, 0), N - 1); c = min(max(c + dc, 0), N - 1)\n    s2 = r * N + c\n    return s2, -1.0, s2 == N * N - 1\ndef softmax(z): e = np.exp(z - z.max()); return e / e.sum()\n\ndef reinforce(seed, episodes=600, T=40, lr=0.02):\n    rng = np.random.default_rng(seed)\n    theta = np.zeros((N * N, 4))                         # 表格式 softmax 策略：每个状态 4 个 logit\n    lengths = []\n    for ep in range(episodes):\n        s, traj = 0, []\n        for t in range(T):                               # 1) 用当前策略采样一个完整回合\n            p = softmax(theta[s]); a = rng.choice(4, p=p)\n            s2, r, done = step(s, a); traj.append((s, a, r)); s = s2\n            if done: break\n        lengths.append(len(traj))\n        G = 0.0; returns = []\n        for (_, _, r) in reversed(traj):                 # 2) 从后往前算「未来总回报」G_t（这里不打折）\n            G = r + G; returns.append(G)\n        returns.reverse()\n        for (s_, a_, _), G_t in zip(traj, returns):      # 3) theta <- theta + lr * G_t * grad log pi(a_t | s_t)\n            p = softmax(theta[s_])\n            theta[s_] += lr * G_t * (np.eye(4)[a_] - p)\n    return lengths, theta\n\nL = np.array([reinforce(sd)[0] for sd in range(10)])     # 10 个随机种子\nprint(\"回合长度（10 个种子平均）:\", {f\"{i}-{i+49}\": round(float(L[:, i:i + 50].mean()), 1) for i in (0, 100, 250, 550)})\ntheta = reinforce(0)[1]\narrows = \"↑↓←→\"\nprint(\"种子 0 学到的贪心动作（右下角 G 是终点）：\")\nfor r in range(N):\n    print(\" \".join(\"G\" if r * N + c == N * N - 1 else arrows[int(np.argmax(theta[r * N + c]))] for c in range(N)))\n# 输出：回合长度（10 个种子平均）: {'0-49': 20.6, '100-149': 8.6, '250-299': 6.7, '550-599': 6.3}\n# 输出：种子 0 学到的贪心动作（右下角 G 是终点）：\n# 输出：→ ↓ ↓ ↓\n# 输出：↑ ↓ → ←\n# 输出：→ ↓ ↓ ↓\n# 输出：↑ → → G\n```\n\n读输出：10 个种子的平均回合长度，开头的 50 个回合是 20.6（一边学一边走，随机策略大约会拖到 30 步左右，所以这里已经有进步），第 100~149 个回合是 8.6，第 250~299 个回合是 6.7，第 550~599 个回合是 6.3，接近最优的 6 步。种子 0 的贪心策略打印出来：沿着 $(0,0)\\to(0,1)\\to(1,1)\\to(2,1)\\to(3,1)\\to(3,2)\\to(3,3)$ 刚好 6 步，是一条最短路径。图上其他状态（比如第 2 行第 1 列的 ↑）几乎没被访问过，动作是随机残留，不用在意。"
+  },
+  {
+   "type": "think",
+   "q": "一个 3 臂老虎机的策略是 $\\pi=(0.5,0.3,0.2)$（softmax 的输出）。采样到第 3 个臂，奖励 $r=4$，基线 $b=1$。写出这一步的梯度估计 $g=(r-b)(\\mathbf e_a-\\pi)$，并说明更新后三个臂的概率各自往哪个方向变。如果 $r=0.5$ 会怎样？",
+   "a": "$\\mathbf e_a-\\pi=(0,0,1)-(0.5,0.3,0.2)=(-0.5,-0.3,0.8)$，$r-b=3$，所以 $g=3\\times(-0.5,-0.3,0.8)=(-1.5,-0.9,2.4)$。沿 $g$ 更新 logit：第 3 个臂的 logit 上升，前两个下降，第 3 个臂的概率变大，另外两个变小。三个分量加起来是 0，因为 softmax 对三个 logit 同时加同一个常数是不变的。\n\n如果 $r=0.5$，$r-b=-0.5<0$，$g=-0.5\\times(-0.5,-0.3,0.8)=(0.25,0.15,-0.4)$，方向反了：第 3 个臂的概率被压低。同一个动作，同一个策略，只因为它的回报比基线低，就从「鼓励」变成「抑制」。这就是基线的作用：决定的是**相对好坏**。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "评分函数",
+     "score function",
+     "$\\nabla_\\theta\\log\\pi_\\theta(a|s)$，让动作更可能的方向"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "当状态数极大或连续时，用函数逼近代替查表，最核心的好处是？",
+    "options": [
+     "参数远少于状态数，并且在一个状态学到的东西能泛化到相似的状态",
+     "保证价值估计没有偏差",
+     "保证学习过程一定收敛",
+     "不再需要探索"
+    ],
+    "answer": 0,
+    "explain": "参数共享使得经验可以在相似状态之间迁移，这是查表做不到的。代价是引入偏差，并且可能带来不稳定（比如致命三角），所以「没有偏差」和「一定收敛」都是错的；探索的需求也不会消失。"
+   },
+   {
+    "q": "为什么 REINFORCE 的梯度估计里不需要环境的转移概率 $P(s^\\prime\\mid s,a)$？",
+    "options": [
+     "因为 REINFORCE 只在单步问题上成立",
+     "因为环境被假定是确定性的",
+     "因为转移概率可以用价值函数代替",
+     "轨迹概率的对数是各项之和，转移概率那几项不依赖策略参数，求梯度后为 0"
+    ],
+    "answer": 3,
+    "explain": "$\\log p_\\theta(\\tau)=\\log p(s_0)+\\sum_t\\log\\pi_\\theta(a_t\\mid s_t)+\\sum_t\\log P(s_{t+1}\\mid s_t,a_t)$，只有中间一项含 $\\theta$。这对随机环境同样成立，不需要确定性假设，也不是用价值函数替换。"
+   },
+   {
+    "q": "三个动作的 softmax 策略，参数为 $\\theta=(0,0,0)$，此时 $\\pi=(1/3,1/3,1/3)$。采到第 1 个动作，评分函数 $\\nabla_\\theta\\log\\pi(a)$ 的值是？",
+    "options": [
+     "$(1/3,\\,1/3,\\,1/3)$",
+     "$(2/3,\\,-1/3,\\,-1/3)$",
+     "$(1,\\,0,\\,0)$",
+     "$(-2/3,\\,1/3,\\,1/3)$"
+    ],
+    "answer": 1,
+    "explain": "softmax 策略的评分函数是 $\\mathbf e_a-\\pi=(1,0,0)-(1/3,1/3,1/3)=(2/3,-1/3,-1/3)$。$(1,0,0)$ 漏掉了减去 $\\pi$ 的一项；$(-2/3,1/3,1/3)$ 符号反了。三个分量之和必须是 0，这一条也可以快速排除错误选项。"
+   }
+  ]
+ }
+}

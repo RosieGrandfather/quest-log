@@ -1,0 +1,107 @@
+{
+ "id": "u04c",
+ "title": "异常、调试、测试与类型注解（3/3）",
+ "en": "Exceptions, Debugging, Testing & Type Hints (3/3)",
+ "minutes": 45,
+ "objectives": [
+  "会用 **`logging`** 代替 `print` 记录运行信息，知道日志级别",
+  "会写 **类型注解 (type hints)**，知道它在运行时**不会被强制检查**，是给人和工具（IDE、`mypy`）看的"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「异常、调试、测试与类型注解」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：单元测试（续）（约 20 分钟） → 日志 (logging)（约 5 分钟） → 类型注解 (type hints)（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nfrom pathlib import Path\n\n# 先写被测的模块 stats.py（真实项目里它就是一个普通的 .py 文件）\nPath(\"stats.py\").write_text(\"\"\"\ndef median(xs):\n    s = sorted(xs)\n    n = len(s)\n    mid = n // 2\n    return s[mid] if n % 2 == 1 else (s[mid - 1] + s[mid]) / 2\n\"\"\")\nprint(\"stats.py 已写入，共\", len(Path(\"stats.py\").read_text().splitlines()), \"行\")\n```\n\n```python\n# 再写 pytest 风格的测试文件 test_stats.py：不需要写类，直接写函数和 assert\nPath(\"test_stats.py\").write_text(\"\"\"\nimport pytest\nfrom stats import median\n\ndef test_odd():\n    assert median([3, 1, 2]) == 2\n\ndef test_even():\n    assert median([4, 1, 3, 2]) == 2.5\n\ndef test_float():\n    assert median([0.1, 0.2]) == pytest.approx(0.15)\n\n@pytest.mark.parametrize(\"xs, expected\", [([1], 1), ([1, 2], 1.5), ([5, 1, 3], 3)])\ndef test_many(xs, expected):          # 一组输入，自动展开成多个测试\n    assert median(xs) == expected\n\ndef test_empty():\n    with pytest.raises(IndexError):\n        median([])\n\"\"\")\nprint(len(Path(\"test_stats.py\").read_text().split(\"def test_\")) - 1, \"个测试函数\")\n# 输出：5 个测试函数\n```\n\n读输出：文件里有 5 个测试函数。要点：**一**，直接写 `assert median(...) == ...`，不用记 `assertEqual` 这类方法名，失败时 `pytest` 会自动显示 `assert` 两边的值。**二**，`pytest.approx(0.15)` 处理浮点数比较。**三**，`@pytest.mark.parametrize`（`@` 开头的是装饰器，这个装饰器带了参数）把「一组输入」自动展开成多个测试：这里 3 组 `(xs, expected)` 变成 3 个用例，所以实际运行的用例会是 7 个。**四**，`pytest.raises(IndexError)` 对应 `assertRaises`。现在运行它们。下面这一块比较长，它是为了让输出稳定而写的「脚手架」，**不需要逐行看懂**，只要知道几点：`class Collect` 是一个 pytest 插件，负责把每个用例的结果收集起来；`sys.modules.pop(...)` 清掉 Python 缓存的旧模块，好让它重新读取刚改过的 `stats.py`（模块缓存在「文件、模块与环境」那一节讲）；`with contextlib.redirect_stdout(io.StringIO()):` 又是一个上下文管理器，把 pytest 自己的打印丢进假文件，离开时再改回来：\n\n```python\nimport sys, io, contextlib, importlib, pytest\n\nclass Collect:                               # 一个小插件：把每个用例的结果收集起来，方便打印\n    def __init__(self):\n        self.results = []\n    def pytest_runtest_logreport(self, report):\n        if report.when == \"call\":\n            msg = report.longrepr.reprcrash.message.splitlines()[0] if report.failed else \"\"\n            self.results.append((report.nodeid.split(\"::\")[-1], report.outcome, msg))\n\ndef run_pytest():\n    sys.dont_write_bytecode = True\n    for m in (\"stats\", \"test_stats\"):        # 重新读取刚写的文件，不用缓存的旧模块\n        sys.modules.pop(m, None)\n    importlib.invalidate_caches()\n    c = Collect()\n    with contextlib.redirect_stdout(io.StringIO()):     # 屏蔽 pytest 自己打印的进度和统计\n        code = pytest.main([\"-q\", \"-s\", \"-p\", \"no:cacheprovider\", \"test_stats.py\"], plugins=[c])\n    print(\"退出码：\", int(code))              # 0 表示全部通过\n    for name, outcome, msg in c.results:\n        print(f\"  {name}: {outcome} {msg}\".rstrip())\n\nrun_pytest()\n# 输出：退出码： 0\n# 输出：  test_odd: passed\n# 输出：  test_even: passed\n# 输出：  test_float: passed\n# 输出：  test_many[xs0-1]: passed\n# 输出：  test_many[xs1-1.5]: passed\n# 输出：  test_many[xs2-3]: passed\n# 输出：  test_empty: passed\n```\n\n读输出：`pytest.main` 的退出码 `0` 表示**全部通过**。7 个用例：`test_odd`、`test_even`、`test_float`、被参数化展开的 `test_many[xs0-1]`、`test_many[xs1-1.5]`、`test_many[xs2-3]`，以及 `test_empty`，全部 `passed`。（为了让输出稳定，我们用一个小插件收集每个用例的结果；平时在终端里运行 `pytest` 会直接显示进度和统计。）再把 `stats.py` 换成有 bug 的版本，用**同一份**测试跑一遍：\n\n```python\n# 把 stats.py 换成有 bug 的版本，再用同一份测试跑一遍\nPath(\"stats.py\").write_text(\"\"\"\ndef median(xs):\n    s = sorted(xs)\n    return s[len(s) // 2]\n\"\"\")\nrun_pytest()\n# 输出：退出码： 1\n# 输出：  test_odd: passed\n# 输出：  test_even: failed assert 3 == 2.5\n# 输出：  test_float: failed assert 0.2 == 0.15 ± 1.5e-07\n# 输出：  test_many[xs0-1]: passed\n# 输出：  test_many[xs1-1.5]: failed assert 2 == 1.5\n# 输出：  test_many[xs2-3]: passed\n# 输出：  test_empty: passed\n```\n\n读输出：退出码变成 `1`，表示**有测试失败**。失败了 3 个：`test_even`（`assert 3 == 2.5`）、`test_float`（`assert 0.2 == 0.15 ± 1.5e-07`，`± 1.5e-07` 是 `pytest.approx` 默认的容差）、参数化用例 `test_many[xs1-1.5]`（`[1, 2]` 的中位数应该是 `1.5`，得到 `assert 2 == 1.5`）；另外 4 个通过。`pytest` 的失败信息**直接给出 `assert` 两边的值**，还能看出是参数化的哪一组出了问题，修 bug 时非常省事。\n\n**怎么想测试用例：** 典型值、**空输入**、**只有一个元素**、**重复元素**、**非常大 / 非常小的数**、**应该报错的输入**。**测试优先 (test-driven development, TDD)**：先写测试（它定义了「正确」是什么），再写代码让它通过。在 ML 里，测试同样有价值：测数据预处理函数的输入输出形状、测损失函数在已知输入上的值、测「一个 batch 能过拟合」（模型和训练循环是否正确的最小检验）。\n\n**写测试 vs 手动试：** 手动试只能验证「现在」，测试保证「以后也对」。数据结构那一门课里，每一段代码我们都用「随机输入 + 与暴力解法对比」验证过，这就是一种测试方法（**基于性质的测试 property-based testing** 的雏形）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "mzlH8lp4ISA",
+   "title": "视频三：getting started with pytest (beginner - intermediate)（anthonywritescode）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 13
+  },
+  {
+   "type": "text",
+   "md": "### 日志 (logging)\n\n> **标准定义 · 日志 (logging)**\n>\n> `logging` 模块用**分级的消息**记录程序运行情况。从低到高的五个**级别 (level)**：`DEBUG`（细节）、`INFO`（正常的进度）、`WARNING`（异常但可继续）、`ERROR`（出错了）、`CRITICAL`（严重故障）。设定一个级别后，**低于它的消息不会输出**。每个模块用 `logging.getLogger(__name__)` 得到自己的 logger；`log.exception(...)` 在 `except` 块里使用，会**自动附上完整的 traceback**。\n>\n> *English: The logging module records messages at levels DEBUG, INFO, WARNING, ERROR and CRITICAL; messages below the configured level are dropped. log.exception inside an except block includes the traceback.*\n\n**白话版：「有开关的 print」。** `print` 要调试完一个个删掉；日志则是把所有信息按重要程度分级打出，**上线时调高级别，不改代码就能让调试信息消失**，还可以同时输出到文件、带上时间。\n\n**问题一：怎样分级输出信息，并让低级别的消息不显示？** 先配置日志（级别设为 `INFO`），再各发一条：\n\n```python\nimport logging, sys\n\ndef setup(level=logging.INFO):               # 真实脚本只在入口处配置一次；这里每次重新指向当前输出区\n    logging.basicConfig(stream=sys.stdout, level=level, force=True,\n                        format=\"%(levelname)-7s %(name)s: %(message)s\")\n    logging.getLogger(\"train\").setLevel(logging.NOTSET)\n\nsetup()\nlog = logging.getLogger(\"train\")             # 用模块名区分来源\n\nlog.debug(\"这条不会显示：级别低于 INFO\")\nlog.info(\"开始训练，lr=%s\", 1e-3)            # 用 % 占位符，不要提前拼字符串\nlog.warning(\"验证集为空，跳过评估\")\n# 输出：INFO    train: 开始训练，lr=0.001\n# 输出：WARNING train: 验证集为空，跳过评估\n```\n\n读输出：`log.debug` 那一条**没有显示**（`DEBUG` 低于 `INFO`），`info` 和 `warning` 显示了，格式正是我们在 `format` 里写的 `级别 名字: 消息`。**用 `%s` 占位符传参**（`log.info(\"lr=%s\", lr)`）而不是 f-string：只有消息真的要输出时才会格式化，省去不必要的开销。（代码里的 `setup()` 只是为了在网页里反复运行时每次都重新配置；真实脚本只在入口处配置一次。`format` 里的 `%(levelname)-7s` 是模板：`%(levelname)s` 会被换成级别名，`-7` 表示「左对齐、占 7 格」，所以 `INFO` 后面补了空格；`1e-3` 就是 0.001。）**训练脚本里应该用日志记录超参数、每个 epoch 的 loss、保存模型的路径**：几天后回头看，你才知道「这个结果是怎么跑出来的」。\n\n**问题二：出错时，怎样把完整的 traceback 也记下来？** 在 `except` 块里用 `log.exception`：\n\n```python\nsetup()\ntry:\n    1 / 0\nexcept ZeroDivisionError:\n    log.exception(\"训练出错\")                # 自动附上完整的 traceback\n# 输出：ERROR   train: 训练出错\n# 输出：Traceback (most recent call last):\n# 输出：  File \"<cell>\", line 3, in <module>\n# 输出：    1 / 0\n# 输出：ZeroDivisionError: division by zero\n```\n\n读输出：先是一行 `ERROR   train: 训练出错`，紧接着是**自动附上的完整 traceback**，最后一行 `ZeroDivisionError: division by zero` 说明了原因（中间的文件名、行号因运行环境而异）。这样日志里既有你写的说明，也有定位问题所需的全部信息。\n\n**问题三：怎样在不改代码的情况下，让不太重要的消息消失？** 调高级别：\n\n```python\nsetup()\nlog.setLevel(logging.ERROR)                  # 只让 ERROR 及以上通过\nlog.warning(\"现在也不会显示了\")\nlog.error(\"只有 ERROR 及以上才显示\")\n# 输出：ERROR   train: 只有 ERROR 及以上才显示\n```\n\n读输出：把级别设成 `ERROR` 之后，`warning` 也被屏蔽了，只有 `ERROR` 及以上的那一条显示出来。**上线时调高级别、调试时调低级别，代码本身不用改。**\n\n### 类型注解 (type hints)\n\n> **标准定义 · 类型注解 (type hints / type annotations)**\n>\n> 在函数参数、返回值与变量后面标注**预期的类型**：`def f(x: int, y: list[float] = None) -> str:`。常用写法：`list[int]`、`dict[str, float]`、`tuple[int, ...]`、`Optional[int]`（等同于 `int | None`）、`Callable[[int], str]`、联合 `int | str`（Python 3.10+）。**注解在运行时不会被强制检查**，Python 解释器不管它；它的作用是给**读代码的人**、**IDE 的补全**和**静态检查工具（如 `mypy`、`pyright`）**看。\n>\n> *English: Type hints annotate expected types of parameters, return values and variables. They are not enforced at runtime; they serve readers, IDEs and static checkers such as mypy and pyright.*\n\n**白话版：「给函数贴上说明标签」。** 标签写的是「这个槽请放整数」，但没有安检员拦着，你放一个字符串进去，Python 也照样运行（直到某一处真的出错）。**真正的安检员是 `mypy` 之类的工具，在你运行代码之前就能指出「这里类型对不上」。**\n\n**问题一：常见的类型注解怎么写？** （`d.get(key)` 是字典的 `.get` 方法，键不存在就返回 `None`，「容器：列表、元组、字典与集合」讲过；`lambda x: x + 1` 是没有名字的小函数，「函数、作用域与递归」讲过；`str | int` 里的 `|` 读作「或」；`from typing import ...` 是 `import` 的另一种写法，只取模块里的指定名字。）\n\n```python\nfrom typing import Optional, Callable\n\ndef mean(xs: list[float]) -> float:                  # 参数和返回值的类型注解\n    return sum(xs) / len(xs)\n\ndef find(d: dict[str, int], key: str) -> Optional[int]:   # Optional[int] 就是 int | None\n    return d.get(key)\n\ndef apply(f: Callable[[int], int], xs: list[int]) -> list[int]:\n    return [f(x) for x in xs]\n\ndef parse(s: str | int) -> int:                      # Python 3.10+ 的联合类型写法\n    return int(s)\n\nprint(mean([1, 2, 3]), find({\"a\": 1}, \"b\"), apply(lambda x: x + 1, [1, 2]), parse(\"7\"))\nprint(mean.__annotations__)\n# 输出：2.0 None [2, 3] 7\n# 输出：{'xs': list[float], 'return': <class 'float'>}\n```\n\n读输出：第一行是四个调用的结果：`mean([1, 2, 3])` 是 `2.0`；`find` 找不到键 `\"b\"`，返回 `None`（所以返回类型是 `Optional[int]`）；`apply` 把 `[1, 2]` 每个加 1 得到 `[2, 3]`；`parse(\"7\")` 得到 `7`。第二行 `mean.__annotations__` 显示注解只是**保存在函数对象里的信息**：参数 `xs` 的注解是 `list[float]`，返回值是 `float`。\n\n**问题二：写错了类型，Python 会拦住吗？**\n\n```python\n# 类型注解不会在运行时强制检查！\ntry:\n    mean([\"a\", \"b\"])\nexcept TypeError as e:\n    print(\"TypeError（由 sum 内部的加法触发，不是注解检查）：\", e)\nprint(parse(3.9))                                    # 注解说是 str|int，传 float 也照样运行\n# 输出：TypeError（由 sum 内部的加法触发，不是注解检查）： unsupported operand type(s) for +: 'int' and 'str'\n# 输出：3\n```\n\n读输出：传入 `[\"a\", \"b\"]` 时报的 `TypeError` 来自 `sum` 内部的加法（`0 + \"a\"`，整数加字符串），而**不是**因为注解被检查了。`parse(3.9)` 不符合 `str | int`，却照常运行，得到 `3`。**注解运行时不会被强制检查**；要在运行前发现这类问题，用 `mypy` / `pyright`。\n\n**问题三：注解还有什么别的用处？** 「类与对象」里的 `@dataclass` 就是靠字段的类型注解来知道有哪些字段：\n\n```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass Sample:\n    x: list[float]\n    label: int | None = None\n\nprint(Sample([0.1, 0.2]))\nprint(Sample.__annotations__)\n# 输出：Sample(x=[0.1, 0.2], label=None)\n# 输出：{'x': list[float], 'label': int | None}\n```\n\n读输出：`Sample([0.1, 0.2])` 的 `label` 取默认值 `None`；`Sample.__annotations__` 显示字段 `x` 的类型是 `list[float]`，`label` 是 `int | None`（既可以是整数，也可以是 `None`）。**在 ML 代码里，类型注解（尤其是 `torch.Tensor`、`np.ndarray`）是最好的文档之一**：一眼看出函数要什么、返回什么。\n\n### 这一节你要带走的三句话\n\n1. **异常会沿调用栈向上传播**；只抓你知道怎么处理的、范围尽量窄的异常，**不要吞掉错误**；`finally` 做清理，`raise ... from` 保留原因。\n2. **读 traceback：先看最后一行，再从下往上**；调试 = 复现、缩小、假设、验证；`assert`、日志和 `breakpoint()` 是三件基本工具。\n3. **测试把「正确」写成代码**：测典型值、边界值、错误情况，浮点数不要用 `==`；修复 bug 之后补一个测试。日志代替 `print`，类型注解是写给人和工具看的。"
+  },
+  {
+   "type": "think",
+   "q": "类型注解不会在运行时被检查，那为什么大家还要写？如果想在运行时真的检查类型，有什么办法？",
+   "a": "价值在**别处**：**一，文档**：`def predict(x: np.ndarray, k: int = 5) -> list[int]` 一眼看出怎么用；**二，IDE 补全与导航**：知道 `x` 是什么类型，编辑器才能提示它有哪些方法；**三，静态检查**：`mypy` / `pyright` 在不运行代码的情况下发现类型不匹配，把一类 bug 提前到写代码时；**四，大型代码库的重构**更安全。\n\n要在运行时检查，可以：手写 `isinstance` 检查，或者 `assert isinstance(x, int)`；也可以用第三方库，比如 **Pydantic**（根据类型注解校验并转换数据，FastAPI 与很多配置库都用它）、`beartype`、`typeguard`。ML 项目里的常见做法：**对外的边界（读配置、API 入口）用 Pydantic 校验，内部函数用注解 + `mypy` 静态检查。**"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "类型注解",
+     "type hints",
+     "标注预期类型；运行时不强制检查，供人与工具使用"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Python 官方教程：Errors and Exceptions",
+   "url": "https://docs.python.org/3/tutorial/errors.html",
+   "note": "语法错误与异常、`try` / `except` / `finally`、自定义异常、异常链的官方说明"
+  },
+  {
+   "title": "Harvard CS50P：Exceptions 与 Unit Tests（课程主页）",
+   "url": "https://cs50.harvard.edu/python/",
+   "note": "大学课程原版，异常处理与 pytest 的讲义与习题"
+  },
+  {
+   "title": "Python Tutorial: Type Hints（Corey Schafer，约 41 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=RwH2UzC2rIo",
+   "note": "从基本注解到泛型的完整讲解，需要写大型项目时再看"
+  },
+  {
+   "title": "pytest 官方文档：Get Started",
+   "url": "https://docs.pytest.org/en/stable/getting-started.html",
+   "note": "安装、写第一个测试、断言与 fixtures 的入门"
+  },
+  {
+   "title": "Python 文档：Logging HOWTO",
+   "url": "https://docs.python.org/3/howto/logging.html",
+   "note": "基础与进阶两部分，含 logger、handler、formatter 的概念"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面哪种情况**不应该**用 `assert` 来检查？",
+    "options": [
+     "检查「这里不应该到达」的分支",
+     "检查训练中 loss 不是 `nan`",
+     "检查一个内部函数收到的张量形状是否符合预期",
+     "检查用户从命令行传入的参数是否合法"
+    ],
+    "answer": 3,
+    "explain": "`python -O` 会忽略 `assert`，所以不要用它检查外部输入；应该 `raise ValueError` 等异常。"
+   },
+   {
+    "q": "`logging` 里，设置级别为 `INFO` 后，哪些消息会输出？",
+    "options": [
+     "只有 `INFO`",
+     "`INFO`、`WARNING`、`ERROR`、`CRITICAL`",
+     "`DEBUG` 及以上所有",
+     "只有 `ERROR`"
+    ],
+    "answer": 1,
+    "explain": "低于设定级别的消息（这里是 `DEBUG`）被丢弃，设定级别及以上的都会输出。"
+   },
+   {
+    "q": "关于 Python 的类型注解，下面说法**正确**的是？",
+    "options": [
+     "加了注解程序会变快",
+     "传错类型时 Python 会自动抛出 `TypeError`",
+     "注解运行时不强制检查，主要供阅读者、IDE 与 `mypy` 等工具使用",
+     "没有注解的代码无法运行"
+    ],
+    "answer": 2,
+    "explain": "注解只是保存在 `__annotations__` 里的信息。要在运行前发现类型问题，用 `mypy` / `pyright`；要在运行时校验，用 Pydantic 等库。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "id": "u10c",
+ "title": "加权图：最短路径、最小生成树与并查集（3/3）",
+ "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "会实现 **并查集 (union-find / disjoint-set)**，理解**路径压缩 (path compression)** 与**按秩合并 (union by rank)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「加权图：最短路径、最小生成树与并查集」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：并查集 (union-find)（约 15 分钟） → 最小生成树 (MST)（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 并查集 (union-find)\n\n> **标准定义 · 并查集 (disjoint-set / union-find)**\n>\n> 维护一组**互不相交的集合**，支持两个操作：**`find(x)`** 返回 $x$ 所在集合的**代表元（根）**；**`union(a, b)`** 合并 $a$、$b$ 所在的两个集合。每个集合用一棵树表示，每个元素存它的父节点，根的父节点是自己。两个优化：**路径压缩 (path compression)**：`find` 时把沿途的节点直接挂到根上；**按秩合并 (union by rank)**：合并时把较矮的树挂到较高的树下面。两个优化合用，每次操作的均摊时间是 $O(\\alpha(n))$，其中 $\\alpha$ 是**反阿克曼函数 (inverse Ackermann function)**，增长极慢，对任何实际的 $n$ 都不超过 4，可以当作常数。\n>\n> *English: A disjoint-set (union-find) structure maintains a partition of elements into sets with find and union. With path compression and union by rank, each operation takes amortized O(α(n)) time.*\n\n**白话版：「朋友圈合并」。** 开始每个人自成一个圈；`union(a, b)` 表示「a 和 b 成了朋友，两个圈合并」；`find(x)` 问「x 的圈长是谁」，**两个人圈长相同，就在同一个圈里**。它只回答「是不是同一组」，不回答「具体有谁」，所以比用 BFS 重新数连通分量快得多，尤其是**边是一条一条动态加进来**的时候。\n\n```python\nclass UnionFind:\n    def __init__(self, n):\n        self.parent = list(range(n))       # 每个人一开始自成一组，组长是自己\n        self.rank = [0] * n\n        self.count = n                     # 当前有几组\n    def find(self, x):\n        while self.parent[x] != x:\n            self.parent[x] = self.parent[self.parent[x]]   # 路径压缩（减半）\n            x = self.parent[x]\n        return x\n    def union(self, a, b):\n        ra, rb = self.find(a), self.find(b)\n        if ra == rb:\n            return False                   # 已经在同一组：这条边会形成环\n        if self.rank[ra] < self.rank[rb]:\n            ra, rb = rb, ra\n        self.parent[rb] = ra               # 矮的树挂到高的树下面（按秩合并）\n        if self.rank[ra] == self.rank[rb]:\n            self.rank[ra] += 1\n        self.count -= 1\n        return True\n\nuf = UnionFind(6)\nfor a, b in [(0, 1), (2, 3), (1, 3), (4, 5), (0, 2)]:\n    print(f\"union({a},{b}) ->\", uf.union(a, b), \"  组数 =\", uf.count)\nprint(\"0 和 3 同组：\", uf.find(0) == uf.find(3), \"；0 和 4 同组：\", uf.find(0) == uf.find(4))\n\n# 速度对比：朴素版（不压缩、不按秩）在「一条链」的最坏输入上 vs 优化版\nimport time, sys\nclass Naive:\n    def __init__(self, n): self.p = list(range(n))\n    def find(self, x):\n        while self.p[x] != x: x = self.p[x]\n        return x\n    def union(self, a, b):\n        self.p[self.find(a)] = self.find(b)\n\nn = 20000\nt = time.perf_counter(); nv = Naive(n)\nfor i in range(n - 1): nv.union(i, i + 1)        # 每次把旧根挂到新点下面，形成长链\nfor i in range(n): nv.find(0)                    # 然后反复从链的最深处查找\nt_naive = time.perf_counter() - t\nt = time.perf_counter(); u2 = UnionFind(n)\nfor i in range(n - 1): u2.union(i, i + 1)\nfor i in range(n): u2.find(0)\nt_fast = time.perf_counter() - t\nprint(f\"朴素版比优化版慢约 {t_naive / t_fast:.0f} 倍（量级对即可，具体数字因机器而异）\")\n\n# 验证：并查集的组数与 BFS 数连通分量一致\nimport random\nfrom collections import deque\nrandom.seed(2)\nok = True\nfor _ in range(300):\n    n = random.randint(1, 15)\n    es = [(random.randrange(n), random.randrange(n)) for _ in range(random.randint(0, n))]\n    u3 = UnionFind(n)\n    adj = [[] for _ in range(n)]\n    for a, b in es:\n        u3.union(a, b); adj[a].append(b); adj[b].append(a)\n    seen, comp = set(), 0\n    for s in range(n):\n        if s in seen: continue\n        comp += 1; seen.add(s); q = deque([s])\n        while q:\n            x = q.popleft()\n            for y in adj[x]:\n                if y not in seen: seen.add(y); q.append(y)\n    ok &= (comp == u3.count)\nprint(\"并查集组数 = BFS 连通分量数（300 张随机图）：\", ok)\n# 输出：union(0,1) -> True   组数 = 5\n# 输出：union(2,3) -> True   组数 = 4\n# 输出：union(1,3) -> True   组数 = 3\n# 输出：union(4,5) -> True   组数 = 2\n# 输出：union(0,2) -> False   组数 = 2\n# 输出：0 和 3 同组： True ；0 和 4 同组： False\n# 输出：朴素版比优化版慢约 1072 倍（量级对即可，具体数字因机器而异）\n# 输出：并查集组数 = BFS 连通分量数（300 张随机图）： True\n```\n\n`union` 返回 `False` 表示这两个点**早就在同一个集合里**，这条边连起来就会形成**环**：下面的 Kruskal 就是用这个性质来判环的。最后的对比里，朴素版在一条长链上，每次 `find` 都要走很长的路，$n$ 次操作变成 $O(n^2)$；优化版把树压得很扁，接近 $O(n)$，差了上千倍（具体倍数因机器不同）。还要注意：「均摊」是上一节学的概念，这里的单次 `find` 偶尔会很慢，但**一连串操作的平均**很快。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "ibjEGG7ylHk",
+   "title": "视频四：Union Find Introduction（WilliamFiset）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### 最小生成树 (MST)\n\n> **标准定义 · 生成树与最小生成树**\n>\n> 连通无向图 $G=(V,E)$ 的**生成树 (spanning tree)** 是包含**所有顶点**、恰好有 $V-1$ 条边的**树**（连通且无环）。边带权时，总权重最小的生成树称为**最小生成树 (minimum spanning tree, MST)**。\n>\n> **切割性质 (cut property)：** 把顶点分成任意两组 $S$ 与 $V\\setminus S$，在所有**横跨两组的边**中，**权重最小的那条一定属于某棵最小生成树**（边权互不相同时是唯一的 MST）。Kruskal 与 Prim 的正确性都由此而来。\n>\n> *English: A spanning tree connects all vertices with V-1 edges and no cycles; a minimum spanning tree has minimum total weight. By the cut property, the lightest edge crossing any cut belongs to some MST.*\n\n**白话版：「用最便宜的方式把所有城市连起来」。** 铺光缆、修路、通水管：只要所有城市互相连通，不需要多余的线，多一条线就会形成环、浪费钱。**注意：MST 是总费用最小，不是每对点之间的距离最短**：最短路径树和最小生成树是两回事。\n\n**切割性质为什么对：** 假设某棵 MST 不包含这条最轻的横跨边 $e$。把 $e$ 加进去就会形成一个环，环必然还会再穿过一次这个切割，那里有另一条横跨边 $f$，$w(f)\\ge w(e)$。把 $f$ 换成 $e$，总权重不增加，仍是生成树。所以总存在包含 $e$ 的 MST。\n\n**两种做法，对应两种「贪心」：**\n\n- **Kruskal**：**把所有边按权重从小到大排序**，依次考虑，**不会形成环就加入**（用并查集判断环）。从「边」的角度生长，中间状态是一片森林。时间 $O(E\\log E)$，排序是瓶颈。\n- **Prim**：**从一个点开始，每次加入连接「已选集合」和「未选集合」的最小边**。从「点」的角度生长，中间状态始终是一棵树，实现几乎就是 Dijkstra，只是堆里放的是「边的权重」而不是「到起点的距离」。时间 $O((V+E)\\log V)$。\n\n```python\nimport heapq, random, itertools\n\nclass UF:\n    def __init__(self, n): self.p = list(range(n))\n    def find(self, x):\n        while self.p[x] != x:\n            self.p[x] = self.p[self.p[x]]; x = self.p[x]\n        return x\n    def union(self, a, b):\n        a, b = self.find(a), self.find(b)\n        if a == b: return False\n        self.p[a] = b; return True\n\ndef kruskal(n, edges):\n    \"\"\"edges = [(w, u, v)]。按权重从小到大，不成环就加入\"\"\"\n    uf, total, chosen = UF(n), 0, []\n    for w, u, v in sorted(edges):\n        if uf.union(u, v):\n            total += w; chosen.append((u, v, w))\n    return total, chosen\n\ndef prim(n, edges, s=0):\n    adj = [[] for _ in range(n)]\n    for w, u, v in edges:\n        adj[u].append((w, v)); adj[v].append((w, u))\n    seen, total, pq, cnt = set(), 0, [(0, s)], 0\n    while pq and len(seen) < n:\n        w, u = heapq.heappop(pq)\n        if u in seen: continue\n        seen.add(u); total += w\n        for w2, v in adj[u]:\n            if v not in seen: heapq.heappush(pq, (w2, v))\n    return total\n\n# 一个小例子：6 个城市之间铺光缆，边上是费用\nedges = [(7,0,1),(5,1,2),(8,0,2),(9,1,3),(7,2,3),(5,3,4),(15,2,4),(6,3,5),(8,4,5),(11,4,0)]\ntotal, chosen = kruskal(6, edges)\nprint(\"Kruskal 总费用：\", total, \" 选中的边：\", chosen)\nprint(\"Prim    总费用：\", prim(6, edges))\n\n# 验证：小图上暴力枚举所有「V-1 条边且连通」的子集，取最小\ndef brute(n, edges):\n    best = None\n    for sub in itertools.combinations(edges, n - 1):\n        uf = UF(n)\n        if all(uf.union(u, v) for w, u, v in sub):     # n-1 条边且无环 => 生成树\n            s = sum(w for w, u, v in sub)\n            best = s if best is None else min(best, s)\n    return best\n\nrandom.seed(3)\nok, tested = True, 0\nfor _ in range(300):\n    n = random.randint(2, 6)\n    es = [(random.randint(1, 9), a, b) for a in range(n) for b in range(a + 1, n) if random.random() < 0.7]\n    b = brute(n, es)\n    if b is None:                                       # 图不连通，没有生成树\n        continue\n    tested += 1\n    ok &= (kruskal(n, es)[0] == b == prim(n, es))\nprint(f\"Kruskal = Prim = 暴力枚举（{tested} 张连通随机图）：\", ok)\n# 输出：Kruskal 总费用： 30  选中的边： [(1, 2, 5), (3, 4, 5), (3, 5, 6), (0, 1, 7), (2, 3, 7)]\n# 输出：Prim    总费用： 30\n# 输出：Kruskal = Prim = 暴力枚举（256 张连通随机图）： True\n```\n\nKruskal 的 `sorted(edges)` 加上并查集的 `union`，就是它的全部；Prim 是把 Dijkstra 的 `nd = d + w` 换成 `w`。两者结果相同（总费用 30），**与暴力枚举所有生成树取最小值完全一致**。MST 的总权重是唯一的，但边权有相同值时，具体的树可以不唯一。选哪个：稀疏图 Kruskal 好写；稠密图 Prim（配合邻接矩阵 $O(V^2)$）更快。\n\n**一个机器学习里的联系：单链接聚类。** 对 $n$ 个数据点，两两距离作为边权，按距离从小到大合并最近的两个簇，这个过程就是 Kruskal；用到 $k$ 个簇时停下，等价于**去掉 MST 里最长的 $k-1$ 条边**。\n\n### 这一节你要带走的三句话\n\n1. **最短路径的核心是「松弛」**：边权非负用 **Dijkstra**（最小堆，$O((V+E)\\log V)$）；有负权用 **Bellman-Ford**（$O(VE)$，还能查负环）；DAG 按拓扑序一遍即可（$O(V+E)$）。\n2. **最小生成树是「总费用最小地连通所有点」**：Kruskal 排序边 + 并查集判环，Prim 像 Dijkstra 一样从一个点长出来；正确性来自**切割性质**。\n3. **并查集**用「树 + 路径压缩 + 按秩合并」，让「合并 / 是不是同一组」几乎是常数时间，是判环、数连通分量和 Kruskal 的基础。"
+  },
+  {
+   "type": "think",
+   "q": "Kruskal 的并查集是用来干什么的？如果不用并查集，每次想知道「加入这条边会不会形成环」，朴素的办法要多少时间？",
+   "a": "并查集用来回答「**这条边的两个端点是不是已经连通**」：连通就加入会成环，应当跳过；不连通就可以加入，并合并两个集合。\n\n朴素做法：每次加边前，在目前已选的森林里做一次 BFS / DFS，看两个端点是否已连通，一次 $O(V)$。$E$ 条边就是 $O(VE)$。而并查集每次操作接近 $O(1)$（$O(\\alpha(n))$），总时间只剩下**排序的 $O(E\\log E)$** 一项，这才让 Kruskal 变得实用。这是「选对数据结构，算法本身不用变」的典型例子。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "生成树",
+     "spanning tree",
+     "连接所有顶点、恰有 $V-1$ 条边的树"
+    ],
+    [
+     "切割性质",
+     "cut property",
+     "横跨任一切割的最小边必属于某棵 MST"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Runestone：Graphs（章节目录，含 Dijkstra 与 Prim）",
+   "url": "https://runestone.academy/ns/books/published/pythonds/Graphs/index.html",
+   "note": "本节大纲依据，含 Dijkstra 与 Prim 的 Python 实现（CC BY-NC-SA 4.0）"
+  },
+  {
+   "title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "大学课程原版，含 Dijkstra、Bellman-Ford 的正确性证明与松弛的统一框架"
+  },
+  {
+   "title": "VisuAlgo：Single-Source Shortest Paths / Minimum Spanning Tree（交互动画）",
+   "url": "https://visualgo.net/en/sssp",
+   "note": "新加坡国立大学的算法可视化网站，可以自己画图、单步执行 Dijkstra、Bellman-Ford、Kruskal、Prim"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个有 $V$ 个顶点的连通图，它的**生成树**有多少条边？",
+    "options": [
+     "$V$",
+     "$V+1$",
+     "取决于权重",
+     "$V-1$"
+    ],
+    "answer": 3,
+    "explain": "树有 $V$ 个点就恰有 $V-1$ 条边；少了不连通，多了有环。"
+   },
+   {
+    "q": "**Kruskal 算法**的步骤是？",
+    "options": [
+     "从一个点开始，每次加入连到已选集合的最小边",
+     "把所有边按权重从小到大排序，依次加入不会形成环的边",
+     "对每个点做一次 BFS",
+     "反复删除权重最大的点"
+    ],
+    "answer": 1,
+    "explain": "「从一个点开始扩张」描述的是 Prim。Kruskal 用并查集判断加入某条边是否会成环。"
+   },
+   {
+    "q": "**切割性质 (cut property)** 说的是？",
+    "options": [
+     "每个环里权重最大的边不属于任何 MST",
+     "任何一棵树都是最小生成树",
+     "把顶点分成两组，横跨两组的边中权重最小的那条一定属于某棵 MST",
+     "MST 里所有边的权重都相等"
+    ],
+    "answer": 2,
+    "explain": "这是 Kruskal 与 Prim 贪心正确的依据。「每个环里最重的边不属于任何 MST」是与之对偶的**环性质**，不是切割性质（且边权相同时也不严格成立）。"
+   },
+   {
+    "q": "并查集用了**路径压缩**和**按秩合并**之后，每次操作的均摊时间是？",
+    "options": [
+     "$O(\\alpha(n))$，反阿克曼函数，实际可当作常数",
+     "$O(\\log n)$",
+     "$O(n)$",
+     "$O(n\\log n)$"
+    ],
+    "answer": 0,
+    "explain": "单用其中一个优化是 $O(\\log n)$ 量级，两个合用可达 $O(\\alpha(n))$，$\\alpha(n)$ 在所有实际的 $n$ 下不超过 4。"
+   }
+  ]
+ }
+}
