@@ -1,0 +1,69 @@
+{
+  "id": "wm-0",
+  "title": "通往世界模型：强化学习与生成模型衔接课",
+  "subtitle": "MDP 与贝尔曼方程、无模型与策略梯度、VAE 与潜变量、状态空间模型、基于模型的强化学习、Dreamer / JEPA —— 从 ARENA 0.0 走向世界模型研究的衔接，代码以 NumPy 为主并真实运行",
+  "source": {
+    "name": "Sutton & Barto《Reinforcement Learning: An Introduction》（作者免费公开）、Ha & Schmidhuber《World Models》、Dreamer 系列论文，并参考 UPenn CIS 6280、Berkeley CS285 的大纲",
+    "url": "http://incompleteideas.net/book/the-book-2nd.html"
+  },
+  "units": [
+    {
+      "id": "u01",
+      "title": "马尔可夫决策过程：智能体与环境",
+      "en": "Markov Decision Processes",
+      "minutes": 90,
+      "file": "u01-mdp.json"
+    },
+    {
+      "id": "u02",
+      "title": "贝尔曼方程与动态规划求解",
+      "en": "Bellman Equations & Dynamic Programming",
+      "minutes": 100,
+      "file": "u02-bellman-dp.json"
+    },
+    {
+      "id": "u03",
+      "title": "无模型学习：蒙特卡洛、TD 与 Q-learning",
+      "en": "Model-free RL: Monte Carlo, TD & Q-learning",
+      "minutes": 105,
+      "file": "u03-model-free.json"
+    },
+    {
+      "id": "u04",
+      "title": "策略梯度与深度强化学习",
+      "en": "Policy Gradient & Deep RL",
+      "minutes": 120,
+      "file": "u04-policy-gradient.json"
+    },
+    {
+      "id": "u05",
+      "title": "潜变量模型与 VAE",
+      "en": "Latent Variable Models & VAE",
+      "minutes": 120,
+      "file": "u05-vae.json"
+    },
+    {
+      "id": "u06",
+      "title": "序列与状态空间模型",
+      "en": "Sequence & State-space Models",
+      "minutes": 100,
+      "file": "u06-state-space.json"
+    },
+    {
+      "id": "u07",
+      "title": "基于模型的强化学习",
+      "en": "Model-based RL",
+      "minutes": 100,
+      "file": "u07-model-based-rl.json"
+    },
+    {
+      "id": "u08",
+      "title": "世界模型：Dreamer、JEPA 与读论文",
+      "en": "World Models: Dreamer, JEPA & Reading Papers",
+      "minutes": 110,
+      "file": "u08-world-models.json"
+    }
+  ],
+  "order": 5,
+  "order_note": "选修衔接课：想研究 world model 时，学完 ARENA 0.0 再开始（需要 NumPy，部分节用 PyTorch）。Master 先修的数据结构与算法（第 4 步）与它互不依赖"
+}

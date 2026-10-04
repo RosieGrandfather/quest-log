@@ -1,0 +1,246 @@
+{
+ "id": "u04",
+ "title": "矩阵的基本性质：秩、迹、行列式、转置",
+ "en": "Rank, Trace, Determinant, Transpose",
+ "minutes": 45,
+ "objectives": [
+  "从几何上理解 **行列式 (determinant)**：面积 / 体积的缩放倍数，为 0 意味着空间被压扁",
+  "知道 **逆矩阵 (inverse)** 什么时候存在，理解 **列空间 (column space)**、**零空间 (null space)**",
+  "理解 **秩 (rank)**，并会用 $\\text{rank}(AB) \\le \\min(\\text{rank}(A), \\text{rank}(B))$ 推理",
+  "掌握 **转置 (transpose)** 和 **迹 (trace)** 的定义与常用性质"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 这一节讲什么\n\nARENA 列出的线性代数必备清单里，有一条是「矩阵的基本性质：**秩、迹、行列式、转置**」。这四个概念在后面读论文、看代码时会反复出现，比如「这个权重矩阵是**低秩**的」「注意力分数是 $QK^\\top$」。\n\n前两个视频继续用 3Blue1Brown 的几何视角讲行列式和秩；转置和迹没有合适的几何视频，放在最后用文字讲清楚。\n\n**本节安排（约 45 分钟）**：视频一（10 分钟）→ 要点 → 视频二（12 分钟）→ 要点 → 转置与迹（8 分钟）→「想一想」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Ip3X9LOh2dk",
+   "title": "视频一：The determinant（线性代数的本质 第 6 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 视频一要点：行列式\n\n**1. 行列式 = 面积（体积）缩放倍数**\n\n一个线性变换会把单位正方形（由 $\\hat{\\imath}, \\hat{\\jmath}$ 围成）变成一个平行四边形，**行列式就是面积被放大了多少倍**。所有区域都按同一个倍数缩放。三维里对应的是体积。\n\n$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc$$\n\n**2. 负号表示「翻面」**\n\n行列式为负，说明空间的**定向 (orientation)** 被翻转了（像把纸翻过来），绝对值仍然是缩放倍数。\n\n**3. 行列式为 0：空间被压扁了**\n\n$\\det(A) = 0$ 意味着变换把平面压成了一条线甚至一个点（三维里压成平面、线或点）——维度丢失了。\n\n**4. 乘积的行列式**\n\n$$\\det(AB) = \\det(A)\\det(B)$$\n\n先缩放 $\\det(B)$ 倍、再缩放 $\\det(A)$ 倍，总共缩放两者的乘积。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "uQhTuRlWMxw",
+   "title": "视频二：Inverse matrices, column space and null space（线性代数的本质 第 7 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### 视频二要点：逆矩阵、列空间、秩\n\n**1. 逆矩阵：把变换「倒回去」**\n\n$A^{-1}$ 是能撤销 $A$ 的变换：$A^{-1}A = I$（**单位矩阵 (identity matrix)**，什么都不做的变换）。\n\n**$A^{-1}$ 存在 ⇔ $\\det(A) \\neq 0$。** 如果空间被压扁了（行列式为 0），不同的输入会被压到同一个输出，就不可能倒回去。\n\n**2. 列空间与秩**\n\n- **列空间 (column space)**：所有可能的输出 $A\\mathbf{v}$ 组成的空间，也就是矩阵各列张成的空间。\n- **秩 (rank)**：列空间的**维数**，即「输出能铺满几维」。3×3 矩阵秩为 3 叫 **满秩 (full rank)**；秩为 2 说明三维空间被压成了一个平面。\n\n**3. 零空间**\n\n**零空间 (null space)** 或称 **核 (kernel)**：所有被送到原点的向量，$\\{\\mathbf{v} : A\\mathbf{v} = \\mathbf{0}\\}$。满秩时零空间只有零向量；秩降低多少维，零空间就有多少维：\n\n$$\\text{列数} = \\text{rank}(A) + \\dim(\\text{零空间})$$\n\n这叫 **秩–零化度定理 (rank–nullity theorem)**。\n\n### 秩的两个常用不等式\n\n- 秩不会超过行数，也不会超过列数：对 $n \\times m$ 矩阵，$\\text{rank}(A) \\le \\min(n, m)$。\n- 复合变换不会「恢复」已经丢失的维度：\n$$\\text{rank}(AB) \\le \\min\\big(\\text{rank}(A), \\text{rank}(B)\\big)$$\n\n**ARENA 的思考题**：$A$ 是 $(n, m)$、$B$ 是 $(m, l)$，$AB$ 的秩最大是多少？答案是 $\\min(n, m, l)$。在 Transformer 里常见 $m \\ll n, l$ 的情况：两个「瘦」矩阵相乘得到一个很大但**低秩 (low-rank)** 的矩阵。第 6 节的 SVD 就是分析这类矩阵的工具。"
+  },
+  {
+   "type": "text",
+   "md": "### 转置 (transpose)\n\n把矩阵的行和列互换：$(A^\\top)_{ij} = A_{ji}$。$(n, m)$ 的矩阵转置后是 $(m, n)$。\n\n常用性质：\n\n- $(A^\\top)^\\top = A$\n- $(A + B)^\\top = A^\\top + B^\\top$\n- **$(AB)^\\top = B^\\top A^\\top$**（顺序要反过来，最容易写错）\n- 两个列向量的 **点积 (dot product)** 可以写成 $\\mathbf{u}^\\top \\mathbf{v} = \\sum_i u_i v_i$\n- $\\text{rank}(A^\\top) = \\text{rank}(A)$：行空间和列空间维数相同\n\n在代码里：`A.T`。注意力机制的核心公式 $QK^\\top$，就是用转置把「每个 query 和每个 key 的点积」一次性算出来。\n\n### 迹 (trace)\n\n方阵**对角线元素之和**：$\\text{tr}(A) = \\sum_i A_{ii}$。\n\n常用性质：\n\n- 线性：$\\text{tr}(A + B) = \\text{tr}(A) + \\text{tr}(B)$，$\\text{tr}(cA) = c\\,\\text{tr}(A)$\n- $\\text{tr}(A^\\top) = \\text{tr}(A)$\n- **循环性**：$\\text{tr}(AB) = \\text{tr}(BA)$（即使 $AB \\neq BA$；$A$、$B$ 也不必是方阵，只要两个乘积都有定义）\n- 迹等于所有**特征值 (eigenvalues)** 之和——第 6 节会讲\n\n```python\nimport torch\nA = torch.tensor([[1., 2.], [3., 4.]])\nprint(torch.det(A))    # tensor(-2.)\nprint(torch.trace(A))  # tensor(5.)\nprint(A.T)             # tensor([[1., 3.], [2., 4.]])\nprint(torch.linalg.matrix_rank(A))  # tensor(2)\n```"
+  },
+  {
+   "type": "think",
+   "q": "$\\det(A) = 0$ 的 3×3 矩阵，秩可能是多少？它可逆吗？",
+   "a": "行列式为 0 说明三维空间被压扁了，秩**小于 3**，可能是 2（压成平面）、1（压成直线）或 0（全部压到原点，即零矩阵）。\n\n它**不可逆**：被压扁时，零空间里的所有向量都被送到原点，无法区分，所以没法倒回去。"
+  },
+  {
+   "type": "think",
+   "q": "$W_1$ 的形状是 $(768, 64)$，$W_2$ 的形状是 $(64, 768)$。乘积 $W_1W_2$ 是多大的矩阵？秩最多是多少？",
+   "a": "$W_1W_2$ 是 $768 \\times 768$ 的方阵，但秩最多是 $\\min(768, 64, 768) = 64$。\n\n它有 $768^2 \\approx 59$ 万个元素，本质上却只有 64 维的「信息」。Transformer 的注意力头正是这种结构（把 768 维压到 64 维再展开），ARENA 第 1 章分析注意力时会大量用到这个视角。"
+  },
+  {
+   "type": "think",
+   "q": "为什么 $(AB)^\\top = B^\\top A^\\top$，顺序要反过来？",
+   "a": "从形状看就能想通：设 $A$ 是 $(n, m)$、$B$ 是 $(m, l)$，$AB$ 是 $(n, l)$，它的转置是 $(l, n)$。\n\n$B^\\top$ 是 $(l, m)$、$A^\\top$ 是 $(m, n)$，只有 $B^\\top A^\\top$ 的形状能对上，得到 $(l, n)$；$A^\\top B^\\top$ 一般根本乘不起来。逐元素验证：$\\big((AB)^\\top\\big)_{ij} = (AB)_{ji} = \\sum_k A_{jk}B_{ki} = \\sum_k (B^\\top)_{ik}(A^\\top)_{kj}$。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "行列式",
+     "determinant",
+     "面积 / 体积的缩放倍数"
+    ],
+    [
+     "定向",
+     "orientation",
+     "行列式为负表示空间被翻转"
+    ],
+    [
+     "单位矩阵",
+     "identity matrix $I$",
+     "什么都不做的变换"
+    ],
+    [
+     "逆矩阵",
+     "inverse matrix",
+     "撤销变换，存在 ⇔ 行列式 ≠ 0"
+    ],
+    [
+     "列空间",
+     "column space",
+     "所有可能的输出"
+    ],
+    [
+     "秩",
+     "rank",
+     "列空间的维数"
+    ],
+    [
+     "满秩 / 低秩",
+     "full rank / low-rank",
+     "秩等于 / 远小于可能的最大值"
+    ],
+    [
+     "零空间 / 核",
+     "null space / kernel",
+     "被送到原点的所有向量"
+    ],
+    [
+     "转置",
+     "transpose",
+     "行列互换，$(AB)^\\top = B^\\top A^\\top$"
+    ],
+    [
+     "迹",
+     "trace",
+     "对角线之和，$\\text{tr}(AB) = \\text{tr}(BA)$"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "含本节「$AB$ 的秩」思考题"
+  },
+  {
+   "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+  },
+  {
+   "title": "The Matrix Cookbook（Petersen & Pedersen）",
+   "url": "https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf",
+   "note": "ARENA 选读：矩阵恒等式速查手册"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个 2×2 矩阵的行列式是 3，这个变换对图形的面积做了什么？",
+    "options": [
+     "面积变成原来的 3 倍",
+     "面积不变",
+     "面积变成原来的 1/3",
+     "面积增加 3 个单位"
+    ],
+    "answer": 0,
+    "explain": "行列式就是面积的**缩放倍数**，所有区域都放大 3 倍。"
+   },
+   {
+    "q": "$\\det\\begin{bmatrix} 2 & 1 \\\\ 4 & 3 \\end{bmatrix}$ 等于？",
+    "options": [
+     "10",
+     "5",
+     "2",
+     "-2"
+    ],
+    "answer": 2,
+    "explain": "$ad - bc = 2 \\times 3 - 1 \\times 4 = 2$。"
+   },
+   {
+    "q": "行列式为负数说明什么？",
+    "options": [
+     "变换不是线性的",
+     "空间的定向被翻转了",
+     "矩阵不可逆",
+     "面积变小了"
+    ],
+    "answer": 1,
+    "explain": "负号表示定向翻转（像把纸翻面），绝对值仍然是缩放倍数。只要不为 0，矩阵就可逆。"
+   },
+   {
+    "q": "矩阵 $A$ 可逆的充要条件是？",
+    "options": [
+     "$A$ 的所有元素都不为 0",
+     "$A$ 是对称矩阵",
+     "$\\text{tr}(A) \\neq 0$",
+     "$\\det(A) \\neq 0$"
+    ],
+    "answer": 3,
+    "explain": "行列式不为 0 ⇔ 空间没有被压扁 ⇔ 变换可以倒回去。元素里有 0 的矩阵照样可以可逆（比如单位矩阵）。"
+   },
+   {
+    "q": "矩阵的 **秩 (rank)** 描述的是？",
+    "options": [
+     "矩阵元素的个数",
+     "矩阵的行数",
+     "列空间的维数，即输出能铺满几维",
+     "对角线元素之和"
+    ],
+    "answer": 2,
+    "explain": "秩 = 列空间的维数。对角线之和是**迹**。"
+   },
+   {
+    "q": "$A$ 是 $(10, 3)$，$B$ 是 $(3, 8)$。$AB$ 的秩**最大**是多少？",
+    "options": [
+     "3",
+     "8",
+     "10",
+     "24"
+    ],
+    "answer": 0,
+    "explain": "$\\text{rank}(AB) \\le \\min(\\text{rank}(A), \\text{rank}(B)) \\le \\min(10, 3, 8) = 3$。虽然 $AB$ 是 10×8 的大矩阵，秩最多是 3。"
+   },
+   {
+    "q": "一个 5×5 矩阵的秩是 3，它的零空间是几维？",
+    "options": [
+     "0",
+     "3",
+     "5",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "秩–零化度定理：列数 = 秩 + 零空间维数，所以零空间维数 = 5 − 3 = 2。"
+   },
+   {
+    "q": "$(AB)^\\top$ 等于？",
+    "options": [
+     "$A^\\top B^\\top$",
+     "$B^\\top A^\\top$",
+     "$AB$",
+     "$BA$"
+    ],
+    "answer": 1,
+    "explain": "转置会把乘积的顺序反过来。从形状也能验证：只有 $B^\\top A^\\top$ 的形状能对上。"
+   },
+   {
+    "q": "关于迹 (trace)，下面哪个说法**错误**？",
+    "options": [
+     "$\\text{tr}(AB) = \\text{tr}(A)\\,\\text{tr}(B)$",
+     "$\\text{tr}(A)$ 是对角线元素之和",
+     "$\\text{tr}(AB) = \\text{tr}(BA)$",
+     "$\\text{tr}(A + B) = \\text{tr}(A) + \\text{tr}(B)$"
+    ],
+    "answer": 0,
+    "explain": "迹是线性的、满足循环性 $\\text{tr}(AB) = \\text{tr}(BA)$，但**乘积的迹一般不等于迹的乘积**。例如 $A = B = \\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}$：$\\text{tr}(AB) = 2$，而 $\\text{tr}(A)\\text{tr}(B) = 0$。（「乘积等于乘积」的是行列式：$\\det(AB) = \\det A \\det B$。）"
+   },
+   {
+    "q": "$\\det(A) = 2$，$\\det(B) = 5$，则 $\\det(AB)$ 等于？",
+    "options": [
+     "7",
+     "2.5",
+     "10",
+     "无法确定"
+    ],
+    "answer": 2,
+    "explain": "$\\det(AB) = \\det(A)\\det(B) = 10$：先放大 5 倍再放大 2 倍，总共放大 10 倍。"
+   }
+  ]
+ }
+}

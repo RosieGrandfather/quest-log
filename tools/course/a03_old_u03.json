@@ -1,0 +1,249 @@
+{
+ "id": "u03",
+ "title": "线性变换与矩阵乘法",
+ "en": "Linear Transformations & Matrix Multiplication",
+ "minutes": 45,
+ "objectives": [
+  "用几何直觉理解 **线性变换 (linear transformation)**：网格线保持平行且等距、原点不动",
+  "知道矩阵的**每一列**就是基向量变换后的位置，会用这个视角算矩阵乘向量",
+  "理解 **矩阵乘法 (matrix multiplication)** = 变换的**复合 (composition)**，以及为什么 $AB \\neq BA$",
+  "会判断矩阵乘法的形状：$(n, m)$ 乘 $(m, l)$ 得到 $(n, l)$"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么线性代数这么重要\n\n上一两节你已经看到：神经网络的每一层，核心就是一次 **矩阵乘法**：$\\mathbf{a}' = \\sigma(W\\mathbf{a} + \\mathbf{b})$。ARENA 在前置清单里把线性代数标为**最高优先级**，第一条就是「线性变换是什么、为什么重要」，推荐的正是 3Blue1Brown 的《线性代数的本质》(Essence of Linear Algebra) 系列。\n\n这一节换一个视角看矩阵：**不是一张数字表格，而是一种对空间的变换**。有了这个视角，后面的行列式、秩、特征值、SVD 都会变得直观。\n\n**本节安排（约 45 分钟）**：导读 → 视频（11 分钟）→ 要点 → 视频（10 分钟）→ 要点 → 短视频（4 分钟）→ 算法和「想一想」。\n\n### 先认识向量\n\n在机器学习里，**向量 (vector)** 可以同时理解成两件事：\n\n- 一个从原点出发的**箭头**（几何视角）；\n- 一列数字，比如 $\\begin{bmatrix} 3 \\\\ -2 \\end{bmatrix}$（计算视角）。\n\n任何二维向量都能写成两个 **基向量 (basis vectors)** 的组合：$\\hat{\\imath} = \\begin{bmatrix}1\\\\0\\end{bmatrix}$、$\\hat{\\jmath} = \\begin{bmatrix}0\\\\1\\end{bmatrix}$，比如 $\\begin{bmatrix} 3 \\\\ -2 \\end{bmatrix} = 3\\hat{\\imath} - 2\\hat{\\jmath}$。记住这一点，下面的视频会反复用到。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "kYB8IZa5AuE",
+   "title": "视频一：Linear transformations and matrices（线性代数的本质 第 3 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 11
+  },
+  {
+   "type": "text",
+   "md": "### 视频一要点：矩阵 = 线性变换\n\n**1. 什么是线性变换**\n\n几何上：变换后**网格线仍然是直线、保持平行且等距**，**原点不动**。代数上等价于两条性质：\n\n$$T(\\mathbf{u} + \\mathbf{v}) = T(\\mathbf{u}) + T(\\mathbf{v}), \\qquad T(c\\,\\mathbf{v}) = c\\,T(\\mathbf{v})$$\n\n旋转、缩放、剪切 (shear) 都是线性变换；平移（原点动了）和弯曲都不是。\n\n**2. 只要知道基向量去了哪里，就知道整个变换**\n\n因为 $\\mathbf{v} = x\\hat{\\imath} + y\\hat{\\jmath}$，由线性性：$T(\\mathbf{v}) = x\\,T(\\hat{\\imath}) + y\\,T(\\hat{\\jmath})$。\n\n把 $T(\\hat{\\imath})$、$T(\\hat{\\jmath})$ 作为**列**排在一起，就是这个变换的矩阵。例如逆时针旋转 90°：$\\hat{\\imath}$ 去了 $\\begin{bmatrix}0\\\\1\\end{bmatrix}$，$\\hat{\\jmath}$ 去了 $\\begin{bmatrix}-1\\\\0\\end{bmatrix}$，所以\n\n$$R = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$$\n\n**3. 矩阵乘向量 = 列的线性组合**\n\n$$\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\begin{bmatrix} a \\\\ c \\end{bmatrix} + y\\begin{bmatrix} b \\\\ d \\end{bmatrix} = \\begin{bmatrix} ax + by \\\\ cx + dy \\end{bmatrix}$$\n\n这个「按列看」的视角非常有用：**矩阵乘向量的结果，一定是矩阵各列的某种组合**。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "XkY2DOUCWMU",
+   "title": "视频二：Matrix multiplication as composition（线性代数的本质 第 4 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 视频二要点：矩阵乘法 = 变换的复合\n\n**1. 先做一个变换，再做另一个**\n\n先做 $B$ 再做 $A$，总效果还是一个线性变换，它的矩阵就是乘积 $AB$：\n\n$$A(B\\mathbf{v}) = (AB)\\,\\mathbf{v}$$\n\n注意**顺序从右往左读**：$AB$ 表示「先 $B$ 后 $A$」，和函数复合 $f(g(x))$ 的顺序一样。\n\n**2. 乘积怎么算**\n\n$AB$ 的第 $j$ 列 = $A$ 乘以 $B$ 的第 $j$ 列（「$B$ 把基向量送到哪，$A$ 再把它送到哪」）。写成逐元素的公式：\n\n$$(AB)_{ij} = \\sum_k A_{ik} B_{kj}$$\n\n即 $A$ 的第 $i$ 行和 $B$ 的第 $j$ 列对应相乘再相加。\n\n**3. 两条重要性质**\n\n- **一般不满足交换律**：$AB \\neq BA$。先旋转再剪切，和先剪切再旋转，结果不一样。\n- **满足结合律**：$(AB)C = A(BC)$。几何上一目了然——都是「先 $C$、再 $B$、再 $A$」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "v8VSDg_WQlA",
+   "title": "视频三：Nonsquare matrices as transformations between dimensions（线性代数的本质 第 8 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "text",
+   "md": "### 非方阵与形状规则\n\n视频三讲的是：**非方阵在不同维度之间做变换**。一个 $m \\times n$ 的矩阵（$m$ 行 $n$ 列）有 $n$ 列，每列是一个 $m$ 维向量，所以它把 $n$ 维空间映射到 $m$ 维空间。\n\n神经网络里正是这样：784 → 16 的那一层，$W$ 是 $16 \\times 784$，把 784 维的像素向量变成 16 维的隐藏层向量。\n\n**形状规则**（写代码时天天用）：\n\n$$\\underbrace{A}_{(n,\\ m)}\\ \\underbrace{B}_{(m,\\ l)} = \\underbrace{AB}_{(n,\\ l)}$$\n\n中间的维度 $m$ 必须相等，结果取两头。在 NumPy / PyTorch 里矩阵乘法写作 `A @ B`；形状对不上时会直接报错，这是排查 bug 的第一线索。\n\n```python\nimport torch\nA = torch.randn(3, 4)\nB = torch.randn(4, 5)\nprint((A @ B).shape)   # torch.Size([3, 5])\n```"
+  },
+  {
+   "type": "think",
+   "q": "如果一个神经网络**只用线性变换**（没有激活函数），会有什么问题？（ARENA 原文的思考题）",
+   "a": "**线性变换的复合仍然是线性变换**：$W_3W_2W_1$ 可以合并成一个矩阵。所以无论叠多少层，整个网络也只能表达线性函数，而我们想学的大多数函数（识别图片、理解语言）都不是线性的。\n\n把线性变换和**非线性**的激活函数交替组合起来，网络才能逼近几乎任何函数。"
+  },
+  {
+   "type": "think",
+   "q": "举一个 $AB \\neq BA$ 的具体例子。",
+   "a": "取旋转 90° 的 $R = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$ 和剪切 $S = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$：\n\n$$SR = \\begin{bmatrix} 1 & -1 \\\\ 1 & 0 \\end{bmatrix}, \\qquad RS = \\begin{bmatrix} 0 & -1 \\\\ 1 & 1 \\end{bmatrix}$$\n\n两者不同。几何上：「先旋转再剪切」和「先剪切再旋转」把 $\\hat{\\jmath}$ 送到了不同的位置。"
+  },
+  {
+   "type": "think",
+   "q": "一个 $3 \\times 2$ 的矩阵，作为变换是在做什么？它能把二维平面「铺满」三维空间吗？",
+   "a": "它有 2 列、每列是三维向量，所以把**二维平面映射到三维空间**：$\\hat{\\imath}$ 和 $\\hat{\\jmath}$ 分别落到两个三维向量上。\n\n所有输出都是这两列的线性组合，最多只能构成三维空间里**一个经过原点的平面**，不可能铺满整个三维空间。下一节的 **秩 (rank)** 就是用来描述「输出能铺满几维」的。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "向量",
+     "vector",
+     "箭头，或一列数字"
+    ],
+    [
+     "基向量",
+     "basis vectors $\\hat{\\imath}, \\hat{\\jmath}$",
+     "标准坐标轴方向的单位向量"
+    ],
+    [
+     "线性组合",
+     "linear combination",
+     "$x\\hat{\\imath} + y\\hat{\\jmath}$ 这种「数乘再相加」"
+    ],
+    [
+     "线性变换",
+     "linear transformation",
+     "保持网格平行等距、原点不动的变换"
+    ],
+    [
+     "矩阵",
+     "matrix",
+     "列 = 基向量变换后的位置"
+    ],
+    [
+     "矩阵乘法",
+     "matrix multiplication",
+     "变换的复合，$(AB)_{ij} = \\sum_k A_{ik}B_{kj}$"
+    ],
+    [
+     "复合",
+     "composition",
+     "先做一个变换再做另一个"
+    ],
+    [
+     "交换律 / 结合律",
+     "commutativity / associativity",
+     "矩阵乘法不满足前者、满足后者"
+    ],
+    [
+     "剪切",
+     "shear",
+     "把正方形推成平行四边形的变换"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
+  },
+  {
+   "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+   "note": "ARENA 推荐的系列，本节用了第 3、4、8 章"
+  },
+  {
+   "title": "mlwiki：Matrix-Matrix Multiplication",
+   "url": "http://mlwiki.org/index.php/Matrix-Matrix_Multiplication",
+   "note": "ARENA 推荐的矩阵乘法讲解"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面哪个变换**不是**线性变换？",
+    "options": [
+     "绕原点旋转 45°",
+     "沿 x 轴拉伸 2 倍",
+     "把所有点向右平移 1 个单位",
+     "剪切：$(x, y) \\mapsto (x + y, y)$"
+    ],
+    "answer": 2,
+    "explain": "平移会移动原点，不满足 $T(\\mathbf{0}) = \\mathbf{0}$，所以不是线性变换。旋转、缩放、剪切都保持原点不动、网格平行等距。"
+   },
+   {
+    "q": "一个 2×2 矩阵的**第一列**表示什么？",
+    "options": [
+     "$\\hat{\\jmath}$ 变换后的位置",
+     "$\\hat{\\imath}$ 变换后的位置",
+     "变换后原点的位置",
+     "矩阵的行列式"
+    ],
+    "answer": 1,
+    "explain": "矩阵的第 $j$ 列就是第 $j$ 个基向量变换后落到的位置。第一列对应 $\\hat{\\imath}$，第二列对应 $\\hat{\\jmath}$。"
+   },
+   {
+    "q": "$\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}$ 等于？",
+    "options": [
+     "$\\begin{bmatrix} 4 \\\\ 6 \\end{bmatrix}$",
+     "$\\begin{bmatrix} 1 \\\\ 3 \\end{bmatrix}$",
+     "$\\begin{bmatrix} 5 \\\\ 5 \\end{bmatrix}$",
+     "$\\begin{bmatrix} 3 \\\\ 7 \\end{bmatrix}$"
+    ],
+    "answer": 3,
+    "explain": "按列看：$1 \\cdot \\begin{bmatrix}1\\\\3\\end{bmatrix} + 1 \\cdot \\begin{bmatrix}2\\\\4\\end{bmatrix} = \\begin{bmatrix}3\\\\7\\end{bmatrix}$。选项 A 是把列加错成了行。"
+   },
+   {
+    "q": "矩阵乘积 $AB$ 作用在向量上，表示的变换顺序是？",
+    "options": [
+     "先做 $B$，再做 $A$",
+     "先做 $A$，再做 $B$",
+     "同时做 $A$ 和 $B$",
+     "顺序无所谓"
+    ],
+    "answer": 0,
+    "explain": "$(AB)\\mathbf{v} = A(B\\mathbf{v})$：$B$ 离向量最近，先作用。和函数复合 $f(g(x))$ 一样从右往左读。"
+   },
+   {
+    "q": "关于矩阵乘法，下面哪个说法正确？",
+    "options": [
+     "总是满足 $AB = BA$",
+     "满足结合律 $(AB)C = A(BC)$，但一般不满足交换律",
+     "既不满足结合律也不满足交换律",
+     "只有方阵才能相乘"
+    ],
+    "answer": 1,
+    "explain": "结合律成立（都是先 $C$ 再 $B$ 再 $A$）；交换律一般不成立，比如先旋转后剪切 ≠ 先剪切后旋转。非方阵只要形状匹配也能相乘。"
+   },
+   {
+    "q": "$A$ 的形状是 $(3, 4)$，$B$ 的形状是 $(4, 2)$，$AB$ 的形状是？",
+    "options": [
+     "$(4, 4)$",
+     "$(3, 4)$",
+     "$(4, 2)$",
+     "$(3, 2)$"
+    ],
+    "answer": 3,
+    "explain": "$(n, m) \\times (m, l) = (n, l)$：中间的 4 消掉，结果取两头 $(3, 2)$。"
+   },
+   {
+    "q": "$A$ 的形状是 $(3, 4)$，$C$ 的形状是 $(3, 4)$，`A @ C` 会怎样？",
+    "options": [
+     "得到 $(3, 3)$",
+     "得到 $(4, 4)$",
+     "报错，因为 $A$ 的列数 4 ≠ $C$ 的行数 3",
+     "得到 $(3, 4)$"
+    ],
+    "answer": 2,
+    "explain": "矩阵乘法要求左边的列数等于右边的行数。想得到 $(3, 3)$ 应该写 `A @ C.T`（$C$ 的转置是 $(4, 3)$）。"
+   },
+   {
+    "q": "一个 $2 \\times 5$ 的矩阵作为变换，把什么空间映射到什么空间？",
+    "options": [
+     "五维空间 → 二维空间",
+     "二维空间 → 五维空间",
+     "二维空间 → 二维空间",
+     "五维空间 → 五维空间"
+    ],
+    "answer": 0,
+    "explain": "它有 5 列（输入是 5 维向量），每列是 2 维向量（输出在 2 维）。$m \\times n$ 矩阵把 $n$ 维映射到 $m$ 维。"
+   },
+   {
+    "q": "为什么没有激活函数的多层网络，表达能力和单层线性模型一样？",
+    "options": [
+     "因为参数太少",
+     "因为多个线性变换的复合仍然是线性变换",
+     "因为梯度会消失",
+     "因为矩阵乘法不满足交换律"
+    ],
+    "answer": 1,
+    "explain": "$W_3(W_2(W_1\\mathbf{x}))= (W_3W_2W_1)\\mathbf{x}$，可以合并成一个矩阵。非线性激活函数才让「深」有意义。"
+   },
+   {
+    "q": "$(AB)_{ij}$ 的计算方法是？",
+    "options": [
+     "$A_{ij} \\times B_{ij}$",
+     "$A$ 的第 $j$ 列和 $B$ 的第 $i$ 行对应相乘再相加",
+     "$A_{ij} + B_{ij}$",
+     "$A$ 的第 $i$ 行和 $B$ 的第 $j$ 列对应相乘再相加"
+    ],
+    "answer": 3,
+    "explain": "$(AB)_{ij} = \\sum_k A_{ik}B_{kj}$。选项 A 是**逐元素乘积**（Hadamard 积，NumPy 里写 `A * B`），和矩阵乘法 `A @ B` 是两回事，写代码时常混淆。"
+   }
+  ]
+ }
+}

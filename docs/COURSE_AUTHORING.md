@@ -13,6 +13,7 @@
 - 讲义里**不能出现写作提示类的文字**（比如「本节的讲法」「提示词」「面向高中生」）；那是给 Claude 的指示，不是讲义内容
 - 格式她认可，不要再改版式；**一次出完整门课，全部验证过再一次性汇报**，不要每节都汇报
 - 汇报用中文，直接、温暖、不恭维；最多问一个问题；**不替她 commit / push**
+- **不要在她的仓库里运行任何 git 命令**（包括 `git status`、`git diff`）：虚拟环境里的 git 会留下一个删不掉的 `.git/index.lock`，她之后提交会报 “A lock file already exists”，要她自己去 `.git` 文件夹里手动删除。要看改了什么，用 `ls`、`find -newer` 或对比文件，不要用 git
 
 ### 0.2 每一节的固定结构（按顺序）
 1. **学习目标** `objectives`：4–5 条，关键概念写成 `**中文 (English)**`
@@ -57,11 +58,12 @@
 - 不确定的事实不要写；视频用 `yt.py verify` 核实，**没看过内容就只能说是按标题和时长选的**，交付时要告诉她
 - 检查：`python tools/course/<课>NN.py`（自动检查测验和公式配对）→ `python tools/course/validate.py --online`（联网核实视频和链接；偶尔因网络超时失败，重跑即可）→ `npm test` → 把所有公式用 KaTeX 试渲染（抽取用的正则同渲染器，0 个出错才算过）→ 确认讲义里没有写作提示类文字
 
-### 0.6 四门课的顺序（页面上的「第 N 步」读的是 `course.json` 的 `order` / `order_note`）
+### 0.6 五门课的顺序（页面上的「第 N 步」读的是 `course.json` 的 `order` / `order_note`）
 1. **py-0 Python 软件基础**：先学，后面都要写代码
 2. **prob-0 概率统计补漏**：ARENA 的概率、信息论要用
 3. **arena-0.0 ARENA 前置知识**：主线技术课
 4. **dsa-0 数据结构与算法**：Master 先修，可在 ARENA 之间穿插；想先准备申请就提到第 3 步
+5. **wm-0 通往世界模型**：选修衔接课（RL、VAE、状态空间、基于模型的 RL、Dreamer/JEPA），学完 ARENA 0.0 再开始
 
 要改顺序：改 `courses/index.json` 里的排列，以及每门课 `course.json` 的 `order`、`order_note`，并同步 README「学习顺序」一节。
 

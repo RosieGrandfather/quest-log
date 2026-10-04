@@ -1,0 +1,240 @@
+{
+ "id": "u10",
+ "title": "Python 与 NumPy 基础",
+ "en": "Python & NumPy",
+ "minutes": 45,
+ "objectives": [
+  "查漏补缺 ARENA 期望你掌握的 Python 语法：`*args / **kwargs`、推导式、生成器、装饰器、`for / else` 等",
+  "理解 NumPy 数组的 **形状 (shape)**、**数据类型 (dtype)**、**轴 (axis)**",
+  "熟练使用 **索引与切片 (indexing & slicing)**、**布尔掩码 (boolean mask)**，知道 **视图 (view)** 和 **副本 (copy)** 的区别",
+  "理解 **向量化 (vectorization)**：用数组运算代替 Python 循环"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### ARENA 对 Python 的要求\n\nARENA 说：「Python 要扎实，因为整个项目都用它」，大致标准是熟练掌握 *Intermediate Python* 这本在线书里 **80–90% 的内容，一直到第 21 节 for/else**。NumPy 则是「高性能 Python 的基本功」，而且它的语法和 PyTorch 几乎一样（常见区别：NumPy 用 `axis`，PyTorch 用 `dim`）。\n\n这一节前半部分是 Python 语法速查（15 分钟，边读边在 Colab / Jupyter 里敲一遍效果最好），后半部分看一个 NumPy 视频（24 分钟）再对照要点。下面代码块里的注释，都是**实际运行后的输出**。\n\n### Python：容易被忽略的几个语法\n\n**1. `*args` 和 `**kwargs`：接收任意多个参数**\n\n```python\ndef f(*args, **kwargs):\n    return args, kwargs\n\nf(1, 2, lr=0.1)   # ((1, 2), {'lr': 0.1})\n```\n\n`args` 是位置参数组成的**元组**，`kwargs` 是关键字参数组成的**字典**。PyTorch 源码里到处是这种写法。\n\n**2. 推导式 (comprehension)**\n\n```python\nsquares = [x * x for x in range(5)]                 # [0, 1, 4, 9, 16]\nevens   = {x for x in range(10) if x % 2 == 0}      # 集合 {0, 2, 4, 6, 8}\nlengths = {w: len(w) for w in [\"cat\", \"tiger\"]}     # {'cat': 3, 'tiger': 5}\n```\n\n**3. 生成器 (generator) 与 `yield`**：按需一个个产生值，不用一次性存进内存。PyTorch 的 `model.parameters()` 返回的就是生成器。\n\n```python\ndef count_up(n):\n    for i in range(n):\n        yield i\n\ng = count_up(3)\nnext(g), next(g), list(g)   # 0, 1, [2]   —— 用过的值不会再出现\n```\n\n**4. `enumerate` 和 `zip`**\n\n```python\nfor i, (a, b) in enumerate(zip(\"xy\", [10, 20])):\n    print(i, a, b)          # 0 x 10 / 1 y 20\n```\n\n**5. `for / else`**：`else` 在循环**没有被 `break` 打断**时执行。\n\n```python\nfor x in [1, 3, 5]:\n    if x % 2 == 0:\n        print(\"找到偶数\", x); break\nelse:\n    print(\"没有偶数\")        # 会打印这一句\n```\n\n**6. 可变默认参数的坑**\n\n```python\ndef add_item(item, box=[]):\n    box.append(item); return box\n\nadd_item(1), add_item(2)   # ([1, 2], [1, 2])  —— 两次调用共用了同一个列表！\n```\n\n默认值只在函数定义时创建一次。正确写法是 `box=None`，在函数里 `if box is None: box = []`。\n\n**7. 装饰器 (decorator)**：一个「接收函数、返回新函数」的函数，用 `@` 语法套在别的函数上。`@torch.no_grad()`、`@dataclass` 都是装饰器。\n\n```python\nimport functools\n\ndef log_calls(fn):\n    @functools.wraps(fn)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {fn.__name__}\")\n        return fn(*args, **kwargs)\n    return wrapper\n\n@log_calls\ndef double(x): return 2 * x\n\ndouble(4)   # 先打印 calling double，再返回 8\n```\n\n**8. 其他常用的**：f-string `f\"loss={loss:.3f}\"`、`with open(...) as f:` 上下文管理器、`lambda x: x + 1`、类型提示 `def f(x: int) -> float:`、`@dataclass` 自动生成 `__init__`。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "lLRBYKwP8GQ",
+   "title": "视频：Ultimate Guide to NumPy Arrays（Python Simplified）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 24
+  },
+  {
+   "type": "text",
+   "md": "### NumPy 要点\n\n**1. 数组的三个基本属性**\n\n```python\nimport numpy as np\na = np.arange(12).reshape(3, 4)\na.shape, a.ndim, a.dtype    # (3, 4)  2  int64\n```\n\n- **形状 (shape)**：各维度的大小。写代码时**最常出错的就是形状**，养成随手 `print(x.shape)` 的习惯。\n- **数据类型 (dtype)**：`int64`、`float32` 等。深度学习里一般用 `float32`，整数和浮点混用时要留意。\n- 创建数组：`np.zeros((2, 3))`、`np.ones(3)`、`np.arange(n)`、`np.linspace(0, 1, 5)`、`np.random.rand(...)`。\n\n**2. 索引与切片**\n\n```python\na[1]          # [4 5 6 7]        第 1 行\na[:, 2]       # [ 2  6 10]       第 2 列\na[1:, :2]     # [[4, 5], [8, 9]] 第 1 行起、前 2 列\na[a > 6]      # [ 7  8  9 10 11] 布尔掩码：取出所有大于 6 的元素\n```\n\n**3. 轴 (axis)：沿着哪个维度「压缩」**\n\n```python\na.sum(axis=0)   # [12 15 18 21]  沿第 0 维（行方向）加，每列得到一个数\na.sum(axis=1)   # [ 6 22 38]     沿第 1 维加，每行得到一个数\n```\n\n记法：`axis=k` 就是**把第 k 维消掉**。形状 `(3, 4)` 沿 `axis=0` 求和得到 `(4,)`。PyTorch 里写 `a.sum(dim=0)`。\n\n**4. 视图 (view) 与副本 (copy)**\n\n```python\nb = a[0];  b[0] = 100;  a[0, 0]         # 100 —— 切片是视图，改 b 就改了 a\nc = a[0].copy();  c[1] = -1;  a[0, 1]   # 1   —— copy 之后互不影响\n```\n\n基本切片返回**视图**，和原数组共享内存；想要独立的数据就 `.copy()`（PyTorch 里是 `.clone()`）。\n\n**5. 向量化：别写 Python 循环**\n\n对百万级数据，`(x * 2).sum()` 这样的数组运算比 `for` 循环快几十到上百倍，因为计算在底层 C 代码里完成。ARENA 的练习要求你用张量运算代替循环，这是贯穿整个课程的习惯。\n\n**6. 矩阵运算**：`a.T` 转置，`a @ b` 矩阵乘法，`a * b` 是**逐元素**乘法——两者不要混淆。"
+  },
+  {
+   "type": "think",
+   "q": "`x` 的形状是 `(5, 3)`。`x.mean(axis=0)` 和 `x.mean(axis=1)` 的形状分别是？",
+   "a": "- `x.mean(axis=0)`：消掉第 0 维，形状 `(3,)`，是每一**列**的平均值。\n- `x.mean(axis=1)`：消掉第 1 维，形状 `(5,)`，是每一**行**的平均值。\n\n如果想保留被消掉的维度（方便后面广播），加 `keepdims=True`：`x.mean(axis=1, keepdims=True)` 的形状是 `(5, 1)`。第 14 节会大量用到。"
+  },
+  {
+   "type": "think",
+   "q": "下面的函数有什么问题？怎么改？\n\n```python\ndef make_config(name, tags={}):\n    tags[\"name\"] = name\n    return tags\n```",
+   "a": "**可变默认参数**：`tags={}` 这个字典只在定义函数时创建一次，每次调用都在往**同一个**字典里写，结果会互相污染。\n\n```python\ndef make_config(name, tags=None):\n    if tags is None:\n        tags = {}\n    tags[\"name\"] = name\n    return tags\n```"
+  },
+  {
+   "type": "think",
+   "q": "怎样不写循环，把一个数组里所有负数替换成 0？",
+   "a": "用布尔掩码赋值：\n\n```python\nx[x < 0] = 0\n```\n\n或者 `np.maximum(x, 0)`（返回新数组，不修改原数组）。后者就是 ReLU 的 NumPy 实现。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "可变参数",
+     "*args / **kwargs",
+     "任意多个位置 / 关键字参数"
+    ],
+    [
+     "推导式",
+     "comprehension",
+     "`[f(x) for x in xs if ...]`"
+    ],
+    [
+     "生成器",
+     "generator / yield",
+     "按需产生值，节省内存"
+    ],
+    [
+     "装饰器",
+     "decorator",
+     "用 `@` 包装函数"
+    ],
+    [
+     "数组",
+     "ndarray",
+     "NumPy 的多维数组"
+    ],
+    [
+     "形状",
+     "shape",
+     "各维度的大小"
+    ],
+    [
+     "数据类型",
+     "dtype",
+     "`int64`、`float32` 等"
+    ],
+    [
+     "轴",
+     "axis（PyTorch 中是 dim）",
+     "沿哪个维度做归约"
+    ],
+    [
+     "布尔掩码",
+     "boolean mask",
+     "`a[a > 6]` 按条件选元素"
+    ],
+    [
+     "视图 / 副本",
+     "view / copy",
+     "是否与原数组共享内存"
+    ],
+    [
+     "向量化",
+     "vectorization",
+     "用数组运算代替 Python 循环"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Programming 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
+  },
+  {
+   "title": "Intermediate Python（在线书）",
+   "url": "https://book.pythontips.com/en/latest/",
+   "note": "ARENA 的标准：掌握到第 21 节 for/else"
+  },
+  {
+   "title": "Python 官方教程",
+   "url": "https://docs.python.org/3/tutorial/",
+   "note": "更系统的 Python 讲解"
+  },
+  {
+   "title": "100 NumPy Exercises",
+   "url": "https://github.com/rougier/numpy-100",
+   "note": "ARENA 推荐的练习，熟练后可以改用 PyTorch 来做"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`def f(*args, **kwargs)` 被调用为 `f(1, 2, lr=0.1)` 时，`args` 和 `kwargs` 分别是？",
+    "options": [
+     "`[1, 2]` 和 `['lr', 0.1]`",
+     "`(1, 2)` 和 `{'lr': 0.1}`",
+     "`{1, 2}` 和 `(lr, 0.1)`",
+     "`1` 和 `2`"
+    ],
+    "answer": 1,
+    "explain": "`args` 收集位置参数，是元组；`kwargs` 收集关键字参数，是字典。"
+   },
+   {
+    "q": "`[x * 2 for x in range(4) if x != 2]` 的结果是？",
+    "options": [
+     "`[0, 2, 6]`",
+     "`[0, 2, 4, 6]`",
+     "`[2, 6]`",
+     "`[0, 1, 3]`"
+    ],
+    "answer": 0,
+    "explain": "`range(4)` 是 0, 1, 2, 3，去掉 2 后剩 0, 1, 3，每个乘 2 得 `[0, 2, 6]`。"
+   },
+   {
+    "q": "`for ... else` 结构中，`else` 块什么时候执行？",
+    "options": [
+     "循环体至少执行一次时",
+     "循环中出现异常时",
+     "循环被 `break` 打断时",
+     "循环正常结束、**没有**被 `break` 打断时"
+    ],
+    "answer": 3,
+    "explain": "`else` 只在循环「跑完了没被 break」时执行，常用来写「找了一圈没找到」的逻辑。"
+   },
+   {
+    "q": "`def add(item, box=[])` 连续调用 `add(1)`、`add(2)`，第二次返回什么？",
+    "options": [
+     "`[2]`",
+     "`[1]`",
+     "`[1, 2]`",
+     "报错"
+    ],
+    "answer": 2,
+    "explain": "默认值 `[]` 只在定义时创建一次，两次调用共用同一个列表。这是经典的可变默认参数陷阱。"
+   },
+   {
+    "q": "`a = np.arange(12).reshape(3, 4)`，`a.sum(axis=1)` 的形状是？",
+    "options": [
+     "`(3,)`",
+     "`(4,)`",
+     "`(3, 4)`",
+     "`(1,)`"
+    ],
+    "answer": 0,
+    "explain": "`axis=1` 表示把第 1 维（大小 4）消掉，剩下 `(3,)`，是每一行的和。"
+   },
+   {
+    "q": "同一个 `a`，`a[:, 1]` 取出的是？",
+    "options": [
+     "第 1 行 `[4, 5, 6, 7]`",
+     "第 1 列 `[1, 5, 9]`",
+     "`[0, 1]`",
+     "整个数组"
+    ],
+    "answer": 1,
+    "explain": "`:` 表示所有行，`1` 表示第 1 列（从 0 开始数），所以是 `[1, 5, 9]`。"
+   },
+   {
+    "q": "`b = a[0]; b[0] = 100` 之后，`a[0, 0]` 是多少？",
+    "options": [
+     "0",
+     "报错",
+     "取决于 dtype",
+     "100"
+    ],
+    "answer": 3,
+    "explain": "基本切片返回**视图**，和原数组共享内存，改 `b` 就是改 `a`。想要独立的数据要用 `.copy()`（PyTorch 里是 `.clone()`）。"
+   },
+   {
+    "q": "`a[a > 6]` 做的是什么？",
+    "options": [
+     "把大于 6 的元素改成 True",
+     "返回所有大于 6 的元素组成的一维数组",
+     "返回大于 6 的元素的个数",
+     "报错，不能用比较结果做索引"
+    ],
+    "answer": 1,
+    "explain": "`a > 6` 生成同形状的布尔数组，用它做索引就是**布尔掩码**，取出所有为 True 位置的元素。"
+   },
+   {
+    "q": "对两个形状都是 `(3, 3)` 的 NumPy 数组，`A * B` 和 `A @ B` 的区别是？",
+    "options": [
+     "`*` 是逐元素乘法，`@` 是矩阵乘法",
+     "两者完全相同",
+     "`*` 是矩阵乘法，`@` 是逐元素乘法",
+     "`@` 只能用于向量"
+    ],
+    "answer": 0,
+    "explain": "`*` 对应位置相乘；`@` 是行乘列再求和的矩阵乘法。混淆两者是很常见的 bug，而且形状相同时不会报错。"
+   },
+   {
+    "q": "为什么在 NumPy / PyTorch 里要尽量**向量化**，而不是写 Python 循环？",
+    "options": [
+     "因为 Python 不支持循环",
+     "因为向量化结果更精确",
+     "因为数组运算在底层 C 代码里批量完成，快得多",
+     "因为循环会改变数组的形状"
+    ],
+    "answer": 2,
+    "explain": "向量化把整批计算交给底层优化过的代码（以及 GPU），比逐个元素的 Python 循环快几十到上百倍。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "id": "u12",
+ "title": "开发工具：VS Code、Jupyter、Git、Conda",
+ "en": "Developer Tools",
+ "minutes": 45,
+ "objectives": [
+  "知道 ARENA 推荐 **VS Code** 的原因：快捷键、`# %%` 代码单元、调试器 (debugger)、类型检查",
+  "分清 **Jupyter Notebook / Colab** 和 `.py` 文件各自适合做什么",
+  "掌握 **Git** 的日常操作：克隆、建分支、暂存、提交、推送",
+  "理解为什么要用 **Conda 虚拟环境**，会创建和激活环境；认识几个最常用的 **Unix 命令**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么要学工具\n\nARENA 把 **VS Code** 和 **Jupyter / Colab** 标为高优先级，**Git** 和 **Conda** 标为中优先级，Unix 是加分项。工具本身不难，但不熟练会在 ARENA 里浪费大量时间——比如不会用调试器，只能到处加 `print`；不会用 Git，就没法和别人协作写 capstone 项目。\n\n这一节是**动手型**的：看视频时最好打开电脑跟着操作。**本节安排（约 45 分钟）**：视频一（15 分钟）→ VS Code 要点 → 视频二（2 分钟）→ Git 要点 → 视频三（9 分钟）→ Conda 与 Unix 要点 → 课后可以做 15 分钟的 Learn Git Branching 交互练习。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "f8_uF_IDV50",
+   "title": "视频一：Learn Visual Studio Code in 15 minutes（VS Code 官方）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 15
+  },
+  {
+   "type": "text",
+   "md": "### VS Code 要点\n\nARENA 建议用 VS Code 做结构化练习，而不是只用 Jupyter。主要理由：\n\n**1. 快捷键**（Windows / Linux 用 Ctrl，Mac 把 Ctrl 换成 Cmd、Alt 换成 Opt）\n\n| 功能 | 快捷键 |\n|---|---|\n| 命令面板 (Command Palette) | Ctrl + Shift + P |\n| 快速打开文件 | Ctrl + P |\n| 全局搜索 | Ctrl + Shift + F |\n| 选中下一个相同的词（多光标） | Ctrl + D |\n| 注释 / 取消注释当前行 | Ctrl + / |\n| 删除当前行 | Ctrl + Shift + K |\n| 向上 / 向下复制当前行 | Shift + Alt + ↑ / ↓ |\n| 显示 / 隐藏侧边栏 | Ctrl + B |\n| 触发代码补全 | Ctrl + Space |\n\n**2. `.py` 文件也能当 notebook 用**：在代码里写 `# %%` 作为单元分隔符，每个单元可以单独运行，输出显示在旁边的窗口里。既有 notebook 的交互性，又是能被 `import` 的普通 Python 文件。\n\n**3. 调试器 (debugger)**：点行号左边设 **断点 (breakpoint)**，程序运行到那里会暂停，可以查看每个变量的值和**张量的形状**，比到处加 `print` 高效得多。\n\n**4. 类型检查**：配合 Python 的 **类型提示 (type hints)**，在 `settings.json` 里设置 `\"python.analysis.typeCheckingMode\": \"basic\"`，写错类型时编辑器会直接标出来。\n\n**5. 其他**：内置测试面板（配合 `pytest`）、通过 SSH 在远程 GPU 机器上写代码、AI 辅助写代码 (Copilot)。\n\n### Jupyter Notebook / Colab\n\n- **Jupyter**：适合**探索和可视化**——边试边看图。缺点是容易堆出几百个单元，代码难以复用。ARENA 线下项目鼓励用 `.py` 文件，这样前几天写的代码可以直接 `import`。\n- **Google Colab**：在线版 Jupyter，**免费提供 GPU**。自学 ARENA、手边没有 GPU 的话，Colab 是最好的选择。本课程每一节的动手练习都可以在 Colab 里做。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "hwP7WQkmECE",
+   "title": "视频二：Git Explained in 100 Seconds（Fireship）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 2
+  },
+  {
+   "type": "text",
+   "md": "### Git 要点\n\n**Git** 是 **版本控制 (version control)** 工具：记录文件的每一次修改，可以随时回到过去的版本，也方便多人协作。**GitHub** 是托管 Git 仓库的网站。\n\n几个核心概念：\n\n- **仓库 (repository / repo)**：被 Git 管理的项目文件夹。\n- **提交 (commit)**：一次「存档」，记录这一刻所有被跟踪文件的状态，并附上说明。\n- **暂存区 (staging area)**：`git add` 把改动放进暂存区，决定下一次提交包含哪些内容。\n- **分支 (branch)**：一条独立的开发线，在分支上随便改，不影响主线 `main`。\n- **远程仓库 (remote)**：GitHub 上的那份，`push` 上传、`pull` 下载。\n\nARENA 希望你至少熟练下面这些操作：\n\n```bash\ngit clone https://github.com/ARENA-education/ARENA_materials.git   # 克隆仓库\ngit switch -c my-feature     # 新建并切换到分支（老写法：git checkout -b）\ngit status                   # 看看改了什么\ngit add solutions.py         # 暂存改动\ngit commit -m \"完成 einops 练习\"   # 提交\ngit push -u origin my-feature      # 推送分支到 GitHub\ngit pull                     # 拉取别人的更新\n```"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "1VVCd0eSkYc",
+   "title": "视频三：Master the basics of Conda environments in Python（The Jackson Laboratory）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "### Conda 虚拟环境\n\n不同项目需要不同版本的库（这个项目要 PyTorch 2.1，那个要 1.13），全装在一起会互相冲突。**虚拟环境 (virtual environment)** 给每个项目一个独立的「Python + 库」空间。ARENA 期间你会在一两个环境里工作。\n\n```bash\nconda create -n arena python=3.11   # 创建名为 arena 的环境\nconda activate arena                # 激活（命令行前面会显示 (arena)）\npip install -r requirements.txt     # 在环境里装项目依赖\nconda deactivate                    # 退出\nconda env list                      # 列出所有环境\n```\n\nVS Code 右下角可以选择用哪个环境的 Python 解释器 (interpreter)，要选对，否则会出现「明明装了却 import 不到」的问题。\n\n### 最常用的 Unix 命令\n\n| 命令 | 作用 |\n|---|---|\n| `pwd` | 显示当前目录 |\n| `ls` | 列出文件 |\n| `cd 目录` / `cd ..` | 进入目录 / 回到上一级 |\n| `mkdir 名字` | 新建目录 |\n| `cp` / `mv` / `rm` | 复制 / 移动或改名 / 删除 |\n| `cat 文件` | 打印文件内容 |\n| `grep \"文字\" 文件` | 在文件里搜索 |\n| `命令 > 文件` | 把输出写进文件 |\n| `命令1 \\| 命令2` | 管道：把前一个的输出交给后一个 |\n\n远程 GPU 服务器几乎都是 Linux，这些命令迟早会用到。"
+  },
+  {
+   "type": "think",
+   "q": "你在 `main` 分支上改坏了代码，还没有提交。怎么回到上一次提交的状态？如果想保留这些修改、先去做别的事呢？",
+   "a": "- **放弃未提交的修改**：`git restore 文件名`（或 `git restore .` 恢复所有文件）。注意这会**丢掉**这些改动。\n- **想保留修改、先切走**：`git stash` 把改动暂存起来，工作区恢复干净；回来后 `git stash pop` 取回。\n- 更好的习惯是：动手改之前先 `git switch -c 新分支`，在分支上随便试，出问题了直接切回 `main`。"
+  },
+  {
+   "type": "think",
+   "q": "`pip install torch` 之后，在 VS Code 里运行却报 `ModuleNotFoundError: No module named 'torch'`。最可能的原因是什么？",
+   "a": "**装的环境和运行的环境不是同一个。** 比如你在命令行里 `conda activate arena` 后装了 torch，但 VS Code 用的是另一个 Python 解释器。\n\n解决：在 VS Code 里按 Ctrl + Shift + P → 输入 *Python: Select Interpreter* → 选 `arena` 环境。也可以在终端里运行 `python -c \"import sys; print(sys.executable)\"` 看当前用的是哪个 Python。"
+  },
+  {
+   "type": "think",
+   "q": "什么时候用 Jupyter / Colab，什么时候用 `.py` 文件？",
+   "a": "- **Jupyter / Colab**：快速试验、画图、查看中间结果、需要免费 GPU。\n- **`.py` 文件**：要复用的代码（可以 `import`）、要写测试、要交给别人或长期维护的项目。\n\nVS Code 的 `# %%` 单元兼顾两者：在 `.py` 文件里像 notebook 一样一块块运行。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "命令面板",
+     "Command Palette",
+     "Ctrl + Shift + P，VS Code 的万能入口"
+    ],
+    [
+     "断点 / 调试器",
+     "breakpoint / debugger",
+     "程序暂停，查看变量"
+    ],
+    [
+     "类型提示",
+     "type hints",
+     "`def f(x: int) -> float`"
+    ],
+    [
+     "代码单元",
+     "`# %%` cell",
+     "让 .py 文件像 notebook 一样运行"
+    ],
+    [
+     "版本控制",
+     "version control",
+     "记录每一次修改"
+    ],
+    [
+     "仓库",
+     "repository",
+     "被 Git 管理的项目"
+    ],
+    [
+     "提交",
+     "commit",
+     "一次存档"
+    ],
+    [
+     "暂存区",
+     "staging area",
+     "`git add` 选择要提交的改动"
+    ],
+    [
+     "分支",
+     "branch",
+     "独立的开发线"
+    ],
+    [
+     "虚拟环境",
+     "virtual environment",
+     "每个项目独立的 Python + 库"
+    ],
+    [
+     "解释器",
+     "interpreter",
+     "实际运行代码的那个 Python"
+    ],
+    [
+     "管道",
+     "pipe `|`",
+     "把一个命令的输出交给下一个"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Software Engineering 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "VS Code 快捷键表、Git 要求的出处"
+  },
+  {
+   "title": "Learn Git Branching（交互式练习）",
+   "url": "https://learngitbranching.js.org/",
+   "note": "ARENA 推荐，强烈建议做前几关"
+  },
+  {
+   "title": "VS Code：Python 交互式窗口（# %% 单元）",
+   "url": "https://code.visualstudio.com/docs/python/jupyter-support-py"
+  },
+  {
+   "title": "Conda 官方：Getting started",
+   "url": "https://conda.io/projects/conda/en/latest/user-guide/getting-started.html"
+  },
+  {
+   "title": "UC Berkeley UNIX Tutorial",
+   "url": "https://people.ischool.berkeley.edu/~kevin/unix-tutorial/toc.html",
+   "note": "ARENA 推荐：看到第 4 节就够"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在 VS Code 里打开 **命令面板 (Command Palette)** 的快捷键是？（Windows）",
+    "options": [
+     "Ctrl + P",
+     "Ctrl + B",
+     "Ctrl + Shift + P",
+     "Ctrl + D"
+    ],
+    "answer": 2,
+    "explain": "Ctrl + Shift + P 打开命令面板；Ctrl + P 是快速打开文件；Ctrl + B 切换侧边栏；Ctrl + D 选中下一个相同的词。"
+   },
+   {
+    "q": "在 `.py` 文件里写 `# %%` 有什么作用？",
+    "options": [
+     "把这一行注释掉",
+     "把代码分成可以单独运行的单元，像 notebook 一样",
+     "设置断点",
+     "声明文件的编码"
+    ],
+    "answer": 1,
+    "explain": "VS Code 会把 `# %%` 识别为单元分隔符，每个单元可以单独运行，输出显示在交互式窗口里。"
+   },
+   {
+    "q": "调试时想让程序在某一行暂停、查看变量的值，应该？",
+    "options": [
+     "在那一行设置断点，用调试模式运行",
+     "在那一行写 `pause()`",
+     "把那一行删掉",
+     "按 Ctrl + /"
+    ],
+    "answer": 0,
+    "explain": "点击行号左侧设置断点，然后用调试模式运行（F5），程序会停在断点处，可以查看所有局部变量和张量形状。"
+   },
+   {
+    "q": "自学 ARENA 但自己电脑没有 GPU，最方便的选择是？",
+    "options": [
+     "不做需要 GPU 的练习",
+     "只用 CPU 慢慢跑所有内容",
+     "用 VS Code 的 Copilot",
+     "用 Google Colab，它免费提供 GPU"
+    ],
+    "answer": 3,
+    "explain": "ARENA 也提到：线上自学的同学无法获得他们提供的算力，Colab 是最佳选择。"
+   },
+   {
+    "q": "`git add` 的作用是？",
+    "options": [
+     "把改动放进暂存区，准备下一次提交",
+     "把代码上传到 GitHub",
+     "新建一个分支",
+     "下载别人的更新"
+    ],
+    "answer": 0,
+    "explain": "`add` 只是暂存；`commit` 才生成一次存档；`push` 才上传到远程。"
+   },
+   {
+    "q": "想新建一个叫 `exp` 的分支并切换过去，用哪条命令？",
+    "options": [
+     "`git branch -d exp`",
+     "`git push exp`",
+     "`git switch -c exp`",
+     "`git commit exp`"
+    ],
+    "answer": 2,
+    "explain": "`git switch -c exp`（老写法 `git checkout -b exp`）。`branch -d` 是删除分支。"
+   },
+   {
+    "q": "`git commit` 和 `git push` 的区别是？",
+    "options": [
+     "两者完全一样",
+     "`commit` 在本地生成一次存档；`push` 把本地的提交上传到远程仓库",
+     "`commit` 上传，`push` 存档",
+     "`push` 只能用于 main 分支"
+    ],
+    "answer": 1,
+    "explain": "提交是本地操作，没有网络也能做；推送才把提交同步到 GitHub。"
+   },
+   {
+    "q": "为什么要为不同项目使用不同的虚拟环境？",
+    "options": [
+     "为了让代码运行更快",
+     "因为 Python 只能装一个库",
+     "为了节省硬盘空间",
+     "避免不同项目需要的库版本互相冲突"
+    ],
+    "answer": 3,
+    "explain": "每个环境有自己独立的 Python 和库版本，一个项目升级 PyTorch 不会搞坏另一个项目。"
+   },
+   {
+    "q": "在命令行里激活名为 `arena` 的 conda 环境，用哪条命令？",
+    "options": [
+     "`conda activate arena`",
+     "`conda create arena`",
+     "`pip install arena`",
+     "`cd arena`"
+    ],
+    "answer": 0,
+    "explain": "`conda create -n arena ...` 是创建；`conda activate arena` 是激活，激活后提示符前面会显示 `(arena)`。"
+   },
+   {
+    "q": "Unix 命令 `ls | grep py` 做了什么？",
+    "options": [
+     "删除所有 py 文件",
+     "新建一个叫 py 的目录",
+     "列出当前目录的文件，只显示名字里含 py 的那些",
+     "打印 py 文件的内容"
+    ],
+    "answer": 2,
+    "explain": "`ls` 列出文件，管道 `|` 把结果交给 `grep py` 过滤出包含 \"py\" 的行。"
+   }
+  ]
+ }
+}

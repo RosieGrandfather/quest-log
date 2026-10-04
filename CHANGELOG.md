@@ -13,6 +13,14 @@
 
 ---
 
+## 2026-10-05 — ARENA 第 2–15 节全部改成新格式，新增衔接课 wm-0（通往世界模型）
+- **ARENA 第 2–15 节按 v3 重写**：每节加「标准定义 + 白话版」、真实运行的 NumPy / PyTorch 代码和小实验（梯度检验、梯度消失、PCA 与 LoRA 参数量、权重初始化、交叉熵拟合、广播与 einsum 对拍等）；视频、10 道测验沿用旧版（只改了解释里的「选项 A」式位置引用）；旧版备份在 `tools/course/aNN_old_uNN.json`。每节 45 分钟 → 85–115 分钟，整门课约 25 小时
+- **新增课程 `wm-0` 通往世界模型**（8 节，约 14 小时）：MDP、贝尔曼方程与动态规划、无模型学习（MC/TD/Q-learning）、策略梯度与深度 RL、潜变量与 VAE、序列与状态空间模型（HMM、卡尔曼、GRU）、基于模型的 RL、世界模型（Ha & Schmidhuber、Dreamer、JEPA、读论文指南与进一步学习资源）。学习顺序第 5 步，选修
+- 改了哪些文件：`courses/arena-0.0/u02…u15-*.json`、`course.json`（minutes）；新增 `courses/wm-0/`、`courses/index.json`、`tools/course/a02…a15*.py`、`w01…w08*.py`、`.gitignore`（忽略 `__pycache__`）；`README.md`、`docs/COURSE_AUTHORING.md`（顺序）
+- 需要注意：所有视频只按标题/频道选择，没逐个看过；新课里有少数事实标了「未核实」；手机上的渲染没看过。**提交前如果有 `.git/index.lock` 要自己删**（我从不运行 git）
+
+---
+
 ## 2026-10-04 — 出课格式写进文档、四门课排出学习顺序、ARENA 第 1 节改成新格式
 - **出课格式**：把 v3 格式（每节结构、渲染规则、脚本写法、质量检查、对 ARENA 旧节的重写方法）写进 `docs/COURSE_AUTHORING.md` 的新增第「〇」节；README 的「出新课程」一条改为先读这一节。下次出课直接读它
 - **学习顺序**：新增 README「学习顺序」一节；`courses/index.json` 改成 py-0 → prob-0 → arena-0.0 → dsa-0；每门课的 `course.json` 加了 `order`、`order_note`；「我的课程」页的卡片和课程页上显示「第 N 步 · 说明 · 约 X 小时」，页面顶部加了一行顺序提示

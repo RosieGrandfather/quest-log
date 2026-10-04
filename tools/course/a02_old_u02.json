@@ -1,0 +1,237 @@
+{
+ "id": "u02",
+ "title": "反向传播",
+ "en": "Backpropagation",
+ "minutes": 45,
+ "objectives": [
+  "说清楚 **反向传播 (backpropagation)** 要解决的问题：高效算出代价函数对**每一个参数**的偏导数",
+  "用 **链式法则 (chain rule)** 推出单个权重、偏置的梯度公式",
+  "理解为什么要「从后往前」算，以及一个神经元的梯度为什么要**对所有路径求和**",
+  "知道 **小批量随机梯度下降 (mini-batch SGD)** 和 **梯度消失 (vanishing gradient)** 是什么"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 接着上一节\n\n上一节讲到：梯度下降每一步都要算出代价函数 $C$ 对**全部 13,002 个参数**的偏导数，也就是梯度 $\\nabla C$。问题是——**怎么算？**\n\n最笨的办法是「逐个试」：把某个参数改动一点点，重新跑一遍网络，看代价变了多少。有多少个参数就要跑多少遍网络，现代模型动辄几十亿参数，这条路完全走不通。\n\n**反向传播 (backpropagation)** 就是答案：只需要**一次前向计算 + 一次反向计算**，就能得到所有参数的梯度。ARENA 第 0 章第 3 天会让你亲手实现一遍反向传播，所以现在先把直觉和公式打牢。\n\n**本节安排（约 45 分钟）**：导读 → 视频三（13 分钟，直觉）→ 要点 → 视频四（10 分钟，微积分推导）→ 要点和「想一想」。\n\n### 先复习：链式法则\n\n如果 $y = f(u)$，而 $u = g(x)$，那么 $x$ 变一点点对 $y$ 的影响，等于两段影响**相乘**：\n\n$$\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}$$\n\n直觉：$x$ 推动 $u$，$u$ 再推动 $y$。神经网络就是一长串这样的「推动」，反向传播就是把链式法则用到底。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Ilg3gGewQ5U",
+   "title": "视频三：Backpropagation, intuitively（深度学习第 3 集）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 13
+  },
+  {
+   "type": "text",
+   "md": "### 视频三要点：直觉\n\n**1. 想让某个输出神经元的激活值变大，有三条路**\n\n以「这张图是 2，希望输出层代表 2 的神经元更亮」为例：\n\n- **调大偏置 (bias)**；\n- **调整权重 (weight)**：连接上一层**越亮**的神经元，调它的权重效果越明显（改动幅度和上一层激活值成正比）；\n- **改变上一层的激活值**：权重为正的就让它更亮、权重为负的就让它更暗（改动幅度和权重成正比）。\n\n第三条路我们不能直接改，但可以把「希望上一层怎么变」的要求**再往前传**——这就是「反向传播」名字的由来。\n\n**2. 所有输出神经元的「愿望」要加起来**\n\n上一层的每个神经元，同时被输出层 10 个神经元「提要求」。把这些要求**加在一起**，就得到它应该怎么变；再对它的权重和偏置重复同样的过程，一层层往前推。\n\n**3. 对所有训练样本取平均**\n\n一张图片只代表一个样本的「愿望」。把**所有训练样本**的愿望平均起来，才是真正的负梯度方向。\n\n**4. 小批量随机梯度下降 (mini-batch stochastic gradient descent)**\n\n每一步都用全部数据算梯度太慢。实际做法是：把训练数据**随机打乱、分成小批 (mini-batch)**（比如每批 100 张），每一步只用一小批来估计梯度。方向不那么精确，但快得多——视频里的比喻是「一个醉汉跌跌撞撞地快步下山」，而不是「每一步都仔细计算的人缓慢下山」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "tIeHLnjs5U8",
+   "title": "视频四：Backpropagation calculus（深度学习第 4 集）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 视频四要点：用公式写出来\n\n**1. 最简单的情况：每层只有一个神经元**\n\n记最后一层为 $L$，对一个训练样本：\n\n$$z^{(L)} = w^{(L)} a^{(L-1)} + b^{(L)}, \\qquad a^{(L)} = \\sigma\\big(z^{(L)}\\big), \\qquad C_0 = \\big(a^{(L)} - y\\big)^2$$\n\n$w^{(L)}$ 影响 $z^{(L)}$，$z^{(L)}$ 影响 $a^{(L)}$，$a^{(L)}$ 影响 $C_0$。按链式法则：\n\n$$\\frac{\\partial C_0}{\\partial w^{(L)}} = \\frac{\\partial z^{(L)}}{\\partial w^{(L)}}\\cdot\\frac{\\partial a^{(L)}}{\\partial z^{(L)}}\\cdot\\frac{\\partial C_0}{\\partial a^{(L)}} = a^{(L-1)}\\cdot\\sigma'\\big(z^{(L)}\\big)\\cdot 2\\big(a^{(L)} - y\\big)$$\n\n同理：\n\n- 对偏置：$\\dfrac{\\partial z^{(L)}}{\\partial b^{(L)}} = 1$，所以 $\\dfrac{\\partial C_0}{\\partial b^{(L)}} = \\sigma'\\big(z^{(L)}\\big)\\cdot 2\\big(a^{(L)} - y\\big)$\n- 对上一层激活值：$\\dfrac{\\partial z^{(L)}}{\\partial a^{(L-1)}} = w^{(L)}$，所以 $\\dfrac{\\partial C_0}{\\partial a^{(L-1)}} = w^{(L)}\\cdot\\sigma'\\big(z^{(L)}\\big)\\cdot 2\\big(a^{(L)} - y\\big)$\n\n最后这一项就是「往前传的要求」：有了 $\\partial C_0 / \\partial a^{(L-1)}$，就可以对第 $L-1$ 层重复同样的计算。\n\n**2. 每层有多个神经元：对所有路径求和**\n\n上一层的神经元 $a^{(L-1)}_k$ 会通过**所有**下一层神经元影响代价，所以要把每条路径的影响加起来：\n\n$$\\frac{\\partial C_0}{\\partial a^{(L-1)}_k} = \\sum_{j} w^{(L)}_{jk}\\,\\sigma'\\big(z^{(L)}_j\\big)\\,\\frac{\\partial C_0}{\\partial a^{(L)}_j}$$\n\n**3. 为什么反向传播这么高效**\n\n从后往前算时，每一层都**复用**后一层已经算好的 $\\partial C / \\partial a$，不用从头重算。所以得到全部梯度的代价，只是前向计算的几倍（常数倍），而不是「参数个数」倍。\n\nPyTorch 的 **自动求导 (autograd)** 做的就是这件事：它记录前向计算的每一步（**计算图 (computational graph)**），调用 `.backward()` 时自动沿着图反向应用链式法则。第 11 节会用到。"
+  },
+  {
+   "type": "think",
+   "q": "为什么要「从后往前」算，而不是「从前往后」？",
+   "a": "我们关心的是**一个数**（代价 $C$）对**非常多的参数**的偏导数。\n\n从后往前算时，先得到 $\\partial C / \\partial a^{(L)}$，再一路往前，每一层都复用后一层的结果，一趟就能得到所有参数的梯度。\n\n如果从前往后算，每一次只能得到「某一个参数变化对后面所有量的影响」，要对每个参数各做一遍。输出只有一个、输入（参数）很多时，**反向**是最省的方向，这在数学上叫 **反向模式自动微分 (reverse-mode automatic differentiation)**。"
+  },
+  {
+   "type": "think",
+   "q": "Sigmoid 的导数最大只有 0.25。网络很深时，这会带来什么问题？",
+   "a": "$\\sigma'(z) = \\sigma(z)\\big(1-\\sigma(z)\\big)$，在 $z=0$ 时最大，为 $0.5 \\times 0.5 = 0.25$。\n\n反向传播每经过一层，就要乘一个 $\\sigma'(z)$。10 层下来就是至多 $0.25^{10} \\approx 10^{-6}$ 这样的量级，前面几层几乎收不到梯度、学不动——这就是 **梯度消失 (vanishing gradient)**。这也是上一节提到的 ReLU 更受欢迎的原因之一：它在正区间的导数是 1。"
+  },
+  {
+   "type": "think",
+   "q": "为什么梯度要对训练样本**取平均**，而实际训练时又只用一小批 (mini-batch)？",
+   "a": "代价函数的定义就是对所有训练样本的平均，所以真正的梯度也是所有样本梯度的平均。\n\n但每一步都遍历全部数据太慢。随机抽一小批样本算出的平均梯度，是真实梯度的一个**有噪声但无偏的估计**：方向大致对，计算量却小得多。走得更多步、每步更快，整体上反而收敛得更快。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "反向传播",
+     "backpropagation",
+     "一次反向计算得到所有参数的梯度"
+    ],
+    [
+     "链式法则",
+     "chain rule",
+     "复合函数的导数 = 各段导数相乘"
+    ],
+    [
+     "加权输入",
+     "weighted input $z$",
+     "$z = wa + b$，进激活函数之前的值"
+    ],
+    [
+     "偏导数",
+     "partial derivative",
+     "只动一个变量时函数的变化率"
+    ],
+    [
+     "小批量",
+     "mini-batch",
+     "每一步只用一小部分训练数据"
+    ],
+    [
+     "随机梯度下降",
+     "stochastic gradient descent (SGD)",
+     "用小批量估计梯度的梯度下降"
+    ],
+    [
+     "计算图",
+     "computational graph",
+     "记录前向计算每一步的图"
+    ],
+    [
+     "自动求导",
+     "autograd",
+     "PyTorch 自动做反向传播的机制"
+    ],
+    [
+     "梯度消失",
+     "vanishing gradient",
+     "梯度逐层变小，前面的层学不动"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Neural Networks 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "3B1B 第 3 集为推荐内容"
+  },
+  {
+   "title": "3Blue1Brown：Neural Networks 系列（含文字版讲义）",
+   "url": "https://www.3blue1brown.com/topics/neural-networks"
+  },
+  {
+   "title": "Michael Nielsen：Neural Networks and Deep Learning 第 2 章",
+   "url": "http://neuralnetworksanddeeplearning.com/chap2.html",
+   "note": "反向传播的完整推导，ARENA 选读"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "反向传播 (backpropagation) 算法要解决的核心问题是什么？",
+    "options": [
+     "决定网络应该有多少层",
+     "高效地算出代价函数对所有参数的偏导数（梯度）",
+     "把训练数据分成小批",
+     "选择合适的激活函数"
+    ],
+    "answer": 1,
+    "explain": "梯度下降需要梯度，反向传播是**计算梯度**的高效算法。它本身不负责更新参数——更新参数是梯度下降（优化器）的事。"
+   },
+   {
+    "q": "设 $C = f(a)$，$a = g(z)$，$z = h(w)$。按链式法则，$\\dfrac{\\partial C}{\\partial w}$ 等于？",
+    "options": [
+     "$\\dfrac{\\partial C}{\\partial a} + \\dfrac{\\partial a}{\\partial z} + \\dfrac{\\partial z}{\\partial w}$",
+     "$\\dfrac{\\partial C}{\\partial a}$",
+     "$\\dfrac{\\partial C}{\\partial a}\\cdot\\dfrac{\\partial a}{\\partial z}\\cdot\\dfrac{\\partial z}{\\partial w}$",
+     "$\\dfrac{\\partial z}{\\partial w}$"
+    ],
+    "answer": 2,
+    "explain": "链式法则是各段导数**相乘**，不是相加。$w$ 推动 $z$，$z$ 推动 $a$，$a$ 推动 $C$，影响逐段相乘。"
+   },
+   {
+    "q": "对 $z = w\\,a^{(L-1)} + b$，$\\dfrac{\\partial z}{\\partial w}$ 等于？",
+    "options": [
+     "$a^{(L-1)}$",
+     "$w$",
+     "$b$",
+     "$1$"
+    ],
+    "answer": 0,
+    "explain": "$z$ 对 $w$ 是线性的，系数就是 $a^{(L-1)}$。这说明：上一层神经元越亮，调它对应的权重效果越明显。"
+   },
+   {
+    "q": "同样对 $z = w\\,a^{(L-1)} + b$，$\\dfrac{\\partial z}{\\partial b}$ 等于？",
+    "options": [
+     "$w$",
+     "$a^{(L-1)}$",
+     "$0$",
+     "$1$"
+    ],
+    "answer": 3,
+    "explain": "$b$ 直接加在 $z$ 上，系数是 1。所以偏置的梯度就等于 $\\partial C / \\partial z$ 本身。"
+   },
+   {
+    "q": "为什么叫「反向」传播？",
+    "options": [
+     "因为它把训练数据倒过来喂给网络",
+     "因为它从输出层开始往前算，每一层复用后一层算好的导数",
+     "因为它让代价函数变大",
+     "因为它随机打乱参数的顺序"
+    ],
+    "answer": 1,
+    "explain": "先算出代价对输出层的导数，再用链式法则一层层往前推。复用后一层的结果，是它高效的关键。"
+   },
+   {
+    "q": "上一层的神经元 $a^{(L-1)}_k$ 连接着下一层的多个神经元。计算 $\\partial C / \\partial a^{(L-1)}_k$ 时要怎么做？",
+    "options": [
+     "只看权重最大的那条连接",
+     "取所有路径影响的平均值",
+     "它对代价没有影响，结果为 0",
+     "把经过下一层每个神经元的所有路径的影响加起来"
+    ],
+    "answer": 3,
+    "explain": "$a_k$ 通过每一个下一层神经元影响代价，总影响是各条路径之和：$\\sum_j w_{jk}\\,\\sigma'(z_j)\\,\\partial C/\\partial a_j$。"
+   },
+   {
+    "q": "**小批量随机梯度下降 (mini-batch SGD)** 每一步怎么算梯度？",
+    "options": [
+     "用随机抽取的一小批训练样本估计梯度",
+     "用全部训练样本精确计算梯度",
+     "只用一个固定的样本",
+     "不算梯度，随机调整参数"
+    ],
+    "answer": 0,
+    "explain": "每一步只用一小批（比如 100 个）样本，得到一个有噪声但大致正确的梯度估计。每步快得多，整体收敛通常也更快。"
+   },
+   {
+    "q": "Sigmoid 导数的最大值是多少？这对深层网络意味着什么？",
+    "options": [
+     "1，不会造成问题",
+     "0.5，梯度会变大",
+     "0.25，反向传播时逐层相乘会让梯度越来越小（梯度消失）",
+     "没有最大值"
+    ],
+    "answer": 2,
+    "explain": "$\\sigma'(z)=\\sigma(z)(1-\\sigma(z))$，最大值在 $z=0$ 处为 $0.25$。很多层连乘后梯度指数级变小，前面的层几乎学不动。"
+   },
+   {
+    "q": "和「每次改动一个参数、重新跑一遍网络」相比，反向传播计算全部梯度的代价大约是？",
+    "options": [
+     "和参数个数成正比，每个参数跑一遍",
+     "只是一次前向计算的常数倍",
+     "需要参数个数的平方次计算",
+     "无法计算全部参数的梯度"
+    ],
+    "answer": 1,
+    "explain": "反向传播只需要一次前向 + 一次反向，总计算量是前向计算的常数倍（通常两三倍），和参数个数无关。这正是深度学习能训练几十亿参数模型的基础。"
+   },
+   {
+    "q": "单个样本的代价 $C_0 = (a^{(L)} - y)^2$，那么 $\\dfrac{\\partial C_0}{\\partial a^{(L)}}$ 等于？",
+    "options": [
+     "$(a^{(L)} - y)^2$",
+     "$a^{(L)} - y$",
+     "$2y$",
+     "$2(a^{(L)} - y)$"
+    ],
+    "answer": 3,
+    "explain": "对 $(a-y)^2$ 求导得 $2(a-y)$。这是反向传播的「起点」：输出离目标越远，往回传的信号越强。"
+   }
+  ]
+ }
+}

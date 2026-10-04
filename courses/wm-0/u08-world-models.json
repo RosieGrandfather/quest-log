@@ -1,0 +1,279 @@
+{
+ "id": "u08",
+ "title": "世界模型：Dreamer、JEPA 与读论文",
+ "en": "World Models: Dreamer, JEPA & Reading Papers",
+ "minutes": 110,
+ "objectives": [
+  "说清 **世界模型 (world model)** 是什么、有哪三种用途（压缩表示、想象 / 模拟、规划），能画出 Ha & Schmidhuber 的 **V / M / C** 结构并说出每个部分的作用",
+  "理解 **RSSM (recurrent state-space model)**：确定性状态 + 随机状态、先验与后验、KL 项，以及 PlaNet 到 Dreamer 系列「在想象中训练 actor-critic」的思路",
+  "理解 **JEPA 类方法「在潜空间预测而不是像素」** 的动机，知道 **表示坍缩 (collapse)** 为什么会发生、常见的防御思路，并能用 NumPy 复现一个玩具实验",
+  "知道视频 / 生成式世界模型（Genie、Sora 报告、DIAMOND 等）的现状和各自**自己承认**的局限，理解评估世界模型为什么很难",
+  "有一份可执行的 **读论文顺序**：每篇论文看什么、带着什么问题读；并知道下一步可以学什么（UPenn CIS 6280、learn-world-model）"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n前面七节把拼图都放齐了：MDP 与价值函数（第 1 到 3 节）、策略梯度（第 4 节）、VAE 与潜变量（第 5 节）、状态空间模型（第 6 节）、基于模型的规划与它的毛病（第 7 节）。这一节把它们拼成世界模型。\n\n> **标准定义 · 世界模型 (world model)**\n>\n> 世界模型是智能体学到的、关于环境如何运转的**内部模型**：它能把高维观测压缩成紧凑的潜状态，并预测「在给定动作下，潜状态接下来会怎样变化」（有的还预测奖励）。形式上就是第 6 节的潜在动力学模型\n>\n> $$q(z_t\\mid o_{\\le t},a_{<t}),\\qquad p(z_{t+1}\\mid z_t,a_t),\\qquad p(o_t\\mid z_t),\\qquad p(r_t\\mid z_t)$$\n>\n> 它有三种用途：**表示**（潜状态当作策略的输入）、**模拟**（在想象里生成经验，训练策略）、**规划**（在模型里搜索动作）。\n>\n> *English: A world model is a learned internal model of the environment: it compresses observations into a latent state and predicts how that state evolves under actions (and sometimes rewards). It can be used as a representation, as a simulator for imagined experience, and for planning.*\n\n**白话版：「脑子里的小宇宙」。** 你闭着眼睛想象把杯子推出桌边会发生什么，不需要真的推。世界模型就是让机器也有这样一个「可以在里面试错」的小宇宙。\n\n**学完它你就能看懂这几件事：**\n\n- 《World Models》（Ha & Schmidhuber）、PlaNet、Dreamer 系列论文的模型图和训练流程；\n- 论文里「imagination」「latent overshooting」「posterior / prior」「KL balancing」这些词在说什么；\n- 为什么 JEPA 路线主张「不要预测像素」，而 DIAMOND 又说「视觉细节很重要」，两者并不矛盾，而是在不同任务上的取舍；\n- 读 UPenn CIS 6280 这类课程的大纲时，知道自己已经具备了哪些基础，缺的是哪些。\n\n**本节安排（约 110 分钟）**：《World Models》的 V / M / C（15 分钟 + 视频 10 分钟）→ 动手：玩具潜变量世界模型（20 分钟）→ PlaNet 与 Dreamer：RSSM 与想象中训练（20 分钟 + 视频 5 分钟）→ JEPA 与坍缩实验（15 分钟）→ 视频 / 生成式世界模型的现状（10 分钟）→ 评估的难点与读论文指南（15 分钟）→ 下一步 →「想一想」。本节以读论文为主，需要时请打开文中的论文链接。\n\n### 经典起点：Ha & Schmidhuber 的 V / M / C\n\n下面的细节来自我对论文及其交互网页（worldmodels.github.io）的核对。\n\n> **标准定义 · V / M / C 结构 (Ha & Schmidhuber, 2018)**\n>\n> - **V (Vision)**：卷积 **VAE**，把 64×64 的 RGB 图像压缩成潜向量 $z_t$（CarRacing 上 32 维，VizDoom 上 64 维），在 10000 条随机 rollout 上训练；\n> - **M (Memory)**：带**混合密度网络 (MDN)** 输出的 **LSTM**，预测下一个潜向量的分布 $P(z_{t+1},d_{t+1}\\mid a_t,z_t,h_t)$（含是否终止 $d$），用 5 个对角高斯的混合表示（隐藏单元 CarRacing 256 个、VizDoom 512 个）；\n> - **C (Controller)**：**单层线性模型**，输入是 $[z_t,h_t]$ 的拼接，输出动作（CarRacing 上仅 867 个参数、VizDoom 上 1088 个），用无梯度的进化策略 **CMA-ES** 优化。\n>\n> *English: V is a convolutional VAE that compresses frames into a latent vector; M is an LSTM with a mixture-density output predicting the next latent; C is a small single-layer linear controller over [z_t, h_t] trained with CMA-ES.*\n\n**白话版：「眼睛、记忆、手」。** V 是眼睛，把画面压缩成一小串数字；M 是记忆和想象力，能续写「下一刻的数字」；C 是手，根据眼前的数字和记忆做决定。三个部分分开训练：先训练 V，再训练 M，最后训练 C，C 小到可以用进化算法直接优化。\n\n几个值得记住的结果（均来自论文网页）：CarRacing-v0 上完整的世界模型得分 $906\\pm21$（该任务的「解决」标准是 900），只用 V 时是 $632\\pm251$；VizDoom Take Cover 上，智能体**完全在 M 生成的「梦」里训练**，再迁移到真实环境，真实环境里平均约 1100 个时间步（任务要求 750）。这是第 7 节讲的「在想象里训练」的第一个漂亮例子，也用到了第 7 节提到的**温度参数 $\\tau$**：提高采样的随机性，防止智能体钻梦境的空子，论文里 $\\tau=1.15$ 时迁移效果最好（$1092\\pm556$）。\n\n迭代的训练流程是：用当前策略收集数据 → 训练 M → 在梦里进化 C → 重复，这正是第 7 节基于模型方法的基本循环。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "ECWC-YlAk1o",
+   "title": "视频一：World Models explained in 10min..（Caleb Writes Code）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 动手：一个玩具潜变量世界模型\n\n下面的实验把这一类结构缩到最小：**固定的编码器 + 学到的线性潜动力学**，只在潜空间里往前想象，再与真实比较。\n\n- 真实世界：带控制的阻尼振子，状态是位置和速度。智能体看不到状态，只看到一张 48 像素的「图像」（状态经过随机混合 + tanh 渲染，再叠加噪声）。\n- 编码器：对训练图像做 PCA，取前 4 个主成分，之后固定不变（相当于《World Models》里先训练好的 V，只是用线性的 PCA 代替 VAE）。\n- 潜动力学：用最小二乘学 $z_{t+1}=[z_t,a_t,1]W$（相当于 M，但是线性、确定性的）。\n- 评估：只给模型带噪声的第 0 帧，然后用动作序列在**潜空间里**滚动 30 步，把潜变量与「真实未来帧编码出的潜变量」比较，也解码回像素与干净的真实帧比较。对照组：直接在像素空间里学线性动力学，以及「一直复制第 0 帧」。\n\n```python\nimport numpy as np\n\n# 「真实世界」：带控制的阻尼振子，状态 s=(位置 x, 速度 v)。智能体看不到 s，只看到 48 像素的「图像」：\n# 状态经过一个固定的随机混合 + tanh 渲染出来，再叠加噪声。\ndt = 0.1\ndef step(s, a):\n    x, v = s[..., 0], s[..., 1]\n    v2 = v + dt * (-2.0 * x - 0.3 * v + a)\n    return np.stack([x + dt * v2, v2], -1)\n\nNP, NOISE = 48, 0.3\nM = np.random.default_rng(42).normal(size=(2, NP))\nrender = lambda s, rng=None: np.tanh(0.8 * (s @ M)) + (0 if rng is None else NOISE * rng.normal(size=s.shape[:-1] + (NP,)))\n\ndef trajectories(n, T, rng):\n    s = np.c_[rng.uniform(-2, 2, n), rng.uniform(-2, 2, n)]; S, A = [s], []\n    for t in range(T):\n        a = rng.uniform(-2, 2, n); s = step(s, a); S.append(s); A.append(a)\n    return np.stack(S, 1), np.stack(A, 1)           # 形状 (n, T+1, 2) 与 (n, T)\n\ndef run(n_train, d=4):\n    rng = np.random.default_rng(0)\n    S, A = trajectories(n_train, 20, rng); O = render(S, rng)          # 训练数据：带噪声的「视频」\n    # 1) 固定编码器：对训练图像做 PCA，取前 d 个主成分。之后编码器不再改变\n    mu = O.reshape(-1, NP).mean(0)\n    E = np.linalg.svd(O.reshape(-1, NP) - mu, full_matrices=False)[2][:d].T      # NP x d\n    enc = lambda o: (o - mu) @ E\n    dec = lambda z: z @ E.T + mu\n    # 2) 在潜空间里学线性动力学 z' = [z, a, 1] @ W（最小二乘）\n    Z = enc(O)\n    X = np.concatenate([Z[:, :-1], A[..., None], np.ones_like(A)[..., None]], -1).reshape(-1, d + 2)\n    W = np.linalg.lstsq(X, Z[:, 1:].reshape(-1, d), rcond=None)[0]\n    # 3) 对照：直接在像素空间学线性动力学 o' = [o, a, 1] @ Wp\n    Xp = np.concatenate([O[:, :-1], A[..., None], np.ones_like(A)[..., None]], -1).reshape(-1, NP + 2)\n    Wp = np.linalg.lstsq(Xp, O[:, 1:].reshape(-1, NP), rcond=None)[0]\n\n    # 评估：200 条没见过的轨迹，只看带噪声的第 0 帧，然后用动作序列往前「想象」30 步\n    rt = np.random.default_rng(5)\n    St, At = trajectories(200, 30, rt); Oclean = render(St); Onoisy = render(St, rt)\n    z, op, o0 = enc(Onoisy[:, 0]), Onoisy[:, 0].copy(), Onoisy[:, 0]\n    out = {\"潜空间误差\": [], \"潜空间相对误差\": [], \"解码后像素误差\": [], \"像素空间模型\": [], \"直接复制第 0 帧\": []}\n    for k in range(30):\n        z = np.c_[z, At[:, k], np.ones(len(z))] @ W                       # 全程只在潜空间里滚动\n        op = np.c_[op, At[:, k], np.ones(len(op))] @ Wp\n        rms = lambda a, b: float(np.sqrt(((a - b) ** 2).mean()))\n        out[\"潜空间误差\"].append(rms(z, enc(Oclean[:, k + 1])))               # 与「真实未来帧编码出的潜变量」比较\n        out[\"潜空间相对误差\"].append(rms(z, enc(Oclean[:, k + 1])) / rms(enc(Oclean[:, k + 1]), 0))   # 除以真实潜变量自身的大小\n        out[\"解码后像素误差\"].append(rms(dec(z), Oclean[:, k + 1]))           # 解码回像素，与干净的真实帧比较\n        out[\"像素空间模型\"].append(rms(op, Oclean[:, k + 1]))\n        out[\"直接复制第 0 帧\"].append(rms(o0, Oclean[:, k + 1]))\n    # 潜变量里是否真的装着状态？用线性读出从 z 恢复 (x, v)，看 R^2\n    Zt = enc(Onoisy[:, 0]); G = np.linalg.lstsq(np.c_[enc(O[:, :-1].reshape(-1, NP)), np.ones((O[:, :-1].size // NP, 1))], S[:, :-1].reshape(-1, 2), rcond=None)[0]\n    pred = np.c_[Zt, np.ones(len(Zt))] @ G; true = St[:, 0]\n    r2 = 1 - ((pred - true) ** 2).sum(0) / ((true - true.mean(0)) ** 2).sum(0)\n    return out, r2\n\nks = [0, 2, 4, 9, 19, 29]\nprint(\"滚动步数 k =\", [k + 1 for k in ks])\nfor n_train in [300, 5]:\n    out, r2 = run(n_train)\n    print(f\"--- 训练用 {n_train} 条轨迹（{n_train * 20} 条转移）；潜变量读出状态的 R^2：位置 {r2[0]:.3f}，速度 {r2[1]:.3f}\")\n    for name, e in out.items():\n        print(f\"{name:14s}\", np.round(np.array(e)[ks], 3))\n# 输出：滚动步数 k = [1, 3, 5, 10, 20, 30]\n# 输出：--- 训练用 300 条轨迹（6000 条转移）；潜变量读出状态的 R^2：位置 0.964，速度 0.951\n# 输出：潜空间误差          [0.302 0.356 0.382 0.414 0.51  0.601]\n# 输出：潜空间相对误差        [0.147 0.175 0.187 0.207 0.278 0.35 ]\n# 输出：解码后像素误差        [0.098 0.112 0.119 0.126 0.152 0.177]\n# 输出：像素空间模型         [0.1   0.112 0.119 0.126 0.152 0.177]\n# 输出：直接复制第 0 帧      [0.32  0.427 0.556 0.837 1.142 0.954]\n# 输出：--- 训练用 5 条轨迹（100 条转移）；潜变量读出状态的 R^2：位置 0.966，速度 0.941\n# 输出：潜空间误差          [0.299 0.36  0.4   0.445 0.578 0.647]\n# 输出：潜空间相对误差        [0.134 0.163 0.181 0.207 0.296 0.349]\n# 输出：解码后像素误差        [0.123 0.134 0.142 0.151 0.184 0.2  ]\n# 输出：像素空间模型         [0.334 0.242 0.212 0.189 0.183 0.197]\n# 输出：直接复制第 0 帧      [0.32  0.427 0.556 0.837 1.142 0.954]\n```\n\n读输出：\n\n- **潜变量里确实装着状态**：用线性读出从 4 维潜变量恢复位置和速度，$R^2$ 分别是 0.964 和 0.951（300 条轨迹的编码器），说明 PCA 编码器虽然是线性的，也把渲染出来的状态大体压缩了出来。\n- **潜空间的预测有效**：300 条轨迹时，解码后的像素误差是 0.098（$k=1$）、0.126（$k=10$）、0.177（$k=30$），而直接复制第 0 帧的误差是 0.32、0.837 和 0.954，明显更差；也就是说，潜空间里的 4 维线性模型已经比「不动」好很多。\n- **潜空间的误差一开始就是 0.302**，这几乎就是输入噪声的大小：我们是从一张**带噪声的单帧**编码出初始潜变量的，初始误差无法靠动力学消除。更合理的做法是用第 6 节的滤波（多帧、卡尔曼式）来估计初始潜状态。潜空间的相对误差（除以真实潜变量自身的大小）从 0.147 增长到 0.35，也看得出误差随想象步数的累积。\n- **数据少的时候，潜空间的模型明显更好**：只有 5 条轨迹（100 条转移）时，$k=1$ 的像素误差，潜空间模型是 0.123，像素空间模型是 0.334，差了约 2.7 倍：像素空间的线性模型有 $50\\times48=2400$ 个参数，潜空间只有 $6\\times4=24$ 个。到了 $k=30$，两者差不多（0.2 对 0.197），因为此时误差主要来自第 0 帧的噪声，而不是动力学。**数据足够多（300 条）时，两者几乎一样**（0.098 对 0.1）：这是一个线性的小系统，像素空间的线性模型也够用。\n- 这个玩具的局限要看清：真实的世界模型要处理非线性、高维图像、部分可观测，需要神经网络编码器和随机的、非线性的动力学（下一节的 RSSM）。这里只演示了一件事：**在低维潜空间里学动力学，比在像素空间里学更省数据**。\n\n### PlaNet 与 Dreamer：RSSM 与「在想象中训练」\n\n> **标准定义 · RSSM 与想象中训练 (PlaNet / Dreamer)**\n>\n> **RSSM (recurrent state-space model)**（PlaNet，Hafner 等，ICML 2019）把潜状态分成两部分：\n>\n> $$h_t=f(h_{t-1},s_{t-1},a_{t-1}),\\qquad s_t\\sim p(s_t\\mid h_t)\\ (\\text{先验}),\\qquad o_t\\sim p(o_t\\mid h_t,s_t),\\qquad r_t\\sim p(r_t\\mid h_t,s_t)$$\n>\n> $h_t$ 是 RNN 的**确定性状态**，负责跨多步记忆；$s_t$ 是**随机状态**，负责表达不确定性。看到观测时用**后验** $q(s_t\\mid h_t,o_t)$（滤波）推断 $s_t$，想象时只用先验（预测）。训练目标是序列 ELBO：重建观测和奖励，同时让后验靠近先验的 KL 项。PlaNet 还提出**潜在过冲 (latent overshooting)**，在潜空间里训练多步预测；规划时用 CEM（每次 1000 个候选、10 轮迭代、取前 100 个精英、规划长度 12）。\n>\n> **Dreamer**（Hafner 等，2019）在 RSSM 学到的世界模型上，用想象出的潜轨迹训练 **actor-critic**：想象长度 $H=15$（连续控制）、用 $\\lambda=0.95$ 的 $\\lambda$-回报，策略的梯度**通过学到的动力学反向传播**（连续动作用重参数化）。\n>\n> *English: The RSSM splits the latent state into a deterministic recurrent part h_t and a stochastic part s_t; it is trained with a sequential ELBO. Dreamer trains an actor and a critic purely on latent trajectories imagined by the world model, backpropagating value gradients through the learned dynamics.*\n\n以上数字和公式来自我对 PlaNet 与 Dreamer 论文原文的核对。\n\n**白话版：「确定性的笔记 + 带点随机的灵感」。** $h_t$ 像一本不会出错的笔记本，记着到目前为止发生了什么；$s_t$ 像每一步抽出来的灵感，表示「在这些已知条件下，具体会出现哪种可能」。后验是「看了画面之后的判断」，先验是「没看画面之前的猜测」。训练时让猜测和判断靠近，**想象时就只靠猜测**往前走。\n\n和第 6 节对照：$h_t$ 就是那个「学出来的信念」（GRU 一类的循环状态），$s_t$ 是卡尔曼 / HMM 里的随机性，后验是滤波，先验是预测。\n\n下面用 NumPy 手算一步 RSSM 的数据流（权重随机，只演示结构）：确定性更新、先验、后验、它们之间的 KL（闭式解对拍蒙特卡洛），以及只用先验的「想象」。\n\n```python\nimport numpy as np\nsigmoid = lambda x: 1 / (1 + np.exp(-x))\nrng = np.random.default_rng(0)\ndh, dz, da, de = 8, 4, 2, 6            # 确定性状态 h、随机状态 z、动作 a、观测嵌入 e 的维度\n\n# RSSM 的几个部件（参数随机，只演示数据流）\nWx = rng.normal(0, 0.5, (3 * dh, dz + da)); Wh = rng.normal(0, 0.5, (3 * dh, dh))    # GRU：输入 [z, a]，状态 h\nWp = rng.normal(0, 0.15, (2 * dz, dh))                                                  # 先验 p(z|h) -> (均值, log 标准差)\nWq = rng.normal(0, 0.15, (2 * dz, dh + de))                                             # 后验 q(z|h, e) -> (均值, log 标准差)\n\ndef gru(x, h):                         # 和上一节同样的 GRU，这里把三个门的参数合并在一起\n    gx, gh = Wx @ x, Wh @ h\n    z = sigmoid(gx[:dh] + gh[:dh]); r = sigmoid(gx[dh:2 * dh] + gh[dh:2 * dh])\n    n = np.tanh(gx[2 * dh:] + r * gh[2 * dh:])\n    return (1 - z) * n + z * h\n\nh_prev, z_prev, a_prev = rng.normal(size=dh) * 0.5, rng.normal(size=dz), np.array([0.5, -1.0])\ne = rng.normal(size=de)                # 观测经过编码器得到的嵌入（这里随机给一个）\n\nh = gru(np.r_[z_prev, a_prev], h_prev)             # 1) 确定性部分：h_t = f(h_{t-1}, z_{t-1}, a_{t-1})\nmp, lp = np.split(Wp @ h, 2)                       # 2) 先验：只看 h，没有看新观测（= 预测）\nmq, lq = np.split(Wq @ np.r_[h, e], 2)             # 3) 后验：h 加上这一帧的观测嵌入（= 滤波）\nsp, sq = np.exp(lp), np.exp(lq)\nprint(\"先验均值\", np.round(mp, 3), \" 后验均值\", np.round(mq, 3))\n\n# 4) 先验和后验之间的 KL（对角高斯的闭式解）：训练时要把它压小，让「预测」靠近「看了观测之后的结论」\nkl = np.sum(np.log(sp / sq) + (sq ** 2 + (mq - mp) ** 2) / (2 * sp ** 2) - 0.5)\nzs = mq + sq * rng.normal(size=(400000, dz))       # 用重参数化从后验采样，蒙特卡洛核对\nlogq = -0.5 * (((zs - mq) / sq) ** 2).sum(1) - np.log(sq).sum()\nlogp = -0.5 * (((zs - mp) / sp) ** 2).sum(1) - np.log(sp).sum()\nprint(\"KL 闭式解 =\", round(float(kl), 4), \"  蒙特卡洛估计 =\", round(float((logq - logp).mean()), 4))\nprint(\"Dreamer 里 KL 低于 3 nats 的部分不再产生梯度（free nats）：本例\", \"被截断（梯度为 0）\" if kl < 3 else \"不截断\")\n\n# 5) 想象：没有观测，只用先验往前滚动。同一个起点、同样的动作序列，每次采样出的 z 不同\ndef imagine(seed, steps=3):\n    r = np.random.default_rng(seed); h_, z_ = h, mq + sq * r.normal(size=dz)\n    for t in range(steps):\n        h_ = gru(np.r_[z_, [0.5, -1.0]], h_)\n        m_, l_ = np.split(Wp @ h_, 2); z_ = m_ + np.exp(l_) * r.normal(size=dz)\n    return z_\nsamples = np.array([imagine(s) for s in range(1000)])\nprint(\"想象 3 步后，z 各维的标准差（1000 次采样）：\", np.round(samples.std(0), 3))\n# 输出：先验均值 [-0.018  0.157 -0.091 -0.073]  后验均值 [-0.997  0.674  0.209 -0.067]\n# 输出：KL 闭式解 = 2.1091   蒙特卡洛估计 = 2.1094\n# 输出：Dreamer 里 KL 低于 3 nats 的部分不再产生梯度（free nats）：本例 被截断（梯度为 0）\n# 输出：想象 3 步后，z 各维的标准差（1000 次采样）： [1.046 0.933 1.1   1.132]\n```\n\n读输出：\n\n- 先验均值 $(-0.018,0.157,-0.091,-0.073)$，后验均值 $(-0.997,0.674,0.209,-0.067)$。后验多看了观测嵌入，和先验的差别比较大。\n- **KL 的闭式解是 2.1091，蒙特卡洛估计是 2.1094**，两者一致，所以对角高斯之间的 KL 公式没有写错。训练时就是要把这个 KL 压小，让「只靠预测」的先验靠近「看了观测之后的后验」。\n- Dreamer 论文里 KL 项设了 3 nats 的 **free nats**：低于 3 nats 的部分不再产生梯度，避免模型为了把 KL 压到 0 而牺牲重建（DreamerV3 里这个值是 1 nat）。本例 KL 为 2.1091，小于 3，所以被截断，梯度为 0。\n- 最后一行：同一个起点和同样的动作，想象 3 步后 $s$ 各维的标准差都在 1 附近（1.046、0.933、1.1、1.132），说明想象里的未来是一个分布，每次采样不同，这是 RSSM 能表达「环境不确定」的来源。\n\n**后续版本**（均核对过论文摘要或原文）：\n\n- **DreamerV2**（Hafner 等，ICLR 2021）：潜状态改为**离散的类别变量**（32 个类别变量，每个 32 类），并引入 **KL 平衡**（对先验和后验用不同的学习率，系数 0.8 对 0.2）；论文称它是第一个在 55 款 Atari 上，仅靠世界模型里学到的行为达到人类水平的智能体。\n- **DreamerV3**（Hafner 等，2023）：用**同一套超参数**在 150 多个任务上超过各领域的专用方法，是第一个不靠人类数据和课程、从零在 Minecraft 里挖到钻石的算法；稳定训练靠 symlog 变换、free bits（截断在 1 nat）、基于分位数的回报归一化等技巧。\n\nPlaNet 是「每一步在线规划（CEM + MPC）」，Dreamer 是「用想象训练出一个策略，部署时一步出动作」：这正是第 7 节说的把规划「摊销」进策略网络。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "BDxRNnhPTlU",
+   "title": "视频二：Dream to Control: Learning Behaviors by Latent Imagination（Danijar Hafner）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 5
+  },
+  {
+   "type": "text",
+   "md": "### JEPA：在潜空间预测，而不是在像素上预测\n\n上面的 Dreamer 仍然**重建像素**：解码器 $p(o_t\\mid h_t,s_t)$ 要把图像画回去。**联合嵌入预测架构 (JEPA, joint-embedding predictive architecture)** 走另一条路：不重建像素，而是**在表示空间里预测**。\n\n> **标准定义 · JEPA 类方法 (I-JEPA 为例)**\n>\n> 编码器把输入映射到表示；预测器根据**上下文**的表示，预测**被遮住的目标**的表示；损失在表示空间里计算，而不是像素空间。I-JEPA（Assran 等，ICCV 2023）有三个部件：**上下文编码器**（ViT，处理可见的图像块）、**目标编码器**（ViT，参数是上下文编码器参数的**指数滑动平均 EMA**，动量 0.996）、**预测器**（较窄的 ViT，嵌入维度 384）。损失是预测的表示与目标表示之间的**平均 L2 距离**。训练时从一张图里取 4 个目标块（尺度 0.15 到 0.2）和 1 个较大的上下文块（尺度 0.85 到 1.0），并去掉上下文块里与目标块重叠的区域。\n>\n> *English: JEPA-style methods predict the representation of a masked target from the representation of a visible context, with the loss computed in representation space rather than pixel space. I-JEPA uses a context encoder, an EMA target encoder and a predictor.*\n\n**白话版：「猜意思，不猜每个像素」。** 看到半张图，想知道被挡住的部分「大概是什么东西」，没必要预测每一粒像素的颜色。树叶的纹理、水面的波纹是不可预测的细节，预测像素就必须去拟合这些噪声；在表示空间里预测，可以让编码器**主动丢掉**不可预测、不重要的细节。这也是第 7 节说的「想象越长越不准」的一个应对思路：不要把力气花在无关细节上。\n\nI-JEPA 论文摘要里的数字：不依赖手工设计的数据增强，用 ViT-Huge/14 在 ImageNet 上训练少于 72 小时（16 块 A100），在分类、目标计数、深度预测等下游任务上表现良好。\n\n后续工作：**V-JEPA**（Bardes 等，2024）把「特征预测」用到视频上，摘要强调只用特征预测的目标，不依赖预训练的图像编码器、文本、负样本、重建或其他监督；**V-JEPA 2**（2025）摘要称在超过 100 万小时的视频上预训练，再用不到 62 小时的无标签机器人视频训练动作条件版本 V-JEPA 2-AC，在两个实验室的 Franka 机械臂上完成抓取与摆放。这几处都是我读摘要核对过的，细节请读论文。\n\n但「在潜空间里预测」有一个陷阱：**表示坍缩 (collapse)**。如果编码器也在被训练，最省力的做法就是把所有输入编码成同一个常数，预测误差立刻为 0，却什么都没学到。I-JEPA 论文写道，用 EMA 的目标编码器对训练带 ViT 的这类架构「被证明是必需的」。下面的玩具实验直接看到坍缩，以及一个最简单的防御：给潜变量协方差加一个惩罚，让它保持接近单位阵（这只是我挑的一种示意，并不是哪篇论文的方法）。\n\n```python\nimport numpy as np\n\n# 在「潜空间里预测下一帧的潜变量」听上去很美，但有一个陷阱：如果编码器也在被训练，\n# 它可以把所有输入都编码成同一个常数——这样预测误差恰好为 0。这叫表示坍缩 (collapse)。\ndt = 0.1\ndef step(s, a):\n    x, v = s[..., 0], s[..., 1]\n    v2 = v + dt * (-2.0 * x - 0.3 * v + a)\n    return np.stack([x + dt * v2, v2], -1)\nNP = 48\nM = np.random.default_rng(42).normal(size=(2, NP))\nrng = np.random.default_rng(1)\ns = np.c_[rng.uniform(-2, 2, 400), rng.uniform(-2, 2, 400)]; Ocur, Onext = [], []\nfor t in range(20):                                   # 无动作的自由振荡，足够说明问题\n    s2 = step(s, 0.0)\n    Ocur.append(np.tanh(0.8 * s @ M) + 0.1 * rng.normal(size=(400, NP)))\n    Onext.append(np.tanh(0.8 * s2 @ M) + 0.1 * rng.normal(size=(400, NP))); s = s2\nO, On = np.concatenate(Ocur), np.concatenate(Onext); N = len(O)\n\nmean = np.concatenate([O, On]).mean(0); Oc, Onc = O - mean, On - mean      # 减去均值，方便谈「方差」\n\ndef train(lam, steps=3000, lr=0.01, d=2):\n    \"\"\"lam = 0：只最小化预测损失；lam > 0：再加一个惩罚，要求潜变量的协方差接近单位阵（方差为 1、互不相关）\"\"\"\n    r = np.random.default_rng(0)\n    E = r.normal(0, 0.3, (NP, d)); A = np.eye(d) * 0.9\n    for i in range(steps + 1):\n        Z, Zn = Oc @ E, Onc @ E\n        R = Zn - Z @ A                                # 预测误差：下一帧的潜变量 - 预测值\n        Cz = Z.T @ Z / N                              # 潜变量的协方差矩阵\n        if i in (0, 10, 100, steps):\n            loss = np.mean((R ** 2).sum(1))\n            print(f\"  第 {i:4d} 步  预测损失 {loss:8.5f}   潜变量的总方差 {np.trace(Cz):8.5f}   损失 / 方差 = {loss / np.trace(Cz):.3f}\")\n        dZn, dZ = 2 * R / N, -2 * R @ A.T / N         # 手写梯度：预测损失 = mean(|Zn - Z A|^2)\n        dZ = dZ + lam * 4 * Z @ (Cz - np.eye(d)) / N  # 惩罚项 lam * |Cz - I|_F^2 的梯度\n        dA = -2 * Z.T @ R / N\n        E -= lr * (Onc.T @ dZn + Oc.T @ dZ); A -= lr * dA\n    return E\n\nprint(\"没有任何约束：\")\ntrain(0.0)\nprint(\"加上「潜变量协方差接近单位阵」的惩罚（lam = 1）：\")\ntrain(1.0)\n# 输出：没有任何约束：\n# 输出：  第    0 步  预测损失  0.21771   潜变量的总方差  2.57995   损失 / 方差 = 0.084\n# 输出：  第   10 步  预测损失  0.20267   潜变量的总方差  2.36905   损失 / 方差 = 0.086\n# 输出：  第  100 步  预测损失  0.15774   潜变量的总方差  1.35277   损失 / 方差 = 0.117\n# 输出：  第 3000 步  预测损失  0.01592   潜变量的总方差  0.01410   损失 / 方差 = 1.129\n# 输出：加上「潜变量协方差接近单位阵」的惩罚（lam = 1）：\n# 输出：  第    0 步  预测损失  0.21771   潜变量的总方差  2.57995   损失 / 方差 = 0.084\n# 输出：  第   10 步  预测损失  0.18643   潜变量的总方差  1.94572   损失 / 方差 = 0.096\n# 输出：  第  100 步  预测损失  0.14982   潜变量的总方差  1.99441   损失 / 方差 = 0.075\n# 输出：  第 3000 步  预测损失  0.02042   潜变量的总方差  1.99694   损失 / 方差 = 0.010\n```\n\n读输出：\n\n- **没有约束时**：预测损失从 0.21771 一路降到 0.01592，看上去训练得很好；但同时潜变量的总方差从 2.57995 降到了 0.01410。「损失 / 方差」从 0.084 升到 1.129：预测误差已经比潜变量本身的大小还大，剩下的只是噪声。这就是坍缩：编码器把信号压缩到几乎没有，预测任务变得平凡。\n- **加上协方差惩罚后**：总方差稳定在约 2（两个维度各约 1），预测损失 0.02042，损失 / 方差只有 0.010，也就是用了 99% 的方差被成功预测，潜变量里确实保留了可预测的信号。\n- 教训：**损失的绝对数值本身不可信，要同时看表示的方差 / 秩**；这也是所有「在潜空间里预测」的方法必须配一个防坍缩机制的原因（EMA 目标编码器、方差与协方差正则、重建项等，各有不同的取舍，细节请读论文）。\n\n### 视频与生成式世界模型：现状（只写核实过的）\n\n近两年「世界模型」这个词被大量用在**视频 / 交互式生成模型**上。下面是我核对过原始页面的事实，没有写进来的就是没核实的。\n\n- **Genie**（Bruce 等，DeepMind，2024 年 2 月）：论文称它是「第一个以无监督方式、从无标注的互联网视频训练出来的生成式交互环境」，参数量 110 亿；由时空视频 tokenizer、自回归动力学模型和**潜在动作模型**三部分组成。训练时没有任何真实动作标签，潜在动作模型自己从视频里学出一个离散的动作空间，使得用户可以逐帧操控生成的环境。\n- **Genie 3**（DeepMind，2025 年 8 月 5 日博客）：从文字提示生成可导航的世界，官方描述为 24 帧 / 秒、720p，画面在几分钟内保持一致；博客列出的限制包括：智能体可采取的动作有限、难以模拟多个智能体的复杂交互、不能准确还原真实地点、清晰的文字通常需要在提示里写明、连续交互只能持续几分钟。\n- **Sora 技术报告《Video generation models as world simulators》**（OpenAI，2024 年 2 月 15 日）：主张扩大视频模型规模是通向物理和数字世界模拟器的一条有希望的路径，列举了 3D 一致性、物体持久性等能力；同时**自己写明**当前的局限，例如「不能准确模拟许多基本交互的物理，比如玻璃破碎」，较长视频里会出现不连贯。\n- **DIAMOND**（Alonso 等，NeurIPS 2024 spotlight）：用**扩散模型**做世界模型，在其中训练强化学习智能体；论文摘要称在 Atari 100k 上平均人类归一化得分 1.46，是「完全在世界模型里训练的智能体」的新最好成绩，核心观点是「视觉细节很重要」。它与 JEPA「不要预测像素」的主张形成有趣的对照：任务里关键信息是细小的视觉细节（Atari 里的小物体）时，丢掉细节会伤害决策。\n- **V-JEPA 2**：见上一节，它是「在表示空间里学物理世界的预测，再接到机器人规划」的路线。\n\n### 评估世界模型为什么很难\n\n下面是我结合本课实验做的归纳，不是引自某篇综述，也没有逐个核实具体的评测基准。\n\n1. **像素指标不等于有用**：单步重建误差低，不代表多步滚动稳定；画面漂亮也不代表模型理解了动作的因果影响。第 7 节的实验已经展示：一步误差差几十倍的模型，在 MPC 里控制效果却几乎一样，而开环时差别立刻出现。\n2. **多步与长时程一致性**：想象长了会漂移（累积误差）、物体会凭空出现或消失（Sora 报告承认的问题）。需要看多步误差曲线，而不是一个数。\n3. **对动作的可控性**：好的世界模型必须真的「听动作」：同一个起点，换一个动作，未来应当不同（第 6 节的潜在动力学例子）。只会生成好看视频、不响应动作的模型，不能用来规划。\n4. **分布外 (OOD) 行为**：第 7 节里 20% 的轨迹跑出训练范围后，误差暴涨到 1.1 以上。评估要覆盖「规划器会把智能体带去的地方」，而不只是数据里常见的状态。\n5. **下游任务表现**：最终要看用它规划 / 训练的策略在真实环境里表现如何，但这又受策略学习算法、规划器等因素影响，很难把「模型的好坏」单独分出来。\n6. **表示的质量**：潜空间里保留了什么、有没有坍缩（上一个实验）、能否被线性读出为物理量（本节的 $R^2$）也是评估的一部分。\n\n### 读论文指南\n\n建议按下面的顺序读，每篇只带着一两个问题读，不要试图一次读懂所有细节。标「已核对」的是我读过摘要或原文页面的。\n\n| 顺序 | 论文 | 带着什么问题读 |\n|---|---|---|\n| 1 | Ha & Schmidhuber《World Models》（2018，已核对）和它的交互网页 | V、M、C 各自怎么训练？为什么 C 可以那么小？梦境里的温度 $\\tau$ 起什么作用？ |\n| 2 | Hafner 等《Learning Latent Dynamics for Planning from Pixels》（PlaNet，ICML 2019，已核对） | 为什么 RSSM 要同时有确定性和随机性部分？潜在过冲在训练什么？规划为什么可以不生成图像？ |\n| 3 | Hafner 等《Dream to Control》（Dreamer，2019，已核对） | 想象的长度 $H$ 如何取？价值函数如何弥补想象的短视？梯度怎样穿过动力学？ |\n| 4 | DreamerV2（ICLR 2021）、DreamerV3（2023），已核对摘要 | 为什么换成离散潜变量？一套超参数通吃的关键技巧是什么？ |\n| 5 | I-JEPA（ICCV 2023）→ V-JEPA（2024）→ V-JEPA 2（2025），已核对摘要 | 如何防坍缩？预测的目标是什么？从图像到视频到机器人，加了什么？ |\n| 6 | Genie（2024）、DIAMOND（NeurIPS 2024）、Sora 报告、Genie 3 博客，已核对 | 动作从哪里来（潜在动作）？「视觉细节重要」与「不要预测像素」如何调和？作者自己承认了哪些局限？ |\n| 7 | LeCun《A Path Towards Autonomous Machine Intelligence》（2022 年，位置论文） | JEPA 在整个「自主智能」框架里扮演什么角色？（我只确认了链接可打开，没有核对论文细节） |\n\n读法的小技巧：先看摘要和模型图，再读「方法」一节里的**符号表和损失函数**，最后读实验的消融（ablation）：消融表告诉你「作者认为哪些设计真的重要」。\n\n### 下一步：学什么、去哪学\n\n做完这八节，你已经具备了读世界模型论文的基础。想系统地继续，有两条我核实过页面的路：\n\n- **UPenn CIS 6280：World Models**（Jiatao Gu 讲授，2026 年秋季学期，课程主页 https://www.cis.upenn.edu/~cis6280/ ）。研究生课，先修课是 CIS 5190、CIS 5200 或同等的研究生机器学习基础。大纲共 23 讲，四个单元：**潜变量世界模型**（第 3 到 10 讲：状态空间模型、表示学习、VAE、潜在动力学与 PlaNet / Dreamer 一类的规划）；**生成与视频模型**（第 11 到 14 讲：扩散模型、视频生成架构、自回归 / 归一化流）；**空间与物理模型**（第 15 到 17 讲：3D 表示、场景几何、神经物理、学出来的模拟器）；**机器人与智能体**（第 18 到 22 讲：机器人学习、视觉-语言-动作策略、把 LLM 当世界模型、数字智能体）。作业是三次，另有期末项目和期末考试。**本课第 1 到 8 节大致对应它的第一个单元的先修与前半部分**；后三个单元（扩散与视频、3D 与物理、机器人）是你之后要自己补的方向。\n- **learn-world-model**（GitHub：https://github.com/datawhalechina/learn-world-model ，datawhalechina 出品，中英双语，仓库自己标注为 **Alpha Preview**，内容还在补充修订中）：5 讲（内部模拟与历史背景、观测编码与潜在动力学、架构模式 / 学习范式 / 规划、诊断世界模型、前沿争论）加 6 个项目（训练 VAE 编码器、搭 RSSM 动力学模型、训练 Dreamer 智能体、更换动力学骨干、世界模型评估仪表盘、反事实的动作条件世界模型）。这几个项目和本课的内容很贴合，适合在这一课之后上手做。\n\n### 这一节你要带走的三句话\n\n1. **世界模型 = 把观测压缩成潜状态 + 学「潜状态如何随动作演化」**，用来做表示、想象和规划：Ha & Schmidhuber 的 V / M / C 是最小的完整例子，RSSM 用「确定性记忆 + 随机状态」把第 6 节的信念和第 5 节的 VAE 连起来，Dreamer 在想象里训练 actor-critic。\n2. **「在潜空间预测」比「在像素上预测」省数据、可以丢掉无关细节，但要防坍缩**：损失降到很低不一定是好事，要同时看表示的方差；任务依赖细微视觉细节时（DIAMOND），丢细节也会吃亏。\n3. **评估比训练更难**：要看多步、对动作的响应、分布外行为和下游任务，不能只看一个像素指标；读论文时先看作者自己承认的局限。"
+  },
+  {
+   "type": "think",
+   "q": "**计算**：RSSM 里先验是 $\\mathcal N(0,1)$（一维），后验是 $\\mathcal N(1,0.5^2)$。用闭式解算 $D_{KL}(q\\|p)$（自然对数）。如果后验也变成 $\\mathcal N(0,1)$，KL 是多少？",
+   "a": "对角高斯的闭式解（一维）：$D_{KL}(q\\|p)=\\log\\frac{\\sigma_p}{\\sigma_q}+\\frac{\\sigma_q^2+(\\mu_q-\\mu_p)^2}{2\\sigma_p^2}-\\frac12$。\n\n代入 $\\mu_q=1,\\sigma_q=0.5,\\mu_p=0,\\sigma_p=1$：$\\log\\frac{1}{0.5}+\\frac{0.25+1}{2}-\\frac12=0.6931+0.625-0.5=0.8181$。\n\n后验与先验完全一样时，第一项 $\\log1=0$，第二项 $\\frac{1+0}{2}=0.5$，减去 $0.5$ 得 0，KL 为 0。KL 越小，说明「没看观测时的预测」越接近「看了观测之后的结论」。可以把上面 RSSM 代码里的 `kl` 公式套到一维数据上核对。"
+  },
+  {
+   "type": "think",
+   "q": "Dreamer 想象的长度只有 $H=15$，而一个任务可能需要几百步才有回报。它如何让策略考虑远期的后果？如果想象很长（例如 500 步），你预期会出什么问题？",
+   "a": "在想象轨迹的末端用价值函数 $v(s_{t+H})$ 估计「之后的所有回报」，并用 $\\lambda$-回报把不同长度的估计加权平均，这样只想象 15 步，也能把远期后果带进来。价值函数本身又是在想象轨迹上训练的。\n\n想象 500 步会遇到：累积误差（第 7 节的 $e_k\\le\\epsilon(L^k-1)/(L-1)$）让后面的轨迹偏离真实；分布偏移让模型在没见过的状态上更不准；策略会利用模型的漏洞（模型利用）；计算量、梯度穿过 500 步的稳定性也成问题。所以实践里取 $H$ 是在偏差（价值函数不准）和累积误差之间折中。"
+  },
+  {
+   "type": "think",
+   "q": "**联系 JEPA 与评估**：本节的坍缩实验中，没有约束时预测损失 0.01592 比有约束时的 0.02042 还低。为什么这个「更低的损失」反而是坏事？如果你要评估一个 JEPA 类世界模型，除了预测损失，还应该看什么？",
+   "a": "没有约束时，损失低是因为潜变量的方差塌到了 0.01410：把一切压成近似常数，预测自然容易。「损失 / 方差」是 1.129，说明剩下的只是噪声，没有可预测的信号；有约束时，该比值仅 0.010。损失的绝对值依赖表示的尺度，不能单独比较。\n\n评估时还应该看：表示的方差 / 协方差的秩是否健康（有没有维度坍缩）；能否用线性读出恢复有物理意义的量（像本节的 $R^2$）；多步预测误差曲线；对动作的响应是否正确；在分布外状态上的表现；以及用它规划 / 训练的策略在下游任务上的真实表现。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "世界模型",
+     "world model",
+     "学到的环境内部模型：压缩观测并预测潜状态如何随动作演化"
+    ],
+    [
+     "V / M / C",
+     "Vision / Memory / Controller",
+     "Ha & Schmidhuber 的三部分：VAE 编码器、MDN-RNN 记忆、线性控制器"
+    ],
+    [
+     "混合密度网络",
+     "mixture density network (MDN)",
+     "输出高斯混合的参数，用来预测多峰的下一状态"
+    ],
+    [
+     "CMA-ES",
+     "covariance matrix adaptation evolution strategy",
+     "无梯度的进化策略，用来优化小型控制器"
+    ],
+    [
+     "温度",
+     "temperature $\\tau$",
+     "控制世界模型采样的随机性，防止智能体钻梦境的空子"
+    ],
+    [
+     "RSSM",
+     "recurrent state-space model",
+     "确定性循环状态 $h_t$ + 随机状态 $s_t$ 的潜动力学模型"
+    ],
+    [
+     "先验 / 后验",
+     "prior / posterior",
+     "没看观测的预测 $p(s_t|h_t)$ / 看了观测的推断 $q(s_t|h_t,o_t)$"
+    ],
+    [
+     "潜在过冲",
+     "latent overshooting",
+     "PlaNet 提出的、在潜空间里训练多步预测的目标"
+    ],
+    [
+     "想象",
+     "imagination",
+     "只用先验、不看观测，在潜空间里滚动出的轨迹"
+    ],
+    [
+     "自由 nats",
+     "free nats",
+     "KL 低于某阈值的部分不再产生梯度"
+    ],
+    [
+     "离散潜变量",
+     "discrete latents",
+     "DreamerV2 用类别变量表示随机状态"
+    ],
+    [
+     "联合嵌入预测架构",
+     "JEPA",
+     "在表示空间里由上下文预测目标，而不是预测像素"
+    ],
+    [
+     "表示坍缩",
+     "representation collapse",
+     "编码器把所有输入映射成常数，预测损失平凡地为 0"
+    ],
+    [
+     "指数滑动平均",
+     "exponential moving average (EMA)",
+     "I-JEPA 的目标编码器参数是上下文编码器参数的 EMA"
+    ],
+    [
+     "潜在动作模型",
+     "latent action model",
+     "Genie 里从无标注视频中学出离散动作的部分"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Ha & Schmidhuber《World Models》（2018）及交互网页",
+   "url": "https://worldmodels.github.io/",
+   "note": "本节的主要来源：V / M / C 的细节都来自这里；论文在 arXiv 1803.10122"
+  },
+  {
+   "title": "Hafner 等《Learning Latent Dynamics for Planning from Pixels》（PlaNet，ICML 2019）",
+   "url": "https://arxiv.org/abs/1811.04551",
+   "note": "RSSM 与潜在过冲；第 7 节的 CEM + MPC 在这里用在了潜空间"
+  },
+  {
+   "title": "Hafner 等《Dream to Control: Learning Behaviors by Latent Imagination》（Dreamer，2019）",
+   "url": "https://arxiv.org/abs/1912.01603",
+   "note": "在想象中训练 actor-critic；后续有 DreamerV2（arXiv 2010.02193）和 DreamerV3（arXiv 2301.04104）"
+  },
+  {
+   "title": "Assran 等《Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture》（I-JEPA，ICCV 2023）",
+   "url": "https://arxiv.org/abs/2301.08243",
+   "note": "JEPA 的图像版本；视频版本见 V-JEPA（arXiv 2404.08471）和 V-JEPA 2（arXiv 2506.09985）"
+  },
+  {
+   "title": "UPenn CIS 6280: World Models（Jiatao Gu，2026 秋）",
+   "url": "https://www.cis.upenn.edu/~cis6280/",
+   "note": "研究生课程主页，下一步学习的路线图；另见 learn-world-model（https://github.com/datawhalechina/learn-world-model ，Alpha 预览，中英双语）"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在 Ha & Schmidhuber 的《World Models》里，V、M、C 三个部分各自负责什么？",
+    "options": [
+     "V 做规划，M 是奖励函数，C 是价值网络",
+     "V 把图像压缩成潜向量，M 预测下一个潜向量（带循环记忆），C 根据潜向量和记忆输出动作",
+     "V 输出动作，M 预测奖励，C 压缩图像",
+     "V、M、C 是三个并行的策略网络，最后投票"
+    ],
+    "answer": 1,
+    "explain": "V 是卷积 VAE，把 64×64 的图像编码成低维的潜向量；M 是带混合密度输出的 LSTM，预测下一步的潜向量；C 很小，把当前潜向量和 M 的隐状态映射成动作。其余选项把角色弄混了。"
+   },
+   {
+    "q": "关于《World Models》里的控制器 C，下面哪个说法是对的？",
+    "options": [
+     "它是一个很深的网络，用反向传播穿过 M 来训练",
+     "它和 V、M 一起用同一个重建损失训练",
+     "它是一个单层线性模型，参数只有几百到一千出头，用进化策略 CMA-ES 训练",
+     "它不需要任何训练"
+    ],
+    "answer": 2,
+    "explain": "论文里 C 是单层线性模型（CarRacing 上 867 个参数），用 CMA-ES 这类无梯度的进化策略优化。让 C 尽量小，是把「理解世界」的工作交给 V 和 M，把「做决策」做得简单。"
+   },
+   {
+    "q": "《World Models》里调高 M 模型采样的温度 $\\tau$，主要是为了什么？",
+    "options": [
+     "让梦境更随机，防止智能体利用世界模型的缺陷，在「梦」里训练出的策略才更容易迁移到真实环境",
+     "让训练更快收敛",
+     "让 VAE 的重建更清晰",
+     "让控制器的参数变少"
+    ],
+    "answer": 0,
+    "explain": "这是一种缓解「模型利用」的办法：梦里太容易、太确定，智能体就会钻模型的空子。适当提高随机性后，策略必须对不确定性稳健。论文里在 VizDoom 上 $\\tau=1.15$ 时迁移到真实环境的效果最好。"
+   },
+   {
+    "q": "PlaNet / Dreamer 的 RSSM 把潜状态分成确定性部分 $h_t$ 和随机部分 $s_t$，这样做的主要原因是？",
+    "options": [
+     "因为随机部分不需要训练",
+     "为了减少显存",
+     "因为确定性部分可以替代观测模型",
+     "确定性部分负责跨多步记住信息，随机部分负责表达环境的不确定性（例如部分可观测、随机性）"
+    ],
+    "answer": 3,
+    "explain": "纯确定性的循环状态不能表达「下一步可能有几种结果」，纯随机的状态又很难稳定地记住长期信息。RSSM 两者结合：$h_t$ 像 GRU 一样记忆，$s_t$ 采样出不确定性。"
+   },
+   {
+    "q": "在 RSSM 里，**想象**未来（没有观测可用）时，下一步的随机状态应该从哪个分布采样？",
+    "options": [
+     "后验 $q(s_t\\mid h_t,o_t)$",
+     "先验 $p(s_t\\mid h_t)$，只依赖确定性状态",
+     "均匀分布",
+     "数据集中的真实 $s_t$"
+    ],
+    "answer": 1,
+    "explain": "后验需要这一步的观测 $o_t$，想象时没有观测，只能用先验。训练时让后验与先验的 KL 变小，正是为了让「只靠预测」的先验在想象时也靠得住。"
+   },
+   {
+    "q": "Dreamer 的策略（actor）和价值函数（critic）是怎样训练的？",
+    "options": [
+     "在世界模型想象出的潜状态轨迹上训练，价值梯度可以通过学到的动力学反向传播",
+     "在真实环境里和 PPO 一样训练，世界模型只用来画图",
+     "只用监督学习拟合专家动作",
+     "完全不训练，直接用 CEM 规划"
+    ],
+    "answer": 0,
+    "explain": "Dreamer 用学到的世界模型想象出若干步（论文里连续控制取 15 步）的潜轨迹，用 $\\lambda$-回报训练价值网络，并让策略沿着想象轨迹上的价值梯度改进。这与 PlaNet 每一步都做 CEM 在线规划不同。"
+   },
+   {
+    "q": "相比第一代 Dreamer，DreamerV2 在世界模型里的一个重要改动是？",
+    "options": [
+     "把策略换成了决策树",
+     "不再使用任何循环结构",
+     "把潜变量从高斯换成离散的类别变量（32 个类别变量，每个 32 类）",
+     "取消了价值函数"
+    ],
+    "answer": 2,
+    "explain": "DreamerV2 用 32 个类别变量、每个 32 类的离散潜表示，并引入 KL 平衡；它是第一个在 55 款 Atari 上、仅靠世界模型中学到的行为就达到人类水平的智能体（论文摘要）。"
+   },
+   {
+    "q": "下面哪一项最贴近 I-JEPA 的核心思想？",
+    "options": [
+     "重建被遮住的像素",
+     "先用大量人工设计的数据增强，再做对比学习",
+     "只依赖文本标注训练图像模型",
+     "用一个上下文块预测被遮住目标块的**表示**（在表示空间里算损失），而不是预测像素"
+    ],
+    "answer": 3,
+    "explain": "I-JEPA 用上下文编码器、目标编码器和预测器，损失是预测表示与目标表示之间的 L2 距离，论文强调不依赖手工设计的数据增强。像素重建属于另一类方法（如 MAE）。"
+   },
+   {
+    "q": "实验里，如果同时训练编码器和潜空间预测器，只最小化「预测下一帧潜变量」的误差，而且没有任何约束，会发生什么？",
+    "options": [
+     "表示坍缩：潜变量方差趋于 0，预测损失看起来变得极小，但已经没有信息",
+     "编码器学到越来越丰富的表示",
+     "预测损失一定保持不变",
+     "模型自动学会动力学"
+    ],
+    "answer": 0,
+    "explain": "把所有输入编码成同一个常数，预测误差就是 0——这是平凡解。实验里潜变量的总方差降到 0.014，「损失 / 方差」却升到 1.129，说明剩下的只是噪声。所以 JEPA 类方法需要防坍缩机制（例如 EMA 目标编码器、方差正则）。"
+   },
+   {
+    "q": "为什么只看单步的像素重建误差，不足以说明一个世界模型「好」？",
+    "options": [
+     "因为像素误差永远无法计算",
+     "因为世界模型只需要预测一步",
+     "因为规划和想象用的是受动作控制的多步滚动，要看长时程一致性、对动作的响应以及对下游决策是否有用",
+     "因为所有世界模型的像素误差必然相同"
+    ],
+    "answer": 2,
+    "explain": "一步像素误差低，可能多步滚动后漂移得面目全非，也可能画得很漂亮却忽略了动作的影响；这也是本课实验里多步误差、开环与 MPC 的差别要强调的原因。常见的评估还要看下游任务表现，这部分是学界仍在讨论的问题。"
+   }
+  ]
+ }
+}

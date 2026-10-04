@@ -2,17 +2,18 @@
  "id": "u05",
  "title": "基与基变换",
  "en": "Bases, Dot Products & Change of Basis",
- "minutes": 45,
+ "minutes": 105,
  "objectives": [
-  "理解 **张成空间 (span)**、**线性无关 (linear independence)**、**基 (basis)** 这三个概念",
-  "从代数和几何两个角度理解 **点积 (dot product)**，会算 **余弦相似度 (cosine similarity)**",
-  "会用 **基变换 (change of basis)** 在两套坐标之间换算",
-  "认识几类重要的矩阵：**单位矩阵**、**对称矩阵**、**正交矩阵**、**旋转矩阵**"
+  "理解 **张成空间 (span)**、**线性无关 (linear independence)**、**基 (basis)** 与 **维数 (dimension)**，会用 NumPy 的 `matrix_rank` 判断一组向量能不能当基",
+  "从代数和几何两个角度理解 **点积 (dot product)**、**范数 (norm)**、**投影 (projection)**，会算 **余弦相似度 (cosine similarity)**",
+  "会用 $B\\mathbf{c}$ 和 $B^{-1}\\mathbf{x}$ 做 **基变换 (change of basis)**，会把变换翻译成 $B^{-1}MB$，并知道换基不改变迹和行列式",
+  "认识 **正交矩阵 (orthogonal matrix)** 与 **标准正交基 (orthonormal basis)**：逆就是转置、保长度保夹角、坐标就是点积",
+  "理解「高维随机方向几乎正交」和「概念方向不一定是神经元轴」这两个事实，这是 ARENA 后面 **特权基 (privileged basis)** 与 **叠加 (superposition)** 的数学基础"
  ],
  "blocks": [
   {
    "type": "text",
-   "md": "### 为什么要关心「基」\n\n我们习惯用标准坐标轴描述向量，但这只是**一种**选择。ARENA 的线性代数清单里专门列了「**基与基变换** (bases, and basis transformations)」，因为在可解释性研究里，这是一个核心问题：\n\n> 神经网络里每个神经元对应一个标准坐标方向。但网络学到的「概念」，一定对齐这些坐标轴吗？\n\n很多时候并不对齐——有意义的方向可能是神经元的某种**组合**。要讨论这类问题，就必须能在不同的基之间自如切换。点积则是衡量「两个方向有多接近」的基本工具，第 14 节算余弦相似度、之后理解注意力机制都要用到。\n\n**本节安排（约 45 分钟）**：视频一（10 分钟）→ 要点 → 视频二（14 分钟）→ 要点 → 视频三（13 分钟）→ 要点、特殊矩阵、「想一想」。"
+   "md": "### 先说这一节要干什么\n\n我们习惯用标准坐标轴描述向量，但那只是**一种**选择。同一个向量，换一把「尺子」（换一组基），数字就全变了，可它还是同一个向量。ARENA 的线性代数清单里专门列了「基与基变换」，因为可解释性研究的一个核心问题就是：**网络学到的「概念」，一定对齐神经元的坐标轴吗？** 要讨论这类问题，就得先能在不同的基之间自如切换，并且会用**点积**衡量两个方向有多接近。\n\n这一节把这些变成能运行的代码：判断一组向量是不是基，算点积与余弦相似度，做基变换，验证正交矩阵的性质，最后用两个小实验看看高维空间里方向的几何。\n\n**学完它你就能看懂这几件事：**\n\n- 注意力机制里 $QK^\\top$ 为什么是一堆点积，以及为什么要除以 $\\sqrt{d}$（点积的大小会随维度增长）；\n- 嵌入向量检索、词向量类比里的**余弦相似度**到底在比较什么；\n- 可解释性论文里「特征方向 (feature direction)」「特权基」「叠加」这些词，说的是**换一组基看激活值**；\n- 为什么初始化、PCA、QR 分解里到处是**正交矩阵**：它们不放大也不缩小任何东西，数值上最稳定。\n\n**本节安排（约 105 分钟）**：导读与张成、基（15 分钟）→ 视频一（10 分钟）→ 点积与余弦相似度（15 分钟）→ 视频二（14 分钟）→ 基变换（15 分钟）→ 视频三（13 分钟）→ 正交矩阵（10 分钟）→ 高维几何小实验（8 分钟）→「想一想」。视频是英文的，可以打开 YouTube 的中文字幕。\n\n### 张成空间、线性无关与基\n\n> **标准定义 · 线性组合、张成、线性无关、基 (linear combination, span, independence, basis)**\n>\n> 向量 $\\mathbf{v}_1,\\dots,\\mathbf{v}_k$ 的**线性组合 (linear combination)** 是 $c_1\\mathbf{v}_1+\\dots+c_k\\mathbf{v}_k$（$c_i$ 为实数）。所有线性组合构成的集合叫它们的**张成空间 (span)**。如果其中没有任何一个向量可以由其余向量的线性组合得到，就称它们**线性无关 (linearly independent)**，否则**线性相关 (linearly dependent)**。一组既**线性无关**、又**张成整个空间**的向量叫**基 (basis)**；$n$ 维空间的任何一组基恰好有 $n$ 个向量，这个数 $n$ 称为**维数 (dimension)**。基给每个向量一组**唯一**的坐标：$\\mathbf{x}=c_1\\mathbf{b}_1+\\dots+c_n\\mathbf{b}_n$。\n>\n> *English: A basis is a linearly independent set of vectors that spans the whole space. Every basis of an n-dimensional space has exactly n vectors, and every vector has a unique coordinate vector with respect to it.*\n\n**白话版：「一套不浪费的坐标系」。** 把向量想成你能走的「步子」：线性组合就是每种步子走几次；张成空间就是你能到达的所有地方。如果某种步子可以被别的步子凑出来，它就是**多余的**（线性相关）；基就是「既够用、又没有多余」的一套步子。\n\n算一个例子：$(1,0,0)$、$(0,1,0)$、$(1,1,0)$ 能不能当三维空间的基？第三个等于前两个之和，所以多余；而且三个向量的第三个坐标全是 0，永远走不出 $xy$ 平面。用代码验证，并换一组真正的基：\n\n```python\nimport numpy as np\n\n# 三个三维向量：第三个是前两个之和\nv1, v2, v3 = np.array([1, 0, 0]), np.array([0, 1, 0]), np.array([1, 1, 0])\nA = np.stack([v1, v2, v3], axis=1)          # 把它们当作列，拼成 3x3 矩阵\nprint(\"秩 =\", np.linalg.matrix_rank(A))      # 秩 = 线性无关的向量个数 = 张成空间的维数\n\n# 能不能组合出 (0, 0, 1)？用最小二乘找「最接近」的组合\ntarget = np.array([0.0, 0.0, 1.0])\ncoef, *_ = np.linalg.lstsq(A, target, rcond=None)\nprint(\"最佳组合的误差 =\", round(float(np.linalg.norm(A @ coef - target)), 3))   # 误差 1 = 完全够不着\n\n# 换一组真正的基：(1,1,0)、(1,-1,0)、(0,0,1)\nB = np.array([[1, 1, 0], [1, -1, 0], [0, 0, 1]]).T\nprint(\"新基的秩 =\", np.linalg.matrix_rank(B), \" 行列式 =\", round(float(np.linalg.det(B)), 3))\nx = np.array([3.0, 1.0, 2.0])\nc = np.linalg.solve(B, x)                   # 解 B @ c = x：x 在新基下的坐标\nprint(\"坐标 c =\", c, \" 还原 B @ c =\", B @ c)\n\n# 二维里两个共线向量\nprint(\"共线 (1,2),(2,4) 的秩 =\", np.linalg.matrix_rank(np.array([[1, 2], [2, 4]])))\n# 输出：秩 = 2\n# 输出：最佳组合的误差 = 1.0\n# 输出：新基的秩 = 3  行列式 = -2.0\n# 输出：坐标 c = [2. 1. 2.]  还原 B @ c = [3. 1. 2.]\n# 输出：共线 (1,2),(2,4) 的秩 = 1\n```\n\n读输出：三个向量拼成的矩阵**秩 (rank) 为 2**，也就是只有两个方向是真正独立的，张成的是二维平面；想组合出 $(0,0,1)$，最好的组合也有误差 1.0，完全够不着。换成 $(1,1,0),(1,-1,0),(0,0,1)$ 后秩是 3、行列式是 $-2$（不为 0，说明可逆）。向量 $(3,1,2)$ 在新基下的坐标是 $(2,1,2)$：$2(1,1,0)+1(1,-1,0)+2(0,0,1)=(3,1,2)$，还原结果与原向量一致。最后一行说明二维里 $(1,2),(2,4)$ 共线，秩只有 1。\n\n**实用判据**：$n$ 个 $n$ 维向量构成基 $\\Longleftrightarrow$ 以它们为列的方阵**可逆** $\\Longleftrightarrow$ 秩为 $n$ $\\Longleftrightarrow$ 行列式不为 0。这四种说法是同一件事，上一节（矩阵性质）已经见过。"
   },
   {
    "type": "video",
@@ -24,7 +25,7 @@
   },
   {
    "type": "text",
-   "md": "### 视频一要点：张成、线性无关、基\n\n- **线性组合 (linear combination)**：$a\\mathbf{v} + b\\mathbf{w}$，各自数乘再相加。\n- **张成空间 (span)**：一组向量所有线性组合构成的集合。两个不共线的二维向量能张成整个平面；共线的只能张成一条直线。\n- **线性相关 (linearly dependent)**：某个向量可以由其他向量组合出来，它是「多余的」，加进来不会扩大张成空间。反之叫 **线性无关 (linearly independent)**。\n- **基 (basis)**：一组**线性无关**且能**张成整个空间**的向量。$n$ 维空间的任何一组基都恰好有 $n$ 个向量，这个数就是 **维数 (dimension)**。\n\n标准基 $\\hat{\\imath}, \\hat{\\jmath}$ 只是其中一种选择。"
+   "md": "### 点积、范数与余弦相似度\n\n> **标准定义 · 点积、范数、余弦相似度 (dot product, norm, cosine similarity)**\n>\n> 两个向量的**点积 (dot product)** 有两个等价的定义：\n>\n> $$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_i u_iv_i=\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\cos\\theta$$\n>\n> 其中 $\\|\\mathbf{u}\\|=\\sqrt{\\mathbf{u}\\cdot\\mathbf{u}}$ 是**长度**（**L2 范数 (L2 norm)**），$\\theta$ 是两向量的夹角。点积为 0 就称它们**正交 (orthogonal)**。把点积除以两个长度，得到**余弦相似度 (cosine similarity)** $\\cos\\theta=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|}\\in[-1,1]$。$\\mathbf{u}$ 在 $\\mathbf{v}$ 方向上的**投影 (projection)** 长度是 $\\mathbf{u}\\cdot\\hat{\\mathbf{v}}$，其中 $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$。\n>\n> *English: The dot product is Σ uᵢvᵢ = ‖u‖‖v‖cos θ. Dividing by both lengths gives cosine similarity, which depends only on direction. The projection of u onto v has length u·v̂.*\n\n**白话版：「两个方向有多顺路」。** 点积大于 0 表示大致同向，等于 0 表示垂直，小于 0 表示大致反向。**余弦相似度只看方向、不看长度**，所以比较两篇文章的主题时，长文章和短文章不会因为长度而吃亏。\n\n```python\nimport numpy as np\n\n# 构造两个已知夹角的向量：u 长 2、方向 30 度；v 长 3、方向 80 度，夹角 50 度\nth_u, th_v = np.deg2rad(30), np.deg2rad(80)\nu = 2 * np.array([np.cos(th_u), np.sin(th_u)])\nv = 3 * np.array([np.cos(th_v), np.sin(th_v)])\n\n# 定义一：对应分量相乘再相加；定义二：长度 x 长度 x cos(夹角)\nprint(\"分量定义 :\", round(float(u @ v), 4))\nprint(\"几何定义 :\", round(float(2 * 3 * np.cos(np.deg2rad(50))), 4))\n\n# 余弦相似度：点积除以两个长度，只剩方向\ndef cos_sim(a, b):\n    return a @ b / (np.linalg.norm(a) * np.linalg.norm(b))\n\nprint(\"夹角 =\", round(float(np.degrees(np.arccos(cos_sim(u, v)))), 1), \"度\")\n\n# 投影：u 在 v 方向上的「影子」长度 = u 和 v 的单位向量的点积\nv_hat = v / np.linalg.norm(v)\nprint(\"u 在 v 上的投影长度 =\", round(float(u @ v_hat), 4))\n\n# 缩放长度不改变余弦相似度；点积却会跟着变\nprint(\"v 放大 10 倍：点积\", round(float(u @ (10 * v)), 2), \" 余弦\", round(float(cos_sim(u, 10 * v)), 4))\n\n# 玩具「词向量」（4 维，手编的）\nwords = {\"cat\": [0.9, 0.8, 0.1, 0.0], \"dog\": [0.8, 0.9, 0.2, 0.1], \"car\": [0.1, 0.0, 0.9, 0.8]}\nw = {k: np.array(x) for k, x in words.items()}\nprint(\"cat-dog:\", round(float(cos_sim(w[\"cat\"], w[\"dog\"])), 3), \" cat-car:\", round(float(cos_sim(w[\"cat\"], w[\"car\"])), 3))\n\n# (3,4) 与 (4,-3)：点积 0，正交\nprint(\"(3,4)·(4,-3) =\", np.dot([3, 4], [4, -3]))\n# 输出：分量定义 : 3.8567\n# 输出：几何定义 : 3.8567\n# 输出：夹角 = 50.0 度\n# 输出：u 在 v 上的投影长度 = 1.2856\n# 输出：v 放大 10 倍：点积 38.57  余弦 0.6428\n# 输出：cat-dog: 0.987  cat-car: 0.123\n# 输出：(3,4)·(4,-3) = 0\n```\n\n读输出：同一对向量，用「分量相乘再相加」和「长度乘长度乘 $\\cos50^\\circ$」都得到 3.8567，两个定义确实等价；由点积反推出的夹角正好是 50.0 度。$\\mathbf{u}$ 在 $\\mathbf{v}$ 方向上的「影子」长 1.2856（就是 $2\\cos50^\\circ$）。把 $\\mathbf{v}$ 放大 10 倍，点积也放大 10 倍（38.57），而余弦相似度仍是 0.6428：**点积会随长度变化，余弦不会**。这就是检索系统常用余弦的原因。玩具词向量里，cat 和 dog 的余弦相似度 0.987（几乎同向），cat 和 car 只有 0.123（接近垂直）。最后一行是经典的 $(3,4)\\cdot(4,-3)=0$，两者正交。\n\n**对偶性 (duality)**：和一个固定向量 $\\mathbf{v}$ 做点积，本身就是一个「把向量变成一个数」的线性变换，它的矩阵是 $1\\times n$ 的 $\\mathbf{v}^\\top$，所以 $\\mathbf{u}\\cdot\\mathbf{v}=\\mathbf{v}^\\top\\mathbf{u}$。这也是为什么矩阵乘法 $A\\mathbf{x}$ 可以读成「$A$ 的每一行和 $\\mathbf{x}$ 做点积」：**矩阵乘法就是一批点积**。注意力里的 $QK^\\top$ 就是每个查询向量和每个键向量的点积；当维度 $d$ 很大时，点积的方差随 $d$ 增大（第 7 节会看到），所以要除以 $\\sqrt{d}$。"
   },
   {
    "type": "video",
@@ -36,7 +37,7 @@
   },
   {
    "type": "text",
-   "md": "### 视频二要点：点积\n\n**1. 两种等价的定义**\n\n$$\\mathbf{u}\\cdot\\mathbf{v} = \\sum_i u_i v_i = \\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\cos\\theta$$\n\n其中 $\\|\\mathbf{u}\\| = \\sqrt{\\mathbf{u}\\cdot\\mathbf{u}}$ 是向量的长度（**L2 范数 (L2 norm)**），$\\theta$ 是两个向量的夹角。\n\n**2. 符号的含义**\n\n- 大于 0：方向大致相同（夹角小于 90°）\n- 等于 0：互相**垂直 / 正交 (orthogonal)**\n- 小于 0：方向大致相反\n\n**3. 投影 (projection)**：$\\mathbf{u}\\cdot\\mathbf{v}$ 等于 $\\mathbf{u}$ 投影到 $\\mathbf{v}$ 方向上的长度，乘以 $\\mathbf{v}$ 的长度。\n\n**4. 对偶性 (duality)**：和一个固定向量 $\\mathbf{v}$ 做点积，本身就是一个「把向量变成一个数」的线性变换，它的矩阵就是 $1 \\times n$ 的 $\\mathbf{v}^\\top$。所以 $\\mathbf{u}\\cdot\\mathbf{v} = \\mathbf{v}^\\top\\mathbf{u}$。\n\n### 余弦相似度\n\n把点积除以两个长度，只保留「方向有多接近」：\n\n$$\\cos\\theta = \\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|} \\in [-1, 1]$$\n\n这就是 **余弦相似度 (cosine similarity)**，在词向量、检索、表示分析里无处不在。"
+   "md": "### 基变换\n\n> **标准定义 · 基变换 (change of basis)**\n>\n> 设另一组基 $\\mathbf{b}_1,\\dots,\\mathbf{b}_n$ 用标准坐标写出，把它们作为**列**排成可逆矩阵 $B=[\\mathbf{b}_1\\ \\cdots\\ \\mathbf{b}_n]$。一个向量在新基下的坐标为 $\\mathbf{c}$，在标准坐标下就是 $\\mathbf{x}=B\\mathbf{c}$；反过来 $\\mathbf{c}=B^{-1}\\mathbf{x}$。如果 $M$ 是用标准坐标写的线性变换，那么**同一个变换**在新基坐标下的矩阵是 $M_B=B^{-1}MB$。换基不改变变换本身，所以 $\\operatorname{tr}(M_B)=\\operatorname{tr}(M)$，$\\det(M_B)=\\det(M)$。\n>\n> *English: If the columns of B are a new basis written in standard coordinates, then x = Bc converts new coordinates to standard ones and c = B⁻¹x converts back. The same linear map M has matrix B⁻¹MB in the new basis; its trace and determinant are unchanged.*\n\n**白话版：「翻译官」。** 想象另一个人用自己的一套尺子说话：他说「$(3,2)$」，意思是「3 个他的第一把尺加 2 个他的第二把尺」。$B$ 是把他的话翻译成我们的话的翻译官，$B^{-1}$ 翻译回去。要让他的坐标系里做一个变换：**先翻译成我们的话（$B$），用我们的方法做（$M$），再翻译回去（$B^{-1}$）**，从右往左读 $B^{-1}MB$。\n\n```python\nimport numpy as np\n\n# 对方的基向量，用「我们的」坐标写出：b1 = (2,1)，b2 = (-1,1)；它们当作 B 的列\nB = np.array([[2.0, -1.0], [1.0, 1.0]])\nc = np.array([3.0, 2.0])                     # 对方说的坐标：「3 个 b1 加 2 个 b2」\nx = B @ c                                    # 翻译成我们的坐标\nprint(\"我们的坐标 x =\", x)\nprint(\"再翻译回去 B^-1 x =\", np.linalg.inv(B) @ x)\n\n# 一个用我们的坐标写的变换：逆时针旋转 90 度\nM = np.array([[0.0, -1.0], [1.0, 0.0]])\nM_B = np.linalg.inv(B) @ M @ B               # 同一个变换，在对方坐标下的矩阵\nprint(\"M_B =\")\nprint(np.round(M_B, 3))\n\n# 检验：两条路线得到同一个结果\n# 路线一：先翻译成我们的坐标，用 M，再翻译回去\nroute1 = np.linalg.inv(B) @ (M @ (B @ c))\n# 路线二：直接在对方坐标里用 M_B\nroute2 = M_B @ c\nprint(\"两条路线一致：\", bool(np.allclose(route1, route2)), route2)\n\n# 相似矩阵：换基不改变迹和行列式（它们描述的是变换本身，不是坐标）\nprint(\"迹：\", np.trace(M), round(float(np.trace(M_B)), 6) + 0.0, \"  行列式：\", round(float(np.linalg.det(M)), 6), round(float(np.linalg.det(M_B)), 6))\n# 输出：我们的坐标 x = [4. 5.]\n# 输出：再翻译回去 B^-1 x = [3. 2.]\n# 输出：M_B =\n# 输出：[[ 0.333 -0.667]\n# 输出： [ 1.667 -0.333]]\n# 输出：两条路线一致： True [-0.33333333  4.33333333]\n# 输出：迹： 0.0 0.0   行列式： 1.0 1.0\n```\n\n读输出：对方基是 $\\mathbf{b}_1=(2,1)$、$\\mathbf{b}_2=(-1,1)$，他说的 $(3,2)$ 在我们这里是 $3(2,1)+2(-1,1)=(4,5)$，再用 $B^{-1}$ 翻回来得到 $(3,2)$。「逆时针转 90 度」这个变换，在他的坐标里变成了看起来完全不同的矩阵 $M_B$（元素是 0.333、$-0.667$、1.667、$-0.333$）；用两条路线算同一个向量，结果都是 $(-0.333, 4.333)$。最后一行验证：换基后迹仍是 0、行列式仍是 1，因为它们是**变换本身的性质**，不依赖坐标。\n\n这件事和下一节直接相连：**对角化 $A=PDP^{-1}$ 就是选一组「恰好让矩阵变成对角」的基**，也就是 $B^{-1}MB$ 的特例。"
   },
   {
    "type": "video",
@@ -48,22 +49,26 @@
   },
   {
    "type": "text",
-   "md": "### 视频三要点：基变换\n\n假设另一个人用基 $\\mathbf{b}_1, \\mathbf{b}_2$ 描述向量（这两个向量用**我们的**坐标写出）。把它们作为列排成矩阵 $B = [\\mathbf{b}_1\\ \\mathbf{b}_2]$：\n\n- **对方坐标 → 我们的坐标**：对方说的 $\\begin{bmatrix}x\\\\y\\end{bmatrix}$，意思是 $x\\mathbf{b}_1 + y\\mathbf{b}_2$，在我们这里就是 $B\\begin{bmatrix}x\\\\y\\end{bmatrix}$。\n- **我们的坐标 → 对方坐标**：乘以 $B^{-1}$。\n- **把一个变换翻译到对方的语言**：若 $M$ 是用我们坐标写的变换，对方坐标下的同一个变换是\n\n$$B^{-1} M B$$\n\n从右往左读：先把对方的向量翻译成我们的语言（$B$），做变换（$M$），再翻译回去（$B^{-1}$）。\n\n### 几类重要的矩阵\n\nARENA 也建议了解「不同类型的矩阵及其意义」：\n\n| 名称 | 定义 | 含义 |\n|---|---|---|\n| **单位矩阵** (identity) | $I$，对角线为 1、其余为 0 | 什么都不做 |\n| **对称矩阵** (symmetric) | $A^\\top = A$ | 协方差矩阵、$X^\\top X$ 都是；特征值是实数（第 6 节） |\n| **正交矩阵** (orthogonal) | $Q^\\top Q = I$，即 $Q^{-1} = Q^\\top$ | 列是互相垂直的单位向量；保持长度和夹角（旋转或反射） |\n| **旋转矩阵** (rotation) | $\\begin{bmatrix}\\cos\\theta & -\\sin\\theta\\\\ \\sin\\theta & \\cos\\theta\\end{bmatrix}$ | 逆时针旋转 $\\theta$，是行列式为 1 的正交矩阵 |\n\n**正交矩阵特别好用**：它的逆就是转置，不用费力求逆；用 **标准正交基 (orthonormal basis)**（互相垂直的单位向量）时，一个向量在某个基向量上的坐标，直接就是和它的点积。"
+   "md": "### 特殊矩阵：对称、正交、旋转\n\n> **标准定义 · 正交矩阵与标准正交基 (orthogonal matrix & orthonormal basis)**\n>\n> 若方阵 $Q$ 满足 $Q^\\top Q=I$（等价于 $Q^{-1}=Q^\\top$），就称为**正交矩阵 (orthogonal matrix)**；它的列是两两垂直的**单位向量**，称为**标准正交基 (orthonormal basis)**。正交矩阵保持长度和点积：$\\|Q\\mathbf{x}\\|=\\|\\mathbf{x}\\|$，$(Q\\mathbf{x})\\cdot(Q\\mathbf{y})=\\mathbf{x}\\cdot\\mathbf{y}$，行列式为 $\\pm1$（$+1$ 是旋转，$-1$ 含反射）。**对称矩阵 (symmetric matrix)** 满足 $A^\\top=A$。\n>\n> *English: Q is orthogonal if QᵀQ = I, i.e. its columns form an orthonormal basis. Orthogonal maps preserve lengths and angles; det = +1 means a rotation, −1 includes a reflection.*\n\n**白话版：「刚体运动」。** 正交矩阵就是不拉伸、不压扁、只把整个空间当作刚体转一下（或照一下镜子）。**最大的好处：用标准正交基时，坐标就是点积，不用求逆。**\n\n```python\nimport numpy as np\n\nth = np.deg2rad(30)\nQ = np.array([[np.cos(th), -np.sin(th)], [np.sin(th), np.cos(th)]])   # 逆时针转 30 度\n\nprint(\"Q^T Q =\")\nprint(np.round(Q.T @ Q, 6))                                  # 单位矩阵：Q 是正交矩阵\nprint(\"逆 = 转置：\", bool(np.allclose(np.linalg.inv(Q), Q.T)), \" 行列式 =\", round(float(np.linalg.det(Q)), 3))\n\nrng = np.random.default_rng(0)\nx = rng.normal(size=2)\nprint(\"长度保持：\", round(float(np.linalg.norm(x)), 4), \"->\", round(float(np.linalg.norm(Q @ x)), 4))\ny = rng.normal(size=2)\nprint(\"点积保持：\", round(float(x @ y), 4), \"->\", round(float((Q @ x) @ (Q @ y)), 4))\n\n# 标准正交基：坐标就是点积，不用求逆\nq1, q2 = Q[:, 0], Q[:, 1]                                    # Q 的两列是一组标准正交基\ndots = np.array([x @ q1, x @ q2])\nprint(\"点积法坐标：\", np.round(dots, 4), \" 求逆法坐标：\", np.round(np.linalg.solve(Q, x), 4))\n\n# 对比：不正交的基，点积不是坐标\nB = np.array([[1.0, 1.0], [0.0, 1.0]])                       # 列 (1,0) 和 (1,1)，不垂直\nprint(\"非正交基 点积：\", np.round(B.T @ x, 4), \" 真实坐标：\", np.round(np.linalg.solve(B, x), 4))\n\n# 反射矩阵：也是正交的，但行列式 -1\nF = np.array([[1.0, 0.0], [0.0, -1.0]])\nprint(\"反射 F^T F = I：\", bool(np.allclose(F.T @ F, np.eye(2))), \" det =\", np.linalg.det(F))\n# 输出：Q^T Q =\n# 输出：[[1. 0.]\n# 输出： [0. 1.]]\n# 输出：逆 = 转置： True  行列式 = 1.0\n# 输出：长度保持： 0.1824 -> 0.1824\n# 输出：点积保持： 0.0667 -> 0.0667\n# 输出：点积法坐标： [ 0.0428 -0.1773]  求逆法坐标： [ 0.0428 -0.1773]\n# 输出：非正交基 点积： [ 0.1257 -0.0064]  真实坐标： [ 0.2578 -0.1321]\n# 输出：反射 F^T F = I： True  det = -1.0\n```\n\n读输出：$30^\\circ$ 的旋转矩阵 $Q$ 满足 $Q^\\top Q=I$，行列式为 1，逆等于转置；随机向量 $\\mathbf{x}$ 的长度在旋转前后都是 0.1824，两个向量的点积旋转前后都是 0.0667（长度和夹角都保持）。关键对比：用 $Q$ 的列作基，坐标直接用点积得到 $(0.0428,-0.1773)$，和「解方程」的结果完全一样；但换成不垂直的基（列 $(1,0)$ 和 $(1,1)$），点积 $(0.1257,-0.0064)$ 就**不是**真实坐标 $(0.2578,-0.1321)$。最后，反射矩阵也满足 $F^\\top F=I$，但行列式是 $-1$。\n\n**对称矩阵**（$A^\\top=A$）也值得记：协方差矩阵、$X^\\top X$ 都是对称的，它们的特征值全是实数、特征向量可以选成互相正交（谱定理），下一节会用到。\n\n### 一个小实验：高维几何与「概念方向」\n\n这一节的最后，用两个实验把上面的工具用到 ARENA 后面真正会遇到的问题上。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\n\n# 实验一：高维空间里，随机方向几乎互相垂直\ndef mean_abs_cos(d, n_pairs=2000):\n    a = rng.normal(size=(n_pairs, d)); b = rng.normal(size=(n_pairs, d))\n    cos = (a * b).sum(1) / (np.linalg.norm(a, axis=1) * np.linalg.norm(b, axis=1))\n    return np.abs(cos).mean()\n\nfor d in [2, 10, 100, 1000]:\n    print(f\"d = {d:5d}  随机两向量 |cos| 的平均 = {mean_abs_cos(d):.3f}\")\n\n# 实验二：在 d=50 维里塞进 200 个随机方向，最坏的一对有多接近？\nd, k = 50, 200\nV = rng.normal(size=(k, d)); V /= np.linalg.norm(V, axis=1, keepdims=True)\nG = V @ V.T; np.fill_diagonal(G, 0)\nprint(\"200 个方向，d=50：平均 |cos| =\", round(float(np.abs(G).mean()), 3), \" 最大 |cos| =\", round(float(np.abs(G).max()), 3))\n\n# 实验三：两个独立「概念」，方向不是神经元轴，而是旋转后的一对正交方向\nf1 = np.array([0.6, 0.8]); f2 = np.array([-0.8, 0.6])\ns1, s2 = rng.normal(size=5000), rng.normal(size=5000)        # 每个样本里两个概念各有多强\nacts = s1[:, None] * f1 + s2[:, None] * f2                   # 两个「神经元」的激活值（标准基下的坐标）\ndef corr(a, b):\n    return round(float(np.corrcoef(a, b)[0, 1]), 2)\nprint(\"神经元 1 与概念 1、概念 2 的相关：\", corr(acts[:, 0], s1), corr(acts[:, 0], s2))\nprint(\"神经元 2 与概念 1、概念 2 的相关：\", corr(acts[:, 1], s1), corr(acts[:, 1], s2))\nR = np.stack([f1, f2])                                       # 换基：R 的行是新基，正交，所以坐标 = 点积\nnew = acts @ R.T\nprint(\"沿 f1 的坐标与概念 1、概念 2 的相关：\", corr(new[:, 0], s1), corr(new[:, 0], s2))\nprint(\"沿 f2 的坐标与概念 1、概念 2 的相关：\", corr(new[:, 1], s1), corr(new[:, 1], s2))\n# 输出：d =     2  随机两向量 |cos| 的平均 = 0.645\n# 输出：d =    10  随机两向量 |cos| 的平均 = 0.260\n# 输出：d =   100  随机两向量 |cos| 的平均 = 0.078\n# 输出：d =  1000  随机两向量 |cos| 的平均 = 0.025\n# 输出：200 个方向，d=50：平均 |cos| = 0.112  最大 |cos| = 0.51\n# 输出：神经元 1 与概念 1、概念 2 的相关： 0.61 -0.79\n# 输出：神经元 2 与概念 1、概念 2 的相关： 0.81 0.59\n# 输出：沿 f1 的坐标与概念 1、概念 2 的相关： 1.0 0.01\n# 输出：沿 f2 的坐标与概念 1、概念 2 的相关： 0.01 1.0\n```\n\n读输出：**实验一**，随机取两个方向，夹角的余弦绝对值的平均：$d=2$ 时 0.645，$d=10$ 时 0.260，$d=100$ 时 0.078，$d=1000$ 时 0.025，大致按 $1/\\sqrt{d}$ 缩小，**维度越高，随机方向越接近正交**。**实验二**：在只有 50 维的空间里放 200 个随机方向（比维数多得多），平均 $|\\cos|$ 只有 0.112，最坏的一对也只有 0.51。这说明「比维数更多的、近似互相独立的方向」是可以塞得下的，这正是 ARENA 可解释性章节里 **叠加 (superposition)** 的几何基础：基最多只有 $d$ 个严格正交的方向，但近似正交的方向可以多得多。\n\n**实验三**：两个「概念」强度独立，它们的方向是标准轴旋转后的一对正交方向 $f_1=(0.6,0.8)$ 和 $f_2=(-0.8,0.6)$。看**单个神经元**，神经元 1 同时和概念 1（相关 0.61）、概念 2（相关 $-0.79$）纠缠在一起，神经元 2 也一样；换到以 $f_1,f_2$ 为基的坐标，沿 $f_1$ 的坐标只和概念 1 相关（1.0 对 0.01），沿 $f_2$ 的只和概念 2 相关。**同一份数据，换一组基，结构就清晰了。** 如果网络的激活函数是逐元素的（如 ReLU），神经元的轴就是**特权基 (privileged basis)**，概念有机会对齐它；但像残差流这类没有逐元素操作的地方，没有哪组基是特殊的，要找概念就得「换基去找」。"
+  },
+  {
+   "type": "text",
+   "md": "### 这一节你要带走的三句话\n\n1. **基 = 线性无关 + 张成全空间**，$n$ 维空间的基恰好 $n$ 个；判断时看矩阵的秩或可逆性。\n2. **点积衡量「顺路程度」**：$\\mathbf{u}\\cdot\\mathbf{v}=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$，余弦相似度只看方向；矩阵乘法就是一批点积。\n3. **换基是翻译**：$\\mathbf{x}=B\\mathbf{c}$，变换变成 $B^{-1}MB$；正交矩阵的基最好用，逆就是转置，坐标就是点积。"
   },
   {
    "type": "think",
-   "q": "三个三维向量 $(1,0,0)$、$(0,1,0)$、$(1,1,0)$ 能构成三维空间的一组基吗？",
-   "a": "**不能。** 第三个向量等于前两个之和，三者**线性相关**，只能张成 $xy$ 平面（二维），无法表示任何 $z \\neq 0$ 的向量。\n\n一组基必须同时满足：线性无关、能张成整个空间。三维空间需要 3 个线性无关的向量。"
+   "q": "向量 $\\mathbf{x}=(5,1)$，新基 $\\mathbf{b}_1=(1,1)$、$\\mathbf{b}_2=(1,-1)$。(a) 求 $\\mathbf{x}$ 在新基下的坐标；(b) 这组基是不是标准正交基？如果不是，怎样改成标准正交基，坐标又会怎样变？",
+   "a": "(a) $B=\\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}$，解 $B\\mathbf{c}=\\mathbf{x}$：$c_1+c_2=5$，$c_1-c_2=1$，得 $\\mathbf{c}=(3,2)$。验证：$3(1,1)+2(1,-1)=(5,1)$。\n\n(b) 两个向量点积 $1\\cdot1+1\\cdot(-1)=0$，垂直；但长度都是 $\\sqrt2$，不是单位向量，所以只是**正交基**。把它们各除以 $\\sqrt2$ 就成了标准正交基，此时坐标就是点积：$\\mathbf{x}\\cdot\\hat{\\mathbf{b}}_1=6/\\sqrt2\\approx4.243$，$\\mathbf{x}\\cdot\\hat{\\mathbf{b}}_2=4/\\sqrt2\\approx2.828$。基向量缩短了 $\\sqrt2$ 倍，坐标就放大了 $\\sqrt2$ 倍（$3\\sqrt2\\approx4.243$，$2\\sqrt2\\approx2.828$）。"
   },
   {
    "type": "think",
-   "q": "向量 $\\mathbf{u} = (3, 4)$、$\\mathbf{v} = (4, -3)$。它们的点积和余弦相似度是多少？",
-   "a": "点积：$3 \\times 4 + 4 \\times (-3) = 0$，所以余弦相似度也是 0。\n\n两个向量**正交**。它们长度都是 5，把各自除以 5 后就是一组标准正交基。"
+   "q": "余弦相似度和点积，在比较两个文档向量时各自有什么好处和坏处？如果所有向量都已经归一化成长度 1，两者还有区别吗？",
+   "a": "**点积**同时受方向和长度影响：好处是长度可以携带「强度、置信度」之类的信息；坏处是长文档、范数大的向量会天然得分高。**余弦相似度**去掉了长度，只比较方向，所以更公平，但丢掉了长度里可能有用的信息。如果所有向量长度都是 1，点积 $=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta=\\cos\\theta$，两者**完全相同**。所以检索系统常常先把向量归一化，再用点积（实现上更快）。"
   },
   {
    "type": "think",
-   "q": "为什么说「神经元的方向不一定是有意义的方向」和基变换有关？",
-   "a": "一层有 $d$ 个神经元的激活值，就是一个 $d$ 维向量在**标准基**下的坐标，每个神经元对应一个基向量方向。\n\n但网络在意的可能是其他方向，比如「$0.6 \\times$ 神经元 3 $+ 0.8 \\times$ 神经元 7」这个方向才代表某个概念。只看单个神经元，相当于只在标准基下看问题，可能看不出结构。ARENA 第 1 章会讨论 **特权基 (privileged basis)** 和 **叠加 (superposition)**：什么时候神经元方向真的特殊，什么时候概念分散在很多神经元的组合里。"
+   "q": "一层网络有 $d=768$ 个神经元。一个研究者发现某个「概念」对应的方向是 $\\mathbf{f}=0.6\\,\\mathbf{e}_3+0.8\\,\\mathbf{e}_7$（$\\mathbf{e}_i$ 是神经元轴）。他只看神经元 3 和神经元 7 的激活值，会漏掉什么？该怎么测量这个概念？",
+   "a": "概念的强度应该是激活向量 $\\mathbf{a}$ 在方向 $\\mathbf{f}$ 上的坐标，即点积 $\\mathbf{a}\\cdot\\mathbf{f}=0.6a_3+0.8a_7$（$\\mathbf{f}$ 是单位向量，因为 $0.6^2+0.8^2=1$）。单独看 $a_3$ 或 $a_7$，每一个都只含有概念信号的一部分，而且还混着别的概念的贡献（上面实验三里神经元 1 同时与两个概念相关）。正确做法是**换基**，把 $\\mathbf{f}$ 当作一条新坐标轴再读数。如果网络有很多这样的概念方向，而且数量超过 768，它们只能近似正交，这就是叠加；那时即使换成某一组基也不能同时把所有概念分开。"
   },
   {
    "type": "keywords",
@@ -71,7 +76,7 @@
     [
      "线性组合",
      "linear combination",
-     "数乘再相加"
+     "数乘再相加：$c_1\\mathbf{v}_1+c_2\\mathbf{v}_2$"
     ],
     [
      "张成空间",
@@ -86,7 +91,7 @@
     [
      "基",
      "basis",
-     "线性无关且能张成整个空间的一组向量"
+     "线性无关且张成整个空间的一组向量"
     ],
     [
      "维数",
@@ -94,9 +99,14 @@
      "基里向量的个数"
     ],
     [
+     "秩",
+     "rank",
+     "线性无关的列的个数，也是像空间的维数"
+    ],
+    [
      "点积",
      "dot product",
-     "$\\sum_i u_iv_i = \\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$"
+     "$\\sum_i u_iv_i=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$"
     ],
     [
      "L2 范数",
@@ -111,22 +121,32 @@
     [
      "余弦相似度",
      "cosine similarity",
-     "只看方向的相似度，范围 $[-1, 1]$"
+     "只看方向的相似度，范围 $[-1,1]$"
+    ],
+    [
+     "投影",
+     "projection",
+     "一个向量在另一个方向上的「影子」"
     ],
     [
      "基变换",
      "change of basis",
-     "$B$ 把对方坐标翻译成我们的坐标"
+     "$\\mathbf{x}=B\\mathbf{c}$，变换变成 $B^{-1}MB$"
     ],
     [
      "正交矩阵",
      "orthogonal matrix",
-     "$Q^\\top Q = I$，保持长度和夹角"
+     "$Q^\\top Q=I$，保持长度和夹角"
     ],
     [
-     "对称矩阵",
-     "symmetric matrix",
-     "$A^\\top = A$"
+     "标准正交基",
+     "orthonormal basis",
+     "两两垂直的单位向量，坐标就是点积"
+    ],
+    [
+     "特权基 / 叠加",
+     "privileged basis / superposition",
+     "神经元轴是否特殊；比维数更多的概念方向近似正交地挤在一起"
     ]
    ]
   }
@@ -135,11 +155,22 @@
   {
    "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
    "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
-   "note": "「基与基变换」「不同类型的矩阵」两条"
+   "note": "「基与基变换」「不同类型的矩阵」两条（讲解为自写，未转载原文）"
   },
   {
    "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
-   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+   "note": "本节三集视频所在的完整系列"
+  },
+  {
+   "title": "NumPy 文档：numpy.linalg（matrix_rank、solve、inv、lstsq）",
+   "url": "https://numpy.org/doc/stable/reference/routines.linalg.html",
+   "note": "本节代码用到的线性代数函数"
+  },
+  {
+   "title": "MIT 18.06 Linear Algebra（Gilbert Strang）",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+   "note": "选看：线性代数的标准大学课程，对应基、正交、基变换各讲"
   }
  ],
  "quiz": {
@@ -164,7 +195,7 @@
      "只有 $(1, 1)$"
     ],
     "answer": 2,
-    "explain": "$(1,1)$ 和 $(1,-1)$ 不共线（线性无关），能张成整个平面。A 共线；B 含零向量，必然线性相关；D 只有一个向量，张不满二维。"
+    "explain": "$(1,1)$ 和 $(1,-1)$ 不共线（线性无关），能张成整个平面。$(1,0)$ 和 $(2,0)$ 共线；含零向量的组合必然线性相关；只有一个向量，张不满二维。"
    },
    {
     "q": "$n$ 维空间的一组基里有几个向量？",

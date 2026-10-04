@@ -1,0 +1,247 @@
+{
+ "id": "u06",
+ "title": "特征值与奇异值分解",
+ "en": "Eigenvalues & SVD",
+ "minutes": 45,
+ "objectives": [
+  "理解 **特征向量 (eigenvector)**：变换后仍留在原来直线上的向量；**特征值 (eigenvalue)** 是它被拉伸的倍数",
+  "会用 $\\det(A - \\lambda I) = 0$ 求 2×2 矩阵的特征值，知道 **对角化 (diagonalization)** 的意义",
+  "理解 **奇异值分解 (SVD)** $A = U\\Sigma V^\\top$ 的几何含义：旋转 → 缩放 → 旋转",
+  "知道为什么 SVD 是分析**低秩**权重矩阵的利器"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 这一节讲什么\n\nARENA 把 **特征值 / 特征向量** 和 **奇异值分解 (singular value decomposition, SVD)** 列为「不是必需、但建议了解」的内容。之所以放进来，是因为 ARENA 后面分析 Transformer 权重时会用 SVD 找出「最重要的方向」，第 4 节提到的「大而低秩的矩阵」正是 SVD 的主战场。\n\n**本节安排（约 45 分钟）**：视频一（17 分钟）→ 要点 → 视频二（16 分钟）→ 要点和「想一想」。视频二的动画很直观，建议全屏看。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "PFDu9oVAE-g",
+   "title": "视频一：Eigenvectors and eigenvalues（线性代数的本质 第 14 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 17
+  },
+  {
+   "type": "text",
+   "md": "### 视频一要点：特征向量与特征值\n\n**1. 定义**\n\n大多数向量在变换后会偏离原来的方向，但有些特殊的向量**只被拉伸或压缩，方向不变**（仍在原来那条直线上）：\n\n$$A\\mathbf{v} = \\lambda\\mathbf{v}$$\n\n$\\mathbf{v}$ 叫 **特征向量**，$\\lambda$ 叫对应的 **特征值**。$\\lambda = 2$ 表示拉长 2 倍；$\\lambda = -1$ 表示翻转到反方向；$\\lambda = 0$ 表示被压到原点。\n\n**2. 怎么求**\n\n$A\\mathbf{v} = \\lambda\\mathbf{v}$ 等价于 $(A - \\lambda I)\\mathbf{v} = \\mathbf{0}$。要有非零解，$A - \\lambda I$ 必须把空间压扁，即\n\n$$\\det(A - \\lambda I) = 0$$\n\n例如 $A = \\begin{bmatrix} 3 & 1 \\\\ 0 & 2 \\end{bmatrix}$：$\\det\\begin{bmatrix} 3-\\lambda & 1 \\\\ 0 & 2-\\lambda \\end{bmatrix} = (3-\\lambda)(2-\\lambda) = 0$，所以 $\\lambda = 3$ 或 $\\lambda = 2$。\n\n**3. 没有实特征向量的情况**\n\n二维平面里旋转 90° 会让每个向量都偏离原来的方向，所以**没有实数特征向量**（特征值是复数 $\\pm i$）。\n\n**4. 特征基与对角化**\n\n如果能找到足够多的特征向量组成一组基（**特征基 (eigenbasis)**），在这组基下变换就只是沿各轴缩放，矩阵变成**对角矩阵**：\n\n$$A = PDP^{-1}$$\n\n$P$ 的列是特征向量，$D$ 的对角线是特征值。这正是上一节的基变换 $B^{-1}MB$。好处之一是算幂很容易：$A^{100} = PD^{100}P^{-1}$。\n\n**5. 两个值得记住的事实**\n\n- $\\text{tr}(A) = \\sum_i \\lambda_i$，$\\det(A) = \\prod_i \\lambda_i$\n- **对称矩阵**（$A^\\top = A$）的特征值都是实数，特征向量可以选成互相正交——这叫 **谱定理 (spectral theorem)**"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "vSczTbgc8Rc",
+   "title": "视频二：SVD Visualized, Singular Value Decomposition explained（Visual Kernel）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 16
+  },
+  {
+   "type": "text",
+   "md": "### 视频二要点：奇异值分解\n\n特征分解只适用于**方阵**，而且不是每个方阵都能对角化。**SVD 对任何矩阵都成立**，包括非方阵：\n\n$$A = U\\,\\Sigma\\,V^\\top$$\n\n对形状为 $(m, n)$ 的 $A$：\n\n- $V^\\top$（$n \\times n$，正交矩阵）：在输入空间里**旋转**（或反射）\n- $\\Sigma$（$m \\times n$，只有对角线非零）：沿坐标轴**缩放**，对角线上的 $\\sigma_1 \\ge \\sigma_2 \\ge \\dots \\ge 0$ 叫 **奇异值 (singular values)**\n- $U$（$m \\times m$，正交矩阵）：在输出空间里再**旋转**\n\n**任何线性变换，都可以拆成「旋转 → 沿轴缩放 → 旋转」三步。** 几何上：单位圆（球）先被转一下，再被拉成椭圆（椭球），最后再转一下。奇异值就是椭圆各个半轴的长度。\n\n**和秩的关系**：非零奇异值的个数 = 矩阵的秩。\n\n**低秩近似 (low-rank approximation)**：只保留最大的 $k$ 个奇异值和对应的向量，\n\n$$A \\approx \\sum_{i=1}^{k} \\sigma_i\\,\\mathbf{u}_i\\mathbf{v}_i^\\top$$\n\n这是所有秩为 $k$ 的矩阵里对 $A$ **最好的近似**（Eckart–Young 定理）。图像压缩、**主成分分析 (PCA)**、分析 Transformer 的权重矩阵都基于这个思想。\n\n**和特征值的联系**：$A^\\top A$ 是对称矩阵，它的特征值恰好是 $\\sigma_i^2$，特征向量就是 $V$ 的列。\n\n```python\nimport torch\nA = torch.randn(5, 3)\nU, S, Vh = torch.linalg.svd(A, full_matrices=False)\nprint(U.shape, S.shape, Vh.shape)   # (5, 3) (3,) (3, 3)\nprint(torch.allclose(U @ torch.diag(S) @ Vh, A, atol=1e-5))  # True\n```"
+  },
+  {
+   "type": "think",
+   "q": "$A = \\begin{bmatrix} 2 & 0 \\\\ 0 & 3 \\end{bmatrix}$ 的特征值和特征向量是什么？",
+   "a": "对角矩阵沿坐标轴缩放：$\\hat{\\imath}$ 被拉长 2 倍，$\\hat{\\jmath}$ 被拉长 3 倍。\n\n所以特征值是 2 和 3，对应的特征向量分别是 $(1, 0)$ 和 $(0, 1)$（以及它们的任意非零倍数）。对角矩阵的特征值就是对角线元素。"
+  },
+  {
+   "type": "think",
+   "q": "一个 $1000 \\times 1000$ 的权重矩阵，奇异值从大到小是 50, 30, 20, 0.1, 0.1, …（后面都很小）。这说明什么？",
+   "a": "前 3 个奇异值远大于其余的，说明这个矩阵**近似是秩 3 的**：它主要沿 3 个方向起作用，其他方向的影响几乎可以忽略。\n\n用前 3 项的 $\\sigma_i\\mathbf{u}_i\\mathbf{v}_i^\\top$ 就能很好地近似它。对可解释性研究来说，这意味着只要弄懂这 3 对输入 / 输出方向，就理解了这个矩阵的大部分行为。"
+  },
+  {
+   "type": "think",
+   "q": "为什么 SVD 比特征分解更「通用」？",
+   "a": "- 特征分解要求**方阵**，而神经网络的权重矩阵大多不是方阵（比如 $768 \\times 3072$）。\n- 即使是方阵，也不一定有足够的实特征向量（比如旋转矩阵），不一定能对角化。\n- SVD 对**任意形状的实矩阵都存在**，而且 $U$、$V$ 总是正交矩阵，奇异值总是非负实数，数值计算也很稳定。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "特征向量",
+     "eigenvector",
+     "变换后方向不变的向量"
+    ],
+    [
+     "特征值",
+     "eigenvalue",
+     "特征向量被拉伸的倍数 $\\lambda$"
+    ],
+    [
+     "特征多项式",
+     "characteristic polynomial",
+     "$\\det(A - \\lambda I)$"
+    ],
+    [
+     "特征基",
+     "eigenbasis",
+     "由特征向量组成的基"
+    ],
+    [
+     "对角化",
+     "diagonalization",
+     "$A = PDP^{-1}$"
+    ],
+    [
+     "谱定理",
+     "spectral theorem",
+     "对称矩阵有实特征值和正交特征向量"
+    ],
+    [
+     "奇异值分解",
+     "singular value decomposition (SVD)",
+     "$A = U\\Sigma V^\\top$"
+    ],
+    [
+     "奇异值",
+     "singular values",
+     "$\\Sigma$ 的对角线，椭圆半轴长度"
+    ],
+    [
+     "低秩近似",
+     "low-rank approximation",
+     "只保留最大的几个奇异值"
+    ],
+    [
+     "主成分分析",
+     "principal component analysis (PCA)",
+     "基于 SVD 的降维方法"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "特征值、SVD 为建议了解的内容"
+  },
+  {
+   "title": "Six (and a half) intuitions for SVD（LessWrong）",
+   "url": "https://www.lesswrong.com/posts/iupCxk3ddiJBAJkts/six-and-a-half-intuitions-for-svd",
+   "note": "ARENA 推荐的 SVD 直觉文章"
+  },
+  {
+   "title": "The Singular Value Decompositions of Transformer Weight Matrices are Highly Interpretable（LessWrong）",
+   "url": "https://www.lesswrong.com/posts/mkbGjzxD8d8XqKHzA/the-singular-value-decompositions-of-transformer-weight",
+   "note": "ARENA 引用的应用案例"
+  },
+  {
+   "title": "3Blue1Brown：A quick trick for computing eigenvalues（第 15 章，选看）",
+   "url": "https://www.youtube.com/watch?v=e50Bj7jn9IQ"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "特征向量 $\\mathbf{v}$ 满足 $A\\mathbf{v} = \\lambda\\mathbf{v}$，几何上意味着什么？",
+    "options": [
+     "变换后 $\\mathbf{v}$ 仍在原来经过原点的那条直线上，只是被缩放了 $\\lambda$ 倍",
+     "$\\mathbf{v}$ 在变换后长度不变",
+     "$\\mathbf{v}$ 被旋转了 $\\lambda$ 度",
+     "$\\mathbf{v}$ 被送到原点"
+    ],
+    "answer": 0,
+    "explain": "特征向量的方向保持不变（或正好反向），只被缩放。长度不变只在 $|\\lambda| = 1$ 时成立。"
+   },
+   {
+    "q": "$A = \\begin{bmatrix} 4 & 0 \\\\ 0 & -1 \\end{bmatrix}$ 的特征值是？",
+    "options": [
+     "4 和 1",
+     "0 和 3",
+     "4 和 −1",
+     "只有 4"
+    ],
+    "answer": 2,
+    "explain": "对角矩阵的特征值就是对角线元素：4 和 −1。$\\lambda = -1$ 表示 $\\hat{\\jmath}$ 方向被翻转。"
+   },
+   {
+    "q": "求特征值时解的方程是？",
+    "options": [
+     "$\\det(A) = \\lambda$",
+     "$\\text{tr}(A - \\lambda I) = 0$",
+     "$A - \\lambda = 0$",
+     "$\\det(A - \\lambda I) = 0$"
+    ],
+    "answer": 3,
+    "explain": "$(A - \\lambda I)\\mathbf{v} = \\mathbf{0}$ 有非零解 ⇔ $A - \\lambda I$ 不可逆 ⇔ 行列式为 0。"
+   },
+   {
+    "q": "二维平面里的 90° 旋转矩阵有实数特征向量吗？",
+    "options": [
+     "有，是 $\\hat{\\imath}$",
+     "没有，每个非零向量都被转离了原来的直线",
+     "有无穷多个",
+     "有，是 $\\hat{\\jmath}$"
+    ],
+    "answer": 1,
+    "explain": "旋转 90° 后没有任何非零向量留在原来的直线上，所以没有实特征向量（特征值是复数 $\\pm i$）。"
+   },
+   {
+    "q": "一个 2×2 矩阵的特征值是 2 和 5，它的迹和行列式分别是？",
+    "options": [
+     "迹 7，行列式 10",
+     "迹 10，行列式 7",
+     "迹 3，行列式 10",
+     "迹 7，行列式 3"
+    ],
+    "answer": 0,
+    "explain": "迹 = 特征值之和 = 7；行列式 = 特征值之积 = 10。"
+   },
+   {
+    "q": "对角化 $A = PDP^{-1}$ 中，$P$ 的列是什么？",
+    "options": [
+     "特征值",
+     "$A$ 的行",
+     "$A$ 的奇异值",
+     "$A$ 的特征向量"
+    ],
+    "answer": 3,
+    "explain": "$P$ 把特征基坐标翻译回标准坐标，所以它的列是特征向量；$D$ 的对角线是对应的特征值。"
+   },
+   {
+    "q": "SVD $A = U\\Sigma V^\\top$ 的几何含义是？",
+    "options": [
+     "平移 → 缩放 → 平移",
+     "旋转（或反射）→ 沿坐标轴缩放 → 旋转（或反射）",
+     "缩放 → 剪切 → 缩放",
+     "只是一次旋转"
+    ],
+    "answer": 1,
+    "explain": "$V^\\top$ 和 $U$ 都是正交矩阵（旋转 / 反射），$\\Sigma$ 沿坐标轴缩放。从右往左：先 $V^\\top$，再 $\\Sigma$，最后 $U$。"
+   },
+   {
+    "q": "关于 SVD，下面哪个说法正确？",
+    "options": [
+     "只适用于方阵",
+     "只适用于对称矩阵",
+     "对任意形状的实矩阵都存在",
+     "奇异值可能是负数"
+    ],
+    "answer": 2,
+    "explain": "SVD 对任何 $m \\times n$ 实矩阵都存在，奇异值总是非负的。这正是它比特征分解更通用的地方。"
+   },
+   {
+    "q": "一个矩阵的奇异值是 5, 2, 0, 0，它的秩是多少？",
+    "options": [
+     "2",
+     "4",
+     "0",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "秩 = 非零奇异值的个数 = 2。"
+   },
+   {
+    "q": "保留最大的 $k$ 个奇异值得到的 $\\sum_{i=1}^k \\sigma_i\\mathbf{u}_i\\mathbf{v}_i^\\top$ 有什么意义？",
+    "options": [
+     "它就是 $A$ 的逆矩阵",
+     "它是 $A$ 的特征向量",
+     "它的行列式等于 $A$ 的行列式",
+     "它是所有秩为 $k$ 的矩阵中对 $A$ 最好的近似"
+    ],
+    "answer": 3,
+    "explain": "这就是低秩近似（Eckart–Young 定理），PCA、图像压缩、分析 Transformer 权重都用到它。"
+   }
+  ]
+ }
+}

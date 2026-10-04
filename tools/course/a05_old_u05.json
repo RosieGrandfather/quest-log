@@ -1,0 +1,259 @@
+{
+ "id": "u05",
+ "title": "基与基变换",
+ "en": "Bases, Dot Products & Change of Basis",
+ "minutes": 45,
+ "objectives": [
+  "理解 **张成空间 (span)**、**线性无关 (linear independence)**、**基 (basis)** 这三个概念",
+  "从代数和几何两个角度理解 **点积 (dot product)**，会算 **余弦相似度 (cosine similarity)**",
+  "会用 **基变换 (change of basis)** 在两套坐标之间换算",
+  "认识几类重要的矩阵：**单位矩阵**、**对称矩阵**、**正交矩阵**、**旋转矩阵**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 为什么要关心「基」\n\n我们习惯用标准坐标轴描述向量，但这只是**一种**选择。ARENA 的线性代数清单里专门列了「**基与基变换** (bases, and basis transformations)」，因为在可解释性研究里，这是一个核心问题：\n\n> 神经网络里每个神经元对应一个标准坐标方向。但网络学到的「概念」，一定对齐这些坐标轴吗？\n\n很多时候并不对齐——有意义的方向可能是神经元的某种**组合**。要讨论这类问题，就必须能在不同的基之间自如切换。点积则是衡量「两个方向有多接近」的基本工具，第 14 节算余弦相似度、之后理解注意力机制都要用到。\n\n**本节安排（约 45 分钟）**：视频一（10 分钟）→ 要点 → 视频二（14 分钟）→ 要点 → 视频三（13 分钟）→ 要点、特殊矩阵、「想一想」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "k7RM-ot2NWY",
+   "title": "视频一：Linear combinations, span, and basis vectors（线性代数的本质 第 2 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 视频一要点：张成、线性无关、基\n\n- **线性组合 (linear combination)**：$a\\mathbf{v} + b\\mathbf{w}$，各自数乘再相加。\n- **张成空间 (span)**：一组向量所有线性组合构成的集合。两个不共线的二维向量能张成整个平面；共线的只能张成一条直线。\n- **线性相关 (linearly dependent)**：某个向量可以由其他向量组合出来，它是「多余的」，加进来不会扩大张成空间。反之叫 **线性无关 (linearly independent)**。\n- **基 (basis)**：一组**线性无关**且能**张成整个空间**的向量。$n$ 维空间的任何一组基都恰好有 $n$ 个向量，这个数就是 **维数 (dimension)**。\n\n标准基 $\\hat{\\imath}, \\hat{\\jmath}$ 只是其中一种选择。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "LyGKycYT2v0",
+   "title": "视频二：Dot products and duality（线性代数的本质 第 9 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "text",
+   "md": "### 视频二要点：点积\n\n**1. 两种等价的定义**\n\n$$\\mathbf{u}\\cdot\\mathbf{v} = \\sum_i u_i v_i = \\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\cos\\theta$$\n\n其中 $\\|\\mathbf{u}\\| = \\sqrt{\\mathbf{u}\\cdot\\mathbf{u}}$ 是向量的长度（**L2 范数 (L2 norm)**），$\\theta$ 是两个向量的夹角。\n\n**2. 符号的含义**\n\n- 大于 0：方向大致相同（夹角小于 90°）\n- 等于 0：互相**垂直 / 正交 (orthogonal)**\n- 小于 0：方向大致相反\n\n**3. 投影 (projection)**：$\\mathbf{u}\\cdot\\mathbf{v}$ 等于 $\\mathbf{u}$ 投影到 $\\mathbf{v}$ 方向上的长度，乘以 $\\mathbf{v}$ 的长度。\n\n**4. 对偶性 (duality)**：和一个固定向量 $\\mathbf{v}$ 做点积，本身就是一个「把向量变成一个数」的线性变换，它的矩阵就是 $1 \\times n$ 的 $\\mathbf{v}^\\top$。所以 $\\mathbf{u}\\cdot\\mathbf{v} = \\mathbf{v}^\\top\\mathbf{u}$。\n\n### 余弦相似度\n\n把点积除以两个长度，只保留「方向有多接近」：\n\n$$\\cos\\theta = \\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|} \\in [-1, 1]$$\n\n这就是 **余弦相似度 (cosine similarity)**，在词向量、检索、表示分析里无处不在。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "P2LTAUO1TdA",
+   "title": "视频三：Change of basis（线性代数的本质 第 13 章）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 13
+  },
+  {
+   "type": "text",
+   "md": "### 视频三要点：基变换\n\n假设另一个人用基 $\\mathbf{b}_1, \\mathbf{b}_2$ 描述向量（这两个向量用**我们的**坐标写出）。把它们作为列排成矩阵 $B = [\\mathbf{b}_1\\ \\mathbf{b}_2]$：\n\n- **对方坐标 → 我们的坐标**：对方说的 $\\begin{bmatrix}x\\\\y\\end{bmatrix}$，意思是 $x\\mathbf{b}_1 + y\\mathbf{b}_2$，在我们这里就是 $B\\begin{bmatrix}x\\\\y\\end{bmatrix}$。\n- **我们的坐标 → 对方坐标**：乘以 $B^{-1}$。\n- **把一个变换翻译到对方的语言**：若 $M$ 是用我们坐标写的变换，对方坐标下的同一个变换是\n\n$$B^{-1} M B$$\n\n从右往左读：先把对方的向量翻译成我们的语言（$B$），做变换（$M$），再翻译回去（$B^{-1}$）。\n\n### 几类重要的矩阵\n\nARENA 也建议了解「不同类型的矩阵及其意义」：\n\n| 名称 | 定义 | 含义 |\n|---|---|---|\n| **单位矩阵** (identity) | $I$，对角线为 1、其余为 0 | 什么都不做 |\n| **对称矩阵** (symmetric) | $A^\\top = A$ | 协方差矩阵、$X^\\top X$ 都是；特征值是实数（第 6 节） |\n| **正交矩阵** (orthogonal) | $Q^\\top Q = I$，即 $Q^{-1} = Q^\\top$ | 列是互相垂直的单位向量；保持长度和夹角（旋转或反射） |\n| **旋转矩阵** (rotation) | $\\begin{bmatrix}\\cos\\theta & -\\sin\\theta\\\\ \\sin\\theta & \\cos\\theta\\end{bmatrix}$ | 逆时针旋转 $\\theta$，是行列式为 1 的正交矩阵 |\n\n**正交矩阵特别好用**：它的逆就是转置，不用费力求逆；用 **标准正交基 (orthonormal basis)**（互相垂直的单位向量）时，一个向量在某个基向量上的坐标，直接就是和它的点积。"
+  },
+  {
+   "type": "think",
+   "q": "三个三维向量 $(1,0,0)$、$(0,1,0)$、$(1,1,0)$ 能构成三维空间的一组基吗？",
+   "a": "**不能。** 第三个向量等于前两个之和，三者**线性相关**，只能张成 $xy$ 平面（二维），无法表示任何 $z \\neq 0$ 的向量。\n\n一组基必须同时满足：线性无关、能张成整个空间。三维空间需要 3 个线性无关的向量。"
+  },
+  {
+   "type": "think",
+   "q": "向量 $\\mathbf{u} = (3, 4)$、$\\mathbf{v} = (4, -3)$。它们的点积和余弦相似度是多少？",
+   "a": "点积：$3 \\times 4 + 4 \\times (-3) = 0$，所以余弦相似度也是 0。\n\n两个向量**正交**。它们长度都是 5，把各自除以 5 后就是一组标准正交基。"
+  },
+  {
+   "type": "think",
+   "q": "为什么说「神经元的方向不一定是有意义的方向」和基变换有关？",
+   "a": "一层有 $d$ 个神经元的激活值，就是一个 $d$ 维向量在**标准基**下的坐标，每个神经元对应一个基向量方向。\n\n但网络在意的可能是其他方向，比如「$0.6 \\times$ 神经元 3 $+ 0.8 \\times$ 神经元 7」这个方向才代表某个概念。只看单个神经元，相当于只在标准基下看问题，可能看不出结构。ARENA 第 1 章会讨论 **特权基 (privileged basis)** 和 **叠加 (superposition)**：什么时候神经元方向真的特殊，什么时候概念分散在很多神经元的组合里。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "线性组合",
+     "linear combination",
+     "数乘再相加"
+    ],
+    [
+     "张成空间",
+     "span",
+     "所有线性组合构成的集合"
+    ],
+    [
+     "线性无关 / 线性相关",
+     "linearly independent / dependent",
+     "有没有「多余」的向量"
+    ],
+    [
+     "基",
+     "basis",
+     "线性无关且能张成整个空间的一组向量"
+    ],
+    [
+     "维数",
+     "dimension",
+     "基里向量的个数"
+    ],
+    [
+     "点积",
+     "dot product",
+     "$\\sum_i u_iv_i = \\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$"
+    ],
+    [
+     "L2 范数",
+     "L2 norm",
+     "向量长度 $\\sqrt{\\sum_i u_i^2}$"
+    ],
+    [
+     "正交",
+     "orthogonal",
+     "点积为 0，互相垂直"
+    ],
+    [
+     "余弦相似度",
+     "cosine similarity",
+     "只看方向的相似度，范围 $[-1, 1]$"
+    ],
+    [
+     "基变换",
+     "change of basis",
+     "$B$ 把对方坐标翻译成我们的坐标"
+    ],
+    [
+     "正交矩阵",
+     "orthogonal matrix",
+     "$Q^\\top Q = I$，保持长度和夹角"
+    ],
+    [
+     "对称矩阵",
+     "symmetric matrix",
+     "$A^\\top = A$"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "ARENA [0.0] Prerequisites — Linear Algebra 部分",
+   "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md",
+   "note": "「基与基变换」「不同类型的矩阵」两条"
+  },
+  {
+   "title": "3Blue1Brown：Essence of Linear Algebra 全系列",
+   "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "两个**共线**的二维向量（比如 $(1, 2)$ 和 $(2, 4)$）的张成空间是什么？",
+    "options": [
+     "整个二维平面",
+     "一条经过原点的直线",
+     "只有原点",
+     "一个正方形区域"
+    ],
+    "answer": 1,
+    "explain": "$(2, 4) = 2 \\times (1, 2)$，两者线性相关，所有组合都落在同一条直线上。"
+   },
+   {
+    "q": "下面哪组向量是二维空间的一组**基**？",
+    "options": [
+     "$(1, 0)$ 和 $(2, 0)$",
+     "$(0, 0)$ 和 $(1, 1)$",
+     "$(1, 1)$ 和 $(1, -1)$",
+     "只有 $(1, 1)$"
+    ],
+    "answer": 2,
+    "explain": "$(1,1)$ 和 $(1,-1)$ 不共线（线性无关），能张成整个平面。A 共线；B 含零向量，必然线性相关；D 只有一个向量，张不满二维。"
+   },
+   {
+    "q": "$n$ 维空间的一组基里有几个向量？",
+    "options": [
+     "恰好 $n$ 个",
+     "至少 $n+1$ 个",
+     "任意多个",
+     "取决于选哪组基"
+    ],
+    "answer": 0,
+    "explain": "任何一组基的向量个数都相同，等于空间的维数 $n$。"
+   },
+   {
+    "q": "$(1, 2, 3) \\cdot (4, -1, 2)$ 等于？",
+    "options": [
+     "12",
+     "0",
+     "6",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "$1 \\times 4 + 2 \\times (-1) + 3 \\times 2 = 4 - 2 + 6 = 8$。"
+   },
+   {
+    "q": "两个非零向量的点积为 0，说明什么？",
+    "options": [
+     "它们方向相同",
+     "它们互相垂直（正交）",
+     "其中一个是零向量",
+     "它们长度相等"
+    ],
+    "answer": 1,
+    "explain": "$\\mathbf{u}\\cdot\\mathbf{v} = \\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta = 0$，而长度都不为 0，所以 $\\cos\\theta = 0$，夹角 90°。"
+   },
+   {
+    "q": "$\\mathbf{u} = (1, 0)$，$\\mathbf{v} = (1, 1)$，余弦相似度是多少？",
+    "options": [
+     "$1$",
+     "$0$",
+     "$\\sqrt{2}$",
+     "$1/\\sqrt{2} \\approx 0.707$"
+    ],
+    "answer": 3,
+    "explain": "点积为 1，长度分别为 1 和 $\\sqrt{2}$，所以 $\\cos\\theta = 1/\\sqrt{2}$，夹角 45°。"
+   },
+   {
+    "q": "矩阵 $B$ 的列是一组新基（用标准坐标写出）。一个向量在新基下的坐标是 $\\mathbf{c}$，它在标准坐标下是？",
+    "options": [
+     "$B\\mathbf{c}$",
+     "$B^{-1}\\mathbf{c}$",
+     "$B^\\top\\mathbf{c}$",
+     "$\\mathbf{c}$ 本身"
+    ],
+    "answer": 0,
+    "explain": "新基坐标 $\\mathbf{c} = (x, y)$ 的意思是 $x\\mathbf{b}_1 + y\\mathbf{b}_2$，也就是 $B\\mathbf{c}$。反方向（标准 → 新基）才用 $B^{-1}$。"
+   },
+   {
+    "q": "变换 $M$ 用标准坐标写出，基变换矩阵为 $B$。在新基坐标下，同一个变换的矩阵是？",
+    "options": [
+     "$BMB^{-1}$",
+     "$B^{-1}MB$",
+     "$MB$",
+     "$B^\\top M$"
+    ],
+    "answer": 1,
+    "explain": "从右往左：先用 $B$ 把新基坐标翻译成标准坐标，再做 $M$，最后用 $B^{-1}$ 翻译回新基坐标。"
+   },
+   {
+    "q": "关于**正交矩阵** $Q$，下面哪个说法正确？",
+    "options": [
+     "它的所有元素都是 0 或 1",
+     "它的行列式一定为 0",
+     "它的逆矩阵等于它的转置，并且保持向量的长度",
+     "它一定是对称矩阵"
+    ],
+    "answer": 2,
+    "explain": "$Q^\\top Q = I$ 意味着 $Q^{-1} = Q^\\top$；它把向量长度和夹角都保持不变（旋转或反射），行列式为 ±1。"
+   },
+   {
+    "q": "矩阵 $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$ 是哪一类？",
+    "options": [
+     "对称矩阵",
+     "奇异矩阵（不可逆）",
+     "单位矩阵",
+     "旋转矩阵（逆时针 90°），也是正交矩阵"
+    ],
+    "answer": 3,
+    "explain": "代入 $\\theta = 90°$：$\\cos\\theta = 0$，$\\sin\\theta = 1$。它的转置是它的逆（顺时针转回去）；它不对称，因为转置后 $-1$ 和 $1$ 互换了位置。"
+   }
+  ]
+ }
+}

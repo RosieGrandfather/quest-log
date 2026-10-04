@@ -1,0 +1,194 @@
+"""ARENA 0.0 第 4 节：矩阵的基本性质（按 v3 格式重写，2026-10-04）"""
+from unitlib import *
+from a04c import C_DET, C_INV, C_RANK, C_LOWRANK, C_TRANS, C_TRACE
+from a04_quiz import QUIZ
+
+unit = {
+ "id": "u04",
+ "title": "矩阵的基本性质：秩、迹、行列式、转置",
+ "en": "Rank, Trace, Determinant, Transpose",
+ "minutes": 100,
+ "objectives": [
+  "从几何上理解 **行列式 (determinant)**：面积 / 体积的缩放倍数，负号表示定向翻转，为 0 意味着空间被压扁；会验证 $\\det(AB)=\\det(A)\\det(B)$",
+  "知道 **逆矩阵 (inverse)** 什么时候存在，理解 **列空间 (column space)**、**零空间 (null space)**，并知道「几乎奇异」矩阵在数值上为什么危险（**条件数 (condition number)**）",
+  "理解 **秩 (rank)** 与 **秩–零化度定理 (rank–nullity theorem)**，会用 $\\text{rank}(AB)\\le\\min(\\text{rank}(A),\\text{rank}(B))$ 推理，并理解 Transformer 里的 **低秩 (low-rank)** 结构",
+  "掌握 **转置 (transpose)** 与 **迹 (trace)** 的定义和常用性质：$(AB)^\\top=B^\\top A^\\top$、$\\text{tr}(AB)=\\text{tr}(BA)$，能用 NumPy 逐条验证",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一节要干什么
+
+上一节把矩阵看成对空间的变换。这一节问四个关于「这个变换有什么特点」的问题：它把面积**放大了多少**（行列式）？它**能不能被撤销**（逆）？它的输出**能铺满几维**（秩）？它有什么**对称的写法**（转置、迹）？ARENA 的清单把「秩、迹、行列式、转置」列在一起，因为后面读论文、看代码时，它们会反复出现。
+
+对数据 / AI 方向，这一节里的概念几乎处处可见：线性回归的正规方程要求 $X^\top X$ **可逆**；PCA 和 SVD 要分析矩阵的**秩**；协方差矩阵的**迹**是总方差；LoRA 这种微调方法的全部想法就是「权重的更新是**低秩**的」；高斯分布的密度里有**行列式**。
+
+**学完它你就能看懂这几件事：**
+
+- 「这个权重矩阵是低秩的」是什么意思，为什么 LoRA 只训练两个很瘦的矩阵就够；
+- 数值计算里为什么「`inv(A)` 没报错」不等于「矩阵是好矩阵」，为什么要用 `solve` 而不是求逆；
+- 注意力分数 $QK^\top$ 的形状从哪来，$(AB)^\top=B^\top A^\top$ 怎么用来检查代码；
+- 为什么 `matrix_rank` 在带噪声的数据上要小心阈值。
+
+**本节安排（约 100 分钟）**：导读（5 分钟）→ 视频一（10 分钟）→ 行列式与动手（15 分钟）→ 视频二（12 分钟）→ 逆矩阵（10 分钟）→ 列空间、零空间与秩（20 分钟）→ 低秩实验（10 分钟）→ 转置与迹（13 分钟）→「想一想」。视频是英文的，可以打开 YouTube 的中文字幕。
+
+### 行列式：面积的缩放倍数
+"""),
+  V("Ip3X9LOh2dk", "视频一：The determinant（线性代数的本质 第 6 章）", 10),
+  T(r"""
+> **标准定义 · 行列式 (determinant)**
+>
+> 方阵 $A$ 的**行列式** $\det(A)$ 是线性变换 $A$ 对**面积（三维是体积）的缩放倍数**，其符号表示**定向 (orientation)** 是否翻转：$\det(A)<0$ 表示空间被「翻了面」。二阶情形：
+>
+> $$\det\begin{bmatrix}a&b\\c&d\end{bmatrix}=ad-bc$$
+>
+> 主要性质：$\det(I)=1$；$\det(AB)=\det(A)\det(B)$；$\det(A)=0$ 当且仅当变换把空间**压扁**到更低的维度。
+>
+> *English: det(A) is the factor by which the linear map A scales area (volume in 3D); its sign says whether orientation is flipped. For a 2×2 matrix it is ad − bc. det(AB) = det(A)det(B), and det(A) = 0 exactly when A squashes space into a lower dimension.*
+
+**白话版：「橡皮网格里每个小方格被放大了几倍」。** 变换后，所有小方格都被放大（或缩小）同样的倍数，这个倍数就是行列式；是负数，说明这张橡皮网格被翻了面（像把纸翻过来，正面变反面）；是 0，说明整张网格被压成了一条线甚至一个点，**面积没有了**。下面用代码把这个画面算出来：对六种变换，量一下单位正方形的面积和一个任意三角形的面积比，再和 `det` 对照：
+
+""" + C_DET + r"""
+
+读输出：**面积比和 $|\det|$ 完全一致**，对正方形、对任意三角形都一样，这就是「所有区域按同一个倍数缩放」。缩放 $2\times3$ 的行列式是 $6$；旋转和剪切的行列式都是 $1$（保持面积）；**反射的行列式是 $-1$**：面积不变，但定向翻转了；最后一行的「压扁」矩阵第二列是第一列的 2 倍，行列式是 $0$，正方形被压成了一条线，面积为 $0$。倒数第二个检验显示 $\det(AB)=\det(A)\det(B)$ 成立（先缩放 $\det(B)$ 倍再缩放 $\det(A)$ 倍），而 $\det(A+B)=\det(A)+\det(B)$ 不成立：**行列式不是线性的**，千万别把它当成线性运算。
+"""),
+  V("uQhTuRlWMxw", "视频二：Inverse matrices, column space and null space（线性代数的本质 第 7 章）", 12),
+  T(r"""
+### 逆矩阵：把变换「倒回去」
+
+> **标准定义 · 逆矩阵 (inverse matrix)**
+>
+> 方阵 $A$ 的**逆矩阵** $A^{-1}$ 满足 $A^{-1}A=AA^{-1}=I$，其中 $I$ 是**单位矩阵 (identity matrix)**（什么都不做的变换）。**$A^{-1}$ 存在 $\iff\det(A)\ne0\iff A$ 满秩。** 此时方程 $A\mathbf{x}=\mathbf{b}$ 有唯一解 $\mathbf{x}=A^{-1}\mathbf{b}$。性质：$(AB)^{-1}=B^{-1}A^{-1}$（穿鞋和脱鞋：后穿的先脱）。
+>
+> *English: A⁻¹ undoes A: A⁻¹A = AA⁻¹ = I. It exists iff det(A) ≠ 0 (A has full rank), and then Ax = b has the unique solution x = A⁻¹b. (AB)⁻¹ = B⁻¹A⁻¹.*
+
+**白话版：「撤销键」。** 变换 $A$ 把空间拉伸、旋转了，$A^{-1}$ 把它按原样倒回去。但如果变换把整个平面压成了一条线，不同的点被挤到了同一个位置，你无法知道一个输出原来对应哪个输入，**撤销键就失灵了**，这就是「行列式为 0 则不可逆」。
+
+""" + C_INV + r"""
+
+读输出：$A=\begin{bmatrix}2&1\\1&3\end{bmatrix}$ 的行列式是 $5$，逆是 $\begin{bmatrix}0.6&-0.2\\-0.2&0.4\end{bmatrix}$；$A^{-1}A=I$，先变换再倒回去还得到原向量。解方程 $A\mathbf{x}=\mathbf{b}$ 时 `solve` 和 `inv @ b` 的答案一样（都是 $(1,3)$），但**实际写代码用 `np.linalg.solve`**：它更快，数值上也更稳，不用真的把逆算出来。压扁的矩阵 $S$ 把 $(2,0)$ 和 $(0,1)$ 都送到 $(2,4)$：输入不同、输出相同，所以没有逆，`inv` 报 `Singular matrix`。
+
+最后一个例子是数值计算里真正要小心的：「**几乎**被压扁」的矩阵 $\begin{bmatrix}1&1\\1&1+10^{-10}\end{bmatrix}$ 严格说可逆（行列式 $10^{-10}\ne0$），`inv` 不会报错，但**条件数 (condition number)** 高达 $4\times10^{10}$：输入里一点点误差，会在输出里被放大约这么多倍，结果基本不可信。**「能求逆」不等于「求出来的逆可靠」**，这是线性回归里「特征高度共线」时系数不稳定的根本原因。
+
+### 列空间、零空间与秩
+
+> **标准定义 · 列空间、零空间与秩 (column space, null space & rank)**
+>
+> 设 $A$ 是 $m\times n$ 矩阵。**列空间 (column space)** $\text{Col}(A)=\{A\mathbf{x}\}$ 是所有可能输出组成的空间，也就是 $A$ 的各列张成的空间。**秩 (rank)** $\text{rank}(A)$ 是列空间的**维数**，即「输出能铺满几维」。**零空间 (null space)** 或**核 (kernel)** $\text{Null}(A)=\{\mathbf{x}:A\mathbf{x}=\mathbf{0}\}$ 是所有被送到原点的输入。**秩–零化度定理**：
+>
+> $$n=\text{rank}(A)+\dim\text{Null}(A)$$
+>
+> *English: The column space is the set of all outputs Ax (the span of the columns); the rank is its dimension. The null space (kernel) is the set of inputs sent to 0. Rank–nullity: number of columns = rank + dim(null space).*
+
+**白话版：「输出有几个真正独立的方向，丢掉了几个方向」。** 一个 $m\times n$ 的变换，输入有 $n$ 个自由度；其中 $\text{rank}$ 个方向「活下来」，变成了输出里独立的方向；剩下的 $n-\text{rank}$ 个方向被「压没了」，也就是被送到原点的零空间。所以「活下来的」加「压没的」等于总共的，这就是秩–零化度定理。满秩时没有任何方向丢失，零空间只有零向量。
+
+""" + C_RANK + r"""
+
+读输出：$M$ 的第三列是前两列之和，三个方向里有一个是多余的，所以 $\det(M)=0$、$\text{rank}(M)=2$；把 500 个随机输入送进去，输出点云的秩是 2：它们全落在三维空间里的一个平面上。用 SVD 找到的零空间方向是 $(-0.5774,-0.5774,0.5774)$（长度 1），$M$ 乘它得到 0；$(1,1,-1)$ 方向也被送到原点（因为 $M$ 的「第三列 = 第一列 + 第二列」，即 $1\cdot c_1+1\cdot c_2-1\cdot c_3=0$）。三个奇异值是 $6.4012$、$1.0124$、$0$，**非零奇异值的个数就是秩**（这是下一阶段要学的 SVD 的预告）。最后一个例子：$5\times8$ 的矩阵 $P$ 是两个「瘦」矩阵（$5\times3$ 和 $3\times8$）的乘积，秩是 3，零空间有 5 维，$3+5=8$ 正好等于列数，秩–零化度定理成立。
+
+### 低秩：Transformer 里的重要结构
+
+> **标准定义 · 秩不等式与低秩矩阵 (rank inequality & low-rank matrix)**
+>
+> 对 $n\times m$ 矩阵 $A$：$\text{rank}(A)\le\min(n,m)$。复合不会「恢复」已经丢失的维度：
+>
+> $$\text{rank}(AB)\le\min\big(\text{rank}(A),\text{rank}(B)\big)$$
+>
+> 秩远小于 $\min(n,m)$ 的矩阵称为**低秩矩阵 (low-rank matrix)**。把 $n\times k$ 与 $k\times m$（$k$ 很小）的矩阵相乘，得到的 $n\times m$ 矩阵秩至多为 $k$。
+>
+> *English: rank(A) ≤ min(n, m), and rank(AB) ≤ min(rank A, rank B). A matrix whose rank is much smaller than its dimensions is low-rank; the product of an n×k and a k×m matrix has rank at most k.*
+
+**白话版：「两条窄管道接起来，再宽的出口也没用」。** 信息先被挤过一条 64 维的窄管道，后面再展开成 768 维，输出里**真正独立的信息**也只有 64 维，不会因为后面的管道变宽就多出来。ARENA 的思考题问的就是：$A$ 是 $(n,m)$、$B$ 是 $(m,l)$，$AB$ 的秩最大是多少？答案是 $\min(n,m,l)$。
+
+""" + C_LOWRANK + r"""
+
+读输出：$W_1$ 是 $768\times64$、$W_2$ 是 $64\times768$，乘积 $W$ 是 $768\times768$，有 589,824 个元素，但秩只有 64；存下两个因子只需要 98,304 个数，约省 6 倍。**LoRA（低秩适配）微调大模型的想法就是这个**：假设权重的「改动量」是低秩的，只训练两个很瘦的矩阵，参数量少一个数量级。第二行验证了秩不等式：$A$ 的秩是 2，$B$ 满秩（6），$AB$ 和 $BA$ 的秩都是 2，不会超过较小的那个。
+
+**最后一个要当心的现实问题：** 给这个严格低秩的 $W$ 加上 $10^{-3}$ 的一点点噪声，NumPy 默认的 `matrix_rank` 立刻变成了 768：严格意义下噪声使矩阵满秩了。看奇异值就知道真相：第 64 个奇异值是 473.5，第 65 个只有 0.053，断崖式下降，所以「有效秩」是 64；手动设阈值 `tol=1` 就能得到 64。**真实数据几乎永远带噪声，所以实践中谈「秩」，其实是在谈「有几个奇异值明显不为零」**，这就是 PCA 里「保留几个主成分」的由来。
+
+### 转置：行列互换
+"""),
+  T(r"""
+> **标准定义 · 转置 (transpose)**
+>
+> $A$ 的**转置** $A^\top$ 把行和列互换：$(A^\top)_{ij}=A_{ji}$，所以 $(n,m)$ 的矩阵转置后是 $(m,n)$。性质：$(A^\top)^\top=A$；$(A+B)^\top=A^\top+B^\top$；**$(AB)^\top=B^\top A^\top$**（顺序反过来）；$\text{rank}(A^\top)=\text{rank}(A)$；两个列向量的**点积** $\mathbf{u}\cdot\mathbf{v}=\mathbf{u}^\top\mathbf{v}$。若 $A^\top=A$，称 $A$ 为**对称矩阵 (symmetric matrix)**；对任意 $A$，$A^\top A$ 总是对称的。
+>
+> *English: (Aᵀ)_ij = A_ji; an (n,m) matrix becomes (m,n). (AB)ᵀ = BᵀAᵀ, and the dot product is uᵀv. rank(Aᵀ) = rank(A). AᵀA is always symmetric.*
+
+**白话版：「穿鞋和脱鞋」。** 转置是把矩阵沿对角线翻转。$(AB)^\top=B^\top A^\top$ 的顺序为什么反过来？**用形状就能推出来**：$A$ 是 $(n,m)$、$B$ 是 $(m,l)$，$AB$ 是 $(n,l)$，转置后是 $(l,n)$；$B^\top$ 是 $(l,m)$、$A^\top$ 是 $(m,n)$，只有 $B^\top A^\top$ 的形状对得上。
+
+""" + C_TRANS + r"""
+
+读输出：$A$ 是 $(3,4)$、$B$ 是 $(4,5)$，$(AB)^\top$ 的形状 $(5,3)$，数值上等于 $B^\top A^\top$；而 $A^\top B^\top$ 的形状 $(4,3)\times(5,4)$ 对不上，直接报错。$A^\top A$ 是 $4\times4$ 的对称矩阵（统计里的协方差矩阵、回归里的 $X^\top X$ 都是这种形式）。最后是注意力：6 个 token、每个 4 维，$QK^\top$ 的形状是 $(6,6)$，其中的第 $(2,5)$ 项就是 $\mathbf{q}_2\cdot\mathbf{k}_5$，**转置让「每对 token 的点积」一次矩阵乘法就全部算出来**。
+
+### 迹：对角线之和
+
+> **标准定义 · 迹 (trace)**
+>
+> 方阵 $A$ 的**迹** $\text{tr}(A)=\sum_iA_{ii}$ 是对角线元素之和。性质：线性，$\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$、$\text{tr}(cA)=c\,\text{tr}(A)$；$\text{tr}(A^\top)=\text{tr}(A)$；**循环性** $\text{tr}(AB)=\text{tr}(BA)$（$A$、$B$ 不必是方阵，只要两个乘积都有定义）；迹等于所有**特征值 (eigenvalues)** 之和，行列式等于它们的积。
+>
+> *English: tr(A) is the sum of the diagonal entries. It is linear, tr(Aᵀ) = tr(A), and cyclic: tr(AB) = tr(BA) even when AB ≠ BA or the matrices are non-square. The trace is the sum of the eigenvalues and the determinant is their product.*
+
+**白话版：「一个矩阵的总量」。** 对角线之和看起来像个无聊的数，其实它是特征值之和：协方差矩阵的迹就是各个维度的总方差。循环性是它最有用的技巧：在推导中可以把矩阵「绕着圈」搬动：$\text{tr}(ABC)=\text{tr}(BCA)=\text{tr}(CAB)$。
+
+""" + C_TRACE + r"""
+
+读输出：$A$ 是 $(3,4)$、$B$ 是 $(4,3)$，$AB$ 是 $3\times3$、$BA$ 是 $4\times4$，**两个矩阵连形状都不一样**，但迹相同，都是 2.232895。迹是线性的，转置不改变迹。对称矩阵 $S$ 的迹 $5.663511$ 等于特征值之和，行列式 $-0.778839$ 等于特征值之积（第 6 节会详细讲特征值）。最后是个常用技巧：$\text{tr}(E^\top F)$ 等于 $E$ 与 $F$ 所有对应元素乘积之和，相当于把两个矩阵拉直成向量做点积。
+
+### 这一节你要带走的三句话
+
+1. **行列式 = 面积缩放倍数**（负号翻面，0 = 压扁）；**逆存在 $\iff\det\ne0\iff$ 满秩**；「几乎奇异」的矩阵虽然可逆，数值上却不可靠（条件数大）。
+2. **秩 = 列空间的维数 = 输出独立方向数**；秩 + 零空间维数 = 列数；$\text{rank}(AB)\le\min(\text{rank}A,\text{rank}B)$，所以两个窄矩阵相乘必然低秩（LoRA 的由来）；带噪声的数据看奇异值，不要迷信严格的秩。
+3. **$(AB)^\top=B^\top A^\top$（用形状就能推出来）；$\text{tr}(AB)=\text{tr}(BA)$；迹是特征值之和**。$QK^\top$ 一次算出所有 token 对的点积。
+"""),
+  THINK("**计算题**：$A=\\begin{bmatrix}1&2\\\\3&6\\end{bmatrix}$。求 $\\det(A)$、$\\text{rank}(A)$、一个零空间向量，并说明 $A$ 是否可逆、$\\text{tr}(A)$ 是多少。", r"""
+$\det(A)=1\cdot6-2\cdot3=0$。第二列 $(2,6)$ 是第一列 $(1,3)$ 的 2 倍，两列共线，所以列空间只是一条直线（过原点、方向 $(1,3)$），$\text{rank}(A)=1$。
+
+零空间：解 $A\mathbf{x}=\mathbf{0}$，即 $x_1+2x_2=0$（第二行是第一行的 3 倍，不给新条件），取 $\mathbf{x}=(2,-1)$：$A\mathbf{x}=(1\cdot2+2\cdot(-1),\ 3\cdot2+6\cdot(-1))=(0,0)$ ✓。零空间维数 $=2-1=1$，符合秩–零化度定理。
+
+**不可逆**（行列式为 0，空间被压成一条线）。$\text{tr}(A)=1+6=7$。可以用 NumPy 的 `np.linalg.det`、`matrix_rank` 核对（浮点数可能给出 $10^{-16}$ 量级的非零行列式，不要用 `== 0` 判断）。
+"""),
+  THINK("**概念辨析**：下面的说法哪些对、哪些错？(a) 随机生成的 $5\\times5$ 浮点矩阵几乎总是满秩；(b) $\\det(A+B)=\\det(A)+\\det(B)$；(c) 一个 $768\\times768$ 的矩阵，秩为 64，它一定可逆；(d) $\\text{tr}(AB)=\\text{tr}(A)\\text{tr}(B)$。", r"""
+(a) **对**：「恰好」落在某个更低维子空间里是概率为 0 的事，所以随机矩阵几乎必然满秩。**低秩矩阵永远来自某种结构**（比如两个窄矩阵相乘），不会凭空出现。
+
+(b) **错**：行列式不是线性的。反例：$A=I$、$B=I$ 时，$\det(A+B)=\det(2I)=4$（二阶），而 $\det A+\det B=2$。上面的代码里随机矩阵也验证了不相等。
+
+(c) **错**：$768\times768$ 的方阵可逆要求秩为 768（满秩）；秩为 64 说明它把空间压到了 64 维，零空间有 $768-64=704$ 维，$\det=0$，不可逆。
+
+(d) **错**：正确的是 $\text{tr}(AB)=\text{tr}(BA)$（循环性）和 $\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$（线性）。迹对乘积没有「分开乘」的性质。反例：$A=B=I_2$，$\text{tr}(AB)=2$，而 $\text{tr}(A)\text{tr}(B)=4$。
+"""),
+  THINK("**联系后续内容**：LoRA 微调把一个 $d\\times d$（取 $d=4096$）的权重更新 $\\Delta W$ 写成 $\\Delta W=BA$，其中 $B$ 是 $d\\times r$、$A$ 是 $r\\times d$，$r=8$。(1) 可训练参数从多少个变成多少个？(2) $\\Delta W$ 的秩最大是多少？(3) 这样做隐含了什么假设？", r"""
+(1) 原来要训练 $d^2=4096^2=16{,}777{,}216$ 个参数；现在是 $B$ 和 $A$ 一共 $2dr=2\times4096\times8=65{,}536$ 个，**少了 256 倍**。
+
+(2) 由 $\text{rank}(BA)\le\min(\text{rank}B,\text{rank}A)\le r$ 知，秩最大是 $r=8$，和上面代码里 $768\times64$ 的例子是同一个道理。
+
+(3) 隐含假设：**微调所需的「改动」本身是低秩的**，也就是微调只需要在权重空间里沿很少几个方向调整。这是一个经验上相当有效的假设（实际效果好），但并不是定理：对需要大幅改变模型行为的任务，$r$ 太小就不够，需要增大 $r$。读到这里要意识到：这些关于「秩」的结论，用的全是这一节的 $\text{rank}(AB)\le\min(\cdot)$。
+"""),
+  KW(("行列式","determinant","面积 / 体积的缩放倍数"),
+     ("定向","orientation","行列式为负表示空间被翻转"),
+     ("单位矩阵","identity matrix $I$","什么都不做的变换"),
+     ("逆矩阵","inverse matrix","撤销变换，存在 ⟺ 行列式 ≠ 0"),
+     ("奇异矩阵","singular matrix","行列式为 0、不可逆的矩阵"),
+     ("条件数","condition number","输入误差被放大的倍数；大则数值不稳"),
+     ("列空间","column space","所有可能的输出"),
+     ("秩","rank","列空间的维数，非零奇异值的个数"),
+     ("满秩 / 低秩","full rank / low-rank","秩等于 / 远小于可能的最大值"),
+     ("零空间 / 核","null space / kernel","被送到原点的所有向量"),
+     ("秩–零化度定理","rank–nullity theorem","列数 = 秩 + 零空间维数"),
+     ("转置","transpose","行列互换，$(AB)^\\top=B^\\top A^\\top$"),
+     ("对称矩阵","symmetric matrix","$A^\\top=A$；任何 $A^\\top A$ 都对称"),
+     ("迹","trace","对角线之和，$\\text{tr}(AB)=\\text{tr}(BA)$"),
+     ("特征值","eigenvalues","迹 = 特征值之和，行列式 = 特征值之积（第 6 节）"),
+  ),
+ ],
+ "references": [
+  {"title": "ARENA [0.0] Prerequisites — Linear Algebra 部分", "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md", "note": "本节依据的原文大纲和「AB 的秩」思考题（讲解为自写，未转载原文）"},
+  {"title": "3Blue1Brown：Essence of Linear Algebra 全系列", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab", "note": "本节用了第 6、7 章"},
+  {"title": "The Matrix Cookbook（Petersen & Pedersen）", "url": "https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf", "note": "ARENA 选读：矩阵恒等式速查手册，转置、迹、行列式、逆的各种公式"},
+  {"title": "MIT 18.06 Linear Algebra（Gilbert Strang，OpenCourseWare）", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", "note": "选看：四个基本子空间（列空间、零空间等）与秩，是硕士阶段的标准讲法"},
+  {"title": "NumPy 文档：numpy.linalg.matrix_rank", "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_rank.html", "note": "说明秩是用奇异值加阈值计算的，对应上面「带噪声」的例子"},
+ ],
+ "quiz": {"questions": QUIZ},
+}
+
+if __name__ == '__main__':
+    dump(unit, "arena-0.0", "u04-matrix-properties.json")
