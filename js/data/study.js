@@ -2,7 +2,7 @@
    积分全部写进主页面同一个 log 集合，所以回到主页面积分 / 历史 / 连续打卡都会自动更新。 */
 import { awardOnce } from './awards.js';
 import { localISO } from '../core/dates.js';
-import { UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, unitKey, studyStreak, streakBonuses } from '../core/study.js';
+import { UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, unitKey, studyStreak, streakBonuses, dayUnitsBonus } from '../core/study.js';
 
 /* 首次学完的日期列表（有效学习日） */
 export async function loadStudyDates(cols){
@@ -11,7 +11,7 @@ export async function loadStudyDates(cols){
 }
 
 /* 学完一节：+100（只一次）。如果这是今天第一节新章节，检查连续学习里程碑。
-   返回 {created, bonuses:[{amount,title}], streak} */
+   返回 {created, bonuses:[{amount,title}], streak, todayCount}（todayCount = 今天首次学完的章节数） */
 export async function completeUnit(cols, course, unit){
   const today = localISO(new Date());
   const key = unitKey(course.id, unit.id);
@@ -21,7 +21,9 @@ export async function completeUnit(cols, course, unit){
   });
   // 只在第一次学完时记完成日期，重复点不会把日期改掉
   if(created) await cols.studyProgress.doc(key).set({courseId:course.id, unitId:unit.id, completedISO:today, completedAt:Date.now()}, {merge:true});
-  const streak = studyStreak(await loadStudyDates(cols));
+  const dates = await loadStudyDates(cols);
+  const streak = studyStreak(dates);
+  const todayCount = dates.filter(d=> d===today).length;
   const bonuses = [];
   if(created){
     for(const b of streakBonuses(streak)){
@@ -32,7 +34,17 @@ export async function completeUnit(cols, course, unit){
       if(got) bonuses.push(b);
     }
   }
-  return {created, bonuses, streak};
+  if(created){
+    // 同一天学完 3 节：+100，每天只一次（ID 里只带日期）
+    const db = dayUnitsBonus(todayCount);
+    if(db){
+      const got = await awardOnce(cols.log, `studyday-${today}`, {
+        category:'studyday', label:`${db.title}奖励`, amount:db.amount, dateISO:today,
+      });
+      if(got) bonuses.push(db);
+    }
+  }
+  return {created, bonuses, streak, todayCount};
 }
 
 /* 交卷：记录这次答题；第一次达到 80 分 +50（只一次，补做也算）。返回 {score, passed, awarded, progress} */

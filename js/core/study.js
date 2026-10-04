@@ -4,6 +4,8 @@ import { computeStreak } from './stats.js';
 export const UNIT_POINTS = 100;        // 学完一节，只加一次
 export const QUIZ_POINTS = 50;         // 测验第一次达到及格线，只加一次
 export const QUIZ_PASS_PCT = 80;
+export const DAY_UNITS_TARGET = 3;     // 同一天学完 3 节新章节
+export const DAY_UNITS_BONUS = 100;    // 额外奖励，每天只一次
 
 /* 进度 / 笔记文档 ID：一门课的一节 */
 export const unitKey = (courseId, unitId) => `${courseId}__${unitId}`;
@@ -30,4 +32,11 @@ export function streakBonuses(n){
   if(n === 100 || n === 200 || n === 300) out.push({amount:500, title:`连续学习 ${n} 天`});
   if(n === 365) out.push({amount:1000, title:'连续学习 365 天'});
   return out;
+}
+
+/* 同一天学完 n 节新章节时的额外奖励：满 3 节 +100，每天只发一次（再多学也不重复发）。
+   n 是「今天首次学完的章节数」，没达到返回 null */
+export function dayUnitsBonus(n){
+  if(n >= DAY_UNITS_TARGET) return {amount:DAY_UNITS_BONUS, title:`同一天学完 ${DAY_UNITS_TARGET} 节`};
+  return null;
 }

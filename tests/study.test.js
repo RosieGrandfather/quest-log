@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreQuiz, studyStreak, streakBonuses, unitKey } from '../js/core/study.js';
+import { scoreQuiz, studyStreak, streakBonuses, dayUnitsBonus, unitKey } from '../js/core/study.js';
 
 const Q = [{answer:0},{answer:1},{answer:2},{answer:3},{answer:0}];
 
@@ -37,4 +37,11 @@ test('里程碑奖励', ()=>{
 
 test('unitKey', ()=>{
   assert.equal(unitKey('arena-0.0','u01'), 'arena-0.0__u01');
+});
+
+test('同一天学完 3 节额外奖励', ()=>{
+  assert.equal(dayUnitsBonus(0), null);
+  assert.equal(dayUnitsBonus(2), null);
+  assert.equal(dayUnitsBonus(3).amount, 100);
+  assert.equal(dayUnitsBonus(4).amount, 100);   // 超过 3 节也只是同一个奖励，发放时用「每天一个 ID」保证只发一次
 });

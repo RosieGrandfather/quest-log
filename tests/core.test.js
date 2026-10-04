@@ -56,14 +56,14 @@ test('computeStats：只有兑换的日子不算连续', ()=>{
 });
 
 test('等级：门槛边界', ()=>{
-  assert.deepEqual(levelInfo(0), {name:'新手上路', sub:'Lv.1', curMin:0, nextMin:100});
-  assert.equal(levelInfo(99).sub, 'Lv.1');
-  assert.equal(levelInfo(100).sub, 'Lv.2');
-  assert.equal(levelInfo(20199).sub, 'Lv.19');
+  assert.deepEqual(levelInfo(0), {name:'新手上路', sub:'Lv.1', curMin:0, nextMin:800});
+  assert.equal(levelInfo(799).sub, 'Lv.1');
+  assert.equal(levelInfo(800).sub, 'Lv.2');
+  assert.equal(levelInfo(15199).sub, 'Lv.19');
 });
-test('等级：超过最后一级每 5000 分再升一级', ()=>{
-  assert.equal(levelInfo(20200).sub, 'Lv.20');
-  assert.deepEqual(levelInfo(25200), {name:'传奇远征者', sub:'Lv.21', curMin:25200, nextMin:30200});
+test('等级：超过最后一级每 800 分再升一级', ()=>{
+  assert.equal(levelInfo(15200).sub, 'Lv.20');
+  assert.deepEqual(levelInfo(16000), {name:'传奇远征者', sub:'Lv.21', curMin:16000, nextMin:16800});
 });
 
 test('escapeHTML', ()=>{

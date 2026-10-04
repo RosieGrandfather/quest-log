@@ -6,7 +6,7 @@ import { unitBodyHTML, mdToHTML, renderMath } from './render-content.js';
 import { openNotes } from './notes.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
-import { unitKey, scoreQuiz, UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT } from '../core/study.js';
+import { unitKey, scoreQuiz, UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, DAY_UNITS_TARGET, DAY_UNITS_BONUS } from '../core/study.js';
 import { completeUnit, submitQuiz } from '../data/study.js';
 import { showToast, openCelebrate } from '../ui/common.js';
 
@@ -185,6 +185,9 @@ async function onComplete(course, unit, btn){
     if(!r.created){ showToast('这一节之前已经学完过了'); return; }
     let html = `你太棒了！学完了「${escapeHTML(unit.title)}」🎉<br>已添加 <span class="mono">${UNIT_POINTS}</span> 积分！`;
     html += `<br><span class="celebrate-sub">🔥 已连续学习 <span class="mono">${r.streak}</span> 天</span>`;
+    if(r.todayCount < DAY_UNITS_TARGET){
+      html += `<br><span class="celebrate-sub">📚 今天已学完 <span class="mono">${r.todayCount}</span> 节，学满 ${DAY_UNITS_TARGET} 节再得 <span class="mono">${DAY_UNITS_BONUS}</span> 分</span>`;
+    }
     r.bonuses.forEach(b=>{
       html += `<div class="celebrate-bonus">🏆 恭喜${escapeHTML(b.title)}！<br>奖励额外 <span class="mono">${b.amount}</span> 分</div>`;
     });
