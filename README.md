@@ -8,7 +8,20 @@
 
 **每次改动（代码、课程内容、数据结构、配置）都要在 [`CHANGELOG.md`](CHANGELOG.md) 最上面记一笔**，写清楚：日期、一句话标题（和 commit 说明一致）、用户能看到的变化、改了哪些文件 / 数据结构、需要注意的事（迁移、要手动做的操作、已知问题）。没记日志的改动不算完成。
 
-**出新课程 / 补章节**：按 [`docs/COURSE_AUTHORING.md`](docs/COURSE_AUTHORING.md) 的流程和格式来，工具在 `tools/course/`。
+**出新课程 / 补章节 / 重写旧章节**：先读 [`docs/COURSE_AUTHORING.md`](docs/COURSE_AUTHORING.md) 第「〇」节（**现行的出课格式 v3**：每节怎么写、渲染规则、质量检查、脚本写法），再按后面的流程做，工具在 `tools/course/`。
+
+## 学习顺序（四门课怎么排）
+
+页面「我的课程」里每张卡片上的「第 N 步」就是这个顺序（读 `course.json` 的 `order` / `order_note`，小时数由各节 `minutes` 加总）。
+
+| 步骤 | 课程 | 约多久 | 为什么排在这里 |
+|---|---|---|---|
+| 1 | `py-0` Python 软件基础（6 节） | 10 小时 | 其他三门课都要写代码；第 6 节是综合小项目 |
+| 2 | `prob-0` 概率统计补漏（6 节） | 6 小时 | ARENA 的概率、信息论（含交叉熵）要用 |
+| 3 | `arena-0.0` ARENA 前置知识（15 节） | 约 12 小时 | 主线技术课；第 10–15 节与 Python 基础有重叠，熟了可略读 |
+| 4 | `dsa-0` 数据结构与算法（11 节） | 14 小时 | Master 课程的先修，可以在 ARENA 的学习之间穿插；想先准备申请就提到第 3 步 |
+
+每周 12–15 小时的话，前两门大约 1–1.5 周，ARENA 约 1 周，数据结构约 1–1.5 周（只算看课时间，不含自己做练习）。这个顺序是建议，改动方法见 `docs/COURSE_AUTHORING.md` 第 0.6 节。
 
 ## 文件
 
@@ -25,7 +38,7 @@
 - `firestore.rules` — Firestore 安全规则的存档（**真正生效的是 Firebase 控制台里的那份**，改规则要去控制台发布，然后同步回这里）
 - `README.md` — 这份文件
 - `CHANGELOG.md` — **改动日志**，从第一版到现在每次改了什么（最新在上）
-- `docs/COURSE_AUTHORING.md` — **出课流程**：怎么选视频、写内容、出测验、检查、验收
+- `docs/COURSE_AUTHORING.md` — **出课流程与格式**：现行的 v3 格式、怎么选视频、写内容、出测验、检查、验收（下次出课先读它）
 - `tools/course/` — 出课工具（Python，不参与网页运行）：`yt.py` 搜索 / 核实 YouTube 视频，`unitlib.py` 写章节的辅助函数和检查，`validate.py` 检查所有课程，`unit_template.py` 新章节模板
 
 **线上地址**：`https://rosiegrandfather.github.io/quest-log/`

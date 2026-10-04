@@ -26,6 +26,8 @@
 }
 .course-card:hover{border-color:var(--ink-faint);}
 .course-title{font-weight:800;font-size:17px;}
+.course-step{font-size:13px;color:var(--ink-soft);margin-bottom:6px;line-height:1.5;}
+.course-step .step-no{display:inline-block;font-weight:800;color:var(--ink);background:var(--bg-soft,rgba(128,128,128,.15));border-radius:6px;padding:1px 7px;margin-right:4px;}
 .course-card .reward-bar{margin-top:12px;}
 
 /* 章节列表：已学 / 未学 / 即将上线 一眼能分出来 */

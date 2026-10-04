@@ -59,12 +59,20 @@ function courseProgress(course){
   return {total, done, pct: total ? Math.round(done/total*100) : 0};
 }
 
+/* 建议学习顺序：course.json 里的 order / order_note；小时数由各节 minutes 加总 */
+function stepLine(c){
+  if(!c.order) return '';
+  const hours = Math.round(c.units.reduce((s,u)=>s+(u.minutes||0),0)/60);
+  return `<div class="course-step"><span class="step-no">第 ${c.order} 步</span> ${escapeHTML(c.order_note||'')} <span class="mono">· 约 ${hours} 小时</span></div>`;
+}
+
 async function renderHome(){
   const courses = await loadCourses();
   const full = await Promise.all(courses.map(c=> loadCourse(c.id)));
-  view().innerHTML = `<h2 class="view-title">我的课程</h2>` + full.map(c=>{
+  view().innerHTML = `<h2 class="view-title">我的课程</h2><div class="course-sub">按「第 N 步」的顺序学：Python → 概率统计 → ARENA 前置 → 数据结构与算法</div>` + full.map(c=>{
     const p = courseProgress(c);
     return `<a class="course-card" href="${courseHash(c.id)}">
+      ${stepLine(c)}
       <div class="course-title">${escapeHTML(c.title)}</div>
       <div class="course-sub">${escapeHTML(c.subtitle||'')}</div>
       <div class="reward-bar"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
@@ -96,6 +104,7 @@ async function renderCourse(cid){
     <a class="crumb" href="#/">← 所有课程</a>
     <h2 class="view-title">${escapeHTML(course.title)}</h2>
     <div class="course-sub">${escapeHTML(course.subtitle||'')}</div>
+    ${stepLine(course)}
     ${course.source ? `<div class="course-source">内容依据：<a href="${escapeHTML(course.source.url)}" target="_blank" rel="noopener">${escapeHTML(course.source.name)}</a>（讲解为自编，未转载原文）</div>` : ''}
     <div class="reward-bar" style="margin-top:12px"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
     <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>

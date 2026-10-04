@@ -13,6 +13,14 @@
 
 ---
 
+## 2026-10-04 — 出课格式写进文档、四门课排出学习顺序、ARENA 第 1 节改成新格式
+- **出课格式**：把 v3 格式（每节结构、渲染规则、脚本写法、质量检查、对 ARENA 旧节的重写方法）写进 `docs/COURSE_AUTHORING.md` 的新增第「〇」节；README 的「出新课程」一条改为先读这一节。下次出课直接读它
+- **学习顺序**：新增 README「学习顺序」一节；`courses/index.json` 改成 py-0 → prob-0 → arena-0.0 → dsa-0；每门课的 `course.json` 加了 `order`、`order_note`；「我的课程」页的卡片和课程页上显示「第 N 步 · 说明 · 约 X 小时」，页面顶部加了一行顺序提示
+- **ARENA 第 1 节按 v3 重写**（`u01-neural-networks.json`，45 → 85 分钟）：加了「标准定义 + 白话版」（神经元、全连接层与前向传播、非线性、代价函数、梯度下降），用 NumPy 真实运行了单个神经元、784→16→16→10 的形状与参数个数（13,002）、批量前向传播、「去掉激活函数 = 一个线性变换」的验证、代价函数、五种学习率的梯度下降、XOR 小实验（10 个随机种子，9 个学会、1 个卡住）；视频、10 道测验沿用旧版，旧版备份在 `tools/course/a01_old_u01.json`
+- 改了哪些文件：`docs/COURSE_AUTHORING.md`、`README.md`、`courses/index.json`、四个 `course.json`、`courses/arena-0.0/u01-neural-networks.json`、`js/study/views.js`、`css/study.css`；新增 `tools/course/a01.py`、`a01c.py`、`a01_quiz.py`、`a01_old_u01.json`
+- 检查：`validate.py` 通过（`--online` 两次都因网络超时中断，新增的 4 个链接和 2 个视频单独核实过可用）；`npm test` 17 项通过；`views.js` 语法检查通过；本节 69 处公式 KaTeX 试渲染 0 个出错
+- 需要注意的：①「第 N 步」的显示我没有在浏览器里看过，请你打开页面确认排版；②ARENA 的 u02–u15 还是旧格式；③顺序是我的建议，不合适可以按文档 0.6 改；④`tools/course/__pycache__/` 不要提交
+
 ## 2026-10-03 — dsa-0 全 11 节、py-0 全 6 节写完（含第 1 节按新格式重写）
 - 按 Yijia 的要求「深浅由我判断够不够给 master 打基础」，不再压缩深度：覆盖 NUS IT5003 / MIT 6.006 的核心内容，py-0 补上读 ML 代码需要的部分
 - **dsa-0 扩成 11 节**（共约 855 分钟）：u01 复杂度（重写：加了 Big-O/Ω/Θ 的形式定义、均摊分析、空间复杂度）、u02 数组与链表、u03 栈队列、u04 哈希表、u05 分治与回溯（含主定理）、u06 排序与二分、u07 树与 BST（含 AVL）、u08 堆、u09 图（BFS/DFS/拓扑排序）、u10 最短路径、最小生成树与并查集（新增）、u11 动态规划（新增，单独成节）
