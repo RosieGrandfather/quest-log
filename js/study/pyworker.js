@@ -14,7 +14,6 @@ import ast, sys, builtins, traceback, linecache
 def _no_input(*a, **k):
     raise RuntimeError("网页里不支持 input()，请直接给变量赋值，例如 name = 'Yijia'")
 builtins.input = _no_input
-_KEEP = set(globals()) | {'_KEEP'}
 def _reset():
     for k in list(globals()):
         if k not in _KEEP:
@@ -41,6 +40,7 @@ def _safe(src):
         if tb is None:
             return ''.join(traceback.format_exception_only(type(e), e))
         return ''.join(traceback.format_exception(type(e), e, tb))
+_KEEP = set(globals()) | {'_KEEP'}   # 必须放在最后：清空变量时，这些辅助函数不能被删掉
 `;
 
 let pyPromise = null;

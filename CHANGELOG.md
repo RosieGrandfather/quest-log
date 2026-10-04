@@ -26,6 +26,7 @@
 - **出课工具**：`runlib.Notebook`（块之间共用变量，规则和网页一致）；`validate.py` 现在检查每个 Python 块的语法，py-0 的单块超过 35 行报错，其他课只提示（共 63 块，以后重写时拆）；`docs/COURSE_AUTHORING.md` 新增 0.8
 - 改了哪些文件：新增 `js/study/runner.js`、`js/study/pyworker.js`；改 `js/study/views.js`、`css/study.css`、`tools/course/runlib.py`、`unitlib.py`、`validate.py`、`y01…y06*.py`（旧版备份 `*_old.py`）、`courses/py-0/u01…u06`、dsa-0 第 5 节里一处伪代码的代码块语言（python→text）、README、文档
 - 注意：我在浏览器里用真实 Pyodide 把 py-0 全部可运行块跑了一遍：无意外报错；少数输出措辞和预期输出略有差异（Python 版本不同，如报错措辞）。手机上的实际体验、公司网络下能否下载 Pyodide 没测过
+- **修了一个 bug**：点「清空变量」（或者先看完一节再进入另一节）之后再运行，会报 `py.globals.get(...) is not a function`——清空变量时把运行用的辅助函数也一起删掉了。已改为清空时保留辅助函数（`js/study/pyworker.js`），并在浏览器里测过「运行 → 清空 → 再运行」
 - 其他课（ARENA、prob-0、dsa-0、wm-0）的代码块也有「▶ 运行」，但很多块偏长、且 ARENA/wm-0 里用 torch 的块在网页里跑不了（只有 numpy），还没按新规则拆
 
 ---
