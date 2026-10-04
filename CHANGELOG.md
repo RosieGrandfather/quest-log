@@ -13,6 +13,11 @@
 
 ---
 
+## 2026-10-06 — 占位课 proj-c（从零搭一个世界模型），README 写入「下回怎么开始」
+- 新增占位课 `proj-c`（9 个小节，放在 wm-0 之后）；llm-0 / safety-0 / opt-0 / rs-0 的步数顺延为 11–14
+- README 新增「下回怎么开始」一节：当前状态、建议顺序、要先核实的东西、不要运行 git 等约定
+- 改了哪些文件：`courses/proj-c/`、`courses/index.json`、几门课的 `order`、README
+
 ## 2026-10-06 — 新增 7 门占位课（只有大纲，没有内容）
 - 新增占位课：`proj-a`（Karpathy 前半：micrograd 与 makemore）、`dl-0` 深度学习主干、`proj-b`（Karpathy 后半：GPT、分词器、复现 GPT-2）、`llm-0`、`safety-0`、`opt-0`（选修）、`rs-0` 研究技能；小节的 `file` 为 null，用新字段 `covers` 写这节要讲什么
 - 学习顺序：py-0 → prob-0 → arena-0.0 → ml-0 → proj-a → dl-0 → proj-b → dsa-0 → wm-0 → llm-0 → safety-0 → opt-0 → rs-0（`order`、`order_note`、`courses/index.json` 已更新）

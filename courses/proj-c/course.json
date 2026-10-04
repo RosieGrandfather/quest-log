@@ -1,0 +1,81 @@
+{
+  "id": "proj-c",
+  "title": "项目 C：从零搭一个世界模型",
+  "subtitle": "【占位课，内容待补】对应「想从头搭一个 GPT，也想从头搭一个世界模型」：先跑通现成项目，再自己一步步搭：采集数据、压缩画面、学动力学、在想象里规划，最后试 JEPA 风格。放在 wm-0 之后，用一个小环境在 CPU 上就能完成",
+  "units": [
+    {
+      "id": "u01",
+      "title": "先跑通一个现成的世界模型",
+      "en": "Run an Existing World Model",
+      "minutes": 50,
+      "file": null,
+      "covers": "跑通并读懂一个现成的小项目（候选：worldmodel-from-scratch、Ha & Schmidhuber 的复现版），知道整个流程长什么样；出课时先打开仓库核实再选"
+    },
+    {
+      "id": "u02",
+      "title": "选环境、采集数据",
+      "en": "Environment & Data",
+      "minutes": 50,
+      "file": null,
+      "covers": "选一个能在 CPU 上训练的小环境（自己写的网格/小游戏，或 gymnasium 里的简单环境）；随机策略采集轨迹；数据格式与划分"
+    },
+    {
+      "id": "u03",
+      "title": "视觉压缩：用 VAE 把画面变成潜变量",
+      "en": "Compress Frames with a VAE",
+      "minutes": 50,
+      "file": null,
+      "covers": "从零写卷积 VAE；重构与 KL 的权衡；潜变量够不够用的检查（回指 wm-0 的 VAE）"
+    },
+    {
+      "id": "u04",
+      "title": "动力学模型：预测下一个潜状态（1/2）",
+      "en": "Dynamics Model (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "循环网络做潜空间的下一步预测；确定性 vs 随机性；训练目标与损失"
+    },
+    {
+      "id": "u05",
+      "title": "动力学模型：预测下一个潜状态（2/2）",
+      "en": "Dynamics Model (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "RSSM 的思路（确定性状态 + 随机状态）简化版；多步预测；teacher forcing 与自由运行"
+    },
+    {
+      "id": "u06",
+      "title": "评估世界模型：多步想象的误差",
+      "en": "Evaluating Rollouts",
+      "minutes": 50,
+      "file": null,
+      "covers": "长程 rollout 的误差累积、可视化想象出来的轨迹、什么情况下模型会坏掉"
+    },
+    {
+      "id": "u07",
+      "title": "在想象里学习或规划",
+      "en": "Learning/Planning in Imagination",
+      "minutes": 50,
+      "file": null,
+      "covers": "用学到的模型做规划（随机射击、CEM）或在想象里训练一个小控制器；和真实环境里的表现对照"
+    },
+    {
+      "id": "u08",
+      "title": "换成 JEPA 风格：在潜空间里预测",
+      "en": "JEPA-style Latent Prediction",
+      "minutes": 50,
+      "file": null,
+      "covers": "不重构像素、只预测表示；防止表示坍塌的办法（对照 LeWorldModel 的思路）；和 VAE 版比较"
+    },
+    {
+      "id": "u09",
+      "title": "总结、失败案例与下一步",
+      "en": "Wrap-up",
+      "minutes": 50,
+      "file": null,
+      "covers": "整理实验记录与结论；写一页项目说明（可放进申请材料）；怎么继续读论文、扩展到更复杂的环境"
+    }
+  ],
+  "order": 10,
+  "order_note": "项目课：wm-0 学完后做。如果想提前看看目标长什么样，可以先做第 1 小节（跑通现成项目）"
+}
