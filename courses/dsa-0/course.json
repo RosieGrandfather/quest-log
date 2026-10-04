@@ -1,7 +1,7 @@
 {
   "id": "dsa-0",
   "title": "数据结构与算法",
-  "subtitle": "复杂度、数组与链表、栈队列、哈希表、排序与二分、树、堆、图、动态规划入门 —— 对应 NUS IT5003 的核心内容，全部用 Python 写",
+  "subtitle": "复杂度、数组与链表、栈队列、哈希表、递归与回溯、排序与二分、树、堆、图、最短路径与最小生成树、动态规划 —— 覆盖 NUS IT5003 / MIT 6.006 的核心内容，全部用 Python 写，每段代码都带真实运行结果",
   "source": {
     "name": "Problem Solving with Algorithms and Data Structures using Python（Miller & Ranum，CC BY-NC-SA 4.0）与 MIT OCW 6.006（作为大纲依据）",
     "url": "https://runestone.academy/ns/books/published/pythonds/index.html"
@@ -11,71 +11,78 @@
       "id": "u01",
       "title": "复杂度：Big-O 怎么看",
       "en": "Algorithm Complexity & Big-O",
-      "minutes": 45,
+      "minutes": 70,
       "file": "u01-complexity.json"
     },
     {
       "id": "u02",
       "title": "数组与链表",
       "en": "Arrays & Linked Lists",
-      "minutes": 45,
-      "file": null
+      "minutes": 75,
+      "file": "u02-arrays-linked-lists.json"
     },
     {
       "id": "u03",
       "title": "栈、队列与双端队列",
       "en": "Stacks, Queues & Deques",
-      "minutes": 45,
-      "file": null
+      "minutes": 70,
+      "file": "u03-stacks-queues.json"
     },
     {
       "id": "u04",
       "title": "哈希表与集合",
       "en": "Hash Tables & Sets",
-      "minutes": 45,
-      "file": null
+      "minutes": 75,
+      "file": "u04-hash-tables.json"
     },
     {
       "id": "u05",
       "title": "递归进阶：分治与回溯",
       "en": "Divide & Conquer, Backtracking",
-      "minutes": 45,
-      "file": null
+      "minutes": 75,
+      "file": "u05-divide-backtrack.json"
     },
     {
       "id": "u06",
       "title": "排序与二分查找",
       "en": "Sorting & Binary Search",
-      "minutes": 45,
-      "file": null
+      "minutes": 70,
+      "file": "u06-sorting-binary-search.json"
     },
     {
       "id": "u07",
       "title": "树与二叉搜索树",
-      "en": "Trees & BSTs",
-      "minutes": 45,
-      "file": null
+      "en": "Trees & Binary Search Trees",
+      "minutes": 80,
+      "file": "u07-trees-bst.json"
     },
     {
       "id": "u08",
       "title": "堆与优先队列",
       "en": "Heaps & Priority Queues",
-      "minutes": 45,
-      "file": null
+      "minutes": 70,
+      "file": "u08-heaps.json"
     },
     {
       "id": "u09",
-      "title": "图：BFS 与 DFS",
-      "en": "Graphs: BFS & DFS",
-      "minutes": 45,
-      "file": null
+      "title": "图：表示、BFS、DFS 与拓扑排序",
+      "en": "Graphs: Representation, BFS, DFS & Topological Sort",
+      "minutes": 90,
+      "file": "u09-graphs-bfs-dfs.json"
     },
     {
       "id": "u10",
-      "title": "最短路径与动态规划入门",
-      "en": "Shortest Paths & Intro to DP",
-      "minutes": 45,
-      "file": null
+      "title": "加权图：最短路径、最小生成树与并查集",
+      "en": "Weighted Graphs: Shortest Paths, Minimum Spanning Trees & Union-Find",
+      "minutes": 90,
+      "file": "u10-shortest-paths-mst.json"
+    },
+    {
+      "id": "u11",
+      "title": "动态规划",
+      "en": "Dynamic Programming",
+      "minutes": 90,
+      "file": "u11-dynamic-programming.json"
     }
   ]
 }

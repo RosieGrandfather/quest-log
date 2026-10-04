@@ -1,7 +1,7 @@
 {
   "id": "py-0",
   "title": "Python 软件基础",
-  "subtitle": "函数与递归、推导式与迭代器、类与对象、异常调试与测试、综合小项目 —— 对应 NUS IT5001 的核心内容，已经会的可以直接跳过",
+  "subtitle": "函数与递归、推导式与迭代器、类与对象、异常调试与测试、文件模块与环境、综合小项目 —— 对应 NUS IT5001 的核心内容并补上读 ML 代码需要的部分（装饰器、生成器、特殊方法、dataclass、虚拟环境），已经会的可以直接跳过",
   "source": {
     "name": "Think Python 3e（Downey，CC BY-NC-SA 4.0）与 Harvard CS50P（作为大纲依据）",
     "url": "https://allendowney.github.io/ThinkPython/"
@@ -9,38 +9,45 @@
   "units": [
     {
       "id": "u01",
-      "title": "函数与递归",
-      "en": "Functions & Recursion",
-      "minutes": 45,
+      "title": "函数、作用域与递归",
+      "en": "Functions, Scope & Recursion",
+      "minutes": 100,
       "file": "u01-functions-recursion.json"
     },
     {
       "id": "u02",
-      "title": "推导式与迭代器",
-      "en": "Comprehensions & Iterators",
-      "minutes": 45,
-      "file": null
+      "title": "推导式、迭代器与生成器",
+      "en": "Comprehensions, Iterators & Generators",
+      "minutes": 90,
+      "file": "u02-comprehensions-iterators.json"
     },
     {
       "id": "u03",
       "title": "类与对象",
       "en": "Classes & Objects",
-      "minutes": 45,
-      "file": null
+      "minutes": 100,
+      "file": "u03-classes-objects.json"
     },
     {
       "id": "u04",
-      "title": "异常、调试与测试",
-      "en": "Exceptions, Debugging & Testing",
-      "minutes": 45,
-      "file": null
+      "title": "异常、调试、测试与类型注解",
+      "en": "Exceptions, Debugging, Testing & Type Hints",
+      "minutes": 100,
+      "file": "u04-exceptions-testing.json"
     },
     {
       "id": "u05",
-      "title": "综合小项目",
-      "en": "Capstone Mini-Project",
-      "minutes": 45,
-      "file": null
+      "title": "文件、模块与环境",
+      "en": "Files, Modules & Environments",
+      "minutes": 90,
+      "file": "u05-files-modules-envs.json"
+    },
+    {
+      "id": "u06",
+      "title": "综合小项目：从零实现 k 近邻分类器",
+      "en": "Capstone: A k-Nearest-Neighbours Classifier from Scratch",
+      "minutes": 120,
+      "file": "u06-capstone-knn.json"
     }
   ]
 }

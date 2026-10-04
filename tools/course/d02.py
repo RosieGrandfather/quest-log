@@ -1,0 +1,381 @@
+"""dsa-0 第 2 节：数组与链表"""
+from unitlib import *
+from runlib import code
+
+C_ARR = code('''
+# 数组的插入：在下标 i 处插入，要把 i 之后的每个元素往后挪一格
+def insert_at(a, i, x):
+    a.append(None)                       # 先多留一个位置
+    moves = 0
+    for k in range(len(a) - 1, i, -1):   # 从后往前挪，防止覆盖
+        a[k] = a[k - 1]
+        moves += 1
+    a[i] = x
+    return moves
+
+for n in (10, 100, 1000):
+    front = insert_at(list(range(n)), 0, -1)     # 在开头插入
+    back = insert_at(list(range(n)), n, -1)      # 在末尾插入
+    print(f"n={n:<5} 开头插入要挪 {front} 次，末尾插入要挪 {back} 次")
+''')
+
+C_LL = code('''
+class Node:
+    def __init__(self, val, next=None):
+        self.val = val                   # 这个节点存的值
+        self.next = next                 # 指向下一个节点（None 表示到头了）
+
+class LinkedList:
+    def __init__(self):
+        self.head = None                 # 只记住头节点
+        self.size = 0
+
+    def push_front(self, val):           # 在头部插入：O(1)，只改一个指针
+        self.head = Node(val, self.head)
+        self.size += 1
+
+    def append(self, val):               # 在尾部插入：O(n)，要从头走到尾
+        node = Node(val)
+        if not self.head:
+            self.head = node
+        else:
+            cur = self.head
+            while cur.next:
+                cur = cur.next
+            cur.next = node
+        self.size += 1
+
+    def find(self, val):                 # 查找：O(n)
+        cur = self.head
+        while cur:
+            if cur.val == val:
+                return cur
+            cur = cur.next
+        return None
+
+    def remove(self, val):               # 删除：找到前一个节点，让它「跳过」目标
+        prev, cur = None, self.head
+        while cur:
+            if cur.val == val:
+                if prev:
+                    prev.next = cur.next
+                else:
+                    self.head = cur.next
+                self.size -= 1
+                return True
+            prev, cur = cur, cur.next
+        return False
+
+    def to_list(self):
+        out, cur = [], self.head
+        while cur:
+            out.append(cur.val)
+            cur = cur.next
+        return out
+
+ll = LinkedList()
+for v in (3, 2, 1):
+    ll.push_front(v)                     # 每次插在最前面，最后变成 1 -> 2 -> 3
+ll.append(4)
+print(ll.to_list(), ll.size)
+print(ll.remove(2), ll.to_list())
+print(ll.find(4).val, ll.find(9))
+''')
+
+C_REV = code('''
+class Node:
+    def __init__(self, val, next=None):
+        self.val, self.next = val, next
+
+def build(vals):                         # 把列表变成链表，返回头节点
+    head = None
+    for v in reversed(vals):
+        head = Node(v, head)
+    return head
+
+def to_list(head, limit=20):
+    out = []
+    while head and len(out) < limit:
+        out.append(head.val)
+        head = head.next
+    return out
+
+def reverse(head):                       # 反转链表：把每个节点的 next 掉头
+    prev = None
+    while head:
+        nxt = head.next                  # 先记住下一个，否则掉头后就找不到了
+        head.next = prev                 # 掉头
+        prev, head = head, nxt           # 两个指针一起往前走
+    return prev
+
+def middle(head):                        # 快慢指针：快的一次走两步，慢的走一步
+    slow = fast = head
+    while fast and fast.next:
+        slow, fast = slow.next, fast.next.next
+    return slow                          # 快的到头时，慢的刚好在中间
+
+def has_cycle(head):                     # Floyd 判圈：有环的话，快指针终会追上慢指针
+    slow = fast = head
+    while fast and fast.next:
+        slow, fast = slow.next, fast.next.next
+        if slow is fast:
+            return True
+    return False
+
+print("反转：", to_list(reverse(build([1, 2, 3, 4, 5]))))
+print("中点：", middle(build([1, 2, 3, 4, 5])).val, middle(build([1, 2, 3, 4])).val)
+h = build([1, 2, 3, 4])
+h.next.next.next.next = h.next           # 让 4 指回 2，制造一个环
+print("有环？", has_cycle(h), "   无环的链表有环？", has_cycle(build([1, 2, 3])))
+''')
+
+C_PRE = code('''
+a = [3, 1, 4, 1, 5, 9, 2, 6]
+
+# 前缀和：prefix[i] = a[0] + ... + a[i-1]。预处理一次 O(n)，之后任意区间的和都是 O(1)
+prefix = [0]
+for v in a:
+    prefix.append(prefix[-1] + v)
+
+def range_sum(l, r):                     # a[l] 到 a[r-1] 的和
+    return prefix[r] - prefix[l]
+
+print(prefix)
+print(range_sum(2, 6), sum(a[2:6]))      # 两种算法结果相同
+
+# 双指针：在「已排序」的数组里找两个数，和等于 target。O(n)，不用两层循环
+def two_sum_sorted(b, target):
+    i, j = 0, len(b) - 1
+    while i < j:
+        s = b[i] + b[j]
+        if s == target:
+            return i, j
+        if s < target:
+            i += 1                       # 和太小，左指针右移，让和变大
+        else:
+            j -= 1                       # 和太大，右指针左移，让和变小
+    return None
+
+b = sorted(a)
+print(b, two_sum_sorted(b, 10), two_sum_sorted(b, 100))
+''')
+
+unit = {
+ "id": "u02",
+ "title": "数组与链表",
+ "en": "Arrays & Linked Lists",
+ "minutes": 75,
+ "objectives": [
+  "说出 **数组 (array)** 和 **链表 (linked list)** 的定义，理解数组为什么能 $O(1)$ 按下标访问",
+  "能比较两者在访问、头部 / 尾部 / 中间插入与删除上的复杂度，并说明各自适用的场景",
+  "会手写 **单链表 (singly linked list)** 的插入、查找、删除、反转，会用 **快慢指针 (fast & slow pointers)** 找中点与判环",
+  "知道 Python 的 `list` 本质是 **动态数组 (dynamic array)**，不是链表",
+  "掌握数组上的两个高频技巧：**前缀和 (prefix sum)** 与 **双指针 (two pointers)**",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一节要干什么
+
+数据结构是「把数据摆放在内存里的方式」。同样一组数，摆法不同，查找、插入、删除的快慢就不同。这一节学最基础的两种摆法：**数组**和**链表**。后面的栈、队列、哈希表、堆，全部是在它们之上搭出来的。
+
+**学完它你就能看懂这几件事：**
+
+- NumPy 数组和 PyTorch 张量 (tensor) 为什么能「一次性对一大片数据做运算」：它们就是连续存放的数组，访问和遍历都很快；
+- 为什么在 Python 列表开头反复 `insert(0, x)` 会越来越慢；
+- 链表的「指针」思想，在后面的树和图里无处不在（树节点就是带多个 `next` 的链表节点）；
+- 面试里最爱考的「反转链表」「判断有环」「前缀和」「双指针」。
+
+**本节安排（约 75 分钟）**：导读与数组（12 分钟）→ 视频一（12 分钟）→ 动态数组（8 分钟）→ 视频二（10 分钟）→ 链表与代码（15 分钟）→ 视频三（17 分钟，选看）→ 数组技巧（8 分钟）→「想一想」。
+
+### 数组
+
+> **标准定义 · 数组 (array)**
+>
+> **数组**是把同类型的元素**连续**存放在一块内存里的数据结构。若第 0 个元素的地址为 $\text{base}$，每个元素占 $s$ 字节，则第 $i$ 个元素的地址是
+>
+> $$\text{address}(i)=\text{base}+i\cdot s$$
+>
+> 因此按下标访问是 **随机访问 (random access)**，复杂度 $O(1)$。
+>
+> *English: An array stores elements of the same size contiguously in memory, so the i-th element is found by simple arithmetic in O(1) time.*
+
+**白话版：像一排编了号的储物柜。** 柜子一个挨一个，每个一样大。想开第 100 号柜，不用从第 1 号数起，直接用「起点 + 100 × 柜子宽度」算出位置就能走过去。所以不管数组多长，**按下标取值永远是一步**。
+
+但代价也在「连续」两个字上：想在中间**插入**一个新元素，必须把它后面的所有元素都往后挪一格，给新元素腾位置；删除同理，要往前挪补上空位。
+
+""" + C_ARR + r"""
+
+在**开头**插入，$n$ 个元素就要挪 $n$ 次，是 $O(n)$；在**末尾**插入不用挪（前提是还有空位），是 $O(1)$。所以数组：**读快，改中间慢**。
+"""),
+  V("lC-yYCOnN8Q", "视频一：Data Structures: Arrays vs Linked Lists（mycodeschool）", 12),
+  T(r"""
+### Python 的 list 是动态数组
+
+> **标准定义 · 动态数组 (dynamic array)**
+>
+> **动态数组**在数组的基础上，额外记录**容量 (capacity)** 和**当前大小 (size)**。`append` 时若 $\text{size}=\text{capacity}$，就分配一块更大的数组（通常按比例，如 1.5 倍或 2 倍），把旧元素全部复制过去，再追加新元素。
+>
+> *English: A dynamic array keeps a capacity larger than its size and grows geometrically when full, giving amortized O(1) append.*
+
+**白话版：会自己「搬家」的数组。** 上一节我们已经用代码验证过：按比例扩容，`append` 摊还下来是 $O(1)$。Python 的 `list`、Java 的 `ArrayList`、C++ 的 `vector` 都是动态数组。注意 Python 的 `list` 里存的**不是数据本身，而是指向对象的引用 (reference)**，所以一个列表里可以放不同类型的东西；这也是它比 NumPy 数组慢、占内存多的原因：NumPy 存的是连续的、同类型的原始数字。
+
+| 操作 | 动态数组（Python list） |
+|---|---|
+| 按下标取值 / 赋值 | $O(1)$ |
+| 末尾 `append` / `pop()` | 摊还 $O(1)$ |
+| 任意位置 `insert` / `pop(i)` | $O(n)$ |
+| 查找一个值 | $O(n)$ |
+| 切片 `a[i:j]` | $O(j-i)$（会复制一份） |
+"""),
+  V("0XC9lFGGpME", "视频二：Dynamic Arrays, aka ArrayLists（Algorithms with Attitude）", 10),
+  T(r"""
+### 链表
+
+> **标准定义 · 链表 (linked list) 与节点 (node)**
+>
+> **链表**由若干 **节点** 组成，每个节点保存一个值和指向下一个节点的 **指针（引用）**。**单链表**只有指向后一个节点的指针；**双向链表 (doubly linked list)** 还有指向前一个节点的指针。链表只需要记住 **头节点 (head)**，尾节点的指针为 `None`。
+>
+> *English: A linked list is a chain of nodes, each holding a value and a pointer to the next node (and, in a doubly linked list, also to the previous one).*
+
+**白话版：像一场「寻宝游戏」。** 每个节点是一张纸条，写着宝物（值）和「下一张纸条在哪」（指针）。你只知道第一张纸条在哪（head），想找第 100 张，必须从第一张开始一张张往下翻，**没有捷径**。但换来的好处是：纸条不需要放在一起，**插入和删除只改指针，不用搬别的元素**。
+
+> **标准定义 · 单链表的核心操作与复杂度**
+>
+> - 头部插入 `push_front`：新节点的 `next` 指向原来的头，再把头改成新节点，$O(1)$。
+> - 尾部插入 `append`：若只有头指针，要先走到尾，$O(n)$；若额外维护 **尾指针 (tail)**，$O(1)$。
+> - 在**已持有某节点引用**的前提下，在它后面插入或删除它后面的节点：$O(1)$。
+> - 按值查找 / 按位置访问第 $i$ 个：$O(n)$。
+>
+> *English: Insertion at the head, or after a node you already hold, is O(1); search and indexed access are O(n).*
+
+下面是完整的单链表。读代码时抓住一件事：**一切都是在改 `next` 指针**。
+
+""" + C_LL + r"""
+
+注意 `remove`：删除一个节点，本质是让它**前一个节点的 `next` 绕过它**，指向它后面的节点。所以单链表的删除需要同时记住 `prev` 和 `cur`。如果用双向链表，每个节点自带 `prev`，就不用额外记了。
+
+| 操作 | 数组 | 单链表（仅头指针） |
+|---|---|---|
+| 按下标访问 | $O(1)$ | $O(n)$ |
+| 头部插入 / 删除 | $O(n)$ | $O(1)$ |
+| 尾部插入 | 摊还 $O(1)$ | $O(n)$（有尾指针则 $O(1)$） |
+| 已知位置后插入 / 删除 | $O(n)$（要挪元素） | $O(1)$ |
+| 查找一个值 | $O(n)$ | $O(n)$ |
+
+**那链表是不是比数组好？** 不一定，而且**实际中数组往往更快**，原因有两个：链表每个节点都要额外存指针，更占内存；而数组连续存放，对 CPU 的 **缓存 (cache)** 友好（一次读入一整块），链表的节点散落在内存各处，每走一步都可能「缓存未命中」。所以链表的 $O(1)$ 插入是**理论上的优势**，只有在频繁在已知位置插入删除、又不需要随机访问时才真正用得上。这也是 Python 标准库里没有链表，而是提供 `deque`（下一节）的原因。
+
+### 链表经典题：反转、找中点、判环
+
+这三道题是面试里的常客，而且都体现了同一种思路：**多个指针，同时走**。
+
+""" + C_REV + r"""
+
+三件事背后的想法：**反转**，是在每一步里先记住下一个、再让当前节点「掉头」，三个变量（`prev`、`head`、`nxt`）轮流前进；**找中点**，快指针每次走两步、慢指针每次一步，快的走到头时慢的刚好在一半；**判环**，如果有环，快指针一定会从背后追上慢指针（就像操场跑步，快的会套圈慢的），无环则快指针先到 `None`。这个 **Floyd 判圈算法 (Floyd's cycle detection)** 只用 $O(1)$ 的额外空间，比「用集合记住访问过的节点」（$O(n)$ 空间）省。
+"""),
+  V("dqLHTK7RuIo", "视频三（选看）：Linked Lists - Singly & Doubly Linked（Greg Hogg，Python）", 17),
+  T(r"""
+### 数组上的两个高频技巧
+
+数组虽然简单，但很多问题只要换个角度，就能从 $O(n^2)$ 降到 $O(n)$。
+
+> **标准定义 · 前缀和 (prefix sum)**
+>
+> 对数组 $a_0,\dots,a_{n-1}$，定义 $P_0=0$，$P_i=a_0+a_1+\dots+a_{i-1}$。则任意区间 $[l,r)$ 的和为
+>
+> $$\sum_{k=l}^{r-1}a_k=P_r-P_l$$
+>
+> 预处理 $O(n)$，之后每次查询 $O(1)$。
+>
+> *English: A prefix sum array lets you compute any range sum in O(1) after O(n) preprocessing.*
+
+**白话版：先把「累计」算好，要什么区间直接相减。** 就像你的银行流水里，每天的「累计余额」已经写好了，想知道第 3 天到第 6 天一共进账多少，用第 6 天的余额减去第 2 天的余额，不用把每笔再加一遍。
+
+> **标准定义 · 双指针 (two pointers)**
+>
+> 用两个下标（指针）同时在数组上移动，利用数组的某种性质（如有序）每一步排除一部分可能，把原本需要两层循环的问题降为一次扫描 $O(n)$。
+>
+> *English: The two-pointer technique scans a sequence with two indices that move according to a rule, often turning an O(n²) search into O(n).*
+
+**白话版：从两头往中间夹。** 在**有序**数组里找两个数的和等于目标：左指针指向最小的、右指针指向最大的。和太小，就把左指针右移（要更大的数）；和太大，就把右指针左移。每一步都能肯定地丢掉一个元素，所以最多走 $n$ 步。
+
+""" + C_PRE + r"""
+
+两种方式的区间和都是 19。**这两个技巧会在后面反复出现**：前缀和是「动态规划」的雏形，双指针是排序、字符串、滑动窗口的基础。你在机器学习里也会遇到前缀和的影子，比如 PyTorch 里的累积和 `cumsum`。
+
+### 这一节你要带走的三句话
+
+1. **数组连续存放，按下标访问 $O(1)$，但在中间插入删除要挪元素 $O(n)$**；Python 的 `list` 是动态数组（存引用）。
+2. **链表靠指针串联，只改指针就能插入删除，但不能随机访问 $O(n)$**；实际中常常不如数组快（缓存、额外内存）。
+3. 链表题的核心是**多个指针同时走**（反转、快慢指针）；数组题常用**前缀和**和**双指针**把 $O(n^2)$ 降到 $O(n)$。
+"""),
+  THINK("既然链表「插入是 $O(1)$」，为什么现实中大多数时候人们还是用数组（Python 的 list）？举两个原因。", r"""
+**第一，找位置要花时间。** 链表插入 $O(1)$ 的前提是你**已经拿到了那个位置的节点**。如果要在「第 500 个元素后面」插入，得先从头走 500 步找到它，整体仍然是 $O(n)$。
+
+**第二，硬件对数组更友好。** 数组连续存放，CPU 读一个元素时会顺带把后面的一整块读进高速缓存，所以顺序遍历非常快；链表节点散落各处，每一步都可能需要重新到内存里取，慢很多。再加上链表每个节点还要存指针，更占内存。所以只有在**频繁在已知位置插入删除、且很少随机访问**时，链表才有真正的优势。
+"""),
+  THINK("为什么反转链表时，必须在修改 `head.next` 之前先保存 `nxt = head.next`？如果不保存会发生什么？", r"""
+`head.next = prev` 这一句把当前节点的 `next` 指针改成了指向前一个节点，**原来指向后一个节点的信息就丢了**。如果事先没把它保存在 `nxt` 里，后面的节点就再也找不到了（除非别处还有引用），循环只能在第一步之后就断掉，丢失整个链表的后半部分。
+
+这是链表题里最典型的**「指针丢失」**错误：每次改指针之前，先想清楚这个指针现在还保存着什么重要信息，需要先存起来。
+"""),
+  THINK("双指针找两数之和，为什么要求数组必须是**有序**的？如果数组无序，还有什么办法在 $O(n)$ 时间内完成？", r"""
+有序是双指针「可以放心丢掉一个元素」的依据：若 $a_i+a_j<\text{target}$，因为右边所有数 $\le a_j$，用 $a_i$ 配任何比 $a_j$ 小的数更小，所以 $a_i$ 不可能是答案的一部分，可以安全丢弃。无序时这个推理不成立。
+
+无序时用**哈希表**：遍历数组，对每个 $x$ 检查 $\text{target}-x$ 是否已经出现过（在集合里查是 $O(1)$），一次扫描 $O(n)$，额外空间 $O(n)$。这又是**空间换时间**。（先排序再双指针是 $O(n\log n)$，不需要额外空间，是另一种取舍。）
+"""),
+  KW(("数组","array","连续存放的同类型元素，按下标访问 $O(1)$"),
+     ("随机访问","random access","直接按下标定位元素，不用从头找"),
+     ("动态数组","dynamic array","装满就按比例扩容的数组，Python list 就是"),
+     ("引用","reference","Python 列表里存的是指向对象的指针，而不是对象本身"),
+     ("链表","linked list","节点用指针串联；头部插入 $O(1)$，访问 $O(n)$"),
+     ("节点","node","链表中的一个单元：值 + 指向下一个节点的指针"),
+     ("头节点 / 尾节点","head / tail","链表的第一个 / 最后一个节点"),
+     ("双向链表","doubly linked list","每个节点同时有 `next` 和 `prev`"),
+     ("缓存友好","cache-friendly","连续存放的数据遍历更快，因为 CPU 一次读入一整块"),
+     ("快慢指针","fast & slow pointers","一个走得快一个走得慢，用于找中点、判环"),
+     ("Floyd 判圈","Floyd's cycle detection","快慢指针判断链表是否有环，$O(1)$ 空间"),
+     ("前缀和","prefix sum","预先算好累计和，区间和 $O(1)$"),
+     ("双指针","two pointers","两个下标按规则移动，一次扫描解决问题"),
+  ),
+ ],
+ "references": [
+  {"title": "Runestone：Implementing an Unordered List: Linked Lists", "url": "https://runestone.academy/ns/books/published/pythonds/BasicDS/ImplementinganUnorderedListLinkedLists.html", "note": "本节的大纲依据之一，用 Python 一步步实现链表（CC BY-NC-SA 4.0）"},
+  {"title": "MIT OCW 6.006 Introduction to Algorithms（课程主页）", "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/", "note": "大学课程原版；第 2 讲讲数据结构与动态数组，难度比本节高"},
+  {"title": "Python Wiki：TimeComplexity（内置类型操作的复杂度表）", "url": "https://wiki.python.org/moin/TimeComplexity", "note": "list 和 collections.deque 的各个操作的复杂度，查表用"},
+ ],
+ "quiz": {"questions": [
+  Q("数组可以 $O(1)$ 按下标访问元素，根本原因是？",
+    ["元素是按大小排好序的", "每个元素都存着指向下一个元素的指针", "元素连续存放，地址 = 起始地址 + 下标 × 元素大小，一次算术就能定位", "用了哈希函数"], 2,
+    "连续存放让位置可以直接算出来。排序和哈希都不是原因；「指向下一个元素的指针」是链表的特点。"),
+  Q("在单链表的**头部**插入一个新节点，时间复杂度是？",
+    ["$O(1)$", "$O(n)$", "$O(\\log n)$", "$O(n^2)$"], 0,
+    "只要让新节点的 `next` 指向原来的头，再把头改成新节点，不涉及任何遍历，$O(1)$。"),
+  Q("一个只保存了头指针的单链表，在**末尾**添加一个节点，时间复杂度和改进方法是？",
+    ["$O(1)$，无需改进", "$O(\\log n)$，用二分", "$O(n^2)$，用排序", "$O(n)$，额外维护尾指针可降到 $O(1)$"], 3,
+    "没有尾指针时要从头走到尾，$O(n)$。多保存一个 `tail` 指针就能直接接在后面，$O(1)$（代价是每次修改都要维护它）。"),
+  Q("已经拿到了单链表中某个节点 `p` 的引用，要删除 `p` 后面的那个节点，时间复杂度是？",
+    ["$O(n)$", "$O(1)$", "$O(\\log n)$", "做不到"], 1,
+    "让 `p.next = p.next.next` 即可，不涉及遍历，$O(1)$。（删除 `p` 自己则需要找到它的前一个节点。）"),
+  Q("在一个有 $n$ 个元素的数组**开头**插入一个元素，需要移动多少个元素？",
+    ["0 个", "1 个", "$n$ 个", "$\\log n$ 个"], 2,
+    "所有原有元素都要往后挪一格，一共 $n$ 个。所以复杂度是 $O(n)$。"),
+  Q("用快慢指针找链表中点：链表有 7 个节点（下标 0 到 6），快指针每次走 2 步、慢指针每次走 1 步。当快指针到达末尾时，慢指针在下标几？",
+    ["3", "2", "4", "6"], 0,
+    "快指针走到下标 6 时一共走了 3 次，每次慢指针走 1 步，所以在下标 3，正好是中点。"),
+  Q("Floyd 判圈算法（快慢指针）判断链表有没有环，额外空间复杂度是？",
+    ["$O(n)$", "$O(\\log n)$", "$O(n^2)$", "$O(1)$"], 3,
+    "只用两个指针变量，额外空间是常数 $O(1)$。用集合记录访问过的节点也能判环，但那需要 $O(n)$ 空间。"),
+  Q("对数组预处理前缀和之后，查询任意一个区间 $[l,r)$ 的和，时间复杂度是？",
+    ["$O(n)$", "$O(1)$", "$O(\\log n)$", "$O(r-l)$"], 1,
+    "$P_r-P_l$ 一次减法即可，$O(1)$；预处理一次需要 $O(n)$。"),
+  Q("下面哪种场景更适合用数组（而不是链表）？",
+    ["频繁按下标随机访问元素", "频繁在序列头部插入元素", "频繁在已经持有的节点后面插入元素", "要求绝对不能复制任何元素"], 0,
+    "数组按下标访问是 $O(1)$，缓存友好。头部插入、持有节点后的插入是链表的强项。"),
+  Q("Python 内置的 `list` 底层是什么结构？",
+    ["双向链表", "哈希表", "动态数组（存的是对象的引用）", "二叉树"], 2,
+    "Python 的 `list` 是动态数组，所以按下标 $O(1)$、`append` 摊还 $O(1)$、`insert(0, x)` 为 $O(n)$。"),
+ ]},
+}
+
+if __name__ == '__main__':
+    dump(unit, "dsa-0", "u02-arrays-linked-lists.json")
