@@ -1,0 +1,279 @@
+{
+ "id": "u06",
+ "title": "无监督学习：聚类与降维",
+ "en": "Unsupervised Learning: Clustering & Dimensionality Reduction",
+ "minutes": 100,
+ "objectives": [
+  "写出 **k-means** 的目标函数 $J=\\sum_i\\|x_i-\\mu_{c(i)}\\|^2$，手写 **Lloyd 算法**（分配步 / 更新步），证明或验证 $J$ 单调不增，并用实验看到它对**初始化**敏感、理解 **k-means++** 的 $D^2$ 加权思想",
+  "会用 **肘部法 (elbow method)** 与 **轮廓系数 (silhouette coefficient)** 选 $k$，并知道它们回答的问题不同、可能给出不同答案",
+  "理解 **高斯混合模型 (GMM)** 的**潜变量 (latent variable)**，手写 **EM 算法** 的 E 步（责任）与 M 步（加权最大似然），验证对数似然单调不减，并明白它是后面 **VAE** 的前身",
+  "用两种方式推导 **主成分分析 (PCA)**（最大方差、最小重构误差），说明它与 **奇异值分解 (SVD)** 的关系 $\\lambda_j=s_j^2/(n-1)$，手写 PCA 并用 `np.linalg.svd` 对照，会读**累计解释方差比**",
+  "知道 **t-SNE / UMAP** 只适合可视化、结论要小心；理解 **自监督学习 (self-supervised learning)** 为什么是无监督学习的延伸，以及**线性自编码器 = PCA** 如何通向表示学习"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n前面所有模型都有一列标签 $y$：「这封邮件是不是垃圾邮件」「房子卖多少钱」。可是世界上的大部分数据没有标签：几亿张图片、网上所有的文字、传感器的流水。**无监督学习**研究的就是：**只有 $x$，没有 $y$，能从数据本身里学到什么？** 两件最经典的事：把相似的点**分组**（聚类）、把高维的数据**压缩**成少数几个有意义的方向（降维）。它们还有第三层意义：压缩和分组是**表示学习**的雏形，而表示学习正是现代深度学习（自监督预训练、VAE、世界模型）的核心。\n\n**开始之前你要会：**\n\n- 本课前面「偏差方差、正则化与模型选择」里的「用交叉验证选超参数」（选 $k$ 是同一类问题，只是没有标签可以验证）；「机器学习的基本问题」里监督 / 无监督的区分；\n- prob-0「最大似然估计与交叉熵」：高斯分布的最大似然估计就是样本均值与样本方差（EM 的 M 步要用它）；prob-0「条件概率与贝叶斯」（EM 的 E 步就是一次贝叶斯公式）；\n- arena-0.0「特征值与奇异值分解」：$A=U\\Sigma V^\\top$、奇异值与特征值的关系（PCA 的核心）；arena-0.0「反向传播」与「PyTorch 入门：张量与自动求导」：这一节只用到「自编码器是用梯度下降训练的」这件事。\n\n**学完它你就能看懂这几件事：**\n\n- `sklearn.cluster.KMeans(n_clusters=8, init=\"k-means++\", n_init=10)` 每个参数在算法里对应哪一步；为什么每次运行结果会不同；\n- 论文里「We fit a Gaussian mixture with the EM algorithm」「the latent variable $z$」是什么意思，以及为什么变分自编码器 (VAE) 的损失里有「重构项 + KL 项」；\n- `PCA(n_components=0.95)` 的 0.95 指什么；为什么人们说「PCA 就是对中心化数据做 SVD」；\n- 为什么网上很多「t-SNE 降维图」不能直接拿来下结论；为什么 GPT、BERT 这些模型被叫作「自监督」，它们和无监督是什么关系。\n\n**本节安排（约 100 分钟）**：k-means 与初始化（22 分钟）→ 选 $k$（10 分钟）→ 高斯混合与 EM（18 分钟，含视频一 8 分钟）→ PCA（35 分钟，含视频二 22 分钟）→ t-SNE / UMAP（4 分钟）→ 自监督与线性自编码器（8 分钟）→「想一想」。视频是英文的，可以打开 YouTube 的中文字幕。\n\n**怎么学这一节：** 代码块都是「▶ 运行」就能跑的，前面的块定义的变量后面的块可以直接用，请**按顺序**往下跑。所有算法都是 NumPy 从零写的；PCA 的部分会用 `np.linalg.svd` 来对照检验。\n\n### k-means：把点分成 $k$ 堆\n\n> **标准定义 · k-means 聚类 (k-means clustering)**\n>\n> 给定 $n$ 个点 $x_1,\\dots,x_n\\in\\mathbb{R}^p$ 和簇数 $k$，**k-means** 要找 $k$ 个**中心** $\\mu_1,\\dots,\\mu_k$ 和每个点的**归属** $c(i)\\in\\{1,\\dots,k\\}$，使**簇内平方和 (inertia)** 最小：\n>\n> $$J=\\sum_{i=1}^n\\|x_i-\\mu_{c(i)}\\|^2$$\n>\n> **Lloyd 算法**交替做两步直到不再变化：**分配步**：固定中心，把每个点分给最近的中心；**更新步**：固定归属，把每个中心移到它所在簇的均值。每一步都不会让 $J$ 变大，所以 $J$ 单调不增，算法一定收敛，但只能收敛到**局部最小**（这个问题是 NP 难的，没有已知的高效全局算法）。\n>\n> *English: k-means minimizes the within-cluster sum of squared distances to k centroids. Lloyd's algorithm alternates between assigning each point to its nearest centroid and moving each centroid to the mean of its points; it converges to a local minimum.*\n\n**白话版：「选 $k$ 个村长，村民就近投靠，村长搬到村子中央，再投靠，再搬……」。** 为什么「搬到均值」是对的？固定一个簇里的点，$\\sum\\|x_i-\\mu\\|^2$ 对 $\\mu$ 求导令其为 0，得到 $\\mu$ 就是这些点的均值（和 prob-0 里「均值使平方误差最小」是同一个结论）；为什么「就近」是对的？固定中心，每个点单独选最近的中心显然使它自己的项最小。两步都是在**同一个目标上做精确的最小化**，所以 $J$ 只降不升。\n\n造一份有 4 个簇的二维数据（中心在 $(0,0)$、$(3,0)$、$(8,0)$、$(8,3.5)$，每个簇 100 个点，标准差 0.8），前两个簇靠得比较近，手写 Lloyd 算法，初始中心从数据点里随机选：\n\n```python\nimport numpy as np\n\nr = np.random.default_rng(0)\ncenters_true = np.array([[0, 0], [3, 0], [8, 0], [8, 3.5]])      # 4 个簇，前两个靠得近\nX = np.vstack([c + 0.8 * r.normal(size=(100, 2)) for c in centers_true])\nprint(X.shape)\n\ndef kmeans(X, init, n_iter=100):\n    centers, history = init.copy(), []\n    for _ in range(n_iter):\n        d = ((X[:, None, :] - centers[None, :, :]) ** 2).sum(-1)    # 每个点到每个中心的距离平方\n        labels = d.argmin(1)                                        # 分配步：归到最近的中心\n        history.append(d[np.arange(len(X)), labels].sum())          # 目标函数 J（簇内平方和）\n        new = np.array([X[labels == j].mean(0) if np.any(labels == j) else centers[j]\n                        for j in range(len(centers))])              # 更新步：中心移到簇的均值\n        if np.allclose(new, centers):\n            break\n        centers = new\n    return centers, labels, history\n\ninit = X[r.choice(len(X), 4, replace=False)]\ncenters, labels, hist = kmeans(X, init)\nprint(\"迭代轮数:\", len(hist), \" J 的变化:\", [round(float(h), 1) for h in hist])\nprint(\"J 单调不增:\", all(a >= b - 1e-9 for a, b in zip(hist, hist[1:])))\nprint(\"最终中心:\\n\", np.round(centers[np.argsort(centers[:, 0])], 2))\n# 输出：(400, 2)\n# 输出：迭代轮数: 11  J 的变化: [1446.5, 1034.5, 1026.7, 1022.8, 1021.6, 1020.5, 1019.6, 1018.8, 1018.4, 1017.8, 1017.6]\n# 输出：J 单调不增: True\n# 输出：最终中心:\n# 输出： [[-0.22 -0.01]\n# 输出： [ 1.88  0.68]\n# 输出： [ 3.26 -0.3 ]\n# 输出： [ 7.99  1.78]]\n```\n\n读输出：共 400 个点。算法迭代了 11 轮就收敛，每一轮的 $J$ 是 1446.5、1034.5、1026.7、1022.8、1021.6、1020.5、1019.6、1018.8、1018.4、1017.8、1017.6，一路下降，`True` 验证了单调不增。可是看最终的中心：$(-0.22,-0.01)$、$(1.88,0.68)$、$(3.26,-0.30)$、$(7.99,1.78)$：右边那两个簇（中心 $(8,0)$ 和 $(8,3.5)$）被**合并**成了一个中心 $(7.99,1.78)$，而左边的两个簇却被分给了三个中心。算法收敛了，可是收敛到了一个**很差的局部最小**（$J\\approx1017.6$）。这就是下一段要讲的初始化问题。\n\n### 初始化敏感性与 k-means++\n\n同一份数据，换不同的随机初始中心，会收敛到不同的结果。重复 40 次，把最终的 $J$ 按大小统计：\n\n```python\n# 同一份数据，换 40 次随机初始化（从数据点里随机选 4 个当初始中心）\ndef final_J(init):\n    return kmeans(X, init)[2][-1]\n\nrng = np.random.default_rng(1)\nJs = np.array([final_J(X[rng.choice(len(X), 4, replace=False)]) for _ in range(40)])\nvals, counts = np.unique(np.round(Js, 0), return_counts=True)\nfor v, c in zip(vals, counts):\n    print(f\"最终 J ≈ {v:6.0f}  出现 {c:2d} 次\")\n# 输出：最终 J ≈    493  出现 25 次\n# 输出：最终 J ≈    887  出现  1 次\n# 输出：最终 J ≈    891  出现  4 次\n# 输出：最终 J ≈    893  出现  2 次\n# 输出：最终 J ≈    896  出现  1 次\n# 输出：最终 J ≈   1017  出现  1 次\n# 输出：最终 J ≈   1022  出现  5 次\n# 输出：最终 J ≈   1030  出现  1 次\n```\n\n读输出：40 次里有 25 次得到 $J\\approx493$（那是正确分出 4 个簇的结果），其余 15 次卡在了别的局部最小：$J\\approx887$ 到 896 的有 8 次，$J\\approx1017$ 到 1030 的有 7 次，$J$ 最大的是正确解的两倍多。上一块里的那次初始化，就是 1017 的那一类。**所以单次运行 k-means 的结果不能直接信。** 常见的补救办法是：**多次随机初始化，保留 $J$ 最小的一次**（`sklearn` 里的 `n_init`），再就是更聪明地选初始中心。\n\n> **标准定义 · k-means++ 初始化**\n>\n> 第一个中心从数据点里**均匀随机**选；之后每个新中心按**概率正比于 $D(x)^2$** 从数据点里抽，其中 $D(x)$ 是点 $x$ 到**已选中心中最近的一个**的距离。这样新中心倾向于落在离已有中心**远**的地方。Arthur 和 Vassilvitskii (2007) 证明，用它初始化再跑 Lloyd，期望的 $J$ 与最优值之比是 $O(\\log k)$。\n>\n> *English: k-means++ picks the first center uniformly at random, then each further center with probability proportional to its squared distance from the nearest already chosen center, spreading the initial centers out.*\n\n**白话版：「选村长时，别让两个村长挨在一起」。** 离已有村长越远的村子越有可能被选中，所以不太会出现两个中心落进同一个簇、另一个簇里却一个中心也没有的局面。\n\n```python\ndef kmeanspp_init(X, k, rng):\n    centers = [X[rng.integers(len(X))]]                    # 第一个中心：均匀随机\n    for _ in range(k - 1):\n        d2 = ((X[:, None, :] - np.array(centers)[None]) ** 2).sum(-1).min(1)   # 离最近已选中心的距离平方\n        centers.append(X[rng.choice(len(X), p=d2 / d2.sum())])                 # 按 D^2 加权抽下一个\n    return np.array(centers)\n\nrng = np.random.default_rng(1)\nJp = np.array([final_J(kmeanspp_init(X, 4, rng)) for _ in range(40)])\nvals, counts = np.unique(np.round(Jp, 0), return_counts=True)\nfor v, c in zip(vals, counts):\n    print(f\"k-means++ 最终 J ≈ {v:6.0f}  出现 {c:2d} 次\")\nprint(\"随机初始化 J 的平均:\", round(Js.mean(), 1), \" k-means++:\", round(Jp.mean(), 1))\n# 输出：k-means++ 最终 J ≈    493  出现 33 次\n# 输出：k-means++ 最终 J ≈    886  出现  1 次\n# 输出：k-means++ 最终 J ≈    891  出现  2 次\n# 输出：k-means++ 最终 J ≈    899  出现  1 次\n# 输出：k-means++ 最终 J ≈   1022  出现  3 次\n# 输出：随机初始化 J 的平均: 665.3  k-means++: 572.6\n```\n\n读输出：同样 40 次，k-means++ 有 33 次得到 $J\\approx493$（随机初始化是 25 次），卡在局部最小的只有 7 次。平均最终 $J$ 从随机初始化的 665.3 降到 572.6。k-means++ 不保证每次都对，但明显更稳；再配合 `n_init` 多次取最优，就是 `sklearn` 的默认做法。\n\n### 怎样选 $k$：肘部法与轮廓系数\n\n$k$ 是超参数，但无监督学习没有标签，没法像前面那样直接用验证误差选。常用的是两种「内部指标」。注意：**$J$ 随 $k$ 增大必然单调下降**（$k=n$ 时每个点自己一个簇，$J=0$），所以不能选使 $J$ 最小的 $k$。\n\n> **标准定义 · 肘部法与轮廓系数 (elbow method & silhouette coefficient)**\n>\n> **肘部法**：对 $k=1,2,3,\\dots$ 各跑一次（取多次初始化的最优），画 $J(k)$ 曲线，选曲线「拐弯」处（再增加 $k$ 带来的下降明显变小的位置）。**轮廓系数**：对每个点 $i$，令 $a(i)$ 为它到**同簇**其他点的平均距离，$b(i)$ 为它到**最近的其他簇**中所有点的平均距离，则\n>\n> $$s(i)=\\frac{b(i)-a(i)}{\\max\\{a(i),\\,b(i)\\}}\\in[-1,1]$$\n>\n> 接近 1 表示点离自己的簇很近、离别的簇很远；接近 0 表示在两个簇的边界上；为负表示可能分错了簇。**平均轮廓系数**最大的 $k$ 是候选。\n>\n> *English: The elbow method looks for the bend in the inertia-versus-k curve; the silhouette coefficient compares each point's mean distance to its own cluster with that to the nearest other cluster, and a higher average is better.*\n\n**白话版：「肘部法看『再多分一堆值不值』，轮廓系数看『每个人是不是离自己人近、离外人远』」。**\n\n```python\ndef best_of(X, k, n_init=10, seed=0):                      # 多次初始化取 J 最小的一次\n    rng = np.random.default_rng(seed)\n    runs = [kmeans(X, kmeanspp_init(X, k, rng)) for _ in range(n_init)]\n    return min(runs, key=lambda t: t[2][-1])\n\nfor k in range(1, 9):\n    J = best_of(X, k)[2][-1]\n    print(f\"k={k}: J={J:8.1f}\")\n# 输出：k=1: J=  6112.8\n# 输出：k=2: J=  1522.5\n# 输出：k=3: J=   939.8\n# 输出：k=4: J=   493.0\n# 输出：k=5: J=   439.9\n# 输出：k=6: J=   391.9\n# 输出：k=7: J=   347.5\n# 输出：k=8: J=   320.3\n```\n\n读输出：$J$ 从 $k=1$ 的 6112.8 降到 $k=2$ 的 1522.5，$k=3$ 的 939.8，$k=4$ 的 493.0，之后每增加一个簇只降 27 到 53（439.9、391.9、347.5、320.3）。「肘」就在 $k=4$：从 $k=4$ 起曲线明显变平，说明再分下去只是在切分已有的簇。这和我们造数据时的真实簇数一致。\n\n```python\ndef silhouette(X, labels):\n    D = np.sqrt(((X[:, None, :] - X[None, :, :]) ** 2).sum(-1))\n    s = np.zeros(len(X))\n    for i in range(len(X)):\n        same = (labels == labels[i]); same[i] = False\n        a = D[i, same].mean()                              # 簇内平均距离\n        b = min(D[i, labels == c].mean() for c in set(labels) if c != labels[i])   # 最近别的簇的平均距离\n        s[i] = (b - a) / max(a, b)\n    return s.mean()\n\nfor k in range(2, 8):\n    labels_k = best_of(X, k)[1]\n    print(f\"k={k}: 平均轮廓系数 = {silhouette(X, labels_k):.3f}\")\n# 输出：k=2: 平均轮廓系数 = 0.647\n# 输出：k=3: 平均轮廓系数 = 0.604\n# 输出：k=4: 平均轮廓系数 = 0.566\n# 输出：k=5: 平均轮廓系数 = 0.489\n# 输出：k=6: 平均轮廓系数 = 0.404\n# 输出：k=7: 平均轮廓系数 = 0.382\n```\n\n读输出：平均轮廓系数最高的却是 $k=2$（0.647），然后是 $k=3$（0.604）、$k=4$（0.566）、$k=5$（0.489），之后继续下降（0.404、0.382）。肘部法说 4，轮廓系数说 2，两者不一致，这并不矛盾：我们的数据里，左边两个簇的中心只隔 3，标准差 0.8，彼此有一点重叠，右边两个簇也靠得很近，而左右两组之间隔得很远，所以在「粗」的尺度上看，这份数据是 2 大堆；在「细」的尺度上看，是 4 小堆。轮廓系数偏好「分得最干净」的 2 堆，但 $k=4$ 的 0.566 仍然高于 0.5，也是合理的划分。**这两个指标都只是参考，没有标签时，最终要结合业务含义来定 $k$**（比如「要给客户分几类才有不同的运营动作」）。\n\n### 高斯混合模型与 EM：软分配和潜变量\n\nk-means 有两个局限：每个点**硬性**属于一个簇；每个簇被当成**半径相同的球**。**高斯混合模型 (GMM)** 同时去掉了这两条，而且把聚类放进了**概率模型**的语言里。\n\n> **标准定义 · 高斯混合模型 (Gaussian mixture model, GMM)**\n>\n> 假设数据由 $K$ 个高斯分布混合而成：先以概率 $\\pi_k$ 抽出一个**隐含的成分编号** $z\\in\\{1,\\dots,K\\}$（**潜变量**，我们看不到），再从该成分的高斯 $\\mathcal{N}(\\mu_k,\\sigma_k^2)$ 里抽出观测 $x$。于是 $x$ 的边缘分布是\n>\n> $$p(x)=\\sum_{k=1}^K\\pi_k\\,\\mathcal{N}(x\\mid\\mu_k,\\sigma_k^2)$$\n>\n> 参数 $\\theta=(\\pi_k,\\mu_k,\\sigma_k^2)$ 用**最大似然**估计，但对数似然 $\\sum_i\\log\\sum_k\\pi_k\\mathcal{N}(x_i\\mid\\mu_k,\\sigma_k^2)$ 里有「对数里套求和」，没有闭式解。**EM 算法 (expectation–maximization)** 交替做两步：**E 步**：固定参数，对每个点算它属于各成分的**后验概率（责任）** $\\gamma_{ik}=P(z=k\\mid x_i)=\\dfrac{\\pi_k\\mathcal{N}(x_i\\mid\\mu_k,\\sigma_k^2)}{\\sum_j\\pi_j\\mathcal{N}(x_i\\mid\\mu_j,\\sigma_j^2)}$；**M 步**：把 $\\gamma_{ik}$ 当作权重，做**加权的最大似然**：$N_k=\\sum_i\\gamma_{ik}$，$\\mu_k=\\tfrac1{N_k}\\sum_i\\gamma_{ik}x_i$，$\\sigma_k^2=\\tfrac1{N_k}\\sum_i\\gamma_{ik}(x_i-\\mu_k)^2$，$\\pi_k=N_k/n$。每一轮迭代都**不会让对数似然下降**。\n>\n> *English: A Gaussian mixture draws a latent component z, then x from that component's Gaussian. EM maximizes the likelihood by alternating the E-step (posterior responsibilities of each component) and the M-step (weighted maximum-likelihood updates); the log-likelihood never decreases.*\n\n**白话版：「猜一猜每个点是谁家的，再按猜的结果重新量每家的身高体重」。** 如果我们知道每个点来自哪个成分，参数的估计就很容易（对每个成分分别做最大似然，就是 prob-0 里的样本均值和方差）；如果我们知道参数，每个点属于哪个成分也很容易（贝叶斯公式）。两者互为条件：EM 就让它们轮流当「已知」。k-means 是它的**硬分配**版本：若所有成分共享同一个球形方差 $\\sigma^2I$ 并让 $\\sigma\\to0$，责任 $\\gamma_{ik}$ 就退化成 0 或 1（只给最近的那个），M 步退化成「取簇均值」，EM 就成了 Lloyd 算法。\n\n造一份一维数据：以 0.4 的概率从 $\\mathcal{N}(-2,0.8^2)$ 抽，以 0.6 的概率从 $\\mathcal{N}(3,1.2^2)$ 抽，一共 600 个，**不告诉算法每个点来自哪一个**。先写出 E 步和 M 步：\n\n```python\nr = np.random.default_rng(0)\nz = r.random(600) < 0.4                                    # 隐变量：来自哪个成分（我们看不到）\nx = np.where(z, r.normal(-2, 0.8, 600), r.normal(3, 1.2, 600))   # 观测\nprint(\"真实参数: pi=(0.4, 0.6), mu=(-2, 3), sigma=(0.8, 1.2)\")\n\ndef normal_pdf(x, mu, var):\n    return np.exp(-0.5 * (x - mu) ** 2 / var) / np.sqrt(2 * np.pi * var)\n\ndef em_step(x, pi, mu, var):\n    dens = pi * normal_pdf(x[:, None], mu, var)            # (n, K)：pi_k N(x_i | mu_k, var_k)\n    loglik = np.log(dens.sum(1)).sum()                     # 当前参数下的对数似然\n    resp = dens / dens.sum(1, keepdims=True)               # E 步：责任 gamma_ik = P(z=k | x_i)\n    Nk = resp.sum(0)                                       # M 步：用责任当权重重新估计参数\n    mu = (resp * x[:, None]).sum(0) / Nk\n    var = (resp * (x[:, None] - mu) ** 2).sum(0) / Nk\n    return Nk / len(x), mu, var, loglik\n# 输出：真实参数: pi=(0.4, 0.6), mu=(-2, 3), sigma=(0.8, 1.2)\n```\n\n读输出：只是打印了真实参数。`em_step` 一次做完 E 步（算责任 `resp`）和 M 步（用 `resp` 当权重更新 $N_k$、均值、方差、$\\pi$），并顺便返回**更新前**参数下的对数似然。下面把它迭代起来，初始值故意取得很差：两个成分的均值分别是数据的最小值和最大值，方差都是 1。\n\n```python\npi, mu, var = np.array([0.5, 0.5]), np.array([x.min(), x.max()]), np.array([1.0, 1.0])\nlogliks = []\nfor it in range(1, 61):\n    pi, mu, var, ll = em_step(x, pi, mu, var)\n    logliks.append(ll)\n    if it in (1, 2, 3, 5, 10, 30, 60):\n        print(f\"迭代 {it:2d}: 对数似然={ll:9.3f} pi={np.round(pi, 3)} mu={np.round(mu, 2)}\")\nprint(\"对数似然单调不减:\", all(b >= a - 1e-9 for a, b in zip(logliks, logliks[1:])))\nprint(\"估计的 sigma:\", np.round(np.sqrt(var), 2))\n# 输出：迭代  1: 对数似然=-3929.798 pi=[0.396 0.604] mu=[-1.83  3.08]\n# 输出：迭代  2: 对数似然=-1274.652 pi=[0.378 0.622] mu=[-1.96  3.  ]\n# 输出：迭代  3: 对数似然=-1260.743 pi=[0.368 0.632] mu=[-2.02  2.97]\n# 输出：迭代  5: 对数似然=-1255.197 pi=[0.362 0.638] mu=[-2.05  2.94]\n# 输出：迭代 10: 对数似然=-1255.033 pi=[0.361 0.639] mu=[-2.06  2.93]\n# 输出：迭代 30: 对数似然=-1255.033 pi=[0.361 0.639] mu=[-2.06  2.93]\n# 输出：迭代 60: 对数似然=-1255.033 pi=[0.361 0.639] mu=[-2.06  2.93]\n# 输出：对数似然单调不减: True\n# 输出：估计的 sigma: [0.75 1.25]\n```\n\n读输出：对数似然从第 1 轮的 $-3929.798$ 一下子涨到第 2 轮的 $-1274.652$，第 3 轮 $-1260.743$，第 5 轮 $-1255.197$，第 10 轮 $-1255.033$，之后到第 30 轮、第 60 轮都是 $-1255.033$：已经收敛。`True` 验证了每一轮对数似然都不下降。估计出的参数是 $\\pi=(0.361,0.639)$、$\\mu=(-2.06,2.93)$、$\\sigma=(0.75,1.25)$，与真实值 $(0.4,0.6)$、$(-2,3)$、$(0.8,1.2)$ 很接近，差别来自 600 个样本的抽样波动（样本里「来自第一个成分」的比例本来就不是正好 0.4）。EM 和 k-means 一样只保证收敛到局部最优，所以对初始值敏感，实际也常常多次初始化，或者用 k-means 的结果当初始值；选成分数 $K$ 常用 **BIC**（对数似然减去一个随参数个数增长的惩罚）。\n\n**为什么说它是 VAE 的前身？** GMM 里「看不到的 $z$ + 由 $z$ 生成 $x$」的结构，就是**潜变量模型 (latent variable model)**：$p(x)=\\sum_zp(z)p(x\\mid z)$。EM 的 E 步需要算后验 $p(z\\mid x)$，M 步最大化「完全数据」的对数似然。变分自编码器 (VAE) 把离散的 $z$ 换成连续的向量，把 $p(x\\mid z)$ 换成神经网络**解码器**；此时后验 $p(z\\mid x)$ 算不出来，就训练另一个神经网络**编码器** $q(z\\mid x)$ 去近似它，目标函数是对数似然的一个下界（**ELBO**），它和 EM 用的是同一个下界，只是写法不同：EM 里写成「完全数据对数似然的期望 + $q$ 的熵」，VAE 里写成「重构项 − KL（$q$ 与先验）」。你可以把 VAE 读作：**用神经网络做的、可以用梯度下降训练的 EM**。到后面讲 VAE 时，你会再次遇到这里的每一个符号。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "REypj2sy_5U",
+   "title": "视频一：EM algorithm: how it works（Victor Lavrenko）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 8
+  },
+  {
+   "type": "text",
+   "md": "### PCA：两种推导，一个答案\n\nk-means 和 GMM 在**分组**；**降维**的目标是把 $p$ 维数据用少数几个方向表示，丢掉的信息尽量少。最经典的方法是**主成分分析**。\n\n> **标准定义 · 主成分分析 (principal component analysis, PCA)**\n>\n> 设数据矩阵 $X_c\\in\\mathbb{R}^{n\\times p}$ 已按列**中心化**，样本协方差 $\\Sigma=\\tfrac1{n-1}X_c^\\top X_c$。**第一主成分**是使数据投影后**方差最大**的单位方向：\n>\n> $$w_1=\\arg\\max_{\\|w\\|=1}\\ w^\\top\\Sigma w$$\n>\n> 引入拉格朗日乘子，令导数为零得 $\\Sigma w=\\lambda w$：$w$ 必须是 $\\Sigma$ 的特征向量，此时投影方差正好是对应的特征值 $\\lambda$，所以取**最大特征值**对应的特征向量。后续主成分是依次与前面正交的方向，等价于取 $\\Sigma$ 的前 $k$ 个特征向量 $W_k=[w_1,\\dots,w_k]$；数据降维后的坐标（**得分**）是 $X_cW_k$。\n>\n> *English: PCA finds orthonormal directions of maximal variance; they are the leading eigenvectors of the covariance matrix, and the variance along each equals its eigenvalue.*\n\n**第二种推导：最小重构误差。** 换一个问题：把每个点投影到 $k$ 维子空间再还原，$\\hat x_i=WW^\\top x_i$（$W^\\top W=I$），怎样选 $W$ 使平均重构误差最小？展开后有\n\n$$\\frac1{n-1}\\sum_i\\|x_i-WW^\\top x_i\\|^2=\\mathrm{tr}(\\Sigma)-\\mathrm{tr}(W^\\top\\Sigma W)$$\n\n右边第一项 $\\mathrm{tr}(\\Sigma)$ 是**数据的总方差**，与 $W$ 无关；所以**最小化重构误差 $\\Leftrightarrow$ 最大化投影保留的方差 $\\mathrm{tr}(W^\\top\\Sigma W)$**，答案还是前 $k$ 个特征向量，最小的重构误差等于**被丢掉的特征值之和** $\\sum_{j>k}\\lambda_j$。两种推导殊途同归：**「保留最多的方差」和「丢掉最少的信息」是同一件事**，因为总方差是个定值。\n\n**和 SVD 的关系。** 对 $X_c$ 做奇异值分解 $X_c=U\\Sigma_sV^\\top$（这里为了不和协方差矩阵 $\\Sigma$ 混淆，奇异值矩阵记为 $\\Sigma_s$，奇异值为 $s_1\\ge s_2\\ge\\cdots$），则 $X_c^\\top X_c=V\\Sigma_s^2V^\\top$，所以：$\\Sigma$ 的特征向量就是 $V$ 的列，特征值 $\\lambda_j=\\dfrac{s_j^2}{n-1}$，得分 $X_cV=U\\Sigma_s$。这就是「PCA 是对中心化数据做 SVD」的意思。实际计算更偏爱 SVD，因为不用显式地算 $X_c^\\top X_c$（会把条件数平方，损失精度）。再回到 arena-0.0「特征值与奇异值分解」里的结论：取前 $k$ 个奇异三元组得到的就是 $X_c$ 在 Frobenius 范数下的**最佳秩 $k$ 近似**（Eckart–Young 定理），PCA 的「最小重构误差」是它的另一个说法。\n\n**白话版：「给一团椭圆形的点找最长的那根轴」。** 数据云像一个被拉长的橄榄球，第一主成分就是橄榄球最长的那根轴，沿它方向的差异最大；第二主成分是与它垂直的次长轴；如果橄榄球几乎是一根针，只留一根轴，几乎没丢什么。\n\n手写 PCA：造一份 5 维数据，其实只有 2 个隐变量（尺度 3 和 1）线性混合出来，再加一点噪声。先中心化，算协方差，做特征分解：\n\n```python\nr = np.random.default_rng(0)\nn = 500\nZ = r.normal(size=(n, 2)) * np.array([3.0, 1.0])           # 2 个隐变量，尺度 3 和 1\nW = r.normal(size=(2, 5))                                  # 线性地混合进 5 个观测特征\nX5 = Z @ W + 0.3 * r.normal(size=(n, 5))                   # 再加一点噪声\nXc = X5 - X5.mean(0)                                       # 第一步：中心化\n\nS = Xc.T @ Xc / (n - 1)                                    # 协方差矩阵 (5 x 5)\nevals, evecs = np.linalg.eigh(S)                           # eigh 给的是升序，翻成降序\nevals, evecs = evals[::-1], evecs[:, ::-1]\nprint(\"特征值（各主成分方向上的方差）:\", np.round(evals, 3))\nprint(\"解释方差比:\", np.round(evals / evals.sum(), 3))\nprint(\"累计解释方差比:\", np.round(np.cumsum(evals) / evals.sum(), 3))\n# 输出：特征值（各主成分方向上的方差）: [30.66   1.225  0.101  0.092  0.08 ]\n# 输出：解释方差比: [0.953 0.038 0.003 0.003 0.002]\n# 输出：累计解释方差比: [0.953 0.992 0.995 0.998 1.   ]\n```\n\n读输出：协方差矩阵的 5 个特征值（也就是 5 个主成分方向上的方差）是 30.66、1.225、0.101、0.092、0.08：前两个很大，后三个都在 0.1 左右（那是噪声的方差，我们加的噪声标准差是 0.3，方差 0.09，对得上）。解释方差比是 0.953、0.038、0.003、0.003、0.002，累计比例 0.953、0.992、0.995、0.998、1.0：**一个主成分就解释了 95.3% 的方差，两个就解释了 99.2%**，和「数据由 2 个隐变量生成」吻合。`eigh` 返回升序排列，所以代码里把它翻成了降序。\n\n用 `np.linalg.svd` 做对照：\n\n```python\nU, s, Vt = np.linalg.svd(Xc, full_matrices=False)          # Xc = U diag(s) V^T\nprint(\"奇异值平方 / (n-1) 与协方差特征值一致:\", np.allclose(s ** 2 / (n - 1), evals))\nprint(\"V 的列与特征向量一致（至多差一个符号）:\", np.allclose(np.abs(Vt.T), np.abs(evecs)))\nscores = Xc @ evecs[:, :2]                                 # 投影到前 2 个主成分：每个样本的新坐标\nprint(\"得分的方差:\", np.round(scores.var(0, ddof=1), 3))\nprint(\"得分之间的协方差接近 0:\", abs(np.cov(scores.T)[0, 1]) < 1e-9)\n# 输出：奇异值平方 / (n-1) 与协方差特征值一致: True\n# 输出：V 的列与特征向量一致（至多差一个符号）: True\n# 输出：得分的方差: [30.66   1.225]\n# 输出：得分之间的协方差接近 0: True\n```\n\n读输出：奇异值的平方除以 $n-1$ 与协方差矩阵的特征值完全一致（`True`）；$V$ 的列与特征向量一致，至多差一个符号（特征向量的正负号是任意的，所以比较的是绝对值），这是 SVD 与 PCA 关系的数值验证。投影到前两个主成分后，得分的方差分别是 30.66 和 1.225（等于对应的特征值），两个得分之间的协方差接近 0（`True`）：**主成分得分彼此不相关**，这也是 PCA 的一个重要性质。\n\n**再用数值检验两种推导。** 在单位球面上随机取 2000 个方向，量一量投影方差；再对 $k=1,2,3,4$，把数据投影到前 $k$ 个主成分再还原，算重构误差，和「被丢掉的特征值之和」对比：\n\n```python\n# 两种推导的数值检验：最大方差 / 最小重构误差\nrng = np.random.default_rng(1)\ndirs = rng.normal(size=(2000, 5)); dirs /= np.linalg.norm(dirs, axis=1, keepdims=True)\nvar_along = np.array([(Xc @ d).var(ddof=1) for d in dirs])\nprint(f\"随机单位方向上的投影方差: 最大 {var_along.max():.3f} <= 第一特征值 {evals[0]:.3f}\")\n\nfor k in range(1, 5):\n    Vk = evecs[:, :k]\n    err = ((Xc - Xc @ Vk @ Vk.T) ** 2).sum() / (n - 1)     # 重构误差（平方和 / (n-1)）\n    print(f\"保留 k={k}: 重构误差={err:.4f}  被丢掉的特征值之和={evals[k:].sum():.4f}\")\n# 输出：随机单位方向上的投影方差: 最大 29.493 <= 第一特征值 30.660\n# 输出：保留 k=1: 重构误差=1.4980  被丢掉的特征值之和=1.4980\n# 输出：保留 k=2: 重构误差=0.2729  被丢掉的特征值之和=0.2729\n# 输出：保留 k=3: 重构误差=0.1716  被丢掉的特征值之和=0.1716\n# 输出：保留 k=4: 重构误差=0.0800  被丢掉的特征值之和=0.0800\n```\n\n读输出：2000 个随机单位方向里，投影方差最大的是 29.493，没有一个超过第一特征值 30.660，说明第一主成分确实是方差最大的方向（随机方向只能逼近它，不会超过）。下面四行：保留 $k=1$ 时重构误差是 1.4980，等于被丢掉的特征值之和 $1.225+0.101+0.092+0.08=1.498$；$k=2$ 时 0.2729 对 0.2729；$k=3$ 时 0.1716 对 0.1716；$k=4$ 时 0.0800 对 0.0800。**两列完全相同**，就是「最小重构误差等于被丢掉的特征值之和」的数值验证。\n\n**保留几个主成分？** 看累计解释方差比。造一份 30 维的数据，其实由 5 个强度递减的隐变量生成，再加噪声：\n\n```python\nr = np.random.default_rng(2)\nZ = r.normal(size=(400, 5)) * np.array([5, 3, 2, 1, 0.5])  # 5 个隐变量，强度递减\nXh = Z @ r.normal(size=(5, 30)) + 0.5 * r.normal(size=(400, 30))   # 观测是 30 维\nXh = Xh - Xh.mean(0)\nsv = np.linalg.svd(Xh, compute_uv=False)\nratio = sv ** 2 / (sv ** 2).sum()\ncum = np.cumsum(ratio)\nprint(\"前 8 个主成分的解释方差比:\", np.round(ratio[:8], 3))\nprint(\"累计:\", np.round(cum[:8], 3))\nfor target in (0.80, 0.95, 0.99):\n    print(f\"累计解释方差达到 {target:.0%} 需要 {int(np.searchsorted(cum, target)) + 1} 个主成分\")\n# 输出：前 8 个主成分的解释方差比: [0.651 0.222 0.096 0.022 0.004 0.    0.    0.   ]\n# 输出：累计: [0.651 0.873 0.97  0.992 0.996 0.996 0.996 0.996]\n# 输出：累计解释方差达到 80% 需要 2 个主成分\n# 输出：累计解释方差达到 95% 需要 3 个主成分\n# 输出：累计解释方差达到 99% 需要 4 个主成分\n```\n\n读输出：前 8 个主成分的解释方差比是 0.651、0.222、0.096、0.022、0.004，之后几乎为 0（0.000，只是四舍五入显示）；累计 0.651、0.873、0.97、0.992、0.996，之后不再增加。累计解释方差达到 80% 需要 2 个主成分，达到 95% 需要 3 个，达到 99% 需要 4 个。曲线在前几个主成分之后明显拐平（和肘部法一个道理），这就是「有效维数」。`sklearn` 的 `PCA(n_components=0.95)` 就是按这个规则自动选 $k$。三点注意：（1）PCA 对**特征的尺度敏感**，量纲不同的特征要先标准化（否则方差大的特征会主导主成分）；（2）PCA 只能找**线性**子空间，数据在弯曲的流形上时，它会高估需要的维数；（3）方差大不等于对任务有用：「方差最大的方向」可能全是噪声，PCA 是无监督的，不知道你要预测什么。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "FgakZw6K1QQ",
+   "title": "视频二：StatQuest: Principal Component Analysis (PCA), Step-by-Step（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 22
+  },
+  {
+   "type": "text",
+   "md": "### t-SNE 与 UMAP：只用来看图\n\nPCA 是线性的。想把高维数据画成一张二维图来**肉眼看看**有没有簇，常用的是非线性方法 **t-SNE** 和 **UMAP**。这里只讲思想，不实现。\n\n> **标准定义 · t-SNE 与 UMAP**\n>\n> **t-SNE**（t-distributed stochastic neighbor embedding）在高维里用高斯核把「点 $j$ 是点 $i$ 的邻居」表示成概率 $p_{ij}$（宽度由超参数 **困惑度 perplexity** 控制，大致是「每个点有效邻居的个数」），在二维里用重尾的 t 分布定义 $q_{ij}$，然后用梯度下降最小化两者的 **KL 散度** $\\mathrm{KL}(P\\Vert Q)$，把 $p_{ij}$ 大的点在二维里拉近。**UMAP** 的出发点是流形与模糊拓扑，实践上同样是「保持高维的邻居图，在低维里重新排布」，速度更快，全局结构通常保留得稍好一些。\n>\n> *English: t-SNE and UMAP embed high-dimensional data in 2-D by preserving neighbor relationships; they are visualization tools, not general-purpose dimensionality reduction.*\n\n**白话版：「保证老邻居还是邻居，别的不负责」。** 它们把**局部**邻居关系尽量保住，换来的代价是**全局**信息不可靠，所以用它们看图要小心：\n\n- **簇之间的距离、簇的大小和密度都没有意义**：两簇在图上离得远，不代表它们在原空间里差别大；一个簇画得很大，不代表它更分散；\n- **不同的超参数（困惑度、随机种子）会画出不同的图**：「看到了 7 个簇」可能只是某个设置下的结果，要多试几组；\n- 标准 t-SNE **没有**把新点投影进已有图里的方法（没有 `transform`），不适合当作下游模型的特征；\n- 常见流程：先用 PCA 降到几十维去掉噪声，再用 t-SNE / UMAP 画图，把图当作**探索工具**，结论要用别的方法验证。\n\n用它们来画模型的嵌入向量（词向量、图像特征）是看**表示学习成果**的常用手段，下面一节就接上这个话题。想看更多，可以看参考资料里的 StatQuest 视频。\n\n### 自监督学习：无监督的延伸\n\n聚类和降维都只用 $x$，是**无监督**的。可是它们学出来的东西（簇、主成分）太简单，没法表示一张图里「有一只猫」这样的语义。现代深度学习想到了一个办法：**从数据自己身上造出监督信号**，让一个很大的神经网络去解这个「自己给自己出的题」（**前置任务, pretext task**），学的过程中就逼出了好的**表示**。\n\n> **标准定义 · 自监督学习 (self-supervised learning)**\n>\n> **自监督学习**使用**没有人工标注**的数据，但把数据自身的一部分当作另一部分的**标签**来训练模型。典型的前置任务有：**预测被遮住的部分**（BERT 的掩码语言模型：遮住几个词，预测它们；MAE：遮住图像块，重建它们）；**预测下一个元素**（GPT 的下一个词预测）；**去噪**（给输入加噪声，要求还原）；**对比学习**（同一张图的两个增强视图的表示要靠近，不同图的表示要远离）。它仍然用监督学习的工具（交叉熵、均方误差、梯度下降），只是标签来自数据本身。学好的表示再用少量标注数据**微调**，或者只训练一个**线性分类器**（线性探测）来评估。\n>\n> *English: Self-supervised learning creates supervision from the data itself, for example predicting masked parts, the next token, the original from a noisy version, or matching augmented views, and learns representations that transfer to downstream tasks with few labels.*\n\n**白话版：「自己给自己出题，自己批改」。** 把一句话盖住几个词让你填空，答案就在原句里，不需要老师。你为了填对，就得真的理解语法和语义。它之所以是「无监督的延伸」，是因为它和 PCA 回答同一类问题：**怎样从没有标签的数据里学出有用的表示？** 只是 PCA 用的是线性的、一个 $k$ 维瓶颈，自监督用的是深度的非线性网络加上更聪明的前置任务。\n\n**PCA 其实就是一个线性自编码器。** 看一个最小的桥梁：一个**自编码器**把输入 $x$ 先**编码**成低维的 $h=xW_e$（瓶颈），再**解码**回 $\\hat x=hW_d$，用重构误差 $\\|x-\\hat x\\|^2$ 训练，不需要任何标签（这是最简单的自监督：目标就是输入自己）。如果编码器和解码器都是线性的，那么它**最优解张成的子空间恰好就是前 $k$ 个主成分张成的子空间**（但基底不一定正好是主成分，可以差一个可逆变换）。下面用梯度下降真的训练一个：\n\n```python\n# 线性自编码器：5 维 -> 2 维 -> 5 维，用梯度下降最小化重构误差（没有任何非线性）\nrng = np.random.default_rng(0)\nWe = 0.1 * rng.normal(size=(5, 2)); Wd = 0.1 * rng.normal(size=(2, 5))\nlr = 0.01\nfor step in range(5000):\n    H = Xc @ We                                            # 编码\n    R = H @ Wd - Xc                                        # 解码后的重构残差\n    gWd = H.T @ R * (2 / n); gWe = Xc.T @ (R @ Wd.T) * (2 / n)\n    Wd -= lr * gWd; We -= lr * gWe\n\nmse = np.mean(((Xc @ We @ Wd - Xc) ** 2).sum(1))\npca_mse = evals[2:].sum() * (n - 1) / n                    # PCA 在 k=2 时的最小可能值\nprint(f\"线性自编码器的重构误差 {mse:.4f}  PCA 的最小值 {pca_mse:.4f}\")\nQ_ae, _ = np.linalg.qr(Wd.T)                               # 解码器张成的 2 维子空间\nP_ae, P_pca = Q_ae @ Q_ae.T, evecs[:, :2] @ evecs[:, :2].T\nprint(\"两个子空间的投影矩阵之差（Frobenius 范数）:\", round(float(np.linalg.norm(P_ae - P_pca)), 4))\n# 输出：线性自编码器的重构误差 0.2724  PCA 的最小值 0.2724\n# 输出：两个子空间的投影矩阵之差（Frobenius 范数）: 0.0\n```\n\n读输出：把 5 维数据（前面 PCA 用的那一份）通过 2 维瓶颈再还原，没有用任何标签，只用梯度下降最小化重构误差。训练到收敛后，线性自编码器的重构误差是 0.2724，与 PCA 的理论最小值（被丢掉的三个特征值之和乘以 $(n-1)/n$）0.2724 一致。再比较两个方法找到的 2 维子空间：用投影矩阵之差的范数衡量，结果是 0.0，**两个子空间完全重合**。换句话说，线性自编码器自己「发现」了 PCA。把编码器、解码器换成深度非线性网络，就得到可以学出**弯曲流形**的深度自编码器；再把重构换成「预测被遮住的部分」或「对比」，就是自监督预训练；在瓶颈里加上概率结构，就是前面说的 VAE。**PCA、GMM、自编码器、VAE、自监督预训练，是同一个主题（用数据自己学表示）上的一串台阶。** 后面讲世界模型时，「在潜在空间里预测下一步」也是同一类思想。\n\n### 这一节你要带走的三句话\n\n1. **k-means** 交替做「就近分配」与「移到均值」，$J$ 单调不增但只收敛到**局部最小**，所以要用 k-means++ 加多次初始化；选 $k$ 用肘部法和轮廓系数，它们只是参考，可能不一致。\n2. **GMM + EM** 把聚类变成带**潜变量**的最大似然：E 步算责任（后验），M 步做加权最大似然，对数似然单调不减；k-means 是它的硬分配极限，VAE 是用神经网络做的、可用梯度下降训练的 EM。\n3. **PCA** 是对中心化数据做 **SVD**：最大方差与最小重构误差是同一个答案，$\\lambda_j=s_j^2/(n-1)$，用累计解释方差比选维数；t-SNE / UMAP 只适合可视化；**自监督**让数据自己出题，线性自编码器就是 PCA，深度版本是表示学习的起点。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 中心化后的二维数据的协方差矩阵为 $\\Sigma=\\begin{pmatrix}3&1\\\\1&3\\end{pmatrix}$。求：（a）两个主成分方向和对应的方差；（b）各自的解释方差比；（c）只保留第一主成分时，每个样本的平均平方重构误差（按 $\\tfrac1{n-1}\\sum\\|x_i-\\hat x_i\\|^2$ 计）是多少？",
+   "a": "（a）特征方程 $\\det(\\Sigma-\\lambda I)=(3-\\lambda)^2-1=0$，得 $\\lambda=4$ 和 $\\lambda=2$。$\\lambda=4$ 时 $(\\Sigma-4I)w=0$ 即 $-w_1+w_2=0$，方向 $w_1=\\tfrac1{\\sqrt2}(1,1)$；$\\lambda=2$ 时方向 $w_2=\\tfrac1{\\sqrt2}(1,-1)$，两者正交。所以第一主成分沿 $(1,1)$ 方向，方差 4；第二主成分沿 $(1,-1)$ 方向，方差 2。\n\n（b）总方差 $=\\mathrm{tr}(\\Sigma)=6=4+2$。解释方差比分别是 $4/6\\approx0.667$ 和 $2/6\\approx0.333$。\n\n（c）只保留第一主成分，被丢掉的就是第二个特征值，平均平方重构误差 $=\\lambda_2=2$（对应本节「最小重构误差 = 被丢掉的特征值之和」）。如果两个方向都保留，误差是 0。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同事给你看一张 t-SNE 图，说：「这两个簇离得最远，所以它们差异最大；而这个簇画得最大，说明它里面最分散。」请评价这段话，并说出你会怎样验证图上看到的结论。",
+   "a": "这两条结论都**不能**直接从 t-SNE 图得出。t-SNE（UMAP 也类似）优化的是「保持每个点的**局部邻居**关系」，不保证全局几何：簇之间的距离会被任意拉伸或压缩（所以「离得远」不等于「差异大」）；簇的大小和密度也会被算法归一化（每个点的邻域按困惑度调整宽度），一个簇画得大不代表它在原空间里更分散。图还依赖困惑度和随机种子，不同设置会产生不同的簇数和排布。\n\n验证的办法：（1）换几组困惑度和种子，看结论是否稳定；（2）回到**原始高维空间**，直接用距离、聚类（k-means / GMM）和轮廓系数来量化「两簇差异多大」「簇内多分散」；（3）用 PCA 的前几个主成分作对照，它的全局几何更可靠；（4）把 t-SNE 当作探索（找假设）的工具，不当作证据。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** BERT 的「掩码语言模型」、MAE 的「遮住图像块再重建」、SimCLR 的「对比学习」都被称作自监督。请回答：（a）它们的「标签」从哪里来？（b）它们与线性自编码器 / PCA 的共同点和关键区别是什么？（c）为什么预训练之后常常只需要少量标注数据就能得到很好的下游效果？",
+   "a": "（a）标签来自**数据本身**：BERT 的标签是被遮住的那几个词；MAE 的标签是被遮住的图像块的像素；对比学习里，同一张图的两个增强视图互为「正样本」，其他图是「负样本」，这些配对关系是由数据增强程序自动构造的，不需要人标注。\n\n（b）共同点：都**不需要人工标签**，都靠**从输入自己预测输入的一部分**（或一个变换）来迫使网络学到紧凑的表示；PCA / 自编码器的重构目标就是它们的最简单形式。关键区别：PCA 是**线性**的、只能抓到一个线性子空间；自监督用**深度非线性**网络和**精心设计的前置任务**（遮住的部分需要语义、因果、上下文才能预测），学到的是高层语义特征，而不是仅仅保留方差最大的方向。\n\n（c）因为预训练在大量无标签数据上已经学出了通用的**表示**：下游任务只需要在这个表示上学一个简单的映射（线性分类器或少量微调），需要估计的参数少、对标注数据的需求就低，这与前面「更少的有效参数 = 更低的方差」是同一个道理。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "无监督学习",
+     "unsupervised learning",
+     "只有输入 $x$、没有标签，从数据本身学结构"
+    ],
+    [
+     "k-means",
+     "k-means",
+     "最小化簇内平方和的聚类，Lloyd 算法交替分配与更新"
+    ],
+    [
+     "簇内平方和",
+     "inertia / within-cluster SS",
+     "$J=\\sum\\|x_i-\\mu_{c(i)}\\|^2$，随 $k$ 单调下降"
+    ],
+    [
+     "k-means++",
+     "k-means++",
+     "按 $D^2$ 概率选初始中心，让它们分散"
+    ],
+    [
+     "肘部法",
+     "elbow method",
+     "画 $J(k)$ 曲线选拐点"
+    ],
+    [
+     "轮廓系数",
+     "silhouette coefficient",
+     "$s=(b-a)/\\max(a,b)$，衡量点与自己簇、最近别的簇的远近"
+    ],
+    [
+     "高斯混合模型",
+     "Gaussian mixture model (GMM)",
+     "由 $K$ 个高斯按权重 $\\pi_k$ 混合的概率模型"
+    ],
+    [
+     "潜变量",
+     "latent variable",
+     "观测不到、用来解释数据的隐含变量，如成分编号 $z$"
+    ],
+    [
+     "EM 算法",
+     "expectation–maximization",
+     "E 步算后验责任，M 步做加权最大似然，似然单调不减"
+    ],
+    [
+     "责任",
+     "responsibility",
+     "$\\gamma_{ik}=P(z=k\\mid x_i)$，软分配的权重"
+    ],
+    [
+     "主成分分析",
+     "PCA",
+     "方差最大的正交方向，即协方差矩阵的前 $k$ 个特征向量"
+    ],
+    [
+     "累计解释方差比",
+     "cumulative explained variance ratio",
+     "前 $k$ 个主成分的方差占总方差的比例，用来选 $k$"
+    ],
+    [
+     "t-SNE / UMAP",
+     "t-SNE / UMAP",
+     "保持局部邻居关系的非线性降维，只适合可视化"
+    ],
+    [
+     "自监督学习",
+     "self-supervised learning",
+     "用数据自身的一部分当标签（遮盖、预测、对比）训练模型"
+    ],
+    [
+     "自编码器",
+     "autoencoder",
+     "编码到低维瓶颈再解码重构输入；线性版本等价于 PCA"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "An Introduction to Statistical Learning（ISL，James 等）第 12 章 Unsupervised Learning（PCA、k-means、层次聚类）",
+   "url": "https://www.statlearning.com/",
+   "note": "本节大纲依据的开放教材（作者免费公开），PCA 与聚类的标准讲法，只引用不转载"
+  },
+  {
+   "title": "Stanford CS229 讲义：Mixtures of Gaussians and the EM algorithm、Principal components analysis、k-means",
+   "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf",
+   "note": "大学课程讲义；EM 对数似然下界的完整推导和 PCA 的推导，想深入 EM 和 VAE 的联系时读它"
+  },
+  {
+   "title": "Arthur & Vassilvitskii：k-means++: The Advantages of Careful Seeding（SODA 2007）",
+   "url": "https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf",
+   "note": "k-means++ 与 $O(\\log k)$ 近似保证的原始论文"
+  },
+  {
+   "title": "scikit-learn 用户指南：2.3 Clustering 与 2.5 Decomposing signals in components (PCA)",
+   "url": "https://scikit-learn.org/stable/modules/clustering.html",
+   "note": "对照本节的手写代码看库的接口；PCA 一节在同站的 modules/decomposition.html"
+  },
+  {
+   "title": "StatQuest：K-means clustering（约 9 分钟）与 t-SNE, Clearly Explained（约 12 分钟），选看",
+   "url": "https://www.youtube.com/watch?v=4b5d3muPQmA",
+   "note": "k-means 的图形讲解；t-SNE 的视频在 youtube.com/watch?v=NEaUSP4YerM"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "Lloyd 算法（k-means）的两步各自做什么？",
+    "options": [
+     "分配步：每个中心移到最近点上；更新步：删除离群点",
+     "分配步：随机把点分给簇；更新步：随机移动中心",
+     "分配步：每个点归到最近的中心；更新步：每个中心移到它所在簇的均值",
+     "分配步：按标签分簇；更新步：重新训练分类器"
+    ],
+    "answer": 2,
+    "explain": "两步都是在目标 $J=\\sum\\|x_i-\\mu_{c(i)}\\|^2$ 上做精确最小化：固定中心时每个点选最近的中心使自己的项最小，固定归属时均值使簇内平方和最小。所以 $J$ 每步都不增，算法收敛。它不涉及随机移动，也不使用标签。"
+   },
+   {
+    "q": "同一份数据多次运行 k-means，常得到不同的结果，原因和对策是？",
+    "options": [
+     "目标函数有许多局部最小，结果依赖初始中心；用 k-means++ 初始化并多次初始化后保留 $J$ 最小的一次",
+     "k-means 的收敛没有保证；只能多迭代几轮",
+     "数据被打乱了；应该固定数据的顺序",
+     "$k$ 取错了；只要 $k$ 对，结果就唯一"
+    ],
+    "answer": 0,
+    "explain": "Lloyd 算法保证 $J$ 单调不增并收敛，但只收敛到局部最小，不同初始值通向不同局部最小（本节实验里 40 次中约有三分之一卡在较差的解）。对策是 k-means++ 初始化加多次初始化。数据顺序不影响结果；即使 $k$ 取对了，局部最小仍然存在。"
+   },
+   {
+    "q": "k-means++ 选下一个初始中心的规则是？",
+    "options": [
+     "选当前簇内方差最大的点",
+     "均匀随机，与已选中心无关",
+     "总是选离已选中心最远的那个点",
+     "按概率正比于「到已选中心中最近者的距离平方」从数据点里抽取"
+    ],
+    "answer": 3,
+    "explain": "概率正比于 $D(x)^2$：离已有中心越远的点越可能被选中，初始中心因此被分散开；但仍然是随机抽取，不是「总选最远点」（那样会被离群点牵着走）。均匀随机是普通的随机初始化。"
+   },
+   {
+    "q": "为什么不能选使 k-means 的 $J$ 最小的 $k$？",
+    "options": [
+     "因为 $J$ 随 $k$ 增大单调上升",
+     "因为 $J$ 随 $k$ 增大单调下降（$k=n$ 时 $J=0$），要看下降变缓的拐点或用轮廓系数等指标",
+     "因为 $J$ 与 $k$ 无关",
+     "因为 $J$ 只能取整数"
+    ],
+    "answer": 1,
+    "explain": "簇越多，每个点离自己的中心越近，$J$ 只会下降，$k=n$ 时降到 0，所以直接最小化 $J$ 会选出最大的 $k$（过拟合）。肘部法找下降明显变缓的位置，轮廓系数同时看簇内紧密度和簇间分离度，且结合业务含义判断。"
+   },
+   {
+    "q": "某点到同簇其他点的平均距离 $a=0.5$，到最近的其他簇的平均距离 $b=2$，它的轮廓系数 $s$ 是多少？",
+    "options": [
+     "-0.75",
+     "0.25",
+     "4",
+     "0.75"
+    ],
+    "answer": 3,
+    "explain": "$s=\\dfrac{b-a}{\\max(a,b)}=\\dfrac{2-0.5}{2}=0.75$，接近 1，说明这个点在自己的簇里很「舒服」。4 是 $b/a$，不是轮廓系数（轮廓系数在 $[-1,1]$ 内）；0.25 是用 $a$ 当分母；负值要 $a>b$ 才会出现。"
+   },
+   {
+    "q": "k-means 与高斯混合模型（GMM）的关系是？",
+    "options": [
+     "两者毫无关系：GMM 是监督的，k-means 是无监督的",
+     "k-means 可看作 GMM + EM 的硬分配极限：各成分共享球形方差并让方差趋于 0，责任退化成 0 或 1",
+     "GMM 是 k-means 的特例，只有一个成分",
+     "k-means 能给出每个点属于各簇的概率，GMM 不能"
+    ],
+    "answer": 1,
+    "explain": "GMM 的 E 步给出软的责任 $\\gamma_{ik}$，M 步用它做加权最大似然；当方差趋于 0，责任只给最近的成分，E 步变成「就近分配」，M 步变成「取簇均值」，就是 Lloyd 算法。两者都是无监督的；能给出概率（软分配）的是 GMM，不是 k-means。"
+   },
+   {
+    "q": "EM 算法对高斯混合模型的两步各做什么？",
+    "options": [
+     "E 步：固定参数，算每个点属于各成分的后验概率；M 步：以这些概率为权重重新做最大似然估计",
+     "E 步：更新参数；M 步：计算每个点的标签",
+     "E 步：删除离群点；M 步：合并相近的成分",
+     "E 步：对数据做期望值标准化；M 步：对数据做最大值归一化"
+    ],
+    "answer": 0,
+    "explain": "E 步是一次贝叶斯公式（得到责任 $\\gamma_{ik}=P(z=k\\mid x_i)$），M 步是加权的最大似然（加权均值、加权方差、新的 $\\pi_k$）；每一轮都不会让对数似然下降。选项里把两步的内容颠倒或乱编的说法都不对。"
+   },
+   {
+    "q": "为什么说 PCA 的「最大方差」推导和「最小重构误差」推导给出同样的答案？",
+    "options": [
+     "因为 PCA 总是保留所有方差",
+     "因为两者的目标函数在任何数据上都完全相同",
+     "因为平均重构误差 = 总方差 − 投影保留的方差，总方差是定值，最小化前者就等于最大化后者",
+     "因为重构误差与方差无关，所以答案只取决于初始化"
+    ],
+    "answer": 2,
+    "explain": "$\\frac1{n-1}\\sum\\|x_i-WW^\\top x_i\\|^2=\\mathrm{tr}(\\Sigma)-\\mathrm{tr}(W^\\top\\Sigma W)$，右边的 $\\mathrm{tr}(\\Sigma)$ 与 $W$ 无关，所以最小误差对应最大保留方差，最优 $W$ 都是前 $k$ 个特征向量，最小误差等于被丢掉的特征值之和。两个目标并不「在任何数据上完全相同」，是它们相差一个常数且符号相反。"
+   },
+   {
+    "q": "对中心化的数据矩阵 $X_c$（$n$ 个样本）做 SVD：$X_c=U\\Sigma_sV^\\top$，PCA 的结果怎样读出？",
+    "options": [
+     "主成分方向是 $V$ 的列，第 $j$ 个主成分的方差是 $s_j^2/(n-1)$，得分是 $X_cV=U\\Sigma_s$",
+     "主成分方向是 $U$ 的列，方差是 $s_j$",
+     "主成分方向是 $V$ 的行，方差是 $s_j^2\\cdot(n-1)$",
+     "SVD 与 PCA 没有关系，必须先算协方差矩阵"
+    ],
+    "answer": 0,
+    "explain": "$X_c^\\top X_c=V\\Sigma_s^2V^\\top$，所以协方差矩阵的特征向量是 $V$ 的列，特征值是 $s_j^2/(n-1)$；得分 $X_cV=U\\Sigma_s$。$U$ 的列是得分的归一化方向（样本空间里的），不是特征空间里的主成分方向。实际中更常用 SVD，避免显式算协方差矩阵。"
+   },
+   {
+    "q": "关于 t-SNE / UMAP 的二维图，下面哪种解读是合理的？",
+    "options": [
+     "这种降维可以直接作为特征喂给下游模型，新数据只要再跑一次 t-SNE 即可",
+     "两个簇在图上相距越远，在原空间里的差异就越大，可以量化比较",
+     "簇画得越大，簇内的点在原空间里就越分散",
+     "把图当作探索工具：可以看有没有局部簇，但簇间距离、簇大小不能当真，且结论要换超参数和用原空间指标验证"
+    ],
+    "answer": 3,
+    "explain": "t-SNE / UMAP 保持的是局部邻居关系，全局的距离、簇的大小与密度会被改变，不同的困惑度、种子会得到不同的图；标准 t-SNE 也没有对新点的映射。所以只把它当作可视化和提出假设的工具，再用原空间的指标（距离、聚类、轮廓系数）验证。"
+   }
+  ]
+ }
+}

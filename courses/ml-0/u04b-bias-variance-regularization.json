@@ -1,0 +1,81 @@
+{
+ "id": "u04b",
+ "title": "偏差方差、正则化与模型选择（2/3）",
+ "en": "Bias–Variance, Regularization & Model Selection (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "手写 **Lasso (L1 正则)** 的 **坐标下降 (coordinate descent)** 与 **软阈值 (soft-thresholding)**，验证 **KKT 条件**，并解释为什么 L1 产生**稀疏解 (sparsity)** 而 L2 不会",
+  "手写 **K 折交叉验证 (K-fold cross-validation)**，会读 **学习曲线 (learning curve)** 来判断「该加数据还是该换模型」，会做 **网格搜索 / 随机搜索 (grid / random search)**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「偏差方差、正则化与模型选择」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：岭回归：给权重加一个 L2 惩罚（续）（约 20 分钟） → Lasso：L1 惩罚与稀疏（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\nsigma = 0.3                                    # 噪声标准差\nf = lambda x: np.sin(2 * np.pi * x)            # 真函数（实际中未知）\nx_grid = np.linspace(0, 1, 50)                 # 固定的评估点\n\ndef poly_fit_predict(x, y, deg, x_new):        # deg 次多项式的最小二乘拟合\n    w = np.linalg.lstsq(np.vander(x, deg + 1), y, rcond=None)[0]\n    return np.vander(x_new, deg + 1) @ w\n\ndef bias_variance(deg, n=20, trials=300):\n    x = np.linspace(0, 1, n)                   # 输入固定，只有噪声每次重抽\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):                    # 每次抽一份全新的训练集\n        y = f(x) + sigma * rng.normal(size=n)\n        preds[t] = poly_fit_predict(x, y, deg, x_grid)\n    bias2 = np.mean((preds.mean(axis=0) - f(x_grid)) ** 2)\n    var = np.mean(preds.var(axis=0))\n    y_new = f(x_grid) + sigma * rng.normal(size=preds.shape)   # 带噪声的新标签\n    return bias2, var, np.mean((preds - y_new) ** 2)\n\nfor deg in [0, 1, 3, 5, 9]:\n    b2, v, mse = bias_variance(deg)\n    print(f\"deg={deg}: bias2={b2:.3f} var={v:.3f} noise={sigma**2:.3f} \"\n          f\"三项之和={b2+v+sigma**2:.3f} 实测MSE={mse:.3f}\")\n```\n\n**一句话的贝叶斯解释。** 如果你认为权重「先验上」服从均值为 0 的高斯 $w_j\\sim\\mathcal{N}(0,\\tau^2)$，噪声是方差 $\\sigma^2$ 的高斯，那么在看到数据后，**最大后验估计 (MAP)** 恰好就是岭回归，且 $\\lambda=\\sigma^2/\\tau^2$：先验越窄（越相信权重小），$\\lambda$ 越大。把先验换成拉普拉斯分布 $p(w_j)\\propto e^{-|w_j|/b}$，得到的就是下面的 Lasso。prob-0「最大似然估计与交叉熵」里「高斯噪声下最大似然等于最小二乘」是这句话的前半部分，加上先验就是后半部分。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Q81RR3yKn30",
+   "title": "视频二：Regularization Part 1: Ridge (L2) Regression（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 20
+  },
+  {
+   "type": "text",
+   "md": "### Lasso：L1 惩罚与稀疏\n\n岭回归把所有系数都压小，但不会压成**恰好为 0**。如果你怀疑 20 个特征里只有几个真正有用，希望模型自己把没用的特征关掉（**特征选择**），就要换一种惩罚：把平方换成绝对值。\n\n> **标准定义 · Lasso 与 L1 正则化**\n>\n> **Lasso**（least absolute shrinkage and selection operator）求解\n>\n> $$\\hat w=\\arg\\min_w\\ \\tfrac12\\|y-Xw\\|_2^2+\\lambda\\|w\\|_1,\\qquad \\|w\\|_1=\\sum_j|w_j|$$\n>\n> 它没有闭式解（绝对值在 0 处不可导），但目标函数是**凸**的，可以用**坐标下降**求解：每次只优化一个坐标 $w_j$、固定其余。固定其余之后，$w_j$ 的最优值是 $w_j=\\dfrac{S(z_j^\\top r_j,\\ \\lambda)}{\\|z_j\\|^2}$，其中 $r_j$ 是把第 $j$ 个特征的贡献加回去之后的残差，**软阈值**函数 $S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,\\,0)$。\n>\n> *English: Lasso minimizes squared error plus lambda times the L1 norm of the weights. It has no closed form, but coordinate descent with the soft-thresholding operator solves it, and it produces exactly sparse solutions.*\n\n**白话版：「超过门槛才给你发工资」。** 软阈值的意思是：一个特征和残差的相关性 $z_j^\\top r_j$ 如果还没超过 $\\lambda$，这个系数就是 0（门槛都没过）；超过了，也要先被扣掉 $\\lambda$ 才算（所以估计总是被收缩的）。岭回归是「每个系数缩水一个比例」，Lasso 是「每个系数减去一个固定值，减到 0 就停」，这就是稀疏的来源。几何上，L1 的单位球是带**尖角**的菱形，约束曲线与它首先接触的地方常常是尖角，而尖角上有些坐标正好为 0；L2 的球是圆的，没有尖角。推导 $S$ 的方法是次梯度：$0\\in-z_j^\\top r_j+\\|z_j\\|^2w_j+\\lambda\\,\\partial|w_j|$，在 $w_j\\neq0$ 和 $w_j=0$ 两种情形分别解。\n\n造一份 100 个样本、20 个特征的数据，其中只有 4 个特征（编号 0、3、7、12）的真系数非零，用手写的坐标下降来解：\n\n```python\ndef soft(z, t):                                # 软阈值：把 z 向 0 收缩 t，不够 t 就变成 0\n    return np.sign(z) * np.maximum(np.abs(z) - t, 0)\n\ndef lasso_cd(Z, y, lam, sweeps=300):           # 目标：1/2 |y - Zw|^2 + lam |w|_1\n    w = np.zeros(Z.shape[1])\n    r = y - Z @ w                              # 当前残差\n    col = (Z ** 2).sum(0)\n    for _ in range(sweeps):\n        for j in range(Z.shape[1]):            # 一次只优化一个坐标，其余固定\n            r += Z[:, j] * w[j]                # 把第 j 个特征的贡献还给残差\n            w[j] = soft(Z[:, j] @ r, lam) / col[j]\n            r -= Z[:, j] * w[j]\n    return w\n\nrng = np.random.default_rng(3)\nn, p = 100, 20\nX = rng.normal(size=(n, p))\nw_true = np.zeros(p); w_true[[0, 3, 7, 12]] = [3, -2, 1.5, 2]  # 只有 4 个特征有用\ny = X @ w_true + rng.normal(size=n)\nZl = (X - X.mean(0)) / X.std(0); yl = y - y.mean()\nw_l = lasso_cd(Zl, yl, lam=30)\nprint(\"非零坐标:\", np.nonzero(w_l)[0])\nprint(\"非零系数:\", np.round(w_l[np.nonzero(w_l)], 2))\n# 输出：非零坐标: [ 0  3  7 12]\n# 输出：非零系数: [ 2.62 -1.86  1.13  1.64]\n```\n\n读输出：Lasso 找到的非零坐标是 `[0 3 7 12]`，正好是真正有用的 4 个特征，其余 16 个坐标是精确的 0。系数是 2.62、-1.86、1.13、1.64，符号全对，但绝对值都比真值（3、-2、1.5、2）小一些：软阈值把每个系数收缩了约 $\\lambda/\\|z_j\\|^2=30/100=0.3$（标准化后 $\\|z_j\\|^2=n=100$），再加上噪声的影响。这是 Lasso 引入的**偏差**，用它换来了稀疏和更低的方差。\n\n**怎么确认坐标下降真的找到了最优解？** 凸问题有最优性条件（KKT）：非零坐标满足 $|z_j^\\top r|=\\lambda$（梯度刚好被惩罚平衡），零坐标满足 $|z_j^\\top r|\\le\\lambda$（门槛没过）。再让 $\\lambda$ 变化，数一数非零系数的个数，并和岭回归对比：\n\n```python\n# 最优性（KKT）检查：非零坐标满足 Z_j^T r = lam * sign(w_j)，零坐标满足 |Z_j^T r| <= lam\nr = yl - Zl @ w_l\ng = Zl.T @ r\nprint(\"非零坐标上 |g| 与 lam 的最大偏差:\", round(np.abs(np.abs(g[w_l != 0]) - 30).max(), 6))\nprint(\"零坐标上 |g| 的最大值:\", round(np.abs(g[w_l == 0]).max(), 2))\n\n# 与岭回归对比：同样的数据，岭回归的 20 个系数一个都不会是 0\nw_r = np.linalg.solve(Zl.T @ Zl + 30 * np.eye(p), Zl.T @ yl)\nprint(\"岭回归 lam=30 的非零个数:\", np.sum(np.abs(w_r) > 1e-8))\nfor lam in [1, 10, 30, 60, 120, 400]:\n    w = lasso_cd(Zl, yl, lam)\n    print(f\"lasso lam={lam:<4d} 非零个数={np.sum(w != 0):2d}\")\n# 输出：非零坐标上 |g| 与 lam 的最大偏差: 0.0\n# 输出：零坐标上 |g| 的最大值: 28.58\n# 输出：岭回归 lam=30 的非零个数: 20\n# 输出：lasso lam=1    非零个数=20\n# 输出：lasso lam=10   非零个数=13\n# 输出：lasso lam=30   非零个数= 4\n# 输出：lasso lam=60   非零个数= 4\n# 输出：lasso lam=120  非零个数= 4\n# 输出：lasso lam=400  非零个数= 0\n```\n\n读输出：非零坐标上 $|z_j^\\top r|$ 与 $\\lambda=30$ 的最大偏差是 0.0，零坐标上 $|z_j^\\top r|$ 的最大值是 28.58，小于 30，两条条件都成立，说明这就是最优解。同样的数据，岭回归 $\\lambda=30$ 的 20 个系数一个也不是 0。再看 Lasso 的「正则化路径」：$\\lambda=1$ 时 20 个特征全部非零（惩罚太轻，噪声特征也被留下），$\\lambda=10$ 时 13 个，$\\lambda=30,60,120$ 时恰好 4 个（稳定地选出了真特征），$\\lambda=400$ 时 0 个（门槛高过所有相关性，全部归零）。实际中 $\\lambda$ 用交叉验证选。另外要注意：不同库对 $\\lambda$ 的缩放不同（比如 `sklearn` 的 `Lasso` 把目标除了 $2n$），照搬数值前先看文档。\n\n小结一张表：\n\n| | 岭回归 (L2) | Lasso (L1) |\n|---|---|---|\n| 惩罚 | $\\lambda\\sum w_j^2$ | $\\lambda\\sum\\lvert w_j\\rvert$ |\n| 解 | 闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$ | 坐标下降 / 次梯度，无闭式解 |\n| 系数 | 全部变小，几乎不为 0 | 一部分恰好为 0（稀疏） |\n| 特征高度相关时 | 把权重平摊给相关的特征 | 常常只留一个，不稳定 |\n| 先验 | 高斯 | 拉普拉斯 |"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 只有一个特征，$x=(1,2,3)$，$y=(2,4,6)$（不含截距）。（a）普通最小二乘的 $w$ 是多少？（b）岭回归（目标 $\\tfrac12\\sum(y_i-wx_i)^2+\\tfrac12\\lambda w^2$）取 $\\lambda=14$ 时 $w$ 是多少？（c）Lasso（目标 $\\tfrac12\\sum(y_i-wx_i)^2+\\lambda|w|$）取 $\\lambda=28$ 时 $w$ 是多少？$\\lambda$ 取多大 Lasso 才会把 $w$ 压到恰好 0，岭回归呢？",
+   "a": "先算两个量：$\\sum x_iy_i=1\\cdot2+2\\cdot4+3\\cdot6=28$，$\\sum x_i^2=1+4+9=14$。\n\n（a）最小二乘 $w=\\dfrac{\\sum xy}{\\sum x^2}=\\dfrac{28}{14}=2$（数据正好在 $y=2x$ 上）。\n\n（b）岭回归令导数为 0：$-\\sum x(y-wx)+\\lambda w=0$，得 $w=\\dfrac{\\sum xy}{\\sum x^2+\\lambda}=\\dfrac{28}{14+14}=1$，被压缩到一半。\n\n（c）Lasso 的更新是软阈值：$w=\\dfrac{S(\\sum xy,\\lambda)}{\\sum x^2}=\\dfrac{S(28,28)}{14}=\\dfrac{\\max(28-28,0)}{14}=0$，恰好为 0。只要 $\\lambda\\ge|\\sum xy|=28$，Lasso 就把 $w$ 压到 0；而岭回归 $w=\\dfrac{28}{14+\\lambda}$ 对任何有限的 $\\lambda$ 都**不会**恰好为 0，只是趋近于 0。这就是稀疏性的来源：软阈值有一个「死区」，L2 没有。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "软阈值",
+     "soft-thresholding",
+     "$S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,0)$，Lasso 坐标更新的核心"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在线性回归里，权重 $w$ 的先验取均值为 0 的高斯分布 $\\mathcal{N}(0,\\tau^2)$，噪声也是高斯，则 MAP 估计对应哪种方法？",
+    "options": [
+     "岭回归（L2 正则），$\\lambda=\\sigma^2/\\tau^2$",
+     "Lasso（L1 正则）",
+     "普通最小二乘（没有正则）",
+     "决策树的剪枝"
+    ],
+    "answer": 0,
+    "explain": "对数后验 = 对数似然 + 对数先验。高斯似然给出平方误差，高斯先验给出 $\\|w\\|_2^2$ 项，所以 MAP 就是岭回归；先验越窄（越相信权重小），$\\lambda$ 越大。拉普拉斯先验才对应 L1 / Lasso，没有先验（均匀先验）对应普通最小二乘 / 最大似然。"
+   },
+   {
+    "q": "为什么 Lasso 能得到恰好为 0 的系数，而岭回归一般不能？",
+    "options": [
+     "因为 Lasso 对每个系数的收缩比例更大",
+     "因为 Lasso 的目标函数是非凸的，会随机丢掉特征",
+     "因为 Lasso 先对特征做了降维",
+     "软阈值有「死区」：相关性不超过 $\\lambda$ 的坐标被置为 0，而 L2 只按比例缩小"
+    ],
+    "answer": 3,
+    "explain": "坐标下降里每个坐标的更新是 $S(z_j^\\top r_j,\\lambda)/\\|z_j\\|^2$：当 $|z_j^\\top r_j|\\le\\lambda$ 时结果就是 0。岭回归的更新是除以 $\\|z_j\\|^2+\\lambda$，只会缩小，不会归零。Lasso 的目标是**凸**的，不是随机的；也不是单纯「收缩更多」，关键是 L1 在 0 处有尖角（不可导）。"
+   },
+   {
+    "q": "软阈值 $S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,0)$，则 $S(-5,2)$ 是多少？",
+    "options": [
+     "$3$",
+     "$-3$",
+     "$-7$",
+     "$0$"
+    ],
+    "answer": 1,
+    "explain": "$a=-5$，$|a|-t=5-2=3>0$，所以结果是 $\\mathrm{sign}(-5)\\cdot3=-3$：保留符号，绝对值向 0 缩小了 2。若误写成 $-7$，是把 $t$ 加在了绝对值上；$3$ 丢了符号；$0$ 只在 $|a|\\le t$ 时才出现。"
+   }
+  ]
+ }
+}

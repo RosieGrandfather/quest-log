@@ -1,0 +1,291 @@
+{
+ "id": "u03",
+ "title": "逻辑回归与分类",
+ "en": "Logistic Regression & Classification",
+ "minutes": 100,
+ "objectives": [
+  "理解为什么分类不用线性回归，掌握 **sigmoid** 与 **对数几率 (log-odds / logit)**，把模型输出解释成概率 $P(y=1\\mid x)=\\sigma(w^\\top x+b)$",
+  "把 **二元交叉熵 (binary cross-entropy)** 推成伯努利分布下的 **负对数似然**（回指 prob-0），并推出梯度 $\\frac1nX^\\top(\\sigma(Xw+b)-y)$，解释它与线性回归梯度形式相同的原因",
+  "手写梯度下降训练逻辑回归，用数值梯度检验和 PyTorch 对照；理解 **决策边界 (decision boundary)** 是超平面，知道线性模型为什么解不了 XOR",
+  "写出 **softmax** 与 **one-hot** 编码，用 softmax 回归做多分类，知道两类时 softmax 退化为 sigmoid",
+  "手写 **混淆矩阵 (confusion matrix)**、**准确率、精确率、召回率、F1、ROC 曲线与 AUC**，会选 **阈值 (threshold)**，并看穿 **类别不平衡 (class imbalance)** 下准确率和精确率的陷阱"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n上一节的目标 $y$ 是连续数，这一节的目标是**类别**：这封邮件是不是垃圾邮件、这张图是猫还是狗、这个订单会不会延迟。分类是机器学习里最常见的任务，而**逻辑回归 (logistic regression)** 是最简单的分类器，也是最重要的一块积木：神经网络最后一层几乎就是逻辑回归（二分类）或 softmax 回归（多分类），语言模型每个位置预测下一个词，用的就是这里的 softmax 加交叉熵。把它从零写一遍、算清楚每一步的梯度，后面所有分类网络你就都看得懂了。\n\n**开始之前你要会：**\n\n- 概率与最大似然，负对数似然就是交叉熵（prob-0「最大似然估计」「对数似然」「交叉熵就是负的对数似然」小节），条件概率与贝叶斯公式（prob-0「条件概率与贝叶斯」）；\n- 交叉熵与 one-hot 目标（arena-0.0「交叉熵与 KL 散度」「语言模型的损失：独热目标下的交叉熵」小节），softmax 与 logsumexp 的数值稳定写法（arena-0.0「Softmax、logsumexp 与交叉熵」小节）；\n- 导数与链式法则（arena-0.0「损失函数的导数」小节，那里已经手推过一次逻辑回归的梯度，这一节会更完整地做一遍）；\n- 上一节「线性回归与梯度下降」：模型 $\\hat y=Xw+b$、梯度下降、特征标准化、数值梯度检验；再上一节「机器学习的基本问题」：训练 / 验证 / 测试、基线。\n\n**学完它你就能看懂这几件事：**\n\n- PyTorch 里 `nn.Linear` 加 `nn.BCEWithLogitsLoss` 或 `nn.CrossEntropyLoss` 到底算了什么，为什么模型输出叫 **logits** 而不是概率；\n- 论文里的「accuracy / precision / recall / F1 / AUC」分别回答什么问题，为什么只报准确率常常不够；\n- 为什么「在 1% 正类的数据上模型准确率 99%」可能毫无价值，以及遇到不平衡数据有哪几种处理办法；\n- 为什么同样一个模型，换一个**阈值**，精确率和召回率就会此消彼长。\n\n**本节安排（约 100 分钟）**：为什么不用线性回归、sigmoid 与概率（12 分钟）→ 视频一（9 分钟）→ 交叉熵与梯度（12 分钟）→ 视频二（10 分钟）→ 训练、PyTorch 对照、决策边界与 XOR（15 分钟）→ softmax 多分类（8 分钟）→ 混淆矩阵与指标（8 分钟）→ ROC 与 AUC、视频三（8 + 16 分钟）→ 阈值与类别不平衡（12 分钟）→ 总结与「想一想」。\n\n**怎么学这一节：** 代码块都只用 numpy，能在页面里「▶ 运行」，按顺序跑。只有一个对照 PyTorch 的块标成了 `python-static`，只显示、不能在网页里运行（我在本地真实跑过，结果已写在里面）。\n\n### 为什么不直接用线性回归做分类\n\n最容易想到的办法：把标签当成 0 和 1 两个数，用上一节的线性回归去拟合。试试看会发生什么：\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\nx = np.r_[rng.normal(-1, 1, 50), rng.normal(2, 1, 50)]   # 一个特征\ny = np.r_[np.zeros(50), np.ones(50)]                     # 标签只有 0 和 1\nA = np.c_[np.ones(100), x]\ntheta = np.linalg.solve(A.T @ A, A.T @ y)                # 直接用上一节的线性回归\np = A @ theta\nprint(\"截距、斜率：\", np.round(theta, 3))\nprint(\"预测值范围：\", round(float(p.min()), 3), \"到\", round(float(p.max()), 3))\nprint(\"小于 0 的个数：\", int((p < 0).sum()), \" 大于 1 的个数：\", int((p > 1).sum()))\n# 输出：截距、斜率： [0.361 0.239]\n# 输出：预测值范围： -0.435 到 1.319\n# 输出：小于 0 的个数： 14  大于 1 的个数： 13\n```\n\n**读输出：** 一维特征，负类中心在 $-1$、正类中心在 $2$。线性回归给出的直线是「截距 `0.361`，斜率 `0.239`」，预测值的范围是 `-0.435` 到 `1.319`；100 个样本里有 `14` 个预测小于 0，`13` 个预测大于 1。**一个「概率」不应该是 $-0.435$ 或 $1.319$**。还有更深的问题：平方损失会把「离边界很远、其实分得很对」的点也当成误差去拉动直线。所以我们需要两样东西：一个把任意实数压进 $(0,1)$ 的函数，和一个适合概率的损失。\n\n### sigmoid：把得分变成概率\n\n> **标准定义 · sigmoid 函数与逻辑回归 (sigmoid & logistic regression)**\n>\n> $$\\sigma(z)=\\frac{1}{1+e^{-z}}$$\n>\n> **逻辑回归**模型：先算线性得分 $z=w^\\top x+b$（叫 **logit**，又叫对数几率），再用 sigmoid 变成概率：\n>\n> $$P(y=1\\mid x)=\\sigma(w^\\top x+b)$$\n>\n> 性质：$\\sigma(z)\\in(0,1)$，$\\sigma(0)=0.5$，$\\sigma(-z)=1-\\sigma(z)$，导数 $\\sigma'(z)=\\sigma(z)(1-\\sigma(z))$（最大值 $0.25$，在 $z=0$ 处）。\n>\n> *English: Logistic regression passes a linear score through the sigmoid to model the probability of the positive class.*\n\n**白话版：「把任意实数压成 0 到 1 之间的概率」。** 得分很大，概率接近 1；得分很负，接近 0；得分为 0 时「一半一半」。线性部分负责「证据的多少」，sigmoid 负责把证据换算成概率。\n```python\ndef sigmoid(z):                                      # 数值稳定的写法：z 为很大的负数时不会溢出\n    z = np.asarray(z, dtype=float)\n    out = np.empty_like(z)\n    pos = z >= 0\n    out[pos] = 1 / (1 + np.exp(-z[pos]))\n    ez = np.exp(z[~pos])\n    out[~pos] = ez / (1 + ez)\n    return out\n\nz = np.array([-10.0, -2.0, 0.0, 2.0, 10.0])\nprint(np.round(sigmoid(z), 4))\nprint(sigmoid(np.array([-1000.0, 1000.0])))          # 极端输入也不报溢出\nprint(\"对称性 s(-z) = 1 - s(z)：\", np.allclose(sigmoid(-z), 1 - sigmoid(z)))\nh = 1e-6\nnum = (sigmoid(z + h) - sigmoid(z - h)) / (2 * h)    # 数值导数\nprint(\"导数 s' = s(1 - s)：\", np.allclose(num, sigmoid(z) * (1 - sigmoid(z)), atol=1e-8))\n# 输出：[0.     0.1192 0.5    0.8808 1.    ]\n# 输出：[0. 1.]\n# 输出：对称性 s(-z) = 1 - s(z)： True\n# 输出：导数 s' = s(1 - s)： True\n```\n\n**读输出：** $\\sigma(-10),\\sigma(-2),\\sigma(0),\\sigma(2),\\sigma(10)$ 是 `[0. 0.1192 0.5 0.8808 1.]`（$\\sigma(\\pm10)$ 四舍五入后是 0 和 1）。第二行用 $\\pm1000$ 检验：结果是 `[0. 1.]`，没有溢出警告，这是因为我们按 $z$ 的正负分开写，只对**非正数**取指数（直接写 `1/(1+np.exp(-z))` 在 $z=-1000$ 时 `exp(1000)` 会溢出）。后两个 `True` 验证了对称性和导数公式（用数值导数验证）。\n\n**为什么是 sigmoid？对数几率。**\n\n> **标准定义 · 几率与对数几率 (odds & log-odds)**\n>\n> 事件概率为 $p$ 时，**几率 (odds)** 是 $\\frac{p}{1-p}$（发生比不发生），**对数几率 (log-odds / logit)** 是 $\\ln\\frac{p}{1-p}$。sigmoid 正是它的反函数：$z=\\ln\\frac{p}{1-p}\\iff p=\\sigma(z)$。逻辑回归就是假设**对数几率是特征的线性函数**。\n>\n> *English: The logit ln(p/(1-p)) is the inverse of the sigmoid; logistic regression assumes the log-odds are linear in the features.*\n\n**白话版：「赔率」。** 概率 0.8 的事件，赔率是「4 比 1」。逻辑回归说：每个特征每增加一个单位，赔率的**对数**线性地增加 $w_j$，也就是赔率乘以 $e^{w_j}$，这使权重有了可解释的含义。\n```python\np = np.array([0.2, 0.5, 0.8, 0.99])\nodds = p / (1 - p)                                   # 几率：发生 / 不发生\nlogit = np.log(odds)                                 # 对数几率，sigmoid 的反函数\nprint(np.round(odds, 3))\nprint(np.round(logit, 3))\nprint(\"sigmoid(logit) 还原概率：\", np.allclose(sigmoid(logit), p))\n# 输出：[ 0.25  1.    4.   99.  ]\n# 输出：[-1.386  0.     1.386  4.595]\n# 输出：sigmoid(logit) 还原概率： True\n```\n\n**读输出：** 概率 `0.2, 0.5, 0.8, 0.99` 对应的几率是 `[0.25 1. 4. 99.]`，对数几率是 `[-1.386 0. 1.386 4.595]`：概率 0.5 对应对数几率 0，概率 0.2 和 0.8 的对数几率**对称**（`-1.386` 与 `1.386`）。最后一行 `True` 说明 sigmoid 把对数几率换回了原来的概率。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "yIYKR4sgzI8",
+   "title": "视频一：StatQuest: Logistic Regression（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 9
+  },
+  {
+   "type": "text",
+   "md": "**视频一要点：** 为什么不直接拟合 0 / 1，用 sigmoid 把线性部分压成概率，并把纵轴换成对数几率之后又变回一条直线。这和我们代码里的 `sigmoid(X @ w + b)` 是同一件事。\n\n### 交叉熵损失：伯努利分布下的最大似然\n\n> **标准定义 · 二元交叉熵 (binary cross-entropy)**\n>\n> 设模型给出 $p_i=\\sigma(z_i)=P(y_i=1\\mid x_i)$。把每个样本看成伯努利试验：$P(y_i\\mid x_i)=p_i^{y_i}(1-p_i)^{1-y_i}$。假设样本独立，训练集的**似然**是它们的乘积，**负对数似然**取平均就是二元交叉熵：\n>\n> $$L(w,b)=-\\frac1n\\sum_{i=1}^n\\Big[y_i\\ln p_i+(1-y_i)\\ln(1-p_i)\\Big]$$\n>\n> 所以**最小化交叉熵 = 最大化似然**。把 $p_i=\\sigma(z_i)$ 代入，可以化成数值稳定的形式：$\\ell(z,y)=\\ln(1+e^{z})-yz$。\n>\n> *English: Binary cross-entropy is the average negative log-likelihood of the labels under a Bernoulli model with p = σ(wᵀx + b).*\n\n**白话版：「给真实答案打了多高的概率」。** 对一个正类样本，只看模型给「正类」的概率 $p$：$p$ 越接近 1 越好，损失是 $-\\ln p$；对一个负类样本，只看模型给「负类」的概率 $1-p$，损失是 $-\\ln(1-p)$。**每个样本都是「给真实类别的概率」的负对数。**\n\n这正是 prob-0 里的「交叉熵就是负的对数似然」：上一节我们用高斯噪声推出了 MSE，这一节用伯努利噪声推出交叉熵，**换一个对噪声的概率假设，就得到另一个损失**。\n```python\ny_t = np.array([1, 0, 1, 1, 0])                      # 真实标签\np = np.array([0.9, 0.2, 0.6, 0.3, 0.05])             # 模型给出的 P(y=1)\nlike = np.prod(np.where(y_t == 1, p, 1 - p))         # 每个样本取「真实类别的概率」，再连乘 = 似然\nnll = -np.log(like) / len(y_t)                       # 平均负对数似然\nbce = -np.mean(y_t * np.log(p) + (1 - y_t) * np.log(1 - p))   # 二元交叉熵公式\nprint(round(float(like), 5), round(float(nll), 4), round(float(bce), 4), np.isclose(nll, bce))\nfor q in [0.9, 0.5, 0.1, 0.01]:                      # 给真实类别的概率越小，惩罚越重\n    print(f\"真实类别的概率 {q:<4}  损失 {-np.log(q):.3f}\")\n# 输出：0.12312 0.4189 0.4189 True\n# 输出：真实类别的概率 0.9   损失 0.105\n# 输出：真实类别的概率 0.5   损失 0.693\n# 输出：真实类别的概率 0.1   损失 2.303\n# 输出：真实类别的概率 0.01  损失 4.605\n```\n\n**读输出：** 5 个样本，真实标签 `[1,0,1,1,0]`，模型给的正类概率 `[0.9, 0.2, 0.6, 0.3, 0.05]`。每个样本取「真实类别的概率」是 $0.9,\\;0.8,\\;0.6,\\;0.3,\\;0.95$，连乘得到似然 `0.12312`；取负对数再除以 5 得 `0.4189`；直接用公式算二元交叉熵也是 `0.4189`，最后一个 `True` 确认两者相等。后四行展示了惩罚的形状：给真实类别的概率是 0.9，损失只有 `0.105`；0.5 时是 `0.693`（$\\ln2$，相当于瞎猜）；0.1 时是 `2.303`；0.01 时是 `4.605`。**越自信地答错，惩罚越重，而且没有上限。**\n\n### 梯度：为什么和线性回归长得一样\n\n要训练，需要对 $w,b$ 求梯度。单个样本的损失对线性得分 $z$ 的导数，用链式法则分三步：\n\n1. $\\ell=-y\\ln p-(1-y)\\ln(1-p)$，所以 $\\dfrac{\\partial\\ell}{\\partial p}=-\\dfrac yp+\\dfrac{1-y}{1-p}=\\dfrac{p-y}{p(1-p)}$；\n2. $p=\\sigma(z)$，所以 $\\dfrac{\\partial p}{\\partial z}=p(1-p)$；\n3. 相乘，分母 $p(1-p)$ **恰好相消**：$\\dfrac{\\partial\\ell}{\\partial z}=p-y$。\n\n再乘上 $\\partial z/\\partial w=x$，对所有样本取平均，写成矩阵形式：\n\n> **标准定义 · 逻辑回归的梯度**\n>\n> $$\\nabla_wL=\\frac1nX^\\top\\big(\\sigma(Xw+b\\mathbf 1)-y\\big),\\qquad \\frac{\\partial L}{\\partial b}=\\frac1n\\sum_i\\big(\\sigma(z_i)-y_i\\big)$$\n>\n> Hessian 为 $\\frac1nX^\\top\\operatorname{diag}\\big(p_i(1-p_i)\\big)X$，**半正定**，所以损失是凸函数，没有局部最小点；但没有闭式解，要用梯度下降或牛顿法（IRLS）等迭代求解。\n>\n> *English: The gradient is the feature matrix transposed times the residual (predicted probability minus label); the loss is convex but has no closed form.*\n\n**白话版：「预测减真实，再乘特征」。** 和线性回归一样，梯度就是「**残差**乘特征」：线性回归的残差是 $\\hat y-y$，逻辑回归的残差是 $p-y$。这不是巧合：这是**指数族分布配上它的自然（典则）连接函数**时的一般规律（广义线性模型）。高斯噪声配恒等连接，得到线性回归；伯努利噪声配 sigmoid，得到逻辑回归；泊松噪声配指数函数，得到泊松回归，三者的梯度都是「预测 − 真实」乘以特征。**这也是为什么神经网络的输出层配交叉熵时，反向传播的第一步总是 `probs - onehot`。**\n\n先造一份数据（两团点、各约一半，有重叠），再用数值梯度检验验证我们的梯度：\n```python\nrng = np.random.default_rng(0)\nn = 400\ny = (rng.random(n) < 0.5).astype(float)              # 标签 0 / 1，各约一半\nshift = np.where(y[:, None] == 1, [1.2, 1.0], [-1.2, -1.0])     # 两类的中心不同\nX = rng.normal(size=(n, 2)) * 1.2 + shift\nidx = rng.permutation(n)\ntr, te = idx[:300], idx[300:]                        # 300 训练，100 测试\nmu, sd = X[tr].mean(axis=0), X[tr].std(axis=0)       # 只用训练集标准化\nXtr, Xte = (X[tr] - mu) / sd, (X[te] - mu) / sd\nytr, yte = y[tr], y[te]\nprint(Xtr.shape, Xte.shape, round(float(ytr.mean()), 3), round(float(yte.mean()), 3))\n# 输出：(300, 2) (100, 2) 0.447 0.49\n```\n\n**读输出：** 300 个训练样本、100 个测试样本，各有 2 个特征，已经用训练集的均值和标准差标准化（和上一节一样，只用训练集）。训练集正类占 `0.447`，测试集占 `0.49`，基本平衡。\n```python\ndef bce_loss(w, b, X, y):                            # 稳定写法：-[y log s(z) + (1-y) log(1-s(z))] = log(1+e^z) - y z\n    z = X @ w + b\n    return float(np.mean(np.logaddexp(0, z) - y * z))\n\ndef grad_lr(w, b, X, y):\n    r = sigmoid(X @ w + b) - y                       # 残差：预测概率 - 真实标签\n    return X.T @ r / len(y), float(r.mean())         # 和线性回归同一个形状：X^T r / n\n\nw0, b0 = np.array([0.3, -0.2]), 0.1\ngw, gb = grad_lr(w0, b0, Xtr, ytr)\neps = 1e-6\nnum_w = np.array([(bce_loss(w0 + eps * e, b0, Xtr, ytr) - bce_loss(w0 - eps * e, b0, Xtr, ytr)) / (2 * eps)\n                  for e in np.eye(2)])\nnum_b = (bce_loss(w0, b0 + eps, Xtr, ytr) - bce_loss(w0, b0 - eps, Xtr, ytr)) / (2 * eps)\nprint(np.round(gw, 4), round(gb, 4))\nprint(np.round(num_w, 4), round(num_b, 4))\nprint(np.allclose(gw, num_w, atol=1e-6), abs(gb - num_b) < 1e-6)\n# 输出：[-0.3052 -0.3463] 0.0779\n# 输出：[-0.3052 -0.3463] 0.0779\n# 输出：True True\n```\n\n**读输出：** 在 $w=(0.3,-0.2)$，$b=0.1$ 这一点，解析梯度是 $(-0.3052,\\,-0.3463)$，$\\partial L/\\partial b=0.0779$；数值梯度显示的数字完全相同，最后的 `True True` 表示在 $10^{-6}$ 内一致。这里的 `bce_loss` 用了稳定写法 `np.logaddexp(0, z) - y * z`：它等价于 $\\ln(1+e^z)-yz$，不会在 $z$ 很大时溢出。**两个梯度相同，说明我们的推导没错。**"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "BfKanl1aSG0",
+   "title": "视频二：Logistic Regression Details Pt 2: Maximum Likelihood（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "**视频二要点：** 用最大似然来拟合逻辑回归的参数：每个样本的似然是「真实类别对应的概率」，全部乘起来就是数据的似然，取对数后相加；因为不能直接解出最大值，所以用迭代的办法（梯度上升 / 下降）去找。这和我们刚才推出的交叉熵完全是同一件事，只差一个负号。\n\n### 手写梯度下降训练\n\n有了梯度，训练循环就和上一节一模一样，只把 `grad` 换掉，学习率取 0.5。\n```python\ndef fit(X, y, lr=0.5, steps=300):\n    w, b, hist = np.zeros(X.shape[1]), 0.0, []\n    for t in range(steps):\n        gw, gb = grad_lr(w, b, X, y)\n        w, b = w - lr * gw, b - lr * gb\n        hist.append(bce_loss(w, b, X, y))\n    return w, b, hist\n\ndef accuracy(y, yhat):\n    return float(np.mean(y == yhat))\n\nw, b, hist = fit(Xtr, ytr)\nprint(\"第 1、10、100、300 步的损失：\", [round(hist[i], 4) for i in (0, 9, 99, 299)])\nprint(\"参数：\", np.round(w, 3), round(b, 3))\npte = sigmoid(Xte @ w + b)                           # 预测概率\nprint(\"训练准确率：\", accuracy(ytr, (sigmoid(Xtr @ w + b) >= 0.5).astype(float)))\nprint(\"测试准确率：\", accuracy(yte, (pte >= 0.5).astype(float)))\nprint(\"多数类基线：\", max(yte.mean(), 1 - yte.mean()))\n# 输出：第 1、10、100、300 步的损失： [0.5843, 0.3083, 0.1843, 0.1753]\n# 输出：参数： [3.173 2.715] -0.635\n# 输出：训练准确率： 0.94\n# 输出：测试准确率： 0.87\n# 输出：多数类基线： 0.51\n```\n\n**读输出：** 损失从第 1 步的 `0.5843`，降到第 10 步的 `0.3083`、第 100 步的 `0.1843`、第 300 步的 `0.1753`（先快后慢）。参数是 $w=(3.173,\\,2.715)$，$b=-0.635$：两个特征的权重都是正的（符合数据：正类在右上方）。训练准确率 `0.94`，测试准确率 `0.87`，而多数类基线（永远猜出现更多的那一类）只有 `0.51`，所以模型确实学到了东西。训练和测试差距 7 个百分点，有一部分是测试集只有 100 个样本带来的抖动（回忆上一节：小样本上的数字本身有误差）。\n\n**用 PyTorch 对照。** 同样的数据、同样的初值（全 0）、同样的学习率，让 PyTorch 自动求导，看是不是同一个结果。下面这块是 `python-static`，网页里不能运行（没有 torch），我在本地真实运行过：\n```python-static\nimport torch                                         # 用 PyTorch 对照：同样的数据、同样的初值、同样的学习率\n\nXt = torch.tensor(Xtr, dtype=torch.float64)\nyt = torch.tensor(ytr, dtype=torch.float64)\nlin = torch.nn.Linear(2, 1).double()\ntorch.nn.init.zeros_(lin.weight); torch.nn.init.zeros_(lin.bias)\nopt = torch.optim.SGD(lin.parameters(), lr=0.5)\nlossf = torch.nn.BCEWithLogitsLoss()                 # sigmoid + 交叉熵，内部用稳定写法\nfor t in range(300):\n    opt.zero_grad()\n    loss = lossf(lin(Xt).squeeze(1), yt)\n    loss.backward()                                  # 自动求导：不需要我们推梯度\n    opt.step()\nprint(np.round(lin.weight.detach().numpy().ravel(), 3), round(lin.bias.item(), 3))\nprint(\"与手写版一致：\", np.allclose(lin.weight.detach().numpy().ravel(), w), np.isclose(lin.bias.item(), b))\n# 输出：[3.173 2.715] -0.635\n# 输出：与手写版一致： True True\n```\n\n**读输出：** PyTorch 的权重和偏置是 `[3.173 2.715]` 和 `-0.635`，与手写版完全一致，最后一行两个 `True` 确认了这一点。`BCEWithLogitsLoss` 的意思是「把 sigmoid 和二元交叉熵合在一起」，输入是 **logits**（线性得分 $z$）而不是概率：合在一起可以用我们前面见过的稳定写法 $\\ln(1+e^z)-yz$，比「先 sigmoid 再 log」更稳。`loss.backward()` 做的事，就是我们手推的 $\\frac1nX^\\top(p-y)$。**以后你可以放心用自动求导，因为你知道它在算什么。**\n\n### 决策边界\n\n> **标准定义 · 决策边界 (decision boundary)**\n>\n> 阈值取 0.5 时，模型预测为正类当且仅当 $\\sigma(w^\\top x+b)\\ge0.5$，即 $w^\\top x+b\\ge0$。所以决策边界是 $\\{x:\\,w^\\top x+b=0\\}$，它是一个**超平面**（二维里是一条直线），$w$ 是它的法向量，指向正类一侧；离边界越远，$|w^\\top x+b|$ 越大，预测越自信。\n>\n> *English: With threshold 0.5 the decision boundary is the hyperplane wᵀx + b = 0; the model is linear in the features, so the boundary is linear.*\n\n**白话版：「一条分界线，一侧是正，另一侧是负」。** 逻辑回归的「逻辑」只在把得分变成概率，**分界线本身仍然是直的**。\n```python\nprint(f\"边界：{w[0]:.3f} * x1 + {w[1]:.3f} * x2 + {b:.3f} = 0\")\nprint(\"斜率 / 截距：\", round(float(-w[0] / w[1]), 3), round(float(-b / w[1]), 3))\nfor x2 in np.linspace(2.5, -2.5, 11):                # 在标准化后的平面上画一张字符地图\n    row = \"\"\n    for x1 in np.linspace(-3, 3, 31):\n        row += \"#\" if sigmoid(np.array([w[0] * x1 + w[1] * x2 + b]))[0] >= 0.5 else \".\"\n    print(row)\n# 输出：边界：3.173 * x1 + 2.715 * x2 + -0.635 = 0\n# 输出：斜率 / 截距： -1.169 0.234\n# 输出：......#########################\n# 输出：........#######################\n# 输出：..........#####################\n# 输出：............###################\n# 输出：..............#################\n# 输出：.................##############\n# 输出：...................############\n# 输出：.....................##########\n# 输出：.......................########\n# 输出：.........................######\n# 输出：...........................####\n```\n\n**读输出：** 边界方程是 $3.173x_1+2.715x_2-0.635=0$，即 $x_2=-1.169\\,x_1+0.234$（斜率 `-1.169`、截距 `0.234`）。下面用 `#` 表示被预测为正类的区域、`.` 表示负类：右上方是 `#`，左下方是 `.`，中间一条从左上斜向右下的分界线，斜率为负，和边界方程一致（行从上到下对应 $x_2$ 从 2.5 降到 $-2.5$，列从左到右对应 $x_1$ 从 $-3$ 到 3）。**权重向量 $(3.173,2.715)$ 指向右上，就是正类那一侧。**\n\n**线性边界的局限：XOR。** 如果两类在平面上是「对角」排列的，一条直线分不开：\n```python\nrng = np.random.default_rng(2)\nc = rng.integers(0, 2, (400, 2))                     # 四个角落：(0,0) (0,1) (1,0) (1,1)\nXx = (c * 2 - 1) + rng.normal(0, 0.3, (400, 2))      # 各自加噪声，中心在 (+-1, +-1)\nyx = (c[:, 0] != c[:, 1]).astype(float)              # 异或：两个坐标符号不同时为 1\nw1, b1, _ = fit(Xx, yx, lr=0.5, steps=500)\nprint(\"只用 x1, x2：\", accuracy(yx, (sigmoid(Xx @ w1 + b1) >= 0.5).astype(float)))\nXf = np.c_[Xx, Xx[:, 0] * Xx[:, 1]]                  # 加一个特征 x1 * x2\nw2, b2, _ = fit(Xf, yx, lr=0.5, steps=500)\nprint(\"加上 x1*x2：  \", accuracy(yx, (sigmoid(Xf @ w2 + b2) >= 0.5).astype(float)))\n# 输出：只用 x1, x2： 0.675\n# 输出：加上 x1*x2：   1.0\n```\n\n**读输出：** 四个角落 $(\\pm1,\\pm1)$，异号的角（$(+1,-1)$ 和 $(-1,+1)$）是正类，同号的角是负类。只用 $(x_1,x_2)$ 时，准确率是 `0.675`：一条直线最多只能把 4 个角中的 3 个分对（约 75%），梯度下降找到的是其中一条不太好的线。再加一个**交叉特征** $x_1x_2$（同号时为正，异号时为负），三维特征空间里一个平面就能分开，准确率变成 `1.0`。**这就是神经网络的动机：与其手工设计特征，不如让模型自己学出特征。**\n\n### softmax：多分类\n\n> **标准定义 · softmax 与 one-hot 编码**\n>\n> **one-hot**：类别 $k\\in\\{0,\\dots,K-1\\}$ 编码成长度 $K$ 的向量，第 $k$ 个位置是 1，其余是 0。**softmax**：把 $K$ 个得分 $z\\in\\mathbb R^K$ 变成概率分布：\n>\n> $$\\text{softmax}(z)_k=\\frac{e^{z_k}}{\\sum_{j=1}^Ke^{z_j}}$$\n>\n> 每个分量大于 0，和为 1；对 $z$ 加常数不变。**softmax 回归**：$z=W^\\top x+b$（$W\\in\\mathbb R^{d\\times K}$，每个类别一列权重），交叉熵损失 $L=-\\frac1n\\sum_i\\ln p_{i,y_i}$，梯度是 $\\nabla_WL=\\frac1nX^\\top(P-Y)$，其中 $P$ 是预测概率矩阵，$Y$ 是 one-hot 标签矩阵。\n>\n> *English: Softmax turns K scores into a probability distribution; softmax regression trains with cross-entropy against one-hot labels, and its gradient is again prediction minus target.*\n\n**白话版：「把 K 个得分按指数比例分配成概率」。** 得分高 1，概率就大约是原来的 $e\\approx2.7$ 倍。二分类时它退化成 sigmoid，所以逻辑回归是 softmax 回归 $K=2$ 的特例；这里梯度也还是「预测 − 真实」乘特征，和前面一模一样。\n```python\ndef softmax(Z):\n    Z = Z - Z.max(axis=1, keepdims=True)             # 每行减最大值，防止 exp 溢出，结果不变\n    E = np.exp(Z)\n    return E / E.sum(axis=1, keepdims=True)\n\nZ = np.array([[2.0, 1.0, 0.1], [1000.0, 1001.0, 1002.0]])\nP = softmax(Z)\nprint(np.round(P, 3))\nprint(P.sum(axis=1))                                 # 每行是一个概率分布\nprint(np.eye(3)[np.array([0, 2, 1])])                # one-hot：类别 -> 单位向量\nz = np.array([-1.5, 0.3, 2.0])\nprint(\"两类的 softmax = sigmoid：\", np.allclose(softmax(np.c_[np.zeros(3), z])[:, 1], sigmoid(z)))\n# 输出：[[0.659 0.242 0.099]\n# 输出： [0.09  0.245 0.665]]\n# 输出：[1. 1.]\n# 输出：[[1. 0. 0.]\n# 输出： [0. 0. 1.]\n# 输出： [0. 1. 0.]]\n# 输出：两类的 softmax = sigmoid： True\n```\n\n**读输出：** 得分 `[2, 1, 0.1]` 变成概率 `[0.659 0.242 0.099]`；第二行得分是 `[1000, 1001, 1002]`，直接 `exp(1000)` 会溢出，我们先**每行减去最大值**再取指数，结果是 `[0.09 0.245 0.665]`，不溢出也不改变结果（因为 softmax 对输入同时加常数不变）。`P.sum(axis=1)` 是 `[1. 1.]`，每行是概率分布。`np.eye(3)[[0,2,1]]` 展示了 one-hot：取单位矩阵的对应行。最后一行 `True`：两类时 softmax 的第二个概率等于 $\\sigma(z_1-z_0)$。\n\n用三团点训练一个 softmax 回归：\n```python\nrng = np.random.default_rng(1)\nmeans = np.array([[0.0, 2.0], [2.0, -1.0], [-2.0, -1.0]])\ny3 = rng.integers(0, 3, 450)\nX3 = means[y3] + rng.normal(0, 1.0, (450, 2))\nY3 = np.eye(3)[y3]\nXa, Ya, ya, Xb, yb = X3[:330], Y3[:330], y3[:330], X3[330:], y3[330:]\n\nW, B = np.zeros((2, 3)), np.zeros(3)\nfor t in range(400):\n    R = softmax(Xa @ W + B) - Ya                     # 梯度的形式和二分类一样：P - Y\n    W -= 0.5 * Xa.T @ R / 330\n    B -= 0.5 * R.mean(axis=0)\nP = softmax(Xa @ W + B)\nprint(\"训练交叉熵：\", round(float(-np.mean(np.log(P[np.arange(330), ya]))), 4))\nprint(\"训练准确率：\", round(float((P.argmax(axis=1) == ya).mean()), 4))\nprint(\"测试准确率：\", round(float((softmax(Xb @ W + B).argmax(axis=1) == yb).mean()), 4))\nprint(\"权重形状：\", W.shape, \" 每列是一个类别的权重向量\")\n# 输出：训练交叉熵： 0.152\n# 输出：训练准确率： 0.9424\n# 输出：测试准确率： 0.975\n# 输出：权重形状： (2, 3)  每列是一个类别的权重向量\n```\n\n**读输出：** 三类、每类中心不同（$(0,2)$、$(2,-1)$、$(-2,-1)$），330 个训练样本、120 个测试样本，只用 numpy 写了 5 行梯度下降。训练交叉熵 `0.152`，训练准确率 `0.9424`，测试准确率 `0.975`（测试集只有 120 个样本，这个数字有抖动）。权重 `W` 的形状是 `(2, 3)`：**每一列是一个类别的权重向量**，三个类别各一条「得分线」，预测取得分最高的那一类。梯度这一行 `R = softmax(...) - Ya` 与二分类的 `p - y` 是同一个形式，这就是反向传播里「softmax + 交叉熵的第一步」。\n\n### 混淆矩阵与评估指标\n\n准确率只回答「对了多少」，但分类错误有两种不同的性质：把负类当成正类（**误报**），把正类当成负类（**漏报**）。代价常常不同：漏掉一个病人，和误报一个健康人，不是一回事。所以要把预测结果按真实类别和预测类别分成四格。\n\n> **标准定义 · 混淆矩阵与指标 (confusion matrix & metrics)**\n>\n> 以正类为「阳性」，四格是：**TP** 真阳性（正类被判为正），**FP** 假阳性（负类被判为正），**FN** 假阴性（正类被判为负），**TN** 真阴性（负类被判为负）。\n>\n> $$\\text{准确率}=\\frac{TP+TN}{n},\\quad \\text{精确率}=\\frac{TP}{TP+FP},\\quad \\text{召回率}=\\frac{TP}{TP+FN},\\quad F_1=\\frac{2PR}{P+R}$$\n>\n> **精确率 (precision)**：判为正的里，真正是正的占多少；**召回率 (recall，又叫灵敏度 sensitivity / 真阳性率 TPR)**：真正的正类里，被抓到了多少；**F1** 是两者的调和平均，两者都高才高。**假阳性率 FPR** $=\\frac{FP}{FP+TN}$。\n>\n> *English: Precision is the fraction of predicted positives that are truly positive; recall is the fraction of true positives that are found; F1 is their harmonic mean.*\n\n**白话版：「抓小偷」。** 警察抓了 40 个人，其中 30 个真是小偷：精确率 $30/40$（抓的人里多少抓对了）。城里一共有 50 个小偷，抓到 30 个：召回率 $30/50$（小偷里多少被抓到了）。你可以把所有人都抓起来（召回率 100%，精确率很低），也可以只抓最确定的一个（精确率高，召回率很低），两者此消彼长。\n```python\ndef confusion(y, yhat):\n    tp = int(((yhat == 1) & (y == 1)).sum()); fp = int(((yhat == 1) & (y == 0)).sum())\n    fn = int(((yhat == 0) & (y == 1)).sum()); tn = int(((yhat == 0) & (y == 0)).sum())\n    return tp, fp, fn, tn\n\ndef metrics(y, yhat):\n    tp, fp, fn, tn = confusion(y, yhat)\n    prec = tp / (tp + fp) if tp + fp else 0.0\n    rec = tp / (tp + fn) if tp + fn else 0.0\n    f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0.0\n    return dict(acc=(tp + tn) / len(y), precision=prec, recall=rec, f1=f1)\n\npred = (pte >= 0.5).astype(float)\ntp, fp, fn, tn = confusion(yte, pred)\nprint(\"        预测1  预测0\")\nprint(f\"真实1   {tp:<6d} {fn}\")\nprint(f\"真实0   {fp:<6d} {tn}\")\nprint({k: round(v, 3) for k, v in metrics(yte, pred).items()})\n# 输出：        预测1  预测0\n# 输出：真实1   38     11\n# 输出：真实0   2      49\n# 输出：{'acc': 0.87, 'precision': 0.95, 'recall': 0.776, 'f1': 0.854}\n```\n\n**读输出：** 测试集 100 个样本（49 个正类、51 个负类）。混淆矩阵：真实 1 的行是 TP=`38`、FN=`11`，真实 0 的行是 FP=`2`、TN=`49`。指标：准确率 `0.87`，精确率 $38/40=0.95$，召回率 $38/49=0.776$，F1 `0.854`。可以看到，这个模型**偏保守**：很少把负类误判为正类（只有 2 个），但漏掉了 11 个正类。这就是阈值 0.5 下的权衡，下一节调阈值。\n\n### ROC 曲线与 AUC\n\n阈值一变，混淆矩阵就变，指标也变。要评价「模型的排序能力」，而不是某一个阈值下的表现，就让阈值从高到低扫一遍，每个阈值得到一个 (FPR, TPR) 点，连起来：\n\n> **标准定义 · ROC 曲线与 AUC (ROC curve & AUC)**\n>\n> **ROC 曲线**：横轴是假阳性率 FPR，纵轴是真阳性率 TPR（召回率），阈值从 $+\\infty$ 降到 $-\\infty$ 画出的曲线，从 $(0,0)$ 到 $(1,1)$。**AUC** 是曲线下的面积，等于**「随机抽一个正样本和一个负样本，正样本得分更高的概率」**（平局算 1/2）。完美排序的 AUC 为 1，随机打分的期望 AUC 为 0.5。\n>\n> *English: The ROC curve plots TPR against FPR over all thresholds; the AUC equals the probability that a random positive is scored above a random negative.*\n\n**白话版：「不管你怎么划线，我的排队排得好不好」。** AUC 只关心得分的**相对顺序**（正类是否普遍排在负类前面），所以它与阈值无关，也不受得分整体放大缩小的影响。\n```python\ndef roc_points(y, score):\n    ths = np.r_[np.inf, np.sort(np.unique(score))[::-1]]        # 阈值从高到低\n    P, N = (y == 1).sum(), (y == 0).sum()\n    tpr = np.array([((score >= t) & (y == 1)).sum() / P for t in ths])\n    fpr = np.array([((score >= t) & (y == 0)).sum() / N for t in ths])\n    return fpr, tpr\n\ndef auc_trapz(fpr, tpr):\n    return float(np.sum((fpr[1:] - fpr[:-1]) * (tpr[1:] + tpr[:-1]) / 2))\n\ndef auc_rank(y, score):                              # AUC = P(随机正样本的得分 > 随机负样本的得分)，平局算 1/2\n    pos, neg = score[y == 1], score[y == 0]\n    diff = pos[:, None] - neg[None, :]\n    return float((diff > 0).mean() + 0.5 * (diff == 0).mean())\n\nfpr, tpr = roc_points(yte, pte)\nprint(\"ROC 点数：\", len(fpr), \" 起点：\", (float(fpr[0]), float(tpr[0])), \" 终点：\", (float(fpr[-1]), float(tpr[-1])))\nprint(\"AUC（梯形法）：\", round(auc_trapz(fpr, tpr), 4))\nprint(\"AUC（排序法）：\", round(auc_rank(yte, pte), 4))\nrs = np.random.default_rng(0).random(len(yte))\nprint(\"随机打分的 AUC：\", round(auc_rank(yte, rs), 3))\n# 输出：ROC 点数： 101  起点： (0.0, 0.0)  终点： (1.0, 1.0)\n# 输出：AUC（梯形法）： 0.9804\n# 输出：AUC（排序法）： 0.9804\n# 输出：随机打分的 AUC： 0.465\n```\n\n**读输出：** 100 个测试样本，得分各不相同，所以阈值有 100 个，再加一个 $+\\infty$，共 `101` 个 ROC 点；起点是 `(0.0, 0.0)`（阈值无穷大，什么都不判为正），终点是 `(1.0, 1.0)`（阈值最低，全判为正）。**两种方法算出同一个 AUC：** 梯形法得 `0.9804`，排序法（统计所有「正 / 负」配对里正样本得分更高的比例）也是 `0.9804`，所以「曲线下面积 = 排序正确的概率」不只是一句话，是可以验证的数学事实。最后一行，随机打分的 AUC 是 `0.465`，接近 0.5（只有 100 个样本，所以有抖动）。我们的模型 AUC 为 `0.9804`，说明它的**排序**很好，即使准确率只有 0.87（后者还受到阈值 0.5 的限制）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "4jRBRDbJemM",
+   "title": "视频三：ROC and AUC, Clearly Explained!（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 16
+  },
+  {
+   "type": "text",
+   "md": "**视频三要点：** 如何一步步从混淆矩阵画出 ROC 曲线，为什么要同时看 FPR 与 TPR，以及什么时候应该用**精确率-召回率曲线 (precision–recall curve)** 代替 ROC：当负类特别多时，FPR 的分母（$FP+TN$）很大，少量的误报几乎不改变 FPR，ROC 看上去仍然很漂亮，而精确率已经很差。下一块会用数字展示这一点。\n\n### 阈值的选择\n\n默认阈值 0.5 并不神圣。它只在两类错误代价相同、而且训练和使用时类别比例一致时才「最优」。\n\n> **标准定义 · 阈值与代价 (threshold & cost)**\n>\n> 给定阈值 $t$：$\\hat y=\\mathbf 1[p\\ge t]$。降低 $t$，更多样本被判为正，**召回率不降、精确率通常下降**；提高 $t$ 则相反。若漏报一个的代价是 $c_{FN}$，误报一个的代价是 $c_{FP}$，对**校准良好**的概率，最小化期望代价的阈值是 $t^*=\\dfrac{c_{FP}}{c_{FP}+c_{FN}}$。\n>\n> *English: Lowering the threshold raises recall and usually lowers precision; with calibrated probabilities the cost-optimal threshold is c_FP / (c_FP + c_FN).*\n\n**白话版：「你更怕漏掉，还是更怕冤枉」。** 癌症筛查宁可多复查几个健康人（阈值调低），垃圾邮件过滤宁可放过几封垃圾邮件、也不要误删重要邮件（阈值调高）。**阈值是业务决策，不是模型参数**，要由代价决定。\n```python\nprint(\"阈值   精确率  召回率  F1\")\nfor t in [0.1, 0.3, 0.5, 0.7, 0.9]:\n    m = metrics(yte, (pte >= t).astype(float))\n    print(f\"{t:<6} {m['precision']:.3f}   {m['recall']:.3f}   {m['f1']:.3f}\")\n\nths = np.linspace(0.05, 0.95, 91)\ncosts = []\nfor t in ths:                                        # 假设漏掉一个正类的代价是误报一个的 5 倍\n    tp, fp, fn, tn = confusion(yte, (pte >= t).astype(float))\n    costs.append(5 * fn + 1 * fp)\nprint(\"代价最小的阈值：\", round(float(ths[int(np.argmin(costs))]), 2), \" 最小代价：\", min(costs))\n# 输出：阈值   精确率  召回率  F1\n# 输出：0.1    0.860   1.000   0.925\n# 输出：0.3    0.933   0.857   0.894\n# 输出：0.5    0.950   0.776   0.854\n# 输出：0.7    1.000   0.714   0.833\n# 输出：0.9    1.000   0.612   0.759\n# 输出：代价最小的阈值： 0.08  最小代价： 8\n```\n\n**读输出：** 阈值从 0.1 提到 0.9，精确率 `0.860 → 0.933 → 0.950 → 1.000 → 1.000`，召回率 `1.000 → 0.857 → 0.776 → 0.714 → 0.612`，**一个上升，另一个下降**；F1 最高的是阈值 0.1 附近的 `0.925`，因为这份数据两类各占一半，宁可多判一些正类。下面假设漏掉一个正类的代价是误报一个的 5 倍，在 0.05 到 0.95 之间扫描，最小代价（$5\\times FN+FP$）为 `8`，对应的阈值是 `0.08`；按公式 $t^*=\\frac{1}{1+5}\\approx0.17$，实际扫描出的阈值更低，是因为我们的概率并不完全校准、测试集也只有 100 个样本，这个数字有抖动，但方向一致：**漏报代价大，阈值就应该降低。**\n\n### 类别不平衡：准确率的陷阱\n\n现实里，次品、欺诈、疾病往往只占 1% 到 5%。看看这时候会发生什么：正类约占 3%，训练 4000 个、测试 2000 个。\n```python\nrng = np.random.default_rng(7)\nN = 6000\nyi = (rng.random(N) < 0.03).astype(float)            # 只有约 3% 是正类\nXi = rng.normal(size=(N, 2)) * 1.2 + np.where(yi[:, None] == 1, [1.5, 1.2], [-0.2, -0.1])\nXi = (Xi - Xi[:4000].mean(axis=0)) / Xi[:4000].std(axis=0)      # 用训练部分的统计量标准化\nXa, ya, Xb, yb = Xi[:4000], yi[:4000], Xi[4000:], yi[4000:]\nwi, bi, _ = fit(Xa, ya, lr=0.5, steps=500)\npb = sigmoid(Xb @ wi + bi)\nm = metrics(yb, (pb >= 0.5).astype(float))\nprint(\"测试集正类个数：\", int(yb.sum()), \"/\", len(yb))\nprint(\"永远预测 0 的准确率：\", round(1 - float(yb.mean()), 4))\nprint(\"模型（阈值 0.5）：\", {k: round(v, 3) for k, v in m.items()})\nprint(\"AUC：\", round(auc_rank(yb, pb), 3))\n# 输出：测试集正类个数： 69 / 2000\n# 输出：永远预测 0 的准确率： 0.9655\n# 输出：模型（阈值 0.5）： {'acc': 0.969, 'precision': 0.875, 'recall': 0.101, 'f1': 0.182}\n# 输出：AUC： 0.898\n```\n\n**读输出：** 测试集 2000 个样本里只有 `69` 个正类。永远预测负类的准确率就有 `0.9655`；我们的模型准确率是 `0.969`，看起来「略好」，但是看别的指标：精确率 `0.875`、**召回率只有 `0.101`**（69 个正类里只抓到了 7 个）、F1 `0.182`。模型几乎永远预测负类：因为负类占 97%，损失被负类样本主导，最划算的做法就是倾向于说「负」。然而 AUC 是 `0.898`，说明模型**排序**其实不差，问题出在阈值 0.5 对这种不平衡不合适。\n\n**处理办法一：类别权重。** 在损失里给稀有的正类更大的权重，相当于告诉模型「漏掉一个正类，比误判一个负类严重得多」：\n```python\ndef fit_weighted(X, y, cw, lr=0.5, steps=500):       # 每个样本的损失乘以类别权重 cw[y]\n    w, b = np.zeros(X.shape[1]), 0.0\n    sw = np.where(y == 1, cw[1], cw[0])\n    for t in range(steps):\n        r = (sigmoid(X @ w + b) - y) * sw\n        w, b = w - lr * X.T @ r / len(y), b - lr * r.mean()\n    return w, b\n\ncw = {0: 1.0, 1: (ya == 0).sum() / (ya == 1).sum()}  # 正类权重 = 负类个数 / 正类个数\nww, bw = fit_weighted(Xa, ya, cw)\npw = sigmoid(Xb @ ww + bw)\nm2 = metrics(yb, (pw >= 0.5).astype(float))\nprint(\"正类权重：\", round(float(cw[1]), 2))\nprint(\"加权后（阈值 0.5）：\", {k: round(v, 3) for k, v in m2.items()})\nprint(\"AUC：\", round(auc_rank(yb, pw), 3))\n# 输出：正类权重： 35.04\n# 输出：加权后（阈值 0.5）： {'acc': 0.806, 'precision': 0.125, 'recall': 0.768, 'f1': 0.215}\n# 输出：AUC： 0.897\n```\n\n**读输出：** 正类权重取负类数与正类数之比，`35.04`。加权训练后（仍用阈值 0.5）：召回率从 `0.101` 升到 `0.768`，F1 从 `0.182` 升到 `0.215`；代价是精确率从 `0.875` 降到 `0.125`，准确率从 `0.969` 降到 `0.806`（比永远预测负类的 `0.9655` 低了）。**AUC 几乎没变**（`0.898` 与 `0.897`），说明加权主要改变的是「决策点」，而不是排序能力，它的作用和降低阈值很像。所以对不平衡数据的另外两个办法是：**直接调低阈值**（保持原模型不动，在验证集上选一个满足召回率要求的阈值）、**过采样稀有类 / 欠采样多数类**（改变训练数据比例）。无论用哪一种，都要用验证集去选，并且报告精确率、召回率、PR 曲线、AUC 等多个指标，而不是只报准确率。\n\n**为什么精确率这么低？贝叶斯。** 即使模型的召回率和误报率都「看起来不错」，在稀有类上，精确率也会被大量的负类拖下来：$\\text{精确率}=\\dfrac{TPR\\cdot\\pi}{TPR\\cdot\\pi+FPR\\cdot(1-\\pi)}$，其中 $\\pi$ 是正类占比。这和 prob-0 里诊断测验的计算一模一样：\n```python\ntpr_, fpr_ = 0.90, 0.05                              # 一个看起来很不错的筛查：抓到 90%，误报 5%\nfor prev in [0.5, 0.1, 0.01]:                        # 正类占比（患病率）\n    prec = tpr_ * prev / (tpr_ * prev + fpr_ * (1 - prev))\n    print(f\"正类占比 {prev:<5} 精确率 {prec:.3f}\")\n# 输出：正类占比 0.5   精确率 0.947\n# 输出：正类占比 0.1   精确率 0.667\n# 输出：正类占比 0.01  精确率 0.154\n```\n\n**读输出：** 一个抓得到 90% 的正类、只有 5% 误报的方法：当正类占 50% 时，精确率是 `0.947`；占 10% 时下降到 `0.667`；占 1% 时只剩 `0.154`，也就是**每 100 个被判为阳性的里面，只有约 15 个是真的**。分母里的假阳性主要来自数量庞大的负类。结论：**精确率不仅取决于模型，也取决于正类的占比**；一个在平衡数据上得到的好指标，部署到更稀有的真实分布上，精确率会大幅下降。所以评估数据的类别比例要和部署时尽量一致，或者至少明确说明。\n\n### 这一节你要带走的三句话\n\n1. **逻辑回归 = 线性得分 + sigmoid + 交叉熵**：$P(y=1\\mid x)=\\sigma(w^\\top x+b)$，交叉熵是伯努利分布下的负对数似然，梯度是 $\\frac1nX^\\top(p-y)$，与线性回归同形（「预测减真实，乘特征」），softmax 把它推广到多类；决策边界是直线 / 超平面，解不了 XOR。\n2. **评价分类器不能只看准确率**：混淆矩阵给出精确率、召回率、F1；ROC / AUC 衡量排序能力、与阈值无关；阈值是由两类错误的代价决定的业务选择。\n3. **类别不平衡会让准确率和精确率骗人**：永远猜多数类就能得高准确率；稀有类上精确率被基数拖低（贝叶斯）；处理办法有类别权重、调阈值、重采样，并且用 PR 曲线与多个指标评估。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 一个二分类器在 200 个样本上：TP=40，FP=20，FN=10，TN=130。算准确率、精确率、召回率、F1、FPR。如果把阈值调低，使得 FN 降到 5，同时 FP 增加到 35（TP 和 TN 相应地变成 45 和 115），这些指标怎么变？",
+   "a": "第一种阈值：\n\n- 准确率 $=\\frac{40+130}{200}=0.85$；\n- 精确率 $=\\frac{40}{40+20}=0.667$；\n- 召回率 $=\\frac{40}{40+10}=0.8$；\n- $F_1=\\frac{2\\times0.667\\times0.8}{0.667+0.8}=0.727$；\n- $FPR=\\frac{20}{20+130}=0.133$。\n\n调低阈值之后（TP=45，FP=35，FN=5，TN=115）：准确率 $=\\frac{160}{200}=0.80$，精确率 $=\\frac{45}{80}=0.5625$，召回率 $=\\frac{45}{50}=0.9$，$F_1=\\frac{2\\times0.5625\\times0.9}{1.4625}=0.692$，$FPR=\\frac{35}{150}=0.233$。\n\n召回率升高、精确率和准确率下降，$FPR$ 上升：这就是沿着同一条 ROC 曲线向右上移动。F1 在这里下降了，说明单看 F1，原来的阈值更好；但如果漏报的代价是误报的 3 倍以上，调低阈值的总代价反而更低（原来 $10\\times3+20=50$，之后 $5\\times3+35=50$，相等；超过 3 倍时更低）。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同学说：「逻辑回归的梯度和线性回归一样，说明逻辑回归就是线性回归加了一个 sigmoid，换成 MSE 损失也一样能训练。」这句话哪里对、哪里不对？（提示：用 MSE 配 sigmoid 时，$\\partial\\ell/\\partial z$ 是什么？在模型非常自信地错了的时候会发生什么？）",
+   "a": "**对的部分：** 模型的第一步确实是一个线性函数 $z=w^\\top x+b$，且「残差乘特征」的梯度结构是一样的。\n\n**不对的部分：** 梯度形式相同是因为**损失与输出函数配对得当**，不是因为二者是同一个模型。如果在 sigmoid 后面用 MSE $\\ell=(p-y)^2$，则 $\\frac{\\partial\\ell}{\\partial z}=2(p-y)\\,p(1-p)$，多出一个 $p(1-p)$ 因子。当模型非常自信地错了（比如 $y=1$，$p\\approx0.001$），$p(1-p)\\approx0.001$，梯度几乎消失，模型**在错得最厉害的地方学得最慢**。交叉熵的 $\\frac{1}{p(1-p)}$ 把这个因子刚好消掉，错得越多，梯度越大。另外，MSE 配 sigmoid 的损失对 $w$ 不是凸的，而交叉熵是凸的。这也是深度学习里分类几乎总用交叉熵的原因（上一门课 arena-0.0 讲过的「梯度消失」在这里有一个最小的例子）。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** 一个 10 类图像分类网络，最后一层是 `nn.Linear(512, 10)`，损失用 `nn.CrossEntropyLoss`。(1) 这一层的输出叫什么，形状是什么？(2) 为什么 `CrossEntropyLoss` 要求输入 logits、不要先过 softmax？(3) 训练中如果这一层输出的某个 logit 变成 1000，会发生什么，库是怎么避免问题的？",
+   "a": "(1) 输出是 **logits**（未归一化的得分），形状 `(batch, 10)`，即本节的 $z=W^\\top x+b$ 对每个样本有 10 个得分。\n\n(2) `CrossEntropyLoss` 在内部把 softmax 和负对数似然合在一起，用 $\\ln\\sum_je^{z_j}$（logsumexp）和 $z_y$ 计算：$\\ell=-z_y+\\ln\\sum_je^{z_j}$。如果自己先 softmax 再取 log，会在概率非常接近 0 时得到 $\\ln0=-\\infty$，既不稳定又丢失精度；合并之后用「减最大值」的技巧，数值稳定，梯度也恰好是 `softmax(z) - onehot`。\n\n(3) 直接算 $e^{1000}$ 会溢出成 `inf`。库用 logsumexp 技巧，先减去最大值 $m$：$\\ln\\sum_je^{z_j}=m+\\ln\\sum_je^{z_j-m}$，指数的最大项是 $e^0=1$，不会溢出。本节 softmax 里「每行减去最大值」就是这个思路。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "分类",
+     "classification",
+     "预测离散的类别标签，常见的有二分类和多分类"
+    ],
+    [
+     "sigmoid 函数",
+     "sigmoid",
+     "$\\sigma(z)=1/(1+e^{-z})$，把任意实数压进 $(0,1)$"
+    ],
+    [
+     "对数几率",
+     "log-odds / logit",
+     "$\\ln\\frac{p}{1-p}$，逻辑回归假设它是特征的线性函数"
+    ],
+    [
+     "逻辑回归",
+     "logistic regression",
+     "线性得分经 sigmoid 得到类别概率的分类模型"
+    ],
+    [
+     "二元交叉熵",
+     "binary cross-entropy",
+     "伯努利分布下的平均负对数似然，逻辑回归的损失"
+    ],
+    [
+     "logits",
+     "logits",
+     "进入 sigmoid / softmax 之前的线性得分"
+    ],
+    [
+     "决策边界",
+     "decision boundary",
+     "预测从一类变成另一类的分界，逻辑回归里是超平面 $w^\\top x+b=0$"
+    ],
+    [
+     "softmax",
+     "softmax",
+     "把 $K$ 个得分变成概率分布 $e^{z_k}/\\sum_je^{z_j}$"
+    ],
+    [
+     "独热编码",
+     "one-hot encoding",
+     "类别编码成只有一个 1 的向量"
+    ],
+    [
+     "混淆矩阵",
+     "confusion matrix",
+     "把预测按真实类别和预测类别分成 TP / FP / FN / TN 四格"
+    ],
+    [
+     "精确率与召回率",
+     "precision & recall",
+     "判为正的里有多少是真的 / 真的正类里有多少被抓到"
+    ],
+    [
+     "F1 分数",
+     "F1 score",
+     "精确率与召回率的调和平均"
+    ],
+    [
+     "ROC 曲线与 AUC",
+     "ROC curve & AUC",
+     "TPR 对 FPR 的曲线；AUC 是随机正样本得分高于随机负样本的概率"
+    ],
+    [
+     "阈值",
+     "threshold",
+     "把概率变成类别的分界点，由两类错误的代价决定"
+    ],
+    [
+     "类别不平衡",
+     "class imbalance",
+     "某一类样本远少于另一类，准确率会失真，要看精确率、召回率与 PR 曲线"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 讲义：Classification and Logistic Regression；Softmax Regression；Generalized Linear Models",
+   "url": "https://cs229.stanford.edu/",
+   "note": "本节大纲依据：Part II 里逻辑回归的极大似然推导、牛顿法、广义线性模型（解释梯度为什么都是「预测 − 真实」）与 softmax 回归，只引用不转载"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL）第 4 章 Classification",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开；逻辑回归、混淆矩阵、ROC 曲线，以及一章里对「错误率与阈值」的讨论"
+  },
+  {
+   "title": "Machine Learning Specialization（吴恩达）第 1 门课 Week 3：Classification with logistic regression",
+   "url": "https://www.deeplearning.ai/courses/machine-learning-specialization/",
+   "note": "更直觉的视频版，对应 sigmoid、决策边界、损失函数的选择与梯度下降"
+  },
+  {
+   "title": "Probabilistic Machine Learning: An Introduction（Murphy）第 10 章 Logistic Regression",
+   "url": "https://probml.github.io/pml-book/book1.html",
+   "note": "把逻辑回归写成最大似然与 MAP，并含多类、不平衡、阈值与评估指标的完整讨论，作者免费公开"
+  },
+  {
+   "title": "Machine Learning Fundamentals: The Confusion Matrix / Sensitivity and Specificity（StatQuest，各约 7 分钟与 12 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=Kdsp6soqA7o",
+   "note": "混淆矩阵与灵敏度、特异度的逐步讲解，对应本节「混淆矩阵与评估指标」"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "用线性回归直接拟合 0/1 标签来做二分类，最主要的问题是？",
+    "options": [
+     "线性回归没有解析解",
+     "线性回归一定会过拟合",
+     "线性回归只能处理一个特征",
+     "预测值不受限制，会出现小于 0 或大于 1 的「概率」，且平方损失对分类并不合适"
+    ],
+    "answer": 3,
+    "explain": "线性函数的值域是整条实数轴，本节的实验里 100 个样本中就有 14 个预测小于 0、13 个大于 1，无法当作概率解释。逻辑回归用 sigmoid 把线性得分压进 $(0,1)$，并改用交叉熵（负对数似然）作损失。线性回归有解析解，也可以有多个特征。"
+   },
+   {
+    "q": "逻辑回归模型 $P(y=1\\mid x)=\\sigma(w^\\top x+b)$。若某个样本的线性得分 $w^\\top x+b=\\ln 3$，则它被预测为正类的概率是？",
+    "options": [
+     "$0.5$",
+     "$0.75$",
+     "$0.9$",
+     "$1/3$"
+    ],
+    "answer": 1,
+    "explain": "线性得分就是**对数几率 (log-odds)**：$\\ln\\frac{p}{1-p}=\\ln3$，所以几率 $\\frac{p}{1-p}=3$，解得 $p=3/4=0.75$。得分为 0 时概率才是 0.5。"
+   },
+   {
+    "q": "某个正类样本，模型给出的 $P(y=1)=0.01$。它对二元交叉熵损失的贡献约为？",
+    "options": [
+     "$4.6$",
+     "$0.01$",
+     "$0.99$",
+     "$1$"
+    ],
+    "answer": 0,
+    "explain": "对真实类别的概率 $q=0.01$，损失是 $-\\ln q=\\ln100\\approx4.605$。注意：自信地预测错误会被**重重地**惩罚，而损失随真实类别概率下降而无上界地增大；这也是交叉熵比 MSE 更适合分类的原因之一。"
+   },
+   {
+    "q": "逻辑回归的梯度 $\\frac1nX^\\top(\\sigma(Xw+b)-y)$ 和线性回归的梯度（差一个常数因子）形式相同，这是因为？",
+    "options": [
+     "纯属巧合",
+     "逻辑回归本质上就是线性回归",
+     "两者的损失对线性得分 $z$ 的导数都是「预测 − 真实」，这是指数族分布配上自然（典则）连接函数时的一般规律",
+     "sigmoid 的导数恒等于 1"
+    ],
+    "answer": 2,
+    "explain": "对高斯噪声的线性回归，$\\partial\\ell/\\partial z=z-y$（相差一个常数）；对伯努利噪声配 sigmoid，链式法则里 sigmoid 的导数 $\\sigma(1-\\sigma)$ 正好与交叉熵对概率的导数 $\\frac{\\sigma-y}{\\sigma(1-\\sigma)}$ 相消，得到 $\\sigma(z)-y$。再乘上 $\\partial z/\\partial w=x$，就得到「残差乘特征」的形式。但两个模型并不相同，sigmoid 的导数并不恒为 1（最大值是 0.25）。"
+   },
+   {
+    "q": "为什么逻辑回归在 XOR 数据（正类在左上、右下角，负类在左下、右上角）上表现很差？",
+    "options": [
+     "学习率没调好",
+     "交叉熵不能用于二分类",
+     "它的决策边界是一个超平面（二维里是一条直线），XOR 不是线性可分的；加一个交叉特征 $x_1x_2$ 就能解决",
+     "XOR 数据标签太少"
+    ],
+    "answer": 2,
+    "explain": "$w^\\top x+b=0$ 是一条直线，无法把对角位置的两类分开，最多能把 4 个角落中的 3 个分对（约 75%）。本节实验里只用 $(x_1,x_2)$ 得到 0.675 的准确率，加上 $x_1x_2$ 之后达到 1.0。「手工造特征」或让神经网络学出特征，是突破线性边界的两条路。"
+   },
+   {
+    "q": "关于 softmax，下面哪个说法正确？",
+    "options": [
+     "只有两类时，softmax 与 sigmoid 毫无关系",
+     "输出每行非负且和为 1；两类时第二类的概率就是 $\\sigma(z_1-z_0)$",
+     "softmax 要求输入必须是正数",
+     "softmax 的结果和输入同时加一个常数有关"
+    ],
+    "answer": 1,
+    "explain": "$\\text{softmax}(z)_k=e^{z_k}/\\sum_je^{z_j}$ 输出是一个概率分布；两类时 $\\frac{e^{z_1}}{e^{z_0}+e^{z_1}}=\\sigma(z_1-z_0)$。softmax 对输入同时加常数不变，所以实现时可以先减最大值防止溢出；它不要求输入为正。"
+   },
+   {
+    "q": "一个分类器在 1000 个样本上的混淆矩阵：TP=30，FP=10，FN=20，TN=940。它的召回率是？",
+    "options": [
+     "$0.6$",
+     "$0.75$",
+     "$0.97$",
+     "$0.67$"
+    ],
+    "answer": 0,
+    "explain": "召回率 $=\\text{TP}/(\\text{TP}+\\text{FN})=30/50=0.6$，即所有真正的正类里抓到了多少。$0.75$ 是精确率 $30/(30+10)$，$0.97$ 是准确率 $970/1000$，$0.67$ 是 F1 约等于的值（$2\\times0.75\\times0.6/1.35$）。注意准确率虽高，但只抓到一半以上的正类。"
+   },
+   {
+    "q": "关于 ROC 曲线与 AUC，哪个说法正确？",
+    "options": [
+     "AUC 依赖于具体选哪个阈值",
+     "AUC 只能用于类别平衡的数据",
+     "AUC 越小模型越好",
+     "AUC 等于「随机抽一个正样本和一个负样本，正样本得分更高」的概率；随机打分的期望 AUC 是 0.5"
+    ],
+    "answer": 3,
+    "explain": "AUC 衡量的是**排序能力**，与阈值无关（本节中，调整类别权重前后 AUC 几乎不变，变的只是阈值位置）。随机打分的 AUC 约 0.5，小于 0.5 说明排反了。AUC 可以用在不平衡数据上，但在正类极少时，它可能掩盖低精确率，这时要看精确率-召回率曲线。"
+   },
+   {
+    "q": "把分类阈值从 0.5 降到 0.1，其他不变，通常会怎样？",
+    "options": [
+     "召回率和精确率都上升",
+     "召回率不降、精确率往往下降",
+     "AUC 上升",
+     "模型参数改变"
+    ],
+    "answer": 1,
+    "explain": "阈值降低，更多样本被判为正类：原来被判正的仍然是正的，所以 TP 不会减少、召回率不会下降；但同时有更多负类被误判成正类，精确率通常下降。阈值只改变决策，不改变模型参数，也不改变排序，所以 AUC 不变。"
+   },
+   {
+    "q": "一个筛查方法能抓到 90% 的患者（召回率 0.9），对健康人有 5% 的误报，患病率只有 1%。一个被检测为阳性的人真的患病的概率约是？",
+    "options": [
+     "$0.90$",
+     "$0.95$",
+     "$0.15$",
+     "$0.05$"
+    ],
+    "answer": 2,
+    "explain": "由贝叶斯公式，精确率 $=\\frac{0.9\\times0.01}{0.9\\times0.01+0.05\\times0.99}=\\frac{0.009}{0.0585}\\approx0.154$。绝大多数阳性其实来自数量庞大的健康人的 5% 误报。**精确率依赖于正类的占比**，这就是类别不平衡时「准确率 / 召回率看起来都不错，精确率却很低」的原因。"
+   }
+  ]
+ }
+}

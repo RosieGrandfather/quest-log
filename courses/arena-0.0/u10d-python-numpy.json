@@ -52,7 +52,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`b = a[0]; b[0] = 100` 之后，`a[0, 0]` 是多少？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nimport numpy as np\na = np.arange(12).reshape(3, 4)\nb = a[0]\nb[0] = 100\nprint(a[0, 0])\n```",
     "options": [
      "0",
      "100",

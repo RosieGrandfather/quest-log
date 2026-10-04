@@ -1,0 +1,291 @@
+{
+ "id": "u04",
+ "title": "偏差方差、正则化与模型选择",
+ "en": "Bias–Variance, Regularization & Model Selection",
+ "minutes": 100,
+ "objectives": [
+  "写出 **偏差-方差分解 (bias–variance decomposition)** $\\mathbb{E}[(y-\\hat h)^2]=\\sigma^2+\\text{bias}^2+\\text{variance}$，说出推导里「加一项减一项、交叉项为零」的两步，并用**重复采样**的数值实验把三项分别量出来",
+  "推导并实现 **岭回归 (ridge regression)** 的闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$，说明它等价于梯度下降里的 **权重衰减 (weight decay)**、等价于高斯先验下的 **MAP 估计**，并用 **SVD** 看出它对每个奇异方向的压缩比例 $s^2/(s^2+\\lambda)$",
+  "手写 **Lasso (L1 正则)** 的 **坐标下降 (coordinate descent)** 与 **软阈值 (soft-thresholding)**，验证 **KKT 条件**，并解释为什么 L1 产生**稀疏解 (sparsity)** 而 L2 不会",
+  "手写 **K 折交叉验证 (K-fold cross-validation)**，会读 **学习曲线 (learning curve)** 来判断「该加数据还是该换模型」，会做 **网格搜索 / 随机搜索 (grid / random search)**",
+  "识别 **数据泄漏 (data leakage)** 的典型情形（预处理泄漏、特征选择泄漏、重复记录泄漏、时间泄漏、目标泄漏），并执行「训练集拟合、验证集选择、**测试集只用一次**」的评估纪律"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n前面你已经能把一个模型训练到「在训练集上很好」。可是机器学习真正要的是**没见过的数据上也好**。这一节回答三个问题：为什么训练集上很好的模型，换一批数据就变差（**偏差与方差**）？怎样在训练的时候主动「管住」模型，不让它记住噪声（**正则化**）？怎样在不偷看测试集的前提下，诚实地挑出最好的模型和超参数（**交叉验证、学习曲线、超参数搜索**）？最后一块是研究和工程里最常见的暗坑：**数据泄漏**，它会让一个其实没用的模型在你手里显得很准。\n\n**开始之前你要会：**\n\n- 本课前面的「机器学习的基本问题」里的**训练 / 验证 / 测试划分**、过拟合与欠拟合；「线性回归与梯度下降」里的**均方误差**和**梯度下降**；\n- prob-0「随机变量、期望与方差」里期望和方差的运算（本节的推导只用到 $\\mathbb{E}[\\cdot]$ 的线性、$\\mathrm{Var}(X)=\\mathbb{E}[X^2]-\\mathbb{E}[X]^2$）；prob-0「最大似然估计与交叉熵」里「高斯噪声下最大似然等价于最小二乘」；\n- arena-0.0「特征值与奇异值分解」里的 $A=U\\Sigma V^\\top$；arena-0.0「Python 与 NumPy 基础」里的数组、广播和 `np.linalg`。\n\n**学完它你就能看懂这几件事：**\n\n- 论文和课程里写的 $\\mathbb{E}[(y-\\hat f(x))^2]=\\sigma^2+\\text{Bias}^2+\\text{Var}$，以及「模型越复杂，偏差越小、方差越大」这句话背后到底在对什么求期望；\n- PyTorch 里 `torch.optim.SGD(..., weight_decay=1e-4)` 和 `AdamW` 到底在做什么，为什么大模型训练几乎都带 weight decay；\n- `sklearn` 里 `Ridge(alpha=...)`、`Lasso(alpha=...)`、`GridSearchCV`、`Pipeline` 为什么要这样设计，以及为什么「先 `fit` 标准化器再切分」是个 bug；\n- 别人的实验报告里「在测试集上调参」「用了全部数据做特征选择」这类说法为什么让结果不可信。\n\n**本节安排（约 100 分钟）**：偏差-方差分解（15 分钟）→ 视频一（7 分钟）→ 岭回归（20 分钟）→ 视频二（20 分钟）→ Lasso 与稀疏（10 分钟）→ 交叉验证（10 分钟）→ 视频三（6 分钟）→ 学习曲线与超参数搜索（8 分钟）→ 数据泄漏与测试集纪律（10 分钟）→「想一想」。视频是英文的，可以打开 YouTube 的中文字幕。\n\n**怎么学这一节：** 代码块都是「▶ 运行」就能跑的，前面的块定义的变量后面的块可以直接用，请**按顺序**往下跑。所有算法都用 NumPy 从零写出来，因为这样每个符号都能对到一行代码；最后会用 `sklearn` 的名字做对照，但它们只是这些代码的包装。\n\n### 偏差-方差分解\n\n**问题：同样的算法、同样的模型，换一份训练数据，学出来的函数会差多少？这种「差」是模型的毛病还是数据的毛病？**\n\n先固定一个设定。数据按 $y=f(x)+\\varepsilon$ 生成，$f$ 是真实规律，噪声 $\\varepsilon$ 满足 $\\mathbb{E}[\\varepsilon]=0$、$\\mathrm{Var}(\\varepsilon)=\\sigma^2$，且和训练数据独立。训练集 $D$ 是随机抽出来的，所以在 $D$ 上训练得到的预测函数 $\\hat h_D$ 本身也是**随机的**：换一份 $D$，就换一个 $\\hat h_D$。\n\n> **标准定义 · 偏差-方差分解 (bias–variance decomposition)**\n>\n> 对平方损失，固定输入 $x$，对训练集 $D$ 和新样本的噪声求期望，期望预测误差分解为三项：\n>\n> $$\\mathbb{E}\\big[(y-\\hat h_D(x))^2\\big]=\\underbrace{\\sigma^2}_{\\text{不可约误差}}+\\underbrace{\\big(f(x)-\\bar h(x)\\big)^2}_{\\text{偏差}^2}+\\underbrace{\\mathbb{E}_D\\big[(\\hat h_D(x)-\\bar h(x))^2\\big]}_{\\text{方差}}$$\n>\n> 其中 $\\bar h(x)=\\mathbb{E}_D[\\hat h_D(x)]$ 是「在所有可能训练集上的平均预测」。**偏差 (bias)** 衡量平均预测离真函数有多远（模型的假设够不够表达 $f$）；**方差 (variance)** 衡量预测随训练集的波动有多大；**不可约误差 (irreducible error)** 是数据本身的噪声，任何模型都消不掉。\n>\n> *English: For squared loss, the expected prediction error at a point equals irreducible noise plus squared bias plus variance, where bias is the gap between the average prediction over training sets and the truth, and variance is the spread of predictions across training sets.*\n\n**白话版：「同一个射手打了很多轮靶」。** 每一轮用不同的训练数据，就是一轮射击。弹孔的**中心**离靶心有多远是偏差（瞄准镜歪了）；弹孔**散得多开**是方差（手抖）；而靶子自己在风里晃（噪声）谁也管不了。简单模型像瞄准镜很死板的枪：准心可能歪，但手不抖；复杂模型像很灵活的枪：准心居中，但每一轮散布很大。\n\n**推导思路（两步，各加减一项）。** 记 $\\hat h=\\hat h_D(x)$，$f=f(x)$，$y=f+\\varepsilon$。第一步，把 $y-\\hat h$ 写成 $\\varepsilon+(f-\\hat h)$，展开平方：$\\mathbb{E}[\\varepsilon^2]+2\\,\\mathbb{E}[\\varepsilon(f-\\hat h)]+\\mathbb{E}[(f-\\hat h)^2]$。因为 $\\varepsilon$ 和 $D$ 独立、均值为 0，中间的交叉项等于 0，剩下 $\\sigma^2+\\mathbb{E}[(f-\\hat h)^2]$。第二步，把 $f-\\hat h$ 写成 $(f-\\bar h)+(\\bar h-\\hat h)$ 再展开：交叉项里 $f-\\bar h$ 是常数，$\\mathbb{E}_D[\\bar h-\\hat h]=0$，所以又等于 0，剩下 $(f-\\bar h)^2+\\mathbb{E}[(\\hat h-\\bar h)^2]$，也就是偏差平方加方差。就这两步。注意这个分解依赖**平方损失**；对 0-1 损失或交叉熵，也能讲「偏差与方差」的直觉，但没有这么干净的等式。\n\n怎样把三项量出来？既然定义里是「对所有可能的训练集求期望」，那就**真的抽很多份训练集**，每份训练一次，然后用样本平均去近似期望。下面用 $f(x)=\\sin(2\\pi x)$、$\\sigma=0.3$，拟合不同次数的多项式。为了让量出来的数更干净，输入 $x$ 固定（等距的 20 个点），每份训练集只重抽噪声。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\nsigma = 0.3                                    # 噪声标准差\nf = lambda x: np.sin(2 * np.pi * x)            # 真函数（实际中未知）\nx_grid = np.linspace(0, 1, 50)                 # 固定的评估点\n\ndef poly_fit_predict(x, y, deg, x_new):        # deg 次多项式的最小二乘拟合\n    w = np.linalg.lstsq(np.vander(x, deg + 1), y, rcond=None)[0]\n    return np.vander(x_new, deg + 1) @ w\n\ndef bias_variance(deg, n=20, trials=300):\n    x = np.linspace(0, 1, n)                   # 输入固定，只有噪声每次重抽\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):                    # 每次抽一份全新的训练集\n        y = f(x) + sigma * rng.normal(size=n)\n        preds[t] = poly_fit_predict(x, y, deg, x_grid)\n    bias2 = np.mean((preds.mean(axis=0) - f(x_grid)) ** 2)\n    var = np.mean(preds.var(axis=0))\n    y_new = f(x_grid) + sigma * rng.normal(size=preds.shape)   # 带噪声的新标签\n    return bias2, var, np.mean((preds - y_new) ** 2)\n\nfor deg in [0, 1, 3, 5, 9]:\n    b2, v, mse = bias_variance(deg)\n    print(f\"deg={deg}: bias2={b2:.3f} var={v:.3f} noise={sigma**2:.3f} \"\n          f\"三项之和={b2+v+sigma**2:.3f} 实测MSE={mse:.3f}\")\n# 输出：deg=0: bias2=0.490 var=0.005 noise=0.090 三项之和=0.585 实测MSE=0.576\n# 输出：deg=1: bias2=0.212 var=0.008 noise=0.090 三项之和=0.310 实测MSE=0.310\n# 输出：deg=3: bias2=0.005 var=0.017 noise=0.090 三项之和=0.112 实测MSE=0.112\n# 输出：deg=5: bias2=0.000 var=0.025 noise=0.090 三项之和=0.115 实测MSE=0.115\n# 输出：deg=9: bias2=0.000 var=0.044 noise=0.090 三项之和=0.134 实测MSE=0.132\n```\n\n读输出：最后一列「实测 MSE」是在新的带噪声标签上直接量的平均平方误差，它和「三项之和」几乎一样（0.585 对 0.576，0.310 对 0.310，0.112 对 0.112，0.115 对 0.115，0.134 对 0.132），分解在数值上成立。再看每一行：0 次（只会预测一个常数）偏差平方高达 0.490，因为一条水平线拟合不了正弦曲线，方差只有 0.005，换多少份数据都是差不多的一条水平线；1 次（一条直线）偏差平方降到 0.212；3 次已经能近似正弦曲线，偏差平方只有 0.005，整体误差 0.112 离噪声下限 $\\sigma^2=0.090$ 很近；5 次和 9 次的偏差平方已经是 0.000，但方差一路涨到 0.025 和 0.044，总误差反而回升到 0.115 和 0.134。这就是「U 形曲线」：模型更灵活，偏差单调下降，方差单调上升，总误差在中间某处最小。\n\n**数据多了，哪一项会变？** 固定用最容易过拟合的 9 次多项式，只改训练集大小：\n\n```python\n# 固定 9 次多项式（容易过拟合），只改变训练集大小 n\nfor n in [12, 20, 40, 80, 160]:\n    b2, v, mse = bias_variance(9, n=n)\n    print(f\"n={n:3d}: bias2={b2:.3f} var={v:.3f} 实测MSE={mse:.3f}\")\n# 输出：n= 12: bias2=0.000 var=0.114 实测MSE=0.207\n# 输出：n= 20: bias2=0.000 var=0.042 实测MSE=0.130\n# 输出：n= 40: bias2=0.000 var=0.022 实测MSE=0.114\n# 输出：n= 80: bias2=0.000 var=0.012 实测MSE=0.100\n# 输出：n=160: bias2=0.000 var=0.006 实测MSE=0.096\n```\n\n读输出：偏差平方一直是 0.000（9 次多项式表达得了正弦曲线，样本多少不影响这一点），变的是方差：从 $n=12$ 的 0.114 一路降到 $n=160$ 的 0.006，大约和 $n$ 成反比；实测 MSE 也从 0.207 降到 0.096，逼近噪声下限 0.090。结论：**更多数据主要压低方差，对偏差基本没用**；偏差只能靠换更有表达力的模型（或更好的特征）来降。这个结论下面的「学习曲线」会再用到。\n\n另外一句提醒：在现代深度网络里，参数多到能把训练集完全记住，测试误差随模型大小并不总是 U 形，会出现**双下降 (double descent)**。偏差-方差分解仍然成立，只是「方差随复杂度单调上升」不再总是对的。你先把经典情形吃透，再去读那些论文。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "EuBBz3bI-aA",
+   "title": "视频一：Machine Learning Fundamentals: Bias and Variance（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "text",
+   "md": "### 岭回归：给权重加一个 L2 惩罚\n\n前面说过，方差大是因为模型太灵活。最直接的办法是换小一点的模型（9 次改 3 次），但「改成几次」是离散的、很粗。**正则化 (regularization)** 的思路是：模型留着，但在目标函数里加一项**惩罚**，让权重大的解付出代价，用一个连续的旋钮 $\\lambda$ 调节灵活程度。\n\n> **标准定义 · 岭回归 (ridge regression) 与 L2 正则化**\n>\n> 设设计矩阵 $X\\in\\mathbb{R}^{n\\times p}$（每列已中心化 / 标准化），目标 $y$ 已中心化（截距不参与惩罚）。**岭回归**求解\n>\n> $$\\hat w_\\lambda=\\arg\\min_w\\ \\|y-Xw\\|_2^2+\\lambda\\|w\\|_2^2\\quad\\Longrightarrow\\quad\\hat w_\\lambda=(X^\\top X+\\lambda I)^{-1}X^\\top y$$\n>\n> $\\lambda\\ge0$ 是**正则化强度**，是一个**超参数 (hyperparameter)**：它不是从训练数据里学出来的，而是人来设（或用验证集选）。当 $\\lambda>0$ 时 $X^\\top X+\\lambda I$ 一定可逆（它的特征值都至少是 $\\lambda$），所以即使特征共线、$p>n$，解也存在且唯一。\n>\n> *English: Ridge regression minimizes squared error plus lambda times the squared L2 norm of the weights; the closed-form solution is (XᵀX + λI)⁻¹Xᵀy, which always exists for λ > 0.*\n\n**白话版：「给每一个系数交一笔『大小税』」。** 一个系数越大，交的税（$\\lambda w_j^2$）越多，所以模型只在「这个系数确实能显著降低训练误差」时才肯把它拉大。$\\lambda=0$ 就是普通最小二乘，$\\lambda\\to\\infty$ 就是所有系数被压到 0（只剩截距）。为什么要先标准化特征？因为税是按系数的绝对大小收的，单位不同的特征（米和毫米）系数大小天差地别，不标准化就不公平。同样，截距不交税，否则整个 $y$ 平移一下答案就变了。\n\n先手写闭式解，在 9 次多项式特征（$x,x^2,\\dots,x^9$）上扫一遍 $\\lambda$。这次的训练集是随机抽的 20 个点：\n\n```python\ndef make_data(n, seed):\n    r = np.random.default_rng(seed)\n    x = r.uniform(0, 1, n)\n    return x, f(x) + sigma * r.normal(size=n)\n\ndef poly_feats(x, deg=9):                      # 特征 x, x^2, ..., x^deg（不含常数列）\n    return np.column_stack([x ** k for k in range(1, deg + 1)])\n\ndef ridge_fit(X, y, lam):\n    mu, sd = X.mean(0), X.std(0)               # 标准化后惩罚才公平\n    Z, yc = (X - mu) / sd, y - y.mean()        # 截距 b 不惩罚：先把 y 中心化\n    w = np.linalg.solve(Z.T @ Z + lam * np.eye(Z.shape[1]), Z.T @ yc)   # 闭式解\n    return mu, sd, y.mean(), w\n\ndef ridge_predict(m, X):\n    mu, sd, b, w = m\n    return b + ((X - mu) / sd) @ w\n\nx_tr, y_tr = make_data(20, 1)\nx_te, y_te = make_data(200, 2)\nXtr, Xte = poly_feats(x_tr), poly_feats(x_te)\nfor lam in [1e-8, 1e-3, 1e-1, 1, 10, 100]:\n    m = ridge_fit(Xtr, y_tr, lam)\n    tr = np.mean((ridge_predict(m, Xtr) - y_tr) ** 2)\n    te = np.mean((ridge_predict(m, Xte) - y_te) ** 2)\n    print(f\"lam={lam:<6g} 训练MSE={tr:.3f} 测试MSE={te:.3f} |w|={np.linalg.norm(m[3]):.1f}\")\n# 输出：lam=1e-08  训练MSE=0.066 测试MSE=0.329 |w|=602.3\n# 输出：lam=0.001  训练MSE=0.077 测试MSE=0.152 |w|=10.1\n# 输出：lam=0.1    训练MSE=0.111 测试MSE=0.205 |w|=1.2\n# 输出：lam=1      训练MSE=0.125 测试MSE=0.246 |w|=0.5\n# 输出：lam=10     训练MSE=0.160 测试MSE=0.343 |w|=0.3\n# 输出：lam=100    训练MSE=0.244 测试MSE=0.508 |w|=0.1\n```\n\n读输出：$\\lambda=10^{-8}$ 时几乎等于普通最小二乘：训练 MSE 最低（0.066），但测试 MSE 高达 0.329，权重向量的范数 $\\|w\\|=602.3$，系数大到互相抵消，典型的过拟合。随着 $\\lambda$ 增大，$\\|w\\|$ 单调缩小（602.3、10.1、1.2、0.5、0.3、0.1），训练 MSE 单调上升（0.066 到 0.244，因为约束越来越紧）；测试 MSE 却是先降后升：$\\lambda=0.001$ 时最低 0.152，之后偏差带来的误差又把它拉高（$\\lambda=100$ 时 0.508）。**正则化不是越大越好，$\\lambda$ 要用验证集选**，这是后面交叉验证一节的任务。\n\n**它和梯度下降是什么关系？** 闭式解是「一步到位」，但深度学习里没有闭式解，用的是梯度下降。看岭回归的梯度：目标 $\\tfrac12\\|y-Zw\\|^2+\\tfrac12\\lambda\\|w\\|^2$ 的梯度是 $-Z^\\top(y-Zw)+\\lambda w$。梯度下降一步就是 $w\\leftarrow(1-\\eta\\lambda)\\,w+\\eta Z^\\top(y-Zw)$：每一步先把权重**按比例缩小一点**（乘以 $1-\\eta\\lambda$），再做普通的数据项更新。所以 L2 正则又叫**权重衰减 (weight decay)**。下面验证梯度下降收敛到的就是闭式解：\n\n```python\n# 同一个目标用梯度下降求：L(w) = 1/2 |yc - Zw|^2 + 1/2 lam |w|^2\nlam = 1.0\nmu, sd = Xtr.mean(0), Xtr.std(0)\nZ, yc = (Xtr - mu) / sd, y_tr - y_tr.mean()\nw = np.zeros(Z.shape[1])\nlr = 1 / np.linalg.eigvalsh(Z.T @ Z + lam * np.eye(9)).max()   # 步长取 1/L\nfor step in range(20000):\n    grad = -Z.T @ (yc - Z @ w) + lam * w       # 数据项的梯度 + lam * w\n    w = w - lr * grad                          # 等价于 w <- (1 - lr*lam) w + lr * Z^T (yc - Zw)\nw_closed = ridge_fit(Xtr, y_tr, lam)[3]\nprint(\"与闭式解一致:\", np.abs(w - w_closed).max() < 1e-6)\n# 输出：与闭式解一致: True\n```\n\n读输出：梯度下降走了 20000 步，和闭式解的最大差距小于 $10^{-6}$，输出 `True`，两种做法是同一个解。这里步长取 $1/L$，$L$ 是 $Z^\\top Z+\\lambda I$ 的最大特征值（目标函数的光滑常数）；条件数大的问题要走很多步才收敛，而闭式解一次线性方程就解决，这是小问题上闭式解的优势，大问题上矩阵求逆太贵时才轮到梯度下降。\n\nPyTorch 里不需要自己写 $\\lambda w$：优化器自带 `weight_decay` 参数，会把 $\\lambda w$ 加进梯度。下面的块用 PyTorch 重做同一件事（网页里没有 torch，所以这一块只显示，不能运行，本地用 PyTorch 真实跑过）：\n\n```python-static\nimport torch                                   # 这块只显示，网页里不运行\nZt, yt = torch.tensor(Z), torch.tensor(yc)\nwt = torch.zeros(9, dtype=torch.float64, requires_grad=True)\nopt = torch.optim.SGD([wt], lr=float(lr), weight_decay=lam)   # weight_decay 就是 L2 正则\nfor step in range(20000):\n    opt.zero_grad()\n    loss = 0.5 * ((yt - Zt @ wt) ** 2).sum()   # 只写数据项，L2 项由 weight_decay 加进梯度\n    loss.backward()\n    opt.step()\nprint(np.abs(wt.detach().numpy() - w_closed).max() < 1e-6)\n# 输出：True\n```\n\n读输出：`True`，PyTorch 的 `SGD(weight_decay=lam)` 走出的结果和闭式解一致。顺便提醒一个细节：对 SGD，「把 $\\lambda\\|w\\|^2/2$ 加进损失」和「`weight_decay`」是一回事；但对 Adam 这类自适应优化器，加进梯度的 $\\lambda w$ 会被除以梯度的历史尺度，效果变了，所以才有 **AdamW**：把权重衰减从梯度里**拿出来**，直接作用在权重上。这是「想一想」的第三题。\n\n**用 SVD 看岭回归到底做了什么。** 回到 arena-0.0「特征值与奇异值分解」：把 $Z=U\\Sigma V^\\top$ 代入闭式解，得到 $\\hat w_\\lambda=V\\,\\mathrm{diag}\\!\\big(\\tfrac{s_i}{s_i^2+\\lambda}\\big)U^\\top y$。对比普通最小二乘（$\\lambda=0$，每个方向的系数是 $\\tfrac{1}{s_i}$），岭回归在第 $i$ 个奇异方向上多乘了一个压缩因子 $\\tfrac{s_i^2}{s_i^2+\\lambda}$。奇异值大的方向（数据里变化大、信息足）几乎不压缩，奇异值小的方向（数据里几乎没变化、只会放大噪声）被大力压缩：\n\n```python\nU, s, Vt = np.linalg.svd(Z, full_matrices=False)           # Z = U diag(s) V^T\nshrink = s ** 2 / (s ** 2 + lam)               # 每个奇异方向被压缩的比例\nw_svd = Vt.T @ ((s / (s ** 2 + lam)) * (U.T @ yc))\nprint(\"奇异值      :\", np.round(s, 2))\nprint(\"压缩比例    :\", np.round(shrink, 3))\nprint(\"与闭式解一致:\", np.allclose(w_svd, w_closed))\n# 输出：奇异值      : [13.04  3.04  0.84  0.15  0.02  0.    0.    0.    0.  ]\n# 输出：压缩比例    : [0.994 0.902 0.414 0.023 0.001 0.    0.    0.    0.   ]\n# 输出：与闭式解一致: True\n```\n\n读输出：$Z$ 有 9 个奇异值，从 13.04 一路掉到接近 0（9 次多项式的各个幂次高度相关，后面的方向几乎不含新信息）。$\\lambda=1$ 时，前两个方向的压缩比例是 0.994 和 0.902，几乎保留；第三个方向 0.414，已经砍掉一半多；第四个方向 0.023，几乎消除；其余方向都接近 0。用这个公式算出的解和闭式解一致（`True`）。这就是岭回归降低方差的机制：**去掉那些由噪声主导的弱方向**。普通最小二乘恰恰在这些方向上除以很小的 $s_i$，把噪声放大，方差就是这么来的。\n\n最后，把 $\\lambda$ 放回偏差-方差的框架里，用刚才的重复采样法量一次（固定输入、300 份训练集）：\n\n```python\n# 用重复采样看 lam 对偏差、方差的影响（9 次多项式，n=20，300 份训练集）\ndef ridge_bias_variance(lam, n=20, trials=300):\n    r = np.random.default_rng(10)\n    x, Xg = np.linspace(0, 1, n), poly_feats(x_grid)\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):\n        y = f(x) + sigma * r.normal(size=n)\n        preds[t] = ridge_predict(ridge_fit(poly_feats(x), y, lam), Xg)\n    return np.mean((preds.mean(0) - f(x_grid)) ** 2), np.mean(preds.var(0))\n\nfor lam in [1e-6, 1e-3, 1e-1, 1, 10, 100]:\n    b2, v = ridge_bias_variance(lam)\n    print(f\"lam={lam:<6g} bias2={b2:.3f} var={v:.3f} 合计={b2+v:.3f}\")\n# 输出：lam=1e-06  bias2=0.000 var=0.029 合计=0.030\n# 输出：lam=0.001  bias2=0.001 var=0.022 合计=0.023\n# 输出：lam=0.1    bias2=0.044 var=0.015 合计=0.059\n# 输出：lam=1      bias2=0.093 var=0.012 合计=0.105\n# 输出：lam=10     bias2=0.174 var=0.009 合计=0.183\n# 输出：lam=100    bias2=0.338 var=0.006 合计=0.345\n```\n\n读输出：随着 $\\lambda$ 从 $10^{-6}$ 增大到 100，偏差平方单调上升（0.000、0.001、0.044、0.093、0.174、0.338），方差单调下降（0.029、0.022、0.015、0.012、0.009、0.006）。合计最小的点在 $\\lambda=0.001$（0.023）附近，再往上偏差占了主导。和前面的多项式次数一样，$\\lambda$ 也是一个沿着「偏差-方差」曲线移动的旋钮，只不过它是连续的。（$\\lambda=10^{-6}$ 的方差 0.029 比前面 9 次最小二乘的 0.044 小，这是因为 $10^{-6}$ 虽小，仍然压住了最弱的那几个方向，另外两次实验的随机数也不同。）\n\n**一句话的贝叶斯解释。** 如果你认为权重「先验上」服从均值为 0 的高斯 $w_j\\sim\\mathcal{N}(0,\\tau^2)$，噪声是方差 $\\sigma^2$ 的高斯，那么在看到数据后，**最大后验估计 (MAP)** 恰好就是岭回归，且 $\\lambda=\\sigma^2/\\tau^2$：先验越窄（越相信权重小），$\\lambda$ 越大。把先验换成拉普拉斯分布 $p(w_j)\\propto e^{-|w_j|/b}$，得到的就是下面的 Lasso。prob-0「最大似然估计与交叉熵」里「高斯噪声下最大似然等于最小二乘」是这句话的前半部分，加上先验就是后半部分。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Q81RR3yKn30",
+   "title": "视频二：Regularization Part 1: Ridge (L2) Regression（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 20
+  },
+  {
+   "type": "text",
+   "md": "### Lasso：L1 惩罚与稀疏\n\n岭回归把所有系数都压小，但不会压成**恰好为 0**。如果你怀疑 20 个特征里只有几个真正有用，希望模型自己把没用的特征关掉（**特征选择**），就要换一种惩罚：把平方换成绝对值。\n\n> **标准定义 · Lasso 与 L1 正则化**\n>\n> **Lasso**（least absolute shrinkage and selection operator）求解\n>\n> $$\\hat w=\\arg\\min_w\\ \\tfrac12\\|y-Xw\\|_2^2+\\lambda\\|w\\|_1,\\qquad \\|w\\|_1=\\sum_j|w_j|$$\n>\n> 它没有闭式解（绝对值在 0 处不可导），但目标函数是**凸**的，可以用**坐标下降**求解：每次只优化一个坐标 $w_j$、固定其余。固定其余之后，$w_j$ 的最优值是 $w_j=\\dfrac{S(z_j^\\top r_j,\\ \\lambda)}{\\|z_j\\|^2}$，其中 $r_j$ 是把第 $j$ 个特征的贡献加回去之后的残差，**软阈值**函数 $S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,\\,0)$。\n>\n> *English: Lasso minimizes squared error plus lambda times the L1 norm of the weights. It has no closed form, but coordinate descent with the soft-thresholding operator solves it, and it produces exactly sparse solutions.*\n\n**白话版：「超过门槛才给你发工资」。** 软阈值的意思是：一个特征和残差的相关性 $z_j^\\top r_j$ 如果还没超过 $\\lambda$，这个系数就是 0（门槛都没过）；超过了，也要先被扣掉 $\\lambda$ 才算（所以估计总是被收缩的）。岭回归是「每个系数缩水一个比例」，Lasso 是「每个系数减去一个固定值，减到 0 就停」，这就是稀疏的来源。几何上，L1 的单位球是带**尖角**的菱形，约束曲线与它首先接触的地方常常是尖角，而尖角上有些坐标正好为 0；L2 的球是圆的，没有尖角。推导 $S$ 的方法是次梯度：$0\\in-z_j^\\top r_j+\\|z_j\\|^2w_j+\\lambda\\,\\partial|w_j|$，在 $w_j\\neq0$ 和 $w_j=0$ 两种情形分别解。\n\n造一份 100 个样本、20 个特征的数据，其中只有 4 个特征（编号 0、3、7、12）的真系数非零，用手写的坐标下降来解：\n\n```python\ndef soft(z, t):                                # 软阈值：把 z 向 0 收缩 t，不够 t 就变成 0\n    return np.sign(z) * np.maximum(np.abs(z) - t, 0)\n\ndef lasso_cd(Z, y, lam, sweeps=300):           # 目标：1/2 |y - Zw|^2 + lam |w|_1\n    w = np.zeros(Z.shape[1])\n    r = y - Z @ w                              # 当前残差\n    col = (Z ** 2).sum(0)\n    for _ in range(sweeps):\n        for j in range(Z.shape[1]):            # 一次只优化一个坐标，其余固定\n            r += Z[:, j] * w[j]                # 把第 j 个特征的贡献还给残差\n            w[j] = soft(Z[:, j] @ r, lam) / col[j]\n            r -= Z[:, j] * w[j]\n    return w\n\nrng = np.random.default_rng(3)\nn, p = 100, 20\nX = rng.normal(size=(n, p))\nw_true = np.zeros(p); w_true[[0, 3, 7, 12]] = [3, -2, 1.5, 2]  # 只有 4 个特征有用\ny = X @ w_true + rng.normal(size=n)\nZl = (X - X.mean(0)) / X.std(0); yl = y - y.mean()\nw_l = lasso_cd(Zl, yl, lam=30)\nprint(\"非零坐标:\", np.nonzero(w_l)[0])\nprint(\"非零系数:\", np.round(w_l[np.nonzero(w_l)], 2))\n# 输出：非零坐标: [ 0  3  7 12]\n# 输出：非零系数: [ 2.62 -1.86  1.13  1.64]\n```\n\n读输出：Lasso 找到的非零坐标是 `[0 3 7 12]`，正好是真正有用的 4 个特征，其余 16 个坐标是精确的 0。系数是 2.62、-1.86、1.13、1.64，符号全对，但绝对值都比真值（3、-2、1.5、2）小一些：软阈值把每个系数收缩了约 $\\lambda/\\|z_j\\|^2=30/100=0.3$（标准化后 $\\|z_j\\|^2=n=100$），再加上噪声的影响。这是 Lasso 引入的**偏差**，用它换来了稀疏和更低的方差。\n\n**怎么确认坐标下降真的找到了最优解？** 凸问题有最优性条件（KKT）：非零坐标满足 $|z_j^\\top r|=\\lambda$（梯度刚好被惩罚平衡），零坐标满足 $|z_j^\\top r|\\le\\lambda$（门槛没过）。再让 $\\lambda$ 变化，数一数非零系数的个数，并和岭回归对比：\n\n```python\n# 最优性（KKT）检查：非零坐标满足 Z_j^T r = lam * sign(w_j)，零坐标满足 |Z_j^T r| <= lam\nr = yl - Zl @ w_l\ng = Zl.T @ r\nprint(\"非零坐标上 |g| 与 lam 的最大偏差:\", round(np.abs(np.abs(g[w_l != 0]) - 30).max(), 6))\nprint(\"零坐标上 |g| 的最大值:\", round(np.abs(g[w_l == 0]).max(), 2))\n\n# 与岭回归对比：同样的数据，岭回归的 20 个系数一个都不会是 0\nw_r = np.linalg.solve(Zl.T @ Zl + 30 * np.eye(p), Zl.T @ yl)\nprint(\"岭回归 lam=30 的非零个数:\", np.sum(np.abs(w_r) > 1e-8))\nfor lam in [1, 10, 30, 60, 120, 400]:\n    w = lasso_cd(Zl, yl, lam)\n    print(f\"lasso lam={lam:<4d} 非零个数={np.sum(w != 0):2d}\")\n# 输出：非零坐标上 |g| 与 lam 的最大偏差: 0.0\n# 输出：零坐标上 |g| 的最大值: 28.58\n# 输出：岭回归 lam=30 的非零个数: 20\n# 输出：lasso lam=1    非零个数=20\n# 输出：lasso lam=10   非零个数=13\n# 输出：lasso lam=30   非零个数= 4\n# 输出：lasso lam=60   非零个数= 4\n# 输出：lasso lam=120  非零个数= 4\n# 输出：lasso lam=400  非零个数= 0\n```\n\n读输出：非零坐标上 $|z_j^\\top r|$ 与 $\\lambda=30$ 的最大偏差是 0.0，零坐标上 $|z_j^\\top r|$ 的最大值是 28.58，小于 30，两条条件都成立，说明这就是最优解。同样的数据，岭回归 $\\lambda=30$ 的 20 个系数一个也不是 0。再看 Lasso 的「正则化路径」：$\\lambda=1$ 时 20 个特征全部非零（惩罚太轻，噪声特征也被留下），$\\lambda=10$ 时 13 个，$\\lambda=30,60,120$ 时恰好 4 个（稳定地选出了真特征），$\\lambda=400$ 时 0 个（门槛高过所有相关性，全部归零）。实际中 $\\lambda$ 用交叉验证选。另外要注意：不同库对 $\\lambda$ 的缩放不同（比如 `sklearn` 的 `Lasso` 把目标除了 $2n$），照搬数值前先看文档。\n\n小结一张表：\n\n| | 岭回归 (L2) | Lasso (L1) |\n|---|---|---|\n| 惩罚 | $\\lambda\\sum w_j^2$ | $\\lambda\\sum\\lvert w_j\\rvert$ |\n| 解 | 闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$ | 坐标下降 / 次梯度，无闭式解 |\n| 系数 | 全部变小，几乎不为 0 | 一部分恰好为 0（稀疏） |\n| 特征高度相关时 | 把权重平摊给相关的特征 | 常常只留一个，不稳定 |\n| 先验 | 高斯 | 拉普拉斯 |\n\n### 交叉验证：怎样诚实地选 λ\n\n$\\lambda$、多项式次数这类超参数不能用训练误差选（训练误差永远偏爱更灵活的模型），也不能用测试集选（下面会讲为什么）。办法是从训练集里再留出一份**验证集 (validation set)**。可是只切一次的验证集又小又不稳定，换一种划分，选出来的结果就可能不同。**交叉验证**让每个样本都轮流当一次验证数据。\n\n> **标准定义 · K 折交叉验证 (K-fold cross-validation)**\n>\n> 把训练数据随机分成 $K$ 个大小接近的**折 (fold)**。对 $k=1,\\dots,K$：用除第 $k$ 折以外的数据训练模型，在第 $k$ 折上计算验证误差 $e_k$。最终的交叉验证误差是 $\\mathrm{CV}=\\tfrac1K\\sum_{k=1}^Ke_k$；对每一组超参数都算一个 CV，选 CV 最小的那一组，再用**全部**训练数据重新训练一次。$K=n$ 叫**留一法 (leave-one-out)**。分类问题通常用**分层 (stratified)** 的折，让每折里的类别比例和整体一致；时间序列不能随机分折，要按时间先后切。\n>\n> *English: K-fold cross-validation splits the training data into K folds, trains on K−1 of them and validates on the remaining one in turn, then averages the K validation errors to compare hyperparameters.*\n\n**白话版：「轮流当考官」。** 把一份习题分成 5 套，每次拿 4 套练习、1 套考试，换 5 次，每套题都当过一次考卷，最后取平均分。这样不会因为「恰好这套考卷很简单」而选错方法。代价是训练次数变成 $K$ 倍。常用 $K=5$ 或 $10$：$K$ 大，每次训练的数据更接近全部数据（偏差小），但 $K$ 个模型彼此更像、计算更贵。\n\n下面手写 5 折，对岭回归的 $\\lambda$ 做搜索。注意**标准化也只用训练折**：`ridge_fit` 内部自己算均值和标准差，验证折只是被「套用」。这条纪律在后面讲泄漏时会出现。\n\n```python\ndef kfold_indices(n, k, seed=0):\n    idx = np.random.default_rng(seed).permutation(n)   # 先打乱，再切成 k 份\n    return np.array_split(idx, k)\n\ndef cv_mse(X, y, lam, k=5, seed=0):\n    folds, errs = kfold_indices(len(y), k, seed), []\n    for i in range(k):\n        va = folds[i]                                   # 第 i 份当验证集\n        tr = np.concatenate([folds[j] for j in range(k) if j != i])\n        m = ridge_fit(X[tr], y[tr], lam)                # 标准化也只用训练折\n        errs.append(np.mean((ridge_predict(m, X[va]) - y[va]) ** 2))\n    return np.mean(errs), np.std(errs)\n\nx_a, y_a = make_data(40, 3)                    # 训练 + 验证用的 40 个点\nXa = poly_feats(x_a)\ngrid = [10.0 ** e for e in range(-6, 3)]\nfor lam in grid:\n    mean, std = cv_mse(Xa, y_a, lam)\n    print(f\"lam={lam:<8g} 5 折平均 MSE={mean:.3f} (折间标准差 {std:.3f})\")\n# 输出：lam=1e-06    5 折平均 MSE=0.218 (折间标准差 0.224)\n# 输出：lam=1e-05    5 折平均 MSE=0.155 (折间标准差 0.105)\n# 输出：lam=0.0001   5 折平均 MSE=0.120 (折间标准差 0.046)\n# 输出：lam=0.001    5 折平均 MSE=0.107 (折间标准差 0.036)\n# 输出：lam=0.01     5 折平均 MSE=0.103 (折间标准差 0.036)\n# 输出：lam=0.1      5 折平均 MSE=0.168 (折间标准差 0.049)\n# 输出：lam=1        5 折平均 MSE=0.231 (折间标准差 0.075)\n# 输出：lam=10       5 折平均 MSE=0.250 (折间标准差 0.132)\n# 输出：lam=100      5 折平均 MSE=0.413 (折间标准差 0.205)\n```\n\n读输出：每一行是一个 $\\lambda$ 的 5 折平均 MSE，括号里是 5 个折之间的标准差。$\\lambda=10^{-6}$ 时 CV 是 0.218，折与折之间波动很大（0.224）；随着 $\\lambda$ 增大 CV 一路下降，到 $\\lambda=0.01$ 时最低 0.103；再往上又升，$\\lambda=100$ 时是 0.413。折间标准差说明：0.103 和 0.107（$\\lambda=0.001$）的差别（0.004）远小于折间波动（约 0.036），所以这两个 $\\lambda$ 其实分不出好坏。实践中有个常用规则叫「一倍标准误规则」：在 CV 误差不显著差于最低值的前提下，选**最简单**（这里是 $\\lambda$ 最大）的那个。\n\n选定之后用全部训练点重训，并在测试集上**只评估这一次**；同时看看「只用一次随机划分」选出来的 $\\lambda$ 稳不稳定：\n\n```python\nbest = min(grid, key=lambda lam: cv_mse(Xa, y_a, lam)[0])\nm = ridge_fit(Xa, y_a, best)                   # 选定 lam 后，用全部 40 个点重新训练\nprint(\"交叉验证选出的 lam:\", best)\nprint(\"测试集 MSE（只看这一次）:\", round(np.mean((ridge_predict(m, Xte) - y_te) ** 2), 3))\n\n# 对比：只用一次随机划分（30 训练 / 10 验证），换 6 个种子选出的 lam 会怎样？\nfor seed in range(6):\n    perm = np.random.default_rng(100 + seed).permutation(40)\n    tr, va = perm[:30], perm[30:]\n    errs = [np.mean((ridge_predict(ridge_fit(Xa[tr], y_a[tr], l), Xa[va]) - y_a[va]) ** 2)\n            for l in grid]\n    print(\"单次划分选出的 lam:\", grid[int(np.argmin(errs))])\n# 输出：交叉验证选出的 lam: 0.01\n# 输出：测试集 MSE（只看这一次）: 0.119\n# 输出：单次划分选出的 lam: 0.001\n# 输出：单次划分选出的 lam: 0.01\n# 输出：单次划分选出的 lam: 0.001\n# 输出：单次划分选出的 lam: 0.0001\n# 输出：单次划分选出的 lam: 0.0001\n# 输出：单次划分选出的 lam: 0.01\n```\n\n读输出：交叉验证选出 $\\lambda=0.01$，重训后测试集 MSE 是 0.119，与 CV 估计值 0.103 接近，略为乐观，这是因为我们「挑了最小的那个」。下面六行是只切一次（30 个训练 / 10 个验证）的结果：选出来的 $\\lambda$ 在 0.0001、0.001、0.01 之间跳来跳去（0.001、0.01、0.001、0.0001、0.0001、0.01），每次的运气不同。交叉验证把 5 次评估平均起来，选择就稳得多。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "fSytzGwwBVw",
+   "title": "视频三：Machine Learning Fundamentals: Cross Validation（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### 学习曲线：该加数据，还是该换模型\n\n交叉验证告诉你「哪组超参数好」，但没告诉你「现在的问题出在哪、下一步该做什么」。**学习曲线**回答后一个问题。\n\n> **标准定义 · 学习曲线 (learning curve)**\n>\n> 学习曲线是**训练误差**和**验证误差**随**训练集大小 $n$** 变化的两条曲线（对每个 $n$，用 $n$ 个样本训练，分别在这 $n$ 个样本和一份固定的验证集上算误差；为了降低抽样波动，通常重复多次取平均）。读法：若两条曲线收敛到一个**较高**的值且几乎重合，是**高偏差**（欠拟合）；若训练误差很低、验证误差高、两者间有大**间隙 (gap)** 并且随 $n$ 增大在缩小，是**高方差**（过拟合）。\n>\n> *English: A learning curve plots training and validation error as functions of training set size, and its shape reveals whether the model suffers from high bias or high variance.*\n\n**白话版：「练习题做得越多，模考分数怎么变」。** 如果做再多题模考分数也不涨（曲线平了，且离满分很远），说明方法本身不行，该换方法；如果练习题满分、模考很差但在慢慢涨，说明背题背多了、见的题型还不够，该多做题或者加约束。\n\n两条模型各画一条：1 次多项式（只能画直线）和 9 次多项式（几乎不受约束，$\\lambda=10^{-4}$），每个 $n$ 重复 30 次：\n\n```python\nx_pool, y_pool = make_data(200, 5)\nx_val, y_val = make_data(400, 6)\nXp, Xv = poly_feats(x_pool), poly_feats(x_val)\n\ndef curve(deg, lam, sizes, reps=30):\n    out = []\n    for n in sizes:\n        tr_err, va_err = [], []\n        for rep in range(reps):                         # 每个 n 重复抽样取平均\n            idx = np.random.default_rng(rep).choice(200, n, replace=False)\n            m = ridge_fit(Xp[idx][:, :deg], y_pool[idx], lam)\n            tr_err.append(np.mean((ridge_predict(m, Xp[idx][:, :deg]) - y_pool[idx]) ** 2))\n            va_err.append(np.mean((ridge_predict(m, Xv[:, :deg]) - y_val) ** 2))\n        out.append((n, np.mean(tr_err), np.mean(va_err)))\n    return out\n\nfor deg, name in [(1, \"1 次（偏差大）\"), (9, \"9 次（方差大）\")]:\n    print(name)\n    for n, tr, va in curve(deg, 1e-4, [12, 20, 40, 80, 160]):\n        print(f\"  n={n:3d} 训练MSE={tr:.3f} 验证MSE={va:.3f}\")\n# 输出：1 次（偏差大）\n# 输出：  n= 12 训练MSE=0.233 验证MSE=0.309\n# 输出：  n= 20 训练MSE=0.261 验证MSE=0.281\n# 输出：  n= 40 训练MSE=0.290 验证MSE=0.275\n# 输出：  n= 80 训练MSE=0.301 验证MSE=0.261\n# 输出：  n=160 训练MSE=0.308 验证MSE=0.255\n# 输出：9 次（方差大）\n# 输出：  n= 12 训练MSE=0.041 验证MSE=73.606\n# 输出：  n= 20 训练MSE=0.057 验证MSE=0.128\n# 输出：  n= 40 训练MSE=0.075 验证MSE=0.144\n# 输出：  n= 80 训练MSE=0.078 验证MSE=0.087\n# 输出：  n=160 训练MSE=0.082 验证MSE=0.084\n```\n\n读输出：1 次多项式：训练 MSE 从 0.233 慢慢升到 0.308，验证 MSE 从 0.309 降到 0.255，两条曲线逐渐靠拢，收敛在 0.26–0.31 附近，远高于噪声下限 $\\sigma^2=0.09$：典型的**高偏差**，再多的数据也救不了，应该换更灵活的模型或加特征。9 次多项式：训练 MSE 一直很低（0.041 到 0.082），$n=12$ 时验证 MSE 是 73.606（只有 12 个点要定 10 个参数，几乎是插值，在点与点之间的空隙里乱摆），$n=20$ 时降到 0.128，$n=80$ 时 0.087，$n=160$ 时 0.084，两条线几乎重合在噪声下限附近：这是**高方差**，且多加数据是有用的（$n=40$ 的 0.144 比 $n=20$ 的 0.128 略高，是 30 次重复仍然留下的抽样波动，曲线整体趋势是向下的）。\n\n### 超参数搜索：网格与随机\n\n> **标准定义 · 超参数搜索 (hyperparameter search)**\n>\n> **超参数**是训练前由人设定、不由梯度下降（或闭式解）学出来的量，比如 $\\lambda$、多项式次数、树的深度、学习率、$K$。**网格搜索 (grid search)** 对每个超参数取若干候选值，试遍所有组合；**随机搜索 (random search)** 在每个超参数的取值范围内独立随机采样（通常对 $\\lambda$、学习率这类跨数量级的量在**对数尺度**上均匀采样），试固定个数的组合。每一组都用交叉验证（或验证集）打分，取最好的。\n>\n> *English: Hyperparameters are set before training. Grid search tries all combinations of a fixed set of values; random search samples combinations at random, typically on a log scale for scale parameters.*\n\n**白话版：「试菜谱」。** 网格搜索像把「盐放 1/2/3 勺」和「火开小/中/大」所有搭配都试一遍；随机搜索是随机抽搭配。如果只有一个调料真正影响味道，网格会把预算浪费在「那个不重要调料」的重复取值上，而随机搜索每次试的**关键调料值都不一样**。Bergstra 与 Bengio（2012）的结论正是：当少数几个超参数起主要作用时，同样预算下随机搜索通常更好。\n\n两种搜索各给 20 次预算，搜索「多项式次数」和「$\\lambda$」，用 5 折 CV 打分：\n\n```python\ndef cv_cfg(deg, lam):                           # 一组超参数的 5 折交叉验证误差\n    return cv_mse(poly_feats(x_a, deg), y_a, lam)[0]\n\ndegs, lams = [1, 3, 5, 7, 9], [1e-6, 1e-3, 1e-1, 10.0]\ngrid_cfgs = [(d, l) for d in degs for l in lams]          # 网格：5 x 4 = 20 组\nr = np.random.default_rng(7)\nrand_cfgs = [(int(r.integers(1, 10)), 10 ** r.uniform(-6, 2))   # 随机：同样 20 组\n             for _ in range(20)]\nfor name, cfgs in [(\"网格\", grid_cfgs), (\"随机\", rand_cfgs)]:\n    scores = [cv_cfg(d, l) for d, l in cfgs]\n    d, l = cfgs[int(np.argmin(scores))]\n    m = ridge_fit(poly_feats(x_a, d), y_a, l)\n    te = np.mean((ridge_predict(m, poly_feats(x_te, d)) - y_te) ** 2)\n    n_lam = len(set(round(c[1], 9) for c in cfgs))\n    print(f\"{name}: {n_lam} 个不同 lam，最好 CV={min(scores):.3f}，\"\n          f\"deg={d} lam={l:.2g}，测试MSE={te:.3f}\")\n# 输出：网格: 4 个不同 lam，最好 CV=0.107，deg=9 lam=0.001，测试MSE=0.134\n# 输出：随机: 20 个不同 lam，最好 CV=0.104，deg=9 lam=0.013，测试MSE=0.117\n```\n\n读输出：网格搜索 $5\\times4=20$ 组，但 $\\lambda$ 只出现过 4 个不同的值；随机搜索也是 20 组，$\\lambda$ 有 20 个不同的值。网格最好的 CV 是 0.107（9 次、$\\lambda=0.001$），测试 MSE 0.134；随机最好的 CV 是 0.104（9 次、$\\lambda=0.013$），测试 MSE 0.117。这只是**一次**实验，两者的差距在抽样波动之内，不能据此宣布随机搜索「赢了」；它想说明的是机制：同样的预算，随机搜索把 $\\lambda$ 这条重要的轴探索得更细。还有第二个现象：被选中的组合，CV 分数（0.107、0.104）总比它后来的测试 MSE（0.134、0.117）乐观一些，因为我们是在 20 个候选里**挑最小的**，这叫**选择偏差 (selection bias)**，下面一节会把它放大给你看。\n\n### 数据泄漏与「测试集只用一次」\n\n> **标准定义 · 数据泄漏 (data leakage)**\n>\n> 当训练过程（包括预处理、特征工程、特征选择、超参数选择）直接或间接用到了**本该保留给评估的数据**，或用到了**部署时拿不到的信息**，使评估结果比真实的泛化表现更乐观，就叫**数据泄漏**。常见形态有：（1）**预处理泄漏**：在全数据上拟合标准化、缺失值填补、PCA；（2）**特征选择泄漏**：先用全部样本的标签选特征，再做交叉验证；（3）**重复 / 分组泄漏**：同一客户、同一病人、同一商品的多条近似记录被分到训练和测试两边；（4）**时间泄漏**：用未来的数据预测过去，随机分折的时间序列；（5）**目标泄漏 (target leakage)**：某个特征是标签的「结果」，部署时并不存在；（6）**反复使用测试集**。\n>\n> *English: Data leakage occurs when information that would not be available at prediction time, or information from the evaluation data, influences training, making the evaluation optimistic.*\n\n**白话版：「考试前偷看了答案」。** 泄漏最危险的地方是它不会让程序报错：代码照常跑、数字照常出，而且数字还很好看。下面先复现最经典的一例（Hastie 等人在《统计学习基础》里专门讲过「交叉验证的错误做法」）。\n\n数据：50 个样本、2000 个**纯噪声**特征，标签随机，理论上不可能有任何规律，任何诚实的评估都应该得到约 0.5 的准确率。比较两种做法：先用全部样本挑相关性最大的 20 个特征、再做 5 折交叉验证（泄漏）；和每一折只在训练折上挑特征（正确）：\n\n```python\nrng = np.random.default_rng(0)\nn, p = 50, 2000\nX = rng.normal(size=(n, p))                    # 2000 个纯噪声特征\ny = rng.integers(0, 2, n) * 2 - 1              # 随机 ±1 标签：理论上没有任何规律\n\ndef top_k(X, y, k=20):                         # 选出与标签相关性最大的 k 个特征\n    return np.argsort(-np.abs((X - X.mean(0)).T @ (y - y.mean())))[:k]\n\ndef centroid_acc(Xtr, ytr, Xva, yva):          # 最近类中心分类器\n    c1, c0 = Xtr[ytr == 1].mean(0), Xtr[ytr == -1].mean(0)\n    pred = np.where(((Xva - c0) ** 2).sum(1) > ((Xva - c1) ** 2).sum(1), 1, -1)\n    return np.mean(pred == yva)\n\ndef cv_acc(leaky, k=5):\n    sel_all = top_k(X, y)                      # 泄漏：用了全部样本（含验证折）的标签\n    folds, accs = kfold_indices(n, k), []\n    for i in range(k):\n        va = folds[i]\n        tr = np.concatenate([folds[j] for j in range(k) if j != i])\n        cols = sel_all if leaky else top_k(X[tr], y[tr])   # 正确：只用训练折选特征\n        accs.append(centroid_acc(X[tr][:, cols], y[tr], X[va][:, cols], y[va]))\n    return np.mean(accs)\n\nprint(\"先选特征再交叉验证（泄漏）:\", round(cv_acc(True), 3))\nprint(\"折内选特征（正确）        :\", round(cv_acc(False), 3))\n# 输出：先选特征再交叉验证（泄漏）: 0.98\n# 输出：折内选特征（正确）        : 0.58\n```\n\n读输出：泄漏版本的 5 折准确率是 0.98，几乎完美，可是这些数据根本没有任何规律。原因是 2000 个噪声特征里，总有 20 个「碰巧」和这 50 个标签相关，而选特征时用过**所有**样本的标签，包括之后要拿来验证的那几折，等于把验证折的答案「编码」进了特征挑选。正确做法在每一折里只用训练折选特征，准确率是 0.58，在 0.5 附近（只有 50 个样本，0.58 是正常的抽样波动）。教训：**任何用到标签的步骤，都必须放在交叉验证的「折」里面**；这也是 `sklearn.pipeline.Pipeline` 存在的理由：把预处理、特征选择和模型打包成一个整体，交叉验证对整个管道做 `fit`。\n\n第二种泄漏：重复记录。设想每个对象有 3 条几乎一样的记录（同一个客户的三次下单，同一个病人的三次检查），而标签是随机的：\n\n```python\n# 重复测量：每个对象有 3 条几乎相同的记录，标签是随机的\nrng = np.random.default_rng(1)\nbase = rng.normal(size=(300, 5)); ybase = rng.integers(0, 2, 300)\nX = np.repeat(base, 3, axis=0) + 0.01 * rng.normal(size=(900, 5))\ny = np.repeat(ybase, 3)\ngroup = np.repeat(np.arange(300), 3)           # 记录属于哪个对象\n\ndef one_nn_acc(tr, te):\n    d = ((X[te][:, None, :] - X[tr][None, :, :]) ** 2).sum(-1)\n    return np.mean(y[tr][d.argmin(1)] == y[te])\n\nperm = rng.permutation(900)                    # 按记录随机划分：同一对象的记录会跨训练 / 测试\nprint(\"按记录划分:\", round(one_nn_acc(perm[:600], perm[600:]), 3))\ng_perm = rng.permutation(300)                  # 按对象划分：同一对象只出现在一边\ntr_mask = np.isin(group, g_perm[:200])\nprint(\"按对象划分:\", round(one_nn_acc(np.nonzero(tr_mask)[0], np.nonzero(~tr_mask)[0]), 3))\n# 输出：按记录划分: 0.91\n# 输出：按对象划分: 0.447\n```\n\n读输出：按记录随机划分，同一个对象的三条记录会有的落在训练集、有的落在测试集，最近邻分类器直接「认出」了长得几乎一样的训练记录，准确率 0.91，但标签是随机的，真实水平应是 0.5。按对象划分（同一个对象的记录只在一边），准确率是 0.447，回到 0.5 附近。所以当数据有分组结构（客户、病人、商品、同一天）时，要用**分组划分 (group split)**（`GroupKFold`）；有时间顺序时，要用**按时间切**的划分，训练在前、验证在后。\n\n最后一种泄漏最隐蔽，来自你自己：反复用测试集。设想测试集只有 100 个标签，你有 200 个**纯随机乱猜**的「模型」，每个都在测试集上打分，然后挑最好的：\n\n```python\nrng = np.random.default_rng(0)\ny_test = rng.integers(0, 2, 100)               # 100 个测试标签\nguesses = rng.integers(0, 2, (200, 100))       # 200 个“模型”：全是随机乱猜\nacc = (guesses == y_test).mean(1)\nbest = int(acc.argmax())                       # 在测试集上挑最好的那个\nprint(\"200 个乱猜模型的平均测试准确率:\", round(acc.mean(), 3))\nprint(\"挑出来的“最好”的测试准确率    :\", round(acc[best], 3))\ny_fresh = rng.integers(0, 2, 100)              # 一份从没看过的新数据\nprint(\"它在新数据上的准确率          :\", round(np.mean(guesses[best] == y_fresh), 3))\n# 输出：200 个乱猜模型的平均测试准确率: 0.5\n# 输出：挑出来的“最好”的测试准确率    : 0.62\n# 输出：它在新数据上的准确率          : 0.46\n```\n\n读输出：200 个乱猜模型的平均测试准确率是 0.5（本来就是乱猜）；但挑出来的「最好」那一个在测试集上是 0.62，看起来像是真有点本事。把它放到一份从没见过的新数据上，准确率是 0.46，回到随机水平。0.62 是**选择偏差**：从很多候选里挑最大值，最大值天然偏高。真实研究里，「我试了几十种配置，报告测试集上最好的那个」就是同一件事，只是候选不是乱猜而已。\n\n所以评估要有纪律。**数据划分**：训练集用来拟合参数，**验证集（或交叉验证）**用来选模型和超参数，**测试集只在所有选择都做完之后评估一次**，这个数字才是对泛化表现的诚实估计；如果看了测试结果又去改模型，测试集就已经变成验证集了，需要新的测试集。**流程**：（1）先切出测试集，锁起来；（2）在剩下的数据上用交叉验证选特征、模型、超参数，所有预处理都放进折里；（3）选定后用全部训练数据重训；（4）在测试集上评估一次，并报告不确定性（测试集有 $m$ 个样本时，准确率的标准误约为 $\\sqrt{p(1-p)/m}$，$m=100$、$p=0.6$ 时约 0.05，对应 prob-0「大数定律与中心极限定理」里的结论）。\n\n### 这一节你要带走的三句话\n\n1. **泛化误差 = 不可约噪声 + 偏差² + 方差**：模型太简单，偏差大（欠拟合，加数据没用）；模型太灵活，方差大（过拟合，加数据、加正则有用）。\n2. **正则化是给模型一个连续的「灵活度旋钮」**：L2（岭回归，闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$，等价于权重衰减、高斯先验，压缩每个奇异方向 $s^2/(s^2+\\lambda)$）让系数变小；L1（Lasso，软阈值）让一部分系数恰好为 0。\n3. **模型选择靠交叉验证，评估靠只用一次的测试集**：任何用到标签的步骤（标准化、特征选择、调参）都必须在折内完成；分组、时间、重复记录要用对应的划分；反复看测试集会让你「选出」一个乐观的数字。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 只有一个特征，$x=(1,2,3)$，$y=(2,4,6)$（不含截距）。（a）普通最小二乘的 $w$ 是多少？（b）岭回归（目标 $\\tfrac12\\sum(y_i-wx_i)^2+\\tfrac12\\lambda w^2$）取 $\\lambda=14$ 时 $w$ 是多少？（c）Lasso（目标 $\\tfrac12\\sum(y_i-wx_i)^2+\\lambda|w|$）取 $\\lambda=28$ 时 $w$ 是多少？$\\lambda$ 取多大 Lasso 才会把 $w$ 压到恰好 0，岭回归呢？",
+   "a": "先算两个量：$\\sum x_iy_i=1\\cdot2+2\\cdot4+3\\cdot6=28$，$\\sum x_i^2=1+4+9=14$。\n\n（a）最小二乘 $w=\\dfrac{\\sum xy}{\\sum x^2}=\\dfrac{28}{14}=2$（数据正好在 $y=2x$ 上）。\n\n（b）岭回归令导数为 0：$-\\sum x(y-wx)+\\lambda w=0$，得 $w=\\dfrac{\\sum xy}{\\sum x^2+\\lambda}=\\dfrac{28}{14+14}=1$，被压缩到一半。\n\n（c）Lasso 的更新是软阈值：$w=\\dfrac{S(\\sum xy,\\lambda)}{\\sum x^2}=\\dfrac{S(28,28)}{14}=\\dfrac{\\max(28-28,0)}{14}=0$，恰好为 0。只要 $\\lambda\\ge|\\sum xy|=28$，Lasso 就把 $w$ 压到 0；而岭回归 $w=\\dfrac{28}{14+\\lambda}$ 对任何有限的 $\\lambda$ 都**不会**恰好为 0，只是趋近于 0。这就是稀疏性的来源：软阈值有一个「死区」，L2 没有。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 一位同学说：「我先对**全部数据**做了标准化（只用了 $X$，没用标签），然后再切分、做 5 折交叉验证选超参数，所以没有泄漏，对吗？」请评价，并说出正确的做法和它对哪些模型影响更大。",
+   "a": "严格地说**仍然是泄漏，但比用标签的特征选择轻得多**。标准化用到了全部样本的均值和标准差，验证折的统计量因此进入了训练过程，验证数据不再是「完全没见过」的数据。没有用到标签，所以通常高估得不多；但对依赖距离或尺度的模型（kNN、SVM、PCA、带正则的线性模型）有可能产生可测的乐观偏差，样本小、维度高时更明显。\n\n正确做法：把标准化放进交叉验证的**折内**：每一折只用训练折估计均值和标准差，再把这组均值和标准差套用到验证折（就像本节 `ridge_fit` 返回 `mu, sd`、`ridge_predict` 套用它们那样）。在 `sklearn` 里就是 `Pipeline([(\"scale\", StandardScaler()), (\"model\", Ridge())])` 再交给 `cross_val_score`。对决策树这类对单调变换不敏感的模型，这种泄漏几乎没有影响；但养成「所有 `fit` 都只在训练折里做」的习惯，比事后判断「这次影响大不大」更可靠。**用到标签的步骤（特征选择、目标编码、调参）泄漏的后果严重得多**，如本节 98% 对 58% 的例子。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** 训练大模型时常见的是 `AdamW` 而不是「Adam + L2 损失」。把 L2 正则加进损失再用 Adam，和把权重衰减独立地作用在权重上，有什么不同？再想一想：早停 (early stopping)、dropout、数据增强，它们各自在偏差-方差分解里降低的是哪一项？",
+   "a": "把 $\\tfrac\\lambda2\\|w\\|^2$ 加进损失，梯度里就多了 $\\lambda w$。SGD 里这一项直接让权重按 $1-\\eta\\lambda$ 衰减，两种写法一样。但 Adam 会把梯度除以它的历史尺度 $\\sqrt{\\hat v}+\\epsilon$：对梯度本来就很大的参数，$\\lambda w$ 被压得很小（正则几乎失效）；对梯度很小的参数，它被放大（正则过强）。也就是说「L2 损失 + Adam」里每个参数实际承受的衰减强度和它的梯度历史绑在一起，不再是统一的 $\\lambda$。**AdamW（Loshchilov & Hutter）把权重衰减从梯度里拿出来**，在更新时直接对权重乘以 $(1-\\eta\\lambda)$，与自适应缩放解耦，调参更容易，泛化通常也更好。\n\n早停、dropout、数据增强都是在**降低方差**：早停限制了模型在训练中能走多远（相当于隐式的 L2，可以用 SVD 的视角理解：先拟合大奇异值方向，后拟合小的），dropout 近似一个子网络的集成，数据增强相当于增加有效样本量。它们都会略微增加偏差，换更小的方差，与岭回归的权衡是同一类。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "偏差",
+     "bias",
+     "平均预测与真函数的差距，反映模型假设的表达能力"
+    ],
+    [
+     "方差",
+     "variance",
+     "预测随训练集变化的波动，反映模型对数据的敏感程度"
+    ],
+    [
+     "不可约误差",
+     "irreducible error",
+     "数据本身的噪声 $\\sigma^2$，任何模型都消不掉"
+    ],
+    [
+     "偏差-方差分解",
+     "bias–variance decomposition",
+     "平方损失下，期望误差 = 噪声 + 偏差² + 方差"
+    ],
+    [
+     "正则化",
+     "regularization",
+     "在目标函数里加惩罚项，用连续的旋钮限制模型灵活度"
+    ],
+    [
+     "岭回归 / L2",
+     "ridge regression / L2",
+     "惩罚 $\\lambda\\|w\\|_2^2$，闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$"
+    ],
+    [
+     "权重衰减",
+     "weight decay",
+     "每步把权重乘以 $1-\\eta\\lambda$；SGD 下等价于 L2 正则"
+    ],
+    [
+     "Lasso / L1",
+     "Lasso / L1",
+     "惩罚 $\\lambda\\|w\\|_1$，产生稀疏解，用坐标下降求"
+    ],
+    [
+     "软阈值",
+     "soft-thresholding",
+     "$S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,0)$，Lasso 坐标更新的核心"
+    ],
+    [
+     "稀疏性",
+     "sparsity",
+     "大多数系数恰好为 0，起到特征选择的作用"
+    ],
+    [
+     "超参数",
+     "hyperparameter",
+     "训练前设定、不由训练学出的量，如 $\\lambda$、深度、学习率"
+    ],
+    [
+     "K 折交叉验证",
+     "K-fold cross-validation",
+     "每份数据轮流当验证集，平均 $K$ 个验证误差"
+    ],
+    [
+     "学习曲线",
+     "learning curve",
+     "训练与验证误差随训练集大小变化，用来诊断高偏差或高方差"
+    ],
+    [
+     "网格 / 随机搜索",
+     "grid / random search",
+     "超参数搜索的两种基本方式，随机搜索常在对数尺度上采样"
+    ],
+    [
+     "数据泄漏",
+     "data leakage",
+     "评估用到了不该用的信息，使结果比真实表现更乐观"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 Machine Learning 讲义（Ng、Ma 等）：Regularization and model selection、Bias-variance tradeoff",
+   "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf",
+   "note": "本节大纲依据的大学课程讲义；偏差-方差分解、正则化、交叉验证的标准推导，只引用不转载"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL，James 等）第 5 章 Resampling Methods、第 6 章 Linear Model Selection and Regularization",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开的教材；交叉验证、岭回归、Lasso 的讲解，配有 Python 版实验"
+  },
+  {
+   "title": "The Elements of Statistical Learning（ESL，Hastie 等）第 7 章 Model Assessment and Selection（7.10.2 是「交叉验证的错误做法」）",
+   "url": "https://hastie.su.domains/ElemStatLearn/",
+   "note": "免费 PDF；偏差-方差分解的严格推导和特征选择泄漏的原始论述"
+  },
+  {
+   "title": "Bergstra & Bengio：Random Search for Hyper-Parameter Optimization（JMLR 2012）",
+   "url": "https://jmlr.org/papers/v13/bergstra12a.html",
+   "note": "随机搜索通常优于网格搜索的原始论文"
+  },
+  {
+   "title": "StatQuest：Regularization Part 2: Lasso (L1) Regression（约 8 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=NGf0voTMlcs",
+   "note": "接着视频二看，用图形讲 Lasso 为什么能把系数压成 0"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在平方损失下，期望预测误差的偏差-方差分解是哪三项之和？",
+    "options": [
+     "训练误差、验证误差、测试误差",
+     "不可约误差 $\\sigma^2$、偏差的平方、方差",
+     "偏差、方差、协方差",
+     "不可约误差、偏差（不平方）、标准差"
+    ],
+    "answer": 1,
+    "explain": "分解写成 $\\mathbb{E}[(y-\\hat h)^2]=\\sigma^2+\\text{bias}^2+\\text{variance}$：噪声项、平均预测与真函数之差的**平方**、预测的**方差**（不是标准差）。三个误差（训练 / 验证 / 测试）是评估的数据划分，不是分解的项；协方差也不出现在这个分解里。"
+   },
+   {
+    "q": "岭回归中把正则化强度 $\\lambda$ 从很小逐渐增大，通常会发生什么？",
+    "options": [
+     "偏差和方差都不变，只有训练误差变化",
+     "偏差下降、方差上升，训练误差总是下降",
+     "偏差和方差同时下降",
+     "偏差上升、方差下降，总误差先降后升"
+    ],
+    "answer": 3,
+    "explain": "$\\lambda$ 越大，系数被压得越小，模型越「僵」：更难拟合真函数（偏差上升），但对训练数据的波动不敏感（方差下降）；训练误差随 $\\lambda$ 增大而上升。偏差和方差通常此消彼长，总误差在某个中间值最小，所以 $\\lambda$ 要用验证集选。"
+   },
+   {
+    "q": "在线性回归里，权重 $w$ 的先验取均值为 0 的高斯分布 $\\mathcal{N}(0,\\tau^2)$，噪声也是高斯，则 MAP 估计对应哪种方法？",
+    "options": [
+     "岭回归（L2 正则），$\\lambda=\\sigma^2/\\tau^2$",
+     "Lasso（L1 正则）",
+     "普通最小二乘（没有正则）",
+     "决策树的剪枝"
+    ],
+    "answer": 0,
+    "explain": "对数后验 = 对数似然 + 对数先验。高斯似然给出平方误差，高斯先验给出 $\\|w\\|_2^2$ 项，所以 MAP 就是岭回归；先验越窄（越相信权重小），$\\lambda$ 越大。拉普拉斯先验才对应 L1 / Lasso，没有先验（均匀先验）对应普通最小二乘 / 最大似然。"
+   },
+   {
+    "q": "为什么 Lasso 能得到恰好为 0 的系数，而岭回归一般不能？",
+    "options": [
+     "因为 Lasso 对每个系数的收缩比例更大",
+     "因为 Lasso 的目标函数是非凸的，会随机丢掉特征",
+     "软阈值有「死区」：相关性不超过 $\\lambda$ 的坐标被置为 0，而 L2 只按比例缩小",
+     "因为 Lasso 先对特征做了降维"
+    ],
+    "answer": 2,
+    "explain": "坐标下降里每个坐标的更新是 $S(z_j^\\top r_j,\\lambda)/\\|z_j\\|^2$：当 $|z_j^\\top r_j|\\le\\lambda$ 时结果就是 0。岭回归的更新是除以 $\\|z_j\\|^2+\\lambda$，只会缩小，不会归零。Lasso 的目标是**凸**的，不是随机的；也不是单纯「收缩更多」，关键是 L1 在 0 处有尖角（不可导）。"
+   },
+   {
+    "q": "软阈值 $S(a,t)=\\mathrm{sign}(a)\\max(|a|-t,0)$，则 $S(-5,2)$ 是多少？",
+    "options": [
+     "$3$",
+     "$-7$",
+     "$-3$",
+     "$0$"
+    ],
+    "answer": 2,
+    "explain": "$a=-5$，$|a|-t=5-2=3>0$，所以结果是 $\\mathrm{sign}(-5)\\cdot3=-3$：保留符号，绝对值向 0 缩小了 2。若误写成 $-7$，是把 $t$ 加在了绝对值上；$3$ 丢了符号；$0$ 只在 $|a|\\le t$ 时才出现。"
+   },
+   {
+    "q": "5 折交叉验证中，关于训练和验证，下面哪项正确？",
+    "options": [
+     "共训练 5 个模型，每个样本恰好被当作一次验证数据",
+     "只训练一个模型，在 5 个测试集上评估",
+     "共训练 5 个模型，每个样本被当作 4 次验证数据",
+     "把数据分成 5 份，每份只用来训练一次，从不验证"
+    ],
+    "answer": 0,
+    "explain": "5 折：每次留一折验证、其余四折训练，共 5 次训练；每个样本恰好有一次在被留出的那一折里。最后用 5 个验证误差的平均比较超参数，选定后再用全部训练数据重训。「每个样本验证 4 次」是把训练和验证次数弄反了。"
+   },
+   {
+    "q": "某模型的学习曲线：训练误差和验证误差都收敛到一个较高的值，并且两条曲线几乎重合。下一步最合理的是？",
+    "options": [
+     "不用改，因为训练误差和验证误差一致说明模型已经最优",
+     "收集更多数据，因为这是高方差",
+     "加大正则化强度",
+     "增大模型容量或增加特征，因为这是高偏差"
+    ],
+    "answer": 3,
+    "explain": "两条曲线高而重合说明模型连训练集都拟合不好：偏差大（欠拟合）。更多数据压低的是方差，对偏差基本没用；加大正则化只会让偏差更大。「两者一致」只说明没有过拟合，不说明误差够低，要和噪声下限（或业务目标）比。"
+   },
+   {
+    "q": "先在**全部**样本上用标签挑出最相关的 20 个特征，然后用 5 折交叉验证评估分类器。这样做的问题是？",
+    "options": [
+     "没有问题，因为特征选择不属于训练",
+     "特征选择用到了验证折的标签，属于数据泄漏，评估会偏乐观",
+     "交叉验证的折数不够多",
+     "选出的特征太少，应该选更多"
+    ],
+    "answer": 1,
+    "explain": "任何用到标签的步骤（特征选择、目标编码、调参）都是「训练」的一部分，必须只在训练折里做。在全数据上选特征，验证折的标签就已经影响了选哪些特征，纯噪声数据也能得到很高的交叉验证准确率。增加折数或特征数都解决不了这个问题。"
+   },
+   {
+    "q": "你尝试了 30 种模型配置，每种都在同一个测试集上打分，报告最高的那个分数。这个数字的问题是？",
+    "options": [
+     "测试集太大了，应该缩小",
+     "没有问题，测试集本来就是用来比较模型的",
+     "存在选择偏差，会高估泛化表现；应该用验证集或交叉验证选配置，测试集只评估一次",
+     "只要重复实验取平均就没有问题"
+    ],
+    "answer": 2,
+    "explain": "从很多候选里取最大值，最大值天然偏高，反复使用测试集等于把它变成了验证集。正确流程是：验证集或交叉验证做所有选择，测试集在最后只评估一次。重复同样的流程取平均不会消除这个偏差，因为每次都在挑最大值。"
+   },
+   {
+    "q": "在预算相同（都试 20 组）时，为什么随机搜索常常比网格搜索更好？",
+    "options": [
+     "每组试验中每个超参数的取值都不一样，对真正重要的超参数探索得更细",
+     "随机搜索一定能找到全局最优",
+     "随机搜索不需要验证集",
+     "网格搜索的结果总是不可复现"
+    ],
+    "answer": 0,
+    "explain": "当少数几个超参数起主要作用时，网格会在不重要的维度上重复同样的值，重要的那一维只试了很少几个不同取值；随机搜索每组都是新值，探索得更细。它不保证找到全局最优，也仍然要用验证集或交叉验证打分；网格搜索在固定设置下也是可复现的。"
+   }
+  ]
+ }
+}

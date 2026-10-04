@@ -1,0 +1,138 @@
+{
+ "id": "u05",
+ "title": "决策树、集成与最近邻（1/3）",
+ "en": "Decision Trees, Ensembles & Nearest Neighbors (1/3)",
+ "minutes": 45,
+ "objectives": [
+  "掌握 **熵 (entropy)**、**基尼不纯度 (Gini impurity)** 与 **信息增益 (information gain)**，手写**最佳分裂**与递归构造 **决策树 (decision tree)**，并用 `max_depth` 等参数控制过拟合",
+  "理解 **bagging**、**自助采样 (bootstrap)** 与 **随机森林 (random forest)** 为什么能降低方差：特征随机的作用、**袋外误差 (out-of-bag error)**，并会写出相关树平均的方差公式"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n线性模型和逻辑回归假设「决策边界是一个超平面」。现实里很多规律不是这样：「库存低于某个值**并且**交期长于某个天数才算风险」这样的规则，是一串**是非题**。这一节介绍几类**不靠线性假设**的经典模型：决策树（一串是非题）、集成（让很多棵树投票或接力）、最近邻（直接记住所有数据，按相似度投票）、朴素贝叶斯（用概率乘法）、支持向量机（最大间隔 + 核技巧）。它们是你在表格数据竞赛、工业数据分析、以及理解「神经网络究竟比它们强在哪里」时会反复遇到的对照组。\n\n**开始之前你要会：**\n\n- 本课前面「机器学习的基本问题」里的训练 / 验证 / 测试划分；「逻辑回归与分类」里的交叉熵、混淆矩阵与 F1；「偏差方差、正则化与模型选择」里的偏差-方差分解和交叉验证（本节的「集成为什么有效」全部用它来解释）；\n- arena-0.0「信息论：熵、交叉熵、KL 散度」里的熵 $H=-\\sum p\\log p$；prob-0「条件概率与贝叶斯」里的贝叶斯公式（朴素贝叶斯）；\n- py-0「综合小项目：从零实现 k 近邻分类器」（你已经用纯 Python 写过 kNN，这里用 NumPy 重写并研究它在高维下的问题）；arena-0.0「Python 与 NumPy 基础」里的数组与广播。\n\n**学完它你就能看懂这几件事：**\n\n- `sklearn` 里 `DecisionTreeClassifier(max_depth=3)`、`RandomForestClassifier(n_estimators=200, max_features=\"sqrt\", oob_score=True)`、`GradientBoostingRegressor(learning_rate=0.1, n_estimators=300)` 的每个参数在算法里对应哪一行；\n- 为什么 XGBoost / LightGBM 是表格数据比赛的常胜将军，而图像、文本、语音又几乎都是神经网络的天下；\n- 为什么「在 1000 维的嵌入向量上做最近邻」需要近似算法和特殊的相似度，而不是直接比欧氏距离（向量数据库、检索增强生成里会遇到）；\n- 论文里「kernel」这个词有两种意思：SVM 的核函数，和卷积网络里的卷积核；这一节讲的是前一种。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 45 分钟）**：决策树：一连串的是非题（约 35 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 决策树：一连串的是非题\n\n> **标准定义 · 决策树 (decision tree)**\n>\n> **决策树**把特征空间用一系列**轴对齐**的切分递归地划成许多矩形区域：每个**内部节点**检验一个条件「特征 $x_j\\le t$ 吗？」，把样本分到左右两个子节点；每个**叶子 (leaf)** 给出一个预测（分类取叶内多数类，回归取叶内均值）。训练就是**自上而下贪心地**选择每个节点的 $(j,t)$：在当前节点的样本上，选使子节点的**不纯度**下降最多的切分，再对两个子节点递归，直到满足停止条件（深度够了、样本太少、已经纯了）。这套算法叫 **CART**。\n>\n> *English: A decision tree recursively partitions the feature space with axis-aligned splits; each leaf predicts the majority class (or mean). Training greedily chooses, at each node, the split that most reduces impurity.*\n\n**白话版：「二十个问题」游戏。** 猜一个东西，每次问一个只能回答是或否的问题，问得好的问题能把可能性砍掉一大半。决策树就是把「问什么问题最好」交给数据来定：每次挑一个特征和一个阈值，让回答之后的两堆样本各自尽可能「纯」（同一堆里大多是同一类）。\n\n**怎么量化「纯」？** 设节点里各类别的比例是 $p_1,\\dots,p_K$：\n\n> **标准定义 · 熵、基尼不纯度与信息增益 (entropy, Gini impurity, information gain)**\n>\n> **熵** $H=-\\sum_kp_k\\log_2p_k$（约定 $0\\log0=0$）；**基尼不纯度** $G=1-\\sum_kp_k^2$。两者都在节点只含一类时为 0，在各类等比例时最大。把节点 $S$（$n$ 个样本）按切分分成左 $S_L$（$n_L$ 个）和右 $S_R$（$n_R$ 个），切分的**增益**（用熵就叫**信息增益**）是\n>\n> $$\\text{Gain}=I(S)-\\frac{n_L}{n}I(S_L)-\\frac{n_R}{n}I(S_R)$$\n>\n> 其中 $I$ 是熵或基尼。取使 Gain 最大的 $(j,t)$。\n>\n> *English: Entropy and Gini impurity measure how mixed a node is; information gain is the parent's impurity minus the size-weighted average impurity of the children.*\n\n**白话版：「这一刀砍下去，乱七八糟的程度少了多少」。** 熵来自你在 arena-0.0「信息论」里学过的概念：一堆样本里「随机抽一个，猜它是哪一类」平均要多少比特的信息。基尼不纯度是「随机抽两个（有放回），它们类别不同的概率」。两者曲线形状很像，所以实践中结果差别很小，基尼省一次对数运算。\n\n```python\nimport numpy as np\n\ndef entropy(counts):                           # 熵（以 2 为底），counts 的最后一维是各类个数\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 0.0 - (p * np.log2(np.where(p > 0, p, 1))).sum(-1)    # 约定 0 log 0 = 0\n\ndef gini(counts):                              # 基尼不纯度 = 1 - sum p_k^2\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 1 - (p ** 2).sum(-1)\n\nfor counts in [[50, 50], [90, 10], [99, 1], [100, 0]]:\n    print(counts, f\"熵={entropy(counts):.3f} 基尼={gini(counts):.3f}\")\n\n# 信息增益：父节点 [40, 40]，按某个特征切成 [30, 10] 和 [10, 30]\ngain = entropy([40, 40]) - 0.5 * entropy([30, 10]) - 0.5 * entropy([10, 30])\nprint(f\"信息增益 = {gain:.3f}\")\n# 输出：[50, 50] 熵=1.000 基尼=0.500\n# 输出：[90, 10] 熵=0.469 基尼=0.180\n# 输出：[99, 1] 熵=0.081 基尼=0.020\n# 输出：[100, 0] 熵=0.000 基尼=0.000\n# 输出：信息增益 = 0.189\n```\n\n读输出：节点 `[50, 50]`（两类各一半）最混乱，熵 1.000 比特、基尼 0.500；`[90, 10]` 熵降到 0.469、基尼 0.180；`[99, 1]` 只有 0.081 和 0.020；纯节点 `[100, 0]` 都是 0.000。熵和基尼随纯度的变化趋势一致，数值不同。最后一行是一个信息增益的例子：父节点 `[40, 40]`（熵 1.0）切成 `[30, 10]` 和 `[10, 30]`，两个子节点熵都是 0.811，加权平均后的信息增益是 $1-0.811=0.189$ 比特。\n\n下面造一份数据来训练树。3 个有用的特征 $x_0,x_1,x_2$，标签为 1 当且仅当 $x_0+x_1>0$ 且 $x_2>-0.5$，再随机翻转 10% 的标签；另外还有 3 个纯噪声特征 $x_3,x_4,x_5$。训练 300 个、测试 1000 个。注意最好的分类器也只能做到约 90% 的准确率，因为有 10% 的标签噪声。\n\n```python\ndef make_data(n, seed, n_noise=3):\n    r = np.random.default_rng(seed)\n    X = r.normal(size=(n, 3 + n_noise))        # 前 3 列有用，后面全是噪声\n    y = ((X[:, 0] + X[:, 1] > 0) & (X[:, 2] > -0.5)).astype(int)\n    flip = r.random(n) < 0.1                   # 10% 的标签被随机翻转\n    return X, np.where(flip, 1 - y, y)\n\nX_tr, y_tr = make_data(300, 0)\nX_te, y_te = make_data(1000, 1)\nprint(X_tr.shape, \"正类比例:\", round(y_tr.mean(), 3))\n# 输出：(300, 6) 正类比例: 0.407\n```\n\n读输出：训练集形状 `(300, 6)`，300 个样本、6 个特征，正类占 40.7%。\n\n**手写最佳分裂。** 对每个特征，把样本按取值排序，在相邻两个**不同**取值的中点放一个候选阈值；累加各类个数，就能一次算出所有候选阈值的左右类别数，向量化地算出所有增益（这里不用写慢吞吞的双重循环）。\n\n```python\ndef best_split(X, y, feats=None, crit=entropy, K=2):\n    n, tot = len(y), np.bincount(y, minlength=K)\n    parent = crit(tot)\n    best = (0.0, None, None)                   # (增益, 特征编号, 阈值)\n    for j in (range(X.shape[1]) if feats is None else feats):\n        o = np.argsort(X[:, j]); xs = X[o, j]\n        left = np.cumsum(np.eye(K)[y[o]], axis=0)[:-1]   # 在第 i 个间隙切开：左边各类个数\n        right = tot - left\n        nl = np.arange(1, n)\n        gain = parent - (nl * crit(left) + (n - nl) * crit(right)) / n\n        gain[xs[:-1] == xs[1:]] = -1           # 取值相同的两点之间不能切\n        i = gain.argmax()\n        if gain[i] > best[0]:\n            best = (gain[i], j, (xs[i] + xs[i + 1]) / 2)\n    return best\n\ng, j, t = best_split(X_tr, y_tr)\nprint(f\"熵: 最佳特征 x{j}，阈值 {t:.3f}，信息增益 {g:.3f}\")\ng, j, t = best_split(X_tr, y_tr, crit=gini)\nprint(f\"基尼: 最佳特征 x{j}，阈值 {t:.3f}，增益 {g:.3f}\")\n# 输出：熵: 最佳特征 x2，阈值 -0.493，信息增益 0.104\n# 输出：基尼: 最佳特征 x2，阈值 -0.493，增益 0.064\n```\n\n读输出：不管用熵还是基尼，根节点的最佳切分都是 `x2 <= -0.493`（增益分别是 0.104 比特和 0.064），挑中了「$x_2>-0.5$」这个真实条件：$x_2$ 低于 $-0.5$ 的样本几乎全是负类，一刀就能分出一块很纯的区域。熵和基尼挑出了同一个切分，这在实践中很常见。\n\n**递归构树。** 现在把「找最佳切分」套进递归：对左右子集分别建树，直到满足停止条件。叶子存下各类个数，方便打印。\n\n```python\ndef build_tree(X, y, depth=0, max_depth=3, min_samples=5, mtry=None, rng=None):\n    counts = np.bincount(y, minlength=2)\n    leaf = {\"leaf\": True, \"pred\": int(counts.argmax()), \"counts\": counts.tolist()}\n    if depth >= max_depth or len(y) < min_samples or counts.max() == len(y):\n        return leaf                            # 停止条件：够深 / 太少 / 已经纯了\n    feats = None if mtry is None else rng.choice(X.shape[1], mtry, replace=False)\n    gain, j, t = best_split(X, y, feats)       # mtry 留给后面的随机森林用\n    if j is None:\n        return leaf\n    m = X[:, j] <= t\n    return {\"leaf\": False, \"j\": j, \"t\": t,\n            \"left\": build_tree(X[m], y[m], depth + 1, max_depth, min_samples, mtry, rng),\n            \"right\": build_tree(X[~m], y[~m], depth + 1, max_depth, min_samples, mtry, rng)}\n\ndef predict_one(node, x):\n    while not node[\"leaf\"]:\n        node = node[\"left\"] if x[node[\"j\"]] <= node[\"t\"] else node[\"right\"]\n    return node[\"pred\"]\n\ndef predict(tree, X):\n    return np.array([predict_one(tree, x) for x in X])\n\ndef show(node, depth=0):\n    pad = \"  \" * depth\n    if node[\"leaf\"]:\n        print(f\"{pad}预测 {node['pred']}  (类别个数 {node['counts']})\")\n    else:\n        print(f\"{pad}x{node['j']} <= {node['t']:.2f} ?\")\n        show(node[\"left\"], depth + 1); show(node[\"right\"], depth + 1)\n\ntree2 = build_tree(X_tr, y_tr, max_depth=2)\nshow(tree2)\n# 输出：x2 <= -0.49 ?\n# 输出：  x3 <= -0.22 ?\n# 输出：    预测 0  (类别个数 [38, 15])\n# 输出：    预测 0  (类别个数 [48, 1])\n# 输出：  x0 <= -0.04 ?\n# 输出：    预测 0  (类别个数 [71, 33])\n# 输出：    预测 1  (类别个数 [21, 73])\n```\n\n读输出：深度为 2 的树，根节点是 `x2 <= -0.49`。右边（$x_2>-0.5$ 的 198 个样本）再用 `x0 <= -0.04` 切：左叶是 `[71, 33]` 预测 0，右叶是 `[21, 73]` 预测 1（真实规则是 $x_0+x_1>0$，用一个只看 $x_0$ 的切分近似它）。左边（$x_2\\le-0.49$ 的 102 个样本）却去切了一个**噪声特征** `x3 <= -0.22`，得到 `[38, 15]` 和 `[48, 1]`，**两个叶子的预测都是 0**：这一刀没有改变任何预测，只是因为纯度「碰巧」有一点点提升，它是树对噪声贪心的小例子。树越深，这类切分越多，这就是过拟合的来源。\n\n**限制深度。** 把 `max_depth` 从 1 加到 30，看训练和测试准确率：\n\n```python\ndef n_leaves(node):\n    return 1 if node[\"leaf\"] else n_leaves(node[\"left\"]) + n_leaves(node[\"right\"])\n\nfor d in [1, 2, 3, 5, 8, 30]:\n    tr = build_tree(X_tr, y_tr, max_depth=d, min_samples=2)\n    acc_tr = np.mean(predict(tr, X_tr) == y_tr)\n    acc_te = np.mean(predict(tr, X_te) == y_te)\n    print(f\"max_depth={d:2d} 叶子数={n_leaves(tr):3d} 训练准确率={acc_tr:.3f} 测试准确率={acc_te:.3f}\")\n# 输出：max_depth= 1 叶子数=  2 训练准确率=0.640 测试准确率=0.612\n# 输出：max_depth= 2 叶子数=  4 训练准确率=0.767 测试准确率=0.778\n# 输出：max_depth= 3 叶子数=  8 训练准确率=0.803 测试准确率=0.807\n# 输出：max_depth= 5 叶子数= 23 训练准确率=0.890 测试准确率=0.801\n# 输出：max_depth= 8 叶子数= 40 训练准确率=0.967 测试准确率=0.777\n# 输出：max_depth=30 叶子数= 48 训练准确率=1.000 测试准确率=0.765\n```\n\n读输出：深度 1（只有一次切分、2 个叶子）：训练 0.640、测试 0.612，欠拟合。深度 3（8 个叶子）：训练 0.803、测试 0.807，最好。再往深，训练准确率一路涨到 0.890、0.967、1.000（叶子数 23、40、48，几乎每个叶子只剩一两个样本，把噪声也记住了），而测试准确率反而一路掉到 0.801、0.777、0.765。这是偏差-方差分解在树上的样子：深树方差大。实际中用 `max_depth`、`min_samples_leaf`（叶子最少样本）、`min_impurity_decrease`（增益太小就不切）来**预剪枝**，或者先长成大树再用代价复杂度剪枝（**后剪枝**），参数用交叉验证选。\n\n决策树的优点：不需要标准化、对特征的单调变换不敏感、能自然处理不同类型的特征、结果可以读成规则。缺点：贪心，不一定找到最优树（后面有一个 XOR 的例子）；轴对齐的切分去近似斜的边界很费劲；而且**方差大**，训练集稍有变化，整棵树的结构可能就变了。下面的集成方法就是为了治最后这条。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "_L39rN6gz7Y",
+   "title": "视频一：Decision and Classification Trees, Clearly Explained!!!（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 18
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 父节点有 16 个样本，正负各 8 个。切分 A 得到左 `[6, 2]`、右 `[2, 6]`；切分 B 得到左 `[8, 4]`、右 `[0, 4]`。分别用**基尼不纯度**和**熵**计算两个切分的增益，哪个切分更好？",
+   "a": "**基尼**：父节点 $G=1-(0.5^2+0.5^2)=0.5$。\n\n切分 A：两个子节点的基尼都是 $1-(0.75^2+0.25^2)=0.375$，加权平均 $0.375$，增益 $0.5-0.375=0.125$。切分 B：左 `[8, 4]` 的基尼是 $1-((2/3)^2+(1/3)^2)=4/9\\approx0.444$，右 `[0, 4]` 是纯的，基尼 0；加权平均 $\\tfrac{12}{16}\\cdot0.444+\\tfrac4{16}\\cdot0\\approx0.333$，增益 $0.5-0.333\\approx0.167$。\n\n**熵**：父节点 $H=1$ 比特。切分 A：每个子节点的熵是 $-(0.75\\log_20.75+0.25\\log_20.25)\\approx0.811$，增益 $1-0.811=0.189$。切分 B：左 `[8, 4]` 的熵约 $0.918$，右是纯的 0；加权平均 $0.75\\times0.918\\approx0.689$，增益 $1-0.689\\approx0.311$。\n\n两种不纯度都说**切分 B 更好**：B 的右边分出了一个完全纯的叶子，A 的两边都还是混的。这也说明加权平均很关键：一个又大又纯的子节点，比两个中等纯度的子节点更值钱。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "决策树",
+     "decision tree",
+     "递归的轴对齐切分，叶子给出预测"
+    ],
+    [
+     "熵",
+     "entropy",
+     "$-\\sum p\\log p$，节点越混乱越大"
+    ],
+    [
+     "基尼不纯度",
+     "Gini impurity",
+     "$1-\\sum p^2$，随机抽两个样本类别不同的概率"
+    ],
+    [
+     "信息增益",
+     "information gain",
+     "父节点不纯度减去子节点的加权平均不纯度"
+    ],
+    [
+     "剪枝",
+     "pruning",
+     "限制深度或叶子大小（预剪枝），或长成大树再剪（后剪枝）"
+    ],
+    [
+     "随机森林",
+     "random forest",
+     "bagging 的树加节点上的随机特征子集，降低树间相关性"
+    ],
+    [
+     "梯度提升",
+     "gradient boosting",
+     "逐轮拟合当前模型的负梯度（残差），小学习率累加"
+    ],
+    [
+     "k 近邻",
+     "k-nearest neighbors",
+     "按距离找最近的 $k$ 个训练点投票或平均"
+    ],
+    [
+     "朴素贝叶斯",
+     "naive Bayes",
+     "特征在类内条件独立，似然拆成一维分布的乘积"
+    ],
+    [
+     "间隔",
+     "margin",
+     "分类超平面到最近训练点的距离，SVM 要最大化它"
+    ],
+    [
+     "核技巧",
+     "kernel trick",
+     "用核函数 $k(x,z)$ 代替内积，隐式地在高维特征空间分类"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个节点里有 30 个正例和 10 个负例（`[30, 10]`），它的基尼不纯度是多少？",
+    "options": [
+     "0.811",
+     "0.75",
+     "0.375",
+     "0.25"
+    ],
+    "answer": 2,
+    "explain": "$G=1-(0.75^2+0.25^2)=1-0.625=0.375$。0.75 只是多数类的比例；0.25 是少数类的比例；0.811 是同一个节点的**熵**（以 2 为底），不是基尼。"
+   },
+   {
+    "q": "决策树里「信息增益」的定义是？",
+    "options": [
+     "父节点的熵减去两个子节点熵的按样本数加权平均",
+     "两个子节点的熵之和",
+     "父节点的熵除以子节点个数",
+     "切分之后训练准确率的提升量"
+    ],
+    "answer": 0,
+    "explain": "$\\text{Gain}=H(S)-\\tfrac{n_L}{n}H(S_L)-\\tfrac{n_R}{n}H(S_R)$，加权平均是为了让「又大又纯」的子节点得到更多的奖励。它衡量的是不纯度的下降，不是准确率；也不是简单求和或相除。"
+   },
+   {
+    "q": "对 XOR 型数据（标签是两个特征符号的异或），为什么深度 2 的贪心决策树可能表现得很差，加深之后又能学会？",
+    "options": [
+     "因为 XOR 数据没有噪声，树无法学习没有噪声的数据",
+     "决策树不能处理两个特征同时起作用的情形",
+     "因为深度 2 的树没有叶子",
+     "第一次切分的信息增益几乎为 0，贪心选择没有可靠的依据；更深的层数才能把四个象限分开"
+    ],
+    "answer": 3,
+    "explain": "XOR 里每个特征单独看都和标签无关，根节点的任何切分增益都接近 0，贪心算法选到的往往是没用的位置；等再切几层，数据被分到四个象限，才变得容易分开。所以树**可以**处理特征交互，只是需要足够的深度；叶子也不缺，深度 2 有 4 个叶子；没有噪声也不影响学习。"
+   },
+   {
+    "q": "决策树的 `max_depth` 从 3 一路加大到 30，通常会发生什么？",
+    "options": [
+     "训练和测试准确率都一直上升",
+     "训练准确率上升到接近 1，测试准确率先持平后下降，即过拟合",
+     "训练准确率下降、测试准确率上升",
+     "两者都不变，因为树的结构由数据决定"
+    ],
+    "answer": 1,
+    "explain": "越深的树叶子越多、每个叶子的样本越少，能把训练集（含噪声）记得越牢，训练准确率趋近 1，但对新数据的预测方差变大，测试准确率不再上升甚至下降。限制深度（或最小叶子大小、剪枝）正是控制这一点。"
+   }
+  ]
+ }
+}

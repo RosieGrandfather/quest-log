@@ -119,7 +119,7 @@
     "explain": "`or` 返回第一个为真的操作数，都为假则返回最后一个。左边的 `0` 是假，所以结果是右边的 `\"默认\"`。注意 `and` / `or` 返回的是操作数本身，不一定是 `True` / `False`。"
    },
    {
-    "q": "`items = []`，那么 `if len(items) > 0 and items[0] > 5:` 为什么不会报 `IndexError`？",
+    "q": "运行下面的代码，为什么不会报 `IndexError`？\n\n```text\nitems = []\nif len(items) > 0 and items[0] > 5:\n    print(\"大于 5\")\n```",
     "options": [
      "因为 Python 会自动把空列表补成有一个元素",
      "因为 `items[0]` 在空列表上返回 `None`",

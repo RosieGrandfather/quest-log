@@ -2,7 +2,7 @@
 from unitlib import Q
 QUIZ = [
   Q('和 NumPy 数组相比，`torch.Tensor` 多了哪两项关键能力？', ['可以存字符串、可以自动排序', '可以放在 GPU 上计算、可以记录计算过程用于自动求导', '可以无限大、可以自动去重', '没有区别'], 1, '张量本质是多维数组，额外支持 GPU 计算和 autograd，这正是深度学习需要的。'),
-  Q('对 `w = t.tensor(2.0, requires_grad=True)`，计算 `y = w ** 3` 后调用 `y.backward()`，`w.grad` 是多少？', ['12', '8', '6', '3'], 0, '$dy/dw = 3w^2 = 3 \\times 4 = 12$。'),
+  Q("运行下面的代码，打印的 `w.grad` 是多少？\n\n```text\nimport torch as t\nw = t.tensor(2.0, requires_grad=True)\ny = w ** 3\ny.backward()\nprint(w.grad)\n```", ['12', '8', '6', '3'], 0, '$dy/dw = 3w^2 = 3 \\times 4 = 12$。'),
   Q('调用 `loss.backward()` 之后，梯度存在哪里？', ['存在 `loss.grad` 里', '作为 `backward()` 的返回值', '直接更新到参数的值里', '存在各个参数（叶子张量）的 `.grad` 属性里'], 3, '`backward()` 没有返回值，也不会修改参数本身，只是把梯度写进每个参数的 `.grad`。更新参数是优化器的事。'),
   Q('对同一个张量连续两次计算并调用 `.backward()`（中间不清零），`.grad` 会？', ['保留第二次的梯度', '保留第一次的梯度', '变成两次梯度之和', '变成 0'], 2, 'PyTorch 的梯度默认**累加**。所以训练循环每一步都要 `optimizer.zero_grad()`。'),
   Q('`nn.Parameter` 的作用是？', ['一种会被 `nn.Module` 自动登记为可训练参数的张量，默认 `requires_grad=True`', '设置学习率', '定义损失函数', '一种不能求导的常量'], 0, '把 `nn.Parameter` 赋给模块属性后，`model.parameters()` 就能找到它，优化器就会更新它。'),

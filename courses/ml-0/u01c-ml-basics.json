@@ -1,0 +1,102 @@
+{
+ "id": "u01c",
+ "title": "机器学习的基本问题（3/3）",
+ "en": "The Machine Learning Problem (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "会算 **MSE / MAE / RMSE / 准确率**，知道为什么先要有一个 **基线 (baseline)**；理解 **泛化 (generalization)**、**真实风险 (true risk)** 与 **经验风险最小化 (ERM)**，并把它和 prob-0 的最大似然联系起来"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「机器学习的基本问题」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：欠拟合与过拟合：用多项式亲手看（续）（约 10 分钟） → 基线与评估指标（约 5 分钟） → 泛化与经验风险最小化（约 10 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\nX = rng.normal(size=(6, 2))                 # 6 个样本，每个样本 2 个特征\nw_true = np.array([2.0, -1.0])\ny_reg = X @ w_true + 0.5                    # 回归：标准答案是连续的数\ny_cls = (y_reg > 0.5).astype(int)           # 分类：标准答案是类别 0 / 1\nprint(X.shape, y_reg.shape, y_cls.shape)\nprint(np.round(y_reg, 2))\nprint(y_cls)\n```\n\n```python\nrng = np.random.default_rng(42)\nn = 60\nx = rng.uniform(0, 1, n)\ny = np.sin(2 * np.pi * x) + rng.normal(0, 0.3, n)   # 真实规律是正弦波，加噪声\n\nidx = rng.permutation(n)                    # 先随机打乱，再切\ntr, va, te = idx[:20], idx[20:40], idx[40:]\nxtr, ytr = x[tr], y[tr]\nxva, yva = x[va], y[va]\nxte, yte = x[te], y[te]\nprint(len(tr), len(va), len(te))\nprint(len(set(tr) & set(va)), len(set(tr) & set(te)), len(set(va) & set(te)))   # 三份互不重叠\n```\n\n```python\ndef mse(y, yhat):\n    return float(np.mean((y - yhat) ** 2))\n\nprint(\"次数  训练MSE  验证MSE\")\nfor d in [0, 1, 3, 5, 9]:\n    coef = np.polyfit(xtr, ytr, d)          # 只用训练集拟合 d 次多项式\n    print(f\"{d:<5d} {mse(ytr, np.polyval(coef, xtr)):.3f}    {mse(yva, np.polyval(coef, xva)):.3f}\")\n```\n\n**一个重要的修正：** 偏差-方差折中不是物理定律，而是在「样本量有限」时的一个**现象**；用更多数据、加正则化（惩罚过大的系数）、集成多个模型，都可以在不增加偏差的情况下降低方差。深度学习里「过参数化的模型反而泛化得好」（double descent）是这个故事的后续，这里不展开，只提醒你：**经典 U 形不是全部**。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "pvcEQfcO3pk",
+   "title": "视频三：Statistical Learning: 2.3 Model Selection and Bias-Variance Tradeoff（Stanford Online，ISL）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "**视频三要点：** ISL 教材作者之一 Trevor Hastie / Rob Tibshirani 讲的同一件事，更偏统计的写法：训练 MSE 随模型灵活性单调下降，测试 MSE 呈 U 形；最佳点出现在偏差与方差的平衡处。第一遍看懂图形语言，后面读 ISL 第 2 章、CS229 的相关讲义就轻松了。\n\n### 基线与评估指标\n\n> **标准定义 · 基线 (baseline)**\n>\n> **基线**是一个不用学习（或几乎不用）就能得到的朴素预测器：回归里常用「永远预测训练集均值（或中位数）」，分类里常用「永远预测最常见的类别（多数类）」。任何学出来的模型都必须**显著优于基线**才算有价值。\n>\n> *English: A baseline is a trivial predictor, such as predicting the training mean or the majority class, against which any learned model must be compared.*\n\n**白话版：「不动脑子也能得到的分数」。** 如果你的模型对销量的预测误差是 100 件，听起来不错还是不好？只有知道「每次都猜平均值，误差是 120 件」，你才知道 100 件只是勉强强一点；如果「猜平均值」只错 5 件，你的模型就是灾难。**所有数字都要和基线一起报。**\n\n> **标准定义 · 回归指标：MSE、RMSE、MAE**\n>\n> 对 $n$ 个样本：$\\text{MSE}=\\frac1n\\sum_i(y_i-\\hat y_i)^2$，$\\text{RMSE}=\\sqrt{\\text{MSE}}$，$\\text{MAE}=\\frac1n\\sum_i|y_i-\\hat y_i|$。RMSE 与 MAE 的单位和 $y$ 相同；MSE 对大误差更敏感（平方放大），MAE 更稳健。\n>\n> *English: MSE is the mean squared error, RMSE its square root, and MAE the mean absolute error; MSE penalises large errors more heavily.*\n\n**白话版：「平均扣多少分」。** MAE 是「平均每道题错多少」；MSE 把每道题的错先平方再平均，**一个错得离谱的题会让 MSE 大幅上升**（错 10 的题，平方后是错 1 的题的 100 倍）；RMSE 开根号把单位变回来，方便解释。\n```python\ndef mae(y, yhat):\n    return float(np.mean(np.abs(y - yhat)))\n\ndef rmse(y, yhat):\n    return float(np.sqrt(mse(y, yhat)))\n\nbase = np.full_like(yte, ytr.mean())        # 基线：永远预测训练集的平均值\ncoef = np.polyfit(xtr, ytr, 3)\nfit = np.polyval(coef, xte)\nprint(\"          MSE    MAE    RMSE\")\nprint(f\"基线      {mse(yte, base):.3f}  {mae(yte, base):.3f}  {rmse(yte, base):.3f}\")\nprint(f\"3 次多项式 {mse(yte, fit):.3f}  {mae(yte, fit):.3f}  {rmse(yte, fit):.3f}\")\n# 输出：          MSE    MAE    RMSE\n# 输出：基线      0.747  0.809  0.864\n# 输出：3 次多项式 0.035  0.144  0.187\n```\n\n**读输出：** 在测试集上，基线（永远预测训练均值）的 MSE 是 `0.747`、MAE 是 `0.809`、RMSE 是 `0.864`；3 次多项式的 MSE 是 `0.035`、MAE 是 `0.144`、RMSE 是 `0.187`。所以模型把误差降低了约一个数量级，这才算真的学到了东西。还可以看到：基线 RMSE `0.864` 约等于 MAE `0.809` 的 1.07 倍，而模型的 RMSE `0.187` 约等于 MAE `0.144` 的 1.3 倍；**RMSE 总是大于等于 MAE**，两者差距越大，说明误差里「大的错」占得越多。\n\n> **标准定义 · 准确率 (accuracy)**\n>\n> 分类中**预测正确的样本占比**：$\\text{accuracy}=\\frac1n\\sum_i\\mathbf 1[\\hat y_i=y_i]$。它把所有错误一视同仁，也不区分类别的多少，所以在**类别不平衡**时会骗人。\n>\n> *English: Accuracy is the fraction of correct predictions; it can be misleading when classes are imbalanced.*\n\n**白话版：「答对的题占几成」。** 一个班 1000 个产品，只有 5% 是次品。你雇一个质检员，他**什么都不查**，一律说「合格」，他的准确率已经是 95%；可是一件次品都没抓到。\n```python\nrng = np.random.default_rng(5)\ny = (rng.random(1000) < 0.05).astype(int)   # 1000 个样本，约 5% 是正类（比如「次品」）\npred = np.zeros(1000, dtype=int)            # 「模型」：永远说是负类\nprint(\"正类个数：\", int(y.sum()))\nprint(\"准确率：\", (pred == y).mean())\nprint(\"抓到的正类：\", int(((pred == 1) & (y == 1)).sum()))\n# 输出：正类个数： 62\n# 输出：准确率： 0.938\n# 输出：抓到的正类： 0\n```\n\n**读输出：** 1000 个样本里有 `62` 个正类（约 6.2%，随机抽样的结果）；永远预测负类，准确率是 `0.938`，抓到的正类是 `0`。**准确率高并不代表模型有用**：这个模型一点用都没有。这个例子要记住：**不平衡数据先看多数类基线，再看精确率、召回率**，这些指标在「逻辑回归与分类」那一节手写。\n\n### 泛化与经验风险最小化\n\n我们之前说「学得好」是指在新样本上也好。现在把它说准确。\n\n> **标准定义 · 真实风险与经验风险 (true risk & empirical risk)**\n>\n> 假设样本 $(x,y)$ 独立同分布地来自未知分布 $P$。预测器 $h$ 的**真实风险 (true risk)** 是它在整个分布上的期望损失：\n>\n> $$R(h)=\\mathbb E_{(x,y)\\sim P}\\big[\\ell(h(x),y)\\big]$$\n>\n> 我们看不到 $P$，只有 $n$ 个训练样本，所以只能算**经验风险 (empirical risk)**：\n>\n> $$\\hat R_n(h)=\\frac1n\\sum_{i=1}^n\\ell(h(x_i),y_i)$$\n>\n> **经验风险最小化 (empirical risk minimization, ERM)** 就是选 $\\hat h=\\arg\\min_{h\\in\\mathcal H}\\hat R_n(h)$。**泛化差距 (generalization gap)** 是 $R(\\hat h)-\\hat R_n(\\hat h)$。\n>\n> *English: True risk is the expected loss under the data distribution; empirical risk is its average over the training sample. ERM picks the hypothesis minimising empirical risk; the generalisation gap is the difference between the two.*\n\n**白话版：「用模拟考成绩估计高考成绩」。** 真实风险是「你在所有可能的题目上的平均表现」，谁也看不到；经验风险是「你在手头那 $n$ 道题上的平均表现」，是它的一个估计。ERM 说：**既然看不到真实风险，就把经验风险压到最小**。这个估计好不好，取决于 $n$（题越多越准），也取决于假设类（模型越灵活，越容易「专门针对这 $n$ 道题」）。\n\n用代码看：用 5 次多项式，训练集大小 $n$ 取 15、30、100、1000，每个 $n$ 重复 50 次取中位数；「真实风险」用 20000 个新样本近似（它们不参与训练）。\n```python\ndef make(n, rng):\n    xs = rng.uniform(0, 1, n)\n    return xs, np.sin(2 * np.pi * xs) + rng.normal(0, 0.3, n)\n\nrng = np.random.default_rng(11)\nxbig, ybig = make(20000, rng)               # 用 20000 个新样本近似「真实风险」\nprint(\"n     训练MSE(中位数)  真实MSE(中位数)\")\nfor n in [15, 30, 100, 1000]:\n    tr_l, true_l = [], []\n    for _ in range(50):\n        xs, ys = make(n, rng)\n        c = np.polyfit(xs, ys, 5)           # 固定用 5 次多项式\n        tr_l.append(mse(ys, np.polyval(c, xs)))\n        true_l.append(mse(ybig, np.polyval(c, xbig)))\n    print(f\"{n:<5d} {np.median(tr_l):.3f}            {np.median(true_l):.3f}\")\n# 输出：n     训练MSE(中位数)  真实MSE(中位数)\n# 输出：15    0.056            0.180\n# 输出：30    0.069            0.116\n# 输出：100   0.084            0.095\n# 输出：1000  0.090            0.091\n```\n\n**读输出：** $n=15$ 时训练 MSE（中位数）只有 `0.056`，真实 MSE 却是 `0.180`，差距很大；$n=30$：`0.069` 对 `0.116`；$n=100$：`0.084` 对 `0.095`；$n=1000$：`0.090` 对 `0.091`，两者几乎重合，并且都收敛到噪声方差 $0.3^2=0.09$。结论：**训练误差系统性地低估真实误差，样本越少低估得越厉害；模型类固定时，泛化差距随 $n$ 增大而收缩**。这是统计学习理论的基本图景：差距大致按 $\\sqrt{\\text{容量}/n}$ 的量级缩小（这里不证明，参考 CS229 的学习理论讲义和 Shalev-Shwartz 的教材）。\n\n**ERM 与最大似然：同一件事的两种说法。** prob-0 已经讲过，最大似然是选使得训练数据概率最大的参数。如果假设噪声是高斯的，$y=f_\\theta(x)+\\varepsilon$，$\\varepsilon\\sim N(0,\\sigma^2)$，那么对数似然是：\n\n$$\\log p(\\mathcal D\\mid\\theta)=-\\frac n2\\log(2\\pi\\sigma^2)-\\frac{1}{2\\sigma^2}\\sum_{i=1}^n\\big(y_i-f_\\theta(x_i)\\big)^2$$\n\n第一项与 $\\theta$ 无关；第二项是 MSE 的正倍数前面加负号。所以**最大化高斯对数似然 = 最小化 MSE**，也就是说，**平方损失的 ERM 就是高斯噪声下的最大似然**。下面用数值验证：\n```python\nrng = np.random.default_rng(0)\nn, s = 30, 0.3\nx = rng.uniform(0, 1, n)\ny = 2 * x + 1 + rng.normal(0, s, n)         # 噪声是 N(0, 0.3^2)\nws = np.linspace(1, 3, 201)\nres = y[None, :] - (ws[:, None] * x[None, :] + 1.0)           # 每个 w 的残差，形状 (201, 30)\nmse_w = (res ** 2).mean(axis=1)\nloglik = -0.5 * n * np.log(2 * np.pi * s ** 2) - (res ** 2).sum(axis=1) / (2 * s ** 2)\nprint(\"MSE 最小的 w：\", round(float(ws[mse_w.argmin()]), 2))\nprint(\"对数似然最大的 w：\", round(float(ws[loglik.argmax()]), 2))\nprint(np.allclose(loglik, -0.5 * n * np.log(2 * np.pi * s ** 2) - n * mse_w / (2 * s ** 2)))\n# 输出：MSE 最小的 w： 2.11\n# 输出：对数似然最大的 w： 2.11\n# 输出：True\n```\n\n**读输出：** 在 $w\\in[1,3]$ 的 201 个网格点上，MSE 最小处是 `2.11`，对数似然最大处也是 `2.11`；最后一行的 `True` 表示对每个 $w$，对数似然都严格等于「常数 $-\\;n\\cdot\\text{MSE}/(2\\sigma^2)$」。换损失就是换噪声假设：对伯努利（分类）噪声，负对数似然就是**交叉熵**（第 3 节），对拉普拉斯噪声，负对数似然是 MAE。**损失函数不是随便选的，它背后是一个对噪声的概率假设。**\n\n### 这一节你要带走的三句话\n\n1. **学习问题 = 数据 + 模型 + 损失 + 优化**；监督学习有标准答案，无监督只有 $x$，强化学习靠评价性的奖励。\n2. **训练误差会骗人**：容量越大训练误差越小，但验证误差呈 U 形；只有**从没参与任何选择**的测试集才给出诚实的泛化估计，所以三分数据，并且测试集只看一次。\n3. **学得好 = 真实风险小**：ERM 用经验风险代替看不见的真实风险，平方损失的 ERM 就是高斯噪声下的最大似然；任何指标都要和基线比，类别不平衡时别看准确率。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 一个回归任务，测试集上 4 个样本的真实值是 $y=(3,5,2,10)$，预测值是 $\\hat y=(4,5,1,6)$。算 MSE、MAE、RMSE；再说一说：哪一个样本对 MSE 的贡献最大，占了多少比例？",
+   "a": "误差是 $y-\\hat y=(-1,0,1,4)$。\n\n- $\\text{MSE}=\\frac{1+0+1+16}{4}=4.5$；\n- $\\text{MAE}=\\frac{1+0+1+4}{4}=1.5$；\n- $\\text{RMSE}=\\sqrt{4.5}\\approx 2.12$。\n\n第 4 个样本的平方误差是 16，占总平方误差 18 的 $16/18\\approx 89\\%$；而它在 MAE 里的占比只有 $4/6\\approx 67\\%$。这就是「MSE 对大误差更敏感」：一个误差为 4 的点，在 MSE 里的权重远大于另外三个误差为 1 的点。如果这个大误差来自一个数据录入错误（离群点），MSE 会被它主导，这时用 MAE 或 Huber 损失更稳。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 Machine Learning 讲义（Andrew Ng 等）—— 监督学习、偏差-方差、学习理论部分",
+   "url": "https://cs229.stanford.edu/",
+   "note": "本节的大纲依据，课程主页有全部讲义和笔记，只引用不转载；Part I 开头讲监督学习的符号，后面的「Learning theory」讲 ERM 与泛化"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL）第 2 章 Statistical Learning",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开的教材，第 2 章讲监督 / 无监督、评估模型精度、偏差-方差折中；Python 版有代码"
+  },
+  {
+   "title": "Machine Learning Specialization（吴恩达，DeepLearning.AI）第 1 门课",
+   "url": "https://www.deeplearning.ai/courses/machine-learning-specialization/",
+   "note": "更慢、更直觉的入门，对应本节的监督 / 无监督定义和训练 / 验证 / 测试划分"
+  },
+  {
+   "title": "Probabilistic Machine Learning: An Introduction（Murphy）第 1 章与第 4 章",
+   "url": "https://probml.github.io/pml-book/book1.html",
+   "note": "把「损失 = 负对数似然」、ERM 与最大似然统一起来的写法，作者免费公开 PDF"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "某任务只有 5% 的样本是正类，一个「永远预测负类」的模型准确率约为 95%。一个新模型准确率 94%。应该怎么理解？",
+    "options": [
+     "新模型很好，因为 94% 很高",
+     "新模型一定过拟合了",
+     "准确率 94% 意味着召回率也是 94%",
+     "新模型比最朴素的基线还差，准确率在类别不平衡时不能说明问题"
+    ],
+    "answer": 3,
+    "explain": "基线（这里是多数类基线）给了判断好坏的起点：连「永远说负类」都比不过的模型没有价值。类别不平衡时要看精确率、召回率等指标；准确率和召回率之间没有这样的换算关系。"
+   },
+   {
+    "q": "同一份预测，MSE 与 MAE 的一个重要区别是？",
+    "options": [
+     "MAE 一定比 MSE 大",
+     "MSE 对大误差的惩罚更重，所以更容易被离群点拉高",
+     "MSE 的单位和 y 相同，MAE 的单位是 y 的平方",
+     "两者对每个误差的权重完全一样"
+    ],
+    "answer": 1,
+    "explain": "MSE 把误差平方，误差为 10 的样本贡献是误差为 1 的样本的 100 倍，所以对离群点敏感；MAE 按绝对值累加，更稳健。MSE 的单位是 y 的平方（RMSE 才和 y 同单位）。误差小于 1 时，MSE 反而比 MAE 小。"
+   },
+   {
+    "q": "假设 $y=f(x)+\\varepsilon$，$\\varepsilon\\sim N(0,\\sigma^2)$，$\\sigma$ 已知且固定。关于最大似然，哪个说法正确？",
+    "options": [
+     "最大似然需要知道真实的 $f$",
+     "最大似然只适用于分类问题",
+     "最大化高斯对数似然与最小化 MSE 是同一个优化问题，因为对数似然等于一个常数减去 MSE 的正倍数",
+     "最大化对数似然等价于最小化 MAE"
+    ],
+    "answer": 2,
+    "explain": "高斯对数似然是 $-\\tfrac n2\\ln(2\\pi\\sigma^2)-\\tfrac{n}{2\\sigma^2}\\cdot\\text{MSE}$：常数项与参数无关，系数为负，所以最大化它就是最小化 MSE。最小化 MAE 对应的是拉普拉斯噪声假设。最大似然并不需要知道真实的 $f$，要估计的正是它的参数。"
+   },
+   {
+    "q": "固定模型类（例如 5 次多项式）不变，只增加训练样本数 $n$。训练误差与真实误差之间的差距（泛化差距）通常怎样变化？",
+    "options": [
+     "越来越小，两者都趋向同一个水平",
+     "保持不变",
+     "越来越大",
+     "训练误差一定会降到 0"
+    ],
+    "answer": 0,
+    "explain": "样本越多，经验风险越接近真实风险，差距缩小；模型容量固定时，两者收敛到同一个下限（这里是噪声方差 0.09 附近）。训练误差不会降到 0，因为噪声本身不可拟合。"
+   }
+  ]
+ }
+}

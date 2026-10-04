@@ -172,18 +172,18 @@
  "quiz": {
   "questions": [
    {
-    "q": "下面的函数调用 `f(1)`、`f(2)` 后，两次返回值打印出来是什么？`def f(x, l=[]): l.append(x); return l`",
+    "q": "运行下面的代码，两次 `print` 打印的内容分别是什么？\n\n```text\ndef f(x, l=[]):\n    l.append(x)\n    return l\n\nprint(f(1))\nprint(f(2))\n```",
     "options": [
      "`[1]` 和 `[2]`",
-     "`[1, 2]` 和 `[1, 2]`（同一个列表对象）",
+     "`[1, 2]` 和 `[1, 2]`",
      "报错",
-     "`[1]` 和 `[1, 2]`"
+     "`[1]` 和 `[1, 2]`（第二次调用时，那个默认列表里已经有 1 了）"
     ],
-    "answer": 1,
-    "explain": "默认值在定义时创建一次，所有不传 `l` 的调用共享同一个列表，两次返回的是同一个对象，打印时两个都已是 `[1, 2]`。"
+    "answer": 3,
+    "explain": "默认值 `[]` 在 `def` 执行时只创建一次，所有不传 `l` 的调用共享同一个列表。第一次调用往里加 1，`print` 当时显示 `[1]`；第二次调用往同一个列表里再加 2，显示 `[1, 2]`。（如果写成 `print(f(1), f(2))`，两个值是同一个列表对象，等两次调用都结束才一起打印，就会显示两个 `[1, 2]`。）"
    },
    {
-    "q": "在 `def f(a, b=2, *args, c, **kwargs)` 中，调用时 `c` 必须怎么传？",
+    "q": "在下面的函数定义中，调用时参数 `c` 必须怎么传？\n\n```text\ndef f(a, b=2, *args, c, **kwargs):\n    ...\n```",
     "options": [
      "按位置传在 `b` 之后",
      "放进 `kwargs`",
@@ -205,7 +205,7 @@
     "explain": "形参与实参指向同一个对象。`lst.append()` 改的是对象本身；`lst = [...]` 只改了局部名字的指向。"
    },
    {
-    "q": "`grid = [[0] * 3] * 3`，然后 `grid[0][0] = 1`，`grid` 变成什么？",
+    "q": "运行下面的代码，打印出的 `grid` 是什么？\n\n```text\ngrid = [[0] * 3] * 3\ngrid[0][0] = 1\nprint(grid)\n```",
     "options": [
      "`[[1,0,0],[1,0,0],[1,0,0]]`（三行是同一个列表）",
      "`[[1,0,0],[0,0,0],[0,0,0]]`",
@@ -227,7 +227,7 @@
     "explain": "先找当前函数（Local），再找外层函数（Enclosing），然后模块级（Global），最后内置（Built-in）。"
    },
    {
-    "q": "在内层函数里想**修改**外层函数里定义的变量 `count`（`count += 1`），需要？",
+    "q": "下面的内层函数想把外层的 `count` 加 1，`inner` 的第一行缺了一句声明。应该怎么做？\n\n```text\ndef outer():\n    count = 0\n    def inner():\n        count += 1       # 想修改外层的 count\n    inner()\n    return count\n```",
     "options": [
      "什么都不用",
      "在内层函数里声明 `nonlocal count`",
@@ -238,7 +238,7 @@
     "explain": "不声明的话，赋值会让 `count` 成为内层函数的局部变量，读取时会 `UnboundLocalError`。`global` 对应的是模块级变量。"
    },
    {
-    "q": "`funcs = [lambda: i for i in range(3)]` 之后，`[f() for f in funcs]` 的结果是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nfuncs = [lambda: i for i in range(3)]\nprint([f() for f in funcs])\n```",
     "options": [
      "`[2, 2, 2]`",
      "`[0, 1, 2]`",
@@ -249,7 +249,7 @@
     "explain": "闭包捕获的是变量 `i`，调用时才取值，此时循环已结束，`i` 是 2。用 `lambda i=i: i` 可固定当时的值。"
    },
    {
-    "q": "装饰器语法 `@deco` 写在 `def f(): ...` 上方，等价于？",
+    "q": "下面的装饰器写法，等价于下面哪一种写法？\n\n```text\n@deco\ndef f():\n    ...\n```",
     "options": [
      "`f = deco`",
      "`deco(f())`",

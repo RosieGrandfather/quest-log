@@ -1,0 +1,86 @@
+{
+ "id": "u05b",
+ "title": "决策树、集成与最近邻（2/3）",
+ "en": "Decision Trees, Ensembles & Nearest Neighbors (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "理解 **梯度提升 (gradient boosting)**：每一轮拟合当前模型的**残差**（平方损失的负梯度），手写一个用回归树桩的小提升，并说清它与 bagging 一个降偏差、一个降方差的区别",
+  "掌握 **k 近邻 (k-nearest neighbors)**，用实验看到 **维数灾难 (curse of dimensionality)**：无关特征和距离集中让「近邻」失去意义"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「决策树、集成与最近邻」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：随机森林：用平均压低方差（约 20 分钟） → 梯度提升：一棵一棵接力纠错（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\ndef entropy(counts):                           # 熵（以 2 为底），counts 的最后一维是各类个数\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 0.0 - (p * np.log2(np.where(p > 0, p, 1))).sum(-1)    # 约定 0 log 0 = 0\n\ndef gini(counts):                              # 基尼不纯度 = 1 - sum p_k^2\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 1 - (p ** 2).sum(-1)\n\nfor counts in [[50, 50], [90, 10], [99, 1], [100, 0]]:\n    print(counts, f\"熵={entropy(counts):.3f} 基尼={gini(counts):.3f}\")\n\n# 信息增益：父节点 [40, 40]，按某个特征切成 [30, 10] 和 [10, 30]\ngain = entropy([40, 40]) - 0.5 * entropy([30, 10]) - 0.5 * entropy([10, 30])\nprint(f\"信息增益 = {gain:.3f}\")\n```\n\n```python\ndef make_data(n, seed, n_noise=3):\n    r = np.random.default_rng(seed)\n    X = r.normal(size=(n, 3 + n_noise))        # 前 3 列有用，后面全是噪声\n    y = ((X[:, 0] + X[:, 1] > 0) & (X[:, 2] > -0.5)).astype(int)\n    flip = r.random(n) < 0.1                   # 10% 的标签被随机翻转\n    return X, np.where(flip, 1 - y, y)\n\nX_tr, y_tr = make_data(300, 0)\nX_te, y_te = make_data(1000, 1)\nprint(X_tr.shape, \"正类比例:\", round(y_tr.mean(), 3))\n```\n\n```python\ndef best_split(X, y, feats=None, crit=entropy, K=2):\n    n, tot = len(y), np.bincount(y, minlength=K)\n    parent = crit(tot)\n    best = (0.0, None, None)                   # (增益, 特征编号, 阈值)\n    for j in (range(X.shape[1]) if feats is None else feats):\n        o = np.argsort(X[:, j]); xs = X[o, j]\n        left = np.cumsum(np.eye(K)[y[o]], axis=0)[:-1]   # 在第 i 个间隙切开：左边各类个数\n        right = tot - left\n        nl = np.arange(1, n)\n        gain = parent - (nl * crit(left) + (n - nl) * crit(right)) / n\n        gain[xs[:-1] == xs[1:]] = -1           # 取值相同的两点之间不能切\n        i = gain.argmax()\n        if gain[i] > best[0]:\n            best = (gain[i], j, (xs[i] + xs[i + 1]) / 2)\n    return best\n\ng, j, t = best_split(X_tr, y_tr)\nprint(f\"熵: 最佳特征 x{j}，阈值 {t:.3f}，信息增益 {g:.3f}\")\ng, j, t = best_split(X_tr, y_tr, crit=gini)\nprint(f\"基尼: 最佳特征 x{j}，阈值 {t:.3f}，增益 {g:.3f}\")\n```\n\n```python\ndef build_tree(X, y, depth=0, max_depth=3, min_samples=5, mtry=None, rng=None):\n    counts = np.bincount(y, minlength=2)\n    leaf = {\"leaf\": True, \"pred\": int(counts.argmax()), \"counts\": counts.tolist()}\n    if depth >= max_depth or len(y) < min_samples or counts.max() == len(y):\n        return leaf                            # 停止条件：够深 / 太少 / 已经纯了\n    feats = None if mtry is None else rng.choice(X.shape[1], mtry, replace=False)\n    gain, j, t = best_split(X, y, feats)       # mtry 留给后面的随机森林用\n    if j is None:\n        return leaf\n    m = X[:, j] <= t\n    return {\"leaf\": False, \"j\": j, \"t\": t,\n            \"left\": build_tree(X[m], y[m], depth + 1, max_depth, min_samples, mtry, rng),\n            \"right\": build_tree(X[~m], y[~m], depth + 1, max_depth, min_samples, mtry, rng)}\n\ndef predict_one(node, x):\n    while not node[\"leaf\"]:\n        node = node[\"left\"] if x[node[\"j\"]] <= node[\"t\"] else node[\"right\"]\n    return node[\"pred\"]\n\ndef predict(tree, X):\n    return np.array([predict_one(tree, x) for x in X])\n\ndef show(node, depth=0):\n    pad = \"  \" * depth\n    if node[\"leaf\"]:\n        print(f\"{pad}预测 {node['pred']}  (类别个数 {node['counts']})\")\n    else:\n        print(f\"{pad}x{node['j']} <= {node['t']:.2f} ?\")\n        show(node[\"left\"], depth + 1); show(node[\"right\"], depth + 1)\n\ntree2 = build_tree(X_tr, y_tr, max_depth=2)\nshow(tree2)\n```\n\n### 随机森林：用平均压低方差\n\n单棵深树方差大。统计里降低方差的老办法是**平均**：$B$ 个独立同分布的预测，各自方差 $\\sigma^2$，它们的平均的方差是 $\\sigma^2/B$。问题是我们只有一份训练集，怎么得到「很多份」训练集？答案是**自助采样**。\n\n> **标准定义 · 自助采样与 Bagging (bootstrap & bagging)**\n>\n> **自助采样 (bootstrap)**：从含 $n$ 个样本的训练集中**有放回**地抽 $n$ 次，得到一份大小同样为 $n$ 的自助样本。**Bagging**（bootstrap aggregating）：抽 $B$ 份自助样本，各训练一个模型，分类时**多数投票**，回归时取**平均**。每份自助样本里平均约有 $1-1/e\\approx63.2\\%$ 的不同原始样本，剩下约 36.8% 没被抽到的样本叫该模型的**袋外 (out-of-bag, OOB)** 样本，可以免费当它的验证集。\n>\n> *English: Bagging trains B models on bootstrap resamples (sampling n points with replacement) and averages or votes their predictions; the ≈36.8% of points left out of each resample are its out-of-bag validation data.*\n\n**白话版：「请很多位见过不同练习册的同学投票」。** 每位同学只见过一份略有不同的练习册（自助样本），各自犯的错不同，投票就能把随机的错抵消掉。\n\n```python\nrng = np.random.default_rng(0)\nfor n in [10, 100, 10000]:\n    idx = rng.integers(0, n, n)                # 自助采样：有放回抽 n 次\n    print(f\"n={n:5d}: 被抽到过的不同样本占 {len(np.unique(idx)) / n:.3f}\")\nprint(\"理论值 1 - 1/e =\", round(1 - 1 / np.e, 3))\n# 输出：n=   10: 被抽到过的不同样本占 0.700\n# 输出：n=  100: 被抽到过的不同样本占 0.630\n# 输出：n=10000: 被抽到过的不同样本占 0.634\n# 输出：理论值 1 - 1/e = 0.632\n```\n\n读输出：$n=10$ 时被抽到的不同样本占 0.700，$n=100$ 时 0.630，$n=10000$ 时 0.634，随 $n$ 增大趋近理论值 $1-1/e=0.632$（每个样本一次没被抽到的概率是 $(1-1/n)^n\\to1/e$）。所以一份自助样本大约只含 63% 的不同样本，另外约 37% 就是这棵树的袋外样本。\n\n但只做 bagging 还不够：如果每棵树都很像（比如都先切同一个最强的特征），它们的错误就是**相关**的，平均抵消不了。设每棵树的方差为 $\\sigma^2$，两两相关系数为 $\\rho$，则平均的方差是\n\n$$\\mathrm{Var}\\Big(\\frac1B\\sum_{b=1}^B\\hat h_b\\Big)=\\rho\\,\\sigma^2+\\frac{1-\\rho}{B}\\sigma^2$$\n\n$B$ 再大，第一项 $\\rho\\sigma^2$ 都降不下去。**随机森林**的第二个随机性就是为了降 $\\rho$：每次找最佳切分时，只在**随机抽出的 `mtry` 个特征**里找（分类常取 $\\sqrt p$，回归常取 $p/3$），让不同的树被迫用不同的特征，变得更不相似。\n\n> **标准定义 · 随机森林 (random forest)**\n>\n> **随机森林** = 决策树 + bagging + 每个节点的**随机特征子集**：每棵树在一份自助样本上生长（通常深度很大），每次分裂只在随机的 `mtry` 个特征中选最佳切分；最终多数投票（分类）或平均（回归）。每个样本的**袋外预测**只用没有见过它的那些树投票，袋外误差是测试误差的一个近似估计，不需要另外留验证集。\n>\n> *English: A random forest bags decision trees and, at every split, considers only a random subset of features, which decorrelates the trees; the out-of-bag error estimates generalization error without a separate validation set.*\n\n**白话版：「请不同专业的同学投票，而且每个人只被允许看一部分题目」。** 让大家不要都盯着同一个最醒目的特征。\n\n```python\ndef fit_forest(X, y, n_trees=50, mtry=None, max_depth=8, seed=0):\n    rng = np.random.default_rng(seed)\n    trees, oob = [], []\n    for _ in range(n_trees):\n        idx = rng.integers(0, len(y), len(y))              # 自助样本\n        trees.append(build_tree(X[idx], y[idx], max_depth=max_depth, mtry=mtry, rng=rng))\n        oob.append(np.setdiff1d(np.arange(len(y)), idx))   # 没被抽到的样本：袋外\n    return trees, oob\n\ndef forest_predict(trees, X):                  # 多数投票\n    return (np.mean([predict(t, X) for t in trees], axis=0) > 0.5).astype(int)\n\ndef oob_accuracy(trees, oob, X, y):            # 每个样本只让「没见过它」的树投票\n    votes, cnt = np.zeros(len(y)), np.zeros(len(y))\n    for t, o in zip(trees, oob):\n        votes[o] += predict(t, X[o]); cnt[o] += 1\n    m = cnt > 0\n    return np.mean((votes[m] / cnt[m] > 0.5) == y[m])\n\nsingle = build_tree(X_tr, y_tr, max_depth=8, min_samples=2)\nprint(\"单棵深树 测试准确率:\", round(np.mean(predict(single, X_te) == y_te), 3))\nfor name, mtry in [(\"bagging(mtry=全部 6 个)\", None), (\"随机森林(mtry=2)\", 2)]:\n    trees, oob = fit_forest(X_tr, y_tr, mtry=mtry)\n    print(f\"{name}: 测试={np.mean(forest_predict(trees, X_te) == y_te):.3f} \"\n          f\"袋外={oob_accuracy(trees, oob, X_tr, y_tr):.3f}\")\n# 输出：单棵深树 测试准确率: 0.777\n# 输出：bagging(mtry=全部 6 个): 测试=0.840 袋外=0.820\n# 输出：随机森林(mtry=2): 测试=0.847 袋外=0.793\n```\n\n读输出：单棵深树（深度 8）的测试准确率是 0.777；50 棵树做 bagging（每次在 6 个特征里选）涨到 0.840，袋外准确率 0.820；加上特征随机（`mtry=2`）的随机森林是 0.847，袋外 0.793。集成把测试准确率从 0.777 提升了约 7 个百分点，已经接近这份数据的上限 0.9（10% 的标签噪声）。bagging 和随机森林的 0.840 与 0.847 之差在抽样波动之内，不能说谁更好；这份数据只有 3 个有用特征加 3 个噪声特征，特征随机能发挥的空间很小，特征多、强相关的高维数据上差别才明显。袋外准确率（0.820、0.793）和测试准确率（0.840、0.847）有出入但大致同一水平，袋外是用训练集自己估计的，只有 300 个样本，波动不小。\n\n要点：随机森林几乎不用调参（树多一点就行，树再多也不会过拟合，只会趋于稳定）；对特征缩放不敏感；训练可以并行；但失去了单棵树的可读性。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "J4Wdy0Wc_xQ",
+   "title": "视频二：StatQuest: Random Forests Part 1 - Building, Using and Evaluating（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "### 梯度提升：一棵一棵接力纠错\n\nBagging 是**并行**训练很多棵深树，靠平均降方差。**提升 (boosting)** 的思路相反：**串行**地训练很多棵很浅的树，每一棵专门去修正前面所有树还没学好的部分，靠逐步减小**偏差**。\n\n> **标准定义 · 梯度提升 (gradient boosting)**\n>\n> 加法模型 $F_M(x)=F_0+\\eta\\sum_{m=1}^Mh_m(x)$：从常数 $F_0$（如 $y$ 的均值）出发，第 $m$ 轮计算当前模型在每个样本上的**伪残差** $r_i=-\\partial L(y_i,F)/\\partial F\\big|_{F=F_{m-1}(x_i)}$，用一棵浅回归树 $h_m$ 去**拟合这些伪残差**，再把它按**学习率** $\\eta$ 缩小后加进模型。对平方损失 $L=\\tfrac12(y-F)^2$，伪残差恰好就是普通残差 $y-F_{m-1}(x)$。对其他可微损失（对数损失、Huber 损失……），换成对应的负梯度即可。\n>\n> *English: Gradient boosting builds an additive model stage by stage; each new shallow tree is fit to the negative gradient of the loss at the current predictions (the residuals, for squared loss) and added with a small learning rate.*\n\n**白话版：「每做一轮练习，只订正上一轮错得最多的地方」。** 第一轮先交一个「全班平均分」的答案；第二轮看哪些题错得最多，专门训练一个小模型去预测这些**错误**；把它的预测（打个折）加到答案上；再看新的错误，重复。「梯度」是因为：拟合残差，等价于在**函数空间**里沿损失下降最快的方向走一步，和神经网络里沿参数的负梯度走一步是同一个思想。\n\n先手写最小的弱学习器：**回归树桩**（只有一次切分、两个叶子的树）。对一维 $x$，选阈值使左右两边各取平均后的平方误差最小：\n\n```python\ndef fit_stump(x, r):                           # 一维回归树桩：一个阈值，左右各取平均\n    o = np.argsort(x); xs, rs = x[o], r[o]\n    n, cs = len(x), np.cumsum(rs)[:-1]\n    nl = np.arange(1, n)\n    score = cs ** 2 / nl + (rs.sum() - cs) ** 2 / (n - nl)   # 最大化它 = 最小化平方误差\n    score[xs[:-1] == xs[1:]] = -np.inf\n    i = score.argmax()\n    return (xs[i] + xs[i + 1]) / 2, rs[:i + 1].mean(), rs[i + 1:].mean()\n\ndef stump_predict(s, x):\n    return np.where(x <= s[0], s[1], s[2])\n\nr = np.random.default_rng(0)\nxb = r.uniform(0, 6, 200); yb = np.sin(xb) + 0.3 * r.normal(size=200)\nxt = np.linspace(0, 6, 300); yt = np.sin(xt)             # 无噪声的真曲线\ns = fit_stump(xb, yb - yb.mean())\nprint(f\"第一个树桩：x <= {s[0]:.2f} 取 {s[1]:.3f}，否则取 {s[2]:.3f}\")\n# 输出：第一个树桩：x <= 3.15 取 0.710，否则取 -0.593\n```\n\n读输出：数据是 $y=\\sin x+$噪声，$x\\in[0,6]$。第一个树桩拟合的是「$y$ 减去平均值」的残差：$x\\le3.15$ 时取 0.710，否则取 $-0.593$，近似把正弦曲线分成「前半个周期偏高、后半个周期偏低」两块（阈值 3.15 正好在 $\\pi$ 附近，正弦曲线由正转负的地方）。一个树桩只能画一级台阶，远远不够，下面把它们叠起来：\n\n```python\nlr, F, Ft = 0.1, np.full(200, yb.mean()), np.full(300, yb.mean())   # F0 = 平均值\nfor m in range(1, 301):\n    resid = yb - F                             # 残差 = 平方损失的负梯度\n    s = fit_stump(xb, resid)                   # 用树桩拟合残差\n    F, Ft = F + lr * stump_predict(s, xb), Ft + lr * stump_predict(s, xt)\n    if m in (1, 5, 20, 50, 100, 300):\n        print(f\"M={m:3d} 训练MSE={np.mean((yb - F) ** 2):.3f} \"\n              f\"对真曲线的MSE={np.mean((yt - Ft) ** 2):.3f}\")\n# 输出：M=  1 训练MSE=0.505 对真曲线的MSE=0.449\n# 输出：M=  5 训练MSE=0.308 对真曲线的MSE=0.244\n# 输出：M= 20 训练MSE=0.140 对真曲线的MSE=0.067\n# 输出：M= 50 训练MSE=0.102 对真曲线的MSE=0.031\n# 输出：M=100 训练MSE=0.086 对真曲线的MSE=0.015\n# 输出：M=300 训练MSE=0.076 对真曲线的MSE=0.009\n```\n\n读输出：学习率 $\\eta=0.1$，每一轮新增一个树桩拟合当前残差。训练 MSE 随轮数单调下降：0.505、0.308、0.140、0.102、0.086、0.076，逐渐逼近噪声方差 $0.3^2=0.09$ 的水平（到 $M=300$ 时训练 MSE 已经略低于噪声方差 0.076，开始把部分噪声也拟合进去了）。最后一列是对**无噪声真曲线**的误差，它更能反映泛化：0.449、0.244、0.067、0.031、0.015，一直降到 $M=300$ 的 0.009。这里 $M=300$ 还没有过拟合，更大的 $M$ 或更深的树才会让它回升；实际中用验证集的误差**早停**来决定 $M$。树桩每次只加一级台阶，300 个台阶叠成了一条接近正弦的曲线，这是提升的力量：把很弱的学习器叠成很强的。\n\n对比一下两种集成：\n\n| | Bagging / 随机森林 | 梯度提升 |\n|---|---|---|\n| 基学习器 | 很深的树（低偏差、高方差） | 很浅的树（高偏差、低方差） |\n| 训练方式 | 并行，彼此独立 | 串行，后一棵依赖前面的结果 |\n| 主要降低 | 方差（靠平均） | 偏差（靠逐步纠错） |\n| 过拟合 | 树数量增加不会过拟合 | 轮数太多会过拟合，要早停或调学习率 |\n| 关键超参数 | 树数、`mtry` | 轮数、学习率、树深度、子采样 |\n\nXGBoost、LightGBM、CatBoost 都是梯度提升的高效工程实现（二阶梯度、直方图加速、类别特征处理、正则化项），它们在表格数据上的强势表现主要来自这套框架。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** Bagging 和 Boosting 都是「把很多棵树合在一起」，请从以下三个角度比较：（a）每棵树的训练方式（并行还是串行）；（b）它们各自主要降低偏差还是方差；（c）为什么 bagging 通常用很深的树，而提升通常用很浅的树（比如深度 1 到 6）？",
+   "a": "（a）Bagging：每棵树在各自的自助样本上**独立并行**训练，互相不知道对方；Boosting：**串行**，第 $m$ 棵树要用到前 $m-1$ 棵树的预测（残差）才能训练。\n\n（b）Bagging 靠平均降低**方差**，不改变偏差（平均几个同分布的预测，期望不变）；Boosting 每一轮都在**修正当前模型的系统性错误**，主要降低**偏差**（也会通过缩小学习率、子采样等控制方差）。\n\n（c）Bagging 要平均的树必须**偏差低**（因为平均不降偏差），所以用深树（低偏差、高方差），让平均去处理方差；随机森林再用特征随机降低树之间的相关性 $\\rho$。Boosting 要靠一级一级叠加来降偏差，每一级只需「略好于瞎猜」的弱学习器，用浅树（高偏差、低方差）就够了，而且用深树每一轮就把残差拟合得太狠，很快过拟合，也失去了「逐步修正」的意义。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "自助采样",
+     "bootstrap",
+     "有放回抽 $n$ 次，约含 63.2% 的不同样本"
+    ],
+    [
+     "袋外误差",
+     "out-of-bag error",
+     "每个样本只让没见过它的树投票得到的误差估计"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在大小为 $n$ 的数据集上做自助采样（有放回抽 $n$ 次），当 $n$ 很大时，一份自助样本平均包含约多少比例的不同原始样本？这对随机森林有什么用？",
+    "options": [
+     "约 63.2%；没被抽到的约 36.8% 是袋外样本，可以免费用来估计测试误差",
+     "约 50%；这样两份自助样本刚好互补",
+     "约 100%；因为每个样本都至少被抽到一次",
+     "约 36.8%；被抽到的样本用来做验证"
+    ],
+    "answer": 0,
+    "explain": "每个样本一次都不被抽到的概率是 $(1-1/n)^n\\to1/e\\approx0.368$，所以被抽到的占 $1-1/e\\approx0.632$。没被某棵树抽到的那些样本（袋外）没参与它的训练，可以用来验证它，汇总得到袋外误差，不需要另留验证集。"
+   },
+   {
+    "q": "随机森林在每个节点只从随机抽出的一部分特征里找最佳切分，这样做的主要目的是？",
+    "options": [
+     "让每棵树更深",
+     "降低每棵树的偏差",
+     "减少训练样本数量以加快速度",
+     "降低不同树之间的相关性，使平均能更有效地降低方差"
+    ],
+    "answer": 3,
+    "explain": "$B$ 棵相关系数为 $\\rho$ 的树平均后的方差是 $\\rho\\sigma^2+\\tfrac{1-\\rho}{B}\\sigma^2$，增加 $B$ 压不动 $\\rho\\sigma^2$ 这一项，必须降低 $\\rho$。随机特征子集强迫不同的树使用不同的特征，从而降低 $\\rho$。它并不降低单棵树的偏差（反而略升），主要目的也不是提速。"
+   },
+   {
+    "q": "梯度提升（平方损失）中，每一轮新加入的树是用来拟合什么的？",
+    "options": [
+     "原始标签 $y$ 本身",
+     "当前集成模型的残差 $y-F_{m-1}(x)$，即平方损失关于预测值的负梯度",
+     "上一棵树的预测值",
+     "随机抽出的一部分特征"
+    ],
+    "answer": 1,
+    "explain": "第 $m$ 轮计算 $r_i=y_i-F_{m-1}(x_i)$（平方损失的负梯度），用一棵浅树去拟合这些 $r_i$，再按学习率缩小后加进模型。如果每棵树都拟合原始标签 $y$，就变成了 bagging 式的互相独立训练，失去了逐步纠错的作用。"
+   }
+  ]
+ }
+}

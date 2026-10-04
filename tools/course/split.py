@@ -242,33 +242,27 @@ def add_setup(parts, whole):
     for k in range(1, len(parts)):
         mine = [(s, e) for kk, s, e in allcells if kk == k]
         prior = [(s, e) for kk, s, e in allcells if kk < k]
-        need = []
-        for _ in range(12):
+        need = []                                   # prior 里的下标
+        for _ in range(30):
+            seq = [(i, prior[i][0], prior[i][1]) for i in sorted(need)] + [(10**6 + j, s, e) for j, (s, e) in enumerate(mine)]
             nb = Notebook()
-            for s, _e in need:
+            missing = None; fi = None
+            for i, s, e in seq:
                 out, fail = nb._run(s, False)
-            missing = None
-            for s, e in mine:
-                out, fail = nb._run(s, False)
-                if fail:
+                if fail and not _expects_err(e):
                     m = re.search(r"NameError: name '(\w+)' is not defined", fail)
-                    if m and not _expects_err(e):
-                        missing = m.group(1); break
+                    if m: missing, fi = m.group(1), i
+                    break
             if not missing: break
-            cand = [i for i, (s, _e) in enumerate(prior) if missing in top_defs(s)]
+            cand = [i for i, (s, _e) in enumerate(prior) if missing in top_defs(s) and i < fi and i not in need]
             if not cand:
                 report.append(f'{parts[k]["id"]}: 找不到 {missing} 的定义'); break
-            idx = cand[-1] if True else cand[0]
-            # 需要的是「最先定义」的那一段（变量可能被后面段修改），取全部定义段里第一个
-            idx = cand[0]
-            if prior[idx] in need: idx = next((c for c in cand if prior[c] not in need), idx)
-            if prior[idx] in need: report.append(f'{parts[k]["id"]}: {missing} 循环依赖'); break
-            need.append(prior[idx])
-            need.sort(key=lambda x: prior.index(x))
+            need.append(cand[-1])
+        need = [prior[i] for i in sorted(need)]
         if need:
             src = '\n'.join(s for s, _e in need)
             md = ('**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n'
-                  '```python\n' + src + '\n```')
+                  + '\n\n'.join('```python\n' + c + '\n```' for c, _e in need))
             blocks = parts[k]['blocks']
             # 插到开头介绍的末尾（「怎么学这一小节」之后）
             b0 = blocks[0]['md']

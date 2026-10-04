@@ -1,0 +1,111 @@
+{
+ "id": "u05c",
+ "title": "决策树、集成与最近邻（3/3）",
+ "en": "Decision Trees, Ensembles & Nearest Neighbors (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "知道 **朴素贝叶斯 (naive Bayes)** 的条件独立假设，以及 **支持向量机 (SVM)** 的**间隔 (margin)** 与**核技巧 (kernel trick)** 的思想，并能判断什么时候该用树模型、什么时候该用神经网络"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「决策树、集成与最近邻」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：k 近邻与维数灾难（约 10 分钟） → 朴素贝叶斯：用概率乘法分类（约 5 分钟） → SVM 与核方法：只讲思想（约 5 分钟） → 什么时候用树，什么时候用神经网络（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\ndef entropy(counts):                           # 熵（以 2 为底），counts 的最后一维是各类个数\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 0.0 - (p * np.log2(np.where(p > 0, p, 1))).sum(-1)    # 约定 0 log 0 = 0\n\ndef gini(counts):                              # 基尼不纯度 = 1 - sum p_k^2\n    c = np.asarray(counts, float)\n    p = c / c.sum(-1, keepdims=True)\n    return 1 - (p ** 2).sum(-1)\n\nfor counts in [[50, 50], [90, 10], [99, 1], [100, 0]]:\n    print(counts, f\"熵={entropy(counts):.3f} 基尼={gini(counts):.3f}\")\n\n# 信息增益：父节点 [40, 40]，按某个特征切成 [30, 10] 和 [10, 30]\ngain = entropy([40, 40]) - 0.5 * entropy([30, 10]) - 0.5 * entropy([10, 30])\nprint(f\"信息增益 = {gain:.3f}\")\n```\n\n```python\ndef make_data(n, seed, n_noise=3):\n    r = np.random.default_rng(seed)\n    X = r.normal(size=(n, 3 + n_noise))        # 前 3 列有用，后面全是噪声\n    y = ((X[:, 0] + X[:, 1] > 0) & (X[:, 2] > -0.5)).astype(int)\n    flip = r.random(n) < 0.1                   # 10% 的标签被随机翻转\n    return X, np.where(flip, 1 - y, y)\n\nX_tr, y_tr = make_data(300, 0)\nX_te, y_te = make_data(1000, 1)\nprint(X_tr.shape, \"正类比例:\", round(y_tr.mean(), 3))\n```\n\n```python\ndef best_split(X, y, feats=None, crit=entropy, K=2):\n    n, tot = len(y), np.bincount(y, minlength=K)\n    parent = crit(tot)\n    best = (0.0, None, None)                   # (增益, 特征编号, 阈值)\n    for j in (range(X.shape[1]) if feats is None else feats):\n        o = np.argsort(X[:, j]); xs = X[o, j]\n        left = np.cumsum(np.eye(K)[y[o]], axis=0)[:-1]   # 在第 i 个间隙切开：左边各类个数\n        right = tot - left\n        nl = np.arange(1, n)\n        gain = parent - (nl * crit(left) + (n - nl) * crit(right)) / n\n        gain[xs[:-1] == xs[1:]] = -1           # 取值相同的两点之间不能切\n        i = gain.argmax()\n        if gain[i] > best[0]:\n            best = (gain[i], j, (xs[i] + xs[i + 1]) / 2)\n    return best\n\ng, j, t = best_split(X_tr, y_tr)\nprint(f\"熵: 最佳特征 x{j}，阈值 {t:.3f}，信息增益 {g:.3f}\")\ng, j, t = best_split(X_tr, y_tr, crit=gini)\nprint(f\"基尼: 最佳特征 x{j}，阈值 {t:.3f}，增益 {g:.3f}\")\n```\n\n```python\ndef build_tree(X, y, depth=0, max_depth=3, min_samples=5, mtry=None, rng=None):\n    counts = np.bincount(y, minlength=2)\n    leaf = {\"leaf\": True, \"pred\": int(counts.argmax()), \"counts\": counts.tolist()}\n    if depth >= max_depth or len(y) < min_samples or counts.max() == len(y):\n        return leaf                            # 停止条件：够深 / 太少 / 已经纯了\n    feats = None if mtry is None else rng.choice(X.shape[1], mtry, replace=False)\n    gain, j, t = best_split(X, y, feats)       # mtry 留给后面的随机森林用\n    if j is None:\n        return leaf\n    m = X[:, j] <= t\n    return {\"leaf\": False, \"j\": j, \"t\": t,\n            \"left\": build_tree(X[m], y[m], depth + 1, max_depth, min_samples, mtry, rng),\n            \"right\": build_tree(X[~m], y[~m], depth + 1, max_depth, min_samples, mtry, rng)}\n\ndef predict_one(node, x):\n    while not node[\"leaf\"]:\n        node = node[\"left\"] if x[node[\"j\"]] <= node[\"t\"] else node[\"right\"]\n    return node[\"pred\"]\n\ndef predict(tree, X):\n    return np.array([predict_one(tree, x) for x in X])\n\ndef show(node, depth=0):\n    pad = \"  \" * depth\n    if node[\"leaf\"]:\n        print(f\"{pad}预测 {node['pred']}  (类别个数 {node['counts']})\")\n    else:\n        print(f\"{pad}x{node['j']} <= {node['t']:.2f} ?\")\n        show(node[\"left\"], depth + 1); show(node[\"right\"], depth + 1)\n\ntree2 = build_tree(X_tr, y_tr, max_depth=2)\nshow(tree2)\n```\n\n### k 近邻与维数灾难\n\n> **标准定义 · k 近邻 (k-nearest neighbors, kNN)**\n>\n> 一个**非参数**方法，没有训练过程，只是存下全部训练数据。预测新点 $x$ 时：计算 $x$ 到所有训练点的距离（常用欧氏距离 $\\|x-x_i\\|_2$），取最近的 $k$ 个，**分类**取这 $k$ 个邻居中的多数类，**回归**取它们的平均。$k$ 是超参数：$k$ 小，决策边界曲折、方差大；$k$ 大，边界平滑、偏差大。\n>\n> *English: kNN stores the training set and predicts by a majority vote (or average) among the k training points closest to the query.*\n\n**白话版：「物以类聚」。** 想知道一个新客户是不是高风险，就看跟他最像的 $k$ 个老客户里多数是不是高风险。你已经在 py-0「综合小项目：从零实现 k 近邻分类器」里用纯 Python 写过它；下面用 NumPy 一次性算出所有测试点到所有训练点的距离矩阵，向量化实现，并在刚才的数据上扫 $k$：\n\n```python\ndef knn_predict(Xtr, ytr, Xte, k):\n    d = ((Xte[:, None, :] - Xtr[None, :, :]) ** 2).sum(-1)    # 所有测试点到所有训练点的距离平方\n    nn = np.argsort(d, axis=1)[:, :k]                         # 每行取最近的 k 个\n    return (ytr[nn].mean(1) > 0.5).astype(int)                # 多数投票\n\nfor k in [1, 3, 5, 15, 45]:\n    acc_tr = np.mean(knn_predict(X_tr, y_tr, X_tr, k) == y_tr)\n    acc_te = np.mean(knn_predict(X_tr, y_tr, X_te, k) == y_te)\n    print(f\"k={k:2d} 训练准确率={acc_tr:.3f} 测试准确率={acc_te:.3f}\")\n# 输出：k= 1 训练准确率=1.000 测试准确率=0.709\n# 输出：k= 3 训练准确率=0.830 测试准确率=0.761\n# 输出：k= 5 训练准确率=0.793 测试准确率=0.776\n# 输出：k=15 训练准确率=0.773 测试准确率=0.804\n# 输出：k=45 训练准确率=0.760 测试准确率=0.801\n```\n\n读输出：$k=1$ 时训练准确率恰好是 1.000（每个训练点最近的邻居就是它自己），测试准确率只有 0.709，典型的过拟合、高方差。随着 $k$ 增大，训练准确率下降（0.830、0.793、0.773、0.760），测试准确率先升后平：0.761、0.776、0.804、0.801，在 $k=15$ 附近最好。$k$ 和决策树的深度、岭回归的 $\\lambda$ 一样，是控制偏差-方差权衡的旋钮，要用验证集选。\n\n**kNN 的软肋：维数灾难。** 前面的数据里有 3 个纯噪声特征，它们参与了距离计算，却对标签毫无贡献。如果继续增加噪声特征呢？\n\n```python\n# 给数据再添加 m 个纯噪声特征，k=15 的 kNN 会怎样？\nfor m in [0, 10, 50, 200]:\n    Xa, ya = make_data(300, 0, n_noise=3 + m)\n    Xb, yb2 = make_data(1000, 1, n_noise=3 + m)\n    print(f\"多加 {m:3d} 个噪声特征: 测试准确率={np.mean(knn_predict(Xa, ya, Xb, 15) == yb2):.3f}\")\n# 输出：多加   0 个噪声特征: 测试准确率=0.804\n# 输出：多加  10 个噪声特征: 测试准确率=0.710\n# 输出：多加  50 个噪声特征: 测试准确率=0.623\n# 输出：多加 200 个噪声特征: 测试准确率=0.612\n```\n\n读输出：没有额外噪声特征时，$k=15$ 的测试准确率是 0.804；多加 10 个噪声特征降到 0.710；加 50 个降到 0.623；加 200 个降到 0.612，已经接近只猜多数类的水平（负类约 59%）。距离是对**所有**特征平方求和：噪声特征越多，它们对距离的贡献就越淹没那 3 个有用特征，「最近的邻居」不再是真正相似的点。决策树和随机森林对这种无关特征不敏感，因为每次切分只挑最有用的特征。\n\n这只是一个原因。更一般的「**维数灾难 (curse of dimensionality)**」有两个几何事实，下面用随机点算一算：\n\n```python\nr = np.random.default_rng(0)\nfor d in [2, 10, 100, 1000]:\n    P = r.random((500, d))                     # 单位超立方体里的 500 个随机点\n    q = r.random(d)\n    dist = np.sqrt(((P - q) ** 2).sum(1))\n    print(f\"d={d:4d}: 最远/最近 = {dist.max() / dist.min():5.2f}  \"\n          f\"要装下 1% 的数据，小方块边长需 {0.01 ** (1 / d):.3f}\")\n# 输出：d=   2: 最远/最近 = 41.73  要装下 1% 的数据，小方块边长需 0.100\n# 输出：d=  10: 最远/最近 =  5.65  要装下 1% 的数据，小方块边长需 0.631\n# 输出：d= 100: 最远/最近 =  1.36  要装下 1% 的数据，小方块边长需 0.955\n# 输出：d=1000: 最远/最近 =  1.11  要装下 1% 的数据，小方块边长需 0.995\n```\n\n读输出：在单位立方体里取 500 个随机点和一个查询点，看距离。$d=2$ 时最远的点比最近的点远 41.73 倍，「近」和「远」差别很大；$d=10$ 时降到 5.65 倍；$d=100$ 时只有 1.36 倍；$d=1000$ 时 1.11 倍：高维下所有点到查询点的距离几乎一样，**距离集中**，最近邻不比随机点更近多少。右边一列是第二个事实：要想用一个小立方体框住 1% 的数据，每条边的长度要有 $0.01^{1/d}$：$d=2$ 时 0.100，$d=10$ 时 0.631，$d=100$ 时 0.955，$d=1000$ 时 0.995，**几乎要覆盖整个立方体的每一条边**，所谓「局部邻域」根本不局部。因此，高维数据上基于距离的方法需要先降维或做特征选择，或学一个更合适的相似度（后面表示学习要讲的内容）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "HVXime0nQeI",
+   "title": "视频三：StatQuest: K-nearest neighbors, Clearly Explained（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### 朴素贝叶斯：用概率乘法分类\n\n> **标准定义 · 朴素贝叶斯 (naive Bayes)**\n>\n> 由贝叶斯公式，$P(c\\mid x)\\propto P(c)\\,P(x\\mid c)$。联合分布 $P(x_1,\\dots,x_p\\mid c)$ 很难估计，**朴素贝叶斯**做一个「朴素」的假设：在给定类别 $c$ 时，各特征**条件独立**，于是 $P(x\\mid c)=\\prod_jP(x_j\\mid c)$，每个一维分布单独估计（连续特征常用高斯，计数特征用多项分布，二值特征用伯努利分布）。预测取使 $\\log P(c)+\\sum_j\\log P(x_j\\mid c)$ 最大的类别。\n>\n> *English: Naive Bayes applies Bayes' rule and assumes features are conditionally independent given the class, so the likelihood factorizes into a product of one-dimensional distributions.*\n\n**白话版：「每条线索各投一票，不管线索之间有没有联系」。** 像垃圾邮件识别：看到「免费」「中奖」「点击」这几个词，各自给「垃圾」加一点证据，把这些证据（对数概率）加起来。它的优点是：训练就是数数（一遍就好）、需要的数据很少、特征非常多时依然好用（文本）；缺点是特征相关时（比如两个词总是一起出现）证据被**重复计算**，概率估计不准，不过分类排序往往仍然不错。\n\n```python\ndef fit_gnb(X, y):                             # 每个类别、每个特征各拟合一个高斯\n    return [(np.mean(y == c), X[y == c].mean(0), X[y == c].var(0) + 1e-9) for c in (0, 1)]\n\ndef predict_gnb(model, X):                     # log 先验 + 各特征的 log 似然之和（特征条件独立）\n    scores = []\n    for prior, mu, var in model:\n        ll = -0.5 * (np.log(2 * np.pi * var) + (X - mu) ** 2 / var)\n        scores.append(np.log(prior) + ll.sum(1))\n    return np.argmax(scores, axis=0)\n\nr = np.random.default_rng(0)                   # 数据 A：特征在类内相互独立，每个特征都有一点区分力\ndef blobs(n):\n    return np.vstack([r.normal(0, 1, (n, 4)), r.normal(1, 1, (n, 4))]), np.repeat([0, 1], n)\n(Xa, ya), (Xb, yb3) = blobs(200), blobs(500)\nprint(\"数据 A 朴素贝叶斯:\", round(np.mean(predict_gnb(fit_gnb(Xa, ya), Xb) == yb3), 3))\n\ndef xor_data(n):                               # 数据 B：标签 = 两个特征符号的异或\n    X = r.normal(size=(n, 2)); return X, ((X[:, 0] > 0) ^ (X[:, 1] > 0)).astype(int)\n(Xc, yc), (Xd, yd) = xor_data(300), xor_data(1000)\nprint(\"数据 B 朴素贝叶斯:\", round(np.mean(predict_gnb(fit_gnb(Xc, yc), Xd) == yd), 3))\nfor d in [2, 4]:\n    tree = build_tree(Xc, yc, max_depth=d)\n    print(f\"数据 B 深度 {d} 的决策树:\", round(np.mean(predict(tree, Xd) == yd), 3))\n# 输出：数据 A 朴素贝叶斯: 0.853\n# 输出：数据 B 朴素贝叶斯: 0.482\n# 输出：数据 B 深度 2 的决策树: 0.519\n# 输出：数据 B 深度 4 的决策树: 0.994\n```\n\n读输出：数据 A 里两类的每个特征均值差 1 个标准差，特征在类内相互独立，正好满足朴素贝叶斯的假设，测试准确率 0.853（4 个特征合起来比单个特征更有力）。数据 B 是 XOR：标签是 $x_0$ 和 $x_1$ **符号的异或**，每个特征**单独**看，两类的分布完全一样（均值都是 0），朴素贝叶斯没有任何线索可用，准确率 0.482，约等于瞎猜。这里同时展示了决策树的一个贪心陷阱：深度 2 的树准确率是 0.519（第一刀切哪里增益都接近 0，选了个没用的位置），深度 4 的树却达到 0.994，让后面几层慢慢把角落分开。可见，XOR 型的**特征交互**是朴素贝叶斯做不到的，是树靠更深的层数才能学到的，是线性模型更学不到的。\n\n### SVM 与核方法：只讲思想\n\n> **标准定义 · 支持向量机 (support vector machine, SVM) 与核技巧 (kernel trick)**\n>\n> 标签取 $y_i\\in\\{-1,+1\\}$。线性 **SVM** 找一个超平面 $w^\\top x+b=0$，使两类之间的**间隔 (margin)**（超平面到最近训练点的距离）最大；在把最近点的 $y_i(w^\\top x_i+b)$ 规范化为 1 之后，间隔是 $1/\\|w\\|$，所以最大化间隔就是最小化 $\\|w\\|^2$。允许少量违规的**软间隔**形式是 $\\min_{w,b}\\ \\tfrac12\\|w\\|^2+C\\sum_i\\max\\big(0,\\,1-y_i(w^\\top x_i+b)\\big)$，其中 $\\max(0,1-y\\hat y)$ 叫**合页损失 (hinge loss)**。对偶形式里，训练数据只通过**内积** $x_i^\\top x_j$ 出现，只有位于间隔上或间隔内的点（**支持向量**）起作用。**核技巧**：把内积换成**核函数** $k(x,z)=\\varphi(x)^\\top\\varphi(z)$，就等价于在一个（可能是无穷维的）特征空间 $\\varphi(x)$ 里做线性分类，而不必真的把 $\\varphi$ 算出来。常用核：多项式核 $(x^\\top z+1)^d$，高斯 RBF 核 $\\exp(-\\|x-z\\|^2/2\\sigma^2)$。\n>\n> *English: A linear SVM maximizes the margin between classes (soft-margin form: hinge loss plus an L2 penalty). Because the dual depends only on inner products, replacing them with a kernel function k(x,z)=φ(x)ᵀφ(z) gives a nonlinear classifier without computing φ explicitly.*\n\n**白话版：「两个阵营之间修一条最宽的马路」，核技巧是「不用真的把地图折起来，也能知道折起来之后两点有多近」。** 马路越宽，边界对个别点的位置越不敏感，所以泛化好；只有路边的点（支持向量）决定马路的位置，其他点可以删掉。数据在平面上不是线性可分的（比如一圈套一圈），把它映射到更高维，说不定就线性可分了；核函数能让你直接算高维空间里的内积，免去升维的计算。\n\n核技巧可以用一个小例子验证：二维输入的多项式核 $(x^\\top z+1)^2$，恰好等于把 $x$ 升到 6 维特征 $\\varphi(x)=(1,\\sqrt2x_1,\\sqrt2x_2,x_1^2,x_2^2,\\sqrt2x_1x_2)$ 之后的内积。\n\n```python\ndef phi(x):                                    # 二维输入的显式二次特征映射（6 维）\n    s2 = np.sqrt(2)\n    return np.array([1, s2 * x[0], s2 * x[1], x[0] ** 2, x[1] ** 2, s2 * x[0] * x[1]])\n\ndef poly_kernel(x, z):                         # 核函数：不显式升维，直接算内积\n    return (x @ z + 1) ** 2\n\nr = np.random.default_rng(0)\nx, z = r.normal(size=2), r.normal(size=2)\nprint(\"显式升到 6 维再做内积:\", round(phi(x) @ phi(z), 6))\nprint(\"直接用核函数 (x·z+1)^2 :\", round(poly_kernel(x, z), 6))\nprint(\"RBF 核 exp(-|x-z|^2/2)  :\", round(float(np.exp(-0.5 * np.sum((x - z) ** 2))), 6))\n# 输出：显式升到 6 维再做内积: 1.137769\n# 输出：直接用核函数 (x·z+1)^2 : 1.137769\n# 输出：RBF 核 exp(-|x-z|^2/2)  : 0.851684\n```\n\n读输出：随机取两个二维点 $x,z$：先显式升到 6 维再做内积，结果 1.137769；直接代入核函数 $(x^\\top z+1)^2$，结果也是 1.137769，两者完全一致，不需要显式计算 $\\varphi$。RBF 核 $\\exp(-\\|x-z\\|^2/2)$ 对应的 $\\varphi$ 是**无穷维**的，根本无法显式写出来，但核函数值（这里是 0.851684）一行就算出来，这就是核技巧的威力。\n\nSVM 在 2000 年代是最主流的分类器之一，今天在大数据上让位给了集成和神经网络，原因是核方法需要 $n\\times n$ 的核矩阵，训练大致 $O(n^2)\\sim O(n^3)$，样本一多就吃不消；但它的思想留了下来：**间隔**（后来的对比学习、度量学习里还在用）、**合页损失**、**用核 / 相似度函数表示数据**（注意力机制可以读成一个可学习的核）。你不需要实现它，能读懂「kernel」「margin」「support vector」这几个词就够了。\n\n### 什么时候用树，什么时候用神经网络\n\n这一节的所有模型，输入都是一行**现成的特征**。图像、文本、音频的输入是**原始信号**（几十万个像素），没人手工写好特征。所以经验法则是：\n\n| | 树模型（随机森林 / 梯度提升） | 神经网络 |\n|---|---|---|\n| 擅长的数据 | **表格数据**：每列是有明确含义的特征（价格、库存、天数……），列的类型混杂 | **图像、文本、语音、图结构**：原始信号里有空间 / 时间 / 序列结构 |\n| 数据量 | 几百到几十万行都很好用 | 通常需要更多数据，或预训练模型 |\n| 特征工程 | 需要，但不需要标准化，对无关特征和异常值不敏感 | 自动学习表示，输入要标准化 |\n| 训练和调参 | 快，默认参数就不错 | 慢，对超参数敏感 |\n| 可解释性 | 特征重要性、单棵树可读 | 较难 |\n\n为什么表格数据上树常常赢？Grinsztajn 等人（2022）系统比较了树模型和深度学习在中等规模表格数据上的表现，树模型仍然领先，并从实验里给出几条原因：神经网络倾向于学**过于平滑**的函数，而表格数据里的目标函数常常不规则；无关特征对 MLP 的伤害更大；表格数据的特征轴有各自的含义，**不具备旋转不变性**，而 MLP 的第一层把所有特征线性混合。反过来，图像和文本有**平移 / 局部性 / 顺序**这样的结构，卷积和注意力把这些结构当作**归纳偏置 (inductive bias)** 直接写进架构，树却对它们无能为力。你在 ARENA 里学的神经网络，强项正是**表示学习**：不再需要人写特征，让网络自己学。这也是下一节「无监督学习」要接着讲的主题。\n\n### 这一节你要带走的三句话\n\n1. **决策树**自上而下贪心地挑「使不纯度（熵 / 基尼）下降最多」的切分，越深越容易过拟合；**随机森林**用 bagging 加特征随机把很多棵深树平均起来压低方差，**梯度提升**用很多棵浅树逐步拟合残差压低偏差，是表格数据的主力。\n2. **kNN** 没有训练，只存数据、按距离投票；高维下距离集中、无关特征会淹没有用特征（**维数灾难**），所以基于距离的方法要先降维或做特征选择；**朴素贝叶斯**靠条件独立假设把似然拆成乘积，对特征交互（如 XOR）无能为力。\n3. **SVM** = 最大间隔 + 合页损失，**核技巧**是「用核函数代替内积，不用显式升维」；今天在表格数据上用树，在图像和文本上用神经网络，选择的依据是数据有没有可以写进架构的结构。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** 一个朋友说：「表格数据我用 XGBoost 就行，为什么还要神经网络？」另一个朋友说：「图像为什么不能把像素拉平后交给随机森林？」请各用 2—3 句话回应，并指出「归纳偏置」在其中的作用。",
+   "a": "对前一位：在**中等规模、特征含义清晰的表格数据**上，梯度提升往往确实是最好的第一选择：训练快、默认参数就好、对无关特征和异常值不敏感，而神经网络倾向于学过于平滑的函数，需要更多的调参和数据。神经网络的价值在别处：当输入是原始信号（图像、文本）、需要**联合学习特征和预测**、需要预训练迁移或多模态时，它才显出优势。\n\n对后一位：把像素拉平后，相邻像素的**空间邻接关系**就丢了，树要在几十万个位置上各自学「这里有没有边缘」，而同一个物体平移几个像素就是完全不同的输入，没有任何机制把「平移后还是同一个东西」告诉模型。卷积网络把**局部性和平移等变**直接写进了架构（同一个卷积核到处共用权重），这就是归纳偏置：它缩小了模型要搜索的函数范围，让有限的数据就足够学会。树的归纳偏置是「轴对齐的规则」，适合特征本身有含义的表格数据，不适合像素。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "维数灾难",
+     "curse of dimensionality",
+     "高维下距离集中、局部邻域不局部、需要的数据指数增长"
+    ],
+    [
+     "归纳偏置",
+     "inductive bias",
+     "模型架构自带的假设（如卷积的平移等变、树的轴对齐）"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "An Introduction to Statistical Learning（ISL，James 等）第 8 章 Tree-Based Methods、第 9 章 Support Vector Machines、第 4 章（kNN、朴素贝叶斯）",
+   "url": "https://www.statlearning.com/",
+   "note": "本节大纲依据的开放教材（作者免费公开），树、bagging、随机森林、提升和 SVM 的标准讲法，只引用不转载"
+  },
+  {
+   "title": "Stanford CS229 讲义：Support vector machines、Kernel methods 等章节",
+   "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf",
+   "note": "大学课程讲义；SVM 的间隔、对偶和核技巧的完整推导，想把「只讲思想」补成推导时读它"
+  },
+  {
+   "title": "Breiman：Random Forests（Machine Learning, 2001）",
+   "url": "https://link.springer.com/article/10.1023/A:1010933404324",
+   "note": "随机森林的原始论文，含袋外误差与特征重要性"
+  },
+  {
+   "title": "Grinsztajn、Oyallon、Varoquaux：Why do tree-based models still outperform deep learning on typical tabular data?（NeurIPS 2022）",
+   "url": "https://arxiv.org/abs/2207.08815",
+   "note": "「表格数据上树模型为什么还在赢」的系统实验，最后一节的依据"
+  },
+  {
+   "title": "StatQuest：Gradient Boost Part 1 (of 4): Regression Main Ideas（约 16 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=3CC4N4z3GJc",
+   "note": "梯度提升的图形讲解，对照本节的回归树桩例子看；SVM 另有 StatQuest 的三集系列"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为什么在几百维的特征上直接用欧氏距离做 kNN，效果常常变差？",
+    "options": [
+     "因为高维空间里的点太少所以不会有近邻",
+     "因为 kNN 只能处理最多十几个特征",
+     "因为欧氏距离在高维不满足三角不等式",
+     "高维下点到查询点的距离趋于相同（距离集中），而且无关特征会淹没有用特征，最近邻不再真正相似"
+    ],
+    "answer": 3,
+    "explain": "实验里随机点的「最远 / 最近」距离比从 $d=2$ 的 41.73 降到 $d=1000$ 的 1.11，近邻和远邻几乎没有区别；再加上无关特征对距离的贡献，会把有用特征的差异淹没。kNN 没有特征个数的硬性上限；欧氏距离在任何维度都满足三角不等式；问题是**距离失去区分度**。"
+   },
+   {
+    "q": "朴素贝叶斯里「朴素」指的是什么假设？",
+    "options": [
+     "特征之间完全不相关，也与类别无关",
+     "给定类别时，各个特征相互条件独立",
+     "各个类别的先验概率相等",
+     "所有特征的取值都是二元的"
+    ],
+    "answer": 1,
+    "explain": "朴素贝叶斯假设 $P(x_1,\\dots,x_p\\mid c)=\\prod_jP(x_j\\mid c)$，即**给定类别后**特征条件独立（不是无条件独立，更不是与类别无关）。它不要求特征二元，也不要求先验相等。这个假设一旦被特征交互破坏（如 XOR），模型就学不到。"
+   },
+   {
+    "q": "SVM 的「核技巧」指的是？",
+    "options": [
+     "把数据先用 PCA 降到二维再画图",
+     "用卷积核在图像上滑动提取局部特征",
+     "把算法中的内积换成核函数 $k(x,z)=\\varphi(x)^\\top\\varphi(z)$，不显式计算高维映射 $\\varphi$ 就能得到非线性分类器",
+     "把训练集中的非支持向量全部删除以加速"
+    ],
+    "answer": 2,
+    "explain": "SVM 的对偶问题只用到样本之间的内积，把内积换成核函数就等价于在（可能无穷维的）特征空间里做线性分类，而不必真的把 $\\varphi(x)$ 算出来。卷积网络里的「卷积核」是另一回事；PCA 是降维；删除非支持向量是 SVM 的一个性质，不叫核技巧。"
+   }
+  ]
+ }
+}

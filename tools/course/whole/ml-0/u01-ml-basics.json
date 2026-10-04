@@ -1,0 +1,286 @@
+{
+ "id": "u01",
+ "title": "机器学习的基本问题",
+ "en": "The Machine Learning Problem",
+ "minutes": 95,
+ "objectives": [
+  "分清 **监督学习 (supervised)**、**无监督学习 (unsupervised)**、**强化学习 (reinforcement learning)** 的区别：训练数据里有没有「标准答案」，反馈是什么形式；并能区分 **回归 (regression)** 与 **分类 (classification)**",
+  "把任何一个学习问题拆成四个部分：**数据 (data)**、**模型 (model / hypothesis class)**、**损失函数 (loss)**、**优化 (optimization)**，并在代码里分别指出它们",
+  "理解为什么要把数据分成 **训练集 (training set)**、**验证集 (validation set)**、**测试集 (test set)**，以及「在测试集上选模型」为什么会让结果偏乐观（**数据泄漏 / 选择偏差**）",
+  "用多项式拟合观察 **欠拟合 (underfitting)** 与 **过拟合 (overfitting)**，并用 **偏差-方差分解 (bias–variance decomposition)** 解释它们",
+  "会算 **MSE / MAE / RMSE / 准确率**，知道为什么先要有一个 **基线 (baseline)**；理解 **泛化 (generalization)**、**真实风险 (true risk)** 与 **经验风险最小化 (ERM)**，并把它和 prob-0 的最大似然联系起来"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n机器学习 (machine learning, ML) 的核心问题可以用一句话说完：**我们手里只有有限的几条样本，却希望得到的规律在没见过的新样本上也管用**。后面所有的东西，线性回归、逻辑回归、神经网络、Transformer，都是这句话的不同回答。这一节不教任何一种具体的模型，而是把这句话说成数学语言：什么叫「学」，什么叫「学得好」，怎么**诚实地**知道自己学得好不好。这套语言用错了，后面模型再漂亮，结论也是错的；你在论文里看到的很多「结果太好以至于不可信」，问题都出在这一节。\n\n**开始之前你要会：**\n\n- 概率统计：期望、方差（prob-0「方差与标准差」小节），最大似然和负对数似然（prob-0「最大似然估计」「交叉熵就是负的对数似然」小节）；\n- NumPy：数组形状、布尔掩码、轴与归约（arena-0.0「数组的形状与数据类型」「轴与归约」小节），向量化与广播（arena-0.0「向量化」小节）；\n- 导数与梯度的意思（arena-0.0「损失函数的导数」小节）。这一节还不用求导，下一节才用。\n\n**学完它你就能看懂这几件事：**\n\n- 论文里的「we hold out 20% of the data as the test set」「selected on the validation set」到底在防什么；\n- 看到「训练损失一直降、验证损失在涨」，立刻知道发生了什么、该做什么（早停、正则化、加数据、换更简单的模型）；\n- 为什么说「准确率 95%」可能毫无意义，以及为什么任何结果都要和一个朴素基线比；\n- 「经验风险最小化」「泛化差距」「偏差-方差」这些在 CS229、ISL、Murphy 教材里反复出现的词。\n\n**本节安排（约 95 分钟）**：三类学习（10 分钟）→ 学习问题的四个部分（8 分钟）→ 训练 / 验证 / 测试与视频一（17 + 6 分钟）→ 欠拟合与过拟合、偏差与方差、视频二与视频三（20 + 17 分钟）→ 基线与评估指标（10 分钟）→ 泛化与经验风险最小化（10 分钟）→ 总结与「想一想」。\n\n**怎么学这一节：** 代码块都能在页面里直接「▶ 运行」，只用 numpy，**按顺序**跑（后面的块要用前面定义的变量）。每个块都是「从零写」，不调用任何机器学习库，因为你要弄清楚库在替你做什么。固定了随机种子，所以你的输出和我的应当逐位一致。\n\n### 三类学习：到底哪里不同\n\n> **标准定义 · 监督学习 (supervised learning)**\n>\n> 给定带标签的训练集 $\\{(x_i,y_i)\\}_{i=1}^n$，其中 $x_i$ 是**特征 (features)**，$y_i$ 是**标签 (label / target)**，目标是学出一个函数 $h$，使 $h(x)$ 在新样本上接近真实的 $y$。$y$ 是连续数值时叫**回归**，$y$ 是有限个类别时叫**分类**。\n>\n> *English: Supervised learning learns a mapping from inputs x to outputs y using labelled examples; regression predicts continuous targets, classification predicts discrete classes.*\n\n**白话版：「有标准答案的习题册」。** 每道题（$x$）后面都附了答案（$y$），你照着做题、对答案、改错，目标是遇到**新题**也能做对。预测销量、预测是否违约、识别图片里是什么，都是这一类。\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\nX = rng.normal(size=(6, 2))                 # 6 个样本，每个样本 2 个特征\nw_true = np.array([2.0, -1.0])\ny_reg = X @ w_true + 0.5                    # 回归：标准答案是连续的数\ny_cls = (y_reg > 0.5).astype(int)           # 分类：标准答案是类别 0 / 1\nprint(X.shape, y_reg.shape, y_cls.shape)\nprint(np.round(y_reg, 2))\nprint(y_cls)\n# 输出：(6, 2) (6,) (6,)\n# 输出：[ 0.88  1.68 -0.93  2.16  0.36 -0.79]\n# 输出：[1 1 0 1 0 0]\n```\n\n**读输出：** `X.shape` 是 `(6, 2)`：6 个样本、2 个特征（样本在行，特征在列，本课程统一这样放）；两个标签向量的形状都是 `(6,)`，每个样本一个标签。`y_reg` 是连续的数 `[ 0.88  1.68 -0.93  2.16  0.36 -0.79]`，这就是回归的标签；把它按「是否大于 0.5」变成 0 / 1，得到 `[1 1 0 1 0 0]`，这就是分类的标签。**回归还是分类，只取决于 $y$ 的类型**，同一份特征可以配不同的标签。\n\n> **标准定义 · 无监督学习 (unsupervised learning)**\n>\n> 训练数据只有特征 $\\{x_i\\}_{i=1}^n$，**没有标签**，目标是发现数据本身的结构：聚类 (clustering)、降维 (dimensionality reduction)、密度估计 (density estimation) 等。\n>\n> *English: Unsupervised learning finds structure in unlabelled data, such as clusters, low-dimensional representations or the data density.*\n\n**白话版：「把一堆没有标签的零件自己分堆」。** 没人告诉你哪个是哪个，你只能凭「谁和谁更像」来分。下面用最经典的 k 均值 (k-means) 做一个手写版：两团点，只给坐标，让算法自己找出两个中心。\n```python\nrng = np.random.default_rng(1)\nA = rng.normal([0, 0], 0.5, size=(50, 2))   # 一团点\nB = rng.normal([3, 3], 0.5, size=(50, 2))   # 另一团点\nZ = np.vstack([A, B])                       # 只有 X，没有任何标签\ncenters = Z[[0, 1]].copy()                  # 随便取两个点当初始中心\nfor it in range(20):\n    d = ((Z[:, None, :] - centers[None, :, :]) ** 2).sum(axis=2)   # 每点到每个中心的距离平方\n    lab = d.argmin(axis=1)                  # 归到最近的中心\n    new = np.array([Z[lab == k].mean(axis=0) for k in range(2)])   # 中心移到本团的均值\n    if np.allclose(new, centers):\n        break\n    centers = new\nprint(it, np.round(centers, 2).tolist(), np.bincount(lab).tolist())\n# 输出：2 [[2.93, 2.99], [-0.01, -0.07]] [50, 50]\n```\n\n**读输出：** 输出里第一个数 `2` 表示编号为 2 的那一轮（第 3 轮）两个中心不再移动，算法收敛；两个中心约在 `[2.93, 2.99]` 和 `[-0.01, -0.07]`，正好是我们造数据时那两团点的中心 $(3,3)$ 和 $(0,0)$ 附近；`[50, 50]` 说明每团分到了 50 个点。**全程没有用到任何标签**：算法只用了「点到中心的距离」这个结构。这里的「损失」是点到所属中心的距离平方和，k-means 的每一轮都让它不增。\n\n> **标准定义 · 强化学习 (reinforcement learning)**\n>\n> 智能体 (agent) 在环境中依次选择**动作**，环境返回**奖励 (reward)**，目标是学出一个策略，使**累计奖励**最大。反馈是**评价性的**（做得好不好、得多少分），而不是**指导性的**（正确动作是什么）；并且只有被选中的动作才会得到反馈。\n>\n> *English: In reinforcement learning an agent learns a policy that maximises cumulative reward from evaluative feedback on the actions it actually takes.*\n\n**白话版：「学骑自行车」。** 没人给你标准答案，也没人把「所有可能的动作」都演示一遍；你摔了（负反馈）、没摔（正反馈），自己总结。最小的例子是**多臂老虎机 (multi-armed bandit)**：两台老虎机，你不知道哪台更容易中奖，每次只能拉一台，只能看到那一台的结果。\n```python\nrng = np.random.default_rng(2)\np = np.array([0.3, 0.6])                    # 两台老虎机的中奖概率（智能体不知道）\nQ = np.zeros(2); N = np.zeros(2)            # 对每台机器的价值估计、尝试次数\ntotal = 0.0\nfor t in range(1000):\n    a = int(rng.integers(2)) if rng.random() < 0.1 else int(Q.argmax())   # 10% 随机探索，其余选当前最好的\n    r = float(rng.random() < p[a])          # 只能看到「自己选的那台」的奖励\n    N[a] += 1\n    Q[a] += (r - Q[a]) / N[a]               # 增量求平均\n    total += r\nprint(N.tolist(), np.round(Q, 2).tolist(), total)\n# 输出：[77.0, 923.0] [0.32, 0.61] 585.0\n```\n\n**读输出：** 真实的中奖概率是 $0.3$ 和 $0.6$。1000 次里，`N` 显示第一台只拉了 77 次、第二台拉了 923 次：智能体发现第二台更好，就主要拉它；估计值 `Q` 是 `[0.32, 0.61]`，和真值很接近；总奖励 `585.0`。注意两个特点：第一，**只能看到自己拉的那台的结果**，所以第一台的估计只来自 77 次样本，不太准；第二，有一小部分（10%）动作是随机**探索 (exploration)**，否则一旦早期运气不好就可能永远不再尝试好机器。「探索与利用」的两难是强化学习独有的，监督学习里没有。这门课接下来专注监督学习，强化学习会在世界模型那门课里正式展开。\n\n**一张对照表：**\n\n| | 监督学习 | 无监督学习 | 强化学习 |\n|---|---|---|---|\n| 训练数据 | $(x,y)$，有标准答案 | 只有 $x$ | 与环境交互得到的 (状态, 动作, 奖励) |\n| 反馈 | 每个样本都有正确答案 | 没有 | 评价性，只对做过的动作 |\n| 典型目标 | 对新 $x$ 预测 $y$ | 找结构、压缩、生成 | 最大化累计奖励 |\n| 典型例子 | 预测销量、图像分类、语言模型预测下一个词 | 聚类、PCA、表示学习 | 游戏、机器人控制 |\n\n**一个容易混淆的点：自监督 (self-supervised)。** 大语言模型预测下一个词，标签其实来自数据本身（下一个词就是前一段文字的标签），不需要人工标注；形式上它是监督学习，只是标签是自动造出来的。所以「有没有标签」要看**训练目标的形式**，而不是看有没有人标过。\n\n### 一个学习问题的四个部分\n\n把任何机器学习问题拆开，都能找到这四样东西：\n\n> **标准定义 · 学习问题的四要素**\n>\n> 1. **数据 (data)**：训练样本 $\\{(x_i,y_i)\\}$，假设来自某个未知分布 $P(x,y)$；\n> 2. **模型 / 假设类 (hypothesis class)**：一族候选函数 $\\mathcal H=\\{h_\\theta:\\theta\\in\\Theta\\}$，由参数 $\\theta$ 决定其中哪一个；\n> 3. **损失函数 (loss function)**：$\\ell(h_\\theta(x),y)\\ge 0$，衡量单个预测错得有多厉害；\n> 4. **优化 (optimization)**：在 $\\mathcal H$ 里搜索使（训练集上的平均）损失最小的 $\\theta$ 的算法。\n>\n> *English: A learning problem consists of data, a hypothesis class, a loss function and an optimisation procedure that searches the class for parameters with low loss.*\n\n**白话版：「练习册、解题套路、评分标准、改进办法」。** 数据是练习册；模型规定你**允许**用哪些解题套路（直线？曲线？）；损失是评分标准，一道题错多少扣多少分；优化是「我怎么调整套路才能少扣分」。**四个部分里只有第 4 个是「算法」，前三个都是你的设计选择**，其中模型和损失一旦选定，就等于规定了你要解的数学问题。\n```python\nrng = np.random.default_rng(0)\nx = rng.uniform(0, 1, 30)\ny = 2 * x + 1 + rng.normal(0, 0.2, 30)      # 数据：真实规律 y = 2x + 1，加噪声\n\ndef model(w, b, x):                         # 模型：一族直线 y = w x + b\n    return w * x + b\n\ndef loss(w, b):                             # 损失：均方误差\n    return np.mean((model(w, b, x) - y) ** 2)\n\nws = np.linspace(0, 4, 9)                   # 优化：最笨的办法，在网格上试（b 固定为 1）\nL = [loss(w, 1.0) for w in ws]\nfor w, l in zip(ws, L):\n    print(f\"w={w:.1f}  损失={l:.3f}\")\nprint(\"最好的 w：\", ws[int(np.argmin(L))])\n# 输出：w=0.0  损失=1.698\n# 输出：w=0.5  损失=0.993\n# 输出：w=1.0  损失=0.482\n# 输出：w=1.5  损失=0.164\n# 输出：w=2.0  损失=0.038\n# 输出：w=2.5  损失=0.106\n# 输出：w=3.0  损失=0.366\n# 输出：w=3.5  损失=0.819\n# 输出：w=4.0  损失=1.466\n# 输出：最好的 w： 2.0\n```\n\n**读输出：** 这段代码里，`x, y` 是数据（真实规律是 $y=2x+1$，加了一点噪声）；`model` 是模型，假设类是所有直线 $y=wx+b$，参数是 $(w,b)$；`loss` 是均方误差；最后用最笨的优化办法，固定 $b=1$，在 $w$ 的网格上逐个试。从输出看，损失随 $w$ 先降后升：`w=0.0` 时 `1.698`，`w=2.0` 时降到最低的 `0.038`，之后又升到 `w=4.0` 的 `1.466`，所以最好的 $w$ 是 `2.0`，正是造数据时用的真值。这个「U 形」是下一节梯度下降的出发点：损失是参数的一条（或一个）碗形曲面，我们要走到碗底。真实问题里参数有成千上万个，网格搜索不可行，所以需要用梯度**有方向地**走。\n\n### 训练集、验证集、测试集：为什么要三分\n\n> **标准定义 · 数据划分 (data splits)**\n>\n> 把可用数据随机且互不重叠地分成三份：**训练集**用来拟合参数；**验证集 (validation set)** 用来比较不同模型、选择**超参数 (hyperparameters)**（如多项式的次数、学习率）；**测试集**在所有选择**都做完之后**只用一次，用来估计最终的泛化表现。\n>\n> *English: The training set fits parameters, the validation set selects models and hyperparameters, and the test set is touched only once at the end to estimate generalisation.*\n\n**白话版：「平时练习、模拟考、高考」。** 练习册（训练集）可以反复做；模拟卷（验证集）用来判断你该用哪种复习方法；高考卷（测试集）如果在备考时就看过，那高考成绩就没有意义了。**测试集的价值在于它没有参与过任何决定。**\n\n先看怎么切。注意要**先随机打乱再切**（否则如果数据是按时间或类别排好的，三份的分布会不同）：\n```python\nrng = np.random.default_rng(42)\nn = 60\nx = rng.uniform(0, 1, n)\ny = np.sin(2 * np.pi * x) + rng.normal(0, 0.3, n)   # 真实规律是正弦波，加噪声\n\nidx = rng.permutation(n)                    # 先随机打乱，再切\ntr, va, te = idx[:20], idx[20:40], idx[40:]\nxtr, ytr = x[tr], y[tr]\nxva, yva = x[va], y[va]\nxte, yte = x[te], y[te]\nprint(len(tr), len(va), len(te))\nprint(len(set(tr) & set(va)), len(set(tr) & set(te)), len(set(va) & set(te)))   # 三份互不重叠\n# 输出：20 20 20\n# 输出：0 0 0\n```\n\n**读输出：** 60 个样本被切成 `20 20 20`；第二行三个 `0` 是三份两两交集的大小，确认互不重叠。**如果同一个样本同时出现在训练集和测试集里，测试成绩就包含了「背答案」的部分**，这类问题叫**数据泄漏 (data leakage)**，是最常见的错误之一。后面还会再看到它的另一种形式：用整份数据算均值再标准化，也是泄漏。\n\n**为什么不能直接用测试集选模型？** 用一个纯噪声实验说明：500 个「模型」其实都是随机权重（预测 $x\\cdot w>0$），标签也是随机的，所以任何一个模型的真实准确率都是 50%。\n```python\nrng = np.random.default_rng(3)\nXv, Xt = rng.normal(size=(40, 5)), rng.normal(size=(40, 5))   # 验证集、测试集：5 个特征\nyv, yt = rng.integers(0, 2, 40), rng.integers(0, 2, 40)       # 标签是纯随机的，特征和标签毫无关系\nW = rng.normal(size=(500, 5))               # 500 个「模型」：每个是一组随机权重，预测 x@w > 0\npv = (Xv @ W.T > 0).astype(int)             # 每个模型在验证集上的预测，形状 (40, 500)\npt = (Xt @ W.T > 0).astype(int)\nacc_v = (pv == yv[:, None]).mean(axis=0)    # 500 个验证准确率\nacc_t = (pt == yt[:, None]).mean(axis=0)\ng = int(acc_v.argmax())                     # 用验证集挑「最好」的那一个\nprint(\"验证集上最好的准确率：\", acc_v[g])\nprint(\"它在测试集上的准确率：\", acc_t[g])\nprint(\"500 个模型在测试集上的平均准确率：\", round(float(acc_t.mean()), 3))\n# 输出：验证集上最好的准确率： 0.675\n# 输出：它在测试集上的准确率： 0.45\n# 输出：500 个模型在测试集上的平均准确率： 0.507\n```\n\n**读输出：** 在 40 个验证样本上，500 个随机模型里最好的那个准确率有 `0.675`，看起来「学到了东西」；可是同一个模型放到另外 40 个测试样本上，只有 `0.45`；500 个模型在测试集上的平均准确率是 `0.507`，正好是 50% 上下。**这就是选择偏差 (selection bias)**：从 500 个候选里挑「在这份数据上最好」的，挑中的往往只是运气最好的。验证集已经被我们「挑」过了，它给出的成绩偏乐观；测试集从没参与过挑选，所以它给出的才是无偏的估计。这也是为什么论文里**不能**因为测试结果不好就回头再调模型：每调一次，测试集的「干净」程度就少一分。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "fSytzGwwBVw",
+   "title": "视频一：Machine Learning Fundamentals: Cross Validation（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "**视频一要点：** 数据不多时，固定切出一份验证集会很浪费，也很依赖「切法的运气」。**k 折交叉验证 (k-fold cross-validation)** 把训练数据分成 $k$ 份，轮流让其中 1 份当验证集、其余 $k-1$ 份训练，最后把 $k$ 个验证成绩取平均。每个样本都被用来验证过一次，也都被用来训练过 $k-1$ 次。它的代价是要训练 $k$ 次。**不管用哪种办法，最后那份测试集仍然要留着不碰。**\n\n### 欠拟合与过拟合：用多项式亲手看\n\n> **标准定义 · 欠拟合与过拟合 (underfitting & overfitting)**\n>\n> **欠拟合**：模型太简单，连训练集都拟合不好，训练误差和验证误差都高。**过拟合**：模型太灵活，把训练样本里的**噪声**也当成规律学进去，训练误差很低，但验证误差明显更高。模型的**容量 (capacity)**（能表示多复杂的函数）是关键旋钮。\n>\n> *English: Underfitting: the model is too simple to capture the pattern, so both training and validation error are high. Overfitting: the model fits noise in the training set, so training error is low but validation error is much higher.*\n\n**白话版：「死记硬背 vs 一知半解」。** 把练习册上的每道题连同它的印刷错误都背下来（过拟合），换一本新书就懵了；只记住「所有答案都选 B」（欠拟合），连练习册都做不好。好的学习是抓住规律、忽略噪声。\n\n**用 numpy 的 `np.polyfit` 做实验。** 真实规律是 $y=\\sin(2\\pi x)+\\varepsilon$，噪声标准差 0.3，所以**任何模型能达到的最低 MSE 约为 $0.3^2=0.09$**（这部分叫不可约误差，下面会解释）。训练集只有 20 个点，次数从 0（常数）一直到 9：\n```python\ndef mse(y, yhat):\n    return float(np.mean((y - yhat) ** 2))\n\nprint(\"次数  训练MSE  验证MSE\")\nfor d in [0, 1, 3, 5, 9]:\n    coef = np.polyfit(xtr, ytr, d)          # 只用训练集拟合 d 次多项式\n    print(f\"{d:<5d} {mse(ytr, np.polyval(coef, xtr)):.3f}    {mse(yva, np.polyval(coef, xva)):.3f}\")\n# 输出：次数  训练MSE  验证MSE\n# 输出：0     0.781    0.558\n# 输出：1     0.243    0.420\n# 输出：3     0.039    0.080\n# 输出：5     0.039    0.105\n# 输出：9     0.009    7.419\n```\n\n**读输出：** 训练 MSE 一路下降：0 次是 `0.781`，1 次是 `0.243`，3 次和 5 次都是 `0.039`，9 次降到 `0.009`，**训练误差只会随容量变大而变小**（次数高的模型包含了次数低的模型，多项式空间是嵌套的）。但验证 MSE 是先降后升：0 次 `0.558`，1 次 `0.420`，3 次 `0.080`，5 次 `0.105`，9 次竟然高达 `7.419`。**3 次以下是欠拟合**（训练误差本身就大，直线没法拟合正弦波的弯），**9 次是过拟合**（训练误差几乎为 0.009，已经低于噪声方差 0.09，说明它在拟合噪声，换一批数据就崩）。0 次的验证误差 `0.558` 比训练误差 `0.781` 还小，这是因为验证集只有 20 个点，本身有抽样波动，说明**单个小验证集的数字是有误差的**，不要过度解读小数点后第三位。\n\n**用验证集选次数，用测试集报告一次：**\n```python\nval = {}\nfor d in range(0, 10):\n    coef = np.polyfit(xtr, ytr, d)\n    val[d] = mse(yva, np.polyval(coef, xva))\nbest = min(val, key=val.get)                # 用验证集选次数\ncoef = np.polyfit(xtr, ytr, best)\nprint(\"验证集选出的次数：\", best)\nprint(\"测试集 MSE（只看这一次）：\", round(mse(yte, np.polyval(coef, xte)), 3))\n# 输出：验证集选出的次数： 3\n# 输出：测试集 MSE（只看这一次）： 0.035\n```\n\n**读输出：** 在 0 到 9 次里，验证 MSE 最小的是 3 次（`0.080`，次数 5 是 `0.105`），选出 3 次之后，才第一次碰测试集，得到 `0.035`。这个数字甚至比噪声下限 0.09 还低，因为测试集只有 20 个点，这 20 个点上的噪声碰巧偏小；再次提醒，小数据上的 MSE 估计本身有抖动。关键的流程是：**选择（用验证集）和报告（用测试集）分开**。\n\n**为什么会出现「U 形」？偏差与方差。**\n\n> **标准定义 · 偏差-方差分解 (bias–variance decomposition)**\n>\n> 设 $y=f(x)+\\varepsilon$，$\\mathbb E\\varepsilon=0$，$\\operatorname{Var}\\varepsilon=\\sigma^2$。训练集 $D$ 随机抽取，学到的预测器记为 $\\hat f_D$。则在固定点 $x$ 处，平方误差的期望（对训练集与噪声取期望）为：\n>\n> $$\\mathbb E\\big[(y-\\hat f_D(x))^2\\big]=\\underbrace{\\big(\\mathbb E_D\\hat f_D(x)-f(x)\\big)^2}_{\\text{偏差}^2}+\\underbrace{\\operatorname{Var}_D\\big(\\hat f_D(x)\\big)}_{\\text{方差}}+\\underbrace{\\sigma^2}_{\\text{不可约误差}}$$\n>\n> *English: Expected squared error at a point decomposes into squared bias, variance across training sets, and irreducible noise.*\n\n**白话版：「打靶」。** 一个人打 100 发：弹孔都集中在靶心左上方——偏差大、方差小（准头系统性偏了）；弹孔散得到处都是，但平均位置在靶心——偏差小、方差大（手抖）；噪声是靶子本身在晃，谁也消除不了。简单模型是「系统性偏」，复杂模型是「手抖」。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "EuBBz3bI-aA",
+   "title": "视频二：Machine Learning Fundamentals: Bias and Variance（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "text",
+   "md": "**视频二要点：** 视频用「直线」与「弯曲的线」拟合同一批数据，讲清楚了偏差（模型能否表达真实形状）与方差（换一批训练数据，拟合结果变化多大）。下面我们不看示意图，而是**用代码把这两个量算出来**：在 $x_0=0.25$ 这一点（真值 $\\sin(\\pi/2)=1$），每次重新抽 20 个训练点，拟合 1、3、9 次多项式，重复 300 次，看这 300 个预测值的平均与离散程度。\n```python\ndef true_f(x):\n    return np.sin(2 * np.pi * x)\n\nrng = np.random.default_rng(7)\nx0 = 0.25                                   # 在 x=0.25 这一点看预测，真值 sin(pi/2)=1\nfor d in [1, 3, 9]:\n    preds = []\n    for _ in range(300):                    # 300 份不同的训练集，每份 20 个点\n        xs = rng.uniform(0, 1, 20)\n        ys = true_f(xs) + rng.normal(0, 0.3, 20)\n        preds.append(np.polyval(np.polyfit(xs, ys, d), x0))\n    preds = np.array(preds)\n    bias2 = (preds.mean() - true_f(x0)) ** 2\n    print(f\"次数 {d}: 偏差^2={bias2:.3f}  方差={preds.var():.3f}\")\n# 输出：次数 1: 偏差^2=0.260  方差=0.025\n# 输出：次数 3: 偏差^2=0.000  方差=0.017\n# 输出：次数 9: 偏差^2=0.009  方差=2.408\n```\n\n**读输出：** 次数 1：偏差平方 `0.260`，方差 `0.025`，直线表达不了正弦波，平均预测偏离真值 1 约 0.5，但每次拟合都差不多（方差小）。次数 3：偏差平方 `0.000`（四舍五入），方差 `0.017`，两个都很小，这是此处最好的模型。次数 9：偏差平方 `0.009`，方差却高达 `2.408`，平均下来预测是对的，但每一次拟合出的曲线都在剧烈抖动，换一批训练数据结果完全不同，**这就是过拟合的统计学含义：高方差**。加上不可约误差 $0.3^2=0.09$，次数 3 在此点的期望平方误差约为 $0+0.017+0.09\\approx 0.107$，而次数 9 约为 $0.009+2.408+0.09\\approx 2.5$。\n\n**一个重要的修正：** 偏差-方差折中不是物理定律，而是在「样本量有限」时的一个**现象**；用更多数据、加正则化（惩罚过大的系数）、集成多个模型，都可以在不增加偏差的情况下降低方差。深度学习里「过参数化的模型反而泛化得好」（double descent）是这个故事的后续，这里不展开，只提醒你：**经典 U 形不是全部**。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "pvcEQfcO3pk",
+   "title": "视频三：Statistical Learning: 2.3 Model Selection and Bias-Variance Tradeoff（Stanford Online，ISL）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 10
+  },
+  {
+   "type": "text",
+   "md": "**视频三要点：** ISL 教材作者之一 Trevor Hastie / Rob Tibshirani 讲的同一件事，更偏统计的写法：训练 MSE 随模型灵活性单调下降，测试 MSE 呈 U 形；最佳点出现在偏差与方差的平衡处。第一遍看懂图形语言，后面读 ISL 第 2 章、CS229 的相关讲义就轻松了。\n\n### 基线与评估指标\n\n> **标准定义 · 基线 (baseline)**\n>\n> **基线**是一个不用学习（或几乎不用）就能得到的朴素预测器：回归里常用「永远预测训练集均值（或中位数）」，分类里常用「永远预测最常见的类别（多数类）」。任何学出来的模型都必须**显著优于基线**才算有价值。\n>\n> *English: A baseline is a trivial predictor, such as predicting the training mean or the majority class, against which any learned model must be compared.*\n\n**白话版：「不动脑子也能得到的分数」。** 如果你的模型对销量的预测误差是 100 件，听起来不错还是不好？只有知道「每次都猜平均值，误差是 120 件」，你才知道 100 件只是勉强强一点；如果「猜平均值」只错 5 件，你的模型就是灾难。**所有数字都要和基线一起报。**\n\n> **标准定义 · 回归指标：MSE、RMSE、MAE**\n>\n> 对 $n$ 个样本：$\\text{MSE}=\\frac1n\\sum_i(y_i-\\hat y_i)^2$，$\\text{RMSE}=\\sqrt{\\text{MSE}}$，$\\text{MAE}=\\frac1n\\sum_i|y_i-\\hat y_i|$。RMSE 与 MAE 的单位和 $y$ 相同；MSE 对大误差更敏感（平方放大），MAE 更稳健。\n>\n> *English: MSE is the mean squared error, RMSE its square root, and MAE the mean absolute error; MSE penalises large errors more heavily.*\n\n**白话版：「平均扣多少分」。** MAE 是「平均每道题错多少」；MSE 把每道题的错先平方再平均，**一个错得离谱的题会让 MSE 大幅上升**（错 10 的题，平方后是错 1 的题的 100 倍）；RMSE 开根号把单位变回来，方便解释。\n```python\ndef mae(y, yhat):\n    return float(np.mean(np.abs(y - yhat)))\n\ndef rmse(y, yhat):\n    return float(np.sqrt(mse(y, yhat)))\n\nbase = np.full_like(yte, ytr.mean())        # 基线：永远预测训练集的平均值\ncoef = np.polyfit(xtr, ytr, 3)\nfit = np.polyval(coef, xte)\nprint(\"          MSE    MAE    RMSE\")\nprint(f\"基线      {mse(yte, base):.3f}  {mae(yte, base):.3f}  {rmse(yte, base):.3f}\")\nprint(f\"3 次多项式 {mse(yte, fit):.3f}  {mae(yte, fit):.3f}  {rmse(yte, fit):.3f}\")\n# 输出：          MSE    MAE    RMSE\n# 输出：基线      0.747  0.809  0.864\n# 输出：3 次多项式 0.035  0.144  0.187\n```\n\n**读输出：** 在测试集上，基线（永远预测训练均值）的 MSE 是 `0.747`、MAE 是 `0.809`、RMSE 是 `0.864`；3 次多项式的 MSE 是 `0.035`、MAE 是 `0.144`、RMSE 是 `0.187`。所以模型把误差降低了约一个数量级，这才算真的学到了东西。还可以看到：基线 RMSE `0.864` 约等于 MAE `0.809` 的 1.07 倍，而模型的 RMSE `0.187` 约等于 MAE `0.144` 的 1.3 倍；**RMSE 总是大于等于 MAE**，两者差距越大，说明误差里「大的错」占得越多。\n\n> **标准定义 · 准确率 (accuracy)**\n>\n> 分类中**预测正确的样本占比**：$\\text{accuracy}=\\frac1n\\sum_i\\mathbf 1[\\hat y_i=y_i]$。它把所有错误一视同仁，也不区分类别的多少，所以在**类别不平衡**时会骗人。\n>\n> *English: Accuracy is the fraction of correct predictions; it can be misleading when classes are imbalanced.*\n\n**白话版：「答对的题占几成」。** 一个班 1000 个产品，只有 5% 是次品。你雇一个质检员，他**什么都不查**，一律说「合格」，他的准确率已经是 95%；可是一件次品都没抓到。\n```python\nrng = np.random.default_rng(5)\ny = (rng.random(1000) < 0.05).astype(int)   # 1000 个样本，约 5% 是正类（比如「次品」）\npred = np.zeros(1000, dtype=int)            # 「模型」：永远说是负类\nprint(\"正类个数：\", int(y.sum()))\nprint(\"准确率：\", (pred == y).mean())\nprint(\"抓到的正类：\", int(((pred == 1) & (y == 1)).sum()))\n# 输出：正类个数： 62\n# 输出：准确率： 0.938\n# 输出：抓到的正类： 0\n```\n\n**读输出：** 1000 个样本里有 `62` 个正类（约 6.2%，随机抽样的结果）；永远预测负类，准确率是 `0.938`，抓到的正类是 `0`。**准确率高并不代表模型有用**：这个模型一点用都没有。这个例子要记住：**不平衡数据先看多数类基线，再看精确率、召回率**，这些指标在「逻辑回归与分类」那一节手写。\n\n### 泛化与经验风险最小化\n\n我们之前说「学得好」是指在新样本上也好。现在把它说准确。\n\n> **标准定义 · 真实风险与经验风险 (true risk & empirical risk)**\n>\n> 假设样本 $(x,y)$ 独立同分布地来自未知分布 $P$。预测器 $h$ 的**真实风险 (true risk)** 是它在整个分布上的期望损失：\n>\n> $$R(h)=\\mathbb E_{(x,y)\\sim P}\\big[\\ell(h(x),y)\\big]$$\n>\n> 我们看不到 $P$，只有 $n$ 个训练样本，所以只能算**经验风险 (empirical risk)**：\n>\n> $$\\hat R_n(h)=\\frac1n\\sum_{i=1}^n\\ell(h(x_i),y_i)$$\n>\n> **经验风险最小化 (empirical risk minimization, ERM)** 就是选 $\\hat h=\\arg\\min_{h\\in\\mathcal H}\\hat R_n(h)$。**泛化差距 (generalization gap)** 是 $R(\\hat h)-\\hat R_n(\\hat h)$。\n>\n> *English: True risk is the expected loss under the data distribution; empirical risk is its average over the training sample. ERM picks the hypothesis minimising empirical risk; the generalisation gap is the difference between the two.*\n\n**白话版：「用模拟考成绩估计高考成绩」。** 真实风险是「你在所有可能的题目上的平均表现」，谁也看不到；经验风险是「你在手头那 $n$ 道题上的平均表现」，是它的一个估计。ERM 说：**既然看不到真实风险，就把经验风险压到最小**。这个估计好不好，取决于 $n$（题越多越准），也取决于假设类（模型越灵活，越容易「专门针对这 $n$ 道题」）。\n\n用代码看：用 5 次多项式，训练集大小 $n$ 取 15、30、100、1000，每个 $n$ 重复 50 次取中位数；「真实风险」用 20000 个新样本近似（它们不参与训练）。\n```python\ndef make(n, rng):\n    xs = rng.uniform(0, 1, n)\n    return xs, np.sin(2 * np.pi * xs) + rng.normal(0, 0.3, n)\n\nrng = np.random.default_rng(11)\nxbig, ybig = make(20000, rng)               # 用 20000 个新样本近似「真实风险」\nprint(\"n     训练MSE(中位数)  真实MSE(中位数)\")\nfor n in [15, 30, 100, 1000]:\n    tr_l, true_l = [], []\n    for _ in range(50):\n        xs, ys = make(n, rng)\n        c = np.polyfit(xs, ys, 5)           # 固定用 5 次多项式\n        tr_l.append(mse(ys, np.polyval(c, xs)))\n        true_l.append(mse(ybig, np.polyval(c, xbig)))\n    print(f\"{n:<5d} {np.median(tr_l):.3f}            {np.median(true_l):.3f}\")\n# 输出：n     训练MSE(中位数)  真实MSE(中位数)\n# 输出：15    0.056            0.180\n# 输出：30    0.069            0.116\n# 输出：100   0.084            0.095\n# 输出：1000  0.090            0.091\n```\n\n**读输出：** $n=15$ 时训练 MSE（中位数）只有 `0.056`，真实 MSE 却是 `0.180`，差距很大；$n=30$：`0.069` 对 `0.116`；$n=100$：`0.084` 对 `0.095`；$n=1000$：`0.090` 对 `0.091`，两者几乎重合，并且都收敛到噪声方差 $0.3^2=0.09$。结论：**训练误差系统性地低估真实误差，样本越少低估得越厉害；模型类固定时，泛化差距随 $n$ 增大而收缩**。这是统计学习理论的基本图景：差距大致按 $\\sqrt{\\text{容量}/n}$ 的量级缩小（这里不证明，参考 CS229 的学习理论讲义和 Shalev-Shwartz 的教材）。\n\n**ERM 与最大似然：同一件事的两种说法。** prob-0 已经讲过，最大似然是选使得训练数据概率最大的参数。如果假设噪声是高斯的，$y=f_\\theta(x)+\\varepsilon$，$\\varepsilon\\sim N(0,\\sigma^2)$，那么对数似然是：\n\n$$\\log p(\\mathcal D\\mid\\theta)=-\\frac n2\\log(2\\pi\\sigma^2)-\\frac{1}{2\\sigma^2}\\sum_{i=1}^n\\big(y_i-f_\\theta(x_i)\\big)^2$$\n\n第一项与 $\\theta$ 无关；第二项是 MSE 的正倍数前面加负号。所以**最大化高斯对数似然 = 最小化 MSE**，也就是说，**平方损失的 ERM 就是高斯噪声下的最大似然**。下面用数值验证：\n```python\nrng = np.random.default_rng(0)\nn, s = 30, 0.3\nx = rng.uniform(0, 1, n)\ny = 2 * x + 1 + rng.normal(0, s, n)         # 噪声是 N(0, 0.3^2)\nws = np.linspace(1, 3, 201)\nres = y[None, :] - (ws[:, None] * x[None, :] + 1.0)           # 每个 w 的残差，形状 (201, 30)\nmse_w = (res ** 2).mean(axis=1)\nloglik = -0.5 * n * np.log(2 * np.pi * s ** 2) - (res ** 2).sum(axis=1) / (2 * s ** 2)\nprint(\"MSE 最小的 w：\", round(float(ws[mse_w.argmin()]), 2))\nprint(\"对数似然最大的 w：\", round(float(ws[loglik.argmax()]), 2))\nprint(np.allclose(loglik, -0.5 * n * np.log(2 * np.pi * s ** 2) - n * mse_w / (2 * s ** 2)))\n# 输出：MSE 最小的 w： 2.11\n# 输出：对数似然最大的 w： 2.11\n# 输出：True\n```\n\n**读输出：** 在 $w\\in[1,3]$ 的 201 个网格点上，MSE 最小处是 `2.11`，对数似然最大处也是 `2.11`；最后一行的 `True` 表示对每个 $w$，对数似然都严格等于「常数 $-\\;n\\cdot\\text{MSE}/(2\\sigma^2)$」。换损失就是换噪声假设：对伯努利（分类）噪声，负对数似然就是**交叉熵**（第 3 节），对拉普拉斯噪声，负对数似然是 MAE。**损失函数不是随便选的，它背后是一个对噪声的概率假设。**\n\n### 这一节你要带走的三句话\n\n1. **学习问题 = 数据 + 模型 + 损失 + 优化**；监督学习有标准答案，无监督只有 $x$，强化学习靠评价性的奖励。\n2. **训练误差会骗人**：容量越大训练误差越小，但验证误差呈 U 形；只有**从没参与任何选择**的测试集才给出诚实的泛化估计，所以三分数据，并且测试集只看一次。\n3. **学得好 = 真实风险小**：ERM 用经验风险代替看不见的真实风险，平方损失的 ERM 就是高斯噪声下的最大似然；任何指标都要和基线比，类别不平衡时别看准确率。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 一个回归任务，测试集上 4 个样本的真实值是 $y=(3,5,2,10)$，预测值是 $\\hat y=(4,5,1,6)$。算 MSE、MAE、RMSE；再说一说：哪一个样本对 MSE 的贡献最大，占了多少比例？",
+   "a": "误差是 $y-\\hat y=(-1,0,1,4)$。\n\n- $\\text{MSE}=\\frac{1+0+1+16}{4}=4.5$；\n- $\\text{MAE}=\\frac{1+0+1+4}{4}=1.5$；\n- $\\text{RMSE}=\\sqrt{4.5}\\approx 2.12$。\n\n第 4 个样本的平方误差是 16，占总平方误差 18 的 $16/18\\approx 89\\%$；而它在 MAE 里的占比只有 $4/6\\approx 67\\%$。这就是「MSE 对大误差更敏感」：一个误差为 4 的点，在 MSE 里的权重远大于另外三个误差为 1 的点。如果这个大误差来自一个数据录入错误（离群点），MSE 会被它主导，这时用 MAE 或 Huber 损失更稳。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同学 A 说：「我对 10 个不同的模型都在测试集上算了准确率，挑了最高的那个报告，所以我的测试准确率是 93%。」同学 B 说：「我把数据先用整份的均值和标准差做了标准化，再划分训练集和测试集。」这两个做法各有什么问题？应该怎么改？",
+   "a": "**A：选择偏差。** 用测试集做了「选模型」的决定，测试集就等于变成了验证集，93% 是 10 个候选里「最幸运的那个」，对新数据偏乐观（本节 500 个随机模型的实验里，挑出的「0.675」在新数据上只有 `0.45`）。改法：把数据分成训练集、验证集、测试集；10 个模型在验证集上比较，选出一个，**最后**只在测试集上报告一次。数据少时用 k 折交叉验证做选择，测试集仍然单独留着。\n\n**B：数据泄漏。** 标准化用到的均值和标准差里包含了测试样本的信息，测试集的分布信息「漏」进了训练过程。改法：先划分，只用训练集计算均值和标准差，再用**同一组数**去变换验证集和测试集。这类细节在特征缩放、填补缺失值、特征选择、降维里都要注意：**凡是从数据里「学」出来的东西（包括预处理的统计量），都只能从训练集学**。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** 训练神经网络时，常见到训练损失一直下降、验证损失先降后升。这个现象对应本节的什么概念？有哪些办法？（提示：想一想容量、数据量、训练步数。）为什么在训练大语言模型时，「泛化差距」常常很小？",
+   "a": "这是**过拟合**：模型在训练集上继续降低损失，靠的是记住训练样本的噪声，验证损失开始上升。常用办法分三类：\n\n1. **减少有效容量**：更小的网络，权重衰减 ($L_2$ 正则化)，dropout，**早停 (early stopping)**（验证损失最低点附近停止训练，相当于用「训练步数」当超参数，由验证集来选）；\n2. **增加数据**：数据增强、更多标注数据、预训练；泛化差距随 $n$ 收缩（见本节 ERM 实验）；\n3. **平均多个模型**（集成）来降低方差。\n\n大语言模型的预训练数据极大（几万亿个词），且通常**每条样本只看一遍或很少几遍**（一个 epoch 以内），模型每一步看到的都是新数据，所以训练损失几乎就是对真实分布的估计，泛化差距很小；但在小数据微调阶段，如果反复训练同一份数据，过拟合就会马上出现。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "监督学习",
+     "supervised learning",
+     "用带标签的 $(x,y)$ 学一个从 $x$ 到 $y$ 的函数"
+    ],
+    [
+     "无监督学习",
+     "unsupervised learning",
+     "只有 $x$ 没有标签，找数据本身的结构（聚类、降维）"
+    ],
+    [
+     "强化学习",
+     "reinforcement learning",
+     "智能体与环境交互，用评价性的奖励学习使累计奖励最大的策略"
+    ],
+    [
+     "回归与分类",
+     "regression & classification",
+     "标签是连续数 / 标签是有限个类别"
+    ],
+    [
+     "假设类",
+     "hypothesis class",
+     "一族候选函数，由参数决定其中哪一个，即「模型」"
+    ],
+    [
+     "损失函数",
+     "loss function",
+     "衡量单个预测错多少的函数，如平方损失、交叉熵"
+    ],
+    [
+     "训练 / 验证 / 测试集",
+     "train / validation / test set",
+     "分别用来拟合参数、选模型与超参数、最后只用一次估计泛化"
+    ],
+    [
+     "数据泄漏",
+     "data leakage",
+     "测试集的信息以任何方式进入训练过程，会让评估过于乐观"
+    ],
+    [
+     "欠拟合与过拟合",
+     "underfitting & overfitting",
+     "模型太简单学不到规律 / 太灵活把噪声也学进去"
+    ],
+    [
+     "偏差与方差",
+     "bias & variance",
+     "预测的平均偏离真值多少 / 换训练集预测抖动多大"
+    ],
+    [
+     "基线",
+     "baseline",
+     "不用学习就能得到的朴素预测，如训练均值、多数类"
+    ],
+    [
+     "MSE / MAE",
+     "mean squared / absolute error",
+     "平均平方误差 / 平均绝对误差，前者对大误差更敏感"
+    ],
+    [
+     "真实风险与经验风险",
+     "true risk & empirical risk",
+     "整个分布上的期望损失 / 训练样本上的平均损失"
+    ],
+    [
+     "经验风险最小化",
+     "empirical risk minimization (ERM)",
+     "在假设类里选使训练集平均损失最小的预测器"
+    ],
+    [
+     "泛化差距",
+     "generalization gap",
+     "真实风险与训练经验风险之差，通常随样本数增加而减小"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 Machine Learning 讲义（Andrew Ng 等）—— 监督学习、偏差-方差、学习理论部分",
+   "url": "https://cs229.stanford.edu/",
+   "note": "本节的大纲依据，课程主页有全部讲义和笔记，只引用不转载；Part I 开头讲监督学习的符号，后面的「Learning theory」讲 ERM 与泛化"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL）第 2 章 Statistical Learning",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开的教材，第 2 章讲监督 / 无监督、评估模型精度、偏差-方差折中；Python 版有代码"
+  },
+  {
+   "title": "Machine Learning Specialization（吴恩达，DeepLearning.AI）第 1 门课",
+   "url": "https://www.deeplearning.ai/courses/machine-learning-specialization/",
+   "note": "更慢、更直觉的入门，对应本节的监督 / 无监督定义和训练 / 验证 / 测试划分"
+  },
+  {
+   "title": "Probabilistic Machine Learning: An Introduction（Murphy）第 1 章与第 4 章",
+   "url": "https://probml.github.io/pml-book/book1.html",
+   "note": "把「损失 = 负对数似然」、ERM 与最大似然统一起来的写法，作者免费公开 PDF"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面四个任务里，哪一个是**监督学习**？",
+    "options": [
+     "给定一批没有任何标签的客户记录，把相似的客户分成几群",
+     "给定一批过去的订单（含当月实际销量），训练模型预测新订单的销量",
+     "让一个智能体在仓库模拟器里反复试错，只根据累计得分调整策略",
+     "把一批高维特征压缩成两维以便画图，不使用任何标签"
+    ],
+    "answer": 1,
+    "explain": "监督学习的标志是训练数据里有「标准答案」：每条样本都带着真实销量。把客户分群和降维都没有标签，属于无监督学习；只靠试错后得到的奖励来学习，属于强化学习。"
+   },
+   {
+    "q": "一个学习问题的四个组成部分是数据、模型、损失和优化。用梯度下降更新参数，属于哪一部分？",
+    "options": [
+     "数据",
+     "模型",
+     "损失",
+     "优化"
+    ],
+    "answer": 3,
+    "explain": "优化 (optimization) 回答的是「怎样找到让损失最小的参数」，梯度下降是最常用的优化算法。模型决定能表示哪一族函数，损失决定「好坏」怎么量化，数据是学习的原材料。"
+   },
+   {
+    "q": "拟合 9 次多项式后，训练 MSE 是 0.009，而验证 MSE 是 7.419。最合理的结论是？",
+    "options": [
+     "模型过拟合，记住了训练集里的噪声，泛化很差",
+     "模型欠拟合，应该换成更简单的模型",
+     "验证集标签一定标错了",
+     "训练 MSE 很小说明模型很好，验证集太小不必理会"
+    ],
+    "answer": 0,
+    "explain": "训练误差极小而验证误差大得多，这是过拟合的典型表现：模型太灵活，把噪声也当成了规律。欠拟合的特征是训练误差本身就很大。验证集小只会让估计更抖动，不能把差距解释掉。"
+   },
+   {
+    "q": "为什么除了训练集和测试集，还要单独留出一个验证集？",
+    "options": [
+     "为了让训练集变大",
+     "因为测试集太小，验证集可以补充",
+     "因为选模型、调超参数会「用掉」手里那份数据的信息，必须有一份测试集从头到尾没参与任何选择，才能给出无偏的最终估计",
+     "因为验证集的数据分布必须和训练集不同"
+    ],
+    "answer": 2,
+    "explain": "如果直接用测试集来挑模型，被挑中的那个模型恰好是「在这份数据上运气最好」的，测试成绩就偏乐观了，本节「选择偏差」那一块的 500 个随机模型实验正是这样。三份数据各司其职：训练集拟合参数，验证集选模型，测试集只用来最后报告一次。"
+   },
+   {
+    "q": "某任务只有 5% 的样本是正类，一个「永远预测负类」的模型准确率约为 95%。一个新模型准确率 94%。应该怎么理解？",
+    "options": [
+     "新模型很好，因为 94% 很高",
+     "新模型一定过拟合了",
+     "新模型比最朴素的基线还差，准确率在类别不平衡时不能说明问题",
+     "准确率 94% 意味着召回率也是 94%"
+    ],
+    "answer": 2,
+    "explain": "基线（这里是多数类基线）给了判断好坏的起点：连「永远说负类」都比不过的模型没有价值。类别不平衡时要看精确率、召回率等指标；准确率和召回率之间没有这样的换算关系。"
+   },
+   {
+    "q": "同一份预测，MSE 与 MAE 的一个重要区别是？",
+    "options": [
+     "MSE 对大误差的惩罚更重，所以更容易被离群点拉高",
+     "MAE 一定比 MSE 大",
+     "MSE 的单位和 y 相同，MAE 的单位是 y 的平方",
+     "两者对每个误差的权重完全一样"
+    ],
+    "answer": 0,
+    "explain": "MSE 把误差平方，误差为 10 的样本贡献是误差为 1 的样本的 100 倍，所以对离群点敏感；MAE 按绝对值累加，更稳健。MSE 的单位是 y 的平方（RMSE 才和 y 同单位）。误差小于 1 时，MSE 反而比 MAE 小。"
+   },
+   {
+    "q": "假设 $y=f(x)+\\varepsilon$，$\\varepsilon\\sim N(0,\\sigma^2)$，$\\sigma$ 已知且固定。关于最大似然，哪个说法正确？",
+    "options": [
+     "最大似然需要知道真实的 $f$",
+     "最大似然只适用于分类问题",
+     "最大化对数似然等价于最小化 MAE",
+     "最大化高斯对数似然与最小化 MSE 是同一个优化问题，因为对数似然等于一个常数减去 MSE 的正倍数"
+    ],
+    "answer": 3,
+    "explain": "高斯对数似然是 $-\\tfrac n2\\ln(2\\pi\\sigma^2)-\\tfrac{n}{2\\sigma^2}\\cdot\\text{MSE}$：常数项与参数无关，系数为负，所以最大化它就是最小化 MSE。最小化 MAE 对应的是拉普拉斯噪声假设。最大似然并不需要知道真实的 $f$，要估计的正是它的参数。"
+   },
+   {
+    "q": "下面哪一种做法属于**数据泄漏 (data leakage)**？",
+    "options": [
+     "把数据随机打乱后再切成三份",
+     "先用整份数据算出均值和标准差做标准化，再划分训练集和测试集",
+     "在训练集上算出均值和标准差，再用这组数去标准化验证集和测试集",
+     "用验证集比较几个模型，选出最好的"
+    ],
+    "answer": 1,
+    "explain": "标准化用到的均值和标准差如果包含了测试样本，测试集的信息就「漏」进了训练流程。正确做法是只用训练集估计这些统计量，再原样应用到验证集和测试集。其余三项都是标准流程。"
+   },
+   {
+    "q": "固定模型类（例如 5 次多项式）不变，只增加训练样本数 $n$。训练误差与真实误差之间的差距（泛化差距）通常怎样变化？",
+    "options": [
+     "越来越小，两者都趋向同一个水平",
+     "保持不变",
+     "越来越大",
+     "训练误差一定会降到 0"
+    ],
+    "answer": 0,
+    "explain": "样本越多，经验风险越接近真实风险，差距缩小；模型容量固定时，两者收敛到同一个下限（这里是噪声方差 0.09 附近）。训练误差不会降到 0，因为噪声本身不可拟合。"
+   },
+   {
+    "q": "用 1 次多项式（直线）去拟合 $y=\\sin(2\\pi x)+\\text{噪声}$，更换不同的训练集重复拟合，会观察到什么？",
+    "options": [
+     "偏差和方差都很大",
+     "偏差小、方差大：每次拟合都很不一样",
+     "偏差和方差都很小",
+     "偏差大、方差小：每次拟合都差不多，但都系统性地偏离真实曲线"
+    ],
+    "answer": 3,
+    "explain": "直线族根本表示不了正弦波，所以平均预测与真值有系统性差距（高偏差，欠拟合）；但它只有两个参数，对训练集的抖动不敏感（低方差）。高次多项式正好相反。"
+   }
+  ]
+ }
+}

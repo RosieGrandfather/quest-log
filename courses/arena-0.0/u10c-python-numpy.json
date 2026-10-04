@@ -31,7 +31,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`a = np.arange(12).reshape(3, 4)`，`a.sum(axis=1)` 的形状是？",
+    "q": "运行下面的代码，打印的形状是什么？\n\n```text\nimport numpy as np\na = np.arange(12).reshape(3, 4)\nprint(a.sum(axis=1).shape)\n```",
     "options": [
      "`(1,)`",
      "`(4,)`",

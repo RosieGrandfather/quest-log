@@ -45,7 +45,7 @@
     "explain": "`else` 只在循环「跑完了没被 break」时执行，常用来写「找了一圈没找到」的逻辑。"
    },
    {
-    "q": "`def add(item, box=[])` 连续调用 `add(1)`、`add(2)`，第二次返回什么？",
+    "q": "运行下面的代码，第二个 `print` 打印什么？\n\n```text\ndef add(item, box=[]):\n    box.append(item)\n    return box\n\nprint(add(1))\nprint(add(2))\n```",
     "options": [
      "`[2]`",
      "`[1]`",

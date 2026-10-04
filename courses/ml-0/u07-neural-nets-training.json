@@ -1,0 +1,144 @@
+{
+ "id": "u07",
+ "title": "神经网络与训练实践（1/3）",
+ "en": "Neural Networks & Training Practice (1/3)",
+ "minutes": 45,
+ "objectives": [
+  "手写一个两层 **多层感知机 (multilayer perceptron, MLP)** 的前向与反向传播，用 **梯度检验 (gradient check)** 验证，并在两个月牙的二维分类上训练到验证准确率 0.92",
+  "说清 **ReLU**、**tanh**、**GELU** 的形状与导数，并用实验解释 **梯度消失 (vanishing gradient)** 为什么让 sigmoid 网络的第 1 层几乎收不到梯度"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n反向传播那一节你把梯度算对了：链式法则、误差项 $\\boldsymbol\\delta$、梯度检验。可是「梯度算对了」和「网络训练好了」之间，还隔着一大片实践：激活函数选哪个？权重一开始取多大？用哪个优化器？学习率怎么随时间变？怎么防止过拟合？损失曲线不对的时候先查什么？这片实践没有一个漂亮的定理能一次说完，但每一条都有清楚的道理和可以复现的实验。这一节就是把这些道理和实验一条条讲清楚。\n\n**开始之前你要会：**\n\n- arena-0.0 的「反向传播」：链式法则、误差项 $\\boldsymbol\\delta=\\partial C/\\partial\\mathbf z$、梯度检验；这一节不再推导，只用，重点是「怎么把它训练好」；\n- arena-0.0 的「Python 与 NumPy 基础」「广播与张量操作」：矩阵乘法的形状、广播；以及「PyTorch 入门：张量与自动求导」里的 `loss.backward()` 和 `optimizer.step()`；\n- prob-0 的「最大似然估计与交叉熵」：二分类交叉熵就是伯努利分布的负对数似然；\n- 本课前面的「线性回归与梯度下降」「逻辑回归与分类」，以及「偏差方差、正则化与模型选择」：梯度下降的更新式 $\\theta\\leftarrow\\theta-\\eta\\nabla L$、sigmoid 与交叉熵、过拟合时训练误差与验证误差的样子。\n\n**学完它你就能看懂这几件事：**\n\n- 一行 PyTorch 代码 `torch.optim.AdamW(model.parameters(), lr=3e-4, weight_decay=0.01)` 里每个参数是什么意思，为什么 Transformer 的训练几乎都用 AdamW + warmup + 余弦衰减；\n- 论文「训练细节」一段，比如「Adam，$\\beta_1=0.9$，$\\beta_2=0.95$，线性 warmup 2000 步后余弦衰减，权重衰减 0.1，梯度裁剪 1.0，dropout 0.1」，每一项在训练里起什么作用；\n- `nn.init.kaiming_normal_`、`nn.Dropout`、`nn.BatchNorm1d` 这些层 / 函数到底在算什么，训练模式 `model.train()` 与评估模式 `model.eval()` 为什么行为不同；\n- 训练日志里「训练损失在降、验证损失在升」「损失一直停在 0.69」「损失突然变成 nan」各是什么病，先查哪里。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 45 分钟）**：两层 MLP：前向、反向与第一次训练（约 10 分钟） → 激活函数与权重初始化：信号怎样穿过深网络（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 两层 MLP：前向、反向与第一次训练\n\n> **标准定义 · 多层感知机 (multilayer perceptron, MLP)**\n>\n> 设输入为 $x$，一个 $L$ 层的 **MLP** 依次计算 $h^{(0)}=x$，$z^{(l)}=W^{(l)}h^{(l-1)}+b^{(l)}$，$h^{(l)}=\\phi(z^{(l)})$（$l<L$），最后一层不加激活，直接输出 $z^{(L)}$。其中 $\\phi$ 是逐元素作用的非线性函数，叫**激活函数 (activation function)**；$W^{(l)}$、$b^{(l)}$ 是第 $l$ 层的**权重**与**偏置**，它们合起来就是要学习的参数 $\\theta$。\n>\n> *English: An MLP alternates affine maps z = Wh + b with element-wise nonlinearities φ; the last layer is left linear and outputs the logits.*\n\n**白话版：「一叠先线性混合、再弯一下的滤镜」。** 每一层先把上一层的输出做加权混合（矩阵乘法），再过一个非线性「弯折」；弯折不能省，否则连着几层线性变换还是一个线性变换，叠再多层也只等于一层。下面用的任务是**两个月牙 (two moons)**：两类点各排成一个半月，互相咬合，一条直线分不开，必须靠非线性。数据我们自己生成，不依赖任何库。\n\n```python\nimport numpy as np\n\ndef make_moons(n, noise, seed):\n    \"\"\"两个互相咬合的半月：上半月是类别 0，下半月是类别 1\"\"\"\n    rng = np.random.default_rng(seed)\n    t = rng.uniform(0, np.pi, n)\n    top = np.c_[np.cos(t), np.sin(t)]\n    bottom = np.c_[1 - np.cos(t), 0.5 - np.sin(t)]\n    is1 = np.arange(n) >= n // 2\n    X = np.where(is1[:, None], bottom, top) + rng.normal(0, noise, (n, 2))\n    return X, is1.astype(float)\n\nXtr, ytr = make_moons(200, 0.2, seed=0)       # 训练集\nXva, yva = make_moons(200, 0.2, seed=1)       # 验证集：另一批从同一分布抽的点\nprint(Xtr.shape, ytr.shape, ytr.mean())\nprint(np.round(Xtr[:3], 3))\n# 线性分类器（逻辑回归）在这份数据上最多能做到多少？用最小二乘的直线粗略估一下\nA = np.c_[Xtr, np.ones(len(Xtr))]\nw = np.linalg.lstsq(A, 2 * ytr - 1, rcond=None)[0]\nprint(\"直线分类的训练准确率:\", np.mean((A @ w > 0) == (ytr == 1)))\n# 输出：(200, 2) (200,) 0.5\n# 输出：[[-0.534  0.814]\n# 输出： [ 0.779  0.617]\n# 输出： [ 0.869 -0.193]]\n# 输出：直线分类的训练准确率: 0.87\n```\n\n读输出：`(200, 2)` 是 200 个点、每点 2 个坐标，标签 200 个，平均值 0.5 说明两类各占一半。训练集和验证集用不同的随机种子，是**同一分布的两批独立样本**，这是后面所有「验证」的前提。最后一行：用最小二乘拟合的一条直线当分类器，训练准确率 0.87，说明月牙并不算难，直线能分对大部分，但最后那一段咬合的区域它永远分不开；神经网络要做到的是把这部分也分对。\n\n接下来写网络。代码里把一批样本按**行**放，所以第 $l$ 层是 $H^{(l)}=\\phi(H^{(l-1)}W^{(l)}+b^{(l)})$，$W^{(l)}$ 的形状是（入, 出），这里的 $W$ 是 arena 里写的 $W\\mathbf a$ 中那个 $W$ 的转置，也就是 `nn.Linear` 里 `weight` 的转置，对照 PyTorch 时要记得转过来。先写前向部分：\n\n```python\nACT = {\"relu\": (lambda z: np.maximum(z, 0), lambda z: (z > 0) * 1.0),\n       \"tanh\": (np.tanh, lambda z: 1 - np.tanh(z) ** 2)}\n\ndef sigmoid(z):\n    e = np.exp(-np.abs(z))                       # 只对非正数取指数，避免溢出\n    return np.where(z >= 0, 1 / (1 + e), e / (1 + e))\n\ndef init(sizes, seed=0):\n    \"\"\"He 初始化（为什么这样取，后面「权重初始化」一节讲）\"\"\"\n    rng = np.random.default_rng(seed)\n    P = {}\n    for i, (m, n) in enumerate(zip(sizes[:-1], sizes[1:])):\n        P[f\"W{i}\"] = rng.normal(0, np.sqrt(2 / m), (m, n))\n        P[f\"b{i}\"] = np.zeros(n)\n    return P\n\ndef forward(P, X, act=\"relu\"):\n    f, L = ACT[act][0], len(P) // 2\n    zs, As = [], [X]\n    for i in range(L):\n        z = As[-1] @ P[f\"W{i}\"] + P[f\"b{i}\"]\n        zs.append(z)\n        As.append(f(z) if i < L - 1 else z)      # 最后一层不加激活：输出的是 logit\n    return zs, As\n\nP = init([2, 16, 1])\nzs, As = forward(P, Xtr)\nprint([z.shape for z in zs], As[-1].shape)\n# 输出：[(200, 16), (200, 1)] (200, 1)\n```\n\n读输出：`ACT` 是一个「名字 → (函数, 导数)」的字典，后面的小节会往里添新的激活函数；`init` 用的是 He 初始化（原因在后面「权重初始化」一节）；`forward` 逐层算 $z$ 和 $a$，最后一层不加激活，返回的就是 logit；`sigmoid` 写成「只对非正数取指数」的形式，避免 $e^{-z}$ 在 $z$ 很负时溢出。输出 `[(200, 16), (200, 1)] (200, 1)`：两层各自的 $z$ 的形状是 $200\\times16$ 和 $200\\times1$，最后的 logit 是 200 个数，每个样本一个。\n\n然后写损失与反向。损失用二分类交叉熵：\n\n> **标准定义 · 二分类交叉熵与 logit (binary cross-entropy on logits)**\n>\n> 网络输出 **logit** $z$，预测概率 $p=\\sigma(z)=1/(1+e^{-z})$，标签 $y\\in\\{0,1\\}$，单个样本的损失是负对数似然 $\\ell=-y\\log p-(1-y)\\log(1-p)$。直接用 $z$ 写，数值稳定的等价形式是 $\\ell=\\max(z,0)-zy+\\log(1+e^{-|z|})$，并且 $\\partial\\ell/\\partial z=p-y$。一批 $N$ 个样本的损失取平均，所以每个样本的 $\\partial L/\\partial z_i=(p_i-y_i)/N$。\n>\n> *English: With logit z, the binary cross-entropy is max(z,0) − zy + log(1+e^{−|z|}); its gradient with respect to z is simply p − y, which is the starting error signal for backpropagation.*\n\n**白话版：「预测概率和真实标签的差，就是反传的起点」。** 这条 $p-y$ 你在逻辑回归里见过；它是最后一层的误差项 $\\boldsymbol\\delta^{(L)}$，之后每往前一层，就乘 $W^\\top$ 再乘激活函数的导数，和 arena 里推的一模一样。下面写 `loss_grads`：先算损失，再从 $p-y$ 出发一层层往前乘，用字典 `G` 装全部参数的梯度。\n\n```python\ndef loss_grads(P, X, y, act=\"relu\"):\n    zs, As = forward(P, X, act)\n    z, L = As[-1][:, 0], len(P) // 2\n    loss = np.mean(np.maximum(z, 0) - z * y + np.log1p(np.exp(-np.abs(z))))   # 稳定的二分类交叉熵\n    dz = ((sigmoid(z) - y) / len(y))[:, None]                                   # dL/dz = (p - y) / N\n    G = {}\n    for i in reversed(range(L)):\n        G[f\"W{i}\"], G[f\"b{i}\"] = As[i].T @ dz, dz.sum(0)\n        if i > 0:\n            dz = (dz @ P[f\"W{i}\"].T) * ACT[act][1](zs[i - 1])\n    return loss, G\n\nloss, G = loss_grads(P, Xtr, ytr)\nprint(round(loss, 4), {k: v.shape for k, v in G.items()})\n# 输出：0.7518 {'W1': (16, 1), 'b1': (1,), 'W0': (2, 16), 'b0': (16,)}\n```\n\n读输出：第一次调用得到初始损失 0.7518，比随机猜测的 $\\ln 2\\approx0.693$ 略大，梯度字典里每个梯度的形状都和对应参数一样（`W0` 是 `(2, 16)`、`b0` 是 `(16,)`、`W1` 是 `(16, 1)`、`b1` 是 `(1,)`）：这是反向传播永远成立的一条检查。\n\n**手写反向传播一定要做梯度检验。** 用中心差分 $\\dfrac{L(\\theta+h)-L(\\theta-h)}{2h}$ 对任意几个参数各算一次数值导数，和解析梯度比：\n\n```python\ndef num_grad(P, key, idx, h=1e-5):\n    old = P[key][idx]\n    P[key][idx] = old + h; lp = loss_grads(P, Xtr, ytr)[0]\n    P[key][idx] = old - h; lm = loss_grads(P, Xtr, ytr)[0]\n    P[key][idx] = old\n    return (lp - lm) / (2 * h)\n\nfor key, idx in [(\"W0\", (0, 3)), (\"W0\", (1, 7)), (\"b0\", (5,)), (\"W1\", (4, 0)), (\"b1\", (0,))]:\n    print(key, idx, f\"{G[key][idx]:.6f}  {num_grad(P, key, idx):.6f}\")\n# 输出：W0 (0, 3) -0.008201  -0.008201\n# 输出：W0 (1, 7) 0.056800  0.056800\n# 输出：b0 (5,) -0.007984  -0.007984\n# 输出：W1 (4, 0) 0.070573  0.070573\n# 输出：b1 (0,) 0.189781  0.189781\n```\n\n读输出：五个参数（第一层权重的两个元素、第一层的一个偏置、第二层权重的一个元素和输出偏置）的解析梯度和数值梯度在小数点后六位完全一致，反向传播没有写错。**以后你自己改任何网络结构（加 dropout、加归一化、换激活函数），第一件事都是做这个检查。**\n\n现在训练：最朴素的全批量梯度下降，$\\theta\\leftarrow\\theta-\\eta\\,\\nabla L$，学习率 $\\eta=0.5$，每 50 步看一眼训练损失和训练 / 验证准确率。\n\n```python\ndef accuracy(P, X, y, act=\"relu\"):\n    return np.mean((forward(P, X, act)[1][-1][:, 0] > 0) == (y == 1))\n\nP = init([2, 16, 1])\nfor step in range(301):\n    loss, G = loss_grads(P, Xtr, ytr)\n    if step % 50 == 0:\n        print(f\"步 {step:3d}  训练损失 {loss:.4f}  训练准确率 {accuracy(P, Xtr, ytr):.3f}  验证准确率 {accuracy(P, Xva, yva):.3f}\")\n    for k in P:\n        P[k] -= 0.5 * G[k]                 # 最朴素的梯度下降，学习率 0.5\n# 输出：步   0  训练损失 0.7518  训练准确率 0.560  验证准确率 0.585\n# 输出：步  50  训练损失 0.2909  训练准确率 0.885  验证准确率 0.885\n# 输出：步 100  训练损失 0.2795  训练准确率 0.905  验证准确率 0.890\n# 输出：步 150  训练损失 0.2747  训练准确率 0.905  验证准确率 0.890\n# 输出：步 200  训练损失 0.2672  训练准确率 0.915  验证准确率 0.890\n# 输出：步 250  训练损失 0.2544  训练准确率 0.915  验证准确率 0.895\n# 输出：步 300  训练损失 0.2360  训练准确率 0.910  验证准确率 0.920\n```\n\n读输出：训练损失从 0.7518 降到 50 步时的 0.2909，之后在 0.28 到 0.25 之间缓慢下降，到 300 步是 0.2360；训练准确率从 0.560（比抛硬币还差）升到 0.910，验证准确率从 0.585 升到 0.920。**训练与验证准确率一直贴得很近，说明在这个规模下没有过拟合**，这是好情形；后面我们会故意制造过拟合来学正则化。注意损失降得很不均匀：开头 50 步降得很快，后面慢得多，这正是「平缓区域梯度小」的样子，也是下面要引入更好优化器的原因。\n\n### 激活函数与权重初始化：信号怎样穿过深网络\n\n训练深网络有一个核心困难：**前向的信号和反向的梯度都要穿过很多层**。每一层都会把信号乘上一个「缩放系数」，层数一多，系数连乘，要么缩到 0，要么爆成无穷。激活函数的导数和权重的初始尺度，决定了这个系数是多少。这一小节先看激活函数，再看初始化。\n\n> **标准定义 · 激活函数 (activation function)**\n>\n> 激活函数是作用在每个神经元输入 $z$ 上的逐元素非线性函数 $\\phi$。常用的有：**sigmoid** $\\sigma(z)=\\dfrac1{1+e^{-z}}$，导数 $\\sigma'=\\sigma(1-\\sigma)\\le0.25$；**tanh** $\\tanh z$，导数 $1-\\tanh^2z\\le1$；**ReLU** $\\max(0,z)$，导数在 $z>0$ 时是 1，$z<0$ 时是 0；**GELU** $z\\,\\Phi(z)$，$\\Phi$ 是标准正态的分布函数，是 ReLU 的光滑版本，Transformer 里很常用。\n>\n> *English: Activation functions are element-wise nonlinearities. Sigmoid and tanh saturate for large |z|; ReLU is piecewise linear; GELU = z·Φ(z) is a smooth ReLU-like function used in Transformers.*\n\n**白话版：「sigmoid 和 tanh 像一扇会卡死的门，ReLU 像一根单向的管子」。** $|z|$ 一大，sigmoid 和 tanh 就「饱和」了：输出几乎不变，导数几乎为 0，反向传来的梯度在这里被掐断。ReLU 在正半轴导数恒为 1，梯度可以原样通过；代价是负半轴导数恒为 0，一个神经元如果输入一直是负的，就再也收不到梯度，叫**死神经元 (dead ReLU)**。GELU 在负半轴有一小段光滑的负值和非零的导数，介于两者之间。先把四个函数在几个点上的值和导数打印出来：\n\n```python\nfrom math import erf\ngelu = lambda z: 0.5 * z * (1 + np.vectorize(erf)(z / np.sqrt(2)))   # z * Phi(z)，Phi 是标准正态的分布函数\nACT[\"gelu\"] = (gelu, lambda z: (gelu(z + 1e-5) - gelu(z - 1e-5)) / 2e-5)   # 导数用中心差分近似\nACT[\"sigmoid\"] = (sigmoid, lambda z: sigmoid(z) * (1 - sigmoid(z)))\n\nzs = np.array([-4.0, -2.0, -0.5, 0.0, 0.5, 2.0, 4.0])\nprint(\"z       \", \" \".join(f\"{v:7.3f}\" for v in zs))\nfor name in [\"sigmoid\", \"tanh\", \"relu\", \"gelu\"]:\n    f, df = ACT[name]\n    print(f\"{name:8s} 值\", \" \".join(f\"{v:7.3f}\" for v in f(zs)))\n    print(f\"{'':8s} 导\", \" \".join(f\"{v:7.3f}\" for v in df(zs)))\n# 输出：z         -4.000  -2.000  -0.500   0.000   0.500   2.000   4.000\n# 输出：sigmoid  值   0.018   0.119   0.378   0.500   0.622   0.881   0.982\n# 输出：         导   0.018   0.105   0.235   0.250   0.235   0.105   0.018\n# 输出：tanh     值  -0.999  -0.964  -0.462   0.000   0.462   0.964   0.999\n# 输出：         导   0.001   0.071   0.786   1.000   0.786   0.071   0.001\n# 输出：relu     值   0.000   0.000   0.000   0.000   0.500   2.000   4.000\n# 输出：         导   0.000   0.000   0.000   0.000   1.000   1.000   1.000\n# 输出：gelu     值  -0.000  -0.046  -0.154   0.000   0.346   1.954   4.000\n# 输出：         导  -0.001  -0.085   0.133   0.500   0.867   1.085   1.001\n```\n\n读输出：第一行是 $z$ 的取值。sigmoid 的导数最大只有 0.250（在 $z=0$ 处），到 $z=\\pm4$ 已经掉到 0.018；tanh 的导数在 $z=0$ 是 1.000，在 $z=\\pm2$ 是 0.071，在 $z=\\pm4$ 是 0.001：**输入一旦偏离 0 两三个单位，梯度就几乎没了**。ReLU 的值在负半轴全是 0，导数也是 0；正半轴值等于 $z$，导数为 1。GELU 在 $z=-2$ 的值是 $-0.046$，在 $z=-0.5$ 是 $-0.154$，导数在 $z=0$ 是 0.500，在 $z=2$ 是 1.085（略大于 1：GELU 在 $z=2$ 处的值 1.954 还在 $z$ 的下方，要在更大的 $z$ 追上 $z$，中间一段斜率就会超过 1），在 $z=4$ 是 1.001：大 $|z|$ 处它就是 ReLU，只是在 0 附近被磨圆了。\n\n> **标准定义 · 梯度消失与梯度爆炸 (vanishing / exploding gradient)**\n>\n> 反向传播时，第 $l$ 层的误差项满足 $\\boldsymbol\\delta^{(l)}=\\big(W^{(l+1)\\top}\\boldsymbol\\delta^{(l+1)}\\big)\\odot\\phi'(\\mathbf z^{(l)})$。把它逐层展开，$\\boldsymbol\\delta^{(1)}$ 是一长串 $W^\\top$ 与 $\\phi'$ 的连乘。若每一层的平均缩放系数小于 1，$\\|\\boldsymbol\\delta^{(l)}\\|$ 随深度**指数衰减**（梯度消失）；大于 1 则指数增长（梯度爆炸）。\n>\n> *English: Backpropagated errors are products of many Wᵀ and φ′ factors. If the typical factor per layer is below 1 the gradient shrinks exponentially with depth; above 1 it explodes.*\n\n**白话版：「传话游戏」。** 二十个人传话，每人只传回上一个人声音的四分之一，传到第一个人时几乎听不到了。下面造一个 20 层、每层 64 个神经元的网络，从最后一层放一个随机的「误差信号」，一层层反传，记录每一层误差项的平均长度。三种激活函数各用它自己合适的初始化（sigmoid 与 tanh 用 Xavier，ReLU 用 He，原因马上讲）：\n\n```python\ndef grad_flow(act, std_fn, depth=20, width=64, seed=0):\n    \"\"\"把一个随机的「误差信号」从第 depth 层反传回第 1 层，记录每层 dL/dz 的平均长度\"\"\"\n    rng = np.random.default_rng(seed)\n    f, df = ACT[act]\n    a, Ws, zl = rng.normal(size=(32, width)), [], []\n    for _ in range(depth):\n        W = rng.normal(0, std_fn(width), (width, width))\n        z = a @ W\n        Ws.append(W); zl.append(z); a = f(z)\n    dz = rng.normal(size=z.shape)\n    norms = [np.linalg.norm(dz, axis=1).mean()]\n    for W, z in zip(Ws[::-1][:-1], zl[::-1][1:]):\n        dz = (dz @ W.T) * df(z)\n        norms.append(np.linalg.norm(dz, axis=1).mean())\n    return norms[::-1]                     # 下标 0 是第 1 层（最靠近输入）\n\nxavier, he = (lambda n: np.sqrt(1 / n)), (lambda n: np.sqrt(2 / n))\nfor act, sf in [(\"sigmoid\", xavier), (\"tanh\", xavier), (\"relu\", he)]:\n    g = grad_flow(act, sf)\n    print(f\"{act:8s} 第1层 {g[0]:.2e}  第10层 {g[9]:.2e}  第20层 {g[-1]:.2e}  第1层/第20层 = {g[0] / g[-1]:.2e}\")\n# 输出：sigmoid  第1层 9.32e-12  第10层 4.26e-06  第20层 8.08e+00  第1层/第20层 = 1.15e-12\n# 输出：tanh     第1层 1.57e+00  第10层 5.38e+00  第20层 8.08e+00  第1层/第20层 = 1.95e-01\n# 输出：relu     第1层 6.78e+00  第10层 7.05e+00  第20层 8.08e+00  第1层/第20层 = 8.39e-01\n```\n\n读输出：最后一层的误差长度三行都是 8.08（那是我们放进去的信号）。**sigmoid**：第 10 层只剩 $4.26\\times10^{-6}$，第 1 层是 $9.32\\times10^{-12}$，第 1 层与第 20 层之比 $1.15\\times10^{-12}$，量级正好是 $0.25^{19}\\approx3.6\\times10^{-12}$（0.25 是 sigmoid 导数的上限，反传 19 步）；**tanh**：第 1 层 1.57，比值 0.195，衰减缓慢得多，因为 tanh 在 0 附近导数是 1，只有输入偏离 0 的神经元才会削弱；**ReLU**：第 1 层 6.78，比值 0.839，几乎原样传回。**这是早期深网络很难训练、而 ReLU 流行起来的原因之一**：用 sigmoid 训 20 层，第一层收到的梯度只有最后一层的万亿分之一。\n\n梯度能不能顺利传回，除了激活函数，还取决于 $W$ 的尺度，也就是**初始化**。先看一条核心的推导。\n\n> **标准定义 · Xavier 初始化与 He 初始化 (Xavier / He initialization)**\n>\n> 设某一层的输入 $x_1,\\dots,x_n$ 相互独立、均值 0、方差 $\\mathrm{Var}(x)$，权重 $w_i$ 独立、均值 0、方差 $\\mathrm{Var}(w)$，则 $z=\\sum_{i=1}^nw_ix_i$ 的方差为 $\\mathrm{Var}(z)=n\\,\\mathrm{Var}(w)\\,\\mathrm{Var}(x)$。要让信号经过这一层后方差不变，需要 $\\mathrm{Var}(w)=1/n_{\\text{in}}$。**Xavier（Glorot）初始化**为兼顾反向传播，取 $\\mathrm{Var}(w)=\\dfrac{2}{n_{\\text{in}}+n_{\\text{out}}}$，适合 tanh 等关于 0 对称的激活。ReLU 会把一半的输入置 0，使 $\\mathbb E[a^2]=\\tfrac12\\mathrm{Var}(z)$，于是要把方差加倍：**He（Kaiming）初始化**取 $\\mathrm{Var}(w)=\\dfrac{2}{n_{\\text{in}}}$。偏置一般初始化为 0。\n>\n> *English: Since Var(z) = n·Var(w)·Var(x), keeping variances stable needs Var(w) = 1/n_in. Xavier uses 2/(n_in+n_out) for symmetric activations; He uses 2/n_in because ReLU zeroes half of the signal.*\n\n**白话版：「每一层是一台放大器，增益要刚好等于 1」。** 增益是 $n\\,\\mathrm{Var}(w)$：权重取大了，信号一层层放大到爆炸；取小了，信号一层层缩到消失；刚刚好，信号才能走到最后。先验证那条公式：输入方差为 1、宽度 $n=256$，权重标准差取 0.01、0.1、1，对比理论值和实测值。\n\n```python\nrng = np.random.default_rng(0)\nn = 256\nx = rng.normal(0, 1, (1000, n))                      # 输入：每个分量均值 0、方差 1\nfor std in [0.01, 0.1, 1.0]:\n    W = rng.normal(0, std, (n, n))\n    z = x @ W\n    print(f\"w 的标准差 {std:<5}  理论 Var(z) = n*Var(w)*Var(x) = {n * std**2:9.4f}   实测 Var(z) = {z.var():9.4f}\")\n# 输出：w 的标准差 0.01   理论 Var(z) = n*Var(w)*Var(x) =    0.0256   实测 Var(z) =    0.0259\n# 输出：w 的标准差 0.1    理论 Var(z) = n*Var(w)*Var(x) =    2.5600   实测 Var(z) =    2.5720\n# 输出：w 的标准差 1.0    理论 Var(z) = n*Var(w)*Var(x) =  256.0000   实测 Var(z) =  256.5665\n```\n\n读输出：理论值 $n\\sigma_w^2$ 分别是 0.0256、2.5600、256.0000，实测方差是 0.0259、2.5720、256.5665，相差都在 1.5% 以内。**同一个输入，只因为权重标准差从 0.01 到 1，输出方差差了一万倍**，二十层之后会差到什么程度，下面看。\n\n```python\ndef act_stats(act, std_fn, depth=20, width=256, seed=0):\n    rng = np.random.default_rng(seed)\n    a = rng.normal(size=(500, width))\n    out = []\n    for l in range(depth):\n        a = ACT[act][0](a @ rng.normal(0, std_fn(width), (width, width)))\n        out.append(a.std())\n    return out\n\nprint(\"tanh 网络，各层激活值的标准差（第 1, 5, 10, 20 层）\")\nfor name, sf in [(\"std=0.01\", lambda n: 0.01), (\"std=1\", lambda n: 1.0), (\"Xavier\", xavier)]:\n    s = act_stats(\"tanh\", sf)\n    print(f\"  {name:9s}\", [f\"{s[i - 1]:.4f}\" for i in (1, 5, 10, 20)])\nprint(\"ReLU 网络\")\nfor name, sf in [(\"Xavier\", xavier), (\"He\", he)]:\n    s = act_stats(\"relu\", sf)\n    print(f\"  {name:9s}\", [f\"{s[i - 1]:.4f}\" for i in (1, 5, 10, 20)])\n# 输出：tanh 网络，各层激活值的标准差（第 1, 5, 10, 20 层）\n# 输出：  std=0.01  ['0.1563', '0.0001', '0.0000', '0.0000']\n# 输出：  std=1     ['0.9751', '0.9744', '0.9743', '0.9740']\n# 输出：  Xavier    ['0.6279', '0.3230', '0.2289', '0.1578']\n# 输出：ReLU 网络\n# 输出：  Xavier    ['0.5846', '0.1609', '0.0314', '0.0011']\n# 输出：  He        ['0.8267', '0.9102', '1.0039', '1.1005']\n```\n\n读输出：tanh 网络里，`std=0.01` 的权重让信号第 1 层就缩到 0.1563，第 5 层 0.0001，第 10 层以后四位小数都是 0.0000：**信号消失了**，网络输出几乎与输入无关，梯度也同样消失；`std=1` 的权重把激活值推到 tanh 的饱和区，标准差一直停在 0.97 左右，而饱和区导数接近 0（上面 $z=\\pm4$ 时仅 0.001），梯度又被掐断；Xavier 初始化下信号虽然还在慢慢缩小（第 1 层 0.6279，第 20 层 0.1578），但始终在可用的范围内。ReLU 网络里，Xavier 初始化（方差 $1/n$）因为没有补偿被 ReLU 砍掉的一半，信号每层缩小约 $1/\\sqrt2$，第 20 层只剩 0.0011；He 初始化（方差 $2/n$）刚好补回，标准差在 0.83 到 1.10 之间，**20 层几乎没有衰减**。这就是前面 `init` 默认用 He 的原因。\n\n补一句现实：Transformer 里用了 LayerNorm 和残差连接，对初始化没那么敏感，但仍然要小心。比如 GPT-2 的实现用标准差 0.02 的正态分布初始化，并把残差分支最后一个投影的权重再按 $1/\\sqrt{N}$（$N$ 是残差层数）缩小，用意相同：控制信号尺度，不让它随深度累积。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "qhXZsFVxGKo",
+   "title": "视频一：Vanishing / Exploding Gradients（吴恩达，Deep Learning 专项课程第 2 课 C2W1L10）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "s2coXdufOzE",
+   "title": "视频二：Weight Initialization in a Deep Network（吴恩达，C2W1L11）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "看视频时抓住两点：第一，视频一讲的是「输出随层数 $L$ 指数变化」，和我们上面的实验是同一件事；第二，视频二讲怎样按每层的输入个数 $n$ 来设置权重的方差，对应上面的 $\\mathrm{Var}(w)=1/n$（ReLU 用 $2/n$）。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 一个 4096→4096 的 ReLU 线性层：(a) 用 He 初始化，权重标准差是多少？(b) 如果你错误地把权重标准差设成 0.02，信号方差每经过一层乘以多少？叠 50 层之后方差大约缩小到原来的多少？",
+   "a": "(a) He 初始化 $\\mathrm{Var}(w)=2/n_{\\text{in}}=2/4096$，标准差 $\\sqrt{2/4096}\\approx0.0221$。\n\n(b) 标准差 0.02，方差 $0.0004$。单层的方差放大系数是 $n\\,\\mathrm{Var}(w)\\cdot\\tfrac12$（那个 $\\tfrac12$ 是 ReLU 砍掉一半），即 $4096\\times0.0004/2=0.8192$。50 层后是 $0.8192^{50}\\approx4.7\\times10^{-5}$，信号方差缩到万分之零点五，标准差缩到约 0.7%。要点：0.02 看上去是个「很正常的小数」，但对宽度 4096 的层，它比 He 的 0.0221 只小了一点点，一层只掉 18%，却在 50 层里累积成接近消失；**初始化的正确尺度和宽度直接相关**，不能照抄一个固定数字。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "多层感知机",
+     "multilayer perceptron (MLP)",
+     "若干层「线性变换 + 逐元素非线性」叠起来的网络，最后一层输出 logit"
+    ],
+    [
+     "激活函数",
+     "activation function",
+     "逐元素的非线性函数，如 ReLU、tanh、GELU；没有它多层等于一层"
+    ],
+    [
+     "梯度检验",
+     "gradient check",
+     "用中心差分的数值导数验证手写反向传播是否正确"
+    ],
+    [
+     "梯度消失 / 爆炸",
+     "vanishing / exploding gradient",
+     "反传的梯度随深度指数衰减 / 增长，因为每层的缩放系数连乘"
+    ],
+    [
+     "饱和与死神经元",
+     "saturation / dead ReLU",
+     "sigmoid、tanh 在大 |z| 处导数趋于 0；ReLU 的输入恒为负时永远没有梯度"
+    ],
+    [
+     "Xavier 初始化",
+     "Xavier (Glorot) initialization",
+     "权重方差取 $2/(n_{in}+n_{out})$，适合 tanh 等对称激活"
+    ],
+    [
+     "He 初始化",
+     "He (Kaiming) initialization",
+     "权重方差取 $2/n_{in}$，补偿 ReLU 砍掉的一半信号"
+    ],
+    [
+     "Adam / AdamW",
+     "Adam / AdamW",
+     "动量加 RMSProp 加偏差修正；AdamW 把权重衰减与自适应缩放解耦"
+    ],
+    [
+     "学习率调度",
+     "learning-rate schedule",
+     "学习率随步数变化：warmup 升到峰值，再余弦衰减"
+    ],
+    [
+     "权重衰减",
+     "weight decay",
+     "把权重按比例拉向 0；等价于在损失里加 $\\frac{\\lambda}{2}\\|W\\|^2$（SGD 下）"
+    ],
+    [
+     "丢弃法",
+     "dropout",
+     "训练时随机把一部分神经元置 0 并重新缩放，评估时关闭"
+    ],
+    [
+     "批归一化",
+     "batch normalization",
+     "逐特征用批内均值方差标准化，再学习缩放与平移；训练 / 评估行为不同"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "sigmoid 的导数最大为 0.25。在一个 20 层的 sigmoid 网络里，只看激活函数导数这一项，梯度从最后一层传到第 1 层大约要缩小多少？",
+    "options": [
+     "不会缩小，因为每一层的导数都是 1",
+     "约 $0.25\\times19\\approx4.75$ 倍（反而放大）",
+     "约 $0.25^{19}\\approx3.6\\times10^{-12}$ 倍",
+     "约 $0.25/19\\approx0.013$ 倍"
+    ],
+    "answer": 2,
+    "explain": "反向传播每过一层就乘一次 $\\sigma'(z)\\le0.25$，19 次连乘是 $0.25^{19}$，是指数衰减，不是线性的。实验里 sigmoid 网络第 1 层与第 20 层的梯度之比是 $1.15\\times10^{-12}$，与这个量级吻合。"
+   },
+   {
+    "q": "一个输入个数为 $n_{\\text{in}}=512$ 的 ReLU 线性层，用 He 初始化，权重的标准差应取多少？",
+    "options": [
+     "$\\sqrt{2/512}=0.0625$",
+     "$\\sqrt{2/1024}\\approx0.0442$",
+     "$2/512\\approx0.0039$",
+     "$1/512\\approx0.00195$"
+    ],
+    "answer": 0,
+    "explain": "He 初始化的**方差**是 $2/n_{\\text{in}}$，标准差是它的平方根 $\\sqrt{2/512}=0.0625$。$0.0442$ 是 $n_{\\text{in}}=n_{\\text{out}}=512$ 时 Xavier 的标准差；$0.0039$ 是 He 的方差，把方差当成了标准差；最后一个同样是把方差当成标准差，而且漏了 ReLU 的因子 2。"
+   },
+   {
+    "q": "把 Xavier 初始化（方差 $1/n_{\\text{in}}$）直接用在很深的 ReLU 网络上，前向信号会怎样？",
+    "options": [
+     "刚好保持不变，所以和 He 初始化没有区别",
+     "每层方差约放大一倍，信号很快爆炸",
+     "信号保持不变，但梯度会爆炸",
+     "每层方差约缩小一半，层数多了信号逐渐消失"
+    ],
+    "answer": 3,
+    "explain": "ReLU 把一半的输入置 0，使 $\\mathbb E[a^2]=\\tfrac12\\mathrm{Var}(z)$，所以需要把权重方差加倍到 $2/n_{\\text{in}}$ 才能补回。用 $1/n_{\\text{in}}$ 时每层方差乘以约 $\\tfrac12$，实验里 20 层之后标准差只剩 0.0011。"
+   }
+  ]
+ }
+}

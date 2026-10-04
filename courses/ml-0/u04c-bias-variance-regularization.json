@@ -1,0 +1,107 @@
+{
+ "id": "u04c",
+ "title": "偏差方差、正则化与模型选择（3/3）",
+ "en": "Bias–Variance, Regularization & Model Selection (3/3)",
+ "minutes": 35,
+ "objectives": [
+  "识别 **数据泄漏 (data leakage)** 的典型情形（预处理泄漏、特征选择泄漏、重复记录泄漏、时间泄漏、目标泄漏），并执行「训练集拟合、验证集选择、**测试集只用一次**」的评估纪律"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「偏差方差、正则化与模型选择」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：交叉验证：怎样诚实地选 λ（约 10 分钟） → 学习曲线：该加数据，还是该换模型（约 5 分钟） → 超参数搜索：网格与随机（约 5 分钟） → 数据泄漏与「测试集只用一次」（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\nsigma = 0.3                                    # 噪声标准差\nf = lambda x: np.sin(2 * np.pi * x)            # 真函数（实际中未知）\nx_grid = np.linspace(0, 1, 50)                 # 固定的评估点\n\ndef poly_fit_predict(x, y, deg, x_new):        # deg 次多项式的最小二乘拟合\n    w = np.linalg.lstsq(np.vander(x, deg + 1), y, rcond=None)[0]\n    return np.vander(x_new, deg + 1) @ w\n\ndef bias_variance(deg, n=20, trials=300):\n    x = np.linspace(0, 1, n)                   # 输入固定，只有噪声每次重抽\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):                    # 每次抽一份全新的训练集\n        y = f(x) + sigma * rng.normal(size=n)\n        preds[t] = poly_fit_predict(x, y, deg, x_grid)\n    bias2 = np.mean((preds.mean(axis=0) - f(x_grid)) ** 2)\n    var = np.mean(preds.var(axis=0))\n    y_new = f(x_grid) + sigma * rng.normal(size=preds.shape)   # 带噪声的新标签\n    return bias2, var, np.mean((preds - y_new) ** 2)\n\nfor deg in [0, 1, 3, 5, 9]:\n    b2, v, mse = bias_variance(deg)\n    print(f\"deg={deg}: bias2={b2:.3f} var={v:.3f} noise={sigma**2:.3f} \"\n          f\"三项之和={b2+v+sigma**2:.3f} 实测MSE={mse:.3f}\")\n```\n\n```python\ndef make_data(n, seed):\n    r = np.random.default_rng(seed)\n    x = r.uniform(0, 1, n)\n    return x, f(x) + sigma * r.normal(size=n)\n\ndef poly_feats(x, deg=9):                      # 特征 x, x^2, ..., x^deg（不含常数列）\n    return np.column_stack([x ** k for k in range(1, deg + 1)])\n\ndef ridge_fit(X, y, lam):\n    mu, sd = X.mean(0), X.std(0)               # 标准化后惩罚才公平\n    Z, yc = (X - mu) / sd, y - y.mean()        # 截距 b 不惩罚：先把 y 中心化\n    w = np.linalg.solve(Z.T @ Z + lam * np.eye(Z.shape[1]), Z.T @ yc)   # 闭式解\n    return mu, sd, y.mean(), w\n\ndef ridge_predict(m, X):\n    mu, sd, b, w = m\n    return b + ((X - mu) / sd) @ w\n\nx_tr, y_tr = make_data(20, 1)\nx_te, y_te = make_data(200, 2)\nXtr, Xte = poly_feats(x_tr), poly_feats(x_te)\nfor lam in [1e-8, 1e-3, 1e-1, 1, 10, 100]:\n    m = ridge_fit(Xtr, y_tr, lam)\n    tr = np.mean((ridge_predict(m, Xtr) - y_tr) ** 2)\n    te = np.mean((ridge_predict(m, Xte) - y_te) ** 2)\n    print(f\"lam={lam:<6g} 训练MSE={tr:.3f} 测试MSE={te:.3f} |w|={np.linalg.norm(m[3]):.1f}\")\n```\n\n### 交叉验证：怎样诚实地选 λ\n\n$\\lambda$、多项式次数这类超参数不能用训练误差选（训练误差永远偏爱更灵活的模型），也不能用测试集选（下面会讲为什么）。办法是从训练集里再留出一份**验证集 (validation set)**。可是只切一次的验证集又小又不稳定，换一种划分，选出来的结果就可能不同。**交叉验证**让每个样本都轮流当一次验证数据。\n\n> **标准定义 · K 折交叉验证 (K-fold cross-validation)**\n>\n> 把训练数据随机分成 $K$ 个大小接近的**折 (fold)**。对 $k=1,\\dots,K$：用除第 $k$ 折以外的数据训练模型，在第 $k$ 折上计算验证误差 $e_k$。最终的交叉验证误差是 $\\mathrm{CV}=\\tfrac1K\\sum_{k=1}^Ke_k$；对每一组超参数都算一个 CV，选 CV 最小的那一组，再用**全部**训练数据重新训练一次。$K=n$ 叫**留一法 (leave-one-out)**。分类问题通常用**分层 (stratified)** 的折，让每折里的类别比例和整体一致；时间序列不能随机分折，要按时间先后切。\n>\n> *English: K-fold cross-validation splits the training data into K folds, trains on K−1 of them and validates on the remaining one in turn, then averages the K validation errors to compare hyperparameters.*\n\n**白话版：「轮流当考官」。** 把一份习题分成 5 套，每次拿 4 套练习、1 套考试，换 5 次，每套题都当过一次考卷，最后取平均分。这样不会因为「恰好这套考卷很简单」而选错方法。代价是训练次数变成 $K$ 倍。常用 $K=5$ 或 $10$：$K$ 大，每次训练的数据更接近全部数据（偏差小），但 $K$ 个模型彼此更像、计算更贵。\n\n下面手写 5 折，对岭回归的 $\\lambda$ 做搜索。注意**标准化也只用训练折**：`ridge_fit` 内部自己算均值和标准差，验证折只是被「套用」。这条纪律在后面讲泄漏时会出现。\n\n```python\ndef kfold_indices(n, k, seed=0):\n    idx = np.random.default_rng(seed).permutation(n)   # 先打乱，再切成 k 份\n    return np.array_split(idx, k)\n\ndef cv_mse(X, y, lam, k=5, seed=0):\n    folds, errs = kfold_indices(len(y), k, seed), []\n    for i in range(k):\n        va = folds[i]                                   # 第 i 份当验证集\n        tr = np.concatenate([folds[j] for j in range(k) if j != i])\n        m = ridge_fit(X[tr], y[tr], lam)                # 标准化也只用训练折\n        errs.append(np.mean((ridge_predict(m, X[va]) - y[va]) ** 2))\n    return np.mean(errs), np.std(errs)\n\nx_a, y_a = make_data(40, 3)                    # 训练 + 验证用的 40 个点\nXa = poly_feats(x_a)\ngrid = [10.0 ** e for e in range(-6, 3)]\nfor lam in grid:\n    mean, std = cv_mse(Xa, y_a, lam)\n    print(f\"lam={lam:<8g} 5 折平均 MSE={mean:.3f} (折间标准差 {std:.3f})\")\n# 输出：lam=1e-06    5 折平均 MSE=0.218 (折间标准差 0.224)\n# 输出：lam=1e-05    5 折平均 MSE=0.155 (折间标准差 0.105)\n# 输出：lam=0.0001   5 折平均 MSE=0.120 (折间标准差 0.046)\n# 输出：lam=0.001    5 折平均 MSE=0.107 (折间标准差 0.036)\n# 输出：lam=0.01     5 折平均 MSE=0.103 (折间标准差 0.036)\n# 输出：lam=0.1      5 折平均 MSE=0.168 (折间标准差 0.049)\n# 输出：lam=1        5 折平均 MSE=0.231 (折间标准差 0.075)\n# 输出：lam=10       5 折平均 MSE=0.250 (折间标准差 0.132)\n# 输出：lam=100      5 折平均 MSE=0.413 (折间标准差 0.205)\n```\n\n读输出：每一行是一个 $\\lambda$ 的 5 折平均 MSE，括号里是 5 个折之间的标准差。$\\lambda=10^{-6}$ 时 CV 是 0.218，折与折之间波动很大（0.224）；随着 $\\lambda$ 增大 CV 一路下降，到 $\\lambda=0.01$ 时最低 0.103；再往上又升，$\\lambda=100$ 时是 0.413。折间标准差说明：0.103 和 0.107（$\\lambda=0.001$）的差别（0.004）远小于折间波动（约 0.036），所以这两个 $\\lambda$ 其实分不出好坏。实践中有个常用规则叫「一倍标准误规则」：在 CV 误差不显著差于最低值的前提下，选**最简单**（这里是 $\\lambda$ 最大）的那个。\n\n选定之后用全部训练点重训，并在测试集上**只评估这一次**；同时看看「只用一次随机划分」选出来的 $\\lambda$ 稳不稳定：\n\n```python\nbest = min(grid, key=lambda lam: cv_mse(Xa, y_a, lam)[0])\nm = ridge_fit(Xa, y_a, best)                   # 选定 lam 后，用全部 40 个点重新训练\nprint(\"交叉验证选出的 lam:\", best)\nprint(\"测试集 MSE（只看这一次）:\", round(np.mean((ridge_predict(m, Xte) - y_te) ** 2), 3))\n\n# 对比：只用一次随机划分（30 训练 / 10 验证），换 6 个种子选出的 lam 会怎样？\nfor seed in range(6):\n    perm = np.random.default_rng(100 + seed).permutation(40)\n    tr, va = perm[:30], perm[30:]\n    errs = [np.mean((ridge_predict(ridge_fit(Xa[tr], y_a[tr], l), Xa[va]) - y_a[va]) ** 2)\n            for l in grid]\n    print(\"单次划分选出的 lam:\", grid[int(np.argmin(errs))])\n# 输出：交叉验证选出的 lam: 0.01\n# 输出：测试集 MSE（只看这一次）: 0.119\n# 输出：单次划分选出的 lam: 0.001\n# 输出：单次划分选出的 lam: 0.01\n# 输出：单次划分选出的 lam: 0.001\n# 输出：单次划分选出的 lam: 0.0001\n# 输出：单次划分选出的 lam: 0.0001\n# 输出：单次划分选出的 lam: 0.01\n```\n\n读输出：交叉验证选出 $\\lambda=0.01$，重训后测试集 MSE 是 0.119，与 CV 估计值 0.103 接近，略为乐观，这是因为我们「挑了最小的那个」。下面六行是只切一次（30 个训练 / 10 个验证）的结果：选出来的 $\\lambda$ 在 0.0001、0.001、0.01 之间跳来跳去（0.001、0.01、0.001、0.0001、0.0001、0.01），每次的运气不同。交叉验证把 5 次评估平均起来，选择就稳得多。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "fSytzGwwBVw",
+   "title": "视频三：Machine Learning Fundamentals: Cross Validation（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 6
+  },
+  {
+   "type": "text",
+   "md": "### 学习曲线：该加数据，还是该换模型\n\n交叉验证告诉你「哪组超参数好」，但没告诉你「现在的问题出在哪、下一步该做什么」。**学习曲线**回答后一个问题。\n\n> **标准定义 · 学习曲线 (learning curve)**\n>\n> 学习曲线是**训练误差**和**验证误差**随**训练集大小 $n$** 变化的两条曲线（对每个 $n$，用 $n$ 个样本训练，分别在这 $n$ 个样本和一份固定的验证集上算误差；为了降低抽样波动，通常重复多次取平均）。读法：若两条曲线收敛到一个**较高**的值且几乎重合，是**高偏差**（欠拟合）；若训练误差很低、验证误差高、两者间有大**间隙 (gap)** 并且随 $n$ 增大在缩小，是**高方差**（过拟合）。\n>\n> *English: A learning curve plots training and validation error as functions of training set size, and its shape reveals whether the model suffers from high bias or high variance.*\n\n**白话版：「练习题做得越多，模考分数怎么变」。** 如果做再多题模考分数也不涨（曲线平了，且离满分很远），说明方法本身不行，该换方法；如果练习题满分、模考很差但在慢慢涨，说明背题背多了、见的题型还不够，该多做题或者加约束。\n\n两条模型各画一条：1 次多项式（只能画直线）和 9 次多项式（几乎不受约束，$\\lambda=10^{-4}$），每个 $n$ 重复 30 次：\n\n```python\nx_pool, y_pool = make_data(200, 5)\nx_val, y_val = make_data(400, 6)\nXp, Xv = poly_feats(x_pool), poly_feats(x_val)\n\ndef curve(deg, lam, sizes, reps=30):\n    out = []\n    for n in sizes:\n        tr_err, va_err = [], []\n        for rep in range(reps):                         # 每个 n 重复抽样取平均\n            idx = np.random.default_rng(rep).choice(200, n, replace=False)\n            m = ridge_fit(Xp[idx][:, :deg], y_pool[idx], lam)\n            tr_err.append(np.mean((ridge_predict(m, Xp[idx][:, :deg]) - y_pool[idx]) ** 2))\n            va_err.append(np.mean((ridge_predict(m, Xv[:, :deg]) - y_val) ** 2))\n        out.append((n, np.mean(tr_err), np.mean(va_err)))\n    return out\n\nfor deg, name in [(1, \"1 次（偏差大）\"), (9, \"9 次（方差大）\")]:\n    print(name)\n    for n, tr, va in curve(deg, 1e-4, [12, 20, 40, 80, 160]):\n        print(f\"  n={n:3d} 训练MSE={tr:.3f} 验证MSE={va:.3f}\")\n# 输出：1 次（偏差大）\n# 输出：  n= 12 训练MSE=0.233 验证MSE=0.309\n# 输出：  n= 20 训练MSE=0.261 验证MSE=0.281\n# 输出：  n= 40 训练MSE=0.290 验证MSE=0.275\n# 输出：  n= 80 训练MSE=0.301 验证MSE=0.261\n# 输出：  n=160 训练MSE=0.308 验证MSE=0.255\n# 输出：9 次（方差大）\n# 输出：  n= 12 训练MSE=0.041 验证MSE=73.606\n# 输出：  n= 20 训练MSE=0.057 验证MSE=0.128\n# 输出：  n= 40 训练MSE=0.075 验证MSE=0.144\n# 输出：  n= 80 训练MSE=0.078 验证MSE=0.087\n# 输出：  n=160 训练MSE=0.082 验证MSE=0.084\n```\n\n读输出：1 次多项式：训练 MSE 从 0.233 慢慢升到 0.308，验证 MSE 从 0.309 降到 0.255，两条曲线逐渐靠拢，收敛在 0.26–0.31 附近，远高于噪声下限 $\\sigma^2=0.09$：典型的**高偏差**，再多的数据也救不了，应该换更灵活的模型或加特征。9 次多项式：训练 MSE 一直很低（0.041 到 0.082），$n=12$ 时验证 MSE 是 73.606（只有 12 个点要定 10 个参数，几乎是插值，在点与点之间的空隙里乱摆），$n=20$ 时降到 0.128，$n=80$ 时 0.087，$n=160$ 时 0.084，两条线几乎重合在噪声下限附近：这是**高方差**，且多加数据是有用的（$n=40$ 的 0.144 比 $n=20$ 的 0.128 略高，是 30 次重复仍然留下的抽样波动，曲线整体趋势是向下的）。\n\n### 超参数搜索：网格与随机\n\n> **标准定义 · 超参数搜索 (hyperparameter search)**\n>\n> **超参数**是训练前由人设定、不由梯度下降（或闭式解）学出来的量，比如 $\\lambda$、多项式次数、树的深度、学习率、$K$。**网格搜索 (grid search)** 对每个超参数取若干候选值，试遍所有组合；**随机搜索 (random search)** 在每个超参数的取值范围内独立随机采样（通常对 $\\lambda$、学习率这类跨数量级的量在**对数尺度**上均匀采样），试固定个数的组合。每一组都用交叉验证（或验证集）打分，取最好的。\n>\n> *English: Hyperparameters are set before training. Grid search tries all combinations of a fixed set of values; random search samples combinations at random, typically on a log scale for scale parameters.*\n\n**白话版：「试菜谱」。** 网格搜索像把「盐放 1/2/3 勺」和「火开小/中/大」所有搭配都试一遍；随机搜索是随机抽搭配。如果只有一个调料真正影响味道，网格会把预算浪费在「那个不重要调料」的重复取值上，而随机搜索每次试的**关键调料值都不一样**。Bergstra 与 Bengio（2012）的结论正是：当少数几个超参数起主要作用时，同样预算下随机搜索通常更好。\n\n两种搜索各给 20 次预算，搜索「多项式次数」和「$\\lambda$」，用 5 折 CV 打分：\n\n```python\ndef cv_cfg(deg, lam):                           # 一组超参数的 5 折交叉验证误差\n    return cv_mse(poly_feats(x_a, deg), y_a, lam)[0]\n\ndegs, lams = [1, 3, 5, 7, 9], [1e-6, 1e-3, 1e-1, 10.0]\ngrid_cfgs = [(d, l) for d in degs for l in lams]          # 网格：5 x 4 = 20 组\nr = np.random.default_rng(7)\nrand_cfgs = [(int(r.integers(1, 10)), 10 ** r.uniform(-6, 2))   # 随机：同样 20 组\n             for _ in range(20)]\nfor name, cfgs in [(\"网格\", grid_cfgs), (\"随机\", rand_cfgs)]:\n    scores = [cv_cfg(d, l) for d, l in cfgs]\n    d, l = cfgs[int(np.argmin(scores))]\n    m = ridge_fit(poly_feats(x_a, d), y_a, l)\n    te = np.mean((ridge_predict(m, poly_feats(x_te, d)) - y_te) ** 2)\n    n_lam = len(set(round(c[1], 9) for c in cfgs))\n    print(f\"{name}: {n_lam} 个不同 lam，最好 CV={min(scores):.3f}，\"\n          f\"deg={d} lam={l:.2g}，测试MSE={te:.3f}\")\n# 输出：网格: 4 个不同 lam，最好 CV=0.107，deg=9 lam=0.001，测试MSE=0.134\n# 输出：随机: 20 个不同 lam，最好 CV=0.104，deg=9 lam=0.013，测试MSE=0.117\n```\n\n读输出：网格搜索 $5\\times4=20$ 组，但 $\\lambda$ 只出现过 4 个不同的值；随机搜索也是 20 组，$\\lambda$ 有 20 个不同的值。网格最好的 CV 是 0.107（9 次、$\\lambda=0.001$），测试 MSE 0.134；随机最好的 CV 是 0.104（9 次、$\\lambda=0.013$），测试 MSE 0.117。这只是**一次**实验，两者的差距在抽样波动之内，不能据此宣布随机搜索「赢了」；它想说明的是机制：同样的预算，随机搜索把 $\\lambda$ 这条重要的轴探索得更细。还有第二个现象：被选中的组合，CV 分数（0.107、0.104）总比它后来的测试 MSE（0.134、0.117）乐观一些，因为我们是在 20 个候选里**挑最小的**，这叫**选择偏差 (selection bias)**，下面一节会把它放大给你看。\n\n### 数据泄漏与「测试集只用一次」\n\n> **标准定义 · 数据泄漏 (data leakage)**\n>\n> 当训练过程（包括预处理、特征工程、特征选择、超参数选择）直接或间接用到了**本该保留给评估的数据**，或用到了**部署时拿不到的信息**，使评估结果比真实的泛化表现更乐观，就叫**数据泄漏**。常见形态有：（1）**预处理泄漏**：在全数据上拟合标准化、缺失值填补、PCA；（2）**特征选择泄漏**：先用全部样本的标签选特征，再做交叉验证；（3）**重复 / 分组泄漏**：同一客户、同一病人、同一商品的多条近似记录被分到训练和测试两边；（4）**时间泄漏**：用未来的数据预测过去，随机分折的时间序列；（5）**目标泄漏 (target leakage)**：某个特征是标签的「结果」，部署时并不存在；（6）**反复使用测试集**。\n>\n> *English: Data leakage occurs when information that would not be available at prediction time, or information from the evaluation data, influences training, making the evaluation optimistic.*\n\n**白话版：「考试前偷看了答案」。** 泄漏最危险的地方是它不会让程序报错：代码照常跑、数字照常出，而且数字还很好看。下面先复现最经典的一例（Hastie 等人在《统计学习基础》里专门讲过「交叉验证的错误做法」）。\n\n数据：50 个样本、2000 个**纯噪声**特征，标签随机，理论上不可能有任何规律，任何诚实的评估都应该得到约 0.5 的准确率。比较两种做法：先用全部样本挑相关性最大的 20 个特征、再做 5 折交叉验证（泄漏）；和每一折只在训练折上挑特征（正确）：\n\n```python\nrng = np.random.default_rng(0)\nn, p = 50, 2000\nX = rng.normal(size=(n, p))                    # 2000 个纯噪声特征\ny = rng.integers(0, 2, n) * 2 - 1              # 随机 ±1 标签：理论上没有任何规律\n\ndef top_k(X, y, k=20):                         # 选出与标签相关性最大的 k 个特征\n    return np.argsort(-np.abs((X - X.mean(0)).T @ (y - y.mean())))[:k]\n\ndef centroid_acc(Xtr, ytr, Xva, yva):          # 最近类中心分类器\n    c1, c0 = Xtr[ytr == 1].mean(0), Xtr[ytr == -1].mean(0)\n    pred = np.where(((Xva - c0) ** 2).sum(1) > ((Xva - c1) ** 2).sum(1), 1, -1)\n    return np.mean(pred == yva)\n\ndef cv_acc(leaky, k=5):\n    sel_all = top_k(X, y)                      # 泄漏：用了全部样本（含验证折）的标签\n    folds, accs = kfold_indices(n, k), []\n    for i in range(k):\n        va = folds[i]\n        tr = np.concatenate([folds[j] for j in range(k) if j != i])\n        cols = sel_all if leaky else top_k(X[tr], y[tr])   # 正确：只用训练折选特征\n        accs.append(centroid_acc(X[tr][:, cols], y[tr], X[va][:, cols], y[va]))\n    return np.mean(accs)\n\nprint(\"先选特征再交叉验证（泄漏）:\", round(cv_acc(True), 3))\nprint(\"折内选特征（正确）        :\", round(cv_acc(False), 3))\n# 输出：先选特征再交叉验证（泄漏）: 0.98\n# 输出：折内选特征（正确）        : 0.58\n```\n\n读输出：泄漏版本的 5 折准确率是 0.98，几乎完美，可是这些数据根本没有任何规律。原因是 2000 个噪声特征里，总有 20 个「碰巧」和这 50 个标签相关，而选特征时用过**所有**样本的标签，包括之后要拿来验证的那几折，等于把验证折的答案「编码」进了特征挑选。正确做法在每一折里只用训练折选特征，准确率是 0.58，在 0.5 附近（只有 50 个样本，0.58 是正常的抽样波动）。教训：**任何用到标签的步骤，都必须放在交叉验证的「折」里面**；这也是 `sklearn.pipeline.Pipeline` 存在的理由：把预处理、特征选择和模型打包成一个整体，交叉验证对整个管道做 `fit`。\n\n第二种泄漏：重复记录。设想每个对象有 3 条几乎一样的记录（同一个客户的三次下单，同一个病人的三次检查），而标签是随机的：\n\n```python\n# 重复测量：每个对象有 3 条几乎相同的记录，标签是随机的\nrng = np.random.default_rng(1)\nbase = rng.normal(size=(300, 5)); ybase = rng.integers(0, 2, 300)\nX = np.repeat(base, 3, axis=0) + 0.01 * rng.normal(size=(900, 5))\ny = np.repeat(ybase, 3)\ngroup = np.repeat(np.arange(300), 3)           # 记录属于哪个对象\n\ndef one_nn_acc(tr, te):\n    d = ((X[te][:, None, :] - X[tr][None, :, :]) ** 2).sum(-1)\n    return np.mean(y[tr][d.argmin(1)] == y[te])\n\nperm = rng.permutation(900)                    # 按记录随机划分：同一对象的记录会跨训练 / 测试\nprint(\"按记录划分:\", round(one_nn_acc(perm[:600], perm[600:]), 3))\ng_perm = rng.permutation(300)                  # 按对象划分：同一对象只出现在一边\ntr_mask = np.isin(group, g_perm[:200])\nprint(\"按对象划分:\", round(one_nn_acc(np.nonzero(tr_mask)[0], np.nonzero(~tr_mask)[0]), 3))\n# 输出：按记录划分: 0.91\n# 输出：按对象划分: 0.447\n```\n\n读输出：按记录随机划分，同一个对象的三条记录会有的落在训练集、有的落在测试集，最近邻分类器直接「认出」了长得几乎一样的训练记录，准确率 0.91，但标签是随机的，真实水平应是 0.5。按对象划分（同一个对象的记录只在一边），准确率是 0.447，回到 0.5 附近。所以当数据有分组结构（客户、病人、商品、同一天）时，要用**分组划分 (group split)**（`GroupKFold`）；有时间顺序时，要用**按时间切**的划分，训练在前、验证在后。\n\n最后一种泄漏最隐蔽，来自你自己：反复用测试集。设想测试集只有 100 个标签，你有 200 个**纯随机乱猜**的「模型」，每个都在测试集上打分，然后挑最好的：\n\n```python\nrng = np.random.default_rng(0)\ny_test = rng.integers(0, 2, 100)               # 100 个测试标签\nguesses = rng.integers(0, 2, (200, 100))       # 200 个“模型”：全是随机乱猜\nacc = (guesses == y_test).mean(1)\nbest = int(acc.argmax())                       # 在测试集上挑最好的那个\nprint(\"200 个乱猜模型的平均测试准确率:\", round(acc.mean(), 3))\nprint(\"挑出来的“最好”的测试准确率    :\", round(acc[best], 3))\ny_fresh = rng.integers(0, 2, 100)              # 一份从没看过的新数据\nprint(\"它在新数据上的准确率          :\", round(np.mean(guesses[best] == y_fresh), 3))\n# 输出：200 个乱猜模型的平均测试准确率: 0.5\n# 输出：挑出来的“最好”的测试准确率    : 0.62\n# 输出：它在新数据上的准确率          : 0.46\n```\n\n读输出：200 个乱猜模型的平均测试准确率是 0.5（本来就是乱猜）；但挑出来的「最好」那一个在测试集上是 0.62，看起来像是真有点本事。把它放到一份从没见过的新数据上，准确率是 0.46，回到随机水平。0.62 是**选择偏差**：从很多候选里挑最大值，最大值天然偏高。真实研究里，「我试了几十种配置，报告测试集上最好的那个」就是同一件事，只是候选不是乱猜而已。\n\n所以评估要有纪律。**数据划分**：训练集用来拟合参数，**验证集（或交叉验证）**用来选模型和超参数，**测试集只在所有选择都做完之后评估一次**，这个数字才是对泛化表现的诚实估计；如果看了测试结果又去改模型，测试集就已经变成验证集了，需要新的测试集。**流程**：（1）先切出测试集，锁起来；（2）在剩下的数据上用交叉验证选特征、模型、超参数，所有预处理都放进折里；（3）选定后用全部训练数据重训；（4）在测试集上评估一次，并报告不确定性（测试集有 $m$ 个样本时，准确率的标准误约为 $\\sqrt{p(1-p)/m}$，$m=100$、$p=0.6$ 时约 0.05，对应 prob-0「大数定律与中心极限定理」里的结论）。\n\n### 这一节你要带走的三句话\n\n1. **泛化误差 = 不可约噪声 + 偏差² + 方差**：模型太简单，偏差大（欠拟合，加数据没用）；模型太灵活，方差大（过拟合，加数据、加正则有用）。\n2. **正则化是给模型一个连续的「灵活度旋钮」**：L2（岭回归，闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$，等价于权重衰减、高斯先验，压缩每个奇异方向 $s^2/(s^2+\\lambda)$）让系数变小；L1（Lasso，软阈值）让一部分系数恰好为 0。\n3. **模型选择靠交叉验证，评估靠只用一次的测试集**：任何用到标签的步骤（标准化、特征选择、调参）都必须在折内完成；分组、时间、重复记录要用对应的划分；反复看测试集会让你「选出」一个乐观的数字。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 一位同学说：「我先对**全部数据**做了标准化（只用了 $X$，没用标签），然后再切分、做 5 折交叉验证选超参数，所以没有泄漏，对吗？」请评价，并说出正确的做法和它对哪些模型影响更大。",
+   "a": "严格地说**仍然是泄漏，但比用标签的特征选择轻得多**。标准化用到了全部样本的均值和标准差，验证折的统计量因此进入了训练过程，验证数据不再是「完全没见过」的数据。没有用到标签，所以通常高估得不多；但对依赖距离或尺度的模型（kNN、SVM、PCA、带正则的线性模型）有可能产生可测的乐观偏差，样本小、维度高时更明显。\n\n正确做法：把标准化放进交叉验证的**折内**：每一折只用训练折估计均值和标准差，再把这组均值和标准差套用到验证折（就像本节 `ridge_fit` 返回 `mu, sd`、`ridge_predict` 套用它们那样）。在 `sklearn` 里就是 `Pipeline([(\"scale\", StandardScaler()), (\"model\", Ridge())])` 再交给 `cross_val_score`。对决策树这类对单调变换不敏感的模型，这种泄漏几乎没有影响；但养成「所有 `fit` 都只在训练折里做」的习惯，比事后判断「这次影响大不大」更可靠。**用到标签的步骤（特征选择、目标编码、调参）泄漏的后果严重得多**，如本节 98% 对 58% 的例子。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 Machine Learning 讲义（Ng、Ma 等）：Regularization and model selection、Bias-variance tradeoff",
+   "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf",
+   "note": "本节大纲依据的大学课程讲义；偏差-方差分解、正则化、交叉验证的标准推导，只引用不转载"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL，James 等）第 5 章 Resampling Methods、第 6 章 Linear Model Selection and Regularization",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开的教材；交叉验证、岭回归、Lasso 的讲解，配有 Python 版实验"
+  },
+  {
+   "title": "The Elements of Statistical Learning（ESL，Hastie 等）第 7 章 Model Assessment and Selection（7.10.2 是「交叉验证的错误做法」）",
+   "url": "https://hastie.su.domains/ElemStatLearn/",
+   "note": "免费 PDF；偏差-方差分解的严格推导和特征选择泄漏的原始论述"
+  },
+  {
+   "title": "Bergstra & Bengio：Random Search for Hyper-Parameter Optimization（JMLR 2012）",
+   "url": "https://jmlr.org/papers/v13/bergstra12a.html",
+   "note": "随机搜索通常优于网格搜索的原始论文"
+  },
+  {
+   "title": "StatQuest：Regularization Part 2: Lasso (L1) Regression（约 8 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=NGf0voTMlcs",
+   "note": "接着视频二看，用图形讲 Lasso 为什么能把系数压成 0"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "5 折交叉验证中，关于训练和验证，下面哪项正确？",
+    "options": [
+     "把数据分成 5 份，每份只用来训练一次，从不验证",
+     "只训练一个模型，在 5 个测试集上评估",
+     "共训练 5 个模型，每个样本被当作 4 次验证数据",
+     "共训练 5 个模型，每个样本恰好被当作一次验证数据"
+    ],
+    "answer": 3,
+    "explain": "5 折：每次留一折验证、其余四折训练，共 5 次训练；每个样本恰好有一次在被留出的那一折里。最后用 5 个验证误差的平均比较超参数，选定后再用全部训练数据重训。「每个样本验证 4 次」是把训练和验证次数弄反了。"
+   },
+   {
+    "q": "先在**全部**样本上用标签挑出最相关的 20 个特征，然后用 5 折交叉验证评估分类器。这样做的问题是？",
+    "options": [
+     "没有问题，因为特征选择不属于训练",
+     "特征选择用到了验证折的标签，属于数据泄漏，评估会偏乐观",
+     "交叉验证的折数不够多",
+     "选出的特征太少，应该选更多"
+    ],
+    "answer": 1,
+    "explain": "任何用到标签的步骤（特征选择、目标编码、调参）都是「训练」的一部分，必须只在训练折里做。在全数据上选特征，验证折的标签就已经影响了选哪些特征，纯噪声数据也能得到很高的交叉验证准确率。增加折数或特征数都解决不了这个问题。"
+   },
+   {
+    "q": "你尝试了 30 种模型配置，每种都在同一个测试集上打分，报告最高的那个分数。这个数字的问题是？",
+    "options": [
+     "测试集太大了，应该缩小",
+     "没有问题，测试集本来就是用来比较模型的",
+     "存在选择偏差，会高估泛化表现；应该用验证集或交叉验证选配置，测试集只评估一次",
+     "只要重复实验取平均就没有问题"
+    ],
+    "answer": 2,
+    "explain": "从很多候选里取最大值，最大值天然偏高，反复使用测试集等于把它变成了验证集。正确流程是：验证集或交叉验证做所有选择，测试集在最后只评估一次。重复同样的流程取平均不会消除这个偏差，因为每次都在挑最大值。"
+   },
+   {
+    "q": "在预算相同（都试 20 组）时，为什么随机搜索常常比网格搜索更好？",
+    "options": [
+     "每组试验中每个超参数的取值都不一样，对真正重要的超参数探索得更细",
+     "随机搜索一定能找到全局最优",
+     "随机搜索不需要验证集",
+     "网格搜索的结果总是不可复现"
+    ],
+    "answer": 0,
+    "explain": "当少数几个超参数起主要作用时，网格会在不重要的维度上重复同样的值，重要的那一维只试了很少几个不同取值；随机搜索每组都是新值，探索得更细。它不保证找到全局最优，也仍然要用验证集或交叉验证打分；网格搜索在固定设置下也是可复现的。"
+   }
+  ]
+ }
+}

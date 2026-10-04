@@ -1,0 +1,221 @@
+{
+  "id": "ml-0",
+  "title": "机器学习入门",
+  "subtitle": "监督学习与泛化、线性回归与梯度下降、逻辑回归与分类、偏差方差与正则化、决策树与集成、无监督学习、神经网络的训练实践、完整项目流程与误差分析 —— 全部用 NumPy 从零实现，是 ARENA 后续章节、读论文和硕士课程的共同底子；每个小节不超过 50 分钟",
+  "source": {
+    "name": "Stanford CS229 讲义、An Introduction to Statistical Learning（作者免费公开）、吴恩达 Machine Learning Specialization（作为大纲依据）",
+    "url": "https://cs229.stanford.edu/"
+  },
+  "units": [
+    {
+      "id": "u01",
+      "title": "机器学习的基本问题（1/3）",
+      "en": "The Machine Learning Problem (1/3)",
+      "minutes": 30,
+      "file": "u01-ml-basics.json",
+      "whole": "u01-ml-basics.json"
+    },
+    {
+      "id": "u01b",
+      "title": "机器学习的基本问题（2/3）",
+      "en": "The Machine Learning Problem (2/3)",
+      "minutes": 40,
+      "file": "u01b-ml-basics.json",
+      "whole": "u01-ml-basics.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u01c",
+      "title": "机器学习的基本问题（3/3）",
+      "en": "The Machine Learning Problem (3/3)",
+      "minutes": 35,
+      "file": "u01c-ml-basics.json",
+      "whole": "u01-ml-basics.json",
+      "part_of": "u01"
+    },
+    {
+      "id": "u02",
+      "title": "线性回归与梯度下降（1/3）",
+      "en": "Linear Regression & Gradient Descent (1/3)",
+      "minutes": 40,
+      "file": "u02-linear-regression.json",
+      "whole": "u02-linear-regression.json"
+    },
+    {
+      "id": "u02b",
+      "title": "线性回归与梯度下降（2/3）",
+      "en": "Linear Regression & Gradient Descent (2/3)",
+      "minutes": 35,
+      "file": "u02b-linear-regression.json",
+      "whole": "u02-linear-regression.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u02c",
+      "title": "线性回归与梯度下降（3/3）",
+      "en": "Linear Regression & Gradient Descent (3/3)",
+      "minutes": 30,
+      "file": "u02c-linear-regression.json",
+      "whole": "u02-linear-regression.json",
+      "part_of": "u02"
+    },
+    {
+      "id": "u03",
+      "title": "逻辑回归与分类（1/3）",
+      "en": "Logistic Regression & Classification (1/3)",
+      "minutes": 35,
+      "file": "u03-logistic-regression.json",
+      "whole": "u03-logistic-regression.json"
+    },
+    {
+      "id": "u03b",
+      "title": "逻辑回归与分类（2/3）",
+      "en": "Logistic Regression & Classification (2/3)",
+      "minutes": 40,
+      "file": "u03b-logistic-regression.json",
+      "whole": "u03-logistic-regression.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u03c",
+      "title": "逻辑回归与分类（3/3）",
+      "en": "Logistic Regression & Classification (3/3)",
+      "minutes": 40,
+      "file": "u03c-logistic-regression.json",
+      "whole": "u03-logistic-regression.json",
+      "part_of": "u03"
+    },
+    {
+      "id": "u04",
+      "title": "偏差方差、正则化与模型选择（1/3）",
+      "en": "Bias–Variance, Regularization & Model Selection (1/3)",
+      "minutes": 40,
+      "file": "u04-bias-variance-regularization.json",
+      "whole": "u04-bias-variance-regularization.json"
+    },
+    {
+      "id": "u04b",
+      "title": "偏差方差、正则化与模型选择（2/3）",
+      "en": "Bias–Variance, Regularization & Model Selection (2/3)",
+      "minutes": 35,
+      "file": "u04b-bias-variance-regularization.json",
+      "whole": "u04-bias-variance-regularization.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u04c",
+      "title": "偏差方差、正则化与模型选择（3/3）",
+      "en": "Bias–Variance, Regularization & Model Selection (3/3)",
+      "minutes": 35,
+      "file": "u04c-bias-variance-regularization.json",
+      "whole": "u04-bias-variance-regularization.json",
+      "part_of": "u04"
+    },
+    {
+      "id": "u05",
+      "title": "决策树、集成与最近邻（1/3）",
+      "en": "Decision Trees, Ensembles & Nearest Neighbors (1/3)",
+      "minutes": 45,
+      "file": "u05-trees-ensembles.json",
+      "whole": "u05-trees-ensembles.json"
+    },
+    {
+      "id": "u05b",
+      "title": "决策树、集成与最近邻（2/3）",
+      "en": "Decision Trees, Ensembles & Nearest Neighbors (2/3)",
+      "minutes": 35,
+      "file": "u05b-trees-ensembles.json",
+      "whole": "u05-trees-ensembles.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u05c",
+      "title": "决策树、集成与最近邻（3/3）",
+      "en": "Decision Trees, Ensembles & Nearest Neighbors (3/3)",
+      "minutes": 35,
+      "file": "u05c-trees-ensembles.json",
+      "whole": "u05-trees-ensembles.json",
+      "part_of": "u05"
+    },
+    {
+      "id": "u06",
+      "title": "无监督学习：聚类与降维（1/3）",
+      "en": "Unsupervised Learning: Clustering & Dimensionality Reduction (1/3)",
+      "minutes": 30,
+      "file": "u06-unsupervised.json",
+      "whole": "u06-unsupervised.json"
+    },
+    {
+      "id": "u06b",
+      "title": "无监督学习：聚类与降维（2/3）",
+      "en": "Unsupervised Learning: Clustering & Dimensionality Reduction (2/3)",
+      "minutes": 40,
+      "file": "u06b-unsupervised.json",
+      "whole": "u06-unsupervised.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u06c",
+      "title": "无监督学习：聚类与降维（3/3）",
+      "en": "Unsupervised Learning: Clustering & Dimensionality Reduction (3/3)",
+      "minutes": 45,
+      "file": "u06c-unsupervised.json",
+      "whole": "u06-unsupervised.json",
+      "part_of": "u06"
+    },
+    {
+      "id": "u07",
+      "title": "神经网络与训练实践（1/3）",
+      "en": "Neural Networks & Training Practice (1/3)",
+      "minutes": 45,
+      "file": "u07-neural-nets-training.json",
+      "whole": "u07-neural-nets-training.json"
+    },
+    {
+      "id": "u07b",
+      "title": "神经网络与训练实践（2/3）",
+      "en": "Neural Networks & Training Practice (2/3)",
+      "minutes": 35,
+      "file": "u07b-neural-nets-training.json",
+      "whole": "u07-neural-nets-training.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u07c",
+      "title": "神经网络与训练实践（3/3）",
+      "en": "Neural Networks & Training Practice (3/3)",
+      "minutes": 35,
+      "file": "u07c-neural-nets-training.json",
+      "whole": "u07-neural-nets-training.json",
+      "part_of": "u07"
+    },
+    {
+      "id": "u08",
+      "title": "机器学习项目的完整流程与错误分析（1/3）",
+      "en": "The ML Workflow & Error Analysis (1/3)",
+      "minutes": 40,
+      "file": "u08-ml-workflow.json",
+      "whole": "u08-ml-workflow.json"
+    },
+    {
+      "id": "u08b",
+      "title": "机器学习项目的完整流程与错误分析（2/3）",
+      "en": "The ML Workflow & Error Analysis (2/3)",
+      "minutes": 45,
+      "file": "u08b-ml-workflow.json",
+      "whole": "u08-ml-workflow.json",
+      "part_of": "u08"
+    },
+    {
+      "id": "u08c",
+      "title": "机器学习项目的完整流程与错误分析（3/3）",
+      "en": "The ML Workflow & Error Analysis (3/3)",
+      "minutes": 30,
+      "file": "u08c-ml-workflow.json",
+      "whole": "u08-ml-workflow.json",
+      "part_of": "u08"
+    }
+  ],
+  "order": 4,
+  "order_note": "ARENA 0.0 之后学：补上机器学习本身（泛化、正则化、树模型、聚类与降维、训练神经网络的实践），再去学 ARENA 后续章节、世界模型衔接课和读论文"
+}

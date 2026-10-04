@@ -65,7 +65,7 @@
     "explain": "`int(\"abc\")`：字符串可以交给 `int`，但 `\"abc\"` 的内容不合法，所以是 `ValueError`。`\"abc\" + 1`：字符串和整数之间不支持 `+`，种类不对，所以是 `TypeError`。"
    },
    {
-    "q": "`sku = \"OMRON-0042\"`，那么 `sku[-4:]` 的结果是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nsku = \"OMRON-0042\"\nprint(repr(sku[-4:]))\n```",
     "options": [
      "`'OMRON'`",
      "`'N-00'`",
@@ -76,7 +76,7 @@
     "explain": "负数下标从末尾倒着数，`-4` 是倒数第 4 个字符（`0`），省略结尾表示一直取到最后，所以得到最后 4 个字符 `'0042'`。"
    },
    {
-    "q": "`name = \"  hi  \"`，单独执行一行 `name.upper()` 之后，`name` 的值是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nname = \"  hi  \"\nname.upper()\nprint(repr(name))\n```",
     "options": [
      "`'  HI  '`",
      "`'  hi  '`，没有变化",

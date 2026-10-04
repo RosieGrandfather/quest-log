@@ -44,7 +44,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`grid = [[0] * 3] * 3`，然后 `grid[0][0] = 1`，`grid` 变成什么？",
+    "q": "运行下面的代码，打印出的 `grid` 是什么？\n\n```text\ngrid = [[0] * 3] * 3\ngrid[0][0] = 1\nprint(grid)\n```",
     "options": [
      "`[[1,0,0],[1,0,0],[1,0,0]]`（三行是同一个列表）",
      "`[[1,0,0],[0,0,0],[0,0,0]]`",
@@ -66,7 +66,7 @@
     "explain": "先找当前函数（Local），再找外层函数（Enclosing），然后模块级（Global），最后内置（Built-in）。"
    },
    {
-    "q": "在内层函数里想**修改**外层函数里定义的变量 `count`（`count += 1`），需要？",
+    "q": "下面的内层函数想把外层的 `count` 加 1，`inner` 的第一行缺了一句声明。应该怎么做？\n\n```text\ndef outer():\n    count = 0\n    def inner():\n        count += 1       # 想修改外层的 count\n    inner()\n    return count\n```",
     "options": [
      "什么都不用",
      "在内层函数里声明 `nonlocal count`",
@@ -75,17 +75,6 @@
     ],
     "answer": 1,
     "explain": "不声明的话，赋值会让 `count` 成为内层函数的局部变量，读取时会 `UnboundLocalError`。`global` 对应的是模块级变量。"
-   },
-   {
-    "q": "装饰器语法 `@deco` 写在 `def f(): ...` 上方，等价于？",
-    "options": [
-     "`f = deco`",
-     "`deco(f())`",
-     "`f = deco(f)`",
-     "`deco = f(deco)`"
-    ],
-    "answer": 2,
-    "explain": "装饰器接收原函数，返回新函数，并替换原来的名字。"
    }
   ]
  }

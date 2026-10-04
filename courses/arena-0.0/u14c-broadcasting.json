@@ -62,7 +62,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "直接计算 `t.exp(z) / t.exp(z).sum()`，其中 `z = [1000., 1001., 1002.]`，结果是？",
+    "q": "运行下面的代码，打印的结果是？\n\n```text\nimport torch as t\nz = t.tensor([1000., 1001., 1002.])\nprint(t.exp(z) / t.exp(z).sum())\n```",
     "options": [
      "正确的概率分布",
      "全是 1/3",

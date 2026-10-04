@@ -1,0 +1,96 @@
+{
+ "id": "u03c",
+ "title": "逻辑回归与分类（3/3）",
+ "en": "Logistic Regression & Classification (3/3)",
+ "minutes": 40,
+ "objectives": [
+  "手写 **混淆矩阵 (confusion matrix)**、**准确率、精确率、召回率、F1、ROC 曲线与 AUC**，会选 **阈值 (threshold)**，并看穿 **类别不平衡 (class imbalance)** 下准确率和精确率的陷阱"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「逻辑回归与分类」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 40 分钟）**：ROC 曲线与 AUC（约 20 分钟） → 阈值的选择（约 5 分钟） → 类别不平衡：准确率的陷阱（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\nx = np.r_[rng.normal(-1, 1, 50), rng.normal(2, 1, 50)]   # 一个特征\ny = np.r_[np.zeros(50), np.ones(50)]                     # 标签只有 0 和 1\nA = np.c_[np.ones(100), x]\ntheta = np.linalg.solve(A.T @ A, A.T @ y)                # 直接用上一节的线性回归\np = A @ theta\nprint(\"截距、斜率：\", np.round(theta, 3))\nprint(\"预测值范围：\", round(float(p.min()), 3), \"到\", round(float(p.max()), 3))\nprint(\"小于 0 的个数：\", int((p < 0).sum()), \" 大于 1 的个数：\", int((p > 1).sum()))\n```\n\n```python\ndef sigmoid(z):                                      # 数值稳定的写法：z 为很大的负数时不会溢出\n    z = np.asarray(z, dtype=float)\n    out = np.empty_like(z)\n    pos = z >= 0\n    out[pos] = 1 / (1 + np.exp(-z[pos]))\n    ez = np.exp(z[~pos])\n    out[~pos] = ez / (1 + ez)\n    return out\n\nz = np.array([-10.0, -2.0, 0.0, 2.0, 10.0])\nprint(np.round(sigmoid(z), 4))\nprint(sigmoid(np.array([-1000.0, 1000.0])))          # 极端输入也不报溢出\nprint(\"对称性 s(-z) = 1 - s(z)：\", np.allclose(sigmoid(-z), 1 - sigmoid(z)))\nh = 1e-6\nnum = (sigmoid(z + h) - sigmoid(z - h)) / (2 * h)    # 数值导数\nprint(\"导数 s' = s(1 - s)：\", np.allclose(num, sigmoid(z) * (1 - sigmoid(z)), atol=1e-8))\n```\n\n```python\nrng = np.random.default_rng(0)\nn = 400\ny = (rng.random(n) < 0.5).astype(float)              # 标签 0 / 1，各约一半\nshift = np.where(y[:, None] == 1, [1.2, 1.0], [-1.2, -1.0])     # 两类的中心不同\nX = rng.normal(size=(n, 2)) * 1.2 + shift\nidx = rng.permutation(n)\ntr, te = idx[:300], idx[300:]                        # 300 训练，100 测试\nmu, sd = X[tr].mean(axis=0), X[tr].std(axis=0)       # 只用训练集标准化\nXtr, Xte = (X[tr] - mu) / sd, (X[te] - mu) / sd\nytr, yte = y[tr], y[te]\nprint(Xtr.shape, Xte.shape, round(float(ytr.mean()), 3), round(float(yte.mean()), 3))\n```\n\n```python\ndef bce_loss(w, b, X, y):                            # 稳定写法：-[y log s(z) + (1-y) log(1-s(z))] = log(1+e^z) - y z\n    z = X @ w + b\n    return float(np.mean(np.logaddexp(0, z) - y * z))\n\ndef grad_lr(w, b, X, y):\n    r = sigmoid(X @ w + b) - y                       # 残差：预测概率 - 真实标签\n    return X.T @ r / len(y), float(r.mean())         # 和线性回归同一个形状：X^T r / n\n\nw0, b0 = np.array([0.3, -0.2]), 0.1\ngw, gb = grad_lr(w0, b0, Xtr, ytr)\neps = 1e-6\nnum_w = np.array([(bce_loss(w0 + eps * e, b0, Xtr, ytr) - bce_loss(w0 - eps * e, b0, Xtr, ytr)) / (2 * eps)\n                  for e in np.eye(2)])\nnum_b = (bce_loss(w0, b0 + eps, Xtr, ytr) - bce_loss(w0, b0 - eps, Xtr, ytr)) / (2 * eps)\nprint(np.round(gw, 4), round(gb, 4))\nprint(np.round(num_w, 4), round(num_b, 4))\nprint(np.allclose(gw, num_w, atol=1e-6), abs(gb - num_b) < 1e-6)\n```\n\n```python\ndef fit(X, y, lr=0.5, steps=300):\n    w, b, hist = np.zeros(X.shape[1]), 0.0, []\n    for t in range(steps):\n        gw, gb = grad_lr(w, b, X, y)\n        w, b = w - lr * gw, b - lr * gb\n        hist.append(bce_loss(w, b, X, y))\n    return w, b, hist\n\ndef accuracy(y, yhat):\n    return float(np.mean(y == yhat))\n\nw, b, hist = fit(Xtr, ytr)\nprint(\"第 1、10、100、300 步的损失：\", [round(hist[i], 4) for i in (0, 9, 99, 299)])\nprint(\"参数：\", np.round(w, 3), round(b, 3))\npte = sigmoid(Xte @ w + b)                           # 预测概率\nprint(\"训练准确率：\", accuracy(ytr, (sigmoid(Xtr @ w + b) >= 0.5).astype(float)))\nprint(\"测试准确率：\", accuracy(yte, (pte >= 0.5).astype(float)))\nprint(\"多数类基线：\", max(yte.mean(), 1 - yte.mean()))\n```\n\n```python\ndef confusion(y, yhat):\n    tp = int(((yhat == 1) & (y == 1)).sum()); fp = int(((yhat == 1) & (y == 0)).sum())\n    fn = int(((yhat == 0) & (y == 1)).sum()); tn = int(((yhat == 0) & (y == 0)).sum())\n    return tp, fp, fn, tn\n\ndef metrics(y, yhat):\n    tp, fp, fn, tn = confusion(y, yhat)\n    prec = tp / (tp + fp) if tp + fp else 0.0\n    rec = tp / (tp + fn) if tp + fn else 0.0\n    f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0.0\n    return dict(acc=(tp + tn) / len(y), precision=prec, recall=rec, f1=f1)\n\npred = (pte >= 0.5).astype(float)\ntp, fp, fn, tn = confusion(yte, pred)\nprint(\"        预测1  预测0\")\nprint(f\"真实1   {tp:<6d} {fn}\")\nprint(f\"真实0   {fp:<6d} {tn}\")\nprint({k: round(v, 3) for k, v in metrics(yte, pred).items()})\n```\n\n### ROC 曲线与 AUC\n\n阈值一变，混淆矩阵就变，指标也变。要评价「模型的排序能力」，而不是某一个阈值下的表现，就让阈值从高到低扫一遍，每个阈值得到一个 (FPR, TPR) 点，连起来：\n\n> **标准定义 · ROC 曲线与 AUC (ROC curve & AUC)**\n>\n> **ROC 曲线**：横轴是假阳性率 FPR，纵轴是真阳性率 TPR（召回率），阈值从 $+\\infty$ 降到 $-\\infty$ 画出的曲线，从 $(0,0)$ 到 $(1,1)$。**AUC** 是曲线下的面积，等于**「随机抽一个正样本和一个负样本，正样本得分更高的概率」**（平局算 1/2）。完美排序的 AUC 为 1，随机打分的期望 AUC 为 0.5。\n>\n> *English: The ROC curve plots TPR against FPR over all thresholds; the AUC equals the probability that a random positive is scored above a random negative.*\n\n**白话版：「不管你怎么划线，我的排队排得好不好」。** AUC 只关心得分的**相对顺序**（正类是否普遍排在负类前面），所以它与阈值无关，也不受得分整体放大缩小的影响。\n```python\ndef roc_points(y, score):\n    ths = np.r_[np.inf, np.sort(np.unique(score))[::-1]]        # 阈值从高到低\n    P, N = (y == 1).sum(), (y == 0).sum()\n    tpr = np.array([((score >= t) & (y == 1)).sum() / P for t in ths])\n    fpr = np.array([((score >= t) & (y == 0)).sum() / N for t in ths])\n    return fpr, tpr\n\ndef auc_trapz(fpr, tpr):\n    return float(np.sum((fpr[1:] - fpr[:-1]) * (tpr[1:] + tpr[:-1]) / 2))\n\ndef auc_rank(y, score):                              # AUC = P(随机正样本的得分 > 随机负样本的得分)，平局算 1/2\n    pos, neg = score[y == 1], score[y == 0]\n    diff = pos[:, None] - neg[None, :]\n    return float((diff > 0).mean() + 0.5 * (diff == 0).mean())\n\nfpr, tpr = roc_points(yte, pte)\nprint(\"ROC 点数：\", len(fpr), \" 起点：\", (float(fpr[0]), float(tpr[0])), \" 终点：\", (float(fpr[-1]), float(tpr[-1])))\nprint(\"AUC（梯形法）：\", round(auc_trapz(fpr, tpr), 4))\nprint(\"AUC（排序法）：\", round(auc_rank(yte, pte), 4))\nrs = np.random.default_rng(0).random(len(yte))\nprint(\"随机打分的 AUC：\", round(auc_rank(yte, rs), 3))\n# 输出：ROC 点数： 101  起点： (0.0, 0.0)  终点： (1.0, 1.0)\n# 输出：AUC（梯形法）： 0.9804\n# 输出：AUC（排序法）： 0.9804\n# 输出：随机打分的 AUC： 0.465\n```\n\n**读输出：** 100 个测试样本，得分各不相同，所以阈值有 100 个，再加一个 $+\\infty$，共 `101` 个 ROC 点；起点是 `(0.0, 0.0)`（阈值无穷大，什么都不判为正），终点是 `(1.0, 1.0)`（阈值最低，全判为正）。**两种方法算出同一个 AUC：** 梯形法得 `0.9804`，排序法（统计所有「正 / 负」配对里正样本得分更高的比例）也是 `0.9804`，所以「曲线下面积 = 排序正确的概率」不只是一句话，是可以验证的数学事实。最后一行，随机打分的 AUC 是 `0.465`，接近 0.5（只有 100 个样本，所以有抖动）。我们的模型 AUC 为 `0.9804`，说明它的**排序**很好，即使准确率只有 0.87（后者还受到阈值 0.5 的限制）。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "4jRBRDbJemM",
+   "title": "视频三：ROC and AUC, Clearly Explained!（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 16
+  },
+  {
+   "type": "text",
+   "md": "**视频三要点：** 如何一步步从混淆矩阵画出 ROC 曲线，为什么要同时看 FPR 与 TPR，以及什么时候应该用**精确率-召回率曲线 (precision–recall curve)** 代替 ROC：当负类特别多时，FPR 的分母（$FP+TN$）很大，少量的误报几乎不改变 FPR，ROC 看上去仍然很漂亮，而精确率已经很差。下一块会用数字展示这一点。\n\n### 阈值的选择\n\n默认阈值 0.5 并不神圣。它只在两类错误代价相同、而且训练和使用时类别比例一致时才「最优」。\n\n> **标准定义 · 阈值与代价 (threshold & cost)**\n>\n> 给定阈值 $t$：$\\hat y=\\mathbf 1[p\\ge t]$。降低 $t$，更多样本被判为正，**召回率不降、精确率通常下降**；提高 $t$ 则相反。若漏报一个的代价是 $c_{FN}$，误报一个的代价是 $c_{FP}$，对**校准良好**的概率，最小化期望代价的阈值是 $t^*=\\dfrac{c_{FP}}{c_{FP}+c_{FN}}$。\n>\n> *English: Lowering the threshold raises recall and usually lowers precision; with calibrated probabilities the cost-optimal threshold is c_FP / (c_FP + c_FN).*\n\n**白话版：「你更怕漏掉，还是更怕冤枉」。** 癌症筛查宁可多复查几个健康人（阈值调低），垃圾邮件过滤宁可放过几封垃圾邮件、也不要误删重要邮件（阈值调高）。**阈值是业务决策，不是模型参数**，要由代价决定。\n```python\nprint(\"阈值   精确率  召回率  F1\")\nfor t in [0.1, 0.3, 0.5, 0.7, 0.9]:\n    m = metrics(yte, (pte >= t).astype(float))\n    print(f\"{t:<6} {m['precision']:.3f}   {m['recall']:.3f}   {m['f1']:.3f}\")\n\nths = np.linspace(0.05, 0.95, 91)\ncosts = []\nfor t in ths:                                        # 假设漏掉一个正类的代价是误报一个的 5 倍\n    tp, fp, fn, tn = confusion(yte, (pte >= t).astype(float))\n    costs.append(5 * fn + 1 * fp)\nprint(\"代价最小的阈值：\", round(float(ths[int(np.argmin(costs))]), 2), \" 最小代价：\", min(costs))\n# 输出：阈值   精确率  召回率  F1\n# 输出：0.1    0.860   1.000   0.925\n# 输出：0.3    0.933   0.857   0.894\n# 输出：0.5    0.950   0.776   0.854\n# 输出：0.7    1.000   0.714   0.833\n# 输出：0.9    1.000   0.612   0.759\n# 输出：代价最小的阈值： 0.08  最小代价： 8\n```\n\n**读输出：** 阈值从 0.1 提到 0.9，精确率 `0.860 → 0.933 → 0.950 → 1.000 → 1.000`，召回率 `1.000 → 0.857 → 0.776 → 0.714 → 0.612`，**一个上升，另一个下降**；F1 最高的是阈值 0.1 附近的 `0.925`，因为这份数据两类各占一半，宁可多判一些正类。下面假设漏掉一个正类的代价是误报一个的 5 倍，在 0.05 到 0.95 之间扫描，最小代价（$5\\times FN+FP$）为 `8`，对应的阈值是 `0.08`；按公式 $t^*=\\frac{1}{1+5}\\approx0.17$，实际扫描出的阈值更低，是因为我们的概率并不完全校准、测试集也只有 100 个样本，这个数字有抖动，但方向一致：**漏报代价大，阈值就应该降低。**\n\n### 类别不平衡：准确率的陷阱\n\n现实里，次品、欺诈、疾病往往只占 1% 到 5%。看看这时候会发生什么：正类约占 3%，训练 4000 个、测试 2000 个。\n```python\nrng = np.random.default_rng(7)\nN = 6000\nyi = (rng.random(N) < 0.03).astype(float)            # 只有约 3% 是正类\nXi = rng.normal(size=(N, 2)) * 1.2 + np.where(yi[:, None] == 1, [1.5, 1.2], [-0.2, -0.1])\nXi = (Xi - Xi[:4000].mean(axis=0)) / Xi[:4000].std(axis=0)      # 用训练部分的统计量标准化\nXa, ya, Xb, yb = Xi[:4000], yi[:4000], Xi[4000:], yi[4000:]\nwi, bi, _ = fit(Xa, ya, lr=0.5, steps=500)\npb = sigmoid(Xb @ wi + bi)\nm = metrics(yb, (pb >= 0.5).astype(float))\nprint(\"测试集正类个数：\", int(yb.sum()), \"/\", len(yb))\nprint(\"永远预测 0 的准确率：\", round(1 - float(yb.mean()), 4))\nprint(\"模型（阈值 0.5）：\", {k: round(v, 3) for k, v in m.items()})\nprint(\"AUC：\", round(auc_rank(yb, pb), 3))\n# 输出：测试集正类个数： 69 / 2000\n# 输出：永远预测 0 的准确率： 0.9655\n# 输出：模型（阈值 0.5）： {'acc': 0.969, 'precision': 0.875, 'recall': 0.101, 'f1': 0.182}\n# 输出：AUC： 0.898\n```\n\n**读输出：** 测试集 2000 个样本里只有 `69` 个正类。永远预测负类的准确率就有 `0.9655`；我们的模型准确率是 `0.969`，看起来「略好」，但是看别的指标：精确率 `0.875`、**召回率只有 `0.101`**（69 个正类里只抓到了 7 个）、F1 `0.182`。模型几乎永远预测负类：因为负类占 97%，损失被负类样本主导，最划算的做法就是倾向于说「负」。然而 AUC 是 `0.898`，说明模型**排序**其实不差，问题出在阈值 0.5 对这种不平衡不合适。\n\n**处理办法一：类别权重。** 在损失里给稀有的正类更大的权重，相当于告诉模型「漏掉一个正类，比误判一个负类严重得多」：\n```python\ndef fit_weighted(X, y, cw, lr=0.5, steps=500):       # 每个样本的损失乘以类别权重 cw[y]\n    w, b = np.zeros(X.shape[1]), 0.0\n    sw = np.where(y == 1, cw[1], cw[0])\n    for t in range(steps):\n        r = (sigmoid(X @ w + b) - y) * sw\n        w, b = w - lr * X.T @ r / len(y), b - lr * r.mean()\n    return w, b\n\ncw = {0: 1.0, 1: (ya == 0).sum() / (ya == 1).sum()}  # 正类权重 = 负类个数 / 正类个数\nww, bw = fit_weighted(Xa, ya, cw)\npw = sigmoid(Xb @ ww + bw)\nm2 = metrics(yb, (pw >= 0.5).astype(float))\nprint(\"正类权重：\", round(float(cw[1]), 2))\nprint(\"加权后（阈值 0.5）：\", {k: round(v, 3) for k, v in m2.items()})\nprint(\"AUC：\", round(auc_rank(yb, pw), 3))\n# 输出：正类权重： 35.04\n# 输出：加权后（阈值 0.5）： {'acc': 0.806, 'precision': 0.125, 'recall': 0.768, 'f1': 0.215}\n# 输出：AUC： 0.897\n```\n\n**读输出：** 正类权重取负类数与正类数之比，`35.04`。加权训练后（仍用阈值 0.5）：召回率从 `0.101` 升到 `0.768`，F1 从 `0.182` 升到 `0.215`；代价是精确率从 `0.875` 降到 `0.125`，准确率从 `0.969` 降到 `0.806`（比永远预测负类的 `0.9655` 低了）。**AUC 几乎没变**（`0.898` 与 `0.897`），说明加权主要改变的是「决策点」，而不是排序能力，它的作用和降低阈值很像。所以对不平衡数据的另外两个办法是：**直接调低阈值**（保持原模型不动，在验证集上选一个满足召回率要求的阈值）、**过采样稀有类 / 欠采样多数类**（改变训练数据比例）。无论用哪一种，都要用验证集去选，并且报告精确率、召回率、PR 曲线、AUC 等多个指标，而不是只报准确率。\n\n**为什么精确率这么低？贝叶斯。** 即使模型的召回率和误报率都「看起来不错」，在稀有类上，精确率也会被大量的负类拖下来：$\\text{精确率}=\\dfrac{TPR\\cdot\\pi}{TPR\\cdot\\pi+FPR\\cdot(1-\\pi)}$，其中 $\\pi$ 是正类占比。这和 prob-0 里诊断测验的计算一模一样：\n```python\ntpr_, fpr_ = 0.90, 0.05                              # 一个看起来很不错的筛查：抓到 90%，误报 5%\nfor prev in [0.5, 0.1, 0.01]:                        # 正类占比（患病率）\n    prec = tpr_ * prev / (tpr_ * prev + fpr_ * (1 - prev))\n    print(f\"正类占比 {prev:<5} 精确率 {prec:.3f}\")\n# 输出：正类占比 0.5   精确率 0.947\n# 输出：正类占比 0.1   精确率 0.667\n# 输出：正类占比 0.01  精确率 0.154\n```\n\n**读输出：** 一个抓得到 90% 的正类、只有 5% 误报的方法：当正类占 50% 时，精确率是 `0.947`；占 10% 时下降到 `0.667`；占 1% 时只剩 `0.154`，也就是**每 100 个被判为阳性的里面，只有约 15 个是真的**。分母里的假阳性主要来自数量庞大的负类。结论：**精确率不仅取决于模型，也取决于正类的占比**；一个在平衡数据上得到的好指标，部署到更稀有的真实分布上，精确率会大幅下降。所以评估数据的类别比例要和部署时尽量一致，或者至少明确说明。\n\n### 这一节你要带走的三句话\n\n1. **逻辑回归 = 线性得分 + sigmoid + 交叉熵**：$P(y=1\\mid x)=\\sigma(w^\\top x+b)$，交叉熵是伯努利分布下的负对数似然，梯度是 $\\frac1nX^\\top(p-y)$，与线性回归同形（「预测减真实，乘特征」），softmax 把它推广到多类；决策边界是直线 / 超平面，解不了 XOR。\n2. **评价分类器不能只看准确率**：混淆矩阵给出精确率、召回率、F1；ROC / AUC 衡量排序能力、与阈值无关；阈值是由两类错误的代价决定的业务选择。\n3. **类别不平衡会让准确率和精确率骗人**：永远猜多数类就能得高准确率；稀有类上精确率被基数拖低（贝叶斯）；处理办法有类别权重、调阈值、重采样，并且用 PR 曲线与多个指标评估。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同学说：「逻辑回归的梯度和线性回归一样，说明逻辑回归就是线性回归加了一个 sigmoid，换成 MSE 损失也一样能训练。」这句话哪里对、哪里不对？（提示：用 MSE 配 sigmoid 时，$\\partial\\ell/\\partial z$ 是什么？在模型非常自信地错了的时候会发生什么？）",
+   "a": "**对的部分：** 模型的第一步确实是一个线性函数 $z=w^\\top x+b$，且「残差乘特征」的梯度结构是一样的。\n\n**不对的部分：** 梯度形式相同是因为**损失与输出函数配对得当**，不是因为二者是同一个模型。如果在 sigmoid 后面用 MSE $\\ell=(p-y)^2$，则 $\\frac{\\partial\\ell}{\\partial z}=2(p-y)\\,p(1-p)$，多出一个 $p(1-p)$ 因子。当模型非常自信地错了（比如 $y=1$，$p\\approx0.001$），$p(1-p)\\approx0.001$，梯度几乎消失，模型**在错得最厉害的地方学得最慢**。交叉熵的 $\\frac{1}{p(1-p)}$ 把这个因子刚好消掉，错得越多，梯度越大。另外，MSE 配 sigmoid 的损失对 $w$ 不是凸的，而交叉熵是凸的。这也是深度学习里分类几乎总用交叉熵的原因（上一门课 arena-0.0 讲过的「梯度消失」在这里有一个最小的例子）。"
+  }
+ ],
+ "references": [
+  {
+   "title": "Stanford CS229 讲义：Classification and Logistic Regression；Softmax Regression；Generalized Linear Models",
+   "url": "https://cs229.stanford.edu/",
+   "note": "本节大纲依据：Part II 里逻辑回归的极大似然推导、牛顿法、广义线性模型（解释梯度为什么都是「预测 − 真实」）与 softmax 回归，只引用不转载"
+  },
+  {
+   "title": "An Introduction to Statistical Learning（ISL）第 4 章 Classification",
+   "url": "https://www.statlearning.com/",
+   "note": "作者免费公开；逻辑回归、混淆矩阵、ROC 曲线，以及一章里对「错误率与阈值」的讨论"
+  },
+  {
+   "title": "Machine Learning Specialization（吴恩达）第 1 门课 Week 3：Classification with logistic regression",
+   "url": "https://www.deeplearning.ai/courses/machine-learning-specialization/",
+   "note": "更直觉的视频版，对应 sigmoid、决策边界、损失函数的选择与梯度下降"
+  },
+  {
+   "title": "Probabilistic Machine Learning: An Introduction（Murphy）第 10 章 Logistic Regression",
+   "url": "https://probml.github.io/pml-book/book1.html",
+   "note": "把逻辑回归写成最大似然与 MAP，并含多类、不平衡、阈值与评估指标的完整讨论，作者免费公开"
+  },
+  {
+   "title": "Machine Learning Fundamentals: The Confusion Matrix / Sensitivity and Specificity（StatQuest，各约 7 分钟与 12 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=Kdsp6soqA7o",
+   "note": "混淆矩阵与灵敏度、特异度的逐步讲解，对应本节「混淆矩阵与评估指标」"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个分类器在 1000 个样本上的混淆矩阵：TP=30，FP=10，FN=20，TN=940。它的召回率是？",
+    "options": [
+     "$0.67$",
+     "$0.75$",
+     "$0.97$",
+     "$0.6$"
+    ],
+    "answer": 3,
+    "explain": "召回率 $=\\text{TP}/(\\text{TP}+\\text{FN})=30/50=0.6$，即所有真正的正类里抓到了多少。$0.75$ 是精确率 $30/(30+10)$，$0.97$ 是准确率 $970/1000$，$0.67$ 是 F1 约等于的值（$2\\times0.75\\times0.6/1.35$）。注意准确率虽高，但只抓到一半以上的正类。"
+   },
+   {
+    "q": "关于 ROC 曲线与 AUC，哪个说法正确？",
+    "options": [
+     "AUC 依赖于具体选哪个阈值",
+     "AUC 等于「随机抽一个正样本和一个负样本，正样本得分更高」的概率；随机打分的期望 AUC 是 0.5",
+     "AUC 越小模型越好",
+     "AUC 只能用于类别平衡的数据"
+    ],
+    "answer": 1,
+    "explain": "AUC 衡量的是**排序能力**，与阈值无关（本节中，调整类别权重前后 AUC 几乎不变，变的只是阈值位置）。随机打分的 AUC 约 0.5，小于 0.5 说明排反了。AUC 可以用在不平衡数据上，但在正类极少时，它可能掩盖低精确率，这时要看精确率-召回率曲线。"
+   },
+   {
+    "q": "把分类阈值从 0.5 降到 0.1，其他不变，通常会怎样？",
+    "options": [
+     "召回率和精确率都上升",
+     "AUC 上升",
+     "召回率不降、精确率往往下降",
+     "模型参数改变"
+    ],
+    "answer": 2,
+    "explain": "阈值降低，更多样本被判为正类：原来被判正的仍然是正的，所以 TP 不会减少、召回率不会下降；但同时有更多负类被误判成正类，精确率通常下降。阈值只改变决策，不改变模型参数，也不改变排序，所以 AUC 不变。"
+   }
+  ]
+ }
+}

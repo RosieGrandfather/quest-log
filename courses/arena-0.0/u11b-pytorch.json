@@ -45,7 +45,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "对 `w = t.tensor(2.0, requires_grad=True)`，计算 `y = w ** 3` 后调用 `y.backward()`，`w.grad` 是多少？",
+    "q": "运行下面的代码，打印的 `w.grad` 是多少？\n\n```text\nimport torch as t\nw = t.tensor(2.0, requires_grad=True)\ny = w ** 3\ny.backward()\nprint(w.grad)\n```",
     "options": [
      "12",
      "8",

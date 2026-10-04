@@ -1,0 +1,146 @@
+{
+ "id": "u04",
+ "title": "偏差方差、正则化与模型选择（1/3）",
+ "en": "Bias–Variance, Regularization & Model Selection (1/3)",
+ "minutes": 40,
+ "objectives": [
+  "写出 **偏差-方差分解 (bias–variance decomposition)** $\\mathbb{E}[(y-\\hat h)^2]=\\sigma^2+\\text{bias}^2+\\text{variance}$，说出推导里「加一项减一项、交叉项为零」的两步，并用**重复采样**的数值实验把三项分别量出来",
+  "推导并实现 **岭回归 (ridge regression)** 的闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$，说明它等价于梯度下降里的 **权重衰减 (weight decay)**、等价于高斯先验下的 **MAP 估计**，并用 **SVD** 看出它对每个奇异方向的压缩比例 $s^2/(s^2+\\lambda)$"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n前面你已经能把一个模型训练到「在训练集上很好」。可是机器学习真正要的是**没见过的数据上也好**。这一节回答三个问题：为什么训练集上很好的模型，换一批数据就变差（**偏差与方差**）？怎样在训练的时候主动「管住」模型，不让它记住噪声（**正则化**）？怎样在不偷看测试集的前提下，诚实地挑出最好的模型和超参数（**交叉验证、学习曲线、超参数搜索**）？最后一块是研究和工程里最常见的暗坑：**数据泄漏**，它会让一个其实没用的模型在你手里显得很准。\n\n**开始之前你要会：**\n\n- 本课前面的「机器学习的基本问题」里的**训练 / 验证 / 测试划分**、过拟合与欠拟合；「线性回归与梯度下降」里的**均方误差**和**梯度下降**；\n- prob-0「随机变量、期望与方差」里期望和方差的运算（本节的推导只用到 $\\mathbb{E}[\\cdot]$ 的线性、$\\mathrm{Var}(X)=\\mathbb{E}[X^2]-\\mathbb{E}[X]^2$）；prob-0「最大似然估计与交叉熵」里「高斯噪声下最大似然等价于最小二乘」；\n- arena-0.0「特征值与奇异值分解」里的 $A=U\\Sigma V^\\top$；arena-0.0「Python 与 NumPy 基础」里的数组、广播和 `np.linalg`。\n\n**学完它你就能看懂这几件事：**\n\n- 论文和课程里写的 $\\mathbb{E}[(y-\\hat f(x))^2]=\\sigma^2+\\text{Bias}^2+\\text{Var}$，以及「模型越复杂，偏差越小、方差越大」这句话背后到底在对什么求期望；\n- PyTorch 里 `torch.optim.SGD(..., weight_decay=1e-4)` 和 `AdamW` 到底在做什么，为什么大模型训练几乎都带 weight decay；\n- `sklearn` 里 `Ridge(alpha=...)`、`Lasso(alpha=...)`、`GridSearchCV`、`Pipeline` 为什么要这样设计，以及为什么「先 `fit` 标准化器再切分」是个 bug；\n- 别人的实验报告里「在测试集上调参」「用了全部数据做特征选择」这类说法为什么让结果不可信。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 40 分钟）**：偏差-方差分解（约 15 分钟） → 岭回归：给权重加一个 L2 惩罚（约 10 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### 偏差-方差分解\n\n**问题：同样的算法、同样的模型，换一份训练数据，学出来的函数会差多少？这种「差」是模型的毛病还是数据的毛病？**\n\n先固定一个设定。数据按 $y=f(x)+\\varepsilon$ 生成，$f$ 是真实规律，噪声 $\\varepsilon$ 满足 $\\mathbb{E}[\\varepsilon]=0$、$\\mathrm{Var}(\\varepsilon)=\\sigma^2$，且和训练数据独立。训练集 $D$ 是随机抽出来的，所以在 $D$ 上训练得到的预测函数 $\\hat h_D$ 本身也是**随机的**：换一份 $D$，就换一个 $\\hat h_D$。\n\n> **标准定义 · 偏差-方差分解 (bias–variance decomposition)**\n>\n> 对平方损失，固定输入 $x$，对训练集 $D$ 和新样本的噪声求期望，期望预测误差分解为三项：\n>\n> $$\\mathbb{E}\\big[(y-\\hat h_D(x))^2\\big]=\\underbrace{\\sigma^2}_{\\text{不可约误差}}+\\underbrace{\\big(f(x)-\\bar h(x)\\big)^2}_{\\text{偏差}^2}+\\underbrace{\\mathbb{E}_D\\big[(\\hat h_D(x)-\\bar h(x))^2\\big]}_{\\text{方差}}$$\n>\n> 其中 $\\bar h(x)=\\mathbb{E}_D[\\hat h_D(x)]$ 是「在所有可能训练集上的平均预测」。**偏差 (bias)** 衡量平均预测离真函数有多远（模型的假设够不够表达 $f$）；**方差 (variance)** 衡量预测随训练集的波动有多大；**不可约误差 (irreducible error)** 是数据本身的噪声，任何模型都消不掉。\n>\n> *English: For squared loss, the expected prediction error at a point equals irreducible noise plus squared bias plus variance, where bias is the gap between the average prediction over training sets and the truth, and variance is the spread of predictions across training sets.*\n\n**白话版：「同一个射手打了很多轮靶」。** 每一轮用不同的训练数据，就是一轮射击。弹孔的**中心**离靶心有多远是偏差（瞄准镜歪了）；弹孔**散得多开**是方差（手抖）；而靶子自己在风里晃（噪声）谁也管不了。简单模型像瞄准镜很死板的枪：准心可能歪，但手不抖；复杂模型像很灵活的枪：准心居中，但每一轮散布很大。\n\n**推导思路（两步，各加减一项）。** 记 $\\hat h=\\hat h_D(x)$，$f=f(x)$，$y=f+\\varepsilon$。第一步，把 $y-\\hat h$ 写成 $\\varepsilon+(f-\\hat h)$，展开平方：$\\mathbb{E}[\\varepsilon^2]+2\\,\\mathbb{E}[\\varepsilon(f-\\hat h)]+\\mathbb{E}[(f-\\hat h)^2]$。因为 $\\varepsilon$ 和 $D$ 独立、均值为 0，中间的交叉项等于 0，剩下 $\\sigma^2+\\mathbb{E}[(f-\\hat h)^2]$。第二步，把 $f-\\hat h$ 写成 $(f-\\bar h)+(\\bar h-\\hat h)$ 再展开：交叉项里 $f-\\bar h$ 是常数，$\\mathbb{E}_D[\\bar h-\\hat h]=0$，所以又等于 0，剩下 $(f-\\bar h)^2+\\mathbb{E}[(\\hat h-\\bar h)^2]$，也就是偏差平方加方差。就这两步。注意这个分解依赖**平方损失**；对 0-1 损失或交叉熵，也能讲「偏差与方差」的直觉，但没有这么干净的等式。\n\n怎样把三项量出来？既然定义里是「对所有可能的训练集求期望」，那就**真的抽很多份训练集**，每份训练一次，然后用样本平均去近似期望。下面用 $f(x)=\\sin(2\\pi x)$、$\\sigma=0.3$，拟合不同次数的多项式。为了让量出来的数更干净，输入 $x$ 固定（等距的 20 个点），每份训练集只重抽噪声。\n\n```python\nimport numpy as np\nrng = np.random.default_rng(0)\nsigma = 0.3                                    # 噪声标准差\nf = lambda x: np.sin(2 * np.pi * x)            # 真函数（实际中未知）\nx_grid = np.linspace(0, 1, 50)                 # 固定的评估点\n\ndef poly_fit_predict(x, y, deg, x_new):        # deg 次多项式的最小二乘拟合\n    w = np.linalg.lstsq(np.vander(x, deg + 1), y, rcond=None)[0]\n    return np.vander(x_new, deg + 1) @ w\n\ndef bias_variance(deg, n=20, trials=300):\n    x = np.linspace(0, 1, n)                   # 输入固定，只有噪声每次重抽\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):                    # 每次抽一份全新的训练集\n        y = f(x) + sigma * rng.normal(size=n)\n        preds[t] = poly_fit_predict(x, y, deg, x_grid)\n    bias2 = np.mean((preds.mean(axis=0) - f(x_grid)) ** 2)\n    var = np.mean(preds.var(axis=0))\n    y_new = f(x_grid) + sigma * rng.normal(size=preds.shape)   # 带噪声的新标签\n    return bias2, var, np.mean((preds - y_new) ** 2)\n\nfor deg in [0, 1, 3, 5, 9]:\n    b2, v, mse = bias_variance(deg)\n    print(f\"deg={deg}: bias2={b2:.3f} var={v:.3f} noise={sigma**2:.3f} \"\n          f\"三项之和={b2+v+sigma**2:.3f} 实测MSE={mse:.3f}\")\n# 输出：deg=0: bias2=0.490 var=0.005 noise=0.090 三项之和=0.585 实测MSE=0.576\n# 输出：deg=1: bias2=0.212 var=0.008 noise=0.090 三项之和=0.310 实测MSE=0.310\n# 输出：deg=3: bias2=0.005 var=0.017 noise=0.090 三项之和=0.112 实测MSE=0.112\n# 输出：deg=5: bias2=0.000 var=0.025 noise=0.090 三项之和=0.115 实测MSE=0.115\n# 输出：deg=9: bias2=0.000 var=0.044 noise=0.090 三项之和=0.134 实测MSE=0.132\n```\n\n读输出：最后一列「实测 MSE」是在新的带噪声标签上直接量的平均平方误差，它和「三项之和」几乎一样（0.585 对 0.576，0.310 对 0.310，0.112 对 0.112，0.115 对 0.115，0.134 对 0.132），分解在数值上成立。再看每一行：0 次（只会预测一个常数）偏差平方高达 0.490，因为一条水平线拟合不了正弦曲线，方差只有 0.005，换多少份数据都是差不多的一条水平线；1 次（一条直线）偏差平方降到 0.212；3 次已经能近似正弦曲线，偏差平方只有 0.005，整体误差 0.112 离噪声下限 $\\sigma^2=0.090$ 很近；5 次和 9 次的偏差平方已经是 0.000，但方差一路涨到 0.025 和 0.044，总误差反而回升到 0.115 和 0.134。这就是「U 形曲线」：模型更灵活，偏差单调下降，方差单调上升，总误差在中间某处最小。\n\n**数据多了，哪一项会变？** 固定用最容易过拟合的 9 次多项式，只改训练集大小：\n\n```python\n# 固定 9 次多项式（容易过拟合），只改变训练集大小 n\nfor n in [12, 20, 40, 80, 160]:\n    b2, v, mse = bias_variance(9, n=n)\n    print(f\"n={n:3d}: bias2={b2:.3f} var={v:.3f} 实测MSE={mse:.3f}\")\n# 输出：n= 12: bias2=0.000 var=0.114 实测MSE=0.207\n# 输出：n= 20: bias2=0.000 var=0.042 实测MSE=0.130\n# 输出：n= 40: bias2=0.000 var=0.022 实测MSE=0.114\n# 输出：n= 80: bias2=0.000 var=0.012 实测MSE=0.100\n# 输出：n=160: bias2=0.000 var=0.006 实测MSE=0.096\n```\n\n读输出：偏差平方一直是 0.000（9 次多项式表达得了正弦曲线，样本多少不影响这一点），变的是方差：从 $n=12$ 的 0.114 一路降到 $n=160$ 的 0.006，大约和 $n$ 成反比；实测 MSE 也从 0.207 降到 0.096，逼近噪声下限 0.090。结论：**更多数据主要压低方差，对偏差基本没用**；偏差只能靠换更有表达力的模型（或更好的特征）来降。这个结论下面的「学习曲线」会再用到。\n\n另外一句提醒：在现代深度网络里，参数多到能把训练集完全记住，测试误差随模型大小并不总是 U 形，会出现**双下降 (double descent)**。偏差-方差分解仍然成立，只是「方差随复杂度单调上升」不再总是对的。你先把经典情形吃透，再去读那些论文。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "EuBBz3bI-aA",
+   "title": "视频一：Machine Learning Fundamentals: Bias and Variance（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "text",
+   "md": "### 岭回归：给权重加一个 L2 惩罚\n\n前面说过，方差大是因为模型太灵活。最直接的办法是换小一点的模型（9 次改 3 次），但「改成几次」是离散的、很粗。**正则化 (regularization)** 的思路是：模型留着，但在目标函数里加一项**惩罚**，让权重大的解付出代价，用一个连续的旋钮 $\\lambda$ 调节灵活程度。\n\n> **标准定义 · 岭回归 (ridge regression) 与 L2 正则化**\n>\n> 设设计矩阵 $X\\in\\mathbb{R}^{n\\times p}$（每列已中心化 / 标准化），目标 $y$ 已中心化（截距不参与惩罚）。**岭回归**求解\n>\n> $$\\hat w_\\lambda=\\arg\\min_w\\ \\|y-Xw\\|_2^2+\\lambda\\|w\\|_2^2\\quad\\Longrightarrow\\quad\\hat w_\\lambda=(X^\\top X+\\lambda I)^{-1}X^\\top y$$\n>\n> $\\lambda\\ge0$ 是**正则化强度**，是一个**超参数 (hyperparameter)**：它不是从训练数据里学出来的，而是人来设（或用验证集选）。当 $\\lambda>0$ 时 $X^\\top X+\\lambda I$ 一定可逆（它的特征值都至少是 $\\lambda$），所以即使特征共线、$p>n$，解也存在且唯一。\n>\n> *English: Ridge regression minimizes squared error plus lambda times the squared L2 norm of the weights; the closed-form solution is (XᵀX + λI)⁻¹Xᵀy, which always exists for λ > 0.*\n\n**白话版：「给每一个系数交一笔『大小税』」。** 一个系数越大，交的税（$\\lambda w_j^2$）越多，所以模型只在「这个系数确实能显著降低训练误差」时才肯把它拉大。$\\lambda=0$ 就是普通最小二乘，$\\lambda\\to\\infty$ 就是所有系数被压到 0（只剩截距）。为什么要先标准化特征？因为税是按系数的绝对大小收的，单位不同的特征（米和毫米）系数大小天差地别，不标准化就不公平。同样，截距不交税，否则整个 $y$ 平移一下答案就变了。\n\n先手写闭式解，在 9 次多项式特征（$x,x^2,\\dots,x^9$）上扫一遍 $\\lambda$。这次的训练集是随机抽的 20 个点：\n\n```python\ndef make_data(n, seed):\n    r = np.random.default_rng(seed)\n    x = r.uniform(0, 1, n)\n    return x, f(x) + sigma * r.normal(size=n)\n\ndef poly_feats(x, deg=9):                      # 特征 x, x^2, ..., x^deg（不含常数列）\n    return np.column_stack([x ** k for k in range(1, deg + 1)])\n\ndef ridge_fit(X, y, lam):\n    mu, sd = X.mean(0), X.std(0)               # 标准化后惩罚才公平\n    Z, yc = (X - mu) / sd, y - y.mean()        # 截距 b 不惩罚：先把 y 中心化\n    w = np.linalg.solve(Z.T @ Z + lam * np.eye(Z.shape[1]), Z.T @ yc)   # 闭式解\n    return mu, sd, y.mean(), w\n\ndef ridge_predict(m, X):\n    mu, sd, b, w = m\n    return b + ((X - mu) / sd) @ w\n\nx_tr, y_tr = make_data(20, 1)\nx_te, y_te = make_data(200, 2)\nXtr, Xte = poly_feats(x_tr), poly_feats(x_te)\nfor lam in [1e-8, 1e-3, 1e-1, 1, 10, 100]:\n    m = ridge_fit(Xtr, y_tr, lam)\n    tr = np.mean((ridge_predict(m, Xtr) - y_tr) ** 2)\n    te = np.mean((ridge_predict(m, Xte) - y_te) ** 2)\n    print(f\"lam={lam:<6g} 训练MSE={tr:.3f} 测试MSE={te:.3f} |w|={np.linalg.norm(m[3]):.1f}\")\n# 输出：lam=1e-08  训练MSE=0.066 测试MSE=0.329 |w|=602.3\n# 输出：lam=0.001  训练MSE=0.077 测试MSE=0.152 |w|=10.1\n# 输出：lam=0.1    训练MSE=0.111 测试MSE=0.205 |w|=1.2\n# 输出：lam=1      训练MSE=0.125 测试MSE=0.246 |w|=0.5\n# 输出：lam=10     训练MSE=0.160 测试MSE=0.343 |w|=0.3\n# 输出：lam=100    训练MSE=0.244 测试MSE=0.508 |w|=0.1\n```\n\n读输出：$\\lambda=10^{-8}$ 时几乎等于普通最小二乘：训练 MSE 最低（0.066），但测试 MSE 高达 0.329，权重向量的范数 $\\|w\\|=602.3$，系数大到互相抵消，典型的过拟合。随着 $\\lambda$ 增大，$\\|w\\|$ 单调缩小（602.3、10.1、1.2、0.5、0.3、0.1），训练 MSE 单调上升（0.066 到 0.244，因为约束越来越紧）；测试 MSE 却是先降后升：$\\lambda=0.001$ 时最低 0.152，之后偏差带来的误差又把它拉高（$\\lambda=100$ 时 0.508）。**正则化不是越大越好，$\\lambda$ 要用验证集选**，这是后面交叉验证一节的任务。\n\n**它和梯度下降是什么关系？** 闭式解是「一步到位」，但深度学习里没有闭式解，用的是梯度下降。看岭回归的梯度：目标 $\\tfrac12\\|y-Zw\\|^2+\\tfrac12\\lambda\\|w\\|^2$ 的梯度是 $-Z^\\top(y-Zw)+\\lambda w$。梯度下降一步就是 $w\\leftarrow(1-\\eta\\lambda)\\,w+\\eta Z^\\top(y-Zw)$：每一步先把权重**按比例缩小一点**（乘以 $1-\\eta\\lambda$），再做普通的数据项更新。所以 L2 正则又叫**权重衰减 (weight decay)**。下面验证梯度下降收敛到的就是闭式解：\n\n```python\n# 同一个目标用梯度下降求：L(w) = 1/2 |yc - Zw|^2 + 1/2 lam |w|^2\nlam = 1.0\nmu, sd = Xtr.mean(0), Xtr.std(0)\nZ, yc = (Xtr - mu) / sd, y_tr - y_tr.mean()\nw = np.zeros(Z.shape[1])\nlr = 1 / np.linalg.eigvalsh(Z.T @ Z + lam * np.eye(9)).max()   # 步长取 1/L\nfor step in range(20000):\n    grad = -Z.T @ (yc - Z @ w) + lam * w       # 数据项的梯度 + lam * w\n    w = w - lr * grad                          # 等价于 w <- (1 - lr*lam) w + lr * Z^T (yc - Zw)\nw_closed = ridge_fit(Xtr, y_tr, lam)[3]\nprint(\"与闭式解一致:\", np.abs(w - w_closed).max() < 1e-6)\n# 输出：与闭式解一致: True\n```\n\n读输出：梯度下降走了 20000 步，和闭式解的最大差距小于 $10^{-6}$，输出 `True`，两种做法是同一个解。这里步长取 $1/L$，$L$ 是 $Z^\\top Z+\\lambda I$ 的最大特征值（目标函数的光滑常数）；条件数大的问题要走很多步才收敛，而闭式解一次线性方程就解决，这是小问题上闭式解的优势，大问题上矩阵求逆太贵时才轮到梯度下降。\n\nPyTorch 里不需要自己写 $\\lambda w$：优化器自带 `weight_decay` 参数，会把 $\\lambda w$ 加进梯度。下面的块用 PyTorch 重做同一件事（网页里没有 torch，所以这一块只显示，不能运行，本地用 PyTorch 真实跑过）：\n\n```python-static\nimport torch                                   # 这块只显示，网页里不运行\nZt, yt = torch.tensor(Z), torch.tensor(yc)\nwt = torch.zeros(9, dtype=torch.float64, requires_grad=True)\nopt = torch.optim.SGD([wt], lr=float(lr), weight_decay=lam)   # weight_decay 就是 L2 正则\nfor step in range(20000):\n    opt.zero_grad()\n    loss = 0.5 * ((yt - Zt @ wt) ** 2).sum()   # 只写数据项，L2 项由 weight_decay 加进梯度\n    loss.backward()\n    opt.step()\nprint(np.abs(wt.detach().numpy() - w_closed).max() < 1e-6)\n# 输出：True\n```\n\n读输出：`True`，PyTorch 的 `SGD(weight_decay=lam)` 走出的结果和闭式解一致。顺便提醒一个细节：对 SGD，「把 $\\lambda\\|w\\|^2/2$ 加进损失」和「`weight_decay`」是一回事；但对 Adam 这类自适应优化器，加进梯度的 $\\lambda w$ 会被除以梯度的历史尺度，效果变了，所以才有 **AdamW**：把权重衰减从梯度里**拿出来**，直接作用在权重上。这是「想一想」的第三题。\n\n**用 SVD 看岭回归到底做了什么。** 回到 arena-0.0「特征值与奇异值分解」：把 $Z=U\\Sigma V^\\top$ 代入闭式解，得到 $\\hat w_\\lambda=V\\,\\mathrm{diag}\\!\\big(\\tfrac{s_i}{s_i^2+\\lambda}\\big)U^\\top y$。对比普通最小二乘（$\\lambda=0$，每个方向的系数是 $\\tfrac{1}{s_i}$），岭回归在第 $i$ 个奇异方向上多乘了一个压缩因子 $\\tfrac{s_i^2}{s_i^2+\\lambda}$。奇异值大的方向（数据里变化大、信息足）几乎不压缩，奇异值小的方向（数据里几乎没变化、只会放大噪声）被大力压缩：\n\n```python\nU, s, Vt = np.linalg.svd(Z, full_matrices=False)           # Z = U diag(s) V^T\nshrink = s ** 2 / (s ** 2 + lam)               # 每个奇异方向被压缩的比例\nw_svd = Vt.T @ ((s / (s ** 2 + lam)) * (U.T @ yc))\nprint(\"奇异值      :\", np.round(s, 2))\nprint(\"压缩比例    :\", np.round(shrink, 3))\nprint(\"与闭式解一致:\", np.allclose(w_svd, w_closed))\n# 输出：奇异值      : [13.04  3.04  0.84  0.15  0.02  0.    0.    0.    0.  ]\n# 输出：压缩比例    : [0.994 0.902 0.414 0.023 0.001 0.    0.    0.    0.   ]\n# 输出：与闭式解一致: True\n```\n\n读输出：$Z$ 有 9 个奇异值，从 13.04 一路掉到接近 0（9 次多项式的各个幂次高度相关，后面的方向几乎不含新信息）。$\\lambda=1$ 时，前两个方向的压缩比例是 0.994 和 0.902，几乎保留；第三个方向 0.414，已经砍掉一半多；第四个方向 0.023，几乎消除；其余方向都接近 0。用这个公式算出的解和闭式解一致（`True`）。这就是岭回归降低方差的机制：**去掉那些由噪声主导的弱方向**。普通最小二乘恰恰在这些方向上除以很小的 $s_i$，把噪声放大，方差就是这么来的。\n\n最后，把 $\\lambda$ 放回偏差-方差的框架里，用刚才的重复采样法量一次（固定输入、300 份训练集）：\n\n```python\n# 用重复采样看 lam 对偏差、方差的影响（9 次多项式，n=20，300 份训练集）\ndef ridge_bias_variance(lam, n=20, trials=300):\n    r = np.random.default_rng(10)\n    x, Xg = np.linspace(0, 1, n), poly_feats(x_grid)\n    preds = np.empty((trials, len(x_grid)))\n    for t in range(trials):\n        y = f(x) + sigma * r.normal(size=n)\n        preds[t] = ridge_predict(ridge_fit(poly_feats(x), y, lam), Xg)\n    return np.mean((preds.mean(0) - f(x_grid)) ** 2), np.mean(preds.var(0))\n\nfor lam in [1e-6, 1e-3, 1e-1, 1, 10, 100]:\n    b2, v = ridge_bias_variance(lam)\n    print(f\"lam={lam:<6g} bias2={b2:.3f} var={v:.3f} 合计={b2+v:.3f}\")\n# 输出：lam=1e-06  bias2=0.000 var=0.029 合计=0.030\n# 输出：lam=0.001  bias2=0.001 var=0.022 合计=0.023\n# 输出：lam=0.1    bias2=0.044 var=0.015 合计=0.059\n# 输出：lam=1      bias2=0.093 var=0.012 合计=0.105\n# 输出：lam=10     bias2=0.174 var=0.009 合计=0.183\n# 输出：lam=100    bias2=0.338 var=0.006 合计=0.345\n```\n\n读输出：随着 $\\lambda$ 从 $10^{-6}$ 增大到 100，偏差平方单调上升（0.000、0.001、0.044、0.093、0.174、0.338），方差单调下降（0.029、0.022、0.015、0.012、0.009、0.006）。合计最小的点在 $\\lambda=0.001$（0.023）附近，再往上偏差占了主导。和前面的多项式次数一样，$\\lambda$ 也是一个沿着「偏差-方差」曲线移动的旋钮，只不过它是连续的。（$\\lambda=10^{-6}$ 的方差 0.029 比前面 9 次最小二乘的 0.044 小，这是因为 $10^{-6}$ 虽小，仍然压住了最弱的那几个方向，另外两次实验的随机数也不同。）"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** 训练大模型时常见的是 `AdamW` 而不是「Adam + L2 损失」。把 L2 正则加进损失再用 Adam，和把权重衰减独立地作用在权重上，有什么不同？再想一想：早停 (early stopping)、dropout、数据增强，它们各自在偏差-方差分解里降低的是哪一项？",
+   "a": "把 $\\tfrac\\lambda2\\|w\\|^2$ 加进损失，梯度里就多了 $\\lambda w$。SGD 里这一项直接让权重按 $1-\\eta\\lambda$ 衰减，两种写法一样。但 Adam 会把梯度除以它的历史尺度 $\\sqrt{\\hat v}+\\epsilon$：对梯度本来就很大的参数，$\\lambda w$ 被压得很小（正则几乎失效）；对梯度很小的参数，它被放大（正则过强）。也就是说「L2 损失 + Adam」里每个参数实际承受的衰减强度和它的梯度历史绑在一起，不再是统一的 $\\lambda$。**AdamW（Loshchilov & Hutter）把权重衰减从梯度里拿出来**，在更新时直接对权重乘以 $(1-\\eta\\lambda)$，与自适应缩放解耦，调参更容易，泛化通常也更好。\n\n早停、dropout、数据增强都是在**降低方差**：早停限制了模型在训练中能走多远（相当于隐式的 L2，可以用 SVD 的视角理解：先拟合大奇异值方向，后拟合小的），dropout 近似一个子网络的集成，数据增强相当于增加有效样本量。它们都会略微增加偏差，换更小的方差，与岭回归的权衡是同一类。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "偏差",
+     "bias",
+     "平均预测与真函数的差距，反映模型假设的表达能力"
+    ],
+    [
+     "方差",
+     "variance",
+     "预测随训练集变化的波动，反映模型对数据的敏感程度"
+    ],
+    [
+     "不可约误差",
+     "irreducible error",
+     "数据本身的噪声 $\\sigma^2$，任何模型都消不掉"
+    ],
+    [
+     "偏差-方差分解",
+     "bias–variance decomposition",
+     "平方损失下，期望误差 = 噪声 + 偏差² + 方差"
+    ],
+    [
+     "正则化",
+     "regularization",
+     "在目标函数里加惩罚项，用连续的旋钮限制模型灵活度"
+    ],
+    [
+     "岭回归 / L2",
+     "ridge regression / L2",
+     "惩罚 $\\lambda\\|w\\|_2^2$，闭式解 $(X^\\top X+\\lambda I)^{-1}X^\\top y$"
+    ],
+    [
+     "权重衰减",
+     "weight decay",
+     "每步把权重乘以 $1-\\eta\\lambda$；SGD 下等价于 L2 正则"
+    ],
+    [
+     "Lasso / L1",
+     "Lasso / L1",
+     "惩罚 $\\lambda\\|w\\|_1$，产生稀疏解，用坐标下降求"
+    ],
+    [
+     "稀疏性",
+     "sparsity",
+     "大多数系数恰好为 0，起到特征选择的作用"
+    ],
+    [
+     "超参数",
+     "hyperparameter",
+     "训练前设定、不由训练学出的量，如 $\\lambda$、深度、学习率"
+    ],
+    [
+     "K 折交叉验证",
+     "K-fold cross-validation",
+     "每份数据轮流当验证集，平均 $K$ 个验证误差"
+    ],
+    [
+     "学习曲线",
+     "learning curve",
+     "训练与验证误差随训练集大小变化，用来诊断高偏差或高方差"
+    ],
+    [
+     "网格 / 随机搜索",
+     "grid / random search",
+     "超参数搜索的两种基本方式，随机搜索常在对数尺度上采样"
+    ],
+    [
+     "数据泄漏",
+     "data leakage",
+     "评估用到了不该用的信息，使结果比真实表现更乐观"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "在平方损失下，期望预测误差的偏差-方差分解是哪三项之和？",
+    "options": [
+     "训练误差、验证误差、测试误差",
+     "偏差、方差、协方差",
+     "不可约误差 $\\sigma^2$、偏差的平方、方差",
+     "不可约误差、偏差（不平方）、标准差"
+    ],
+    "answer": 2,
+    "explain": "分解写成 $\\mathbb{E}[(y-\\hat h)^2]=\\sigma^2+\\text{bias}^2+\\text{variance}$：噪声项、平均预测与真函数之差的**平方**、预测的**方差**（不是标准差）。三个误差（训练 / 验证 / 测试）是评估的数据划分，不是分解的项；协方差也不出现在这个分解里。"
+   },
+   {
+    "q": "岭回归中把正则化强度 $\\lambda$ 从很小逐渐增大，通常会发生什么？",
+    "options": [
+     "偏差上升、方差下降，总误差先降后升",
+     "偏差下降、方差上升，训练误差总是下降",
+     "偏差和方差同时下降",
+     "偏差和方差都不变，只有训练误差变化"
+    ],
+    "answer": 0,
+    "explain": "$\\lambda$ 越大，系数被压得越小，模型越「僵」：更难拟合真函数（偏差上升），但对训练数据的波动不敏感（方差下降）；训练误差随 $\\lambda$ 增大而上升。偏差和方差通常此消彼长，总误差在某个中间值最小，所以 $\\lambda$ 要用验证集选。"
+   },
+   {
+    "q": "某模型的学习曲线：训练误差和验证误差都收敛到一个较高的值，并且两条曲线几乎重合。下一步最合理的是？",
+    "options": [
+     "不用改，因为训练误差和验证误差一致说明模型已经最优",
+     "收集更多数据，因为这是高方差",
+     "加大正则化强度",
+     "增大模型容量或增加特征，因为这是高偏差"
+    ],
+    "answer": 3,
+    "explain": "两条曲线高而重合说明模型连训练集都拟合不好：偏差大（欠拟合）。更多数据压低的是方差，对偏差基本没用；加大正则化只会让偏差更大。「两者一致」只说明没有过拟合，不说明误差够低，要和噪声下限（或业务目标）比。"
+   }
+  ]
+ }
+}

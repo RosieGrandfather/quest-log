@@ -202,7 +202,7 @@
     "explain": "`or` 返回第一个为真的操作数，都为假则返回最后一个。左边的 `0` 是假，所以结果是右边的 `\"默认\"`。注意 `and` / `or` 返回的是操作数本身，不一定是 `True` / `False`。"
    },
    {
-    "q": "`items = []`，那么 `if len(items) > 0 and items[0] > 5:` 为什么不会报 `IndexError`？",
+    "q": "运行下面的代码，为什么不会报 `IndexError`？\n\n```text\nitems = []\nif len(items) > 0 and items[0] > 5:\n    print(\"大于 5\")\n```",
     "options": [
      "因为 Python 会自动把空列表补成有一个元素",
      "因为 `and` 的左边是 `False`，右边没有被计算（短路求值）",
@@ -213,7 +213,7 @@
     "explain": "`and` 看到左边为假，结果已经确定，就不再计算右边，所以 `items[0]` 没有被执行。如果把两个条件的顺序反过来，就会因为先执行 `items[0]` 而报 `IndexError`。"
    },
    {
-    "q": "`for bad in (\"a\", \"b\", \"c\"):` 这行代码里，变量 `bad` 是什么？",
+    "q": "下面这段代码里，变量 `bad` 是什么？\n\n```text\nfor bad in (\"a\", \"b\", \"c\"):\n    print(bad)\n```",
     "options": [
      "一个固定的关键字，必须叫这个名字",
      "整个元组 `(\"a\", \"b\", \"c\")`",

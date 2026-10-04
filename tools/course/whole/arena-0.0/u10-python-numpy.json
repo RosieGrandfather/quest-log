@@ -153,7 +153,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`def f(*args, **kwargs)` 被调用为 `f(1, 2, lr=0.1)` 时，`args` 和 `kwargs` 分别是？",
+    "q": "运行下面的代码，打印的 `args` 和 `kwargs` 分别是什么？\n\n```text\ndef f(*args, **kwargs):\n    print(args, kwargs)\n\nf(1, 2, lr=0.1)\n```",
     "options": [
      "`[1, 2]` 和 `['lr', 0.1]`",
      "`(1, 2)` 和 `{'lr': 0.1}`",
@@ -164,7 +164,7 @@
     "explain": "`args` 收集位置参数，是元组；`kwargs` 收集关键字参数，是字典。"
    },
    {
-    "q": "`[x * 2 for x in range(4) if x != 2]` 的结果是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nprint([x * 2 for x in range(4) if x != 2])\n```",
     "options": [
      "`[0, 2, 6]`",
      "`[0, 2, 4, 6]`",
@@ -186,7 +186,7 @@
     "explain": "`else` 只在循环「跑完了没被 break」时执行，常用来写「找了一圈没找到」的逻辑。"
    },
    {
-    "q": "`def add(item, box=[])` 连续调用 `add(1)`、`add(2)`，第二次返回什么？",
+    "q": "运行下面的代码，第二个 `print` 打印什么？\n\n```text\ndef add(item, box=[]):\n    box.append(item)\n    return box\n\nprint(add(1))\nprint(add(2))\n```",
     "options": [
      "`[2]`",
      "`[1]`",
@@ -197,7 +197,7 @@
     "explain": "默认值 `[]` 只在定义时创建一次，两次调用共用同一个列表。这是经典的可变默认参数陷阱。"
    },
    {
-    "q": "`a = np.arange(12).reshape(3, 4)`，`a.sum(axis=1)` 的形状是？",
+    "q": "运行下面的代码，打印的形状是什么？\n\n```text\nimport numpy as np\na = np.arange(12).reshape(3, 4)\nprint(a.sum(axis=1).shape)\n```",
     "options": [
      "`(3,)`",
      "`(4,)`",
@@ -219,7 +219,7 @@
     "explain": "`:` 表示所有行，`1` 表示第 1 列（从 0 开始数），所以是 `[1, 5, 9]`。"
    },
    {
-    "q": "`b = a[0]; b[0] = 100` 之后，`a[0, 0]` 是多少？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nimport numpy as np\na = np.arange(12).reshape(3, 4)\nb = a[0]\nb[0] = 100\nprint(a[0, 0])\n```",
     "options": [
      "0",
      "报错",

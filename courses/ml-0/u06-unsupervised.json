@@ -1,0 +1,140 @@
+{
+ "id": "u06",
+ "title": "无监督学习：聚类与降维（1/3）",
+ "en": "Unsupervised Learning: Clustering & Dimensionality Reduction (1/3)",
+ "minutes": 30,
+ "objectives": [
+  "写出 **k-means** 的目标函数 $J=\\sum_i\\|x_i-\\mu_{c(i)}\\|^2$，手写 **Lloyd 算法**（分配步 / 更新步），证明或验证 $J$ 单调不增，并用实验看到它对**初始化**敏感、理解 **k-means++** 的 $D^2$ 加权思想",
+  "会用 **肘部法 (elbow method)** 与 **轮廓系数 (silhouette coefficient)** 选 $k$，并知道它们回答的问题不同、可能给出不同答案"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n前面所有模型都有一列标签 $y$：「这封邮件是不是垃圾邮件」「房子卖多少钱」。可是世界上的大部分数据没有标签：几亿张图片、网上所有的文字、传感器的流水。**无监督学习**研究的就是：**只有 $x$，没有 $y$，能从数据本身里学到什么？** 两件最经典的事：把相似的点**分组**（聚类）、把高维的数据**压缩**成少数几个有意义的方向（降维）。它们还有第三层意义：压缩和分组是**表示学习**的雏形，而表示学习正是现代深度学习（自监督预训练、VAE、世界模型）的核心。\n\n**开始之前你要会：**\n\n- 本课前面「偏差方差、正则化与模型选择」里的「用交叉验证选超参数」（选 $k$ 是同一类问题，只是没有标签可以验证）；「机器学习的基本问题」里监督 / 无监督的区分；\n- prob-0「最大似然估计与交叉熵」：高斯分布的最大似然估计就是样本均值与样本方差（EM 的 M 步要用它）；prob-0「条件概率与贝叶斯」（EM 的 E 步就是一次贝叶斯公式）；\n- arena-0.0「特征值与奇异值分解」：$A=U\\Sigma V^\\top$、奇异值与特征值的关系（PCA 的核心）；arena-0.0「反向传播」与「PyTorch 入门：张量与自动求导」：这一节只用到「自编码器是用梯度下降训练的」这件事。\n\n**学完它你就能看懂这几件事：**\n\n- `sklearn.cluster.KMeans(n_clusters=8, init=\"k-means++\", n_init=10)` 每个参数在算法里对应哪一步；为什么每次运行结果会不同；\n- 论文里「We fit a Gaussian mixture with the EM algorithm」「the latent variable $z$」是什么意思，以及为什么变分自编码器 (VAE) 的损失里有「重构项 + KL 项」；\n- `PCA(n_components=0.95)` 的 0.95 指什么；为什么人们说「PCA 就是对中心化数据做 SVD」；\n- 为什么网上很多「t-SNE 降维图」不能直接拿来下结论；为什么 GPT、BERT 这些模型被叫作「自监督」，它们和无监督是什么关系。\n\n**这一节分成 3 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**\n\n**本小节安排（约 30 分钟）**：k-means：把点分成 $k$ 堆（约 5 分钟） → 初始化敏感性与 k-means++（约 5 分钟） → 怎样选 $k$：肘部法与轮廓系数（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n### k-means：把点分成 $k$ 堆\n\n> **标准定义 · k-means 聚类 (k-means clustering)**\n>\n> 给定 $n$ 个点 $x_1,\\dots,x_n\\in\\mathbb{R}^p$ 和簇数 $k$，**k-means** 要找 $k$ 个**中心** $\\mu_1,\\dots,\\mu_k$ 和每个点的**归属** $c(i)\\in\\{1,\\dots,k\\}$，使**簇内平方和 (inertia)** 最小：\n>\n> $$J=\\sum_{i=1}^n\\|x_i-\\mu_{c(i)}\\|^2$$\n>\n> **Lloyd 算法**交替做两步直到不再变化：**分配步**：固定中心，把每个点分给最近的中心；**更新步**：固定归属，把每个中心移到它所在簇的均值。每一步都不会让 $J$ 变大，所以 $J$ 单调不增，算法一定收敛，但只能收敛到**局部最小**（这个问题是 NP 难的，没有已知的高效全局算法）。\n>\n> *English: k-means minimizes the within-cluster sum of squared distances to k centroids. Lloyd's algorithm alternates between assigning each point to its nearest centroid and moving each centroid to the mean of its points; it converges to a local minimum.*\n\n**白话版：「选 $k$ 个村长，村民就近投靠，村长搬到村子中央，再投靠，再搬……」。** 为什么「搬到均值」是对的？固定一个簇里的点，$\\sum\\|x_i-\\mu\\|^2$ 对 $\\mu$ 求导令其为 0，得到 $\\mu$ 就是这些点的均值（和 prob-0 里「均值使平方误差最小」是同一个结论）；为什么「就近」是对的？固定中心，每个点单独选最近的中心显然使它自己的项最小。两步都是在**同一个目标上做精确的最小化**，所以 $J$ 只降不升。\n\n造一份有 4 个簇的二维数据（中心在 $(0,0)$、$(3,0)$、$(8,0)$、$(8,3.5)$，每个簇 100 个点，标准差 0.8），前两个簇靠得比较近，手写 Lloyd 算法，初始中心从数据点里随机选：\n\n```python\nimport numpy as np\n\nr = np.random.default_rng(0)\ncenters_true = np.array([[0, 0], [3, 0], [8, 0], [8, 3.5]])      # 4 个簇，前两个靠得近\nX = np.vstack([c + 0.8 * r.normal(size=(100, 2)) for c in centers_true])\nprint(X.shape)\n\ndef kmeans(X, init, n_iter=100):\n    centers, history = init.copy(), []\n    for _ in range(n_iter):\n        d = ((X[:, None, :] - centers[None, :, :]) ** 2).sum(-1)    # 每个点到每个中心的距离平方\n        labels = d.argmin(1)                                        # 分配步：归到最近的中心\n        history.append(d[np.arange(len(X)), labels].sum())          # 目标函数 J（簇内平方和）\n        new = np.array([X[labels == j].mean(0) if np.any(labels == j) else centers[j]\n                        for j in range(len(centers))])              # 更新步：中心移到簇的均值\n        if np.allclose(new, centers):\n            break\n        centers = new\n    return centers, labels, history\n\ninit = X[r.choice(len(X), 4, replace=False)]\ncenters, labels, hist = kmeans(X, init)\nprint(\"迭代轮数:\", len(hist), \" J 的变化:\", [round(float(h), 1) for h in hist])\nprint(\"J 单调不增:\", all(a >= b - 1e-9 for a, b in zip(hist, hist[1:])))\nprint(\"最终中心:\\n\", np.round(centers[np.argsort(centers[:, 0])], 2))\n# 输出：(400, 2)\n# 输出：迭代轮数: 11  J 的变化: [1446.5, 1034.5, 1026.7, 1022.8, 1021.6, 1020.5, 1019.6, 1018.8, 1018.4, 1017.8, 1017.6]\n# 输出：J 单调不增: True\n# 输出：最终中心:\n# 输出： [[-0.22 -0.01]\n# 输出： [ 1.88  0.68]\n# 输出： [ 3.26 -0.3 ]\n# 输出： [ 7.99  1.78]]\n```\n\n读输出：共 400 个点。算法迭代了 11 轮就收敛，每一轮的 $J$ 是 1446.5、1034.5、1026.7、1022.8、1021.6、1020.5、1019.6、1018.8、1018.4、1017.8、1017.6，一路下降，`True` 验证了单调不增。可是看最终的中心：$(-0.22,-0.01)$、$(1.88,0.68)$、$(3.26,-0.30)$、$(7.99,1.78)$：右边那两个簇（中心 $(8,0)$ 和 $(8,3.5)$）被**合并**成了一个中心 $(7.99,1.78)$，而左边的两个簇却被分给了三个中心。算法收敛了，可是收敛到了一个**很差的局部最小**（$J\\approx1017.6$）。这就是下一段要讲的初始化问题。\n\n### 初始化敏感性与 k-means++\n\n同一份数据，换不同的随机初始中心，会收敛到不同的结果。重复 40 次，把最终的 $J$ 按大小统计：\n\n```python\n# 同一份数据，换 40 次随机初始化（从数据点里随机选 4 个当初始中心）\ndef final_J(init):\n    return kmeans(X, init)[2][-1]\n\nrng = np.random.default_rng(1)\nJs = np.array([final_J(X[rng.choice(len(X), 4, replace=False)]) for _ in range(40)])\nvals, counts = np.unique(np.round(Js, 0), return_counts=True)\nfor v, c in zip(vals, counts):\n    print(f\"最终 J ≈ {v:6.0f}  出现 {c:2d} 次\")\n# 输出：最终 J ≈    493  出现 25 次\n# 输出：最终 J ≈    887  出现  1 次\n# 输出：最终 J ≈    891  出现  4 次\n# 输出：最终 J ≈    893  出现  2 次\n# 输出：最终 J ≈    896  出现  1 次\n# 输出：最终 J ≈   1017  出现  1 次\n# 输出：最终 J ≈   1022  出现  5 次\n# 输出：最终 J ≈   1030  出现  1 次\n```\n\n读输出：40 次里有 25 次得到 $J\\approx493$（那是正确分出 4 个簇的结果），其余 15 次卡在了别的局部最小：$J\\approx887$ 到 896 的有 8 次，$J\\approx1017$ 到 1030 的有 7 次，$J$ 最大的是正确解的两倍多。上一块里的那次初始化，就是 1017 的那一类。**所以单次运行 k-means 的结果不能直接信。** 常见的补救办法是：**多次随机初始化，保留 $J$ 最小的一次**（`sklearn` 里的 `n_init`），再就是更聪明地选初始中心。\n\n> **标准定义 · k-means++ 初始化**\n>\n> 第一个中心从数据点里**均匀随机**选；之后每个新中心按**概率正比于 $D(x)^2$** 从数据点里抽，其中 $D(x)$ 是点 $x$ 到**已选中心中最近的一个**的距离。这样新中心倾向于落在离已有中心**远**的地方。Arthur 和 Vassilvitskii (2007) 证明，用它初始化再跑 Lloyd，期望的 $J$ 与最优值之比是 $O(\\log k)$。\n>\n> *English: k-means++ picks the first center uniformly at random, then each further center with probability proportional to its squared distance from the nearest already chosen center, spreading the initial centers out.*\n\n**白话版：「选村长时，别让两个村长挨在一起」。** 离已有村长越远的村子越有可能被选中，所以不太会出现两个中心落进同一个簇、另一个簇里却一个中心也没有的局面。\n\n```python\ndef kmeanspp_init(X, k, rng):\n    centers = [X[rng.integers(len(X))]]                    # 第一个中心：均匀随机\n    for _ in range(k - 1):\n        d2 = ((X[:, None, :] - np.array(centers)[None]) ** 2).sum(-1).min(1)   # 离最近已选中心的距离平方\n        centers.append(X[rng.choice(len(X), p=d2 / d2.sum())])                 # 按 D^2 加权抽下一个\n    return np.array(centers)\n\nrng = np.random.default_rng(1)\nJp = np.array([final_J(kmeanspp_init(X, 4, rng)) for _ in range(40)])\nvals, counts = np.unique(np.round(Jp, 0), return_counts=True)\nfor v, c in zip(vals, counts):\n    print(f\"k-means++ 最终 J ≈ {v:6.0f}  出现 {c:2d} 次\")\nprint(\"随机初始化 J 的平均:\", round(Js.mean(), 1), \" k-means++:\", round(Jp.mean(), 1))\n# 输出：k-means++ 最终 J ≈    493  出现 33 次\n# 输出：k-means++ 最终 J ≈    886  出现  1 次\n# 输出：k-means++ 最终 J ≈    891  出现  2 次\n# 输出：k-means++ 最终 J ≈    899  出现  1 次\n# 输出：k-means++ 最终 J ≈   1022  出现  3 次\n# 输出：随机初始化 J 的平均: 665.3  k-means++: 572.6\n```\n\n读输出：同样 40 次，k-means++ 有 33 次得到 $J\\approx493$（随机初始化是 25 次），卡在局部最小的只有 7 次。平均最终 $J$ 从随机初始化的 665.3 降到 572.6。k-means++ 不保证每次都对，但明显更稳；再配合 `n_init` 多次取最优，就是 `sklearn` 的默认做法。\n\n### 怎样选 $k$：肘部法与轮廓系数\n\n$k$ 是超参数，但无监督学习没有标签，没法像前面那样直接用验证误差选。常用的是两种「内部指标」。注意：**$J$ 随 $k$ 增大必然单调下降**（$k=n$ 时每个点自己一个簇，$J=0$），所以不能选使 $J$ 最小的 $k$。\n\n> **标准定义 · 肘部法与轮廓系数 (elbow method & silhouette coefficient)**\n>\n> **肘部法**：对 $k=1,2,3,\\dots$ 各跑一次（取多次初始化的最优），画 $J(k)$ 曲线，选曲线「拐弯」处（再增加 $k$ 带来的下降明显变小的位置）。**轮廓系数**：对每个点 $i$，令 $a(i)$ 为它到**同簇**其他点的平均距离，$b(i)$ 为它到**最近的其他簇**中所有点的平均距离，则\n>\n> $$s(i)=\\frac{b(i)-a(i)}{\\max\\{a(i),\\,b(i)\\}}\\in[-1,1]$$\n>\n> 接近 1 表示点离自己的簇很近、离别的簇很远；接近 0 表示在两个簇的边界上；为负表示可能分错了簇。**平均轮廓系数**最大的 $k$ 是候选。\n>\n> *English: The elbow method looks for the bend in the inertia-versus-k curve; the silhouette coefficient compares each point's mean distance to its own cluster with that to the nearest other cluster, and a higher average is better.*\n\n**白话版：「肘部法看『再多分一堆值不值』，轮廓系数看『每个人是不是离自己人近、离外人远』」。**\n\n```python\ndef best_of(X, k, n_init=10, seed=0):                      # 多次初始化取 J 最小的一次\n    rng = np.random.default_rng(seed)\n    runs = [kmeans(X, kmeanspp_init(X, k, rng)) for _ in range(n_init)]\n    return min(runs, key=lambda t: t[2][-1])\n\nfor k in range(1, 9):\n    J = best_of(X, k)[2][-1]\n    print(f\"k={k}: J={J:8.1f}\")\n# 输出：k=1: J=  6112.8\n# 输出：k=2: J=  1522.5\n# 输出：k=3: J=   939.8\n# 输出：k=4: J=   493.0\n# 输出：k=5: J=   439.9\n# 输出：k=6: J=   391.9\n# 输出：k=7: J=   347.5\n# 输出：k=8: J=   320.3\n```\n\n读输出：$J$ 从 $k=1$ 的 6112.8 降到 $k=2$ 的 1522.5，$k=3$ 的 939.8，$k=4$ 的 493.0，之后每增加一个簇只降 27 到 53（439.9、391.9、347.5、320.3）。「肘」就在 $k=4$：从 $k=4$ 起曲线明显变平，说明再分下去只是在切分已有的簇。这和我们造数据时的真实簇数一致。\n\n```python\ndef silhouette(X, labels):\n    D = np.sqrt(((X[:, None, :] - X[None, :, :]) ** 2).sum(-1))\n    s = np.zeros(len(X))\n    for i in range(len(X)):\n        same = (labels == labels[i]); same[i] = False\n        a = D[i, same].mean()                              # 簇内平均距离\n        b = min(D[i, labels == c].mean() for c in set(labels) if c != labels[i])   # 最近别的簇的平均距离\n        s[i] = (b - a) / max(a, b)\n    return s.mean()\n\nfor k in range(2, 8):\n    labels_k = best_of(X, k)[1]\n    print(f\"k={k}: 平均轮廓系数 = {silhouette(X, labels_k):.3f}\")\n# 输出：k=2: 平均轮廓系数 = 0.647\n# 输出：k=3: 平均轮廓系数 = 0.604\n# 输出：k=4: 平均轮廓系数 = 0.566\n# 输出：k=5: 平均轮廓系数 = 0.489\n# 输出：k=6: 平均轮廓系数 = 0.404\n# 输出：k=7: 平均轮廓系数 = 0.382\n```\n\n读输出：平均轮廓系数最高的却是 $k=2$（0.647），然后是 $k=3$（0.604）、$k=4$（0.566）、$k=5$（0.489），之后继续下降（0.404、0.382）。肘部法说 4，轮廓系数说 2，两者不一致，这并不矛盾：我们的数据里，左边两个簇的中心只隔 3，标准差 0.8，彼此有一点重叠，右边两个簇也靠得很近，而左右两组之间隔得很远，所以在「粗」的尺度上看，这份数据是 2 大堆；在「细」的尺度上看，是 4 小堆。轮廓系数偏好「分得最干净」的 2 堆，但 $k=4$ 的 0.566 仍然高于 0.5，也是合理的划分。**这两个指标都只是参考，没有标签时，最终要结合业务含义来定 $k$**（比如「要给客户分几类才有不同的运营动作」）。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同事给你看一张 t-SNE 图，说：「这两个簇离得最远，所以它们差异最大；而这个簇画得最大，说明它里面最分散。」请评价这段话，并说出你会怎样验证图上看到的结论。",
+   "a": "这两条结论都**不能**直接从 t-SNE 图得出。t-SNE（UMAP 也类似）优化的是「保持每个点的**局部邻居**关系」，不保证全局几何：簇之间的距离会被任意拉伸或压缩（所以「离得远」不等于「差异大」）；簇的大小和密度也会被算法归一化（每个点的邻域按困惑度调整宽度），一个簇画得大不代表它在原空间里更分散。图还依赖困惑度和随机种子，不同设置会产生不同的簇数和排布。\n\n验证的办法：（1）换几组困惑度和种子，看结论是否稳定；（2）回到**原始高维空间**，直接用距离、聚类（k-means / GMM）和轮廓系数来量化「两簇差异多大」「簇内多分散」；（3）用 PCA 的前几个主成分作对照，它的全局几何更可靠；（4）把 t-SNE 当作探索（找假设）的工具，不当作证据。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "无监督学习",
+     "unsupervised learning",
+     "只有输入 $x$、没有标签，从数据本身学结构"
+    ],
+    [
+     "k-means",
+     "k-means",
+     "最小化簇内平方和的聚类，Lloyd 算法交替分配与更新"
+    ],
+    [
+     "簇内平方和",
+     "inertia / within-cluster SS",
+     "$J=\\sum\\|x_i-\\mu_{c(i)}\\|^2$，随 $k$ 单调下降"
+    ],
+    [
+     "k-means++",
+     "k-means++",
+     "按 $D^2$ 概率选初始中心，让它们分散"
+    ],
+    [
+     "肘部法",
+     "elbow method",
+     "画 $J(k)$ 曲线选拐点"
+    ],
+    [
+     "轮廓系数",
+     "silhouette coefficient",
+     "$s=(b-a)/\\max(a,b)$，衡量点与自己簇、最近别的簇的远近"
+    ],
+    [
+     "高斯混合模型",
+     "Gaussian mixture model (GMM)",
+     "由 $K$ 个高斯按权重 $\\pi_k$ 混合的概率模型"
+    ],
+    [
+     "EM 算法",
+     "expectation–maximization",
+     "E 步算后验责任，M 步做加权最大似然，似然单调不减"
+    ],
+    [
+     "主成分分析",
+     "PCA",
+     "方差最大的正交方向，即协方差矩阵的前 $k$ 个特征向量"
+    ],
+    [
+     "累计解释方差比",
+     "cumulative explained variance ratio",
+     "前 $k$ 个主成分的方差占总方差的比例，用来选 $k$"
+    ],
+    [
+     "t-SNE / UMAP",
+     "t-SNE / UMAP",
+     "保持局部邻居关系的非线性降维，只适合可视化"
+    ],
+    [
+     "自监督学习",
+     "self-supervised learning",
+     "用数据自身的一部分当标签（遮盖、预测、对比）训练模型"
+    ],
+    [
+     "自编码器",
+     "autoencoder",
+     "编码到低维瓶颈再解码重构输入；线性版本等价于 PCA"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "Lloyd 算法（k-means）的两步各自做什么？",
+    "options": [
+     "分配步：每个中心移到最近点上；更新步：删除离群点",
+     "分配步：随机把点分给簇；更新步：随机移动中心",
+     "分配步：每个点归到最近的中心；更新步：每个中心移到它所在簇的均值",
+     "分配步：按标签分簇；更新步：重新训练分类器"
+    ],
+    "answer": 2,
+    "explain": "两步都是在目标 $J=\\sum\\|x_i-\\mu_{c(i)}\\|^2$ 上做精确最小化：固定中心时每个点选最近的中心使自己的项最小，固定归属时均值使簇内平方和最小。所以 $J$ 每步都不增，算法收敛。它不涉及随机移动，也不使用标签。"
+   },
+   {
+    "q": "同一份数据多次运行 k-means，常得到不同的结果，原因和对策是？",
+    "options": [
+     "目标函数有许多局部最小，结果依赖初始中心；用 k-means++ 初始化并多次初始化后保留 $J$ 最小的一次",
+     "k-means 的收敛没有保证；只能多迭代几轮",
+     "数据被打乱了；应该固定数据的顺序",
+     "$k$ 取错了；只要 $k$ 对，结果就唯一"
+    ],
+    "answer": 0,
+    "explain": "Lloyd 算法保证 $J$ 单调不增并收敛，但只收敛到局部最小，不同初始值通向不同局部最小（本节实验里 40 次中约有三分之一卡在较差的解）。对策是 k-means++ 初始化加多次初始化。数据顺序不影响结果；即使 $k$ 取对了，局部最小仍然存在。"
+   },
+   {
+    "q": "k-means++ 选下一个初始中心的规则是？",
+    "options": [
+     "选当前簇内方差最大的点",
+     "均匀随机，与已选中心无关",
+     "总是选离已选中心最远的那个点",
+     "按概率正比于「到已选中心中最近者的距离平方」从数据点里抽取"
+    ],
+    "answer": 3,
+    "explain": "概率正比于 $D(x)^2$：离已有中心越远的点越可能被选中，初始中心因此被分散开；但仍然是随机抽取，不是「总选最远点」（那样会被离群点牵着走）。均匀随机是普通的随机初始化。"
+   },
+   {
+    "q": "某点到同簇其他点的平均距离 $a=0.5$，到最近的其他簇的平均距离 $b=2$，它的轮廓系数 $s$ 是多少？",
+    "options": [
+     "-0.75",
+     "0.75",
+     "4",
+     "0.25"
+    ],
+    "answer": 1,
+    "explain": "$s=\\dfrac{b-a}{\\max(a,b)}=\\dfrac{2-0.5}{2}=0.75$，接近 1，说明这个点在自己的簇里很「舒服」。4 是 $b/a$，不是轮廓系数（轮廓系数在 $[-1,1]$ 内）；0.25 是用 $a$ 当分母；负值要 $a>b$ 才会出现。"
+   }
+  ]
+ }
+}

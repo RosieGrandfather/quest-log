@@ -1,0 +1,71 @@
+{
+ "id": "u02b",
+ "title": "线性回归与梯度下降（2/3）",
+ "en": "Linear Regression & Gradient Descent (2/3)",
+ "minutes": 35,
+ "objectives": [
+  "手写 **批量 / 随机 / 小批量梯度下降 (batch / stochastic / mini-batch GD)**，并与解析解对照；理解 **epoch**、批量大小与每步噪声的关系",
+  "理解 **学习率 (learning rate)** 太小（慢）与太大（发散）的原因：Hessian 的最大特征值 $L$ 与稳定条件 $\\eta<2/L$；理解 **特征缩放 (feature scaling)** 通过降低 **条件数 (condition number)** 加速收敛"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「线性回归与梯度下降」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 35 分钟）**：学习率：太小太慢，太大发散（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\nn, d = 200, 3\nX = rng.normal(size=(n, d))                          # 200 个样本，3 个特征\nw_true, b_true = np.array([2.0, -1.0, 0.5]), 3.0\ny = X @ w_true + b_true + rng.normal(0, 0.5, n)      # 真实规律 + 标准差 0.5 的噪声\n\ndef predict(X, w, b):                                # 模型：y_hat = X w + b\n    return X @ w + b\n\ndef mse(y, yhat):                                    # 均方误差\n    return float(np.mean((y - yhat) ** 2))\n\nprint(X.shape, y.shape)\nprint(\"用真实参数的 MSE：\", round(mse(y, predict(X, w_true, b_true)), 3))\nprint(\"w=0, b=0 的 MSE：\", round(mse(y, predict(X, np.zeros(d), 0.0)), 3))\n```\n\n```python\ndef grad(w, b, X, y):\n    r = X @ w + b - y                                # 残差 r = y_hat - y，形状 (n,)\n    m = len(y)\n    return 2 / m * (X.T @ r), 2 / m * r.sum()        # dL/dw = (2/n) X^T r,  dL/db = (2/n) sum(r)\n\ndef loss(w, b, X, y):\n    return float(np.mean((X @ w + b - y) ** 2))\n\nw0, b0 = np.array([0.5, 0.5, 0.5]), 0.5\ngw, gb = grad(w0, b0, X, y)\neps = 1e-6                                           # 用中心差分做数值检验\nnum_w = np.zeros(d)\nfor j in range(d):\n    e = np.zeros(d); e[j] = eps\n    num_w[j] = (loss(w0 + e, b0, X, y) - loss(w0 - e, b0, X, y)) / (2 * eps)\nnum_b = (loss(w0, b0 + eps, X, y) - loss(w0, b0 - eps, X, y)) / (2 * eps)\nprint(np.round(gw, 4), round(gb, 4))\nprint(np.round(num_w, 4), round(num_b, 4))\nprint(np.allclose(gw, num_w, atol=1e-6), abs(gb - num_b) < 1e-6)\n```\n\n```python\nXa = np.hstack([np.ones((n, 1)), X])                 # 增广矩阵：加一列 1，把 b 并进参数\ntheta = np.linalg.solve(Xa.T @ Xa, Xa.T @ y)         # 正规方程 (X^T X) theta = X^T y\nprint(np.round(theta, 3))                            # 依次是 b, w1, w2, w3\ntheta_ls = np.linalg.lstsq(Xa, y, rcond=None)[0]     # 最小二乘的另一种求法\nprint(np.allclose(theta, theta_ls))\ngw, gb = grad(theta[1:], theta[0], X, y)\nprint(\"解处的梯度几乎为 0：\", np.abs(gw).max() < 1e-10 and abs(gb) < 1e-10)\n```\n\n```python\ndef gd(X, y, lr, steps):\n    w, b, hist = np.zeros(X.shape[1]), 0.0, []\n    for t in range(steps):\n        gw, gb = grad(w, b, X, y)\n        w, b = w - lr * gw, b - lr * gb              # 沿负梯度方向走一步\n        hist.append(loss(w, b, X, y))\n    return w, b, hist\n\nw, b, h = gd(X, y, 0.1, 200)\nprint(np.round(w, 3), round(b, 3))\nprint(\"第 1、10、50、200 步的损失：\", [round(h[i], 4) for i in (0, 9, 49, 199)])\nprint(\"和正规方程一致：\", np.allclose(np.r_[b, w], theta, atol=1e-3))\n```\n\n### 学习率：太小太慢，太大发散\n\n线性回归的损失是二次函数，所以可以算清楚学习率的界限。损失的 **Hessian**（二阶导矩阵）是 $H=\\frac2nX_a^\\top X_a$，设它的特征值为 $\\lambda_{\\min}\\le\\dots\\le\\lambda_{\\max}=L$。对二次函数，每一步在第 $k$ 个特征方向上的误差都乘以 $(1-\\eta\\lambda_k)$：\n\n- 要所有方向都不发散，需要 $|1-\\eta\\lambda_k|<1$，即 $\\eta<2/\\lambda_k$，最严的是最大的 $\\lambda_{\\max}=L$：**$\\eta<2/L$**；\n- 收敛有多快，取决于**最慢的方向**，它每步只缩小 $(1-\\eta\\lambda_{\\min})$。取 $\\eta=1/L$ 时，每步缩小 $1-1/\\kappa$，其中 $\\kappa=\\lambda_{\\max}/\\lambda_{\\min}$ 是 **条件数 (condition number)**。\n```python\nH = 2 / n * Xa.T @ Xa                                # 损失的 Hessian（二阶导矩阵）\nlam = np.linalg.eigvalsh(H)\nprint(\"Hessian 最大特征值：\", round(float(lam.max()), 3), \" 稳定学习率上界 2/L：\", round(float(2 / lam.max()), 3))\nfor lr in [0.001, 0.1, 0.9, 1.1]:\n    _, _, h = gd(X, y, lr, 50)\n    print(f\"lr={lr:<6}  第 50 步损失 = {h[-1]:.4g}\")\n# 输出：Hessian 最大特征值： 2.207  稳定学习率上界 2/L： 0.906\n# 输出：lr=0.001   第 50 步损失 = 11.03\n# 输出：lr=0.1     第 50 步损失 = 0.25\n# 输出：lr=0.9     第 50 步损失 = 0.2821\n# 输出：lr=1.1     第 50 步损失 = 3.756e+14\n```\n\n**读输出：** 这份数据的 Hessian 最大特征值 $L$ 是 `2.207`，所以稳定学习率上界是 $2/L=$ `0.906`。四个学习率的第 50 步损失：$\\eta=0.001$ 时 `11.03`，几乎没怎么动（太小，走得太慢）；$\\eta=0.1$ 时 `0.25`，已经到底；$\\eta=0.9$ 时 `0.2821`，**接近上界，开始来回振荡**，虽然还在收敛，但比 0.1 慢；$\\eta=1.1$ 时 `3.756e+14`，**超过上界，每步越冲越远，损失爆炸**。如果你在训练神经网络时看到损失突然变成 `nan` 或 `inf`，第一怀疑对象就是学习率太大。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "sDv4f4s2SB8",
+   "title": "视频二：Gradient Descent, Step-by-Step（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 24
+  },
+  {
+   "type": "text",
+   "md": "**视频二要点：** 从一个只有一个参数（截距）的例子开始，把「损失曲线」「斜率」「步长 = 斜率 × 学习率」讲得非常慢，然后扩展到截距与斜率两个参数同时更新，最后说明什么时候停（步长足够小，或达到最大步数）。对照我们的代码：`gw, gb = grad(...)` 是斜率，`w - lr * gw` 就是「步长 = 学习率 × 斜率」。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 同学说：「我把全部数据（含测试集）标准化之后再切分训练集和测试集，这样特征的尺度统一了，对吧？」这个做法的问题在哪？在部署模型预测一个新样本时，应该怎样标准化？",
+   "a": "问题是**数据泄漏**：均值和标准差用到了测试样本，测试集的信息通过预处理渗进了训练流程，测试成绩会偏乐观（偏差不一定大，但原则上就不干净）。正确做法：**先切分，再只用训练集计算 $\\mu,\\sigma$**，然后用这同一组 $(\\mu,\\sigma)$ 变换验证集、测试集和之后的任何新样本。部署时同理：**训练时用的 $\\mu,\\sigma$ 必须随模型一起保存**，新样本来了先用它们变换，再送进模型。直接对新样本自己算 $\\mu,\\sigma$（比如只有一个样本时标准差为 0）是错的。"
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "某线性回归的损失，Hessian 最大特征值为 $L=4$。对批量梯度下降，保证每步损失不增的学习率范围大致是？",
+    "options": [
+     "$0<\\eta<0.5$",
+     "$0<\\eta<0.25$",
+     "$0<\\eta<2$",
+     "任意 $\\eta>0$ 都行，只是收敛得快慢不同"
+    ],
+    "answer": 0,
+    "explain": "对二次函数，梯度下降稳定的条件是 $\\eta<2/L$，这里是 $2/4=0.5$。超过它，沿最陡方向每步都会「冲过头」且越冲越远，损失发散；本节里学习率 1.1 超过上界 0.906，损失涨到 $10^{14}$。小于 $1/L=0.25$ 才保证不振荡，但范围题问的是不发散。"
+   },
+   {
+    "q": "特征缩放（如标准化）对梯度下降的主要作用是？",
+    "options": [
+     "改变最优解，使损失更小",
+     "减少样本数量",
+     "让模型从线性变成非线性",
+     "降低损失曲面 Hessian 的条件数，让一个学习率对所有方向都合适，收敛更快更稳"
+    ],
+    "answer": 3,
+    "explain": "各特征量级差得很大时，损失曲面是一条又细又长的山谷：沿陡的方向要小学习率才不发散，沿平的方向又走得极慢。标准化把条件数从 $7.76\\times10^{6}$ 降到约 1.09，一个学习率就够了。线性模型的最优预测能力不因缩放而变（只是参数的数值变了），所以不会让损失更小。"
+   },
+   {
+    "q": "向量化的梯度函数和用两层 for 循环写的梯度函数，对同样的输入，结果该怎么比较？",
+    "options": [
+     "必须用 `==` 判断完全相等，否则说明有 bug",
+     "用 `np.allclose` 判断在浮点误差内相等，因为求和的先后顺序不同会让末位有差别",
+     "只比较第一个元素",
+     "向量化只是更快，结果一定不同"
+    ],
+    "answer": 1,
+    "explain": "浮点数加法不满足结合律，同一批数以不同顺序相加，末位可能不同。所以数值代码比较要用 `np.allclose` / `np.isclose`，给一个相对和绝对容差。两种写法数学上完全一样，所以应当在容差内相等；若差得很大，那才是 bug。"
+   }
+  ]
+ }
+}

@@ -87,7 +87,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`def f(*args, **kwargs)` 被调用为 `f(1, 2, lr=0.1)` 时，`args` 和 `kwargs` 分别是？",
+    "q": "运行下面的代码，打印的 `args` 和 `kwargs` 分别是什么？\n\n```text\ndef f(*args, **kwargs):\n    print(args, kwargs)\n\nf(1, 2, lr=0.1)\n```",
     "options": [
      "`[1, 2]` 和 `['lr', 0.1]`",
      "`{1, 2}` 和 `(lr, 0.1)`",
@@ -98,7 +98,7 @@
     "explain": "`args` 收集位置参数，是元组；`kwargs` 收集关键字参数，是字典。"
    },
    {
-    "q": "`[x * 2 for x in range(4) if x != 2]` 的结果是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nprint([x * 2 for x in range(4) if x != 2])\n```",
     "options": [
      "`[0, 2, 6]`",
      "`[0, 2, 4, 6]`",

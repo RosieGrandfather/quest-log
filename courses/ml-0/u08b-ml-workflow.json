@@ -1,0 +1,93 @@
+{
+ "id": "u08b",
+ "title": "机器学习项目的完整流程与错误分析（2/3）",
+ "en": "The ML Workflow & Error Analysis (2/3)",
+ "minutes": 45,
+ "objectives": [
+  "手写 **特征工程 (feature engineering)** 的基本件：**缺失值填补与缺失指示列**、**独热编码 (one-hot encoding)**、**标准化 (standardization)**，并遵守「只在训练集上 fit」的规则",
+  "先做 **基线 (baseline)** 再加复杂度；会读 **混淆矩阵 (confusion matrix)**、**精确率 / 召回率 / AUC**，并做 **误差分析 (error analysis)**：按子群体看指标、看损失最大的样本、定位问题后再针对性地改"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「机器学习项目的完整流程与错误分析」分成的第 2 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：先做基线，再加复杂度（约 5 分钟） → 误差分析：子群体、错误样本与混淆矩阵（约 25 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\nrng = np.random.default_rng(0)\ny = np.r_[np.ones(30), np.zeros(970)]                 # 1000 个样本里只有 3% 是正例\ncounts = [y[rng.choice(1000, 100, replace=False)].sum() for _ in range(2000)]\nprint(\"随机抽 100 个当验证集，2000 次里正例个数：最少\", int(min(counts)), \" 最多\", int(max(counts)), \" 平均\", np.mean(counts))\nprint(\"有\", int(np.sum(np.array(counts) == 0)), \"次验证集里一个正例也没有\")\n\npos, neg = np.where(y == 1)[0], np.where(y == 0)[0]  # 分层抽样：每一类各抽 10%\nval = np.r_[rng.choice(pos, 3, replace=False), rng.choice(neg, 97, replace=False)]\nprint(\"分层抽样：验证集 100 个样本里的正例个数 =\", int(y[val].sum()))\n```\n\n```python\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\nrng = np.random.default_rng(7)\nN = 2400\nday = np.sort(rng.integers(0, 300, N))                          # 订单日期，按时间排好\ncarrier = rng.choice([\"A\", \"B\", \"C\", \"D\"], N, p=[0.35, 0.3, 0.2, 0.15])\ndist = np.exp(rng.normal(5.5, 0.8, N))                          # 运输距离（km），右偏\nweight = rng.gamma(2.0, 5.0, N)                                 # 重量（kg）\nmiss = rng.random(N) < np.where(carrier == \"D\", 0.20, 0.05)     # D 承运商经常不填距离\nld = np.log(dist) - 5.5\nbonus = dict(A=0.0, B=0.4, C=-0.3, D=0.4)\nlogit = (-2.4 + 1.8 * ld + 0.06 * (weight - 10) + np.array([bonus[c] for c in carrier])\n         + (carrier == \"D\") * -3.4 * ld + 1.0 * miss + 0.003 * (day - 150))\ny = (rng.random(N) < sigmoid(logit)).astype(float)              # 1 = 订单延迟\ndist = np.where(miss, np.nan, dist)                             # 观测到的距离里有缺失值\n\ntr, va, te = day < 180, (day >= 180) & (day < 240), day >= 240  # 按时间划分：过去训练、之后验证、最后测试\nprint(\"样本数 训练/验证/测试:\", tr.sum(), va.sum(), te.sum())\nprint(\"延迟比例 训练/验证/测试:\", [round(float(y[m].mean()), 3) for m in (tr, va, te)])\nprint(\"距离缺失比例:\", round(float(np.isnan(dist).mean()), 3), \"  按承运商:\", {c: round(float(np.isnan(dist[carrier == c]).mean()), 2) for c in \"ABCD\"})\nfor i in range(3):\n    print(day[i], carrier[i], dist[i].round(1), weight[i].round(1), int(y[i]))\n```\n\n```python\nclass Prep:\n    \"\"\"预处理器：只在训练集上 fit（算中位数、类别表、均值和标准差），再 transform 任何数据\"\"\"\n    def fit(self, dist, weight, carrier):\n        self.med = np.nanmedian(np.log(dist))                   # 缺失值用训练集的中位数填\n        self.cats = [str(c) for c in sorted(set(carrier))]                        # 类别表来自训练集\n        raw = self._raw(dist, weight, carrier)\n        self.mu, self.sd = raw[:, :2].mean(0), raw[:, :2].std(0)\n        return self\n\n    def _raw(self, dist, weight, carrier):\n        ld = np.log(dist)\n        missing = np.isnan(ld)\n        ld = np.where(missing, self.med, ld)                    # 填补\n        onehot = (carrier[:, None] == np.array(self.cats)[None, :]).astype(float)   # 独热编码\n        return np.c_[ld, weight, missing, onehot]               # 对数距离、重量、「缺失」指示列、承运商独热\n\n    def transform(self, dist, weight, carrier):\n        X = self._raw(dist, weight, carrier)\n        X[:, :2] = (X[:, :2] - self.mu) / self.sd               # 只标准化两个连续列\n        return X\n\nprep = Prep().fit(dist[tr], weight[tr], carrier[tr])\nXtr, Xva, Xte = [prep.transform(dist[m], weight[m], carrier[m]) for m in (tr, va, te)]\nprint(\"特征矩阵形状:\", Xtr.shape, \" 类别表:\", prep.cats, \" 训练集填补用的中位数(对数距离):\", round(prep.med, 3))\nprint(\"训练集前两列 均值\", Xtr[:, :2].mean(0).round(3), \" 标准差\", Xtr[:, :2].std(0).round(3))\nprint(\"验证集前两列 均值\", Xva[:, :2].mean(0).round(3), \" 标准差\", Xva[:, :2].std(0).round(3))\nprint(\"训练集缺失指示列的均值:\", Xtr[:, 2].mean().round(3))\n```\n\n### 先做基线，再加复杂度\n\n> **标准定义 · 基线 (baseline) 与评估指标**\n>\n> **基线**是一个简单、便宜、容易理解的参照方案（如永远预测多数类、一条规则、一个线性模型），任何更复杂的模型都必须**明显地**超过它才值得使用。二分类的常用指标：把预测与真实标签交叉统计得到 TP、FP、FN、TN，**准确率** $=(TP+TN)/N$；**精确率 (precision)** $=TP/(TP+FP)$，预测为正的里有多少真是正；**召回率 (recall)** $=TP/(TP+FN)$，真实的正里有多少被找出来了；**F1** 是两者的调和平均 $2PR/(P+R)$；**AUC** 是随机抽一个正例和一个负例，模型给正例的分数更高的概率，它只看排序，不依赖阈值。\n>\n> *English: A baseline is a simple reference that any complex model must clearly beat. Precision = TP/(TP+FP), recall = TP/(TP+FN), F1 is their harmonic mean; AUC is the probability that a random positive is scored above a random negative.*\n\n**白话版：「先拿根木棍量一下，再拿显微镜」。** 基线回答的是「这个问题本来有多难」：如果一条规则就能做到 0.73，你的神经网络做到 0.75 就没什么值得高兴的。下面先写指标函数，再看两个基线：永远预测「不延迟」，和只看距离的规则。\n\n```python\ndef confusion(y, pred):\n    tp = int(((pred == 1) & (y == 1)).sum()); fp = int(((pred == 1) & (y == 0)).sum())\n    fn = int(((pred == 0) & (y == 1)).sum()); tn = int(((pred == 0) & (y == 0)).sum())\n    return tp, fp, fn, tn\n\ndef scores(y, p, thr=0.5):\n    tp, fp, fn, tn = confusion(y, (p >= thr).astype(int))\n    prec = tp / max(tp + fp, 1); rec = tp / max(tp + fn, 1)\n    return dict(acc=(tp + tn) / len(y), prec=prec, rec=rec, f1=2 * prec * rec / max(prec + rec, 1e-12))\n\ndef auc(y, s):                                          # AUC = 随机抽一个正例和一个负例，正例得分更高的概率（秩和公式）\n    r = np.argsort(np.argsort(s)) + 1.0\n    n1, n0 = y.sum(), len(y) - y.sum()\n    return (r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0)\n\ndef nll(y, p):                                          # 平均对数损失（交叉熵）\n    p = np.clip(p, 1e-9, 1 - 1e-9)\n    return -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))\n\nytr, yva, yte = y[tr], y[va], y[te]\nbase = np.full(len(yva), ytr.mean())                    # 基线 0：永远预测训练集的平均延迟率\nprint(\"基线0 总是预测不延迟:\", {k: round(v, 3) for k, v in scores(yva, base).items()}, \" AUC 0.5（常数预测没有排序能力）\")\nrule = np.nan_to_num(Xva[:, 0], nan=0.0)                # 基线 1：只看距离，越远越可能延迟\nprint(\"基线1 只看距离排序  : AUC\", round(auc(yva, rule), 3), \"  阈值取 1 倍标准差:\", {k: round(v, 3) for k, v in scores(yva, (rule > 1).astype(float)).items()})\n# 输出：基线0 总是预测不延迟: {'acc': 0.812, 'prec': 0.0, 'rec': 0.0, 'f1': 0.0}  AUC 0.5（常数预测没有排序能力）\n# 输出：基线1 只看距离排序  : AUC 0.727   阈值取 1 倍标准差: {'acc': 0.797, 'prec': 0.455, 'rec': 0.402, 'f1': 0.427}\n```\n\n读输出：基线 0「总是预测不延迟」的准确率是 **0.812**，听上去很高，但精确率、召回率、F1 全是 0：它一个延迟订单都没找出来，是一个毫无用处的模型。这就是**类别不平衡时不能只看准确率**的原因（延迟只占 18.8%，不延迟就是 81.2%）。常数预测没有排序能力，AUC 是 0.5。基线 1 只按距离排序，AUC 已经有 **0.727**；用「标准化距离大于 1」做判断，召回率 0.402、精确率 0.455。**所以你的模型至少要超过 0.727**。\n\n然后上逻辑回归。它就是前面学过的模型，加 L2，用全批量梯度下降训练：\n\n```python\ndef fit_logreg(X, y, l2=1e-2, lr=0.5, steps=400):\n    w, b = np.zeros(X.shape[1]), 0.0\n    for _ in range(steps):\n        p = sigmoid(X @ w + b)\n        w -= lr * (X.T @ (p - y) / len(y) + l2 * w)         # 交叉熵的梯度 + L2\n        b -= lr * (p - y).mean()\n    return w, b\n\nw, b = fit_logreg(Xtr, ytr)\npva = sigmoid(Xva @ w + b)\nprint(\"逻辑回归 验证集:\", {k: round(v, 3) for k, v in scores(yva, pva).items()}, \" AUC\", round(auc(yva, pva), 3))\nprint(\"系数（对数距离, 重量, 缺失, A, B, C, D）:\", w.round(2))\n# 输出：逻辑回归 验证集: {'acc': 0.812, 'prec': 0.5, 'rec': 0.011, 'f1': 0.022}  AUC 0.748\n# 输出：系数（对数距离, 重量, 缺失, A, B, C, D）: [ 0.64  0.26  0.56 -0.21  0.02 -0.4   0.25]\n```\n\n读输出：验证 AUC 是 **0.748**，比距离规则的 0.727 只好了一点点。阈值 0.5 下准确率 0.812，召回率却只有 0.011，精确率 0.5：总共只预测了两个订单为延迟，几乎什么都没找出来。**阈值 0.5 不是神圣的**：延迟只占两成，模型给出的概率大多低于 0.5，后面的「误差分析」会看到把阈值挪低会怎样。系数里「缺失」是 0.56，是正的：距离缺失的订单更容易延迟，模型从缺失指示列学到了这一点；承运商系数最大的是 D（0.25）、最小的是 C（-0.4）。\n\n再加复杂度：一个 32 个隐藏单元的两层 MLP（和本课「神经网络与训练实践」里是同一类东西）：\n\n```python\ndef fit_mlp(X, y, h=32, steps=500, lr=0.1, l2=0.0, seed=0):\n    rng = np.random.default_rng(seed)\n    W1, b1 = rng.normal(0, np.sqrt(2 / X.shape[1]), (X.shape[1], h)), np.zeros(h)\n    W2, b2 = rng.normal(0, np.sqrt(1 / h), h), 0.0\n    for _ in range(steps):\n        z = X @ W1 + b1; a = np.maximum(z, 0)\n        d = (sigmoid(a @ W2 + b2) - y) / len(y)                   # 输出层误差 (p - y) / N\n        dz = np.outer(d, W2) * (z > 0)                             # 反传到隐藏层\n        W2 -= lr * (a.T @ d + l2 * W2); b2 -= lr * d.sum()\n        W1 -= lr * (X.T @ dz + l2 * W1); b1 -= lr * dz.sum(0)\n    return lambda Xn: sigmoid(np.maximum(Xn @ W1 + b1, 0) @ W2 + b2)\n\nmlp = fit_mlp(Xtr, ytr)\npm = mlp(Xva)\nprint(\"MLP    验证集:\", {k: round(v, 3) for k, v in scores(yva, pm).items()}, \" AUC\", round(auc(yva, pm), 3))\nprint(\"训练集 AUC: 逻辑回归\", round(auc(ytr, sigmoid(Xtr @ w + b)), 3), \" MLP\", round(auc(ytr, mlp(Xtr)), 3))\n# 输出：MLP    验证集: {'acc': 0.82, 'prec': 0.75, 'rec': 0.069, 'f1': 0.126}  AUC 0.774\n# 输出：训练集 AUC: 逻辑回归 0.731  MLP 0.787\n```\n\n读输出：MLP 的验证 AUC 是 **0.774**，比逻辑回归的 0.748 高一点，召回率 0.069、精确率 0.75（阈值仍是 0.5）。训练集 AUC 是 0.731（逻辑回归）和 0.787（MLP）。注意：逻辑回归的**训练 AUC 比验证 AUC 还低**，这不是矛盾，训练集是更早的时期，延迟率更低、可预测的信号也更弱，验证集是不同的一批样本。**这两个数字之间的差别，说明验证 AUC 会随抽样而波动，别把 0.01 的差距当成结论**，后面会专门量化这个波动。MLP 好了 0.026：是它自己学会了某些交互，还是别的原因？后面的误差分析会给出答案。\n\n### 误差分析：子群体、错误样本与混淆矩阵\n\n> **标准定义 · 混淆矩阵 (confusion matrix)**\n>\n> 对二分类，**混淆矩阵**是一个 $2\\times2$ 的计数表：行是真实标签，列是预测标签，四个格子是 TP（真阳性）、FN（假阴性，漏报）、FP（假阳性，误报）、TN（真阴性）。预测为正的标准是**阈值** $\\tau$：$\\hat y=1$ 当且仅当预测概率 $p\\ge\\tau$。降低 $\\tau$，预测为正的样本只会增多：**召回率不会下降**，精确率通常下降。\n>\n> *English: The confusion matrix counts TP, FN, FP and TN. Lowering the decision threshold flags more examples as positive: recall can only go up, precision usually goes down.*\n\n**白话版：「漏报和误报，哪个更疼？」。** 没有放之四海而皆准的阈值，要看错误的代价：漏掉一个会延迟的订单，可能损失一个客户；多预警一个其实不会延迟的订单，只是多花一点人工。代价不对称时，阈值要往代价高的一侧挪。下面把逻辑回归在验证集上的混淆矩阵，在两个阈值下并排列出：\n\n```python\nfor thr in (0.5, 0.3):\n    tp, fp, fn, tn = confusion(yva, (pva >= thr).astype(int))\n    print(f\"阈值 {thr}:            预测延迟  预测准时\")\n    print(f\"      实际延迟      {tp:5d}    {fn:5d}      召回 = {tp}/{tp + fn} = {tp / (tp + fn):.3f}\")\n    print(f\"      实际准时      {fp:5d}    {tn:5d}      精确率 = {tp}/{tp + fp} = {tp / max(tp + fp, 1):.3f}\")\n# 输出：阈值 0.5:            预测延迟  预测准时\n# 输出：      实际延迟          1       86      召回 = 1/87 = 0.011\n# 输出：      实际准时          1      374      精确率 = 1/2 = 0.500\n# 输出：阈值 0.3:            预测延迟  预测准时\n# 输出：      实际延迟         19       68      召回 = 19/87 = 0.218\n# 输出：      实际准时         14      361      精确率 = 19/33 = 0.576\n```\n\n读输出：阈值 0.5 时只有 2 个订单被预测为延迟（TP 1，FP 1），漏掉 86 个，**召回 1/87 = 0.011**；阈值降到 0.3，预测为延迟的订单增加到 33 个（TP 19，FP 14），漏掉 68 个，**召回升到 19/87 = 0.218**，精确率 19/33 = 0.576。注意这里精确率没有下降，是因为阈值 0.5 时只有 2 个预测，数字不稳；一般来说降低阈值总是以精确率下降为代价。（行是实际、列是预测；「实际延迟」一行的两个数相加是实际延迟的总数 87。）此后我们用 0.3 作为运行阈值。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "Kdsp6soqA7o",
+   "title": "视频二：Machine Learning Fundamentals: The Confusion Matrix（StatQuest）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "text",
+   "md": "**误差分析的第一课：别只看总体指标，按子群体拆开看。** 把验证集按承运商、按距离是否缺失分成几个子群体，每组分别算指标：\n\n```python\ncv, mv = carrier[va], np.isnan(dist[va])\nprint(\"子群体        样本数  实际延迟率  平均预测  召回@0.3   AUC    对数损失\")\nfor name, m in [(\"全部\", np.ones(len(yva), bool)), (\"承运商 A\", cv == \"A\"), (\"承运商 B\", cv == \"B\"), (\"承运商 C\", cv == \"C\"),\n                (\"承运商 D\", cv == \"D\"), (\"距离缺失\", mv), (\"距离未缺失\", ~mv)]:\n    print(f\"{name:8s} {m.sum():8d}    {yva[m].mean():.3f}     {pva[m].mean():.3f}     {scores(yva[m], pva[m], 0.3)['rec']:.3f}   \"\n          f\"{auc(yva[m], pva[m]):.3f}    {nll(yva[m], pva[m]):.3f}\")\n# 输出：子群体        样本数  实际延迟率  平均预测  召回@0.3   AUC    对数损失\n# 输出：全部            462    0.188     0.148     0.218   0.748    0.433\n# 输出：承运商 A         156    0.186     0.143     0.310   0.860    0.383\n# 输出：承运商 B         150    0.193     0.150     0.241   0.720    0.452\n# 输出：承运商 C          89    0.202     0.118     0.111   0.794    0.454\n# 输出：承运商 D          67    0.164     0.191     0.091   0.476    0.479\n# 输出：距离缺失           22    0.318     0.220     0.143   0.695    0.615\n# 输出：距离未缺失         440    0.182     0.144     0.225   0.748    0.424\n```\n\n读输出：这是一张值得认真读的表。总体 AUC 是 0.748，看上去还行，但**承运商 D（67 个样本）的 AUC 是 0.476，低于 0.5**，也就是说在 D 里，模型的排序和随机差不多，甚至略微反着来；召回率 0.091，是四家承运商里最低的；而承运商 A 的 AUC 是 0.860，B 是 0.720，C 是 0.794。再看最后两行：距离缺失（只有 22 个样本）的对数损失是 0.615，是所有行里最高的，但样本太少，要谨慎解读。**子群体指标会暴露总体指标藏起来的问题**；与此同时，样本越少，指标的随机波动越大，不要对 20 个样本的结论太当真。\n\n**第二课：看具体的错误样本，而不是只看数字。** 最有用的排序方式是**按每个样本自己的损失从大到小排**，看损失最大的那些：\n\n```python\nloss_i = -(yva * np.log(pva) + (1 - yva) * np.log(1 - pva))   # 每个样本自己的损失\nworst = np.argsort(-loss_i)[:30]                          # 损失最大的 30 个样本\nprint(\"损失最大的 6 个：\")\nprint(\"承运商  距离km  重量kg  实际  预测概率  损失\")\nfor i in worst[:6]:\n    print(f\"  {cv[i]}    {dist[va][i]:7.1f}  {weight[va][i]:6.1f}    {int(yva[i])}    {pva[i]:.3f}   {loss_i[i]:.2f}\")\nprint(\"这 30 个里承运商 D 占\", int((cv[worst] == \"D\").sum()), \"个 =\", round(float((cv[worst] == \"D\").mean()), 3), \"  验证集里 D 的占比:\", round(float((cv == \"D\").mean()), 3))\nprint(\"这 30 个里距离缺失占\", int(mv[worst].sum()), \"个 =\", round(float(mv[worst].mean()), 3), \"  验证集里缺失的占比:\", round(float(mv.mean()), 3))\ndv = dist[va]\nfor name, m in [(\"非 D\", cv != \"D\"), (\"D\", cv == \"D\")]:    # 钻进子群体：延迟和准时的订单，距离有什么不同\n    print(f\"{name:3s} 延迟订单的距离中位数 {np.nanmedian(dv[m & (yva == 1)]):5.0f} km   准时订单的距离中位数 {np.nanmedian(dv[m & (yva == 0)]):5.0f} km\")\n# 输出：损失最大的 6 个：\n# 输出：承运商  距离km  重量kg  实际  预测概率  损失\n# 输出：  A      114.4     1.3    1    0.045   3.09\n# 输出：  B      115.3     3.4    1    0.061   2.79\n# 输出：  C      137.9    11.8    1    0.064   2.75\n# 输出：  D       56.6    18.3    1    0.074   2.61\n# 输出：  B      121.4     7.6    1    0.074   2.60\n# 输出：  D      132.7     4.0    1    0.086   2.45\n# 输出：这 30 个里承运商 D 占 5 个 = 0.167   验证集里 D 的占比: 0.145\n# 输出：这 30 个里距离缺失占 0 个 = 0.0   验证集里缺失的占比: 0.048\n# 输出：非 D 延迟订单的距离中位数   475 km   准时订单的距离中位数   209 km\n# 输出：D   延迟订单的距离中位数   127 km   准时订单的距离中位数   285 km\n```\n\n读输出：损失最大的 6 个几乎全是「实际延迟、模型给了很低的概率」的订单，其中承运商 D 有两个（距离 56.6 km 与 132.7 km 的订单），其余是 A、B、C 的中等距离订单。这 30 个里 D 占 5 个，占 0.167，而验证集里 D 的占比是 0.145，**看不出明显的集中**；距离缺失占 0 个。这提醒我们：**只盯最差的几个样本，经常只是看到噪声**（一次「倒霉的延迟」没有任何规律）。真正的发现在最后两行：钻进承运商 D 这个子群体，对比延迟和准时的订单的距离中位数。非 D 的承运商，延迟订单的距离中位数是 475 km、准时订单是 209 km：越远越容易延迟，符合直觉；**D 却完全反过来：延迟订单的距离中位数是 127 km，准时订单是 285 km**，近距离反而更容易延迟。一个全局的线性模型只有一个「距离系数」，必须是正的，对 D 一定错。这就是 D 的 AUC 低于 0.5 的原因。\n\n**第三课：发现问题之后，做有针对性的改进，并验证它真的有用。** 加一个特征：承运商 D 与对数距离的**交互项** $x_{\\text{D}}\\cdot x_{\\log d}$，让 D 有自己的距离系数：\n\n```python\ndef add_inter(X):                                         # 针对错误加特征：承运商 D × 对数距离 的交互项\n    return np.c_[X, X[:, 0] * X[:, 6]]\n\nw2, b2 = fit_logreg(add_inter(Xtr), ytr)\np2 = sigmoid(add_inter(Xva) @ w2 + b2)\nD = cv == \"D\"\nprint(\"                逻辑回归   加交互项\")\nprint(\"全部 AUC        \", round(auc(yva, pva), 3), \"     \", round(auc(yva, p2), 3))\nprint(\"全部 对数损失   \", round(nll(yva, pva), 3), \"     \", round(nll(yva, p2), 3))\nprint(\"D 的 AUC        \", round(auc(yva[D], pva[D]), 3), \"     \", round(auc(yva[D], p2[D]), 3))\nprint(\"D 的 对数损失   \", round(nll(yva[D], pva[D]), 3), \"     \", round(nll(yva[D], p2[D]), 3))\nprint(\"非 D 的 对数损失\", round(nll(yva[~D], pva[~D]), 3), \"     \", round(nll(yva[~D], p2[~D]), 3))\n# 输出：                逻辑回归   加交互项\n# 输出：全部 AUC         0.748       0.789\n# 输出：全部 对数损失    0.433       0.407\n# 输出：D 的 AUC         0.476       0.817\n# 输出：D 的 对数损失    0.479       0.376\n# 输出：非 D 的 对数损失 0.425       0.413\n```\n\n读输出：总体 AUC 从 0.748 升到 0.789，总体对数损失从 0.433 降到 0.407；**承运商 D 的 AUC 从 0.476 升到 0.817，D 的对数损失从 0.479 降到 0.376**；非 D 的对数损失几乎没动（0.425 对 0.413）。改进恰好发生在我们定位的子群体上，非 D 没有受伤，这就是一次成功的「误差分析 → 针对性修改 → 验证」。再回头看前面的基线对比：这个有针对性的逻辑回归（AUC 0.789）超过了更复杂的 MLP（AUC 0.774）。**加复杂度不如加对的信息。** 另一方面，MLP 比没加交互项的逻辑回归好 0.026，很可能是因为它自己学到了一部分 D 的特殊规律，但它没有告诉你「D 有问题」，逻辑回归 + 误差分析才让你知道问题在哪里、原因是什么。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "JoAxZsdw_3w",
+   "title": "视频三：Carrying Out Error Analysis（吴恩达，Structuring Machine Learning Projects，C3W2L01）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 11
+  },
+  {
+   "type": "text",
+   "md": "看视频时抓住它的核心方法：拿一批（视频建议大约一百个）被分错的验证样本，人工看一遍，**把错误按原因分类并统计每一类的占比**，这个占比就是「把这一类错误完全修好，最多能把错误率降低多少」的上限，用来决定下一步该投入哪里。这和我们上面用子群体表和钻取 D 的做法是同一个思路：先量化，再动手。"
+  },
+  {
+   "type": "think",
+   "q": "**（计算）** 1000 个订单里有 60 个真正延迟。模型在某个阈值下得到 TP = 40，FP = 60，FN = 20，TN = 880。算出准确率、精确率、召回率和 F1，并和「总是预测准时」的准确率比较。这对你选指标有什么启示？",
+   "a": "精确率 $=TP/(TP+FP)=40/100=0.40$；召回率 $=TP/(TP+FN)=40/60\\approx0.667$；F1 $=2\\times0.40\\times0.667/(0.40+0.667)=0.50$；准确率 $=(TP+TN)/N=(40+880)/1000=0.92$。\n\n「总是预测准时」：真实延迟 60 个，准时 940 个，准确率 $=940/1000=0.94$，**比我们这个看起来不错的模型还高**，但它的召回率是 0。启示：类别不平衡时，准确率会被多数类绑架；应该看精确率与召回率（取决于漏报与误报的代价）、F1、AUC 等，并且永远把「多数类基线」放在一起比较。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "混淆矩阵",
+     "confusion matrix",
+     "TP、FP、FN、TN 的计数表，随阈值变化"
+    ]
+   ]
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "一个订单是否延迟的数据里，只有约 19% 延迟。「总是预测不延迟」的模型准确率约 0.81。这说明什么？",
+    "options": [
+     "不平衡数据上准确率会被多数类绑架；应该同时看精确率、召回率、AUC，并且永远与这个多数类基线比较",
+     "准确率 0.81 说明这是个很好的模型",
+     "不平衡的数据没法建模",
+     "应该把准确率当作唯一的指标，因为它最直观"
+    ],
+    "answer": 0,
+    "explain": "这个「模型」一个延迟订单也没找出来（召回率 0），却有 0.81 的准确率。任何要报告的模型，都应该先和这样的简单基线比；准确率的提升要放在「多数类基线」上看，召回率与精确率才反映它真正找出了多少少数类。"
+   },
+   {
+    "q": "把二分类的判定阈值从 0.5 降到 0.3，一般会怎样？",
+    "options": [
+     "AUC 会因此改变",
+     "精确率与召回率都一定上升",
+     "召回率一定下降，精确率一定上升",
+     "被预测为正的样本只会增多：召回率不会下降，精确率通常下降"
+    ],
+    "answer": 3,
+    "explain": "降低阈值只会把更多样本划进「预测为正」，已经是 TP 的不会丢，所以召回率不降；同时 FP 往往增加，精确率通常下降（样本少时数字可能不稳）。AUC 衡量的是对所有阈值的排序能力，和选哪个阈值无关。阈值应根据漏报与误报的代价来定。"
+   },
+   {
+    "q": "一个模型在验证集上总体 AUC 是 0.75，但在其中一个承运商的子群体上 AUC 是 0.48。最合理的解读是？",
+    "options": [
+     "应该直接换一个更复杂的模型",
+     "总体指标掩盖了问题：在这个子群体上模型的排序和随机差不多（甚至方向相反），要进一步看这个子群体的样本找规律",
+     "总体 AUC 是 0.75，说明模型对每个子群体都有效",
+     "子群体样本少，所以这个结果可以直接忽略"
+    ],
+    "answer": 1,
+    "explain": "总体指标是各子群体的混合，一个占比小的子群体可以完全失效而总体看上去仍不错。当然也要留意子群体的样本量，样本很少时 AUC 波动大；但这里的正确动作是钻进去看，而不是忽略或盲目加复杂度。实验里的承运商 D 正是延迟与距离的关系和别的承运商相反，加一个交互特征后 D 的 AUC 从 0.476 升到 0.817。"
+   }
+  ]
+ }
+}

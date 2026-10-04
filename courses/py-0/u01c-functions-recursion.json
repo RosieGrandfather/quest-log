@@ -74,7 +74,7 @@
  "quiz": {
   "questions": [
    {
-    "q": "`funcs = [lambda: i for i in range(3)]` 之后，`[f() for f in funcs]` 的结果是？",
+    "q": "运行下面的代码，打印什么？\n\n```text\nfuncs = [lambda: i for i in range(3)]\nprint([f() for f in funcs])\n```",
     "options": [
      "报错",
      "`[0, 1, 2]`",
@@ -85,25 +85,36 @@
     "explain": "闭包捕获的是变量 `i`，调用时才取值，此时循环已结束，`i` 是 2。用 `lambda i=i: i` 可固定当时的值。"
    },
    {
-    "q": "写装饰器时，在 `wrapper` 上加 `@functools.wraps(func)` 的作用是？",
+    "q": "下面的装饰器写法，等价于下面哪一种写法？\n\n```text\n@deco\ndef f():\n    ...\n```",
     "options": [
-     "让函数运行更快",
-     "保留原函数的 `__name__`、`__doc__` 等信息",
-     "让装饰器可以带参数",
-     "防止递归"
+     "`f = deco`",
+     "`f = deco(f)`",
+     "`deco(f())`",
+     "`deco = f(deco)`"
     ],
     "answer": 1,
+    "explain": "装饰器接收原函数，返回新函数，并替换原来的名字。"
+   },
+   {
+    "q": "写装饰器时，在 `wrapper` 上加 `@functools.wraps(func)` 的作用是？",
+    "options": [
+     "让装饰器可以带参数",
+     "让函数运行更快",
+     "保留原函数的 `__name__`、`__doc__` 等信息",
+     "防止递归"
+    ],
+    "answer": 2,
     "explain": "不加时，被装饰函数的 `__name__` 会变成 `wrapper`，文档字符串丢失，调试和文档工具会被误导。"
    },
    {
     "q": "一个正确的递归函数**必须**有的两个要素是？",
     "options": [
+     "基础情形（会停）与递归情形（把问题缩小）",
      "循环与条件",
      "全局变量与返回值",
-     "基础情形（会停）与递归情形（把问题缩小）",
      "装饰器与缓存"
     ],
-    "answer": 2,
+    "answer": 0,
     "explain": "没有基础情形会无限递归；递归情形不使问题变小，同样不会收敛到基础情形。"
    }
   ]

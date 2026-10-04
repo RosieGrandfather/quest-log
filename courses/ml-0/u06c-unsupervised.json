@@ -1,0 +1,96 @@
+{
+ "id": "u06c",
+ "title": "无监督学习：聚类与降维（3/3）",
+ "en": "Unsupervised Learning: Clustering & Dimensionality Reduction (3/3)",
+ "minutes": 45,
+ "objectives": [
+  "知道 **t-SNE / UMAP** 只适合可视化、结论要小心；理解 **自监督学习 (self-supervised learning)** 为什么是无监督学习的延伸，以及**线性自编码器 = PCA** 如何通向表示学习"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一小节要干什么\n\n这是「无监督学习：聚类与降维」分成的第 3 个小节（共 3 个），接着上一个小节往下学。这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。\n\n**本小节安排（约 45 分钟）**：PCA：两种推导，一个答案（续）（约 25 分钟） → t-SNE 与 UMAP：只用来看图（约 5 分钟） → 自监督学习：无监督的延伸（约 5 分钟） → 总结（约 5 分钟） → 「想一想」与小测验\n\n**怎么学这一小节：** 每个知识点都是「一小段代码 → 紧跟着读它的输出」。每个代码块都可以点「▶ 运行」，也可以改一改再跑；同一小节里，前面的块定义的变量和函数，后面的块可以直接用，所以请**按顺序**往下跑。\n\n**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n```python\nimport numpy as np\n\nr = np.random.default_rng(0)\ncenters_true = np.array([[0, 0], [3, 0], [8, 0], [8, 3.5]])      # 4 个簇，前两个靠得近\nX = np.vstack([c + 0.8 * r.normal(size=(100, 2)) for c in centers_true])\nprint(X.shape)\n\ndef kmeans(X, init, n_iter=100):\n    centers, history = init.copy(), []\n    for _ in range(n_iter):\n        d = ((X[:, None, :] - centers[None, :, :]) ** 2).sum(-1)    # 每个点到每个中心的距离平方\n        labels = d.argmin(1)                                        # 分配步：归到最近的中心\n        history.append(d[np.arange(len(X)), labels].sum())          # 目标函数 J（簇内平方和）\n        new = np.array([X[labels == j].mean(0) if np.any(labels == j) else centers[j]\n                        for j in range(len(centers))])              # 更新步：中心移到簇的均值\n        if np.allclose(new, centers):\n            break\n        centers = new\n    return centers, labels, history\n\ninit = X[r.choice(len(X), 4, replace=False)]\ncenters, labels, hist = kmeans(X, init)\nprint(\"迭代轮数:\", len(hist), \" J 的变化:\", [round(float(h), 1) for h in hist])\nprint(\"J 单调不增:\", all(a >= b - 1e-9 for a, b in zip(hist, hist[1:])))\nprint(\"最终中心:\\n\", np.round(centers[np.argsort(centers[:, 0])], 2))\n```\n\n```python\nr = np.random.default_rng(0)\nn = 500\nZ = r.normal(size=(n, 2)) * np.array([3.0, 1.0])           # 2 个隐变量，尺度 3 和 1\nW = r.normal(size=(2, 5))                                  # 线性地混合进 5 个观测特征\nX5 = Z @ W + 0.3 * r.normal(size=(n, 5))                   # 再加一点噪声\nXc = X5 - X5.mean(0)                                       # 第一步：中心化\n\nS = Xc.T @ Xc / (n - 1)                                    # 协方差矩阵 (5 x 5)\nevals, evecs = np.linalg.eigh(S)                           # eigh 给的是升序，翻成降序\nevals, evecs = evals[::-1], evecs[:, ::-1]\nprint(\"特征值（各主成分方向上的方差）:\", np.round(evals, 3))\nprint(\"解释方差比:\", np.round(evals / evals.sum(), 3))\nprint(\"累计解释方差比:\", np.round(np.cumsum(evals) / evals.sum(), 3))\n```\n\n**保留几个主成分？** 看累计解释方差比。造一份 30 维的数据，其实由 5 个强度递减的隐变量生成，再加噪声：\n\n```python\nr = np.random.default_rng(2)\nZ = r.normal(size=(400, 5)) * np.array([5, 3, 2, 1, 0.5])  # 5 个隐变量，强度递减\nXh = Z @ r.normal(size=(5, 30)) + 0.5 * r.normal(size=(400, 30))   # 观测是 30 维\nXh = Xh - Xh.mean(0)\nsv = np.linalg.svd(Xh, compute_uv=False)\nratio = sv ** 2 / (sv ** 2).sum()\ncum = np.cumsum(ratio)\nprint(\"前 8 个主成分的解释方差比:\", np.round(ratio[:8], 3))\nprint(\"累计:\", np.round(cum[:8], 3))\nfor target in (0.80, 0.95, 0.99):\n    print(f\"累计解释方差达到 {target:.0%} 需要 {int(np.searchsorted(cum, target)) + 1} 个主成分\")\n# 输出：前 8 个主成分的解释方差比: [0.651 0.222 0.096 0.022 0.004 0.    0.    0.   ]\n# 输出：累计: [0.651 0.873 0.97  0.992 0.996 0.996 0.996 0.996]\n# 输出：累计解释方差达到 80% 需要 2 个主成分\n# 输出：累计解释方差达到 95% 需要 3 个主成分\n# 输出：累计解释方差达到 99% 需要 4 个主成分\n```\n\n读输出：前 8 个主成分的解释方差比是 0.651、0.222、0.096、0.022、0.004，之后几乎为 0（0.000，只是四舍五入显示）；累计 0.651、0.873、0.97、0.992、0.996，之后不再增加。累计解释方差达到 80% 需要 2 个主成分，达到 95% 需要 3 个，达到 99% 需要 4 个。曲线在前几个主成分之后明显拐平（和肘部法一个道理），这就是「有效维数」。`sklearn` 的 `PCA(n_components=0.95)` 就是按这个规则自动选 $k$。三点注意：（1）PCA 对**特征的尺度敏感**，量纲不同的特征要先标准化（否则方差大的特征会主导主成分）；（2）PCA 只能找**线性**子空间，数据在弯曲的流形上时，它会高估需要的维数；（3）方差大不等于对任务有用：「方差最大的方向」可能全是噪声，PCA 是无监督的，不知道你要预测什么。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "FgakZw6K1QQ",
+   "title": "视频二：StatQuest: Principal Component Analysis (PCA), Step-by-Step（StatQuest with Josh Starmer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 22
+  },
+  {
+   "type": "text",
+   "md": "### t-SNE 与 UMAP：只用来看图\n\nPCA 是线性的。想把高维数据画成一张二维图来**肉眼看看**有没有簇，常用的是非线性方法 **t-SNE** 和 **UMAP**。这里只讲思想，不实现。\n\n> **标准定义 · t-SNE 与 UMAP**\n>\n> **t-SNE**（t-distributed stochastic neighbor embedding）在高维里用高斯核把「点 $j$ 是点 $i$ 的邻居」表示成概率 $p_{ij}$（宽度由超参数 **困惑度 perplexity** 控制，大致是「每个点有效邻居的个数」），在二维里用重尾的 t 分布定义 $q_{ij}$，然后用梯度下降最小化两者的 **KL 散度** $\\mathrm{KL}(P\\Vert Q)$，把 $p_{ij}$ 大的点在二维里拉近。**UMAP** 的出发点是流形与模糊拓扑，实践上同样是「保持高维的邻居图，在低维里重新排布」，速度更快，全局结构通常保留得稍好一些。\n>\n> *English: t-SNE and UMAP embed high-dimensional data in 2-D by preserving neighbor relationships; they are visualization tools, not general-purpose dimensionality reduction.*\n\n**白话版：「保证老邻居还是邻居，别的不负责」。** 它们把**局部**邻居关系尽量保住，换来的代价是**全局**信息不可靠，所以用它们看图要小心：\n\n- **簇之间的距离、簇的大小和密度都没有意义**：两簇在图上离得远，不代表它们在原空间里差别大；一个簇画得很大，不代表它更分散；\n- **不同的超参数（困惑度、随机种子）会画出不同的图**：「看到了 7 个簇」可能只是某个设置下的结果，要多试几组；\n- 标准 t-SNE **没有**把新点投影进已有图里的方法（没有 `transform`），不适合当作下游模型的特征；\n- 常见流程：先用 PCA 降到几十维去掉噪声，再用 t-SNE / UMAP 画图，把图当作**探索工具**，结论要用别的方法验证。\n\n用它们来画模型的嵌入向量（词向量、图像特征）是看**表示学习成果**的常用手段，下面一节就接上这个话题。想看更多，可以看参考资料里的 StatQuest 视频。\n\n### 自监督学习：无监督的延伸\n\n聚类和降维都只用 $x$，是**无监督**的。可是它们学出来的东西（簇、主成分）太简单，没法表示一张图里「有一只猫」这样的语义。现代深度学习想到了一个办法：**从数据自己身上造出监督信号**，让一个很大的神经网络去解这个「自己给自己出的题」（**前置任务, pretext task**），学的过程中就逼出了好的**表示**。\n\n> **标准定义 · 自监督学习 (self-supervised learning)**\n>\n> **自监督学习**使用**没有人工标注**的数据，但把数据自身的一部分当作另一部分的**标签**来训练模型。典型的前置任务有：**预测被遮住的部分**（BERT 的掩码语言模型：遮住几个词，预测它们；MAE：遮住图像块，重建它们）；**预测下一个元素**（GPT 的下一个词预测）；**去噪**（给输入加噪声，要求还原）；**对比学习**（同一张图的两个增强视图的表示要靠近，不同图的表示要远离）。它仍然用监督学习的工具（交叉熵、均方误差、梯度下降），只是标签来自数据本身。学好的表示再用少量标注数据**微调**，或者只训练一个**线性分类器**（线性探测）来评估。\n>\n> *English: Self-supervised learning creates supervision from the data itself, for example predicting masked parts, the next token, the original from a noisy version, or matching augmented views, and learns representations that transfer to downstream tasks with few labels.*\n\n**白话版：「自己给自己出题，自己批改」。** 把一句话盖住几个词让你填空，答案就在原句里，不需要老师。你为了填对，就得真的理解语法和语义。它之所以是「无监督的延伸」，是因为它和 PCA 回答同一类问题：**怎样从没有标签的数据里学出有用的表示？** 只是 PCA 用的是线性的、一个 $k$ 维瓶颈，自监督用的是深度的非线性网络加上更聪明的前置任务。\n\n**PCA 其实就是一个线性自编码器。** 看一个最小的桥梁：一个**自编码器**把输入 $x$ 先**编码**成低维的 $h=xW_e$（瓶颈），再**解码**回 $\\hat x=hW_d$，用重构误差 $\\|x-\\hat x\\|^2$ 训练，不需要任何标签（这是最简单的自监督：目标就是输入自己）。如果编码器和解码器都是线性的，那么它**最优解张成的子空间恰好就是前 $k$ 个主成分张成的子空间**（但基底不一定正好是主成分，可以差一个可逆变换）。下面用梯度下降真的训练一个：\n\n```python\n# 线性自编码器：5 维 -> 2 维 -> 5 维，用梯度下降最小化重构误差（没有任何非线性）\nrng = np.random.default_rng(0)\nWe = 0.1 * rng.normal(size=(5, 2)); Wd = 0.1 * rng.normal(size=(2, 5))\nlr = 0.01\nfor step in range(5000):\n    H = Xc @ We                                            # 编码\n    R = H @ Wd - Xc                                        # 解码后的重构残差\n    gWd = H.T @ R * (2 / n); gWe = Xc.T @ (R @ Wd.T) * (2 / n)\n    Wd -= lr * gWd; We -= lr * gWe\n\nmse = np.mean(((Xc @ We @ Wd - Xc) ** 2).sum(1))\npca_mse = evals[2:].sum() * (n - 1) / n                    # PCA 在 k=2 时的最小可能值\nprint(f\"线性自编码器的重构误差 {mse:.4f}  PCA 的最小值 {pca_mse:.4f}\")\nQ_ae, _ = np.linalg.qr(Wd.T)                               # 解码器张成的 2 维子空间\nP_ae, P_pca = Q_ae @ Q_ae.T, evecs[:, :2] @ evecs[:, :2].T\nprint(\"两个子空间的投影矩阵之差（Frobenius 范数）:\", round(float(np.linalg.norm(P_ae - P_pca)), 4))\n# 输出：线性自编码器的重构误差 0.2724  PCA 的最小值 0.2724\n# 输出：两个子空间的投影矩阵之差（Frobenius 范数）: 0.0\n```\n\n读输出：把 5 维数据（前面 PCA 用的那一份）通过 2 维瓶颈再还原，没有用任何标签，只用梯度下降最小化重构误差。训练到收敛后，线性自编码器的重构误差是 0.2724，与 PCA 的理论最小值（被丢掉的三个特征值之和乘以 $(n-1)/n$）0.2724 一致。再比较两个方法找到的 2 维子空间：用投影矩阵之差的范数衡量，结果是 0.0，**两个子空间完全重合**。换句话说，线性自编码器自己「发现」了 PCA。把编码器、解码器换成深度非线性网络，就得到可以学出**弯曲流形**的深度自编码器；再把重构换成「预测被遮住的部分」或「对比」，就是自监督预训练；在瓶颈里加上概率结构，就是前面说的 VAE。**PCA、GMM、自编码器、VAE、自监督预训练，是同一个主题（用数据自己学表示）上的一串台阶。** 后面讲世界模型时，「在潜在空间里预测下一步」也是同一类思想。\n\n### 这一节你要带走的三句话\n\n1. **k-means** 交替做「就近分配」与「移到均值」，$J$ 单调不增但只收敛到**局部最小**，所以要用 k-means++ 加多次初始化；选 $k$ 用肘部法和轮廓系数，它们只是参考，可能不一致。\n2. **GMM + EM** 把聚类变成带**潜变量**的最大似然：E 步算责任（后验），M 步做加权最大似然，对数似然单调不减；k-means 是它的硬分配极限，VAE 是用神经网络做的、可用梯度下降训练的 EM。\n3. **PCA** 是对中心化数据做 **SVD**：最大方差与最小重构误差是同一个答案，$\\lambda_j=s_j^2/(n-1)$，用累计解释方差比选维数；t-SNE / UMAP 只适合可视化；**自监督**让数据自己出题，线性自编码器就是 PCA，深度版本是表示学习的起点。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系深度学习）** BERT 的「掩码语言模型」、MAE 的「遮住图像块再重建」、SimCLR 的「对比学习」都被称作自监督。请回答：（a）它们的「标签」从哪里来？（b）它们与线性自编码器 / PCA 的共同点和关键区别是什么？（c）为什么预训练之后常常只需要少量标注数据就能得到很好的下游效果？",
+   "a": "（a）标签来自**数据本身**：BERT 的标签是被遮住的那几个词；MAE 的标签是被遮住的图像块的像素；对比学习里，同一张图的两个增强视图互为「正样本」，其他图是「负样本」，这些配对关系是由数据增强程序自动构造的，不需要人标注。\n\n（b）共同点：都**不需要人工标签**，都靠**从输入自己预测输入的一部分**（或一个变换）来迫使网络学到紧凑的表示；PCA / 自编码器的重构目标就是它们的最简单形式。关键区别：PCA 是**线性**的、只能抓到一个线性子空间；自监督用**深度非线性**网络和**精心设计的前置任务**（遮住的部分需要语义、因果、上下文才能预测），学到的是高层语义特征，而不是仅仅保留方差最大的方向。\n\n（c）因为预训练在大量无标签数据上已经学出了通用的**表示**：下游任务只需要在这个表示上学一个简单的映射（线性分类器或少量微调），需要估计的参数少、对标注数据的需求就低，这与前面「更少的有效参数 = 更低的方差」是同一个道理。"
+  }
+ ],
+ "references": [
+  {
+   "title": "An Introduction to Statistical Learning（ISL，James 等）第 12 章 Unsupervised Learning（PCA、k-means、层次聚类）",
+   "url": "https://www.statlearning.com/",
+   "note": "本节大纲依据的开放教材（作者免费公开），PCA 与聚类的标准讲法，只引用不转载"
+  },
+  {
+   "title": "Stanford CS229 讲义：Mixtures of Gaussians and the EM algorithm、Principal components analysis、k-means",
+   "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf",
+   "note": "大学课程讲义；EM 对数似然下界的完整推导和 PCA 的推导，想深入 EM 和 VAE 的联系时读它"
+  },
+  {
+   "title": "Arthur & Vassilvitskii：k-means++: The Advantages of Careful Seeding（SODA 2007）",
+   "url": "https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf",
+   "note": "k-means++ 与 $O(\\log k)$ 近似保证的原始论文"
+  },
+  {
+   "title": "scikit-learn 用户指南：2.3 Clustering 与 2.5 Decomposing signals in components (PCA)",
+   "url": "https://scikit-learn.org/stable/modules/clustering.html",
+   "note": "对照本节的手写代码看库的接口；PCA 一节在同站的 modules/decomposition.html"
+  },
+  {
+   "title": "StatQuest：K-means clustering（约 9 分钟）与 t-SNE, Clearly Explained（约 12 分钟），选看",
+   "url": "https://www.youtube.com/watch?v=4b5d3muPQmA",
+   "note": "k-means 的图形讲解；t-SNE 的视频在 youtube.com/watch?v=NEaUSP4YerM"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "为什么不能选使 k-means 的 $J$ 最小的 $k$？",
+    "options": [
+     "因为 $J$ 随 $k$ 增大单调上升",
+     "因为 $J$ 只能取整数",
+     "因为 $J$ 与 $k$ 无关",
+     "因为 $J$ 随 $k$ 增大单调下降（$k=n$ 时 $J=0$），要看下降变缓的拐点或用轮廓系数等指标"
+    ],
+    "answer": 3,
+    "explain": "簇越多，每个点离自己的中心越近，$J$ 只会下降，$k=n$ 时降到 0，所以直接最小化 $J$ 会选出最大的 $k$（过拟合）。肘部法找下降明显变缓的位置，轮廓系数同时看簇内紧密度和簇间分离度，且结合业务含义判断。"
+   },
+   {
+    "q": "k-means 与高斯混合模型（GMM）的关系是？",
+    "options": [
+     "两者毫无关系：GMM 是监督的，k-means 是无监督的",
+     "k-means 可看作 GMM + EM 的硬分配极限：各成分共享球形方差并让方差趋于 0，责任退化成 0 或 1",
+     "GMM 是 k-means 的特例，只有一个成分",
+     "k-means 能给出每个点属于各簇的概率，GMM 不能"
+    ],
+    "answer": 1,
+    "explain": "GMM 的 E 步给出软的责任 $\\gamma_{ik}$，M 步用它做加权最大似然；当方差趋于 0，责任只给最近的成分，E 步变成「就近分配」，M 步变成「取簇均值」，就是 Lloyd 算法。两者都是无监督的；能给出概率（软分配）的是 GMM，不是 k-means。"
+   },
+   {
+    "q": "关于 t-SNE / UMAP 的二维图，下面哪种解读是合理的？",
+    "options": [
+     "这种降维可以直接作为特征喂给下游模型，新数据只要再跑一次 t-SNE 即可",
+     "两个簇在图上相距越远，在原空间里的差异就越大，可以量化比较",
+     "把图当作探索工具：可以看有没有局部簇，但簇间距离、簇大小不能当真，且结论要换超参数和用原空间指标验证",
+     "簇画得越大，簇内的点在原空间里就越分散"
+    ],
+    "answer": 2,
+    "explain": "t-SNE / UMAP 保持的是局部邻居关系，全局的距离、簇的大小与密度会被改变，不同的困惑度、种子会得到不同的图；标准 t-SNE 也没有对新点的映射。所以只把它当作可视化和提出假设的工具，再用原空间的指标（距离、聚类、轮廓系数）验证。"
+   }
+  ]
+ }
+}

@@ -203,7 +203,7 @@
     "explain": "`d` 求和（点积），`b` 保留（每个批次分开算），`q` 和 `k` 两两组合。输出里漏掉 `b` 会把 batch 也加起来；把 key 的维度名写成和 query 一样（`b q d, b q d`）则变成了 query 自己和自己对位相乘，不是两两配对。"
    },
    {
-    "q": "`prices = t.tensor([2., 5., 1.5])`，`items = t.tensor([1, 1, 0])`，`prices[items].sum()` 是多少？",
+    "q": "运行下面的代码，打印的结果是多少？\n\n```text\nimport torch as t\nprices = t.tensor([2., 5., 1.5])\nitems = t.tensor([1, 1, 0])\nprint(prices[items].sum())\n```",
     "options": [
      "8.5",
      "7.0",
