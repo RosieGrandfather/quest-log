@@ -1,0 +1,286 @@
+{
+ "id": "u01",
+ "title": "函数、作用域与递归",
+ "en": "Functions, Scope & Recursion",
+ "minutes": 100,
+ "objectives": [
+  "会用 Python 函数的全部参数形式：**默认参数 (default)**、**关键字参数 (keyword)**、`*args` / `**kwargs`、**仅关键字 (keyword-only)** 参数，以及调用时的 `*` / `**` 拆包",
+  "说清 Python 的**传参机制 (pass by object reference)**，避开 **可变默认参数** 与 `[[0]*3]*3` 这两个经典陷阱",
+  "理解 **作用域 (scope)** 的 **LEGB** 查找规则、`global` / `nonlocal`，以及 **闭包 (closure)** 与其「晚绑定」陷阱",
+  "理解函数是 **一等公民 (first-class object)**，会写 **lambda**、`sorted(key=)`，会写简单与带参数的 **装饰器 (decorator)**",
+  "会写 **递归 (recursion)**：基础情形、递归情形、调用栈、`RecursionError`，以及用 `lru_cache` 做记忆化"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n函数是 Python 里最基本的复用单位，后面所有内容（类、迭代器、测试、模块）都建立在它上面。这一节的重点不是「会定义函数」（你已经会），而是把那些**读别人的 ML 代码时一定会遇到、而你可能没有系统学过的细节**补齐：`*args` / `**kwargs`、闭包、装饰器，以及 Python 的参数传递到底是怎么回事。\n\n**学完它你就能看懂这几件事：**\n\n- PyTorch / Hugging Face 代码里随处可见的 `def forward(self, x, *args, **kwargs)`、`@torch.no_grad()`、`@torch.compile`、`@lru_cache`、`@dataclass`：这些都是**装饰器**；\n- `model(x, mask=m)` 为什么能写得这么灵活：**关键字参数与默认参数**；\n- 「我传进去的列表怎么被改了」「为什么这个函数每次调用结果越来越多」：**可变对象与默认参数**；\n- 数据结构与算法课里的树、图、分治、动态规划：**递归**。\n\n**本节安排（约 100 分钟）**：参数与传参（20 分钟）→ 作用域与闭包（15 分钟，含视频一）→ 一等函数与装饰器（20 分钟，含视频二）→ 递归（20 分钟，含视频三）→ 总结与「想一想」（15 分钟）。\n\n### 参数的所有形式\n\n> **标准定义 · 参数 (parameter) 与实参 (argument)**\n>\n> **形参 (parameter)** 是函数**定义**中写的名字；**实参 (argument)** 是**调用**时传入的值。Python 的形参有五类：**位置或关键字参数**（最常见）、**默认参数** `name=value`、可变位置参数 `*args`（收集多余的位置实参为 **元组 tuple**）、可变关键字参数 `**kwargs`（收集多余的关键字实参为 **字典 dict**），以及 **仅位置 (positional-only)**（写在 `/` 之前）与 **仅关键字 (keyword-only)**（写在 `*` 之后）参数。\n>\n> *English: A parameter is a name in a function definition; an argument is the value passed in a call. Python supports positional-or-keyword, default, *args, **kwargs, positional-only (before /) and keyword-only (after *) parameters.*\n\n**白话版：「点菜」。** 位置参数像「按菜单顺序点：第一道、第二道」；关键字参数像「指名道姓：汤要不辣的」；默认参数是「不说就按默认」；`*args` 是「还有什么其他的，都装一个袋子里」；`**kwargs` 是「还有什么其他的『指名要求』，都装一个本子里」。\n\n```python\ndef describe(name, age, /, city=\"Singapore\", *, verbose=False):\n    # name、age 只能按位置传（/ 之前）；city 可位置可关键字；verbose 只能用关键字传（* 之后）\n    s = f\"{name}, {age}, {city}\"\n    return s + \" (verbose)\" if verbose else s\n\nprint(describe(\"Yijia\", 28))\nprint(describe(\"Yijia\", 28, \"Osaka\"))\nprint(describe(\"Yijia\", 28, city=\"Tokyo\", verbose=True))\n\ndef total(*nums, **options):\n    # *nums 收集多余的位置参数成元组；**options 收集多余的关键字参数成字典\n    s = sum(nums)\n    return s * options.get(\"scale\", 1), nums, options\n\nprint(total(1, 2, 3))\nprint(total(1, 2, 3, scale=10, debug=True))\n\n# 反过来：调用时用 * 和 ** 把容器「拆开」传入\nargs = (1, 2, 3)\nkw = {\"scale\": 2}\nprint(total(*args, **kw))\n\n# 函数可以返回多个值：其实返回的是一个元组，再被「解包」\ndef min_max(xs):\n    return min(xs), max(xs)\nlo, hi = min_max([3, 9, 1, 7])\nprint(lo, hi, type(min_max([1, 2])))\n\n# 错误的调用方式会得到什么\nfor bad in (\"describe('A', 1, 'X', True)\", \"describe(name='A', age=1)\"):\n    try:\n        eval(bad)\n    except TypeError as e:\n        print(\"TypeError:\", e)\n# 输出：Yijia, 28, Singapore\n# 输出：Yijia, 28, Osaka\n# 输出：Yijia, 28, Tokyo (verbose)\n# 输出：(6, (1, 2, 3), {})\n# 输出：(60, (1, 2, 3), {'scale': 10, 'debug': True})\n# 输出：(12, (1, 2, 3), {'scale': 2})\n# 输出：1 9 <class 'tuple'>\n# 输出：TypeError: describe() takes from 2 to 3 positional arguments but 4 were given\n# 输出：TypeError: describe() got some positional-only arguments passed as keyword arguments: 'name, age'\n```\n\n三点解读：**一**，`/` 与 `*` 是 Python 3.8+ 的写法，库的作者用它们来**约束调用方式**：仅关键字参数让调用处的意思更清楚（`verbose=True` 比一个孤零零的 `True` 好读得多）。**二**，`*` 与 `**` 在**调用**时是「拆包」，在**定义**时是「打包」，是互逆的两件事。**三**，「返回多个值」其实是返回一个**元组**，再由调用方「解包」。最后两行展示了调用方式错误时 Python 给出的 `TypeError`（具体措辞随版本稍有不同）。\n\n### Python 怎么传参：传的是「对象的引用」\n\n> **标准定义 · 传对象引用 (pass by object reference / pass by assignment)**\n>\n> Python 里变量是**名字 (name)**，它**指向 (refer to)** 内存里的一个**对象 (object)**，而不是存放数据的盒子。调用函数时，形参与实参**指向同一个对象**（等价于做了一次赋值）。**可变对象 (mutable)**（列表、字典、集合）能被原地修改，修改对所有指向它的名字可见；**不可变对象 (immutable)**（整数、字符串、元组）不能被修改，「改」只是让名字指向一个新对象。**重新赋值（`name = ...`）只改变这个名字的指向**，不影响别的名字。\n>\n> *English: Python names refer to objects. Passing an argument binds the parameter to the same object. Mutating a mutable object is visible through every name; rebinding a name only changes that name.*\n\n**白话版：「名字是便利贴，对象是东西」。** 两个人（实参和形参）各拿一张便利贴，贴在同一件东西上。你把东西本身改了（`append`），另一个人看到的也变了；你把自己的便利贴撕下来贴到另一件东西上（`lst = [0]`），对方的便利贴还贴在原处。\n\n```python\n# Python 传参：传的是「对象的引用」。可变对象在函数里被修改，外面能看到；重新赋值则不影响外面\ndef modify(lst, num):\n    lst.append(99)          # 原地修改：外面的列表也变了\n    lst = [0]               # 让局部名字 lst 指向一个新列表：外面不受影响\n    num += 1                # 整数不可变：这是让局部 num 指向新整数\n    return lst, num\n\na, n = [1, 2], 10\nprint(modify(a, n), a, n)\n\n# 可变默认参数陷阱：默认值只在「定义函数时」创建一次\ndef bad(x, bucket=[]):\n    bucket.append(x)\n    return bucket\nprint(bad(1), bad(2), bad(3))\nprint(\"默认值本身：\", bad.__defaults__)\n\ndef good(x, bucket=None):\n    if bucket is None:\n        bucket = []\n    bucket.append(x)\n    return bucket\nprint(good(1), good(2))\n\n# 同样的原因：[[0]*3]*3 得到的是 3 个「同一个」列表\ngrid_bad = [[0] * 3] * 3\ngrid_bad[0][0] = 1\ngrid_ok = [[0] * 3 for _ in range(3)]\ngrid_ok[0][0] = 1\nprint(grid_bad, grid_ok)\nprint(\"is 比较身份：\", grid_bad[0] is grid_bad[1], grid_ok[0] is grid_ok[1])\n# 输出：([0], 11) [1, 2, 99] 10\n# 输出：[1, 2, 3] [1, 2, 3] [1, 2, 3]\n# 输出：默认值本身： ([1, 2, 3],)\n# 输出：[1] [2]\n# 输出：[[1, 0, 0], [1, 0, 0], [1, 0, 0]] [[1, 0, 0], [0, 0, 0], [0, 0, 0]]\n# 输出：is 比较身份： True False\n```\n\n第一行输出：列表在函数里被 `append(99)` 修改，外面的 `a` 也变成了 `[1, 2, 99]`；但 `lst = [0]` 只是让局部名字指向了新列表，不影响外面；整数 `n` 没变，因为整数不可变。\n\n**陷阱一：可变默认参数。** **默认值是在 `def` 语句执行的那一刻只创建一次的**，不是每次调用时创建。所以 `bucket=[]` 让所有调用共享**同一个列表**：三次调用返回同一个对象，打印时三个都是 `[1, 2, 3]`，`__defaults__` 里能看到那个被不断修改的列表。**正确写法：用 `None` 做默认值，在函数里创建新的。**\n\n**陷阱二：`[[0]*3]*3`。** `*3` 复制的是**引用**，得到 3 个**同一个**内部列表，改一个，三行同时变。正确写法是列表推导式 `[[0]*3 for _ in range(3)]`，每次循环创建一个新列表（下一节会讲推导式）。判断两个名字是不是指向同一个对象，用 `is`（比较身份），`==` 比较的是值是否相等。**在 NumPy / PyTorch 里，切片返回的是「视图 (view)」，与原数组共享内存，也是同样的道理。**"
+  },
+  {
+   "type": "text",
+   "md": "### 作用域与闭包\n\n> **标准定义 · 作用域 (scope) 与 LEGB 规则**\n>\n> 一个名字在代码中**有效的范围**叫做它的**作用域**。Python 查找名字的顺序是 **L**ocal（当前函数内）→ **E**nclosing（外层函数）→ **G**lobal（模块级）→ **B**uilt-in（内置名字，如 `len`），找到就停。在函数内**对名字赋值**，会使它成为该函数的**局部变量**；要修改外层或全局的变量，需用 `nonlocal` 或 `global` 声明。\n>\n> *English: Python resolves names by the LEGB rule: Local, Enclosing, Global, Built-in. Assigning to a name inside a function makes it local unless declared global or nonlocal.*\n\n> **标准定义 · 闭包 (closure)**\n>\n> 当一个**内层函数**引用了**外层函数的变量**，并且这个内层函数被**返回或传出**，那么即使外层函数已经执行完毕，内层函数仍然能访问这些变量。这种「函数 + 它所捕获的外层变量」的组合叫做**闭包**。\n>\n> *English: A closure is an inner function together with the variables from its enclosing scope that it captured; it keeps access to them after the outer function has returned.*\n\n**白话版：「函数带着自己的小背包出门」。** 外层函数创建时，把一些变量装进背包交给内层函数；内层函数被带到别处使用时，背包还在，里面的东西还能读（`nonlocal` 声明之后还能改）。\n\n```python\nx = \"global\"\n\ndef outer():\n    x = \"enclosing\"\n    def inner():\n        return x                       # 本地没有 → 去外层函数找（Enclosing）\n    return inner()\n\ndef uses_global():\n    return x                           # 找到全局（Global）\n\ndef tries_to_modify():\n    try:\n        x += \"!\"                       # 赋值使 x 成为局部变量，但它还没有值\n    except UnboundLocalError as e:\n        return \"UnboundLocalError: \" + str(e)\n\nprint(outer(), uses_global())\nprint(tries_to_modify())\n\n# 闭包 (closure)：内层函数「记住」了外层函数的变量，即使外层已经返回\ndef make_counter():\n    count = 0\n    def counter():\n        nonlocal count                 # 声明要修改的是外层的 count\n        count += 1\n        return count\n    return counter\n\nc1, c2 = make_counter(), make_counter()\nprint(c1(), c1(), c1(), c2())          # 每个闭包有自己独立的 count\nprint(\"闭包保存的变量：\", c1.__closure__[0].cell_contents)\n\n# 经典陷阱：闭包「晚绑定」(late binding)——它记住的是变量，不是当时的值\nfuncs_bad = [lambda: i for i in range(3)]\nfuncs_ok = [lambda i=i: i for i in range(3)]       # 用默认参数把当时的值固定下来\nprint([f() for f in funcs_bad], [f() for f in funcs_ok])\n# 输出：enclosing global\n# 输出：UnboundLocalError: local variable 'x' referenced before assignment\n# 输出：1 2 3 1\n# 输出：闭包保存的变量： 3\n# 输出：[2, 2, 2] [0, 1, 2]\n```\n\n要点：**`tries_to_modify` 报 `UnboundLocalError`**（具体错误文字随 Python 版本不同）：函数里有 `x += \"!\"` 这条赋值，Python 在**编译函数时**就判定 `x` 是局部变量，于是执行时读取一个还没有值的局部变量。解决办法是 `global x` / `nonlocal x`（或者更好：别修改全局状态，把值当作参数传进来、结果返回出去）。\n\n**闭包给每次调用留下一份独立的状态**：`c1` 与 `c2` 各自带着自己的 `count`，互不干扰，所以输出 `1 2 3 1`。这是不用类、用函数保存状态的方式，装饰器就是它的重要应用。\n\n**闭包的晚绑定陷阱：** 闭包捕获的是**变量**，而不是创建那一刻的**值**。`[lambda: i for i in range(3)]` 里三个 lambda 共享同一个 `i`，等循环结束时 `i` 是 2，所以调用结果是 `[2, 2, 2]`。用默认参数 `i=i` 把当时的值固定下来（因为默认值在定义时求值），就得到 `[0, 1, 2]`。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "swU3c34d2NQ",
+   "title": "视频一：Programming Terms: Closures - How to Use Them and Why They Are Useful（Corey Schafer）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 12
+  },
+  {
+   "type": "text",
+   "md": "### 函数是一等公民，以及装饰器\n\n> **标准定义 · 一等函数 (first-class function) 与高阶函数 (higher-order function)**\n>\n> 在 Python 里，函数是**对象**，与整数、列表一样可以：赋给变量、放进数据结构、作为参数传给别的函数、作为返回值。**接收函数作为参数、或返回函数的函数**叫**高阶函数**。**lambda** 表达式是创建匿名的、只含一个表达式的小函数的语法。\n>\n> *English: Functions in Python are objects: they can be assigned, stored, passed as arguments and returned. A higher-order function takes or returns functions. A lambda is an anonymous single-expression function.*\n\n> **标准定义 · 装饰器 (decorator)**\n>\n> **装饰器**是一个接收一个函数、返回一个（通常是「包装过的」）新函数的高阶函数。语法 `@deco` 写在 `def` 上方，等价于 `f = deco(f)`。包装函数通常用 `*args, **kwargs` 接收任意参数，并用 `functools.wraps` 保留原函数的名字与文档字符串。\n>\n> *English: A decorator is a function that takes a function and returns a (usually wrapped) function. `@deco` above a `def` is shorthand for `f = deco(f)`.*\n\n**白话版：「给函数套一层外壳」。** 不修改函数内部，给它**外面**加上新功能：计时、记日志、检查权限、缓存结果、关闭梯度计算。每个功能写一次，用 `@` 贴到任何函数上。\n\n```python\nimport functools, time\n\n# 函数是「一等公民」：可以赋给变量、放进列表、当参数传、当返回值\ndef square(x): return x * x\nops = [square, abs, str]\nprint([f(-3) for f in ops])\n\nwords = [\"banana\", \"Apple\", \"cherry\", \"date\"]\nprint(sorted(words), sorted(words, key=str.lower), sorted(words, key=len, reverse=True))\nprint(list(map(lambda w: w.upper(), filter(lambda w: len(w) > 4, words))))\n\n# 装饰器 (decorator)：接收一个函数，返回一个「包装过」的新函数\ndef timer(func):\n    @functools.wraps(func)             # 保留原函数的名字和文档字符串\n    def wrapper(*args, **kwargs):\n        t = time.perf_counter()\n        result = func(*args, **kwargs)\n        wrapper.last = time.perf_counter() - t\n        return result\n    return wrapper\n\n@timer                                 # 等价于 slow_sum = timer(slow_sum)\ndef slow_sum(n):\n    \"\"\"求 1..n 的和\"\"\"\n    return sum(range(n + 1))\n\nprint(slow_sum(10**6), slow_sum.__name__, \"|\", slow_sum.__doc__)\nprint(\"耗时已被记录：\", slow_sum.last > 0)\n\n# 带参数的装饰器：多套一层，先接收参数\ndef repeat(times):\n    def deco(func):\n        @functools.wraps(func)\n        def wrapper(*a, **k):\n            return [func(*a, **k) for _ in range(times)]\n        return wrapper\n    return deco\n\n@repeat(3)\ndef hello(name): return f\"hi {name}\"\nprint(hello(\"Yijia\"))\n# 输出：[9, 3, '-3']\n# 输出：['Apple', 'banana', 'cherry', 'date'] ['Apple', 'banana', 'cherry', 'date'] ['banana', 'cherry', 'Apple', 'date']\n# 输出：['BANANA', 'APPLE', 'CHERRY']\n# 输出：500000500000 slow_sum | 求 1..n 的和\n# 输出：耗时已被记录： True\n# 输出：['hi Yijia', 'hi Yijia', 'hi Yijia']\n```\n\n读法：`sorted(words, key=len, reverse=True)` 把函数 `len` 作为参数传给 `sorted`；`key=str.lower` 实现「不分大小写排序」。`@timer` 把 `slow_sum` 换成了 `timer(slow_sum)` 返回的 `wrapper`；`functools.wraps` 让 `__name__` 与 `__doc__` 仍然是原来的（不加的话，`slow_sum.__name__` 会变成 `wrapper`，调试和文档工具都会被误导）。**带参数的装饰器**要多套一层：`repeat(3)` 先返回真正的装饰器 `deco`，再由 `deco` 去装饰函数，共三层闭包。\n\n你已经遇到过的装饰器：本节递归部分的 `@lru_cache`，PyTorch 里的 `@torch.no_grad()`，之后会学的 `@property`、`@dataclass`。写一个新的装饰器的机会不多，**但读懂它是读 ML 代码的必备技能**。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "U-G-mSd4KAE",
+   "title": "视频二：Learn Python DECORATORS in 7 minutes!（Bro Code）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 7
+  },
+  {
+   "type": "text",
+   "md": "### 递归\n\n> **标准定义 · 递归 (recursion)**\n>\n> 一个函数**直接或间接地调用自己**，称为**递归**。每个正确的递归函数必须有两部分：**基础情形 (base case)**：不用再递归就能直接给出答案，保证递归**会停**；**递归情形 (recursive case)**：把问题化为**更小**的同类问题，再用它的结果组合出答案，并且每一步都**更接近基础情形**。\n>\n> *English: Recursion is when a function calls itself. It needs a base case that stops the recursion and a recursive case that reduces the problem towards the base case.*\n\n**白话版：「俄罗斯套娃」。** 打开一个套娃，里面是更小的同样的套娃，一直打开到最小的实心娃娃（基础情形），再一层层合上。每次函数调用，Python 会在**调用栈 (call stack)** 上放一个**栈帧 (stack frame)** 保存当前的局部变量，调用结束后弹出，所以递归太深会撑满栈，抛出 `RecursionError`。\n\n```python\nimport sys\nfrom functools import lru_cache\n\ndef fact(n):\n    if n == 0:                         # 基础情形 (base case)：不再递归\n        return 1\n    return n * fact(n - 1)             # 递归情形：把问题缩小\n\nprint(fact(5), fact(20))\n\n# 调用栈：每次调用占用一个「栈帧」\ndef depth(n):\n    return 0 if n == 0 else 1 + depth(n - 1)\nprint(\"默认递归深度上限：\", sys.getrecursionlimit())\nprint(depth(500))\ntry:\n    depth(100000)\nexcept RecursionError as e:\n    print(\"RecursionError:\", e)\n\n# 没有基础情形 → 无限递归\ndef forever(n): return forever(n + 1)\ntry:\n    forever(0)\nexcept RecursionError:\n    print(\"没有基础情形的递归，最终会 RecursionError\")\n\n# 朴素递归重复计算 → 用 lru_cache 记忆化\ncalls = 0\ndef fib(n):\n    global calls; calls += 1\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\nfib(25); print(\"朴素 fib(25) 调用次数：\", calls)\n\ncalls = 0\n@lru_cache(maxsize=None)\ndef fib2(n):\n    global calls; calls += 1\n    return n if n < 2 else fib2(n - 1) + fib2(n - 2)\nfib2(25); print(\"记忆化 fib(25) 调用次数：\", calls, \" cache_info:\", fib2.cache_info())\n\n# 递归适合「结构本身是嵌套的」：把任意深度嵌套的列表展平\ndef flatten(x):\n    if not isinstance(x, list):\n        return [x]\n    out = []\n    for item in x:\n        out += flatten(item)\n    return out\nprint(flatten([1, [2, [3, [4]], 5], [[6]]]))\n# 输出：120 2432902008176640000\n# 输出：默认递归深度上限： 1000\n# 输出：500\n# 输出：RecursionError: maximum recursion depth exceeded in comparison\n# 输出：没有基础情形的递归，最终会 RecursionError\n# 输出：朴素 fib(25) 调用次数： 242785\n# 输出：记忆化 fib(25) 调用次数： 26  cache_info: CacheInfo(hits=23, misses=26, maxsize=None, currsize=26)\n# 输出：[1, 2, 3, 4, 5, 6]\n```\n\n三点：**一**，默认递归深度上限约 1000（用 `sys.getrecursionlimit()` 查看）：`depth(500)` 没问题，`depth(100000)` 就会 `RecursionError`。可以用 `sys.setrecursionlimit` 调大，但调得太大会让整个 Python 进程崩溃，**更稳妥的做法是改写成循环或显式栈**（数据结构那一门课的 DFS 就是这么做的）。**二**，忘了写基础情形，就是无限递归，同样以 `RecursionError` 结束。**三**，朴素的 `fib(25)` 调用了 24 万多次，因为大量子问题被重复计算；`@lru_cache` 让每个 $n$ 只算一次，只有 26 次，这就是**记忆化**，数据结构那一门课的动态规划一节会系统讲。\n\n**什么时候递归最自然？** 当**结构本身是嵌套的**：嵌套的列表、文件夹里的文件夹、树、JSON、表达式。`flatten` 对任意深度的嵌套列表，用循环写会很别扭，用递归几行就行。（递归的更深入内容，如主定理、分治与回溯，在「数据结构与算法」的第 5 节。）\n\n### 写函数的几个好习惯\n\n- 一个函数**只做一件事**，名字用动词（`load_data`、`compute_loss`）；\n- 用**文档字符串 (docstring)** 说明参数与返回值；类型注解（第 4 节会学）让别人（和 IDE）知道该传什么；\n- 尽量**不修改传入的参数、不依赖全局变量**：同样的输入总是得到同样的输出（**纯函数 pure function**）的代码最容易测试和调试；\n- 需要修改参数时，在文档里写清楚，并考虑函数名里体现（比如 `sort` 与 `sorted`：前者原地修改，后者返回新列表）。\n\n### 这一节你要带走的三句话\n\n1. **参数有位置、关键字、默认、`*args`、`**kwargs`、仅关键字等形式**；Python 传的是**对象的引用**，可变对象会被函数「改到」，默认参数只在定义时创建一次，所以**不要用 `[]` 做默认值**。\n2. **名字按 LEGB 查找；闭包让函数带着外层变量的「背包」出门**，装饰器就是「接收函数、返回新函数」的闭包应用；闭包捕获的是变量，不是值。\n3. **递归 = 基础情形 + 递归情形**，靠调用栈实现，深度有限；重复子问题用 `lru_cache` 记忆化，需要很深时改成循环。"
+  },
+  {
+   "type": "video",
+   "provider": "youtube",
+   "id": "mz6tAJMVmfM",
+   "title": "视频三：Recursion - CS50 Shorts（Harvard CS50）",
+   "lang": "英文，可开中文字幕",
+   "minutes": 14
+  },
+  {
+   "type": "think",
+   "q": "下面这段代码打印什么？为什么？怎样改才能打印 `[1] [2]`？代码：`def add(x, items=[]): items.append(x); return items`，然后 `print(add(1), add(2))`。",
+   "a": "打印 `[1, 2] [1, 2]`。默认值 `[]` 是在 `def` 执行时**只创建一次**的列表对象，之后每次不传 `items` 都用**同一个**列表，`add(1)` 把 1 加进去，`add(2)` 又把 2 加进同一个列表；两次调用返回的是同一个对象，而 `print` 在两次调用都结束之后才打印，所以两个都显示 `[1, 2]`。\n\n修改：用 `None` 做默认值。\n\n```python\ndef add(x, items=None):\n    if items is None:\n        items = []\n    items.append(x)\n    return items\n```\n\n这样每次不传 `items` 时，都在函数内**新建**一个列表。注意要用 `is None` 而不是 `if not items`，后者会把调用者传入的**空列表**也当成「没传」。"
+  },
+  {
+   "type": "think",
+   "q": "写一个装饰器 `count_calls`，让被装饰的函数每被调用一次，就把计数加 1，并且能通过 `func.calls` 读取次数。提示：函数本身也是对象，可以给它加属性。",
+   "a": "```python\nimport functools\n\ndef count_calls(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        wrapper.calls += 1\n        return func(*args, **kwargs)\n    wrapper.calls = 0\n    return wrapper\n\n@count_calls\ndef hello():\n    return \"hi\"\n\nhello(); hello()\nprint(hello.calls)   # 2\n```\n\n关键：**计数器放在 `wrapper` 这个函数对象的属性上**，每次调用时加 1。用 `*args, **kwargs` 让它能装饰任何参数形式的函数；`functools.wraps` 保留原函数的名字。另一种写法是用闭包里的变量加 `nonlocal`，但那样外面读不到次数，除非再多暴露一个读取的函数。"
+  },
+  {
+   "type": "think",
+   "q": "为什么递归求 $n!$ 在 $n$ 很大（比如 $10^5$）时会失败，而用 `for` 循环写的版本不会？这两种写法的**空间复杂度**分别是多少？",
+   "a": "递归版每次调用都要在**调用栈**上放一个栈帧，$n$ 层嵌套就同时有 $n$ 个栈帧，**空间 $O(n)$**，并且 Python 把深度限制在约 1000，所以 $n=10^5$ 会抛出 `RecursionError`。循环版只用一个累乘变量，**空间 $O(1)$**，没有深度限制。时间上两者都是 $O(n)$ 次乘法。\n\n这引出一个通用的方法：**任何递归都可以改写成循环**，需要保存状态时用一个显式的栈代替隐式的调用栈。有些语言（如 Scheme）会做「尾调用优化」，让某些递归不占用栈；**Python 没有这个优化**，所以 Python 里要把「可能很深」的递归改成循环。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "参数 / 实参",
+     "parameter / argument",
+     "定义时的名字 / 调用时传入的值"
+    ],
+    [
+     "默认参数",
+     "default argument",
+     "不传时使用的默认值，只在定义时求值一次"
+    ],
+    [
+     "可变参数",
+     "*args / **kwargs",
+     "收集多余的位置 / 关键字实参为元组 / 字典"
+    ],
+    [
+     "仅关键字参数",
+     "keyword-only parameter",
+     "写在 `*` 之后，只能用关键字传"
+    ],
+    [
+     "传对象引用",
+     "pass by object reference",
+     "形参与实参指向同一个对象；修改可变对象会被外面看到"
+    ],
+    [
+     "可变 / 不可变",
+     "mutable / immutable",
+     "列表、字典、集合可原地修改；整数、字符串、元组不可"
+    ],
+    [
+     "作用域",
+     "scope",
+     "名字有效的范围；LEGB 查找规则"
+    ],
+    [
+     "闭包",
+     "closure",
+     "内层函数 + 它捕获的外层变量"
+    ],
+    [
+     "晚绑定",
+     "late binding",
+     "闭包捕获变量而不是值，调用时才取值"
+    ],
+    [
+     "一等函数",
+     "first-class function",
+     "函数是对象，可以赋值、传参、返回"
+    ],
+    [
+     "装饰器",
+     "decorator",
+     "接收函数、返回新函数；`@deco` 语法糖"
+    ],
+    [
+     "递归",
+     "recursion",
+     "函数调用自己；需要基础情形与递归情形"
+    ],
+    [
+     "调用栈",
+     "call stack",
+     "保存各层函数调用的局部变量的栈"
+    ],
+    [
+     "记忆化",
+     "memoization",
+     "缓存函数结果避免重复计算，如 `lru_cache`"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Think Python 3e（Downey）— 第 3 章 Functions 与第 5 章 Conditionals and Recursion",
+   "url": "https://allendowney.github.io/ThinkPython/chap03.html",
+   "note": "本节大纲依据之一，CC BY-NC-SA 4.0，带 Colab 可运行笔记本"
+  },
+  {
+   "title": "Python Tutorial for Beginners 8: Functions（Corey Schafer，约 22 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=9Os0o3wzS_I",
+   "note": "函数基础与参数形式的详细演示，参数部分不熟时回看"
+  },
+  {
+   "title": "Python Tutorial: Variable Scope - LEGB（Corey Schafer，约 21 分钟，选看）",
+   "url": "https://www.youtube.com/watch?v=QVdf0LgmICw",
+   "note": "作用域、`global`、`nonlocal` 的完整讲解"
+  },
+  {
+   "title": "Harvard CS50P：Introduction to Programming with Python（课程主页）",
+   "url": "https://cs50.harvard.edu/python/",
+   "note": "大学课程原版，函数、异常、测试、文件等都有视频和习题"
+  },
+  {
+   "title": "Python 文档：functools（lru_cache、wraps）",
+   "url": "https://docs.python.org/3/library/functools.html",
+   "note": "记忆化装饰器与 wraps 的官方说明"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "下面的函数调用 `f(1)`、`f(2)` 后，两次返回值打印出来是什么？`def f(x, l=[]): l.append(x); return l`",
+    "options": [
+     "`[1]` 和 `[2]`",
+     "`[1, 2]` 和 `[1, 2]`（同一个列表对象）",
+     "报错",
+     "`[1]` 和 `[1, 2]`"
+    ],
+    "answer": 1,
+    "explain": "默认值在定义时创建一次，所有不传 `l` 的调用共享同一个列表，两次返回的是同一个对象，打印时两个都已是 `[1, 2]`。"
+   },
+   {
+    "q": "在 `def f(a, b=2, *args, c, **kwargs)` 中，调用时 `c` 必须怎么传？",
+    "options": [
+     "按位置传在 `b` 之后",
+     "放进 `kwargs`",
+     "可以不传",
+     "用关键字传，如 `c=5`"
+    ],
+    "answer": 3,
+    "explain": "`*args` 之后的参数是仅关键字参数，没有默认值时必须以 `c=...` 的形式传入。"
+   },
+   {
+    "q": "Python 的参数传递机制最准确的说法是？",
+    "options": [
+     "所有参数按值复制",
+     "所有参数按引用传递，函数里的任何赋值都会改变外面的变量",
+     "传的是对象的引用：修改可变对象外面可见，对名字重新赋值外面不受影响",
+     "只有整数按值传递，其余按引用"
+    ],
+    "answer": 2,
+    "explain": "形参与实参指向同一个对象。`lst.append()` 改的是对象本身；`lst = [...]` 只改了局部名字的指向。"
+   },
+   {
+    "q": "`grid = [[0] * 3] * 3`，然后 `grid[0][0] = 1`，`grid` 变成什么？",
+    "options": [
+     "`[[1,0,0],[1,0,0],[1,0,0]]`（三行是同一个列表）",
+     "`[[1,0,0],[0,0,0],[0,0,0]]`",
+     "`[[1,1,1],[1,1,1],[1,1,1]]`",
+     "报错"
+    ],
+    "answer": 0,
+    "explain": "`*3` 复制的是引用，三行是同一个对象。要用 `[[0]*3 for _ in range(3)]`。"
+   },
+   {
+    "q": "Python 查找一个名字的 **LEGB** 顺序是？",
+    "options": [
+     "Global → Local → Built-in → Enclosing",
+     "Local → Global → Enclosing → Built-in",
+     "Built-in → Global → Enclosing → Local",
+     "Local → Enclosing → Global → Built-in"
+    ],
+    "answer": 3,
+    "explain": "先找当前函数（Local），再找外层函数（Enclosing），然后模块级（Global），最后内置（Built-in）。"
+   },
+   {
+    "q": "在内层函数里想**修改**外层函数里定义的变量 `count`（`count += 1`），需要？",
+    "options": [
+     "什么都不用",
+     "在内层函数里声明 `nonlocal count`",
+     "`global count`",
+     "把 `count` 改名"
+    ],
+    "answer": 1,
+    "explain": "不声明的话，赋值会让 `count` 成为内层函数的局部变量，读取时会 `UnboundLocalError`。`global` 对应的是模块级变量。"
+   },
+   {
+    "q": "`funcs = [lambda: i for i in range(3)]` 之后，`[f() for f in funcs]` 的结果是？",
+    "options": [
+     "`[2, 2, 2]`",
+     "`[0, 1, 2]`",
+     "`[3, 3, 3]`",
+     "报错"
+    ],
+    "answer": 0,
+    "explain": "闭包捕获的是变量 `i`，调用时才取值，此时循环已结束，`i` 是 2。用 `lambda i=i: i` 可固定当时的值。"
+   },
+   {
+    "q": "装饰器语法 `@deco` 写在 `def f(): ...` 上方，等价于？",
+    "options": [
+     "`f = deco`",
+     "`deco(f())`",
+     "`f = deco(f)`",
+     "`deco = f(deco)`"
+    ],
+    "answer": 2,
+    "explain": "装饰器接收原函数，返回新函数，并替换原来的名字。"
+   },
+   {
+    "q": "写装饰器时，在 `wrapper` 上加 `@functools.wraps(func)` 的作用是？",
+    "options": [
+     "保留原函数的 `__name__`、`__doc__` 等信息",
+     "让函数运行更快",
+     "让装饰器可以带参数",
+     "防止递归"
+    ],
+    "answer": 0,
+    "explain": "不加时，被装饰函数的 `__name__` 会变成 `wrapper`，文档字符串丢失，调试和文档工具会被误导。"
+   },
+   {
+    "q": "一个正确的递归函数**必须**有的两个要素是？",
+    "options": [
+     "循环与条件",
+     "基础情形（会停）与递归情形（把问题缩小）",
+     "全局变量与返回值",
+     "装饰器与缓存"
+    ],
+    "answer": 1,
+    "explain": "没有基础情形会无限递归；递归情形不使问题变小，同样不会收敛到基础情形。"
+   }
+  ]
+ }
+}

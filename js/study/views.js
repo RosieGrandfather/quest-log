@@ -3,6 +3,7 @@
 import { T } from './state.js';
 import { loadCourses, loadCourse, loadUnit } from './content.js';
 import { unitBodyHTML, mdToHTML, renderMath } from './render-content.js';
+import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
@@ -144,6 +145,8 @@ async function renderUnit(cid, uid){
     </nav>
     <button class="notes-fab" id="notesFab">📝 笔记</button>`;
   renderMath(view());
+  resetPySession();               // 每进一节，变量清空，像新开一个 notebook
+  enhanceCode(view());
   $('notesFab').addEventListener('click', ()=> openNotes(course, unit));
   await renderUnitActions(cid, uid);
 }

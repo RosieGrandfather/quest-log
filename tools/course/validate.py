@@ -5,11 +5,16 @@
 """
 import json, os, sys, urllib.request, concurrent.futures as cf
 sys.path.insert(0, os.path.dirname(__file__))
-from unitlib import COURSES, validate_unit
+from unitlib import COURSES, validate_unit, python_cells
+
+# 这些课的代码块必须「一个知识点一段」：单个代码块（不含输出行）不超过 MAX_CELL 行，解释紧跟在后面
+SPLIT_COURSES = {'py-0'}
+MAX_CELL = 35
 from yt import verify
 
 def main(online):
     errors, videos, links = [], set(), set()
+    long_cells = []
     index = json.load(open(os.path.join(COURSES, 'index.json'), encoding='utf-8'))
     for entry in index['courses']:
         cdir = os.path.join(COURSES, entry['path'])
@@ -26,10 +31,16 @@ def main(online):
             if unit['id'] != u['id']: errors.append(f"{u['file']}: 文件里的 id {unit['id']} ≠ course.json 的 {u['id']}")
             if unit['title'] != u['title']: errors.append(f"{u['file']}: 标题和 course.json 不一致")
             errors += validate_unit(unit)
+            for j, lang, n, _ in python_cells(unit):
+                if n > MAX_CELL:
+                    msg = f"{course['id']}/{u['id']} 块{j}: 代码块 {n} 行，太长（拆成一个知识点一段，解释紧跟其后）"
+                    if course['id'] in SPLIT_COURSES: errors.append(msg)
+                    else: long_cells.append(msg)
             videos |= {b['id'] for b in unit['blocks'] if b['type'] == 'video' and b['provider'] == 'youtube'}
             links |= {r['url'] for r in unit.get('references', [])}
             done += 1
         print(f"{course['id']}：{done} / {len(course['units'])} 节有内容")
+    if long_cells: print(f'提示：{len(long_cells)} 个代码块超过 {MAX_CELL} 行（非 py-0，不算错误，以后重写时拆开）')
     if online:
         print(f'核实 {len(videos)} 个 YouTube 视频、{len(links)} 个链接 …')
         with cf.ThreadPoolExecutor(8) as ex:

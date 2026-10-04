@@ -91,6 +91,7 @@
   - 连续学习：只有「当天首次学完了一节新章节」才算有效学习日。每满 7 天 +100；第 30 天 +500（只一次）；第 100 / 200 / 300 天各 +500；第 365 天 +1000。每次都有庆祝弹窗（`studystreak-{日期}-{天数}-{分值}`）
   - 同一天学完 3 节新章节：额外 +100，每天只一次（`studyday-{日期}`，category `studyday`），第 3 节的庆祝弹窗里会显示；前两节会提示「今天已学完 N 节」
   - 学习记录（category `study` / `quiz` / `studystreak`）也算主页面的 🔥 连续打卡
+- **可运行的 Python 代码块**：学习页里的 ```python 块有「▶ 运行」，可以改代码再跑（Shift+Enter 也行），同一节里前面的块定义的变量后面能用，「清空变量」可重来；块末尾的真实输出显示成「预期输出」。用的是浏览器里的 Python（Pyodide，`js/study/runner.js` + `pyworker.js`，放在 Web Worker 里，死循环可点「停止」），第一次运行要从 cdn.jsdelivr.net 下载约 10 MB，之后浏览器缓存；支持 numpy，没有 torch / matplotlib。读写真实文件、子进程、装包的块写成 ```python-static，只显示。写法规则见 `docs/COURSE_AUTHORING.md` 0.8
 - 笔记：每节一篇，点右下角「📝 笔记」弹出，停止输入 0.8 秒自动保存，只有本人可见
 - 学习区打开时同样会发每日签到奖励
 

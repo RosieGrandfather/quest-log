@@ -20,6 +20,16 @@
 
 ---
 
+## 2026-10-05 — 学习页的 Python 代码块可以直接运行；py-0 的代码块按知识点拆开
+- **可运行**：学习页里每个 ```python 块都有「▶ 运行」，能改代码、Shift+Enter 运行，同一节里变量共用（像 Jupyter），支持 numpy；报错会显示 traceback，死循环可「停止」。块末尾真实输出显示为「预期输出」。浏览器里的 Python 是 Pyodide（Python 3.13），第一次要下载约 10 MB（cdn.jsdelivr.net，公司网络可能拦截，会有提示）
+- **py-0 六节重写代码块**：原来每块 35–84 行、好几个知识点、解释攒在后面；现在一个知识点一块（最长 35 行），格式是「问题引入 → 代码 → 紧跟着读输出」。块数：u01 5→22、u02 4→25、u03 4→22、u04 5→23、u05 4→17、u06 11→18；讲解、视频、测验保留。u06 的项目文件块大多是 static（网页里没法把多个文件当项目运行），可运行的是 5 个算法块
+- **出课工具**：`runlib.Notebook`（块之间共用变量，规则和网页一致）；`validate.py` 现在检查每个 Python 块的语法，py-0 的单块超过 35 行报错，其他课只提示（共 63 块，以后重写时拆）；`docs/COURSE_AUTHORING.md` 新增 0.8
+- 改了哪些文件：新增 `js/study/runner.js`、`js/study/pyworker.js`；改 `js/study/views.js`、`css/study.css`、`tools/course/runlib.py`、`unitlib.py`、`validate.py`、`y01…y06*.py`（旧版备份 `*_old.py`）、`courses/py-0/u01…u06`、dsa-0 第 5 节里一处伪代码的代码块语言（python→text）、README、文档
+- 注意：我在浏览器里用真实 Pyodide 把 py-0 全部可运行块跑了一遍：无意外报错；少数输出措辞和预期输出略有差异（Python 版本不同，如报错措辞）。手机上的实际体验、公司网络下能否下载 Pyodide 没测过
+- 其他课（ARENA、prob-0、dsa-0、wm-0）的代码块也有「▶ 运行」，但很多块偏长、且 ARENA/wm-0 里用 torch 的块在网页里跑不了（只有 numpy），还没按新规则拆
+
+---
+
 ## 2026-10-05 — 学习积分：同一天学完 3 节再奖励 100 分
 - 同一天首次学完 3 节新章节，额外 +100，每天只发一次（再多学不重复发）；第 3 节的庆祝弹窗里会显示奖励，前两节的弹窗会提示「今天已学完 N 节，学满 3 节再得 100 分」
 - 改了哪些文件：`js/core/study.js`（`dayUnitsBonus`）、`js/data/study.js`（`completeUnit` 多返回 `todayCount` 并发放，log 文档 ID `studyday-{日期}`、category `studyday`）、`js/study/views.js`、`js/core/constants.js`（标签「当日三连」）、`tests/study.test.js`、README

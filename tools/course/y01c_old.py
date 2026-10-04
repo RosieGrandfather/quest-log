@@ -1,9 +1,6 @@
-from runlib import Notebook
+from runlib import code
 
-nb = Notebook()
-
-# ───── 参数的所有形式 ─────
-C_POS = nb.cell('''
+C_ARGS = code('''
 def describe(name, age, /, city="Singapore", *, verbose=False):
     # name、age 只能按位置传（/ 之前）；city 可位置可关键字；verbose 只能用关键字传（* 之后）
     s = f"{name}, {age}, {city}"
@@ -12,9 +9,7 @@ def describe(name, age, /, city="Singapore", *, verbose=False):
 print(describe("Yijia", 28))
 print(describe("Yijia", 28, "Osaka"))
 print(describe("Yijia", 28, city="Tokyo", verbose=True))
-''')
 
-C_VAR = nb.cell('''
 def total(*nums, **options):
     # *nums 收集多余的位置参数成元组；**options 收集多余的关键字参数成字典
     s = sum(nums)
@@ -22,9 +17,7 @@ def total(*nums, **options):
 
 print(total(1, 2, 3))
 print(total(1, 2, 3, scale=10, debug=True))
-''')
 
-C_UNPACK = nb.cell('''
 # 反过来：调用时用 * 和 ** 把容器「拆开」传入
 args = (1, 2, 3)
 kw = {"scale": 2}
@@ -35,9 +28,7 @@ def min_max(xs):
     return min(xs), max(xs)
 lo, hi = min_max([3, 9, 1, 7])
 print(lo, hi, type(min_max([1, 2])))
-''')
 
-C_BADCALL = nb.cell('''
 # 错误的调用方式会得到什么
 for bad in ("describe('A', 1, 'X', True)", "describe(name='A', age=1)"):
     try:
@@ -46,8 +37,7 @@ for bad in ("describe('A', 1, 'X', True)", "describe(name='A', age=1)"):
         print("TypeError:", e)
 ''')
 
-# ───── 传参机制 ─────
-C_MUT = nb.cell('''
+C_MUT = code('''
 # Python 传参：传的是「对象的引用」。可变对象在函数里被修改，外面能看到；重新赋值则不影响外面
 def modify(lst, num):
     lst.append(99)          # 原地修改：外面的列表也变了
@@ -57,29 +47,21 @@ def modify(lst, num):
 
 a, n = [1, 2], 10
 print(modify(a, n), a, n)
-''')
 
-C_DEFBAD = nb.cell('''
 # 可变默认参数陷阱：默认值只在「定义函数时」创建一次
 def bad(x, bucket=[]):
     bucket.append(x)
     return bucket
-
 print(bad(1), bad(2), bad(3))
 print("默认值本身：", bad.__defaults__)
-''')
 
-C_DEFGOOD = nb.cell('''
 def good(x, bucket=None):
     if bucket is None:
         bucket = []
     bucket.append(x)
     return bucket
-
 print(good(1), good(2))
-''')
 
-C_GRID = nb.cell('''
 # 同样的原因：[[0]*3]*3 得到的是 3 个「同一个」列表
 grid_bad = [[0] * 3] * 3
 grid_bad[0][0] = 1
@@ -89,8 +71,7 @@ print(grid_bad, grid_ok)
 print("is 比较身份：", grid_bad[0] is grid_bad[1], grid_ok[0] is grid_ok[1])
 ''')
 
-# ───── 作用域与闭包 ─────
-C_SCOPE = nb.cell('''
+C_SCOPE = code('''
 x = "global"
 
 def outer():
@@ -102,20 +83,15 @@ def outer():
 def uses_global():
     return x                           # 找到全局（Global）
 
-print(outer(), uses_global())
-''')
-
-C_UNBOUND = nb.cell('''
 def tries_to_modify():
     try:
         x += "!"                       # 赋值使 x 成为局部变量，但它还没有值
     except UnboundLocalError as e:
         return "UnboundLocalError: " + str(e)
 
+print(outer(), uses_global())
 print(tries_to_modify())
-''')
 
-C_CLOSURE = nb.cell('''
 # 闭包 (closure)：内层函数「记住」了外层函数的变量，即使外层已经返回
 def make_counter():
     count = 0
@@ -128,31 +104,24 @@ def make_counter():
 c1, c2 = make_counter(), make_counter()
 print(c1(), c1(), c1(), c2())          # 每个闭包有自己独立的 count
 print("闭包保存的变量：", c1.__closure__[0].cell_contents)
-''')
 
-C_LATE = nb.cell('''
 # 经典陷阱：闭包「晚绑定」(late binding)——它记住的是变量，不是当时的值
 funcs_bad = [lambda: i for i in range(3)]
 funcs_ok = [lambda i=i: i for i in range(3)]       # 用默认参数把当时的值固定下来
 print([f() for f in funcs_bad], [f() for f in funcs_ok])
 ''')
 
-# ───── 一等函数与装饰器 ─────
-C_FIRST = nb.cell('''
+C_DECO = code('''
+import functools, time
+
 # 函数是「一等公民」：可以赋给变量、放进列表、当参数传、当返回值
 def square(x): return x * x
 ops = [square, abs, str]
 print([f(-3) for f in ops])
-''')
 
-C_KEY = nb.cell('''
-words = ["banana", "Cherry", "apple", "date"]
+words = ["banana", "Apple", "cherry", "date"]
 print(sorted(words), sorted(words, key=str.lower), sorted(words, key=len, reverse=True))
 print(list(map(lambda w: w.upper(), filter(lambda w: len(w) > 4, words))))
-''')
-
-C_DECO = nb.cell('''
-import functools, time
 
 # 装饰器 (decorator)：接收一个函数，返回一个「包装过」的新函数
 def timer(func):
@@ -171,9 +140,7 @@ def slow_sum(n):
 
 print(slow_sum(10**6), slow_sum.__name__, "|", slow_sum.__doc__)
 print("耗时已被记录：", slow_sum.last > 0)
-''')
 
-C_DECO2 = nb.cell('''
 # 带参数的装饰器：多套一层，先接收参数
 def repeat(times):
     def deco(func):
@@ -188,18 +155,16 @@ def hello(name): return f"hi {name}"
 print(hello("Yijia"))
 ''')
 
-# ───── 递归 ─────
-C_FACT = nb.cell('''
+C_REC = code('''
+import sys
+from functools import lru_cache
+
 def fact(n):
     if n == 0:                         # 基础情形 (base case)：不再递归
         return 1
     return n * fact(n - 1)             # 递归情形：把问题缩小
 
 print(fact(5), fact(20))
-''')
-
-C_STACK = nb.cell('''
-import sys
 
 # 调用栈：每次调用占用一个「栈帧」
 def depth(n):
@@ -210,39 +175,28 @@ try:
     depth(100000)
 except RecursionError as e:
     print("RecursionError:", e)
-''')
 
-C_FOREVER = nb.cell('''
 # 没有基础情形 → 无限递归
 def forever(n): return forever(n + 1)
 try:
     forever(0)
 except RecursionError:
     print("没有基础情形的递归，最终会 RecursionError")
-''')
 
-C_FIB = nb.cell('''
-# 朴素递归重复计算
+# 朴素递归重复计算 → 用 lru_cache 记忆化
 calls = 0
 def fib(n):
     global calls; calls += 1
     return n if n < 2 else fib(n - 1) + fib(n - 2)
 fib(25); print("朴素 fib(25) 调用次数：", calls)
-''')
 
-C_FIB2 = nb.cell('''
-from functools import lru_cache
-
-# 用 lru_cache 记忆化：每个 n 只算一次
 calls = 0
 @lru_cache(maxsize=None)
 def fib2(n):
     global calls; calls += 1
     return n if n < 2 else fib2(n - 1) + fib2(n - 2)
 fib2(25); print("记忆化 fib(25) 调用次数：", calls, " cache_info:", fib2.cache_info())
-''')
 
-C_FLAT = nb.cell('''
 # 递归适合「结构本身是嵌套的」：把任意深度嵌套的列表展平
 def flatten(x):
     if not isinstance(x, list):

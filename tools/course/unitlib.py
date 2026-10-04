@@ -43,6 +43,16 @@ def _check_math(s, where, errors):
     if s.replace('$$', '').count('$') % 2:
         errors.append(f'{where}: $ 没有成对出现：{s[:60]}')
 
+import ast as _ast, re as _re
+def python_cells(unit):
+    """返回这一节所有 ```python / ```python-static 代码块：[(块序号, 语言, 代码行数(不含「# 输出：」行), 源码)]"""
+    out = []
+    for j, b in enumerate(unit['blocks']):
+        for m in _re.finditer(r'```(python-static|python)\n(.*?)```', b.get('md', ''), _re.S):
+            lines = [l for l in m.group(2).rstrip('\n').split('\n') if not l.startswith('# 输出：')]
+            out.append((j + 1, m.group(1), len(lines), '\n'.join(lines)))
+    return out
+
 def validate_unit(unit, n_questions=10):
     """返回错误列表（空 = 通过）"""
     e = []
@@ -69,6 +79,9 @@ def validate_unit(unit, n_questions=10):
         if b['type'] == 'video' and b.get('provider') not in ('youtube', 'bilibili'):
             e.append(f'{uid} 块{j+1}: 视频 provider 只能是 youtube / bilibili')
     for o in unit['objectives']: _check_math(o, f'{uid} 学习目标', e)
+    for j, lang, n, src in python_cells(unit):          # 每个 Python 代码块必须语法正确（网页里可以直接运行）
+        try: _ast.parse(src)
+        except SyntaxError as x: e.append(f'{uid} 块{j}: Python 代码有语法错误（第 {x.lineno} 行）：{x.msg}')
     return e
 
 def dump(unit, course_path, filename):
