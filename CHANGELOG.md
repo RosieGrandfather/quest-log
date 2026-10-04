@@ -13,6 +13,12 @@
 
 ---
 
+## 2026-10-06 — 新增 7 门占位课（只有大纲，没有内容）
+- 新增占位课：`proj-a`（Karpathy 前半：micrograd 与 makemore）、`dl-0` 深度学习主干、`proj-b`（Karpathy 后半：GPT、分词器、复现 GPT-2）、`llm-0`、`safety-0`、`opt-0`（选修）、`rs-0` 研究技能；小节的 `file` 为 null，用新字段 `covers` 写这节要讲什么
+- 学习顺序：py-0 → prob-0 → arena-0.0 → ml-0 → proj-a → dl-0 → proj-b → dsa-0 → wm-0 → llm-0 → safety-0 → opt-0 → rs-0（`order`、`order_note`、`courses/index.json` 已更新）
+- `js/study/views.js` 课程页：小节有 `covers` 时显示「要讲：…」；`css/study.css` 加了 `.unit-covers`
+- 注意：占位小节的分钟数是估计值；Karpathy 各集的标题和顺序是凭记忆写的，出课时要核实；占位课还没有「内容依据」来源链接
+
 ## 2026-10-06 — 测验题干里的代码改成完整代码块
 - py-0 和 ARENA 0.0 里 34 道「考代码结果」的测验题，题干改成把完整代码单独放进代码块（带 `print`），不再用文字描述代码；py-0 u01「两次返回值打印出来」那题有歧义，改成两个分开的 `print`，正确答案相应改为 `[1]` 和 `[1, 2]`
 - 改了哪些文件：`tools/course/whole/` 里对应整节、对应的 `y01/y07/y08_quiz/y09/a10…` 脚本，重新拆分后的各小节 JSON；规则写进 `docs/COURSE_AUTHORING.md` 0.9

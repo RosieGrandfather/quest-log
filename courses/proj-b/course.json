@@ -1,0 +1,89 @@
+{
+  "id": "proj-b",
+  "title": "项目 B：从零写 GPT（跟着 Karpathy）",
+  "subtitle": "【占位课，内容待补】跟着 Karpathy 的后半部分：从零写 GPT、写分词器、复现 GPT-2。放在 dl-0 的 Transformer 之后做：先在 dl-0 里理解，再在这里亲手敲出来。每个小节 = 看一段 + 敲代码 + 一道改动练习",
+  "units": [
+    {
+      "id": "u01",
+      "title": "Let's build GPT（1/3）",
+      "en": "Let's build GPT (1/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "字符级数据、批次与上下文、bigram 基线"
+    },
+    {
+      "id": "u02",
+      "title": "Let's build GPT（2/3）",
+      "en": "Let's build GPT (2/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "自注意力的数学技巧（矩阵乘法做加权平均）、单头注意力"
+    },
+    {
+      "id": "u03",
+      "title": "Let's build GPT（3/3）",
+      "en": "Let's build GPT (3/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "多头、前馈、残差、LayerNorm、训练与生成；对照 dl-0 的 Transformer"
+    },
+    {
+      "id": "u04",
+      "title": "分词器：BPE（1/3）",
+      "en": "Tokenizer: BPE (1/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "Unicode 与 UTF-8、字节对编码的算法与手写"
+    },
+    {
+      "id": "u05",
+      "title": "分词器：BPE（2/3）",
+      "en": "Tokenizer: BPE (2/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "正则预切分、GPT-2/GPT-4 分词器的差别、特殊 token"
+    },
+    {
+      "id": "u06",
+      "title": "分词器：BPE（3/3）",
+      "en": "Tokenizer: BPE (3/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "分词带来的怪现象（数字、空格、非英文）与对模型能力的影响"
+    },
+    {
+      "id": "u07",
+      "title": "复现 GPT-2（1/4）",
+      "en": "Reproduce GPT-2 (1/4)",
+      "minutes": 50,
+      "file": null,
+      "covers": "模型结构与加载官方权重对照；参数量核对（选做，较重）"
+    },
+    {
+      "id": "u08",
+      "title": "复现 GPT-2（2/4）",
+      "en": "Reproduce GPT-2 (2/4)",
+      "minutes": 50,
+      "file": null,
+      "covers": "速度与显存：混合精度、torch.compile、FlashAttention 的思想"
+    },
+    {
+      "id": "u09",
+      "title": "复现 GPT-2（3/4）",
+      "en": "Reproduce GPT-2 (3/4)",
+      "minutes": 50,
+      "file": null,
+      "covers": "优化器配置、学习率调度、梯度累积、权重衰减"
+    },
+    {
+      "id": "u10",
+      "title": "复现 GPT-2（4/4）",
+      "en": "Reproduce GPT-2 (4/4)",
+      "minutes": 50,
+      "file": null,
+      "covers": "数据管线、评测（HellaSwag 之类）、结果怎么看、能学到什么"
+    }
+  ],
+  "order": 7,
+  "order_note": "dl-0 学完 Transformer 之后做，把它亲手敲出来"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "opt-0",
+  "title": "优化与进阶数学（按需学）",
+  "subtitle": "【占位课，内容待补】选修：补强训练理论背后的数学，读论文遇到推导时再回来查。不阻塞其他课程",
+  "units": [
+    {
+      "id": "u01",
+      "title": "多元微积分复习：梯度、雅可比、海森",
+      "en": "Multivariable Calculus",
+      "minutes": 50,
+      "file": null,
+      "covers": "泰勒展开、链式法则的矩阵形式、海森矩阵与曲率"
+    },
+    {
+      "id": "u02",
+      "title": "线性代数补充：范数、条件数与低秩",
+      "en": "Linear Algebra Extras",
+      "minutes": 50,
+      "file": null,
+      "covers": "向量与矩阵范数、条件数、低秩近似、矩阵微积分常用公式"
+    },
+    {
+      "id": "u03",
+      "title": "凸优化基础",
+      "en": "Convex Optimization",
+      "minutes": 50,
+      "file": null,
+      "covers": "凸集与凸函数、一阶最优条件、对偶的直觉"
+    },
+    {
+      "id": "u04",
+      "title": "梯度下降的收敛分析",
+      "en": "Convergence of Gradient Descent",
+      "minutes": 50,
+      "file": null,
+      "covers": "光滑性、学习率上界、条件数与收敛速度"
+    },
+    {
+      "id": "u05",
+      "title": "随机优化与自适应方法的理论",
+      "en": "Stochastic & Adaptive Methods",
+      "minutes": 50,
+      "file": null,
+      "covers": "SGD 的噪声与批量大小、动量与 Adam 的直觉与理论"
+    },
+    {
+      "id": "u06",
+      "title": "非凸优化与损失景观",
+      "en": "Non-convex Landscapes",
+      "minutes": 50,
+      "file": null,
+      "covers": "鞍点、平坦与尖锐极小值、过参数化为什么能训练"
+    },
+    {
+      "id": "u07",
+      "title": "信息论与变分推断补充",
+      "en": "Information Theory & Variational Inference",
+      "minutes": 50,
+      "file": null,
+      "covers": "KL 散度的性质、ELBO 的推导、与 VAE、扩散模型的联系"
+    },
+    {
+      "id": "u08",
+      "title": "证明与离散数学基础（按目标院校要求）",
+      "en": "Proofs & Discrete Math",
+      "minutes": 50,
+      "file": null,
+      "covers": "证明方法、归纳法、集合与计数；是否需要取决于申请院校的先修要求，先查官网"
+    }
+  ],
+  "order": 12,
+  "order_note": "选修，按需回来补，不阻塞其他课程"
+}

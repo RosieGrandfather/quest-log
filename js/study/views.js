@@ -116,6 +116,7 @@ async function renderCourse(cid){
         <div class="unit-body">
           <div class="unit-title">${escapeHTML(u.title)}</div>
           <div class="unit-en">${escapeHTML(u.en||'')}${u.minutes?` · 约 ${u.minutes} 分钟`:''}</div>
+          ${u.covers ? `<div class="unit-covers">要讲：${escapeHTML(u.covers)}</div>` : ''}
           <div class="unit-badges">${unitBadges(course, u)}</div>
         </div>`;
       return u.file ? `<a class="unit-row ${cls}" href="${unitHash(cid, u.id)}">${inner}</a>` : `<div class="unit-row ${cls}">${inner}</div>`;

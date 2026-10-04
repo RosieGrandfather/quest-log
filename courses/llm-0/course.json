@@ -1,0 +1,57 @@
+{
+  "id": "llm-0",
+  "title": "大语言模型专项",
+  "subtitle": "【占位课，内容待补】LLM 方向的专项：预训练到对齐到推理的完整链路。在 dl-0 与项目 B 之后",
+  "units": [
+    {
+      "id": "u01",
+      "title": "预训练：数据与流程",
+      "en": "Pretraining",
+      "minutes": 50,
+      "file": null,
+      "covers": "数据清洗与去重、混合比例、训练目标、规模化与算力"
+    },
+    {
+      "id": "u02",
+      "title": "微调：SFT 与参数高效微调",
+      "en": "SFT & PEFT",
+      "minutes": 50,
+      "file": null,
+      "covers": "指令数据、LoRA/QLoRA 的原理、什么时候该微调"
+    },
+    {
+      "id": "u03",
+      "title": "对齐：RLHF 与 DPO",
+      "en": "RLHF & DPO",
+      "minutes": 50,
+      "file": null,
+      "covers": "偏好数据、奖励模型、PPO 的角色、DPO 的推导与局限"
+    },
+    {
+      "id": "u04",
+      "title": "推理加速与部署",
+      "en": "Inference",
+      "minutes": 50,
+      "file": null,
+      "covers": "KV cache、解码策略、量化、批处理与吞吐"
+    },
+    {
+      "id": "u05",
+      "title": "评测与失败模式",
+      "en": "Evaluation & Failure Modes",
+      "minutes": 50,
+      "file": null,
+      "covers": "基准的陷阱、污染、幻觉、鲁棒性、怎么设计自己的评测"
+    },
+    {
+      "id": "u06",
+      "title": "推理模型与用强化学习训练推理",
+      "en": "Reasoning Models & RL",
+      "minutes": 50,
+      "file": null,
+      "covers": "思维链、可验证奖励、过程监督 vs 结果监督；连接 wm-0 的强化学习"
+    }
+  ],
+  "order": 10,
+  "order_note": "想做 LLM 方向时，在 dl-0 和项目 B 之后"
+}

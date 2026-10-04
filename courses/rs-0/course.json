@@ -1,0 +1,65 @@
+{
+  "id": "rs-0",
+  "title": "研究技能：读论文、复现与写作",
+  "subtitle": "【占位课，内容待补】贯穿所有阶段的研究基本功。从 ml-0 之后就可以开始做，一边学一边练",
+  "units": [
+    {
+      "id": "u01",
+      "title": "怎么读一篇论文",
+      "en": "Reading Papers",
+      "minutes": 50,
+      "file": null,
+      "covers": "三遍读法、抓住问题-方法-证据、做笔记、怎么判断论文可信度"
+    },
+    {
+      "id": "u02",
+      "title": "复现一篇论文",
+      "en": "Reproducing a Paper",
+      "minutes": 50,
+      "file": null,
+      "covers": "选论文、对照官方代码、复现小实验、结果对不上时怎么排查"
+    },
+    {
+      "id": "u03",
+      "title": "实验设计与消融",
+      "en": "Experiment Design & Ablations",
+      "minutes": 50,
+      "file": null,
+      "covers": "基线、对照、消融、随机种子与误差条、避免自欺"
+    },
+    {
+      "id": "u04",
+      "title": "实验记录与可复现",
+      "en": "Tracking & Reproducibility",
+      "minutes": 50,
+      "file": null,
+      "covers": "Git、配置文件、W&B 或同类工具、环境与数据版本"
+    },
+    {
+      "id": "u05",
+      "title": "写作与汇报",
+      "en": "Writing & Presenting",
+      "minutes": 50,
+      "file": null,
+      "covers": "论文结构、图表、摘要和引言怎么写、做 10 分钟汇报"
+    },
+    {
+      "id": "u06",
+      "title": "选题与文献综述",
+      "en": "Choosing a Problem",
+      "minutes": 50,
+      "file": null,
+      "covers": "怎么找到可做的小问题、文献综述方法、与导师沟通"
+    },
+    {
+      "id": "u07",
+      "title": "申请材料：研究陈述与套磁",
+      "en": "Applications",
+      "minutes": 50,
+      "file": null,
+      "covers": "研究陈述、简历里的研究/项目经历、联系导师的邮件；院校要求以官网为准"
+    }
+  ],
+  "order": 13,
+  "order_note": "贯穿所有阶段，ml-0 之后就可以开始，一边学一边练"
+}

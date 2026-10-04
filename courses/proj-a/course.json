@@ -1,0 +1,113 @@
+{
+  "id": "proj-a",
+  "title": "项目 A：从零写反向传播与字符级语言模型（跟着 Karpathy）",
+  "subtitle": "【占位课，内容待补】跟着 Andrej Karpathy 的 Neural Networks: Zero to Hero 前半部分，边看边自己敲：先从零写一个自动求导引擎，再一步步写字符级语言模型。这是项目课，不是讲义课：每个小节 = 看一段视频 + 自己把代码敲出来 + 做一道改动练习。适合在 ml-0 之后马上做，用来把反向传播、训练实践彻底吃透",
+  "units": [
+    {
+      "id": "u01",
+      "title": "micrograd：从零写自动求导（1/3）",
+      "en": "micrograd (1/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "导数的直觉、数值求导；Value 类与计算图；前向传播"
+    },
+    {
+      "id": "u02",
+      "title": "micrograd：从零写自动求导（2/3）",
+      "en": "micrograd (2/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "反向传播手算与实现；拓扑排序；梯度累加的坑"
+    },
+    {
+      "id": "u03",
+      "title": "micrograd：从零写自动求导（3/3）",
+      "en": "micrograd (3/3)",
+      "minutes": 50,
+      "file": null,
+      "covers": "用它搭一个 MLP 并训练；和 PyTorch 的 autograd 对照；改动练习"
+    },
+    {
+      "id": "u04",
+      "title": "makemore 1：二元语言模型（1/2）",
+      "en": "makemore 1 (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "字符级数据、计数得到二元模型、采样"
+    },
+    {
+      "id": "u05",
+      "title": "makemore 1：二元语言模型（2/2）",
+      "en": "makemore 1 (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "用负对数似然评估；把计数模型改成神经网络；两者等价；平滑"
+    },
+    {
+      "id": "u06",
+      "title": "makemore 2：多层感知机（1/2）",
+      "en": "makemore 2 (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "嵌入表、上下文窗口、MLP 语言模型"
+    },
+    {
+      "id": "u07",
+      "title": "makemore 2：多层感知机（2/2）",
+      "en": "makemore 2 (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "学习率寻找、训练/验证/测试划分、过拟合、调超参数"
+    },
+    {
+      "id": "u08",
+      "title": "makemore 3：激活值、梯度与 BatchNorm（1/2）",
+      "en": "makemore 3 (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "初始化的影响、tanh 饱和、He/Xavier 缩放、看激活值分布"
+    },
+    {
+      "id": "u09",
+      "title": "makemore 3：激活值、梯度与 BatchNorm（2/2）",
+      "en": "makemore 3 (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "BatchNorm 的作用与坑、训练诊断图（激活、梯度、更新比例）"
+    },
+    {
+      "id": "u10",
+      "title": "makemore 4：手写反向传播（1/2）",
+      "en": "makemore 4 (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "不用 autograd，逐层手推张量的梯度（交叉熵、线性层、tanh）"
+    },
+    {
+      "id": "u11",
+      "title": "makemore 4：手写反向传播（2/2）",
+      "en": "makemore 4 (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "BatchNorm 的反向传播、整体检查梯度、训练循环"
+    },
+    {
+      "id": "u12",
+      "title": "makemore 5：WaveNet 式层次结构（1/2）",
+      "en": "makemore 5 (1/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "把模型改写成 PyTorch 风格的层、层次化融合上下文"
+    },
+    {
+      "id": "u13",
+      "title": "makemore 5：WaveNet 式层次结构（2/2）",
+      "en": "makemore 5 (2/2)",
+      "minutes": 50,
+      "file": null,
+      "covers": "一维卷积的视角、实验流程与调参、这条线接到 Transformer 的哪里"
+    }
+  ],
+  "order": 5,
+  "order_note": "项目课：ml-0 学完后马上做，趁热把反向传播和训练实践敲一遍"
+}

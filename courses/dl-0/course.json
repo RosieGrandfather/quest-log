@@ -1,0 +1,81 @@
+{
+  "id": "dl-0",
+  "title": "深度学习主干：CNN、序列模型与 Transformer",
+  "subtitle": "【占位课，内容待补】ml-0 之后、读论文之前的深度学习主干。目标：能读懂并自己实现 CNN、残差网络、注意力与 Transformer 的核心，知道现代大模型是怎么训练的。ARENA 的 Transformer 章节在它之后会更顺",
+  "units": [
+    {
+      "id": "u01",
+      "title": "卷积神经网络",
+      "en": "Convolutional Neural Networks",
+      "minutes": 50,
+      "file": null,
+      "covers": "卷积/步幅/填充、感受野、参数量与计算量的手算、池化；LeNet→VGG"
+    },
+    {
+      "id": "u02",
+      "title": "残差网络、归一化与迁移学习",
+      "en": "ResNets, Normalization & Transfer Learning",
+      "minutes": 50,
+      "file": null,
+      "covers": "残差连接为什么好训、BatchNorm vs LayerNorm、数据增强、预训练与微调"
+    },
+    {
+      "id": "u03",
+      "title": "循环网络与它们的局限",
+      "en": "RNNs, LSTM/GRU & Their Limits",
+      "minutes": 50,
+      "file": null,
+      "covers": "序列建模、BPTT、梯度消失/爆炸、LSTM/GRU 门控、seq2seq"
+    },
+    {
+      "id": "u04",
+      "title": "注意力机制",
+      "en": "Attention",
+      "minutes": 50,
+      "file": null,
+      "covers": "query/key/value、缩放点积注意力、自注意力、多头、因果掩码，手写实现"
+    },
+    {
+      "id": "u05",
+      "title": "Transformer 架构",
+      "en": "The Transformer",
+      "minutes": 50,
+      "file": null,
+      "covers": "位置编码、残差+LayerNorm、前馈层、编码器与解码器、参数量与算力估算"
+    },
+    {
+      "id": "u06",
+      "title": "语言模型基础",
+      "en": "Language Modeling Basics",
+      "minutes": 50,
+      "file": null,
+      "covers": "分词（BPE）、下一个词预测、困惑度、解码与采样策略"
+    },
+    {
+      "id": "u07",
+      "title": "表示学习与自监督",
+      "en": "Representation & Self-Supervised Learning",
+      "minutes": 50,
+      "file": null,
+      "covers": "嵌入、对比学习、掩码建模、CLIP 的思想"
+    },
+    {
+      "id": "u08",
+      "title": "生成模型：GAN 与扩散模型",
+      "en": "GANs & Diffusion Models",
+      "minutes": 50,
+      "file": null,
+      "covers": "GAN 的博弈目标与训练不稳定、扩散的前向加噪与反向去噪、与 VAE 对照"
+    },
+    {
+      "id": "u09",
+      "title": "训练与规模化",
+      "en": "Training at Scale",
+      "minutes": 50,
+      "file": null,
+      "covers": "混合精度、梯度累积、分布式训练的概念、scaling laws、算力与显存估算"
+    }
+  ],
+  "order": 6,
+  "order_note": "ml-0 与项目 A 之后；ARENA 的 Transformer 章节在它之后更顺"
+}

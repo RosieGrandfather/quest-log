@@ -1,0 +1,57 @@
+{
+  "id": "safety-0",
+  "title": "AI 安全入门",
+  "subtitle": "【占位课，内容待补】AI 安全方向的概念地图和入门阅读。偏概念与阅读，配合 ARENA 的可解释性章节做",
+  "units": [
+    {
+      "id": "u01",
+      "title": "问题全景：对齐、鲁棒性与滥用",
+      "en": "The Landscape",
+      "minutes": 50,
+      "file": null,
+      "covers": "对齐问题是什么、目标错误设定与目标泛化错误、欺骗性对齐的讨论、滥用风险"
+    },
+    {
+      "id": "u02",
+      "title": "可解释性入门",
+      "en": "Interpretability Basics",
+      "minutes": 50,
+      "file": null,
+      "covers": "特征与电路、探针、稀疏自编码器的思想；接 ARENA 的对应章节"
+    },
+    {
+      "id": "u03",
+      "title": "对齐技术概览",
+      "en": "Alignment Techniques",
+      "minutes": 50,
+      "file": null,
+      "covers": "RLHF 的局限、可扩展监督、辩论、宪法式方法"
+    },
+    {
+      "id": "u04",
+      "title": "评估与红队",
+      "en": "Evals & Red-Teaming",
+      "minutes": 50,
+      "file": null,
+      "covers": "危险能力评估、红队、基准的设计与局限"
+    },
+    {
+      "id": "u05",
+      "title": "治理与政策概览",
+      "en": "Governance",
+      "minutes": 50,
+      "file": null,
+      "covers": "主要监管框架与实验室的安全承诺（要读最新资料，不要凭记忆）"
+    },
+    {
+      "id": "u06",
+      "title": "阅读清单与怎么跟进领域",
+      "en": "Reading List",
+      "minutes": 50,
+      "file": null,
+      "covers": "必读论文与博客、怎么跟踪新研究、可以做的小项目"
+    }
+  ],
+  "order": 11,
+  "order_note": "想做 AI 安全方向时学，可配合 ARENA 的可解释性章节"
+}
