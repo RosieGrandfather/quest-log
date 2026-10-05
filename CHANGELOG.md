@@ -15,9 +15,11 @@
 
 ## 2026-10-05 — 新增「日记」板块（和记录 / 学习区平行），每天写了就 +5 分
 - 主页面右上角新增「📔 日记」入口 → `journal.html`：每天一页，当天再进来还是同一页，无固定格式，自动保存，输入框提示语固定为 "What's on your mind today?"；今天记录就自动 +5 分（每天只发一次，内容不能只有空白）；可以在月历里点任意一天翻看和修改以前的日记（有日记的日子有圆点，不加分）；页头显示连续写日记的天数；历史里的小标签是「日记」
+- 日记一页分五块（身体 / 心情 / 学习 / 工作 / 想说的）；月历默认收起，点「🗓 历史记录」才展开，选了日期自动收起；老的整段日记归到「想说的」
 - 连续写日记有隐藏的小惊喜（3/7/14/21/30/50/66/100/200/365 天，+5 到 +200，到了弹窗提示）
 - 改了哪些文件：新增 `journal.html`、`css/journal.css`、`js/journal/main.js`、`js/data/journal.js`、`js/core/journal.js`、`tests/journal.test.js`；改了 `index.html`（入口）、`css/base.css`（`.entry-links`）、`js/firebase.js`（`journal` 集合）、`js/core/constants.js`（`CAT_SHORT.journal`）、README
 - 数据：`users/{uid}/journal/{YYYY-MM-DD}`；积分记录 `log/journal-YYYY-MM-DD`（`awardOnce`）；不需要迁移，也不用改 Firestore 规则
+- 数据：`journal` 文档新增 `sections`（五块），`text` 变成拼起来的一份；不需要迁移
 - 需要注意的：「记录次数」会把日记的 +5 算一次；积分涨得更快，奖励价格和 `LEVEL_STEP` 之后还要一起重新平衡
 
 ## 2026-10-06 — 课程分必修 / 选修 / 方向课；dl-0 第 1 节「卷积神经网络」上线

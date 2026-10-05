@@ -115,12 +115,12 @@
 `LEVELS` 数组，**现在是 20 级**，按累计获得的总积分（不是可用积分，兑换奖励不扣这个数）算，每级相差 `LEVEL_STEP = 800` 分（`js/core/levels.js`，按每周约 800 分的学习节奏，大约一周升一级）：新手上路(0) → 打好地基(800) → 小试牛刀(1600) → …… → 传奇远征者(15200)。超过最后一级后，`levelInfo()` 按「每 +800 分再升一级」继续延伸，不会封顶。觉得太快或太慢，只改 `LEVEL_STEP` 这一个数。
 
 ### 5b. 日记（`journal.html`）
-- 主页面右上角「📔 日记」进入。**每天一页**：第一次打开当天就是空白的一页，当天再进来打开的还是同一页；没有固定格式，想写多少写多少，停手 0.8 秒自动保存；输入框提示语固定为 "What's on your mind today?"（`PLACEHOLDER`）
+- 主页面右上角「📔 日记」进入。**每天一页**：第一次打开当天就是空白的一页，当天再进来打开的还是同一页；一页分五块：**身体 / 心情 / 学习 / 工作 / 想说的**（`JOURNAL_SECTIONS`，哪块空着都行，输入框随内容自动变高），想写多少写多少，停手 0.8 秒自动保存；输入框提示语固定为 "What's on your mind today?"（`PLACEHOLDER`）
 - **今天记录就自动 +5 分**（保存的内容去掉空白后不为空）（`log` 里 `journal-YYYY-MM-DD`，category `journal`，用 `awardOnce` 所以每天只发一次，手机电脑同时写也只一次）。清空再写、反复修改都不会重复发；只发「保存的日期就是今天」的，补写 / 修改以前的日记不加分
-- 页面开着跨过零点会先存好旧的一页再翻到新的一页；下面是**月历**：写过日记的日子有圆点，点任意一天（今天以前）打开那天的日记看和改，‹ › 切换月份（按月读取，`loadJournalMonth`），「回到今天」回来；没写过的日子打开是空白页，可以补写
+- 页面开着跨过零点会先存好旧的一页再翻到新的一页；**月历默认收起**，点页面右上角「🗓 历史记录」才展开（选了日期自动收起，不占版面）：写过日记的日子有圆点，点任意一天（今天以前）打开那天的日记看和改，‹ › 切换月份（按月读取，`loadJournalMonth`），「回到今天」回来；没写过的日子打开是空白页，可以补写
 - 页头「连续写 N 天」是日记自己的连续天数（今天还没写时从昨天往前数）；主页面的连续打卡 / 积分 / 历史会照常包含日记的 +5
 - **连续写日记有隐藏的小惊喜**（页面上不提前显示，到了才弹出）：第 3 天 +5、7 天 +15、14 天 +20、21 天 +30、30 天 +50、50 天 +50、66 天 +66、100 天 +100、200 天 +100、365 天 +200（`JOURNAL_STREAK_BONUS`，第一个月额外共 120）。在当天第一次拿到 +5 时计算，`log` 里 `journalstreak-日期-天数`（category `journalstreak`，小标签「日记连续」），同一天不会重复发，断签后重新连到同一天数会再发。要改金额只改 `js/core/journal.js` 里那张表
-- 日记正文只存在 `users/{uid}/journal/{YYYY-MM-DD}`（`dateISO`、`text`、`createdAt`、`updatedAt`），不会进 `log`，`log` 里只有一条「写日记 +5」；安全规则对整个 `users/{uid}/**` 已经是只有本人能读写，不用改规则
+- 日记正文只存在 `users/{uid}/journal/{YYYY-MM-DD}`（`dateISO`、`sections`：`body`/`mood`/`study`/`work`/`free` 五块、`text`：把有内容的块拼成一份方便搜索、`createdAt`、`updatedAt`；老版本只有整段 `text` 的文档读出来归到「想说的」，`entryFromDoc`），不会进 `log`，`log` 里只有一条「写日记 +5」；安全规则对整个 `users/{uid}/**` 已经是只有本人能读写，不用改规则
 - 日记页打开时同样会发每日签到奖励
 
 ### 6. 学习区（`study.html`）
@@ -164,7 +164,7 @@
 - `users/{uid}/sections`：板块。文档 ID 就是板块 id。字段：`label`、`ts`（排序）、`short`（可选，历史记录小标签用的简称；老板块迁移时带上，改名后删除，之后标签显示全名）
 - `users/{uid}/studyProgress/{课程}__{章节}`：测验成绩。`quizAttempts`、`quizBest`、`quizPassed`、`lastAttempt`（`answers` 数组、`score`、`ts`）、首次学完时的 `completedISO`。**「是否学完」以 log 里有没有 `study-…` 记录为准**
 - `users/{uid}/studyNotes/{课程}__{章节}`：笔记 `text`、`updatedAt`
-- `users/{uid}/journal/{YYYY-MM-DD}`：日记，`dateISO`、`text`、`createdAt`、`updatedAt`（有内容时 `log` 里另有 `journal-日期`，+5 分）
+- `users/{uid}/journal/{YYYY-MM-DD}`：日记，`dateISO`、`sections`（五块）、`text`（拼起来的一份）、`createdAt`、`updatedAt`（有内容时 `log` 里另有 `journal-日期`，+5 分）
 - `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
 
 **2026-09 数据迁移（schemaVersion 1 → 2）**：老版本板块写死在代码里。老账号登录时 `migrateLegacySections()` 会：① 把原来 7 个板块（arena/pl300/python/project/job/review/custom，见 `LEGACY_SECTIONS`）用**原 id 当文档 ID** 写进 `sections`（已存在的不覆盖），所以老任务/老记录的 `category` 不用改；②把上一版自定义板块留下的 `'sec_'+文档ID` 格式的 `category`（任务和 log 里都有）统一去掉前缀。每一步都可以重复执行，完成后写 `meta/app`。`log` 里的 `category` 还可能是 `'reward'`（兑换）或 `'daily'`（签到），小标签见 `CAT_SHORT`。

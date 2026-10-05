@@ -1,17 +1,23 @@
-/* 日记页：一页纸 + 以前的日记列表 */
+/* 日记页：一页纸（五块输入框）+ 点「历史记录」才展开的月历 */
 .j-page{margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:16px 16px 12px;box-shadow:var(--shadow);}
 .j-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;}
 .j-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.02em;}
 .j-sub{font-size:12.5px;color:var(--ink-faint);margin-top:2px;}
 .j-sub.ok{color:var(--teal);font-weight:700;}
 .j-today{flex:none;padding:6px 12px;font-size:13px;}
-#jText{
-  width:100%;min-height:48vh;resize:vertical;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
-  padding:14px;font:inherit;font-size:16px;line-height:1.8;color:var(--ink);
+.j-head-btns{display:flex;gap:6px;flex:none;flex-wrap:wrap;justify-content:flex-end;}
+.j-hist{padding:6px 12px;font-size:13px;}
+.j-hist[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent);}
+.j-field{margin-top:12px;}
+.j-field label{display:block;font-size:13px;font-weight:800;color:var(--ink-soft);margin-bottom:4px;}
+.j-field textarea{
+  width:100%;min-height:3.6em;resize:none;overflow:hidden;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:10px 12px;font:inherit;font-size:15.5px;line-height:1.7;color:var(--ink);
 }
-#jText:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.j-field.free textarea{min-height:9em;}
+.j-field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
 .j-foot{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--ink-faint);margin-top:6px;}
-.j-cal-wrap{margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:14px;box-shadow:var(--shadow);}
+.j-cal-wrap{margin:4px 0 6px;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:12px;}
 .j-cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
 .j-cal-title{font-weight:800;font-size:15px;}
 .j-nav{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:var(--surface-2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;}
@@ -27,6 +33,6 @@
 .j-day.has::after{content:"";position:absolute;bottom:5px;width:5px;height:5px;border-radius:50%;background:var(--teal);}
 .j-day.today{border-color:var(--accent);}
 .j-day.active{background:var(--accent-soft);color:var(--accent-ink);}
-.j-day:not(:disabled):not(.blank):hover{background:var(--surface-2);}
+.j-day:not(:disabled):not(.blank):hover{background:var(--surface);}
 .j-day.active:hover{background:var(--accent-soft);}
 .j-cal-hint{font-size:12px;color:var(--ink-faint);margin-top:8px;text-align:center;}

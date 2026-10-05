@@ -5,6 +5,32 @@ export const JOURNAL_POINTS = 5;
 
 export const hasContent = text => typeof text === 'string' && text.trim().length > 0;
 
+/* 一天的日记分五块（顺序就是页面上的顺序）。没有固定格式，哪块空着都行 */
+export const JOURNAL_SECTIONS = [
+  {id:'body',  label:'身体'},
+  {id:'mood',  label:'心情'},
+  {id:'study', label:'学习'},
+  {id:'work',  label:'工作'},
+  {id:'free',  label:'想说的'},
+];
+export const emptyEntry = () => Object.fromEntries(JOURNAL_SECTIONS.map(s=>[s.id, '']));
+
+/* 数据库文档 → 一天的内容。老版本只有一整段 text，归到「想说的」 */
+export function entryFromDoc(data){
+  const e = emptyEntry();
+  if(!data) return e;
+  if(data.sections && typeof data.sections === 'object'){
+    JOURNAL_SECTIONS.forEach(s=>{ if(typeof data.sections[s.id] === 'string') e[s.id] = data.sections[s.id]; });
+  } else if(typeof data.text === 'string'){
+    e.free = data.text;
+  }
+  return e;
+}
+export const entryHasContent = e => !!e && JOURNAL_SECTIONS.some(s=> hasContent(e[s.id]));
+/* 拼成一段文字（存进文档的 text 字段，方便以后搜索 / 导出；空的块不写） */
+export const entryText = e => JOURNAL_SECTIONS.filter(s=> hasContent(e[s.id])).map(s=>`【${s.label}】${e[s.id].trim()}`).join('\n');
+export const entryCharCount = e => JOURNAL_SECTIONS.reduce((n,s)=> n + charCount(e[s.id]), 0);
+
 /* 字数：不算空白（中文按字，英文按字符，够用即可） */
 export const charCount = text => (text || '').replace(/\s/g, '').length;
 
@@ -27,7 +53,7 @@ export function weekdayLabel(iso){
   return WEEK[new Date(y, m-1, d).getDay()];
 }
 
-/* 列表里的预览：取第一行有字的内容，最多 40 字 */
+/* 预览：取第一行有字的内容，最多 40 字 */
 export function previewText(text, max = 40){
   const line = (text || '').split('\n').map(s=>s.trim()).find(Boolean) || '';
   return line.length > max ? line.slice(0, max) + '…' : line;

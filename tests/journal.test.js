@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { JOURNAL_POINTS, hasContent, charCount, journalStreak, weekdayLabel, previewText, PLACEHOLDER, journalStreakBonus, monthGrid, shiftMonth } from '../js/core/journal.js';
+import { JOURNAL_POINTS, hasContent, charCount, journalStreak, weekdayLabel, previewText, PLACEHOLDER, JOURNAL_SECTIONS, emptyEntry, entryFromDoc, entryHasContent, entryText, entryCharCount, journalStreakBonus, monthGrid, shiftMonth } from '../js/core/journal.js';
 
 const NOW = new Date(2026, 9, 5, 10, 0); // 2026-10-05（周一）
 
@@ -48,4 +48,21 @@ test('日记连续奖励：只在里程碑天数发，其余为空', ()=>{
   assert.equal(journalStreakBonus(8), null);
   assert.equal(journalStreakBonus(66).amount, 66);
   assert.equal(journalStreakBonus(365).amount, 200);
+});
+
+test('日记分五块：身体 / 心情 / 学习 / 工作 / 想说的', ()=>{
+  assert.deepEqual(JOURNAL_SECTIONS.map(s=>s.label), ['身体','心情','学习','工作','想说的']);
+  assert.equal(entryHasContent(emptyEntry()), false);
+  assert.equal(entryHasContent({...emptyEntry(), mood:'  '}), false);
+  assert.equal(entryHasContent({...emptyEntry(), work:'开了会'}), true);
+});
+test('entryFromDoc：新格式、老格式（整段 text 归到想说的）、没有文档', ()=>{
+  assert.equal(entryFromDoc({sections:{body:'跑步',free:'嗯'}}).body, '跑步');
+  assert.equal(entryFromDoc({text:'老日记'}).free, '老日记');
+  assert.equal(entryFromDoc({text:'老日记'}).body, '');
+  assert.deepEqual(entryFromDoc(null), emptyEntry());
+});
+test('entryText 只拼有内容的块；entryCharCount 不算空白', ()=>{
+  assert.equal(entryText({...emptyEntry(), body:' 跑步 ', free:'累'}), '【身体】跑步\n【想说的】累');
+  assert.equal(entryCharCount({...emptyEntry(), body:'跑 步', mood:'好'}), 3);
 });

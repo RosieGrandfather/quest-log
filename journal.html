@@ -41,24 +41,28 @@
           <div class="j-date" id="jDate"></div>
           <div class="j-sub" id="jSub"></div>
         </div>
-        <button class="btn-ghost j-today" id="backToday" hidden>回到今天</button>
+        <div class="j-head-btns">
+          <button class="btn-ghost j-today" id="backToday" hidden>回到今天</button>
+          <button class="btn-ghost j-hist" id="histBtn" aria-expanded="false">🗓 历史记录</button>
+        </div>
       </div>
-      <textarea id="jText" placeholder="" disabled></textarea>
+
+      <section class="j-cal-wrap" id="calWrap" hidden>
+        <div class="j-cal-head">
+          <button class="j-nav" id="calPrev" aria-label="上个月">‹</button>
+          <div class="j-cal-title" id="calTitle"></div>
+          <button class="j-nav" id="calNext" aria-label="下个月">›</button>
+        </div>
+        <div class="j-cal-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+        <div class="j-cal" id="jCal"></div>
+        <div class="j-cal-hint">有圆点的日子写过日记，点一下打开</div>
+      </section>
+
+      <div id="jFields"></div>
       <div class="j-foot">
         <span id="jCount"></span>
         <span id="jStatus"></span>
       </div>
-    </section>
-
-    <section class="j-cal-wrap">
-      <div class="j-cal-head">
-        <button class="j-nav" id="calPrev" aria-label="上个月">‹</button>
-        <div class="j-cal-title" id="calTitle"></div>
-        <button class="j-nav" id="calNext" aria-label="下个月">›</button>
-      </div>
-      <div class="j-cal-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
-      <div class="j-cal" id="jCal"></div>
-      <div class="j-cal-hint">有圆点的日子写过日记，点一下打开</div>
     </section>
   </div>
 </div>
