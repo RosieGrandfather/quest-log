@@ -84,8 +84,9 @@ def validate_unit(unit, n_questions=10):
         except SyntaxError as x: e.append(f'{uid} 块{j}: Python 代码有语法错误（第 {x.lineno} 行）：{x.msg}')
     return e
 
-def dump(unit, course_path, filename):
-    errors = validate_unit(unit)
+def dump(unit, course_path, filename, n_questions=10):
+    """直接按 ≤50 分钟写的小节：n_questions=5（course.json 里这一节要加 \"direct\": true）"""
+    errors = validate_unit(unit, n_questions=n_questions)
     if errors:
         raise SystemExit('检查没通过：\n  ' + '\n  '.join(errors))
     out = os.path.join(COURSES, course_path, filename)

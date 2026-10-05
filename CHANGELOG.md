@@ -13,6 +13,13 @@
 
 ---
 
+## 2026-10-06 — 课程分必修 / 选修 / 方向课；dl-0 第 1 节「卷积神经网络」上线
+- 首页课程卡片按「必修 / 选修 / 方向课」分组并带标签；必修 8 门（py-0、prob-0、arena-0.0、ml-0、proj-a、dl-0、proj-b、rs-0）、选修 2 门（dsa-0、opt-0）、方向课 4 门（wm-0、proj-c 世界模型；llm-0；safety-0）
+- 占位小节显示「要讲：…」（`covers`）
+- dl-0 u01 卷积神经网络（50 分钟，1 个视频，5 道测验）；手写 conv2d 与 F.conv2d、手写 CNN 与 nn.Sequential 都核对一致
+- 改了哪些文件：各 `course.json`（`tier`、`track`、`order`、`order_note`）、`js/study/views.js`、`css/study.css`、`courses/dl-0/`、`tools/course/dl01*.py`、`unitlib.py`（`dump` 支持 `n_questions`）、`validate.py`（`direct` 小节）、README
+- 需要注意的：视频内容没看过，只核实了存在和可嵌入；「有效感受野比理论值小」「LeNet/VGG 参数规模」「ViT 切块」写自已有知识，没查文献；若有 `.git/index.lock` 先删掉再提交
+
 ## 2026-10-06 — 占位课 proj-c（从零搭一个世界模型），README 写入「下回怎么开始」
 - 新增占位课 `proj-c`（9 个小节，放在 wm-0 之后）；llm-0 / safety-0 / opt-0 / rs-0 的步数顺延为 11–14
 - README 新增「下回怎么开始」一节：当前状态、建议顺序、要先核实的东西、不要运行 git 等约定

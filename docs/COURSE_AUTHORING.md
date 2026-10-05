@@ -58,7 +58,7 @@
 - 不确定的事实不要写；视频用 `yt.py verify` 核实，**没看过内容就只能说是按标题和时长选的**，交付时要告诉她
 - 检查：`python tools/course/<课>NN.py`（自动检查测验和公式配对）→ `python tools/course/validate.py --online`（联网核实视频和链接；偶尔因网络超时失败，重跑即可）→ `npm test` → 把所有公式用 KaTeX 试渲染（抽取用的正则同渲染器，0 个出错才算过）→ 确认讲义里没有写作提示类文字
 
-### 0.6 六门课的顺序（页面上的「第 N 步」读的是 `course.json` 的 `order` / `order_note`）
+### 0.6 课程的顺序与分组（页面上的「第 N 步」读的是 `course.json` 的 `order` / `order_note`）
 1. **py-0 Python 软件基础**：先学，后面都要写代码
 2. **prob-0 概率统计补漏**：ARENA 的概率、信息论要用
 3. **arena-0.0 ARENA 前置知识**：主线技术课
@@ -67,6 +67,8 @@
 
 要改顺序：改 `courses/index.json` 里的排列，以及每门课 `course.json` 的 `order`、`order_note`，并同步 README「学习顺序」一节。
 
+
+2026-10-06 起共 14 门课，`course.json` 另有 `tier`（`core` 必修 / `elective` 选修 / `track` 方向课）和方向课的 `track`（世界模型 / LLM / AI 安全）；首页按 `tier` 分组。占位小节用 `file: null` + `covers`。直接按 ≤50 分钟写的小节（不经过 split.py）在 course.json 里加 `"direct": true`，用 `dump(unit, course, file, n_questions=5)` 输出，测验 2–5 道。
 ### 0.7 把 ARENA 旧格式的节重写成 v3
 - 在 `tools/course/` 里写 `aNN.py` + `aNNc.py`（参考 `a01.py`、`a01c.py`）；**测验沿用旧版题目**：先备份旧 JSON，再把旧题目导出成 `aNN_quiz.py`（`a01_quiz.py` 就是这么来的）
 - ARENA 没有开源授权：**只按它的大纲和知识点自己写**；视频沿用旧版已经核实过的，参考资料第一条保留 ARENA 原文

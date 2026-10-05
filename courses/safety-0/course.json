@@ -52,6 +52,8 @@
       "covers": "必读论文与博客、怎么跟踪新研究、可以做的小项目"
     }
   ],
-  "order": 12,
-  "order_note": "想做 AI 安全方向时学，可配合 ARENA 的可解释性章节"
+  "order": 14,
+  "order_note": "AI 安全方向课：学完必修基础后再开始，可配合 ARENA 的可解释性章节",
+  "tier": "track",
+  "track": "AI 安全"
 }

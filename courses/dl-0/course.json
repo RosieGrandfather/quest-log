@@ -8,8 +8,8 @@
       "title": "卷积神经网络",
       "en": "Convolutional Neural Networks",
       "minutes": 50,
-      "file": null,
-      "covers": "卷积/步幅/填充、感受野、参数量与计算量的手算、池化；LeNet→VGG"
+      "file": "u01-cnn.json",
+      "direct": true
     },
     {
       "id": "u02",
@@ -77,5 +77,6 @@
     }
   ],
   "order": 6,
-  "order_note": "ml-0 与项目 A 之后；ARENA 的 Transformer 章节在它之后更顺"
+  "order_note": "ml-0 与项目 A 之后；ARENA 的 Transformer 章节在它之后更顺",
+  "tier": "core"
 }

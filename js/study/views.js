@@ -61,16 +61,19 @@ function courseProgress(course){
 }
 
 /* 建议学习顺序：course.json 里的 order / order_note；小时数由各节 minutes 加总 */
+const TIER_LABEL = {core:'必修', elective:'选修', track:'方向课'};
+const TIER_HEAD = {core:'必修基础：学完它们，就可以开始自己做研究', elective:'选修：按需学（申请 Master 常要的数据结构、读论文要的进阶数学）', track:'方向课：学完必修基础后，选定方向再学'};
 function stepLine(c){
   if(!c.order) return '';
   const hours = Math.round(c.units.reduce((s,u)=>s+(u.minutes||0),0)/60);
-  return `<div class="course-step"><span class="step-no">第 ${c.order} 步</span> ${escapeHTML(c.order_note||'')} <span class="mono">· 约 ${hours} 小时</span></div>`;
+  const tier = TIER_LABEL[c.tier] ? `<span class="tier tier-${c.tier}">${TIER_LABEL[c.tier]}${c.track ? '：'+escapeHTML(c.track) : ''}</span> ` : '';
+  return `<div class="course-step">${tier}<span class="step-no">第 ${c.order} 步</span> ${escapeHTML(c.order_note||'')} <span class="mono">· 约 ${hours} 小时</span></div>`;
 }
 
 async function renderHome(){
   const courses = await loadCourses();
   const full = await Promise.all(courses.map(c=> loadCourse(c.id)));
-  view().innerHTML = `<h2 class="view-title">我的课程</h2><div class="course-sub">按「第 N 步」的顺序学：Python → 概率统计 → ARENA 前置 → 数据结构与算法</div>` + full.map(c=>{
+  const card = c=>{
     const p = courseProgress(c);
     return `<a class="course-card" href="${courseHash(c.id)}">
       ${stepLine(c)}
@@ -79,7 +82,15 @@ async function renderHome(){
       <div class="reward-bar"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
       <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
     </a>`;
-  }).join('');
+  };
+  let html = `<h2 class="view-title">我的课程</h2><div class="course-sub">按「第 N 步」的顺序学。先学完「必修基础」，就可以开始自己做研究；选修按需；方向课在选定方向后再学</div>`;
+  for(const tier of ['core','elective','track']){
+    const group = full.filter(c=> (c.tier||'core')===tier);
+    if(!group.length) continue;
+    const hours = Math.round(group.reduce((s,c)=>s+c.units.reduce((t,u)=>t+(u.minutes||0),0),0)/60);
+    html += `<div class="tier-head tier-head-${tier}">${TIER_HEAD[tier]} <span class="mono">· 约 ${hours} 小时</span></div>` + group.map(card).join('');
+  }
+  view().innerHTML = html;
 }
 
 /* ---------- 章节列表 ---------- */

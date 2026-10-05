@@ -52,6 +52,8 @@
       "covers": "思维链、可验证奖励、过程监督 vs 结果监督；连接 wm-0 的强化学习"
     }
   ],
-  "order": 11,
-  "order_note": "想做 LLM 方向时，在 dl-0 和项目 B 之后"
+  "order": 13,
+  "order_note": "LLM 方向课：学完必修基础（含 dl-0 和项目 B）后再开始",
+  "tier": "track",
+  "track": "LLM"
 }
