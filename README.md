@@ -115,10 +115,11 @@
 `LEVELS` 数组，**现在是 20 级**，按累计获得的总积分（不是可用积分，兑换奖励不扣这个数）算，每级相差 `LEVEL_STEP = 800` 分（`js/core/levels.js`，按每周约 800 分的学习节奏，大约一周升一级）：新手上路(0) → 打好地基(800) → 小试牛刀(1600) → …… → 传奇远征者(15200)。超过最后一级后，`levelInfo()` 按「每 +800 分再升一级」继续延伸，不会封顶。觉得太快或太慢，只改 `LEVEL_STEP` 这一个数。
 
 ### 5b. 日记（`journal.html`）
-- 主页面右上角「📔 日记」进入。**每天一页**：第一次打开当天就是空白的一页，当天再进来打开的还是同一页；没有固定格式，想写多少写多少，停手 0.8 秒自动保存
-- **当天有内容（去掉空白后不为空）就自动 +5 分**（`log` 里 `journal-YYYY-MM-DD`，category `journal`，用 `awardOnce` 所以每天只发一次，手机电脑同时写也只一次）。清空再写、反复修改都不会重复发；只发「保存的日期就是今天」的，补写 / 修改以前的日记不加分
-- 页面开着跨过零点会先存好旧的一页再翻到新的一页；下面列出以前写过的日子，点一下可以看和改，「回到今天」回来
+- 主页面右上角「📔 日记」进入。**每天一页**：第一次打开当天就是空白的一页，当天再进来打开的还是同一页；没有固定格式，想写多少写多少，停手 0.8 秒自动保存；输入框提示语固定为 "What's on your mind today?"（`PLACEHOLDER`）
+- **今天记录就自动 +5 分**（保存的内容去掉空白后不为空）（`log` 里 `journal-YYYY-MM-DD`，category `journal`，用 `awardOnce` 所以每天只发一次，手机电脑同时写也只一次）。清空再写、反复修改都不会重复发；只发「保存的日期就是今天」的，补写 / 修改以前的日记不加分
+- 页面开着跨过零点会先存好旧的一页再翻到新的一页；下面是**月历**：写过日记的日子有圆点，点任意一天（今天以前）打开那天的日记看和改，‹ › 切换月份（按月读取，`loadJournalMonth`），「回到今天」回来；没写过的日子打开是空白页，可以补写
 - 页头「连续写 N 天」是日记自己的连续天数（今天还没写时从昨天往前数）；主页面的连续打卡 / 积分 / 历史会照常包含日记的 +5
+- **连续写日记有隐藏的小惊喜**（页面上不提前显示，到了才弹出）：第 3 天 +5、7 天 +15、14 天 +20、21 天 +30、30 天 +50、50 天 +50、66 天 +66、100 天 +100、200 天 +100、365 天 +200（`JOURNAL_STREAK_BONUS`，第一个月额外共 120）。在当天第一次拿到 +5 时计算，`log` 里 `journalstreak-日期-天数`（category `journalstreak`，小标签「日记连续」），同一天不会重复发，断签后重新连到同一天数会再发。要改金额只改 `js/core/journal.js` 里那张表
 - 日记正文只存在 `users/{uid}/journal/{YYYY-MM-DD}`（`dateISO`、`text`、`createdAt`、`updatedAt`），不会进 `log`，`log` 里只有一条「写日记 +5」；安全规则对整个 `users/{uid}/**` 已经是只有本人能读写，不用改规则
 - 日记页打开时同样会发每日签到奖励
 
@@ -202,7 +203,7 @@ js/
    └─ rewards.js        奖励商店 Tab：卡片、兑换确认、奖励增改删
 js/core/journal.js      日记规则：JOURNAL_POINTS、hasContent、journalStreak、previewText
 js/data/journal.js      日记读写 + 当天首次有内容 +5（awardOnce）
-js/journal/main.js      日记页：每天一页、自动保存、跨零点翻页、以前的日记列表
+js/journal/main.js      日记页：每天一页、自动保存、跨零点翻页、月历（monthGrid / shiftMonth）
 js/core/study.js        学习区规则：积分常量、scoreQuiz、studyStreak、streakBonuses
 js/data/study.js        completeUnit / submitQuiz（都用 awardOnce）、笔记读写
 js/study/               学习区页面

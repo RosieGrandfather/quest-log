@@ -43,17 +43,33 @@
         </div>
         <button class="btn-ghost j-today" id="backToday" hidden>回到今天</button>
       </div>
-      <textarea id="jText" placeholder="今天想记下什么都可以，写多写少都行。没有格式，想到哪写到哪……只有你自己能看到" disabled></textarea>
+      <textarea id="jText" placeholder="" disabled></textarea>
       <div class="j-foot">
         <span id="jCount"></span>
         <span id="jStatus"></span>
       </div>
     </section>
 
-    <section class="j-list-wrap">
-      <h3>以前的日记</h3>
-      <div id="jList" class="j-list"></div>
+    <section class="j-cal-wrap">
+      <div class="j-cal-head">
+        <button class="j-nav" id="calPrev" aria-label="上个月">‹</button>
+        <div class="j-cal-title" id="calTitle"></div>
+        <button class="j-nav" id="calNext" aria-label="下个月">›</button>
+      </div>
+      <div class="j-cal-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+      <div class="j-cal" id="jCal"></div>
+      <div class="j-cal-hint">有圆点的日子写过日记，点一下打开</div>
     </section>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="celebrateModal" hidden>
+  <div class="modal celebrate-modal">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="celebrate-emoji">🎉</div>
+    <h3>小惊喜！</h3>
+    <p id="celebrateText" class="celebrate-text"></p>
+    <button class="btn-primary" id="closeCelebrate" style="width:100%">收下</button>
   </div>
 </div>
 
