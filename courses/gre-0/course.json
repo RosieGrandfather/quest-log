@@ -1,0 +1,70 @@
+{
+  "id": "gre-0",
+  "title": "GRE 普通考试：每个科目到底多难",
+  "subtitle": "按 ETS 官方资料拆开 GRE 的三个科目（数学推理、文字推理、分析性写作）：考什么、怎么算分、百分位意味着什么、难在内容、速度还是词汇，最后用官方免费模考量出你自己的起点。例题是本课程自己写的，不是 ETS 真题",
+  "source": {
+    "name": "ETS 官方网站：GRE General Test 的考试结构、各科内容与 Interpretive Data（Table 1A）",
+    "url": "https://www.ets.org/gre/test-takers/general-test/prepare/test-structure.html"
+  },
+  "units": [
+    {
+      "id": "u01",
+      "title": "GRE 全景：考什么、怎么算分、每科多难",
+      "en": "The GRE at a Glance: Structure, Scoring and Difficulty",
+      "minutes": 40,
+      "file": "u01-overview.json",
+      "direct": true
+    },
+    {
+      "id": "u02",
+      "title": "数学推理（上）：考什么、算术与代数",
+      "en": "Quantitative Reasoning I: Scope, Arithmetic & Algebra",
+      "minutes": 45,
+      "file": "u02-quant-1.json",
+      "direct": true
+    },
+    {
+      "id": "u03",
+      "title": "数学推理（下）：几何、数据分析与数量比较",
+      "en": "Quantitative Reasoning II: Geometry, Data Analysis & Quantitative Comparison",
+      "minutes": 35,
+      "file": "u03-quant-2.json",
+      "direct": true
+    },
+    {
+      "id": "u04",
+      "title": "文字推理（上）：文本填空与句子等价",
+      "en": "Verbal Reasoning I: Text Completion & Sentence Equivalence",
+      "minutes": 40,
+      "file": "u04-verbal-1.json",
+      "direct": true
+    },
+    {
+      "id": "u05",
+      "title": "文字推理（下）：阅读理解",
+      "en": "Verbal Reasoning II: Reading Comprehension",
+      "minutes": 35,
+      "file": "u05-verbal-2.json",
+      "direct": true
+    },
+    {
+      "id": "u06",
+      "title": "分析性写作：30 分钟一篇议论文",
+      "en": "Analytical Writing: One Issue Essay in 30 Minutes",
+      "minutes": 35,
+      "file": "u06-writing.json",
+      "direct": true
+    },
+    {
+      "id": "u07",
+      "title": "备考路线：先用官方模考量出自己的起点",
+      "en": "Study Plan: Measure Your Baseline with the Official Practice Tests",
+      "minutes": 35,
+      "file": "u07-plan.json",
+      "direct": true
+    }
+  ],
+  "order": 15,
+  "order_note": "选修，申请准备：想先弄清 GRE 有多难就先学，不影响主线；用官方模考量出起点之后再决定要不要备考",
+  "tier": "elective"
+}

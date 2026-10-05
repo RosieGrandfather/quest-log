@@ -1,0 +1,124 @@
+"""gre-0 第 5 节：文字推理（下）：阅读理解（直接按 ≤50 分钟写）"""
+from unitlib import *
+
+PASSAGE = """> Urban planners long assumed that adding bus lanes would speed up commutes simply by removing buses from general traffic. A recent study of eleven cities complicates this picture. In the three cities where travel times fell most, bus lanes were accompanied by changes to ticketing: passengers paid before boarding, which cut the time each bus spent at stops. In the cities where lanes were added without such changes, average commutes improved only slightly. The authors caution that their sample is small and that the cities differed in ways the study could not fully control, but they argue that planners should treat lanes and boarding procedures as a package rather than as independent measures."""
+
+unit = {
+ "id": "u05",
+ "title": "文字推理（下）：阅读理解",
+ "en": "Verbal Reasoning II: Reading Comprehension",
+ "minutes": 35,
+ "objectives": [
+  "说出 **阅读理解 (Reading Comprehension)** 的三种答题格式：选一个（五选一）、选一个或多个（三选，要选出所有正确的）、**文中选句 (select-in-passage)**",
+  "知道官方列出的几项考查能力：理解词句含义、区分**主要观点与支持细节**、**得出结论 (draw conclusions)**、分析文章结构与作者视角、识别**假设 (assumption)** 并评价论证",
+  "用**先读题再读文、先抓主旨**的顺序读一段 100 词左右的文章，并区分**文中明确说了的**与**可以推出的**",
+  "理解为什么阅读理解的难点是**速度与忠实于原文**，而不是生僻词",
+  "知道这类题和论文阅读的联系与区别",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一小节要干什么
+
+阅读理解约占 Verbal 的一半（ETS 官方的说法是大约 50%）。对读英文论文的你来说，这是 Verbal 里最熟悉的一块：区别是**限时**，而且 GRE 的题目要求你**只依据文中的信息**作答，不能用自己的背景知识。这一小节看官方给出的题型格式，用一段**本课程自己写的短文**示范读法，再说它和读论文有什么相同、什么不同。
+
+**学完它你就能看懂这几件事：**
+
+- 阅读理解的三种答题格式，以及「选所有正确答案」没有部分分时怎么处理；
+- 为什么答案要有**文中依据**，不能凭常识；
+- 读一段文章时，第一遍该抓什么；
+- 你要不要把 Verbal 的大部分备考时间放在阅读理解上。
+
+**本小节安排（约 35 分钟）**：导读（2 分钟）→ 官方题型与考查能力（8 分钟）→ 读一段示例（12 分钟）→ 难点与对策（8 分钟）→ 总结与「想一想」（5 分钟）。
+
+### 官方题型与考查能力
+
+> **标准定义 · 阅读理解 (Reading Comprehension)**
+>
+> 官方说明：文章大多数是**一个段落**，也有一两篇有多个段落；每篇文章配 **1–6 道题**；内容取材于物理科学、生物科学、社会科学、商业、艺术和人文。三种答题格式：**五选一**；**三选一个或多个**（要选出所有正确的答案）；**文中选句**（在文章里点出符合描述的那句话）。考查的能力包括：理解词句含义、区分主要观点与支持细节、得出结论、分析文章结构与作者视角、识别假设并评价论证。
+>
+> *English: Passages come from the sciences, social sciences, business, arts and humanities; each has 1–6 questions in three formats: select one answer, select one or more answers, or select a sentence in the passage.*
+
+**白话版：「读一小段文章，回答只看原文的问题」。** 官方没有把题目分成「主旨题」「推断题」这样的类别名，这里的分类是常见的备考说法。
+
+### 读一段示例
+
+下面这段是本课程自己写的，不是 ETS 真题，长度比真题短，只是用来练读法。
+""" + "\n\n" + PASSAGE + r"""
+
+**第一遍只抓三件事：** ① 常见看法是什么（「公交专用道本身就会加快通勤」）；② 作者用什么转折（「A recent study…complicates this picture」，转折词 complicates 告诉你文章要反驳或修正前面的看法）；③ 最终结论是什么（lanes and boarding procedures 应当一起考虑）。读完你应该能用一句话概括：**公交专用道的效果取决于是否同时改进上车方式，不能只改一项**。
+
+**例题（本课程自己出的）：**
+
+1. 作者对研究的态度最接近：（A）完全肯定 （B）认为样本小、有局限，但仍认为有参考价值 （C）完全否定 （D）认为与政策无关。答案是 B：文章明确说「样本小、城市差异不能完全控制」，但又说「planners should treat…as a package」，所以不是完全肯定，也不是否定。
+2. （文中选句）哪一句最直接说明了通勤时间下降最多的城市做对了什么？答案是第三句「In the three cities where travel times fell most, bus lanes were accompanied by changes to ticketing…」：它直接给出了「下降最多」和「先付费再上车」的联系。其他句子要么是背景（第一句），要么是对照组（第四句），要么是作者的保留意见（第五句）。
+3. （选一个或多个）下面哪些可以由文章推出？（i）所有城市都实行了先付费再上车 （ii）在先付费的城市里，车辆在站台的时间缩短了 （iii）在没有改变售票方式的城市里，通勤时间改善较小。答案是 ii 和 iii：(i) 与「cities where lanes were added without such changes」矛盾；(ii) 文章明确说了；(iii) 文章明确说了。**注意：每一个选项都要能在原文里找到依据**。
+
+### 难点与对策
+
+- **速度**：Verbal 两个小节共 27 题 41 分钟，平均每题约 1.5 分钟，而一篇文章要读一遍再答 1–6 道题，所以文章越长，每题能分到的时间越少。对策：**第一遍只读结构，不抠细节**；答题时再回原文定位。
+- **忠实于原文**：选「最合理」的答案，不是选「你觉得对」的答案。读论文时你常常有自己的判断，GRE 要求你**压住自己的背景知识**，只用文中的信息。
+- **选一个或多个**：官方说要选出**所有**正确答案才得分，所以每个选项都要独立判断，不要凭感觉凑数。
+- **不是生僻词的问题**：文章里不认识的词，通常可以由上下文推出，不需要查词典式的词汇量；真正的难点是理解长句和论证。
+
+**和读论文的区别：** 论文你会从摘要、结论开始读，跳着读；GRE 的文章短，从头到尾读一遍就是最快的办法。论文里你会挑战作者；GRE 里先复述作者，再答题。**这是本课程的判断**，需要你用官方模考量一下：同一批阅读题，限时做和不限时做的正确率差多少，就是你的速度缺口。
+
+### 这一小节你要带走的三句话
+
+1. **阅读理解约占 Verbal 的一半**，三种格式：五选一、选所有正确的、文中选句；考查主旨与细节的区分、推断、结构与作者视角、假设与论证评价。
+2. **读法**：第一遍抓常见看法、转折、结论；答题时回原文找依据；**不凭背景知识**。
+3. **难在速度和忠实于原文**，不是生词；用限时与不限时的正确率差来量你的速度缺口。
+"""),
+  THINK("**（计算）** 假设一篇文章配 4 道题，总共有 6 分钟。第一遍读文章用掉 2 分钟，剩下每题平均多少秒？如果其中一题是「选一个或多个」需要多花 30 秒，其余三题平均又是多少秒？", r"""
+剩下 4 分钟，4 题平均 60 秒一题。如果「选一个或多个」的那题用 90 秒，其余三题共有 $240-90=150$ 秒，平均 50 秒。这个计算说明：长文章的每道题时间很紧，**第一遍读文不能追求细节**。
+"""),
+  THINK("**（概念辨析）** 选项说「文章暗示公交专用道没有任何作用」。为什么这个选项不对？这属于哪一种常见的错误？", r"""
+文章说的是在没有改变售票方式的城市里，通勤时间**只改善了一点**，不是「没有作用」。这属于**过度推断（走得太远）**：把「作用有限」夸大成「没有作用」。这类干扰项的特点是用了「所有」「完全」「没有任何」之类的绝对词，而原文只给出了比较或程度。
+"""),
+  THINK("**（联系后续）** 如果你申请 NUS 或 NTU 时被要求提交英文研究计划，阅读理解里的哪项能力是你需要的？", r"""
+最相关的是**区分主要观点与支持细节**，以及**识别假设并评价论证**：写研究计划时要把自己的主要论点放在最前面，细节支持它，并且知道别人会质疑哪个假设。两者的区别是阅读理解里你只需要判断，研究计划里你要自己产出。
+"""),
+  KW(("阅读理解","Reading Comprehension","约占 Verbal 的 50%，一段或多段文章配 1–6 题"),
+     ("选一个答案","select one answer","五选一"),
+     ("选一个或多个","select one or more","三个选项里选出所有正确的"),
+     ("文中选句","select-in-passage","在文章里点出符合描述的那句话"),
+     ("主要观点","main idea","文章的中心论点"),
+     ("支持细节","supporting detail","用来支持主要观点的具体信息"),
+     ("推断","inference","由文中信息必然推出的结论"),
+     ("过度推断","over-inference","把原文的程度夸大成绝对"),
+     ("假设","assumption","论证里没有明说、但必须成立的前提"),
+     ("作者视角","author's perspective","作者对话题的态度与立场"),
+     ("文章结构","passage structure","段落之间的逻辑关系，如先常见看法再转折"),
+     ("转折词","signal word","but, however, complicates 等提示观点转变的词"),
+  ),
+ ],
+ "references": [
+  {"title": "ETS：GRE Verbal Reasoning Overview（含 Reading Comprehension 的题型格式与考查能力）", "url": "https://www.ets.org/gre/test-takers/general-test/prepare/content/verbal-reasoning.html", "note": "本小节官方题型格式与考查能力的依据"},
+  {"title": "ETS：POWERPREP 免费与付费模考", "url": "https://www.ets.org/gre/test-takers/general-test/prepare/powerprep.html", "note": "官方免费模考里的阅读理解真题"},
+  {"title": "ETS：GRE General Test Structure", "url": "https://www.ets.org/gre/test-takers/general-test/prepare/test-structure.html", "note": "Verbal 两个小节的题数与时间"},
+ ],
+ "quiz": {"questions": [
+  Q("下面哪一项**不是**ETS 官方列出的阅读理解答题格式？",
+    ["按重要程度给四个段落排序", "五选一", "三选一个或多个（要选出所有正确的）", "在文章里选出一个句子"], 0,
+    "官方列出的三种格式是：五选一、三选一个或多个、文中选句（select-in-passage）。排序题不在官方列出的格式里。"),
+  Q("「选一个或多个」格式的题，正确的做法是：",
+    ["每个选项独立对照原文判断，选出所有有依据的", "至少选两个以防万一", "只选最长的那个", "只选与自己的背景知识一致的"], 0,
+    "官方说这类题要选出所有正确的答案才算对，所以每个选项要独立判断，且依据来自原文，不能凭背景知识或猜测凑数。"),
+  Q("读完示例短文，下面哪项最能概括它的主旨？",
+    ["公交专用道的效果取决于是否同时改进上车方式，二者应一起考虑", "公交专用道完全无效，应该取消", "所有城市都应立即实行先付费后上车", "该研究的样本足够大，结论完全可靠"], 0,
+    "文章结论是 lanes and boarding procedures 应当作为一个整体看待。「完全无效」「完全可靠」是绝对化的错误，文章还明确说样本小、城市差异没有完全控制。"),
+  Q("一篇文章配 4 道题，总共 6 分钟，第一遍读文章 2 分钟，其余时间平均分给 4 题，每题约多少秒？",
+    ["60 秒", "90 秒", "120 秒", "45 秒"], 0,
+    "剩下 $6-2=4$ 分钟共 240 秒，$240/4=60$ 秒。90 是只除以 $4$ 但没有扣掉读文时间；45 没有对应算法。重点是长文章会压缩每题的时间。"),
+  Q("「选项使用了『所有』『完全』『没有任何』这样的绝对词，而原文只说『有限』『较小』」，这通常说明该选项：",
+    ["过度推断，不应该选", "一定正确，因为它最明确", "与题目无关", "是文中选句的标志"], 0,
+    "这是最常见的干扰项类型：把原文的程度夸大成绝对。绝对词并不是一定错，但需要原文里有同样强度的依据。"),
+ ]},
+}
+
+TARGET = [2, 0, 3, 1, 2]
+for q, t in zip(unit["quiz"]["questions"], TARGET):
+    q["options"][q["answer"]], q["options"][t] = q["options"][t], q["options"][q["answer"]]
+    q["answer"] = t
+
+if __name__ == '__main__':
+    dump(unit, "gre-0", "u05-verbal-2.json", n_questions=5)
