@@ -61,6 +61,7 @@
 
 - `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑。左上角「📚 学习区」进入学习区
 - `study.html` — **学习区**（独立页面），见下面「学习区」一节
+- `journal.html` — **日记**（独立页面，和记录 / 学习区平行），见下面「日记」一节；`css/journal.css`、`js/journal/main.js`、`js/data/journal.js`、`js/core/journal.js`
 - `css/study.css` — 学习区专用样式
 - `courses/` — 学习区的课程内容（JSON），**推送即发布**
 - `css/base.css` — 所有页面共用：颜色变量（含深色模式）、登录页、按钮、弹窗、提示、庆祝动画
@@ -113,6 +114,14 @@
 ### 5. 等级系统
 `LEVELS` 数组，**现在是 20 级**，按累计获得的总积分（不是可用积分，兑换奖励不扣这个数）算，每级相差 `LEVEL_STEP = 800` 分（`js/core/levels.js`，按每周约 800 分的学习节奏，大约一周升一级）：新手上路(0) → 打好地基(800) → 小试牛刀(1600) → …… → 传奇远征者(15200)。超过最后一级后，`levelInfo()` 按「每 +800 分再升一级」继续延伸，不会封顶。觉得太快或太慢，只改 `LEVEL_STEP` 这一个数。
 
+### 5b. 日记（`journal.html`）
+- 主页面右上角「📔 日记」进入。**每天一页**：第一次打开当天就是空白的一页，当天再进来打开的还是同一页；没有固定格式，想写多少写多少，停手 0.8 秒自动保存
+- **当天有内容（去掉空白后不为空）就自动 +5 分**（`log` 里 `journal-YYYY-MM-DD`，category `journal`，用 `awardOnce` 所以每天只发一次，手机电脑同时写也只一次）。清空再写、反复修改都不会重复发；只发「保存的日期就是今天」的，补写 / 修改以前的日记不加分
+- 页面开着跨过零点会先存好旧的一页再翻到新的一页；下面列出以前写过的日子，点一下可以看和改，「回到今天」回来
+- 页头「连续写 N 天」是日记自己的连续天数（今天还没写时从昨天往前数）；主页面的连续打卡 / 积分 / 历史会照常包含日记的 +5
+- 日记正文只存在 `users/{uid}/journal/{YYYY-MM-DD}`（`dateISO`、`text`、`createdAt`、`updatedAt`），不会进 `log`，`log` 里只有一条「写日记 +5」；安全规则对整个 `users/{uid}/**` 已经是只有本人能读写，不用改规则
+- 日记页打开时同样会发每日签到奖励
+
 ### 6. 学习区（`study.html`）
 独立页面，只放学习内容。学完 / 测验达标 / 连续学习的积分自动写进同一个 `log`，回主页面积分、历史、🔥 连续打卡都会更新。
 - 页面：课程列表 `#/` → 章节列表 `#/c/课程id` → 学习页 `#/c/课程id/u/章节id` → 测验 `…/quiz` → 回顾 `…/review`
@@ -154,6 +163,7 @@
 - `users/{uid}/sections`：板块。文档 ID 就是板块 id。字段：`label`、`ts`（排序）、`short`（可选，历史记录小标签用的简称；老板块迁移时带上，改名后删除，之后标签显示全名）
 - `users/{uid}/studyProgress/{课程}__{章节}`：测验成绩。`quizAttempts`、`quizBest`、`quizPassed`、`lastAttempt`（`answers` 数组、`score`、`ts`）、首次学完时的 `completedISO`。**「是否学完」以 log 里有没有 `study-…` 记录为准**
 - `users/{uid}/studyNotes/{课程}__{章节}`：笔记 `text`、`updatedAt`
+- `users/{uid}/journal/{YYYY-MM-DD}`：日记，`dateISO`、`text`、`createdAt`、`updatedAt`（有内容时 `log` 里另有 `journal-日期`，+5 分）
 - `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
 
 **2026-09 数据迁移（schemaVersion 1 → 2）**：老版本板块写死在代码里。老账号登录时 `migrateLegacySections()` 会：① 把原来 7 个板块（arena/pl300/python/project/job/review/custom，见 `LEGACY_SECTIONS`）用**原 id 当文档 ID** 写进 `sections`（已存在的不覆盖），所以老任务/老记录的 `category` 不用改；②把上一版自定义板块留下的 `'sec_'+文档ID` 格式的 `category`（任务和 log 里都有）统一去掉前缀。每一步都可以重复执行，完成后写 `meta/app`。`log` 里的 `category` 还可能是 `'reward'`（兑换）或 `'daily'`（签到），小标签见 `CAT_SHORT`。
@@ -190,6 +200,9 @@ js/
    ├─ tasks.js          记录 Tab：任务卡片、完成确认、任务增改删
    ├─ sections.js       板块增 / 改名 / 删
    └─ rewards.js        奖励商店 Tab：卡片、兑换确认、奖励增改删
+js/core/journal.js      日记规则：JOURNAL_POINTS、hasContent、journalStreak、previewText
+js/data/journal.js      日记读写 + 当天首次有内容 +5（awardOnce）
+js/journal/main.js      日记页：每天一页、自动保存、跨零点翻页、以前的日记列表
 js/core/study.js        学习区规则：积分常量、scoreQuiz、studyStreak、streakBonuses
 js/data/study.js        completeUnit / submitQuiz（都用 awardOnce）、笔记读写
 js/study/               学习区页面

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>日记 · 远征日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/study.css">
+<link rel="stylesheet" href="css/journal.css">
+</head>
+<body>
+
+<div class="app study-app">
+  <div class="gate" id="gate">
+    <h1>日记</h1>
+    <p>登录后才能写日记，只有你自己能看到，手机电脑自动同步。</p>
+    <button class="btn-google" id="signInBtn">用 Google 账号登录</button>
+    <div class="gate-note" id="gateNote"></div>
+  </div>
+
+  <div id="journalRoot" hidden>
+    <div class="study-topbar">
+      <a class="back-home" href="index.html">← 返回远征日志</a>
+      <a class="study-home-link" href="study.html">📚 学习区</a>
+    </div>
+    <header class="study-hero">
+      <div>
+        <div class="eyebrow">日记</div>
+        <div class="today-status" id="todayStatus"></div>
+      </div>
+      <div class="streak"><span class="flame">📔</span>连续写&nbsp;<span class="mono" id="journalStreakNum">0</span>&nbsp;天</div>
+    </header>
+
+    <section class="j-page">
+      <div class="j-head">
+        <div>
+          <div class="j-date" id="jDate"></div>
+          <div class="j-sub" id="jSub"></div>
+        </div>
+        <button class="btn-ghost j-today" id="backToday" hidden>回到今天</button>
+      </div>
+      <textarea id="jText" placeholder="今天想记下什么都可以，写多写少都行。没有格式，想到哪写到哪……只有你自己能看到" disabled></textarea>
+      <div class="j-foot">
+        <span id="jCount"></span>
+        <span id="jStatus"></span>
+      </div>
+    </section>
+
+    <section class="j-list-wrap">
+      <h3>以前的日记</h3>
+      <div id="jList" class="j-list"></div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="js/journal/main.js"></script>
+</body>
+</html>

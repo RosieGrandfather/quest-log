@@ -22,5 +22,6 @@ export function userCols(uid){
     meta: u.collection('meta').doc('app'),
     studyProgress: u.collection('studyProgress'),   // 文档 ID = unitKey(courseId, unitId)
     studyNotes: u.collection('studyNotes'),         // 同上，每节一篇笔记
+    journal: u.collection('journal'),               // 日记，文档 ID = 日期 YYYY-MM-DD
   };
 }

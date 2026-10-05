@@ -34,7 +34,7 @@ export const LEGACY_SECTIONS = [
 export const SCHEMA_VERSION = 2;
 
 /* 不属于任何板块的记录类型的小标签 */
-export const CAT_SHORT = {reward:'奖励', daily:'签到', study:'学习', quiz:'测验', studystreak:'连续学习', studyday:'当日三连'};
+export const CAT_SHORT = {reward:'奖励', daily:'签到', study:'学习', quiz:'测验', studystreak:'连续学习', studyday:'当日三连', journal:'日记'};
 export const DAILY_LOGIN_POINTS = 5;
 
 export const TIER_META = {
