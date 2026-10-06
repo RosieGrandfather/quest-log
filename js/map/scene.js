@@ -2,7 +2,7 @@
    这个文件只管「画」和「车怎么开」：不碰 Firebase，也不碰页面上的按钮；
    要显示什么由 main.js 通过 setProjects 传进来，用户点了哪座城、车到了哪座城通过回调告诉 main.js。 */
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { cityPositions, roadPoints, sampleRoad, landDisks, onLand, HUB_RADIUS, hash32, rng, overallProgress, progressOf } from '../core/map.js';
+import { cityPositions, roadPoints, sampleRoad, landDisks, onLand, HUB_RADIUS, hash32, rng, overallProgress, progressOf, stagesOf } from '../core/map.js';
 
 const PER_SEG = 8;                     // 路上每两座城之间的采样点数（和 sampleRoad 的第二个参数一致）
 const GROUND_Y = 0.8;                  // 陆地顶面高度
@@ -170,7 +170,7 @@ export function createScene(host, handlers = {}){
   }
 
   /* ---------- 一个项目：路 + 城 ---------- */
-  const sigOf = p => [p.slot, p.color, p.title, p.steps.map(s => s.id + ':' + (s.doneAt ? 1 : 0) + ':' + s.title).join('|')].join('#');
+  const sigOf = p => [p.slot, p.color, p.title, p.steps.map(s => s.id + ':' + (s.doneAt ? 1 : 0) + ':' + s.title + ':' + (s.stage || '')).join('|')].join('#');
 
   function disposeGroup(g){
     g.traverse(o => {
@@ -180,7 +180,51 @@ export function createScene(host, handlers = {}){
     });
   }
 
-  function makeCity(project, step, idx, center, tan, lit){
+  /* 每座城除了几间房子，还有一个按「阶段」换花样的地标：0 民居 · 1 工坊 · 2 塔楼 · 3 圆顶剧场 · 4 集市；最后一座城是金顶大塔 */
+  function addLandmark(g, kind, isLast, lit, color, r, px, pz, yaw){
+    const grp = new THREE.Group(); grp.position.set(px, GROUND_Y, pz); grp.rotation.y = yaw;
+    const wall = lit ? new THREE.Color(0xf0e2c4) : new THREE.Color(0x3c4358);
+    const accent = lit ? color.clone() : new THREE.Color(0x4a5268);
+    const gold = lit ? new THREE.Color(0xf2c14e) : new THREE.Color(0x5a5f70);
+    const win = new THREE.MeshBasicMaterial({color: 0xffe08a});
+    const add = (geo, m, x, y, z) => { const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); grp.add(o); return o; };
+    const shadow = new THREE.Mesh(new THREE.CircleGeometry(4.2, 12), new THREE.MeshBasicMaterial({color: 0x000000, transparent: true, opacity: 0.22, depthWrite: false})); shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.05; grp.add(shadow);
+    if(isLast){
+      add(new THREE.CylinderGeometry(3.4, 3.8, 1.2, 8), mat(wall), 0, 0.6, 0);
+      add(new THREE.CylinderGeometry(2.1, 2.7, 7, 8), mat(wall), 0, 4.7, 0);
+      add(new THREE.CylinderGeometry(2.6, 2.1, 1.0, 8), mat(accent), 0, 8.7, 0);
+      add(new THREE.ConeGeometry(2.4, 4.6, 8), mat(gold), 0, 11.5, 0);
+      add(new THREE.SphereGeometry(0.55, 8, 6), new THREE.MeshBasicMaterial({color: lit ? 0xfff0b0 : 0x666b7c}), 0, 14.2, 0);
+      if(lit) for(let a = 0; a < 6; a++) add(new THREE.BoxGeometry(0.5, 0.9, 0.12), win, Math.cos(a * 1.047) * 2.45, 3 + (a % 2) * 2, Math.sin(a * 1.047) * 2.45).rotation.y = -a * 1.047;
+    } else if(kind === 1){            // 工坊：长屋 + 烟囱 + 齿轮
+      add(new THREE.BoxGeometry(5.6, 2.6, 3), mat(wall), 0, 1.3, 0);
+      const roof = add(new THREE.CylinderGeometry(2.2, 2.2, 5.9, 3), mat(accent), 0, 3.1, 0); roof.rotation.set(0, 0, Math.PI / 2);
+      add(new THREE.BoxGeometry(0.9, 3.4, 0.9), mat(0x7a5a4a), 1.8, 3.8, 0.6);
+      const gear = add(new THREE.TorusGeometry(0.9, 0.28, 5, 8), mat(gold), -2.4, 1.6, 1.6); gear.rotation.y = 0;
+      if(lit) for(let k = -2; k <= 2; k += 2) add(new THREE.BoxGeometry(0.6, 0.7, 0.1), win, k, 1.4, 1.55);
+    } else if(kind === 2){            // 塔楼
+      add(new THREE.CylinderGeometry(1.7, 2.2, 6.5, 8), mat(wall), 0, 3.25, 0);
+      add(new THREE.CylinderGeometry(2.2, 1.7, 0.8, 8), mat(accent), 0, 6.9, 0);
+      add(new THREE.ConeGeometry(2.0, 3.6, 8), mat(accent), 0, 9.1, 0);
+      if(lit) for(let a = 0; a < 5; a++) add(new THREE.BoxGeometry(0.4, 0.8, 0.1), win, Math.cos(a * 1.257) * 1.85, 2 + (a % 2) * 2.2, Math.sin(a * 1.257) * 1.85).rotation.y = -a * 1.257;
+    } else if(kind === 3){            // 圆顶剧场
+      add(new THREE.CylinderGeometry(3.0, 3.2, 2.2, 10), mat(wall), 0, 1.1, 0);
+      add(new THREE.SphereGeometry(3.0, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), mat(accent), 0, 2.2, 0);
+      for(let a = 0; a < 6; a++) add(new THREE.CylinderGeometry(0.22, 0.22, 2.4, 5), mat(0xe8dfc9), Math.cos(a * 1.047) * 3.35, 1.2, Math.sin(a * 1.047) * 3.35);
+      add(new THREE.SphereGeometry(0.4, 6, 5), mat(gold), 0, 5.4, 0);
+    } else if(kind === 4){            // 集市：围成一圈的摊位 + 中间喷泉
+      add(new THREE.CylinderGeometry(0.9, 1.1, 0.9, 8), mat(0xb9c4d4), 0, 0.45, 0);
+      add(new THREE.SphereGeometry(0.45, 6, 5), new THREE.MeshBasicMaterial({color: lit ? 0x8fd3ff : 0x59617a}), 0, 1.2, 0);
+      for(let a = 0; a < 4; a++){
+        const x = Math.cos(a * 1.571 + 0.4) * 3.0, z = Math.sin(a * 1.571 + 0.4) * 3.0;
+        add(new THREE.BoxGeometry(1.5, 1.0, 1.0), mat(wall), x, 0.5, z).rotation.y = -(a * 1.571 + 0.4);
+        const aw = add(new THREE.ConeGeometry(1.3, 1.0, 4), mat(a % 2 ? accent : (lit ? new THREE.Color(0xe36b5a) : new THREE.Color(0x4a5268))), x, 1.8, z); aw.rotation.y = Math.PI / 4;
+      }
+    }
+    g.add(grp);
+  }
+
+  function makeCity(project, step, idx, center, tan, lit, kind = 0, isLast = false){
     const color = new THREE.Color(project.color);
     const r = rng(hash32(project.id + ':' + step.id));
     const g = new THREE.Group(); g.position.set(center.x, 0, center.z);
@@ -188,10 +232,11 @@ export function createScene(host, handlers = {}){
     const yaw = Math.atan2(tan.x, tan.z);
 
     const plaza = new THREE.Mesh(new THREE.CylinderGeometry(4.7, 5.1, 0.45, 9), mat(lit ? 0xe3d9c2 : 0x6f7688)); plaza.position.y = GROUND_Y + 0.15; g.add(plaza);
-    const nb = 3 + Math.floor(r() * 2);
+    const landSide = r() < 0.5 ? 1 : -1;
+    const nb = kind === 0 ? 3 + Math.floor(r() * 2) : 2;
     const palette = [color.clone(), color.clone().offsetHSL(0.05, -0.05, 0.1), new THREE.Color(0xf0e2c4), color.clone().offsetHSL(-0.05, -0.1, -0.08)];
     for(let k = 0; k < nb; k++){
-      const side = k % 2 ? 1 : -1;
+      const side = kind === 0 ? (k % 2 ? 1 : -1) : -landSide;
       const along = (r() - 0.5) * 7, lat = side * (4.2 + r() * 2.2);
       const w = 1.7 + r() * 1.0, d = 1.7 + r() * 1.0, h = 2.2 + r() * 3.4;
       const b = new THREE.Group(); b.position.set(tan.x * along + nrm.x * lat, GROUND_Y, tan.z * along + nrm.z * lat); b.rotation.y = yaw;
@@ -209,6 +254,7 @@ export function createScene(host, handlers = {}){
       }
       g.add(b);
     }
+    if(kind !== 0 || isLast) addLandmark(g, kind, isLast, lit, color, r, nrm.x * landSide * 6.8, nrm.z * landSide * 6.8, yaw);
     for(let k = 0; k < 3 + Math.floor(r() * 3); k++){
       const side = r() < 0.5 ? 1 : -1, along = (r() - 0.5) * 9, lat = side * (8 + r() * 3);
       const tx = tan.x * along + nrm.x * lat, tz = tan.z * along + nrm.z * lat;
@@ -220,7 +266,7 @@ export function createScene(host, handlers = {}){
     const flag = new THREE.Mesh(new THREE.BoxGeometry(1.7, 1.0, 0.06), new THREE.MeshBasicMaterial({color: lit ? color : 0x596175})); flag.position.set(nrm.x * 3 + tan.x * 0.9, GROUND_Y + 7.0, nrm.z * 3 + tan.z * 0.9); flag.rotation.y = yaw;
     g.add(flagPole, flag);
     if(lit){
-      const glow = new THREE.Sprite(new THREE.SpriteMaterial({map: glowTexture(), color: color.clone().lerp(new THREE.Color(0xffd98a), 0.5), transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending, depthWrite: false}));
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({map: glowTexture(), color: color.clone().lerp(new THREE.Color(0xffd98a), 0.5), transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false}));
       glow.scale.set(26, 26, 1); glow.position.y = GROUND_Y + 4; g.add(glow);
     }
     const num = labelSprite(String(idx + 1), {round: true, size: 40, bg: lit ? project.color : 'rgba(70,78,98,0.92)', color: '#fff', pad: 14});
@@ -248,11 +294,13 @@ export function createScene(host, handlers = {}){
     group.add(new THREE.Mesh(stripGeometry(dimStrips, 0.45, GROUND_Y + 0.13), new THREE.MeshBasicMaterial({color: 0x5b6477, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -2})));
     group.add(new THREE.Mesh(stripGeometry(litStrips, 0.7, GROUND_Y + 0.14), new THREE.MeshBasicMaterial({color: new THREE.Color(project.color), side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -3})));
     const cities = [];
+    const kindOf = [];
+    stagesOf(project.steps).forEach((st, si) => st.idx.forEach((ix, k) => { kindOf[ix] = (si * 2 + k) % 5; }));
     for(let i = 0; i < n; i++){
       const prev = pts[i], next = pts[i + 2] || {x: cityPts[i].x * 2 - pts[i + 1 - 1].x, z: cityPts[i].z * 2 - pts[i].z};
       let tx = next.x - prev.x, tz = next.z - prev.z; const l = Math.hypot(tx, tz) || 1; tx /= l; tz /= l;
       const lit = !!project.steps[i].doneAt;
-      const c = makeCity(project, project.steps[i], i, cityPts[i], {x: tx, z: tz}, lit);
+      const c = makeCity(project, project.steps[i], i, cityPts[i], {x: tx, z: tz}, lit, kindOf[i] || 0, n > 1 && i === n - 1);
       group.add(c.group); group.add(c.pick);
       cities.push({idx: i, stepId: project.steps[i].id, center: cityPts[i], tan: {x: tx, z: tz}, ...c});
     }
@@ -461,7 +509,7 @@ export function createScene(host, handlers = {}){
   };
   el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
   el.addEventListener('wheel', e => { e.preventDefault(); const c = state.cam; c.dist = Math.max(14, Math.min(1400, c.dist * Math.exp(e.deltaY * 0.0012))); c.goal = null; }, {passive: false});
-  const typing = () => { const a = document.activeElement; return a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName); };
+  const typing = () => { const a = document.activeElement; return !!a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.offsetParent !== null; };   // 输入框藏起来（比如新建项目的弹窗关了）就不算在打字
   const kd = e => { if(typing()) return; if(/^(Arrow|Key[WASD])/.test(e.code)){ state.keys.add(e.code); if(car_auto_cancel()) e.preventDefault(); if(e.code.startsWith('Arrow')) e.preventDefault(); } };
   const ku = e => state.keys.delete(e.code);
   const car_auto_cancel = () => { const c = selCar(); if(c && c.auto){ c.auto = null; } return false; };
