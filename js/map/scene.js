@@ -100,8 +100,51 @@ export function createScene(host, handlers = {}){
   const hemi = new THREE.HemisphereLight(0x9db2ff, 0x2b3050, 0.75); scene.add(hemi);
   const sun = new THREE.DirectionalLight(0xffe2b5, 0.6); sun.position.set(-60, 120, 40); scene.add(sun);
 
-  const sea = new THREE.Mesh(new THREE.PlaneGeometry(6000, 6000), mat(0x1f4a78, {flatShading: false}));
+  /* ---------- 天空 / 星星 / 海 / 云影：整体随「点亮的城越多越亮」从深蓝夜色渐变成暖色黄昏 ---------- */
+  const C = hex => new THREE.Color(hex);
+  const SKY_A = {top: C(0x070b22), hor: C(0x262a55), deep: C(0x0f2f58), shallow: C(0x25608c)};   // 一座城都没亮
+  const SKY_B = {top: C(0x2d5cb0), hor: C(0xf4b88c), deep: C(0x1b78ae), shallow: C(0x63cfd8)};   // 全亮
+  const skyU = {uTop: {value: C(0x070b22)}, uHor: {value: C(0x262a55)}};
+  const skyDome = new THREE.Mesh(new THREE.SphereGeometry(2600, 20, 14), new THREE.ShaderMaterial({
+    uniforms: skyU, side: THREE.BackSide, depthWrite: false, fog: false,
+    vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'uniform vec3 uTop; uniform vec3 uHor; varying vec3 vP; void main(){ float h = clamp(normalize(vP).y, 0.0, 1.0); gl_FragColor = vec4(mix(uHor, uTop, pow(h, 0.55)), 1.0); }',
+  }));
+  skyDome.renderOrder = -10; scene.add(skyDome);
+  const starGeo = new THREE.BufferGeometry(), starPos = [];
+  { const rs = rng(4242); for(let i = 0; i < 260; i++){ const a = rs() * Math.PI * 2, e = 0.12 + rs() * 1.35, R = 2400; starPos.push(Math.cos(a) * Math.cos(e) * R, Math.sin(e) * R, Math.sin(a) * Math.cos(e) * R); } }
+  starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
+  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({color: 0xffffff, size: 5, sizeAttenuation: false, transparent: true, opacity: 0.9, depthWrite: false, fog: false}));
+  stars.renderOrder = -9; scene.add(stars);
+
+  const seaU = {uTime: {value: 0}, uDeep: {value: C(0x0f2f58)}, uShallow: {value: C(0x25608c)}, uFog: {value: C(0x262a55)}, uFogD: {value: 0.0017}, uGlint: {value: C(0xffe2b5)}};
+  const sea = new THREE.Mesh(new THREE.PlaneGeometry(6000, 6000, 1, 1), new THREE.ShaderMaterial({
+    uniforms: seaU,
+    vertexShader: 'varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }',
+    fragmentShader: `uniform float uTime; uniform vec3 uDeep; uniform vec3 uShallow; uniform vec3 uFog; uniform vec3 uGlint; uniform float uFogD; varying vec3 vW;
+      void main(){
+        vec2 p = vW.xz;
+        float w = sin(p.x * 0.21 + uTime * 0.7) + sin(p.y * 0.17 - uTime * 0.55) + sin((p.x + p.y) * 0.11 + uTime * 0.4) + sin((p.x - p.y) * 0.31 - uTime * 0.9) * 0.6;
+        float t = clamp(0.5 + w * 0.13, 0.0, 1.0);
+        vec3 col = mix(uDeep, uShallow, t);
+        float g = smoothstep(0.9, 0.99, (sin(p.x * 1.7 + uTime * 1.5) * sin(p.y * 1.4 - uTime * 1.2) * 0.5 + 0.5) * (0.75 + 0.25 * sin(w * 2.0 + uTime)));
+        col += uGlint * g * 0.22;
+        float d = length(cameraPosition - vW);
+        float f = 1.0 - exp(-uFogD * uFogD * d * d);
+        gl_FragColor = vec4(mix(col, uFog, clamp(f, 0.0, 1.0)), 1.0);
+      }`,
+  }));
   sea.rotation.x = -Math.PI / 2; sea.position.y = -1.4; scene.add(sea);
+
+  /* 云的影子：几块软边的暗斑慢慢从地面上飘过 */
+  const cloudTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'); const gr = x.createRadialGradient(64, 64, 4, 64, 64, 62); gr.addColorStop(0, 'rgba(0,0,0,1)'); gr.addColorStop(0.55, 'rgba(0,0,0,0.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
+  const cloudShadows = [];
+  { const rc = rng(777); for(let i = 0; i < 9; i++){
+    const size = 70 + rc() * 90;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size * (0.55 + rc() * 0.3)), new THREE.MeshBasicMaterial({map: cloudTex, transparent: true, opacity: 0.2, depthWrite: false, fog: false}));
+    m.rotation.x = -Math.PI / 2; m.rotation.z = rc() * 3; m.renderOrder = 2;
+    cloudShadows.push({m, ox: (rc() - 0.5) * 600, oz: (rc() - 0.5) * 600, sp: 3 + rc() * 4}); scene.add(m);
+  } }
 
   const world = new THREE.Group(); scene.add(world);        // 陆地、路、城
   const carsGroup = new THREE.Group(); scene.add(carsGroup);
@@ -269,7 +312,7 @@ export function createScene(host, handlers = {}){
       const glow = new THREE.Sprite(new THREE.SpriteMaterial({map: glowTexture(), color: color.clone().lerp(new THREE.Color(0xffd98a), 0.5), transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false}));
       glow.scale.set(26, 26, 1); glow.position.y = GROUND_Y + 4; g.add(glow);
     }
-    const num = labelSprite(String(idx + 1), {round: true, size: 40, bg: lit ? project.color : 'rgba(70,78,98,0.92)', color: '#fff', pad: 14});
+    const num = labelSprite(String(idx + 1), {round: true, size: 30, bg: lit ? project.color : 'rgba(70,78,98,0.92)', color: '#fff', pad: 14});
     num.position.set(0, GROUND_Y + 10.4, 0); g.add(num);
 
     const pick = new THREE.Mesh(new THREE.SphereGeometry(7, 8, 6), new THREE.MeshBasicMaterial({transparent: true, opacity: 0, depthWrite: false}));
@@ -536,6 +579,15 @@ export function createScene(host, handlers = {}){
     // 环境光：点亮的城越多，整个世界越亮
     state.light += (state.lightGoal - state.light) * (1 - Math.exp(-2 * dt));
     hemi.intensity = state.light; sun.intensity = 0.3 + (state.light - 0.55) * 0.9;
+    // 天色 / 海色 / 星星随点亮程度变化
+    { const k = Math.max(0, Math.min(1, (state.light - 0.55) / 0.7));
+      skyU.uTop.value.copy(SKY_A.top).lerp(SKY_B.top, k); skyU.uHor.value.copy(SKY_A.hor).lerp(SKY_B.hor, k);
+      seaU.uDeep.value.copy(SKY_A.deep).lerp(SKY_B.deep, k); seaU.uShallow.value.copy(SKY_A.shallow).lerp(SKY_B.shallow, k);
+      seaU.uFog.value.copy(skyU.uHor.value).lerp(seaU.uDeep.value, 0.55); scene.fog.color.copy(skyU.uHor.value); scene.background.copy(skyU.uHor.value);
+      seaU.uTime.value = state.time; stars.material.opacity = 0.9 * (1 - k * 0.92);
+      skyDome.position.copy(camera.position); stars.position.copy(camera.position);
+      const tx = state.cam.target.x, tz = state.cam.target.z, span = 700;
+      for(const c of cloudShadows){ c.ox += c.sp * dt; if(c.ox > span / 2) c.ox -= span; c.m.position.set(tx + c.ox, GROUND_Y + 0.4, tz + c.oz); c.m.material.opacity = 0.2 - k * 0.07; } }
     // 标记动画
     for(const p of state.pulses){ p.arrow.position.y = p.baseY + Math.sin(state.time * 3) * 0.8; p.arrow.rotation.y += dt * 2; p.ring.scale.setScalar(1 + Math.sin(state.time * 3) * 0.06); }
     // 弹出的城
@@ -549,7 +601,7 @@ export function createScene(host, handlers = {}){
       for(const c of selB.cities){
         const near = car && Math.hypot(car.x - c.center.x, car.z - c.center.z) < 26;
         const show = near || c.idx === nx;
-        if(show && !c.title){ c.title = labelSprite(selP.steps[c.idx].title.slice(0, 18), {size: 34, pad: 14}); c.title.position.set(0, GROUND_Y + 12.6, 0); c.group.add(c.title); }
+        if(show && !c.title){ c.title = labelSprite(selP.steps[c.idx].title.slice(0, 18), {size: 24, pad: 12}); c.title.position.set(0, GROUND_Y + 12.6, 0); c.group.add(c.title); }
         if(c.title) c.title.visible = show;
       }
     }
