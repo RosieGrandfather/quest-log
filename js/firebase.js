@@ -23,5 +23,6 @@ export function userCols(uid){
     studyProgress: u.collection('studyProgress'),   // 文档 ID = unitKey(courseId, unitId)
     studyNotes: u.collection('studyNotes'),         // 同上，每节一篇笔记
     journal: u.collection('journal'),               // 日记，文档 ID = 日期 YYYY-MM-DD
+    projects: u.collection('projects'),             // 城邦地图的项目，每个项目一篇文档，步骤放在文档里的 steps 数组
   };
 }

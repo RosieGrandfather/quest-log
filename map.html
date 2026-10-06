@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>城邦 · 远征日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/map.css">
+</head>
+<body class="map-page">
+
+<div class="gate" id="gate">
+  <h1>城邦</h1>
+  <p>登录后才能看到你的城邦地图，只有你自己能看到，手机电脑自动同步。</p>
+  <button class="btn-google" id="signInBtn">用 Google 账号登录</button>
+  <div class="gate-note" id="gateNote"></div>
+</div>
+
+<div id="mapRoot" hidden>
+  <div id="stage" class="stage" aria-label="3D 城邦地图"></div>
+
+  <div class="hud-top">
+    <a class="hud-btn" href="index.html" aria-label="返回远征日志">←</a>
+    <div class="chips" id="chips" role="tablist" aria-label="项目"></div>
+    <button class="hud-btn" id="newBtn" aria-label="新建项目" title="新建项目">＋</button>
+  </div>
+
+  <div class="hud-side">
+    <button class="hud-btn" id="viewBtn" aria-pressed="false" title="切换跟随 / 上帝视角">🌍</button>
+    <button class="hud-btn" id="listBtn" title="列表与编辑">☰</button>
+  </div>
+
+  <div class="hud-bottom">
+    <div class="joy" id="joy" aria-label="虚拟摇杆" hidden><div class="joy-knob" id="joyKnob"></div></div>
+    <div class="next" id="nextCard"></div>
+  </div>
+  <div class="hud-hint" id="hint">方向键 / WASD 开车 · 拖动旋转 · 滚轮缩放 · 点城看详情</div>
+
+  <div class="fallback" id="fallback" hidden></div>
+</div>
+
+<!-- 城的详情 / 到达卡片 -->
+<div class="modal-backdrop" id="cityModal" hidden>
+  <div class="modal city-modal" id="cityCard"></div>
+</div>
+
+<!-- 列表与编辑 -->
+<aside class="sheet" id="sheet" hidden>
+  <div class="sheet-head"><h3>项目与步骤</h3><button class="hud-btn small" id="sheetClose" aria-label="关闭">✕</button></div>
+  <div class="sheet-body" id="sheetBody"></div>
+</aside>
+
+<!-- 新建项目 -->
+<div class="modal-backdrop" id="newModal" hidden>
+  <div class="modal">
+    <h3>新建项目</h3>
+    <label for="newTitle">项目名（可以不填，用模板名）</label>
+    <input id="newTitle" type="text" maxlength="40" placeholder="例如：我的第一首 demo">
+    <label>选一个模板，创建后每一步都可以改</label>
+    <div id="tplList" class="tpl-list"></div>
+    <div class="form-error" id="newErr"></div>
+    <div class="modal-actions"><button class="btn-ghost" id="newCancel">取消</button></div>
+  </div>
+</div>
+
+<!-- 编辑步骤 -->
+<div class="modal-backdrop" id="editModal" hidden>
+  <div class="modal">
+    <h3 id="editTitle">编辑步骤</h3>
+    <label for="eTitle">这一步做什么（半天的量）</label>
+    <input id="eTitle" type="text" maxlength="60">
+    <label for="eStage">阶段（相同阶段名的连续步骤算一个阶段，做完得阶段奖励）</label>
+    <input id="eStage" type="text" maxlength="30">
+    <label for="eDetail">怎么做 / 做到什么算完成</label>
+    <textarea id="eDetail" rows="4"></textarea>
+    <label for="eRefs">参考（一行一条：「标题 | 链接」，或只写链接 / 一句话）</label>
+    <textarea id="eRefs" rows="3"></textarea>
+    <div class="form-error" id="editErr"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="editCancel">取消</button>
+      <button class="btn-primary" id="editSave">保存</button>
+    </div>
+    <div class="modal-actions" id="editMore">
+      <button class="btn-ghost solid" id="editUp">▲ 上移</button>
+      <button class="btn-ghost solid" id="editDown">▼ 下移</button>
+      <button class="btn-ghost solid" id="editDelete">删除这步</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="celebrateModal" hidden>
+  <div class="modal celebrate-modal">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="celebrate-emoji">🏙️</div>
+    <h3 id="celebrateTitle">城市亮了！</h3>
+    <p id="celebrateText" class="celebrate-text"></p>
+    <button class="btn-primary" id="closeCelebrate" style="width:100%">收下</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="js/map/main.js"></script>
+</body>
+</html>

@@ -13,6 +13,16 @@
 
 ---
 
+## 2026-10-07 — 新功能「城邦」：项目地图（3D 小游戏，map.html）
+- 主页「🗺 城邦」进入。所有项目在同一张 3D 低多边形地图上：每个项目从中央首都往外长一条随机拐弯的路，每一步（约半天）是路上的一座城，做完就点亮，整张地图越做越亮；每个项目一辆小车，选中的那辆可以自己开（键盘 WASD/方向键，手机左下摇杆），也可以点「开过去」自动开到下一站；拖动旋转、滚轮 / 双指缩放、🌍 切换上帝视角
+- 模板：第一首 demo（Logic Pro，10 步，4 个阶段）、写一篇文章、做一个小工具、空白项目；步骤标题 / 说明 / 参考 / 阶段都可以改，可上移下移、增删；同时进行的项目超过 3 个会提醒，可「停放」
+- 积分：点亮一座城 +50（`mapstep-项目-步骤`），一个阶段全部点亮再 +100（只在项目有多个阶段时），项目全部完成 +200；都走 `awardOnce`，重复点只发一次；取消完成不扣已发的分
+- 布局稳定：城的位置只由「项目 slot + 项目 id + 第几步」决定（`cityPositions`），重开、手机电脑之间都一样；在末尾加步骤不会挪动前面的城，**在中间删 / 换顺序会让后面的城挪位置**
+- 数据：`users/{uid}/projects/{id}`（title、templateId、icon、slot、color、parked、createdAt、steps[{id,title,detail,refs,stage,doneAt}]）；安全规则不用改
+- 文件：`map.html`、`css/map.css`、`js/map/main.js`（界面）、`js/map/scene.js`（three.js 场景）、`js/core/map.js`（布局 / 进度 / 积分 / 模板，纯函数）、`js/data/map.js`、`tests/map.test.js`；`js/firebase.js` 加 `projects` 集合；`js/core/constants.js` 加三个小标签
+- 注意：three.js r160 从 jsDelivr CDN 加载，加载失败（离线 / 公司网络拦截）会自动退回列表模式；云端用软件渲染 + 假 Firebase 测过桌面和 375 宽手机画面，没有在真实手机上测过
+- 已知：外观是朴素的低多边形；参考链接目前是文字提示，没有逐条核验过的教程视频
+
 ## 2026-10-07 — 新课 gre-0：GRE 普通考试每个科目到底多难（7 节，选修）
 - 新课 `gre-0`，选修（`tier: elective`，`order: 15`）：u01 全景与难度地图、u02/u03 数学推理上下、u04 填空与句子等价、u05 阅读理解、u06 分析性写作、u07 备考路线与摸底；每节 35–45 分钟，5 道测验，`direct: true`
 - 考试结构（作文 30 分钟；Verbal 12+15 题 18+23 分钟；Quant 12+15 题 21+26 分钟；小节级自适应）来自 ETS 官方 GRE General Test Structure；百分位、均值、标准差来自 ETS Interpretive Data Table 1A（统计期 2022-07-01 至 2025-06-30）；各科题型与范围来自 ETS 官方各科页面；POWERPREP 免费两套与付费 44.95 美元来自 ETS POWERPREP 页面（2026-10 读取）

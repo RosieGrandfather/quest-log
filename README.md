@@ -63,6 +63,7 @@
 - `index.html` — 主页面的 HTML 骨架（弹窗也在这里），不含样式和逻辑。左上角「📚 学习区」进入学习区
 - `study.html` — **学习区**（独立页面），见下面「学习区」一节
 - `journal.html` — **日记**（独立页面，和记录 / 学习区平行），见下面「日记」一节；`css/journal.css`、`js/journal/main.js`、`js/data/journal.js`、`js/core/journal.js`
+- `map.html` — **城邦**（项目地图：3D 小游戏，每个项目一条从首都往外长的路，每步一座城，做完点亮），见 CHANGELOG 2026-10-07；`css/map.css`、`js/map/main.js`、`js/map/scene.js`、`js/data/map.js`、`js/core/map.js`
 - `css/study.css` — 学习区专用样式
 - `courses/` — 学习区的课程内容（JSON），**推送即发布**
 - `css/base.css` — 所有页面共用：颜色变量（含深色模式）、登录页、按钮、弹窗、提示、庆祝动画
