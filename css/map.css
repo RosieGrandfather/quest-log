@@ -112,3 +112,7 @@ body.map-page{padding-inline:0;overflow:hidden;overscroll-behavior:none;backgrou
 /* 没有 3D 时的备用界面：整页就是列表 */
 .fallback{position:fixed;inset:0;background:#18203f;color:var(--hud-ink);padding:70px 16px 24px;overflow-y:auto;}
 .fallback p{color:var(--hud-soft);line-height:1.6;}
+
+.swap-box{margin:8px 0 4px;padding:10px;border-radius:12px;background:rgba(127,127,127,.12);}
+.swap-box p{margin:0 0 8px;font-size:12px;color:var(--ink-soft);line-height:1.5;}
+.swap-box button{display:block;width:100%;margin-top:6px;text-align:left;}

@@ -142,6 +142,7 @@ async function deleteStep(){
 
 /* ---------- 列表与编辑面板 ---------- */
 const confirmDelProj = makeConfirmDelete(() => renderSheet());
+const confirmSwap = makeConfirmDelete(() => renderSheet());
 function renderSheet(){
   if(!M.sheetOpen) return;
   const body = $('sheetBody');
@@ -160,9 +161,11 @@ function renderSheet(){
         <button data-act="select" data-pid="${p.id}">在地图上看</button>
         <button data-act="rename" data-pid="${p.id}">重命名</button>
         <button data-act="park" data-pid="${p.id}">${p.parked ? '恢复' : '停放'}</button>
+        <button data-act="swap" data-pid="${p.id}">${M.swapFor === p.id ? '取消换步骤' : '换成模板步骤'}</button>
         <button class="danger" data-act="delproj" data-pid="${p.id}">${confirmDelProj.isPending(p.id) ? '再点一次确认删除' : '删除项目'}</button>
       </div>
       ${rename}
+      ${M.swapFor === p.id ? `<div class="swap-box"><p>选一个模板，整个项目的步骤会换成它的（名字、颜色、位置不变；已点亮的城里，标题相同的会保留，其他重置。已拿的分不会扣）：</p>${TEMPLATES.filter(t => t.id !== 'blank').map(t => `<button class="btn-ghost solid" data-act="swaptpl" data-pid="${p.id}" data-tpl="${t.id}">${confirmSwap.isPending(p.id + ':' + t.id) ? '再点一次确认：' : ''}${esc(t.icon)} ${esc(t.name)}（${t.steps.length} 步）</button>`).join('')}</div>` : ''}
       <div class="colors">${colors}</div>
       ${steps}
       <button class="btn-ghost add-step" data-act="addstep" data-pid="${p.id}">＋ 在路的尽头添加一步</button>
@@ -311,6 +314,16 @@ $('sheetBody').addEventListener('click', async e => {
   else if(act === 'select'){ if(p){ selectProject(p.id); if(M.scene) closeSheet(); } }
   else if(act === 'rename'){ if(p){ M.renaming = p.id; renderSheet(); } }
   else if(act === 'park'){ if(p) await persist({...p, parked: !p.parked}, p.parked ? '已恢复' : '已停放：不占同时进行的名额'); }
+  else if(act === 'swap'){ if(p){ M.swapFor = M.swapFor === p.id ? null : p.id; renderSheet(); } }
+  else if(act === 'swaptpl'){
+    if(p && confirmSwap.click(p.id + ':' + a.dataset.tpl)){
+      const t = TEMPLATES.find(x => x.id === a.dataset.tpl); if(!t) return;
+      const keep = new Map(p.steps.filter(x => x.doneAt).map(x => [x.title, x.doneAt])), tag = Date.now().toString(36);
+      const steps = t.steps.map((x, i) => ({id: 'u' + tag + '-' + (i + 1), title: x.title, detail: x.detail, refs: x.refs, stage: x.stage, doneAt: keep.get(x.title) || null}));
+      M.swapFor = null;
+      await persist({...p, templateId: t.id, icon: t.icon, steps}, '步骤已换成「' + t.name + '」');
+    }
+  }
   else if(act === 'color'){ if(p && p.color !== a.dataset.color) await persist({...p, color: a.dataset.color}); }
   else if(act === 'delproj'){
     if(p && confirmDelProj.click(p.id)){
