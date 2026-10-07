@@ -1,0 +1,211 @@
+"""pl300-0 第 5 节：DAX 基础与 CALCULATE"""
+from pllib import *
+
+nb = Notebook()
+
+C_ENGINE = nb.cell('''
+sales = [
+    {"Region": "North", "Product": "Pen",  "Qty": 10, "Price": 2.0},
+    {"Region": "North", "Product": "Desk", "Qty": 1,  "Price": 150.0},
+    {"Region": "South", "Product": "Pen",  "Qty": 30, "Price": 1.5},
+    {"Region": "South", "Product": "Desk", "Qty": 2,  "Price": 140.0},
+]
+
+def visible(ctx):                    # 筛选上下文：{列: 允许的取值集合}
+    return [r for r in sales if all(r[c] in vals for c, vals in ctx.items())]
+
+def total_sales(ctx):                # 度量值：SUMX(Sales, Qty * Price) 在当前筛选上下文里算
+    return sum(r["Qty"] * r["Price"] for r in visible(ctx))
+
+def calculate(measure, ctx, **new):  # CALCULATE：用新条件「覆盖」同一列上已有的筛选
+    c = {k: set(v) for k, v in ctx.items()}
+    for col, val in new.items():
+        c[col] = {val} if not isinstance(val, (set, list)) else set(val)
+    return measure(c)
+
+def all_(ctx, col):                  # ALL(列)：移除这一列上的筛选
+    return {k: v for k, v in ctx.items() if k != col}
+
+north = {"Region": {"North"}}        # 想象：切片器选了 North
+print("在 North 的筛选下:", total_sales(north))
+print("CALCULATE(Region = South):", calculate(total_sales, north, Region="South"))   # 覆盖，不是叠加
+print("CALCULATE(ALL(Region)):", total_sales(all_(north, "Region")))
+print("占比 = DIVIDE(North, ALL):", round(total_sales(north) / total_sales(all_(north, "Region")), 3))
+''')
+
+C_ITER = nb.cell('''
+# 迭代器 SUMX 逐行计算再求和；先聚合再相乘会得到不同的结果
+rows = sales
+right = sum(r["Qty"] * r["Price"] for r in rows)                      # SUMX(Sales, Qty * Price)
+wrong = sum(r["Qty"] for r in rows) * (sum(r["Price"] for r in rows) / len(rows))   # SUM(Qty) * AVERAGE(Price)
+print("SUMX 逐行乘再加:", right)
+print("SUM(Qty) * AVERAGE(Price):", round(wrong, 2))
+''')
+
+C_DIV = nb.cell('''
+def divide(a, b, alt=None):          # DIVIDE(a, b, [alt])：分母为 0 或空时返回 alt（默认 BLANK），不报错
+    return alt if (b is None or b == 0) else a / b
+
+print(divide(10, 4), divide(10, 0), divide(10, 0, 0))
+''')
+
+unit = {
+ "id": "u05",
+ "title": "DAX 基础：度量值、筛选上下文与 CALCULATE",
+ "en": "DAX Basics: Measures, Filter Context & CALCULATE",
+ "minutes": 50,
+ "objectives": [
+  "写出常用的**聚合度量值**（`SUM`、`AVERAGE`、`COUNTROWS`、`DISTINCTCOUNT`、`DIVIDE`），并知道为什么用 `DIVIDE` 而不是 `/`",
+  "区分**行上下文 (row context)** 与**筛选上下文 (filter context)**，并说出筛选上下文从哪里来",
+  "解释 **`CALCULATE`** 做了什么：修改筛选上下文，并能读懂 `ALL`、`REMOVEFILTERS`、`KEEPFILTERS`",
+  "区分**迭代函数 (iterator, 如 `SUMX`)** 与普通聚合，知道什么时候必须逐行算",
+  "会用**变量 (`VAR` / `RETURN`)** 写出更清楚、更快的度量值",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一小节要干什么
+
+DAX 是 PL-300 里**最容易失分、也最值得花时间**的部分。你做过报表，大概写过 `SUM` 或者让 Quick measure 帮你写；这一节要补上它背后的**一个模型**：**每个度量值都是在一个「筛选上下文」里算出来的，而 `CALCULATE` 是唯一能改这个上下文的函数**。把这个模型吃透，下一节的时间智能就只是它的特例。
+
+**学完它你就能看懂这几件事：**
+
+- 同一个度量值放进不同的矩阵格子，为什么结果不同；
+- 为什么 `CALCULATE([Sales], Region[Name] = "South")` 在选了 North 的切片器下也能算出 South；
+- 「占总数的百分比」那个分母为什么要用 `ALL`；
+- 为什么 `SUM(Qty) * AVERAGE(Price)` 不等于销售额。
+
+**本小节安排（约 50 分钟）**：导读（2 分钟）→ 度量值与上下文（10 分钟）→ CALCULATE 与代码实验（13 分钟）→ 两个视频（23 分钟）→ 总结与「想一想」（2 分钟）。
+
+### 度量值与两种上下文
+
+> **标准定义 · 度量值 (measure) 与上下文 (context)**
+>
+> **度量值**是一个 DAX 表达式，在报表里每个单元格**各算一次**。它的结果取决于**上下文**：**筛选上下文 (filter context)** 是「当前哪些行可见」，来源有：行和列上的字段、切片器、视觉对象 / 页面 / 报表级筛选、以及关系传播过来的筛选。**行上下文 (row context)** 是「当前正在处理哪一行」，来源有：**计算列**和**迭代函数**（`SUMX`、`FILTER`、`AVERAGEX` 等）。**上下文转换 (context transition)**：在行上下文里调用 `CALCULATE`（或引用度量值）时，当前行会被转换成筛选上下文。
+>
+> *English: A measure is evaluated per cell. Filter context is which rows are visible (slicers, rows/columns, filters, relationships); row context is the current row (calculated columns, iterators). CALCULATE inside a row context turns the row into a filter (context transition).*
+
+**白话版：「筛选上下文是舞台灯光照到哪里，行上下文是演员站在哪个位置」。** 同样一个 `Total Sales`，放在「North」那一行，灯光只照着 North 的数据；放在总计行，灯光照全场。
+
+常用聚合（都在**当前筛选上下文**里算）：
+
+```text
+Total Sales    = SUM ( Sales[Amount] )
+Avg Price      = AVERAGE ( Sales[Price] )
+Orders         = COUNTROWS ( Sales )
+Customers      = DISTINCTCOUNT ( Sales[CustomerKey] )
+Margin %       = DIVIDE ( [Profit], [Total Sales] )
+```
+
+**用 `DIVIDE` 而不是 `/`**：分母为 0 或空时，`DIVIDE` 返回 `BLANK`（或你指定的替代值），不报错，也更简洁：
+""" + C_DIV + r"""
+
+**读输出：** `10/4` 是 `2.5`；分母为 0 时返回 `None`（对应 DAX 的 BLANK）；给了替代值 0，就返回 0。
+
+### CALCULATE：改写筛选上下文
+
+> **标准定义 · CALCULATE**
+>
+> `CALCULATE ( <表达式>, <筛选1>, <筛选2>, … )`：先**修改当前的筛选上下文**，再在修改后的上下文里计算表达式。**筛选参数**可以是：布尔表达式（`Region[Name] = "South"`，它**覆盖**同一列上已有的筛选）；表函数（`FILTER`、`ALL`、`VALUES`）；以及修饰函数 `ALL`（移除筛选）、`REMOVEFILTERS`（同 `ALL` 但只用于筛选）、`ALLEXCEPT`（移除除指定列以外的所有筛选）、`ALLSELECTED`、`KEEPFILTERS`（叠加而不覆盖）。
+>
+> *English: CALCULATE evaluates an expression in a modified filter context. Boolean arguments replace existing filters on the same column; ALL / REMOVEFILTERS clear filters; KEEPFILTERS adds instead of replacing.*
+
+**白话版：「换一束灯光再算一遍」。** 下面的代码写了一个**迷你的 DAX 引擎**：筛选上下文是「每一列允许哪些取值」，`calculate` 用新条件覆盖同一列上原有的筛选，`all_` 把某一列的筛选拿掉。它**只是模拟这几条语义**，不是真正的 DAX，但每条规则都和 DAX 一致：
+""" + C_ENGINE + r"""
+
+**读输出：** 切片器选了 North 时，销售额是 $10\times2.0+1\times150=170$；`CALCULATE` 把 Region 条件换成 South，得到 $30\times1.5+2\times140=325$——**是覆盖，不是叠加成「North 且 South」**；`ALL(Region)` 把 Region 的筛选拿掉，得到全部的 495；占比是 $170/495\approx0.343$。对应的 DAX：
+
+```text
+Sales South    = CALCULATE ( [Total Sales], Region[Name] = "South" )
+Sales All Reg  = CALCULATE ( [Total Sales], REMOVEFILTERS ( Region ) )
+% of Total     = DIVIDE ( [Total Sales], [Sales All Reg] )
+```
+
+**一个考试常考的细节：** 布尔筛选 `Region[Name] = "South"` 只是语法糖，等价于 `FILTER ( ALL ( Region[Name] ), Region[Name] = "South" )`，所以它会**先清掉这一列上原有的筛选**。想**保留**原有筛选再叠加，就包一层 `KEEPFILTERS`。
+
+### 迭代函数：逐行算再汇总
+
+> **标准定义 · 迭代函数 (iterator function)**
+>
+> 以 `X` 结尾的函数（`SUMX`、`AVERAGEX`、`MINX`、`MAXX`、`COUNTX`）以及 `FILTER`，会对一张表**逐行**计算一个表达式，再把结果汇总。它们为每一行创建**行上下文**。普通聚合（`SUM`）只能对**一个列**聚合。
+>
+> *English: Iterators such as SUMX, AVERAGEX and FILTER evaluate an expression row by row (creating a row context) and then aggregate the results.*
+
+**白话版：「先每行算好，再加总」。** 销售额 = 每行的「数量 × 单价」之和，不是「总数量 × 平均单价」：
+""" + C_ITER + r"""
+
+**读输出：** 逐行乘再加是 495.0；先聚合再相乘得到 3155.12，**差了很多倍**。DAX 写法是 `SUMX ( Sales, Sales[Qty] * Sales[Price] )`。当事实表里**没有现成的金额列**，只有数量和单价时，就必须用迭代函数。
+
+**变量：** `VAR … RETURN` 让你把中间结果起个名字，**只算一次**，也更好读：
+
+```text
+Sales vs LY % =
+VAR Cur = [Total Sales]
+VAR LY  = CALCULATE ( [Total Sales], SAMEPERIODLASTYEAR ( 'Date'[Date] ) )
+RETURN DIVIDE ( Cur - LY, LY )
+```
+"""),
+  V("40xO1MD_CCs", "DAX CALCULATE Function Made Easy to Understand (just one word)", 8),
+  V("hbJA6EYHq1Y", "TAME the Beast that is DAX in Power BI: Learn DAX with Practical Examples", 14),
+  T(r"""
+> 两个视频（Leila Gharani 约 9 分钟，Guy in a Cube 约 14 分钟）围绕 `CALCULATE` 和 DAX 实例。**我只核实了它们存在且可嵌入，内容没有看过**；看的时候带着本节的问题：**每一步的筛选上下文是什么？**
+
+### 这一小节你要带走的三句话
+
+1. **度量值在筛选上下文里算**；筛选上下文来自行列、切片器、筛选器和关系；行上下文来自计算列和迭代函数。
+2. **`CALCULATE` 改上下文**：布尔条件覆盖同一列的筛选；`ALL` / `REMOVEFILTERS` 清筛选；`KEEPFILTERS` 叠加；占比的分母就是清了筛选的总数。
+3. **逐行算再汇总要用迭代函数**（`SUMX`）；比率用 `DIVIDE`；中间结果用 `VAR`。
+"""),
+  THINK("**（计算）** 在上面的迷你模型里，如果切片器选了 `South`，并且度量值是 `CALCULATE([Total Sales], Product[Name] = \"Desk\")`，结果应该是多少？用 `KEEPFILTERS` 包住那个条件结果会怎样？", r"""
+布尔条件作用在 `Product` 列上，而切片器筛选的是 `Region` 列，两者**不冲突**，叠加：South 且 Desk，$2\times140=280$。`KEEPFILTERS` 对不同列没有影响，仍是 280；它只在**同一列**上才会和默认的「覆盖」不同：在 North 的筛选下写 `Region[Name]="South"`，覆盖得到 South 的 325，加 `KEEPFILTERS` 则变成 North 与 South 的交集，为空。
+"""),
+  THINK("**（概念辨析）** 计算列和度量值里写 `SUM(Sales[Amount])`，结果为什么不同？", r"""
+**计算列**有行上下文但**没有筛选上下文**：直接写 `SUM(Sales[Amount])`，会对整张表求和，每一行得到同一个总数。要得到「当前行对应的值」，需要 `CALCULATE` 触发**上下文转换**。**度量值**则是在报表每个单元格的筛选上下文里算，自然得到该格的和。
+"""),
+  THINK("**（联系后续）** 下一节的 `SAMEPERIODLASTYEAR`、`TOTALYTD` 都可以看成 `CALCULATE` 的简写。为什么这么说？它们改的是筛选上下文里的哪一部分？", r"""
+它们都是**在日期列上改筛选**：把当前可见的日期换成「去年同期」或「年初至今」这批日期，然后在新的筛选上下文里算表达式。所以它们依赖一张连续的、标记过的日期表，也依赖 `CALCULATE` 的机制。
+"""),
+  KW(("度量值","measure","在每个单元格的上下文里计算的 DAX 表达式"),
+     ("筛选上下文","filter context","当前可见的行：切片器、行列、筛选器、关系"),
+     ("行上下文","row context","当前正在处理的一行"),
+     ("上下文转换","context transition","在行上下文里用 CALCULATE，把当前行变成筛选"),
+     ("CALCULATE","CALCULATE","修改筛选上下文后再计算表达式"),
+     ("ALL","ALL","移除表或列上的筛选"),
+     ("REMOVEFILTERS","REMOVEFILTERS","在 CALCULATE 里移除筛选"),
+     ("KEEPFILTERS","KEEPFILTERS","叠加而不是覆盖已有筛选"),
+     ("迭代函数","iterator","SUMX 等，逐行计算再汇总"),
+     ("DIVIDE","DIVIDE","安全除法，分母为 0 返回 BLANK 或替代值"),
+     ("DISTINCTCOUNT","DISTINCTCOUNT","列里不同取值的个数"),
+     ("COUNTROWS","COUNTROWS","表的行数"),
+     ("变量","VAR / RETURN","给中间结果命名并只算一次"),
+     ("BLANK","BLANK","DAX 的空值"),
+  ),
+ ],
+ "references": [
+  PL_STUDY_GUIDE,
+  {"title": "Microsoft Learn：CALCULATE function (DAX)", "url": "https://learn.microsoft.com/en-us/dax/calculate-function-dax", "note": "CALCULATE 的官方说明，包括筛选参数的规则"},
+  {"title": "Microsoft Learn：DAX overview", "url": "https://learn.microsoft.com/en-us/dax/dax-overview", "note": "DAX 的基本概念：语法、函数、上下文"},
+  {"title": "Microsoft Learn：Context in DAX formulas", "url": "https://learn.microsoft.com/en-us/dax/dax-overview#context", "note": "行上下文与筛选上下文"},
+  {"title": "SQLBI：DAX Guide", "url": "https://dax.guide/", "note": "SQLBI 维护的 DAX 函数参考，用来查单个函数；只引用"},
+ ],
+ "quiz": {"questions": [
+  Q("切片器选了 Region = North。度量值 `CALCULATE([Total Sales], Region[Name] = \"South\")` 返回：",
+    ["South 的销售额", "North 和 South 的合计", "空（BLANK）", "报错"], 0,
+    "布尔筛选覆盖同一列上已有的筛选，所以结果是 South 的销售额。想叠加要用 KEEPFILTERS，这时才会变成空。"),
+  Q("要算「某地区占全部地区的百分比」，分母应该怎样写？",
+    ["CALCULATE([Total Sales], REMOVEFILTERS(Region))", "SUM(Sales[Amount])，因为它忽略筛选", "COUNTROWS(Region)", "ALL 之后再 FILTER"], 0,
+    "分母要在「去掉 Region 筛选」的上下文里算，用 CALCULATE 配合 ALL 或 REMOVEFILTERS。SUM 本身不会忽略筛选上下文。"),
+  Q("事实表只有 Qty 和 Price，没有金额列。总销售额的正确度量值是：",
+    ["SUMX(Sales, Sales[Qty] * Sales[Price])", "SUM(Sales[Qty]) * AVERAGE(Sales[Price])", "SUM(Sales[Qty] * Sales[Price])", "COUNTROWS(Sales) * SUM(Sales[Price])"], 0,
+    "每行先乘再加，需要迭代函数。SUM 只能聚合一个列，先聚合再相乘会得到错误的数。"),
+  Q("度量值里想让 0 分母不报错，更推荐：",
+    ["DIVIDE([A], [B])", "[A] / [B]", "IFERROR([A] / [B], 0) 总是更好", "把 B 改成计算列"], 0,
+    "DIVIDE 在分母为 0 或空时返回 BLANK（或替代值），简洁且性能好。IFERROR 能用但会掩盖其他错误。"),
+  Q("下面哪一项会产生**行上下文**？",
+    ["计算列和 SUMX 这样的迭代函数", "切片器", "页面级筛选器", "表之间的关系"], 0,
+    "行上下文来自计算列和迭代函数；切片器、筛选器和关系产生的是筛选上下文。"),
+ ]},
+}
+retarget(unit, [2, 0, 3, 1, 3])
+
+if __name__ == '__main__':
+    dump(unit, "pl300-0", "u05-dax-calculate.json", n_questions=5)

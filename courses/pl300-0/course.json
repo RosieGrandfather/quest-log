@@ -1,0 +1,118 @@
+{
+  "id": "pl300-0",
+  "title": "PL-300：Power BI 数据分析师认证备考",
+  "subtitle": "按微软官方 PL-300 考试大纲（Study Guide）的四个技能域整理：准备数据、建模、可视化与分析、管理和保护 Power BI。每一节用 Python 模拟 DAX 和 Power Query 的语义帮你理解概念，最后用官方免费练习评估量出起点。代码只是语义演示，真正的 DAX / M 要在 Power BI Desktop 里练；例题是本课程自己写的，不是考试真题",
+  "source": {
+    "name": "Microsoft Learn：PL-300 Study Guide（官方考试大纲，2026-04-20 更新版）",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300"
+  },
+  "order": 16,
+  "order_note": "选修，求职与技能证明：已报名 PL-300 考试时学；不影响主线",
+  "tier": "elective",
+  "units": [
+    {
+      "id": "u01",
+      "title": "获取数据：连接、存储模式与参数",
+      "en": "Get Data: Connections, Storage Modes & Parameters",
+      "minutes": 40,
+      "file": "u01-get-data.json",
+      "direct": true
+    },
+    {
+      "id": "u02",
+      "title": "数据剖析与清洗：先看清再动手",
+      "en": "Profile & Clean: Look Before You Transform",
+      "minutes": 40,
+      "file": "u02-profile-clean.json",
+      "direct": true
+    },
+    {
+      "id": "u03",
+      "title": "转换与加载：合并、透视、事实表与维度表",
+      "en": "Transform & Load: Merge, Pivot, Fact and Dimension Tables",
+      "minutes": 45,
+      "file": "u03-transform-load.json",
+      "direct": true
+    },
+    {
+      "id": "u04",
+      "title": "数据模型设计：星型模型、关系与日期表",
+      "en": "Model Design: Star Schema, Relationships & the Date Table",
+      "minutes": 45,
+      "file": "u04-model-design.json",
+      "direct": true
+    },
+    {
+      "id": "u05",
+      "title": "DAX 基础：度量值、筛选上下文与 CALCULATE",
+      "en": "DAX Basics: Measures, Filter Context & CALCULATE",
+      "minutes": 50,
+      "file": "u05-dax-calculate.json",
+      "direct": true
+    },
+    {
+      "id": "u06",
+      "title": "时间智能、半可加度量值与计算组",
+      "en": "Time Intelligence, Semi-Additive Measures & Calculation Groups",
+      "minutes": 45,
+      "file": "u06-time-intel.json",
+      "direct": true
+    },
+    {
+      "id": "u07",
+      "title": "优化模型性能：瘦身、折叠与 Performance Analyzer",
+      "en": "Optimize Model Performance: Reduce Size, Fold Queries & Use Performance Analyzer",
+      "minutes": 40,
+      "file": "u07-performance.json",
+      "direct": true
+    },
+    {
+      "id": "u08",
+      "title": "创建报表：选视觉对象、格式、筛选与视觉计算",
+      "en": "Build Reports: Choose Visuals, Format, Filter & Use Visual Calculations",
+      "minutes": 45,
+      "file": "u08-reports.json",
+      "direct": true
+    },
+    {
+      "id": "u09",
+      "title": "可用性与讲故事：钻取、书签、交互与无障碍",
+      "en": "Usability & Storytelling: Drillthrough, Bookmarks, Interactions & Accessibility",
+      "minutes": 50,
+      "file": "u09-storytelling.json",
+      "direct": true
+    },
+    {
+      "id": "u10",
+      "title": "识别模式与趋势：分组、聚类、AI 视觉对象、预测与异常",
+      "en": "Identify Patterns & Trends: Grouping, Clustering, AI Visuals, Forecasting & Anomalies",
+      "minutes": 40,
+      "file": "u10-patterns.json",
+      "direct": true
+    },
+    {
+      "id": "u11",
+      "title": "管理 Power BI：工作区、应用、分发、网关与刷新",
+      "en": "Manage Power BI: Workspaces, Apps, Distribution, Gateways & Refresh",
+      "minutes": 45,
+      "file": "u11-workspaces.json",
+      "direct": true
+    },
+    {
+      "id": "u12",
+      "title": "保护与治理：角色、行级安全与敏感度标签",
+      "en": "Secure & Govern: Roles, Row-Level Security & Sensitivity Labels",
+      "minutes": 40,
+      "file": "u12-security.json",
+      "direct": true
+    },
+    {
+      "id": "u13",
+      "title": "备考路线：用官方练习评估量起点，再按丢分补",
+      "en": "Exam Plan: Measure Your Baseline with the Official Practice Assessment",
+      "minutes": 35,
+      "file": "u13-exam-plan.json",
+      "direct": true
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+"""pl300-0 第 8 节：创建报表"""
+from pllib import *
+
+nb = Notebook()
+
+C_PICK = nb.cell('''
+# 课程的简化选择器：分析问题 → 视觉对象。不是微软的规则，是考试里最常见的对应关系
+GUIDE = {
+    "比较类别的大小":       "条形图 / 柱形图",
+    "看随时间的趋势":       "折线图（或面积图）",
+    "两个数值之间的关系":   "散点图",
+    "部分占整体（类别很少）": "饼图 / 环形图（不超过几个类别）",
+    "层级里谁占比最大":     "树状图 (Treemap)",
+    "累计变化的构成":       "瀑布图",
+    "流程各阶段的流失":     "漏斗图",
+    "单个关键数字":         "卡片 / KPI",
+    "精确数值的明细":       "表 / 矩阵",
+    "按地区的分布":         "地图 / 填充地图",
+}
+for q, v in GUIDE.items():
+    print(f"{q} → {v}")
+''')
+
+C_COND = nb.cell('''
+# 条件格式的三种常用方式：规则、渐变、字段值
+def by_rules(x):                         # 规则：满足条件就给颜色
+    if x >= 100: return "绿"
+    if x >= 50:  return "黄"
+    return "红"
+
+def gradient(x, lo, hi):                 # 渐变：按位置在 lo~hi 之间插值，输出 0~100% 的深浅
+    return round(100 * (x - lo) / (hi - lo))
+
+sales = {"A": 120, "B": 60, "C": 20}
+lo, hi = min(sales.values()), max(sales.values())
+for k, v in sales.items():
+    print(k, v, "规则:", by_rules(v), "  渐变深浅:", gradient(v, lo, hi), "%")
+''')
+
+C_FILT = nb.cell('''
+# 筛选的层级：视觉对象 / 页面 / 所有页面，加上切片器——它们是 AND 关系，一起缩小数据
+data = [("A", "North", 120), ("B", "North", 60), ("C", "South", 20), ("D", "South", 90), ("E", "North", 15), ("F", "North", 70), ("G", "North", 45)]
+
+report_f = lambda r: r[2] >= 20                    # 所有页面：金额 >= 20
+page_f   = lambda r: r[1] == "North"               # 当前页：地区 = North
+slicer   = lambda r: r[0] != "B"                   # 切片器：排除 B
+
+rows = [r for r in data if report_f(r) and page_f(r) and slicer(r)]
+print("同时满足三层筛选:", rows)
+
+top2 = sorted(rows, key=lambda r: -r[2])[:2]       # 视觉对象级 Top N：在已经过滤的数据里取前 2
+print("视觉对象级 Top 2:", top2)
+''')
+
+C_VC = nb.cell('''
+# 视觉计算 (visual calculations)：直接在「视觉对象的数据」上算，不改模型
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+sales  = [100, 120, 90, 150, 130, 160]               # 视觉对象里已经聚合好的每月销售额
+
+def running_sum(xs):
+    out, s = [], 0
+    for x in xs: s += x; out.append(s)
+    return out
+
+def moving_avg(xs, w):
+    return [round(sum(xs[max(0, i - w + 1): i + 1]) / len(xs[max(0, i - w + 1): i + 1]), 1) for i in range(len(xs))]
+
+print("RUNNINGSUM:", running_sum(sales))
+print("MOVINGAVERAGE(3):", moving_avg(sales, 3))
+prev = [None] + sales[:-1]                           # PREVIOUS：上一行
+print("较上月:", [None if p is None else s - p for s, p in zip(sales, prev)])
+''')
+
+unit = {
+ "id": "u08",
+ "title": "创建报表：选视觉对象、格式、筛选与视觉计算",
+ "en": "Build Reports: Choose Visuals, Format, Filter & Use Visual Calculations",
+ "minutes": 45,
+ "objectives": [
+  "按分析问题**选择合适的视觉对象**，并说出常见的误用（比如类别太多的饼图）",
+  "使用**主题 (theme)** 和**条件格式 (conditional formatting)**（规则、渐变、字段值），并知道各自适用的场景",
+  "区分**筛选器窗格的三个层级**（视觉对象、页面、所有页面）和**切片器**，说出它们怎样叠加",
+  "说出什么时候应该用**分页报表 (paginated report)** 而不是普通的 Power BI 报表",
+  "解释**视觉计算 (visual calculation)** 和模型里的度量值有什么区别，会读 `RUNNINGSUM`、`MOVINGAVERAGE`、`PREVIOUS`",
+  "知道 **Copilot** 在报表里能做的几件事（叙述、新页面、建议内容），以及它需要付费容量",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一小节要干什么
+
+第 3 个考试域 **Visualize and analyze the data（可视化和分析数据）** 占 25–30%，和前两个域一样重。你已经会做报表，所以这里的重点是**考试常用的判断**：选什么视觉对象、怎么用格式帮助读者看懂、筛选怎么叠加、什么时候该换成分页报表，以及新的**视觉计算**。
+
+**学完它你就能看懂这几件事：**
+
+- 一道题说「比较各类别」「看趋势」「看两个指标的关系」，分别指向哪个视觉对象；
+- 页面级筛选和视觉对象级筛选同时存在时，数据是怎么被缩小的；
+- 为什么要出打印版发票时不用普通报表，而用分页报表；
+- 视觉计算为什么能写「累计」「上一行」，而度量值要靠日期筛选。
+
+**本小节安排（约 45 分钟）**：导读（2 分钟）→ 选视觉对象与格式（9 分钟）→ 筛选与切片（8 分钟）→ 分页报表与 Copilot（4 分钟）→ 视觉计算与视频（17 分钟）→ 总结（5 分钟）。
+
+### 选择合适的视觉对象
+
+> **标准定义 · 视觉对象的选择 (choosing a visual)**
+>
+> 先问**这个视觉对象要回答什么问题**，再选图：**比较类别**用条形图 / 柱形图；**趋势**用折线图；**两个数值的关系**用散点图；**部分与整体**只在类别很少时用饼图或环形图，类别多用树状图；**累计变化**用瀑布图；**流程各阶段**用漏斗图；**单个关键数字**用卡片或 KPI；**需要看精确值**用表或矩阵；**地区分布**用地图。
+>
+> *English: Choose the visual from the question: bar/column for comparison, line for trend, scatter for relationships, treemap for hierarchy shares, waterfall for cumulative change, funnel for stages, card/KPI for a single number, table/matrix for exact values, map for geography.*
+
+**白话版：「先问问题，再选图」。** 表格能放精确值，但看趋势不如折线；饼图只适合两三类的占比。
+""" + C_PICK + r"""
+
+**读输出：** 这就是上面那张对应表的完整版本。考试里的题通常给一个业务场景，让你**在四个视觉对象里选最不容易误读**的一个。
+
+### 主题与条件格式
+
+> **标准定义 · 主题 (theme) 与条件格式 (conditional formatting)**
+>
+> **主题**是整个报表的外观设置（颜色、字体、视觉对象默认样式），可以选内置主题，也可以导入 **JSON 主题文件**，让多份报表保持一致。**条件格式**按数据的值改变颜色或显示，方式有：**渐变 (gradient)**——按值在最小和最大之间插值；**规则 (rules)**——满足条件才给颜色；**字段值 (field value)**——颜色来自一个字段或度量值；还有数据条、图标和网页链接。
+>
+> *English: Themes style the whole report (built-in or imported JSON); conditional formatting colours values by gradient, rules or a field value, and also supports data bars, icons and web URLs.*
+
+**白话版：「主题管整体，条件格式让异常自己跳出来」。**
+""" + C_COND + r"""
+
+**读输出：** 同样的三个值，**规则**格式给出绿、黄、红（≥100 绿，≥50 黄，其余红）；**渐变**则是 100%、40%、0% 的深浅。规则适合「达标 / 不达标」，渐变适合「高低有多大差距」。**可访问性提示：** 只靠红绿区分会让色盲读者看不出来，应该配合图标或文字。
+
+### 筛选：层级与叠加
+
+> **标准定义 · 筛选器窗格的层级与切片器 (Filters pane and slicers)**
+>
+> 筛选器窗格有三个层级：**此视觉对象上的筛选器 (Filters on this visual)**、**此页上的筛选器 (Filters on this page)**、**所有页面上的筛选器 (Filters on all pages)**；再加上页面里的**切片器 (slicer)**。它们是 **AND（且）** 关系，**一起**缩小数据。筛选类型有**基本筛选**（勾选值）、**高级筛选**（条件）、**Top N**、**相对日期**。切片器可以在页面内交互选值，也可以**同步到别的页面**（下一节）。
+>
+> *English: Filters apply at visual, page and report level, together with slicers; all are combined with AND. Types include basic, advanced, Top N and relative date.*
+
+**白话版：「层层加码，每一层只会让数据更少」。**
+""" + C_FILT + r"""
+
+**读输出：** 三层都满足的是 `A`、`F`、`G` 三行（`B` 被切片器排除，`E` 金额小于 20，`C`、`D` 不在 North）；**视觉对象级 Top 2** 是在这三行里再取最大的两个：`A` 和 `F`。**Top N 是在已经过滤过的数据上取的**，这是考试里常见的陷阱。
+
+### 分页报表与 Copilot
+
+**什么时候用分页报表 (paginated report)：** 需要**像素级精确、可打印或导出成 PDF / Excel** 的固定版式文档：发票、对账单、跨很多页的明细清单。它用 **Power BI Report Builder** 制作，支持参数；而**交互式探索、钻取、联动**用普通 Power BI 报表。发布分页报表通常需要在有容量（Premium / PPU / Fabric）的工作区里，具体要求以官方文档为准。
+
+**Copilot 在报表里（大纲提到的）：** 用 Copilot **生成叙述视觉对象 (narrative visual)** 总结当前页的要点、**创建新页面**、**建议报表内容**、也可以让它**总结语义模型**。这些功能需要对应的**付费容量和管理员启用**，**你自己的 OMRON 租户不一定有**，所以考试里重点是「知道它能做什么、什么情况下适合用」。注意**非 Copilot 的智能叙述 (smart narrative)** 是另一个更早的视觉对象。
+
+### 视觉计算
+
+> **标准定义 · 视觉计算 (visual calculation)**
+>
+> 一种**直接定义在视觉对象里**的 DAX 计算，作用在**这个视觉对象当前显示的、已聚合的数据**上，不存进模型。它可以引用视觉对象里的其他字段，用 `RUNNINGSUM`（累计）、`MOVINGAVERAGE`（移动平均）、`PREVIOUS` / `NEXT`（上一行 / 下一行）、`FIRST` / `LAST`、`RANK`、`COLLAPSE` / `EXPAND` 等函数，沿着视觉对象的**轴**逐行算。它们不用 `CALCULATE`，也不需要日期表。
+>
+> *English: A DAX calculation defined inside a visual that operates on the visual's aggregated data and is not stored in the model; functions like RUNNINGSUM, MOVINGAVERAGE, PREVIOUS, NEXT and RANK work along the visual's axis.*
+
+**白话版：「在表格上直接拉公式」。** 度量值要靠筛选上下文和日期表才能算「累计」；视觉计算只是**对眼前这一列已经算好的数字**再算一次：
+""" + C_VC + r"""
+
+**读输出：** 累计 `[100, 220, 310, 460, 590, 750]`；3 个月移动平均 `[100.0, 110.0, 103.3, 120.0, 123.3, 146.7]`（前两个月不足 3 个月，按已有的算）；较上月变化 `[None, 20, -30, 60, -20, 30]`。**要点：** 如果把视觉对象的粒度从月改成季度，这些数字就会跟着变，因为视觉计算作用在**视觉对象当前的数据**上；而模型里的度量值不依赖这个视觉对象。
+"""),
+  V("5I8yzn8oDAo", "Visual Calculations vs DAX Measures: When to Use Each in Power BI", 12),
+  T(r"""
+> 视频（Guy in a Cube，约 12 分钟）比较视觉计算和 DAX 度量值。**我只核实了它存在且可嵌入，内容没有看过**；看的时候留意他给出的「什么时候用哪个」的标准：**需要在多个视觉对象里复用就用度量值；只服务这一个视觉对象的行间计算用视觉计算**，这和上面的结论应该一致，如果不一致以官方文档为准。
+
+### 这一小节你要带走的三句话
+
+1. **先问问题再选图**：类别比较用条形，趋势用折线，关系用散点，占比类别少才用饼图；条件格式要配合文字或图标，别只靠红绿。
+2. **筛选一层一层叠加（AND）**：视觉对象、页面、所有页面加切片器；Top N 作用在已过滤的数据上。
+3. **分页报表给打印和固定版式，视觉计算给视觉对象内的行间计算**；Copilot 的功能要看租户有没有容量和启用。
+"""),
+  THINK("**（场景判断）** 财务部要每月给供应商发一份带公司抬头、固定版式、多页明细的对账单，要能导出 PDF。用普通 Power BI 报表还是分页报表？为什么？", r"""
+**分页报表**：它用来做像素级精确、可打印、分页的固定版式文档，也支持参数和导出 PDF / Excel。普通的 Power BI 报表偏交互式探索，分页的版面和打印很难控制。
+"""),
+  THINK("**（概念辨析）** 页面上有一个切片器选了 `North`，页面级筛选器是「金额 ≥ 20」，某视觉对象上还有 Top 3 筛选器。这个视觉对象显示的是什么？如果把 Top 3 改成先筛选再取，对结果有什么影响？", r"""
+它显示的是：在 North 且金额 ≥ 20 的行里，取前 3 名。多层筛选是 AND 关系，**Top N 在其他筛选之后计算**，所以是「在过滤后的集合里排名」。如果想在**全部数据里**取前 3 名再看 North，就得用别的做法（比如度量值里先排名）。
+"""),
+  THINK("**（联系后续）** 你在第 6 节学了 `TOTALYTD`。要在一个折线图里显示「累计销售额」，除了写 `TOTALYTD` 度量值，还有什么更省事的办法？它的限制是什么？", r"""
+用**视觉计算** `RUNNINGSUM`：对视觉对象里的月度销售额逐行累计，不用建日期表也不用 `CALCULATE`。限制：它只作用于**这个视觉对象当前的数据**，换了粒度或字段结果就变；不能在别的视觉对象里复用，也不会出现在模型里，所以需要复用的指标仍应该写成度量值。
+"""),
+  KW(("视觉对象","visual","报表页上的一个图表、表或卡片"),
+     ("主题","theme","报表的整体外观，可导入 JSON 文件"),
+     ("条件格式","conditional formatting","按值改变颜色或显示：渐变、规则、字段值"),
+     ("渐变","gradient","按值在最小和最大之间插值上色"),
+     ("切片器","slicer","页面上的交互式筛选控件"),
+     ("筛选器窗格","Filters pane","设置视觉对象、页面、所有页面的筛选"),
+     ("Top N","Top N filter","在过滤后的数据里取前 N 项"),
+     ("相对日期筛选","relative date filter","如最近 30 天"),
+     ("分页报表","paginated report","像素级、可打印、固定版式；用 Report Builder 制作"),
+     ("视觉计算","visual calculation","定义在视觉对象里、作用于其聚合数据的 DAX"),
+     ("RUNNINGSUM","RUNNINGSUM","视觉计算里的累计"),
+     ("MOVINGAVERAGE","MOVINGAVERAGE","视觉计算里的移动平均"),
+     ("Copilot 叙述视觉对象","Copilot narrative visual","由 Copilot 生成的文字总结"),
+     ("智能叙述","smart narrative","自动生成要点文字的早期视觉对象，不依赖 Copilot"),
+  ),
+ ],
+ "references": [
+  PL_STUDY_GUIDE,
+  {"title": "Microsoft Learn：Visual calculations overview", "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview", "note": "视觉计算的官方概述与函数清单"},
+  {"title": "Microsoft Learn：Conditional formatting in tables", "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting", "note": "规则、渐变、字段值等条件格式"},
+  {"title": "Microsoft Learn：Use report themes in Power BI Desktop", "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes", "note": "内置主题与 JSON 主题文件"},
+  {"title": "Microsoft Learn：Paginated reports in Power BI", "url": "https://learn.microsoft.com/en-us/power-bi/paginated-reports/paginated-reports-report-builder-power-bi", "note": "什么是分页报表，以及怎样用 Report Builder 制作"},
+ ],
+ "quiz": {"questions": [
+  Q("要显示「一年中每月销售额的变化趋势」，最合适的视觉对象是：",
+    ["折线图", "饼图", "漏斗图", "树状图"], 0,
+    "趋势用折线图。饼图表示部分与整体，漏斗图表示流程阶段，树状图表示层级占比。"),
+  Q("页面有切片器（地区 = North）和页面级筛选器（金额 ≥ 20）。一个视觉对象上还加了 Top 3。它显示的是：",
+    ["在 North 且金额 ≥ 20 的数据里取前 3 名", "全部数据里的前 3 名，再按 North 筛选", "只受切片器影响，其他筛选被忽略", "三个筛选互相覆盖，只有最后一个生效"], 0,
+    "各层筛选是 AND 关系；Top N 在其他筛选之后计算，所以是过滤后的前 3 名。"),
+  Q("需要每月生成带固定版式、多页明细、可打印 PDF 的对账单。应该选择：",
+    ["分页报表（Report Builder）", "带切片器的普通报表页", "仪表板磁贴", "条件格式"], 0,
+    "分页报表用于像素级精确、可打印、固定版式的文档；普通报表偏交互式探索。"),
+  Q("视觉计算（visual calculation）与度量值最重要的区别是：",
+    ["视觉计算作用在视觉对象当前的聚合数据上，不存进模型", "视觉计算只能用于计算列", "视觉计算可以在所有报表里复用", "视觉计算需要一张日期表"], 0,
+    "视觉计算定义在视觉对象里，沿视觉对象的轴逐行算，不存进模型，因此不能在别的视觉对象里复用；它不需要 CALCULATE，也不依赖日期表。"),
+  Q("给一列利润额做条件格式，要让「越高颜色越深」，而不是只分「达标 / 不达标」。应该选：",
+    ["渐变（Gradient）", "规则（Rules）", "只用数据条", "把它改成文本"], 0,
+    "渐变按值在最小与最大之间插值，适合表现高低差距；规则适合分档判断。"),
+ ]},
+}
+retarget(unit, [2, 1, 3, 0, 1])
+
+if __name__ == '__main__':
+    dump(unit, "pl300-0", "u08-reports.json", n_questions=5)

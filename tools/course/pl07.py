@@ -1,0 +1,203 @@
+"""pl300-0 第 7 节：模型性能优化"""
+from pllib import *
+
+nb = Notebook()
+
+C_CARD = nb.cell('''
+import random
+random.seed(7)
+N = 50000
+events = [(random.randrange(30), random.randrange(86400)) for _ in range(N)]     # (第几天, 当天第几秒)
+
+full_ts   = {d * 86400 + s for d, s in events}        # 一个「日期+时间(精确到秒)」列
+date_only = {d for d, s in events}                    # 拆开：日期列
+hour_only = {s // 3600 for d, s in events}            # 拆开：小时列
+
+print("行数:", N)
+print("带秒的日期时间列，不同值:", len(full_ts))
+print("拆成日期 + 小时 两列，不同值合计:", len(date_only) + len(hour_only))
+''')
+
+C_GRAN = nb.cell('''
+import random
+# 降低粒度：不需要「每一笔事件」时，先按 日期 × 产品 汇总再加载
+random.seed(3)
+products = ["A", "B", "C", "D", "E"]
+raw = [(random.randrange(30), random.choice(products), random.randint(1, 9)) for _ in range(50000)]
+
+agg = {}
+for day, p, q in raw:
+    agg[(day, p)] = agg.get((day, p), 0) + q
+
+print("明细行数:", len(raw), " 汇总后行数:", len(agg), " 压缩比:", f"{len(raw) / len(agg):.0f}:1")
+print("总数量是否一致:", sum(q for _, _, q in raw) == sum(agg.values()))
+''')
+
+C_FOLD = nb.cell('''
+# 查询折叠：把筛选「推给数据源」，只搬需要的行；折叠中断，就是先全搬回来再在本地筛
+source_rows = 1_000_000
+fraction_wanted = 0.02          # 只要最近一个月，约占 2%
+
+folded = int(source_rows * fraction_wanted)        # 筛选在数据库里完成，只传回符合的行
+broken = source_rows                               # 折叠失败：先传回全部，再在 Power Query 里筛
+print("折叠成功，传输行数:", folded)
+print("折叠失败，传输行数:", broken, " 多传了", broken // folded, "倍")
+''')
+
+C_PERF = nb.cell('''
+# Performance Analyzer 的三段耗时：DAX 查询 / 视觉对象显示 / 其他（毫秒）
+visuals = {
+    "销售趋势折线图": (120, 80, 30),
+    "地区矩阵":       (2400, 150, 40),
+    "产品卡片":       (60, 20, 10),
+    "20 个切片器页":  (200, 1900, 500),
+}
+for name, (dax, disp, other) in sorted(visuals.items(), key=lambda kv: -sum(kv[1])):
+    total = dax + disp + other
+    main = max(zip(("DAX 查询", "显示", "其他"), (dax, disp, other)), key=lambda x: x[1])[0]
+    print(f"{name:14s} 合计 {total:5d} ms  主要耗时：{main}")
+''')
+
+unit = {
+ "id": "u07",
+ "title": "优化模型性能：瘦身、折叠与 Performance Analyzer",
+ "en": "Optimize Model Performance: Reduce Size, Fold Queries & Use Performance Analyzer",
+ "minutes": 40,
+ "objectives": [
+  "解释为什么**基数 (cardinality)** 决定导入模型的大小，并说出几种降低它的做法（删列、拆日期时间、换数据类型）",
+  "说明**降低粒度 (reduce granularity)** 与**删除不需要的行和列**应该发生在哪里",
+  "解释**查询折叠 (query folding)** 是什么、为什么重要，以及什么会让它中断",
+  "会用 **Performance Analyzer** 读出一个慢视觉对象的三段耗时，并知道下一步去哪里查",
+  "知道 **DAX 查询视图 (DAX query view)** 可以运行和调试 DAX 查询",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一小节要干什么
+
+Model 域的最后一块是 **Optimize model performance（优化模型性能）**。它的考法几乎都是场景：「报表很慢 / 模型太大，你该做什么」。答案的方向很固定：**先减少进模型的数据，再改模型结构，最后才去改 DAX**；而定位问题的工具是 **Performance Analyzer**。
+
+**学完它你就能看懂这几件事：**
+
+- 为什么「日期时间精确到秒」的一列，比拆成日期和小时两列大那么多；
+- 为什么 DirectQuery 或大表加载慢时，要先看「查询折叠」还在不在；
+- Performance Analyzer 的三段耗时，哪一段大要去查什么；
+- 为什么说「在 Power Query 里删掉不用的列」优于「在报表里把它们隐藏」。
+
+**本小节安排（约 40 分钟）**：导读（2 分钟）→ 降低基数与粒度（12 分钟）→ 查询折叠（8 分钟）→ Performance Analyzer 与 DAX 查询视图（12 分钟）→ 总结与「想一想」（6 分钟）。
+
+### 导入模型的大小由什么决定
+
+> **标准定义 · 基数 (cardinality) 与列式压缩**
+>
+> 导入模型用**列式存储**（VertiPaq）：每一列单独压缩，用**字典编码**把不同的取值编成整数。因此一列占多大，主要取决于它的**不同值的个数（基数）**，而不是行数。基数高的列（带秒的时间戳、GUID、自由文本）压缩差，最占空间。
+>
+> *English: Imported models use columnar storage with dictionary encoding, so a column's size mostly depends on its number of distinct values (cardinality).*
+
+**白话版：「字典越厚，书越重」。** 一列里只有 30 种不同的日期，字典很薄；一列里有几乎每行都不同的时间戳，字典就和数据一样厚。
+""" + C_CARD + r"""
+
+**读输出：** 5 万行的「日期 + 秒」时间戳有 49,567 个不同值，几乎每行一个；拆成日期（30 种）和小时（24 种）两列，不同值合计只有 54 个。**所以：把日期时间拆成日期列和时间列，只保留业务需要的精度；用不上的 GUID、备注、自由文本列在 Power Query 里直接删掉。**
+
+**降低模型大小的清单（考点）：**
+
+| 做法 | 说明 |
+|---|---|
+| 删除不需要的**列**和**行** | 在 Power Query 里删（如只加载近几年的数据），而不是加载后隐藏；报表里隐藏的列仍占空间 |
+| **降低粒度** | 不需要明细就先汇总再加载（Group By） |
+| 选合适的**数据类型** | 整数键比文本键压缩好；能用定点小数就别用浮点 |
+| 拆开日期与时间；去掉高基数列 | 如上面的例子 |
+| 关闭**自动日期/时间** | 否则每个日期列都生成一张隐藏表 |
+| 少用**计算列**，多用度量值 | 计算列要存储；尤其是大表上 |
+| 用星型模型、单向关系 | 上一节 |
+
+降低粒度的效果：
+""" + C_GRAN + r"""
+
+**读输出：** 5 万行的明细，按「日期 × 产品」（30 天 × 5 个产品）汇总后只有 150 行，压缩比 333:1，总数量不变（`True`）。**前提是报表确实不需要看单笔**：这是一个**业务取舍**，要和需求方确认。
+"""),
+  T(r"""
+### 查询折叠：让数据源干活
+
+> **标准定义 · 查询折叠 (query folding)**
+>
+> Power Query 把你的转换步骤**翻译成数据源的原生查询**（如 SQL），由数据源执行，只返回结果。折叠让筛选、分组、合并、选列在**源端**完成，显著减少传输和刷新时间，也是**增量刷新**等功能的前提。**某些步骤会中断折叠**：自定义函数、添加索引列、合并来自**不同数据源**的查询、写**原生查询 (native query)** 之后继续做的很多步骤等。在步骤上右键，如果**「查看原生查询 (View Native Query)」是灰色**，说明从这一步起折叠已经中断。
+>
+> *English: Query folding translates Power Query steps into the source's native query so the source does the work; some steps break folding, and a greyed-out View Native Query indicates it has stopped.*
+
+**白话版：「让库房自己挑好再送来，别把整个库房搬来再挑」。**
+""" + C_FOLD + r"""
+
+**读输出：** 折叠成功只传 20,000 行，失败则传回 1,000,000 行，多传了 50 倍。**实践顺序：** 把**能折叠的步骤（筛选、选列、删除列）放在最前面**，会中断折叠的步骤放到后面；先判断中断发生在哪一步。注意文件类数据源（Excel、CSV）**没有查询折叠**，因为它们没有能理解查询的引擎。
+
+### Performance Analyzer 与 DAX 查询视图
+
+> **标准定义 · Performance Analyzer 与 DAX 查询视图 (DAX query view)**
+>
+> **Performance Analyzer**（Desktop 的 View 选项卡）：开始录制、刷新视觉对象后，为每个视觉对象列出耗时：**DAX 查询 (DAX query)**——执行查询的时间；**视觉对象显示 (Visual display)**——画图的时间；**其他 (Other)**——等待其他操作的时间。每个视觉对象可以**复制它的查询**，拿到 **DAX 查询视图**里运行、修改和对比。**DAX 查询视图**是 Desktop 的一个视图，可以写 `EVALUATE` 查询、运行它并查看结果，还能在这里试验度量值的写法。
+>
+> *English: Performance Analyzer records DAX query, visual display and other time per visual; the query can be copied to DAX query view, a Desktop view for writing and running EVALUATE queries.*
+
+**白话版：「先量一量是哪一段慢」。** 看到慢，不要凭感觉改；录制，然后看分项：
+""" + C_PERF + r"""
+
+**读输出：** 「20 个切片器页」合计 2,600 ms，**主要耗时在「显示」**（1,900 ms）：问题在于页面上视觉对象太多，要精简；「地区矩阵」合计 2,590 ms，**主要耗时在 DAX 查询**（2,400 ms）：要去查度量值和模型，比如是否用了低效的迭代、关系是不是双向。**诊断对应的方向：DAX 段长 → 看度量值、关系、数据源（DirectQuery）；显示段长 → 少放视觉对象、简化复杂视觉；其他段长 → 并发等待，通常是页面视觉对象过多。**
+
+### 这一小节你要带走的三句话
+
+1. **导入模型的大小看基数**：拆开日期和时间，删高基数的列，在 Power Query 里删不用的行列，必要时降低粒度。
+2. **查询折叠让源端干活**：能折叠的步骤放前面；View Native Query 变灰就是折叠断了；文件数据源没有折叠。
+3. **先用 Performance Analyzer 量**：DAX 查询、视觉对象显示、其他，三段各自指向不同的修法；查询可以复制到 DAX 查询视图里试。
+"""),
+  THINK("**（计算）** 一张事实表有 2,000 万行，带秒的「事件时间」列几乎没有重复。业务只按天和小时分析。怎么改？为什么这样改能让模型明显变小？", r"""
+在 Power Query 里把「事件时间」拆成**日期**和**小时（或时间段）**两列，并删除原来的带秒时间戳列。日期只有几百到几千种取值，小时只有 24 种，两个低基数列压缩得很好；而带秒的时间戳基数接近行数，几乎没法压缩，是体积的大头。
+"""),
+  THINK("**（概念辨析）** 同事说「那几个没用的列我在报表视图里隐藏了，模型应该小了吧」。这样对模型大小有影响吗？应该怎么做？", r"""
+**没有**：隐藏只是不在字段列表里显示，列仍然在模型里，占着空间。要在 **Power Query 里删除**这些列（或在源端不选），这样根本不会加载。如果某些列只是用作关系或排序，则需要保留，但要隐藏。
+"""),
+  THINK("**（联系后续）** 在第 1 节你学到 DirectQuery 的每个视觉对象都会给数据源发查询。如果 Performance Analyzer 里一个 DirectQuery 视觉对象的「DAX 查询」段很长，下一步该查什么？", r"""
+DAX 查询段在 DirectQuery 下包含了**数据源执行的时间**。下一步看：数据源的索引和视图、查询是否折叠成原生查询、度量值是否产生了复杂的 SQL、关系是不是双向；必要时把维度表改成**双重 (Dual)**，或对热点表使用**导入 / 聚合**。
+"""),
+  KW(("基数","cardinality","一列里不同取值的个数"),
+     ("列式存储","columnar storage","按列单独压缩的存储方式（VertiPaq）"),
+     ("字典编码","dictionary encoding","把不同取值编码成整数，取值越少越省空间"),
+     ("降低粒度","reduce granularity","汇总后再加载，减少行数"),
+     ("高基数列","high-cardinality column","如时间戳、GUID，压缩差"),
+     ("自动日期/时间","Auto date/time","给每个日期列隐式生成日期表；建议关闭"),
+     ("查询折叠","query folding","把步骤翻译成源端的原生查询"),
+     ("原生查询","native query","如手写的 SQL，之后的步骤常会中断折叠"),
+     ("增量刷新","incremental refresh","只刷新新增或变化的分区；依赖查询折叠"),
+     ("Performance Analyzer","Performance Analyzer","录制并显示每个视觉对象的耗时"),
+     ("DAX 查询段","DAX query","执行查询的时间"),
+     ("视觉对象显示段","visual display","画图的时间"),
+     ("DAX 查询视图","DAX query view","写和运行 EVALUATE 查询的视图"),
+  ),
+ ],
+ "references": [
+  PL_STUDY_GUIDE,
+  {"title": "Microsoft Learn：Use Performance Analyzer to examine report element performance", "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-performance-analyzer", "note": "三段耗时的定义与使用方法"},
+  {"title": "Microsoft Learn：Query folding basics", "url": "https://learn.microsoft.com/en-us/power-query/query-folding-basics", "note": "查询折叠与 View Native Query"},
+  {"title": "Microsoft Learn：Data reduction techniques for Import modeling", "url": "https://learn.microsoft.com/en-us/power-bi/guidance/import-modeling-data-reduction", "note": "删行删列、降低粒度、拆列等降低模型大小的官方指南"},
+  {"title": "Microsoft Learn：DAX query view", "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/dax-query-view", "note": "DAX 查询视图的用法"},
+ ],
+ "quiz": {"questions": [
+  Q("一张大事实表的「事件时间」列精确到秒，几乎没有重复，占用大量空间。最合适的做法是：",
+    ["拆成日期列和时间（或小时）列，删除原列", "改成文本类型", "在报表里隐藏这一列", "把它设为主键"], 0,
+    "列式压缩的大小主要由基数决定。拆成低基数的两列压缩得好很多。在报表里隐藏并不会减小模型。"),
+  Q("在 Performance Analyzer 里，一个视觉对象的「DAX 查询」耗时很长。应该首先去：",
+    ["检查度量值、关系和（DirectQuery 时的）数据源", "减少页面上的视觉对象个数", "更换视觉对象类型的主题颜色", "增加刷新频率"], 0,
+    "DAX 查询段长，说明在执行查询时慢，去看度量值、模型关系和数据源。显示段长才是视觉对象太多或太复杂的信号。"),
+  Q("在 Power Query 的某一步右键，「查看原生查询」是灰色的。它的含义是：",
+    ["从这一步开始查询折叠已经中断", "这一步一定有错误", "数据源是 DirectQuery", "这一步已经被禁用"], 0,
+    "灰色表示这一步不能被翻译成原生查询，折叠已中断。应把会中断折叠的步骤尽量放在后面。"),
+  Q("下面哪一项**不能**减小导入模型的大小？",
+    ["在报表视图中隐藏不用的列", "在 Power Query 里删除不用的列", "按日期和产品汇总后再加载", "关闭自动日期/时间"], 0,
+    "隐藏列只改变显示，数据仍在模型里。其余三项都减少了加载的数据量或隐式对象。"),
+  Q("数据源是一组 CSV 文件，同事说「让 Power Query 把筛选折叠到源里」。这能实现吗？",
+    ["不能，文件类数据源没有查询折叠", "能，所有数据源都支持查询折叠", "能，但只限 Excel 文件", "能，只要设置参数"], 0,
+    "查询折叠要求数据源有能执行查询的引擎，如关系数据库。CSV 和 Excel 文件只能先读取再在本地处理。"),
+ ]},
+}
+retarget(unit, [3, 0, 1, 2, 2])
+
+if __name__ == '__main__':
+    dump(unit, "pl300-0", "u07-performance.json", n_questions=5)

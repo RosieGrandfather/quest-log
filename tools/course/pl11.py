@@ -1,0 +1,213 @@
+"""pl300-0 第 11 节：工作区、发布与分发"""
+from pllib import *
+
+nb = Notebook()
+
+C_DIST = nb.cell('''
+# 课程的简化选择器：分发场景 → 方式。考试要你认出场景里的关键词
+def distribute(audience, edit_needed=False, public=False, paginated_snapshot=False):
+    if public:              return "发布到 Web（公开！所有人可见，慎用）"
+    if paginated_snapshot:  return "订阅 (Subscription)：按计划发邮件快照"
+    if edit_needed:         return "工作区角色：Contributor / Member / Admin"
+    if audience == "few":   return "共享 (Share) 链接给具体的人"
+    return "应用 (App)：发布给一大批只读的读者，可分受众"
+
+print("给 3 个同事看：", distribute("few"))
+print("全部门 200 人只读：", distribute("many"))
+print("要让同事一起改报表：", distribute("few", edit_needed=True))
+print("每周一早上发邮件：", distribute("many", paginated_snapshot=True))
+''')
+
+C_GATE = nb.cell('''
+# 定时刷新需不需要网关？看数据源在哪里
+SOURCES = {
+    "Azure SQL（公网可达）": False,
+    "公司机房里的 SQL Server": True,
+    "SharePoint Online 上的 Excel": False,
+    "内网共享盘上的 Excel": True,
+    "Snowflake（云）": False,
+}
+for name, need in SOURCES.items():
+    print(f"{name}: {'需要本地数据网关' if need else '不需要（云端直连）'}")
+''')
+
+C_REFRESH = nb.cell('''
+# 计划刷新次数有上限（以官方文档为准：Pro 的共享容量每天 8 次，Premium / Fabric 容量最多 48 次）
+def schedule(n, start_hour=6, end_hour=22):
+    if n == 1: return [start_hour]
+    step = (end_hour - start_hour) / (n - 1)
+    return [round(start_hour + i * step, 1) for i in range(n)]
+
+for n, limit in ((4, 8), (8, 8), (12, 8)):
+    ok = n <= limit
+    print(f"每天 {n} 次，上限 {limit}：{'可以' if ok else '超出'}  时间点 {schedule(n) if ok else '-'}")
+''')
+
+C_ALERT = nb.cell('''
+# 数据警报：只能设在仪表板的卡片 / 仪表 / KPI 磁贴上；数据刷新后检查，越过阈值就通知
+values = [92, 97, 103, 99, 108]            # 每次刷新后磁贴的数字
+threshold = 100                             # 条件：高于 100
+
+alerts = []
+for i, v in enumerate(values):
+    if v > threshold:
+        alerts.append(f"第 {i + 1} 次刷新：{v} > {threshold} → 通知")
+print("\\n".join(alerts) if alerts else "未触发")
+''')
+
+unit = {
+ "id": "u11",
+ "title": "管理 Power BI：工作区、应用、分发、网关与刷新",
+ "en": "Manage Power BI: Workspaces, Apps, Distribution, Gateways & Refresh",
+ "minutes": 45,
+ "objectives": [
+  "说明**工作区 (workspace)** 是什么，以及发布、导入、更新报表和语义模型的几种方式",
+  "区分**共享 (Share)**、**应用 (App)**、**工作区角色**和**订阅 (Subscription)** 这几种分发方式，并为场景选对",
+  "解释**仪表板 (dashboard)** 与报表的区别，以及**数据警报 (data alert)** 能设在哪里",
+  "区分**推荐 (Promoted)** 与**认证 (Certified)**，说出谁能给内容做认证",
+  "说明什么时候需要**本地数据网关 (on-premises data gateway)**，并配置**计划刷新 (scheduled refresh)**",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一小节要干什么
+
+第 4 个考试域 **Manage and secure Power BI（管理和保护 Power BI）** 占 15–20%，比前三个小，但**几乎全是 Power BI 服务（网页端）里的事**。这是你最难动手练的一块：OMRON 租户里你能用 Pro 许可、但**不能创建工作区**，所以这一块要靠**读、记场景**，不是点点看。我会在最后提醒你怎么弥补。
+
+**学完它你就能看懂这几件事：**
+
+- 一份报表发布出去之后，在服务里到底是哪几个对象（工作区里的报表、语义模型）；
+- 「给 200 个人只读」「给 3 个人看」「让同事一起改」「每周一发邮件」分别用什么；
+- 为什么 SharePoint Online 上的 Excel 刷新不需要网关，而内网共享盘上的需要；
+- 数据警报为什么设不到报表的视觉对象上。
+
+**本小节安排（约 45 分钟）**：导读（3 分钟）→ 工作区与发布（8 分钟）→ 分发（10 分钟）→ 仪表板、警报、订阅（8 分钟）→ 推荐与认证（4 分钟）→ 网关与刷新（9 分钟）→ 总结（3 分钟）。
+
+### 工作区与发布
+
+> **标准定义 · 工作区 (workspace) 与发布**
+>
+> **工作区**是在 Power BI 服务里**协作和管理内容**的容器：里面放报表、语义模型（以前叫数据集）、仪表板、数据流等。**创建工作区**时设置名称、描述、许可证模式（Pro、Premium per user、容量）、联系人列表等。内容进入服务有几种方式：在 Desktop 里 **发布 (Publish)** 到指定工作区；在服务里 **导入 (Import / Upload)** 一个 `.pbix` 文件；把 Desktop 里的同一个文件**再次发布**，会**更新（覆盖）**服务里的同名语义模型和报表。企业里常用**部署管道 (deployment pipelines)** 在开发 / 测试 / 生产工作区之间发布。
+>
+> *English: A workspace is the container where content is collaborated on and managed; content arrives by Publish from Desktop, Import / Upload in the service, or republishing to overwrite; deployment pipelines promote content between stages.*
+
+**白话版：「工作区是共享的文件夹，但里面是活的内容」。** 一份 `.pbix` 发布后，在服务里是**两个对象**：**语义模型**（数据和模型）和**报表**（视觉对象）。
+"""),
+  T(r"""
+### 分发：共享、应用、角色与订阅
+
+> **标准定义 · 分发方式 (distribution methods)**
+>
+> **共享 (Share)**：把某份报表或仪表板用链接给**具体的人**（可以让他们再共享、可以允许基于它建内容）。**应用 (App)**：把工作区里选定的报表、仪表板打包成一个**发布给大量读者的产品**，可定义**多个受众 (audiences)**，每个受众看到不同的内容；更新时在工作区里改好后**更新应用 (Update app)**，读者才会看到。**工作区角色**：**管理员 (Admin)、成员 (Member)、参与者 (Contributor)、查看者 (Viewer)**，用来让一起**制作**内容的人进入工作区。**订阅 (Subscription)**：把报表页或仪表板的**快照**按计划发邮件。**发布到 Web (Publish to web)** 会让**任何人**无需登录都能看，通常不应用于内部数据。
+>
+> *English: Share gives named people access; an App packages content for many read-only users with audiences; workspace roles are for people who build; subscriptions email snapshots on a schedule; Publish to web makes content public.*
+
+**白话版：「给少数人用共享，给一大批人用应用，一起做用角色，定时看用订阅」。**
+""" + C_DIST + r"""
+
+**读输出：** 4 个场景对应 4 种方式；注意**把读者放进工作区角色不是推荐的分发方式**：工作区是给**制作者**用的，面向大量读者应当用**应用**。每种方式的权限是独立设置的，比如**共享**之后读者能否再共享、能否基于语义模型建新报表，都有勾选项。
+
+### 仪表板、数据警报与订阅
+
+> **标准定义 · 仪表板 (dashboard) 与数据警报 (data alert)**
+>
+> **仪表板**是**只存在于服务里的单页画布**，由从一份或多份报表 **固定 (pin)** 来的**磁贴 (tile)** 组成（也可以固定整页），读者点磁贴会回到源报表。仪表板**没有切片器**。**数据警报**设置在仪表板上显示**单个数字**的磁贴（**卡片、仪表、KPI**）上：当数值**高于或低于**你设的阈值时，发通知（应用内或邮件，也可以触发 Power Automate 流）。
+>
+> *English: A dashboard is a single-page canvas in the service made of pinned tiles from reports; it has no slicers. Data alerts are set on cards, gauges and KPI tiles and notify when the value crosses a threshold.*
+
+**白话版：「仪表板是摘要墙，警报是墙上的报警器」。** 警报的逻辑很简单：
+""" + C_ALERT + r"""
+
+**读输出：** 阈值 100，五次刷新里第 3 次（103）和第 5 次（108）越过，各发出一次通知，第 4 次回落到 99 不触发。**考点：** 数据警报针对**数字类**磁贴（卡片、仪表、KPI），设置在**仪表板上**；订阅是**按计划**发快照，警报是**按条件**发通知。
+
+### 推荐与认证
+
+> **标准定义 · 内容认可 (endorsement)**
+>
+> 帮助读者找到**可信**的内容。**推荐 (Promoted)**：内容的所有者或有写权限的人认为它值得使用，**不需要管理员批准**。**认证 (Certified)**：只有**租户管理员授权的审阅者**才能给内容打上，表示它符合组织的质量标准。另有**主数据 (Master data)**：用于表示是权威的主数据源。
+>
+> *English: Promoted is applied by content owners or writers; Certified can only be applied by reviewers authorized by the tenant admin; Master data marks authoritative data.*
+
+**白话版：「推荐是自己说好，认证是官方盖章」。** 考试的经典问法是「谁可以认证」，答案是**被租户管理员授权的人**，不是工作区管理员也不是内容所有者。
+
+### 本地数据网关与计划刷新
+
+> **标准定义 · 本地数据网关 (on-premises data gateway) 与计划刷新 (scheduled refresh)**
+>
+> **网关**是安装在内网里的一个程序，让 Power BI 服务能**安全地访问不对公网开放的数据源**（内网 SQL Server、共享盘文件等）用于**刷新**和 **DirectQuery**。**标准模式 (standard mode)** 供多人共用，**个人模式 (personal mode)** 供个人使用；虚拟网络上的数据源用**虚拟网络数据网关**。**云端可直连的数据源不需要网关**。**计划刷新**只针对**导入**的语义模型，在设置里启用并选时间点；次数有上限（官方文档写的是共享容量每天 8 次，Premium 或 Fabric 容量更多，具体以文档为准），也可以随时**手动刷新**。需要的话要先在语义模型设置里**为数据源配置凭据**，选择网关。
+>
+> *English: A gateway lets the service reach on-premises data for refresh and DirectQuery; cloud sources need none; scheduled refresh applies to Import models and is capped per day; credentials and gateway must be configured first.*
+
+**白话版：「网关是内网的一个传话人」。**
+""" + C_GATE + r"""
+
+**读输出：** 云端能直连的（Azure SQL、SharePoint Online、Snowflake）不需要；内网机房的 SQL Server 和内网共享盘上的 Excel 需要。再看计划刷新的次数限制：
+""" + C_REFRESH + r"""
+
+**读输出：** 每天 4 次、8 次在 8 次的上限内可以，12 次超出了；这里的时间点只是均匀分布的示例。**这个上限的具体数字请以官方文档为准**，我在这里写它是为了让你记住「刷新次数有上限，并且和容量类型有关」。
+
+### 在 OMRON 租户里怎么弥补练习
+
+你的租户创建不了工作区，所以这一块靠**读和场景题**。可以做的：用微软提供的**免费练习评估 (practice assessment)** 做这个域的题；读上面参考资料里的官方文档；如果能申请一个**个人的开发者 / 试用租户**，在里面练工作区、应用和订阅（这要用你个人的账号，**不要用公司数据**）。
+
+### 这一小节你要带走的三句话
+
+1. **发布 = 语义模型 + 报表**；再次发布会覆盖；分发：少数人用**共享**，一大批只读用**应用**，一起制作用**角色**，定时快照用**订阅**。
+2. **仪表板由磁贴组成、没有切片器；数据警报设在卡片 / 仪表 / KPI 磁贴上**；认证只能由租户管理员授权的人打。
+3. **云端可直连的不需要网关，内网的需要**；计划刷新只针对导入，有次数上限。
+"""),
+  THINK("**（场景判断）** 一个 200 人的销售部门只需要**查看**一组固定的报表，并且销售总监想看到比一线销售更多的页面。应该用什么方式分发？", r"""
+用**应用 (App)**：把报表打包发布，并创建**多个受众**——一线销售和销售总监各一个，每个受众看到不同的报表或页面。不建议把 200 人都放进工作区角色，因为工作区是给制作者用的。
+"""),
+  THINK("**（概念辨析）** 某同事说：「我是这个工作区的管理员，我把这个语义模型标成『认证』吧。」这样做可以吗？", r"""
+**不可以**：认证只能由租户管理员**授权的审阅者**来做。工作区管理员和内容所有者可以把内容标为**推荐 (Promoted)**，但不能自己认证。如果想要认证，要向被授权的审阅者提交，由他们审核后打上。
+"""),
+  THINK("**（联系后续）** 下一节你会学行级安全 (RLS)。如果一个应用发布给 200 个读者，但每个销售只应该看到自己区域的数据，工作区角色和应用能解决吗？还需要什么？", r"""
+**不能**：应用和共享只决定「能不能看到这份报表」，不决定「能看到哪些行」。需要在语义模型里定义**行级安全 (RLS)**，并把读者分配到对应的角色。需要注意：对于在工作区里有**编辑权限的角色（管理员、成员、参与者）**，RLS 不会限制他们，这点下一节会展开。
+"""),
+  KW(("工作区","workspace","在服务里协作和管理内容的容器"),
+     ("语义模型","semantic model","以前叫数据集：数据加模型"),
+     ("发布","Publish","把 Desktop 里的文件发到服务的工作区"),
+     ("部署管道","deployment pipeline","在开发、测试、生产之间发布内容"),
+     ("共享","Share","把内容用链接给具体的人"),
+     ("应用","App","打包发布给大批读者，可分受众"),
+     ("受众","audience","应用里一组读者及其可见的内容"),
+     ("工作区角色","workspace roles","管理员、成员、参与者、查看者"),
+     ("订阅","subscription","按计划发邮件快照"),
+     ("仪表板","dashboard","服务里由磁贴组成的单页摘要"),
+     ("数据警报","data alert","卡片、仪表、KPI 磁贴越过阈值时通知"),
+     ("推荐","Promoted","内容所有者或写权限者标记"),
+     ("认证","Certified","仅由租户管理员授权的审阅者标记"),
+     ("本地数据网关","on-premises data gateway","让服务访问内网数据源"),
+     ("计划刷新","scheduled refresh","按时间点自动刷新导入的模型"),
+  ),
+ ],
+ "references": [
+  PL_STUDY_GUIDE,
+  {"title": "Microsoft Learn：Roles in workspaces", "url": "https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces", "note": "工作区四个角色的权限"},
+  {"title": "Microsoft Learn：Create and publish a Power BI app", "url": "https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-create-distribute-apps", "note": "应用、受众与更新"},
+  {"title": "Microsoft Learn：Endorse your content", "url": "https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-endorse-content", "note": "推荐与认证"},
+  {"title": "Microsoft Learn：What is an on-premises data gateway?", "url": "https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-onprem", "note": "网关的类型与适用场景"},
+  {"title": "Microsoft Learn：Configure scheduled refresh", "url": "https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-scheduled-refresh", "note": "计划刷新的设置与次数限制"},
+ ],
+ "quiz": {"questions": [
+  Q("一个工作区里有一组报表，要给 300 个只需阅读的读者，并让总监看到更多页面。最合适的是：",
+    ["发布应用并创建多个受众", "把 300 人都加为工作区成员", "给每个人分别发共享链接", "使用发布到 Web"], 0,
+    "应用面向大量只读读者，可定义多个受众并让不同受众看到不同内容。工作区角色用于制作者。发布到 Web 会公开。"),
+  Q("谁可以把一个语义模型标为「认证」（Certified）？",
+    ["由租户管理员授权的审阅者", "任何有写权限的人", "工作区管理员", "内容所有者"], 0,
+    "认证只能由租户管理员授权的审阅者打上；推荐（Promoted）才是所有者或写权限者可以做的。"),
+  Q("数据警报（data alert）可以设置在：",
+    ["仪表板上的卡片、仪表或 KPI 磁贴", "报表里的任意视觉对象", "切片器上", "数据流上"], 0,
+    "数据警报设置在仪表板上显示单个数值的磁贴（卡片、仪表、KPI）上，越过阈值时通知。"),
+  Q("下面哪个数据源的计划刷新**需要**本地数据网关？",
+    ["公司内网机房里的 SQL Server", "SharePoint Online 上的 Excel", "Azure SQL 数据库（公网可达）", "Snowflake（云）"], 0,
+    "不对公网开放的内网数据源需要本地数据网关；云端可直连的数据源不需要。"),
+  Q("在服务里再次发布同一份 .pbix 到同一个工作区，通常会：",
+    ["更新（覆盖）同名的语义模型和报表", "新建一个重名的副本", "只更新视觉对象，不更新数据", "删除工作区"], 0,
+    "再次发布会更新服务里同名的语义模型和报表。需要在开发、测试、生产之间推进时，企业常用部署管道。"),
+ ]},
+}
+retarget(unit, [0, 3, 1, 2, 0])
+
+if __name__ == '__main__':
+    dump(unit, "pl300-0", "u11-workspaces.json", n_questions=5)
