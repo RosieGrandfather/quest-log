@@ -13,11 +13,11 @@
 
 ---
 
-## 2026-10-09 — 新课 sql-0：SQL 实战，从会写到敢上岗（8 节，选修）
-- 新课 `sql-0`，选修（`tier: elective`，`order: 18`）：u01 SELECT 与 NULL、u02 聚合与分组、u03 JOIN 与孤儿记录、u04 子查询与 CTE、u05 窗口函数、u06 改数据、事务、约束与索引、u07 排查与对账实战、u08 Oracle 对照、JDE 日期、证书路线与水平自测；每节 40–45 分钟，5 道测验，`direct: true`，合计 340 分钟
+## 2026-10-09 — 新课 sql-0：SQL 实战，从会写到敢上岗（10 节，选修）
+- 新课 `sql-0`，选修（`tier: elective`，`order: 18`）：u01 SELECT 与 NULL、u02 聚合与分组、u03 JOIN 与孤儿记录、u04 子查询与 CTE、u05 窗口函数、u06 改数据、事务、约束与索引、u07 排查与对账实战、u08 Oracle 对照、JDE 日期、证书路线与水平自测、u09 面试实战（上）七道经典题（第 N 高、每组前 N、同时买过 A 和 B、帕累托、比率、相邻间隔、去重）、u10 面试实战（下）进阶题（连续登录、递归 BOM 展开、补全日期与移动平均、中位数、先进先出分配）；每节 40–50 分钟，5 道测验，`direct: true`，合计 440 分钟
 - 每节开头用同一个自己编的供应链演示数据库（客户、产品、订单、明细、库存，故意埋了孤儿记录和 NULL），代码块在网页里用 SQLite（Pyodide 自带 sqlite3）直接运行；输出由 `Notebook` 真实运行写入
-- 文件：`courses/sql-0/*.json`、`course.json`，脚本 `tools/course/sql01.py`–`sql08.py`、`sqllib.py`；`courses/index.json` 加了 sql-0
-- 需要注意：**Oracle 的写法没有在 Oracle 上运行过**，按官方文档和常见用法整理；JDE 的 CYYDDD 日期规则用 Python 验证了换算，但字段是否如此以实际库为准；证书信息（1Z0-071 的题量、时长、及格线、费用）来自第三方备考网站，Oracle 官方页面没能读到，课程里已写明要去官方确认；`EXPLAIN QUERY PLAN` 只输出是否走索引，避免不同 SQLite 版本的文字差异；本地 SQLite 3.37 跑出的输出和网页里 Pyodide 的版本可能略有不同，请在浏览器里抽测几节
+- 文件：`courses/sql-0/*.json`、`course.json`，脚本 `tools/course/sql01.py`–`sql10.py`、`sqllib.py`；`courses/index.json` 加了 sql-0
+- 需要注意：u09 / u10 的面试题型是按常见题整理的，不是某家公司的真题，也没有查到新加坡公司具体考什么；**Oracle 的写法没有在 Oracle 上运行过**，按官方文档和常见用法整理；JDE 的 CYYDDD 日期规则用 Python 验证了换算，但字段是否如此以实际库为准；证书信息（1Z0-071 的题量、时长、及格线、费用）来自第三方备考网站，Oracle 官方页面没能读到，课程里已写明要去官方确认；`EXPLAIN QUERY PLAN` 只输出是否走索引，避免不同 SQLite 版本的文字差异；本地 SQLite 3.37 跑出的输出和网页里 Pyodide 的版本可能略有不同，请在浏览器里抽测几节
 
 ## 2026-10-09 — 新课 ba-0：BA 入门，一个项目从头到尾（10 节，选修）
 - 新课 `ba-0`，选修（`tier: elective`，`order: 17`）：u01 BA 是做什么的、u02 项目启动、u03 干系人分析、u04 需求访谈、u05 As-Is 现状、u06 写需求、u07 数据与接口、u08 方案选择、u09 UAT 与上线、u10 上线后与面试；每节 40–45 分钟，5 道测验，`direct: true`，合计 420 分钟。每节有「会议卡」（找谁开会、准备什么、问什么）和「对照你的 SOC Automation」

@@ -1,0 +1,179 @@
+{
+ "id": "u09",
+ "title": "SQL 面试实战（上）：七道常考题的解法、追问与边界",
+ "en": "SQL Interview Practice I: Seven Classic Questions, Follow-ups & Edge Cases",
+ "minutes": 50,
+ "objectives": [
+  "掌握面试答题的固定流程：**问清口径 → 举例子 → 选工具 → 写 → 查边界 → 讲复杂度和优化**",
+  "做出七类经典题：**第 N 高、每组前 N 名、同时满足多个条件的人、帕累托 80/20、比率、相邻记录的间隔、保留一条的去重**",
+  "对每道题能说出**至少一种别的写法**和**一个会让答案出错的边界**（并列、NULL、空表、取消的订单）",
+  "知道每道题在 **Oracle 里要怎么改**"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\nSQL 面试几乎都是在白板、共享文档或在线编辑器里**现场写查询**，题目往往短，但**追问很多**。面试官想看的不只是你会不会写，而是：你**问不问口径、会不会举例子验证、能不能想到边界、能不能解释为什么这样写**。这一节用同一个演示库做七道常考题。我说明一下：这些题型是 SQL 面试里的常见类型（来自我对常见面试题的整理，不是某家公司的真题，也没有查到新加坡公司具体考什么）；有的比基础题难，超出前面的内容也是有意的。\n\n```python\nimport sqlite3\ndb = sqlite3.connect(\":memory:\")\ndb.executescript(\"\"\"\nCREATE TABLE customers(cust_id INTEGER PRIMARY KEY, name TEXT, country TEXT);\nCREATE TABLE products(sku TEXT PRIMARY KEY, name TEXT, category TEXT, unit_cost REAL);\nCREATE TABLE orders(order_id INTEGER PRIMARY KEY, cust_id INTEGER, order_date TEXT, status TEXT);\nCREATE TABLE order_lines(order_id INTEGER, line_no INTEGER, sku TEXT, qty INTEGER, unit_price REAL);\nCREATE TABLE inventory(sku TEXT, warehouse TEXT, on_hand INTEGER, stock_status TEXT);\n\"\"\")\nins = lambda t, rows: db.executemany(f\"INSERT INTO {t} VALUES ({','.join('?'*len(rows[0]))})\", rows)\nins(\"customers\", [(1,\"Alpha Pharmacy\",\"SG\"),(2,\"Beta Clinic\",\"SG\"),(3,\"Gamma Trading\",\"MY\"),\n                  (4,\"Delta Retail\",\"MY\"),(5,\"Echo Health\",\"SG\"),(6,\"Foxtrot Store\",None)])\nins(\"products\", [(\"BP100\",\"Arm BP Monitor\",\"BP\",30.0),(\"BP200\",\"Wrist BP Monitor\",\"BP\",22.0),\n                 (\"TH10\",\"Thermometer\",\"TEMP\",4.0),(\"NB50\",\"Nebulizer\",\"NEB\",35.0),\n                 (\"MS01\",\"Massager\",\"PAIN\",18.0),(\"OLD9\",\"Old Model\",\"BP\",10.0)])\nins(\"orders\", [(101,1,\"2026-09-01\",\"SHIPPED\"),(102,1,\"2026-09-03\",\"SHIPPED\"),(103,2,\"2026-09-03\",\"OPEN\"),\n               (104,3,\"2026-09-05\",\"SHIPPED\"),(105,3,\"2026-09-12\",\"CANCELLED\"),(106,4,\"2026-09-15\",\"OPEN\"),\n               (107,5,\"2026-09-20\",\"SHIPPED\"),(108,2,\"2026-09-22\",\"SHIPPED\"),(109,9,\"2026-09-25\",\"OPEN\")])\nins(\"order_lines\", [(101,1,\"BP100\",10,55.0),(101,2,\"TH10\",50,9.0),(102,1,\"BP200\",20,40.0),\n                    (103,1,\"NB50\",5,70.0),(104,1,\"BP100\",8,56.0),(104,2,\"MS01\",10,35.0),\n                    (105,1,\"TH10\",100,9.0),(106,1,\"BP200\",15,41.0),(106,2,\"TH10\",30,9.5),\n                    (107,1,\"NB50\",10,69.0),(107,2,\"BP100\",12,55.0),(108,1,\"MS01\",6,36.0),\n                    (108,2,\"XX99\",2,10.0),(109,1,\"BP100\",4,55.0)])\nins(\"inventory\", [(\"BP100\",\"SG-WH\",120,\"AVAIL\"),(\"BP100\",\"SG-WH\",30,\"QUAR\"),(\"BP200\",\"SG-WH\",200,\"AVAIL\"),\n                  (\"TH10\",\"SG-WH\",500,\"AVAIL\"),(\"NB50\",\"MY-WH\",40,\"AVAIL\"),(\"MS01\",\"MY-WH\",0,\"AVAIL\"),\n                  (\"BP200\",\"MY-WH\",25,\"QUAR\"),(\"OLD9\",\"SG-WH\",15,\"AVAIL\")])\ndb.commit()    # 先把建好的数据提交，后面的 rollback 才不会把它也撤销\nprint(\"建库完成：5 张表\")\n# 输出：建库完成：5 张表\n```\n```python\ndef q(sql, params=()):\n    cur = db.execute(sql, params)\n    rows = cur.fetchall()\n    if cur.description:\n        print(\" | \".join(d[0] for d in cur.description))\n        for r in rows:\n            print(\" | \".join(\"NULL\" if v is None else str(v) for v in r))\n        print(f\"({len(rows)} 行)\")\n```\n\n**本节安排（约 50 分钟）**：导读与答题流程（5 分钟）→ 七道题各约 6 分钟（42 分钟）→ 总结（3 分钟）。**建议做法：每道题先看题目，自己在练习里写一遍，再看我的解法。**\n\n### 答题流程：六步\n\n1. **问清口径**：「取消的订单算不算？并列怎么处理？没有数据时返回什么？」（这一步本身就是加分项。）\n2. **举个小例子**：用 3 到 5 行数据手算期望结果，说给面试官听。\n3. **选工具**：这是「分组汇总」「排名」「连接」「窗口」「集合」里的哪一类？\n4. **边写边说**：先写骨架，再补细节，别一次写完才解释。\n5. **查边界**：NULL、重复、并列、空表、边界值（`>` 还是 `>=`）。\n6. **讲优化和替代**：可能的索引、有没有别的写法。\n\n### 第 1 题：第 N 高的值\n\n> **题目：** 订单金额第 2 高是多少？如果没有第 2 高，返回 NULL。\n\n**追问：** 金额并列怎么办？N 是参数怎么办？\n\n```python\nOA = \"\"\"WITH oa AS (\n    SELECT o.order_id, o.cust_id, o.order_date, SUM(ol.qty * ol.unit_price) AS amount\n    FROM orders o JOIN order_lines ol ON ol.order_id = o.order_id\n    GROUP BY o.order_id)\"\"\"\ndef nth_highest(n):\n    q(OA + f\"\"\"\n      SELECT MAX(amount) AS nth_highest FROM (\n          SELECT amount, DENSE_RANK() OVER (ORDER BY amount DESC) AS r FROM oa) WHERE r = {n}\"\"\")\nnth_highest(2)\nnth_highest(10)\n# 输出：nth_highest\n# 输出：1000.0\n# 输出：(1 行)\n# 输出：nth_highest\n# 输出：NULL\n# 输出：(1 行)\n```\n\n**读输出：** 先用 `DENSE_RANK` 给金额排名（并列不跳号），再取排名为 N 的值。第 2 高是 1000（订单 101）。**为什么外面套 `MAX`：** 子查询没有匹配行时返回的是「零行」，而面试要求返回 NULL；聚合函数在零行时返回 NULL，这是个小技巧（第 10 高就返回了 `NULL`）。**为什么用 `DENSE_RANK`：** 如果用 `RANK`，两个并列第 3 之后就没有「第 4」了；如果用 `ROW_NUMBER`，并列的值会被当成不同名次。**别的写法：** `SELECT DISTINCT amount FROM oa ORDER BY amount DESC LIMIT 1 OFFSET 1`（Oracle 用 `OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY`），但没有结果时返回零行而不是 NULL。\n\n### 第 2 题：每组前 N 名\n\n> **题目：** 每个产品类别里销量最高的 2 个 SKU。\n\n```python\nq(\"\"\"SELECT category, sku, total_qty FROM (\n         SELECT p.category, p.sku, SUM(ol.qty) AS total_qty,\n                ROW_NUMBER() OVER (PARTITION BY p.category ORDER BY SUM(ol.qty) DESC) AS rn\n         FROM order_lines ol JOIN products p ON p.sku = ol.sku\n         GROUP BY p.category, p.sku)\n     WHERE rn <= 2 ORDER BY category, rn\"\"\")\n# 输出：category | sku | total_qty\n# 输出：BP | BP200 | 35\n# 输出：BP | BP100 | 34\n# 输出：NEB | NB50 | 15\n# 输出：PAIN | MS01 | 16\n# 输出：TEMP | TH10 | 180\n# 输出：(5 行)\n```\n\n**读输出：** 按类别分区，按销量倒序编号，取编号 <= 2。BP 类别两个都在（BP200 为 35，BP100 为 34），其他类别只有一个 SKU 有销量。**追问：并列怎么办？** `ROW_NUMBER` 会在并列时随便选一个，如果要保留所有并列的，改用 `RANK` 或 `DENSE_RANK` 并筛 `<= 2`。**边界：** 没有销量的 SKU（OLD9）不会出现，因为我们用的是 `JOIN`；如果题目要求「没有销量的也要显示」，要改成从产品表出发的 `LEFT JOIN`。\n\n### 第 3 题：同时买过 A 和 B 的客户\n\n> **题目：** 找出同时买过 BP100 和 TH10 的客户。\n\n```python\ndef bought_both(extra=\"\"):\n    q(f\"\"\"SELECT c.cust_id, c.name\n          FROM orders o\n          JOIN customers c    ON c.cust_id = o.cust_id\n          JOIN order_lines ol ON ol.order_id = o.order_id\n          WHERE ol.sku IN ('BP100', 'TH10') {extra}\n          GROUP BY c.cust_id, c.name\n          HAVING COUNT(DISTINCT ol.sku) = 2\"\"\")\nprint(\"含已取消订单：\")\nbought_both()\nprint(\"不含已取消订单：\")\nbought_both(\"AND o.status <> 'CANCELLED'\")\n# 输出：含已取消订单：\n# 输出：cust_id | name\n# 输出：1 | Alpha Pharmacy\n# 输出：3 | Gamma Trading\n# 输出：(2 行)\n# 输出：不含已取消订单：\n# 输出：cust_id | name\n# 输出：1 | Alpha Pharmacy\n# 输出：(1 行)\n```\n\n**读输出：** 做法是先筛出只含这两个 SKU 的行，按客户分组，用 `HAVING COUNT(DISTINCT sku) = 2` 保证两个都买过。**这道题的重点在口径：** 含已取消订单时有 Alpha 和 Gamma 两个客户；不含已取消订单时只剩 Alpha，因为 Gamma 的 TH10 在被取消的 105 号订单里。面试官问「取消的算不算」才是答对的关键。**别的写法：** 用 `INTERSECT`（两个 SKU 各查一次客户，再求交集），或者 `EXISTS` 写两次。\n\n### 第 4 题：帕累托（80/20）分析\n\n> **题目：** 按销售额从高到低列出 SKU，算出累计占比，并把累计占比达到 80% 之前的 SKU 标为 A 类。\n\n```python\nq(\"\"\"WITH r AS (SELECT sku, SUM(qty * unit_price) AS rev FROM order_lines GROUP BY sku),\n     c AS (SELECT sku, rev,\n                  SUM(rev) OVER (ORDER BY rev DESC ROWS UNBOUNDED PRECEDING) AS cum_rev,\n                  SUM(rev) OVER () AS total_rev\n           FROM r)\n     SELECT sku, rev, ROUND(100.0 * cum_rev / total_rev, 1) AS cum_pct,\n            CASE WHEN (cum_rev - rev) * 1.0 / total_rev < 0.8 THEN 'A' ELSE 'B' END AS cls\n     FROM c ORDER BY rev DESC\"\"\")\n# 输出：sku | rev | cum_pct | cls\n# 输出：BP100 | 1878.0 | 28.7 | A\n# 输出：TH10 | 1635.0 | 53.6 | A\n# 输出：BP200 | 1415.0 | 75.2 | A\n# 输出：NB50 | 1040.0 | 91.1 | A\n# 输出：MS01 | 566.0 | 99.7 | B\n# 输出：XX99 | 20.0 | 100.0 | B\n# 输出：(6 行)\n```\n\n**读输出：** `SUM(rev) OVER (ORDER BY rev DESC ROWS UNBOUNDED PRECEDING)` 得到累计销售额，除以总额得到累计占比。BP100 的累计 28.7%，TH10 累计 53.6%，BP200 累计 75.2%，NB50 累计 91.1%。**A 类的判断用的是「这一行之前的累计占比」**（`cum_rev - rev`）：NB50 开始前累计才 75.2%，没到 80%，所以 NB50 也算 A；如果用「含本行的累计占比」判断，NB50（91.1%）就被排除，会少一个。**这个边界是常见追问**，答案没有对错，要和面试官确认「A 类是包含跨过 80% 的那一个，还是不包含」。这类库存分类（ABC 分析）在供应链里很常用。\n\n### 第 5 题：比率和百分比\n\n> **题目：** 每个国家的订单取消率。\n\n```python\nq(\"\"\"SELECT COALESCE(c.country, '(unknown)') AS country,\n            COUNT(*) AS n_orders,\n            ROUND(100.0 * AVG(CASE WHEN o.status = 'CANCELLED' THEN 1.0 ELSE 0 END), 1) AS cancel_pct\n     FROM orders o LEFT JOIN customers c ON c.cust_id = o.cust_id\n     GROUP BY COALESCE(c.country, '(unknown)')\n     ORDER BY country\"\"\")\n# 输出：country | n_orders | cancel_pct\n# 输出：(unknown) | 1 | 0.0\n# 输出：MY | 3 | 33.3\n# 输出：SG | 5 | 0.0\n# 输出：(3 行)\n```\n\n**读输出：** `AVG(CASE WHEN … THEN 1.0 ELSE 0 END)` 是算比例的万能写法：满足条件记 1，否则记 0，平均数就是占比。MY 有 3 张订单、1 张取消，33.3%；SG 5 张，0%；订单 109 的客户不存在，国家是 NULL，用 `COALESCE` 单独标为 `(unknown)`。**边界：** `1.0` 不能写成 `1`，否则在有些数据库里整数相除会得到 0（SQLite 里 `1/3` 也是 0）；**分母为 0** 时要避免除零。\n\n### 第 6 题：相邻记录的间隔\n\n> **题目：** 找出同一个客户相邻两次下单间隔超过 7 天的订单。\n\n```python\nq(\"\"\"SELECT cust_id, order_id, order_date, gap_days FROM (\n         SELECT cust_id, order_id, order_date,\n                CAST(julianday(order_date) - julianday(\n                     LAG(order_date) OVER (PARTITION BY cust_id ORDER BY order_date)) AS INT) AS gap_days\n         FROM orders)\n     WHERE gap_days > 7\"\"\")\n# 输出：cust_id | order_id | order_date | gap_days\n# 输出：2 | 108 | 2026-09-22 | 19\n# 输出：(1 行)\n```\n\n**读输出：** `LAG` 取同一客户上一张订单的日期，两个日期相减得到间隔天数。只有客户 2 的 108 号订单满足（9 月 3 日到 9 月 22 日，相隔 19 天）。**注意客户 3 的两张订单（9 月 5 日和 12 日）刚好相隔 7 天，因为题目是「超过 7 天」所以不算，如果改成 `>= 7` 就会包含它**，这正是面试官爱问的边界。**Oracle：** 日期直接相减就是天数，不需要 `julianday`：`order_date - LAG(order_date) OVER (...)`（日期类型的前提下）。\n\n### 第 7 题：删除重复，只保留一条\n\n> **题目：** 临时表里同一个订单和 SKU 有重复行，写出只保留一条的删除语句。\n\n```python\ndb.execute(\"CREATE TABLE stg(order_id INT, sku TEXT, qty INT)\")\ndb.executemany(\"INSERT INTO stg VALUES (?,?,?)\", [(101,\"BP100\",10),(101,\"BP100\",10),(102,\"BP200\",20),(102,\"BP200\",20),(102,\"BP200\",20)])\ncur = db.execute(\"\"\"DELETE FROM stg WHERE rowid NOT IN (\n                        SELECT MIN(rowid) FROM stg GROUP BY order_id, sku)\"\"\")\nprint(\"删除行数:\", cur.rowcount)\nq(\"SELECT * FROM stg ORDER BY order_id\")\ndb.rollback()\n# 输出：删除行数: 3\n# 输出：order_id | sku | qty\n# 输出：101 | BP100 | 10\n# 输出：102 | BP200 | 20\n# 输出：(2 行)\n```\n\n**读输出：** 按业务键（订单号加 SKU）分组，每组只留 `MIN(rowid)` 那一条，其余删掉，共删除 3 行（5 行变 2 行）。最后 `rollback()` 撤销。**Oracle 对应：** `ROWID` 是行的物理地址，写法几乎一样：`DELETE FROM stg WHERE ROWID NOT IN (SELECT MIN(ROWID) FROM stg GROUP BY order_id, sku)`。**追问：** 如果这是生产表怎么办？答：先备份或在事务里，先用 `SELECT` 确认要删的行，让有权限的人执行；还要问「保留哪条才对」。\n\n### 这一节你要带走的三句话\n\n1. **答题流程：问口径、举例子、选工具、边写边说、查边界、讲替代和优化；很多题的「陷阱」其实是口径（取消的算不算、并列怎么办、> 还是 >=）。**\n2. **常考题型对应的工具：第 N 高用 DENSE_RANK，每组前 N 用 ROW_NUMBER，「同时买过」用 HAVING COUNT(DISTINCT)，占比用 AVG(CASE)，相邻记录用 LAG，去重用 ROWID 或 ROW_NUMBER。**\n3. **每道题都准备一个替代写法和一个会让答案出错的边界，面试官追问时就不会慌。**"
+  },
+  {
+   "type": "think",
+   "q": "**（实践）** 不看解法，写出：「每个客户最近一张订单的金额」。再写出：「每个客户金额最高的订单」。两题的窗口函数有什么区别？",
+   "a": "最近一张：`ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY order_date DESC)` 取 1；金额最高：`ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY amount DESC)` 取 1。区别只有 `ORDER BY` 的列。如果日期或金额并列要保留所有并列，就把 `ROW_NUMBER` 换成 `RANK`。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 为什么算比例时要写 `1.0` 而不是 `1`？",
+   "a": "很多数据库里整数除以整数的结果仍然是整数（舍去小数），例如 `1/3` 得 0。把其中一个数写成小数（`1.0`、`100.0`）就会按小数计算。写 `AVG(CASE WHEN … THEN 1.0 ELSE 0 END)` 或 `100.0 * COUNT(…) / COUNT(*)` 都是为了避免这个问题。Oracle 的 `/` 本身会得到小数，但这个习惯在换库时依然安全。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系）** 面试官给了题目就问你：「有什么要问我的吗？」，你会问哪三个问题？拿第 3 题（同时买过 A 和 B）举例。",
+   "a": "可以问：① 已取消和未发货的订单算不算？② 「同时买过」是指同一张订单里同时买，还是不同订单里分别买过？（我们的解法是后者，如果要求同一张订单，分组要改成按订单。）③ 结果要客户编号、客户名，还是数量？同时可以顺带问数据量，决定要不要考虑索引。这些问题本身就在展示你做 BA 的思维。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "第 N 高",
+     "Nth highest",
+     "按值排名取第 N 个"
+    ],
+    [
+     "每组前 N 名",
+     "top N per group",
+     "分区排名后筛选"
+    ],
+    [
+     "紧凑排名",
+     "DENSE_RANK",
+     "并列不跳号"
+    ],
+    [
+     "关系除法",
+     "relational division",
+     "买过全部指定项的人"
+    ],
+    [
+     "帕累托",
+     "Pareto / ABC analysis",
+     "按累计占比分类"
+    ],
+    [
+     "累计占比",
+     "cumulative share",
+     "累计值除以总值"
+    ],
+    [
+     "比率",
+     "ratio",
+     "用 AVG(CASE) 计算占比"
+    ],
+    [
+     "相邻记录",
+     "adjacent rows",
+     "用 LAG 比较前后行"
+    ],
+    [
+     "边界条件",
+     "edge case",
+     "并列、NULL、空表、等于"
+    ],
+    [
+     "业务键",
+     "business key",
+     "判断重复的列组合"
+    ],
+    [
+     "行标识",
+     "ROWID",
+     "Oracle 里行的物理地址"
+    ],
+    [
+     "口径",
+     "definition",
+     "统计范围的定义"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "SQLite 官方文档：SQL 语法与窗口函数",
+   "url": "https://www.sqlite.org/lang.html",
+   "note": "本课程练习用的 SQLite 的语法说明；Oracle 的写法在第 8 节单独对照"
+  },
+  {
+   "title": "SQLite 官方文档：窗口函数",
+   "url": "https://www.sqlite.org/windowfunctions.html",
+   "note": "第 1、2、4、6 题用到的窗口函数"
+  },
+  {
+   "title": "Oracle 官方文档：Database SQL Language Reference",
+   "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/",
+   "note": "Oracle 方言以这份官方文档为准（19c 版本）"
+  },
+  {
+   "title": "Wikipedia：Pareto principle",
+   "url": "https://en.wikipedia.org/wiki/Pareto_principle",
+   "note": "80/20 法则的背景（ABC 分析是它在库存管理里的应用）"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "求「第 2 高的金额」，金额有并列时最稳妥的做法是：",
+    "options": [
+     "ROW_NUMBER 取第 2 行",
+     "DENSE_RANK 排名后取排名为 2 的值",
+     "ORDER BY 后 LIMIT 2",
+     "MAX 减 1"
+    ],
+    "answer": 1,
+    "explain": "DENSE_RANK 并列不跳号，保证「第 2 高」是第二个不同的值；ROW_NUMBER 会把并列的值当成不同名次。"
+   },
+   {
+    "q": "找「同时买过 A 和 B 两个 SKU 的客户」，下面哪个条件配合 GROUP BY 客户最合适？",
+    "options": [
+     "ORDER BY sku",
+     "WHERE sku = 'A' AND sku = 'B'",
+     "HAVING COUNT(DISTINCT sku) = 2（先筛出只含 A 和 B 的行）",
+     "SELECT DISTINCT sku"
+    ],
+    "answer": 2,
+    "explain": "一行的 sku 不可能同时等于 A 和 B，所以要分组后数不同的 SKU 个数。"
+   },
+   {
+    "q": "订单取消率用 `AVG(CASE WHEN status = 'CANCELLED' THEN 1.0 ELSE 0 END)` 计算，其中写 1.0 而不是 1 的主要原因是：",
+    "options": [
+     "避免整数运算把小数截断",
+     "1.0 运行更快",
+     "1 会报错",
+     "1.0 能排序"
+    ],
+    "answer": 0,
+    "explain": "在不少数据库里整数相除结果仍是整数，用小数能得到正确的比例。"
+   },
+   {
+    "q": "题目要求相邻两次下单间隔「超过 7 天」，某客户的两张订单刚好相隔 7 天，应该：",
+    "options": [
+     "取决于排序",
+     "算，因为 7 接近 7",
+     "报错",
+     "不算，因为 7 不大于 7"
+    ],
+    "answer": 3,
+    "explain": "超过是严格大于；如果题目是「至少 7 天」才用 >= 7，面试里要确认边界。"
+   },
+   {
+    "q": "面试时拿到题目，最应该先做的是：",
+    "options": [
+     "立刻开始写完整答案",
+     "问清口径并用小例子确认期望结果",
+     "先背语法",
+     "先写索引"
+    ],
+    "answer": 1,
+    "explain": "多数题的坑在口径和边界，先问清再写，既减少错误，也体现 BA 的思维。"
+   }
+  ]
+ }
+}

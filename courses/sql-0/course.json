@@ -1,7 +1,7 @@
 {
   "id": "sql-0",
   "title": "SQL 实战：从会写到敢上岗（含 Oracle 对照）",
-  "subtitle": "为 BA / 业务支持岗位准备的 SQL：查询与 NULL、聚合、JOIN、子查询与 CTE、窗口函数、修改数据与索引、数据排查与对账，最后是 Oracle 写法对照、JDE 日期、SQL 证书路线和水平自测。每节用同一个自己编的供应链演示数据库，在浏览器里用 SQLite 直接运行；Oracle 的写法按官方文档整理，课程里没有逐条在 Oracle 上运行过",
+  "subtitle": "为 BA / 业务支持岗位准备的 SQL：查询与 NULL、聚合、JOIN、子查询与 CTE、窗口函数、修改数据与索引、数据排查与对账，然后是 Oracle 写法对照、JDE 日期、SQL 证书路线和水平自测，最后两节是面试实战（经典题和进阶题，含供应链的 BOM 展开和先进先出分配）。每节用同一个自己编的供应链演示数据库，在浏览器里用 SQLite 直接运行；Oracle 的写法按官方文档整理，课程里没有逐条在 Oracle 上运行过",
   "source": {
     "name": "SQLite 官方文档 / Oracle Database SQL Language Reference（概念与语法参考，只引用）",
     "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/"
@@ -72,6 +72,22 @@
       "en": "Switching to Oracle: Dialect Map, Common Errors, Certification & Self-Assessment",
       "minutes": 45,
       "file": "u08-oracle-cert.json",
+      "direct": true
+    },
+    {
+      "id": "u09",
+      "title": "SQL 面试实战（上）：七道常考题的解法、追问与边界",
+      "en": "SQL Interview Practice I: Seven Classic Questions, Follow-ups & Edge Cases",
+      "minutes": 50,
+      "file": "u09-interview-1.json",
+      "direct": true
+    },
+    {
+      "id": "u10",
+      "title": "SQL 面试实战（下）：连续登录、递归、补全日期、移动平均、中位数与先进先出",
+      "en": "SQL Interview Practice II: Streaks, Recursion, Date Gaps, Moving Averages, Median & FIFO",
+      "minutes": 50,
+      "file": "u10-interview-2.json",
       "direct": true
     }
   ]
