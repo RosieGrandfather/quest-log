@@ -1,0 +1,175 @@
+{
+ "id": "u02",
+ "title": "汇总数字：聚合函数、GROUP BY 与 HAVING",
+ "en": "Summarising: Aggregates, GROUP BY & HAVING",
+ "minutes": 40,
+ "objectives": [
+  "使用 **COUNT、SUM、AVG、MIN、MAX**，并分清 `COUNT(*)`、`COUNT(列)`、`COUNT(DISTINCT 列)`",
+  "用 **GROUP BY** 按一列或多列分组汇总，说出「SELECT 里的非聚合列必须出现在 GROUP BY」的原因",
+  "分清 **WHERE 和 HAVING**：一个在分组前筛行，一个在分组后筛组",
+  "知道聚合函数怎么对待 **NULL**（忽略它），并用 **COALESCE** 处理",
+  "用 **CASE WHEN 加 SUM（条件聚合）** 把一列拆成几列，做简单的透视"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\n业务上大部分问题是汇总：每个产品卖了多少、每个状态有多少订单、可用库存有多少。你做 Power BI 报表时 DAX 的 `SUM`、`COUNT` 背后就是这些。这一节练的是：**先决定「按什么维度分组」，再决定「汇总什么数字」**，并且学会核对汇总结果。\n\n```python\nimport sqlite3\ndb = sqlite3.connect(\":memory:\")\ndb.executescript(\"\"\"\nCREATE TABLE customers(cust_id INTEGER PRIMARY KEY, name TEXT, country TEXT);\nCREATE TABLE products(sku TEXT PRIMARY KEY, name TEXT, category TEXT, unit_cost REAL);\nCREATE TABLE orders(order_id INTEGER PRIMARY KEY, cust_id INTEGER, order_date TEXT, status TEXT);\nCREATE TABLE order_lines(order_id INTEGER, line_no INTEGER, sku TEXT, qty INTEGER, unit_price REAL);\nCREATE TABLE inventory(sku TEXT, warehouse TEXT, on_hand INTEGER, stock_status TEXT);\n\"\"\")\nins = lambda t, rows: db.executemany(f\"INSERT INTO {t} VALUES ({','.join('?'*len(rows[0]))})\", rows)\nins(\"customers\", [(1,\"Alpha Pharmacy\",\"SG\"),(2,\"Beta Clinic\",\"SG\"),(3,\"Gamma Trading\",\"MY\"),\n                  (4,\"Delta Retail\",\"MY\"),(5,\"Echo Health\",\"SG\"),(6,\"Foxtrot Store\",None)])\nins(\"products\", [(\"BP100\",\"Arm BP Monitor\",\"BP\",30.0),(\"BP200\",\"Wrist BP Monitor\",\"BP\",22.0),\n                 (\"TH10\",\"Thermometer\",\"TEMP\",4.0),(\"NB50\",\"Nebulizer\",\"NEB\",35.0),\n                 (\"MS01\",\"Massager\",\"PAIN\",18.0),(\"OLD9\",\"Old Model\",\"BP\",10.0)])\nins(\"orders\", [(101,1,\"2026-09-01\",\"SHIPPED\"),(102,1,\"2026-09-03\",\"SHIPPED\"),(103,2,\"2026-09-03\",\"OPEN\"),\n               (104,3,\"2026-09-05\",\"SHIPPED\"),(105,3,\"2026-09-12\",\"CANCELLED\"),(106,4,\"2026-09-15\",\"OPEN\"),\n               (107,5,\"2026-09-20\",\"SHIPPED\"),(108,2,\"2026-09-22\",\"SHIPPED\"),(109,9,\"2026-09-25\",\"OPEN\")])\nins(\"order_lines\", [(101,1,\"BP100\",10,55.0),(101,2,\"TH10\",50,9.0),(102,1,\"BP200\",20,40.0),\n                    (103,1,\"NB50\",5,70.0),(104,1,\"BP100\",8,56.0),(104,2,\"MS01\",10,35.0),\n                    (105,1,\"TH10\",100,9.0),(106,1,\"BP200\",15,41.0),(106,2,\"TH10\",30,9.5),\n                    (107,1,\"NB50\",10,69.0),(107,2,\"BP100\",12,55.0),(108,1,\"MS01\",6,36.0),\n                    (108,2,\"XX99\",2,10.0),(109,1,\"BP100\",4,55.0)])\nins(\"inventory\", [(\"BP100\",\"SG-WH\",120,\"AVAIL\"),(\"BP100\",\"SG-WH\",30,\"QUAR\"),(\"BP200\",\"SG-WH\",200,\"AVAIL\"),\n                  (\"TH10\",\"SG-WH\",500,\"AVAIL\"),(\"NB50\",\"MY-WH\",40,\"AVAIL\"),(\"MS01\",\"MY-WH\",0,\"AVAIL\"),\n                  (\"BP200\",\"MY-WH\",25,\"QUAR\"),(\"OLD9\",\"SG-WH\",15,\"AVAIL\")])\ndb.commit()    # 先把建好的数据提交，后面的 rollback 才不会把它也撤销\nprint(\"建库完成：5 张表\")\n# 输出：建库完成：5 张表\n```\n```python\ndef q(sql, params=()):\n    cur = db.execute(sql, params)\n    rows = cur.fetchall()\n    if cur.description:\n        print(\" | \".join(d[0] for d in cur.description))\n        for r in rows:\n            print(\" | \".join(\"NULL\" if v is None else str(v) for v in r))\n        print(f\"({len(rows)} 行)\")\n```\n\n**本节安排（约 40 分钟）**：导读（2 分钟）→ 聚合函数（8 分钟）→ GROUP BY（10 分钟）→ HAVING（6 分钟）→ NULL 与条件聚合（10 分钟）→ 总结（4 分钟）。\n\n### 聚合函数\n\n> **标准定义 · 聚合函数 (aggregate function)**\n>\n> 把**多行**压缩成**一个值**的函数：`COUNT`（个数）、`SUM`（求和）、`AVG`（平均）、`MIN`、`MAX`。除 `COUNT(*)` 外，聚合函数都**忽略 NULL**。\n>\n> *English: Aggregate functions collapse many rows into one value. Except COUNT(*), they ignore NULLs.*\n\n**白话版：「一堆行进去，一个数出来」。**\n\n```python\nq(\"\"\"SELECT COUNT(*) AS n_lines, SUM(qty) AS total_qty,\n            MIN(unit_price) AS min_p, MAX(unit_price) AS max_p,\n            ROUND(AVG(unit_price), 2) AS avg_p\n     FROM order_lines\"\"\")\n# 输出：n_lines | total_qty | min_p | max_p | avg_p\n# 输出：14 | 282 | 9.0 | 70.0 | 39.25\n# 输出：(1 行)\n```\n\n**读输出：** 订单明细共 14 行，总数量 `SUM(qty)` 是 282（可以自己把 14 行加一遍核对，**汇总结果要用别的办法抽查**），单价最低 9、最高 70，平均 39.25。三种 COUNT：`COUNT(*)` 数所有行；`COUNT(列)` 数该列非空的行；`COUNT(DISTINCT 列)` 数不重复的非空值。\n\n### GROUP BY：先分组，再汇总\n\n> **标准定义 · 分组 (GROUP BY)**\n>\n> 把行按指定列的值分成若干组，**每组产生一行结果**，聚合函数在每组内部计算。`SELECT` 里出现的**非聚合列必须出现在 GROUP BY 里**，否则这一列在每组里有多个值，数据库不知道该显示哪个。\n>\n> *English: GROUP BY splits rows into groups by the listed columns and returns one row per group; non-aggregated columns in SELECT must appear in GROUP BY.*\n\n**白话版：「GROUP BY 后面写什么，结果就是一行一个什么」。**\n\n```python\nq(\"\"\"SELECT sku, SUM(qty) AS total_qty, ROUND(SUM(qty * unit_price), 1) AS revenue\n     FROM order_lines\n     GROUP BY sku\n     ORDER BY revenue DESC\"\"\")\nq(\"SELECT status, COUNT(*) AS n FROM orders GROUP BY status ORDER BY status\")\n# 输出：sku | total_qty | revenue\n# 输出：BP100 | 34 | 1878.0\n# 输出：TH10 | 180 | 1635.0\n# 输出：BP200 | 35 | 1415.0\n# 输出：NB50 | 15 | 1040.0\n# 输出：MS01 | 16 | 566.0\n# 输出：XX99 | 2 | 20.0\n# 输出：(6 行)\n# 输出：status | n\n# 输出：CANCELLED | 1\n# 输出：OPEN | 3\n# 输出：SHIPPED | 5\n# 输出：(3 行)\n```\n\n**读输出：** 第一条按 SKU 一行，BP100 数量 34、收入 1878（四行加起来），收入最高；TH10 数量 180，数量最多但单价低，收入排第二。最后一行 `XX99` 不在产品表里，第 3 节会专门查这种「孤儿」。第二条按订单状态：CANCELLED 1 张、OPEN 3 张、SHIPPED 5 张，合计 9 张，和订单表总行数一致——**分组后的合计应该等于总数，这是最基本的核对**。可以按多列分组：`GROUP BY sku, stock_status`。\n\n### WHERE 与 HAVING\n\n```python\n# WHERE 在分组前筛行；HAVING 在分组后筛组\nq(\"\"\"SELECT sku, SUM(qty) AS total_qty FROM order_lines\n     GROUP BY sku HAVING SUM(qty) >= 50\"\"\")\nq(\"\"\"SELECT sku, SUM(qty) AS big_line_qty FROM order_lines\n     WHERE qty >= 10\n     GROUP BY sku ORDER BY sku\"\"\")\n# 输出：sku | total_qty\n# 输出：TH10 | 180\n# 输出：(1 行)\n# 输出：sku | big_line_qty\n# 输出：BP100 | 22\n# 输出：BP200 | 35\n# 输出：MS01 | 10\n# 输出：NB50 | 10\n# 输出：TH10 | 180\n# 输出：(5 行)\n```\n\n**读输出：** 第一条先按 SKU 分组求和，再用 `HAVING` 保留合计 >= 50 的组，只剩 TH10（180）。第二条用 `WHERE qty >= 10` **先**去掉小行再分组，所以每个 SKU 的合计是「只算单行 >= 10 的」，数字和不筛选时不同。**区别：WHERE 看的是单行的值，HAVING 看的是分组后的汇总值。** 能用 WHERE 筛掉的尽量用 WHERE（先减少数据，更快）。\n\n### NULL 与条件聚合\n\n```python\nq(\"SELECT AVG(x) AS avg_x, COUNT(x) AS n_x, COUNT(*) AS n_all FROM (SELECT 10 AS x UNION ALL SELECT NULL UNION ALL SELECT 20)\")\nq(\"SELECT SUM(x) AS sum_x, COALESCE(SUM(x), 0) AS sum_or_zero FROM (SELECT NULL AS x)\")\n# 输出：avg_x | n_x | n_all\n# 输出：15.0 | 2 | 3\n# 输出：(1 行)\n# 输出：sum_x | sum_or_zero\n# 输出：NULL | 0\n# 输出：(1 行)\n```\n\n**读输出：** `AVG(x)` 是 15，不是 10：因为 NULL 被**忽略**，只用 10 和 20 算（平均 = 30 / 2）。`COUNT(x)` 是 2，`COUNT(*)` 是 3。全部是 NULL 时 `SUM` 返回 NULL 而不是 0，要显示 0 就用 `COALESCE(SUM(x), 0)`（Oracle 里也可以用 `NVL`）。\n\n**条件聚合**是最实用的技巧之一：把 `CASE WHEN` 放进 `SUM`，一次查询把一列拆成几列。比如把库存按状态拆开，看总数、可用、隔离：\n\n```python\nq(\"\"\"SELECT sku,\n            SUM(on_hand) AS total,\n            SUM(CASE WHEN stock_status = 'AVAIL' THEN on_hand ELSE 0 END) AS avail,\n            SUM(CASE WHEN stock_status = 'QUAR'  THEN on_hand ELSE 0 END) AS quarantine\n     FROM inventory\n     GROUP BY sku\n     ORDER BY sku\"\"\")\n# 输出：sku | total | avail | quarantine\n# 输出：BP100 | 150 | 120 | 30\n# 输出：BP200 | 225 | 200 | 25\n# 输出：MS01 | 0 | 0 | 0\n# 输出：NB50 | 40 | 40 | 0\n# 输出：OLD9 | 15 | 15 | 0\n# 输出：TH10 | 500 | 500 | 0\n# 输出：(6 行)\n```\n\n**读输出：** BP100 总共 150，其中可用 120、隔离 30；BP200 总共 225，可用 200、隔离 25。如果只看「可用」那一行，就不会发现隔离的 30 和 25；**把总数、可用、隔离放在一起，才看得见库存「存在但不能卖」的部分。**\n\n### 对照你的工作\n\n同事问：「系统里 BP100 到底有多少库存？」你要先问「哪个口径」：含不含隔离库存、含不含各个仓库。上面的条件聚合一次就能给出三个数。这和你在 SOC 项目里发现「隔离库存在系统里看不见」是同一类问题：**同一个词（库存）不同口径数字不同，要写清楚。**\n\n### 这一节你要带走的三句话\n\n1. **GROUP BY 后面写什么，结果就一行一个什么；SELECT 里的非聚合列都要在 GROUP BY 里。**\n2. **WHERE 在分组前筛行，HAVING 在分组后筛组；聚合函数忽略 NULL，要 0 用 COALESCE。**\n3. **汇总后一定要核对：分组合计等于总数、抽几行手算；条件聚合可以把一列变成几列。**"
+  },
+  {
+   "type": "think",
+   "q": "**（实践）** 写一条查询：每个客户（cust_id）有多少张订单、其中多少张是 SHIPPED。提示：条件聚合。",
+   "a": "`SELECT cust_id, COUNT(*) AS n_orders, SUM(CASE WHEN status = 'SHIPPED' THEN 1 ELSE 0 END) AS n_shipped FROM orders GROUP BY cust_id`。注意是 `THEN 1 ELSE 0`，再 SUM，相当于数个数。核对：每个客户的 n_orders 加起来应该等于 9。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 「找出订单数超过 1 张的客户」应该用 WHERE 还是 HAVING？为什么？",
+   "a": "用 **HAVING**：`GROUP BY cust_id HAVING COUNT(*) > 1`。「订单数」是分组后才算出来的汇总值，WHERE 执行时还没分组，不能用聚合函数。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系）** 同事给你一张 Excel 报表，说 BP100 库存 150，你的查询「可用」是 120。你怎么向他解释？",
+   "a": "先确认他的 150 是不是含隔离库存：总数 150 = 可用 120 + 隔离 30。给他看三列（总数、可用、隔离）说明口径差异，再问他的业务用途：做销售承诺应该看可用，做盘点对账应该看总数。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "聚合函数",
+     "aggregate function",
+     "多行压成一个值"
+    ],
+    [
+     "分组",
+     "GROUP BY",
+     "按列值分成若干组"
+    ],
+    [
+     "分组后筛选",
+     "HAVING",
+     "对汇总结果筛选"
+    ],
+    [
+     "计数",
+     "COUNT",
+     "数行或数非空值"
+    ],
+    [
+     "求和",
+     "SUM",
+     "忽略 NULL 的合计"
+    ],
+    [
+     "平均",
+     "AVG",
+     "忽略 NULL 的平均"
+    ],
+    [
+     "最小 / 最大",
+     "MIN / MAX",
+     "取极值"
+    ],
+    [
+     "去重计数",
+     "COUNT(DISTINCT)",
+     "数不重复的值"
+    ],
+    [
+     "空值替换",
+     "COALESCE",
+     "返回第一个非空值"
+    ],
+    [
+     "条件聚合",
+     "conditional aggregation",
+     "CASE WHEN 放进 SUM"
+    ],
+    [
+     "口径",
+     "definition / basis",
+     "同一个词不同的统计范围"
+    ],
+    [
+     "核对",
+     "reconciliation",
+     "用另一个办法验证结果"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "SQLite 官方文档：SQL 语法与窗口函数",
+   "url": "https://www.sqlite.org/lang.html",
+   "note": "本课程练习用的 SQLite 的语法说明；Oracle 的写法在第 8 节单独对照"
+  },
+  {
+   "title": "SQLite 官方文档：聚合函数",
+   "url": "https://www.sqlite.org/lang_aggfunc.html",
+   "note": "COUNT、SUM、AVG 等聚合函数的说明"
+  },
+  {
+   "title": "Wikipedia：Group by (SQL)",
+   "url": "https://en.wikipedia.org/wiki/Group_by_(SQL)",
+   "note": "GROUP BY 与 HAVING 的概述"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "`SELECT sku, qty FROM order_lines GROUP BY sku` 在 Oracle 里会报错，原因是：",
+    "options": [
+     "qty 是非聚合列，没有出现在 GROUP BY 里",
+     "sku 不能分组",
+     "GROUP BY 必须写在 SELECT 前",
+     "order_lines 不能被分组"
+    ],
+    "answer": 0,
+    "explain": "非聚合列必须出现在 GROUP BY 中，否则同一组有多个 qty，数据库不知道显示哪个（SQLite 会放行但结果不可靠）。"
+   },
+   {
+    "q": "一列的值是 10、NULL、20。`AVG(x)` 的结果是：",
+    "options": [
+     "NULL",
+     "10",
+     "30",
+     "15"
+    ],
+    "answer": 3,
+    "explain": "AVG 忽略 NULL，只用 10 和 20，所以是 15，不是 30 / 3。"
+   },
+   {
+    "q": "要筛出「合计数量 >= 50 的 SKU」，应当用：",
+    "options": [
+     "WHERE SUM(qty) >= 50",
+     "HAVING SUM(qty) >= 50",
+     "ORDER BY SUM(qty) >= 50",
+     "DISTINCT SUM(qty) >= 50"
+    ],
+    "answer": 1,
+    "explain": "合计是分组后才有的值，只能在 HAVING 里筛。"
+   },
+   {
+    "q": "一列全是 NULL，`SUM(x)` 返回：",
+    "options": [
+     "报错",
+     "0",
+     "NULL",
+     "空字符串"
+    ],
+    "answer": 2,
+    "explain": "没有可求和的值时 SUM 返回 NULL；要显示 0 用 COALESCE(SUM(x), 0)。"
+   },
+   {
+    "q": "`SUM(CASE WHEN stock_status = 'QUAR' THEN on_hand ELSE 0 END)` 的作用是：",
+    "options": [
+     "按状态排序",
+     "删除隔离库存",
+     "把所有库存改成 0",
+     "只汇总隔离状态的库存"
+    ],
+    "answer": 3,
+    "explain": "条件聚合：只有满足条件的行才贡献数量，其余算 0。"
+   }
+  ]
+ }
+}

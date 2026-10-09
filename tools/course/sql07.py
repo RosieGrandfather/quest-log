@@ -1,0 +1,184 @@
+"""sql-0 第 7 节：排查与对账实战"""
+from sqllib import *
+
+nb = Notebook()
+C_DB = nb.cell(SETUP_DATA)
+C_Q = nb.cell(SETUP_Q)
+
+C_CHECK = nb.cell('''
+q("""SELECT 'orders: customer missing' AS check_name, COUNT(*) AS n
+     FROM orders o WHERE NOT EXISTS (SELECT 1 FROM customers c WHERE c.cust_id = o.cust_id)
+     UNION ALL
+     SELECT 'lines: SKU not in products', COUNT(*)
+     FROM order_lines ol WHERE NOT EXISTS (SELECT 1 FROM products p WHERE p.sku = ol.sku)
+     UNION ALL
+     SELECT 'customers: country empty', COUNT(*) FROM customers WHERE country IS NULL
+     UNION ALL
+     SELECT 'lines: qty <= 0', COUNT(*) FROM order_lines WHERE qty <= 0
+     UNION ALL
+     SELECT 'orders: no lines', COUNT(*)
+     FROM orders o WHERE NOT EXISTS (SELECT 1 FROM order_lines ol WHERE ol.order_id = o.order_id)""")
+''')
+
+C_DUP = nb.cell('''
+db.execute("INSERT INTO order_lines VALUES (102, 1, 'BP200', 20, 40.0)")   # 模拟一次重复加载
+q("""SELECT order_id, line_no, COUNT(*) AS copies
+     FROM order_lines GROUP BY order_id, line_no HAVING COUNT(*) > 1""")
+db.rollback()
+''')
+
+C_RECON = nb.cell('''
+# 系统里「已发货」的销量，对比同事 Excel 里的数字（Excel 数据用 VALUES 临时写进查询）
+q("""WITH sys AS (
+         SELECT ol.sku, SUM(ol.qty) AS qty
+         FROM order_lines ol JOIN orders o ON o.order_id = ol.order_id
+         WHERE o.status = 'SHIPPED' GROUP BY ol.sku),
+     rpt(sku, qty) AS (VALUES ('BP100', 30), ('TH10', 50), ('BP200', 20), ('MS01', 10), ('NB50', 10)),
+     keys AS (SELECT sku FROM sys UNION SELECT sku FROM rpt)
+     SELECT * FROM (
+         SELECT k.sku, COALESCE(s.qty, 0) AS system_qty, COALESCE(r.qty, 0) AS report_qty,
+                COALESCE(s.qty, 0) - COALESCE(r.qty, 0) AS diff
+         FROM keys k LEFT JOIN sys s ON s.sku = k.sku LEFT JOIN rpt r ON r.sku = k.sku)
+     WHERE diff <> 0 ORDER BY sku""")
+''')
+
+C_STOCK = nb.cell('''
+q("""SELECT p.sku, p.name,
+            COALESCE(SUM(i.on_hand), 0) AS total,
+            COALESCE(SUM(CASE WHEN i.stock_status = 'AVAIL' THEN i.on_hand END), 0) AS sellable
+     FROM products p LEFT JOIN inventory i ON i.sku = p.sku
+     WHERE p.category = 'BP'
+     GROUP BY p.sku, p.name ORDER BY p.sku""")
+''')
+
+unit = {
+ "id": "u07",
+ "title": "排查与对账实战：数据质量检查、重复与两边数字对不上",
+ "en": "Troubleshooting in Practice: Data-Quality Checks, Duplicates & Reconciliation",
+ "minutes": 45,
+ "objectives": [
+  "用一条 **UNION ALL 的体检查询**，一次跑完多项**数据质量检查**",
+  "找出**重复记录**，并区分「真重复」和「正常的多行」",
+  "做**两边数字对账 (reconciliation)**：找出系统和报表之间每个键的差异",
+  "按「**系统问题 / 数据问题 / 操作问题 / 口径问题**」四类给问题定位",
+  "把排查结论写成**别人能看懂、能复现**的说明",
+ ],
+ "blocks": [
+  T(r"""
+### 先说这一节要干什么
+
+这一节把前六节的工具放进一个真实场景：同事跑来说「系统里的数字不对」。你的任务不是马上改数据，而是**先判断问题在哪一层，再用查询拿出证据**。这和你在 OMRON 里判断「是系统背后的问题，还是同事操作的问题」是同一件事，这一节给它配上一套固定的 SQL 动作。
+
+""" + C_DB + r"""
+""" + C_Q + r"""
+
+**本节安排（约 45 分钟）**：导读（2 分钟）→ 先分类再动手（6 分钟）→ 数据质量体检（10 分钟）→ 重复记录（7 分钟）→ 两边对账（12 分钟）→ 口径问题（4 分钟）→ 总结与写说明（4 分钟）。
+
+### 先给问题分类
+
+| 类型 | 典型表现 | 先查什么 |
+|---|---|---|
+| **数据问题** | 主数据缺失、重复、空值、孤儿记录 | 数据质量体检、重复查询 |
+| **操作问题** | 同事录入错误、漏做步骤、用错功能 | 看单据的操作记录和时间，问同事做了什么 |
+| **口径问题** | 双方对同一个词理解不同（如库存含不含隔离） | 对齐定义，把各口径的数字并排 |
+| **系统问题** | 数据对、操作对，结果仍然错（逻辑错误、接口丢数） | 复现步骤、对比输入和输出、整理给 IT |
+
+**原则：先排除前三类，才能说是系统缺陷。** 把「是系统的问题」交给 IT 时，要附上证据：输入是什么、期望是什么、实际是什么、怎么复现。
+
+### 数据质量体检：一条查询跑多项检查
+
+> **标准定义 · 数据质量检查 (data quality check)**
+>
+> 用固定的规则去检验数据：**完整性**（该有的有没有）、**唯一性**（有没有重复）、**有效性**（值是否合理）、**一致性**（引用的主数据是否存在）。每项检查返回「违规的行数」，为 0 才算通过。
+>
+> *English: Rule-based tests on data for completeness, uniqueness, validity and consistency; each returns a count of violations.*
+
+""" + C_CHECK + r"""
+
+**读输出：** 5 项检查里 3 项有问题：订单引用了不存在的客户（1 张，109）、订单行的 SKU 不在产品表（1 行，XX99）、客户国家为空（1 个，Foxtrot）；数量不合理和没有明细的订单各 0。**把检查做成固定的一条查询，每次拿到新数据先跑一遍**，比出了问题再临时查更有效。每一项加上「为什么这是问题」的说明，就是一份数据质量清单。
+
+### 重复记录
+
+""" + C_DUP + r"""
+
+**读输出：** 我们临时插入了一行和 102 号订单第 1 行完全相同的记录，`GROUP BY 业务键 HAVING COUNT(*) > 1` 立刻把它抓出来，`copies = 2`。**关键是先定义「业务键」**：什么组合算同一条（这里是订单号加行号）。同一个订单有多行是正常的，不是重复。查出重复之后，保留哪条要向数据负责人确认（可以用第 5 节的 ROW_NUMBER）。
+
+### 两边对账：系统 vs 报表
+
+对账是 BAU 最典型的工作：系统说一个数，同事的 Excel 说另一个，要找出**每个键上差多少**。
+
+""" + C_RECON + r"""
+
+**读输出：** 系统里已发货的销量按 SKU 汇总，和同事 Excel（用 `VALUES` 临时写进查询）逐项对比，只显示有差异的：
+
+- `MS01`：系统 16，报表 10，差 6。可能是报表漏了一张单，也可能是系统多了一张单，要回到订单明细去看。
+- `XX99`：系统有 2，报表 0。这个 SKU 不在产品主数据里（第 3 节的孤儿），Excel 里自然没有它，**差异的根源是主数据缺失**。
+
+**这个写法的套路：** 先把两边各自汇总成「每个键一行」，用 `UNION` 取所有的键，再用 LEFT JOIN 两边，`COALESCE` 把缺失的补 0，最后筛差异不为 0。因为 SQLite 老版本和一些场合不支持 `FULL OUTER JOIN`，这个写法更通用；Oracle 支持 `FULL OUTER JOIN`，可以更简洁。
+
+### 口径问题：数字没错，是定义不同
+
+""" + C_STOCK + r"""
+
+**读输出：** 血压计类产品的库存：BP100 总数 150，可售（可用）120；BP200 总数 225，可售 200；OLD9 是旧型号，总数 15、可售 15。如果同事说「BP100 库存 150」，你说「120」，**你们都对，只是一个含隔离、一个不含**。这就是第 2 节讲过的口径。你在 SOC 项目里发现的隔离库存可见性缺口，本质上就是这类问题。
+
+### 对照你的工作：怎么写排查结论
+
+一份好的排查说明，包含五项：**① 现象**（谁、什么时候、看到什么）；**② 范围**（几张单、几个 SKU）；**③ 证据**（贴上查询和结果）；**④ 判断**（四类问题里的哪一类，依据是什么）；**⑤ 建议**（谁来处理、怎么处理、怎么验证）。这样同事、IT、主管都能接着做下去，而不是重新查一遍。
+
+### 这一节你要带走的三句话
+
+1. **遇到「数字不对」先分类（数据、操作、口径、系统），先排除前三类，才能把问题交给 IT。**
+2. **用固定的体检查询检查完整性、唯一性、有效性、一致性；重复要先定义业务键；对账要先把两边汇总成每个键一行。**
+3. **排查结论写成「现象、范围、证据、判断、建议」，让别人能复现、能接手。**
+"""),
+  THINK("**（实践）** 在体检查询里再加一项：「订单日期晚于今天的订单数」。写出这一行（今天用 `'2026-10-01'` 代替）。", r"""
+`UNION ALL SELECT 'orders: future date', COUNT(*) FROM orders WHERE order_date > '2026-10-01'`。当前数据结果应为 0。注意 Oracle 里日期是日期类型，写成 `order_date > TRUNC(SYSDATE)`，细节见第 8 节。新增检查要保持「列名和类型与前面一致」。
+"""),
+  THINK("**（概念辨析）** 对账里发现 SKU `XX99` 系统有 2 件、报表没有。你判断这是四类问题里的哪一类？下一步找谁？", r"""
+先看证据：XX99 不在产品主数据里，属于**数据问题**（主数据缺失或 SKU 录错）。下一步要弄清楚：这是一个真实在卖的新品没建主数据，还是订单上 SKU 写错了（比如本来应该是 BP100）。前者找主数据负责人，后者找录入订单的同事。不要直接判断为系统问题。
+"""),
+  THINK("**（联系）** 同事说：「系统里 BP100 库存比我的 Excel 少 30。」你怎么在 5 分钟内判断是不是口径问题？", r"""
+先查 BP100 按状态拆开的库存：总数 150、可用 120、隔离 30。差的 30 正好等于隔离库存，说明 Excel 含了隔离库存而系统「可用」口径不含。再向同事确认 Excel 的口径。这是用一条条件聚合查询、一次对话就能解决的口径问题，不需要找 IT。
+"""),
+  KW(("数据质量","data quality","完整、唯一、有效、一致"),
+     ("体检查询","health check query","一次跑多项检查"),
+     ("业务键","business key","判断是不是同一条记录的列组合"),
+     ("重复记录","duplicate","同一业务键出现多次"),
+     ("对账","reconciliation","比对两边数字找差异"),
+     ("口径","definition","统计范围的定义"),
+     ("可售库存","sellable stock","不含隔离、冻结的库存"),
+     ("孤儿记录","orphan record","引用的主数据不存在"),
+     ("根因","root cause","问题真正的来源"),
+     ("复现","reproduce","按步骤重现问题"),
+     ("证据","evidence","查询加结果"),
+     ("全外连接","FULL OUTER JOIN","保留两边所有行"),
+  ),
+ ],
+ "references": [
+  SQLITE_DOC,
+  {"title": "Wikipedia：Data quality", "url": "https://en.wikipedia.org/wiki/Data_quality", "note": "数据质量的维度和概念"},
+  {"title": "Wikipedia：Root cause analysis", "url": "https://en.wikipedia.org/wiki/Root_cause_analysis", "note": "根因分析的常见方法"},
+ ],
+ "quiz": {"questions": [
+  Q("你的 SQL 结果和同事的报表相差 30，而差额恰好等于隔离库存。最可能是：",
+    ["口径问题", "系统缺陷", "网络故障", "磁盘损坏"], 0,
+    "差额等于某个状态的数量，说明双方统计范围不同，应先对齐口径。"),
+  Q("找重复记录时，第一步应该是：",
+    ["先定义什么组合算同一条（业务键）", "直接删除所有重复行", "先加索引", "先 DROP 表"], 0,
+    "同一订单有多行是正常的，必须先定义业务键才能判断什么是重复。"),
+  Q("做两边对账，最稳妥的结构是：",
+    ["两边各自汇总成每个键一行，再合并所有键，对比并筛差异", "直接 CROSS JOIN 两张表", "只看总数是否相等", "只看前 10 行"], 0,
+    "总数相等也可能有互相抵消的差异；要逐键对比，并补全只在一边出现的键。"),
+  Q("在把问题交给 IT 当作系统缺陷之前，最应该先做的是：",
+    ["排除数据、操作和口径问题，并整理复现步骤和证据", "直接发邮件说系统坏了", "自己修改生产数据", "等问题自己消失"], 0,
+    "先排除前三类，附上输入、期望、实际和复现步骤，IT 才能高效处理。"),
+  Q("一条体检查询里，每项检查返回的是：",
+    ["违规的行数，为 0 才算通过", "整张表的内容", "表的列数", "数据库的大小"], 0,
+    "每项检查统计违反规则的行数，便于一眼看出哪项有问题。"),
+ ]},
+}
+retarget(unit, [0, 2, 3, 1, 0])
+
+if __name__ == '__main__':
+    dump(unit, "sql-0", "u07-troubleshoot.json", n_questions=5)

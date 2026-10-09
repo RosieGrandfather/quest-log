@@ -1,0 +1,175 @@
+{
+ "id": "u05",
+ "title": "窗口函数：排名、取最新一条、累计与上一行",
+ "en": "Window Functions: Ranking, Latest Row, Running Totals & LAG",
+ "minutes": 45,
+ "objectives": [
+  "说出**窗口函数和 GROUP BY 的区别**：窗口函数**不压缩行**，每行都保留",
+  "读懂 `函数() OVER (PARTITION BY … ORDER BY …)` 的结构",
+  "分清 **ROW_NUMBER、RANK、DENSE_RANK** 遇到并列时的区别",
+  "用 **ROW_NUMBER 去重 / 取每组最新一条**，这是 BAU 里最常用的写法",
+  "用 **SUM OVER 做累计、用 LAG 取上一行**，做环比和对比"
+ ],
+ "blocks": [
+  {
+   "type": "text",
+   "md": "### 先说这一节要干什么\n\nGROUP BY 会把一组行压成一行。但很多业务问题要的是「**保留每一行，同时看到它在组里的位置或组的合计**」：每个客户最新的一张订单、金额排名第几、累计到今天一共多少、和上一次相比涨了多少。这些就是窗口函数。你做 Power BI 的 DAX（如 `RANKX`、时间智能）时思路是一样的。面试和 BA / 数据岗位的 SQL 题几乎必考。\n\n```python\nimport sqlite3\ndb = sqlite3.connect(\":memory:\")\ndb.executescript(\"\"\"\nCREATE TABLE customers(cust_id INTEGER PRIMARY KEY, name TEXT, country TEXT);\nCREATE TABLE products(sku TEXT PRIMARY KEY, name TEXT, category TEXT, unit_cost REAL);\nCREATE TABLE orders(order_id INTEGER PRIMARY KEY, cust_id INTEGER, order_date TEXT, status TEXT);\nCREATE TABLE order_lines(order_id INTEGER, line_no INTEGER, sku TEXT, qty INTEGER, unit_price REAL);\nCREATE TABLE inventory(sku TEXT, warehouse TEXT, on_hand INTEGER, stock_status TEXT);\n\"\"\")\nins = lambda t, rows: db.executemany(f\"INSERT INTO {t} VALUES ({','.join('?'*len(rows[0]))})\", rows)\nins(\"customers\", [(1,\"Alpha Pharmacy\",\"SG\"),(2,\"Beta Clinic\",\"SG\"),(3,\"Gamma Trading\",\"MY\"),\n                  (4,\"Delta Retail\",\"MY\"),(5,\"Echo Health\",\"SG\"),(6,\"Foxtrot Store\",None)])\nins(\"products\", [(\"BP100\",\"Arm BP Monitor\",\"BP\",30.0),(\"BP200\",\"Wrist BP Monitor\",\"BP\",22.0),\n                 (\"TH10\",\"Thermometer\",\"TEMP\",4.0),(\"NB50\",\"Nebulizer\",\"NEB\",35.0),\n                 (\"MS01\",\"Massager\",\"PAIN\",18.0),(\"OLD9\",\"Old Model\",\"BP\",10.0)])\nins(\"orders\", [(101,1,\"2026-09-01\",\"SHIPPED\"),(102,1,\"2026-09-03\",\"SHIPPED\"),(103,2,\"2026-09-03\",\"OPEN\"),\n               (104,3,\"2026-09-05\",\"SHIPPED\"),(105,3,\"2026-09-12\",\"CANCELLED\"),(106,4,\"2026-09-15\",\"OPEN\"),\n               (107,5,\"2026-09-20\",\"SHIPPED\"),(108,2,\"2026-09-22\",\"SHIPPED\"),(109,9,\"2026-09-25\",\"OPEN\")])\nins(\"order_lines\", [(101,1,\"BP100\",10,55.0),(101,2,\"TH10\",50,9.0),(102,1,\"BP200\",20,40.0),\n                    (103,1,\"NB50\",5,70.0),(104,1,\"BP100\",8,56.0),(104,2,\"MS01\",10,35.0),\n                    (105,1,\"TH10\",100,9.0),(106,1,\"BP200\",15,41.0),(106,2,\"TH10\",30,9.5),\n                    (107,1,\"NB50\",10,69.0),(107,2,\"BP100\",12,55.0),(108,1,\"MS01\",6,36.0),\n                    (108,2,\"XX99\",2,10.0),(109,1,\"BP100\",4,55.0)])\nins(\"inventory\", [(\"BP100\",\"SG-WH\",120,\"AVAIL\"),(\"BP100\",\"SG-WH\",30,\"QUAR\"),(\"BP200\",\"SG-WH\",200,\"AVAIL\"),\n                  (\"TH10\",\"SG-WH\",500,\"AVAIL\"),(\"NB50\",\"MY-WH\",40,\"AVAIL\"),(\"MS01\",\"MY-WH\",0,\"AVAIL\"),\n                  (\"BP200\",\"MY-WH\",25,\"QUAR\"),(\"OLD9\",\"SG-WH\",15,\"AVAIL\")])\ndb.commit()    # 先把建好的数据提交，后面的 rollback 才不会把它也撤销\nprint(\"建库完成：5 张表\")\n# 输出：建库完成：5 张表\n```\n```python\ndef q(sql, params=()):\n    cur = db.execute(sql, params)\n    rows = cur.fetchall()\n    if cur.description:\n        print(\" | \".join(d[0] for d in cur.description))\n        for r in rows:\n            print(\" | \".join(\"NULL\" if v is None else str(v) for v in r))\n        print(f\"({len(rows)} 行)\")\n```\n\n**本节安排（约 45 分钟）**：导读（2 分钟）→ OVER 的结构与排名（10 分钟）→ 取每组最新一条（10 分钟）→ 累计和上一行（10 分钟）→ 去重实战（8 分钟）→ 总结（5 分钟）。\n\n### OVER：窗口的结构\n\n> **标准定义 · 窗口函数 (window function)**\n>\n> 在**每一行**上，对「和它相关的一组行（窗口）」做计算，**结果附在这一行旁边，不合并行**。写法：`函数() OVER (PARTITION BY 分组列 ORDER BY 排序列)`。`PARTITION BY` 决定窗口分成哪几组（可省略，则全表一组），`ORDER BY` 决定组内顺序。\n>\n> *English: A window function computes a value for each row over a set of related rows without collapsing them; OVER(PARTITION BY … ORDER BY …) defines the window.*\n\n**白话版：「GROUP BY 是『每组只留一行』，窗口函数是『每行都留着，还告诉你它在组里是第几、组里合计多少』」。**\n\n```python\n# 先把「每张订单的金额」做成一段可复用的 CTE 文本，后面几个块都拼在它前面用\nOA = \"\"\"WITH oa AS (\n    SELECT o.order_id, o.cust_id, o.order_date,\n           SUM(ol.qty * ol.unit_price) AS amount\n    FROM orders o JOIN order_lines ol ON ol.order_id = o.order_id\n    GROUP BY o.order_id)\"\"\"\nq(OA + \" SELECT COUNT(*) AS n_orders, SUM(amount) AS total FROM oa\")\n# 输出：n_orders | total\n# 输出：9 | 6554.0\n# 输出：(1 行)\n```\n\n**读输出：** 这是后面共用的「订单金额」CTE：9 张订单，总金额 6554。\n\n### 排名：RANK、DENSE_RANK、ROW_NUMBER\n\n```python\nq(OA + \"\"\"\n  SELECT order_id, amount,\n         RANK()       OVER (ORDER BY amount DESC)               AS rnk,\n         DENSE_RANK() OVER (ORDER BY amount DESC)               AS dense,\n         ROW_NUMBER() OVER (ORDER BY amount DESC, order_id)     AS rn\n  FROM oa ORDER BY amount DESC, order_id LIMIT 6\"\"\")\n# 输出：order_id | amount | rnk | dense | rn\n# 输出：107 | 1350.0 | 1 | 1 | 1\n# 输出：101 | 1000.0 | 2 | 2 | 2\n# 输出：105 | 900.0 | 3 | 3 | 3\n# 输出：106 | 900.0 | 3 | 3 | 4\n# 输出：102 | 800.0 | 5 | 4 | 5\n# 输出：104 | 798.0 | 6 | 5 | 6\n# 输出：(6 行)\n```\n\n**读输出：** 订单 105 和 106 金额都是 900，并列。**`RANK`** 并列后跳号：1、2、3、3、5、6；**`DENSE_RANK`** 并列后不跳号：1、2、3、3、4、5；**`ROW_NUMBER`** 不管并列，永远是 1、2、3、4、5、6（并列的谁在前由额外的排序决定，这里加了 `order_id`）。**要「每组只取一行」就用 ROW_NUMBER，因为它保证唯一。**\n\n### 取每组最新一条\n\n```python\nq(OA + \"\"\", ranked AS (\n      SELECT oa.*, ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY order_date DESC) AS rn\n      FROM oa)\n  SELECT cust_id, order_id, order_date, amount FROM ranked WHERE rn = 1 ORDER BY cust_id\"\"\")\n# 输出：cust_id | order_id | order_date | amount\n# 输出：1 | 102 | 2026-09-03 | 800.0\n# 输出：2 | 108 | 2026-09-22 | 236.0\n# 输出：3 | 105 | 2026-09-12 | 900.0\n# 输出：4 | 106 | 2026-09-15 | 900.0\n# 输出：5 | 107 | 2026-09-20 | 1350.0\n# 输出：9 | 109 | 2026-09-25 | 220.0\n# 输出：(6 行)\n```\n\n**读输出：** 每个客户最新的一张订单：客户 1 是 102（09-03），客户 2 是 108，客户 3 是 105 ……写法是固定套路：**内层用 `ROW_NUMBER() OVER (PARTITION BY 分组列 ORDER BY 日期 DESC)` 编号，外层筛 `rn = 1`。** 窗口函数的结果不能直接写在同一层的 WHERE 里（WHERE 比 SELECT 先执行），所以要套一层。\n\n### 累计和上一行\n\n```python\nq(OA + \"\"\"\n  SELECT order_id, order_date, amount,\n         SUM(amount) OVER (ORDER BY order_date, order_id) AS running_total\n  FROM oa ORDER BY order_date, order_id LIMIT 5\"\"\")\nq(OA + \"\"\"\n  SELECT cust_id, order_date, amount,\n         LAG(amount) OVER (PARTITION BY cust_id ORDER BY order_date) AS prev_amount\n  FROM oa WHERE cust_id IN (1, 2, 3) ORDER BY cust_id, order_date\"\"\")\n# 输出：order_id | order_date | amount | running_total\n# 输出：101 | 2026-09-01 | 1000.0 | 1000.0\n# 输出：102 | 2026-09-03 | 800.0 | 1800.0\n# 输出：103 | 2026-09-03 | 350.0 | 2150.0\n# 输出：104 | 2026-09-05 | 798.0 | 2948.0\n# 输出：105 | 2026-09-12 | 900.0 | 3848.0\n# 输出：(5 行)\n# 输出：cust_id | order_date | amount | prev_amount\n# 输出：1 | 2026-09-01 | 1000.0 | NULL\n# 输出：1 | 2026-09-03 | 800.0 | 1000.0\n# 输出：2 | 2026-09-03 | 350.0 | NULL\n# 输出：2 | 2026-09-22 | 236.0 | 350.0\n# 输出：3 | 2026-09-05 | 798.0 | NULL\n# 输出：3 | 2026-09-12 | 900.0 | 798.0\n# 输出：(6 行)\n```\n\n**读输出：** 第一条累计：1000 → 1800 → 2150 → 2948 → 3848，每行是「截止这一行的合计」。第二条 `LAG(amount)` 取**同一客户上一张订单**的金额，客户 1 的第一张订单没有上一张，所以是 `NULL`；第二张订单（800）旁边是上一张的 1000，可以直接算差值。`LEAD` 则取下一行。\n\n### 实战：去重，保留最新加载的一条\n\nBAU 里很常见：数据重复加载，同一个订单和 SKU 有两条，只有最新的是对的。\n\n```python\ndb.execute(\"CREATE TABLE stg(order_id INT, sku TEXT, qty INT, loaded_at TEXT)\")\ndb.executemany(\"INSERT INTO stg VALUES (?,?,?,?)\", [\n    (101, \"BP100\", 10, \"09-01 08:00\"), (101, \"BP100\", 12, \"09-02 08:00\"),\n    (102, \"BP200\", 20, \"09-01 08:00\")])\nprint(\"同一个订单和 SKU 被加载了两次：\")\nq(\"SELECT * FROM stg ORDER BY order_id, loaded_at\")\nprint(\"每组只保留最新加载的一条：\")\nq(\"\"\"SELECT order_id, sku, qty, loaded_at FROM (\n         SELECT stg.*, ROW_NUMBER() OVER (PARTITION BY order_id, sku ORDER BY loaded_at DESC) AS rn\n         FROM stg) WHERE rn = 1 ORDER BY order_id\"\"\")\n# 输出：同一个订单和 SKU 被加载了两次：\n# 输出：order_id | sku | qty | loaded_at\n# 输出：101 | BP100 | 10 | 09-01 08:00\n# 输出：101 | BP100 | 12 | 09-02 08:00\n# 输出：102 | BP200 | 20 | 09-01 08:00\n# 输出：(3 行)\n# 输出：每组只保留最新加载的一条：\n# 输出：order_id | sku | qty | loaded_at\n# 输出：101 | BP100 | 12 | 09-02 08:00\n# 输出：102 | BP200 | 20 | 09-01 08:00\n# 输出：(2 行)\n```\n\n**读输出：** 订单 101 的 BP100 被加载了两次（数量 10 和 12），按加载时间倒序编号，保留 `rn = 1`，也就是更新的那条（12）。**注意：这个查询只是「选出」要保留的行，没有删除任何数据。** 真要清理数据前，要先和负责人确认「哪一条才是对的」。\n\n### 对照你的工作\n\n你排查「系统数字和 Excel 对不上」时，经常会遇到重复行、多个版本。看到「每个 X 的最新一条」「每个 X 的前 N 个」「和上一期比」，第一反应应该是窗口函数。\n\n### 这一节你要带走的三句话\n\n1. **窗口函数不合并行；`OVER (PARTITION BY 分组 ORDER BY 顺序)` 里，PARTITION 是分组，ORDER BY 是组内顺序。**\n2. **RANK 并列跳号，DENSE_RANK 并列不跳号，ROW_NUMBER 永远唯一；取每组最新一条用 ROW_NUMBER 加 `rn = 1`。**\n3. **窗口函数的结果要套一层才能在 WHERE 里筛选；SUM OVER 做累计，LAG 取上一行。**"
+  },
+  {
+   "type": "think",
+   "q": "**（实践）** 写一条查询：每个 SKU 在订单明细里数量最大的那一行（订单号、SKU、数量）。提示：ROW_NUMBER。",
+   "a": "`SELECT order_id, sku, qty FROM (SELECT order_id, sku, qty, ROW_NUMBER() OVER (PARTITION BY sku ORDER BY qty DESC, order_id) AS rn FROM order_lines) WHERE rn = 1`。每个 SKU 一行（共 6 个 SKU）。如果数量并列时想全部保留，改用 RANK 并筛 `= 1`。"
+  },
+  {
+   "type": "think",
+   "q": "**（概念辨析）** 为什么不能写 `WHERE ROW_NUMBER() OVER (...) = 1`？",
+   "a": "因为 WHERE 在逻辑上先于 SELECT 执行，窗口函数的结果在 SELECT 阶段才产生，WHERE 里还不存在。解决办法是把窗口函数放进子查询或 CTE，外层再筛。Oracle 和 SQLite 都是这个规则。"
+  },
+  {
+   "type": "think",
+   "q": "**（联系）** 同事说「同一个订单在报表里出现了两次」。你怎么先判断是不是重复加载，再决定保留哪一条？",
+   "a": "先用 `GROUP BY 订单号, SKU HAVING COUNT(*) > 1` 确认是否有重复，再看这些行有没有不同的字段（数量、加载时间）。如果有加载时间，保留最新一条是常见做法，但一定要向数据负责人确认：有时最新一条是错的，要保留的是被审批过的那条。确认之前只查询，不删除。"
+  },
+  {
+   "type": "keywords",
+   "items": [
+    [
+     "窗口函数",
+     "window function",
+     "每行保留，附加组内计算"
+    ],
+    [
+     "分区",
+     "PARTITION BY",
+     "把行分成若干组"
+    ],
+    [
+     "窗口排序",
+     "ORDER BY in OVER",
+     "组内的顺序"
+    ],
+    [
+     "行号",
+     "ROW_NUMBER",
+     "每行唯一编号"
+    ],
+    [
+     "排名",
+     "RANK",
+     "并列后跳号"
+    ],
+    [
+     "紧凑排名",
+     "DENSE_RANK",
+     "并列后不跳号"
+    ],
+    [
+     "累计",
+     "running total",
+     "截止当前行的合计"
+    ],
+    [
+     "上一行",
+     "LAG",
+     "取前一行的值"
+    ],
+    [
+     "下一行",
+     "LEAD",
+     "取后一行的值"
+    ],
+    [
+     "取最新一条",
+     "latest per group",
+     "ROW_NUMBER 加 rn = 1"
+    ],
+    [
+     "去重",
+     "deduplication",
+     "保留每组一条"
+    ],
+    [
+     "环比",
+     "period over period",
+     "和上一期对比"
+    ]
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "SQLite 官方文档：SQL 语法与窗口函数",
+   "url": "https://www.sqlite.org/lang.html",
+   "note": "本课程练习用的 SQLite 的语法说明；Oracle 的写法在第 8 节单独对照"
+  },
+  {
+   "title": "SQLite 官方文档：窗口函数",
+   "url": "https://www.sqlite.org/windowfunctions.html",
+   "note": "窗口函数的语法和内置函数列表"
+  },
+  {
+   "title": "Wikipedia：Window function (SQL)",
+   "url": "https://en.wikipedia.org/wiki/Window_function_(SQL)",
+   "note": "窗口函数的概述"
+  }
+ ],
+ "quiz": {
+  "questions": [
+   {
+    "q": "两行金额并列第 3，`RANK()` 给下一行的排名是：",
+    "options": [
+     "4",
+     "5",
+     "3",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "RANK 并列后跳号：1、2、3、3、5；DENSE_RANK 才是 1、2、3、3、4。"
+   },
+   {
+    "q": "要取「每个客户最新的一张订单」，最合适的写法是：",
+    "options": [
+     "ROW_NUMBER() OVER (PARTITION BY 客户 ORDER BY 日期 DESC)，外层筛 rn = 1",
+     "GROUP BY 客户 再 SELECT 订单号",
+     "ORDER BY 日期 LIMIT 1",
+     "DISTINCT 客户"
+    ],
+    "answer": 0,
+    "explain": "按客户分区、按日期倒序编号，每组第 1 条就是最新的。"
+   },
+   {
+    "q": "窗口函数和 GROUP BY 的主要区别是：",
+    "options": [
+     "窗口函数会删除重复行",
+     "窗口函数只能用于文本",
+     "窗口函数不能排序",
+     "窗口函数不压缩行，每行都保留"
+    ],
+    "answer": 3,
+    "explain": "GROUP BY 每组只留一行，窗口函数保留所有行并附加组内计算结果。"
+   },
+   {
+    "q": "某客户的第一张订单，`LAG(amount)` 的结果是：",
+    "options": [
+     "该订单自己的金额",
+     "0",
+     "NULL",
+     "报错"
+    ],
+    "answer": 2,
+    "explain": "第一行前面没有上一行，LAG 返回 NULL（也可以用第二个参数指定默认值）。"
+   },
+   {
+    "q": "为什么 `WHERE ROW_NUMBER() OVER (...) = 1` 会报错？",
+    "options": [
+     "WHERE 先于 SELECT 执行，窗口函数结果还不存在",
+     "ROW_NUMBER 不存在",
+     "OVER 不能带括号",
+     "= 1 不允许"
+    ],
+    "answer": 0,
+    "explain": "要把窗口函数放进子查询或 CTE，外层再用 WHERE 筛选。"
+   }
+  ]
+ }
+}

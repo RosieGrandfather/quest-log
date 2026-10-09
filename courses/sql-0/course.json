@@ -1,0 +1,78 @@
+{
+  "id": "sql-0",
+  "title": "SQL 实战：从会写到敢上岗（含 Oracle 对照）",
+  "subtitle": "为 BA / 业务支持岗位准备的 SQL：查询与 NULL、聚合、JOIN、子查询与 CTE、窗口函数、修改数据与索引、数据排查与对账，最后是 Oracle 写法对照、JDE 日期、SQL 证书路线和水平自测。每节用同一个自己编的供应链演示数据库，在浏览器里用 SQLite 直接运行；Oracle 的写法按官方文档整理，课程里没有逐条在 Oracle 上运行过",
+  "source": {
+    "name": "SQLite 官方文档 / Oracle Database SQL Language Reference（概念与语法参考，只引用）",
+    "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/"
+  },
+  "order": 18,
+  "order_note": "选修，求职与上岗准备：转 BA / IT BA 方向、入职前补 SQL 时学；不影响主线",
+  "tier": "elective",
+  "units": [
+    {
+      "id": "u01",
+      "title": "读懂一张表：SELECT、WHERE、排序与 NULL",
+      "en": "Reading a Table: SELECT, WHERE, Sorting & NULL",
+      "minutes": 40,
+      "file": "u01-select-null.json",
+      "direct": true
+    },
+    {
+      "id": "u02",
+      "title": "汇总数字：聚合函数、GROUP BY 与 HAVING",
+      "en": "Summarising: Aggregates, GROUP BY & HAVING",
+      "minutes": 40,
+      "file": "u02-aggregate.json",
+      "direct": true
+    },
+    {
+      "id": "u03",
+      "title": "把表连起来：JOIN、孤儿记录与重复放大",
+      "en": "Joining Tables: JOIN, Orphan Records & Row Fan-out",
+      "minutes": 45,
+      "file": "u03-joins.json",
+      "direct": true
+    },
+    {
+      "id": "u04",
+      "title": "查询里套查询：子查询、CTE 与集合运算",
+      "en": "Queries Inside Queries: Subqueries, CTEs & Set Operators",
+      "minutes": 40,
+      "file": "u04-subquery-cte.json",
+      "direct": true
+    },
+    {
+      "id": "u05",
+      "title": "窗口函数：排名、取最新一条、累计与上一行",
+      "en": "Window Functions: Ranking, Latest Row, Running Totals & LAG",
+      "minutes": 45,
+      "file": "u05-window.json",
+      "direct": true
+    },
+    {
+      "id": "u06",
+      "title": "改数据要小心：INSERT / UPDATE / DELETE、事务、约束与索引",
+      "en": "Changing Data Safely: DML, Transactions, Constraints & Indexes",
+      "minutes": 40,
+      "file": "u06-dml-index.json",
+      "direct": true
+    },
+    {
+      "id": "u07",
+      "title": "排查与对账实战：数据质量检查、重复与两边数字对不上",
+      "en": "Troubleshooting in Practice: Data-Quality Checks, Duplicates & Reconciliation",
+      "minutes": 45,
+      "file": "u07-troubleshoot.json",
+      "direct": true
+    },
+    {
+      "id": "u08",
+      "title": "换成 Oracle：方言对照、常见报错、证书路线与水平自测",
+      "en": "Switching to Oracle: Dialect Map, Common Errors, Certification & Self-Assessment",
+      "minutes": 45,
+      "file": "u08-oracle-cert.json",
+      "direct": true
+    }
+  ]
+}
