@@ -86,6 +86,8 @@ def validate_unit(unit, n_questions=10):
 
 def dump(unit, course_path, filename, n_questions=10):
     """直接按 ≤50 分钟写的小节：n_questions=5（course.json 里这一节要加 \"direct\": true）"""
+    from cleanintro import clean_unit      # 去掉开头的套话（本节安排、怎么学这一节、先说这一节要干什么 等）
+    clean_unit(unit)
     errors = validate_unit(unit, n_questions=n_questions)
     if errors:
         raise SystemExit('检查没通过：\n  ' + '\n  '.join(errors))

@@ -12,10 +12,6 @@
  ],
  "blocks": [
   {
-   "type": "text",
-   "md": "### 先说这一节要干什么\n\n前两节学了 `rearrange`（搬动数据）和 `reduce`（对一个张量汇总）。要把**多个**张量「相乘再求和」（矩阵乘法、注意力分数、线性层），需要 **einsum**。另一半是**索引**：从张量里按下标取出元素。「取出每个样本正确类别的概率」「按 token id 查词向量」「按下标把梯度加回去」都靠它。这两样东西合起来，就是 Transformer 实现里绝大部分「不是调现成层」的代码。\n\n这一节同样用 NumPy 和 einops 写并真实运行，最后给出 PyTorch 的对照块。\n\n**学完它你就能看懂这几件事：**\n\n- Transformer 里 `einsum(q, k, \"batch q_pos d, batch k_pos d -> batch q_pos k_pos\")` 这一行为什么就是 $QK^\\top$，为什么 `d` 消失、`batch` 保留；\n- `nn.Embedding`、`logits[range(n), y]`、`scores.gather(1, ...)` 分别在做什么，它们之间怎么互相转换；\n- 为什么同一个 einsum 的不同计算顺序，速度可以差几十到几百倍；\n- 为什么往数组里按下标累加时，重复下标会让结果出错（梯度累加、直方图、稀疏更新里都会遇到）。\n\n**本节安排（约 95 分钟）**：导读（5 分钟）→ 视频（16 分钟）→ einsum 的规则与速查（20 分钟）→ 手写 einsum、注意力与计算顺序实验（15 分钟）→ 整数数组索引（15 分钟）→ 视图 vs 副本、词嵌入（10 分钟）→ gather（10 分钟）→ PyTorch 对照与「想一想」（4 分钟）。视频是英文的，可以打开 YouTube 的中文字幕。"
-  },
-  {
    "type": "video",
    "provider": "youtube",
    "id": "pkVwUVEHmfI",

@@ -7,6 +7,7 @@
   - 「想一想」「关键词」「测验」按内容相关度分到各小节；测验每个小节 3–5 题，正确答案位置打散；
   - 后面的小节如果用到前面小节定义的变量，自动在开头补一个「承接上一部分」的代码块。
 """
+from cleanintro import clean_unit
 import ast, copy, itertools, json, math, os, re, sys, textwrap
 sys.path.insert(0, os.path.dirname(__file__))
 from runlib import Notebook
@@ -176,13 +177,8 @@ def build(unit):
             rest = p['groups'][1:]
             flush_idx = 0
             texts[-1] = texts[-1].rstrip()
-            texts.append(f"**这一节分成 {K} 个小节（每个不超过 50 分钟，各有自己的「想一想」和测验），这是第 1 个。**")
-            texts.append(head); texts.append(NOTE_LEARN)
             groups = rest
         else:
-            texts.append(f"### 先说这一小节要干什么\n\n这是「{title}」分成的第 {k+1} 个小节（共 {K} 个），接着上一个小节往下学。"
-                         f"这里的代码块如果用到了前面小节定义的变量或函数，会在开头用「承接上一小节」的代码块重新定义一遍，所以你可以直接从这里开始。")
-            texts.append(head); texts.append(NOTE_LEARN)
             groups = p['groups']
         for g in groups:
             if g['md'].startswith('### 先说这一节'):
@@ -261,13 +257,12 @@ def add_setup(parts, whole):
         need = [prior[i] for i in sorted(need)]
         if need:
             src = '\n'.join(s for s, _e in need)
-            md = ('**承接上一小节：** 下面的代码用到了前面小节里定义的东西。先点一下「▶ 运行」把它们重新定义出来（不用细看，前面已经讲过）：\n\n'
-                  + '\n\n'.join('```python\n' + c + '\n```' for c, _e in need))
+            md = '\n\n'.join('```python\n' + c + '\n```' for c, _e in need)
+            md = md.replace('```python\n', '```python\n# 承接上一小节：先运行，重新定义前面用到的变量\n', 1)
             blocks = parts[k]['blocks']
-            # 插到开头介绍的末尾（「怎么学这一小节」之后）
-            b0 = blocks[0]['md']
-            i = b0.index(NOTE_LEARN) + len(NOTE_LEARN)
-            blocks[0]['md'] = b0[:i] + '\n\n' + md + b0[i:]
+            # 承接块放在这一小节的最前面
+            blocks = parts[k]['blocks']
+            blocks[0]['md'] = md + '\n\n' + blocks[0]['md']
             report.append(f'{parts[k]["id"]}: 补了承接块（{len(need)} 段，{src.count(chr(10))+1} 行）')
     return parts, report
 
@@ -305,6 +300,7 @@ def main(course, only=None):
             probs = check_run(p)
             fname = base if k == 0 else base.replace('.json', '').replace(unit['id'] + '-', unit['id'] + LABEL[k] + '-', 1) + '.json'
             if k == 0 and len(parts) > 1: fname = base
+            clean_unit(p)
             json.dump(p, open(os.path.join(cdir, fname), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
             print(f"{p['id']} {p['minutes']}分 题{[q['answer'] for q in p['quiz']['questions']]} 块{len(p['blocks'])}", errs or '', probs or '')
             e = dict(u); e.update(id=p['id'], title=p['title'], en=p['en'], minutes=p['minutes'], file=fname)

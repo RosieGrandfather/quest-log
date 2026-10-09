@@ -9,6 +9,7 @@ def retarget(unit, target):
 
 # 每一节开头都要重新建库（网页里每进入一节都会清空变量）。数据是自己编的演示数据，不是任何真实系统的数据
 SETUP_DATA = '''
+# 练习数据库：客户、产品、订单、订单明细、库存（自己编的演示数据）
 import sqlite3
 db = sqlite3.connect(":memory:")
 db.executescript("""
@@ -39,6 +40,7 @@ db.commit()    # 先把建好的数据提交，后面的 rollback 才不会把�
 print("建库完成：5 张表")
 '''
 SETUP_Q = '''
+# 辅助函数 q(sql)：运行一条 SQL 并打印结果表
 def q(sql, params=()):
     cur = db.execute(sql, params)
     rows = cur.fetchall()
