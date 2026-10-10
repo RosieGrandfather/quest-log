@@ -1,12 +1,15 @@
 /* 所有页面共用的界面小工具。依赖页面里有 #toast、#celebrateModal（含 #confettiWrap、#celebrateText、#closeCelebrate） */
 
 let toastTimer = null;
-export function showToast(msg){
+/* opts.onClick：点提示条要做的事（会点到的提示给长一点的停留时间，默认 6 秒） */
+export function showToast(msg, opts = {}){
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.hidden = false;
+  t.style.cursor = opts.onClick ? 'pointer' : '';
+  t.onclick = opts.onClick ? ()=>{ t.hidden = true; opts.onClick(); } : null;
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(()=>{ t.hidden = true; }, 2600);
+  toastTimer = setTimeout(()=>{ t.hidden = true; }, opts.onClick ? 6000 : 2600);
 }
 
 /* 庆祝弹窗 + 撒花。html 由调用方拼好（记得转义用户输入） */

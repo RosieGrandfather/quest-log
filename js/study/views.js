@@ -5,6 +5,7 @@ import { loadCourses, loadCourse, loadUnit } from './content.js';
 import { unitBodyHTML, mdToHTML, renderMath } from './render-content.js';
 import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
+import { startResume, stopResume, clearResume } from './resume.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
 import { unitKey, scoreQuiz, UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, DAY_UNITS_TARGET, DAY_UNITS_BONUS } from '../core/study.js';
@@ -32,6 +33,7 @@ function parseHash(){
 
 export async function renderRoute(){
   route = parseHash();
+  stopResume();                   // 先把上一页的阅读位置存好，再回到顶部
   window.scrollTo(0, 0);
   view().innerHTML = '<div class="loading">加载中…</div>';
   try{
@@ -159,6 +161,9 @@ async function renderUnit(cid, uid){
   renderMath(view());
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());
+  if(startResume(unitKey(cid, uid), document.querySelector('.lesson'))){
+    showToast('已回到上次读到的位置 · 点这里回到开头', {onClick: ()=>{ clearResume(unitKey(cid, uid)); stopResume(); window.scrollTo({top:0}); startResume(unitKey(cid, uid), document.querySelector('.lesson')); }});
+  }
   $('notesFab').addEventListener('click', ()=> openNotes(course, unit));
   await renderUnitActions(cid, uid);
 }

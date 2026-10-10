@@ -45,3 +45,19 @@ test('同一天学完 3 节额外奖励', ()=>{
   assert.equal(dayUnitsBonus(3).amount, 100);
   assert.equal(dayUnitsBonus(4).amount, 100);   // 超过 3 节也只是同一个奖励，发放时用「每天一个 ID」保证只发一次
 });
+
+import { pickAnchor, worthResuming } from '../js/core/resume.js';
+
+test('阅读位置：取屏幕顶边处的第一个内容块', ()=>{
+  const rects = [{top:-900,bottom:-500},{top:-500,bottom:-3},{top:-3,bottom:300},{top:300,bottom:700}];
+  assert.deepEqual(pickAnchor(rects), {i:2, off:-3});
+  assert.equal(pickAnchor([{top:-50,bottom:0}]), null);
+  assert.equal(pickAnchor([]), null);
+});
+test('阅读位置：还在开头就不跳', ()=>{
+  assert.equal(worthResuming(null), false);
+  assert.equal(worthResuming({i:0, off:-50}), false);
+  assert.equal(worthResuming({i:0, off:-400}), true);
+  assert.equal(worthResuming({i:3, off:20}), true);
+  assert.equal(worthResuming({i:'x', off:0}), false);
+});
