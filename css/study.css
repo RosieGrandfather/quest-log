@@ -13,7 +13,10 @@
 #view{margin-top:18px;}
 .loading{color:var(--ink-faint);text-align:center;padding:30px;}
 .view-title{font-family:'Barlow Condensed';font-weight:700;font-size:28px;line-height:1.15;margin:6px 0 4px;}
-.crumb{display:inline-block;font-size:13.5px;margin-bottom:4px;}
+/* 返回链接吸顶：长课翻到中间也能一直看到「← 返回」 */
+.crumb{display:block;position:sticky;top:0;z-index:30;font-size:13.5px;margin-bottom:4px;
+  padding:calc(9px + env(safe-area-inset-top,0px)) 0 9px;background:var(--bg);border-bottom:1px solid var(--border);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .course-sub{color:var(--ink-soft);font-size:14px;}
 .course-source{font-size:12.5px;color:var(--ink-faint);margin-top:6px;}
 .course-source a{color:var(--ink-soft);}
