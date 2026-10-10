@@ -161,9 +161,14 @@ async function renderUnit(cid, uid){
   renderMath(view());
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());
-  if(startResume(unitKey(cid, uid), document.querySelector('.lesson'))){
-    showToast('已回到上次读到的位置 · 点这里回到开头', {onClick: ()=>{ clearResume(unitKey(cid, uid)); stopResume(); window.scrollTo({top:0}); startResume(unitKey(cid, uid), document.querySelector('.lesson')); }});
-  }
+  const rkey = unitKey(cid, uid);
+  startResume(rkey, document.querySelector('.lesson'), T.cols).then(jumped=>{
+    if(!jumped) return;
+    showToast('已回到上次读到的位置 · 点这里回到开头', {onClick: ()=>{
+      clearResume(rkey, T.cols); window.scrollTo({top:0});
+      startResume(rkey, document.querySelector('.lesson'), T.cols);
+    }});
+  });
   $('notesFab').addEventListener('click', ()=> openNotes(course, unit));
   await renderUnitActions(cid, uid);
 }

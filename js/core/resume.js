@@ -14,3 +14,11 @@ export function pickAnchor(rects){
 export function worthResuming(a){
   return !!a && Number.isInteger(a.i) && Number.isFinite(a.off) && (a.i > 0 || a.off < -200);
 }
+
+/* 本机和云端各有一份记录时，取时间（t）较新的那份；没有有效记录返回 null */
+export function newerPos(a, b){
+  const ok = x => x && Number.isInteger(x.i) && Number.isFinite(x.off);
+  if(!ok(a)) return ok(b) ? b : null;
+  if(!ok(b)) return a;
+  return (b.t || 0) > (a.t || 0) ? b : a;
+}
