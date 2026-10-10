@@ -5,6 +5,11 @@
 格式：
 
 ```
+## 2026-10-10 — 词汇课每个词可标「会 / 不会」
+- 词卡上加了「会」「不会」两个按钮，点一下标记，再点一下取消；标记存在 `users/{uid}/vocabMarks/{课程}__{章节}`（跨设备同步，现有安全规则已覆盖）
+- 「不会」的卡片左边有红线，「会」的是绿线；暂时没做「不会的词」汇总表，数据已经按词存好，之后可直接汇总
+- 文件：`js/study/vocab-marks.js`（新）、`js/data/study.js`、`js/firebase.js`、`js/study/render-content.js`、`js/study/views.js`、`css/study.css`
+
 ## 2026-10-10 — 新课 gre-v：GRE 核心词汇 S 级（60 节），移除 gre-0
 - 新课 `gre-v`（选修，`order: 15`），取代 `gre-0`：1196 个词按固定随机种子乱序，每节 20 词、每 5 个词一段例句短文（词在短文里高亮，点按显示中文），每词有中文、英文释义、近义词、反义词；每节 5 道测验（`direct: true`）
 - 新内容块 `vocab`（词卡，点音标 🔊 发音）和 `passage`（`[[表面形式|原形]]` 标记高亮）；发音用浏览器 `speechSynthesis`（en-US），不可用时退回 Youdao 发音；`render-content.js` 新增 `speak`、`wireVocab`，`views.js` 在课页挂上，`study.css` 新增样式

@@ -169,6 +169,7 @@
 - `users/{uid}/sections`：板块。文档 ID 就是板块 id。字段：`label`、`ts`（排序）、`short`（可选，历史记录小标签用的简称；老板块迁移时带上，改名后删除，之后标签显示全名）
 - `users/{uid}/studyProgress/{课程}__{章节}`：测验成绩。`quizAttempts`、`quizBest`、`quizPassed`、`lastAttempt`（`answers` 数组、`score`、`ts`）、首次学完时的 `completedISO`。**「是否学完」以 log 里有没有 `study-…` 记录为准**
 - `users/{uid}/studyNotes/{课程}__{章节}`：笔记 `text`、`updatedAt`
+- `users/{uid}/vocabMarks/{课程}__{章节}`：词汇课每个词的「会 / 不会」，`marks`（`{词:'know'|'unknown'|''}`）、`updatedAt`；以后可按 `unknown` 汇总成「不会的词」表
 - `users/{uid}/journal/{YYYY-MM-DD}`：日记，`dateISO`、`sections`（五块）、`text`（拼起来的一份）、`createdAt`、`updatedAt`（有内容时 `log` 里另有 `journal-日期`，+5 分）
 - `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
 

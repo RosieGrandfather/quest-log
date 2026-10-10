@@ -237,3 +237,13 @@
 .blk-passage .vw:focus::after,.blk-passage .vw:hover::after{
   content:attr(data-zh);position:absolute;left:0;top:calc(100% + 4px);z-index:5;white-space:nowrap;max-width:70vw;overflow:hidden;text-overflow:ellipsis;
   font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:3px 9px;box-shadow:var(--shadow);}
+
+/* 词卡：会 / 不会 */
+.vmark{display:flex;gap:8px;margin:8px 0 2px;}
+.vm{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--border);border-radius:999px;padding:3px 14px;cursor:pointer;}
+.vm:hover{border-color:var(--teal);}
+.vm:active{transform:scale(.97);}
+.vm-know.on{color:var(--teal);background:var(--teal-soft);border-color:var(--teal);font-weight:600;}
+.vm-no.on{color:#b3261e;background:rgba(179,38,30,.12);border-color:#b3261e;font-weight:600;}
+.vcard[data-mark="unknown"]{box-shadow:inset 3px 0 0 #b3261e;}
+.vcard[data-mark="know"]{box-shadow:inset 3px 0 0 var(--teal);}

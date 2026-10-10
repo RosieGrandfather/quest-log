@@ -5,6 +5,7 @@ import { loadCourses, loadCourse, loadUnit } from './content.js';
 import { unitBodyHTML, mdToHTML, renderMath, wireVocab } from './render-content.js';
 import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
+import { wireVocabMarks } from './vocab-marks.js';
 import { startResume, stopResume, clearResume } from './resume.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
@@ -160,6 +161,7 @@ async function renderUnit(cid, uid){
     <button class="notes-fab" id="notesFab">📝 笔记</button>`;
   renderMath(view());
   wireVocab(document.querySelector('.lesson'));
+  wireVocabMarks(document.querySelector('.lesson'), course, unit);
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());
   const rkey = unitKey(cid, uid);

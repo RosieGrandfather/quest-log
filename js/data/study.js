@@ -78,3 +78,13 @@ export async function loadNote(cols, course, unit){
   const snap = await cols.studyNotes.doc(unitKey(course.id, unit.id)).get();
   return snap.exists ? (snap.data().text || '') : '';
 }
+
+/* 词汇课「会 / 不会」标记：每节一篇文档 {marks:{词:'know'|'unknown'|''}} */
+export async function loadVocabMarks(cols, course, unit){
+  const snap = await cols.vocabMarks.doc(unitKey(course.id, unit.id)).get();
+  return snap.exists ? (snap.data().marks || {}) : {};
+}
+export function saveVocabMark(cols, course, unit, word, value){
+  return cols.vocabMarks.doc(unitKey(course.id, unit.id)).set(
+    {courseId:course.id, unitId:unit.id, marks:{[word]:value}, updatedAt:Date.now()}, {merge:true});
+}

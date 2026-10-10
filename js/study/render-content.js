@@ -59,6 +59,9 @@ function vocabCard(it){
     <div class="vhead"><span class="vword">${escapeHTML(it.w)}</span>
       <button type="button" class="vipa" data-say="${escapeHTML(it.w)}" aria-label="朗读 ${escapeHTML(it.w)}">🔊 ${escapeHTML(it.ipa||'发音')}</button>
       ${it.pos?`<span class="vpos">${escapeHTML(it.pos)}</span>`:''}</div>
+    <div class="vmark" role="group" aria-label="${escapeHTML(it.w)} 会不会">
+      <button type="button" class="vm vm-know" data-w="${escapeHTML(it.w)}" data-v="know" aria-pressed="false">会</button>
+      <button type="button" class="vm vm-no" data-w="${escapeHTML(it.w)}" data-v="unknown" aria-pressed="false">不会</button></div>
     <div class="vzh">${escapeHTML(it.zh||'')}</div>
     <div class="ven">${escapeHTML(it.en||'')}</div>
     <div class="vrel">${chips('近','vsyn',it.syn)}${chips('反','vant',it.ant)}</div>
