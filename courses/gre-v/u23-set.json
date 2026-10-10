@@ -1,0 +1,422 @@
+{
+ "id": "u23",
+ "title": "S 级核心词 · 第 23 组",
+ "en": "GRE Core Vocabulary · Set 23",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "innocuous",
+     "ipa": "[ɪˈnɑːkjuəs]",
+     "pos": "adj.",
+     "zh": "无害的；不会引起敌意的",
+     "en": "harmless; not likely to offend",
+     "syn": [
+      "harmless",
+      "inoffensive"
+     ],
+     "ant": [
+      "harmful",
+      "offensive"
+     ]
+    },
+    {
+     "w": "numinous",
+     "ipa": "[ˈnuːmɪnəs]",
+     "pos": "adj.",
+     "zh": "神秘的，超自然的",
+     "en": "mysterious and spiritual",
+     "syn": [
+      "spiritual",
+      "transcendent"
+     ],
+     "ant": [
+      "mundane",
+      "ordinary"
+     ]
+    },
+    {
+     "w": "jaded",
+     "ipa": "[ˈdʒeɪdɪd]",
+     "pos": "adj.",
+     "zh": "厌倦的，没兴趣没热情的",
+     "en": "worn out and bored from overexposure",
+     "syn": [
+      "weary",
+      "blasé"
+     ],
+     "ant": [
+      "fresh",
+      "enthusiastic"
+     ]
+    },
+    {
+     "w": "sporadic",
+     "ipa": "[spəˈrædɪk]",
+     "pos": "adj.",
+     "zh": "断断续续的",
+     "en": "occurring occasionally and irregularly",
+     "syn": [
+      "occasional",
+      "intermittent"
+     ],
+     "ant": [
+      "constant",
+      "regular"
+     ]
+    },
+    {
+     "w": "capitulate",
+     "ipa": "[kəˈpɪtʃuleɪt]",
+     "pos": "v.",
+     "zh": "投降，默许",
+     "en": "to surrender",
+     "syn": [
+      "surrender",
+      "yield"
+     ],
+     "ant": [
+      "resist",
+      "withstand"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[innocuous]] remark broke the [[numinous]] hush at the shrine; the [[jaded]] guide, whose smiles were [[sporadic]], at last chose to [[capitulate]] and sit down.",
+   "gloss": {
+    "innocuous": "无害的",
+    "numinous": "神秘的，超自然的",
+    "jaded": "厌倦的，没兴趣没热情的",
+    "sporadic": "断断续续的",
+    "capitulate": "投降，默许"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "clandestine",
+     "ipa": "[klænˈdestɪn]",
+     "pos": "adj.",
+     "zh": "隐藏的，秘密的",
+     "en": "done in secret",
+     "syn": [
+      "secret",
+      "covert"
+     ],
+     "ant": [
+      "open",
+      "overt"
+     ]
+    },
+    {
+     "w": "rescind",
+     "ipa": "[rɪˈsɪnd]",
+     "pos": "vt.",
+     "zh": "废除，取消",
+     "en": "to cancel or repeal",
+     "syn": [
+      "revoke",
+      "repeal"
+     ],
+     "ant": [
+      "enact",
+      "uphold"
+     ]
+    },
+    {
+     "w": "reiterate",
+     "ipa": "[rɪˈɪtəret]",
+     "pos": "v.",
+     "zh": "重申",
+     "en": "to say again",
+     "syn": [
+      "repeat",
+      "restate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "didactic",
+     "ipa": "[daɪˈdæktɪk]",
+     "pos": "adj.",
+     "zh": "喜欢说教的，思修的",
+     "en": "intended to teach, often in a preachy way",
+     "syn": [
+      "instructive",
+      "preachy"
+     ],
+     "ant": []
+    },
+    {
+     "w": "cavil",
+     "ipa": "[ˈkævl]",
+     "pos": "v.",
+     "zh": "挑剔，吹毛求疵",
+     "en": "to raise petty objections",
+     "syn": [
+      "quibble",
+      "carp"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[clandestine]] meeting led the board to [[rescind]] its decision; the chair would [[reiterate]] a [[didactic]] speech, though some members would [[cavil]].",
+   "gloss": {
+    "clandestine": "隐藏的，秘密的",
+    "rescind": "废除，取消",
+    "reiterate": "重申",
+    "didactic": "喜欢说教的，思修的",
+    "cavil": "挑剔，吹毛求疵"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "precipitate",
+     "ipa": "[prɪˈsɪpɪteɪt]",
+     "pos": "adj.",
+     "zh": "仓促的；促成，引发",
+     "en": "hasty and rash; to cause suddenly",
+     "syn": [
+      "hasty",
+      "trigger"
+     ],
+     "ant": [
+      "deliberate",
+      "delay"
+     ]
+    },
+    {
+     "w": "agog",
+     "ipa": "[əˈɡɑːɡ]",
+     "pos": "adj.",
+     "zh": "极度感兴趣的",
+     "en": "eager and excited",
+     "syn": [
+      "eager",
+      "expectant"
+     ],
+     "ant": [
+      "indifferent",
+      "bored"
+     ]
+    },
+    {
+     "w": "unpretentious",
+     "ipa": "[ˌʌnprɪˈtɛnʃəs]",
+     "pos": "adj.",
+     "zh": "低调的，谦逊的；坦诚的，自然的",
+     "en": "modest and natural",
+     "syn": [
+      "modest",
+      "humble"
+     ],
+     "ant": [
+      "pretentious",
+      "showy"
+     ]
+    },
+    {
+     "w": "mediate",
+     "ipa": "[ˈmidɪet]",
+     "pos": "vt.",
+     "zh": "调解，调停",
+     "en": "to settle a dispute between parties",
+     "syn": [
+      "arbitrate",
+      "intervene"
+     ],
+     "ant": []
+    },
+    {
+     "w": "inevitable",
+     "ipa": "[ɪnˈɛvɪtəbl]",
+     "pos": "adj.",
+     "zh": "不可避免的，必然的",
+     "en": "certain to happen",
+     "syn": [
+      "unavoidable",
+      "inescapable"
+     ],
+     "ant": [
+      "avoidable",
+      "preventable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[precipitate]] strike left the town [[agog]]; the [[unpretentious]] envoy was called to [[mediate]], since further talks seemed [[inevitable]].",
+   "gloss": {
+    "precipitate": "仓促的",
+    "agog": "极度感兴趣的",
+    "unpretentious": "低调的，谦逊的",
+    "mediate": "调解，调停",
+    "inevitable": "不可避免的，必然的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "amenable",
+     "ipa": "[əˈminəbl]",
+     "pos": "adj.",
+     "zh": "顺从的，服从的",
+     "en": "willing to cooperate; easily influenced",
+     "syn": [
+      "agreeable",
+      "compliant"
+     ],
+     "ant": [
+      "obstinate",
+      "resistant"
+     ]
+    },
+    {
+     "w": "whimsical",
+     "ipa": "[ˈwɪmzɪkl]",
+     "pos": "adj.",
+     "zh": "反复无常的",
+     "en": "playful and unpredictable",
+     "syn": [
+      "capricious",
+      "fanciful"
+     ],
+     "ant": [
+      "serious",
+      "predictable"
+     ]
+    },
+    {
+     "w": "reprehend",
+     "ipa": "[ˌreprɪˈhend]",
+     "pos": "vt.",
+     "zh": "谴责，责难，批评",
+     "en": "to criticize or rebuke",
+     "syn": [
+      "rebuke",
+      "censure"
+     ],
+     "ant": [
+      "praise",
+      "commend"
+     ]
+    },
+    {
+     "w": "cachet",
+     "ipa": "[kæˈʃeɪ]",
+     "pos": "n.",
+     "zh": "同意；声望",
+     "en": "prestige; a mark of approval",
+     "syn": [
+      "prestige",
+      "distinction"
+     ],
+     "ant": []
+    },
+    {
+     "w": "abstruse",
+     "ipa": "[əbˈstrus]",
+     "pos": "adj.",
+     "zh": "难以理解的",
+     "en": "hard to understand",
+     "syn": [
+      "recondite",
+      "esoteric"
+     ],
+     "ant": [
+      "clear",
+      "straightforward"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[amenable]] teacher would never [[reprehend]] a [[whimsical]] student; the school's [[cachet]] came from its [[abstruse]] curriculum.",
+   "gloss": {
+    "amenable": "顺从的，服从的",
+    "whimsical": "反复无常的",
+    "reprehend": "谴责，责难，批评",
+    "cachet": "同意",
+    "abstruse": "难以理解的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**reiterate** 的意思最接近：",
+    "options": [
+     "谴责，责难，批评",
+     "废除，取消",
+     "重申",
+     "挑剔，吹毛求疵"
+    ],
+    "answer": 2,
+    "explain": "reiterate：重申（to say again）。近义词：repeat, restate。"
+   },
+   {
+    "q": "**reprehend** 的意思最接近：",
+    "options": [
+     "废除，取消",
+     "谴责，责难，批评",
+     "重申",
+     "投降，默许"
+    ],
+    "answer": 1,
+    "explain": "reprehend：谴责，责难，批评（to criticize or rebuke）。近义词：rebuke, censure。"
+   },
+   {
+    "q": "哪个词的意思是「难以理解的」？",
+    "options": [
+     "inevitable",
+     "innocuous",
+     "didactic",
+     "abstruse"
+    ],
+    "answer": 3,
+    "explain": "abstruse：难以理解的（hard to understand）。"
+   },
+   {
+    "q": "哪个词和 **compliant** 的意思最接近？",
+    "options": [
+     "precipitate",
+     "amenable",
+     "clandestine",
+     "unpretentious"
+    ],
+    "answer": 1,
+    "explain": "amenable 与 compliant 近义：willing to cooperate; easily influenced。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A precipitate strike left the town agog; the unpretentious envoy was called to mediate, since further talks seemed ____.",
+    "options": [
+     "inevitable",
+     "jaded",
+     "amenable",
+     "sporadic"
+    ],
+    "answer": 0,
+    "explain": "inevitable：不可避免的，必然的（certain to happen）。"
+   }
+  ]
+ }
+}

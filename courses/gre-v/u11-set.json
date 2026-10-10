@@ -1,0 +1,430 @@
+{
+ "id": "u11",
+ "title": "S 级核心词 · 第 11 组",
+ "en": "GRE Core Vocabulary · Set 11",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "imperious",
+     "ipa": "[ɪmˈpɪrɪəs]",
+     "pos": "adj.",
+     "zh": "傲慢的，专横的",
+     "en": "arrogantly commanding",
+     "syn": [
+      "domineering",
+      "overbearing"
+     ],
+     "ant": [
+      "meek",
+      "submissive"
+     ]
+    },
+    {
+     "w": "propitious",
+     "ipa": "[prəˈpɪʃəs]",
+     "pos": "adj.",
+     "zh": "吉祥的",
+     "en": "favorable; showing good signs",
+     "syn": [
+      "auspicious",
+      "favorable"
+     ],
+     "ant": [
+      "inauspicious",
+      "ominous"
+     ]
+    },
+    {
+     "w": "quirky",
+     "ipa": "[ˈkwəːki]",
+     "pos": "adj.",
+     "zh": "古怪的，奇葩的",
+     "en": "unconventional in an interesting way",
+     "syn": [
+      "eccentric",
+      "offbeat"
+     ],
+     "ant": [
+      "conventional",
+      "ordinary"
+     ]
+    },
+    {
+     "w": "taxing",
+     "ipa": "[ˈtæksɪŋ]",
+     "pos": "adj.",
+     "zh": "繁重的，费力的",
+     "en": "physically or mentally demanding",
+     "syn": [
+      "strenuous",
+      "demanding"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    },
+    {
+     "w": "esoteric",
+     "ipa": "[ˌesəˈterɪk]",
+     "pos": "adj.",
+     "zh": "深奥难懂的",
+     "en": "understood only by a small group of experts",
+     "syn": [
+      "arcane",
+      "abstruse"
+     ],
+     "ant": [
+      "accessible",
+      "familiar"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[imperious]] professor, a [[quirky]] man with an [[esoteric]] specialty, set a [[taxing]] exam on what he called a [[propitious]] day for the whole department.",
+   "gloss": {
+    "imperious": "傲慢的，专横的",
+    "propitious": "吉祥的",
+    "quirky": "古怪的，奇葩的",
+    "taxing": "繁重的，费力的",
+    "esoteric": "深奥难懂的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "obfuscate",
+     "ipa": "[ˈɑːbfʌskeɪt]",
+     "pos": "vt.",
+     "zh": "使困惑，使模糊",
+     "en": "to make unclear or confusing",
+     "syn": [
+      "obscure",
+      "muddle"
+     ],
+     "ant": [
+      "clarify",
+      "elucidate"
+     ]
+    },
+    {
+     "w": "warble",
+     "ipa": "[ˈwɔːrbl]",
+     "pos": "v.",
+     "zh": "柔和地唱歌",
+     "en": "to sing with trills and quavers",
+     "syn": [
+      "trill",
+      "chirp"
+     ],
+     "ant": []
+    },
+    {
+     "w": "despotic",
+     "ipa": "[dɪˈspɒtɪk]",
+     "pos": "adj.",
+     "zh": "专制的，暴虐的",
+     "en": "ruling with absolute and cruel power",
+     "syn": [
+      "tyrannical",
+      "autocratic"
+     ],
+     "ant": [
+      "democratic",
+      "liberal"
+     ]
+    },
+    {
+     "w": "dearth",
+     "ipa": "[dɜːrθ]",
+     "pos": "n.",
+     "zh": "供应不足",
+     "en": "a scarcity or lack",
+     "syn": [
+      "scarcity",
+      "paucity"
+     ],
+     "ant": [
+      "abundance",
+      "plethora"
+     ]
+    },
+    {
+     "w": "captivate",
+     "ipa": "[ˈkæptɪveɪt]",
+     "pos": "v.",
+     "zh": "吸引",
+     "en": "to attract and hold attention",
+     "syn": [
+      "enchant",
+      "charm"
+     ],
+     "ant": [
+      "repel",
+      "bore"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[despotic]] governor tried to [[obfuscate]] a [[dearth]] of food, but a street singer began to [[warble]] a song that would [[captivate]] the crowd and expose him.",
+   "gloss": {
+    "obfuscate": "使困惑，使模糊",
+    "warble": "柔和地唱歌",
+    "despotic": "专制的，暴虐的",
+    "dearth": "供应不足",
+    "captivate": "吸引"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "stifle",
+     "ipa": "[ˈstaɪfl]",
+     "pos": "vt.",
+     "zh": "抑制(声音、呼吸等)；阻止，扼杀",
+     "en": "to suppress or smother",
+     "syn": [
+      "suppress",
+      "smother"
+     ],
+     "ant": [
+      "encourage",
+      "foster"
+     ]
+    },
+    {
+     "w": "fungible",
+     "ipa": "[ˈfʌndʒəbl]",
+     "pos": "adj.",
+     "zh": "可互换的",
+     "en": "interchangeable with others of the same kind",
+     "syn": [
+      "interchangeable",
+      "exchangeable"
+     ],
+     "ant": [
+      "unique",
+      "irreplaceable"
+     ]
+    },
+    {
+     "w": "halcyon",
+     "ipa": "[ˈhælsɪən]",
+     "pos": "adj.",
+     "zh": "宁静的，平静的",
+     "en": "peaceful and happy",
+     "syn": [
+      "tranquil",
+      "idyllic"
+     ],
+     "ant": [
+      "turbulent",
+      "stormy"
+     ]
+    },
+    {
+     "w": "smother",
+     "ipa": "[ˈsmʌðɚ]",
+     "pos": "vt.",
+     "zh": "抑制，压制；使窒息",
+     "en": "to suppress; to suffocate",
+     "syn": [
+      "stifle",
+      "suppress"
+     ],
+     "ant": []
+    },
+    {
+     "w": "upbeat",
+     "ipa": "[ˈʌpbit]",
+     "pos": "adj.",
+     "zh": "心情好的；给人希望的，象征好运的",
+     "en": "cheerful and optimistic",
+     "syn": [
+      "optimistic",
+      "positive"
+     ],
+     "ant": [
+      "downbeat",
+      "gloomy"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In the [[halcyon]] years, shares seemed [[fungible]] and every outlook was [[upbeat]]; now analysts [[stifle]] their fears and [[smother]] bad news.",
+   "gloss": {
+    "stifle": "抑制(声音、呼吸等)",
+    "fungible": "可互换的",
+    "halcyon": "宁静的，平静的",
+    "smother": "抑制，压制",
+    "upbeat": "心情好的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tactless",
+     "ipa": "[ˈtæktləs]",
+     "pos": "adj.",
+     "zh": "不机智的，笨拙的",
+     "en": "lacking sensitivity in dealing with others",
+     "syn": [
+      "insensitive",
+      "undiplomatic"
+     ],
+     "ant": [
+      "tactful",
+      "diplomatic"
+     ]
+    },
+    {
+     "w": "cogent",
+     "ipa": "[ˈkodʒənt]",
+     "pos": "adj.",
+     "zh": "令人信服的；相关的",
+     "en": "clear, logical and convincing",
+     "syn": [
+      "compelling",
+      "persuasive"
+     ],
+     "ant": [
+      "unconvincing",
+      "weak"
+     ]
+    },
+    {
+     "w": "bridle",
+     "ipa": "[ˈbraɪdl]",
+     "pos": "v.",
+     "zh": "限制",
+     "en": "to restrain or hold in check",
+     "syn": [
+      "curb",
+      "restrain"
+     ],
+     "ant": [
+      "unleash"
+     ]
+    },
+    {
+     "w": "neophyte",
+     "ipa": "[ˈniəfaɪt]",
+     "pos": "n.",
+     "zh": "初学者，新手",
+     "en": "a beginner",
+     "syn": [
+      "novice",
+      "tyro"
+     ],
+     "ant": [
+      "veteran",
+      "expert"
+     ]
+    },
+    {
+     "w": "grumble",
+     "ipa": "[ˈɡrʌmbl]",
+     "pos": "vi.",
+     "zh": "(尤指低声地)抱怨，埋怨",
+     "en": "to complain in a low, discontented voice",
+     "syn": [
+      "complain",
+      "mutter"
+     ],
+     "ant": [
+      "praise",
+      "applaud"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[neophyte]] manager's remarks were [[tactless]], yet her proposal was [[cogent]]; the veterans began to [[grumble]], but the director urged them to [[bridle]] their impatience.",
+   "gloss": {
+    "tactless": "不机智的，笨拙的",
+    "cogent": "令人信服的",
+    "bridle": "限制",
+    "neophyte": "初学者，新手",
+    "grumble": "(尤指低声地)抱怨，埋怨"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**imperious** 的意思最接近：",
+    "options": [
+     "古怪的，奇葩的",
+     "令人信服的；相关的",
+     "傲慢的，专横的",
+     "专制的，暴虐的"
+    ],
+    "answer": 2,
+    "explain": "imperious：傲慢的，专横的（arrogantly commanding）。近义词：domineering, overbearing。"
+   },
+   {
+    "q": "**stifle** 的意思最接近：",
+    "options": [
+     "抑制(声音、呼吸等)；阻止，扼杀",
+     "使困惑，使模糊",
+     "抑制，压制；使窒息",
+     "限制"
+    ],
+    "answer": 0,
+    "explain": "stifle：抑制(声音、呼吸等)；阻止，扼杀（to suppress or smother）。近义词：suppress, smother。"
+   },
+   {
+    "q": "哪个词的意思是「初学者，新手」？",
+    "options": [
+     "neophyte",
+     "dearth",
+     "fungible",
+     "cogent"
+    ],
+    "answer": 0,
+    "explain": "neophyte：初学者，新手（a beginner）。"
+   },
+   {
+    "q": "哪个词和 **charm** 的意思最接近？",
+    "options": [
+     "grumble",
+     "captivate",
+     "stifle",
+     "smother"
+    ],
+    "answer": 1,
+    "explain": "captivate 与 charm 近义：to attract and hold attention。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The despotic governor tried to ____ a dearth of food, but a street singer began to warble a song that would captivate the crowd and expose him.",
+    "options": [
+     "grumble",
+     "stifle",
+     "warble",
+     "obfuscate"
+    ],
+    "answer": 3,
+    "explain": "obfuscate：使困惑，使模糊（to make unclear or confusing）。"
+   }
+  ]
+ }
+}

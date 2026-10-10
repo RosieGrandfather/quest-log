@@ -1,0 +1,425 @@
+{
+ "id": "u29",
+ "title": "S 级核心词 · 第 29 组",
+ "en": "GRE Core Vocabulary · Set 29",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "urbane",
+     "ipa": "[ɜːrˈbeɪn]",
+     "pos": "adj.",
+     "zh": "彬彬有礼的，文雅的",
+     "en": "polished and refined in manner",
+     "syn": [
+      "suave",
+      "sophisticated"
+     ],
+     "ant": [
+      "uncouth",
+      "rustic"
+     ]
+    },
+    {
+     "w": "facetious",
+     "ipa": "[fəˈsiʃəs]",
+     "pos": "adj.",
+     "zh": "喜欢开玩笑的，轻浮的",
+     "en": "joking inappropriately",
+     "syn": [
+      "flippant",
+      "jocular"
+     ],
+     "ant": [
+      "serious",
+      "earnest"
+     ]
+    },
+    {
+     "w": "analogous",
+     "ipa": "[əˈnæləɡəs]",
+     "pos": "adj.",
+     "zh": "相似的，可比较的",
+     "en": "similar in some respects",
+     "syn": [
+      "comparable",
+      "parallel"
+     ],
+     "ant": [
+      "dissimilar",
+      "unrelated"
+     ]
+    },
+    {
+     "w": "embargo",
+     "ipa": "[ɪmˈbɑːrɡoʊ]",
+     "pos": "n.",
+     "zh": "贸易禁止令",
+     "en": "an official ban on trade",
+     "syn": [
+      "ban",
+      "prohibition"
+     ],
+     "ant": []
+    },
+    {
+     "w": "dissension",
+     "ipa": "[dɪˈsenʃn]",
+     "pos": "n.",
+     "zh": "意见不合",
+     "en": "strong disagreement",
+     "syn": [
+      "discord",
+      "conflict"
+     ],
+     "ant": [
+      "accord",
+      "agreement"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[urbane]] ambassador made a [[facetious]] remark that an [[embargo]] was [[analogous]] to a stern lecture; the [[dissension]] in the room was audible.",
+   "gloss": {
+    "urbane": "彬彬有礼的，文雅的",
+    "facetious": "喜欢开玩笑的，轻浮的",
+    "analogous": "相似的，可比较的",
+    "embargo": "贸易禁止令",
+    "dissension": "意见不合"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "relish",
+     "ipa": "[ˈrɛlɪʃ]",
+     "pos": "n.",
+     "zh": "享受；喜好",
+     "en": "to enjoy greatly; enjoyment",
+     "syn": [
+      "savor",
+      "enjoy"
+     ],
+     "ant": [
+      "dislike",
+      "loathe"
+     ]
+    },
+    {
+     "w": "incursion",
+     "ipa": "[ɪnˈkɜːrʒn]",
+     "pos": "n.",
+     "zh": "入侵",
+     "en": "a sudden invasion",
+     "syn": [
+      "invasion",
+      "raid"
+     ],
+     "ant": [
+      "retreat",
+      "withdrawal"
+     ]
+    },
+    {
+     "w": "adulate",
+     "ipa": "[ˈædʒəˌleɪt]",
+     "pos": "v.",
+     "zh": "极度谄媚，拍马屁",
+     "en": "to praise excessively",
+     "syn": [
+      "flatter",
+      "fawn on"
+     ],
+     "ant": [
+      "denigrate",
+      "disparage"
+     ]
+    },
+    {
+     "w": "list",
+     "ipa": "[lɪst]",
+     "pos": "v.",
+     "zh": "(使)倾斜",
+     "en": "to lean to one side",
+     "syn": [
+      "tilt",
+      "lean"
+     ],
+     "ant": []
+    },
+    {
+     "w": "lugubrious",
+     "ipa": "[ləˈɡuːbriəs]",
+     "pos": "adj.",
+     "zh": "(故作夸张的)悲哀的",
+     "en": "mournful, often in an exaggerated way",
+     "syn": [
+      "gloomy",
+      "doleful"
+     ],
+     "ant": [
+      "jovial",
+      "cheerful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The crew would [[relish]] a quiet night, but an [[incursion]] by pirates left the ship to [[list]]; the captain, whom fans used to [[adulate]], gave a [[lugubrious]] speech.",
+   "gloss": {
+    "relish": "享受",
+    "incursion": "入侵",
+    "adulate": "极度谄媚，拍马屁",
+    "list": "(使)倾斜",
+    "lugubrious": "(故作夸张的)悲哀的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "captious",
+     "ipa": "[ˈkæpʃəs]",
+     "pos": "adj.",
+     "zh": "吹毛求疵的，爱挑毛病的",
+     "en": "fond of finding fault",
+     "syn": [
+      "carping",
+      "fault-finding"
+     ],
+     "ant": [
+      "appreciative",
+      "accepting"
+     ]
+    },
+    {
+     "w": "rampant",
+     "ipa": "[ˈræmpənt]",
+     "pos": "adj.",
+     "zh": "(植物)生长茂盛的；猖獗的，不受限制的",
+     "en": "spreading uncontrollably",
+     "syn": [
+      "unchecked",
+      "widespread"
+     ],
+     "ant": [
+      "restrained",
+      "controlled"
+     ]
+    },
+    {
+     "w": "truncate",
+     "ipa": "[trʌŋˈket]",
+     "pos": "vt.",
+     "zh": "截短；缩短(时间、篇幅等)",
+     "en": "to shorten by cutting",
+     "syn": [
+      "shorten",
+      "abridge"
+     ],
+     "ant": [
+      "lengthen",
+      "extend"
+     ]
+    },
+    {
+     "w": "beleaguer",
+     "ipa": "[bɪˈliːgə]",
+     "pos": "v.",
+     "zh": "使困扰，使烦恼，使消沉",
+     "en": "to surround with difficulties; to harass",
+     "syn": [
+      "besiege",
+      "harass"
+     ],
+     "ant": []
+    },
+    {
+     "w": "importune",
+     "ipa": "[ˌɪmpɔːrˈtuːn]",
+     "pos": "vt.",
+     "zh": "恳求，迫切请求",
+     "en": "to ask persistently and urgently",
+     "syn": [
+      "beseech",
+      "implore"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[captious]] editor would [[truncate]] the report; with errors [[rampant]], he would [[beleaguer]] the writers and [[importune]] them to hurry.",
+   "gloss": {
+    "captious": "吹毛求疵的，爱挑毛病的",
+    "rampant": "(植物)生长茂盛的",
+    "truncate": "截短",
+    "beleaguer": "使困扰，使烦恼，使消沉",
+    "importune": "恳求，迫切请求"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "byzantine",
+     "ipa": "[ˈbaɪzəntaɪn]",
+     "pos": "adj.",
+     "zh": "错综复杂的",
+     "en": "extremely complicated and secretive",
+     "syn": [
+      "labyrinthine",
+      "intricate"
+     ],
+     "ant": [
+      "straightforward",
+      "simple"
+     ]
+    },
+    {
+     "w": "dampen",
+     "ipa": "[ˈdæmpən]",
+     "pos": "vt.",
+     "zh": "抑制，压抑(感情、精力等)，泼冷水",
+     "en": "to reduce the intensity of",
+     "syn": [
+      "discourage",
+      "curb"
+     ],
+     "ant": [
+      "encourage",
+      "stimulate"
+     ]
+    },
+    {
+     "w": "preface",
+     "ipa": "[ˈprɛfəs]",
+     "pos": "n.",
+     "zh": "序言",
+     "en": "an introduction to a book or speech",
+     "syn": [
+      "foreword",
+      "prologue"
+     ],
+     "ant": [
+      "epilogue",
+      "afterword"
+     ]
+    },
+    {
+     "w": "zealot",
+     "ipa": "[ˈzelət]",
+     "pos": "n.",
+     "zh": "狂热者，极端主义者",
+     "en": "a fanatical supporter",
+     "syn": [
+      "fanatic",
+      "extremist"
+     ],
+     "ant": [
+      "moderate",
+      "skeptic"
+     ]
+    },
+    {
+     "w": "seminal",
+     "ipa": "[ˈsemɪnl]",
+     "pos": "adj.",
+     "zh": "创新的",
+     "en": "strongly influential and original",
+     "syn": [
+      "groundbreaking",
+      "formative"
+     ],
+     "ant": [
+      "derivative",
+      "trivial"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[byzantine]] rule threatened to [[dampen]] interest in the [[seminal]] book, whose [[preface]] was written by a [[zealot]].",
+   "gloss": {
+    "byzantine": "错综复杂的",
+    "dampen": "抑制，压抑(感情、精力等)，泼冷水",
+    "preface": "序言",
+    "zealot": "狂热者，极端主义者",
+    "seminal": "创新的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**byzantine** 的意思最接近：",
+    "options": [
+     "创新的",
+     "彬彬有礼的，文雅的",
+     "错综复杂的",
+     "相似的，可比较的"
+    ],
+    "answer": 2,
+    "explain": "byzantine：错综复杂的（extremely complicated and secretive）。近义词：labyrinthine, intricate。"
+   },
+   {
+    "q": "**analogous** 的意思最接近：",
+    "options": [
+     "相似的，可比较的",
+     "创新的",
+     "彬彬有礼的，文雅的",
+     "(植物)生长茂盛的；猖獗的，不受限制的"
+    ],
+    "answer": 0,
+    "explain": "analogous：相似的，可比较的（similar in some respects）。近义词：comparable, parallel。"
+   },
+   {
+    "q": "哪个词的意思是「(植物)生长茂盛的；猖獗的，不受限制的」？",
+    "options": [
+     "analogous",
+     "urbane",
+     "seminal",
+     "rampant"
+    ],
+    "answer": 3,
+    "explain": "rampant：(植物)生长茂盛的；猖獗的，不受限制的（spreading uncontrollably）。"
+   },
+   {
+    "q": "哪个词和 **gloomy** 的意思最接近？",
+    "options": [
+     "analogous",
+     "lugubrious",
+     "byzantine",
+     "urbane"
+    ],
+    "answer": 1,
+    "explain": "lugubrious 与 gloomy 近义：mournful, often in an exaggerated way。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The urbane ambassador made a ____ remark that an embargo was analogous to a stern lecture; the dissension in the room was audible.",
+    "options": [
+     "seminal",
+     "facetious",
+     "analogous",
+     "lugubrious"
+    ],
+    "answer": 1,
+    "explain": "facetious：喜欢开玩笑的，轻浮的（joking inappropriately）。"
+   }
+  ]
+ }
+}

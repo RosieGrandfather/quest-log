@@ -1,0 +1,425 @@
+{
+ "id": "u02",
+ "title": "S 级核心词 · 第 2 组",
+ "en": "GRE Core Vocabulary · Set 2",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lethargic",
+     "ipa": "[ləˈθɑːdʒɪk]",
+     "pos": "adj.",
+     "zh": "没精打采的，行动迟缓的",
+     "en": "sluggish and lacking energy",
+     "syn": [
+      "torpid",
+      "listless"
+     ],
+     "ant": [
+      "energetic",
+      "lively"
+     ]
+    },
+    {
+     "w": "ethos",
+     "ipa": "[ˈiːθɑːs]",
+     "pos": "n.",
+     "zh": "道德准则",
+     "en": "the characteristic spirit or guiding beliefs of a community",
+     "syn": [
+      "spirit",
+      "ideology"
+     ],
+     "ant": []
+    },
+    {
+     "w": "vague",
+     "ipa": "[veɡ]",
+     "pos": "adj.",
+     "zh": "表达不清的；轮廓不清晰的",
+     "en": "not clearly expressed or defined",
+     "syn": [
+      "nebulous",
+      "hazy"
+     ],
+     "ant": [
+      "precise",
+      "explicit"
+     ]
+    },
+    {
+     "w": "gaffe",
+     "ipa": "[ɡæf]",
+     "pos": "n.",
+     "zh": "(社交上)失礼，失态",
+     "en": "an embarrassing social blunder",
+     "syn": [
+      "blunder",
+      "faux pas"
+     ],
+     "ant": []
+    },
+    {
+     "w": "humble",
+     "ipa": "[ˈhʌmbl]",
+     "pos": "adj.",
+     "zh": "谦逊的；顺从的，谦卑的",
+     "en": "modest and not proud; of low rank",
+     "syn": [
+      "modest",
+      "meek"
+     ],
+     "ant": [
+      "arrogant",
+      "haughty"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[lethargic]] mood hung over the office until the new manager restated the company's [[ethos]]; her speech was a little [[vague]] and contained a [[gaffe]] about the founder, but her [[humble]] apology won everyone back.",
+   "gloss": {
+    "lethargic": "没精打采的，行动迟缓的",
+    "ethos": "道德准则",
+    "vague": "表达不清的",
+    "gaffe": "(社交上)失礼，失态",
+    "humble": "谦逊的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "banal",
+     "ipa": "[bəˈnɑl]",
+     "pos": "adj.",
+     "zh": "非原创的，陈腐的",
+     "en": "so ordinary and unoriginal as to be boring",
+     "syn": [
+      "trite",
+      "hackneyed"
+     ],
+     "ant": [
+      "original",
+      "fresh"
+     ]
+    },
+    {
+     "w": "allegiance",
+     "ipa": "[əˈlidʒəns]",
+     "pos": "n.",
+     "zh": "忠诚",
+     "en": "loyalty or commitment to a person, group or cause",
+     "syn": [
+      "loyalty",
+      "fealty"
+     ],
+     "ant": [
+      "betrayal",
+      "disloyalty"
+     ]
+    },
+    {
+     "w": "cosmopolitan",
+     "ipa": "[ˈkɑzməˈpɑlətn]",
+     "pos": "adj.",
+     "zh": "有世界性眼光的，包容的",
+     "en": "worldly; at home in many parts of the world",
+     "syn": [
+      "worldly",
+      "sophisticated"
+     ],
+     "ant": [
+      "provincial",
+      "parochial"
+     ]
+    },
+    {
+     "w": "countermand",
+     "ipa": "[ˈkaʊntərmænd]",
+     "pos": "v.",
+     "zh": "取消，撤销",
+     "en": "to revoke an earlier order",
+     "syn": [
+      "revoke",
+      "rescind"
+     ],
+     "ant": []
+    },
+    {
+     "w": "promulgate",
+     "ipa": "[ˈprɑːmlɡeɪt]",
+     "pos": "v.",
+     "zh": "正式宣布",
+     "en": "to announce or put into effect publicly",
+     "syn": [
+      "proclaim",
+      "announce"
+     ],
+     "ant": [
+      "suppress",
+      "conceal"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The speech was so [[banal]] that nobody noticed the pledge of [[allegiance]] to a [[cosmopolitan]] vision, until the minister moved to [[countermand]] an earlier order and [[promulgate]] a new rule.",
+   "gloss": {
+    "banal": "非原创的，陈腐的",
+    "allegiance": "忠诚",
+    "cosmopolitan": "有世界性眼光的，包容的",
+    "countermand": "取消，撤销",
+    "promulgate": "正式宣布"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "obtrusive",
+     "ipa": "[əbˈtrusɪv]",
+     "pos": "adj.",
+     "zh": "扎眼的，难看显眼的",
+     "en": "noticeable in an unwelcome or intrusive way",
+     "syn": [
+      "conspicuous",
+      "intrusive"
+     ],
+     "ant": [
+      "unobtrusive",
+      "discreet"
+     ]
+    },
+    {
+     "w": "insular",
+     "ipa": "[ˈɪnsələ]",
+     "pos": "adj.",
+     "zh": "(观念，想法等)孤立狭隘的",
+     "en": "narrow-minded; isolated from outside influences",
+     "syn": [
+      "parochial",
+      "narrow"
+     ],
+     "ant": [
+      "cosmopolitan",
+      "broad-minded"
+     ]
+    },
+    {
+     "w": "obloquy",
+     "ipa": "[ˈɑːbləkwi]",
+     "pos": "n.",
+     "zh": "谩骂，诽谤",
+     "en": "abusive language; public disgrace",
+     "syn": [
+      "vilification",
+      "calumny"
+     ],
+     "ant": [
+      "praise",
+      "acclaim"
+     ]
+    },
+    {
+     "w": "pretense",
+     "ipa": "[ˈpriːtens]",
+     "pos": "n.",
+     "zh": "虚假，伪装；自大，优越感",
+     "en": "a false show or claim; pretension",
+     "syn": [
+      "façade",
+      "sham"
+     ],
+     "ant": [
+      "sincerity",
+      "candor"
+     ]
+    },
+    {
+     "w": "attune",
+     "ipa": "[əˈtjuːn]",
+     "pos": "vt.",
+     "zh": "使协调，使和谐",
+     "en": "to bring into harmony or adjust to something",
+     "syn": [
+      "adjust",
+      "harmonize"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[obtrusive]] billboard offended the [[insular]] village, whose residents heaped [[obloquy]] on the developer; he answered with a [[pretense]] of regret and promised to [[attune]] his plans to local taste.",
+   "gloss": {
+    "obtrusive": "扎眼的，难看显眼的",
+    "insular": "(观念，想法等)孤立狭隘的",
+    "obloquy": "谩骂，诽谤",
+    "pretense": "虚假，伪装",
+    "attune": "使协调，使和谐"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "fury",
+     "ipa": "[ˈfjʊri]",
+     "pos": "n.",
+     "zh": "暴怒",
+     "en": "violent, uncontrolled anger",
+     "syn": [
+      "rage",
+      "wrath"
+     ],
+     "ant": [
+      "calm",
+      "serenity"
+     ]
+    },
+    {
+     "w": "discretionary",
+     "ipa": "[dɪˈskrɛʃəˈnɛri]",
+     "pos": "adj.",
+     "zh": "自主决定的",
+     "en": "left to one's own judgment; optional",
+     "syn": [
+      "optional",
+      "elective"
+     ],
+     "ant": [
+      "mandatory",
+      "compulsory"
+     ]
+    },
+    {
+     "w": "vociferous",
+     "ipa": "[voʊˈsɪfərəs]",
+     "pos": "adj.",
+     "zh": "喧哗的，大叫大嚷的",
+     "en": "loud and insistent in expressing opinions",
+     "syn": [
+      "clamorous",
+      "strident"
+     ],
+     "ant": [
+      "quiet",
+      "reticent"
+     ]
+    },
+    {
+     "w": "understate",
+     "ipa": "[ˌʌndərˈsteɪt]",
+     "pos": "vt.",
+     "zh": "保守陈述",
+     "en": "to describe as less important or serious than it is",
+     "syn": [
+      "downplay",
+      "minimize"
+     ],
+     "ant": [
+      "exaggerate",
+      "overstate"
+     ]
+    },
+    {
+     "w": "tribute",
+     "ipa": "[ˈtrɪbjut]",
+     "pos": "n.",
+     "zh": "称颂，颂词",
+     "en": "an expression of respect or gratitude",
+     "syn": [
+      "homage",
+      "accolade"
+     ],
+     "ant": [
+      "insult",
+      "condemnation"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[fury]] over the cut to the [[discretionary]] budget was [[vociferous]]; her boss tried to [[understate]] the damage and paid [[tribute]] to her years of service.",
+   "gloss": {
+    "fury": "暴怒",
+    "discretionary": "自主决定的",
+    "vociferous": "喧哗的，大叫大嚷的",
+    "understate": "保守陈述",
+    "tribute": "称颂，颂词"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**humble** 的意思最接近：",
+    "options": [
+     "(观念，想法等)孤立狭隘的",
+     "谦逊的；顺从的，谦卑的",
+     "表达不清的；轮廓不清晰的",
+     "扎眼的，难看显眼的"
+    ],
+    "answer": 1,
+    "explain": "humble：谦逊的；顺从的，谦卑的（modest and not proud; of low rank）。近义词：modest, meek。"
+   },
+   {
+    "q": "**pretense** 的意思最接近：",
+    "options": [
+     "暴怒",
+     "称颂，颂词",
+     "虚假，伪装；自大，优越感",
+     "道德准则"
+    ],
+    "answer": 2,
+    "explain": "pretense：虚假，伪装；自大，优越感（a false show or claim; pretension）。近义词：façade, sham。"
+   },
+   {
+    "q": "哪个词的意思是「喧哗的，大叫大嚷的」？",
+    "options": [
+     "humble",
+     "vague",
+     "discretionary",
+     "vociferous"
+    ],
+    "answer": 3,
+    "explain": "vociferous：喧哗的，大叫大嚷的（loud and insistent in expressing opinions）。"
+   },
+   {
+    "q": "哪个词和 **homage** 的意思最接近？",
+    "options": [
+     "allegiance",
+     "obloquy",
+     "tribute",
+     "ethos"
+    ],
+    "answer": 2,
+    "explain": "tribute 与 homage 近义：an expression of respect or gratitude。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> Her ____ over the cut to the discretionary budget was vociferous; her boss tried to understate the damage and paid tribute to her years of service.",
+    "options": [
+     "fury",
+     "tribute",
+     "pretense",
+     "ethos"
+    ],
+    "answer": 0,
+    "explain": "fury：暴怒（violent, uncontrolled anger）。"
+   }
+  ]
+ }
+}

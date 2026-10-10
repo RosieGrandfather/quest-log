@@ -1,0 +1,434 @@
+{
+ "id": "u51",
+ "title": "S 级核心词 · 第 51 组",
+ "en": "GRE Core Vocabulary · Set 51",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "placebo",
+     "ipa": "[pləˈsibo]",
+     "pos": "n.",
+     "zh": "安慰性的事物",
+     "en": "something given to comfort that has no real effect",
+     "syn": [
+      "sop",
+      "sugar pill"
+     ],
+     "ant": []
+    },
+    {
+     "w": "transgress",
+     "ipa": "[trænzˈɡres]",
+     "pos": "vt.",
+     "zh": "违背，犯错",
+     "en": "to go beyond a limit or break a rule",
+     "syn": [
+      "violate",
+      "trespass"
+     ],
+     "ant": [
+      "obey",
+      "comply"
+     ]
+    },
+    {
+     "w": "quell",
+     "ipa": "[kwɛl]",
+     "pos": "vt.",
+     "zh": "压制；使平静，使安静",
+     "en": "to put an end to by force; to calm",
+     "syn": [
+      "suppress",
+      "subdue"
+     ],
+     "ant": [
+      "incite",
+      "rouse"
+     ]
+    },
+    {
+     "w": "unimpeachable",
+     "ipa": "[ˌʌnɪmˈpitʃəbl]",
+     "pos": "adj.",
+     "zh": "无可置疑的",
+     "en": "beyond doubt or criticism",
+     "syn": [
+      "irreproachable",
+      "flawless"
+     ],
+     "ant": [
+      "questionable",
+      "dubious"
+     ]
+    },
+    {
+     "w": "strenuous",
+     "ipa": "[ˈstrɛnjuəs]",
+     "pos": "adj.",
+     "zh": "有活力的；艰苦的，费力的",
+     "en": "requiring great effort or energy",
+     "syn": [
+      "arduous",
+      "vigorous"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The doctor insisted the [[placebo]] was harmless, but a patient who would [[transgress]] the rules to [[quell]] her fear stayed an [[unimpeachable]] witness; the [[strenuous]] study ended.",
+   "gloss": {
+    "placebo": "安慰性的事物",
+    "transgress": "违背，犯错",
+    "quell": "压制",
+    "unimpeachable": "无可置疑的",
+    "strenuous": "有活力的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "outlandish",
+     "ipa": "[aʊtˈlændɪʃ]",
+     "pos": "adj.",
+     "zh": "古怪的，奇异的",
+     "en": "strikingly strange or unfamiliar",
+     "syn": [
+      "bizarre",
+      "eccentric"
+     ],
+     "ant": [
+      "ordinary",
+      "conventional"
+     ]
+    },
+    {
+     "w": "opportune",
+     "ipa": "[ˌɑːpərˈtuːn]",
+     "pos": "adj.",
+     "zh": "合适的，适当的",
+     "en": "happening at a suitable time",
+     "syn": [
+      "timely",
+      "auspicious"
+     ],
+     "ant": [
+      "inopportune",
+      "ill-timed"
+     ]
+    },
+    {
+     "w": "resign",
+     "ipa": "[rɪˈzaɪn]",
+     "pos": "vt.",
+     "zh": "辞职，放弃(职位)",
+     "en": "to give up a position; to accept something unwelcome",
+     "syn": [
+      "quit",
+      "relinquish"
+     ],
+     "ant": [
+      "retain",
+      "hold on to"
+     ]
+    },
+    {
+     "w": "languish",
+     "ipa": "[ˈlæŋɡwɪʃ]",
+     "pos": "vi.",
+     "zh": "变得衰弱",
+     "en": "to grow weak or lose vitality; to be neglected",
+     "syn": [
+      "wither",
+      "flag"
+     ],
+     "ant": [
+      "flourish",
+      "thrive"
+     ]
+    },
+    {
+     "w": "subservient",
+     "ipa": "[səbˈsɜːrviənt]",
+     "pos": "adj.",
+     "zh": "奉承的，屈从的",
+     "en": "too ready to obey; less important",
+     "syn": [
+      "servile",
+      "submissive"
+     ],
+     "ant": [
+      "domineering",
+      "assertive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[outlandish]] rumor said the [[opportune]] moment had come for the chief to [[resign]]; the firm would [[languish]] without him, and a [[subservient]] deputy would do nothing.",
+   "gloss": {
+    "outlandish": "古怪的，奇异的",
+    "opportune": "合适的，适当的",
+    "resign": "辞职，放弃(职位)",
+    "languish": "变得衰弱",
+    "subservient": "奉承的，屈从的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "mediocre",
+     "ipa": "[ˌmidɪˈokə]",
+     "pos": "adj.",
+     "zh": "平庸的；质量中等偏差的",
+     "en": "of only moderate quality; not good enough",
+     "syn": [
+      "middling",
+      "ordinary"
+     ],
+     "ant": [
+      "exceptional",
+      "outstanding"
+     ]
+    },
+    {
+     "w": "aver",
+     "ipa": "[əˈvɜːr]",
+     "pos": "v.",
+     "zh": "声称为真",
+     "en": "to state firmly that something is true",
+     "syn": [
+      "assert",
+      "affirm"
+     ],
+     "ant": [
+      "deny",
+      "disavow"
+     ]
+    },
+    {
+     "w": "obsequious",
+     "ipa": "[əbˈsiːkwiəs]",
+     "pos": "adj.",
+     "zh": "谄媚的，奴性的",
+     "en": "too eager to please or obey",
+     "syn": [
+      "fawning",
+      "sycophantic"
+     ],
+     "ant": [
+      "domineering",
+      "aloof"
+     ]
+    },
+    {
+     "w": "stingy",
+     "ipa": "[ˈstɪndʒi]",
+     "pos": "adj.",
+     "zh": "小气的，吝啬的",
+     "en": "unwilling to spend or give",
+     "syn": [
+      "miserly",
+      "parsimonious"
+     ],
+     "ant": [
+      "generous",
+      "lavish"
+     ]
+    },
+    {
+     "w": "winsome",
+     "ipa": "[ˈwɪnsəm]",
+     "pos": "adj.",
+     "zh": "迷人的，漂亮的",
+     "en": "charming in a fresh, innocent way",
+     "syn": [
+      "engaging",
+      "appealing"
+     ],
+     "ant": [
+      "repellent",
+      "off-putting"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[mediocre]] pundit would [[aver]] anything; his [[obsequious]] fans, though [[stingy]] with praise for rivals, found his [[winsome]] smile hard to resist.",
+   "gloss": {
+    "mediocre": "平庸的",
+    "aver": "声称为真",
+    "obsequious": "谄媚的，奴性的",
+    "stingy": "小气的，吝啬的",
+    "winsome": "迷人的，漂亮的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "imperative",
+     "ipa": "[ɪmˈpɛrətɪv]",
+     "pos": "adj.",
+     "zh": "命令的，强制性的；迫切的",
+     "en": "absolutely necessary; a command",
+     "syn": [
+      "essential",
+      "vital"
+     ],
+     "ant": [
+      "optional",
+      "trivial"
+     ]
+    },
+    {
+     "w": "scant",
+     "ipa": "[skænt]",
+     "pos": "adj.",
+     "zh": "不足的，缺乏的",
+     "en": "barely enough; very little",
+     "syn": [
+      "meager",
+      "sparse"
+     ],
+     "ant": [
+      "ample",
+      "abundant"
+     ]
+    },
+    {
+     "w": "enamored",
+     "ipa": "[enˈæməd]",
+     "pos": "adj.",
+     "zh": "迷恋的，热爱的",
+     "en": "filled with love or fascination",
+     "syn": [
+      "smitten",
+      "infatuated"
+     ],
+     "ant": [
+      "indifferent",
+      "disenchanted"
+     ]
+    },
+    {
+     "w": "invigorate",
+     "ipa": "[ɪnˈvɪɡəret]",
+     "pos": "vt.",
+     "zh": "使精神，使强壮，鼓舞激励",
+     "en": "to give energy and life to",
+     "syn": [
+      "energize",
+      "refresh"
+     ],
+     "ant": [
+      "exhaust",
+      "enervate"
+     ]
+    },
+    {
+     "w": "cow",
+     "ipa": "[kaʊ]",
+     "pos": "v.",
+     "zh": "恐吓，威胁",
+     "en": "to frighten into submission",
+     "syn": [
+      "intimidate",
+      "daunt"
+     ],
+     "ant": [
+      "embolden",
+      "encourage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "It is [[imperative]] that [[scant]] funds not leave the [[enamored]] founder blind; a coffee could [[invigorate]] him, and he must not [[cow]] his staff.",
+   "gloss": {
+    "imperative": "命令的，强制性的",
+    "scant": "不足的，缺乏的",
+    "enamored": "迷恋的，热爱的",
+    "invigorate": "使精神，使强壮，鼓舞激励",
+    "cow": "恐吓，威胁"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**resign** 的意思最接近：",
+    "options": [
+     "声称为真",
+     "违背，犯错",
+     "压制；使平静，使安静",
+     "辞职，放弃(职位)"
+    ],
+    "answer": 3,
+    "explain": "resign：辞职，放弃(职位)（to give up a position; to accept something unwelcome）。近义词：quit, relinquish。"
+   },
+   {
+    "q": "**transgress** 的意思最接近：",
+    "options": [
+     "压制；使平静，使安静",
+     "使精神，使强壮，鼓舞激励",
+     "违背，犯错",
+     "变得衰弱"
+    ],
+    "answer": 2,
+    "explain": "transgress：违背，犯错（to go beyond a limit or break a rule）。近义词：violate, trespass。"
+   },
+   {
+    "q": "哪个词的意思是「谄媚的，奴性的」？",
+    "options": [
+     "obsequious",
+     "scant",
+     "outlandish",
+     "subservient"
+    ],
+    "answer": 0,
+    "explain": "obsequious：谄媚的，奴性的（too eager to please or obey）。"
+   },
+   {
+    "q": "哪个词和 **wither** 的意思最接近？",
+    "options": [
+     "aver",
+     "languish",
+     "cow",
+     "invigorate"
+    ],
+    "answer": 1,
+    "explain": "languish 与 wither 近义：to grow weak or lose vitality; to be neglected。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The doctor insisted the ____ was harmless, but a patient who would transgress the rules to quell her fear stayed an unimpeachable witness; the strenuous study ended.",
+    "options": [
+     "cow",
+     "placebo",
+     "resign",
+     "imperative"
+    ],
+    "answer": 1,
+    "explain": "placebo：安慰性的事物（something given to comfort that has no real effect）。"
+   }
+  ]
+ }
+}

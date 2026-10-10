@@ -1,0 +1,421 @@
+{
+ "id": "u34",
+ "title": "S 级核心词 · 第 34 组",
+ "en": "GRE Core Vocabulary · Set 34",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "diversity",
+     "ipa": "[dɪˈvəsɪti]",
+     "pos": "n.",
+     "zh": "多样性",
+     "en": "variety",
+     "syn": [
+      "variety",
+      "multiplicity"
+     ],
+     "ant": [
+      "uniformity",
+      "sameness"
+     ]
+    },
+    {
+     "w": "tenacious",
+     "ipa": "[təˈneʃəs]",
+     "pos": "adj.",
+     "zh": "顽固的，不屈不挠的",
+     "en": "holding firmly; persistent",
+     "syn": [
+      "persistent",
+      "dogged"
+     ],
+     "ant": [
+      "yielding",
+      "weak"
+     ]
+    },
+    {
+     "w": "manuscript",
+     "ipa": "[ˈmænjuskrɪpt]",
+     "pos": "n.",
+     "zh": "手稿",
+     "en": "a handwritten or unpublished text",
+     "syn": [
+      "text",
+      "draft"
+     ],
+     "ant": []
+    },
+    {
+     "w": "articulate",
+     "ipa": "[ɑrˈtɪkjulet]",
+     "pos": "v.",
+     "zh": "清晰地表达；表达清晰的",
+     "en": "to express clearly; able to speak clearly",
+     "syn": [
+      "enunciate",
+      "eloquent"
+     ],
+     "ant": [
+      "inarticulate",
+      "mumbling"
+     ]
+    },
+    {
+     "w": "elucidate",
+     "ipa": "[iˈluːsɪdeɪt]",
+     "pos": "v.",
+     "zh": "阐明",
+     "en": "to explain clearly",
+     "syn": [
+      "clarify",
+      "explain"
+     ],
+     "ant": [
+      "obscure",
+      "confuse"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[tenacious]] editor read a [[manuscript]] on cultural [[diversity]]; the author was [[articulate]] and tried to [[elucidate]] each point.",
+   "gloss": {
+    "diversity": "多样性",
+    "tenacious": "顽固的，不屈不挠的",
+    "manuscript": "手稿",
+    "articulate": "清晰地表达",
+    "elucidate": "阐明"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "dominant",
+     "ipa": "[ˈdɑmɪnənt]",
+     "pos": "adj.",
+     "zh": "处于支配地位的；(基因)显性的",
+     "en": "most important or powerful",
+     "syn": [
+      "ruling",
+      "prevailing"
+     ],
+     "ant": [
+      "subordinate",
+      "minor"
+     ]
+    },
+    {
+     "w": "euphemism",
+     "ipa": "[ˈjuːfəmɪzəm]",
+     "pos": "n.",
+     "zh": "婉言，委婉的说法",
+     "en": "a mild word used in place of a blunt one",
+     "syn": [
+      "understatement",
+      "circumlocution"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pedant",
+     "ipa": "[ˈpednt]",
+     "pos": "n.",
+     "zh": "书呆子，墨守成规之人",
+     "en": "someone overly concerned with minor rules",
+     "syn": [
+      "stickler",
+      "nitpicker"
+     ],
+     "ant": []
+    },
+    {
+     "w": "incipient",
+     "ipa": "[ɪnˈsɪpiənt]",
+     "pos": "adj.",
+     "zh": "起初的，初现的",
+     "en": "just beginning to appear",
+     "syn": [
+      "nascent",
+      "budding"
+     ],
+     "ant": [
+      "full-blown",
+      "advanced"
+     ]
+    },
+    {
+     "w": "obeisance",
+     "ipa": "[oʊˈbiːsns]",
+     "pos": "n.",
+     "zh": "敬礼，尊重",
+     "en": "a gesture of respect or submission",
+     "syn": [
+      "homage",
+      "deference"
+     ],
+     "ant": [
+      "disrespect",
+      "defiance"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[dominant]] party used a [[euphemism]] for the layoffs; an [[incipient]] revolt followed, and the [[pedant]] and the clerk paid [[obeisance]] only out of fear.",
+   "gloss": {
+    "dominant": "处于支配地位的",
+    "euphemism": "婉言，委婉的说法",
+    "pedant": "书呆子，墨守成规之人",
+    "incipient": "起初的，初现的",
+    "obeisance": "敬礼，尊重"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "exotic",
+     "ipa": "[ɪɡˈzɑtɪk]",
+     "pos": "adj.",
+     "zh": "外来的，不同寻常的",
+     "en": "strikingly unusual; from another country",
+     "syn": [
+      "foreign",
+      "unusual"
+     ],
+     "ant": [
+      "familiar",
+      "ordinary"
+     ]
+    },
+    {
+     "w": "madcap",
+     "ipa": "[ˈmædkæp]",
+     "pos": "n.",
+     "zh": "鲁莽的；冒失鬼",
+     "en": "reckless or wildly foolish",
+     "syn": [
+      "reckless",
+      "zany"
+     ],
+     "ant": [
+      "sensible",
+      "sober"
+     ]
+    },
+    {
+     "w": "demagogue",
+     "ipa": "[ˈdeməɡɑːɡ]",
+     "pos": "n.",
+     "zh": "蛊惑民心的政客",
+     "en": "a leader who plays on emotions and prejudices",
+     "syn": [
+      "rabble-rouser",
+      "agitator"
+     ],
+     "ant": []
+    },
+    {
+     "w": "snag",
+     "ipa": "[snæɡ]",
+     "pos": "n.",
+     "zh": "障碍",
+     "en": "a hidden problem or obstacle",
+     "syn": [
+      "hitch",
+      "catch"
+     ],
+     "ant": []
+    },
+    {
+     "w": "lucid",
+     "ipa": "[ˈluːsɪd]",
+     "pos": "adj.",
+     "zh": "表达清晰的，简单易懂的",
+     "en": "clear and easy to understand",
+     "syn": [
+      "clear",
+      "coherent"
+     ],
+     "ant": [
+      "confused",
+      "obscure"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[demagogue]] hit a [[snag]] when a [[lucid]] reporter exposed his [[madcap]] scheme to buy [[exotic]] gifts for voters.",
+   "gloss": {
+    "exotic": "外来的，不同寻常的",
+    "madcap": "鲁莽的",
+    "demagogue": "蛊惑民心的政客",
+    "snag": "障碍",
+    "lucid": "表达清晰的，简单易懂的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "spate",
+     "ipa": "[speɪt]",
+     "pos": "n.",
+     "zh": "大量",
+     "en": "a sudden large number or outpouring",
+     "syn": [
+      "flood",
+      "surge"
+     ],
+     "ant": [
+      "trickle"
+     ]
+    },
+    {
+     "w": "sidestep",
+     "ipa": "[ˈsaɪdstɛp]",
+     "pos": "vt.",
+     "zh": "(通过逃避而)不遵守",
+     "en": "to avoid dealing with",
+     "syn": [
+      "evade",
+      "dodge"
+     ],
+     "ant": [
+      "confront",
+      "tackle"
+     ]
+    },
+    {
+     "w": "lucrative",
+     "ipa": "[ˈlukrətɪv]",
+     "pos": "adj.",
+     "zh": "有利可图的",
+     "en": "producing a lot of money",
+     "syn": [
+      "profitable",
+      "remunerative"
+     ],
+     "ant": [
+      "unprofitable",
+      "futile"
+     ]
+    },
+    {
+     "w": "deplore",
+     "ipa": "[dɪˈplɔr]",
+     "pos": "vt.",
+     "zh": "谴责，强烈反对",
+     "en": "to strongly condemn",
+     "syn": [
+      "lament",
+      "condemn"
+     ],
+     "ant": [
+      "applaud",
+      "welcome"
+     ]
+    },
+    {
+     "w": "preposterous",
+     "ipa": "[prɪˈpɑːstərəs]",
+     "pos": "adj.",
+     "zh": "荒谬的，不符合常理的",
+     "en": "completely absurd",
+     "syn": [
+      "absurd",
+      "ludicrous"
+     ],
+     "ant": [
+      "sensible",
+      "reasonable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[spate]] of scandals, the firm tried to [[sidestep]] the rules for a [[lucrative]] deal; critics would [[deplore]] the [[preposterous]] excuse.",
+   "gloss": {
+    "spate": "大量",
+    "sidestep": "(通过逃避而)不遵守",
+    "lucrative": "有利可图的",
+    "deplore": "谴责，强烈反对",
+    "preposterous": "荒谬的，不符合常理的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**elucidate** 的意思最接近：",
+    "options": [
+     "清晰地表达；表达清晰的",
+     "谴责，强烈反对",
+     "(通过逃避而)不遵守",
+     "阐明"
+    ],
+    "answer": 3,
+    "explain": "elucidate：阐明（to explain clearly）。近义词：clarify, explain。"
+   },
+   {
+    "q": "**snag** 的意思最接近：",
+    "options": [
+     "障碍",
+     "书呆子，墨守成规之人",
+     "婉言，委婉的说法",
+     "蛊惑民心的政客"
+    ],
+    "answer": 0,
+    "explain": "snag：障碍（a hidden problem or obstacle）。近义词：hitch, catch。"
+   },
+   {
+    "q": "哪个词的意思是「书呆子，墨守成规之人」？",
+    "options": [
+     "diversity",
+     "euphemism",
+     "pedant",
+     "snag"
+    ],
+    "answer": 2,
+    "explain": "pedant：书呆子，墨守成规之人（someone overly concerned with minor rules）。"
+   },
+   {
+    "q": "哪个词和 **ruling** 的意思最接近？",
+    "options": [
+     "incipient",
+     "lucid",
+     "tenacious",
+     "dominant"
+    ],
+    "answer": 3,
+    "explain": "dominant 与 ruling 近义：most important or powerful。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The dominant party used a euphemism for the layoffs; an incipient revolt followed, and the ____ and the clerk paid obeisance only out of fear.",
+    "options": [
+     "spate",
+     "pedant",
+     "demagogue",
+     "obeisance"
+    ],
+    "answer": 1,
+    "explain": "pedant：书呆子，墨守成规之人（someone overly concerned with minor rules）。"
+   }
+  ]
+ }
+}

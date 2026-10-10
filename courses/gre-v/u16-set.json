@@ -1,0 +1,416 @@
+{
+ "id": "u16",
+ "title": "S 级核心词 · 第 16 组",
+ "en": "GRE Core Vocabulary · Set 16",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "conviction",
+     "ipa": "[kənˈvɪkʃən]",
+     "pos": "n.",
+     "zh": "坚定的信念；定罪",
+     "en": "a firmly held belief; a finding of guilt",
+     "syn": [
+      "belief",
+      "certainty"
+     ],
+     "ant": [
+      "doubt",
+      "acquittal"
+     ]
+    },
+    {
+     "w": "discombobulate",
+     "ipa": "[ˌdɪskəmˈbɑbjəˌlet]",
+     "pos": "vt.",
+     "zh": "使不安，使混乱",
+     "en": "to confuse or upset",
+     "syn": [
+      "confuse",
+      "disconcert"
+     ],
+     "ant": []
+    },
+    {
+     "w": "embryonic",
+     "ipa": "[ˌembriˈɑːnɪk]",
+     "pos": "adj.",
+     "zh": "初期的，萌芽阶段的",
+     "en": "in an early stage of development",
+     "syn": [
+      "nascent",
+      "rudimentary"
+     ],
+     "ant": [
+      "mature",
+      "developed"
+     ]
+    },
+    {
+     "w": "marvel",
+     "ipa": "[ˈmɑrvl]",
+     "pos": "n.",
+     "zh": "对…感到惊奇；奇迹",
+     "en": "to be filled with wonder; a wonderful thing",
+     "syn": [
+      "wonder",
+      "miracle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "proficient",
+     "ipa": "[prəˈfɪʃnt]",
+     "pos": "adj.",
+     "zh": "熟练的，精通的",
+     "en": "skilled and competent",
+     "syn": [
+      "adept",
+      "skilled"
+     ],
+     "ant": [
+      "inept",
+      "unskilled"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The young inventor, still [[proficient]] only in theory, felt a [[conviction]] that his [[embryonic]] design would make the judges [[marvel]]; one tough question could still [[discombobulate]] him.",
+   "gloss": {
+    "conviction": "坚定的信念",
+    "discombobulate": "使不安，使混乱",
+    "embryonic": "初期的，萌芽阶段的",
+    "marvel": "对…感到惊奇",
+    "proficient": "熟练的，精通的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "adjudicate",
+     "ipa": "[əˈdʒuːdɪkeɪt]",
+     "pos": "v.",
+     "zh": "裁决，判定",
+     "en": "to judge or settle formally",
+     "syn": [
+      "arbitrate",
+      "rule"
+     ],
+     "ant": []
+    },
+    {
+     "w": "robust",
+     "ipa": "[roˈbʌst]",
+     "pos": "adj.",
+     "zh": "精力充沛的；强壮的，健康的",
+     "en": "strong and healthy; sturdy",
+     "syn": [
+      "sturdy",
+      "vigorous"
+     ],
+     "ant": [
+      "frail",
+      "weak"
+     ]
+    },
+    {
+     "w": "epic",
+     "ipa": "[ˈɛpɪk]",
+     "pos": "adj.",
+     "zh": "宏大的，超凡脱俗的",
+     "en": "grand in scale; heroic",
+     "syn": [
+      "grand",
+      "monumental"
+     ],
+     "ant": [
+      "trivial",
+      "modest"
+     ]
+    },
+    {
+     "w": "rant",
+     "ipa": "[rænt]",
+     "pos": "n.",
+     "zh": "(尤指长时间的)训斥，责骂",
+     "en": "to speak or shout in a wild, angry way",
+     "syn": [
+      "rave",
+      "tirade"
+     ],
+     "ant": []
+    },
+    {
+     "w": "loath",
+     "ipa": "[loʊθ]",
+     "pos": "adj.",
+     "zh": "不情愿的，讨厌的",
+     "en": "unwilling; reluctant",
+     "syn": [
+      "reluctant",
+      "averse"
+     ],
+     "ant": [
+      "eager",
+      "willing"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The panel was [[loath]] to [[adjudicate]] the dispute, and a [[robust]] debate turned into an [[epic]] row, ending in a long [[rant]] from one member.",
+   "gloss": {
+    "adjudicate": "裁决，判定",
+    "robust": "精力充沛的",
+    "epic": "宏大的，超凡脱俗的",
+    "rant": "(尤指长时间的)训斥，责骂",
+    "loath": "不情愿的，讨厌的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "peddle",
+     "ipa": "[ˈpɛdl]",
+     "pos": "v.",
+     "zh": "叫卖，兜售",
+     "en": "to sell goods, often door to door",
+     "syn": [
+      "hawk",
+      "sell"
+     ],
+     "ant": []
+    },
+    {
+     "w": "laconic",
+     "ipa": "[ˈlækrɪmos]",
+     "pos": "adj.",
+     "zh": "简洁(以至于显得粗鲁或难以理解)的",
+     "en": "using very few words",
+     "syn": [
+      "terse",
+      "concise"
+     ],
+     "ant": [
+      "verbose",
+      "wordy"
+     ]
+    },
+    {
+     "w": "lurid",
+     "ipa": "[ˈlʊrɪd]",
+     "pos": "adj.",
+     "zh": "恐怖的，令人反感的",
+     "en": "shocking and sensational; glaringly bright",
+     "syn": [
+      "sensational",
+      "gruesome"
+     ],
+     "ant": [
+      "mild",
+      "bland"
+     ]
+    },
+    {
+     "w": "plague",
+     "ipa": "[pleɡ]",
+     "pos": "n.",
+     "zh": "瘟疫；折磨，使…痛苦",
+     "en": "a deadly epidemic; to afflict persistently",
+     "syn": [
+      "scourge",
+      "torment"
+     ],
+     "ant": []
+    },
+    {
+     "w": "conducive",
+     "ipa": "[kənˈdusɪv]",
+     "pos": "adj.",
+     "zh": "有益的，有促进作用的",
+     "en": "helpful in bringing something about",
+     "syn": [
+      "favorable",
+      "beneficial"
+     ],
+     "ant": [
+      "detrimental",
+      "obstructive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[laconic]] reporter refused to [[peddle]] [[lurid]] stories about the [[plague]], believing that calm reporting was more [[conducive]] to public trust.",
+   "gloss": {
+    "peddle": "叫卖，兜售",
+    "laconic": "简洁(以至于显得粗鲁或难以理解)的",
+    "lurid": "恐怖的，令人反感的",
+    "plague": "瘟疫",
+    "conducive": "有益的，有促进作用的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "querulous",
+     "ipa": "[ˈkwerələs]",
+     "pos": "adj.",
+     "zh": "抱怨的，爱发牢骚的",
+     "en": "complaining in a whining way",
+     "syn": [
+      "whining",
+      "petulant"
+     ],
+     "ant": [
+      "content",
+      "uncomplaining"
+     ]
+    },
+    {
+     "w": "lurk",
+     "ipa": "[lɜːk]",
+     "pos": "vi.",
+     "zh": "潜伏",
+     "en": "to wait hidden, ready to attack",
+     "syn": [
+      "skulk",
+      "prowl"
+     ],
+     "ant": []
+    },
+    {
+     "w": "altruism",
+     "ipa": "[ˈæltruɪzəm]",
+     "pos": "n.",
+     "zh": "利他主义，无私",
+     "en": "selfless concern for others",
+     "syn": [
+      "selflessness",
+      "philanthropy"
+     ],
+     "ant": [
+      "selfishness",
+      "egoism"
+     ]
+    },
+    {
+     "w": "condign",
+     "ipa": "[kənˈdaɪn]",
+     "pos": "adj.",
+     "zh": "应得的，恰当的",
+     "en": "deserved; fitting",
+     "syn": [
+      "deserved",
+      "fitting"
+     ],
+     "ant": [
+      "undeserved",
+      "unjust"
+     ]
+    },
+    {
+     "w": "preclude",
+     "ipa": "[prɪˈklud]",
+     "pos": "v.",
+     "zh": "预先阻止",
+     "en": "to prevent from happening",
+     "syn": [
+      "prevent",
+      "rule out"
+     ],
+     "ant": [
+      "permit",
+      "enable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[querulous]] guard saw danger [[lurk]] behind every door; the volunteer's [[altruism]] earned [[condign]] praise, though safety rules would [[preclude]] her entry.",
+   "gloss": {
+    "querulous": "抱怨的，爱发牢骚的",
+    "lurk": "潜伏",
+    "altruism": "利他主义，无私",
+    "condign": "应得的，恰当的",
+    "preclude": "预先阻止"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**rant** 的意思最接近：",
+    "options": [
+     "坚定的信念；定罪",
+     "(尤指长时间的)训斥，责骂",
+     "瘟疫；折磨，使…痛苦",
+     "利他主义，无私"
+    ],
+    "answer": 1,
+    "explain": "rant：(尤指长时间的)训斥，责骂（to speak or shout in a wild, angry way）。近义词：rave, tirade。"
+   },
+   {
+    "q": "**altruism** 的意思最接近：",
+    "options": [
+     "利他主义，无私",
+     "(尤指长时间的)训斥，责骂",
+     "坚定的信念；定罪",
+     "对…感到惊奇；奇迹"
+    ],
+    "answer": 0,
+    "explain": "altruism：利他主义，无私（selfless concern for others）。近义词：selflessness, philanthropy。"
+   },
+   {
+    "q": "哪个词的意思是「初期的，萌芽阶段的」？",
+    "options": [
+     "lurid",
+     "laconic",
+     "embryonic",
+     "proficient"
+    ],
+    "answer": 2,
+    "explain": "embryonic：初期的，萌芽阶段的（in an early stage of development）。"
+   },
+   {
+    "q": "哪个词和 **terse** 的意思最接近？",
+    "options": [
+     "querulous",
+     "epic",
+     "laconic",
+     "embryonic"
+    ],
+    "answer": 2,
+    "explain": "laconic 与 terse 近义：using very few words。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The panel was loath to ____ the dispute, and a robust debate turned into an epic row, ending in a long rant from one member.",
+    "options": [
+     "preclude",
+     "discombobulate",
+     "peddle",
+     "adjudicate"
+    ],
+    "answer": 3,
+    "explain": "adjudicate：裁决，判定（to judge or settle formally）。"
+   }
+  ]
+ }
+}

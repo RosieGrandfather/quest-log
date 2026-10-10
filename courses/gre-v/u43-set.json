@@ -1,0 +1,424 @@
+{
+ "id": "u43",
+ "title": "S 级核心词 · 第 43 组",
+ "en": "GRE Core Vocabulary · Set 43",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "salutary",
+     "ipa": "[ˈsæljəˈtɛri]",
+     "pos": "adj.",
+     "zh": "有益健康的；有利的，利好的",
+     "en": "beneficial, especially to health",
+     "syn": [
+      "beneficial",
+      "wholesome"
+     ],
+     "ant": [
+      "harmful",
+      "detrimental"
+     ]
+    },
+    {
+     "w": "supposition",
+     "ipa": "[ˌsʌpəˈzɪʃən]",
+     "pos": "n.",
+     "zh": "猜想，推测",
+     "en": "a guess or assumption",
+     "syn": [
+      "assumption",
+      "conjecture"
+     ],
+     "ant": [
+      "fact",
+      "certainty"
+     ]
+    },
+    {
+     "w": "browbeat",
+     "ipa": "[ˈbraʊbiːt]",
+     "pos": "v.",
+     "zh": "恐吓",
+     "en": "to intimidate with stern words",
+     "syn": [
+      "bully",
+      "intimidate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "inquisitive",
+     "ipa": "[ɪnˈkwɪzətɪv]",
+     "pos": "adj.",
+     "zh": "过分好奇的",
+     "en": "overly curious",
+     "syn": [
+      "curious",
+      "nosy"
+     ],
+     "ant": [
+      "uninterested",
+      "incurious"
+     ]
+    },
+    {
+     "w": "abate",
+     "ipa": "[əˈbet]",
+     "pos": "v.",
+     "zh": "减轻(程度或者强度)；减少(数量)，降低(价值)",
+     "en": "to become less intense",
+     "syn": [
+      "subside",
+      "diminish"
+     ],
+     "ant": [
+      "intensify",
+      "escalate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[salutary]] rest would have helped him; his [[inquisitive]] colleague tried to [[browbeat]] him into confirming a [[supposition]], and his stress did not [[abate]].",
+   "gloss": {
+    "salutary": "有益健康的",
+    "supposition": "猜想，推测",
+    "browbeat": "恐吓",
+    "inquisitive": "过分好奇的",
+    "abate": "减轻(程度或者强度)"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "oust",
+     "ipa": "[aʊst]",
+     "pos": "vt.",
+     "zh": "驱逐",
+     "en": "to force out of a position",
+     "syn": [
+      "expel",
+      "remove"
+     ],
+     "ant": [
+      "install",
+      "reinstate"
+     ]
+    },
+    {
+     "w": "obscure",
+     "ipa": "[əbˈskjʊr]",
+     "pos": "adj.",
+     "zh": "含义模糊的；平凡的，不知名的",
+     "en": "unclear; little known",
+     "syn": [
+      "vague",
+      "unknown"
+     ],
+     "ant": [
+      "clear",
+      "famous"
+     ]
+    },
+    {
+     "w": "deprecate",
+     "ipa": "[ˈdeprəkeɪt]",
+     "pos": "vt.",
+     "zh": "不喜欢；贬低，轻视",
+     "en": "to express disapproval of; to belittle",
+     "syn": [
+      "disparage",
+      "belittle"
+     ],
+     "ant": [
+      "praise",
+      "commend"
+     ]
+    },
+    {
+     "w": "ossify",
+     "ipa": "[ˈɑːsɪfaɪ]",
+     "pos": "v.",
+     "zh": "(使)硬化，(使)僵化",
+     "en": "to harden; to become rigid in ideas",
+     "syn": [
+      "harden",
+      "stagnate"
+     ],
+     "ant": [
+      "soften",
+      "adapt"
+     ]
+    },
+    {
+     "w": "staunch",
+     "ipa": "[stɔntʃ]",
+     "pos": "adj.",
+     "zh": "忠诚的，坚定的",
+     "en": "very loyal and firm",
+     "syn": [
+      "loyal",
+      "steadfast"
+     ],
+     "ant": [
+      "disloyal",
+      "wavering"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[staunch]] reformer would [[oust]] an [[obscure]] clerk who might [[deprecate]] new methods and let the office [[ossify]].",
+   "gloss": {
+    "oust": "驱逐",
+    "obscure": "含义模糊的",
+    "deprecate": "不喜欢",
+    "ossify": "(使)硬化，(使)僵化",
+    "staunch": "忠诚的，坚定的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "gargantuan",
+     "ipa": "[ɡɑrˈɡæntʃuən]",
+     "pos": "adj.",
+     "zh": "巨大的",
+     "en": "enormous",
+     "syn": [
+      "colossal",
+      "gigantic"
+     ],
+     "ant": [
+      "tiny",
+      "minuscule"
+     ]
+    },
+    {
+     "w": "complacency",
+     "ipa": "[kəmˈplesnsi]",
+     "pos": "n.",
+     "zh": "自满，无忧患意识",
+     "en": "smug self-satisfaction",
+     "syn": [
+      "smugness",
+      "self-satisfaction"
+     ],
+     "ant": [
+      "concern",
+      "vigilance"
+     ]
+    },
+    {
+     "w": "wayward",
+     "ipa": "[ˈwewəd]",
+     "pos": "adj.",
+     "zh": "刚愎自用的，不服管束的",
+     "en": "willful and hard to control",
+     "syn": [
+      "willful",
+      "unruly"
+     ],
+     "ant": [
+      "obedient",
+      "tractable"
+     ]
+    },
+    {
+     "w": "mockery",
+     "ipa": "[ˈmɑkəri]",
+     "pos": "n.",
+     "zh": "鄙视，嘲弄；以嘲笑为目的的模仿",
+     "en": "ridicule; a poor imitation",
+     "syn": [
+      "ridicule",
+      "derision"
+     ],
+     "ant": [
+      "respect",
+      "praise"
+     ]
+    },
+    {
+     "w": "rote",
+     "ipa": "[rot]",
+     "pos": "n.",
+     "zh": "死记硬背",
+     "en": "mechanical memorization without understanding",
+     "syn": [
+      "routine",
+      "repetition"
+     ],
+     "ant": [
+      "understanding",
+      "insight"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[gargantuan]] bill ended years of [[complacency]]; the [[wayward]] student made a [[mockery]] of the exam by learning everything by [[rote]].",
+   "gloss": {
+    "gargantuan": "巨大的",
+    "complacency": "自满，无忧患意识",
+    "wayward": "刚愎自用的，不服管束的",
+    "mockery": "鄙视，嘲弄",
+    "rote": "死记硬背"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "philistine",
+     "ipa": "[ˈfɪlɪstiːn]",
+     "pos": "n.",
+     "zh": "市侩(注重物质而鄙视智慧或艺术的人)",
+     "en": "a person who disdains art and culture",
+     "syn": [
+      "boor",
+      "lowbrow"
+     ],
+     "ant": [
+      "aesthete",
+      "connoisseur"
+     ]
+    },
+    {
+     "w": "legacy",
+     "ipa": "[ˈlɛgəsi]",
+     "pos": "n.",
+     "zh": "遗产",
+     "en": "something handed down from the past",
+     "syn": [
+      "inheritance",
+      "heritage"
+     ],
+     "ant": []
+    },
+    {
+     "w": "nuance",
+     "ipa": "[ˈnuːɑːns]",
+     "pos": "n.",
+     "zh": "细微的差异",
+     "en": "a subtle difference in meaning",
+     "syn": [
+      "subtlety",
+      "shade"
+     ],
+     "ant": []
+    },
+    {
+     "w": "gild",
+     "ipa": "[ɡɪld]",
+     "pos": "vt.",
+     "zh": "(带欺骗性地)修改，润色",
+     "en": "to cover with gold; to make appear better than it is",
+     "syn": [
+      "embellish",
+      "adorn"
+     ],
+     "ant": []
+    },
+    {
+     "w": "conundrum",
+     "ipa": "[kəˈnʌndrəm]",
+     "pos": "n.",
+     "zh": "无法解决的问题，迷",
+     "en": "a difficult puzzle or dilemma",
+     "syn": [
+      "puzzle",
+      "riddle"
+     ],
+     "ant": [
+      "solution"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[philistine]] heir ignored the [[nuance]] of his [[legacy]] and tried to [[gild]] his past, leaving a [[conundrum]] for the lawyers.",
+   "gloss": {
+    "philistine": "市侩(注重物质而鄙视智慧或艺术的人)",
+    "legacy": "遗产",
+    "nuance": "细微的差异",
+    "gild": "(带欺骗性地)修改，润色",
+    "conundrum": "无法解决的问题，迷"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**oust** 的意思最接近：",
+    "options": [
+     "不喜欢；贬低，轻视",
+     "驱逐",
+     "减轻(程度或者强度)；减少(数量)，降低(价值)",
+     "(使)硬化，(使)僵化"
+    ],
+    "answer": 1,
+    "explain": "oust：驱逐（to force out of a position）。近义词：expel, remove。"
+   },
+   {
+    "q": "**salutary** 的意思最接近：",
+    "options": [
+     "过分好奇的",
+     "忠诚的，坚定的",
+     "有益健康的；有利的，利好的",
+     "刚愎自用的，不服管束的"
+    ],
+    "answer": 2,
+    "explain": "salutary：有益健康的；有利的，利好的（beneficial, especially to health）。近义词：beneficial, wholesome。"
+   },
+   {
+    "q": "哪个词的意思是「市侩(注重物质而鄙视智慧或艺术的人)」？",
+    "options": [
+     "philistine",
+     "mockery",
+     "conundrum",
+     "rote"
+    ],
+    "answer": 0,
+    "explain": "philistine：市侩(注重物质而鄙视智慧或艺术的人)（a person who disdains art and culture）。"
+   },
+   {
+    "q": "哪个词和 **curious** 的意思最接近？",
+    "options": [
+     "salutary",
+     "wayward",
+     "obscure",
+     "inquisitive"
+    ],
+    "answer": 3,
+    "explain": "inquisitive 与 curious 近义：overly curious。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A gargantuan bill ended years of complacency; the wayward student made a ____ of the exam by learning everything by rote.",
+    "options": [
+     "complacency",
+     "philistine",
+     "rote",
+     "mockery"
+    ],
+    "answer": 3,
+    "explain": "mockery：鄙视，嘲弄；以嘲笑为目的的模仿（ridicule; a poor imitation）。"
+   }
+  ]
+ }
+}

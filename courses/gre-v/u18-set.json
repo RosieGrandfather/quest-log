@@ -1,0 +1,423 @@
+{
+ "id": "u18",
+ "title": "S 级核心词 · 第 18 组",
+ "en": "GRE Core Vocabulary · Set 18",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lapse",
+     "ipa": "[læps]",
+     "pos": "n.",
+     "zh": "小过失",
+     "en": "a brief failure or mistake",
+     "syn": [
+      "slip",
+      "error"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disparage",
+     "ipa": "[dɪˈspærɪdʒ]",
+     "pos": "vt.",
+     "zh": "贬低，轻蔑地说",
+     "en": "to belittle or speak slightingly of",
+     "syn": [
+      "belittle",
+      "denigrate"
+     ],
+     "ant": [
+      "praise",
+      "extol"
+     ]
+    },
+    {
+     "w": "mawkish",
+     "ipa": "[ˈmɔːkɪʃ]",
+     "pos": "adj.",
+     "zh": "矫情的，肉麻地感伤的",
+     "en": "sickly sentimental",
+     "syn": [
+      "sappy",
+      "maudlin"
+     ],
+     "ant": [
+      "dispassionate",
+      "unsentimental"
+     ]
+    },
+    {
+     "w": "credit",
+     "ipa": "[ˈkrɛdɪt]",
+     "pos": "n.",
+     "zh": "信任；功劳，荣誉",
+     "en": "belief or trust; praise or recognition",
+     "syn": [
+      "trust",
+      "acclaim"
+     ],
+     "ant": [
+      "blame"
+     ]
+    },
+    {
+     "w": "polymath",
+     "ipa": "[ˈpɑːlimæθ]",
+     "pos": "n.",
+     "zh": "学识渊博的人，博学者",
+     "en": "a person of wide learning",
+     "syn": [
+      "scholar",
+      "savant"
+     ],
+     "ant": [
+      "ignoramus"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A momentary [[lapse]] led a rival to [[disparage]] the [[polymath]], calling his [[mawkish]] memoir undeserving of [[credit]].",
+   "gloss": {
+    "lapse": "小过失",
+    "disparage": "贬低，轻蔑地说",
+    "mawkish": "矫情的，肉麻地感伤的",
+    "credit": "信任",
+    "polymath": "学识渊博的人，博学者"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "fusty",
+     "ipa": "[ˈfʌsti]",
+     "pos": "adj.",
+     "zh": "过时的；腐臭的",
+     "en": "stale-smelling; old-fashioned",
+     "syn": [
+      "musty",
+      "antiquated"
+     ],
+     "ant": [
+      "fresh",
+      "modern"
+     ]
+    },
+    {
+     "w": "forfeit",
+     "ipa": "[ˈfɔrfət]",
+     "pos": "n.",
+     "zh": "丧失；罚金",
+     "en": "to lose as a penalty; a penalty",
+     "syn": [
+      "surrender",
+      "relinquish"
+     ],
+     "ant": [
+      "retain",
+      "gain"
+     ]
+    },
+    {
+     "w": "beguile",
+     "ipa": "[bɪˈɡaɪl]",
+     "pos": "v.",
+     "zh": "欺骗",
+     "en": "to charm or deceive",
+     "syn": [
+      "charm",
+      "deceive"
+     ],
+     "ant": [
+      "repel",
+      "enlighten"
+     ]
+    },
+    {
+     "w": "maudlin",
+     "ipa": "[ˈmɔːdlɪn]",
+     "pos": "adj.",
+     "zh": "多愁善感的，爱流泪的",
+     "en": "tearfully and foolishly sentimental",
+     "syn": [
+      "mawkish",
+      "weepy"
+     ],
+     "ant": [
+      "unemotional",
+      "stoic"
+     ]
+    },
+    {
+     "w": "charlatan",
+     "ipa": "[ˈʃɑːrlətən]",
+     "pos": "n.",
+     "zh": "骗子，装懂的人",
+     "en": "a person who falsely claims skill or knowledge",
+     "syn": [
+      "quack",
+      "fraud"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[charlatan]] used [[maudlin]] stories to [[beguile]] buyers in a [[fusty]] shop, and when he was caught he had to [[forfeit]] his deposit.",
+   "gloss": {
+    "fusty": "过时的",
+    "forfeit": "丧失",
+    "beguile": "欺骗",
+    "maudlin": "多愁善感的，爱流泪的",
+    "charlatan": "骗子，装懂的人"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "solace",
+     "ipa": "[ˈsɑːləs]",
+     "pos": "n.",
+     "zh": "安慰；安慰，安抚",
+     "en": "comfort in distress",
+     "syn": [
+      "consolation",
+      "comfort"
+     ],
+     "ant": [
+      "distress",
+      "torment"
+     ]
+    },
+    {
+     "w": "trope",
+     "ipa": "[troʊp]",
+     "pos": "n.",
+     "zh": "比喻；陈词滥调",
+     "en": "a figure of speech; an overused theme",
+     "syn": [
+      "figure of speech",
+      "cliché"
+     ],
+     "ant": []
+    },
+    {
+     "w": "forsake",
+     "ipa": "[fɔrˈsekˌfə-]",
+     "pos": "vt.",
+     "zh": "彻底放弃，抛弃",
+     "en": "to abandon or give up completely",
+     "syn": [
+      "abandon",
+      "renounce"
+     ],
+     "ant": [
+      "keep",
+      "cherish"
+     ]
+    },
+    {
+     "w": "affliction",
+     "ipa": "[əˈflɪkʃn]",
+     "pos": "n.",
+     "zh": "痛苦，悲伤，折磨",
+     "en": "something that causes pain or suffering",
+     "syn": [
+      "suffering",
+      "ordeal"
+     ],
+     "ant": [
+      "comfort",
+      "blessing"
+     ]
+    },
+    {
+     "w": "stymie",
+     "ipa": "[ˈstaɪmi]",
+     "pos": "vt.",
+     "zh": "阻碍",
+     "en": "to block or frustrate",
+     "syn": [
+      "thwart",
+      "hinder"
+     ],
+     "ant": [
+      "facilitate",
+      "assist"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In her [[affliction]] she found [[solace]] in a familiar [[trope]]: a hero who would never [[forsake]] a friend; no rule could [[stymie]] her hope.",
+   "gloss": {
+    "solace": "安慰",
+    "trope": "比喻",
+    "forsake": "彻底放弃，抛弃",
+    "affliction": "痛苦，悲伤，折磨",
+    "stymie": "阻碍"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "patronize",
+     "ipa": "[ˈpeɪtrəˌnaɪz]",
+     "pos": "vt.",
+     "zh": "赞助；以高人一等的态度对待",
+     "en": "to support; to treat as inferior",
+     "syn": [
+      "condescend",
+      "support"
+     ],
+     "ant": []
+    },
+    {
+     "w": "suppress",
+     "ipa": "[səˈprɛs]",
+     "pos": "vt.",
+     "zh": "用暴力终止，镇压；封锁，删除",
+     "en": "to put an end to by force; to hold back",
+     "syn": [
+      "quell",
+      "stifle"
+     ],
+     "ant": [
+      "encourage",
+      "express"
+     ]
+    },
+    {
+     "w": "vehement",
+     "ipa": "[ˈviːəmənt]",
+     "pos": "adj.",
+     "zh": "(情感)强烈的，热情的",
+     "en": "showing intense feeling",
+     "syn": [
+      "fervent",
+      "passionate"
+     ],
+     "ant": [
+      "apathetic",
+      "mild"
+     ]
+    },
+    {
+     "w": "hybrid",
+     "ipa": "[ˈhaɪbrɪd]",
+     "pos": "n.",
+     "zh": "杂交品种，混合品种；杂交的",
+     "en": "a mixture of two different kinds",
+     "syn": [
+      "crossbreed",
+      "composite"
+     ],
+     "ant": [
+      "pure",
+      "purebred"
+     ]
+    },
+    {
+     "w": "pernicious",
+     "ipa": "[pərˈnɪʃəs]",
+     "pos": "adj.",
+     "zh": "有害的",
+     "en": "harmful in a subtle way",
+     "syn": [
+      "destructive",
+      "noxious"
+     ],
+     "ant": [
+      "beneficial",
+      "harmless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The minister's [[vehement]] speech tried to [[suppress]] the rumors; critics said he would [[patronize]] voters and called the [[hybrid]] policy [[pernicious]].",
+   "gloss": {
+    "patronize": "赞助",
+    "suppress": "用暴力终止，镇压",
+    "vehement": "(情感)强烈的，热情的",
+    "hybrid": "杂交品种，混合品种",
+    "pernicious": "有害的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**solace** 的意思最接近：",
+    "options": [
+     "安慰；安慰，安抚",
+     "丧失；罚金",
+     "小过失",
+     "杂交品种，混合品种；杂交的"
+    ],
+    "answer": 0,
+    "explain": "solace：安慰；安慰，安抚（comfort in distress）。近义词：consolation, comfort。"
+   },
+   {
+    "q": "**fusty** 的意思最接近：",
+    "options": [
+     "过时的；腐臭的",
+     "矫情的，肉麻地感伤的",
+     "(情感)强烈的，热情的",
+     "多愁善感的，爱流泪的"
+    ],
+    "answer": 0,
+    "explain": "fusty：过时的；腐臭的（stale-smelling; old-fashioned）。近义词：musty, antiquated。"
+   },
+   {
+    "q": "哪个词的意思是「杂交品种，混合品种；杂交的」？",
+    "options": [
+     "forfeit",
+     "solace",
+     "affliction",
+     "hybrid"
+    ],
+    "answer": 3,
+    "explain": "hybrid：杂交品种，混合品种；杂交的（a mixture of two different kinds）。"
+   },
+   {
+    "q": "哪个词和 **maudlin** 的意思最接近？",
+    "options": [
+     "vehement",
+     "mawkish",
+     "fusty",
+     "pernicious"
+    ],
+    "answer": 1,
+    "explain": "mawkish 与 maudlin 近义：sickly sentimental。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The minister's ____ speech tried to suppress the rumors; critics said he would patronize voters and called the hybrid policy pernicious.",
+    "options": [
+     "fusty",
+     "pernicious",
+     "vehement",
+     "mawkish"
+    ],
+    "answer": 2,
+    "explain": "vehement：(情感)强烈的，热情的（showing intense feeling）。"
+   }
+  ]
+ }
+}

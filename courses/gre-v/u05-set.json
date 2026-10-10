@@ -1,0 +1,434 @@
+{
+ "id": "u05",
+ "title": "S 级核心词 · 第 5 组",
+ "en": "GRE Core Vocabulary · Set 5",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "efficacious",
+     "ipa": "[ˌefɪˈkeɪʃəs]",
+     "pos": "adj.",
+     "zh": "有效的",
+     "en": "producing the desired effect",
+     "syn": [
+      "effective",
+      "potent"
+     ],
+     "ant": [
+      "ineffectual",
+      "futile"
+     ]
+    },
+    {
+     "w": "stamina",
+     "ipa": "[ˈstæmɪnə]",
+     "pos": "n.",
+     "zh": "耐力",
+     "en": "the strength to keep going over a long time",
+     "syn": [
+      "endurance",
+      "staying power"
+     ],
+     "ant": [
+      "weakness",
+      "fatigue"
+     ]
+    },
+    {
+     "w": "boon",
+     "ipa": "[bʊn]",
+     "pos": "n.",
+     "zh": "恩惠，福利",
+     "en": "a benefit or blessing",
+     "syn": [
+      "blessing",
+      "advantage"
+     ],
+     "ant": [
+      "bane",
+      "curse"
+     ]
+    },
+    {
+     "w": "polarize",
+     "ipa": "[ˈpoʊləraɪz]",
+     "pos": "v.",
+     "zh": "使分开对立，使两极分化",
+     "en": "to divide into two opposing groups",
+     "syn": [
+      "divide",
+      "split"
+     ],
+     "ant": [
+      "unify",
+      "reconcile"
+     ]
+    },
+    {
+     "w": "cagey",
+     "ipa": "[ˈkeɪdʒi]",
+     "pos": "adj.",
+     "zh": "不乐意说话的",
+     "en": "reluctant to give information",
+     "syn": [
+      "guarded",
+      "evasive"
+     ],
+     "ant": [
+      "forthcoming",
+      "candid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[efficacious]] new drug proved a [[boon]] to patients with little [[stamina]], though its price began to [[polarize]] the board, and the [[cagey]] director would say no more.",
+   "gloss": {
+    "efficacious": "有效的",
+    "stamina": "耐力",
+    "boon": "恩惠，福利",
+    "polarize": "使分开对立，使两极分化",
+    "cagey": "不乐意说话的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "acquiesce",
+     "ipa": "[ˌækwiˈes]",
+     "pos": "v.",
+     "zh": "勉强同意；默许",
+     "en": "to accept something reluctantly without protest",
+     "syn": [
+      "comply",
+      "assent"
+     ],
+     "ant": [
+      "resist",
+      "object"
+     ]
+    },
+    {
+     "w": "halfhearted",
+     "ipa": "[ˈhɑːfˈhɑːtɪd]",
+     "pos": "adj.",
+     "zh": "不感兴趣的，不热情的",
+     "en": "lacking enthusiasm or effort",
+     "syn": [
+      "lukewarm",
+      "perfunctory"
+     ],
+     "ant": [
+      "wholehearted",
+      "zealous"
+     ]
+    },
+    {
+     "w": "gainsay",
+     "ipa": "[ˌɡenˈse]",
+     "pos": "vt.",
+     "zh": "否认",
+     "en": "to deny or contradict",
+     "syn": [
+      "contradict",
+      "dispute"
+     ],
+     "ant": [
+      "affirm",
+      "concede"
+     ]
+    },
+    {
+     "w": "apropos",
+     "ipa": "[ˌæprəˈpo]",
+     "pos": "adj.",
+     "zh": "相关的；关于，有关",
+     "en": "relevant to the matter; concerning",
+     "syn": [
+      "pertinent",
+      "relevant"
+     ],
+     "ant": [
+      "irrelevant",
+      "inapposite"
+     ]
+    },
+    {
+     "w": "denounce",
+     "ipa": "[dɪˈnaʊns]",
+     "pos": "vt.",
+     "zh": "公开指责",
+     "en": "to condemn publicly",
+     "syn": [
+      "condemn",
+      "censure"
+     ],
+     "ant": [
+      "praise",
+      "laud"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After weeks of pressure the mayor chose to [[acquiesce]], giving a [[halfhearted]] nod; no one would [[gainsay]] her remark, [[apropos]] of the scandal, that the council must [[denounce]] corruption.",
+   "gloss": {
+    "acquiesce": "勉强同意",
+    "halfhearted": "不感兴趣的，不热情的",
+    "gainsay": "否认",
+    "apropos": "相关的",
+    "denounce": "公开指责"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "corroborate",
+     "ipa": "[kəˈrɑbəret]",
+     "pos": "v.",
+     "zh": "用证据或权威证实；为…提供证据，支持",
+     "en": "to confirm with additional evidence",
+     "syn": [
+      "confirm",
+      "substantiate"
+     ],
+     "ant": [
+      "contradict",
+      "refute"
+     ]
+    },
+    {
+     "w": "dubious",
+     "ipa": "[ˈdubɪəs]",
+     "pos": "adj.",
+     "zh": "充满不定性的，值得怀疑的",
+     "en": "doubtful; open to question",
+     "syn": [
+      "doubtful",
+      "questionable"
+     ],
+     "ant": [
+      "certain",
+      "trustworthy"
+     ]
+    },
+    {
+     "w": "preempt",
+     "ipa": "[priːˈempt]",
+     "pos": "v.",
+     "zh": "预先占有",
+     "en": "to forestall by acting first",
+     "syn": [
+      "forestall",
+      "anticipate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disregard",
+     "ipa": "[ˌdɪsrɪˈɡɑrd]",
+     "pos": "vt.",
+     "zh": "漠视，不关注；缺乏兴趣，缺乏关心",
+     "en": "to ignore or pay no attention to",
+     "syn": [
+      "ignore",
+      "overlook"
+     ],
+     "ant": [
+      "heed",
+      "regard"
+     ]
+    },
+    {
+     "w": "judicious",
+     "ipa": "[dʒuˈdɪʃəs]",
+     "pos": "adj.",
+     "zh": "明智的，慎重的",
+     "en": "showing good judgment",
+     "syn": [
+      "prudent",
+      "sagacious"
+     ],
+     "ant": [
+      "foolish",
+      "rash"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The new records [[corroborate]] the claim; although the witness seemed [[dubious]], the judge chose to [[preempt]] objections and [[disregard]] rumor, a [[judicious]] move.",
+   "gloss": {
+    "corroborate": "用证据或权威证实",
+    "dubious": "充满不定性的，值得怀疑的",
+    "preempt": "预先占有",
+    "disregard": "漠视，不关注",
+    "judicious": "明智的，慎重的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "gawky",
+     "ipa": "[ˈɡɔːki]",
+     "pos": "adj.",
+     "zh": "(举止)笨拙的",
+     "en": "awkward and clumsy",
+     "syn": [
+      "clumsy",
+      "ungainly"
+     ],
+     "ant": [
+      "graceful",
+      "adroit"
+     ]
+    },
+    {
+     "w": "veracious",
+     "ipa": "[vəˈreɪʃəs]",
+     "pos": "adj.",
+     "zh": "诚实的，说实话的",
+     "en": "truthful and honest",
+     "syn": [
+      "truthful",
+      "honest"
+     ],
+     "ant": [
+      "mendacious",
+      "false"
+     ]
+    },
+    {
+     "w": "sanction",
+     "ipa": "[ˈsæŋkʃən]",
+     "pos": "vt.",
+     "zh": "批准，认可；制裁",
+     "en": "to give official approval; a penalty",
+     "syn": [
+      "approve",
+      "authorize"
+     ],
+     "ant": [
+      "prohibit",
+      "forbid"
+     ]
+    },
+    {
+     "w": "demoralize",
+     "ipa": "[dɪˈmɔːrəlaɪz]",
+     "pos": "vt.",
+     "zh": "使士气低落贬低，使堕落",
+     "en": "to weaken someone's confidence and morale",
+     "syn": [
+      "dishearten",
+      "discourage"
+     ],
+     "ant": [
+      "hearten",
+      "encourage"
+     ]
+    },
+    {
+     "w": "exasperate",
+     "ipa": "[ɪɡˈzæspəreɪt]",
+     "pos": "vt.",
+     "zh": "激怒",
+     "en": "to irritate intensely",
+     "syn": [
+      "infuriate",
+      "vex"
+     ],
+     "ant": [
+      "soothe",
+      "placate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[gawky]] clerk was a [[veracious]] man, but the board's decision to [[sanction]] him would [[demoralize]] the staff and [[exasperate]] his friends.",
+   "gloss": {
+    "gawky": "(举止)笨拙的",
+    "veracious": "诚实的，说实话的",
+    "sanction": "批准，认可",
+    "demoralize": "使士气低落贬低，使堕落",
+    "exasperate": "激怒"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**gainsay** 的意思最接近：",
+    "options": [
+     "用证据或权威证实；为…提供证据，支持",
+     "否认",
+     "勉强同意；默许",
+     "使分开对立，使两极分化"
+    ],
+    "answer": 1,
+    "explain": "gainsay：否认（to deny or contradict）。近义词：contradict, dispute。"
+   },
+   {
+    "q": "**apropos** 的意思最接近：",
+    "options": [
+     "相关的；关于，有关",
+     "不乐意说话的",
+     "明智的，慎重的",
+     "有效的"
+    ],
+    "answer": 0,
+    "explain": "apropos：相关的；关于，有关（relevant to the matter; concerning）。近义词：pertinent, relevant。"
+   },
+   {
+    "q": "哪个词的意思是「充满不定性的，值得怀疑的」？",
+    "options": [
+     "halfhearted",
+     "dubious",
+     "gawky",
+     "cagey"
+    ],
+    "answer": 1,
+    "explain": "dubious：充满不定性的，值得怀疑的（doubtful; open to question）。"
+   },
+   {
+    "q": "哪个词和 **ungainly** 的意思最接近？",
+    "options": [
+     "efficacious",
+     "apropos",
+     "dubious",
+     "gawky"
+    ],
+    "answer": 3,
+    "explain": "gawky 与 ungainly 近义：awkward and clumsy。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The new records ____ the claim; although the witness seemed dubious, the judge chose to preempt objections and disregard rumor, a judicious move.",
+    "options": [
+     "exasperate",
+     "denounce",
+     "corroborate",
+     "demoralize"
+    ],
+    "answer": 2,
+    "explain": "corroborate：用证据或权威证实；为…提供证据，支持（to confirm with additional evidence）。"
+   }
+  ]
+ }
+}

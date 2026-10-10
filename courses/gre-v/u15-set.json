@@ -1,0 +1,425 @@
+{
+ "id": "u15",
+ "title": "S 级核心词 · 第 15 组",
+ "en": "GRE Core Vocabulary · Set 15",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "poignant",
+     "ipa": "[ˈpɔɪnjənt]",
+     "pos": "adj.",
+     "zh": "令人感伤的",
+     "en": "deeply moving, often with sadness",
+     "syn": [
+      "touching",
+      "moving"
+     ],
+     "ant": [
+      "unmoving",
+      "flippant"
+     ]
+    },
+    {
+     "w": "bumble",
+     "ipa": "[ˈbʌmbl]",
+     "pos": "vi.",
+     "zh": "笨拙地做；含糊地说",
+     "en": "to speak or act in a confused, clumsy way",
+     "syn": [
+      "fumble",
+      "stumble"
+     ],
+     "ant": []
+    },
+    {
+     "w": "coagulate",
+     "ipa": "[koʊˈæɡjuleɪt]",
+     "pos": "v.",
+     "zh": "(使)凝结，(使)变稠",
+     "en": "to change from liquid to thick or solid",
+     "syn": [
+      "clot",
+      "congeal"
+     ],
+     "ant": [
+      "dissolve",
+      "liquefy"
+     ]
+    },
+    {
+     "w": "shrewd",
+     "ipa": "[ʃrud]",
+     "pos": "adj.",
+     "zh": "精明的，机敏的",
+     "en": "clever and sharp in judgment",
+     "syn": [
+      "astute",
+      "canny"
+     ],
+     "ant": [
+      "naive",
+      "gullible"
+     ]
+    },
+    {
+     "w": "nostalgia",
+     "ipa": "[nəˈstældʒə]",
+     "pos": "n.",
+     "zh": "怀旧，怀念",
+     "en": "a wistful longing for the past",
+     "syn": [
+      "wistfulness",
+      "yearning"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[poignant]] film stirred [[nostalgia]] in the old man, who tried to [[bumble]] through a toast; in the kitchen a [[shrewd]] cook watched the sauce [[coagulate]].",
+   "gloss": {
+    "poignant": "令人感伤的",
+    "bumble": "笨拙地做",
+    "coagulate": "(使)凝结，(使)变稠",
+    "shrewd": "精明的，机敏的",
+    "nostalgia": "怀旧，怀念"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "notoriety",
+     "ipa": "[ˌnoʊtəˈraɪəti]",
+     "pos": "n.",
+     "zh": "坏名声",
+     "en": "the state of being famous for something bad",
+     "syn": [
+      "infamy",
+      "disrepute"
+     ],
+     "ant": [
+      "renown",
+      "honor"
+     ]
+    },
+    {
+     "w": "solitude",
+     "ipa": "[ˈsɑlətud]",
+     "pos": "n.",
+     "zh": "孤独，避世",
+     "en": "the state of being alone",
+     "syn": [
+      "seclusion",
+      "isolation"
+     ],
+     "ant": [
+      "company",
+      "society"
+     ]
+    },
+    {
+     "w": "censure",
+     "ipa": "[ˈsɛnʃɚ]",
+     "pos": "v.",
+     "zh": "公开表示反对，谴责",
+     "en": "to express strong disapproval of",
+     "syn": [
+      "condemn",
+      "reprimand"
+     ],
+     "ant": [
+      "commend",
+      "applaud"
+     ]
+    },
+    {
+     "w": "aggravate",
+     "ipa": "[ˈæɡrəvet]",
+     "pos": "vt.",
+     "zh": "加重，恶化",
+     "en": "to make worse; to annoy",
+     "syn": [
+      "exacerbate",
+      "worsen"
+     ],
+     "ant": [
+      "alleviate",
+      "soothe"
+     ]
+    },
+    {
+     "w": "soft-pedal",
+     "ipa": "soft-pedal",
+     "pos": "v.",
+     "zh": "降低…的力度",
+     "en": "to downplay or make less emphatic",
+     "syn": [
+      "downplay",
+      "tone down"
+     ],
+     "ant": [
+      "emphasize",
+      "stress"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The senator's [[notoriety]] grew, and to avoid [[censure]] he sought [[solitude]]; his aides tried to [[soft-pedal]] the issue lest it [[aggravate]] the crisis.",
+   "gloss": {
+    "notoriety": "坏名声",
+    "solitude": "孤独，避世",
+    "censure": "公开表示反对，谴责",
+    "aggravate": "加重，恶化",
+    "soft-pedal": "降低…的力度"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tepid",
+     "ipa": "[ˈtɛpɪd]",
+     "pos": "adj.",
+     "zh": "不太热心的",
+     "en": "lukewarm; lacking enthusiasm",
+     "syn": [
+      "lukewarm",
+      "halfhearted"
+     ],
+     "ant": [
+      "enthusiastic",
+      "fervent"
+     ]
+    },
+    {
+     "w": "plethora",
+     "ipa": "[ˈpleθərə]",
+     "pos": "n.",
+     "zh": "过量，过剩",
+     "en": "an excessive amount",
+     "syn": [
+      "surfeit",
+      "glut"
+     ],
+     "ant": [
+      "dearth",
+      "scarcity"
+     ]
+    },
+    {
+     "w": "fawn",
+     "ipa": "[fɔn]",
+     "pos": "vi.",
+     "zh": "阿谀奉承",
+     "en": "to flatter in order to win favor",
+     "syn": [
+      "grovel",
+      "toady"
+     ],
+     "ant": []
+    },
+    {
+     "w": "repugnant",
+     "ipa": "[rɪˈpʌɡnənt]",
+     "pos": "adj.",
+     "zh": "令人厌恶的",
+     "en": "extremely distasteful",
+     "syn": [
+      "repulsive",
+      "abhorrent"
+     ],
+     "ant": [
+      "attractive",
+      "agreeable"
+     ]
+    },
+    {
+     "w": "downplay",
+     "ipa": "[ˌdaʊnˈple]",
+     "pos": "vt.",
+     "zh": "轻描淡写，不予重视",
+     "en": "to make something seem less important",
+     "syn": [
+      "minimize",
+      "understate"
+     ],
+     "ant": [
+      "emphasize",
+      "exaggerate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[tepid]] applause suggested a [[plethora]] of doubts; the courtiers who used to [[fawn]] now found the king's decrees [[repugnant]] and began to [[downplay]] their loyalty.",
+   "gloss": {
+    "tepid": "不太热心的",
+    "plethora": "过量，过剩",
+    "fawn": "阿谀奉承",
+    "repugnant": "令人厌恶的",
+    "downplay": "轻描淡写，不予重视"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "diminutive",
+     "ipa": "[dɪˈmɪnjətɪv]",
+     "pos": "adj.",
+     "zh": "极小的",
+     "en": "extremely small",
+     "syn": [
+      "tiny",
+      "petite"
+     ],
+     "ant": [
+      "huge",
+      "gigantic"
+     ]
+    },
+    {
+     "w": "temperate",
+     "ipa": "[ˈtɛmpərət]",
+     "pos": "adj.",
+     "zh": "(言行举止)有分寸的；有节制的",
+     "en": "moderate; not extreme",
+     "syn": [
+      "moderate",
+      "restrained"
+     ],
+     "ant": [
+      "extreme",
+      "intemperate"
+     ]
+    },
+    {
+     "w": "gossamer",
+     "ipa": "[ˈɡɑːsəmər]",
+     "pos": "n.",
+     "zh": "轻薄的东西；薄纱",
+     "en": "something very light and delicate",
+     "syn": [
+      "gauzy",
+      "filmy"
+     ],
+     "ant": [
+      "heavy",
+      "substantial"
+     ]
+    },
+    {
+     "w": "anecdote",
+     "ipa": "[ˈænɪkdot]",
+     "pos": "n.",
+     "zh": "短小有趣的故事，段子",
+     "en": "a short, amusing story about a real event",
+     "syn": [
+      "tale",
+      "story"
+     ],
+     "ant": []
+    },
+    {
+     "w": "untenable",
+     "ipa": "[ʌnˈtenəbl]",
+     "pos": "adj.",
+     "zh": "防守不住的，站不住脚的",
+     "en": "impossible to defend",
+     "syn": [
+      "indefensible",
+      "unsustainable"
+     ],
+     "ant": [
+      "defensible",
+      "tenable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[diminutive]] speaker, dressed in [[gossamer]] silk, told a [[temperate]] [[anecdote]] that showed the opposition's claim was [[untenable]].",
+   "gloss": {
+    "diminutive": "极小的",
+    "temperate": "(言行举止)有分寸的",
+    "gossamer": "轻薄的东西",
+    "anecdote": "短小有趣的故事，段子",
+    "untenable": "防守不住的，站不住脚的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**diminutive** 的意思最接近：",
+    "options": [
+     "防守不住的，站不住脚的",
+     "(言行举止)有分寸的；有节制的",
+     "极小的",
+     "不太热心的"
+    ],
+    "answer": 2,
+    "explain": "diminutive：极小的（extremely small）。近义词：tiny, petite。"
+   },
+   {
+    "q": "**repugnant** 的意思最接近：",
+    "options": [
+     "令人厌恶的",
+     "防守不住的，站不住脚的",
+     "(言行举止)有分寸的；有节制的",
+     "令人感伤的"
+    ],
+    "answer": 0,
+    "explain": "repugnant：令人厌恶的（extremely distasteful）。近义词：repulsive, abhorrent。"
+   },
+   {
+    "q": "哪个词的意思是「短小有趣的故事，段子」？",
+    "options": [
+     "notoriety",
+     "plethora",
+     "gossamer",
+     "anecdote"
+    ],
+    "answer": 3,
+    "explain": "anecdote：短小有趣的故事，段子（a short, amusing story about a real event）。"
+   },
+   {
+    "q": "哪个词和 **yearning** 的意思最接近？",
+    "options": [
+     "notoriety",
+     "nostalgia",
+     "gossamer",
+     "anecdote"
+    ],
+    "answer": 1,
+    "explain": "nostalgia 与 yearning 近义：a wistful longing for the past。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A poignant film stirred nostalgia in the old man, who tried to bumble through a toast; in the kitchen a shrewd cook watched the sauce ____.",
+    "options": [
+     "aggravate",
+     "bumble",
+     "soft-pedal",
+     "coagulate"
+    ],
+    "answer": 3,
+    "explain": "coagulate：(使)凝结，(使)变稠（to change from liquid to thick or solid）。"
+   }
+  ]
+ }
+}

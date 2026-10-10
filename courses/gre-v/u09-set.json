@@ -1,0 +1,423 @@
+{
+ "id": "u09",
+ "title": "S 级核心词 · 第 9 组",
+ "en": "GRE Core Vocabulary · Set 9",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "austere",
+     "ipa": "[ɔˈstɪr]",
+     "pos": "adj.",
+     "zh": "朴素的，朴实无华的",
+     "en": "plain and strict; without luxury",
+     "syn": [
+      "severe",
+      "ascetic"
+     ],
+     "ant": [
+      "lavish",
+      "indulgent"
+     ]
+    },
+    {
+     "w": "knotty",
+     "ipa": "[ˈnɑti]",
+     "pos": "adj.",
+     "zh": "复杂的，困难的",
+     "en": "complicated and difficult to solve",
+     "syn": [
+      "thorny",
+      "intricate"
+     ],
+     "ant": [
+      "simple",
+      "straightforward"
+     ]
+    },
+    {
+     "w": "mercenary",
+     "ipa": "[ˈmɜːsənɛri]",
+     "pos": "adj.",
+     "zh": "唯利是图的，贪婪的",
+     "en": "motivated only by money",
+     "syn": [
+      "greedy",
+      "venal"
+     ],
+     "ant": [
+      "altruistic",
+      "selfless"
+     ]
+    },
+    {
+     "w": "credence",
+     "ipa": "[ˈkriːdns]",
+     "pos": "n.",
+     "zh": "坚信",
+     "en": "belief or acceptance as true",
+     "syn": [
+      "belief",
+      "trust"
+     ],
+     "ant": [
+      "disbelief",
+      "distrust"
+     ]
+    },
+    {
+     "w": "bureaucratic",
+     "ipa": "[ˌbjʊrəˈkrætɪk]",
+     "pos": "adj.",
+     "zh": "官僚主义的",
+     "en": "marked by rigid rules and red tape",
+     "syn": [
+      "officious",
+      "rule-bound"
+     ],
+     "ant": [
+      "flexible",
+      "streamlined"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[austere]] judge, who gave no [[credence]] to [[mercenary]] witnesses, found the [[knotty]] case buried in [[bureaucratic]] paperwork.",
+   "gloss": {
+    "austere": "朴素的，朴实无华的",
+    "knotty": "复杂的，困难的",
+    "mercenary": "唯利是图的，贪婪的",
+    "credence": "坚信",
+    "bureaucratic": "官僚主义的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "minuscule",
+     "ipa": "[ˈmɪnəˌskjuːl]",
+     "pos": "adj.",
+     "zh": "极小的",
+     "en": "extremely small",
+     "syn": [
+      "tiny",
+      "minute"
+     ],
+     "ant": [
+      "enormous",
+      "gigantic"
+     ]
+    },
+    {
+     "w": "tyro",
+     "ipa": "[ˈtaɪroʊ]",
+     "pos": "n.",
+     "zh": "新手，业余爱好者",
+     "en": "a beginner",
+     "syn": [
+      "novice",
+      "neophyte"
+     ],
+     "ant": [
+      "expert",
+      "veteran"
+     ]
+    },
+    {
+     "w": "condone",
+     "ipa": "[kənˈdon]",
+     "pos": "v.",
+     "zh": "宽恕；忽视",
+     "en": "to excuse or overlook a wrong",
+     "syn": [
+      "forgive",
+      "overlook"
+     ],
+     "ant": [
+      "condemn",
+      "censure"
+     ]
+    },
+    {
+     "w": "conjure",
+     "ipa": "[ˈkʌndʒɚ]",
+     "pos": "vt.",
+     "zh": "召唤；使在脑海中浮现",
+     "en": "to call to mind; to summon by magic",
+     "syn": [
+      "evoke",
+      "summon"
+     ],
+     "ant": [
+      "dispel"
+     ]
+    },
+    {
+     "w": "beset",
+     "ipa": "[bɪˈsɛt]",
+     "pos": "vt.",
+     "zh": "使苦恼，骚扰；攻击，袭击",
+     "en": "to attack from all sides; to trouble persistently",
+     "syn": [
+      "plague",
+      "harass"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[minuscule]] error by a [[tyro]] accountant, which the firm would not [[condone]], began to [[conjure]] fears of fraud, and soon the company was [[beset]] by questions.",
+   "gloss": {
+    "minuscule": "极小的",
+    "tyro": "新手，业余爱好者",
+    "condone": "宽恕",
+    "conjure": "召唤",
+    "beset": "使苦恼，骚扰"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "refractory",
+     "ipa": "[rɪˈfræktəri]",
+     "pos": "adj.",
+     "zh": "倔强的，不顺从的",
+     "en": "stubborn and hard to control",
+     "syn": [
+      "obstinate",
+      "unruly"
+     ],
+     "ant": [
+      "docile",
+      "compliant"
+     ]
+    },
+    {
+     "w": "subvert",
+     "ipa": "[səbˈvɜːrt]",
+     "pos": "vt.",
+     "zh": "颠覆",
+     "en": "to undermine or overthrow",
+     "syn": [
+      "undermine",
+      "overthrow"
+     ],
+     "ant": [
+      "uphold",
+      "support"
+     ]
+    },
+    {
+     "w": "copious",
+     "ipa": "[ˈkoʊpiəs]",
+     "pos": "adj.",
+     "zh": "丰富的，大量的",
+     "en": "plentiful",
+     "syn": [
+      "abundant",
+      "ample"
+     ],
+     "ant": [
+      "scant",
+      "meager"
+     ]
+    },
+    {
+     "w": "hamstring",
+     "ipa": "[ˈhæmstrɪŋ]",
+     "pos": "vt.",
+     "zh": "使无效，使无力",
+     "en": "to cripple or make ineffective",
+     "syn": [
+      "cripple",
+      "thwart"
+     ],
+     "ant": []
+    },
+    {
+     "w": "cavalier",
+     "ipa": "[ˌkævəˈlɪr]",
+     "pos": "n.",
+     "zh": "傲慢随便的；骑士",
+     "en": "casually dismissive; a gallant gentleman",
+     "syn": [
+      "offhand",
+      "haughty"
+     ],
+     "ant": [
+      "earnest",
+      "respectful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[refractory]] student made [[copious]] notes while trying to [[subvert]] the class; the teacher's [[cavalier]] reply could not [[hamstring]] his campaign.",
+   "gloss": {
+    "refractory": "倔强的，不顺从的",
+    "subvert": "颠覆",
+    "copious": "丰富的，大量的",
+    "hamstring": "使无效，使无力",
+    "cavalier": "傲慢随便的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "obviate",
+     "ipa": "[ˈɑːbvieɪt]",
+     "pos": "vt.",
+     "zh": "排除，使不必要",
+     "en": "to make unnecessary",
+     "syn": [
+      "preclude",
+      "forestall"
+     ],
+     "ant": [
+      "necessitate"
+     ]
+    },
+    {
+     "w": "purport",
+     "ipa": "[pərˈpɔːrt]",
+     "pos": "v.",
+     "zh": "声称，打算",
+     "en": "to claim to be or do (often falsely)",
+     "syn": [
+      "claim",
+      "profess"
+     ],
+     "ant": []
+    },
+    {
+     "w": "detritus",
+     "ipa": "[dɪˈtraɪtəs]",
+     "pos": "n.",
+     "zh": "废品，碎屑，遗骸",
+     "en": "debris or waste left after breakdown",
+     "syn": [
+      "debris",
+      "rubble"
+     ],
+     "ant": []
+    },
+    {
+     "w": "snub",
+     "ipa": "[snʌb]",
+     "pos": "vt.",
+     "zh": "轻视，不理睬",
+     "en": "to ignore or treat coldly",
+     "syn": [
+      "slight",
+      "rebuff"
+     ],
+     "ant": [
+      "welcome",
+      "embrace"
+     ]
+    },
+    {
+     "w": "pensive",
+     "ipa": "[ˈpɛnsɪv]",
+     "pos": "adj.",
+     "zh": "沉思的，(尤指)哀思的",
+     "en": "thoughtful, often sadly so",
+     "syn": [
+      "reflective",
+      "wistful"
+     ],
+     "ant": [
+      "carefree",
+      "thoughtless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[pensive]] clerk read a report that [[purports|purport]] to [[obviate]] the need for review, then swept the [[detritus]] from his desk and chose to [[snub]] the manager's request.",
+   "gloss": {
+    "obviate": "排除，使不必要",
+    "purport": "声称，打算",
+    "detritus": "废品，碎屑，遗骸",
+    "snub": "轻视，不理睬",
+    "pensive": "沉思的，(尤指)哀思的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**obviate** 的意思最接近：",
+    "options": [
+     "使无效，使无力",
+     "排除，使不必要",
+     "轻视，不理睬",
+     "使苦恼，骚扰；攻击，袭击"
+    ],
+    "answer": 1,
+    "explain": "obviate：排除，使不必要（to make unnecessary）。近义词：preclude, forestall。"
+   },
+   {
+    "q": "**tyro** 的意思最接近：",
+    "options": [
+     "新手，业余爱好者",
+     "坚信",
+     "傲慢随便的；骑士",
+     "废品，碎屑，遗骸"
+    ],
+    "answer": 0,
+    "explain": "tyro：新手，业余爱好者（a beginner）。近义词：novice, neophyte。"
+   },
+   {
+    "q": "哪个词的意思是「召唤；使在脑海中浮现」？",
+    "options": [
+     "beset",
+     "subvert",
+     "hamstring",
+     "conjure"
+    ],
+    "answer": 3,
+    "explain": "conjure：召唤；使在脑海中浮现（to call to mind; to summon by magic）。"
+   },
+   {
+    "q": "哪个词和 **abundant** 的意思最接近？",
+    "options": [
+     "copious",
+     "bureaucratic",
+     "refractory",
+     "minuscule"
+    ],
+    "answer": 0,
+    "explain": "copious 与 abundant 近义：plentiful。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A minuscule error by a ____ accountant, which the firm would not condone, began to conjure fears of fraud, and soon the company was beset by questions.",
+    "options": [
+     "credence",
+     "detritus",
+     "tyro",
+     "cavalier"
+    ],
+    "answer": 2,
+    "explain": "tyro：新手，业余爱好者（a beginner）。"
+   }
+  ]
+ }
+}

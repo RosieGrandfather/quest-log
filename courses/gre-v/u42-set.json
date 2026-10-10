@@ -1,0 +1,426 @@
+{
+ "id": "u42",
+ "title": "S 级核心词 · 第 42 组",
+ "en": "GRE Core Vocabulary · Set 42",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "antiquated",
+     "ipa": "[ˈæntɪkwetɪd]",
+     "pos": "adj.",
+     "zh": "古老的，过时的",
+     "en": "too old to be useful",
+     "syn": [
+      "obsolete",
+      "outdated"
+     ],
+     "ant": [
+      "modern",
+      "up-to-date"
+     ]
+    },
+    {
+     "w": "circumscribe",
+     "ipa": "[ˈsɜːrkəmskraɪb]",
+     "pos": "vt.",
+     "zh": "限制",
+     "en": "to limit narrowly",
+     "syn": [
+      "restrict",
+      "confine"
+     ],
+     "ant": [
+      "expand",
+      "extend"
+     ]
+    },
+    {
+     "w": "proclivity",
+     "ipa": "[prəˈklɪvəti]",
+     "pos": "n.",
+     "zh": "癖性，偏好",
+     "en": "a natural tendency",
+     "syn": [
+      "inclination",
+      "penchant"
+     ],
+     "ant": [
+      "aversion",
+      "disinclination"
+     ]
+    },
+    {
+     "w": "alacrity",
+     "ipa": "[əˈlækrəti]",
+     "pos": "n.",
+     "zh": "反应迅速，乐意，欣然",
+     "en": "cheerful readiness and speed",
+     "syn": [
+      "eagerness",
+      "promptness"
+     ],
+     "ant": [
+      "reluctance",
+      "sluggishness"
+     ]
+    },
+    {
+     "w": "fatigue",
+     "ipa": "[fəˈtig]",
+     "pos": "n.",
+     "zh": "疲惫",
+     "en": "extreme tiredness",
+     "syn": [
+      "exhaustion",
+      "weariness"
+     ],
+     "ant": [
+      "vigor",
+      "energy"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[antiquated]] rule would [[circumscribe]] the staff; despite her [[fatigue]], she followed her [[proclivity]] for hard work with [[alacrity]].",
+   "gloss": {
+    "antiquated": "古老的，过时的",
+    "circumscribe": "限制",
+    "proclivity": "癖性，偏好",
+    "alacrity": "反应迅速，乐意，欣然",
+    "fatigue": "疲惫"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "indict",
+     "ipa": "[ɪnˈdaɪt]",
+     "pos": "vt.",
+     "zh": "起诉，控告",
+     "en": "to formally accuse of a crime",
+     "syn": [
+      "charge",
+      "accuse"
+     ],
+     "ant": [
+      "acquit",
+      "exonerate"
+     ]
+    },
+    {
+     "w": "empirical",
+     "ipa": "[ɪmˈpɪrɪkl]",
+     "pos": "adj.",
+     "zh": "基于观察、实验的",
+     "en": "based on observation or experiment",
+     "syn": [
+      "observational",
+      "experimental"
+     ],
+     "ant": [
+      "theoretical",
+      "hypothetical"
+     ]
+    },
+    {
+     "w": "seemly",
+     "ipa": "[ˈsiːmli]",
+     "pos": "adj.",
+     "zh": "得体的，遵守礼节的",
+     "en": "proper and in good taste",
+     "syn": [
+      "proper",
+      "decorous"
+     ],
+     "ant": [
+      "unseemly",
+      "improper"
+     ]
+    },
+    {
+     "w": "seditious",
+     "ipa": "[sɪˈdɪʃəs]",
+     "pos": "adj.",
+     "zh": "煽动性的，意在制造混乱的",
+     "en": "inciting rebellion against authority",
+     "syn": [
+      "subversive",
+      "rebellious"
+     ],
+     "ant": [
+      "loyal",
+      "obedient"
+     ]
+    },
+    {
+     "w": "counterpart",
+     "ipa": "[ˈkaʊntɚpɑrt]",
+     "pos": "n.",
+     "zh": "(地位、功能)对等的人或物",
+     "en": "a person or thing with a similar function",
+     "syn": [
+      "equivalent",
+      "peer"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The court moved to [[indict]] the editor for [[seditious]] articles; his [[counterpart]] abroad thought that [[empirical]] proof and a [[seemly]] reply were needed.",
+   "gloss": {
+    "indict": "起诉，控告",
+    "empirical": "基于观察、实验的",
+    "seemly": "得体的，遵守礼节的",
+    "seditious": "煽动性的，意在制造混乱的",
+    "counterpart": "(地位、功能)对等的人或物"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "coax",
+     "ipa": "[koks]",
+     "pos": "v.",
+     "zh": "哄骗",
+     "en": "to persuade gently",
+     "syn": [
+      "cajole",
+      "wheedle"
+     ],
+     "ant": [
+      "force",
+      "compel"
+     ]
+    },
+    {
+     "w": "ministration",
+     "ipa": "[ˌmɪnɪsˈtreɪʃən]",
+     "pos": "n.",
+     "zh": "帮助",
+     "en": "help or care given to someone",
+     "syn": [
+      "aid",
+      "service"
+     ],
+     "ant": [
+      "neglect"
+     ]
+    },
+    {
+     "w": "redolent",
+     "ipa": "[ˈrɛdələnt]",
+     "pos": "adj.",
+     "zh": "芳香的",
+     "en": "strongly suggestive of; fragrant",
+     "syn": [
+      "reminiscent",
+      "fragrant"
+     ],
+     "ant": [
+      "odorless"
+     ]
+    },
+    {
+     "w": "discreet",
+     "ipa": "[dɪˈskrit]",
+     "pos": "adj.",
+     "zh": "(言行)谨慎的",
+     "en": "careful and tactful",
+     "syn": [
+      "prudent",
+      "tactful"
+     ],
+     "ant": [
+      "indiscreet",
+      "careless"
+     ]
+    },
+    {
+     "w": "tentative",
+     "ipa": "[ˈtɛntətɪv]",
+     "pos": "adj.",
+     "zh": "暂时性的，尝试的",
+     "en": "not certain; hesitant",
+     "syn": [
+      "provisional",
+      "hesitant"
+     ],
+     "ant": [
+      "definite",
+      "confident"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[discreet]] nurse, through patient [[ministration]], had to [[coax]] the patient into a [[tentative]] smile in a room [[redolent]] of lavender.",
+   "gloss": {
+    "coax": "哄骗",
+    "ministration": "帮助",
+    "redolent": "芳香的",
+    "discreet": "(言行)谨慎的",
+    "tentative": "暂时性的，尝试的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "heterodox",
+     "ipa": "[ˈhɛtərəˈdɑks]",
+     "pos": "adj.",
+     "zh": "非正统的，异端的",
+     "en": "not conforming to accepted beliefs",
+     "syn": [
+      "unorthodox",
+      "heretical"
+     ],
+     "ant": [
+      "orthodox",
+      "conventional"
+     ]
+    },
+    {
+     "w": "spontaneous",
+     "ipa": "[spɑnˈtenɪəs]",
+     "pos": "adj.",
+     "zh": "自发的，不经思索的",
+     "en": "done on impulse, without planning",
+     "syn": [
+      "impulsive",
+      "unplanned"
+     ],
+     "ant": [
+      "planned",
+      "deliberate"
+     ]
+    },
+    {
+     "w": "meddle",
+     "ipa": "[ˈmɛdl]",
+     "pos": "vi.",
+     "zh": "干涉，管闲事",
+     "en": "to interfere in others' affairs",
+     "syn": [
+      "interfere",
+      "intrude"
+     ],
+     "ant": []
+    },
+    {
+     "w": "forge",
+     "ipa": "[fɔrdʒ]",
+     "pos": "v.",
+     "zh": "伪造；锻造，铸就",
+     "en": "to fake; to shape by hard work",
+     "syn": [
+      "counterfeit",
+      "fashion"
+     ],
+     "ant": []
+    },
+    {
+     "w": "perfunctory",
+     "ipa": "[pəˈfʌŋktəri]",
+     "pos": "adj.",
+     "zh": "敷衍的，呵呵的",
+     "en": "done routinely without real interest",
+     "syn": [
+      "cursory",
+      "mechanical"
+     ],
+     "ant": [
+      "thorough",
+      "zealous"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[heterodox]] views won a [[spontaneous]] cheer; critics said he would [[meddle]], [[forge]] alliances, and give only a [[perfunctory]] defense.",
+   "gloss": {
+    "heterodox": "非正统的，异端的",
+    "spontaneous": "自发的，不经思索的",
+    "meddle": "干涉，管闲事",
+    "forge": "伪造",
+    "perfunctory": "敷衍的，呵呵的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**forge** 的意思最接近：",
+    "options": [
+     "伪造；锻造，铸就",
+     "限制",
+     "起诉，控告",
+     "干涉，管闲事"
+    ],
+    "answer": 0,
+    "explain": "forge：伪造；锻造，铸就（to fake; to shape by hard work）。近义词：counterfeit, fashion。"
+   },
+   {
+    "q": "**proclivity** 的意思最接近：",
+    "options": [
+     "疲惫",
+     "癖性，偏好",
+     "(地位、功能)对等的人或物",
+     "反应迅速，乐意，欣然"
+    ],
+    "answer": 1,
+    "explain": "proclivity：癖性，偏好（a natural tendency）。近义词：inclination, penchant。"
+   },
+   {
+    "q": "哪个词的意思是「非正统的，异端的」？",
+    "options": [
+     "antiquated",
+     "perfunctory",
+     "redolent",
+     "heterodox"
+    ],
+    "answer": 3,
+    "explain": "heterodox：非正统的，异端的（not conforming to accepted beliefs）。"
+   },
+   {
+    "q": "哪个词和 **weariness** 的意思最接近？",
+    "options": [
+     "counterpart",
+     "fatigue",
+     "proclivity",
+     "alacrity"
+    ],
+    "answer": 1,
+    "explain": "fatigue 与 weariness 近义：extreme tiredness。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The court moved to indict the editor for seditious articles; his counterpart abroad thought that ____ proof and a seemly reply were needed.",
+    "options": [
+     "antiquated",
+     "tentative",
+     "empirical",
+     "seemly"
+    ],
+    "answer": 2,
+    "explain": "empirical：基于观察、实验的（based on observation or experiment）。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,418 @@
+{
+ "id": "u27",
+ "title": "S 级核心词 · 第 27 组",
+ "en": "GRE Core Vocabulary · Set 27",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "omniscient",
+     "ipa": "[ɑmˈnɪsɪənt]",
+     "pos": "adj.",
+     "zh": "无所不知的",
+     "en": "knowing everything",
+     "syn": [
+      "all-knowing"
+     ],
+     "ant": [
+      "ignorant"
+     ]
+    },
+    {
+     "w": "surly",
+     "ipa": "[ˈsɜːrli]",
+     "pos": "adj.",
+     "zh": "脾气不好的",
+     "en": "bad-tempered and unfriendly",
+     "syn": [
+      "sullen",
+      "churlish"
+     ],
+     "ant": [
+      "genial",
+      "affable"
+     ]
+    },
+    {
+     "w": "transitory",
+     "ipa": "[ˈtrænsətɔri]",
+     "pos": "adj.",
+     "zh": "短暂的",
+     "en": "lasting only a short time",
+     "syn": [
+      "fleeting",
+      "ephemeral"
+     ],
+     "ant": [
+      "permanent",
+      "enduring"
+     ]
+    },
+    {
+     "w": "squander",
+     "ipa": "[ˈskwɑndɚ]",
+     "pos": "vt.",
+     "zh": "浪费",
+     "en": "to waste carelessly",
+     "syn": [
+      "waste",
+      "dissipate"
+     ],
+     "ant": [
+      "conserve",
+      "save"
+     ]
+    },
+    {
+     "w": "intermediary",
+     "ipa": "[ˌɪntərˈmiːdieri]",
+     "pos": "n.",
+     "zh": "中间人",
+     "en": "a go-between",
+     "syn": [
+      "mediator",
+      "broker"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[surly]] agent, an [[intermediary]] who was not [[omniscient]], warned the star that fame is [[transitory]] and urged him not to [[squander]] it.",
+   "gloss": {
+    "omniscient": "无所不知的",
+    "surly": "脾气不好的",
+    "transitory": "短暂的",
+    "squander": "浪费",
+    "intermediary": "中间人"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "improvise",
+     "ipa": "[ˈɪmprəvaɪz]",
+     "pos": "v.",
+     "zh": "即兴而作",
+     "en": "to create or perform without preparation",
+     "syn": [
+      "ad-lib",
+      "extemporize"
+     ],
+     "ant": [
+      "plan",
+      "rehearse"
+     ]
+    },
+    {
+     "w": "harbinger",
+     "ipa": "[ˈhɑrbɪndʒə]",
+     "pos": "n.",
+     "zh": "预言者",
+     "en": "a sign of what is to come",
+     "syn": [
+      "herald",
+      "forerunner"
+     ],
+     "ant": []
+    },
+    {
+     "w": "burlesque",
+     "ipa": "[bɜːrˈlesk]",
+     "pos": "n./v.",
+     "zh": "夸张滑稽地模仿以嘲弄他人的文学艺术作品，恶搞",
+     "en": "a mocking imitation of a serious work",
+     "syn": [
+      "parody",
+      "caricature"
+     ],
+     "ant": []
+    },
+    {
+     "w": "peculiarity",
+     "ipa": "[pɪˌkjuːliˈærəti]",
+     "pos": "n.",
+     "zh": "特征，特点",
+     "en": "a distinguishing feature or oddity",
+     "syn": [
+      "quirk",
+      "trait"
+     ],
+     "ant": [
+      "normality"
+     ]
+    },
+    {
+     "w": "cryptic",
+     "ipa": "[ˈkrɪptɪk]",
+     "pos": "adj.",
+     "zh": "秘密的；难以理解的",
+     "en": "mysterious; hard to understand",
+     "syn": [
+      "enigmatic",
+      "obscure"
+     ],
+     "ant": [
+      "clear",
+      "explicit"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[cryptic]] note, the [[harbinger]] of trouble, warned the comedian that the [[peculiarity]] of his [[burlesque]] would not be forgiven, but he would [[improvise]] anyway.",
+   "gloss": {
+    "improvise": "即兴而作",
+    "harbinger": "预言者",
+    "burlesque": "夸张滑稽地模仿以嘲弄他人的文学艺术作品，恶搞",
+    "peculiarity": "特征，特点",
+    "cryptic": "秘密的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "milieu",
+     "ipa": "[miːˈljɜː]",
+     "pos": "n.",
+     "zh": "环境，氛围",
+     "en": "the social or physical surroundings",
+     "syn": [
+      "environment",
+      "setting"
+     ],
+     "ant": []
+    },
+    {
+     "w": "fraught",
+     "ipa": "[frɔt]",
+     "pos": "adj.",
+     "zh": "充满的",
+     "en": "filled with (something unpleasant)",
+     "syn": [
+      "laden",
+      "charged"
+     ],
+     "ant": [
+      "free",
+      "devoid"
+     ]
+    },
+    {
+     "w": "hackneyed",
+     "ipa": "[ˈhæknɪd]",
+     "pos": "adj.",
+     "zh": "陈腐的，缺乏创新的",
+     "en": "made trite by overuse",
+     "syn": [
+      "stale",
+      "banal"
+     ],
+     "ant": [
+      "fresh",
+      "original"
+     ]
+    },
+    {
+     "w": "decry",
+     "ipa": "[dɪˈkraɪ]",
+     "pos": "vt.",
+     "zh": "强烈反对，否定",
+     "en": "to publicly condemn",
+     "syn": [
+      "denounce",
+      "censure"
+     ],
+     "ant": [
+      "praise",
+      "extol"
+     ]
+    },
+    {
+     "w": "bootless",
+     "ipa": "[ˈbuːtlɪs]",
+     "pos": "adj.",
+     "zh": "无用的",
+     "en": "useless; without result",
+     "syn": [
+      "futile",
+      "vain"
+     ],
+     "ant": [
+      "fruitful",
+      "useful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In the [[milieu]] of the old court, every conversation was [[fraught]] with risk; critics would [[decry]] [[hackneyed]] verse, and any protest felt [[bootless]].",
+   "gloss": {
+    "milieu": "环境，氛围",
+    "fraught": "充满的",
+    "hackneyed": "陈腐的，缺乏创新的",
+    "decry": "强烈反对，否定",
+    "bootless": "无用的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "apocalyptic",
+     "ipa": "[əˌpɑːkəˈlɪptɪk]",
+     "pos": "adj.",
+     "zh": "预言的，启示的；重要的，转折点的",
+     "en": "relating to disaster or the end of the world",
+     "syn": [
+      "prophetic",
+      "dire"
+     ],
+     "ant": []
+    },
+    {
+     "w": "munificent",
+     "ipa": "[mjuːˈnɪfɪsnt]",
+     "pos": "adj.",
+     "zh": "慷慨的",
+     "en": "extremely generous",
+     "syn": [
+      "generous",
+      "lavish"
+     ],
+     "ant": [
+      "stingy",
+      "miserly"
+     ]
+    },
+    {
+     "w": "repudiate",
+     "ipa": "[rɪˈpjuːdieɪt]",
+     "pos": "vt.",
+     "zh": "否认",
+     "en": "to reject as untrue or invalid",
+     "syn": [
+      "disown",
+      "renounce"
+     ],
+     "ant": [
+      "accept",
+      "endorse"
+     ]
+    },
+    {
+     "w": "contingency",
+     "ipa": "[kənˈtɪndʒənsi]",
+     "pos": "n.",
+     "zh": "可能发生的事",
+     "en": "a possible future event; an unforeseen event",
+     "syn": [
+      "eventuality",
+      "possibility"
+     ],
+     "ant": [
+      "certainty"
+     ]
+    },
+    {
+     "w": "frivolous",
+     "ipa": "[ˈfrɪvələs]",
+     "pos": "adj.",
+     "zh": "轻浮的；不重要的",
+     "en": "not serious; silly",
+     "syn": [
+      "trivial",
+      "flippant"
+     ],
+     "ant": [
+      "serious",
+      "weighty"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[apocalyptic]] sermon led the [[munificent]] donor to [[repudiate]] her [[frivolous]] past and plan for every [[contingency]].",
+   "gloss": {
+    "apocalyptic": "预言的，启示的",
+    "munificent": "慷慨的",
+    "repudiate": "否认",
+    "contingency": "可能发生的事",
+    "frivolous": "轻浮的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**fraught** 的意思最接近：",
+    "options": [
+     "充满的",
+     "轻浮的；不重要的",
+     "慷慨的",
+     "陈腐的，缺乏创新的"
+    ],
+    "answer": 0,
+    "explain": "fraught：充满的（filled with (something unpleasant)）。近义词：laden, charged。"
+   },
+   {
+    "q": "**munificent** 的意思最接近：",
+    "options": [
+     "无所不知的",
+     "无用的",
+     "慷慨的",
+     "轻浮的；不重要的"
+    ],
+    "answer": 2,
+    "explain": "munificent：慷慨的（extremely generous）。近义词：generous, lavish。"
+   },
+   {
+    "q": "哪个词的意思是「强烈反对，否定」？",
+    "options": [
+     "squander",
+     "improvise",
+     "decry",
+     "repudiate"
+    ],
+    "answer": 2,
+    "explain": "decry：强烈反对，否定（to publicly condemn）。"
+   },
+   {
+    "q": "哪个词和 **broker** 的意思最接近？",
+    "options": [
+     "milieu",
+     "intermediary",
+     "burlesque",
+     "contingency"
+    ],
+    "answer": 1,
+    "explain": "intermediary 与 broker 近义：a go-between。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> An apocalyptic sermon led the ____ donor to repudiate her frivolous past and plan for every contingency.",
+    "options": [
+     "cryptic",
+     "fraught",
+     "transitory",
+     "munificent"
+    ],
+    "answer": 3,
+    "explain": "munificent：慷慨的（extremely generous）。"
+   }
+  ]
+ }
+}

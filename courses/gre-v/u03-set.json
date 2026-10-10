@@ -1,0 +1,434 @@
+{
+ "id": "u03",
+ "title": "S 级核心词 · 第 3 组",
+ "en": "GRE Core Vocabulary · Set 3",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "malodorous",
+     "ipa": "[ˌmælˈoʊdərəs]",
+     "pos": "adj.",
+     "zh": "恶臭的",
+     "en": "having a bad smell",
+     "syn": [
+      "fetid",
+      "rank"
+     ],
+     "ant": [
+      "fragrant",
+      "aromatic"
+     ]
+    },
+    {
+     "w": "ad hoc",
+     "ipa": "[ˈeˈdi][ˈhɒk]",
+     "pos": "adj.",
+     "zh": "专门的",
+     "en": "created for a specific purpose; unplanned",
+     "syn": [
+      "improvised",
+      "makeshift"
+     ],
+     "ant": [
+      "permanent",
+      "systematic"
+     ]
+    },
+    {
+     "w": "proprietary",
+     "ipa": "[prəˈpraɪətɛri]",
+     "pos": "adj.",
+     "zh": "私营的",
+     "en": "owned privately; held by an owner",
+     "syn": [
+      "private",
+      "exclusive"
+     ],
+     "ant": [
+      "public"
+     ]
+    },
+    {
+     "w": "chide",
+     "ipa": "[tʃaɪd]",
+     "pos": "v.",
+     "zh": "责备",
+     "en": "to scold mildly",
+     "syn": [
+      "reprimand",
+      "rebuke"
+     ],
+     "ant": [
+      "praise",
+      "commend"
+     ]
+    },
+    {
+     "w": "camaraderie",
+     "ipa": "[ˌkɑːməˈrɑːdəri]",
+     "pos": "n.",
+     "zh": "友情",
+     "en": "friendship and trust among companions",
+     "syn": [
+      "fellowship",
+      "comradeship"
+     ],
+     "ant": [
+      "enmity",
+      "hostility"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[malodorous]] leak forced an [[ad hoc]] committee to inspect the [[proprietary]] machinery; the manager began to [[chide]] the crew, but their [[camaraderie]] soon softened his tone.",
+   "gloss": {
+    "malodorous": "恶臭的",
+    "ad hoc": "专门的",
+    "proprietary": "私营的",
+    "chide": "责备",
+    "camaraderie": "友情"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "resurgence",
+     "ipa": "[rɪˈsɜːrdʒəns]",
+     "pos": "n.",
+     "zh": "复兴",
+     "en": "a revival after a period of decline",
+     "syn": [
+      "revival",
+      "renewal"
+     ],
+     "ant": [
+      "decline",
+      "ebb"
+     ]
+    },
+    {
+     "w": "extraneous",
+     "ipa": "[ɪkˈstreɪniəs]",
+     "pos": "adj.",
+     "zh": "无关的，不重要的",
+     "en": "not relevant or essential",
+     "syn": [
+      "irrelevant",
+      "superfluous"
+     ],
+     "ant": [
+      "essential",
+      "relevant"
+     ]
+    },
+    {
+     "w": "dignified",
+     "ipa": "[ˈdɪɡnɪfaɪd]",
+     "pos": "adj.",
+     "zh": "高贵庄严的",
+     "en": "serious, stately and deserving respect",
+     "syn": [
+      "stately",
+      "august"
+     ],
+     "ant": [
+      "undignified",
+      "ungainly"
+     ]
+    },
+    {
+     "w": "variance",
+     "ipa": "[ˈvɛrɪəns]",
+     "pos": "n.",
+     "zh": "不一致，不和谐",
+     "en": "a disagreement or difference",
+     "syn": [
+      "discrepancy",
+      "divergence"
+     ],
+     "ant": [
+      "agreement",
+      "consistency"
+     ]
+    },
+    {
+     "w": "particularize",
+     "ipa": "[pəˈtɪkjələraɪz]",
+     "pos": "vt.",
+     "zh": "详述",
+     "en": "to give details or treat item by item",
+     "syn": [
+      "itemize",
+      "specify"
+     ],
+     "ant": [
+      "generalize"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a long decline, a [[resurgence]] of interest in the town's festival brought [[dignified]] guests and plenty of [[extraneous]] chatter; the council tried to [[particularize]] its plans but found a [[variance]] between its budget and its ambition.",
+   "gloss": {
+    "resurgence": "复兴",
+    "extraneous": "无关的，不重要的",
+    "dignified": "高贵庄严的",
+    "variance": "不一致，不和谐",
+    "particularize": "详述"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "invidious",
+     "ipa": "[ɪnˈvɪdɪəs]",
+     "pos": "adj.",
+     "zh": "惹人反感的；羡慕嫉妒恨的",
+     "en": "causing resentment; unfairly discriminating",
+     "syn": [
+      "offensive",
+      "discriminatory"
+     ],
+     "ant": [
+      "fair",
+      "just"
+     ]
+    },
+    {
+     "w": "baffle",
+     "ipa": "[ˈbæfl]",
+     "pos": "vt.",
+     "zh": "使疑惑",
+     "en": "to confuse or perplex",
+     "syn": [
+      "perplex",
+      "bewilder"
+     ],
+     "ant": [
+      "enlighten",
+      "clarify"
+     ]
+    },
+    {
+     "w": "credulous",
+     "ipa": "[ˈkrɛdʒələs]",
+     "pos": "adj.",
+     "zh": "轻信的，易受骗的",
+     "en": "too ready to believe",
+     "syn": [
+      "gullible",
+      "naive"
+     ],
+     "ant": [
+      "skeptical",
+      "incredulous"
+     ]
+    },
+    {
+     "w": "balk",
+     "ipa": "[bɔk]",
+     "pos": "vt.",
+     "zh": "阻碍；不愿接受，拒绝",
+     "en": "to refuse to proceed; to hinder",
+     "syn": [
+      "resist",
+      "shy away"
+     ],
+     "ant": [
+      "acquiesce",
+      "proceed"
+     ]
+    },
+    {
+     "w": "meager",
+     "ipa": "[ˈmiːgə]",
+     "pos": "adj.",
+     "zh": "贫乏的",
+     "en": "lacking in quantity or quality",
+     "syn": [
+      "scant",
+      "paltry"
+     ],
+     "ant": [
+      "ample",
+      "abundant"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[invidious]] comparison of the two teams could [[baffle]] only a [[credulous]] listener; the coach would [[balk]] at the idea, pointing to the [[meager]] evidence.",
+   "gloss": {
+    "invidious": "惹人反感的",
+    "baffle": "使疑惑",
+    "credulous": "轻信的，易受骗的",
+    "balk": "阻碍",
+    "meager": "贫乏的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "circumspect",
+     "ipa": "[ˈsɜːrkəmspekt]",
+     "pos": "adj.",
+     "zh": "谨慎的，小心的",
+     "en": "careful to consider all consequences",
+     "syn": [
+      "prudent",
+      "wary"
+     ],
+     "ant": [
+      "reckless",
+      "rash"
+     ]
+    },
+    {
+     "w": "finicky",
+     "ipa": "[ˈfɪnɪki]",
+     "pos": "adj.",
+     "zh": "过分讲究的，挑剔的",
+     "en": "overly fussy about details",
+     "syn": [
+      "fastidious",
+      "picky"
+     ],
+     "ant": [
+      "undemanding",
+      "easygoing"
+     ]
+    },
+    {
+     "w": "meander",
+     "ipa": "[miˈændər]",
+     "pos": "vi.",
+     "zh": "闲逛，漫步",
+     "en": "to wander without a fixed course",
+     "syn": [
+      "ramble",
+      "wander"
+     ],
+     "ant": [
+      "proceed directly"
+     ]
+    },
+    {
+     "w": "ebullient",
+     "ipa": "[ɪˈbʌliənt]",
+     "pos": "adj.",
+     "zh": "热情奔放的",
+     "en": "bubbling with enthusiasm",
+     "syn": [
+      "exuberant",
+      "effervescent"
+     ],
+     "ant": [
+      "subdued",
+      "glum"
+     ]
+    },
+    {
+     "w": "incontrovertible",
+     "ipa": "[ˌɪnkɑːntrəˈvɜːrtəbl]",
+     "pos": "adj.",
+     "zh": "不可争议的",
+     "en": "impossible to dispute",
+     "syn": [
+      "indisputable",
+      "undeniable"
+     ],
+     "ant": [
+      "dubious",
+      "questionable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[circumspect]] inspector, though [[finicky]] about detail, let his attention [[meander]] during the [[ebullient]] celebration, until an [[incontrovertible]] clue jolted him alert.",
+   "gloss": {
+    "circumspect": "谨慎的，小心的",
+    "finicky": "过分讲究的，挑剔的",
+    "meander": "闲逛，漫步",
+    "ebullient": "热情奔放的",
+    "incontrovertible": "不可争议的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**credulous** 的意思最接近：",
+    "options": [
+     "过分讲究的，挑剔的",
+     "轻信的，易受骗的",
+     "无关的，不重要的",
+     "不可争议的"
+    ],
+    "answer": 1,
+    "explain": "credulous：轻信的，易受骗的（too ready to believe）。近义词：gullible, naive。"
+   },
+   {
+    "q": "**chide** 的意思最接近：",
+    "options": [
+     "责备",
+     "闲逛，漫步",
+     "详述",
+     "使疑惑"
+    ],
+    "answer": 0,
+    "explain": "chide：责备（to scold mildly）。近义词：reprimand, rebuke。"
+   },
+   {
+    "q": "哪个词的意思是「复兴」？",
+    "options": [
+     "camaraderie",
+     "variance",
+     "resurgence",
+     "credulous"
+    ],
+    "answer": 2,
+    "explain": "resurgence：复兴（a revival after a period of decline）。"
+   },
+   {
+    "q": "哪个词和 **effervescent** 的意思最接近？",
+    "options": [
+     "finicky",
+     "ad hoc",
+     "meager",
+     "ebullient"
+    ],
+    "answer": 3,
+    "explain": "ebullient 与 effervescent 近义：bubbling with enthusiasm。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The circumspect inspector, though finicky about detail, let his attention ____ during the ebullient celebration, until an incontrovertible clue jolted him alert.",
+    "options": [
+     "particularize",
+     "balk",
+     "meander",
+     "baffle"
+    ],
+    "answer": 2,
+    "explain": "meander：闲逛，漫步（to wander without a fixed course）。"
+   }
+  ]
+ }
+}

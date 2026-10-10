@@ -1,0 +1,428 @@
+{
+ "id": "u19",
+ "title": "S 级核心词 · 第 19 组",
+ "en": "GRE Core Vocabulary · Set 19",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "moribund",
+     "ipa": "[ˈmɔːrɪbʌnd]",
+     "pos": "adj.",
+     "zh": "即将过时的",
+     "en": "near death; no longer effective",
+     "syn": [
+      "dying",
+      "obsolescent"
+     ],
+     "ant": [
+      "thriving",
+      "vigorous"
+     ]
+    },
+    {
+     "w": "assuage",
+     "ipa": "[əˈswedʒ]",
+     "pos": "vt.",
+     "zh": "缓和，减轻",
+     "en": "to make less severe; to soothe",
+     "syn": [
+      "alleviate",
+      "appease"
+     ],
+     "ant": [
+      "aggravate",
+      "exacerbate"
+     ]
+    },
+    {
+     "w": "deliberate",
+     "ipa": "[dɪˈlɪbərət]",
+     "pos": "adj.",
+     "zh": "深思熟虑的",
+     "en": "done on purpose; careful",
+     "syn": [
+      "intentional",
+      "unhurried"
+     ],
+     "ant": [
+      "accidental",
+      "hasty"
+     ]
+    },
+    {
+     "w": "erudite",
+     "ipa": "[ˈɛrudaɪt]",
+     "pos": "adj.",
+     "zh": "博学的",
+     "en": "having great learning",
+     "syn": [
+      "learned",
+      "scholarly"
+     ],
+     "ant": [
+      "ignorant",
+      "uneducated"
+     ]
+    },
+    {
+     "w": "jejune",
+     "ipa": "[dʒɪˈdʒuːn]",
+     "pos": "adj.",
+     "zh": "无趣乏味的",
+     "en": "dull; childishly naive",
+     "syn": [
+      "insipid",
+      "naive"
+     ],
+     "ant": [
+      "sophisticated",
+      "engaging"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[moribund]] journal tried to [[assuage]] its readers with a [[deliberate]] relaunch, filled with [[erudite]] essays and a few [[jejune]] ones.",
+   "gloss": {
+    "moribund": "即将过时的",
+    "assuage": "缓和，减轻",
+    "deliberate": "深思熟虑的",
+    "erudite": "博学的",
+    "jejune": "无趣乏味的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "usurp",
+     "ipa": "[juːˈzɜːrp]",
+     "pos": "vt.",
+     "zh": "篡夺，篡位",
+     "en": "to seize power illegally",
+     "syn": [
+      "seize",
+      "commandeer"
+     ],
+     "ant": [
+      "relinquish",
+      "cede"
+     ]
+    },
+    {
+     "w": "cloying",
+     "ipa": "[ˈklɔɪɪŋ]",
+     "pos": "adj.",
+     "zh": "甜得发腻的；感情用事的",
+     "en": "too sweet or sentimental",
+     "syn": [
+      "saccharine",
+      "sickly"
+     ],
+     "ant": [
+      "tart",
+      "restrained"
+     ]
+    },
+    {
+     "w": "precarious",
+     "ipa": "[prɪˈkɛrərɪəs]",
+     "pos": "adj.",
+     "zh": "危险的，不稳定的；可疑的，不明确的",
+     "en": "dangerously unstable",
+     "syn": [
+      "perilous",
+      "shaky"
+     ],
+     "ant": [
+      "secure",
+      "stable"
+     ]
+    },
+    {
+     "w": "mitigate",
+     "ipa": "[ˈmɪtɪɡeɪt]",
+     "pos": "vt.",
+     "zh": "减轻痛苦，使缓和",
+     "en": "to lessen the severity of",
+     "syn": [
+      "alleviate",
+      "temper"
+     ],
+     "ant": [
+      "aggravate",
+      "intensify"
+     ]
+    },
+    {
+     "w": "dulcet",
+     "ipa": "[ˈdʌlsɪt]",
+     "pos": "adj.",
+     "zh": "悦耳的，令人愉悦的",
+     "en": "sweet and soothing to the ear",
+     "syn": [
+      "melodious",
+      "mellifluous"
+     ],
+     "ant": [
+      "harsh",
+      "grating"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "To [[usurp]] the throne, the prince spoke in [[dulcet]] tones; his [[cloying]] flattery could [[mitigate]] suspicion only briefly, leaving his position [[precarious]].",
+   "gloss": {
+    "usurp": "篡夺，篡位",
+    "cloying": "甜得发腻的",
+    "precarious": "危险的，不稳定的",
+    "mitigate": "减轻痛苦，使缓和",
+    "dulcet": "悦耳的，令人愉悦的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ambiguous",
+     "ipa": "[æmˈbɪɡjuəs]",
+     "pos": "adj.",
+     "zh": "不确定的",
+     "en": "open to more than one meaning",
+     "syn": [
+      "equivocal",
+      "vague"
+     ],
+     "ant": [
+      "clear",
+      "unequivocal"
+     ]
+    },
+    {
+     "w": "antithetical",
+     "ipa": "[ˌæntɪˈθɛtɪkl]",
+     "pos": "adj.",
+     "zh": "完全对立的，相反的",
+     "en": "directly opposed",
+     "syn": [
+      "opposite",
+      "contrary"
+     ],
+     "ant": [
+      "compatible",
+      "similar"
+     ]
+    },
+    {
+     "w": "diminish",
+     "ipa": "[dɪˈmɪnɪʃ]",
+     "pos": "v.",
+     "zh": "(使)变小，(使)减少；轻视，贬低",
+     "en": "to make or become smaller; to belittle",
+     "syn": [
+      "lessen",
+      "reduce"
+     ],
+     "ant": [
+      "increase",
+      "enlarge"
+     ]
+    },
+    {
+     "w": "pivotal",
+     "ipa": "[ˈpɪvətl]",
+     "pos": "adj.",
+     "zh": "最关键的，最为重要的",
+     "en": "of vital importance; central",
+     "syn": [
+      "crucial",
+      "key"
+     ],
+     "ant": [
+      "peripheral",
+      "minor"
+     ]
+    },
+    {
+     "w": "meteoric",
+     "ipa": "[ˌmitɪˈɔrɪk]",
+     "pos": "adj.",
+     "zh": "流星般迅速而短暂的",
+     "en": "rapid and brilliant, but brief",
+     "syn": [
+      "swift",
+      "dazzling"
+     ],
+     "ant": [
+      "gradual",
+      "slow"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The treaty was [[ambiguous]], with clauses [[antithetical]] to one another, which would [[diminish]] its value; a [[pivotal]] vote ended the [[meteoric]] rise of its author.",
+   "gloss": {
+    "ambiguous": "不确定的",
+    "antithetical": "完全对立的，相反的",
+    "diminish": "(使)变小，(使)减少",
+    "pivotal": "最关键的，最为重要的",
+    "meteoric": "流星般迅速而短暂的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "meticulous",
+     "ipa": "[məˈtɪkjələs]",
+     "pos": "adj.",
+     "zh": "极为谨慎的",
+     "en": "extremely careful about details",
+     "syn": [
+      "scrupulous",
+      "painstaking"
+     ],
+     "ant": [
+      "careless",
+      "sloppy"
+     ]
+    },
+    {
+     "w": "pessimistic",
+     "ipa": "[ˌpɛsɪˈmɪstɪk]",
+     "pos": "adj.",
+     "zh": "悲观的",
+     "en": "expecting the worst",
+     "syn": [
+      "gloomy",
+      "cynical"
+     ],
+     "ant": [
+      "optimistic",
+      "hopeful"
+     ]
+    },
+    {
+     "w": "panacea",
+     "ipa": "[ˌpænəˈsiːə]",
+     "pos": "n.",
+     "zh": "万能药，万灵药",
+     "en": "a cure for all problems",
+     "syn": [
+      "cure-all",
+      "elixir"
+     ],
+     "ant": []
+    },
+    {
+     "w": "tonic",
+     "ipa": "[ˈtɑnɪk]",
+     "pos": "adj.",
+     "zh": "滋补的，有益健康的",
+     "en": "something that refreshes or invigorates",
+     "syn": [
+      "restorative",
+      "boost"
+     ],
+     "ant": []
+    },
+    {
+     "w": "compromise",
+     "ipa": "[ˈkɑmprəmaɪz]",
+     "pos": "v.",
+     "zh": "妥协；损害",
+     "en": "to settle by mutual concession; to weaken",
+     "syn": [
+      "concede",
+      "settle"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[meticulous]] editor, [[pessimistic]] about easy fixes, said that no [[panacea]] existed; a short break was a [[tonic]], and a [[compromise]] was best.",
+   "gloss": {
+    "meticulous": "极为谨慎的",
+    "pessimistic": "悲观的",
+    "panacea": "万能药，万灵药",
+    "tonic": "滋补的，有益健康的",
+    "compromise": "妥协"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**pivotal** 的意思最接近：",
+    "options": [
+     "最关键的，最为重要的",
+     "滋补的，有益健康的",
+     "甜得发腻的；感情用事的",
+     "完全对立的，相反的"
+    ],
+    "answer": 0,
+    "explain": "pivotal：最关键的，最为重要的（of vital importance; central）。近义词：crucial, key。"
+   },
+   {
+    "q": "**jejune** 的意思最接近：",
+    "options": [
+     "无趣乏味的",
+     "深思熟虑的",
+     "悲观的",
+     "最关键的，最为重要的"
+    ],
+    "answer": 0,
+    "explain": "jejune：无趣乏味的（dull; childishly naive）。近义词：insipid, naive。"
+   },
+   {
+    "q": "哪个词的意思是「即将过时的」？",
+    "options": [
+     "deliberate",
+     "meteoric",
+     "dulcet",
+     "moribund"
+    ],
+    "answer": 3,
+    "explain": "moribund：即将过时的（near death; no longer effective）。"
+   },
+   {
+    "q": "哪个词和 **cynical** 的意思最接近？",
+    "options": [
+     "meteoric",
+     "pessimistic",
+     "jejune",
+     "antithetical"
+    ],
+    "answer": 1,
+    "explain": "pessimistic 与 cynical 近义：expecting the worst。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The ____ journal tried to assuage its readers with a deliberate relaunch, filled with erudite essays and a few jejune ones.",
+    "options": [
+     "pessimistic",
+     "deliberate",
+     "moribund",
+     "precarious"
+    ],
+    "answer": 2,
+    "explain": "moribund：即将过时的（near death; no longer effective）。"
+   }
+  ]
+ }
+}

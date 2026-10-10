@@ -1,0 +1,419 @@
+{
+ "id": "u33",
+ "title": "S 级核心词 · 第 33 组",
+ "en": "GRE Core Vocabulary · Set 33",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "awry",
+     "ipa": "[əˈraɪ]",
+     "pos": "adj./adv.",
+     "zh": "出差错的(地)",
+     "en": "off course; wrong",
+     "syn": [
+      "askew",
+      "amiss"
+     ],
+     "ant": [
+      "straight",
+      "correct"
+     ]
+    },
+    {
+     "w": "manipulate",
+     "ipa": "[məˈnɪpjulet]",
+     "pos": "vt.",
+     "zh": "巧妙处理；暗中操控",
+     "en": "to handle skillfully; to control deviously",
+     "syn": [
+      "maneuver",
+      "exploit"
+     ],
+     "ant": []
+    },
+    {
+     "w": "glamorous",
+     "ipa": "[ˈglæmərəs]",
+     "pos": "adj.",
+     "zh": "迷人的",
+     "en": "exciting and attractive",
+     "syn": [
+      "alluring",
+      "dazzling"
+     ],
+     "ant": [
+      "dull",
+      "plain"
+     ]
+    },
+    {
+     "w": "exonerate",
+     "ipa": "[ɪɡˈzɑːnəreɪt]",
+     "pos": "vt.",
+     "zh": "免除责备",
+     "en": "to clear of blame",
+     "syn": [
+      "absolve",
+      "acquit"
+     ],
+     "ant": [
+      "accuse",
+      "blame"
+     ]
+    },
+    {
+     "w": "abridge",
+     "ipa": "[əˈbrɪdʒ]",
+     "pos": "v.",
+     "zh": "缩短，缩小",
+     "en": "to shorten a text",
+     "syn": [
+      "condense",
+      "curtail"
+     ],
+     "ant": [
+      "expand",
+      "lengthen"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "When the plan went [[awry]], the [[glamorous]] star said the press would [[manipulate]] the story; a court could [[exonerate]] her, but only an [[abridged|abridge]] version was published.",
+   "gloss": {
+    "awry": "出差错的(地)",
+    "manipulate": "巧妙处理",
+    "glamorous": "迷人的",
+    "exonerate": "免除责备",
+    "abridge": "缩短，缩小"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "subtle",
+     "ipa": "[ˈsʌtl]",
+     "pos": "adj.",
+     "zh": "微妙的，难以感知的",
+     "en": "delicate and hard to notice",
+     "syn": [
+      "delicate",
+      "understated"
+     ],
+     "ant": [
+      "obvious",
+      "blatant"
+     ]
+    },
+    {
+     "w": "vapid",
+     "ipa": "[ˈvæpɪd]",
+     "pos": "adj.",
+     "zh": "无趣的，乏味的",
+     "en": "dull and lifeless",
+     "syn": [
+      "insipid",
+      "bland"
+     ],
+     "ant": [
+      "lively",
+      "stimulating"
+     ]
+    },
+    {
+     "w": "debunk",
+     "ipa": "[ˌdiːˈbʌŋk]",
+     "pos": "vt.",
+     "zh": "揭露…的真面目",
+     "en": "to expose as false or exaggerated",
+     "syn": [
+      "expose",
+      "discredit"
+     ],
+     "ant": [
+      "confirm",
+      "validate"
+     ]
+    },
+    {
+     "w": "detach",
+     "ipa": "[dɪˈtætʃ]",
+     "pos": "vt.",
+     "zh": "使分离",
+     "en": "to separate or disconnect",
+     "syn": [
+      "separate",
+      "unfasten"
+     ],
+     "ant": [
+      "attach",
+      "join"
+     ]
+    },
+    {
+     "w": "entail",
+     "ipa": "[ɪnˈtel]",
+     "pos": "v.",
+     "zh": "牵连；导致",
+     "en": "to involve as a necessary result",
+     "syn": [
+      "involve",
+      "necessitate"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[subtle]] critic could [[debunk]] a [[vapid]] theory; to [[detach]] facts from fashion would [[entail]] years of study.",
+   "gloss": {
+    "subtle": "微妙的，难以感知的",
+    "vapid": "无趣的，乏味的",
+    "debunk": "揭露…的真面目",
+    "detach": "使分离",
+    "entail": "牵连"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "camouflage",
+     "ipa": "[ˈkæməˈflɑʒ]",
+     "pos": "v./n.",
+     "zh": "伪装；伪装手段",
+     "en": "a disguise that blends in; to disguise",
+     "syn": [
+      "disguise",
+      "mask"
+     ],
+     "ant": [
+      "reveal",
+      "expose"
+     ]
+    },
+    {
+     "w": "kindred",
+     "ipa": "[ˈkɪndrəd]",
+     "pos": "adj.",
+     "zh": "类似的；具有相似或相近的起源、本性或性质的",
+     "en": "related; similar in nature",
+     "syn": [
+      "related",
+      "akin"
+     ],
+     "ant": [
+      "unrelated",
+      "dissimilar"
+     ]
+    },
+    {
+     "w": "limpid",
+     "ipa": "[ˈlɪmpɪd]",
+     "pos": "adj.",
+     "zh": "透明清澈的",
+     "en": "perfectly clear",
+     "syn": [
+      "transparent",
+      "lucid"
+     ],
+     "ant": [
+      "murky",
+      "opaque"
+     ]
+    },
+    {
+     "w": "provenance",
+     "ipa": "[ˈprɑːvənəns]",
+     "pos": "n.",
+     "zh": "来源，起源",
+     "en": "the place of origin",
+     "syn": [
+      "origin",
+      "source"
+     ],
+     "ant": []
+    },
+    {
+     "w": "dogmatic",
+     "ipa": "[dɔːɡˈmætɪk]",
+     "pos": "adj.",
+     "zh": "武断的，自以为是的",
+     "en": "stubbornly asserting opinions as facts",
+     "syn": [
+      "doctrinaire",
+      "opinionated"
+     ],
+     "ant": [
+      "open-minded",
+      "flexible"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The soldier's [[camouflage]] let him hide beside a [[limpid]] stream; a [[kindred]] spirit asked about the [[provenance]] of his map, but a [[dogmatic]] sergeant would not answer.",
+   "gloss": {
+    "camouflage": "伪装",
+    "kindred": "类似的",
+    "limpid": "透明清澈的",
+    "provenance": "来源，起源",
+    "dogmatic": "武断的，自以为是的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "caterwaul",
+     "ipa": "[ˈkætərwɔːl]",
+     "pos": "v.",
+     "zh": "嚎叫",
+     "en": "to make a shrill, howling noise",
+     "syn": [
+      "howl",
+      "screech"
+     ],
+     "ant": []
+    },
+    {
+     "w": "resuscitate",
+     "ipa": "[rɪˈsʌsɪteɪt]",
+     "pos": "vt.",
+     "zh": "使复活，使苏醒",
+     "en": "to revive from unconsciousness or near death",
+     "syn": [
+      "revive",
+      "revitalize"
+     ],
+     "ant": []
+    },
+    {
+     "w": "onset",
+     "ipa": "[ˈɑnsɛt]",
+     "pos": "n.",
+     "zh": "起始，开始",
+     "en": "the beginning of something",
+     "syn": [
+      "start",
+      "outset"
+     ],
+     "ant": [
+      "end",
+      "conclusion"
+     ]
+    },
+    {
+     "w": "pushover",
+     "ipa": "[ˈpʊʃoʊvər]",
+     "pos": "n.",
+     "zh": "容易的事；容易被打败的人",
+     "en": "something very easy; a person easily beaten",
+     "syn": [
+      "doddle",
+      "soft touch"
+     ],
+     "ant": []
+    },
+    {
+     "w": "aspersion",
+     "ipa": "[əˈspɜːʒən]",
+     "pos": "n.",
+     "zh": "诽谤，中伤",
+     "en": "a damaging remark about someone",
+     "syn": [
+      "slur",
+      "slander"
+     ],
+     "ant": [
+      "praise",
+      "compliment"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "At the [[onset]] of winter the cats began to [[caterwaul]]; the vet, who tried to [[resuscitate]] one that was no [[pushover]], faced cruel [[aspersions|aspersion]] about her skill.",
+   "gloss": {
+    "caterwaul": "嚎叫",
+    "resuscitate": "使复活，使苏醒",
+    "onset": "起始，开始",
+    "pushover": "容易的事",
+    "aspersion": "诽谤，中伤"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**detach** 的意思最接近：",
+    "options": [
+     "嚎叫",
+     "揭露…的真面目",
+     "使分离",
+     "免除责备"
+    ],
+    "answer": 2,
+    "explain": "detach：使分离（to separate or disconnect）。近义词：separate, unfasten。"
+   },
+   {
+    "q": "**vapid** 的意思最接近：",
+    "options": [
+     "微妙的，难以感知的",
+     "无趣的，乏味的",
+     "迷人的",
+     "出差错的(地)"
+    ],
+    "answer": 1,
+    "explain": "vapid：无趣的，乏味的（dull and lifeless）。近义词：insipid, bland。"
+   },
+   {
+    "q": "哪个词的意思是「容易的事；容易被打败的人」？",
+    "options": [
+     "provenance",
+     "aspersion",
+     "pushover",
+     "onset"
+    ],
+    "answer": 2,
+    "explain": "pushover：容易的事；容易被打败的人（something very easy; a person easily beaten）。"
+   },
+   {
+    "q": "哪个词和 **slur** 的意思最接近？",
+    "options": [
+     "aspersion",
+     "pushover",
+     "onset",
+     "provenance"
+    ],
+    "answer": 0,
+    "explain": "aspersion 与 slur 近义：a damaging remark about someone。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> At the onset of winter the cats began to caterwaul; the vet, who tried to resuscitate one that was no ____, faced cruel aspersions about her skill.",
+    "options": [
+     "aspersion",
+     "onset",
+     "provenance",
+     "pushover"
+    ],
+    "answer": 3,
+    "explain": "pushover：容易的事；容易被打败的人（something very easy; a person easily beaten）。"
+   }
+  ]
+ }
+}

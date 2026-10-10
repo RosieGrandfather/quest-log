@@ -1,0 +1,433 @@
+{
+ "id": "u32",
+ "title": "S 级核心词 · 第 32 组",
+ "en": "GRE Core Vocabulary · Set 32",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "retard",
+     "ipa": "[ˈrɪtɑrd]",
+     "pos": "vt.",
+     "zh": "减速，延迟",
+     "en": "to slow down",
+     "syn": [
+      "delay",
+      "hinder"
+     ],
+     "ant": [
+      "accelerate",
+      "speed up"
+     ]
+    },
+    {
+     "w": "zenith",
+     "ipa": "[ˈzɛnɪθ]",
+     "pos": "n.",
+     "zh": "最高点，巅峰",
+     "en": "the highest point",
+     "syn": [
+      "peak",
+      "apex"
+     ],
+     "ant": [
+      "nadir",
+      "bottom"
+     ]
+    },
+    {
+     "w": "absolve",
+     "ipa": "[əbˈzɑlv]",
+     "pos": "v.",
+     "zh": "使无罪，解除责任",
+     "en": "to declare free from blame or guilt",
+     "syn": [
+      "exonerate",
+      "acquit"
+     ],
+     "ant": [
+      "condemn",
+      "blame"
+     ]
+    },
+    {
+     "w": "comity",
+     "ipa": "[ˈkɑməti]",
+     "pos": "n.",
+     "zh": "友好，社会和谐",
+     "en": "friendly courtesy and mutual respect",
+     "syn": [
+      "civility",
+      "amity"
+     ],
+     "ant": [
+      "hostility",
+      "discord"
+     ]
+    },
+    {
+     "w": "aggrandize",
+     "ipa": "[əˈɡrænˌdaɪz]",
+     "pos": "vt.",
+     "zh": "增加、提高(力量、财富、地位、声誉)等",
+     "en": "to increase the power or reputation of",
+     "syn": [
+      "exalt",
+      "inflate"
+     ],
+     "ant": [
+      "belittle",
+      "diminish"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Delays would [[retard]] the empire after it reached its [[zenith]]; the emperor tried to [[aggrandize]] himself, and no priest could [[absolve]] him or restore [[comity]].",
+   "gloss": {
+    "retard": "减速，延迟",
+    "zenith": "最高点，巅峰",
+    "absolve": "使无罪，解除责任",
+    "comity": "友好，社会和谐",
+    "aggrandize": "增加、提高(力量、财富、地位、声誉)等"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "collude",
+     "ipa": "[kəˈluːd]",
+     "pos": "v.",
+     "zh": "串通，共谋(做坏事)",
+     "en": "to cooperate secretly for a dishonest purpose",
+     "syn": [
+      "conspire",
+      "connive"
+     ],
+     "ant": []
+    },
+    {
+     "w": "subjugate",
+     "ipa": "[ˈsʌbdʒuɡeɪt]",
+     "pos": "vt.",
+     "zh": "征服，镇压",
+     "en": "to bring under control by force",
+     "syn": [
+      "conquer",
+      "subdue"
+     ],
+     "ant": [
+      "liberate",
+      "free"
+     ]
+    },
+    {
+     "w": "diverge",
+     "ipa": "[daɪˈvɜːdʒ]",
+     "pos": "vt.",
+     "zh": "(使)分叉，散开；分歧",
+     "en": "to branch off; to differ",
+     "syn": [
+      "branch",
+      "differ"
+     ],
+     "ant": [
+      "converge",
+      "merge"
+     ]
+    },
+    {
+     "w": "ambivalent",
+     "ipa": "[æmˈbɪvələnt]",
+     "pos": "adj.",
+     "zh": "(尤指感情、态度)矛盾的",
+     "en": "having mixed or conflicting feelings",
+     "syn": [
+      "torn",
+      "uncertain"
+     ],
+     "ant": [
+      "decided",
+      "certain"
+     ]
+    },
+    {
+     "w": "desultory",
+     "ipa": "[ˈdɛsəltɔri]",
+     "pos": "adj.",
+     "zh": "无计划的，无目的的",
+     "en": "lacking a plan or purpose",
+     "syn": [
+      "aimless",
+      "random"
+     ],
+     "ant": [
+      "methodical",
+      "purposeful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Two generals would [[collude]] to [[subjugate]] the province, but their plans began to [[diverge]]; the [[ambivalent]] public gave only [[desultory]] support.",
+   "gloss": {
+    "collude": "串通，共谋(做坏事)",
+    "subjugate": "征服，镇压",
+    "diverge": "(使)分叉，散开",
+    "ambivalent": "(尤指感情、态度)矛盾的",
+    "desultory": "无计划的，无目的的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "pristine",
+     "ipa": "[ˈprɪstin]",
+     "pos": "adj.",
+     "zh": "纯净的，质朴的，未被文明腐蚀的",
+     "en": "in its original, pure state",
+     "syn": [
+      "unspoiled",
+      "untouched"
+     ],
+     "ant": [
+      "corrupted",
+      "tarnished"
+     ]
+    },
+    {
+     "w": "encumber",
+     "ipa": "[ɪnˈkʌmbə]",
+     "pos": "vt.",
+     "zh": "阻碍；妨碍",
+     "en": "to burden or hinder",
+     "syn": [
+      "hamper",
+      "burden"
+     ],
+     "ant": [
+      "free",
+      "unburden"
+     ]
+    },
+    {
+     "w": "elephantine",
+     "ipa": "[ˌelɪˈfæntiːn]",
+     "pos": "adj.",
+     "zh": "巨大的；笨拙的",
+     "en": "huge; clumsy",
+     "syn": [
+      "gigantic",
+      "ponderous"
+     ],
+     "ant": [
+      "tiny",
+      "graceful"
+     ]
+    },
+    {
+     "w": "modicum",
+     "ipa": "[ˈmɑːdɪkəm]",
+     "pos": "n.",
+     "zh": "少量",
+     "en": "a small amount",
+     "syn": [
+      "bit",
+      "trace"
+     ],
+     "ant": [
+      "abundance"
+     ]
+    },
+    {
+     "w": "cowardice",
+     "ipa": "[ˈkaʊɚdɪs]",
+     "pos": "n.",
+     "zh": "懦弱，不坚定",
+     "en": "lack of courage",
+     "syn": [
+      "timidity",
+      "faintheartedness"
+     ],
+     "ant": [
+      "bravery",
+      "courage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[pristine]] valley was spoiled by an [[elephantine]] hotel that would [[encumber]] the town with debt; showing a [[modicum]] of sense was not [[cowardice]].",
+   "gloss": {
+    "pristine": "纯净的，质朴的，未被文明腐蚀的",
+    "encumber": "阻碍",
+    "elephantine": "巨大的",
+    "modicum": "少量",
+    "cowardice": "懦弱，不坚定"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "volatile",
+     "ipa": "[ˈvɑlətl]",
+     "pos": "adj.",
+     "zh": "多变的",
+     "en": "liable to change rapidly; explosive",
+     "syn": [
+      "unstable",
+      "fickle"
+     ],
+     "ant": [
+      "stable",
+      "steady"
+     ]
+    },
+    {
+     "w": "menial",
+     "ipa": "[ˈminjəl]",
+     "pos": "adj.",
+     "zh": "卑贱的，低下的",
+     "en": "lowly and unskilled; servile",
+     "syn": [
+      "lowly",
+      "humble"
+     ],
+     "ant": [
+      "prestigious",
+      "skilled"
+     ]
+    },
+    {
+     "w": "subordinate",
+     "ipa": "[səˈbɔdɪnet]",
+     "pos": "adj.",
+     "zh": "下级的；次要的；征服",
+     "en": "lower in rank; secondary; a junior",
+     "syn": [
+      "inferior",
+      "secondary"
+     ],
+     "ant": [
+      "superior",
+      "principal"
+     ]
+    },
+    {
+     "w": "retribution",
+     "ipa": "[ˌrɛtrɪˈbjuʃən]",
+     "pos": "n.",
+     "zh": "报偿，报应",
+     "en": "deserved punishment",
+     "syn": [
+      "vengeance",
+      "reprisal"
+     ],
+     "ant": [
+      "reward",
+      "forgiveness"
+     ]
+    },
+    {
+     "w": "myriad",
+     "ipa": "[ˈmɪriəd]",
+     "pos": "adj.",
+     "zh": "无限的，大量的",
+     "en": "countless; a great number",
+     "syn": [
+      "countless",
+      "innumerable"
+     ],
+     "ant": [
+      "few",
+      "scant"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In a [[volatile]] office, [[menial]] tasks fell to the [[subordinate]] staff, who feared [[retribution]] from [[myriad]] managers.",
+   "gloss": {
+    "volatile": "多变的",
+    "menial": "卑贱的，低下的",
+    "subordinate": "下级的",
+    "retribution": "报偿，报应",
+    "myriad": "无限的，大量的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**menial** 的意思最接近：",
+    "options": [
+     "(尤指感情、态度)矛盾的",
+     "卑贱的，低下的",
+     "巨大的；笨拙的",
+     "纯净的，质朴的，未被文明腐蚀的"
+    ],
+    "answer": 1,
+    "explain": "menial：卑贱的，低下的（lowly and unskilled; servile）。近义词：lowly, humble。"
+   },
+   {
+    "q": "**encumber** 的意思最接近：",
+    "options": [
+     "阻碍；妨碍",
+     "使无罪，解除责任",
+     "增加、提高(力量、财富、地位、声誉)等",
+     "(使)分叉，散开；分歧"
+    ],
+    "answer": 0,
+    "explain": "encumber：阻碍；妨碍（to burden or hinder）。近义词：hamper, burden。"
+   },
+   {
+    "q": "哪个词的意思是「无计划的，无目的的」？",
+    "options": [
+     "desultory",
+     "myriad",
+     "subordinate",
+     "ambivalent"
+    ],
+    "answer": 0,
+    "explain": "desultory：无计划的，无目的的（lacking a plan or purpose）。"
+   },
+   {
+    "q": "哪个词和 **uncertain** 的意思最接近？",
+    "options": [
+     "desultory",
+     "subordinate",
+     "volatile",
+     "ambivalent"
+    ],
+    "answer": 3,
+    "explain": "ambivalent 与 uncertain 近义：having mixed or conflicting feelings。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A pristine valley was spoiled by an ____ hotel that would encumber the town with debt; showing a modicum of sense was not cowardice.",
+    "options": [
+     "subordinate",
+     "menial",
+     "elephantine",
+     "ambivalent"
+    ],
+    "answer": 2,
+    "explain": "elephantine：巨大的；笨拙的（huge; clumsy）。"
+   }
+  ]
+ }
+}

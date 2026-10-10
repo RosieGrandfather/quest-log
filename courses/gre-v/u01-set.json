@@ -1,0 +1,430 @@
+{
+ "id": "u01",
+ "title": "S 级核心词 · 第 1 组",
+ "en": "GRE Core Vocabulary · Set 1",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "annul",
+     "ipa": "[əˈnʌl]",
+     "pos": "vt.",
+     "zh": "宣告无效，取消",
+     "en": "to declare something legally invalid or cancel it officially",
+     "syn": [
+      "revoke",
+      "nullify",
+      "void"
+     ],
+     "ant": [
+      "validate",
+      "uphold"
+     ]
+    },
+    {
+     "w": "formidable",
+     "ipa": "[ˈfɔrmɪdəbl]",
+     "pos": "adj.",
+     "zh": "令人生畏的，难以对付的",
+     "en": "difficult to deal with; inspiring awe or fear",
+     "syn": [
+      "daunting",
+      "imposing"
+     ],
+     "ant": [
+      "trivial",
+      "negligible"
+     ]
+    },
+    {
+     "w": "predecessor",
+     "ipa": "[ˈprɛdəsɛsə]",
+     "pos": "n.",
+     "zh": "前任，先辈",
+     "en": "a person who held a position or role before another",
+     "syn": [
+      "forerunner",
+      "antecedent"
+     ],
+     "ant": [
+      "successor"
+     ]
+    },
+    {
+     "w": "nonchalant",
+     "ipa": "[ˌnɑnʃəˈlɑnt]",
+     "pos": "adj.",
+     "zh": "漫不经心的，若无其事的",
+     "en": "calm and casually unconcerned",
+     "syn": [
+      "unruffled",
+      "blasé"
+     ],
+     "ant": [
+      "anxious",
+      "concerned"
+     ]
+    },
+    {
+     "w": "brook",
+     "ipa": "[brʊk]",
+     "pos": "v.",
+     "zh": "忍受，容许",
+     "en": "to tolerate or allow (usually used in negative statements)",
+     "syn": [
+      "tolerate",
+      "abide"
+     ],
+     "ant": [
+      "forbid",
+      "prohibit"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The incoming director vowed to [[annul]] a contract that her [[predecessor]] had signed, even though the legal obstacles looked [[formidable]]. Her colleagues stayed [[nonchalant]], but she would not [[brook]] any further delay.",
+   "gloss": {
+    "annul": "宣告无效，取消",
+    "formidable": "令人生畏的，难以对付的",
+    "predecessor": "前任，先辈",
+    "nonchalant": "漫不经心的，若无其事的",
+    "brook": "忍受，容许"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "excavate",
+     "ipa": "[ˈɛkskəˈvet]",
+     "pos": "v.",
+     "zh": "挖掘，挖空",
+     "en": "to dig out or uncover by digging",
+     "syn": [
+      "unearth",
+      "dig up"
+     ],
+     "ant": [
+      "bury",
+      "fill in"
+     ]
+    },
+    {
+     "w": "dissemble",
+     "ipa": "[dɪˈsembl]",
+     "pos": "v.",
+     "zh": "用假象隐藏真相，掩饰",
+     "en": "to hide one's true feelings or intentions behind a false appearance",
+     "syn": [
+      "feign",
+      "disguise"
+     ],
+     "ant": [
+      "reveal",
+      "disclose"
+     ]
+    },
+    {
+     "w": "cliquish",
+     "ipa": "[ˈkliːkɪʃ]",
+     "pos": "adj.",
+     "zh": "小集团的",
+     "en": "tending to form small exclusive groups",
+     "syn": [
+      "clannish",
+      "exclusive"
+     ],
+     "ant": [
+      "inclusive",
+      "welcoming"
+     ]
+    },
+    {
+     "w": "divert",
+     "ipa": "[dɪˈvət]",
+     "pos": "vt.",
+     "zh": "使转向；使消遣",
+     "en": "to turn aside from a course; to amuse",
+     "syn": [
+      "deflect",
+      "entertain"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pedestrian",
+     "ipa": "[pəˈdɛstrɪən]",
+     "pos": "adj.",
+     "zh": "平庸无奇的，令人厌倦的",
+     "en": "dull and unimaginative",
+     "syn": [
+      "prosaic",
+      "mundane"
+     ],
+     "ant": [
+      "original",
+      "inspired"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "When teams began to [[excavate]] the old harbor, a [[cliquish]] circle of officials tried to [[divert]] the press by calling the project a [[pedestrian]] affair, while they [[dissemble]] about what had already been found.",
+   "gloss": {
+    "excavate": "挖掘，挖空",
+    "dissemble": "用假象隐藏真相，掩饰",
+    "cliquish": "小集团的",
+    "divert": "使转向",
+    "pedestrian": "平庸无奇的，令人厌倦的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "brandish",
+     "ipa": "[ˈbrændɪʃ]",
+     "pos": "vt.",
+     "zh": "(带有威胁性地)挥舞",
+     "en": "to wave or flourish, often in a threatening way",
+     "syn": [
+      "flourish",
+      "wield"
+     ],
+     "ant": [
+      "sheathe",
+      "conceal"
+     ]
+    },
+    {
+     "w": "gigantic",
+     "ipa": "[dʒaɪˈɡæntɪk]",
+     "pos": "adj.",
+     "zh": "巨大的",
+     "en": "extremely large",
+     "syn": [
+      "colossal",
+      "enormous"
+     ],
+     "ant": [
+      "tiny",
+      "minuscule"
+     ]
+    },
+    {
+     "w": "faction",
+     "ipa": "[ˈfækʃən]",
+     "pos": "n.",
+     "zh": "派系",
+     "en": "a small group within a larger one, often quarrelsome",
+     "syn": [
+      "clique",
+      "splinter group"
+     ],
+     "ant": []
+    },
+    {
+     "w": "patchwork",
+     "ipa": "[ˈpætʃˈwɝk]",
+     "pos": "n./adj.",
+     "zh": "混合物(的)",
+     "en": "something made of many different pieces or elements",
+     "syn": [
+      "hodgepodge",
+      "medley"
+     ],
+     "ant": [
+      "uniformity"
+     ]
+    },
+    {
+     "w": "inimical",
+     "ipa": "[ɪˈnɪmɪkl]",
+     "pos": "adj.",
+     "zh": "带有敌意的",
+     "en": "hostile or harmful",
+     "syn": [
+      "hostile",
+      "adverse"
+     ],
+     "ant": [
+      "friendly",
+      "favorable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A protester began to [[brandish]] a [[gigantic]] banner, and soon the crowd split into rival [[factions|faction]], their complaints a [[patchwork]] of grievances that were openly [[inimical]] to one another.",
+   "gloss": {
+    "brandish": "(带有威胁性地)挥舞",
+    "gigantic": "巨大的",
+    "faction": "派系",
+    "patchwork": "混合物(的)",
+    "inimical": "带有敌意的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "chivalrous",
+     "ipa": "[ˈʃɪvəlrəs]",
+     "pos": "adj.",
+     "zh": "有骑士风度的，(尤指对女性)彬彬有礼的",
+     "en": "courteous and considerate, especially toward women",
+     "syn": [
+      "gallant",
+      "courtly"
+     ],
+     "ant": [
+      "rude",
+      "boorish"
+     ]
+    },
+    {
+     "w": "sequester",
+     "ipa": "[sɪˈkwestər]",
+     "pos": "vt.",
+     "zh": "使隔绝，分离",
+     "en": "to isolate or set apart from others",
+     "syn": [
+      "isolate",
+      "cloister"
+     ],
+     "ant": [
+      "integrate",
+      "mingle"
+     ]
+    },
+    {
+     "w": "auspicious",
+     "ipa": "[ɔˈspɪʃəs]",
+     "pos": "adj.",
+     "zh": "好兆头的",
+     "en": "showing signs of future success; favorable",
+     "syn": [
+      "propitious",
+      "promising"
+     ],
+     "ant": [
+      "ominous",
+      "inauspicious"
+     ]
+    },
+    {
+     "w": "facile",
+     "ipa": "[ˈfæsl]",
+     "pos": "adj.",
+     "zh": "表面的，浅尝辄止的",
+     "en": "too easy; superficial",
+     "syn": [
+      "glib",
+      "simplistic"
+     ],
+     "ant": [
+      "profound",
+      "thorough"
+     ]
+    },
+    {
+     "w": "avid",
+     "ipa": "[ˈævɪd]",
+     "pos": "adj.",
+     "zh": "急切渴望的",
+     "en": "having a keen, eager interest",
+     "syn": [
+      "keen",
+      "zealous"
+     ],
+     "ant": [
+      "apathetic",
+      "indifferent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[chivalrous]] captain chose to [[sequester]] the passengers in the safest cabin, yet his crew took the calm sea as an [[auspicious]] sign and offered a [[facile]] explanation for the storm warnings, like [[avid]] card players unwilling to leave a game.",
+   "gloss": {
+    "chivalrous": "有骑士风度的，(尤指对女性)彬彬有礼的",
+    "sequester": "使隔绝，分离",
+    "auspicious": "好兆头的",
+    "facile": "表面的，浅尝辄止的",
+    "avid": "急切渴望的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**sequester** 的意思最接近：",
+    "options": [
+     "(带有威胁性地)挥舞",
+     "使隔绝，分离",
+     "使转向；使消遣",
+     "宣告无效，取消"
+    ],
+    "answer": 1,
+    "explain": "sequester：使隔绝，分离（to isolate or set apart from others）。近义词：isolate, cloister。"
+   },
+   {
+    "q": "**brook** 的意思最接近：",
+    "options": [
+     "使隔绝，分离",
+     "使转向；使消遣",
+     "忍受，容许",
+     "挖掘，挖空"
+    ],
+    "answer": 2,
+    "explain": "brook：忍受，容许（to tolerate or allow (usually used in negative statements)）。近义词：tolerate, abide。"
+   },
+   {
+    "q": "哪个词的意思是「宣告无效，取消」？",
+    "options": [
+     "brandish",
+     "dissemble",
+     "excavate",
+     "annul"
+    ],
+    "answer": 3,
+    "explain": "annul：宣告无效，取消（to declare something legally invalid or cancel it officially）。"
+   },
+   {
+    "q": "哪个词和 **flourish** 的意思最接近？",
+    "options": [
+     "dissemble",
+     "sequester",
+     "brandish",
+     "excavate"
+    ],
+    "answer": 2,
+    "explain": "brandish 与 flourish 近义：to wave or flourish, often in a threatening way。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> When teams began to excavate the old harbor, a cliquish circle of officials tried to divert the press by calling the project a pedestrian affair, while they ____ about what had already been found.",
+    "options": [
+     "dissemble",
+     "sequester",
+     "excavate",
+     "brook"
+    ],
+    "answer": 0,
+    "explain": "dissemble：用假象隐藏真相，掩饰（to hide one's true feelings or intentions behind a false appearance）。"
+   }
+  ]
+ }
+}

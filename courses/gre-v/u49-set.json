@@ -1,0 +1,427 @@
+{
+ "id": "u49",
+ "title": "S 级核心词 · 第 49 组",
+ "en": "GRE Core Vocabulary · Set 49",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "indoctrinate",
+     "ipa": "[ɪnˈdɑːktrɪneɪt]",
+     "pos": "vt.",
+     "zh": "教育，灌输思想",
+     "en": "to teach someone to accept a set of beliefs without question",
+     "syn": [
+      "brainwash",
+      "instruct"
+     ],
+     "ant": []
+    },
+    {
+     "w": "opprobrious",
+     "ipa": "[əˈprəʊbriəs]",
+     "pos": "adj.",
+     "zh": "辱骂的；臭名昭著的，令人鄙视的",
+     "en": "expressing scorn; deserving of disgrace",
+     "syn": [
+      "abusive",
+      "scurrilous"
+     ],
+     "ant": [
+      "laudatory",
+      "respectful"
+     ]
+    },
+    {
+     "w": "oblivious",
+     "ipa": "[əˈblɪvɪəs]",
+     "pos": "adj.",
+     "zh": "不知道的，不知情的",
+     "en": "not aware of what is happening around one",
+     "syn": [
+      "unaware",
+      "heedless"
+     ],
+     "ant": [
+      "aware",
+      "mindful"
+     ]
+    },
+    {
+     "w": "testimony",
+     "ipa": "[ˈtɛstəˈmoni]",
+     "pos": "n.",
+     "zh": "证词，声明",
+     "en": "a formal statement given as evidence; proof",
+     "syn": [
+      "evidence",
+      "attestation"
+     ],
+     "ant": []
+    },
+    {
+     "w": "surfeit",
+     "ipa": "[ˈsɜːrfɪt]",
+     "pos": "v./n.",
+     "zh": "(使)过量，(使)饮食过度",
+     "en": "an excessive amount; to overfill",
+     "syn": [
+      "excess",
+      "glut"
+     ],
+     "ant": [
+      "dearth",
+      "shortage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The cult sought to [[indoctrinate]] the young with [[opprobrious]] slogans; the [[oblivious]] members gave [[testimony]] that showed a [[surfeit]] of blind loyalty.",
+   "gloss": {
+    "indoctrinate": "教育，灌输思想",
+    "opprobrious": "辱骂的",
+    "oblivious": "不知道的，不知情的",
+    "testimony": "证词，声明",
+    "surfeit": "(使)过量，(使)饮食过度"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "cantankerous",
+     "ipa": "[kænˈtæŋkərəs]",
+     "pos": "adj.",
+     "zh": "脾气不好的",
+     "en": "bad-tempered and difficult to deal with",
+     "syn": [
+      "crotchety",
+      "ornery"
+     ],
+     "ant": [
+      "affable",
+      "good-natured"
+     ]
+    },
+    {
+     "w": "debacle",
+     "ipa": "[deɪˈbɑːkl]",
+     "pos": "n.",
+     "zh": "溃败",
+     "en": "a sudden, complete failure or collapse",
+     "syn": [
+      "fiasco",
+      "rout"
+     ],
+     "ant": [
+      "triumph",
+      "success"
+     ]
+    },
+    {
+     "w": "fringe",
+     "ipa": "[frɪndʒ]",
+     "pos": "n.",
+     "zh": "边缘",
+     "en": "the outer edge; not part of the mainstream",
+     "syn": [
+      "periphery",
+      "margin"
+     ],
+     "ant": [
+      "center",
+      "core"
+     ]
+    },
+    {
+     "w": "discern",
+     "ipa": "[dɪˈsɜːn]",
+     "pos": "v.",
+     "zh": "识别，辨别差异",
+     "en": "to perceive or recognize with effort",
+     "syn": [
+      "detect",
+      "distinguish"
+     ],
+     "ant": [
+      "overlook",
+      "miss"
+     ]
+    },
+    {
+     "w": "fastidious",
+     "ipa": "[fæˈstɪdɪəs]",
+     "pos": "adj.",
+     "zh": "挑剔的，极仔细的，追求完美的",
+     "en": "very attentive to detail and hard to please",
+     "syn": [
+      "meticulous",
+      "finicky"
+     ],
+     "ant": [
+      "careless",
+      "slapdash"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[cantankerous]] host faced a [[debacle]] when guests from the [[fringe]] arrived; he could not [[discern]] which were friends, and the [[fastidious]] cook walked out.",
+   "gloss": {
+    "cantankerous": "脾气不好的",
+    "debacle": "溃败",
+    "fringe": "边缘",
+    "discern": "识别，辨别差异",
+    "fastidious": "挑剔的，极仔细的，追求完美的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lull",
+     "ipa": "[lʌl]",
+     "pos": "n.",
+     "zh": "相对平静时期，间隙；使镇静，使安心",
+     "en": "a temporary period of calm; to soothe or deceive into calm",
+     "syn": [
+      "respite",
+      "pause"
+     ],
+     "ant": [
+      "surge",
+      "flurry"
+     ]
+    },
+    {
+     "w": "wane",
+     "ipa": "[wen]",
+     "pos": "vi.",
+     "zh": "减少，衰退，缺少的",
+     "en": "to decrease gradually in strength or size",
+     "syn": [
+      "ebb",
+      "dwindle"
+     ],
+     "ant": [
+      "wax",
+      "grow"
+     ]
+    },
+    {
+     "w": "wrest",
+     "ipa": "[rest]",
+     "pos": "v.",
+     "zh": "辛苦地获得",
+     "en": "to pull away by force or effort",
+     "syn": [
+      "wring",
+      "extract"
+     ],
+     "ant": [
+      "surrender",
+      "yield"
+     ]
+    },
+    {
+     "w": "far-fetched",
+     "ipa": "[ˈfrɛtfəl]",
+     "pos": "adj.",
+     "zh": "牵强的，不可信的",
+     "en": "unlikely and hard to believe",
+     "syn": [
+      "implausible",
+      "improbable"
+     ],
+     "ant": [
+      "plausible",
+      "credible"
+     ]
+    },
+    {
+     "w": "revelation",
+     "ipa": "[ˈrɛvəˈleʃən]",
+     "pos": "n.",
+     "zh": "爆料，揭示",
+     "en": "the disclosing of something previously hidden",
+     "syn": [
+      "disclosure",
+      "exposé"
+     ],
+     "ant": [
+      "concealment"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a brief [[lull]], the storm began to [[wane]]; sailors had to [[wrest]] the helm back, and the [[far-fetched]] tale of a sea beast was the biggest [[revelation]] of the trip.",
+   "gloss": {
+    "lull": "相对平静时期，间隙",
+    "wane": "减少，衰退，缺少的",
+    "wrest": "辛苦地获得",
+    "far-fetched": "牵强的，不可信的",
+    "revelation": "爆料，揭示"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ploy",
+     "ipa": "[plɔɪ]",
+     "pos": "n.",
+     "zh": "计策，手段",
+     "en": "a clever maneuver to gain an advantage",
+     "syn": [
+      "ruse",
+      "stratagem"
+     ],
+     "ant": []
+    },
+    {
+     "w": "authentic",
+     "ipa": "[ɔˈθɛntɪk]",
+     "pos": "adj.",
+     "zh": "真实的，非仿造的",
+     "en": "real, not copied or fake",
+     "syn": [
+      "genuine",
+      "bona fide"
+     ],
+     "ant": [
+      "counterfeit",
+      "spurious"
+     ]
+    },
+    {
+     "w": "vilify",
+     "ipa": "[ˈvɪlɪfaɪ]",
+     "pos": "vt.",
+     "zh": "诽谤，辱骂",
+     "en": "to speak of someone in an abusively bad way",
+     "syn": [
+      "slander",
+      "malign"
+     ],
+     "ant": [
+      "praise",
+      "exalt"
+     ]
+    },
+    {
+     "w": "encomium",
+     "ipa": "[enˈkoʊmiəm]",
+     "pos": "n.",
+     "zh": "赞颂之词",
+     "en": "a speech or writing of glowing praise",
+     "syn": [
+      "panegyric",
+      "tribute"
+     ],
+     "ant": [
+      "diatribe",
+      "censure"
+     ]
+    },
+    {
+     "w": "divulge",
+     "ipa": "[daɪˈvʌldʒ]",
+     "pos": "vt.",
+     "zh": "泄露(秘密)",
+     "en": "to make known something private or secret",
+     "syn": [
+      "reveal",
+      "disclose"
+     ],
+     "ant": [
+      "conceal",
+      "withhold"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The reporter's [[ploy]] was to feign an [[authentic]] interest; she would [[vilify]] no one, but wrote an [[encomium]] to the clerk who agreed to [[divulge]] the facts.",
+   "gloss": {
+    "ploy": "计策，手段",
+    "authentic": "真实的，非仿造的",
+    "vilify": "诽谤，辱骂",
+    "encomium": "赞颂之词",
+    "divulge": "泄露(秘密)"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**oblivious** 的意思最接近：",
+    "options": [
+     "不知道的，不知情的",
+     "挑剔的，极仔细的，追求完美的",
+     "真实的，非仿造的",
+     "辱骂的；臭名昭著的，令人鄙视的"
+    ],
+    "answer": 0,
+    "explain": "oblivious：不知道的，不知情的（not aware of what is happening around one）。近义词：unaware, heedless。"
+   },
+   {
+    "q": "**wrest** 的意思最接近：",
+    "options": [
+     "(使)过量，(使)饮食过度",
+     "辛苦地获得",
+     "减少，衰退，缺少的",
+     "教育，灌输思想"
+    ],
+    "answer": 1,
+    "explain": "wrest：辛苦地获得（to pull away by force or effort）。近义词：wring, extract。"
+   },
+   {
+    "q": "哪个词的意思是「赞颂之词」？",
+    "options": [
+     "ploy",
+     "lull",
+     "fringe",
+     "encomium"
+    ],
+    "answer": 3,
+    "explain": "encomium：赞颂之词（a speech or writing of glowing praise）。"
+   },
+   {
+    "q": "哪个词和 **malign** 的意思最接近？",
+    "options": [
+     "indoctrinate",
+     "divulge",
+     "vilify",
+     "wrest"
+    ],
+    "answer": 2,
+    "explain": "vilify 与 malign 近义：to speak of someone in an abusively bad way。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The reporter's ploy was to feign an authentic interest; she would vilify no one, but wrote an ____ to the clerk who agreed to divulge the facts.",
+    "options": [
+     "debacle",
+     "revelation",
+     "ploy",
+     "encomium"
+    ],
+    "answer": 3,
+    "explain": "encomium：赞颂之词（a speech or writing of glowing praise）。"
+   }
+  ]
+ }
+}

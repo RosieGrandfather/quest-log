@@ -213,3 +213,27 @@
 .tier-track{background:#efe6fb;color:#5b2d9a}
 .tier-head{margin:22px 0 8px;font-weight:700;font-size:14px}
 .tier-head .mono{font-weight:400;opacity:.7}
+
+/* ---------- 词汇课：单词卡与例句短文 ---------- */
+.blk-vocab{display:grid;gap:10px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 14px;}
+.vhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+.vword{font-size:20px;font-weight:800;color:var(--ink);}
+.vipa{font:inherit;font-size:13px;color:var(--teal);background:var(--teal-soft);border:1px solid transparent;border-radius:999px;padding:3px 10px;cursor:pointer;}
+.vipa:hover{border-color:var(--teal);}
+.vipa:active{transform:scale(.97);}
+.vpos{font-size:12px;color:var(--ink-faint);font-style:italic;}
+.vzh{margin-top:6px;font-weight:700;color:var(--ink);}
+.ven{margin-top:2px;font-size:14px;color:var(--ink-soft);}
+.vrel{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px 14px;}
+.vrel-row{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;}
+.vlabel{font-size:11px;font-weight:800;border-radius:6px;padding:1px 6px;color:var(--teal);background:var(--teal-soft);}
+.vlabel.vant{color:var(--burgundy);background:var(--burgundy-soft);}
+.vchip{font-size:13px;color:var(--ink-soft);background:var(--surface-2);border-radius:999px;padding:1px 9px;}
+.blk-passage{background:var(--accent-soft);border:1px solid var(--border);border-radius:14px;padding:12px 16px;}
+.vp-tag{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;}
+.blk-passage p{margin:0;line-height:1.85;font-size:16px;color:var(--ink);}
+.blk-passage .vw{background:transparent;color:var(--ink);font-weight:800;border-bottom:2px solid var(--accent);padding:0 1px;cursor:help;position:relative;outline:none;}
+.blk-passage .vw:focus::after,.blk-passage .vw:hover::after{
+  content:attr(data-zh);position:absolute;left:0;top:calc(100% + 4px);z-index:5;white-space:nowrap;max-width:70vw;overflow:hidden;text-overflow:ellipsis;
+  font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:3px 9px;box-shadow:var(--shadow);}

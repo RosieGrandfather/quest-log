@@ -1,0 +1,422 @@
+{
+ "id": "u10",
+ "title": "S 级核心词 · 第 10 组",
+ "en": "GRE Core Vocabulary · Set 10",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "convoluted",
+     "ipa": "[ˈkɑːnvəluːtɪd]",
+     "pos": "adj.",
+     "zh": "复杂的，费解的",
+     "en": "extremely complex and twisted",
+     "syn": [
+      "intricate",
+      "tangled"
+     ],
+     "ant": [
+      "simple",
+      "straightforward"
+     ]
+    },
+    {
+     "w": "turbulent",
+     "ipa": "[ˈtɝbjələnt]",
+     "pos": "adj.",
+     "zh": "动荡的",
+     "en": "violently unsettled",
+     "syn": [
+      "stormy",
+      "chaotic"
+     ],
+     "ant": [
+      "calm",
+      "tranquil"
+     ]
+    },
+    {
+     "w": "rapacious",
+     "ipa": "[rəˈpeɪʃəs]",
+     "pos": "adj.",
+     "zh": "过度贪婪的",
+     "en": "aggressively greedy",
+     "syn": [
+      "grasping",
+      "predatory"
+     ],
+     "ant": [
+      "generous",
+      "charitable"
+     ]
+    },
+    {
+     "w": "vulnerable",
+     "ipa": "[ˈvʌlnərəbl]",
+     "pos": "adj.",
+     "zh": "易受攻击的，脆弱的",
+     "en": "open to attack or harm",
+     "syn": [
+      "exposed",
+      "defenseless"
+     ],
+     "ant": [
+      "invulnerable",
+      "secure"
+     ]
+    },
+    {
+     "w": "prudent",
+     "ipa": "[ˈpruːdɪʃ]",
+     "pos": "adj.",
+     "zh": "明智的；小心谨慎的，审慎的",
+     "en": "wise and careful",
+     "syn": [
+      "cautious",
+      "wise"
+     ],
+     "ant": [
+      "reckless",
+      "imprudent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In a [[turbulent]] market, [[rapacious]] traders exploited a [[convoluted]] contract that left small investors [[vulnerable]]; the [[prudent]] ones had already sold.",
+   "gloss": {
+    "convoluted": "复杂的，费解的",
+    "turbulent": "动荡的",
+    "rapacious": "过度贪婪的",
+    "vulnerable": "易受攻击的，脆弱的",
+    "prudent": "明智的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "dodge",
+     "ipa": "[dɑdʒ]",
+     "pos": "v.",
+     "zh": "躲避",
+     "en": "to avoid by a quick movement or trick",
+     "syn": [
+      "evade",
+      "sidestep"
+     ],
+     "ant": [
+      "confront",
+      "face"
+     ]
+    },
+    {
+     "w": "diabolic",
+     "ipa": "[ˌdaɪəˈbɑːlɪk]",
+     "pos": "adj.",
+     "zh": "恶魔一般的",
+     "en": "devilish; extremely wicked",
+     "syn": [
+      "fiendish",
+      "wicked"
+     ],
+     "ant": [
+      "angelic",
+      "saintly"
+     ]
+    },
+    {
+     "w": "filibuster",
+     "ipa": "[ˈfɪləˈbʌstə]",
+     "pos": "n./v.",
+     "zh": "拖延议事",
+     "en": "a long speech meant to delay legislation",
+     "syn": [
+      "stall",
+      "obstruct"
+     ],
+     "ant": []
+    },
+    {
+     "w": "putative",
+     "ipa": "[ˈpjuːtətɪv]",
+     "pos": "adj.",
+     "zh": "推测的，假定的",
+     "en": "generally supposed or reputed",
+     "syn": [
+      "supposed",
+      "alleged"
+     ],
+     "ant": [
+      "actual",
+      "proven"
+     ]
+    },
+    {
+     "w": "indolent",
+     "ipa": "[ˈɪndələnt]",
+     "pos": "adj.",
+     "zh": "懒惰的",
+     "en": "lazy",
+     "syn": [
+      "idle",
+      "slothful"
+     ],
+     "ant": [
+      "industrious",
+      "diligent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The senator tried to [[dodge]] the question with a [[filibuster]], calling the [[putative]] scheme of her [[indolent]] rival [[diabolic]].",
+   "gloss": {
+    "dodge": "躲避",
+    "diabolic": "恶魔一般的",
+    "filibuster": "拖延议事",
+    "putative": "推测的，假定的",
+    "indolent": "懒惰的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "revision",
+     "ipa": "[rɪˈvɪʒən]",
+     "pos": "n.",
+     "zh": "修订",
+     "en": "a change made to improve or correct",
+     "syn": [
+      "amendment",
+      "alteration"
+     ],
+     "ant": []
+    },
+    {
+     "w": "irascible",
+     "ipa": "[ɪˈræsəbl]",
+     "pos": "adj.",
+     "zh": "易怒的",
+     "en": "easily angered",
+     "syn": [
+      "irritable",
+      "choleric"
+     ],
+     "ant": [
+      "placid",
+      "even-tempered"
+     ]
+    },
+    {
+     "w": "intrepid",
+     "ipa": "[ɪnˈtrepɪd]",
+     "pos": "adj.",
+     "zh": "大胆的",
+     "en": "fearless and adventurous",
+     "syn": [
+      "fearless",
+      "bold"
+     ],
+     "ant": [
+      "timid",
+      "fearful"
+     ]
+    },
+    {
+     "w": "rehabilitate",
+     "ipa": "[ˌriːəˈbɪlɪteɪt]",
+     "pos": "vt.",
+     "zh": "使复原，使康复",
+     "en": "to restore to health or good standing",
+     "syn": [
+      "restore",
+      "reform"
+     ],
+     "ant": []
+    },
+    {
+     "w": "heartfelt",
+     "ipa": "[ˈhɑrtfɛlt]",
+     "pos": "adj.",
+     "zh": "真心实意的",
+     "en": "deeply and sincerely felt",
+     "syn": [
+      "sincere",
+      "genuine"
+     ],
+     "ant": [
+      "insincere",
+      "feigned"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After the [[revision]] of the law, the [[irascible]] warden gave a [[heartfelt]] speech about how to [[rehabilitate]] prisoners, and an [[intrepid]] reporter wrote it up.",
+   "gloss": {
+    "revision": "修订",
+    "irascible": "易怒的",
+    "intrepid": "大胆的",
+    "rehabilitate": "使复原，使康复",
+    "heartfelt": "真心实意的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "animate",
+     "ipa": "[ˈænɪmeɪt]",
+     "pos": "adj.",
+     "zh": "有活力的；使有活力，支持",
+     "en": "to give life or energy to; lively",
+     "syn": [
+      "enliven",
+      "invigorate"
+     ],
+     "ant": [
+      "dampen",
+      "deaden"
+     ]
+    },
+    {
+     "w": "requisite",
+     "ipa": "[ˈrɛkwəzɪt]",
+     "pos": "n.",
+     "zh": "必需的；必需品",
+     "en": "required; a necessary thing",
+     "syn": [
+      "essential",
+      "indispensable"
+     ],
+     "ant": [
+      "unnecessary",
+      "optional"
+     ]
+    },
+    {
+     "w": "metamorphose",
+     "ipa": "[ˌmetəˈmɔːrfoʊz]",
+     "pos": "vt.",
+     "zh": "(使)变形",
+     "en": "to change completely in form",
+     "syn": [
+      "transform",
+      "mutate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "antedate",
+     "ipa": "[ˌæntiˈdeɪt]",
+     "pos": "vt.",
+     "zh": "比…早，早于",
+     "en": "to come before in time",
+     "syn": [
+      "precede",
+      "predate"
+     ],
+     "ant": [
+      "postdate",
+      "follow"
+     ]
+    },
+    {
+     "w": "supersede",
+     "ipa": "[ˌsupəˈsid]",
+     "pos": "v.",
+     "zh": "取代，替代",
+     "en": "to replace something older",
+     "syn": [
+      "replace",
+      "supplant"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In a museum lecture, the guide showed fossils that [[antedate]] the dinosaurs and explained how larvae [[metamorphose]] into adults; new discoveries [[supersede]] old textbooks, and a [[requisite]] spark of curiosity can [[animate]] even the dullest class.",
+   "gloss": {
+    "animate": "有活力的",
+    "requisite": "必需的",
+    "metamorphose": "(使)变形",
+    "antedate": "比…早，早于",
+    "supersede": "取代，替代"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**indolent** 的意思最接近：",
+    "options": [
+     "有活力的；使有活力，支持",
+     "真心实意的",
+     "明智的；小心谨慎的，审慎的",
+     "懒惰的"
+    ],
+    "answer": 3,
+    "explain": "indolent：懒惰的（lazy）。近义词：idle, slothful。"
+   },
+   {
+    "q": "**irascible** 的意思最接近：",
+    "options": [
+     "动荡的",
+     "易怒的",
+     "大胆的",
+     "推测的，假定的"
+    ],
+    "answer": 1,
+    "explain": "irascible：易怒的（easily angered）。近义词：irritable, choleric。"
+   },
+   {
+    "q": "哪个词的意思是「大胆的」？",
+    "options": [
+     "indolent",
+     "diabolic",
+     "rapacious",
+     "intrepid"
+    ],
+    "answer": 3,
+    "explain": "intrepid：大胆的（fearless and adventurous）。"
+   },
+   {
+    "q": "哪个词和 **fiendish** 的意思最接近？",
+    "options": [
+     "diabolic",
+     "animate",
+     "vulnerable",
+     "irascible"
+    ],
+    "answer": 0,
+    "explain": "diabolic 与 fiendish 近义：devilish; extremely wicked。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The senator tried to dodge the question with a filibuster, calling the putative scheme of her indolent rival ____.",
+    "options": [
+     "heartfelt",
+     "animate",
+     "diabolic",
+     "prudent"
+    ],
+    "answer": 2,
+    "explain": "diabolic：恶魔一般的（devilish; extremely wicked）。"
+   }
+  ]
+ }
+}

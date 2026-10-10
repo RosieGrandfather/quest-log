@@ -1,0 +1,420 @@
+{
+ "id": "u36",
+ "title": "S 级核心词 · 第 36 组",
+ "en": "GRE Core Vocabulary · Set 36",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "premeditate",
+     "ipa": "[prɪˈmedəˌteɪt]",
+     "pos": "v.",
+     "zh": "预谋",
+     "en": "to plan or consider beforehand",
+     "syn": [
+      "plan",
+      "plot"
+     ],
+     "ant": [
+      "improvise"
+     ]
+    },
+    {
+     "w": "epilogue",
+     "ipa": "[ˈɛpɪlɔɡ]",
+     "pos": "n.",
+     "zh": "文学作品的结局",
+     "en": "a concluding section of a work",
+     "syn": [
+      "afterword",
+      "conclusion"
+     ],
+     "ant": [
+      "prologue",
+      "preface"
+     ]
+    },
+    {
+     "w": "paragon",
+     "ipa": "[ˈpærəɡɑːn]",
+     "pos": "n.",
+     "zh": "典范，完美的典型",
+     "en": "a perfect example of a quality",
+     "syn": [
+      "model",
+      "exemplar"
+     ],
+     "ant": []
+    },
+    {
+     "w": "bargain",
+     "ipa": "[ˈbɑrɡən]",
+     "pos": "n.",
+     "zh": "协议；讨价还价",
+     "en": "an agreement; to haggle",
+     "syn": [
+      "deal",
+      "haggle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "entreat",
+     "ipa": "[ɪnˈtriːt]",
+     "pos": "vt.",
+     "zh": "恳求",
+     "en": "to ask earnestly",
+     "syn": [
+      "implore",
+      "beg"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The jury decided that he did not [[premeditate]] the crime; in the [[epilogue]] he is called a [[paragon]] of regret who would [[entreat]] the court to accept a plea [[bargain]].",
+   "gloss": {
+    "premeditate": "预谋",
+    "epilogue": "文学作品的结局",
+    "paragon": "典范，完美的典型",
+    "bargain": "协议",
+    "entreat": "恳求"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "vernacular",
+     "ipa": "[vɚˈnækjəlɚ]",
+     "pos": "n.",
+     "zh": "方言；非正式的，口头的",
+     "en": "everyday language of a region; informal",
+     "syn": [
+      "colloquial",
+      "native"
+     ],
+     "ant": [
+      "formal",
+      "literary"
+     ]
+    },
+    {
+     "w": "contumacious",
+     "ipa": "[ˌkɑːntuˈmeɪʃəs]",
+     "pos": "adj.",
+     "zh": "不服从的，倔强的",
+     "en": "stubbornly disobedient",
+     "syn": [
+      "rebellious",
+      "defiant"
+     ],
+     "ant": [
+      "obedient",
+      "compliant"
+     ]
+    },
+    {
+     "w": "itinerant",
+     "ipa": "[aɪˈtɪnərənt]",
+     "pos": "adj.",
+     "zh": "巡游的，巡回的",
+     "en": "traveling from place to place",
+     "syn": [
+      "wandering",
+      "nomadic"
+     ],
+     "ant": [
+      "settled",
+      "stationary"
+     ]
+    },
+    {
+     "w": "boycott",
+     "ipa": "[ˈbɔɪkɑt]",
+     "pos": "vt.",
+     "zh": "联合抵制，拒绝参与",
+     "en": "to refuse to buy, use or take part in",
+     "syn": [
+      "shun",
+      "blacklist"
+     ],
+     "ant": [
+      "patronize"
+     ]
+    },
+    {
+     "w": "acclaim",
+     "ipa": "[əˈklem]",
+     "pos": "n.",
+     "zh": "称赞；赞扬，赞颂",
+     "en": "enthusiastic praise; to praise",
+     "syn": [
+      "applause",
+      "praise"
+     ],
+     "ant": [
+      "criticism",
+      "censure"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[itinerant]] poet wrote in the [[vernacular]] and won wide [[acclaim]]; when a [[contumacious]] mayor tried to [[boycott]] his show, he played in the street.",
+   "gloss": {
+    "vernacular": "方言",
+    "contumacious": "不服从的，倔强的",
+    "itinerant": "巡游的，巡回的",
+    "boycott": "联合抵制，拒绝参与",
+    "acclaim": "称赞"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "dissent",
+     "ipa": "[dɪˈsɛnt]",
+     "pos": "vi.",
+     "zh": "持异议，不同意；反对正统",
+     "en": "to disagree; disagreement",
+     "syn": [
+      "disagree",
+      "differ"
+     ],
+     "ant": [
+      "assent",
+      "agree"
+     ]
+    },
+    {
+     "w": "derivative",
+     "ipa": "[dəˈrɪvətɪv]",
+     "pos": "adj.",
+     "zh": "非原创的",
+     "en": "copied from something else; unoriginal",
+     "syn": [
+      "unoriginal",
+      "imitative"
+     ],
+     "ant": [
+      "original",
+      "innovative"
+     ]
+    },
+    {
+     "w": "debilitate",
+     "ipa": "[dɪˈbɪlɪteɪt]",
+     "pos": "vt.",
+     "zh": "使衰弱",
+     "en": "to weaken seriously",
+     "syn": [
+      "enfeeble",
+      "sap"
+     ],
+     "ant": [
+      "strengthen",
+      "invigorate"
+     ]
+    },
+    {
+     "w": "coerce",
+     "ipa": "[koʊˈɜːrs]",
+     "pos": "vt.",
+     "zh": "(以武力)强制",
+     "en": "to force someone to act",
+     "syn": [
+      "compel",
+      "pressure"
+     ],
+     "ant": [
+      "persuade",
+      "induce"
+     ]
+    },
+    {
+     "w": "doom",
+     "ipa": "[dʊm]",
+     "pos": "v.",
+     "zh": "注定(倒霉)",
+     "en": "to condemn to a bad fate; a grim fate",
+     "syn": [
+      "condemn",
+      "destine"
+     ],
+     "ant": [
+      "save",
+      "spare"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The regime would [[coerce]] citizens into cheering; to [[dissent]] was to be [[doomed|doom]], and its [[derivative]] ideology could only [[debilitate]] the nation.",
+   "gloss": {
+    "dissent": "持异议，不同意",
+    "derivative": "非原创的",
+    "debilitate": "使衰弱",
+    "coerce": "(以武力)强制",
+    "doom": "注定(倒霉)"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "demur",
+     "ipa": "[dɪˈmɜːr]",
+     "pos": "n./vi.",
+     "zh": "表示异议，反对",
+     "en": "to raise objections; an objection",
+     "syn": [
+      "object",
+      "balk"
+     ],
+     "ant": [
+      "agree",
+      "accept"
+     ]
+    },
+    {
+     "w": "deleterious",
+     "ipa": "[ˌdeləˈtɪriəs]",
+     "pos": "adj.",
+     "zh": "有害的",
+     "en": "harmful",
+     "syn": [
+      "harmful",
+      "damaging"
+     ],
+     "ant": [
+      "beneficial",
+      "helpful"
+     ]
+    },
+    {
+     "w": "rehash",
+     "ipa": "[ˌriːˈhæʃ]",
+     "pos": "v.",
+     "zh": "重复，老调重弹",
+     "en": "to present old ideas again with little change",
+     "syn": [
+      "rework",
+      "regurgitate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "revolt",
+     "ipa": "[rɪˈvolt]",
+     "pos": "vt.",
+     "zh": "使厌恶，使反感；反叛",
+     "en": "to cause disgust; to rebel",
+     "syn": [
+      "repel",
+      "rebel"
+     ],
+     "ant": [
+      "attract",
+      "obey"
+     ]
+    },
+    {
+     "w": "pertain",
+     "ipa": "[pɜːˈten]",
+     "pos": "v.",
+     "zh": "有关联",
+     "en": "to be relevant to",
+     "syn": [
+      "relate",
+      "apply"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Many would [[demur]] at a [[deleterious]] law; a [[rehash]] of old promises would [[revolt]] voters, as nothing in it could [[pertain]] to their lives.",
+   "gloss": {
+    "demur": "表示异议，反对",
+    "deleterious": "有害的",
+    "rehash": "重复，老调重弹",
+    "revolt": "使厌恶，使反感",
+    "pertain": "有关联"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**epilogue** 的意思最接近：",
+    "options": [
+     "表示异议，反对",
+     "方言；非正式的，口头的",
+     "称赞；赞扬，赞颂",
+     "文学作品的结局"
+    ],
+    "answer": 3,
+    "explain": "epilogue：文学作品的结局（a concluding section of a work）。近义词：afterword, conclusion。"
+   },
+   {
+    "q": "**deleterious** 的意思最接近：",
+    "options": [
+     "巡游的，巡回的",
+     "非原创的",
+     "有害的",
+     "不服从的，倔强的"
+    ],
+    "answer": 2,
+    "explain": "deleterious：有害的（harmful）。近义词：harmful, damaging。"
+   },
+   {
+    "q": "哪个词的意思是「巡游的，巡回的」？",
+    "options": [
+     "itinerant",
+     "deleterious",
+     "contumacious",
+     "derivative"
+    ],
+    "answer": 0,
+    "explain": "itinerant：巡游的，巡回的（traveling from place to place）。"
+   },
+   {
+    "q": "哪个词和 **applause** 的意思最接近？",
+    "options": [
+     "acclaim",
+     "bargain",
+     "epilogue",
+     "vernacular"
+    ],
+    "answer": 0,
+    "explain": "acclaim 与 applause 近义：enthusiastic praise; to praise。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The jury decided that he did not premeditate the crime; in the epilogue he is called a paragon of regret who would entreat the court to accept a plea ____.",
+    "options": [
+     "epilogue",
+     "bargain",
+     "vernacular",
+     "paragon"
+    ],
+    "answer": 1,
+    "explain": "bargain：协议；讨价还价（an agreement; to haggle）。"
+   }
+  ]
+ }
+}

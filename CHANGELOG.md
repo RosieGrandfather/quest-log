@@ -5,6 +5,13 @@
 格式：
 
 ```
+## 2026-10-10 — 新课 gre-v：GRE 核心词汇 S 级（60 节），移除 gre-0
+- 新课 `gre-v`（选修，`order: 15`），取代 `gre-0`：1196 个词按固定随机种子乱序，每节 20 词、每 5 个词一段例句短文（词在短文里高亮，点按显示中文），每词有中文、英文释义、近义词、反义词；每节 5 道测验（`direct: true`）
+- 新内容块 `vocab`（词卡，点音标 🔊 发音）和 `passage`（`[[表面形式|原形]]` 标记高亮）；发音用浏览器 `speechSynthesis`（en-US），不可用时退回 Youdao 发音；`render-content.js` 新增 `speak`、`wireVocab`，`views.js` 在课页挂上，`study.css` 新增样式
+- 英文释义、近反义词、例句均为自己撰写，不是来源书的原文
+- 生成：`tools/course/grev/build.py`（数据在 `entries_*.txt`、`passages_*.txt`、`words_shuffled.json`），会校验例句标记与词一一对应
+- 旧的 `gre-0` 课程和 `gre0*.py`、`gre*c.py` 脚本没有删除，移到了 `_to_delete_gre-0/`，确认不需要后可自行删除；`courses/index.json` 里 `gre-0` 换成 `gre-v`
+
 ## 日期 — 一句话标题（对应的 commit 说明）
 - 改了什么（用户能看到的变化）
 - 改了哪些文件 / 数据结构（给之后接手的人看）

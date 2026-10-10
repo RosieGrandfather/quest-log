@@ -1,0 +1,417 @@
+{
+ "id": "u21",
+ "title": "S 级核心词 · 第 21 组",
+ "en": "GRE Core Vocabulary · Set 21",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "perceptible",
+     "ipa": "[pərˈseptəbl]",
+     "pos": "adj.",
+     "zh": "可察觉的",
+     "en": "able to be noticed",
+     "syn": [
+      "noticeable",
+      "discernible"
+     ],
+     "ant": [
+      "imperceptible",
+      "undetectable"
+     ]
+    },
+    {
+     "w": "callow",
+     "ipa": "[ˈkælo]",
+     "pos": "adj.",
+     "zh": "不老练的，不成熟的",
+     "en": "young and inexperienced",
+     "syn": [
+      "immature",
+      "green"
+     ],
+     "ant": [
+      "mature",
+      "seasoned"
+     ]
+    },
+    {
+     "w": "pandemonium",
+     "ipa": "[ˌpændəˈmoʊniəm]",
+     "pos": "n.",
+     "zh": "喧嚣，骚动",
+     "en": "wild noise and confusion",
+     "syn": [
+      "chaos",
+      "uproar"
+     ],
+     "ant": [
+      "order",
+      "calm"
+     ]
+    },
+    {
+     "w": "baroque",
+     "ipa": "[bəˈroʊk]",
+     "pos": "adj.",
+     "zh": "复杂，装饰华丽的",
+     "en": "extremely ornate and elaborate",
+     "syn": [
+      "ornate",
+      "flamboyant"
+     ],
+     "ant": [
+      "simple",
+      "plain"
+     ]
+    },
+    {
+     "w": "overshadow",
+     "ipa": "[ˌoʊvərˈʃædoʊ]",
+     "pos": "v.",
+     "zh": "(在重要性上)超越，超过",
+     "en": "to make seem less important",
+     "syn": [
+      "eclipse",
+      "dwarf"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A barely [[perceptible]] cough from the [[callow]] usher was followed by [[pandemonium]]; the [[baroque]] chandelier crashed, and the noise began to [[overshadow]] the music.",
+   "gloss": {
+    "perceptible": "可察觉的",
+    "callow": "不老练的，不成熟的",
+    "pandemonium": "喧嚣，骚动",
+    "baroque": "复杂，装饰华丽的",
+    "overshadow": "(在重要性上)超越，超过"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "magnitude",
+     "ipa": "[ˈmæɡnɪtud]",
+     "pos": "n.",
+     "zh": "重要，重大",
+     "en": "great size or importance",
+     "syn": [
+      "importance",
+      "scale"
+     ],
+     "ant": [
+      "insignificance"
+     ]
+    },
+    {
+     "w": "palpable",
+     "ipa": "[ˈpælpəbl]",
+     "pos": "adj.",
+     "zh": "明显的，易觉察的",
+     "en": "so obvious it can almost be touched",
+     "syn": [
+      "tangible",
+      "evident"
+     ],
+     "ant": [
+      "imperceptible",
+      "intangible"
+     ]
+    },
+    {
+     "w": "apocryphal",
+     "ipa": "[əˈpɑːkrɪfl]",
+     "pos": "adj.",
+     "zh": "假的",
+     "en": "of doubtful authenticity",
+     "syn": [
+      "spurious",
+      "dubious"
+     ],
+     "ant": [
+      "authentic",
+      "genuine"
+     ]
+    },
+    {
+     "w": "censor",
+     "ipa": "[ˈsɛnsɚ]",
+     "pos": "vt.",
+     "zh": "审查删改；审查员",
+     "en": "to remove objectionable material; an official who does so",
+     "syn": [
+      "expurgate",
+      "suppress"
+     ],
+     "ant": []
+    },
+    {
+     "w": "balloon",
+     "ipa": "[bəˈlun]",
+     "pos": "v.",
+     "zh": "迅速增加",
+     "en": "to swell or grow rapidly",
+     "syn": [
+      "swell",
+      "expand"
+     ],
+     "ant": [
+      "shrink",
+      "contract"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Officials tried to [[censor]] the news, but the [[magnitude]] of the crisis was [[palpable]]; debts began to [[balloon]], and [[apocryphal]] stories of a secret fund spread.",
+   "gloss": {
+    "magnitude": "重要，重大",
+    "palpable": "明显的，易觉察的",
+    "apocryphal": "假的",
+    "censor": "审查删改",
+    "balloon": "迅速增加"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "rebuff",
+     "ipa": "[rɪˈbʌf]",
+     "pos": "vt.",
+     "zh": "严词拒绝",
+     "en": "to reject bluntly",
+     "syn": [
+      "spurn",
+      "repel"
+     ],
+     "ant": [
+      "welcome",
+      "accept"
+     ]
+    },
+    {
+     "w": "truism",
+     "ipa": "[ˈtruːɪzəm]",
+     "pos": "n.",
+     "zh": "陈词滥调",
+     "en": "a statement obviously true and often repeated",
+     "syn": [
+      "platitude",
+      "cliché"
+     ],
+     "ant": []
+    },
+    {
+     "w": "overwhelm",
+     "ipa": "[ˌovəˈwɛlm]",
+     "pos": "v.",
+     "zh": "淹没",
+     "en": "to overpower, in emotion or amount",
+     "syn": [
+      "overpower",
+      "inundate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "slant",
+     "ipa": "[slænt]",
+     "pos": "n.",
+     "zh": "倾向；角度；倾斜",
+     "en": "a particular point of view; to slope",
+     "syn": [
+      "bias",
+      "angle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "surmise",
+     "ipa": "[sɜːˈmaɪz]",
+     "pos": "n.",
+     "zh": "推测；揣测",
+     "en": "to guess without firm evidence",
+     "syn": [
+      "conjecture",
+      "guess"
+     ],
+     "ant": [
+      "know"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "He would [[rebuff]] any advice, repeating a [[truism]] that the facts [[overwhelm]]; his [[slant]] was clear, and we could only [[surmise]] why.",
+   "gloss": {
+    "rebuff": "严词拒绝",
+    "truism": "陈词滥调",
+    "overwhelm": "淹没",
+    "slant": "倾向",
+    "surmise": "推测"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "histrionic",
+     "ipa": "[ˈhɪstrɪˈɑnɪk]",
+     "pos": "adj.",
+     "zh": "夸张做作的",
+     "en": "overly dramatic and theatrical",
+     "syn": [
+      "theatrical",
+      "melodramatic"
+     ],
+     "ant": [
+      "restrained",
+      "understated"
+     ]
+    },
+    {
+     "w": "profusion",
+     "ipa": "[prəˈfjuʒn]",
+     "pos": "n.",
+     "zh": "丰富，大量",
+     "en": "a large amount; abundance",
+     "syn": [
+      "abundance",
+      "plethora"
+     ],
+     "ant": [
+      "scarcity",
+      "dearth"
+     ]
+    },
+    {
+     "w": "foreground",
+     "ipa": "[ˈfɔrɡraʊnd]",
+     "pos": "vt.",
+     "zh": "强调；突出",
+     "en": "to give prominence to",
+     "syn": [
+      "highlight",
+      "emphasize"
+     ],
+     "ant": []
+    },
+    {
+     "w": "accede",
+     "ipa": "[əkˈsid]",
+     "pos": "v.",
+     "zh": "赞成",
+     "en": "to agree to a request or demand",
+     "syn": [
+      "consent",
+      "yield"
+     ],
+     "ant": [
+      "refuse",
+      "decline"
+     ]
+    },
+    {
+     "w": "impetuous",
+     "ipa": "[ɪmˈpetʃuəs]",
+     "pos": "adj.",
+     "zh": "冲动的，性急的，轻率的",
+     "en": "acting quickly without thought",
+     "syn": [
+      "impulsive",
+      "rash"
+     ],
+     "ant": [
+      "cautious",
+      "deliberate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[histrionic]] speech contained a [[profusion]] of promises; to [[foreground]] the cause, the [[impetuous]] leader agreed to [[accede]] to every demand.",
+   "gloss": {
+    "histrionic": "夸张做作的",
+    "profusion": "丰富，大量",
+    "foreground": "强调",
+    "accede": "赞成",
+    "impetuous": "冲动的，性急的，轻率的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**callow** 的意思最接近：",
+    "options": [
+     "不老练的，不成熟的",
+     "冲动的，性急的，轻率的",
+     "可察觉的",
+     "夸张做作的"
+    ],
+    "answer": 0,
+    "explain": "callow：不老练的，不成熟的（young and inexperienced）。近义词：immature, green。"
+   },
+   {
+    "q": "**censor** 的意思最接近：",
+    "options": [
+     "严词拒绝",
+     "淹没",
+     "强调；突出",
+     "审查删改；审查员"
+    ],
+    "answer": 3,
+    "explain": "censor：审查删改；审查员（to remove objectionable material; an official who does so）。近义词：expurgate, suppress。"
+   },
+   {
+    "q": "哪个词的意思是「假的」？",
+    "options": [
+     "baroque",
+     "apocryphal",
+     "impetuous",
+     "histrionic"
+    ],
+    "answer": 1,
+    "explain": "apocryphal：假的（of doubtful authenticity）。"
+   },
+   {
+    "q": "哪个词和 **platitude** 的意思最接近？",
+    "options": [
+     "surmise",
+     "pandemonium",
+     "truism",
+     "profusion"
+    ],
+    "answer": 2,
+    "explain": "truism 与 platitude 近义：a statement obviously true and often repeated。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> Officials tried to censor the news, but the magnitude of the crisis was ____; debts began to balloon, and apocryphal stories of a secret fund spread.",
+    "options": [
+     "baroque",
+     "impetuous",
+     "apocryphal",
+     "palpable"
+    ],
+    "answer": 3,
+    "explain": "palpable：明显的，易觉察的（so obvious it can almost be touched）。"
+   }
+  ]
+ }
+}

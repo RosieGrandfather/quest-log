@@ -1,0 +1,419 @@
+{
+ "id": "u08",
+ "title": "S 级核心词 · 第 8 组",
+ "en": "GRE Core Vocabulary · Set 8",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "overture",
+     "ipa": "[ˈoʊvərtʃər]",
+     "pos": "n.",
+     "zh": "序曲；（友好的）提议",
+     "en": "an opening move or proposal; a musical introduction",
+     "syn": [
+      "prelude",
+      "proposal"
+     ],
+     "ant": []
+    },
+    {
+     "w": "warp",
+     "ipa": "[wɔrp]",
+     "pos": "vt.",
+     "zh": "使扭曲；曲解",
+     "en": "to bend or distort",
+     "syn": [
+      "distort",
+      "twist"
+     ],
+     "ant": [
+      "straighten"
+     ]
+    },
+    {
+     "w": "extrapolate",
+     "ipa": "[ɪkˈstræpəleɪt]",
+     "pos": "vt.",
+     "zh": "(通过逻辑)推断",
+     "en": "to infer by extending known facts",
+     "syn": [
+      "infer",
+      "project"
+     ],
+     "ant": []
+    },
+    {
+     "w": "approbation",
+     "ipa": "[ˈæprəˈbeʃən]",
+     "pos": "n.",
+     "zh": "赞许，认可",
+     "en": "approval or praise",
+     "syn": [
+      "approval",
+      "sanction"
+     ],
+     "ant": [
+      "disapproval",
+      "censure"
+     ]
+    },
+    {
+     "w": "erratic",
+     "ipa": "[ɪˈrætɪk]",
+     "pos": "adj.",
+     "zh": "不稳定的，反复无常的",
+     "en": "unpredictable; not steady",
+     "syn": [
+      "unpredictable",
+      "capricious"
+     ],
+     "ant": [
+      "steady",
+      "consistent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The minister's [[overture]] to the rival party earned the [[approbation]] of voters, although the press tended to [[warp]] his words; analysts tried to [[extrapolate]] his plans from his [[erratic]] record.",
+   "gloss": {
+    "overture": "序曲",
+    "warp": "使扭曲",
+    "extrapolate": "(通过逻辑)推断",
+    "approbation": "赞许，认可",
+    "erratic": "不稳定的，反复无常的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "stagnant",
+     "ipa": "[ˈstæɡnənt]",
+     "pos": "adj.",
+     "zh": "停滞不前的",
+     "en": "not flowing or developing",
+     "syn": [
+      "inert",
+      "static"
+     ],
+     "ant": [
+      "dynamic",
+      "flowing"
+     ]
+    },
+    {
+     "w": "inherent",
+     "ipa": "[ɪnˈhɪrənt]",
+     "pos": "adj.",
+     "zh": "内在的，本质的",
+     "en": "existing as a natural, essential part",
+     "syn": [
+      "intrinsic",
+      "innate"
+     ],
+     "ant": [
+      "extrinsic",
+      "acquired"
+     ]
+    },
+    {
+     "w": "self-perpetuating",
+     "ipa": "self-perpetuating",
+     "pos": "adj.",
+     "zh": "自续的，能使自身永久存在的",
+     "en": "continuing without outside help",
+     "syn": [
+      "self-sustaining"
+     ],
+     "ant": []
+    },
+    {
+     "w": "courteous",
+     "ipa": "[ˈkɝtɪəs]",
+     "pos": "adj.",
+     "zh": "礼貌的，谦恭有礼的",
+     "en": "polite and respectful",
+     "syn": [
+      "polite",
+      "civil"
+     ],
+     "ant": [
+      "rude",
+      "discourteous"
+     ]
+    },
+    {
+     "w": "arbitrary",
+     "ipa": "[ˈɑrbətrɛri]",
+     "pos": "adj.",
+     "zh": "专横的，独断专行的；缺乏计划的，随意的",
+     "en": "based on whim, not reason; despotic",
+     "syn": [
+      "capricious",
+      "random"
+     ],
+     "ant": [
+      "reasoned",
+      "systematic"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In a [[stagnant]] economy, the [[inherent]] flaws of the system became [[self-perpetuating]]; officials, always [[courteous]], defended [[arbitrary]] rules.",
+   "gloss": {
+    "stagnant": "停滞不前的",
+    "inherent": "内在的，本质的",
+    "self-perpetuating": "自续的，能使自身永久存在的",
+    "courteous": "礼貌的，谦恭有礼的",
+    "arbitrary": "专横的，独断专行的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "impotent",
+     "ipa": "[ˈɪmpətənt]",
+     "pos": "adj.",
+     "zh": "无力的，无能的",
+     "en": "powerless",
+     "syn": [
+      "powerless",
+      "helpless"
+     ],
+     "ant": [
+      "potent",
+      "powerful"
+     ]
+    },
+    {
+     "w": "impeccable",
+     "ipa": "[ɪmˈpɛkəbl]",
+     "pos": "adj.",
+     "zh": "无暇的，无可挑剔的",
+     "en": "flawless",
+     "syn": [
+      "flawless",
+      "faultless"
+     ],
+     "ant": [
+      "flawed",
+      "faulty"
+     ]
+    },
+    {
+     "w": "decorous",
+     "ipa": "[ˈdekərəs]",
+     "pos": "adj.",
+     "zh": "得体端正的",
+     "en": "proper and polite in behavior",
+     "syn": [
+      "proper",
+      "seemly"
+     ],
+     "ant": [
+      "unseemly",
+      "boorish"
+     ]
+    },
+    {
+     "w": "parody",
+     "ipa": "[ˈpærədi]",
+     "pos": "n.",
+     "zh": "(以嘲笑原作作者的)模仿作品，恶搞；模仿(以嘲弄)",
+     "en": "a humorous imitation that mocks the original",
+     "syn": [
+      "spoof",
+      "burlesque"
+     ],
+     "ant": []
+    },
+    {
+     "w": "succor",
+     "ipa": "[ˈsʌkə]",
+     "pos": "vt.",
+     "zh": "救援，援助",
+     "en": "help in a time of need",
+     "syn": [
+      "aid",
+      "relief"
+     ],
+     "ant": [
+      "hindrance"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[impotent]] king, whose manners were [[impeccable]] and whose court was [[decorous]], could only watch a [[parody]] of his speech performed in the streets, and he offered no [[succor]] to the hungry.",
+   "gloss": {
+    "impotent": "无力的，无能的",
+    "impeccable": "无暇的，无可挑剔的",
+    "decorous": "得体端正的",
+    "parody": "(以嘲笑原作作者的)模仿作品，恶搞",
+    "succor": "救援，援助"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "retroactive",
+     "ipa": "[ˌretroʊˈæktɪv]",
+     "pos": "adj.",
+     "zh": "有追溯效力的",
+     "en": "taking effect from a past date",
+     "syn": [
+      "backdated",
+      "retrospective"
+     ],
+     "ant": []
+    },
+    {
+     "w": "enlighten",
+     "ipa": "[ɪnˈlaɪtn]",
+     "pos": "vt.",
+     "zh": "使知道，启发",
+     "en": "to give knowledge or insight to",
+     "syn": [
+      "educate",
+      "illuminate"
+     ],
+     "ant": [
+      "mystify",
+      "confuse"
+     ]
+    },
+    {
+     "w": "discretion",
+     "ipa": "[dɪˈskrɛʃən]",
+     "pos": "n.",
+     "zh": "谨慎；自制，节制",
+     "en": "good judgment and caution; freedom to decide",
+     "syn": [
+      "prudence",
+      "judgment"
+     ],
+     "ant": [
+      "indiscretion",
+      "recklessness"
+     ]
+    },
+    {
+     "w": "propriety",
+     "ipa": "[prəˈpraɪəti]",
+     "pos": "n.",
+     "zh": "适当，得体",
+     "en": "conformity to accepted standards of behavior",
+     "syn": [
+      "decorum",
+      "correctness"
+     ],
+     "ant": [
+      "impropriety",
+      "indecency"
+     ]
+    },
+    {
+     "w": "assiduous",
+     "ipa": "[əˈsɪdʒuəs]",
+     "pos": "adj.",
+     "zh": "勤勉的，专心仔细的",
+     "en": "working with constant care and diligence",
+     "syn": [
+      "diligent",
+      "industrious"
+     ],
+     "ant": [
+      "lazy",
+      "negligent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[retroactive]] pay raise was left to the manager's [[discretion]]; an [[assiduous]] clerk tried to [[enlighten]] him about the [[propriety]] of such a decision.",
+   "gloss": {
+    "retroactive": "有追溯效力的",
+    "enlighten": "使知道，启发",
+    "discretion": "谨慎",
+    "propriety": "适当，得体",
+    "assiduous": "勤勉的，专心仔细的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**extrapolate** 的意思最接近：",
+    "options": [
+     "使知道，启发",
+     "救援，援助",
+     "使扭曲；曲解",
+     "(通过逻辑)推断"
+    ],
+    "answer": 3,
+    "explain": "extrapolate：(通过逻辑)推断（to infer by extending known facts）。近义词：infer, project。"
+   },
+   {
+    "q": "**impeccable** 的意思最接近：",
+    "options": [
+     "停滞不前的",
+     "无暇的，无可挑剔的",
+     "专横的，独断专行的；缺乏计划的，随意的",
+     "礼貌的，谦恭有礼的"
+    ],
+    "answer": 1,
+    "explain": "impeccable：无暇的，无可挑剔的（flawless）。近义词：flawless, faultless。"
+   },
+   {
+    "q": "哪个词的意思是「勤勉的，专心仔细的」？",
+    "options": [
+     "assiduous",
+     "arbitrary",
+     "courteous",
+     "self-perpetuating"
+    ],
+    "answer": 0,
+    "explain": "assiduous：勤勉的，专心仔细的（working with constant care and diligence）。"
+   },
+   {
+    "q": "哪个词和 **intrinsic** 的意思最接近？",
+    "options": [
+     "erratic",
+     "self-perpetuating",
+     "inherent",
+     "decorous"
+    ],
+    "answer": 2,
+    "explain": "inherent 与 intrinsic 近义：existing as a natural, essential part。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The minister's overture to the rival party earned the approbation of voters, although the press tended to warp his words; analysts tried to ____ his plans from his erratic record.",
+    "options": [
+     "warp",
+     "succor",
+     "enlighten",
+     "extrapolate"
+    ],
+    "answer": 3,
+    "explain": "extrapolate：(通过逻辑)推断（to infer by extending known facts）。"
+   }
+  ]
+ }
+}

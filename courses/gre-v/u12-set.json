@@ -1,0 +1,430 @@
+{
+ "id": "u12",
+ "title": "S 级核心词 · 第 12 组",
+ "en": "GRE Core Vocabulary · Set 12",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "rationale",
+     "ipa": "[ˌræʃəˈnæl]",
+     "pos": "n.",
+     "zh": "基本原理，解释",
+     "en": "the reasoning behind something",
+     "syn": [
+      "reasoning",
+      "justification"
+     ],
+     "ant": []
+    },
+    {
+     "w": "convulsion",
+     "ipa": "[kənˈvʌlʃn]",
+     "pos": "n.",
+     "zh": "骚乱",
+     "en": "a violent disturbance or upheaval",
+     "syn": [
+      "upheaval",
+      "fit"
+     ],
+     "ant": [
+      "calm"
+     ]
+    },
+    {
+     "w": "salient",
+     "ipa": "[ˈselɪənt]",
+     "pos": "adj.",
+     "zh": "显著的，最突出的",
+     "en": "most noticeable or important",
+     "syn": [
+      "prominent",
+      "conspicuous"
+     ],
+     "ant": [
+      "minor",
+      "inconspicuous"
+     ]
+    },
+    {
+     "w": "lag",
+     "ipa": "[læɡ]",
+     "pos": "v.",
+     "zh": "缓慢行走；萎靡，失去活力",
+     "en": "to fall behind; to lose vigor",
+     "syn": [
+      "trail",
+      "dawdle"
+     ],
+     "ant": [
+      "lead",
+      "advance"
+     ]
+    },
+    {
+     "w": "diffuse",
+     "ipa": "[dɪˈfjus]",
+     "pos": "adj.",
+     "zh": "啰嗦的；扩展，散开",
+     "en": "spread out; wordy",
+     "syn": [
+      "wordy",
+      "scattered"
+     ],
+     "ant": [
+      "concise",
+      "concentrated"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[rationale]] for reform emerged after a political [[convulsion]]; the [[salient]] point was that growth would [[lag]] unless the party dropped its [[diffuse]] message.",
+   "gloss": {
+    "rationale": "基本原理，解释",
+    "convulsion": "骚乱",
+    "salient": "显著的，最突出的",
+    "lag": "缓慢行走",
+    "diffuse": "啰嗦的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "beige",
+     "ipa": "[beʒ]",
+     "pos": "adj.",
+     "zh": "缺乏特征的",
+     "en": "dull and lacking distinction",
+     "syn": [
+      "bland",
+      "nondescript"
+     ],
+     "ant": [
+      "distinctive",
+      "vivid"
+     ]
+    },
+    {
+     "w": "laudatory",
+     "ipa": "[ˈlɔdətɔri]",
+     "pos": "adj.",
+     "zh": "表示赞扬的",
+     "en": "expressing praise",
+     "syn": [
+      "complimentary",
+      "approving"
+     ],
+     "ant": [
+      "derogatory",
+      "critical"
+     ]
+    },
+    {
+     "w": "privation",
+     "ipa": "[praɪˈveʃən]",
+     "pos": "n.",
+     "zh": "缺乏，穷困",
+     "en": "lack of basic necessities",
+     "syn": [
+      "hardship",
+      "want"
+     ],
+     "ant": [
+      "abundance",
+      "comfort"
+     ]
+    },
+    {
+     "w": "primitive",
+     "ipa": "[ˈprɪmətɪv]",
+     "pos": "adj.",
+     "zh": "原始的",
+     "en": "belonging to an early stage of development",
+     "syn": [
+      "rudimentary",
+      "crude"
+     ],
+     "ant": [
+      "advanced",
+      "sophisticated"
+     ]
+    },
+    {
+     "w": "turbid",
+     "ipa": "[ˈtɝbɪd]",
+     "pos": "adj.",
+     "zh": "混浊的",
+     "en": "cloudy or muddy; confused",
+     "syn": [
+      "muddy",
+      "murky"
+     ],
+     "ant": [
+      "clear",
+      "limpid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[beige]] report, [[laudatory]] only in places, described the [[privation]] of villagers who drew water from a [[turbid]] river and cooked on [[primitive]] stoves.",
+   "gloss": {
+    "beige": "缺乏特征的",
+    "laudatory": "表示赞扬的",
+    "privation": "缺乏，穷困",
+    "primitive": "原始的",
+    "turbid": "混浊的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "petty",
+     "ipa": "[ˈpɛti]",
+     "pos": "adj.",
+     "zh": "细微的，不重要的",
+     "en": "small and unimportant; narrow-minded",
+     "syn": [
+      "trivial",
+      "minor"
+     ],
+     "ant": [
+      "significant",
+      "magnanimous"
+     ]
+    },
+    {
+     "w": "clarity",
+     "ipa": "[ˈklærəti]",
+     "pos": "n.",
+     "zh": "清晰，清楚",
+     "en": "the quality of being clear",
+     "syn": [
+      "lucidity",
+      "clearness"
+     ],
+     "ant": [
+      "obscurity",
+      "vagueness"
+     ]
+    },
+    {
+     "w": "truculent",
+     "ipa": "[ˈtrʌkjələnt]",
+     "pos": "adj.",
+     "zh": "好战的，好斗的",
+     "en": "eager to fight; aggressively defiant",
+     "syn": [
+      "belligerent",
+      "combative"
+     ],
+     "ant": [
+      "peaceable",
+      "docile"
+     ]
+    },
+    {
+     "w": "fanciful",
+     "ipa": "[ˈfænsɪfl]",
+     "pos": "adj.",
+     "zh": "不切实际的，荒谬的",
+     "en": "imaginative but unrealistic",
+     "syn": [
+      "whimsical",
+      "imaginary"
+     ],
+     "ant": [
+      "realistic",
+      "practical"
+     ]
+    },
+    {
+     "w": "enervate",
+     "ipa": "[ˈɛnəvet]",
+     "pos": "vt.",
+     "zh": "使衰弱",
+     "en": "to weaken or drain energy from",
+     "syn": [
+      "debilitate",
+      "sap"
+     ],
+     "ant": [
+      "invigorate",
+      "energize"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "With [[clarity]] the judge dismissed the [[petty]] complaint of a [[truculent]] neighbor, whose [[fanciful]] claims could only [[enervate]] the court.",
+   "gloss": {
+    "petty": "细微的，不重要的",
+    "clarity": "清晰，清楚",
+    "truculent": "好战的，好斗的",
+    "fanciful": "不切实际的，荒谬的",
+    "enervate": "使衰弱"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "adversary",
+     "ipa": "[ˈædvɚsɛri]",
+     "pos": "n.",
+     "zh": "敌手，对手",
+     "en": "an opponent or enemy",
+     "syn": [
+      "opponent",
+      "foe"
+     ],
+     "ant": [
+      "ally",
+      "supporter"
+     ]
+    },
+    {
+     "w": "overt",
+     "ipa": "[oˈvɜːt]",
+     "pos": "adj.",
+     "zh": "明显的，公开的",
+     "en": "openly shown, not hidden",
+     "syn": [
+      "open",
+      "blatant"
+     ],
+     "ant": [
+      "covert",
+      "concealed"
+     ]
+    },
+    {
+     "w": "insipid",
+     "ipa": "[ɪnˈsɪpɪd]",
+     "pos": "adj.",
+     "zh": "平淡的，无聊的",
+     "en": "lacking flavor or interest",
+     "syn": [
+      "bland",
+      "vapid"
+     ],
+     "ant": [
+      "tasty",
+      "stimulating"
+     ]
+    },
+    {
+     "w": "conversant",
+     "ipa": "[kənˈvɜːrsnt]",
+     "pos": "adj.",
+     "zh": "熟悉的",
+     "en": "familiar through study or experience",
+     "syn": [
+      "familiar",
+      "versed"
+     ],
+     "ant": [
+      "ignorant",
+      "unfamiliar"
+     ]
+    },
+    {
+     "w": "idiosyncrasy",
+     "ipa": "[ˌɪdɪəˈsɪŋkrəsi]",
+     "pos": "n.",
+     "zh": "独特而奇怪的习惯",
+     "en": "a peculiar habit or characteristic",
+     "syn": [
+      "quirk",
+      "eccentricity"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[adversary]], [[conversant]] with every opening, found her [[insipid]] style hard to read; her one [[idiosyncrasy]] was an [[overt]] smile before each trap.",
+   "gloss": {
+    "adversary": "敌手，对手",
+    "overt": "明显的，公开的",
+    "insipid": "平淡的，无聊的",
+    "conversant": "熟悉的",
+    "idiosyncrasy": "独特而奇怪的习惯"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**convulsion** 的意思最接近：",
+    "options": [
+     "敌手，对手",
+     "骚乱",
+     "清晰，清楚",
+     "独特而奇怪的习惯"
+    ],
+    "answer": 1,
+    "explain": "convulsion：骚乱（a violent disturbance or upheaval）。近义词：upheaval, fit。"
+   },
+   {
+    "q": "**truculent** 的意思最接近：",
+    "options": [
+     "好战的，好斗的",
+     "啰嗦的；扩展，散开",
+     "细微的，不重要的",
+     "缺乏特征的"
+    ],
+    "answer": 0,
+    "explain": "truculent：好战的，好斗的（eager to fight; aggressively defiant）。近义词：belligerent, combative。"
+   },
+   {
+    "q": "哪个词的意思是「混浊的」？",
+    "options": [
+     "primitive",
+     "conversant",
+     "turbid",
+     "laudatory"
+    ],
+    "answer": 2,
+    "explain": "turbid：混浊的（cloudy or muddy; confused）。"
+   },
+   {
+    "q": "哪个词和 **foe** 的意思最接近？",
+    "options": [
+     "rationale",
+     "convulsion",
+     "clarity",
+     "adversary"
+    ],
+    "answer": 3,
+    "explain": "adversary 与 foe 近义：an opponent or enemy。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> Her ____, conversant with every opening, found her insipid style hard to read; her one idiosyncrasy was an overt smile before each trap.",
+    "options": [
+     "privation",
+     "convulsion",
+     "adversary",
+     "rationale"
+    ],
+    "answer": 2,
+    "explain": "adversary：敌手，对手（an opponent or enemy）。"
+   }
+  ]
+ }
+}

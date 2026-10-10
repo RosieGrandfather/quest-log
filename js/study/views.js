@@ -2,7 +2,7 @@
    路由用 URL 的 #：#/  #/c/课程  #/c/课程/u/章节  …/quiz  …/review */
 import { T } from './state.js';
 import { loadCourses, loadCourse, loadUnit } from './content.js';
-import { unitBodyHTML, mdToHTML, renderMath } from './render-content.js';
+import { unitBodyHTML, mdToHTML, renderMath, wireVocab } from './render-content.js';
 import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { startResume, stopResume, clearResume } from './resume.js';
@@ -159,6 +159,7 @@ async function renderUnit(cid, uid){
     </nav>
     <button class="notes-fab" id="notesFab">📝 笔记</button>`;
   renderMath(view());
+  wireVocab(document.querySelector('.lesson'));
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());
   const rkey = unitKey(cid, uid);

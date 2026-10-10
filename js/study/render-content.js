@@ -50,6 +50,54 @@ function videoHTML(b){
   </figure>`;
 }
 
+
+/* ---------- 词汇课：单词卡 + 例句短文 ---------- */
+function vocabCard(it){
+  const chips = (label, cls, arr)=> arr && arr.length
+    ? `<span class="vrel-row"><span class="vlabel ${cls}">${label}</span>${arr.map(x=>`<span class="vchip">${escapeHTML(x)}</span>`).join('')}</span>` : '';
+  return `<div class="vcard">
+    <div class="vhead"><span class="vword">${escapeHTML(it.w)}</span>
+      <button type="button" class="vipa" data-say="${escapeHTML(it.w)}" aria-label="朗读 ${escapeHTML(it.w)}">🔊 ${escapeHTML(it.ipa||'发音')}</button>
+      ${it.pos?`<span class="vpos">${escapeHTML(it.pos)}</span>`:''}</div>
+    <div class="vzh">${escapeHTML(it.zh||'')}</div>
+    <div class="ven">${escapeHTML(it.en||'')}</div>
+    <div class="vrel">${chips('近','vsyn',it.syn)}${chips('反','vant',it.ant)}</div>
+  </div>`;
+}
+
+/* 例句里 [[词]] 或 [[出现的形式|词原形]] 会被标出来，点一下看中文 */
+function passageHTML(b){
+  const gloss = b.gloss || {};
+  const body = escapeHTML(b.text).replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, surf, lemma)=>{
+    const key = (lemma || surf).trim();
+    return `<mark class="vw" tabindex="0" data-zh="${escapeHTML(gloss[key]||'')}">${surf}</mark>`;
+  });
+  return `<div class="blk-passage"><div class="vp-tag">例句短文 · 点高亮的词看中文意思</div><p>${body}</p></div>`;
+}
+
+/* 点音标朗读：用浏览器自带的英文语音（不用联网）；浏览器没有语音功能时才用有道的读音 */
+export function speak(word){
+  if('speechSynthesis' in window){
+    const voices = speechSynthesis.getVoices();
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = 'en-US';
+    const v = voices.find(x=>/^en[-_]US/i.test(x.lang)) || voices.find(x=>/^en/i.test(x.lang));
+    if(v) u.voice = v;
+    u.rate = 0.85;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+    return;
+  }
+  new Audio(`https://dict.youdao.com/dictvoice?type=2&audio=${encodeURIComponent(word)}`).play().catch(()=>{});
+}
+export function wireVocab(root){
+  if(!root) return;
+  root.addEventListener('click', e=>{
+    const b = e.target.closest && e.target.closest('.vipa');
+    if(b) speak(b.dataset.say);
+  });
+}
+
 function blockHTML(b){
   switch(b.type){
     case 'text': return `<div class="blk-text">${mdToHTML(b.md)}</div>`;
@@ -58,6 +106,8 @@ function blockHTML(b){
     case 'think': return `<details class="blk-think"><summary><span class="think-tag">想一想</span>${mdToHTML(b.q)}</summary><div class="think-answer">${mdToHTML(b.a)}</div></details>`;
     case 'keywords': return `<div class="blk-keywords"><div class="kw-title">本节关键词</div><table>${b.items.map(([zh,en,desc])=>
       `<tr><td class="kw-zh">${escapeHTML(zh)}</td><td class="kw-en">${escapeHTML(en)}</td><td class="kw-desc">${mdToHTML(desc||'')}</td></tr>`).join('')}</table></div>`;
+    case 'vocab': return `<div class="blk-vocab">${b.items.map(vocabCard).join('')}</div>`;
+    case 'passage': return passageHTML(b);
     default: return '';
   }
 }

@@ -1,0 +1,370 @@
+{
+ "id": "u60",
+ "title": "S 级核心词 · 第 60 组",
+ "en": "GRE Core Vocabulary · Set 60",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 16 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "strident",
+     "ipa": "[ˈstraɪdnt]",
+     "pos": "adj.",
+     "zh": "尖厉的；刺耳而强硬的",
+     "en": "loud and harsh in sound or tone",
+     "syn": [
+      "shrill",
+      "grating"
+     ],
+     "ant": [
+      "soft",
+      "mellow"
+     ]
+    },
+    {
+     "w": "vaunt",
+     "ipa": "[vɔːnt]",
+     "pos": "vi.",
+     "zh": "吹嘘",
+     "en": "to boast about",
+     "syn": [
+      "brag",
+      "flaunt"
+     ],
+     "ant": [
+      "belittle",
+      "downplay"
+     ]
+    },
+    {
+     "w": "abhor",
+     "ipa": "[əbˈhɔr]",
+     "pos": "v.",
+     "zh": "深恶痛绝，极度厌恶",
+     "en": "to regard with disgust and hatred",
+     "syn": [
+      "detest",
+      "loathe"
+     ],
+     "ant": [
+      "adore",
+      "cherish"
+     ]
+    },
+    {
+     "w": "reminiscent",
+     "ipa": "[ˌremɪˈnɪsnt]",
+     "pos": "adj.",
+     "zh": "怀旧的，引发回忆的",
+     "en": "tending to recall something past",
+     "syn": [
+      "evocative",
+      "suggestive"
+     ],
+     "ant": []
+    },
+    {
+     "w": "peremptory",
+     "ipa": "[pəˈremptəri]",
+     "pos": "adj.",
+     "zh": "不容反抗的；傲慢的",
+     "en": "insisting on immediate obedience; imperious",
+     "syn": [
+      "imperious",
+      "dictatorial"
+     ],
+     "ant": [
+      "tentative",
+      "deferential"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[strident]] tone would only [[vaunt]] his fame; the [[reminiscent]] crowd would [[abhor]] it, and a [[peremptory]] order ended the show.",
+   "gloss": {
+    "strident": "尖厉的",
+    "vaunt": "吹嘘",
+    "abhor": "深恶痛绝，极度厌恶",
+    "reminiscent": "怀旧的，引发回忆的",
+    "peremptory": "不容反抗的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "dispassionate",
+     "ipa": "[dɪsˈpæʃənət]",
+     "pos": "adj.",
+     "zh": "客观公正的，不易被情绪或偏见影响的",
+     "en": "not influenced by strong emotion; impartial",
+     "syn": [
+      "impartial",
+      "objective"
+     ],
+     "ant": [
+      "emotional",
+      "biased"
+     ]
+    },
+    {
+     "w": "doctrinaire",
+     "ipa": "[ˌdɑːktrəˈner]",
+     "pos": "adj.",
+     "zh": "教条主义的，照本宣科的",
+     "en": "rigidly applying a theory without regard to practicality",
+     "syn": [
+      "dogmatic",
+      "inflexible"
+     ],
+     "ant": [
+      "flexible",
+      "pragmatic"
+     ]
+    },
+    {
+     "w": "grueling",
+     "ipa": "[ˈgruːəlɪŋ]",
+     "pos": "adj.",
+     "zh": "累人的，极其艰苦的",
+     "en": "extremely tiring and demanding",
+     "syn": [
+      "exhausting",
+      "punishing"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    },
+    {
+     "w": "novice",
+     "ipa": "[ˈnɑvɪs]",
+     "pos": "n.",
+     "zh": "新手，初学者",
+     "en": "a person new to a skill or field",
+     "syn": [
+      "beginner",
+      "neophyte"
+     ],
+     "ant": [
+      "expert",
+      "veteran"
+     ]
+    },
+    {
+     "w": "manacle",
+     "ipa": "[ˈmænəkl]",
+     "pos": "vt.",
+     "zh": "限制，束缚；手铐",
+     "en": "to restrain; a shackle for the hands",
+     "syn": [
+      "shackle",
+      "fetter"
+     ],
+     "ant": [
+      "free",
+      "release"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[dispassionate]] judge called the [[doctrinaire]] plan a [[grueling]] mistake that would [[manacle]] a [[novice]].",
+   "gloss": {
+    "dispassionate": "客观公正的，不易被情绪或偏见影响的",
+    "doctrinaire": "教条主义的，照本宣科的",
+    "grueling": "累人的，极其艰苦的",
+    "novice": "新手，初学者",
+    "manacle": "限制，束缚"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "pithy",
+     "ipa": "[ˈpɪθi]",
+     "pos": "adj.",
+     "zh": "精练的，简洁的",
+     "en": "brief but full of meaning",
+     "syn": [
+      "concise",
+      "terse"
+     ],
+     "ant": [
+      "rambling",
+      "long-winded"
+     ]
+    },
+    {
+     "w": "mar",
+     "ipa": "[mɑr]",
+     "pos": "vt.",
+     "zh": "破坏，削弱",
+     "en": "to spoil the appearance or quality of",
+     "syn": [
+      "spoil",
+      "blemish"
+     ],
+     "ant": [
+      "improve",
+      "enhance"
+     ]
+    },
+    {
+     "w": "haphazard",
+     "ipa": "[ˈhæphæzəd]",
+     "pos": "adj.",
+     "zh": "无秩序的，无目标的",
+     "en": "lacking order or planning",
+     "syn": [
+      "random",
+      "disorganized"
+     ],
+     "ant": [
+      "methodical",
+      "systematic"
+     ]
+    },
+    {
+     "w": "audacious",
+     "ipa": "[ɔˈdeʃəs]",
+     "pos": "adj.",
+     "zh": "大胆的，(但往往)愚勇的",
+     "en": "boldly daring, sometimes recklessly",
+     "syn": [
+      "bold",
+      "daring"
+     ],
+     "ant": [
+      "timid",
+      "cautious"
+     ]
+    },
+    {
+     "w": "forestall",
+     "ipa": "[fɔːrˈstɔːl]",
+     "pos": "vt.",
+     "zh": "预先阻止",
+     "en": "to prevent by acting ahead of time",
+     "syn": [
+      "preempt",
+      "avert"
+     ],
+     "ant": [
+      "facilitate",
+      "permit"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[pithy]] note could [[mar]] the [[haphazard]] plan; an [[audacious]] clerk tried to [[forestall]] it.",
+   "gloss": {
+    "pithy": "精练的，简洁的",
+    "mar": "破坏，削弱",
+    "haphazard": "无秩序的，无目标的",
+    "audacious": "大胆的，(但往往)愚勇的",
+    "forestall": "预先阻止"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "myopic",
+     "ipa": "[maɪˈɒpɪk]",
+     "pos": "adj.",
+     "zh": "缺乏远见的，缺乏辨识能力的",
+     "en": "lacking foresight; nearsighted",
+     "syn": [
+      "shortsighted",
+      "narrow"
+     ],
+     "ant": [
+      "farsighted",
+      "visionary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[myopic]] chief saw only the next quarter.",
+   "gloss": {
+    "myopic": "缺乏远见的，缺乏辨识能力的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**haphazard** 的意思最接近：",
+    "options": [
+     "尖厉的；刺耳而强硬的",
+     "无秩序的，无目标的",
+     "大胆的，(但往往)愚勇的",
+     "累人的，极其艰苦的"
+    ],
+    "answer": 1,
+    "explain": "haphazard：无秩序的，无目标的（lacking order or planning）。近义词：random, disorganized。"
+   },
+   {
+    "q": "**mar** 的意思最接近：",
+    "options": [
+     "限制，束缚；手铐",
+     "破坏，削弱",
+     "深恶痛绝，极度厌恶",
+     "预先阻止"
+    ],
+    "answer": 1,
+    "explain": "mar：破坏，削弱（to spoil the appearance or quality of）。近义词：spoil, blemish。"
+   },
+   {
+    "q": "哪个词的意思是「深恶痛绝，极度厌恶」？",
+    "options": [
+     "vaunt",
+     "mar",
+     "manacle",
+     "abhor"
+    ],
+    "answer": 3,
+    "explain": "abhor：深恶痛绝，极度厌恶（to regard with disgust and hatred）。"
+   },
+   {
+    "q": "哪个词和 **exhausting** 的意思最接近？",
+    "options": [
+     "grueling",
+     "dispassionate",
+     "doctrinaire",
+     "haphazard"
+    ],
+    "answer": 0,
+    "explain": "grueling 与 exhausting 近义：extremely tiring and demanding。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The ____ judge called the doctrinaire plan a grueling mistake that would manacle a novice.",
+    "options": [
+     "pithy",
+     "reminiscent",
+     "dispassionate",
+     "haphazard"
+    ],
+    "answer": 2,
+    "explain": "dispassionate：客观公正的，不易被情绪或偏见影响的（not influenced by strong emotion; impartial）。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,425 @@
+{
+ "id": "u06",
+ "title": "S 级核心词 · 第 6 组",
+ "en": "GRE Core Vocabulary · Set 6",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tortuous",
+     "ipa": "[ˈtɔːrtʃuəs]",
+     "pos": "adj.",
+     "zh": "曲折的，拐弯抹角的",
+     "en": "full of twists and turns; indirect",
+     "syn": [
+      "winding",
+      "circuitous"
+     ],
+     "ant": [
+      "straightforward",
+      "direct"
+     ]
+    },
+    {
+     "w": "prognosis",
+     "ipa": "[prɑːɡˈnoʊsɪs]",
+     "pos": "n.",
+     "zh": "预后；预测",
+     "en": "a forecast, especially of the course of a disease",
+     "syn": [
+      "forecast",
+      "prediction"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disgorge",
+     "ipa": "[dɪsˈɡɔːrdʒ]",
+     "pos": "v.",
+     "zh": "呕吐出",
+     "en": "to pour out or discharge; to vomit",
+     "syn": [
+      "spew",
+      "discharge"
+     ],
+     "ant": [
+      "swallow",
+      "absorb"
+     ]
+    },
+    {
+     "w": "offish",
+     "ipa": "[ˈɔːfɪʃ]",
+     "pos": "adj.",
+     "zh": "冷淡的",
+     "en": "distant and aloof in manner",
+     "syn": [
+      "aloof",
+      "standoffish"
+     ],
+     "ant": [
+      "friendly",
+      "approachable"
+     ]
+    },
+    {
+     "w": "somber",
+     "ipa": "[ˈsɒmbə]",
+     "pos": "adj.",
+     "zh": "悲伤的，不愉快的",
+     "en": "dark and gloomy; serious",
+     "syn": [
+      "grave",
+      "dismal"
+     ],
+     "ant": [
+      "cheerful",
+      "bright"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[tortuous]] walk through the hospital corridors, the family heard the doctor's [[prognosis]] in [[somber]] silence; the usually warm nurse seemed [[offish]], and outside a burst pipe began to [[disgorge]] muddy water onto the street.",
+   "gloss": {
+    "tortuous": "曲折的，拐弯抹角的",
+    "prognosis": "预后",
+    "disgorge": "呕吐出",
+    "offish": "冷淡的",
+    "somber": "悲伤的，不愉快的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "parsimonious",
+     "ipa": "[ˌpɑrsəˈmonɪəs]",
+     "pos": "adj.",
+     "zh": "过度节俭的，吝啬的",
+     "en": "extremely unwilling to spend money",
+     "syn": [
+      "stingy",
+      "miserly"
+     ],
+     "ant": [
+      "generous",
+      "lavish"
+     ]
+    },
+    {
+     "w": "malfeasance",
+     "ipa": "[ˌmælˈfiːzəns]",
+     "pos": "n.",
+     "zh": "非法行为",
+     "en": "wrongdoing, especially by a public official",
+     "syn": [
+      "misconduct",
+      "wrongdoing"
+     ],
+     "ant": []
+    },
+    {
+     "w": "patent",
+     "ipa": "[ˈpætnt]",
+     "pos": "adj.",
+     "zh": "显而易见的；专利（权）",
+     "en": "obvious; protected by an official right",
+     "syn": [
+      "obvious",
+      "evident"
+     ],
+     "ant": [
+      "obscure",
+      "hidden"
+     ]
+    },
+    {
+     "w": "impending",
+     "ipa": "[ɪmˈpɛndɪŋ]",
+     "pos": "adj.",
+     "zh": "即将发生的",
+     "en": "about to happen",
+     "syn": [
+      "imminent",
+      "looming"
+     ],
+     "ant": [
+      "distant",
+      "remote"
+     ]
+    },
+    {
+     "w": "fabricate",
+     "ipa": "[ˈfæbrɪket]",
+     "pos": "vt.",
+     "zh": "捏造",
+     "en": "to invent falsely; to manufacture",
+     "syn": [
+      "invent",
+      "concoct"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[parsimonious]] treasurer was accused of [[malfeasance]] when the [[impending]] audit showed that he had tried to [[fabricate]] receipts; the fraud was so [[patent]] that no one would defend him.",
+   "gloss": {
+    "parsimonious": "过度节俭的，吝啬的",
+    "malfeasance": "非法行为",
+    "patent": "显而易见的",
+    "impending": "即将发生的",
+    "fabricate": "捏造"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "exalt",
+     "ipa": "[ɪɡˈzɔlt]",
+     "pos": "vt.",
+     "zh": "赞扬",
+     "en": "to praise highly; to raise in rank",
+     "syn": [
+      "extol",
+      "glorify"
+     ],
+     "ant": [
+      "denigrate",
+      "belittle"
+     ]
+    },
+    {
+     "w": "enigma",
+     "ipa": "[ɪˈnɪgmə]",
+     "pos": "n.",
+     "zh": "难以理解或解释的事物，谜",
+     "en": "a puzzling, mysterious person or thing",
+     "syn": [
+      "mystery",
+      "riddle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "concede",
+     "ipa": "[kənˈsid]",
+     "pos": "v.",
+     "zh": "承认",
+     "en": "to admit as true; to yield",
+     "syn": [
+      "admit",
+      "acknowledge"
+     ],
+     "ant": [
+      "deny",
+      "dispute"
+     ]
+    },
+    {
+     "w": "recant",
+     "ipa": "[rɪˈkænt]",
+     "pos": "vt.",
+     "zh": "撤回，放弃，改变",
+     "en": "to withdraw a statement or belief publicly",
+     "syn": [
+      "retract",
+      "renounce"
+     ],
+     "ant": [
+      "affirm",
+      "maintain"
+     ]
+    },
+    {
+     "w": "gregarious",
+     "ipa": "[grɪˈgɛrɪəs]",
+     "pos": "adj.",
+     "zh": "爱社交的；群居的",
+     "en": "fond of company; living in groups",
+     "syn": [
+      "sociable",
+      "outgoing"
+     ],
+     "ant": [
+      "reclusive",
+      "solitary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Critics used to [[exalt]] the painter as an [[enigma]]; she was [[gregarious]] in public but secretive in her studio, and when pressed she would [[concede]] a mistake yet never [[recant]] her principles.",
+   "gloss": {
+    "exalt": "赞扬",
+    "enigma": "难以理解或解释的事物，谜",
+    "concede": "承认",
+    "recant": "撤回，放弃，改变",
+    "gregarious": "爱社交的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "specious",
+     "ipa": "[ˈspiːʃəs]",
+     "pos": "adj.",
+     "zh": "似是而非的，欺骗性的",
+     "en": "seeming true but actually false",
+     "syn": [
+      "plausible-sounding",
+      "fallacious"
+     ],
+     "ant": [
+      "genuine",
+      "sound"
+     ]
+    },
+    {
+     "w": "deterioration",
+     "ipa": "[dɪˌtɪrɪəˈreʃən]",
+     "pos": "n.",
+     "zh": "恶化；堕落",
+     "en": "the process of becoming worse",
+     "syn": [
+      "decline",
+      "decay"
+     ],
+     "ant": [
+      "improvement",
+      "recovery"
+     ]
+    },
+    {
+     "w": "obligatory",
+     "ipa": "[əˈblɪɡətɔri]",
+     "pos": "adj.",
+     "zh": "强制性的",
+     "en": "required by rule or duty",
+     "syn": [
+      "compulsory",
+      "mandatory"
+     ],
+     "ant": [
+      "optional",
+      "voluntary"
+     ]
+    },
+    {
+     "w": "nugatory",
+     "ipa": "[ˈnuːɡətɔːri]",
+     "pos": "adj.",
+     "zh": "无关紧要的",
+     "en": "of no importance; worthless",
+     "syn": [
+      "trivial",
+      "inconsequential"
+     ],
+     "ant": [
+      "significant",
+      "valuable"
+     ]
+    },
+    {
+     "w": "canny",
+     "ipa": "[ˈkæni]",
+     "pos": "adj.",
+     "zh": "精明的，聪明的",
+     "en": "shrewd and careful, especially in practical matters",
+     "syn": [
+      "shrewd",
+      "astute"
+     ],
+     "ant": [
+      "naive",
+      "gullible"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[specious]] argument that the [[deterioration]] of the bridge was [[nugatory]] convinced no one; the [[canny]] engineer insisted that an annual inspection was [[obligatory]].",
+   "gloss": {
+    "specious": "似是而非的，欺骗性的",
+    "deterioration": "恶化",
+    "obligatory": "强制性的",
+    "nugatory": "无关紧要的",
+    "canny": "精明的，聪明的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**enigma** 的意思最接近：",
+    "options": [
+     "非法行为",
+     "难以理解或解释的事物，谜",
+     "预后；预测",
+     "恶化；堕落"
+    ],
+    "answer": 1,
+    "explain": "enigma：难以理解或解释的事物，谜（a puzzling, mysterious person or thing）。近义词：mystery, riddle。"
+   },
+   {
+    "q": "**offish** 的意思最接近：",
+    "options": [
+     "强制性的",
+     "显而易见的；专利（权）",
+     "冷淡的",
+     "悲伤的，不愉快的"
+    ],
+    "answer": 2,
+    "explain": "offish：冷淡的（distant and aloof in manner）。近义词：aloof, standoffish。"
+   },
+   {
+    "q": "哪个词的意思是「无关紧要的」？",
+    "options": [
+     "nugatory",
+     "canny",
+     "parsimonious",
+     "specious"
+    ],
+    "answer": 0,
+    "explain": "nugatory：无关紧要的（of no importance; worthless）。"
+   },
+   {
+    "q": "哪个词和 **grave** 的意思最接近？",
+    "options": [
+     "offish",
+     "somber",
+     "obligatory",
+     "parsimonious"
+    ],
+    "answer": 1,
+    "explain": "somber 与 grave 近义：dark and gloomy; serious。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The parsimonious treasurer was accused of malfeasance when the impending audit showed that he had tried to ____ receipts; the fraud was so patent that no one would defend him.",
+    "options": [
+     "disgorge",
+     "concede",
+     "exalt",
+     "fabricate"
+    ],
+    "answer": 3,
+    "explain": "fabricate：捏造（to invent falsely; to manufacture）。"
+   }
+  ]
+ }
+}

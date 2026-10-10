@@ -1,0 +1,432 @@
+{
+ "id": "u47",
+ "title": "S 级核心词 · 第 47 组",
+ "en": "GRE Core Vocabulary · Set 47",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "buttress",
+     "ipa": "[ˈbʌtrəs]",
+     "pos": "vt.",
+     "zh": "为…提供支撑的证据或者信息",
+     "en": "to support or strengthen with evidence or structure",
+     "syn": [
+      "bolster",
+      "reinforce"
+     ],
+     "ant": [
+      "undermine",
+      "weaken"
+     ]
+    },
+    {
+     "w": "immure",
+     "ipa": "[ɪˈmjʊr]",
+     "pos": "vt.",
+     "zh": "监禁，禁闭；使闭门不出",
+     "en": "to shut in; to confine as if in walls",
+     "syn": [
+      "imprison",
+      "confine"
+     ],
+     "ant": [
+      "free",
+      "release"
+     ]
+    },
+    {
+     "w": "parity",
+     "ipa": "[ˈpærəti]",
+     "pos": "n.",
+     "zh": "相称，同等，平等",
+     "en": "equality, especially of status or amount",
+     "syn": [
+      "equality",
+      "equivalence"
+     ],
+     "ant": [
+      "disparity",
+      "inequality"
+     ]
+    },
+    {
+     "w": "rudimentary",
+     "ipa": "[ˌruːdɪˈmentri]",
+     "pos": "adj.",
+     "zh": "初始的，未发展的；最根本的，基础的",
+     "en": "basic, undeveloped",
+     "syn": [
+      "elementary",
+      "primitive"
+     ],
+     "ant": [
+      "advanced",
+      "sophisticated"
+     ]
+    },
+    {
+     "w": "petrify",
+     "ipa": "[ˈpɛtrɪfaɪ]",
+     "pos": "v.",
+     "zh": "使僵化，使失去活力",
+     "en": "to make rigid, lifeless, or frozen with fear",
+     "syn": [
+      "ossify",
+      "paralyze"
+     ],
+     "ant": [
+      "animate",
+      "enliven"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "He sought to [[buttress]] his claim, yet the council would [[immure]] him in silence; the offered [[parity]] was [[rudimentary]], and the long delay began to [[petrify]] the talks.",
+   "gloss": {
+    "buttress": "为…提供支撑的证据或者信息",
+    "immure": "监禁，禁闭",
+    "parity": "相称，同等，平等",
+    "rudimentary": "初始的，未发展的",
+    "petrify": "使僵化，使失去活力"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "countenance",
+     "ipa": "[ˈkaʊntənəns]",
+     "pos": "v.",
+     "zh": "容忍，赞许",
+     "en": "to tolerate or approve",
+     "syn": [
+      "condone",
+      "sanction"
+     ],
+     "ant": [
+      "disapprove",
+      "forbid"
+     ]
+    },
+    {
+     "w": "concomitant",
+     "ipa": "[kənˈkɑmətənt]",
+     "pos": "adj.",
+     "zh": "伴随的，同时发生的",
+     "en": "occurring together with something else",
+     "syn": [
+      "accompanying",
+      "attendant"
+     ],
+     "ant": [
+      "separate",
+      "unrelated"
+     ]
+    },
+    {
+     "w": "disparate",
+     "ipa": "[ˈdɪspərət]",
+     "pos": "adj.",
+     "zh": "迥然不同的",
+     "en": "so different as to be hard to compare",
+     "syn": [
+      "dissimilar",
+      "distinct"
+     ],
+     "ant": [
+      "alike",
+      "akin"
+     ]
+    },
+    {
+     "w": "covert",
+     "ipa": "[ˈkovɝt]",
+     "pos": "adj.",
+     "zh": "隐蔽的，秘密的",
+     "en": "hidden or secret",
+     "syn": [
+      "clandestine",
+      "furtive"
+     ],
+     "ant": [
+      "overt",
+      "open"
+     ]
+    },
+    {
+     "w": "linger",
+     "ipa": "[ˈlɪŋɡə]",
+     "pos": "vi.",
+     "zh": "磨蹭，闲荡",
+     "en": "to stay longer than needed; to be slow to leave",
+     "syn": [
+      "dawdle",
+      "loiter"
+     ],
+     "ant": [
+      "depart",
+      "hasten"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The board would not [[countenance]] a [[concomitant]] rise in fees for such [[disparate]] groups; the [[covert]] plan was dropped, and its backers did not [[linger]].",
+   "gloss": {
+    "countenance": "容忍，赞许",
+    "concomitant": "伴随的，同时发生的",
+    "disparate": "迥然不同的",
+    "covert": "隐蔽的，秘密的",
+    "linger": "磨蹭，闲荡"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "inadvertent",
+     "ipa": "[ˌɪnədˈvɜːtənt]",
+     "pos": "adj.",
+     "zh": "偶然发生的；疏忽的，不留意的",
+     "en": "done without intention or thought",
+     "syn": [
+      "unintentional",
+      "accidental"
+     ],
+     "ant": [
+      "deliberate",
+      "intentional"
+     ]
+    },
+    {
+     "w": "slur",
+     "ipa": "[slɝ]",
+     "pos": "n.",
+     "zh": "污蔑，诽谤",
+     "en": "an insulting remark that damages reputation; to speak unclearly",
+     "syn": [
+      "insult",
+      "smear"
+     ],
+     "ant": [
+      "compliment",
+      "praise"
+     ]
+    },
+    {
+     "w": "concoct",
+     "ipa": "[kənˈkɑkt]",
+     "pos": "v.",
+     "zh": "捏造，编造",
+     "en": "to invent or make up, often a story or plan",
+     "syn": [
+      "fabricate",
+      "devise"
+     ],
+     "ant": []
+    },
+    {
+     "w": "misrepresent",
+     "ipa": "[ˌmɪsˌreprɪˈzent]",
+     "pos": "vi.",
+     "zh": "误传，篡改",
+     "en": "to give a false or misleading account of",
+     "syn": [
+      "distort",
+      "falsify"
+     ],
+     "ant": [
+      "portray accurately"
+     ]
+    },
+    {
+     "w": "peer",
+     "ipa": "[pɪr]",
+     "pos": "n.",
+     "zh": "同等地位的人，同辈；好奇地凝视",
+     "en": "an equal in rank or ability; to look closely",
+     "syn": [
+      "equal",
+      "counterpart"
+     ],
+     "ant": [
+      "superior",
+      "inferior"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[inadvertent]] [[slur]] spread when a rival chose to [[concoct]] a story and [[misrepresent]] her words; the [[peers|peer]] who read it were not fooled.",
+   "gloss": {
+    "inadvertent": "偶然发生的",
+    "slur": "污蔑，诽谤",
+    "concoct": "捏造，编造",
+    "misrepresent": "误传，篡改",
+    "peer": "同等地位的人，同辈"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "loathe",
+     "ipa": "[loð]",
+     "pos": "vt.",
+     "zh": "厌恶",
+     "en": "to feel intense disgust or hatred for",
+     "syn": [
+      "detest",
+      "abhor"
+     ],
+     "ant": [
+      "adore",
+      "cherish"
+     ]
+    },
+    {
+     "w": "vituperate",
+     "ipa": "[vaɪˈtjuːpəˌreɪt]",
+     "pos": "vt.",
+     "zh": "谩骂，责骂",
+     "en": "to attack with harsh, abusive words",
+     "syn": [
+      "revile",
+      "berate"
+     ],
+     "ant": [
+      "praise",
+      "laud"
+     ]
+    },
+    {
+     "w": "ponderous",
+     "ipa": "[ˈpɑndərəs]",
+     "pos": "adj.",
+     "zh": "笨重的，沉闷的",
+     "en": "heavy, slow, and dull",
+     "syn": [
+      "unwieldy",
+      "laborious"
+     ],
+     "ant": [
+      "light",
+      "nimble"
+     ]
+    },
+    {
+     "w": "wistful",
+     "ipa": "[ˈwɪstfl]",
+     "pos": "adj.",
+     "zh": "渴望的，怀念的",
+     "en": "full of vague, melancholy longing",
+     "syn": [
+      "yearning",
+      "pensive"
+     ],
+     "ant": [
+      "content",
+      "cheerful"
+     ]
+    },
+    {
+     "w": "gloat",
+     "ipa": "[ɡlot]",
+     "pos": "vi.",
+     "zh": "幸灾乐祸，自鸣得意",
+     "en": "to take smug pleasure in someone's misfortune",
+     "syn": [
+      "exult",
+      "crow"
+     ],
+     "ant": [
+      "sympathize"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Critics who [[loathe]] him still [[vituperate]] his [[ponderous]] prose; he looks back with a [[wistful]] smile and refuses to [[gloat]] over his later success.",
+   "gloss": {
+    "loathe": "厌恶",
+    "vituperate": "谩骂，责骂",
+    "ponderous": "笨重的，沉闷的",
+    "wistful": "渴望的，怀念的",
+    "gloat": "幸灾乐祸，自鸣得意"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**countenance** 的意思最接近：",
+    "options": [
+     "幸灾乐祸，自鸣得意",
+     "使僵化，使失去活力",
+     "谩骂，责骂",
+     "容忍，赞许"
+    ],
+    "answer": 3,
+    "explain": "countenance：容忍，赞许（to tolerate or approve）。近义词：condone, sanction。"
+   },
+   {
+    "q": "**wistful** 的意思最接近：",
+    "options": [
+     "初始的，未发展的；最根本的，基础的",
+     "伴随的，同时发生的",
+     "渴望的，怀念的",
+     "偶然发生的；疏忽的，不留意的"
+    ],
+    "answer": 2,
+    "explain": "wistful：渴望的，怀念的（full of vague, melancholy longing）。近义词：yearning, pensive。"
+   },
+   {
+    "q": "哪个词的意思是「迥然不同的」？",
+    "options": [
+     "concomitant",
+     "disparate",
+     "wistful",
+     "ponderous"
+    ],
+    "answer": 1,
+    "explain": "disparate：迥然不同的（so different as to be hard to compare）。"
+   },
+   {
+    "q": "哪个词和 **accompanying** 的意思最接近？",
+    "options": [
+     "covert",
+     "wistful",
+     "inadvertent",
+     "concomitant"
+    ],
+    "answer": 3,
+    "explain": "concomitant 与 accompanying 近义：occurring together with something else。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> He sought to buttress his claim, yet the council would ____ him in silence; the offered parity was rudimentary, and the long delay began to petrify the talks.",
+    "options": [
+     "immure",
+     "linger",
+     "misrepresent",
+     "concoct"
+    ],
+    "answer": 0,
+    "explain": "immure：监禁，禁闭；使闭门不出（to shut in; to confine as if in walls）。"
+   }
+  ]
+ }
+}

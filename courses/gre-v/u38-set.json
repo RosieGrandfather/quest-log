@@ -1,0 +1,423 @@
+{
+ "id": "u38",
+ "title": "S 级核心词 · 第 38 组",
+ "en": "GRE Core Vocabulary · Set 38",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "squelch",
+     "ipa": "[skwɛltʃ]",
+     "pos": "vt.",
+     "zh": "压制，镇压(运动)",
+     "en": "to suppress forcefully",
+     "syn": [
+      "quash",
+      "suppress"
+     ],
+     "ant": [
+      "encourage"
+     ]
+    },
+    {
+     "w": "distraught",
+     "ipa": "[dɪˈstrɔt]",
+     "pos": "adj.",
+     "zh": "精神狂乱的，极疯狂的",
+     "en": "deeply upset and agitated",
+     "syn": [
+      "frantic",
+      "anguished"
+     ],
+     "ant": [
+      "composed",
+      "serene"
+     ]
+    },
+    {
+     "w": "garrulous",
+     "ipa": "[ˈɡærələs]",
+     "pos": "adj.",
+     "zh": "啰嗦的，话多得令人厌烦的",
+     "en": "excessively talkative",
+     "syn": [
+      "talkative",
+      "loquacious"
+     ],
+     "ant": [
+      "taciturn",
+      "reticent"
+     ]
+    },
+    {
+     "w": "blemish",
+     "ipa": "[ˈblemɪʃ]",
+     "pos": "n.",
+     "zh": "缺点，污点；损害，玷污",
+     "en": "a flaw or mark that spoils appearance",
+     "syn": [
+      "flaw",
+      "stain"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pry",
+     "ipa": "[praɪ]",
+     "pos": "vi.",
+     "zh": "刺探，打听",
+     "en": "to inquire too closely into private matters",
+     "syn": [
+      "snoop",
+      "meddle"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[garrulous]] neighbor would [[pry]] into the [[distraught]] widow's life, until she tried to [[squelch]] the rumor of a [[blemish]] on her name.",
+   "gloss": {
+    "squelch": "压制，镇压(运动)",
+    "distraught": "精神狂乱的，极疯狂的",
+    "garrulous": "啰嗦的，话多得令人厌烦的",
+    "blemish": "缺点，污点",
+    "pry": "刺探，打听"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "valorize",
+     "ipa": "[ˈvæləˌraɪz]",
+     "pos": "v.",
+     "zh": "提升，赞美",
+     "en": "to give value or status to",
+     "syn": [
+      "elevate",
+      "glorify"
+     ],
+     "ant": [
+      "devalue"
+     ]
+    },
+    {
+     "w": "vigilant",
+     "ipa": "[ˈvɪdʒələnt]",
+     "pos": "adj.",
+     "zh": "警醒的，警惕的",
+     "en": "keeping careful watch",
+     "syn": [
+      "watchful",
+      "alert"
+     ],
+     "ant": [
+      "negligent",
+      "inattentive"
+     ]
+    },
+    {
+     "w": "pedagogical",
+     "ipa": "[ˌpedəˈɡɑːdʒɪkl]",
+     "pos": "adj.",
+     "zh": "教学的；教师的",
+     "en": "relating to teaching",
+     "syn": [
+      "educational",
+      "instructional"
+     ],
+     "ant": []
+    },
+    {
+     "w": "plastic",
+     "ipa": "[ˈplæstɪk]",
+     "pos": "adj.",
+     "zh": "可塑的",
+     "en": "easily shaped or molded",
+     "syn": [
+      "pliable",
+      "malleable"
+     ],
+     "ant": [
+      "rigid",
+      "inflexible"
+     ]
+    },
+    {
+     "w": "eulogize",
+     "ipa": "[ˈjʊləˈdʒaɪz]",
+     "pos": "vt.",
+     "zh": "称赞；颂扬",
+     "en": "to praise highly, especially in a speech",
+     "syn": [
+      "extol",
+      "laud"
+     ],
+     "ant": [
+      "denounce",
+      "disparage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The school wanted to [[valorize]] teaching with a [[pedagogical]] prize; the [[vigilant]] judges, assuming that young minds are [[plastic]], chose a speaker to [[eulogize]] the great teachers.",
+   "gloss": {
+    "valorize": "提升，赞美",
+    "vigilant": "警醒的，警惕的",
+    "pedagogical": "教学的",
+    "plastic": "可塑的",
+    "eulogize": "称赞"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tenuous",
+     "ipa": "[ˈtenjuəs]",
+     "pos": "adj.",
+     "zh": "没有实际内容的，空洞的",
+     "en": "thin and weak; flimsy",
+     "syn": [
+      "flimsy",
+      "insubstantial"
+     ],
+     "ant": [
+      "solid",
+      "substantial"
+     ]
+    },
+    {
+     "w": "pejorative",
+     "ipa": "[pɪˈdʒɔːrətɪv]",
+     "pos": "adj.",
+     "zh": "轻蔑的，贬低的",
+     "en": "expressing contempt or disapproval",
+     "syn": [
+      "derogatory",
+      "disparaging"
+     ],
+     "ant": [
+      "complimentary",
+      "laudatory"
+     ]
+    },
+    {
+     "w": "apathy",
+     "ipa": "[ˈæpəθi]",
+     "pos": "n.",
+     "zh": "缺乏兴趣，不关心",
+     "en": "lack of interest or concern",
+     "syn": [
+      "indifference",
+      "lethargy"
+     ],
+     "ant": [
+      "enthusiasm",
+      "zeal"
+     ]
+    },
+    {
+     "w": "forbearance",
+     "ipa": "[fɔrˈbɛrəns]",
+     "pos": "n.",
+     "zh": "克制；忍耐",
+     "en": "patient self-control; tolerance",
+     "syn": [
+      "restraint",
+      "tolerance"
+     ],
+     "ant": [
+      "impatience",
+      "intolerance"
+     ]
+    },
+    {
+     "w": "univocal",
+     "ipa": "[juːˈnɪvəkəl]",
+     "pos": "adj.",
+     "zh": "含义明确的",
+     "en": "having only one meaning",
+     "syn": [
+      "unambiguous",
+      "explicit"
+     ],
+     "ant": [
+      "equivocal",
+      "ambiguous"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Critics called the evidence [[tenuous]] and the word \"fad\" [[pejorative]]; voter [[apathy]] and public [[forbearance]] lasted until a [[univocal]] verdict finally arrived.",
+   "gloss": {
+    "tenuous": "没有实际内容的，空洞的",
+    "pejorative": "轻蔑的，贬低的",
+    "apathy": "缺乏兴趣，不关心",
+    "forbearance": "克制",
+    "univocal": "含义明确的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "inveterate",
+     "ipa": "[ɪnˈvɛtərət]",
+     "pos": "adj.",
+     "zh": "根深蒂固的",
+     "en": "long-established and unlikely to change",
+     "syn": [
+      "habitual",
+      "ingrained"
+     ],
+     "ant": [
+      "occasional",
+      "recent"
+     ]
+    },
+    {
+     "w": "proliferate",
+     "ipa": "[prəˈlɪfəreɪt]",
+     "pos": "v.",
+     "zh": "快速繁殖；激增",
+     "en": "to multiply rapidly",
+     "syn": [
+      "multiply",
+      "burgeon"
+     ],
+     "ant": [
+      "dwindle",
+      "diminish"
+     ]
+    },
+    {
+     "w": "entice",
+     "ipa": "[ɪnˈtaɪs]",
+     "pos": "vt.",
+     "zh": "诱使",
+     "en": "to attract by offering something",
+     "syn": [
+      "tempt",
+      "lure"
+     ],
+     "ant": [
+      "repel",
+      "deter"
+     ]
+    },
+    {
+     "w": "random",
+     "ipa": "[ˈrændəm]",
+     "pos": "adj.",
+     "zh": "随机的，随意的",
+     "en": "made without a pattern or plan",
+     "syn": [
+      "arbitrary",
+      "haphazard"
+     ],
+     "ant": [
+      "deliberate",
+      "systematic"
+     ]
+    },
+    {
+     "w": "forage",
+     "ipa": "[ˈfɔrɪdʒ]",
+     "pos": "vi.",
+     "zh": "寻找",
+     "en": "to search for food or provisions",
+     "syn": [
+      "scavenge",
+      "hunt"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[inveterate]] gambler loved [[random]] chance; as casinos [[proliferate]], ads [[entice]] him, and he would [[forage]] for coins in every pocket.",
+   "gloss": {
+    "inveterate": "根深蒂固的",
+    "proliferate": "快速繁殖",
+    "entice": "诱使",
+    "random": "随机的，随意的",
+    "forage": "寻找"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**forbearance** 的意思最接近：",
+    "options": [
+     "缺点，污点；损害，玷污",
+     "缺乏兴趣，不关心",
+     "提升，赞美",
+     "克制；忍耐"
+    ],
+    "answer": 3,
+    "explain": "forbearance：克制；忍耐（patient self-control; tolerance）。近义词：restraint, tolerance。"
+   },
+   {
+    "q": "**apathy** 的意思最接近：",
+    "options": [
+     "缺点，污点；损害，玷污",
+     "缺乏兴趣，不关心",
+     "克制；忍耐",
+     "随机的，随意的"
+    ],
+    "answer": 1,
+    "explain": "apathy：缺乏兴趣，不关心（lack of interest or concern）。近义词：indifference, lethargy。"
+   },
+   {
+    "q": "哪个词的意思是「警醒的，警惕的」？",
+    "options": [
+     "vigilant",
+     "pejorative",
+     "univocal",
+     "plastic"
+    ],
+    "answer": 0,
+    "explain": "vigilant：警醒的，警惕的（keeping careful watch）。"
+   },
+   {
+    "q": "哪个词和 **instructional** 的意思最接近？",
+    "options": [
+     "inveterate",
+     "random",
+     "pedagogical",
+     "univocal"
+    ],
+    "answer": 2,
+    "explain": "pedagogical 与 instructional 近义：relating to teaching。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The garrulous neighbor would ____ into the distraught widow's life, until she tried to squelch the rumor of a blemish on her name.",
+    "options": [
+     "proliferate",
+     "pry",
+     "squelch",
+     "valorize"
+    ],
+    "answer": 1,
+    "explain": "pry：刺探，打听（to inquire too closely into private matters）。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,424 @@
+{
+ "id": "u45",
+ "title": "S 级核心词 · 第 45 组",
+ "en": "GRE Core Vocabulary · Set 45",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "arcane",
+     "ipa": "[ɑrˈken]",
+     "pos": "adj.",
+     "zh": "深奥的，难以理解的",
+     "en": "known only to a few; mysterious",
+     "syn": [
+      "esoteric",
+      "obscure"
+     ],
+     "ant": [
+      "familiar",
+      "common"
+     ]
+    },
+    {
+     "w": "veto",
+     "ipa": "[ˈvito]",
+     "pos": "n./vt.",
+     "zh": "否决，禁止",
+     "en": "to forbid officially; a prohibition",
+     "syn": [
+      "forbid",
+      "reject"
+     ],
+     "ant": [
+      "approve",
+      "sanction"
+     ]
+    },
+    {
+     "w": "pellucid",
+     "ipa": "[pəˈluːsɪd]",
+     "pos": "adj.",
+     "zh": "清晰明确的，易懂的",
+     "en": "transparently clear",
+     "syn": [
+      "lucid",
+      "limpid"
+     ],
+     "ant": [
+      "opaque",
+      "murky"
+     ]
+    },
+    {
+     "w": "clement",
+     "ipa": "[ˈklɛmənt]",
+     "pos": "adj.",
+     "zh": "宽容的，善良的；气候温和的",
+     "en": "mild; merciful",
+     "syn": [
+      "merciful",
+      "mild"
+     ],
+     "ant": [
+      "harsh",
+      "severe"
+     ]
+    },
+    {
+     "w": "skullduggery",
+     "ipa": "skullduggery",
+     "pos": "n.",
+     "zh": "欺诈，诡计",
+     "en": "underhanded trickery",
+     "syn": [
+      "trickery",
+      "chicanery"
+     ],
+     "ant": [
+      "honesty",
+      "fair play"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[clement]] judge made the [[arcane]] contract [[pellucid]], then moved to [[veto]] the [[skullduggery]] behind it.",
+   "gloss": {
+    "arcane": "深奥的，难以理解的",
+    "veto": "否决，禁止",
+    "pellucid": "清晰明确的，易懂的",
+    "clement": "宽容的，善良的",
+    "skullduggery": "欺诈，诡计"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "chic",
+     "ipa": "[ʃɪk]",
+     "pos": "adj.",
+     "zh": "时髦的，潮的",
+     "en": "stylish",
+     "syn": [
+      "fashionable",
+      "elegant"
+     ],
+     "ant": [
+      "dowdy",
+      "unfashionable"
+     ]
+    },
+    {
+     "w": "supplement",
+     "ipa": "[ˈsʌplɪmənt]",
+     "pos": "n./v.",
+     "zh": "增补，补充",
+     "en": "to add to; an addition",
+     "syn": [
+      "augment",
+      "addendum"
+     ],
+     "ant": []
+    },
+    {
+     "w": "tantamount",
+     "ipa": "[ˈtæntəˈmaʊnt]",
+     "pos": "adj.",
+     "zh": "等价的，与…相等的",
+     "en": "equivalent in effect",
+     "syn": [
+      "equivalent",
+      "equal"
+     ],
+     "ant": []
+    },
+    {
+     "w": "venerate",
+     "ipa": "[ˈvɛnəret]",
+     "pos": "vt.",
+     "zh": "尊敬",
+     "en": "to regard with deep respect",
+     "syn": [
+      "revere",
+      "honor"
+     ],
+     "ant": [
+      "despise",
+      "scorn"
+     ]
+    },
+    {
+     "w": "contemplate",
+     "ipa": "[ˈkɑntəmplet]",
+     "pos": "v.",
+     "zh": "沉思，仔细思索",
+     "en": "to think deeply about; to consider",
+     "syn": [
+      "ponder",
+      "consider"
+     ],
+     "ant": [
+      "neglect"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The owner of the [[chic]] boutique would [[contemplate]] closing it; customers who [[venerate]] the brand called that [[tantamount]] to a betrayal, and a sale could [[supplement]] her income.",
+   "gloss": {
+    "chic": "时髦的，潮的",
+    "supplement": "增补，补充",
+    "tantamount": "等价的，与…相等的",
+    "venerate": "尊敬",
+    "contemplate": "沉思，仔细思索"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "seamy",
+     "ipa": "[ˈsiːmi]",
+     "pos": "adj.",
+     "zh": "肮脏的，堕落的",
+     "en": "sordid; unpleasant",
+     "syn": [
+      "sordid",
+      "squalid"
+     ],
+     "ant": [
+      "wholesome",
+      "respectable"
+     ]
+    },
+    {
+     "w": "civility",
+     "ipa": "[səˈvɪləti]",
+     "pos": "n.",
+     "zh": "彬彬有礼",
+     "en": "polite behavior",
+     "syn": [
+      "courtesy",
+      "politeness"
+     ],
+     "ant": [
+      "rudeness",
+      "incivility"
+     ]
+    },
+    {
+     "w": "compound",
+     "ipa": "[ˈkɑmpaʊnd]",
+     "pos": "n.",
+     "zh": "混合；使恶化；混合物",
+     "en": "to combine; to make worse; a mixture",
+     "syn": [
+      "combine",
+      "aggravate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pseudonym",
+     "ipa": "[ˈsuːdənɪm]",
+     "pos": "n.",
+     "zh": "假名，笔名",
+     "en": "a fictitious name used by an author",
+     "syn": [
+      "pen name",
+      "alias"
+     ],
+     "ant": []
+    },
+    {
+     "w": "absolute",
+     "ipa": "[ˈæbsəlut]",
+     "pos": "adj.",
+     "zh": "专制的；无限的；完美的，纯净不掺杂的；不容置疑的，确凿的",
+     "en": "complete; unlimited; certain",
+     "syn": [
+      "total",
+      "unqualified"
+     ],
+     "ant": [
+      "partial",
+      "conditional"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[seamy]] side of politics was hidden by [[civility]]; to [[compound]] the problem, a writer using a [[pseudonym]] demanded [[absolute]] secrecy.",
+   "gloss": {
+    "seamy": "肮脏的，堕落的",
+    "civility": "彬彬有礼",
+    "compound": "混合",
+    "pseudonym": "假名，笔名",
+    "absolute": "专制的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "sonorous",
+     "ipa": "[ˈsɑnərəs]",
+     "pos": "adj.",
+     "zh": "声音洪亮的",
+     "en": "deep and full in sound",
+     "syn": [
+      "resonant",
+      "rich"
+     ],
+     "ant": [
+      "thin",
+      "faint"
+     ]
+    },
+    {
+     "w": "rabid",
+     "ipa": "[ˈræbɪd]",
+     "pos": "adj.",
+     "zh": "狂热的，不冷静的",
+     "en": "fanatical; extremely enthusiastic",
+     "syn": [
+      "fanatical",
+      "zealous"
+     ],
+     "ant": [
+      "moderate",
+      "apathetic"
+     ]
+    },
+    {
+     "w": "deadpan",
+     "ipa": "[ˈdɛdpæn]",
+     "pos": "adj.",
+     "zh": "面无表情的；冷面幽默",
+     "en": "expressionless, especially in humor",
+     "syn": [
+      "expressionless",
+      "impassive"
+     ],
+     "ant": [
+      "animated",
+      "expressive"
+     ]
+    },
+    {
+     "w": "implacable",
+     "ipa": "[ɪmˈplækəbl]",
+     "pos": "adj.",
+     "zh": "固执的；无法平息的",
+     "en": "impossible to appease",
+     "syn": [
+      "relentless",
+      "unforgiving"
+     ],
+     "ant": [
+      "lenient",
+      "placable"
+     ]
+    },
+    {
+     "w": "confound",
+     "ipa": "[kənˈfaʊnd]",
+     "pos": "v.",
+     "zh": "使困惑；证明为假，证伪",
+     "en": "to confuse; to prove wrong",
+     "syn": [
+      "perplex",
+      "refute"
+     ],
+     "ant": [
+      "clarify",
+      "confirm"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[sonorous]] preacher, [[rabid]] in his views, had a [[deadpan]] manner that would [[confound]] even [[implacable]] critics.",
+   "gloss": {
+    "sonorous": "声音洪亮的",
+    "rabid": "狂热的，不冷静的",
+    "deadpan": "面无表情的",
+    "implacable": "固执的",
+    "confound": "使困惑"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**sonorous** 的意思最接近：",
+    "options": [
+     "声音洪亮的",
+     "固执的；无法平息的",
+     "深奥的，难以理解的",
+     "肮脏的，堕落的"
+    ],
+    "answer": 0,
+    "explain": "sonorous：声音洪亮的（deep and full in sound）。近义词：resonant, rich。"
+   },
+   {
+    "q": "**contemplate** 的意思最接近：",
+    "options": [
+     "使困惑；证明为假，证伪",
+     "尊敬",
+     "假名，笔名",
+     "沉思，仔细思索"
+    ],
+    "answer": 3,
+    "explain": "contemplate：沉思，仔细思索（to think deeply about; to consider）。近义词：ponder, consider。"
+   },
+   {
+    "q": "哪个词的意思是「增补，补充」？",
+    "options": [
+     "veto",
+     "supplement",
+     "skullduggery",
+     "civility"
+    ],
+    "answer": 1,
+    "explain": "supplement：增补，补充（to add to; an addition）。"
+   },
+   {
+    "q": "哪个词和 **squalid** 的意思最接近？",
+    "options": [
+     "chic",
+     "implacable",
+     "seamy",
+     "rabid"
+    ],
+    "answer": 2,
+    "explain": "seamy 与 squalid 近义：sordid; unpleasant。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The sonorous preacher, rabid in his views, had a ____ manner that would confound even implacable critics.",
+    "options": [
+     "deadpan",
+     "clement",
+     "arcane",
+     "implacable"
+    ],
+    "answer": 0,
+    "explain": "deadpan：面无表情的；冷面幽默（expressionless, especially in humor）。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,426 @@
+{
+ "id": "u20",
+ "title": "S 级核心词 · 第 20 组",
+ "en": "GRE Core Vocabulary · Set 20",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "catharsis",
+     "ipa": "[kəˈθɑːrsɪs]",
+     "pos": "n.",
+     "zh": "情绪的宣泄、释放",
+     "en": "emotional release that brings relief",
+     "syn": [
+      "purging",
+      "release"
+     ],
+     "ant": []
+    },
+    {
+     "w": "respite",
+     "ipa": "[ˈrɛspɪt]",
+     "pos": "n.",
+     "zh": "间歇，休息",
+     "en": "a short break from something difficult",
+     "syn": [
+      "break",
+      "lull"
+     ],
+     "ant": [
+      "continuation"
+     ]
+    },
+    {
+     "w": "skittish",
+     "ipa": "[ˈskɪtɪʃ]",
+     "pos": "adj.",
+     "zh": "容易受到惊吓的，胆小的；善变的，多变的",
+     "en": "nervous and easily startled; unpredictable",
+     "syn": [
+      "jumpy",
+      "restive"
+     ],
+     "ant": [
+      "calm",
+      "steady"
+     ]
+    },
+    {
+     "w": "dramatic",
+     "ipa": "[drəˈmætɪk]",
+     "pos": "adj.",
+     "zh": "显著的，惹人注意的",
+     "en": "sudden and striking",
+     "syn": [
+      "striking",
+      "sensational"
+     ],
+     "ant": [
+      "subtle",
+      "understated"
+     ]
+    },
+    {
+     "w": "ridicule",
+     "ipa": "[ˈrɪdɪˈkjʊl]",
+     "pos": "vt.",
+     "zh": "嘲笑",
+     "en": "to mock",
+     "syn": [
+      "mock",
+      "deride"
+     ],
+     "ant": [
+      "praise",
+      "respect"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The play offered [[catharsis]] and a brief [[respite]] to a [[skittish]] audience, until the [[dramatic]] finale drew critics who would [[ridicule]] it.",
+   "gloss": {
+    "catharsis": "情绪的宣泄、释放",
+    "respite": "间歇，休息",
+    "skittish": "容易受到惊吓的，胆小的",
+    "dramatic": "显著的，惹人注意的",
+    "ridicule": "嘲笑"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "paltry",
+     "ipa": "[ˈpɔːltri]",
+     "pos": "adj.",
+     "zh": "无价值的，微不足道的",
+     "en": "trifling; very small in amount",
+     "syn": [
+      "meager",
+      "trifling"
+     ],
+     "ant": [
+      "substantial",
+      "ample"
+     ]
+    },
+    {
+     "w": "naive",
+     "ipa": "[naɪˈiv]",
+     "pos": "adj.",
+     "zh": "天真纯朴的",
+     "en": "lacking worldly experience",
+     "syn": [
+      "innocent",
+      "gullible"
+     ],
+     "ant": [
+      "sophisticated",
+      "worldly"
+     ]
+    },
+    {
+     "w": "repetitious",
+     "ipa": "[ˌrepəˈtɪʃəs]",
+     "pos": "adj.",
+     "zh": "重复的，反复的",
+     "en": "full of repetition",
+     "syn": [
+      "redundant",
+      "monotonous"
+     ],
+     "ant": [
+      "varied",
+      "concise"
+     ]
+    },
+    {
+     "w": "vicious",
+     "ipa": "[ˈvɪʃəs]",
+     "pos": "adj.",
+     "zh": "凶恶的，恶毒的",
+     "en": "cruel and violent; spiteful",
+     "syn": [
+      "savage",
+      "malicious"
+     ],
+     "ant": [
+      "gentle",
+      "kind"
+     ]
+    },
+    {
+     "w": "tempestuous",
+     "ipa": "[tɛmˈpɛstʃuəs]",
+     "pos": "adj.",
+     "zh": "突然的，剧烈的",
+     "en": "stormy; wildly emotional",
+     "syn": [
+      "stormy",
+      "turbulent"
+     ],
+     "ant": [
+      "calm",
+      "placid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[naive]] fan paid a [[paltry]] sum to hear a [[repetitious]] speech; a [[vicious]] heckler and a [[tempestuous]] crowd ended the evening.",
+   "gloss": {
+    "paltry": "无价值的，微不足道的",
+    "naive": "天真纯朴的",
+    "repetitious": "重复的，反复的",
+    "vicious": "凶恶的，恶毒的",
+    "tempestuous": "突然的，剧烈的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "uncanny",
+     "ipa": "[ʌnˈkæni]",
+     "pos": "adj.",
+     "zh": "离奇的，奇异的",
+     "en": "strange in a way that is hard to explain",
+     "syn": [
+      "eerie",
+      "weird"
+     ],
+     "ant": [
+      "ordinary",
+      "normal"
+     ]
+    },
+    {
+     "w": "drudgery",
+     "ipa": "[ˈdrʌdʒəri]",
+     "pos": "n.",
+     "zh": "苦工；单调、卑贱或无趣的工作",
+     "en": "tedious, hard work",
+     "syn": [
+      "toil",
+      "grind"
+     ],
+     "ant": [
+      "leisure"
+     ]
+    },
+    {
+     "w": "solicitous",
+     "ipa": "[səˈlɪsɪtəs]",
+     "pos": "adj.",
+     "zh": "为他人操心的，体谅他人的",
+     "en": "concerned and attentive to others",
+     "syn": [
+      "caring",
+      "attentive"
+     ],
+     "ant": [
+      "indifferent",
+      "neglectful"
+     ]
+    },
+    {
+     "w": "ethereal",
+     "ipa": "[iˈθɪriəl]",
+     "pos": "adj.",
+     "zh": "轻巧精致的；非物质的，精神(上)的",
+     "en": "extremely delicate; heavenly",
+     "syn": [
+      "airy",
+      "celestial"
+     ],
+     "ant": [
+      "earthly",
+      "solid"
+     ]
+    },
+    {
+     "w": "sage",
+     "ipa": "[sedʒ]",
+     "pos": "adj.",
+     "zh": "智者；睿智的",
+     "en": "a wise person; wise",
+     "syn": [
+      "wise person",
+      "sagacious"
+     ],
+     "ant": [
+      "fool",
+      "simpleton"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[uncanny]] hush fell over the kitchen where the [[drudgery]] had ended; a [[solicitous]] nurse hummed an [[ethereal]] tune beside the [[sage]] old cook.",
+   "gloss": {
+    "uncanny": "离奇的，奇异的",
+    "drudgery": "苦工",
+    "solicitous": "为他人操心的，体谅他人的",
+    "ethereal": "轻巧精致的",
+    "sage": "智者"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "slump",
+     "ipa": "[slʌmp]",
+     "pos": "n.",
+     "zh": "暴跌；萧条",
+     "en": "a sudden fall or decline",
+     "syn": [
+      "decline",
+      "downturn"
+     ],
+     "ant": [
+      "boom",
+      "surge"
+     ]
+    },
+    {
+     "w": "paradox",
+     "ipa": "[ˈpærədɑks]",
+     "pos": "n.",
+     "zh": "矛盾，悖论",
+     "en": "a seemingly contradictory but possibly true statement",
+     "syn": [
+      "contradiction",
+      "anomaly"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disquisition",
+     "ipa": "[ˌdɪskwɪˈzɪʃn]",
+     "pos": "n.",
+     "zh": "专题论文",
+     "en": "a long formal discussion of a subject",
+     "syn": [
+      "treatise",
+      "dissertation"
+     ],
+     "ant": []
+    },
+    {
+     "w": "sloth",
+     "ipa": "[sloθ]",
+     "pos": "n.",
+     "zh": "怠惰，懒惰",
+     "en": "laziness",
+     "syn": [
+      "laziness",
+      "idleness"
+     ],
+     "ant": [
+      "diligence",
+      "industry"
+     ]
+    },
+    {
+     "w": "morbid",
+     "ipa": "[ˈmɔrbɪd]",
+     "pos": "adj.",
+     "zh": "疾病的，疾病所指的；(思想性格)变态的",
+     "en": "unhealthily gloomy; related to disease",
+     "syn": [
+      "gruesome",
+      "macabre"
+     ],
+     "ant": [
+      "cheerful",
+      "wholesome"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[morbid]] columnist's [[disquisition]] blamed the [[slump]] on [[sloth]], a [[paradox]] in a nation that works so hard.",
+   "gloss": {
+    "slump": "暴跌",
+    "paradox": "矛盾，悖论",
+    "disquisition": "专题论文",
+    "sloth": "怠惰，懒惰",
+    "morbid": "疾病的，疾病所指的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**drudgery** 的意思最接近：",
+    "options": [
+     "专题论文",
+     "矛盾，悖论",
+     "怠惰，懒惰",
+     "苦工；单调、卑贱或无趣的工作"
+    ],
+    "answer": 3,
+    "explain": "drudgery：苦工；单调、卑贱或无趣的工作（tedious, hard work）。近义词：toil, grind。"
+   },
+   {
+    "q": "**ethereal** 的意思最接近：",
+    "options": [
+     "容易受到惊吓的，胆小的；善变的，多变的",
+     "轻巧精致的；非物质的，精神(上)的",
+     "疾病的，疾病所指的；(思想性格)变态的",
+     "为他人操心的，体谅他人的"
+    ],
+    "answer": 1,
+    "explain": "ethereal：轻巧精致的；非物质的，精神(上)的（extremely delicate; heavenly）。近义词：airy, celestial。"
+   },
+   {
+    "q": "哪个词的意思是「情绪的宣泄、释放」？",
+    "options": [
+     "catharsis",
+     "disquisition",
+     "drudgery",
+     "respite"
+    ],
+    "answer": 0,
+    "explain": "catharsis：情绪的宣泄、释放（emotional release that brings relief）。"
+   },
+   {
+    "q": "哪个词和 **meager** 的意思最接近？",
+    "options": [
+     "morbid",
+     "dramatic",
+     "paltry",
+     "repetitious"
+    ],
+    "answer": 2,
+    "explain": "paltry 与 meager 近义：trifling; very small in amount。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> An uncanny hush fell over the kitchen where the drudgery had ended; a ____ nurse hummed an ethereal tune beside the sage old cook.",
+    "options": [
+     "skittish",
+     "solicitous",
+     "tempestuous",
+     "uncanny"
+    ],
+    "answer": 1,
+    "explain": "solicitous：为他人操心的，体谅他人的（concerned and attentive to others）。"
+   }
+  ]
+ }
+}

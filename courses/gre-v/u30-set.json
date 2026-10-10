@@ -1,0 +1,424 @@
+{
+ "id": "u30",
+ "title": "S 级核心词 · 第 30 组",
+ "en": "GRE Core Vocabulary · Set 30",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "endemic",
+     "ipa": "[ɛnˈdɛmɪk]",
+     "pos": "adj.",
+     "zh": "地方性的",
+     "en": "native to or common in a particular area",
+     "syn": [
+      "native",
+      "local"
+     ],
+     "ant": [
+      "foreign",
+      "imported"
+     ]
+    },
+    {
+     "w": "emulate",
+     "ipa": "[ˈɛmjulet]",
+     "pos": "vt.",
+     "zh": "效仿",
+     "en": "to imitate in order to equal or surpass",
+     "syn": [
+      "imitate",
+      "mimic"
+     ],
+     "ant": []
+    },
+    {
+     "w": "venial",
+     "ipa": "[ˈvinɪəl]",
+     "pos": "adj.",
+     "zh": "可宽恕的",
+     "en": "minor and easily forgiven",
+     "syn": [
+      "pardonable",
+      "excusable"
+     ],
+     "ant": [
+      "grave",
+      "mortal"
+     ]
+    },
+    {
+     "w": "stock",
+     "ipa": "[stɑk]",
+     "pos": "adj.",
+     "zh": "普通的，常备的",
+     "en": "commonly used and unoriginal",
+     "syn": [
+      "standard",
+      "routine"
+     ],
+     "ant": [
+      "original",
+      "unusual"
+     ]
+    },
+    {
+     "w": "reign",
+     "ipa": "[ren]",
+     "pos": "n.",
+     "zh": "统治权占统治地位或盛行",
+     "en": "to rule; to prevail",
+     "syn": [
+      "rule",
+      "prevail"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Where bribery is [[endemic]], clerks [[emulate]] their bosses and shrug off each [[venial]] fault with a [[stock]] excuse, while the old king's [[reign]] never seems to end.",
+   "gloss": {
+    "endemic": "地方性的",
+    "emulate": "效仿",
+    "venial": "可宽恕的",
+    "stock": "普通的，常备的",
+    "reign": "统治权占统治地位或盛行"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "glean",
+     "ipa": "[ɡʌl]",
+     "pos": "v.",
+     "zh": "收集",
+     "en": "to gather bit by bit",
+     "syn": [
+      "gather",
+      "collect"
+     ],
+     "ant": [
+      "scatter"
+     ]
+    },
+    {
+     "w": "tamper",
+     "ipa": "[ˈtæmpɚ]",
+     "pos": "v.",
+     "zh": "恶意窜改，损害",
+     "en": "to interfere with in order to damage",
+     "syn": [
+      "meddle",
+      "interfere"
+     ],
+     "ant": []
+    },
+    {
+     "w": "restless",
+     "ipa": "[ˈrɛstləs]",
+     "pos": "adj.",
+     "zh": "不平静的",
+     "en": "unable to rest or stay still",
+     "syn": [
+      "fidgety",
+      "uneasy"
+     ],
+     "ant": [
+      "calm",
+      "tranquil"
+     ]
+    },
+    {
+     "w": "fiasco",
+     "ipa": "[fɪˈæsko]",
+     "pos": "n.",
+     "zh": "大失败",
+     "en": "a complete and humiliating failure",
+     "syn": [
+      "debacle",
+      "flop"
+     ],
+     "ant": [
+      "triumph",
+      "success"
+     ]
+    },
+    {
+     "w": "precedent",
+     "ipa": "[ˈprɛsɪdənt]",
+     "pos": "n.",
+     "zh": "先例，前例；先前的",
+     "en": "an earlier example used as a guide",
+     "syn": [
+      "example",
+      "standard"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Detectives tried to [[glean]] facts from the [[restless]] witness; to [[tamper]] with the evidence would turn the case into a [[fiasco]] and set a bad [[precedent]].",
+   "gloss": {
+    "glean": "收集",
+    "tamper": "恶意窜改，损害",
+    "restless": "不平静的",
+    "fiasco": "大失败",
+    "precedent": "先例，前例"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "bungle",
+     "ipa": "[ˈbʌŋɡl]",
+     "pos": "v.",
+     "zh": "办糟，失败",
+     "en": "to do badly and clumsily",
+     "syn": [
+      "botch",
+      "fumble"
+     ],
+     "ant": [
+      "accomplish",
+      "succeed"
+     ]
+    },
+    {
+     "w": "deluge",
+     "ipa": "[ˈdɛljʊdʒ]",
+     "pos": "n.",
+     "zh": "大暴雨；大量",
+     "en": "a great flood; an overwhelming amount",
+     "syn": [
+      "flood",
+      "torrent"
+     ],
+     "ant": [
+      "trickle",
+      "drought"
+     ]
+    },
+    {
+     "w": "grudge",
+     "ipa": "[ɡrʌdʒ]",
+     "pos": "n.",
+     "zh": "怨恨，仇恨",
+     "en": "a lasting feeling of resentment",
+     "syn": [
+      "resentment",
+      "rancor"
+     ],
+     "ant": [
+      "goodwill",
+      "forgiveness"
+     ]
+    },
+    {
+     "w": "defy",
+     "ipa": "[ˈdifaɪ]",
+     "pos": "vt.",
+     "zh": "蔑视",
+     "en": "to openly resist or disobey",
+     "syn": [
+      "resist",
+      "flout"
+     ],
+     "ant": [
+      "obey",
+      "comply"
+     ]
+    },
+    {
+     "w": "malignant",
+     "ipa": "[məˈlɪgnənt]",
+     "pos": "adj.",
+     "zh": "恶毒的，邪恶的",
+     "en": "evil in effect; harmful",
+     "syn": [
+      "malevolent",
+      "virulent"
+     ],
+     "ant": [
+      "benign",
+      "harmless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The workers would [[bungle]] repairs after a [[deluge]]; a [[grudge]] made them [[defy]] their boss, whose [[malignant]] glare did not help.",
+   "gloss": {
+    "bungle": "办糟，失败",
+    "deluge": "大暴雨",
+    "grudge": "怨恨，仇恨",
+    "defy": "蔑视",
+    "malignant": "恶毒的，邪恶的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ubiquitous",
+     "ipa": "[juːˈbɪkwɪtəs]",
+     "pos": "adj.",
+     "zh": "无所不在的，普通的",
+     "en": "present everywhere",
+     "syn": [
+      "omnipresent",
+      "pervasive"
+     ],
+     "ant": [
+      "rare",
+      "scarce"
+     ]
+    },
+    {
+     "w": "disseminate",
+     "ipa": "[dɪˈsɛmɪnet]",
+     "pos": "vt.",
+     "zh": "散播，传播",
+     "en": "to spread widely",
+     "syn": [
+      "spread",
+      "circulate"
+     ],
+     "ant": [
+      "withhold",
+      "suppress"
+     ]
+    },
+    {
+     "w": "commensurate",
+     "ipa": "[kəˈmenʃərət]",
+     "pos": "adj.",
+     "zh": "同样大小的；相称的，相当的",
+     "en": "corresponding in size or degree",
+     "syn": [
+      "proportionate",
+      "equivalent"
+     ],
+     "ant": [
+      "disproportionate",
+      "inadequate"
+     ]
+    },
+    {
+     "w": "illuminate",
+     "ipa": "[ɪˈlumɪnet]",
+     "pos": "vt.",
+     "zh": "阐明",
+     "en": "to light up; to make clear",
+     "syn": [
+      "clarify",
+      "elucidate"
+     ],
+     "ant": [
+      "obscure",
+      "confuse"
+     ]
+    },
+    {
+     "w": "recondite",
+     "ipa": "[ˈrekəndaɪt]",
+     "pos": "adj.",
+     "zh": "深奥的，难解的",
+     "en": "little known; hard to understand",
+     "syn": [
+      "abstruse",
+      "esoteric"
+     ],
+     "ant": [
+      "obvious",
+      "accessible"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Smartphones are [[ubiquitous]] and [[disseminate]] news; a talk that can [[illuminate]] [[recondite]] ideas deserves a [[commensurate]] reward.",
+   "gloss": {
+    "ubiquitous": "无所不在的，普通的",
+    "disseminate": "散播，传播",
+    "commensurate": "同样大小的",
+    "illuminate": "阐明",
+    "recondite": "深奥的，难解的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**endemic** 的意思最接近：",
+    "options": [
+     "同样大小的；相称的，相当的",
+     "深奥的，难解的",
+     "地方性的",
+     "恶毒的，邪恶的"
+    ],
+    "answer": 2,
+    "explain": "endemic：地方性的（native to or common in a particular area）。近义词：native, local。"
+   },
+   {
+    "q": "**deluge** 的意思最接近：",
+    "options": [
+     "先例，前例；先前的",
+     "怨恨，仇恨",
+     "大失败",
+     "大暴雨；大量"
+    ],
+    "answer": 3,
+    "explain": "deluge：大暴雨；大量（a great flood; an overwhelming amount）。近义词：flood, torrent。"
+   },
+   {
+    "q": "哪个词的意思是「阐明」？",
+    "options": [
+     "defy",
+     "illuminate",
+     "tamper",
+     "glean"
+    ],
+    "answer": 1,
+    "explain": "illuminate：阐明（to light up; to make clear）。"
+   },
+   {
+    "q": "哪个词和 **fidgety** 的意思最接近？",
+    "options": [
+     "restless",
+     "venial",
+     "ubiquitous",
+     "commensurate"
+    ],
+    "answer": 0,
+    "explain": "restless 与 fidgety 近义：unable to rest or stay still。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> Where bribery is endemic, clerks emulate their bosses and shrug off each venial fault with a ____ excuse, while the old king's reign never seems to end.",
+    "options": [
+     "malignant",
+     "commensurate",
+     "stock",
+     "restless"
+    ],
+    "answer": 2,
+    "explain": "stock：普通的，常备的（commonly used and unoriginal）。"
+   }
+  ]
+ }
+}

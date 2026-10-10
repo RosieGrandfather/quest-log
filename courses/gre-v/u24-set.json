@@ -1,0 +1,428 @@
+{
+ "id": "u24",
+ "title": "S 级核心词 · 第 24 组",
+ "en": "GRE Core Vocabulary · Set 24",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "check",
+     "ipa": "[tʃɛk]",
+     "pos": "v.",
+     "zh": "使突然停止；抑制；相符",
+     "en": "to stop suddenly; to match or agree",
+     "syn": [
+      "halt",
+      "restrain"
+     ],
+     "ant": []
+    },
+    {
+     "w": "amorphous",
+     "ipa": "[əˈmɔrfəs]",
+     "pos": "adj.",
+     "zh": "无固定形状的",
+     "en": "without clear shape or form",
+     "syn": [
+      "shapeless",
+      "formless"
+     ],
+     "ant": [
+      "distinct",
+      "structured"
+     ]
+    },
+    {
+     "w": "egalitarian",
+     "ipa": "[ɪˈgæləˈtɛrɪən]",
+     "pos": "adj.",
+     "zh": "平等主义的",
+     "en": "believing in equal rights for all",
+     "syn": [
+      "equalitarian",
+      "democratic"
+     ],
+     "ant": [
+      "elitist",
+      "hierarchical"
+     ]
+    },
+    {
+     "w": "facilitate",
+     "ipa": "[fəˈsɪləˈtet]",
+     "pos": "vt.",
+     "zh": "使变容易，促进",
+     "en": "to make easier",
+     "syn": [
+      "ease",
+      "expedite"
+     ],
+     "ant": [
+      "hinder",
+      "impede"
+     ]
+    },
+    {
+     "w": "tinker",
+     "ipa": "[ˈtɪŋkɚ]",
+     "pos": "v.",
+     "zh": "乱修，乱调整",
+     "en": "to fiddle with something in an attempt to fix it",
+     "syn": [
+      "fiddle",
+      "meddle"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A new law will [[check]] the spread of [[amorphous]] rules, and an [[egalitarian]] panel will [[facilitate]] reform, if engineers do not [[tinker]] with it.",
+   "gloss": {
+    "check": "使突然停止",
+    "amorphous": "无固定形状的",
+    "egalitarian": "平等主义的",
+    "facilitate": "使变容易，促进",
+    "tinker": "乱修，乱调整"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "inert",
+     "ipa": "[ɪˈnɜːrt]",
+     "pos": "adj.",
+     "zh": "(人)懒惰缺乏活力的；(物品)惰性的",
+     "en": "lacking energy or motion; chemically inactive",
+     "syn": [
+      "inactive",
+      "lifeless"
+     ],
+     "ant": [
+      "active",
+      "dynamic"
+     ]
+    },
+    {
+     "w": "palliate",
+     "ipa": "[ˈpælɪet]",
+     "pos": "vt.",
+     "zh": "平息，减轻",
+     "en": "to ease without curing; to downplay",
+     "syn": [
+      "alleviate",
+      "mitigate"
+     ],
+     "ant": [
+      "aggravate",
+      "intensify"
+     ]
+    },
+    {
+     "w": "incite",
+     "ipa": "[ɪnˈsaɪt]",
+     "pos": "vt.",
+     "zh": "煽动，激起",
+     "en": "to stir up or provoke to action",
+     "syn": [
+      "provoke",
+      "instigate"
+     ],
+     "ant": [
+      "quell",
+      "pacify"
+     ]
+    },
+    {
+     "w": "impecunious",
+     "ipa": "[ˌɪmpɪˈkjuːniəs]",
+     "pos": "adj.",
+     "zh": "贫穷的",
+     "en": "having little or no money",
+     "syn": [
+      "penniless",
+      "destitute"
+     ],
+     "ant": [
+      "wealthy",
+      "affluent"
+     ]
+    },
+    {
+     "w": "curt",
+     "ipa": "[kɝt]",
+     "pos": "adj.",
+     "zh": "言辞简略的，直接(以致显得粗鲁)的",
+     "en": "rudely brief",
+     "syn": [
+      "brusque",
+      "terse"
+     ],
+     "ant": [
+      "courteous",
+      "effusive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[inert]] crowd woke up when a [[curt]] speaker began to [[incite]] the [[impecunious]] workers, while the mayor tried to [[palliate]] their anger.",
+   "gloss": {
+    "inert": "(人)懒惰缺乏活力的",
+    "palliate": "平息，减轻",
+    "incite": "煽动，激起",
+    "impecunious": "贫穷的",
+    "curt": "言辞简略的，直接(以致显得粗鲁)的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "belie",
+     "ipa": "[bɪˈlaɪ]",
+     "pos": "v.",
+     "zh": "掩饰；与…相对立；与…相矛盾",
+     "en": "to give a false impression of; to contradict",
+     "syn": [
+      "contradict",
+      "misrepresent"
+     ],
+     "ant": [
+      "confirm",
+      "reveal"
+     ]
+    },
+    {
+     "w": "flout",
+     "ipa": "[flaʊt]",
+     "pos": "n./v.",
+     "zh": "嘲弄性不理会，蔑视",
+     "en": "to openly disregard a rule",
+     "syn": [
+      "defy",
+      "scorn"
+     ],
+     "ant": [
+      "obey",
+      "observe"
+     ]
+    },
+    {
+     "w": "exuberant",
+     "ipa": "[ɪɡˈzuːbərənt]",
+     "pos": "adj.",
+     "zh": "非常高兴的，热情洋溢的",
+     "en": "full of high spirits",
+     "syn": [
+      "ebullient",
+      "lively"
+     ],
+     "ant": [
+      "subdued",
+      "dejected"
+     ]
+    },
+    {
+     "w": "soothe",
+     "ipa": "[sʊð]",
+     "pos": "vt.",
+     "zh": "带来慰藉，安慰",
+     "en": "to calm or comfort",
+     "syn": [
+      "calm",
+      "comfort"
+     ],
+     "ant": [
+      "agitate",
+      "irritate"
+     ]
+    },
+    {
+     "w": "anathema",
+     "ipa": "[əˈnæθəmə]",
+     "pos": "n.",
+     "zh": "令人讨厌的事物",
+     "en": "something strongly disliked or detested",
+     "syn": [
+      "abomination",
+      "bane"
+     ],
+     "ant": [
+      "blessing",
+      "boon"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[exuberant]] manner could [[belie]] his fear; to a man who loved to [[flout]] authority, rules were [[anathema]], and nothing could [[soothe]] his nerves.",
+   "gloss": {
+    "belie": "掩饰",
+    "flout": "嘲弄性不理会，蔑视",
+    "exuberant": "非常高兴的，热情洋溢的",
+    "soothe": "带来慰藉，安慰",
+    "anathema": "令人讨厌的事物"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "complicate",
+     "ipa": "[ˈkɑmplɪket]",
+     "pos": "vt.",
+     "zh": "使复杂化",
+     "en": "to make more difficult or intricate",
+     "syn": [
+      "confuse",
+      "entangle"
+     ],
+     "ant": [
+      "simplify",
+      "clarify"
+     ]
+    },
+    {
+     "w": "profligate",
+     "ipa": "[prɔflɪɡət]",
+     "pos": "adj./n.",
+     "zh": "挥霍的；挥霍者",
+     "en": "wastefully extravagant",
+     "syn": [
+      "wasteful",
+      "spendthrift"
+     ],
+     "ant": [
+      "thrifty",
+      "frugal"
+     ]
+    },
+    {
+     "w": "august",
+     "ipa": "[ˈɔːɡəst]",
+     "pos": "adj.",
+     "zh": "威严的，庄重的",
+     "en": "inspiring awe and respect",
+     "syn": [
+      "majestic",
+      "venerable"
+     ],
+     "ant": [
+      "undignified",
+      "humble"
+     ]
+    },
+    {
+     "w": "equivocate",
+     "ipa": "[ɪˈkwɪvəkeɪt]",
+     "pos": "vi.",
+     "zh": "(带有欺骗目的地)模棱两可地说，说谎话",
+     "en": "to use ambiguous language to avoid committing",
+     "syn": [
+      "hedge",
+      "prevaricate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disdain",
+     "ipa": "[dɪsˈden]",
+     "pos": "vt.",
+     "zh": "轻视，鄙视",
+     "en": "to regard with contempt",
+     "syn": [
+      "scorn",
+      "despise"
+     ],
+     "ant": [
+      "esteem",
+      "admire"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[profligate]] heir tried to [[equivocate]] before the [[august]] court; to [[complicate]] matters further, he began to [[disdain]] the judge.",
+   "gloss": {
+    "complicate": "使复杂化",
+    "profligate": "挥霍的",
+    "august": "威严的，庄重的",
+    "equivocate": "(带有欺骗目的地)模棱两可地说，说谎话",
+    "disdain": "轻视，鄙视"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**incite** 的意思最接近：",
+    "options": [
+     "使突然停止；抑制；相符",
+     "煽动，激起",
+     "使变容易，促进",
+     "使复杂化"
+    ],
+    "answer": 1,
+    "explain": "incite：煽动，激起（to stir up or provoke to action）。近义词：provoke, instigate。"
+   },
+   {
+    "q": "**equivocate** 的意思最接近：",
+    "options": [
+     "乱修，乱调整",
+     "使突然停止；抑制；相符",
+     "掩饰；与…相对立；与…相矛盾",
+     "(带有欺骗目的地)模棱两可地说，说谎话"
+    ],
+    "answer": 3,
+    "explain": "equivocate：(带有欺骗目的地)模棱两可地说，说谎话（to use ambiguous language to avoid committing）。近义词：hedge, prevaricate。"
+   },
+   {
+    "q": "哪个词的意思是「无固定形状的」？",
+    "options": [
+     "exuberant",
+     "egalitarian",
+     "amorphous",
+     "profligate"
+    ],
+    "answer": 2,
+    "explain": "amorphous：无固定形状的（without clear shape or form）。"
+   },
+   {
+    "q": "哪个词和 **penniless** 的意思最接近？",
+    "options": [
+     "impecunious",
+     "exuberant",
+     "egalitarian",
+     "curt"
+    ],
+    "answer": 0,
+    "explain": "impecunious 与 penniless 近义：having little or no money。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> His exuberant manner could ____ his fear; to a man who loved to flout authority, rules were anathema, and nothing could soothe his nerves.",
+    "options": [
+     "tinker",
+     "equivocate",
+     "incite",
+     "belie"
+    ],
+    "answer": 3,
+    "explain": "belie：掩饰；与…相对立；与…相矛盾（to give a false impression of; to contradict）。"
+   }
+  ]
+ }
+}

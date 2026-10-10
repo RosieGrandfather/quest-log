@@ -1,0 +1,432 @@
+{
+ "id": "u13",
+ "title": "S 级核心词 · 第 13 组",
+ "en": "GRE Core Vocabulary · Set 13",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "presage",
+     "ipa": "[ˈprɛsɪdʒ]",
+     "pos": "n.",
+     "zh": "征兆；预示，预言",
+     "en": "a sign of something to come; to foretell",
+     "syn": [
+      "omen",
+      "portend"
+     ],
+     "ant": []
+    },
+    {
+     "w": "extol",
+     "ipa": "[ɪkˈstol]",
+     "pos": "vt.",
+     "zh": "赞美；吹捧",
+     "en": "to praise enthusiastically",
+     "syn": [
+      "laud",
+      "glorify"
+     ],
+     "ant": [
+      "denounce",
+      "disparage"
+     ]
+    },
+    {
+     "w": "hamper",
+     "ipa": "[ˈhæmpə]",
+     "pos": "vt.",
+     "zh": "阻碍",
+     "en": "to hinder or obstruct",
+     "syn": [
+      "hinder",
+      "impede"
+     ],
+     "ant": [
+      "facilitate",
+      "assist"
+     ]
+    },
+    {
+     "w": "tedious",
+     "ipa": "[ˈtidɪəs]",
+     "pos": "adj.",
+     "zh": "冗长乏味的",
+     "en": "tiresomely long and dull",
+     "syn": [
+      "boring",
+      "monotonous"
+     ],
+     "ant": [
+      "exciting",
+      "engaging"
+     ]
+    },
+    {
+     "w": "perish",
+     "ipa": "[ˈpɛrɪʃ]",
+     "pos": "vi.",
+     "zh": "死亡，消亡",
+     "en": "to die or be destroyed",
+     "syn": [
+      "die",
+      "expire"
+     ],
+     "ant": [
+      "survive",
+      "thrive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Dark clouds [[presage]] a storm; the captain would [[extol]] his crew's courage, though a [[tedious]] rule might [[hamper]] rescue and some sailors could [[perish]].",
+   "gloss": {
+    "presage": "征兆",
+    "extol": "赞美",
+    "hamper": "阻碍",
+    "tedious": "冗长乏味的",
+    "perish": "死亡，消亡"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "founder",
+     "ipa": "[ˈfaʊndə]",
+     "pos": "n.",
+     "zh": "创立者；（计划等）失败",
+     "en": "a person who establishes something; to fail or sink",
+     "syn": [
+      "originator",
+      "collapse"
+     ],
+     "ant": [
+      "succeed",
+      "prosper"
+     ]
+    },
+    {
+     "w": "backfire",
+     "ipa": "[ˈbækˈfaɪr]",
+     "pos": "vi.",
+     "zh": "产生相反的结果，事与愿违",
+     "en": "to have the opposite of the intended effect",
+     "syn": [
+      "rebound",
+      "boomerang"
+     ],
+     "ant": [
+      "succeed"
+     ]
+    },
+    {
+     "w": "embrace",
+     "ipa": "[ɪmˈbres]",
+     "pos": "vt.",
+     "zh": "乐于接受",
+     "en": "to accept eagerly; to hug",
+     "syn": [
+      "adopt",
+      "welcome"
+     ],
+     "ant": [
+      "reject",
+      "spurn"
+     ]
+    },
+    {
+     "w": "glut",
+     "ipa": "[ɡlʌt]",
+     "pos": "vt.",
+     "zh": "使过量，使充满",
+     "en": "an oversupply; to fill to excess",
+     "syn": [
+      "surfeit",
+      "oversupply"
+     ],
+     "ant": [
+      "shortage",
+      "dearth"
+     ]
+    },
+    {
+     "w": "castigate",
+     "ipa": "[ˈkæstɪɡeɪt]",
+     "pos": "vt.",
+     "zh": "强烈(公开)指责",
+     "en": "to criticize severely",
+     "syn": [
+      "rebuke",
+      "chastise"
+     ],
+     "ant": [
+      "praise",
+      "commend"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[founder]] of the firm decided to [[embrace]] a risky plan that would [[backfire]], and a [[glut]] of unsold stock made investors [[castigate]] him.",
+   "gloss": {
+    "founder": "创立者",
+    "backfire": "产生相反的结果，事与愿违",
+    "embrace": "乐于接受",
+    "glut": "使过量，使充满",
+    "castigate": "强烈(公开)指责"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "diatribe",
+     "ipa": "[ˈdaɪətraɪb]",
+     "pos": "n.",
+     "zh": "长篇抨击性演讲",
+     "en": "a bitter, lengthy verbal attack",
+     "syn": [
+      "tirade",
+      "harangue"
+     ],
+     "ant": [
+      "eulogy",
+      "praise"
+     ]
+    },
+    {
+     "w": "fluster",
+     "ipa": "[ˈflʌstə]",
+     "pos": "vt.",
+     "zh": "使慌乱",
+     "en": "to make nervous and confused",
+     "syn": [
+      "rattle",
+      "agitate"
+     ],
+     "ant": [
+      "calm",
+      "soothe"
+     ]
+    },
+    {
+     "w": "unwitting",
+     "ipa": "[ʌnˈwɪtɪŋ]",
+     "pos": "adj.",
+     "zh": "不知道的，未觉察的",
+     "en": "not aware; unintentional",
+     "syn": [
+      "unknowing",
+      "inadvertent"
+     ],
+     "ant": [
+      "deliberate",
+      "knowing"
+     ]
+    },
+    {
+     "w": "buoy",
+     "ipa": "[ˈbʊi]",
+     "pos": "v.",
+     "zh": "使充满勇气和力量，使振作",
+     "en": "to keep afloat; to lift the spirits of",
+     "syn": [
+      "cheer",
+      "uplift"
+     ],
+     "ant": [
+      "depress",
+      "dishearten"
+     ]
+    },
+    {
+     "w": "anonymous",
+     "ipa": "[əˈnɑnəməs]",
+     "pos": "adj.",
+     "zh": "匿名的",
+     "en": "with no name given",
+     "syn": [
+      "unnamed",
+      "nameless"
+     ],
+     "ant": [
+      "named",
+      "identified"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[anonymous]] letter containing a [[diatribe]] against the mayor began to [[fluster]] an [[unwitting]] aide, until kind words from a friend helped [[buoy]] his spirits.",
+   "gloss": {
+    "diatribe": "长篇抨击性演讲",
+    "fluster": "使慌乱",
+    "unwitting": "不知道的，未觉察的",
+    "buoy": "使充满勇气和力量，使振作",
+    "anonymous": "匿名的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "antagonize",
+     "ipa": "[ænˈtæɡənaɪz]",
+     "pos": "vt.",
+     "zh": "与…敌对，反对；激怒",
+     "en": "to make into an enemy; to provoke",
+     "syn": [
+      "provoke",
+      "alienate"
+     ],
+     "ant": [
+      "placate",
+      "appease"
+     ]
+    },
+    {
+     "w": "impassive",
+     "ipa": "[ɪmˈpæsɪv]",
+     "pos": "adj.",
+     "zh": "冷漠的，无感情的",
+     "en": "showing no emotion",
+     "syn": [
+      "stoic",
+      "expressionless"
+     ],
+     "ant": [
+      "emotional",
+      "expressive"
+     ]
+    },
+    {
+     "w": "elate",
+     "ipa": "[ɪˈleɪt]",
+     "pos": "vt.",
+     "zh": "使开心，使自豪",
+     "en": "to fill with joy",
+     "syn": [
+      "delight",
+      "exhilarate"
+     ],
+     "ant": [
+      "depress",
+      "dishearten"
+     ]
+    },
+    {
+     "w": "chagrin",
+     "ipa": "[ʃəˈɡrɪn]",
+     "pos": "n.",
+     "zh": "(因为失败、出糗而导致的)不安，焦虑",
+     "en": "distress from embarrassment or failure",
+     "syn": [
+      "mortification",
+      "dismay"
+     ],
+     "ant": [
+      "delight",
+      "satisfaction"
+     ]
+    },
+    {
+     "w": "override",
+     "ipa": "[ˌovəˈraɪd]",
+     "pos": "v.",
+     "zh": "推翻",
+     "en": "to overrule or set aside",
+     "syn": [
+      "overrule",
+      "annul"
+     ],
+     "ant": [
+      "uphold"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[impassive]] coach refused to [[antagonize]] the referee, even when the league voted to [[override]] a call; to the team's [[chagrin]], only a late goal could [[elate]] the crowd.",
+   "gloss": {
+    "antagonize": "与…敌对，反对",
+    "impassive": "冷漠的，无感情的",
+    "elate": "使开心，使自豪",
+    "chagrin": "(因为失败、出糗而导致的)不安，焦虑",
+    "override": "推翻"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**hamper** 的意思最接近：",
+    "options": [
+     "赞美；吹捧",
+     "强烈(公开)指责",
+     "使充满勇气和力量，使振作",
+     "阻碍"
+    ],
+    "answer": 3,
+    "explain": "hamper：阻碍（to hinder or obstruct）。近义词：hinder, impede。"
+   },
+   {
+    "q": "**anonymous** 的意思最接近：",
+    "options": [
+     "匿名的",
+     "不知道的，未觉察的",
+     "冷漠的，无感情的",
+     "冗长乏味的"
+    ],
+    "answer": 0,
+    "explain": "anonymous：匿名的（with no name given）。近义词：unnamed, nameless。"
+   },
+   {
+    "q": "哪个词的意思是「使充满勇气和力量，使振作」？",
+    "options": [
+     "perish",
+     "buoy",
+     "fluster",
+     "backfire"
+    ],
+    "answer": 1,
+    "explain": "buoy：使充满勇气和力量，使振作（to keep afloat; to lift the spirits of）。"
+   },
+   {
+    "q": "哪个词和 **rattle** 的意思最接近？",
+    "options": [
+     "hamper",
+     "elate",
+     "fluster",
+     "override"
+    ],
+    "answer": 2,
+    "explain": "fluster 与 rattle 近义：to make nervous and confused。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> An anonymous letter containing a diatribe against the mayor began to fluster an unwitting aide, until kind words from a friend helped ____ his spirits.",
+    "options": [
+     "override",
+     "buoy",
+     "embrace",
+     "backfire"
+    ],
+    "answer": 1,
+    "explain": "buoy：使充满勇气和力量，使振作（to keep afloat; to lift the spirits of）。"
+   }
+  ]
+ }
+}

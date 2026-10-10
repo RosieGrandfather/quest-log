@@ -1,0 +1,437 @@
+{
+ "id": "u50",
+ "title": "S 级核心词 · 第 50 组",
+ "en": "GRE Core Vocabulary · Set 50",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "propitiate",
+     "ipa": "[prəˈpɪʃieɪt]",
+     "pos": "v.",
+     "zh": "抚慰，劝解",
+     "en": "to win over or appease someone angry",
+     "syn": [
+      "appease",
+      "placate"
+     ],
+     "ant": [
+      "provoke",
+      "antagonize"
+     ]
+    },
+    {
+     "w": "quixotic",
+     "ipa": "[kwɪkˈsɑːtɪk]",
+     "pos": "adj.",
+     "zh": "不切实际的，空想的",
+     "en": "idealistic in an impractical way",
+     "syn": [
+      "romantic",
+      "visionary"
+     ],
+     "ant": [
+      "pragmatic",
+      "realistic"
+     ]
+    },
+    {
+     "w": "tendentious",
+     "ipa": "[tenˈdenʃəs]",
+     "pos": "adj.",
+     "zh": "有偏见的",
+     "en": "promoting a particular, often controversial, point of view",
+     "syn": [
+      "biased",
+      "slanted"
+     ],
+     "ant": [
+      "impartial",
+      "objective"
+     ]
+    },
+    {
+     "w": "measured",
+     "ipa": "[ˈmɛʒəd]",
+     "pos": "adj.",
+     "zh": "深思熟虑的",
+     "en": "careful and deliberate; restrained",
+     "syn": [
+      "deliberate",
+      "restrained"
+     ],
+     "ant": [
+      "hasty",
+      "reckless"
+     ]
+    },
+    {
+     "w": "encyclopedic",
+     "ipa": "[ɪnˌsaɪkləˈpiːdɪk]",
+     "pos": "adj.",
+     "zh": "全面的，百科全书式的",
+     "en": "covering a very wide range of knowledge",
+     "syn": [
+      "comprehensive",
+      "exhaustive"
+     ],
+     "ant": [
+      "limited",
+      "cursory"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The envoy tried to [[propitiate]] the [[tendentious]] council with a [[measured]] speech; her [[quixotic]] plan was praised for its [[encyclopedic]] detail.",
+   "gloss": {
+    "propitiate": "抚慰，劝解",
+    "quixotic": "不切实际的，空想的",
+    "tendentious": "有偏见的",
+    "measured": "深思熟虑的",
+    "encyclopedic": "全面的，百科全书式的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "germane",
+     "ipa": "[dʒɜːˈmen]",
+     "pos": "adj.",
+     "zh": "有关的，适当的",
+     "en": "closely connected to the subject at hand",
+     "syn": [
+      "relevant",
+      "pertinent"
+     ],
+     "ant": [
+      "irrelevant",
+      "extraneous"
+     ]
+    },
+    {
+     "w": "inception",
+     "ipa": "[ɪnˈsɛpʃən]",
+     "pos": "n.",
+     "zh": "开端，开始",
+     "en": "the start of something",
+     "syn": [
+      "beginning",
+      "genesis"
+     ],
+     "ant": [
+      "conclusion",
+      "termination"
+     ]
+    },
+    {
+     "w": "abstemious",
+     "ipa": "[əbˈstimɪəs]",
+     "pos": "adj.",
+     "zh": "(吃喝等)有节制的，节俭的",
+     "en": "sparing in eating or drinking; self-denying",
+     "syn": [
+      "temperate",
+      "ascetic"
+     ],
+     "ant": [
+      "gluttonous",
+      "self-indulgent"
+     ]
+    },
+    {
+     "w": "plummet",
+     "ipa": "[ˈplʌmɪt]",
+     "pos": "v.",
+     "zh": "突然下降",
+     "en": "to fall or drop sharply",
+     "syn": [
+      "plunge",
+      "nosedive"
+     ],
+     "ant": [
+      "soar",
+      "skyrocket"
+     ]
+    },
+    {
+     "w": "impenetrable",
+     "ipa": "[ɪmˈpɛnɪtrəbl]",
+     "pos": "adj.",
+     "zh": "不可渗透的，不可穿透的；难以理解的",
+     "en": "impossible to get through or understand",
+     "syn": [
+      "impervious",
+      "inscrutable"
+     ],
+     "ant": [
+      "accessible",
+      "lucid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His point was [[germane]] to the debate's [[inception]]; the [[abstemious]] clerk saw profits [[plummet]] as the new tax code stayed [[impenetrable]].",
+   "gloss": {
+    "germane": "有关的，适当的",
+    "inception": "开端，开始",
+    "abstemious": "(吃喝等)有节制的，节俭的",
+    "plummet": "突然下降",
+    "impenetrable": "不可渗透的，不可穿透的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "invincible",
+     "ipa": "[ɪnˈvɪnsəbl]",
+     "pos": "adj.",
+     "zh": "不可战胜的，不可超越的",
+     "en": "too strong to be defeated",
+     "syn": [
+      "unbeatable",
+      "indomitable"
+     ],
+     "ant": [
+      "vulnerable",
+      "weak"
+     ]
+    },
+    {
+     "w": "sparse",
+     "ipa": "[spɑrs]",
+     "pos": "adj.",
+     "zh": "稀疏的，稀少的",
+     "en": "thinly scattered; not dense",
+     "syn": [
+      "scanty",
+      "meager"
+     ],
+     "ant": [
+      "dense",
+      "abundant"
+     ]
+    },
+    {
+     "w": "avant-garde",
+     "ipa": "[ˌævɑː̃ˈɡɑːrd]",
+     "pos": "n.",
+     "zh": "(尤指艺术上的)先锋派",
+     "en": "new, experimental, ahead of its time; pioneers in the arts",
+     "syn": [
+      "innovative",
+      "pioneering"
+     ],
+     "ant": [
+      "conventional",
+      "traditional"
+     ]
+    },
+    {
+     "w": "probity",
+     "ipa": "[ˈprobəti]",
+     "pos": "n.",
+     "zh": "正直",
+     "en": "strong moral principles; honesty",
+     "syn": [
+      "integrity",
+      "rectitude"
+     ],
+     "ant": [
+      "dishonesty",
+      "corruption"
+     ]
+    },
+    {
+     "w": "sober",
+     "ipa": "[ˈsobɚ]",
+     "pos": "adj.",
+     "zh": "严肃的；节制的",
+     "en": "serious and sensible; not drunk",
+     "syn": [
+      "solemn",
+      "grave"
+     ],
+     "ant": [
+      "frivolous",
+      "excitable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[invincible]] king ruled a [[sparse]] realm of fine [[avant-garde]] artists; his [[probity]] made him a [[sober]] judge.",
+   "gloss": {
+    "invincible": "不可战胜的，不可超越的",
+    "sparse": "稀疏的，稀少的",
+    "avant-garde": "(尤指艺术上的)先锋派",
+    "probity": "正直",
+    "sober": "严肃的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "stodgy",
+     "ipa": "[ˈstɑdʒi]",
+     "pos": "adj.",
+     "zh": "平庸的，乏味的",
+     "en": "dull, formal, and old-fashioned",
+     "syn": [
+      "staid",
+      "fusty"
+     ],
+     "ant": [
+      "lively",
+      "trendy"
+     ]
+    },
+    {
+     "w": "sanguine",
+     "ipa": "[ˈsæŋɡwɪn]",
+     "pos": "adj.",
+     "zh": "乐观的，确信的",
+     "en": "cheerfully optimistic, especially in a difficult situation",
+     "syn": [
+      "hopeful",
+      "upbeat"
+     ],
+     "ant": [
+      "pessimistic",
+      "gloomy"
+     ]
+    },
+    {
+     "w": "majestic",
+     "ipa": "[məˈdʒɛstɪk]",
+     "pos": "adj.",
+     "zh": "宏伟壮丽的",
+     "en": "grand and impressive",
+     "syn": [
+      "stately",
+      "imposing"
+     ],
+     "ant": [
+      "humble",
+      "modest"
+     ]
+    },
+    {
+     "w": "bigot",
+     "ipa": "[ˈbɪɡət]",
+     "pos": "n.",
+     "zh": "固执己见者，有偏见的人",
+     "en": "a person intolerantly attached to their own views",
+     "syn": [
+      "zealot",
+      "dogmatist"
+     ],
+     "ant": [
+      "liberal",
+      "open-minded person"
+     ]
+    },
+    {
+     "w": "oscillate",
+     "ipa": "[ˈɑːsɪleɪt]",
+     "pos": "vt.",
+     "zh": "犹豫，变化",
+     "en": "to swing back and forth; to waver",
+     "syn": [
+      "fluctuate",
+      "waver"
+     ],
+     "ant": [
+      "stabilize",
+      "hold steady"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[stodgy]] banker stayed [[sanguine]] before the [[majestic]] hall; a [[bigot]] in the crowd made him [[oscillate]] between rage and calm.",
+   "gloss": {
+    "stodgy": "平庸的，乏味的",
+    "sanguine": "乐观的，确信的",
+    "majestic": "宏伟壮丽的",
+    "bigot": "固执己见者，有偏见的人",
+    "oscillate": "犹豫，变化"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**measured** 的意思最接近：",
+    "options": [
+     "深思熟虑的",
+     "(吃喝等)有节制的，节俭的",
+     "不可战胜的，不可超越的",
+     "乐观的，确信的"
+    ],
+    "answer": 0,
+    "explain": "measured：深思熟虑的（careful and deliberate; restrained）。近义词：deliberate, restrained。"
+   },
+   {
+    "q": "**oscillate** 的意思最接近：",
+    "options": [
+     "突然下降",
+     "抚慰，劝解",
+     "(吃喝等)有节制的，节俭的",
+     "犹豫，变化"
+    ],
+    "answer": 3,
+    "explain": "oscillate：犹豫，变化（to swing back and forth; to waver）。近义词：fluctuate, waver。"
+   },
+   {
+    "q": "哪个词的意思是「(尤指艺术上的)先锋派」？",
+    "options": [
+     "probity",
+     "inception",
+     "avant-garde",
+     "bigot"
+    ],
+    "answer": 2,
+    "explain": "avant-garde：(尤指艺术上的)先锋派（new, experimental, ahead of its time; pioneers in the arts）。"
+   },
+   {
+    "q": "哪个词和 **hopeful** 的意思最接近？",
+    "options": [
+     "stodgy",
+     "sanguine",
+     "impenetrable",
+     "quixotic"
+    ],
+    "answer": 1,
+    "explain": "sanguine 与 hopeful 近义：cheerfully optimistic, especially in a difficult situation。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The ____ king ruled a sparse realm of fine avant-garde artists; his probity made him a sober judge.",
+    "options": [
+     "sanguine",
+     "tendentious",
+     "stodgy",
+     "invincible"
+    ],
+    "answer": 3,
+    "explain": "invincible：不可战胜的，不可超越的（too strong to be defeated）。"
+   }
+  ]
+ }
+}

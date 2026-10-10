@@ -1,0 +1,423 @@
+{
+ "id": "u35",
+ "title": "S 级核心词 · 第 35 组",
+ "en": "GRE Core Vocabulary · Set 35",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "warrant",
+     "ipa": "[ˈwɔrənt]",
+     "pos": "vt.",
+     "zh": "批准，认可",
+     "en": "to justify; to authorize",
+     "syn": [
+      "justify",
+      "authorize"
+     ],
+     "ant": []
+    },
+    {
+     "w": "viable",
+     "ipa": "[ˈvaɪəbl]",
+     "pos": "adj.",
+     "zh": "可行的",
+     "en": "capable of working or succeeding",
+     "syn": [
+      "feasible",
+      "workable"
+     ],
+     "ant": [
+      "impractical",
+      "unworkable"
+     ]
+    },
+    {
+     "w": "beseech",
+     "ipa": "[bɪˈsiːtʃ]",
+     "pos": "v.",
+     "zh": "(急切地)恳求",
+     "en": "to beg earnestly",
+     "syn": [
+      "implore",
+      "entreat"
+     ],
+     "ant": []
+    },
+    {
+     "w": "metaphor",
+     "ipa": "[ˈmɛtəfɔː]",
+     "pos": "n.",
+     "zh": "暗喻",
+     "en": "a figure of speech calling one thing another",
+     "syn": [
+      "figure of speech",
+      "symbol"
+     ],
+     "ant": []
+    },
+    {
+     "w": "nitpick",
+     "ipa": "[ˈnɪtpɪk]",
+     "pos": "v.",
+     "zh": "吹毛求疵",
+     "en": "to find fault over tiny details",
+     "syn": [
+      "carp",
+      "quibble"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Nothing in the plan could [[warrant]] a loan unless it was [[viable]]; she would [[beseech]] the board, using a [[metaphor]] to avoid [[nitpicking|nitpick]].",
+   "gloss": {
+    "warrant": "批准，认可",
+    "viable": "可行的",
+    "beseech": "(急切地)恳求",
+    "metaphor": "暗喻",
+    "nitpick": "吹毛求疵"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "bombast",
+     "ipa": "[ˈbɑːmbæst]",
+     "pos": "n.",
+     "zh": "夸大的言辞",
+     "en": "pompous, inflated language",
+     "syn": [
+      "grandiloquence",
+      "rhetoric"
+     ],
+     "ant": [
+      "plain speech"
+     ]
+    },
+    {
+     "w": "connoisseur",
+     "ipa": "[ˌkɑnəˈsɝ]",
+     "pos": "n.",
+     "zh": "专家；鉴赏家(尤指艺术领域)",
+     "en": "an expert judge in matters of taste",
+     "syn": [
+      "expert",
+      "aficionado"
+     ],
+     "ant": [
+      "novice",
+      "philistine"
+     ]
+    },
+    {
+     "w": "hidebound",
+     "ipa": "[ˈhaɪdbaʊnd]",
+     "pos": "adj.",
+     "zh": "死板的，极度保守的",
+     "en": "too conservative and unwilling to change",
+     "syn": [
+      "rigid",
+      "narrow-minded"
+     ],
+     "ant": [
+      "open-minded",
+      "progressive"
+     ]
+    },
+    {
+     "w": "pertinent",
+     "ipa": "[ˈpɜːtnənt]",
+     "pos": "adj.",
+     "zh": "相关的，恰当的",
+     "en": "directly relevant",
+     "syn": [
+      "relevant",
+      "apt"
+     ],
+     "ant": [
+      "irrelevant",
+      "immaterial"
+     ]
+    },
+    {
+     "w": "telling",
+     "ipa": "[ˈtɛlɪŋ]",
+     "pos": "adj.",
+     "zh": "有效的，显著的",
+     "en": "having a striking effect; revealing",
+     "syn": [
+      "revealing",
+      "significant"
+     ],
+     "ant": [
+      "insignificant",
+      "vague"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[connoisseur]] ignored the [[bombast]] of the [[hidebound]] critic and made a [[pertinent]] and [[telling]] remark.",
+   "gloss": {
+    "bombast": "夸大的言辞",
+    "connoisseur": "专家",
+    "hidebound": "死板的，极度保守的",
+    "pertinent": "相关的，恰当的",
+    "telling": "有效的，显著的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "overbearing",
+     "ipa": "[ˌovəˈbɛrɪŋ]",
+     "pos": "adj.",
+     "zh": "专横傲慢的",
+     "en": "domineering and arrogant",
+     "syn": [
+      "domineering",
+      "bossy"
+     ],
+     "ant": [
+      "meek",
+      "unassuming"
+     ]
+    },
+    {
+     "w": "lavish",
+     "ipa": "[ˈlævɪʃ]",
+     "pos": "adj.",
+     "zh": "奢侈的，大量的，无节制的；挥霍，浪费",
+     "en": "extravagant; to give generously",
+     "syn": [
+      "extravagant",
+      "opulent"
+     ],
+     "ant": [
+      "frugal",
+      "stingy"
+     ]
+    },
+    {
+     "w": "spurious",
+     "ipa": "[ˈspjʊriəs]",
+     "pos": "adj.",
+     "zh": "假的，伪造的",
+     "en": "not genuine; false",
+     "syn": [
+      "bogus",
+      "fake"
+     ],
+     "ant": [
+      "authentic",
+      "genuine"
+     ]
+    },
+    {
+     "w": "prolix",
+     "ipa": "[ˈproʊlɪks]",
+     "pos": "adj.",
+     "zh": "啰嗦的，冗长的",
+     "en": "using too many words",
+     "syn": [
+      "wordy",
+      "long-winded"
+     ],
+     "ant": [
+      "concise",
+      "terse"
+     ]
+    },
+    {
+     "w": "impertinent",
+     "ipa": "[ɪmˈpɜːtnənt]",
+     "pos": "adj.",
+     "zh": "无关紧要的；粗鲁无礼的，大胆的",
+     "en": "rude; not relevant",
+     "syn": [
+      "insolent",
+      "irrelevant"
+     ],
+     "ant": [
+      "respectful",
+      "pertinent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[overbearing]] host threw a [[lavish]] party, gave a [[prolix]] toast, cited a [[spurious]] story and, when asked, made an [[impertinent]] reply.",
+   "gloss": {
+    "overbearing": "专横傲慢的",
+    "lavish": "奢侈的，大量的，无节制的",
+    "spurious": "假的，伪造的",
+    "prolix": "啰嗦的，冗长的",
+    "impertinent": "无关紧要的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "champion",
+     "ipa": "[ˈtʃæmpɪən]",
+     "pos": "v.",
+     "zh": "支持",
+     "en": "to defend or support publicly; a winner",
+     "syn": [
+      "advocate",
+      "defend"
+     ],
+     "ant": [
+      "oppose",
+      "undermine"
+     ]
+    },
+    {
+     "w": "extricate",
+     "ipa": "[ˈɛkstrɪket]",
+     "pos": "vt.",
+     "zh": "使解脱，救出",
+     "en": "to free from a difficult situation",
+     "syn": [
+      "free",
+      "disentangle"
+     ],
+     "ant": [
+      "entangle",
+      "implicate"
+     ]
+    },
+    {
+     "w": "eternal",
+     "ipa": "[ɪˈtɜːnl]",
+     "pos": "adj.",
+     "zh": "永恒的",
+     "en": "lasting forever",
+     "syn": [
+      "everlasting",
+      "perpetual"
+     ],
+     "ant": [
+      "temporary",
+      "fleeting"
+     ]
+    },
+    {
+     "w": "drollness",
+     "ipa": "[dˈrəʊlnes]",
+     "pos": "n.",
+     "zh": "诙谐；滑稽",
+     "en": "quaint, amusing humor",
+     "syn": [
+      "whimsy",
+      "wit"
+     ],
+     "ant": [
+      "solemnity"
+     ]
+    },
+    {
+     "w": "meet",
+     "ipa": "[mit]",
+     "pos": "adj.",
+     "zh": "合适的",
+     "en": "proper or fitting",
+     "syn": [
+      "suitable",
+      "fitting"
+     ],
+     "ant": [
+      "improper",
+      "unsuitable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "It seemed [[meet]] that the [[champion]] of the poor should [[extricate]] them from debt; her [[drollness]] made even an [[eternal]] struggle bearable.",
+   "gloss": {
+    "champion": "支持",
+    "extricate": "使解脱，救出",
+    "eternal": "永恒的",
+    "drollness": "诙谐",
+    "meet": "合适的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**nitpick** 的意思最接近：",
+    "options": [
+     "吹毛求疵",
+     "批准，认可",
+     "(急切地)恳求",
+     "支持"
+    ],
+    "answer": 0,
+    "explain": "nitpick：吹毛求疵（to find fault over tiny details）。近义词：carp, quibble。"
+   },
+   {
+    "q": "**hidebound** 的意思最接近：",
+    "options": [
+     "永恒的",
+     "死板的，极度保守的",
+     "有效的，显著的",
+     "合适的"
+    ],
+    "answer": 1,
+    "explain": "hidebound：死板的，极度保守的（too conservative and unwilling to change）。近义词：rigid, narrow-minded。"
+   },
+   {
+    "q": "哪个词的意思是「专横傲慢的」？",
+    "options": [
+     "hidebound",
+     "lavish",
+     "viable",
+     "overbearing"
+    ],
+    "answer": 3,
+    "explain": "overbearing：专横傲慢的（domineering and arrogant）。"
+   },
+   {
+    "q": "哪个词和 **significant** 的意思最接近？",
+    "options": [
+     "telling",
+     "eternal",
+     "prolix",
+     "meet"
+    ],
+    "answer": 0,
+    "explain": "telling 与 significant 近义：having a striking effect; revealing。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The connoisseur ignored the bombast of the hidebound critic and made a ____ and telling remark.",
+    "options": [
+     "eternal",
+     "prolix",
+     "pertinent",
+     "spurious"
+    ],
+    "answer": 2,
+    "explain": "pertinent：相关的，恰当的（directly relevant）。"
+   }
+  ]
+ }
+}

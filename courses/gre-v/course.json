@@ -1,0 +1,490 @@
+{
+ "id": "gre-v",
+ "title": "GRE 核心词汇 S 级：机经里出现过的再要你命 3000",
+ "subtitle": "把「再要你命 3000」里同时出现在机经（霍 V6）里的 1196 个词，按乱序拆成每组 20 个词的小节：中英释义、近义词、反义词、点音标发音、每 5 个词一段例句短文，最后 5 道小测验。",
+ "order": 16,
+ "order_note": "选修，申请准备：背 GRE 词汇，可以和别的课穿插着学",
+ "tier": "elective",
+ "units": [
+  {
+   "id": "u01",
+   "title": "S 级核心词 · 第 1 组",
+   "en": "GRE Core Vocabulary · Set 1",
+   "minutes": 35,
+   "file": "u01-set.json",
+   "direct": true
+  },
+  {
+   "id": "u02",
+   "title": "S 级核心词 · 第 2 组",
+   "en": "GRE Core Vocabulary · Set 2",
+   "minutes": 35,
+   "file": "u02-set.json",
+   "direct": true
+  },
+  {
+   "id": "u03",
+   "title": "S 级核心词 · 第 3 组",
+   "en": "GRE Core Vocabulary · Set 3",
+   "minutes": 35,
+   "file": "u03-set.json",
+   "direct": true
+  },
+  {
+   "id": "u04",
+   "title": "S 级核心词 · 第 4 组",
+   "en": "GRE Core Vocabulary · Set 4",
+   "minutes": 35,
+   "file": "u04-set.json",
+   "direct": true
+  },
+  {
+   "id": "u05",
+   "title": "S 级核心词 · 第 5 组",
+   "en": "GRE Core Vocabulary · Set 5",
+   "minutes": 35,
+   "file": "u05-set.json",
+   "direct": true
+  },
+  {
+   "id": "u06",
+   "title": "S 级核心词 · 第 6 组",
+   "en": "GRE Core Vocabulary · Set 6",
+   "minutes": 35,
+   "file": "u06-set.json",
+   "direct": true
+  },
+  {
+   "id": "u07",
+   "title": "S 级核心词 · 第 7 组",
+   "en": "GRE Core Vocabulary · Set 7",
+   "minutes": 35,
+   "file": "u07-set.json",
+   "direct": true
+  },
+  {
+   "id": "u08",
+   "title": "S 级核心词 · 第 8 组",
+   "en": "GRE Core Vocabulary · Set 8",
+   "minutes": 35,
+   "file": "u08-set.json",
+   "direct": true
+  },
+  {
+   "id": "u09",
+   "title": "S 级核心词 · 第 9 组",
+   "en": "GRE Core Vocabulary · Set 9",
+   "minutes": 35,
+   "file": "u09-set.json",
+   "direct": true
+  },
+  {
+   "id": "u10",
+   "title": "S 级核心词 · 第 10 组",
+   "en": "GRE Core Vocabulary · Set 10",
+   "minutes": 35,
+   "file": "u10-set.json",
+   "direct": true
+  },
+  {
+   "id": "u11",
+   "title": "S 级核心词 · 第 11 组",
+   "en": "GRE Core Vocabulary · Set 11",
+   "minutes": 35,
+   "file": "u11-set.json",
+   "direct": true
+  },
+  {
+   "id": "u12",
+   "title": "S 级核心词 · 第 12 组",
+   "en": "GRE Core Vocabulary · Set 12",
+   "minutes": 35,
+   "file": "u12-set.json",
+   "direct": true
+  },
+  {
+   "id": "u13",
+   "title": "S 级核心词 · 第 13 组",
+   "en": "GRE Core Vocabulary · Set 13",
+   "minutes": 35,
+   "file": "u13-set.json",
+   "direct": true
+  },
+  {
+   "id": "u14",
+   "title": "S 级核心词 · 第 14 组",
+   "en": "GRE Core Vocabulary · Set 14",
+   "minutes": 35,
+   "file": "u14-set.json",
+   "direct": true
+  },
+  {
+   "id": "u15",
+   "title": "S 级核心词 · 第 15 组",
+   "en": "GRE Core Vocabulary · Set 15",
+   "minutes": 35,
+   "file": "u15-set.json",
+   "direct": true
+  },
+  {
+   "id": "u16",
+   "title": "S 级核心词 · 第 16 组",
+   "en": "GRE Core Vocabulary · Set 16",
+   "minutes": 35,
+   "file": "u16-set.json",
+   "direct": true
+  },
+  {
+   "id": "u17",
+   "title": "S 级核心词 · 第 17 组",
+   "en": "GRE Core Vocabulary · Set 17",
+   "minutes": 35,
+   "file": "u17-set.json",
+   "direct": true
+  },
+  {
+   "id": "u18",
+   "title": "S 级核心词 · 第 18 组",
+   "en": "GRE Core Vocabulary · Set 18",
+   "minutes": 35,
+   "file": "u18-set.json",
+   "direct": true
+  },
+  {
+   "id": "u19",
+   "title": "S 级核心词 · 第 19 组",
+   "en": "GRE Core Vocabulary · Set 19",
+   "minutes": 35,
+   "file": "u19-set.json",
+   "direct": true
+  },
+  {
+   "id": "u20",
+   "title": "S 级核心词 · 第 20 组",
+   "en": "GRE Core Vocabulary · Set 20",
+   "minutes": 35,
+   "file": "u20-set.json",
+   "direct": true
+  },
+  {
+   "id": "u21",
+   "title": "S 级核心词 · 第 21 组",
+   "en": "GRE Core Vocabulary · Set 21",
+   "minutes": 35,
+   "file": "u21-set.json",
+   "direct": true
+  },
+  {
+   "id": "u22",
+   "title": "S 级核心词 · 第 22 组",
+   "en": "GRE Core Vocabulary · Set 22",
+   "minutes": 35,
+   "file": "u22-set.json",
+   "direct": true
+  },
+  {
+   "id": "u23",
+   "title": "S 级核心词 · 第 23 组",
+   "en": "GRE Core Vocabulary · Set 23",
+   "minutes": 35,
+   "file": "u23-set.json",
+   "direct": true
+  },
+  {
+   "id": "u24",
+   "title": "S 级核心词 · 第 24 组",
+   "en": "GRE Core Vocabulary · Set 24",
+   "minutes": 35,
+   "file": "u24-set.json",
+   "direct": true
+  },
+  {
+   "id": "u25",
+   "title": "S 级核心词 · 第 25 组",
+   "en": "GRE Core Vocabulary · Set 25",
+   "minutes": 35,
+   "file": "u25-set.json",
+   "direct": true
+  },
+  {
+   "id": "u26",
+   "title": "S 级核心词 · 第 26 组",
+   "en": "GRE Core Vocabulary · Set 26",
+   "minutes": 35,
+   "file": "u26-set.json",
+   "direct": true
+  },
+  {
+   "id": "u27",
+   "title": "S 级核心词 · 第 27 组",
+   "en": "GRE Core Vocabulary · Set 27",
+   "minutes": 35,
+   "file": "u27-set.json",
+   "direct": true
+  },
+  {
+   "id": "u28",
+   "title": "S 级核心词 · 第 28 组",
+   "en": "GRE Core Vocabulary · Set 28",
+   "minutes": 35,
+   "file": "u28-set.json",
+   "direct": true
+  },
+  {
+   "id": "u29",
+   "title": "S 级核心词 · 第 29 组",
+   "en": "GRE Core Vocabulary · Set 29",
+   "minutes": 35,
+   "file": "u29-set.json",
+   "direct": true
+  },
+  {
+   "id": "u30",
+   "title": "S 级核心词 · 第 30 组",
+   "en": "GRE Core Vocabulary · Set 30",
+   "minutes": 35,
+   "file": "u30-set.json",
+   "direct": true
+  },
+  {
+   "id": "u31",
+   "title": "S 级核心词 · 第 31 组",
+   "en": "GRE Core Vocabulary · Set 31",
+   "minutes": 35,
+   "file": "u31-set.json",
+   "direct": true
+  },
+  {
+   "id": "u32",
+   "title": "S 级核心词 · 第 32 组",
+   "en": "GRE Core Vocabulary · Set 32",
+   "minutes": 35,
+   "file": "u32-set.json",
+   "direct": true
+  },
+  {
+   "id": "u33",
+   "title": "S 级核心词 · 第 33 组",
+   "en": "GRE Core Vocabulary · Set 33",
+   "minutes": 35,
+   "file": "u33-set.json",
+   "direct": true
+  },
+  {
+   "id": "u34",
+   "title": "S 级核心词 · 第 34 组",
+   "en": "GRE Core Vocabulary · Set 34",
+   "minutes": 35,
+   "file": "u34-set.json",
+   "direct": true
+  },
+  {
+   "id": "u35",
+   "title": "S 级核心词 · 第 35 组",
+   "en": "GRE Core Vocabulary · Set 35",
+   "minutes": 35,
+   "file": "u35-set.json",
+   "direct": true
+  },
+  {
+   "id": "u36",
+   "title": "S 级核心词 · 第 36 组",
+   "en": "GRE Core Vocabulary · Set 36",
+   "minutes": 35,
+   "file": "u36-set.json",
+   "direct": true
+  },
+  {
+   "id": "u37",
+   "title": "S 级核心词 · 第 37 组",
+   "en": "GRE Core Vocabulary · Set 37",
+   "minutes": 35,
+   "file": "u37-set.json",
+   "direct": true
+  },
+  {
+   "id": "u38",
+   "title": "S 级核心词 · 第 38 组",
+   "en": "GRE Core Vocabulary · Set 38",
+   "minutes": 35,
+   "file": "u38-set.json",
+   "direct": true
+  },
+  {
+   "id": "u39",
+   "title": "S 级核心词 · 第 39 组",
+   "en": "GRE Core Vocabulary · Set 39",
+   "minutes": 35,
+   "file": "u39-set.json",
+   "direct": true
+  },
+  {
+   "id": "u40",
+   "title": "S 级核心词 · 第 40 组",
+   "en": "GRE Core Vocabulary · Set 40",
+   "minutes": 35,
+   "file": "u40-set.json",
+   "direct": true
+  },
+  {
+   "id": "u41",
+   "title": "S 级核心词 · 第 41 组",
+   "en": "GRE Core Vocabulary · Set 41",
+   "minutes": 35,
+   "file": "u41-set.json",
+   "direct": true
+  },
+  {
+   "id": "u42",
+   "title": "S 级核心词 · 第 42 组",
+   "en": "GRE Core Vocabulary · Set 42",
+   "minutes": 35,
+   "file": "u42-set.json",
+   "direct": true
+  },
+  {
+   "id": "u43",
+   "title": "S 级核心词 · 第 43 组",
+   "en": "GRE Core Vocabulary · Set 43",
+   "minutes": 35,
+   "file": "u43-set.json",
+   "direct": true
+  },
+  {
+   "id": "u44",
+   "title": "S 级核心词 · 第 44 组",
+   "en": "GRE Core Vocabulary · Set 44",
+   "minutes": 35,
+   "file": "u44-set.json",
+   "direct": true
+  },
+  {
+   "id": "u45",
+   "title": "S 级核心词 · 第 45 组",
+   "en": "GRE Core Vocabulary · Set 45",
+   "minutes": 35,
+   "file": "u45-set.json",
+   "direct": true
+  },
+  {
+   "id": "u46",
+   "title": "S 级核心词 · 第 46 组",
+   "en": "GRE Core Vocabulary · Set 46",
+   "minutes": 35,
+   "file": "u46-set.json",
+   "direct": true
+  },
+  {
+   "id": "u47",
+   "title": "S 级核心词 · 第 47 组",
+   "en": "GRE Core Vocabulary · Set 47",
+   "minutes": 35,
+   "file": "u47-set.json",
+   "direct": true
+  },
+  {
+   "id": "u48",
+   "title": "S 级核心词 · 第 48 组",
+   "en": "GRE Core Vocabulary · Set 48",
+   "minutes": 35,
+   "file": "u48-set.json",
+   "direct": true
+  },
+  {
+   "id": "u49",
+   "title": "S 级核心词 · 第 49 组",
+   "en": "GRE Core Vocabulary · Set 49",
+   "minutes": 35,
+   "file": "u49-set.json",
+   "direct": true
+  },
+  {
+   "id": "u50",
+   "title": "S 级核心词 · 第 50 组",
+   "en": "GRE Core Vocabulary · Set 50",
+   "minutes": 35,
+   "file": "u50-set.json",
+   "direct": true
+  },
+  {
+   "id": "u51",
+   "title": "S 级核心词 · 第 51 组",
+   "en": "GRE Core Vocabulary · Set 51",
+   "minutes": 35,
+   "file": "u51-set.json",
+   "direct": true
+  },
+  {
+   "id": "u52",
+   "title": "S 级核心词 · 第 52 组",
+   "en": "GRE Core Vocabulary · Set 52",
+   "minutes": 35,
+   "file": "u52-set.json",
+   "direct": true
+  },
+  {
+   "id": "u53",
+   "title": "S 级核心词 · 第 53 组",
+   "en": "GRE Core Vocabulary · Set 53",
+   "minutes": 35,
+   "file": "u53-set.json",
+   "direct": true
+  },
+  {
+   "id": "u54",
+   "title": "S 级核心词 · 第 54 组",
+   "en": "GRE Core Vocabulary · Set 54",
+   "minutes": 35,
+   "file": "u54-set.json",
+   "direct": true
+  },
+  {
+   "id": "u55",
+   "title": "S 级核心词 · 第 55 组",
+   "en": "GRE Core Vocabulary · Set 55",
+   "minutes": 35,
+   "file": "u55-set.json",
+   "direct": true
+  },
+  {
+   "id": "u56",
+   "title": "S 级核心词 · 第 56 组",
+   "en": "GRE Core Vocabulary · Set 56",
+   "minutes": 35,
+   "file": "u56-set.json",
+   "direct": true
+  },
+  {
+   "id": "u57",
+   "title": "S 级核心词 · 第 57 组",
+   "en": "GRE Core Vocabulary · Set 57",
+   "minutes": 35,
+   "file": "u57-set.json",
+   "direct": true
+  },
+  {
+   "id": "u58",
+   "title": "S 级核心词 · 第 58 组",
+   "en": "GRE Core Vocabulary · Set 58",
+   "minutes": 35,
+   "file": "u58-set.json",
+   "direct": true
+  },
+  {
+   "id": "u59",
+   "title": "S 级核心词 · 第 59 组",
+   "en": "GRE Core Vocabulary · Set 59",
+   "minutes": 35,
+   "file": "u59-set.json",
+   "direct": true
+  },
+  {
+   "id": "u60",
+   "title": "S 级核心词 · 第 60 组",
+   "en": "GRE Core Vocabulary · Set 60",
+   "minutes": 35,
+   "file": "u60-set.json",
+   "direct": true
+  }
+ ]
+}

@@ -1,0 +1,429 @@
+{
+ "id": "u17",
+ "title": "S 级核心词 · 第 17 组",
+ "en": "GRE Core Vocabulary · Set 17",
+ "minutes": 35,
+ "objectives": [
+  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
+  "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "blocks": [
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "riveting",
+     "ipa": "[ˈrɪvɪtɪŋ]",
+     "pos": "adj.",
+     "zh": "吸引人的，极迷人的",
+     "en": "completely absorbing",
+     "syn": [
+      "engrossing",
+      "gripping"
+     ],
+     "ant": [
+      "boring",
+      "tedious"
+     ]
+    },
+    {
+     "w": "infuriate",
+     "ipa": "[ɪnˈfjʊrɪet]",
+     "pos": "vt.",
+     "zh": "激怒",
+     "en": "to make extremely angry",
+     "syn": [
+      "enrage",
+      "incense"
+     ],
+     "ant": [
+      "pacify",
+      "placate"
+     ]
+    },
+    {
+     "w": "endorse",
+     "ipa": "[ɪnˈdɔrs]",
+     "pos": "vt.",
+     "zh": "公开支持",
+     "en": "to publicly support or approve",
+     "syn": [
+      "support",
+      "back"
+     ],
+     "ant": [
+      "oppose",
+      "denounce"
+     ]
+    },
+    {
+     "w": "reconcile",
+     "ipa": "[ˈrɛkənsaɪl]",
+     "pos": "vt.",
+     "zh": "使和解，协调",
+     "en": "to restore harmony; to make compatible",
+     "syn": [
+      "reunite",
+      "harmonize"
+     ],
+     "ant": [
+      "estrange",
+      "alienate"
+     ]
+    },
+    {
+     "w": "canonize",
+     "ipa": "[ˈkænəˈnaɪz]",
+     "pos": "vt.",
+     "zh": "使崇高，使神圣",
+     "en": "to declare officially holy; to treat as sacred",
+     "syn": [
+      "sanctify",
+      "exalt"
+     ],
+     "ant": [
+      "vilify",
+      "desecrate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[riveting]] speech began to [[infuriate]] her rivals, but the mayor chose to [[endorse]] her plan, hoping to [[reconcile]] the parties and [[canonize]] the founder.",
+   "gloss": {
+    "riveting": "吸引人的，极迷人的",
+    "infuriate": "激怒",
+    "endorse": "公开支持",
+    "reconcile": "使和解，协调",
+    "canonize": "使崇高，使神圣"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "dilatory",
+     "ipa": "[ˈdɪlətɔːri]",
+     "pos": "adj.",
+     "zh": "拖延的，磨蹭的",
+     "en": "slow to act; causing delay",
+     "syn": [
+      "tardy",
+      "slow"
+     ],
+     "ant": [
+      "prompt",
+      "speedy"
+     ]
+    },
+    {
+     "w": "consensus",
+     "ipa": "[kənˈsɛnsəs]",
+     "pos": "n.",
+     "zh": "一致同意",
+     "en": "general agreement",
+     "syn": [
+      "agreement",
+      "accord"
+     ],
+     "ant": [
+      "dissent",
+      "disagreement"
+     ]
+    },
+    {
+     "w": "calculated",
+     "ipa": "[ˈkælkjuletɪd]",
+     "pos": "adj.",
+     "zh": "经过计算(成败得失)的，经过深思熟虑的",
+     "en": "done with careful planning; deliberate",
+     "syn": [
+      "deliberate",
+      "intentional"
+     ],
+     "ant": [
+      "spontaneous",
+      "accidental"
+     ]
+    },
+    {
+     "w": "accentuate",
+     "ipa": "[əkˈsɛntʃuet]",
+     "pos": "v.",
+     "zh": "强调",
+     "en": "to emphasize or make more noticeable",
+     "syn": [
+      "emphasize",
+      "highlight"
+     ],
+     "ant": [
+      "downplay",
+      "mute"
+     ]
+    },
+    {
+     "w": "jaunty",
+     "ipa": "[ˈdʒɔnti]",
+     "pos": "adj.",
+     "zh": "轻快的，活泼的",
+     "en": "lively and cheerful in manner",
+     "syn": [
+      "sprightly",
+      "buoyant"
+     ],
+     "ant": [
+      "gloomy",
+      "staid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[dilatory]] start, the council reached a [[consensus]]; the [[calculated]] move was to [[accentuate]] the good news, delivered in a [[jaunty]] tone.",
+   "gloss": {
+    "dilatory": "拖延的，磨蹭的",
+    "consensus": "一致同意",
+    "calculated": "经过计算(成败得失)的，经过深思熟虑的",
+    "accentuate": "强调",
+    "jaunty": "轻快的，活泼的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "compliment",
+     "ipa": "[ˈkɑmpləmənt]",
+     "pos": "n./vt.",
+     "zh": "赞美；恭维",
+     "en": "a polite expression of praise; to praise",
+     "syn": [
+      "praise",
+      "flattery"
+     ],
+     "ant": [
+      "insult",
+      "criticism"
+     ]
+    },
+    {
+     "w": "prune",
+     "ipa": "[prun]",
+     "pos": "vt.",
+     "zh": "修剪；修整",
+     "en": "to trim by cutting off parts",
+     "syn": [
+      "trim",
+      "cut back"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disinclination",
+     "ipa": "[ˌdɪsˌɪnklɪˈneʃən]",
+     "pos": "n.",
+     "zh": "不喜欢，厌恶，不情愿",
+     "en": "a lack of willingness",
+     "syn": [
+      "reluctance",
+      "aversion"
+     ],
+     "ant": [
+      "eagerness",
+      "willingness"
+     ]
+    },
+    {
+     "w": "clumsy",
+     "ipa": "[ˈklʌmzi]",
+     "pos": "adj.",
+     "zh": "笨拙的",
+     "en": "awkward in movement or handling",
+     "syn": [
+      "awkward",
+      "ungainly"
+     ],
+     "ant": [
+      "graceful",
+      "adroit"
+     ]
+    },
+    {
+     "w": "disconcert",
+     "ipa": "[ˌdɪskənˈsɜːrt]",
+     "pos": "vt.",
+     "zh": "使不安",
+     "en": "to make uneasy or confused",
+     "syn": [
+      "unsettle",
+      "rattle"
+     ],
+     "ant": [
+      "reassure",
+      "calm"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Despite a [[disinclination]] to talk, the gardener accepted a [[compliment]] on how he would [[prune]] the roses, and his [[clumsy]] reply seemed to [[disconcert]] the visitors.",
+   "gloss": {
+    "compliment": "赞美",
+    "prune": "修剪",
+    "disinclination": "不喜欢，厌恶，不情愿",
+    "clumsy": "笨拙的",
+    "disconcert": "使不安"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "adjunct",
+     "ipa": "[ˈædʒʌŋkt]",
+     "pos": "n.",
+     "zh": "附属物，非必须部分",
+     "en": "something added but not essential",
+     "syn": [
+      "addition",
+      "appendage"
+     ],
+     "ant": []
+    },
+    {
+     "w": "hedge",
+     "ipa": "[hɛdʒ]",
+     "pos": "v.",
+     "zh": "闪烁其词",
+     "en": "to avoid committing oneself",
+     "syn": [
+      "equivocate",
+      "evade"
+     ],
+     "ant": [
+      "commit"
+     ]
+    },
+    {
+     "w": "worldly",
+     "ipa": "[ˈwɝldli]",
+     "pos": "adj.",
+     "zh": "世间的，世俗的；老练的",
+     "en": "concerned with material life; experienced",
+     "syn": [
+      "earthly",
+      "sophisticated"
+     ],
+     "ant": [
+      "spiritual",
+      "naive"
+     ]
+    },
+    {
+     "w": "prototype",
+     "ipa": "[ˈprotəˈtaɪp]",
+     "pos": "n.",
+     "zh": "原型",
+     "en": "an original model for later versions",
+     "syn": [
+      "model",
+      "archetype"
+     ],
+     "ant": [
+      "copy"
+     ]
+    },
+    {
+     "w": "stale",
+     "ipa": "[stel]",
+     "pos": "adj.",
+     "zh": "陈旧乏味的",
+     "en": "no longer fresh; overused",
+     "syn": [
+      "musty",
+      "hackneyed"
+     ],
+     "ant": [
+      "fresh",
+      "novel"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[adjunct]] professor, a [[worldly]] man, would [[hedge]] when asked about the [[prototype]], afraid that a [[stale]] answer would bore the judges.",
+   "gloss": {
+    "adjunct": "附属物，非必须部分",
+    "hedge": "闪烁其词",
+    "worldly": "世间的，世俗的",
+    "prototype": "原型",
+    "stale": "陈旧乏味的"
+   }
+  }
+ ],
+ "references": [],
+ "quiz": {
+  "questions": [
+   {
+    "q": "**hedge** 的意思最接近：",
+    "options": [
+     "闪烁其词",
+     "激怒",
+     "公开支持",
+     "强调"
+    ],
+    "answer": 0,
+    "explain": "hedge：闪烁其词（to avoid committing oneself）。近义词：equivocate, evade。"
+   },
+   {
+    "q": "**accentuate** 的意思最接近：",
+    "options": [
+     "修剪；修整",
+     "强调",
+     "激怒",
+     "闪烁其词"
+    ],
+    "answer": 1,
+    "explain": "accentuate：强调（to emphasize or make more noticeable）。近义词：emphasize, highlight。"
+   },
+   {
+    "q": "哪个词的意思是「公开支持」？",
+    "options": [
+     "reconcile",
+     "prune",
+     "endorse",
+     "canonize"
+    ],
+    "answer": 2,
+    "explain": "endorse：公开支持（to publicly support or approve）。"
+   },
+   {
+    "q": "哪个词和 **archetype** 的意思最接近？",
+    "options": [
+     "consensus",
+     "adjunct",
+     "compliment",
+     "prototype"
+    ],
+    "answer": 3,
+    "explain": "prototype 与 archetype 近义：an original model for later versions。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The adjunct professor, a worldly man, would ____ when asked about the prototype, afraid that a stale answer would bore the judges.",
+    "options": [
+     "hedge",
+     "accentuate",
+     "disconcert",
+     "endorse"
+    ],
+    "answer": 0,
+    "explain": "hedge：闪烁其词（to avoid committing oneself）。"
+   }
+  ]
+ }
+}
