@@ -1,0 +1,336 @@
+{
+ "id": "u06-m2",
+ "title": "混合 · 第 2 套（25 题）",
+ "en": "Quantitative Reasoning — Mixed Practice Set 2",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "独立做完 25 道 ETS 官方 Quant 真题，**全部做完再点提交**（提交前不显示对错）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己重算一遍，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-q/img/",
+   "source": "ETS《Official GRE Quantitative Reasoning Practice Questions》· 混合 · 第 2 套",
+   "items": [
+    {
+     "n": 1,
+     "kind": "qc",
+     "img": "m2/q1.png",
+     "w": 1011,
+     "exp": "m2/e1.png",
+     "ew": 981,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "qc",
+     "img": "m2/q2.png",
+     "w": 1019,
+     "exp": "m2/e2.png",
+     "ew": 1173,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "qc",
+     "img": "m2/q3.png",
+     "w": 1008,
+     "exp": "m2/e3.png",
+     "ew": 1172,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "qc",
+     "img": "m2/q4.png",
+     "w": 1157,
+     "exp": "m2/e4.png",
+     "ew": 1179,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "qc",
+     "img": "m2/q5.png",
+     "w": 1077,
+     "exp": "m2/e5.png",
+     "ew": 1034,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "qc",
+     "img": "m2/q6.png",
+     "w": 1161,
+     "exp": "m2/e6.png",
+     "ew": 1178,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "qc",
+     "img": "m2/q7.png",
+     "w": 1112,
+     "exp": "m2/e7.png",
+     "ew": 1158,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "qc",
+     "img": "m2/q8.png",
+     "w": 1008,
+     "exp": "m2/e8.png",
+     "ew": 1174,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "qc",
+     "img": "m2/q9.png",
+     "w": 1112,
+     "exp": "m2/e9.png",
+     "ew": 1124,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 10,
+     "kind": "mc1",
+     "img": "m2/q10.png",
+     "w": 1164,
+     "exp": "m2/e10.png",
+     "ew": 1168,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 11,
+     "kind": "mc1",
+     "img": "m2/q11.png",
+     "w": 1164,
+     "exp": "m2/e11.png",
+     "ew": 1127,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 12,
+     "kind": "mc1",
+     "img": "m2/q12.png",
+     "w": 1173,
+     "exp": "m2/e12.png",
+     "ew": 1163,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 13,
+     "kind": "mc1",
+     "img": "m2/q13.png",
+     "w": 1176,
+     "exp": "m2/e13.png",
+     "ew": 1171,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 14,
+     "kind": "mc1",
+     "img": "m2/q14.png",
+     "w": 1171,
+     "exp": "m2/e14.png",
+     "ew": 1167,
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 15,
+     "kind": "mc1",
+     "img": "m2/q15.png",
+     "w": 1171,
+     "exp": "m2/e15.png",
+     "ew": 1223,
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 16,
+     "kind": "mc1",
+     "img": "m2/q16.png",
+     "w": 1171,
+     "exp": "m2/e16.png",
+     "ew": 1174,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 17,
+     "kind": "mc1",
+     "img": "m2/q17.png",
+     "w": 1171,
+     "exp": "m2/e17.png",
+     "ew": 1177,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 18,
+     "kind": "mcn",
+     "img": "m2/q18.png",
+     "w": 1167,
+     "exp": "m2/e18.png",
+     "ew": 1179,
+     "nopt": 8,
+     "ans": [
+      0,
+      3,
+      6
+     ]
+    },
+    {
+     "n": 19,
+     "kind": "mcn",
+     "img": "m2/q19.png",
+     "w": 1108,
+     "exp": "m2/e19.png",
+     "ew": 1179,
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 20,
+     "kind": "ne",
+     "img": "m2/q20.png",
+     "w": 1047,
+     "exp": "m2/e20.png",
+     "ew": 1152,
+     "ans": "5/2",
+     "frac": true
+    },
+    {
+     "n": 21,
+     "kind": "ne",
+     "img": "m2/q21.png",
+     "w": 1182,
+     "exp": "m2/e21.png",
+     "ew": 1179,
+     "ans": "15.8"
+    },
+    {
+     "n": 22,
+     "kind": "mc1",
+     "img": "m2/q22.png",
+     "w": 1107,
+     "exp": "m2/e22.png",
+     "ew": 1175,
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "fig": "m2/f1.png",
+     "figw": 1202,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 23,
+     "kind": "mc1",
+     "img": "m2/q23.png",
+     "w": 1113,
+     "exp": "m2/e23.png",
+     "ew": 1169,
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "fig": "m2/f1.png",
+     "figw": 1202,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 24,
+     "kind": "mc1",
+     "img": "m2/q24.png",
+     "w": 1113,
+     "exp": "m2/e24.png",
+     "ew": 1171,
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "fig": "m2/f1.png",
+     "figw": 1202,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 25,
+     "kind": "mcn",
+     "img": "m2/q25.png",
+     "w": 1178,
+     "exp": "m2/e25.png",
+     "ew": 1161,
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "fig": "m2/f1.png",
+     "figw": 1202,
+     "figRange": [
+      22,
+      25
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

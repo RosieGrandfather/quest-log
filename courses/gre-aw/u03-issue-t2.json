@@ -1,0 +1,163 @@
+{
+ "id": "u03-issue-t2",
+ "title": "Issue 3 · 企业的社会责任与利润",
+ "en": "Analyze an Issue — Corporate responsibility",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "限时 30 分钟，在页面里写一篇 Issue（议论文）（打字，自动保存；不想计时也可以先不点计时）",
+  "写完再看官方评分标准、6–1 分各一篇官方样文和阅卷评语，对照自己的文章找差距",
+  "重点对照：有没有紧扣任务指令、有没有具体的理由或例子、结构是否清楚；语言错误留到最后再改"
+ ],
+ "blocks": [
+  {
+   "type": "gre-essay",
+   "kind": "issue",
+   "source": "ETS《The Official Guide to the GRE General Test》· 官方指南 Practice Test 2 的作文题与样文",
+   "prompt": [
+    "Some people believe that corporations have a responsibility to promote the well-being of the societies and environments in which they operate. Others believe that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible.",
+    "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented."
+   ],
+   "strategy": [],
+   "rubric": [
+    {
+     "score": 6,
+     "summary": "In addressing the specific task directions, a 6 response presents a cogent, well-articulated analysis of the issue and conveys meaning skillfully.",
+     "bullets": [
+      "articulates a clear and insightful position on the issue in accordance with the assigned task",
+      "develops the position fully with compelling reasons and/or persuasive examples",
+      "sustains a well-focused, well-organized analysis, connecting ideas logically",
+      "conveys ideas fluently and precisely, using effective vocabulary and sentence variety",
+      "demonstrates superior facility with the conventions of standard written English (i.e., grammar, usage, and mechanics) but may have minor errors"
+     ]
+    },
+    {
+     "score": 5,
+     "summary": "In addressing the specific task directions, a 5 response presents a generally thoughtful, well-developed analysis of the issue and conveys meaning clearly.",
+     "bullets": [
+      "presents a clear and well-considered position on the issue in accordance with the assigned task",
+      "develops the position with logically sound reasons and/or well-chosen examples",
+      "is focused and generally well organized, connecting ideas appropriately",
+      "conveys ideas clearly and well, using appropriate vocabulary and sentence variety",
+      "demonstrates facility with the conventions of standard written English but may have minor errors"
+     ]
+    },
+    {
+     "score": 4,
+     "summary": "In addressing the specific task directions, a 4 response presents a competent analysis of the issue and conveys meaning with acceptable clarity.",
+     "bullets": [
+      "presents a clear position on the issue in accordance with the assigned task",
+      "develops the position with relevant reasons and/or examples",
+      "is adequately focused and organized",
+      "demonstrates sufficient control of language to express ideas with acceptable clarity",
+      "generally demonstrates control of the conventions of standard written English but may have some errors"
+     ]
+    },
+    {
+     "score": 3,
+     "summary": "A 3 response demonstrates some competence in addressing the specific task directions, in analyzing the issue, and in conveying meaning but is obviously flawed. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "is vague or limited in addressing the specific task directions and/or in presenting or developing a position on the issue",
+      "is weak in the use of relevant reasons or examples or relies largely on unsupported claims",
+      "is limited in focus and/or organization",
+      "has problems in language and sentence structure that result in a lack of clarity",
+      "contains occasional major errors or frequent minor errors in grammar, usage, or mechanics that can interfere with meaning"
+     ]
+    },
+    {
+     "score": 2,
+     "summary": "A 2 response largely disregards the specific task directions and/or demonstrates serious weaknesses in analytical writing. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "is unclear or seriously limited in addressing the specific task directions and/or in presenting or developing a position on the issue",
+      "provides few, if any, relevant reasons or examples in support of its claims",
+      "is poorly focused and/or poorly organized",
+      "has serious problems in language and sentence structure that frequently interfere with meaning",
+      "contains serious errors in grammar, usage, or mechanics that frequently obscure meaning"
+     ]
+    },
+    {
+     "score": 1,
+     "summary": "A 1 response demonstrates fundamental deficiencies in analytical writing. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "provides little or no evidence of understanding the issue",
+      "provides little evidence of the ability to develop an organized response (e.g., is disorganized and/or extremely brief)",
+      "has severe problems in language and sentence structure that persistently interfere with meaning",
+      "contains pervasive errors in grammar, usage, or mechanics that result in incoherence"
+     ]
+    }
+   ],
+   "responses": [
+    {
+     "score": 6,
+     "essay": [
+      "It is not uncommon for some to argue that, in the world in which we live, corporations have a responsibility to society and to the environment in which they operate. Proponents of this view would argue that major environmental catastrophes (e.g., the oil spill in the Gulf) are key examples of the damage that can be wrought when corporations are allowed to operate unchecked. Yet within that very statement lies a contradiction that undermines this kind of thinking—it is necessary for outside forces to check the behavior of corporations, because we do not expect corporations to behave in such a manner. In fact, the expectation is simply that corporations will follow the law, and in the course of doing so, engage in every possible tactic to their advantage in the pursuit of more and greater profit. To expect otherwise from corporations is to fail to understand their puropose and their very structure. The corporation arose as a model of business in which capital could be raised through the contributions of stockholders; investors purchases shares in a company, and their money is then used as the operating capital for the company. Shareholders buy stock not because they are hoping to better make the world a better place or because they have a desire to improve the quality of life but because they expect to see a return in their investment in this company. The company may itself have generally altruistic goals (perhaps it is a think tank that advises the government on how to improve relations with the Middle East, or perhaps it is a company built around finding alternative forms of energy), but the immediate expectation of the investor is that he himself will see dividends, or profits, from the investment he has made. This is even more true in the case of companies that are purely profit driven and which do not have goals that are particularly directed toward social improvement—a description that applies to the vast majority of corporations.",
+      "Is it a bad thing to have a corporation negatively affect the environment (and by extentsion, its inhabitants)? To pump noxious fumes into the atmosphere as a by-product of its manufacturing processes? Of course, and this is why agencies such as the EPA were established and why governments —federal, state, and local—are expected to monitor such companies to ensure that such practices fall within the boundaries of legal expectations. Any and all corporations should be expected to temper their pursuit of profit with the necessity of following those safeguards that have been legislated as protections. But the assumption that corporations have an inherent obligation or responsibility to go above and beyond that to actively PROMOTE the environment and the well-being of society is absurd.",
+      "Engaging in practices to adhere to legal expectations to protect society and the environment is costly to corporations. If the very purpose of a corporation is to generate profits, and the obligation to adhere to safety expectations established by law cuts into those profits, then to expect corporations to embrace such practices beyond what is required is to presume that they willingly engage in an inherently self-destructive process: the unnecessary lowering of profits. This is antithetical to the very concept of the corporation. Treehuggers everywhere should be pleased that environmental protections exist, but to expect corporations to “make the world a better place” is to embrace altruism to the point that it becomes delusion.",
+      "This is not to say that we should reject efforts to hold corporations accountable. In fact, the opposite is true—we should be vigilant with the business world and maintain our expectations that corporations do not make their profits at the EXPENSE of the well-being of society. But that role must be fulfilled by a watchdog, not the corporation itself, and those expectations must be imposed UPON the corporations, not expected FROM them.",
+      "*NOTE: All responses are reproduced exactly as written, including errors, misspellings, etc., if any."
+     ],
+     "commentary": [
+      "This response receives a 6 for developing an insightful position on the issue in accordance with the assigned task, skillfully weaving a position that takes into consideration both of the statements in the prompt. Beginning in the first paragraph, the writer rejects the idea that corporations themselves “have a responsibility to promote the well-being of the societies and environments in which they operate.” In the second paragraph, the writer offers compelling reasons for this rejection by discussing the purpose and structure of corporations. The writer then considers the role of government in promoting corporations’ social and environmental responsibility, developing the position fully. A cogent statement of the writer’s position appears at the conclusion of the response: “we should be vigilant with the business world and maintain our expectations that corporations do not make their profits at the EXPENSE of the well-being of society. But that role must be fulfilled by a watchdog, not the corporation itself.” The response as a whole is logically organized, with each paragraph serving as a stepping stone in the development of the writer’s position. It also demonstrates the writer’s ability to convey ideas fluently and precisely, using effective vocabulary and sentence variety. This sentence demonstrates the level of language facility seen throughout the response: “If the very purpose of a corporation is to generate profits, and the obligation to adhere to safety expectations established by law cuts into those profits, then to expect corporations to embrace such practices beyond what is required is to presume that they willingly engage in an inherently self-destructive process: the unnecessary lowering of profits.” Here the writer has skillfully maintained control of complex syntax and diction while making a logically compelling point. The sentence demonstrates the outstanding nature of this response."
+     ]
+    },
+    {
+     "score": 5,
+     "essay": [
+      "In order to survive, corporations must make money. Successful corporations try and make as much money as possible. Yet this incentive to make money does not mean that a corporation can be a detriment to the society in which it operates. Corporations have a duty and a responsability to ensure the well being of the society in which they are a part.",
+      "Contributing to the well being of a society is actually benefical to a corporation in many cases. One of these is making sure that workers are well taken care of. Absenteeism and neglect while on duty are a big problem for corporations, as is attracting the best workers, who hopefully will lower the risks caused by absenteeism and neglect. One way that corporations can attract these workers is by offering them generous benefits. If, for example, an employer includes with employment a good health care plan, they will be able to attract better workers than one that does not, and that will aid the corporation greatly. Health care plans provided by employers mean that these people have at their disposal health coverage, which means that they have the care they need if they get sick. This also might encourage preventive care, something that has been shown to reduce the cost and risk of developing other major ailments.",
+      "Another area where corporations providing support for themselves and society is in the creation of human capital. Globalization and increased education means that employers need a better educated workforce more than ever. One way that employers can contribute to this is by sponsoring worker training programs, or paying for their employees to return to school. This creates a more educated workforce for employers, as well as may increase the loyalty of employees to an employer. An employee who received an education sponsored by an employer may be thankful for receiving that education, and may work harder for that employer. This creates a benefit for employers and employees.",
+      "The main reason that corporations have a duty to contribute to the well being of society is that they are a part of the society. Even though they have an economic desire to make a profit, corporations also should think long term about actions they take which could hurt their company. A good example of this is BP, after the recent oil spill in the gulf. Their desire to make a profit meant that they did not keep up on all of their safety regulations and standards, and the result of the then faulty equipment caused a massive spill. This cost them huge amounts of money to clean up, as well as the fines they had to pay for causing this. The biggest loss for BP however is that there brand name will be associated in the US and abroad as the company that caused this giant oil spill. As the spill was happening, many people boycotted the company, resulting in lost potential revenue. They may realize that as they lose business to people upset by the spill, that making sure a spill didn’t happen in the first place was cheaper. Another reason corporations have to ensure the well-being of a society is that by makign a society better off, a company may have more consumers. This is especially true for corporations that sell goods for middle and upper class consumers. If a corporation tries to bring people up and increase the overall economic well being of society, they may find that more and more people have to ability to afford their goods. This could generate huge new profits for this corporation, since their pool of potential consumers has gone up considerably. Concentrating on the long term here means that corporations can increase their pool of potential consumers. By denying responsabilty to a society, a corporation is only looking at the possible short term profits, not the potential long term ones. While in the short term it may work for a corporation to ignore their societal responsability, it is advantageous in the long term for the entire corporation to make sure society is getting better. The potential for new markets, products, production processes and other beneficial factors that come from promoting well being is quite large. This is something that corportions should be ready and willing to take advantage of, and something that society should hold them accountable for."
+     ],
+     "commentary": [
+      "This strong response receives a 5 for its thoughtful, well-developed analysis of the issue. In this case, the writer argues that corporations do indeed have a responsibility to promote the well-being of the societies and environments in which they operate, offering several reasons and well-chosen examples to explain why it is in the interests of corporations to fulfill these responsibilities. The writer clearly follows the task directions by addressing the two views provided by the prompt, both explicitly in the opening paragraph and more subtly throughout the response. While the writer clearly signals at the beginning his or her alignment with the first position (“Corporations have a duty and a responsability to ensure the well being of the society of which they are a part”), the paragraphs that follow in fact acknowledge the writer’s opening statement (“In order to survive, corporations must make money”). In areas such as employee health care and education, as well as in relation to broader issues such as the environment and the general level of prosperity in society, the writer argues that corporations should strive to meet their social obligations because in the long term, it is economically advantageous to do so. The various reasons and examples offered are brought together to support a thoughtful position that implicitly suggests that the two views are not as mutually exclusive as they might first appear. The response also demonstrates considerable facility with language. There are some minor errors, but overall the writer’s control of language is strong, demonstrating sentence variety and appropriate use of vocabulary. The response lacks the superior fluency and precision of a 6 but nevertheless conveys meaning clearly and well. Discernibly stronger than the adequate level of analysis in a 4, the response has thoughtful, nuanced analysis of the issue that earns it a score of 5."
+     ]
+    },
+    {
+     "score": 4,
+     "essay": [
+      "While some people may believe that corporations have a responsibility to protect society, others believe that the only purpose of a corporation is to make money. I agree that making profits is important. In the grand scheme of things, though, all companies have a responsibility to watch out for their customers. Their customers are how they make their money. If they’re not watching out for their customers, they obviously will see a drop in their profits.",
+      "Consider light bulbs. This is an invention that has all kinds of potential for serious accidents. It is basically just a glass globe with electricity running through it! If a bulb gets too hot, it could potentially start a fire. Similarly, if someone removed the glass from around the tungsten wire, you’d basically have an exposed electrical wire that could hurt anyone who touched it. Makers of light bulbs know and understand all these dangers. They want consumers to purchase their products, so the first and smartest way to make that happen is to ensure that the products are safe and thus more attractive to the customer base. If everyone who used light bulbs was afraid of getting zapped profits would obviously go down and light bulbs would not be a very profitable enterprise.",
+      "This same thinking applies to all major products. The automobile is one of the most dangerous tools man uses. Tens of thousands of automobile drivers die every year in accidents. Insuring that the vehicles contain designs and parts that promote customer safety is a main focus of car manufacturers. Certain parts of of cars were built with promoting driver’s well-being in mind. For instance, air bags, anti-lock braking systems, online crash reporting. These features are considered standard now, and they were all developed to increase the safety of consumers. These features were not cheap to develop, but car manufacturers improved their profits anyway because they developed products with public safety in mind, which is what customers expect. If this symbiosis relationship wasn’t true, then we would still have cars without airbags or even seatbelts. Worrying about the safety and actually improving it for customers is not just a basic responsibility of corporations, but it drives their profits, too.",
+      "In conclusion, its pretty clear that a corporation’s desire to make more profits is in line with a corporation’s responsibility to consumers. Increasing the focus on consumers, worrying about taking care of them and the environment, can only lead to bigger profits and success for corporations in the long run."
+     ],
+     "commentary": [
+      "This adequate response follows the task directions and presents a clear position on the issue. It supports and develops its position competently, using relevant examples. In accordance with the assigned task, the response addresses both of the competing positions. Specifically, its position and the examples it develops argue that businesses can care about both profits and ethical responsibility through the ways they develop products. The development of examples and ideas, while adequate, is not as thoughtful or compelling as would be needed to earn higher scores. For instance, both of the examples the response uses are about product safety; the discussion of automobile design does not advance the position much more than the prior discussion of lightbulb production. Language control in the response is also competent. It demonstrates sufficient control of the conventions of standard written English, and its main points are made with acceptable clarity. The response features a few grammatical and mechanical errors (e.g., “Certain parts of of cars …” and “symbiosis relationship”) and some awkward sentences. However, for the 4 range, GRE raters allow for minor errors in responses like this one that holistically demonstrate sufficient clarity and control. Overall, then, this response demonstrates adequate development and control of language, making the score of 4 appropriate."
+     ]
+    },
+    {
+     "score": 3,
+     "essay": [
+      "Corporations can be viewed as both beneficial and bad. This statement addresses both views that many people have about corporations. Views come from personal experiences and is the reason why some people like corporations and why some people do not.",
+      "Half of this argument deals with people that like the idea of corporations. Some people believe that corporations help stmiulate societies and promote the well being of society. These people are ones that have never encountered a corupt corporation. Just like in any other aspects of life, people can get images of something as being good if they only brush the outside. It isn’t until they are being faced with a problem within a particular corporation where they either work for them or have just dealt with them. Also, people that are benefited from corporations are obviously going to like the idea of an corporation.",
+      "The other side of this argument is that many people believe corporations are just money hungry. This can be seen in many corporations throughout America. Many small business owners will side with this argument. The problem lies that this is corporate America and the little businesses are being taking over by larger corporations. As Mark Twain once said, “The vast amount of money is only in a couple of hands”. This statement still lies true today. In addition, corporations are large and with that being said they lead to more lines of coruption. In small buisnesses, the owners can oversee their store entirely. Can these corporation owners really oversee everything that is going on? Ask any employee at a corporate office if they believe their workplace is being ran how they think the corporation would want it. One is likely to find the answer that it is not.",
+      "Just like any other issue there are two sides to the story. The problem with this issue is that most will agree that corporations are only there to make money. They don’t care about the people that are helping them make money. They only care at the end of the day how much money they made."
+     ],
+     "commentary": [
+      "This response receives a score of 3 primarily because it is limited in focus. Rather than addressing the conflicting views of corporate responsibility given in the prompt, the response instead incorrectly casts the two positions as “people that like the idea of corporations” and people who “believe corporations are just money hungry.” The writer proceeds to develop an explanation of these two positions, citing the various qualities that lead each group of people to their beliefs, but the response concludes by declaring that “there are two sides to the story” without adopting any position of its own. This highlights another limitation of the response, the fact that it does not completely address the specific task directions. Although the response does discuss the two opposing positions, it never discusses which view more closely aligns with the writer’s own. The response does contain adequate organization, and the writing demonstrates a sufficient control of language. Sentences such as “Just like in any other aspects of life, people can get images of something as being good if they only brush the outside” are typical of the writing in this response and, despite the presence of some errors, demonstrate a sufficient control of the conventions of standard written English. However, even though the response demonstrates some qualities of a 4, its problems with focus and its failure to develop a clear position on the issue in accordance with the assigned task mean that it merits a score of 3."
+     ]
+    },
+    {
+     "score": 2,
+     "essay": [
+      "I think corporations have a responsibility to not only follow the law but also work with the societies and enviroments they are in. Our societies and environments in this age are affected by corporations’ operations. An example of this is BP’s accident in the Gulf of Mexico—they might have been following the law and regulations, but once an accident happens, our societies and environments are affected. Many fishermen and businesses around the area have been affected by the accident. Now BP faces so many liabilities and needs to pay money. As a result, they are loosing more than they made in the past.",
+      "It is also important that corporations makes as much as money possible. If they do well, there might be more employment opportunities for people and more taxes for the city, states and federal which help our country’s economy better.",
+      "However, there are always choices that corporations can take and they can make money by promoting the well-being of the societies and environments. It might cost them more but it will also help to save thier expenses."
+     ],
+     "commentary": [
+      "This seriously flawed response attempts to address the task directions by considering both of the views presented in the prompt. The first paragraph seems to embrace the first view given in the prompt when it asserts that “corporations have a responsibility to … work with the societies and environments they are in.” The writer uses the example of the BP oil spill in the Gulf of Mexico to demonstrate that “our societies and environments in this age are affected by corporations’ operations,” but, apart from restating these same claims, the paragraph provides no real support for this position. Instead, the writer moves on to a discussion of the financial implications of the oil spill for BP. The second paragraph then makes an abrupt transition to a discussion of the prompt’s second view and again seems to embrace this position when it claims that “it is also important that corporations makes as much as money possible.” This position is supported with a single relevant but undeveloped reason. Although the writer attempts to reconcile the two positions in the last paragraph by arguing that “there are always choices that corporations can take and they can make money by promoting the well-being of the societies and environments,” the response provides no support for this position beyond its unsupported and contradictory claim that “it might cost them more but it will also help to save their expenses.” Overall, then, this response provides few examples in support of its claims. The response’s poor focus and its very limited support, then, warrant a score of 2."
+     ]
+    },
+    {
+     "score": 1,
+     "essay": [
+      "It is certainly true that some people believe that corporations have a responsibility to promote the well being of societies and environments. On the other hand, some other people argue that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible. It is easy to see why it would be difficult for some people to decide between these two positions. The responsibility of all citizens of a society, including corporate citizens, is ultimately to further the well being of the society as a whole. It takes little more than examining the recent United States financial crisis to see the ill effects suffered by society at large when corporations focus on maximizing profits."
+     ],
+     "commentary": [
+      "This response earns a score of 1 because it provides little evidence of the ability to develop an organized response. The first paragraph begins with a nearly word-for-word restatement of the prompt, which increases the length of the response but does not demonstrate the ability to develop a position on the issue in relation to the specific task instructions. The final sentence in the first paragraph is analytically empty in that it could be applied to any prompt that asks writers to discuss two competing positions. The writer does nothing to relate that sentence to this specific prompt. The second paragraph, then, is all that the writer has provided in terms of original analysis of the issue. Although it does demonstrate understanding of the issue, it fits the “extremely brief” description from the scoring guide description of a 1. Because of the extreme brevity of its analysis, then, this response merits a score of 1."
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

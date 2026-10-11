@@ -1,0 +1,393 @@
+{
+ "id": "u04-da",
+ "title": "数据分析专题（26 题）",
+ "en": "Quantitative Reasoning — Data Analysis",
+ "minutes": 50,
+ "practice": true,
+ "objectives": [
+  "独立做完 26 道 ETS 官方 Quant 真题，**全部做完再点提交**（提交前不显示对错）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己重算一遍，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-q/img/",
+   "source": "ETS《Official GRE Quantitative Reasoning Practice Questions》· 数据分析",
+   "items": [
+    {
+     "n": 1,
+     "kind": "qc",
+     "img": "da/q1.png",
+     "w": 1132,
+     "exp": "da/e1.png",
+     "ew": 1160,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "qc",
+     "img": "da/q2.png",
+     "w": 1112,
+     "exp": "da/e2.png",
+     "ew": 1176,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "qc",
+     "img": "da/q3.png",
+     "w": 1110,
+     "exp": "da/e3.png",
+     "ew": 1149,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "qc",
+     "img": "da/q4.png",
+     "w": 1112,
+     "exp": "da/e4.png",
+     "ew": 1170,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "qc",
+     "img": "da/q5.png",
+     "w": 1179,
+     "exp": "da/e5.png",
+     "ew": 1160,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "qc",
+     "img": "da/q6.png",
+     "w": 1112,
+     "exp": "da/e6.png",
+     "ew": 1173,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "mc1",
+     "img": "da/q7.png",
+     "w": 1176,
+     "exp": "da/e7.png",
+     "ew": 1132,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "mc1",
+     "img": "da/q8.png",
+     "w": 1167,
+     "exp": "da/e8.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "mc1",
+     "img": "da/q9.png",
+     "w": 1169,
+     "exp": "da/e9.png",
+     "ew": 1171,
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 10,
+     "kind": "mc1",
+     "img": "da/q10.png",
+     "w": 1179,
+     "exp": "da/e10.png",
+     "ew": 1165,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 11,
+     "kind": "mc1",
+     "img": "da/q11.png",
+     "w": 1161,
+     "exp": "da/e11.png",
+     "ew": 1179,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 12,
+     "kind": "mc1",
+     "img": "da/q12.png",
+     "w": 1165,
+     "exp": "da/e12.png",
+     "ew": 1170,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 13,
+     "kind": "mcn",
+     "img": "da/q13.png",
+     "w": 1173,
+     "exp": "da/e13.png",
+     "ew": 1178,
+     "nopt": 6,
+     "ans": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "n": 14,
+     "kind": "ne",
+     "img": "da/q14.png",
+     "w": 1153,
+     "exp": "da/e14.png",
+     "ew": 1176,
+     "ans": "0.76"
+    },
+    {
+     "n": 15,
+     "kind": "ne",
+     "img": "da/q15.png",
+     "w": 1178,
+     "exp": "da/e15.png",
+     "ew": 1155,
+     "ans": "5"
+    },
+    {
+     "n": 16,
+     "kind": "mc1",
+     "img": "da/q16.png",
+     "w": 1119,
+     "exp": "da/e16.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "fig": "da/f1.png",
+     "figw": 1224,
+     "figRange": [
+      16,
+      19
+     ]
+    },
+    {
+     "n": 17,
+     "kind": "mc1",
+     "img": "da/q17.png",
+     "w": 1138,
+     "exp": "da/e17.png",
+     "ew": 1107,
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "fig": "da/f1.png",
+     "figw": 1224,
+     "figRange": [
+      16,
+      19
+     ]
+    },
+    {
+     "n": 18,
+     "kind": "mc1",
+     "img": "da/q18.png",
+     "w": 1181,
+     "exp": "da/e18.png",
+     "ew": 1134,
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "fig": "da/f1.png",
+     "figw": 1224,
+     "figRange": [
+      16,
+      19
+     ]
+    },
+    {
+     "n": 19,
+     "kind": "mc1",
+     "img": "da/q19.png",
+     "w": 1150,
+     "exp": "da/e19.png",
+     "ew": 1150,
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "fig": "da/f1.png",
+     "figw": 1224,
+     "figRange": [
+      16,
+      19
+     ]
+    },
+    {
+     "n": 20,
+     "kind": "mc1",
+     "img": "da/q20.png",
+     "w": 1182,
+     "exp": "da/e20.png",
+     "ew": 1155,
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "fig": "da/f2.png",
+     "figw": 1208,
+     "figRange": [
+      20,
+      23
+     ]
+    },
+    {
+     "n": 21,
+     "kind": "mc1",
+     "img": "da/q21.png",
+     "w": 1182,
+     "exp": "da/e21.png",
+     "ew": 1176,
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "fig": "da/f2.png",
+     "figw": 1208,
+     "figRange": [
+      20,
+      23
+     ]
+    },
+    {
+     "n": 22,
+     "kind": "mcn",
+     "img": "da/q22.png",
+     "w": 1171,
+     "exp": "da/e22.png",
+     "ew": 1166,
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "fig": "da/f2.png",
+     "figw": 1208,
+     "figRange": [
+      20,
+      23
+     ]
+    },
+    {
+     "n": 23,
+     "kind": "mc1",
+     "img": "da/q23.png",
+     "w": 1156,
+     "exp": "da/e23.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "fig": "da/f2.png",
+     "figw": 1208,
+     "figRange": [
+      20,
+      23
+     ]
+    },
+    {
+     "n": 24,
+     "kind": "mc1",
+     "img": "da/q24.png",
+     "w": 1135,
+     "exp": "da/e24.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "fig": "da/f3.png",
+     "figw": 1211,
+     "figRange": [
+      24,
+      26
+     ]
+    },
+    {
+     "n": 25,
+     "kind": "mc1",
+     "img": "da/q25.png",
+     "w": 1135,
+     "exp": "da/e25.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "fig": "da/f3.png",
+     "figw": 1211,
+     "figRange": [
+      24,
+      26
+     ]
+    },
+    {
+     "n": 26,
+     "kind": "mc1",
+     "img": "da/q26.png",
+     "w": 1135,
+     "exp": "da/e26.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "fig": "da/f3.png",
+     "figw": 1211,
+     "figRange": [
+      24,
+      26
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

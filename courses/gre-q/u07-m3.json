@@ -1,0 +1,331 @@
+{
+ "id": "u07-m3",
+ "title": "混合 · 第 3 套（25 题）",
+ "en": "Quantitative Reasoning — Mixed Practice Set 3",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "独立做完 25 道 ETS 官方 Quant 真题，**全部做完再点提交**（提交前不显示对错）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己重算一遍，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-q/img/",
+   "source": "ETS《Official GRE Quantitative Reasoning Practice Questions》· 混合 · 第 3 套",
+   "items": [
+    {
+     "n": 1,
+     "kind": "qc",
+     "img": "m3/q1.png",
+     "w": 1007,
+     "exp": "m3/e1.png",
+     "ew": 1153,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "qc",
+     "img": "m3/q2.png",
+     "w": 1110,
+     "exp": "m3/e2.png",
+     "ew": 1169,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "qc",
+     "img": "m3/q3.png",
+     "w": 1008,
+     "exp": "m3/e3.png",
+     "ew": 1175,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "qc",
+     "img": "m3/q4.png",
+     "w": 1008,
+     "exp": "m3/e4.png",
+     "ew": 1142,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "qc",
+     "img": "m3/q5.png",
+     "w": 1149,
+     "exp": "m3/e5.png",
+     "ew": 1179,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "qc",
+     "img": "m3/q6.png",
+     "w": 1010,
+     "exp": "m3/e6.png",
+     "ew": 1179,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "qc",
+     "img": "m3/q7.png",
+     "w": 1113,
+     "exp": "m3/e7.png",
+     "ew": 1164,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "qc",
+     "img": "m3/q8.png",
+     "w": 1010,
+     "exp": "m3/e8.png",
+     "ew": 1179,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "qc",
+     "img": "m3/q9.png",
+     "w": 1112,
+     "exp": "m3/e9.png",
+     "ew": 1168,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 10,
+     "kind": "mc1",
+     "img": "m3/q10.png",
+     "w": 1161,
+     "exp": "m3/e10.png",
+     "ew": 1155,
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 11,
+     "kind": "mc1",
+     "img": "m3/q11.png",
+     "w": 1165,
+     "exp": "m3/e11.png",
+     "ew": 1169,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 12,
+     "kind": "mc1",
+     "img": "m3/q12.png",
+     "w": 1151,
+     "exp": "m3/e12.png",
+     "ew": 1175,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 13,
+     "kind": "mc1",
+     "img": "m3/q13.png",
+     "w": 1119,
+     "exp": "m3/e13.png",
+     "ew": 1160,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 14,
+     "kind": "mc1",
+     "img": "m3/q14.png",
+     "w": 1150,
+     "exp": "m3/e14.png",
+     "ew": 1171,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 15,
+     "kind": "mc1",
+     "img": "m3/q15.png",
+     "w": 1097,
+     "exp": "m3/e15.png",
+     "ew": 1179,
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 16,
+     "kind": "mc1",
+     "img": "m3/q16.png",
+     "w": 1178,
+     "exp": "m3/e16.png",
+     "ew": 1168,
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 17,
+     "kind": "mc1",
+     "img": "m3/q17.png",
+     "w": 1182,
+     "exp": "m3/e17.png",
+     "ew": 1177,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 18,
+     "kind": "mcn",
+     "img": "m3/q18.png",
+     "w": 1152,
+     "exp": "m3/e18.png",
+     "ew": 1179,
+     "nopt": 5,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 19,
+     "kind": "mcn",
+     "img": "m3/q19.png",
+     "w": 1152,
+     "exp": "m3/e19.png",
+     "ew": 1152,
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 20,
+     "kind": "ne",
+     "img": "m3/q20.png",
+     "w": 1156,
+     "exp": "m3/e20.png",
+     "ew": 1176,
+     "ans": "4.1"
+    },
+    {
+     "n": 21,
+     "kind": "ne",
+     "img": "m3/q21.png",
+     "w": 1180,
+     "exp": "m3/e21.png",
+     "ew": 1126,
+     "ans": "3/2",
+     "frac": true
+    },
+    {
+     "n": 22,
+     "kind": "mc1",
+     "img": "m3/q22.png",
+     "w": 1159,
+     "exp": "m3/e22.png",
+     "ew": 1177,
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "fig": "m3/f1.png",
+     "figw": 1203,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 23,
+     "kind": "mc1",
+     "img": "m3/q23.png",
+     "w": 1159,
+     "exp": "m3/e23.png",
+     "ew": 1172,
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "fig": "m3/f1.png",
+     "figw": 1203,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 24,
+     "kind": "mc1",
+     "img": "m3/q24.png",
+     "w": 1079,
+     "exp": "m3/e24.png",
+     "ew": 1138,
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "fig": "m3/f1.png",
+     "figw": 1203,
+     "figRange": [
+      22,
+      25
+     ]
+    },
+    {
+     "n": 25,
+     "kind": "ne",
+     "img": "m3/q25.png",
+     "w": 1047,
+     "exp": "m3/e25.png",
+     "ew": 1149,
+     "ans": "67",
+     "fig": "m3/f1.png",
+     "figw": 1203,
+     "figRange": [
+      22,
+      25
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

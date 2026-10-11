@@ -79,6 +79,16 @@ export async function loadNote(cols, course, unit){
   return snap.exists ? (snap.data().text || '') : '';
 }
 
+/* 写作练习的草稿：和笔记同一个集合，文档 id 加 __essay 后缀，不会和每节的笔记冲突 */
+const essayId = (course, unit)=> unitKey(course.id, unit.id) + '__essay';
+export function saveEssay(cols, course, unit, text){
+  return cols.studyNotes.doc(essayId(course, unit)).set({courseId:course.id, unitId:unit.id, essay:true, text, updatedAt:Date.now()});
+}
+export async function loadEssay(cols, course, unit){
+  const snap = await cols.studyNotes.doc(essayId(course, unit)).get();
+  return snap.exists ? {text: snap.data().text || '', ts: snap.data().updatedAt || 0} : {text:'', ts:0};
+}
+
 /* 词汇课「会 / 不会」标记：每节一篇文档 {marks:{词:'know'|'unknown'|''}} */
 export async function loadVocabMarks(cols, course, unit){
   // 小节合并过（legacyIds 是合并前的旧小节 ID）：旧标记也读进来，新标记盖在上面

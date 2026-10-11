@@ -4,6 +4,8 @@
 /* global marked, renderMathInElement */
 import { escapeHTML } from '../core/html.js';
 import { practiceHTML } from './practice.js';
+import { qsetHTML } from './qset.js';
+import { essayHTML } from './essay.js';
 
 /* marked 会把公式里的 _ 和 * 当成斜体，所以先把 $...$ / $$...$$ 换成占位符，排版完再换回来 */
 export function mdToHTML(md){
@@ -113,6 +115,8 @@ function blockHTML(b){
     case 'vocab': return `<div class="blk-vocab">${b.items.map(vocabCard).join('')}</div>`;
     case 'passage': return passageHTML(b);
     case 'gre-set': return practiceHTML(b);
+    case 'gre-qset': return qsetHTML(b);
+    case 'gre-essay': return essayHTML(b);
     default: return '';
   }
 }

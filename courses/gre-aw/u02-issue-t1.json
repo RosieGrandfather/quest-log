@@ -1,0 +1,160 @@
+{
+ "id": "u02-issue-t1",
+ "title": "Issue 2 · 表扬好行为、忽略坏行为",
+ "en": "Analyze an Issue — Praise positive actions, ignore negative ones",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "限时 30 分钟，在页面里写一篇 Issue（议论文）（打字，自动保存；不想计时也可以先不点计时）",
+  "写完再看官方评分标准、6–1 分各一篇官方样文和阅卷评语，对照自己的文章找差距",
+  "重点对照：有没有紧扣任务指令、有没有具体的理由或例子、结构是否清楚；语言错误留到最后再改"
+ ],
+ "blocks": [
+  {
+   "type": "gre-essay",
+   "kind": "issue",
+   "source": "ETS《The Official Guide to the GRE General Test》· 官方指南 Practice Test 1 的作文题与样文",
+   "prompt": [
+    "The best way to teach is to praise positive actions and ignore negative ones.",
+    "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position."
+   ],
+   "strategy": [],
+   "rubric": [
+    {
+     "score": 6,
+     "summary": "In addressing the specific task directions, a 6 response presents a cogent, well-articulated analysis of the issue and conveys meaning skillfully.",
+     "bullets": [
+      "articulates a clear and insightful position on the issue in accordance with the assigned task",
+      "develops the position fully with compelling reasons and/or persuasive examples",
+      "sustains a well-focused, well-organized analysis, connecting ideas logically",
+      "conveys ideas fluently and precisely, using effective vocabulary and sentence variety",
+      "demonstrates superior facility with the conventions of standard written English (i.e., grammar, usage, and mechanics) but may have minor errors"
+     ]
+    },
+    {
+     "score": 5,
+     "summary": "In addressing the specific task directions, a 5 response presents a generally thoughtful, well-developed analysis of the issue and conveys meaning clearly.",
+     "bullets": [
+      "presents a clear and well-considered position on the issue in accordance with the assigned task",
+      "develops the position with logically sound reasons and/or well-chosen examples",
+      "is focused and generally well organized, connecting ideas appropriately",
+      "conveys ideas clearly and well, using appropriate vocabulary and sentence variety",
+      "demonstrates facility with the conventions of standard written English but may have minor errors"
+     ]
+    },
+    {
+     "score": 4,
+     "summary": "In addressing the specific task directions, a 4 response presents a competent analysis of the issue and conveys meaning with acceptable clarity.",
+     "bullets": [
+      "presents a clear position on the issue in accordance with the assigned task",
+      "develops the position with relevant reasons and/or examples",
+      "is adequately focused and organized",
+      "demonstrates sufficient control of language to express ideas with acceptable clarity",
+      "generally demonstrates control of the conventions of standard written English but may have some errors"
+     ]
+    },
+    {
+     "score": 3,
+     "summary": "A 3 response demonstrates some competence in addressing the specific task directions, in analyzing the issue, and in conveying meaning but is obviously flawed. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "is vague or limited in addressing the specific task directions and/or in presenting or developing a position on the issue",
+      "is weak in the use of relevant reasons or examples or relies largely on unsupported claims",
+      "is limited in focus and/or organization",
+      "has problems in language and sentence structure that result in a lack of clarity",
+      "contains occasional major errors or frequent minor errors in grammar, usage, or mechanics that can interfere with meaning"
+     ]
+    },
+    {
+     "score": 2,
+     "summary": "A 2 response largely disregards the specific task directions and/or demonstrates serious weaknesses in analytical writing. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "is unclear or seriously limited in addressing the specific task directions and/or in presenting or developing a position on the issue",
+      "provides few, if any, relevant reasons or examples in support of its claims",
+      "is poorly focused and/or poorly organized",
+      "has serious problems in language and sentence structure that frequently interfere with meaning",
+      "contains serious errors in grammar, usage, or mechanics that frequently obscure meaning"
+     ]
+    },
+    {
+     "score": 1,
+     "summary": "A 1 response demonstrates fundamental deficiencies in analytical writing. A typical response in this category exhibits ONE OR MORE of the following characteristics:",
+     "bullets": [
+      "provides little or no evidence of understanding the issue",
+      "provides little evidence of the ability to develop an organized response (e.g., is disorganized and/or extremely brief)",
+      "has severe problems in language and sentence structure that persistently interfere with meaning",
+      "contains pervasive errors in grammar, usage, or mechanics that result in incoherence"
+     ]
+    }
+   ],
+   "responses": [
+    {
+     "score": 6,
+     "essay": [
+      "The recommendation presents a view that I would agree is successful most of the time, but one that I cannot fully support due to the “all or nothing” impression it gives.",
+      "Certainly as an educator I agree fully that the best way to elicit positive response from students is to make use of students’ positive energy and then encourage actions that you would like to see repeated. It is human nature that we all want to be accepted and achieve on some level, and when people in authority provide feedback that we have done something well, the drive to repeat the action that was praised is bound to be particularly strong.",
+      "This blanket statement would obviously pay dividends in situations in which a teacher desires to have students repeat particular behaviors. For example, if an educator is attempting to teach students proper classroom etiquette, it would be appropriate to openly praise a student who raises his or her hand when wishing to speak or address the class. In such cases, the teacher may also help shape positive behaviors by ignoring a student who is trying to interject without approval from the teacher. In fact, the decision to ignore students who are exhibiting inappropriate behaviors of this type could work very well in this situation, as the stakes are not very high and the intended outcome can likely be achieved by such a method. However, it is important to note here that this tactic would only be effective in such a “low-stakes” situation, as when a student speaks without raising her hand first. As we will discuss below, ignoring a student who hits another student, or engages in more serious misbehaviors, would not be effective or prudent.",
+      "To expand on this point, it is important for teachers to be careful when working with the second half of this statement, only ignoring negative actions that are not serious. Take for instance a student who is misbehaving just by chatting with a fellow classmate. This student might not be presenting much of a problem and may be simply seeking attention. Ignoring the student might, in fact, be the best solution. Now assume the negative action is the improper administering of chemicals in a science experiment or the bullying of a fellow student. To ignore these negative actions would be absurd and negligent. Now you are allowing a problem to persist, one that could potentially lead to much bigger and more dangerous issues. In a more serious situation, addressing the negative actions quickly and properly could stop the problem it in its tracks. It is for reasons like this that I do not advocate the idea that a teacher can be successful by simply ignoring negative actions. I do, however, greatly support the idea that the central focus of teaching should be to build on and encourage positive actions. However, the author’s all-encompasing statement leaves too many negative possibilities for the classroom. Perhaps a better way to phrase this statement would be to say, “The best way to teach is to praise positive actions and ignore negative ones that are not debilitating to class efficiency or the safety of any individual”. Thus, in the original statement, there are indeed some good intentions, and there could be a lot of merit in adopting its basic principles. Data proves that positive support can substantially increase motivation and desire in students and contribute to positive achievements. In fact, most studies of teaching efficacy indicate that praising positive actions and ignoring negative ones can create a more stable and efficient classroom. It needs to be stressed, however, that this tool is only effective at certain levels of misbehavior. As mentioned above, when the behavior is precipitated by feelings of revenge, power or total self-worthlessness, this methodology will likely not work. It is likely to be very successful, however, when the drive behind the misbehavior is simple attention seeking. In many of these instances, if the teacher demonstrates clearly that inappropriate behavior does not result in the gaining of attention, students are more likely to seek attention by behaving properly. Should the student choose this path, then the ignoring has worked and when the positive behavior is exhibited, then the teacher can utilize the first part of the theory and support or praise this behavior. Now it is much more likely to be repeated. If the student does not choose this path and instead elects to raise the actions to a higher level that presents a more serious issue, then ignorance alone cannot work and other methods must be employed. In conclusion, one can appreciate the credo expressed in this instance, but surely we all can see the potential error of following it through to the extreme.",
+      "*NOTE: All responses are reproduced exactly as written, including errors, misspellings, etc., if any."
+     ],
+     "commentary": [
+      "This response receives a 6 for its well-articulated, insightful analysis of the issue. Rather than simply rejecting or accepting the prompt, the writer argues that the recommendation made by the prompt can often be true but is too “all or nothing” to be endorsed without qualification. The writer turns this idea into an insightful position by providing examples and evidence to fully and persuasively support its nuanced argument. The response offers nicely detailed situations that provide compelling support for a claim that the recommendation can, in fact, work. At the same time, it also highlights the recommendation’s limits using additional specific, detailed examples. Particularly persuasive is the fourth paragraph, in which the writer compares the impact of ignoring minor behavioral problems like talking in class to the potential costs of ignoring more serious issues like bullying. Thus, the writer recognizes that the prompt’s claim, as well as his/her own, is inevitably dependent on the specific context for its success or failure. Throughout the response, the writer demonstrates the ability to convey ideas fluently and precisely, using effective vocabulary and sentence variety. This sentence demonstrates the level of language facility seen throughout the response: “It is human nature that we all want to be accepted and achieve on some level, and when people in authority provide feedback that we have done something well, the drive to repeat the action that was praised is bound to be particularly strong.”"
+     ]
+    },
+    {
+     "score": 5,
+     "essay": [
+      "I partially agree with the statement “The best way to teach is to praise positive actions and ignore negative ones”. Children should be rewarded when they perform well; however, they should not be ignored for performing sub-optimally. For purposes of this essay, the term “actions” is defined as behaviors within the classroom. Utilizing positive reinforcements, such as tangible rewards, can be a good method to teach children. If the teacher praises children for actions that are desirable, then the children are more likely to repeat those actions. For example, a student who completes an assignment on time and does a good job is likely to want to do a good job on the next assignment if he gets positive feedback. Likewise, the children who are not currently engaging in the desirable actions may be more inclined to do so in order to recieve the positive reinforcement. Conversely, children should not be ignored for negative actions. If a child is not exhibiting appropriate behavior in the classroom, then it is the teacher’s responsibility to encourage the child to perform optimally. Ignoring something doesn’t make it go away, actions and consequences do. A student who is being disruptive in class will continue to be disruptive unless the teacher does something about it. However, the teacher’s actions need be appropriate.",
+      "Before the teacher attempts to modify a child’s behavior, the teacher needs to try and identify the reason behind the behavior. For instance, children who leave their seat often, stare in to space, or call out of turn may be initially viewed as having poor behavior. However, the teacher may suspect that the child has an attentional problem, and request that the child be tested. If the child does have an attentional problem, then the teacher can work with a related service, such as occupational therapy, to alter the classroom environment in order to cater to the needs of the child. For instance, the teacher could remove some of the stimulating bulliten board displays to make the room more calming to the child. If the child becomes more attentive in class then the teacher was able to assist the child without scorning them or ignoring them. The teacher met the needs of the child and created an enviornment to enable the child to optimally perform in the educational setting.",
+      "On the other hand, if the child is tested, and does not have any areas of concern that may be impacting the educational performance in the classroom, then the negative behavior may strictly be due to defiance. In such a case, the teacher still should not ignore the child, because the negative actions may hinder the learning opportunity for the remaining children in the class. As a result, a child who is being disruptive to the learning process of the class should be set apart from the class so that they do not receive the positive reinforcement of peer attention.",
+      "The teacher should not ignore the student who is misbehaving, but that does not mean that the teacher just needs to punish. It is better to address the child privately and make sure the child is aware of the negative actions. Once the child is aware, then the teacher should once again try to determine the reason why the child is behaving in a negative manner. Perhaps the child’s parents are in the middle of a divorce and the child is outwardly expressing his frustration in the classroom. Or the academic content of the class may not be challenging enough for the child and so he is misbehaving out of boredom. Whatever the reason behind the behavior, the key factor is that the teacher works with the child to try and identify it. Simply punnishing or ignoring the child would not solve the problem, whereas working to create a plan for success in the classroom would. Likewise, rather than punnishing and defeating the child, the teacher is working with and empowering the child; a much more positive outcome to the situation."
+     ],
+     "commentary": [
+      "This strong response presents a thoughtful and well-developed analysis of the issue. In this case the writer argues that teachers need to modify their approach based on context and observation, meaning that a blanket approach cannot be successful. The writer supports this position with relevant reasons and examples that present logically sound support. Note that the task instructions ask writers to discuss circumstances in which adopting the recommendation might or might not prove advantageous, and this response does that quite clearly. In the second paragraph, the writer gives an example of a student who completes an assignment on time and receives positive feedback, showing how the recommendation could prove advantageous. Other examples show circumstances in which adopting the recommendation would not be a good idea, and these various points are brought together to support the writer’s position that teachers have to look at the context of the situation and cannot rely on simply ignoring negative actions. This response also demonstrates facility with language, using appropriate vocabulary and sentence variety. Sentences like this one demonstrate the writer’s command of the conventions of standard written English: “If the child does have an attentional problem, then the teacher can work with a related service, such as occupational therapy, to alter the classroom environment in order to cater to the needs of the child.” There are some minor errors, but overall the response demonstrates strong control of language. Although the response is clearly stronger than a 4, which would simply present a clear position on the issue according to the task instructions, it does not reach the level of a 6 because it does not develop its points in a way that creates a cogent and insightful position. It does, however, present a generally thoughtful and well-developed analysis of the issue, leading to a score of 5."
+     ]
+    },
+    {
+     "score": 4,
+     "essay": [
+      "I absolutely agree with the first section of the statement above, but find fault with the latter half.",
+      "There is no doubt that praising positive actions is an excellent way to teach, and this method is most clearly exemplified when dealing with much younger children. When a young child is learning basic social behavior, it is imperative that he is encouraged to repeat positive actions. For example, when a child voluntarily shares his toys with another, if a teacher rewards that behavior, the child will understand that this is a good practice, and likely share again in the future.",
+      "In contrast, if a child displays negative behavior by stealing a toy away from his playmate, it would be very dangerous for the teacher to ignore this action, for then the child may never recognize that this is unacceptable. In this instance, the child has not learned from the situation at all. So what should a teacher do when faced with such a situation? Punishment is not necessarily the optimal choice, either. Rather than scolding a child for mistreating his playmates and sending him off to a corner, a teacher would be wise to demonstrate the positive alternative: to share his toys instead. In this case, rather than ignoring or punishing negative actions, the teacher could seize the opportunity to reinforce positive behavior, and further extend the child’s learning experience.",
+      "In summary, positive reinforcement is certainly an excellent method for teaching new methods or behaviors, and encouraging a student to learn more. However to ignore, rather than recognize and correct negative actions, would be a disservice to the student, for he would not know what conclusion to draw from his action."
+     ],
+     "commentary": [
+      "This adequate response follows the task directions and presents a clear position on the issue, supporting its main points with examples that are relevant, if only adequately developed. For instance, the discussion in the second paragraph of a teacher who reinforces the positive behavior of sharing a toy is certainly relevant and on-task (i.e., it describes a situation in which adopting the recommendation would be advantageous). However, the development of this idea does not lead to generally thoughtful or insightful analysis. Instead, it is simply presented as an example. In addition to its adequate development, this response also demonstrates sufficient control of the conventions of standard written English, and its main points are made with reasonable clarity. Some of the sentences demonstrate the syntactical variety normally seen in responses that receive higher scores (e.g., “Rather than scolding a child for mistreating his playmates and sending him off to a corner, a teacher would be wise to demonstrate the positive alternative: to share his toys instead”). However, the overall use of language in this response is merely adequate."
+     ]
+    },
+    {
+     "score": 3,
+     "essay": [
+      "Praising postive actions and ignoring negative ones may be a good way to teach but not the best way. Ignoring negative actions could negate all the postive praises given to an individual, having negative actions go unchecked will lead to habits formed that would overwhelm any positive actions that are complementary to an individuals learning process. For instance, in a classroom full of eight-year old kids; if during a lesson they are making alot of noise, having this ignored would tell the kids that it is okay to be disruptive in class. The individuals in that class would develop the habit of being distruptive hence hindering their learning process. However if the eight-year old kids were immediately told to stop the distruption then it will never become a habit. Every action needs to have a related consequence follow in a learning environment. In the early years of education, the way they are taught becomes a lifelong habit which is hard to change in later years. If negative actions are not assigned a related consequences then teaching becomes ineffective because the students negative actions soon diminish the ability to do well in school. The way postive actions are dealt with should also be done with negative actions rather than being ignored which in turn enhance the learning environment."
+     ],
+     "commentary": [
+      "Although this response has minor errors in its use of language, it receives a 3 primarily for insufficient overall clarity and for the limited development of its claims. The writer does make an attempt to follow the specific task instructions, and the response has a clear position on the issue, arguing that it is not acceptable practice to ignore negative behaviors. However, the development provided in support of that position is limited. The example of “eight-year old kids” making noise during class can be seen as a situation in which following the recommendation is not advantageous. Instead of developing that point in a logically persuasive way, however, the writer proceeds to make an unsupported assertion about the consequences of following the recommendation (“The individuals in that class would develop the habit of being distruptive hence hindering their learning process”). Another issue that keeps this response at the 3 level is a lack of clarity, particularly in the final paragraph. The final sentence demonstrates this problem with clarity: “The way postive actions are dealt with should also be done with negative actions rather than being ignored which in turn enhance the learning environment.” Problems with the structure of this sentence make it difficult to determine the writer’s intended meaning."
+     ]
+    },
+    {
+     "score": 2,
+     "essay": [
+      "I don’t agree with this afirmation, because I think is very important to praise positive actions but also is important to sign the negative ones, in some situations acording to the students level, grade, etc., could be better to put more emphasis in the positive things and if not ignore all the negative ones, do not give so much importance to them, this is particulary important in the lowest levels of education.",
+      "But in another situations you must sign the negative things, trying to avoid that the students can repeat them in the future, because I think you can also learn from the negative situations.",
+      "For this reason I believe that is important to praise positive actions but is also important no to ignore the negative ones, because in a given situation the student can have troubles recongnising what is right and what is wrong. And finally as a conclusion I think that the best way to teach is combination of praise positive things but also to sign the negative ones."
+     ],
+     "commentary": [
+      "This response clearly fits several characteristics of a 2, as defined by the scoring guide. It is seriously limited in its development, organization, and focus. The response repeats itself rather than developing any of its statements, pointing to an inability to organize a response capable of supporting any specific claims with relevant reasons or examples. Additionally, serious language control problems frequently interfere with meaning. Thus, even though the writer does seem to be making an attempt to respond to the specific task instructions, the response merits a score of 2."
+     ]
+    },
+    {
+     "score": 1,
+     "essay": [
+      "Write a response in which you disuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position. Author says that The best way to teach is to praise positive actions and ignore negative ones. I agree to this recommendation. Explaining, I strongly believe that the best way to teach is not to praise positive action and ignore negative ones but is makeing everyone to be a good ones. Specific crimstances lead me which adopting the recommendation as the following: First, we will lost the good children who have negative maner if we ignore them. Children are future, not all. Praise in negative should not be, teaching to children to best way. I strongly believe adopting this recommeindation would be not advantages. second, negative ones in today may be a great people in the future. Not only ones behave do worse they are teenage. Teenage in today is not easy for all! Negative ones can not better, if only prainse positive actions, ignore negativeone. Negative ones may not positive be having, but if we praise them only, they not think they should be positive person later. conclusion, specific circumstances are which adopting the recommendation would not be advantage, I am not agree to the the recommendation. Ignore negative manor when they will not be positive behavrio in futre. But they can, if do not ignore them. we should not ignor negative person but should make them think that they can be a good man future like positive person."
+     ],
+     "commentary": [
+      "This response has severe and pervasive problems in language and sentence structure that, as stated in the scoring guide, consistently interfere with meaning and result in incoherence. The response begins by repeating the prompt, but then the severe problems with language control and organization undermine any evidence of the ability to understand the prompt or to present and develop a clear position. For example, it is not clear what the writer means by the claim that the best way to teach is “makeing everyone to be a good ones.” Severe problems with language control in that sentence and throughout the response prevent it from developing a coherent position on the issue or responding to the specific task instructions. Although the writer makes an attempt at organization, with points marked as first, second, and conclusion, the response actually exhibits little or no evidence of the ability to develop any potential understanding of the prompt into a logical position on the issue."
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

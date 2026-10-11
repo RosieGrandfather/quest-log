@@ -1,0 +1,75 @@
+{
+ "id": "gre-q",
+ "title": "GRE Quant 官方练习题：7 套 Practice Set",
+ "order": 17,
+ "order_note": "选修，申请准备：官方 Quant 真题 150 道，算术 / 代数 / 几何 / 数据分析各一套，另有 3 套混合",
+ "tier": "elective",
+ "tags": [
+  "GRE"
+ ],
+ "units": [
+  {
+   "id": "u01-ar",
+   "title": "算术专题（19 题）",
+   "en": "Quantitative Reasoning — Arithmetic",
+   "minutes": 35,
+   "file": "u01-ar.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u02-al",
+   "title": "代数专题（17 题）",
+   "en": "Quantitative Reasoning — Algebra",
+   "minutes": 30,
+   "file": "u02-al.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u03-ge",
+   "title": "几何专题（13 题）",
+   "en": "Quantitative Reasoning — Geometry",
+   "minutes": 25,
+   "file": "u03-ge.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u04-da",
+   "title": "数据分析专题（26 题）",
+   "en": "Quantitative Reasoning — Data Analysis",
+   "minutes": 50,
+   "file": "u04-da.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u05-m1",
+   "title": "混合 · 第 1 套（25 题）",
+   "en": "Quantitative Reasoning — Mixed Practice Set 1",
+   "minutes": 45,
+   "file": "u05-m1.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u06-m2",
+   "title": "混合 · 第 2 套（25 题）",
+   "en": "Quantitative Reasoning — Mixed Practice Set 2",
+   "minutes": 45,
+   "file": "u06-m2.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u07-m3",
+   "title": "混合 · 第 3 套（25 题）",
+   "en": "Quantitative Reasoning — Mixed Practice Set 3",
+   "minutes": 45,
+   "file": "u07-m3.json",
+   "practice": true,
+   "hasQuiz": false
+  }
+ ]
+}

@@ -7,6 +7,8 @@ import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { wireVocabMarks } from './vocab-marks.js';
 import { wirePractice } from './practice.js';
+import { wireQset } from './qset.js';
+import { wireEssay } from './essay.js';
 import { startResume, stopResume, clearResume } from './resume.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
@@ -192,6 +194,8 @@ async function renderUnit(cid, uid){
   if(!unit.practice) renderMath(view());     // 练习套题是纯英文原文，不做公式排版
   wireVocab(document.querySelector('.lesson'));
   wirePractice(document.querySelector('.lesson'), course, unit);
+  wireQset(document.querySelector('.lesson'), course, unit);
+  wireEssay(document.querySelector('.lesson'), course, unit);
   wireVocabMarks(document.querySelector('.lesson'), course, unit);
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());

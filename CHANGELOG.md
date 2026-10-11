@@ -5,6 +5,16 @@
 格式：
 
 ```
+## 2026-10-11 — 新课 gre-aw：GRE 写作官方练习（Issue 3 题 + Argument 3 题）
+- 新课 `gre-aw`（选修，tags: GRE），6 节，每节一道 ETS 官方作文题（官方指南的 Sample 题 + 两套模考的作文题），每题带官方评分标准、6–1 分各一篇官方样文和阅卷评语（英文原文，由 `tools/course/grw/extract.py` 从 PDF 文本层抽出）；官方指南里没有 ETS 网站上公开的完整题库，所以只有这 6 题
+- 新 block 类型 `gre-essay`：题目 + 30 分钟计时（可选，超时不锁）+ 打字区（字数统计，停手 1.2 秒自动保存到本机和云端，云端存在 `studyNotes` 集合的 `<课>__<节>__essay` 文档，和每节笔记分开）→ 点「写完了」后才显示评分标准、5 分标准自查清单、6–1 分样文（标签切换）和评语；少于 100 词会先提醒一次
+- 文件：`js/study/essay.js`、`js/data/study.js`（saveEssay / loadEssay）、`js/study/render-content.js`、`js/study/views.js`、`js/study/practice.js`、`css/study.css`、`tools/course/grw/`、`tools/course/validate.py`、`courses/index.json`
+
+## 2026-10-11 — 新课 gre-q：GRE Quant 官方练习题（7 套，150 题）
+- 新课 `gre-q`（选修，tags: GRE）：题目、解析取自 ETS《Official GRE Quantitative Reasoning Practice Questions》，因为公式和图表多，直接用 PDF 截图（`courses/gre-q/img/<套>/q*.png` 题目、`e*.png` 解析、`f*.png` 数据分析图表），答案来自原书答案表；分 算术 / 代数 / 几何 / 数据分析 4 个专题套 + 混合 3 套（原书没标难度，不编难度）
+- 新 block 类型 `gre-qset`：题图 + 作答区（数量比较 A–D、单选、多选「全对才算对」、数值填空、分数填空：分子/分母两个框，等值分数算对）；做完所有题 → 提交 → 才显示对错、正确答案、官方解析截图和本套总结；成绩复用 `studyProgress` 的 practice* 字段（作答存成字符串数组）
+- 文件：`js/study/qset.js`、`js/core/qgrade.js`（判分，`tests/qgrade.test.js`）、`js/study/render-content.js`、`js/study/views.js`、`js/study/practice.js`（选择器排除 .qset）、`css/study.css`、`tools/course/grq/`（build.py、sets.json、qset_check.py、extract/）、`tools/course/validate.py`、`courses/index.json`
+
 ## 2026-10-11 — 课程列表的卡片不再显示课程简介（subtitle）
 - 首页课程卡片只显示：必修/选修标签、第 N 步、标题、标签、进度；那段长简介不看就去掉了。`course.json` 的 `subtitle` 现在可写可不写，**以后新课不用写**（进入课程页时如果有才显示）
 - 文件：`js/study/views.js`

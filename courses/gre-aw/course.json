@@ -1,0 +1,66 @@
+{
+ "id": "gre-aw",
+ "title": "GRE 写作官方练习：Issue 与 Argument 各 3 题",
+ "order": 18,
+ "order_note": "选修，申请准备：每题限时 30 分钟，写完对照官方评分标准、6–1 分样文和阅卷评语",
+ "tier": "elective",
+ "tags": [
+  "GRE"
+ ],
+ "units": [
+  {
+   "id": "u01-issue-sample",
+   "title": "Issue 1 · 技术依赖与独立思考",
+   "en": "Analyze an Issue — Technology and thinking for oneself",
+   "minutes": 45,
+   "file": "u01-issue-sample.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u02-issue-t1",
+   "title": "Issue 2 · 表扬好行为、忽略坏行为",
+   "en": "Analyze an Issue — Praise positive actions, ignore negative ones",
+   "minutes": 45,
+   "file": "u02-issue-t1.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u03-issue-t2",
+   "title": "Issue 3 · 企业的社会责任与利润",
+   "en": "Analyze an Issue — Corporate responsibility",
+   "minutes": 45,
+   "file": "u03-issue-t2.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u04-arg-sample",
+   "title": "Argument 1 · Mason 河与河滨设施预算",
+   "en": "Analyze an Argument — Mason River",
+   "minutes": 45,
+   "file": "u04-arg-sample.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u05-arg-t1",
+   "title": "Argument 2 · Tertia 岛的育儿研究",
+   "en": "Analyze an Argument — Tertia island",
+   "minutes": 45,
+   "file": "u05-arg-t1.json",
+   "practice": true,
+   "hasQuiz": false
+  },
+  {
+   "id": "u06-arg-t2",
+   "title": "Argument 3 · Movies Galore 缩减营业开支",
+   "en": "Analyze an Argument — Movies Galore",
+   "minutes": 45,
+   "file": "u06-arg-t2.json",
+   "practice": true,
+   "hasQuiz": false
+  }
+ ]
+}

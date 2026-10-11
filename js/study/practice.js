@@ -70,7 +70,7 @@ const explainHTML = (it, sel, ok)=>{
 };
 
 export function wirePractice(root, course, unit){
-  const box = root && root.querySelector('.gset');
+  const box = root && root.querySelector('.gset:not(.qset):not(.aw)');
   if(!box) return;
   const b = unit.blocks.find(x=> x.type === 'gre-set');
   const items = b.items;

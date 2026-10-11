@@ -1,0 +1,175 @@
+{
+ "id": "u03-ge",
+ "title": "几何专题（13 题）",
+ "en": "Quantitative Reasoning — Geometry",
+ "minutes": 25,
+ "practice": true,
+ "objectives": [
+  "独立做完 13 道 ETS 官方 Quant 真题，**全部做完再点提交**（提交前不显示对错）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己重算一遍，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-q/img/",
+   "source": "ETS《Official GRE Quantitative Reasoning Practice Questions》· 几何",
+   "items": [
+    {
+     "n": 1,
+     "kind": "qc",
+     "img": "ge/q1.png",
+     "w": 1017,
+     "exp": "ge/e1.png",
+     "ew": 1163,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "qc",
+     "img": "ge/q2.png",
+     "w": 1112,
+     "exp": "ge/e2.png",
+     "ew": 1154,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "qc",
+     "img": "ge/q3.png",
+     "w": 1065,
+     "exp": "ge/e3.png",
+     "ew": 1179,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "qc",
+     "img": "ge/q4.png",
+     "w": 1010,
+     "exp": "ge/e4.png",
+     "ew": 1175,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "qc",
+     "img": "ge/q5.png",
+     "w": 1159,
+     "exp": "ge/e5.png",
+     "ew": 1176,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "mc1",
+     "img": "ge/q6.png",
+     "w": 1149,
+     "exp": "ge/e6.png",
+     "ew": 1140,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "mc1",
+     "img": "ge/q7.png",
+     "w": 743,
+     "exp": "ge/e7.png",
+     "ew": 1177,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "mc1",
+     "img": "ge/q8.png",
+     "w": 1171,
+     "exp": "ge/e8.png",
+     "ew": 1157,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "mc1",
+     "img": "ge/q9.png",
+     "w": 1144,
+     "exp": "ge/e9.png",
+     "ew": 1179,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 10,
+     "kind": "mc1",
+     "img": "ge/q10.png",
+     "w": 1131,
+     "exp": "ge/e10.png",
+     "ew": 1171,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 11,
+     "kind": "mcn",
+     "img": "ge/q11.png",
+     "w": 1142,
+     "exp": "ge/e11.png",
+     "ew": 1172,
+     "nopt": 8,
+     "ans": [
+      1,
+      2,
+      4,
+      6
+     ]
+    },
+    {
+     "n": 12,
+     "kind": "mcn",
+     "img": "ge/q12.png",
+     "w": 1108,
+     "exp": "ge/e12.png",
+     "ew": 1173,
+     "nopt": 4,
+     "ans": [
+      0,
+      2,
+      3
+     ]
+    },
+    {
+     "n": 13,
+     "kind": "ne",
+     "img": "ge/q13.png",
+     "w": 771,
+     "exp": "ge/e13.png",
+     "ew": 1179,
+     "ans": "112.5"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

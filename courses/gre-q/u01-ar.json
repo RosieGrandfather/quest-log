@@ -1,0 +1,236 @@
+{
+ "id": "u01-ar",
+ "title": "算术专题（19 题）",
+ "en": "Quantitative Reasoning — Arithmetic",
+ "minutes": 35,
+ "practice": true,
+ "objectives": [
+  "独立做完 19 道 ETS 官方 Quant 真题，**全部做完再点提交**（提交前不显示对错）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己重算一遍，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-q/img/",
+   "source": "ETS《Official GRE Quantitative Reasoning Practice Questions》· 算术",
+   "items": [
+    {
+     "n": 1,
+     "kind": "qc",
+     "img": "ar/q1.png",
+     "w": 1112,
+     "exp": "ar/e1.png",
+     "ew": 1175,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "qc",
+     "img": "ar/q2.png",
+     "w": 1067,
+     "exp": "ar/e2.png",
+     "ew": 918,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "qc",
+     "img": "ar/q3.png",
+     "w": 1082,
+     "exp": "ar/e3.png",
+     "ew": 1179,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "qc",
+     "img": "ar/q4.png",
+     "w": 1010,
+     "exp": "ar/e4.png",
+     "ew": 1149,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "qc",
+     "img": "ar/q5.png",
+     "w": 1010,
+     "exp": "ar/e5.png",
+     "ew": 1179,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "qc",
+     "img": "ar/q6.png",
+     "w": 1146,
+     "exp": "ar/e6.png",
+     "ew": 1143,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "qc",
+     "img": "ar/q7.png",
+     "w": 1112,
+     "exp": "ar/e7.png",
+     "ew": 1167,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "mc1",
+     "img": "ar/q8.png",
+     "w": 1197,
+     "exp": "ar/e8.png",
+     "ew": 1158,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "mc1",
+     "img": "ar/q9.png",
+     "w": 1187,
+     "exp": "ar/e9.png",
+     "ew": 1148,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 10,
+     "kind": "mc1",
+     "img": "ar/q10.png",
+     "w": 1187,
+     "exp": "ar/e10.png",
+     "ew": 1177,
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 11,
+     "kind": "mc1",
+     "img": "ar/q11.png",
+     "w": 1195,
+     "exp": "ar/e11.png",
+     "ew": 1174,
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 12,
+     "kind": "mc1",
+     "img": "ar/q12.png",
+     "w": 1195,
+     "exp": "ar/e12.png",
+     "ew": 1165,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 13,
+     "kind": "mc1",
+     "img": "ar/q13.png",
+     "w": 1168,
+     "exp": "ar/e13.png",
+     "ew": 1160,
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 14,
+     "kind": "mcn",
+     "img": "ar/q14.png",
+     "w": 1171,
+     "exp": "ar/e14.png",
+     "ew": 1177,
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 15,
+     "kind": "mcn",
+     "img": "ar/q15.png",
+     "w": 1194,
+     "exp": "ar/e15.png",
+     "ew": 1179,
+     "nopt": 3,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 16,
+     "kind": "mcn",
+     "img": "ar/q16.png",
+     "w": 1198,
+     "exp": "ar/e16.png",
+     "ew": 1175,
+     "nopt": 8,
+     "ans": [
+      2,
+      7
+     ]
+    },
+    {
+     "n": 17,
+     "kind": "ne",
+     "img": "ar/q17.png",
+     "w": 1071,
+     "exp": "ar/e17.png",
+     "ew": 1162,
+     "ans": "12"
+    },
+    {
+     "n": 18,
+     "kind": "ne",
+     "img": "ar/q18.png",
+     "w": 1174,
+     "exp": "ar/e18.png",
+     "ew": 1177,
+     "ans": "7"
+    },
+    {
+     "n": 19,
+     "kind": "ne",
+     "img": "ar/q19.png",
+     "w": 1216,
+     "exp": "ar/e19.png",
+     "ew": 1172,
+     "ans": "2500"
+    }
+   ]
+  }
+ ],
+ "references": []
+}
