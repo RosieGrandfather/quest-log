@@ -2,16 +2,20 @@
    做完所有题 → 点「提交」→ 才显示每题对错 + 官方解析（截图）+ 本套总结。判分在 js/core/qgrade.js。 */
 import { T } from './state.js';
 import { escapeHTML } from '../core/html.js';
-import { QKIND_LABEL, QC_TEXT, isAnswered, gradeItem, summarize, answerText, pickedText } from '../core/qgrade.js';
+import { QKIND_LABEL, QC_TEXT, isAnswered, gradeItem, summarize, answerText, pickedText, isMulti, isGraded } from '../core/qgrade.js';
 import { unitKey } from '../core/study.js';
 import { submitPractice } from '../data/study.js';
 import { showToast } from '../ui/common.js';
 
 const L = 'ABCDEFGH';
 const img = (b, p, w, cls = '')=> `<img class="qimg ${cls}" src="${escapeHTML(b.base + p)}" ${w ? `style="width:${Math.round(w / 2)}px"` : ''} alt="" loading="lazy">`;
+const BLK = ['(i)', '(ii)', '(iii)'];
 const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选一项'
   : it.kind === 'mc1' ? '选一项'
   : it.kind === 'mcn' ? '选出所有正确的选项（可能不止一个）'
+  : it.kind === 'se' ? '选两个答案：填进去句子通顺，而且两个句子意思相近（选项自上而下是 A–F）'
+  : it.kind === 'tc' ? `${it.blanks} 个空，每个空各选一项（每列自上而下是 A、B、C）`
+  : it.kind === 'ss' ? '在原文里找出符合题意的那一句；下面写它的序号或开头几个词。这类题交卷后对照答案自评，不计入分数'
   : it.frac ? '分数作答：上面填分子，下面填分母' : '在框里填一个数（可以带小数点；逗号、% 不用管）';
 
 function controlsHTML(it, i){
@@ -20,7 +24,13 @@ function controlsHTML(it, i){
       ? `<div class="qne frac"><input type="text" inputmode="numeric" autocomplete="off" data-part="0" aria-label="分子"><span class="qbar"></span><input type="text" inputmode="numeric" autocomplete="off" data-part="1" aria-label="分母"></div>`
       : `<div class="qne"><input type="text" inputmode="decimal" autocomplete="off" aria-label="答案"></div>`;
   }
-  const type = it.kind === 'mcn' ? 'checkbox' : 'radio';
+  if(it.kind === 'ss') return `<div class="qne ss"><input type="text" autocomplete="off" placeholder="例：第 3 句 / But, in addition…" aria-label="你选的句子"></div>`;
+  if(it.kind === 'tc'){
+    return `<div class="qtc">${Array.from({length: it.blanks}, (_, j)=>
+      `<div class="qblank"><span class="qblank-no">空 ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
+        `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span><span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
+  }
+  const type = isMulti(it) ? 'checkbox' : 'radio';
   const n = it.kind === 'qc' ? 4 : it.nopt;
   return `<div class="qopts ${it.kind}">${Array.from({length: n}, (_, k)=>
     `<label class="qopt" data-k="${k}"><input type="${type}" name="q${i}" value="${k}"><span class="qletter">${L[k]}</span>${it.kind === 'qc' ? `<span class="qtext">${QC_TEXT[k]}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div>`;
@@ -36,7 +46,7 @@ function itemHTML(it, i, b){
   }
   return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
-    ${img(b, it.img, it.w, 'qstem')}
+    ${(it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('')}
     <div class="gq-hint">${hintOf(it)}</div>
     ${controlsHTML(it, i)}
     <div class="gq-explain" hidden></div>
@@ -45,7 +55,7 @@ function itemHTML(it, i, b){
 
 export function qsetHTML(b){
   return `<div class="gset qset" data-n="${b.items.length}">
-    <div class="gset-source">来源：${escapeHTML(b.source)}（官方原题与解析的截图，仅供个人学习；原书没有标难度）</div>
+    <div class="gset-source">来源：${escapeHTML(b.source)}${escapeHTML(b.noteTail ?? '（官方原题与解析的截图，仅供个人学习；原书没有标难度）')}</div>
     <div class="gset-prev" hidden></div>
     ${b.items.map((it, i)=> itemHTML(it, i, b)).join('')}
     <div class="gbar" id="gbar"><span class="gbar-count"></span><button type="button" class="btn-primary gbar-submit">提交</button></div>
@@ -66,14 +76,22 @@ export function wireQset(root, course, unit){
 
   const readOne = i => {
     const it = items[i], sec = box.querySelector(`#gq-${i}`);
-    if(it.kind === 'ne'){
+    if(it.kind === 'tc'){
+      answers[i] = Array.from({length: it.blanks}, (_, j)=> { const c = sec.querySelector(`input[name="q${i}_${j}"]:checked`); return c ? c.value : ''; }).join(',');
+      if(/^,*$/.test(answers[i])) answers[i] = '';
+    } else if(it.kind === 'ss') answers[i] = sec.querySelector('.qne input').value.trim();
+    else if(it.kind === 'ne'){
       const ins = [...sec.querySelectorAll('.qne input')].map(x=> x.value.trim());
       answers[i] = it.frac ? (ins[0] || ins[1] ? `${ins[0]}/${ins[1]}` : '') : ins[0];
     } else answers[i] = [...sec.querySelectorAll('input:checked')].map(x=> x.value).join(',');
   };
   const paint = ()=> items.forEach((it, i)=>{
     const sec = box.querySelector(`#gq-${i}`), a = answers[i] || '';
-    if(it.kind === 'ne'){
+    if(it.kind === 'tc'){
+      const p = a.split(',');
+      sec.querySelectorAll('input').forEach(x=>{ const j = Number(x.name.split('_')[1]); x.checked = p[j] === x.value; });
+    } else if(it.kind === 'ss') sec.querySelector('.qne input').value = a;
+    else if(it.kind === 'ne'){
       const ins = sec.querySelectorAll('.qne input');
       if(it.frac){ const [p, q] = a.split('/'); ins[0].value = p || ''; ins[1].value = q || ''; } else ins[0].value = a;
     } else {
@@ -102,9 +120,19 @@ export function wireQset(root, course, unit){
     items.forEach((it, i)=>{
       const sec = box.querySelector(`#gq-${i}`), a = answers[i] || '';
       const ok = gradeItem(it, a), blank = !isAnswered(it, a);
-      sec.classList.add(ok ? 'right' : 'wrong');
-      sec.querySelector('.gq-verdict').textContent = ok ? '✓ 答对' : blank ? '✗ 没作答' : '✗ 答错';
-      if(it.kind !== 'ne'){
+      if(isGraded(it)){
+        sec.classList.add(ok ? 'right' : 'wrong');
+        sec.querySelector('.gq-verdict').textContent = ok ? '✓ 答对' : blank ? '✗ 没作答' : '✗ 答错';
+      } else sec.querySelector('.gq-verdict').textContent = '对照答案自评';
+      if(it.kind === 'tc'){
+        const got = a.split(',');
+        sec.querySelectorAll('.qopt').forEach(lab=>{
+          const k = Number(lab.dataset.k), j = Number(lab.dataset.b), isC = it.ans[j] === k, picked = got[j] === String(k);
+          lab.classList.toggle('correct', isC);
+          lab.classList.toggle('chosen-wrong', picked && !isC);
+          lab.querySelector('.gopt-tag').textContent = isC && picked ? '✓ 你选对了' : isC ? '正确答案' : picked ? '你的选择' : '';
+        });
+      } else if(it.kind !== 'ne' && it.kind !== 'ss'){
         const got = a.split(',');
         sec.querySelectorAll('.qopt').forEach(lab=>{
           const k = Number(lab.dataset.k), isC = it.ans.includes(k), picked = got.includes(String(k));
@@ -115,7 +143,7 @@ export function wireQset(root, course, unit){
       }
       const ex = sec.querySelector('.gq-explain');
       ex.innerHTML = `<div class="gq-answer"><span>正确答案：<b>${escapeHTML(answerText(it))}</b></span><span class="${ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
-        <div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>`;
+        ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });
     $('#gbar').hidden = true;
@@ -126,6 +154,8 @@ export function wireQset(root, course, unit){
 
   function summaryHTML(sum){
     const kinds = Object.entries(sum.byKind).map(([k, v])=> `<div class="gsum-row"><span>${QKIND_LABEL[k]}</span><b>${v.correct} / ${v.total}</b><span class="gsum-pct">${Math.round(v.correct / v.total * 100)}%</span></div>`).join('');
+    const selfc = sum.selfCheck && sum.selfCheck.length
+      ? `<div class="gsum-card"><div class="gsum-sub">选句子题（自评，不计分）</div>${sum.selfCheck.map(i=> `<button type="button" class="gsum-chip" data-goto="${i}">第 ${items[i].n} 题</button>`).join('')}</div>` : '';
     const wrongs = sum.wrong.length
       ? `<div class="gsum-wrong"><div class="gsum-sub">错题（点一下跳到那题）</div>${sum.wrong.map(i=> `<button type="button" class="gsum-chip" data-goto="${i}">第 ${items[i].n} 题</button>`).join('')}</div>`
       : '<div class="gsum-allright">🎉 全对！</div>';
@@ -134,6 +164,7 @@ export function wireQset(root, course, unit){
       <div>本套正确率 ${sum.pct}%${sum.blank ? ` · 有 ${sum.blank} 题没作答（算错）` : ''}</div></div>
       <div class="gsum-card"><div class="gsum-sub">分题型</div>${kinds}</div>
       ${wrongs}
+      ${selfc}
       <div class="gsum-btns">
         ${sum.wrong.length ? '<button type="button" class="btn-ghost" data-act="only-wrong">只看错题</button>' : ''}
         <button type="button" class="btn-primary" data-act="redo">重做本套</button>

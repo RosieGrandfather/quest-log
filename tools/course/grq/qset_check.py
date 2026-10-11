@@ -21,10 +21,20 @@ def validate_qset(unit, cdir):
     for i, it in enumerate(items, 1):
         w = f'{uid} 第 {i} 题'
         kind = it.get('kind'); ans = it.get('ans')
-        if kind not in ('qc', 'mc1', 'mcn', 'ne'): e.append(f'{w}: kind 不对'); continue
-        need(it.get('img'), w); need(it.get('exp'), w)
+        if kind not in ('qc', 'mc1', 'mcn', 'ne', 'se', 'tc', 'ss'): e.append(f'{w}: kind 不对'); continue
+        for p in (it.get('imgs') or [it.get('img')]): need(p, w)
+        if it.get('exp') is not None: need(it.get('exp'), w)
         if it.get('fig'): need(it['fig'], w)
-        if kind == 'ne':
+        if kind == 'ss':
+            if not str(it.get('ansText', '')).strip(): e.append(f'{w}: 选句子题没有 ansText')
+        elif kind == 'tc':
+            nb = it.get('blanks')
+            if nb not in (2, 3): e.append(f'{w}: 填空数 blanks 应为 2 或 3')
+            elif not isinstance(ans, list) or len(ans) != nb or any((not isinstance(x, int)) or not 0 <= x < 3 for x in ans): e.append(f'{w}: 多空填空答案应为 {nb} 个 0–2 的下标')
+        elif kind == 'se':
+            if it.get('nopt') != 6: e.append(f'{w}: 选两个应有 6 个选项')
+            if not isinstance(ans, list) or len(ans) != 2 or len(set(ans)) != 2 or any((not isinstance(x, int)) or not 0 <= x < 6 for x in ans): e.append(f'{w}: 选两个答案应为 2 个 0–5 的下标')
+        elif kind == 'ne':
             if not isinstance(ans, str) or not ans.strip(): e.append(f'{w}: 数值题没有答案')
             if it.get('frac') and '/' not in str(ans): e.append(f'{w}: 分数题答案应为 a/b')
         else:

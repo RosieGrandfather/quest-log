@@ -5,6 +5,14 @@
 格式：
 
 ```
+## 2026-10-11 — 新课 gre-vx：GRE Verbal 2025 年真题回忆（25 套 · 50 个 Section）
+- 新课 `gre-vx`（选修，tags: GRE）：数据来自 `GRE-main/2025年1–4月份真题` 里 25 份 PDF（逐鹿留学整理的考场截屏），每套有 2 个 Verbal section（12 题 + 15 题），每个 section 一节，共 50 节、674 题；答案取自每份 PDF 末页的答案表（目视录入），没有官方解析
+- `gre-qset` 新增题型：`se` 选两个（6 选项，刚好选对两个）、`tc` 多空填空（2–3 个空，每空 3 选 1，按顺序全对才算对，作答存成 "2,0,1"）、`ss` 选句子（网页里没法点选，写序号或开头几个词，交卷后对照答案自评，**不计入总分**，单独列出）；一题可以有两屏图（`imgs`：长阅读原文往下滚动后的画面）；没有 `exp` 就不显示解析
+- 图片：每页去掉页眉（页码/计时器/按钮）后转 WebP（宽 ≤1000），共约 26MB（`courses/gre-vx/img/<套>/<section>-<题号>.webp`）；生成：`tools/course/grvx/build.py <逐页 PNG 目录>`（`data.json` 是题号/题型/答案/页码）
+- 已知问题：①2月第三套 Section2 的 PDF 里缺第 5 题的截图，这节只有 11 题；②1 月 15 日是手机拍屏，清晰度较差，个别图顶部残留一点计时器；③答案是第三方整理的，我抽查 16 题有 15 题一致，另有疑似错误：1月15日 Verbal1 第 3 题（空 iii 答案表是 A，按文意应是 B）、1月1日 Verbal1 第 3 题存疑；④没有难度标注
+- 版权提醒：这些是 ETS 考题的考后回忆截图，放到公开的 GitHub Pages 有版权/公开可见的风险，自己决定是否把 `courses/gre-vx/` 提交到公开仓库
+- 文件：`js/core/qgrade.js`（`tests/qgrade.test.js` 增加 se/tc/ss 用例，共 60 个测试）、`js/study/qset.js`、`css/study.css`、`tools/course/grq/qset_check.py`、`tools/course/grvx/`、`courses/gre-vx/`、`courses/index.json`
+
 ## 2026-10-11 — gre-aw 去掉 3 个 Argument 单元（只留 Issue）
 - ETS 官网 Analytical Writing 页面写明：写作只有一篇 30 分钟的 "Analyze an Issue"，Argument 已不考。`tools/course/grw/build.py` 只生成 3 个 Issue 单元；`essays.json` 里 Argument 数据保留但不用。旧的 `courses/gre-aw/u04-arg-sample.json`、`u05-arg-t1.json`、`u06-arg-t2.json` 已不被 course.json 引用，可以手动删除
 - ETS 还公布了完整的 Issue 题库（官网 Analytical Writing 页面的 "Issue Topic pool"），以后可以从里面补题
