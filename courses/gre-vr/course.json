@@ -17,8 +17,7 @@
    "file": "u01-rc-easy.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "easy",
-   "covers": "9 题 · 难度：低（照官方原文标注）"
+   "difficulty": "easy"
   },
   {
    "id": "u02-rc-med",
@@ -28,8 +27,7 @@
    "file": "u02-rc-med.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "medium",
-   "covers": "11 题 · 难度：中（照官方原文标注）"
+   "difficulty": "medium"
   },
   {
    "id": "u03-rc-hard",
@@ -39,8 +37,7 @@
    "file": "u03-rc-hard.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "hard",
-   "covers": "10 题 · 难度：高（照官方原文标注）"
+   "difficulty": "hard"
   },
   {
    "id": "u04-tc-easy",
@@ -50,8 +47,7 @@
    "file": "u04-tc-easy.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "easy",
-   "covers": "9 题 · 难度：低（照官方原文标注）"
+   "difficulty": "easy"
   },
   {
    "id": "u05-tc-med",
@@ -61,8 +57,7 @@
    "file": "u05-tc-med.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "medium",
-   "covers": "8 题 · 难度：中（照官方原文标注）"
+   "difficulty": "medium"
   },
   {
    "id": "u06-tc-hard",
@@ -72,8 +67,7 @@
    "file": "u06-tc-hard.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "hard",
-   "covers": "8 题 · 难度：高（照官方原文标注）"
+   "difficulty": "hard"
   },
   {
    "id": "u07-se-easy",
@@ -83,8 +77,7 @@
    "file": "u07-se-easy.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "easy",
-   "covers": "5 题 · 难度：低（照官方原文标注）"
+   "difficulty": "easy"
   },
   {
    "id": "u08-se-med",
@@ -94,8 +87,7 @@
    "file": "u08-se-med.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "medium",
-   "covers": "8 题 · 难度：中（照官方原文标注）"
+   "difficulty": "medium"
   },
   {
    "id": "u09-se-hard",
@@ -105,8 +97,7 @@
    "file": "u09-se-hard.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "hard",
-   "covers": "7 题 · 难度：高（照官方原文标注）"
+   "difficulty": "hard"
   },
   {
    "id": "u10-mix-1",
@@ -116,8 +107,7 @@
    "file": "u10-mix-1.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "mixed",
-   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+   "difficulty": "mixed"
   },
   {
    "id": "u11-mix-2",
@@ -127,8 +117,7 @@
    "file": "u11-mix-2.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "mixed",
-   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+   "difficulty": "mixed"
   },
   {
    "id": "u12-mix-3",
@@ -138,8 +127,7 @@
    "file": "u12-mix-3.json",
    "practice": true,
    "hasQuiz": false,
-   "difficulty": "mixed",
-   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+   "difficulty": "mixed"
   }
  ]
 }

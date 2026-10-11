@@ -39,7 +39,7 @@ for i, s in enumerate(sets, 1):
     errors += validate_practice(unit)
     json.dump(unit, open(os.path.join(out, f'{uid}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     units.append({'id': uid, 'title': title, 'en': unit['en'], 'minutes': minutes, 'file': f'{uid}.json', 'practice': True, 'hasQuiz': False,
-                  'difficulty': s['difficulty'], 'covers': f'{n} 题 · 难度：{DIFF[s["difficulty"]]}（照官方原文标注）'})
+                  'difficulty': s['difficulty']})
 course = {
     'id': 'gre-vr', 'title': 'GRE Verbal 官方练习题：12 套 Practice Set',
     'subtitle': 'ETS 官方 Verbal Reasoning 练习册里的真题，按原书分成 12 套：阅读理解、文本补全、句子等价各「低 / 中 / 高」难度三套，另有 3 套混合。每套做完再提交，才显示对错、官方解析和本套总结。',

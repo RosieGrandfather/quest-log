@@ -53,7 +53,6 @@ export function practiceHTML(b){
   return `<div class="gset" data-n="${b.items.length}">
     <div class="gset-source">来源：${escapeHTML(b.source)}（官方原题与解析，仅供个人学习；难度照原书标注：${DIFF_LABEL[b.difficulty] || ''}）</div>
     <div class="gset-prev" hidden></div>
-    <div class="gset-note">先把全部 ${b.items.length} 题做完，再点最下面的「提交」——提交前不会显示对错。阅读题里的 line N 指原书的行号，本页没有行号，用引号里的词在文章里找就行。</div>
     ${b.items.map((it, i)=> itemHTML(it, i, b, spans)).join('')}
     <div class="gbar" id="gbar"><span class="gbar-count"></span><button type="button" class="btn-primary gbar-submit">提交</button></div>
     <div class="gsummary" hidden></div>
