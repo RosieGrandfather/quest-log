@@ -1,0 +1,224 @@
+{
+ "id": "u08-se-med",
+ "title": "句子等价 · 难度中（8 题）",
+ "en": "Sentence Equivalence — Practice Set 2: Medium",
+ "minutes": 15,
+ "practice": true,
+ "objectives": [
+  "独立做完 8 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "se",
+   "difficulty": "medium",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Sentence Equivalence · Practice Set 2: Medium",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "se",
+     "passage": null,
+     "stem": "The band’s long-standing strategy of laying leisurely explorations atop a steady funk beat has proven to be surprisingly ______: a concert in Cologne from 1972 sounds as if it could have taken place today.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "fortuitous",
+        "foresighted",
+        "prescient",
+        "popular",
+        "serendipitous",
+        "lucrative"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        2
+       ]
+      }
+     ],
+     "expl": "The colon indicates that the second part of the sentence supports the assertion made in the first part. Since this second part emphasizes the modern sound of the 1972 concert, the blank calls for choices that refer to the similarities between the band’s 1972 sound and music characteristic of more recent times. Both “foresighted” and “prescient” suggest that the band’s musical strategy anticipated the trends of the coming decades, so they are the correct choice. Of the other responses, “fortuitous” and “serendipitous” are similar in meaning, but they do not fit well with the word “surprisingly,” nor with the emphasis on the band’s having a long-term strategy. Neither “popular” nor “lucrative” have a synonym among the other choices; moreover, they too go beyond the sentence’s emphasis on the band’s seemingly timeless style.\n\nThus the correct answer is foresighted (Choice B) and prescient (Choice C)."
+    },
+    {
+     "id": "q2",
+     "kind": "se",
+     "passage": null,
+     "stem": "Factory production made an absence of imperfections so blandly commonplace that the ______ of hand-produced goods were now cherished where they once might have been shunned.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "advantages",
+        "revivals",
+        "benefits",
+        "pretensions",
+        "blemishes",
+        "defects"
+       ],
+       "pick": 2,
+       "correct": [
+        4,
+        5
+       ]
+      }
+     ],
+     "expl": "The sentence suggests a contrast between the quality of factory-produced goods, marked by an absence of imperfections, with that of hand-produced goods, which must possess such imperfections. The words “blemishes” and “defects” are the only ones that connote imperfection. While “advantages” and “benefits” produce sentences with the same meaning, they neither connote imperfection nor make sense as one would not necessarily shun a product with such positive attributes. The word “revivals” also does not connote imperfection, and there is no other word that would produce a sentence with the same meaning.\n\nThus the correct answer is blemishes (Choice E) and defects (Choice F)."
+    },
+    {
+     "id": "q3",
+     "kind": "se",
+     "passage": null,
+     "stem": "Through its state associations, the American Medical Association controlled who could become a physician and dominated ______ professions like nursing and occupational therapy.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "commensurate",
+        "proportionate",
+        "kindred",
+        "affiliated",
+        "imperative",
+        "voluntary"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        3
+       ]
+      }
+     ],
+     "expl": "The blank calls for words that will describe professions such as nursing and occupational therapy as they relate to physicians. These professions are also in the health-care field; the answer choices “kindred” and “affiliated” both suggest this close relationship and produce completed sentences that are similar in meaning. Of the other choices, both “commensurate” and “proportionate” suggest some sort of comparative measurement between the professions mentioned, something unsupported by the rest of the sentence. Neither “imperative” nor “voluntary” would typically be used to describe “profession” nor does either have a word close in meaning among the other choices with which it could be paired.\n\nThus the correct answer is kindred (Choice C) and affiliated (Choice D)."
+    },
+    {
+     "id": "q4",
+     "kind": "se",
+     "passage": null,
+     "stem": "In a strong indication of the way the entire party is ______ the candidate with moderate credentials, the outspokenly conservative former mayor of a major city has promised to raise a substantial amount of money for the candidate’s campaign.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "rallying behind",
+        "incensed over",
+        "undecided about",
+        "mortified over",
+        "embarrassed about",
+        "coalescing around"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        5
+       ]
+      }
+     ],
+     "expl": "The former mayor’s promise to raise funds is used as an example of the party’s attitude or actions toward the candidate. Since raising funds is a way of supporting a candidate, the words filling the blank must be positive rather than negative. Only two of the choices given, “rallying behind” and “coalescing around,’ indicate a positive attitude toward the candidate; moreover, they also produce similar meanings, so they are the correct answer. The other four choices indicate negative or indifferent attitudes toward the candidate that would not be exemplified by promises of fund-raising.\n\nThus the correct answer is rallying behind (Choice A) and coalescing around (Choice F)."
+    },
+    {
+     "id": "q5",
+     "kind": "se",
+     "passage": null,
+     "stem": "Mr. Hirsch says he will aim to preserve the foundation’s support of ______ thinkers, individuals who are going against the trends in a field or an acknowledged set of opinions.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "iconoclastic",
+        "integrative",
+        "doctrinaire",
+        "heterodox",
+        "dogmatic",
+        "synthesizing"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        3
+       ]
+      }
+     ],
+     "expl": "The portion of the sentence following the comma defines the type of thinkers characterized by the words that will fill the blank. The challenge posed by this item, then, is mainly one of vocabulary: the answers must be words that describe individuals who go against the trends in a field or against a set of opinions. “Iconoclastic” and “heterodox” mean exactly that, with both words describing people whose opinions run counter to established norms. Of the other choices, “doctrinaire” and “dogmatic” both mean the opposite—adhering to established principles—while “integrative” and “synthesizing” both refer to a willingness to bring together disparate points of view.\n\nThus the correct answer is iconoclastic (Choice A) and heterodox (Choice D)."
+    },
+    {
+     "id": "q6",
+     "kind": "se",
+     "passage": null,
+     "stem": "In France cultural subsidies are ______: producers of just about any film can get an advance from the government against box-office receipts, even though most such loans are never fully repaid.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "ubiquitous",
+        "invaluable",
+        "sporadic",
+        "scanty",
+        "questionable",
+        "omnipresent"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        5
+       ]
+      }
+     ],
+     "expl": "The colon signals that the second part of the sentence provides an example of the first part, so the blank must characterize the idea that just about any film (as an instance of subsidized culture) gets an advance. This rules out “sporadic” and “scanty” neither of which suggest the pervasiveness of the subsidies. While “invaluable” and “questionable” may make some sense, they do not produce sentences with the same meaning.\n\nThus the correct answer is ubiquitous (Choice A) and omnipresent (Choice F)."
+    },
+    {
+     "id": "q7",
+     "kind": "se",
+     "passage": null,
+     "stem": "The problem of avoiding duplicate names—such as for Internet domain names or for e-mail accounts—is particularly ______ when the name has to fit into a format that allows only a finite number of possibilities.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "meager",
+        "acute",
+        "agreeable",
+        "severe",
+        "beneficial",
+        "productive"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        3
+       ]
+      }
+     ],
+     "expl": "The blank must be filled with a word that describes the challenge of ensuring unique names under certain limitations. Since these limitations add to the difficulty of avoiding duplication, the blank must be filled with choices that reflect the arduousness of this task. To characterize the problem as particularly “acute” or “severe” would do this nicely; both adjectives indicate the added difficulty of the problem under the circumstances described, and the pairing renders sentences with similar meanings. None of the other responses describe the difficulty of the problem that the rest of the sentence emphasizes. Thus the correct answer is acute (Choice B) and severe (Choice D)."
+    },
+    {
+     "id": "q8",
+     "kind": "se",
+     "passage": null,
+     "stem": "At nearly 450 pages, the novel is ______: the author does not often resist the temptation to finish off a chapter, section, or even paragraph with some unnecessary flourish.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "instructive",
+        "complex",
+        "prolix",
+        "educational",
+        "long-winded",
+        "explicit"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        4
+       ]
+      }
+     ],
+     "expl": "The words that fill the blank in must convey that the novel is not merely long but also contains numerous portions deemed unnecessary. While it may be “instructive” and “educational” these do not properly describe the novel’s length. While “complex” and “explicit” may correlate with (though not characterize) length, they do not produce sentences with the same meaning.\n\nThus the correct answer is prolix (Choice C) and long-winded (Choice E)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

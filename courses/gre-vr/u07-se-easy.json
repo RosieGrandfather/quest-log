@@ -1,0 +1,149 @@
+{
+ "id": "u07-se-easy",
+ "title": "句子等价 · 难度低（5 题）",
+ "en": "Sentence Equivalence — Practice Set 1: Easy",
+ "minutes": 10,
+ "practice": true,
+ "objectives": [
+  "独立做完 5 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "se",
+   "difficulty": "easy",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Sentence Equivalence · Practice Set 1: Easy",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "se",
+     "passage": null,
+     "stem": "Retrofitted with stabilizing devices, some of which ______ its aesthetics, the bridge has been reopened, no longer prone to excessive swaying but not quite the breathtaking structure it originally was.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "impair",
+        "resist",
+        "improve",
+        "enhance",
+        "restore",
+        "compromise"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        5
+       ]
+      }
+     ],
+     "expl": "The sentence suggests that the addition of devices to make the bridge more stable has consequently lessened its previous aesthetic impact as a “breathtaking structure.” The words “restore,” “improve,” and “enhance” do not describe the appropriate qualitative direction of the change caused by the retrofitting as “impair” and “compromise” do. Though “resist” makes some sense when inserted into the blank, it does not produce a sentence with the same meaning as either of these.\n\nThus the correct answer is impair (Choice A) and compromise (Choice F)."
+    },
+    {
+     "id": "q2",
+     "kind": "se",
+     "passage": null,
+     "stem": "Although cosmic objects have struck Earth since the planet's very formation, humanity has only recently become aware of these events: two centuries ago the idea that objects orbiting the Sun could collide with Earth was widely ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "ridiculed",
+        "doubted",
+        "disseminated",
+        "promulgated",
+        "marginalized",
+        "disbelieved"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        5
+       ]
+      }
+     ],
+     "expl": "The colon introduces an example that explains or demonstrates the former lack of awareness about cosmic collisions with Earth. Because people were not aware of the existence of events of this type, the idea of their possibility would not have been “disseminated” or “promulgated.” Although “ridiculed” and “marginalized” make sense when inserted into the blank, they do not produce sentences with the same meaning, which “doubted” and “disbelieved” do.\n\nThus the correct answer is doubted (Choice B) and disbelieved (Choice F)."
+    },
+    {
+     "id": "q3",
+     "kind": "se",
+     "passage": null,
+     "stem": "That people ______ the musical features of birdsongs suggests that despite the vast evolutionary gulf between birds and mammals, songbirds and humans share some common auditory perceptual abilities.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "mimic",
+        "recognize",
+        "relish",
+        "are confounded by",
+        "can make out",
+        "are puzzled by"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        4
+       ]
+      }
+     ],
+     "expl": "According to the sentence, some human ability or other suggests that humans share a perceptual ability with songbirds. The words that fill the blank must allow for the existence of this ability in humans, which “are confounded by” and “are puzzled by” do not. Although both “mimic” and “relish” make sense when inserted into the blank, they each designate more than just perception, and they both lack another word that would create a sentence similar in meaning.\n\nThus the correct answer is recognize (Choice B) and can make out (Choice E)."
+    },
+    {
+     "id": "q4",
+     "kind": "se",
+     "passage": null,
+     "stem": "Torpey’s study has turned a seemingly ______ topic, the passport, into a fascinating one by making an original contribution to the sociology of the state.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "ironic",
+        "banal",
+        "provocative",
+        "witty",
+        "insipid",
+        "stimulating"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        4
+       ]
+      }
+     ],
+     "expl": "The adjective “seemingly” indicates that the words that fill the blank will contrast with “fascinating.” Of the responses, “banal” and “insipid” are both opposites of “fascinating, and they yield sentences alike in meaning, so they are the correct response. While “provocative” and “stimulating” are near in meaning, they do not provide any contrast to “fascinating,” so they are incorrect. Neither of the other responses has a near synonym among the choices, nor do they provide any opposition to the characterization of the passport as a fascinating topic.\n\nThus the correct answer is banal (Choice B) and insipid (Choice E)."
+    },
+    {
+     "id": "q5",
+     "kind": "se",
+     "passage": null,
+     "stem": "Britain is attractive to worldwide advertisers because it is ______ market, so there is no need to tailor advertisements for different parts of the country.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "a global",
+        "an uncomplicated",
+        "a vast",
+        "a homogeneous",
+        "a uniform",
+        "an immense"
+       ],
+       "pick": 2,
+       "correct": [
+        3,
+        4
+       ]
+      }
+     ],
+     "expl": "The sentence describes a country whose different parts share a similarity that does not require differential action (tailoring for different parts) by advertisers. The blank must designate this sameness. While the words “vast” and “immense” produce sentences with the same meaning—and “global” less so—they all describe size, not similarity. Being “uncomplicated” might also attract advertisers, but it suggests a different virtue than similarity, and there is no other word that produces a sentence with the same meaning.\n\nThus the correct answer is a homogenous (Choice D) and a uniform (Choice E)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

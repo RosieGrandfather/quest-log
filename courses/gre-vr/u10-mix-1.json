@@ -1,0 +1,698 @@
+{
+ "id": "u10-mix-1",
+ "title": "混合练习 · 第 1 套（25 题）",
+ "en": "Mixed — Mixed Practice Set 1",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "独立做完 25 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "mix",
+   "difficulty": "mixed",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Mixed Practice Set 1",
+   "passages": {
+    "p1": "Despite hypotheses ranging from armed conflict to climate change, the abandonment of more than 600 Pueblo cliff dwellings in Mesa Verde by a.D. 1300 still puzzles archaeologists. Researchers analyzing refuse from one Pueblo community found remains of maize—a Pueblo crop—in 44 percent of samples from years when the community flourished, but in only 10 percent of samples from years near the time of depopulation, while the remains of wild plants increased significantly. Bones found in the samples showed that the consumption of domesticated turkeys—which were fed maize—decreased from 55 to 14 percent, while there was a marked increase in wild-animal bones. These data suggest that near the end of the site’s occupation, villagers experienced substantial food shortages and adopted hunting-and-gathering strategies to compensate for crop failure.",
+    "p2": "Although it is intuitively clear that an increase in antipredator behavior lowers an animal's risk of predation when predators are present, such benefits are not easily demonstrated. One study that did so found that well-fed guppies are more alert tine for predators and are consequently less likely to be killed than are their hungry counterparts, which feed with greater intensity. It is also well documented that a decrease in activity lowers an animal's risk of predation by reducing the probability of being detected or encountered by a predator. This effect was convincingly demonstrated by a study in which it was found that partially anesthetized tadpoles were less likely to be captured by dragonfly larvae than were unanesthetized tadpoles.",
+    "p3": "Since the 1980s, experts have been claiming that the skill demands of today’s jobs have outstripped the skills workers possess. Moss and Tilly counter that worker deficiencies lie less in job-specific skills than in such attributes as motivation, interpersonal skills, and appropriate work demeanor. However, Handel suggests that these perceived deficiencies are merely an age effect, arguing that workers pass through a phase of early adulthood characterized by weak attachment to their jobs. As they mature, workers grow out of casual work attitudes and adjust to the workplace norms of jobs that they are more interested in retaining. Significantly, complaints regarding younger workers have persisted for over two decades, but similar complaints regarding older workers have not grown as the earlier cohorts aged.",
+    "p4": "In the early twentieth century, the idea that pianists should be musician-scholars whose playing reflected the way composers wanted their music to sound replaced the notion that pianists should be virtuosos whose performances thrilled audiences tine with emotional daring and showy displays of technique. One important figure to emerge in the period, though a harpsichordist rather than a pianist, was Wanda Landowska (1879-1959). She demonstrated how the keyboard works of Baroque composers such as Bach, Handel, Scarlatti, and Couperin probably sounded in their own times. It would be a mistake to consider Landowska a classicist, however. She had been born in an age of Romantic playing dominated by Liszt, Leschetizky, and their pupils. Thus she grew up with and was influenced by certain Romantic traditions of performance, whatever the stringency of her musical scholarship; Landowska knew how to hold audiences breathless, and when she gave recitals, they responded with deathlike silence and rapt attention.\n\nHer playing was Romantic, but it was at least as close in spirit to the style of playing intended by composers of the Baroque (1600-1750) and Classical (1750-1830) eras, as have been the more exacting but less emotionally resonant interpretations of most harpsichordists since Landowska. She had a miraculous quality of touch, a seemingly autonomous left hand; no artist in her generation could clarify with such deftness the polyphonic writing of the Baroque masters. And none could make their music so spring to life.\n\nHer achievements were the result of a lifetime of scholarship, truly remarkable physical gifts, and resilient rhythm, all combined with excellent judgment about when not to hold the printed note sacrosanct. Of course, developing such judgment demanded considerable experience and imagination. She was a genius at underlining the dramatic and emotional content of a piece, and to do so, she took liberties, all kinds of liberties, while nevertheless preserving the integrity of a composer’s score. In short, her entire musical approach was Romantic: intensely personal, full of light and shade, never pedantic. Thanks to Landowska, Bach’s music (originally composed for the harpsichord) now sounded inappropriately thick when played on the piano. One by one, pianists stopped playing Bach’s music as adapted for the piano by Liszt or by Tausig. Then they gradually stopped performing any kind of Baroque music on the piano, even Scarlatti’s. The piano repertoire, it began to be felt, was extensive enough without reverting to transcriptions of Baroque music originally written for the harpsichord—and piano performances of Bach and Scarlatti were, despite the obvious similarities between the harpsichord and the piano, transcriptions, no matter how faithfully the original notes were played. In accordance with this kind of purism came an emphasis on studying composers’ manuscript notations, a relatively new field of musicology that is flourishing even today.",
+    "p5": "Scientists formerly believed that the rocky planets—Earth, Mercury, Venus, and Mars—were created by the rapid gravitational collapse of a dust cloud, a deflation giving rise to a dense orb. That view was challenged in the 1960s, when studies of tine Moon craters revealed that these craters were caused by the impact of objects that were in great abundance about 4.5 billion years ago but whose number appeared to have quickly decreased shortly thereafter. This observation rejuvenated Otto Schmidt’s 1944 theory of accretion. According to this theory, cosmic dust gradually lumped into ever-larger conglomerates: particulates, gravel, small and then larger balls, planetesimals (tiny planets), and, ultimately, planets. As the planetesimals became larger, their numbers decreased. Consequently, the number of collisions between planetesimals decreased."
+   },
+   "items": [
+    {
+     "id": "q1",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The name of the Sloane Matthew Library has long been ______; even longtime city residents assume it is a run-of-the-mill library, never suspecting what art treasures it contains.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "revered",
+        "proposed",
+        "misleading",
+        "elevated",
+        "intriguing"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The second half of the sentence contrasts the art treasures actually housed in the Sloane Matthew Library with city residents’ perceptions of the institution. The semicolon that separates the first half of the sentence from the second half suggests that this contrast explains the assertion made in the first half. The blank, then, calls for a word that indicates the dis-parity between the public’s image of the library and its actual contents. “Misleading” does this, suggesting that it is the name of the institution that leads residents to view it as a run-of-the-mill library rather than an art museum. “Revered,” “elevated,” and even “intriguing” would all suggest that the public sees the library as an extraordinary institution. “Proposed” suggests that the institution is still in the process of being named, an idea not supported by anything else in the sentence.\n\nThus the correct answer is misleading (Choice C)."
+    },
+    {
+     "id": "q2",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Although economic growth has conventionally been viewed as the ______ for poverty in underdeveloped regions, this prescription’s negative environmental side effects are becoming a concern.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "culprit",
+        "recipe",
+        "panacea",
+        "explanation",
+        "refuge"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The use of the word “prescription” suggests that the word that fills the blank will imply that economic growth is a cure for poverty. “Panacea,” meaning a universal remedy, fits this sense exactly. Of the other choices, “culprit” and “recipe” would provide the opposite sense by implying that economic growth causes poverty in underdeveloped regions. Neither “refuge” nor “explanation” conveys the sense of remediation implied by the word “prescription,” so they are both incorrect.\n\n112 Thus the correct answer is panacea (Choice C)."
+    },
+    {
+     "id": "q3",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Even as the economy struggled, the secretary stood by his ______ long-term outlook, saying that technology was allowing businesses to make deep-rooted improvements in their productivity, the best indicator of an economy’s ability to grow.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "arcane",
+        "sanguine",
+        "equivocal",
+        "ambivalent",
+        "irresolute"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence contrasts the economy’s current struggles with the secretary's predictions for its long-term prospects. Since the secretary believes that technology will lead to economic growth, the secretary’s outlook is an optimistic one. Thus the correct answer is “sanguine,” which can mean optimistic. Since there is no indication that the secretary's view has wavered or is open to alternate interpretations, “irresolute,” “ambivalent,” and “equivocal” are all incorrect. The straightforward explanation of the rationale for the secretary's out-look suggests that it is not an “arcane” one, making that choice incorrect as well.\n\nThus the correct answer is sanguine (Choice B)."
+    },
+    {
+     "id": "q4",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The villas and compounds that proliferated during the building boom of the 1990s were (i) ______, far too (ii) ______ for people of average means.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "opulent",
+        "eclectic",
+        "enigmatic"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "bucolic",
+        "expensive",
+        "mundane"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence talks about “villas and compounds,’ which are high-end properties, so the intuitive answer to Blank (ii) must be a word denoting a quality that makes these properties unsuitable or out of reach for people of average means. The answer choice that best matches this meaning is “expensive,” so it is correct. The answer to Blank (i) must name the quality of the properties that makes them too expensive for people of average means; the answer choice that best meets this requirement is “opulent” “Bucolic” may also seem a plausible choice for Blank (ii), as it denotes a quality that may not normally be associated with “people of average means.” However, it is incorrect, as none of the qualities named in Blank (i) would make a property bucolic. Thus the correct answer is opulent (Choice A) and expensive (Choice E)."
+    },
+    {
+     "id": "q5",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The governor has considerable political talents, but as a speaker he is far less (i) ______ than his opponent, whose oratorical skills are (ii) ______",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "adroit",
+        "unconvincing",
+        "prolix"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "unpretentious",
+        "spurious",
+        "breathtaking"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The “but” in the sentence suggests that there is a contrast between the governor's political talents and his speaking ability. Since the former is described in positive terms (“consider-able”), the description of the latter must be negative. The governor is described as “far less (i), than his opponent” as a speaker; since this whole phrase must have a negative meaning, the answer to Blank (i) must be positive. The only answer choice for Blank (i) that is positive is “adroit, so it is correct. Given this, the opponent’s speaking ability must be much better than the governor's, so the answer to Blank (ii) has to be positive. The only positive choice for Blank (ii) is “breathtaking,” so it is correct.\n\nThus the correct answer is adroit (Choice A) and breathtaking (Choice F)."
+    },
+    {
+     "id": "q6",
+     "kind": "tc",
+     "passage": null,
+     "stem": "There is no point in combing through the director’s work for hints of ideological significance. It is unnecessary: his ideology—Marxist, anti-imperialist, aligned with the perceived interests of the powerless and the marginal—is the (i) ______ of his films. The clarity and force of that ideology are considerable, but its (ii) ______ sometimes bothers critics, who often scold the director for lacking (iii) ______.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "hidden focus",
+        "chief impetus",
+        "murky lesson"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "bluntness",
+        "obscurity",
+        "feebleness"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "lucidity",
+        "subtlety",
+        "courage"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The colon in the second sentence indicates that the second half of the sentence will explain the first, so Blank (i) must contain a phrase that explains why it is needless to search the director's work for hints of ideology. “Chief impetus” does so, since it implies that the director's ideology is so obvious that “combing through” it for hints is not needed. The other two choices are incorrect because they suggest on the contrary a need for deeper analysis to detect what is “hidden” or “murky” in the films. Blank (ii) calls for an aspect of the director’s ideology that bothers critics. The first part of the sentence mentions the considerable force and clarity of that ideology, so neither “feebleness” nor “obscurity” makes sense. “Bluntness” is therefore correct. Blank (iii) must then be a word whose lack characterizes bluntness. Since “subtlety” is the opposite of “bluntness,’ it is the correct answer.\n\nThus the correct answer is chief impetus (Choice B), bluntness (Choice D), and subtlety (Choice H)."
+    },
+    {
+     "id": "q7",
+     "kind": "tc",
+     "passage": null,
+     "stem": "As the finances of the energy-trading firm began unraveling, what eventually became (i) ______ was that the company had been concocting “value” out of thin air, thanks not to the trading strategies it promoted as visionary but to financial (ii) ______ that turned a once-solid entity into the most notorious (iii) ______ in an era of corporate scandals.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "vindicated",
+        "unmistakable",
+        "unverifiable"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "redemption",
+        "responsibilities",
+        "games"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "omission",
+        "boon",
+        "debacle"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The characterization of the company’s activities as “concocting ‘value’ out of thin air” strongly suggests that its transactions have been fraudulent. The word that completes Blank (ii) must reflect this financial trickery; “games” does so, whereas both “redemption” and “responsibilities” both reflect more upstanding behavior than the sentence ascribes to the firm. The word that completes Blank (iii) should reflect the company’s fall from respectability and have a sense opposite to the “once-solid entity” with which it is contrasted. “Debacle” does this nicely, while the other two choices lack the necessary pejorative meaning. For Blank (i), “vindicated” suggests that there had been previous warnings about the firm’s practices that were eventually borne out, something indicated nowhere else in the passage. “Unverifiable” is at odds with the sentence’s surety about the firm’s wrongdoing; that assurance is best conveyed by “unmistakable”\n\nThus the correct answer is unmistakable (Choice B), games (Choice F), and debacle (Choice I)."
+    },
+    {
+     "id": "q8",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Kept (i) ______ by cloying commercial radio and clueless record executives, the American popular music scene has frequently depended on cities at the edges of the cultural map to provide a much-needed shot of (ii) ______. The momentary (iii) ______ what the next big thing is seems to come out of nowhere—as if someone blows a whistle only those in the know can hear, and suddenly record executives and journalists are crawling all over what had previously been an obscure locale.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "hidebound",
+        "liberated",
+        "obligated"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "originality",
+        "truth",
+        "orthodoxy"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "consensus about",
+        "indifference to",
+        "guarantee of"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The second sentence provides a clue for Blank (iii): the whistle metaphor and the talk about record executives and journalists “crawling all over” a location bring up the image of a race that involves a large number of people; this, and the fact that all these people congregate in one place, point to “consensus about” as the right answer choice for Blank (iii). The search for “the next big thing” suggests that the American popular music scene is looking for something new; this points to “originality” as the correct answer for Blank (ii). Finally, someone who needs a “shot of originality” is unwilling or unable to let go of the past; therefore, “hidebound” is the correct answer choice for Blank (i).\n\nThus, the correct answer choices are hidebound (Choice A), originality (Choice D) and consensus about (Choice G)."
+    },
+    {
+     "id": "q9",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "According to the passage, which of the following is likely true regarding the consumption of wild plants in the Pueblo community investigated by researchers?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It decreased dramatically as the settlement began to decline.",
+        "It significantly affected the food supply of wild animals living nearby.",
+        "It increased as domesticated sources of food declined.",
+        "It represented a continuation of centuries-old traditions.",
+        "It fell markedly as the consumption of wild animals increased."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The passage presents four developments that accompanied the decline of one Pueblo community: consumption of maize and domesticated turkeys fell, while that of wild plants and wild animals increased. This summary shows that answer Choices A and E are incorrect, since both refer to a drop in the consumption of wild plants. Since the passage says nothing about whether the consumption of wild plants affected nearby wildlife nor about whether it was a long-standing tradition, Choices B and D are incorrect. Choice C is correct, however: consumption of wild plants rose as that of maize and domesticated turkeys fell."
+    },
+    {
+     "id": "q10",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "The research described in the passage most clearly supports which of the following claims about the abandonment of Mesa Verde?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It likely resulted from factors affecting crop viability.",
+        "It was more extensive than had previously been documented.",
+        "It may have been hastened by the abundance of wild animals in the area.",
+        "It has been misdated by previous archaeological research.",
+        "It happened more rapidly in certain Pueblo communities than in others."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The research strongly suggests that when the Pueblo community was flourishing, maize and maize-fed turkey formed a substantial part of the inhabitants’ diet, but that just before the abandonment of Mesa Verde, maize had become a much scarcer commodity. This decline in what had been a dietary mainstay supports the claim that the villagers were experiencing difficulty growing crops. Thus Choice A is correct. Nothing in the passage suggests that the extent or date of the abandonment should be revised (Choices B and D), nor that the rate of the abandonment was affected by wild animals or varied from one community to another (Choices C and E)."
+    },
+    {
+     "id": "q11",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "It can be inferred that the guppy study and the tadpole study, as they are described in the passage, differed in which of the following ways?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The animals less likely to become the victims of predators were the more active ones in the guppy study but were the less active ones in the tadpole study.",
+        "The animals less likely to become the victims of predators were those more alert to their surroundings in the guppy study but were the less alert ones in the tadpole study.",
+        "The situation created experimentally for the guppy study would be more likely to occur in the wild than would the situation created for the tadpole study."
+       ],
+       "pick": "any",
+       "correct": [
+        1,
+        2
+       ]
+      }
+     ],
+     "expl": "Choices B and C are correct. The question asks how the two studies differed.\n\nChoice A is incorrect: In the guppy study, the more likely victims are the hungry guppies who “feed with greater intensity” and are, therefore, more active than well-fed guppies. Choice B is correct: The passage states that “well-fed guppies are more alert for predators and are consequently less likely to be killed” and that “anesthetized,” or less alert, tadpoles “were less likely to be captured by dragonfly larvae”\n\nChoice C is correct: In the guppy study the subjects were well fed, while in the tad-pole study the subjects were anesthetized; this latter condition is much less unlikely to occur in the wild."
+    },
+    {
+     "id": "q12",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "In the context indicated, “demonstrated” (line 3) most nearly means",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "explained",
+        "presented",
+        "shown",
+        "protested",
+        "justified"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The passage states that benefits of increased antipredator behavior “are not easily demonstrated”; in this context, “shown” is the closest synonym, so Choice C is correct."
+    },
+    {
+     "id": "q13",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The passage suggests that Moss and Tilly are most likely to disagree with the",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Whether the skills demanded by jobs in the labor market have changed since the 1980s",
+        "Whether employers think that job-specific skills are as important as such attributes as motivation and appropriate work demeanor",
+        "Whether workers in today’s labor market generally live up to the standards and expectations of employers",
+        "Whether adequate numbers of workers in the labor market possess the particular skills demanded by various different jobs",
+        "Whether most workers are motivated to acquire new skills that are demanded by the labor market"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "According to the passage, the “experts” on the one hand, and Moss and Tilly on the other, disagree about the specific kinds of deficiencies possessed by today’s workers: the “experts” claim that workers are deficient because of the lack of job skills, while Moss and Tilly believe that the deficiencies stem from the lack of motivation and poor attitude. This means that the two sides would disagree about whether the skills of today’s workers are adequate for their jobs; thus Choice D is correct."
+    },
+    {
+     "id": "q14",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The last sentence serves primarily to",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "suggest that worker deficiencies are likely to become more pronounced in the future",
+        "introduce facts that Handel may have failed to take into account",
+        "cite evidence supporting Handel’s argument about workers",
+        "show that the worker deficiencies cited by Handel are more than an age effect",
+        "distinguish certain skills more commonly possessed by young workers from skills more commonly found among mature workers"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "If Handel’s account is correct, it would not be surprising that a high level of perceived skill deficiencies in young workers at one time translates into a relatively low level of perceived deficiencies among older workers some twenty years later. If the deficiencies in young workers are in job-related skills, however, some trace of those deficiencies would still be noticeable twenty years later. Since the last sentence presents data that support the first prediction rather than the second, Choice C is correct."
+    },
+    {
+     "id": "q15",
+     "kind": "se",
+     "passage": null,
+     "stem": "Family photos of the author suggest that she was ______ child: she seemed to wear a permanent frown.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "a sullen",
+        "an amiable",
+        "a surly",
+        "a beautiful",
+        "a prudent",
+        "a stunning"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        2
+       ]
+      }
+     ],
+     "expl": "The second part of the sentence explains the first, so the blank describes someone who is best characterized by wearing a permanent frown. This disallows “an amiable,” “a beautiful,’ “a prudent,’ and “a stunning,” none of which demand or allow for such a characterization. While “a sullen” and “a surly” do not mean exactly the same thing, they create sentences with the same meaning.\n\nThus the correct answer is a sullen (Choice A) and a surly (Choice C)."
+    },
+    {
+     "id": "q16",
+     "kind": "se",
+     "passage": null,
+     "stem": "Biologists agree that snakes descended from lizards, but exactly where this first happened has been a matter of debate since the 1800s, when two ______ theories emerged.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "complex",
+        "competing",
+        "dubious",
+        "conclusive",
+        "contending",
+        "irrefutable"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        4
+       ]
+      }
+     ],
+     "expl": "The “but” that connects the two parts of the sentence indicates that the second part contrasts in some way with the first part. In this case, the contrast is between the biologists’ agreement on a central fact (snakes’ descent from lizards) and a disagreement over the details (which have long been a matter of debate). The words that best complete the blank, then, must somehow emphasize this disagreement. Of the choices, “competing” and “contending” best do so because they imply that the two theories are what the long-running debate has centered upon. Of the other choices, “conclusive” and “irrefutable” are roughly synonymous, but neither suggests a matter worthy of a long-running debate. “Dubious,” in addition to having no near-synonym among the choices, would also not explain why the emergence of the two theories triggered the debate. While “complex” might well describe a theory, it too has no obvious pair among the choices, and it also does not foreground biologists’ disagreement regarding the two theories.\n\nThus the correct answer is competing (Choice B) and contending (Choice E)."
+    },
+    {
+     "id": "q17",
+     "kind": "se",
+     "passage": null,
+     "stem": "A particular bacterium that has never encountered a particular virus will usually succumb to it, a ______ that may, surprisingly, be beneficial to the colony in which the bacterium lives.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "susceptibility",
+        "theory",
+        "characteristic",
+        "juxtaposition",
+        "collision",
+        "hypothesis"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        2
+       ]
+      }
+     ],
+     "expl": "The blank calls for words that can refer to the tendency of a bacterium to be killed by an unfamiliar virus. “Susceptibility” and “characteristic,” although not synonyms, can both be used to indicate this trait, and because it is clear that they are both referring to the same behavior, they produce sentences alike in meaning. The other choices contain a pair of synonyms—“theory” and “hypothesis’—that might at first seem tempting. But these, along with the other two choices, cannot aptly be used to characterize the typical behavior of bacteria, so they are all incorrect.\n\nThus the correct answer is susceptibility (Choice A) and characteristic (Choice C)."
+    },
+    {
+     "id": "q18",
+     "kind": "se",
+     "passage": null,
+     "stem": "The remarkable thing about the mayoral race, in retrospect, is that so many people wanted the job of managing a municipality so obviously about to ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "materialize",
+        "disintegrate",
+        "crumble",
+        "prosper",
+        "flourish",
+        "scuffle"
+       ],
+       "pick": 2,
+       "correct": [
+        1,
+        2
+       ]
+      }
+     ],
+     "expl": "The sentence expresses surprise that the job of mayor was seen as desirable, given the state of the municipality. Thus the phrase containing the blank likely expresses something negative about the municipality. Of the choices, three—“disintegrate,’ “crumble,” and “scuffle’—are negative. Of these, two—“disintegrate” and “crumble’—are synonyms that would yield sentences alike in meaning, so they are the correct choices. Of the other three possibilities, one pairing, “prosper” and “flourish,” are synonyms, but the mayorship of a municipality on the verge of prosperity would be a desirable job, so that pairing does not fit the meaning of the sentence.\n\nThus the correct answer is disintegrate (Choice B) and crumble (Choice C)."
+    },
+    {
+     "id": "q19",
+     "kind": "se",
+     "passage": null,
+     "stem": "It is a testimony to Roth’s ______ that he could not quite bring himself to write a book as dull and flat as his original conception for his novel Everyman seemed to demand.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "persistence",
+        "deterioration",
+        "talent",
+        "ambition",
+        "decline",
+        "genius"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        5
+       ]
+      }
+     ],
+     "expl": "The sentence suggests that both Roth’s original conception and his execution were negative, but it relies on the contrast between these to create irony. While the “deterioration” and “decline” produce sentences alike in meaning, they do not capture the irony demanded by the use of the word “quite.” While “ambition” and “persistence” may each capture that irony, there are no other words that when paired with them would pro-duce sentences alike in meaning.\n\nThus the correct answer is talent (Choice C) and genius (Choice F)."
+    },
+    {
+     "id": "q20",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "The passage suggests that Landowska’s playing embodied a rejection of which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Emotionally resonant interpretations of musical works",
+        "An audience's complete silence during a performance",
+        "Performances of previously obscure Baroque works",
+        "The idea that a performer can correctly judge when not to hold the printed note sacrosanct",
+        "Performances emphasizing showy displays of technique that compromise the integrity of a composer's original score"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "Choice E is correct because throughout the passage Wanda Landowska’s playing serves as the embodiment of the historical change described in the passage’s first sentence: the replacement of “showy displays of technique” in favor of playing that “reflected the way composers wanted their music to sound.’ The passage later describes Landowska’s play-ing as “preserving the integrity of the composer’s original score.”"
+    },
+    {
+     "id": "q21",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "Which of the following can be inferred from the passage about the compositions of Scarlatti?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "They were adapted by Liszt and Tausig.",
+        "They have not been transcribed faithfully.",
+        "They were not composed during the Baroque period.",
+        "They were composed for instruments other than piano.",
+        "They fell out of favor with most musicians in the early twentieth century."
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "In the last paragraph, the passage states that pianists gradually stopped playing Scarlatti’s music on the piano because they felt that the piano repertoire was extensive enough and that they had no need to resort to transcriptions of harpsichord pieces. It follows from this that Scarlatti’s music was not written for the piano, so Choice D is correct."
+    },
+    {
+     "id": "q22",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "The passage suggests that Landowska would probably have objected most strongly to which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "A performance of a Bach keyboard piece played on the harpsichord",
+        "A performance of a Handel organ piece on a Baroque pipe organ",
+        "A modern composition written for a harpsichord and two pianos",
+        "A piano solo in which the performer occasionally departs from the tempo indicated by the composer",
+        "A performance of a piano and violin sonata in which the piano part is played on the harpsichord"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "The passage tells us that Landowska was an adherent of the idea that performers of other people's musical works should play “the way composers wanted their music to sound” (line 2). In the context of the passage, this means that performers should use the instrument for which the music was originally written. This rules out Choices B, C, and D, as they are not examples of this kind of deviation from the composers’ intentions. Choice A is incorrect, since the passage tells us that Bach’s music was “originally composed for the harpsichord” (line 28). This leaves Choice E as the only correct option: Landowska would object to the music originally intended for the piano being performed on a harpsichord."
+    },
+    {
+     "id": "q23",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "The author’s assertion that Landowska should not be considered a classicist serves primarily to emphasize which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Landowska specialized in playing the works of composers of the Baroque era.",
+        "Landowska’s repertoire included orchestral music only.",
+        "Landowska’s musical performances were not devoid of emotion.",
+        "Landowska’s repertoire emphasized works of long-lasting interest and value.",
+        "Landowska advocated the study of Classical style or form."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The second paragraph of the passage suggests that the primary difference between the Classical and the Romantic styles of playing is that the former puts emphasis on technical mastery and faithfulness to the original score, while the latter focuses on the emotional aspects of a performance. Therefore, Choice C is correct."
+    },
+    {
+     "id": "q24",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "The passage provides evidence that Schmidt would be likely to DISAGREE with the theory presented in the first sentence over",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "the length of time it took for the rocky planets to form",
+        "the most likely causes of the Moon’s impact craters",
+        "the importance of cosmic dust as a seminal material in planetary formation"
+       ],
+       "pick": "any",
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "Choice A is correct. The question asks what Schmidt would disagree with in the rapid-collapse theory.\n\nChoice A is correct: According to Schmidt's own theory, “cosmic dust gradually lumped into ever-larger conglomerates”; this means that planetary formation was a prolonged process, while in the rapid-collapse theory, it happened quickly.\n\nChoice B is incorrect: Both theories agree that Moon craters were caused by the impact of cosmic bodies that crashed into the Moon's surface.\n\nChoice C is incorrect: Both theories agree that cosmic dust was the material from which the planets ultimately formed."
+    },
+    {
+     "id": "q25",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "Which of the following best describes the “observation” (line 6) referred to in the passage?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The rocky planets were created by the rapid gravitational collapse of a dust cloud.",
+        "Certain features on the Moon's surface are impact craters caused by collisions with objects such as planetesimals.",
+        "The rocky planets were formed by a slow accretion of cosmic dust into increasingly larger bodies.",
+        "The number of objects colliding with the Moon appears to have been high for a while and then rapidly diminished.",
+        "There are far fewer planetesimals in existence today than there were about 4.5 billion years ago."
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The “observation” mentioned in the passage is the finding that Moon’s craters “were caused by the impact of objects that were in great abundance about 4.5 billion years ago but whose number appeared to have quickly decreased shortly thereafter.” The answer choice that is closest in meaning to this description is Choice D."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

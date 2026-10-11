@@ -1,0 +1,282 @@
+{
+ "id": "u06-tc-hard",
+ "title": "文本补全 · 难度高（8 题）",
+ "en": "Text Completion — Practice Set 3: Hard",
+ "minutes": 15,
+ "practice": true,
+ "objectives": [
+  "独立做完 8 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "tc",
+   "difficulty": "hard",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Text Completion · Practice Set 3: Hard",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "tc",
+     "passage": null,
+     "stem": "In searching for norms in the sense of authoritative standards of what ought to be, rather than in the sense of what is average and thus can be considered normal, normative ethics aims to ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "predict",
+        "mitigate",
+        "question",
+        "dictate",
+        "personalize"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The sentence defines normative ethics by specifying the sense of the “norms” for which it searches. Since these are authoritative ethical standards, the word that fills the blank must describe the act of establishing those standards. The choice that does this is “dictate.” Of the other choices, “predict” suggests that normative ethics merely attempts to describe future behavior rather than establish what guidelines should shape it, while “personalize” suggests a concern with individual circumstances that is not otherwise addressed in the sentence. “Mitigate” (to moderate or alleviate) is likewise incongruent with the rest of the sentence, while “question” does not address normative ethics’ concern with establishing rather than questioning norms.\n\nThus the correct answer is dictate (Choice D)."
+    },
+    {
+     "id": "q2",
+     "kind": "tc",
+     "passage": null,
+     "stem": "When she first came to France from Bulgaria, she was hardly the ______ student she later made herself out to be, since she had access to considerable family wealth.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "naive",
+        "precocious",
+        "impecunious",
+        "ambitious",
+        "assiduous"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The student’s considerable family wealth is cited as proof that her later depiction of herself was false; the word that fills the blank describes this later depiction, so it must be an adjective that is incompatible with wealth. “Impecunious,’ meaning penniless, is therefore the correct choice. None of the other responses is dependent on wealth—her family’s finances would have no bearing on whether the student was actually naive, precocious (advanced for her age), ambitious, or assiduous (diligent)—so they are incorrect.\n\nThus the correct answer is impecunious (Choice C)."
+    },
+    {
+     "id": "q3",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Researchers have observed chimpanzees feigning injury in order to influence other members of the group, thus showing that the capacity to ______ is not uniquely human.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "cooperate",
+        "instruct",
+        "conspire",
+        "dissemble",
+        "dominate"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The words “thus showing” suggest that the capacity that is not unique to humans was demonstrated by the activity the researchers observed. Since that activity—feigning injury to influence others—requires the capacity to transmit false information, “dissemble” is the correct answer. Because there is no indication that the chimpanzees worked together to feign injury, “conspire” is incorrect. None of the other options— “dominate,” “instruct,” or “cooperate”—suggests the pretense involved in feigning an injury, so they are all incorrect.\n\nThus the correct answer is dissemble (Choice D)."
+    },
+    {
+     "id": "q4",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Instant celebrity is often (i) ______ asset because if there is no (ii) ______ to interest the public—no stage or screen triumphs, no interesting books, no heroic exploits—people quickly become bored.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "a fleeting",
+        "an incomparable",
+        "an untapped"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "competing attraction",
+        "continuity of exposure",
+        "real achievement"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The sentence says that people quickly become bored with those who achieve sudden fame in the absence of the condition named by Blank (ii), implying that instant celebrity often does not last long; among the answer choices for Blank (i) only “a fleet-ing” matches this meaning, so it is correct. The answer to Blank (ii) must be an umbrella term for things listed in the second part of the sentence as defeaters of boredom: “screen triumphs,’ “interesting books,’ “heroic exploits.” The answer choice that best matches this meaning is “real achievement,’ so it is correct. “Competing attraction” also seems a plausible choice for Blank (ii), but it is incorrect because the sentence does not mention competition between attractions.\n\nThus the correct answer is a fleeting (Choice A) and real achievement (Choice F)."
+    },
+    {
+     "id": "q5",
+     "kind": "tc",
+     "passage": null,
+     "stem": "At their best, (i) ______ book reviews are written in defense of value and in the tacit hope that the author, having had his or her (ii) ______ pointed out, might secretly agree that the book could be improved.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "abstruse",
+        "adverse",
+        "hortatory"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "strengths",
+        "transgressions",
+        "assumptions"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The second part of the sentence talks about the author agreeing that the book can be improved after the things named by Blank (ii) are pointed out; therefore, the answer to Blank (ii) must denote something negative whose presence calls for improvement. The only answer choice for Blank (ii) that is negative in meaning is “transgressions,” so it is correct. Book reviews that point out the author's transgressions are negative in nature, so the answer to Blank (i) must be negative in meaning; the only answer choice that meets this condition is “adverse,” so it is correct.\n\nThus the correct answer is adverse (Choice B) and transgressions (Choice E)."
+    },
+    {
+     "id": "q6",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The gaps in existing accounts of the playwright’s life are not (i) ______ since much of the documentary evidence on which historians have relied is (ii) ______",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "trifling",
+        "obvious",
+        "implicit"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "credible",
+        "extant",
+        "incomplete"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The sentence focuses on the relationship between the gaps in existing accounts of a life and the evidence used to produce those accounts. Since “gaps” implies a concern with completeness, the characterization of that evidence that makes the most sense for Blank (ii) is “incomplete.” The other choices, “credible” or “extant,” could explain the accuracy or verifiability of the accounts in question but nothing about the gaps themselves. Once it is determined that “incomplete” is the best choice for characterizing the evidence, it follows that the gaps in the accounts based on that evidence would likely be consider-able, so the opposite of considerable, “trifling,” is the correct answer for Blank (i).\n\nThus the correct answer is trifling (Choice A) and incomplete (Choice F)."
+    },
+    {
+     "id": "q7",
+     "kind": "tc",
+     "passage": null,
+     "stem": "That today’s students of American culture tend to (i) ______ classical music is understandable. In our own time, America’s musical high culture has degenerated into a formulaic entertainment divorced from the contemporary moment. Thus, to miss out on what our orchestras are up to is not to (ii) ______ much. In the late Gilded Age, however, music was widely esteemed as the “queen of the arts.” Classical music was in its American heyday, (iii) ______ the culture at large.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "promote",
+        "reinterpret",
+        "ignore"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "sacrifice",
+        "appreciate",
+        "malign"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "antagonistic toward",
+        "generally rejected by",
+        "centrally embedded in"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The “however” of the next-to-last sentence indicates that the author’s characterization of the relationship between classical music and popular culture during the Gilded Age contrasts with the current state of affairs. Since music was widely esteemed during the Gilded Age, it follows that it is viewed more negatively, or disregarded, during the current era. Of the choices for Blank (i), “ignore” is the only choice that conveys this sentiment; “promote” connotes the opposite, while “reinterpret” suggests a different sort of positive engagement with classical music that is otherwise unmentioned in the passage. The author characterizes ia the current disconnection between music and culture as understandable, and uses pejorative language (“degenerated,” “formulaic”) to describe current classical music. Of the three choices for Blank (ii), “sacrifice” best conveys this dismissive attitude; “appreciate” would convey that those who forego orchestral concerts are indeed missing something worthwhile, while “malign” overstates the presumed level of feeling and activity of one who simply does not attend concerts. Since the lack of a connection between culture and classical music must contrast with the relationship during the Gilded Age, the answer to Blank (iii) is “centrally embedded in.’ Of the other two choices, “generally rejected by” would provide no contrast, while “antagonistic toward” suggests a relationship that would not explain why music was so widely esteemed.\n\nThus the correct answer is ignore (Choice C), sacrifice (Choice D), and centrally embedded in (Choice I)."
+    },
+    {
+     "id": "q8",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The serious study of popular culture by intellectuals is regularly credited with having rendered obsolete a once-dominant view that popular culture is inherently inferior to high art. Yet this alteration of attitudes may be somewhat (i) ______ Although it is now academically respectable to analyze popular culture, the fact that many intellectuals feel compelled to rationalize their own (ii) ______ action movies or mass-market fiction reveals, perhaps unwittingly, their continued (iii) ______ the old hierarchy of high and low culture.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "counterproductive",
+        "underappreciated",
+        "overstated"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "penchant for",
+        "distaste for",
+        "indifference to"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "aversion to",
+        "investment in",
+        "misunderstanding of"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence discusses a purported change in how popular culture and high art are relatively valued; the author is scrutinizing the notion that the academic study of the former has significantly raised its once lowly status. In the last sentence, Blank (iii) is preceded by the word “continued,” indicating that something about intellectuals’ view of the hierarchy of culture has remained unchanged. Since the author states in the first sentence that this hierarchy was once dominant, “investment in” the hierarchy would indicate that sense of continuity. Neither of the other two options is supported by the pas-sage because there is no indication the author believes that intellectuals have a long-held aversion to or misunderstanding of that hierarchy. The “although” that begins the last sentence indicates that the phrase completed by Blank (ii) will contrast the respectability of analyses of popular culture with something that nonetheless reveals a continued allegiance to the hierarchy. A need to explain away a “distaste for” or an “indifference to” action movies or pulp fiction would not indicate any such allegiance, so those choices must be incorrect. However, a need to justify one’s penchant or liking for popular culture would indicate an adherence to the high-low culture hierarchy. Thus “penchant for” is the correct choice for Blank (ii). Finally, since the author is suggesting that the hierarchy given to high and low culture is not obsolete as some claim, it follows that the shift in attitudes is exaggerated; thus, the correct answer to Blank (i) is “overstated.” “Underappreciated” implies the opposite, and “counterproductive” implies a judgment about the value of the hierarchy, whereas the passage is primarily concerned with its existence.\n\nThus the correct answer is overstated (Choice C), penchant for (Choice D), and investment in (Choice H)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

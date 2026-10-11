@@ -6,6 +6,8 @@
 import json, os, sys, urllib.request, concurrent.futures as cf
 sys.path.insert(0, os.path.dirname(__file__))
 from unitlib import COURSES, validate_unit, python_cells
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'grvp'))
+from practice_check import validate_practice
 
 # 这些课的代码块必须「一个知识点一段」：单个代码块（不含输出行）不超过 MAX_CELL 行，解释紧跟在后面
 SPLIT_COURSES = {'py-0'}
@@ -30,6 +32,9 @@ def main(online):
             unit = json.load(open(path, encoding='utf-8'))
             if unit['id'] != u['id']: errors.append(f"{u['file']}: 文件里的 id {unit['id']} ≠ course.json 的 {u['id']}")
             if unit['title'] != u['title']: errors.append(f"{u['file']}: 标题和 course.json 不一致")
+            if u.get('practice'):           # 官方练习套题：没有小测验，用自己的检查
+                if u['minutes'] > 50: errors.append(f"{course['id']}/{u['id']}: 一节 {u['minutes']} 分钟，超过 50 分钟")
+                errors += validate_practice(unit); done += 1; continue
             nq = len(unit['quiz']['questions']) if (u.get('whole') or u.get('direct')) else 10     # 拆分出来的小节，每个 3–5 题
             if (u.get('whole') or u.get('direct')) and not 2 <= nq <= 5: errors.append(f"{u['id']}: 拆分小节的测验应有 2–5 题，现在 {nq} 题")
             if u['minutes'] > 50: errors.append(f"{course['id']}/{u['id']}: 一节 {u['minutes']} 分钟，超过 50 分钟（用 tools/course/split.py 拆开）")

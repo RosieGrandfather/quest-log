@@ -1,0 +1,327 @@
+{
+ "id": "u04-tc-easy",
+ "title": "文本补全 · 难度低（9 题）",
+ "en": "Text Completion — Practice Set 1: Easy",
+ "minutes": 20,
+ "practice": true,
+ "objectives": [
+  "独立做完 9 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "tc",
+   "difficulty": "easy",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Text Completion · Practice Set 1: Easy",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "tc",
+     "passage": null,
+     "stem": "This composer has never courted popularity: her rugged modernism seems to defy rather than to ______ the audience.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "ignore",
+        "discount",
+        "woo",
+        "teach",
+        "cow"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The first part of the sentence asserts that the composer has never sought popularity, while the second part of the sentence explains what the composer’s style does instead. The blank, then, must be filled with a verb that is roughly synonymous with “court popularity.” The choice that best does this is “woo;” its correctness is confirmed by the fact that it also forms the best contrast with “defy.” None of the other choices indicates the desire to be liked by or to win over audiences that a synonym of “court popularity” would require.\n\nThus the correct answer is woo (Choice C)."
+    },
+    {
+     "id": "q2",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The sight of a single actor portraying several characters in the same scene is no longer a shock to the average moviegoer, such special-effects trickery having become so ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "expensive",
+        "specialized",
+        "sinister",
+        "commonplace",
+        "unreliable"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The blank calls for a term that would explain why the special effects that once astonished moviegoers no longer do so. “Commonplace” does this by suggesting that the technology has become so familiar that it no longer surprises; therefore, it is the correct answer. None of the other options suggests a change that would result in desensitizing moviegoers to the special effects on-screen.\n\nThus the correct answer is commonplace (Choice D)."
+    },
+    {
+     "id": "q3",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Early studies often concluded that the public was ______ the propagandistic influence of mass communications, but one recent study indicates that, on the contrary, mass communications seldom produce marked changes in social attitudes or actions.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "unaware of",
+        "scornful of",
+        "susceptible to",
+        "unimpressed by",
+        "coping with"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The recent study found that mass communications had negligible effects on the public. Since the recent study’s findings are contrary to those of earlier ones, the earlier studies must have found that the influence of mass communications was significant; thus, the blank must be filled with a word that indicates that the public is swayed by such communications. Of the choices, only “susceptible to” does this. Two of the other choices, “unaware of” and “unimpressed by,’ indicate the opposite. “Scornful of” also indicates some resistance to mass communications, as does “coping with,” so those are incorrect as well.\n\nThus the correct answer is susceptible to (Choice C)."
+    },
+    {
+     "id": "q4",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The figure-skating pair’s convincing victory last week was particularly (i) ______ to their rivals, who were in peak form and complained privately about the judging. That the pair won when their rivals were (ii) ______ too is also impressive.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "unsurprising",
+        "irksome",
+        "gratifying"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "terrific",
+        "nervous",
+        "inconsistent"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The fact that the winning pair’s rivals were “in peak physical form” suggests that these rivals had a reasonable expectation of victory; the fact that they “complained about the judging” indicates that they regarded the pair’s victory as not completely deserved. These two considerations suggest that the rivals had a negative reaction to the winning pair's victory; the only answer choice for Blank (i) that matches this meaning is “irksome,” so it is correct. The second sentence reinforces the implication that the rivals were also strongly deserving of vic-tory, and the word “too” suggests that the performances of the winning pair and of their rivals were comparable in quality. This points to “terrific” as the correct answer choice for Blank (ii). Thus the correct answer is irksome (Choice B) and terrific (Choice D)."
+    },
+    {
+     "id": "q5",
+     "kind": "tc",
+     "passage": null,
+     "stem": "In his initial works, the playwright made physical disease (i) ______ factor in the action; from this, his early critics inferred that he had a predilection for focusing on (ii) ______ subject matter.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "pivotal",
+        "a nonexistent",
+        "an obscure"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "recondite",
+        "uncomplicated",
+        "morbid"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "A writer who has “a predilection for focusing” on a thing makes that thing prominent in his or her work, so the answer to Blank (i) must be synonymous with “prominent” or “significant”; the answer choice that matches this meaning is “pivotal,” so it is correct. The answer to Blank (ii) must be a word that describes the subject matter of physical disease, so the correct choice is “morbid”\n\nThus the correct answer is a pivotal (Choice A) and morbid (Choice F)."
+    },
+    {
+     "id": "q6",
+     "kind": "tc",
+     "passage": null,
+     "stem": "We have yet to (i) ______ the assessment of Canada’s biodiversity. Most of the vertebrates have been assessed, but our challenge will be the assessment of invertebrates and plants. This task is (ii) ______ not only because of the high number of species, but also because of the diversity, each species requiring a different approach.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "initiate",
+        "complete",
+        "limit"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "repetitious",
+        "trivial",
+        "daunting"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The sentence implies that Canada’s invertebrates and plants have not yet been assessed, so the assessment of Canada’s biodiversity is not finished; therefore, the correct answer to Blank (i) is “complete.” The assessment of invertebrates and plants is described as a “challenge,” so the answer to Blank (ii) must be synonymous with “difficult” The only answer choice that matches this meaning is “daunting,” so it is correct.\n\nThus the correct answer is complete (Choice B) and daunting (Choice F)."
+    },
+    {
+     "id": "q7",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The company’s efforts to improve safety were apparently (i) ______, at least according to the company’s own data, which showed that the (ii) ______ incidents with the potential to cause a serious accident declined significantly. Nevertheless, independent analysts argue that those statistics are (iii) ______: These analysts maintain that the company has consistently underestimated both the probability and the likely effects of accidents in the sensitive and poorly understood environment in which the company is operating.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "innovative",
+        "successful",
+        "frustrated"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "frequency of",
+        "impediments to",
+        "attention to"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "deceptive",
+        "testable",
+        "consistent"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "Since the analysts found that the company’s statistics underestimated the potential for accidents, the answer to Blank (iii) must reflect the inaccuracy or inapplicability of those statistics. “Deceptive” is the only choice that does so. Blank (i) must then be answered with a choice that reflects the more positive view of accident prevention that deceptive statistics might provide. “Frustrated” efforts would imply the opposite, and while “innovative” has positive connotations, the passage is concerned with the effectiveness of safety measures rather than with their novelty. Thus “successful” is the correct choice. Finally, the word for Blank (ii) describes something related to potentially dangerous incidents that would indicate improved safety if it were to decline. If “impediments to” or “attention to” such incidents were to decline, that would likely have the opposite implication. However, fewer such incidents would presumably be a sign of improved safety; thus “frequency of” is the correct response. Thus the correct answer is successful (Choice B), frequency of (Choice D), and deceptive (Choice G)."
+    },
+    {
+     "id": "q8",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Researchers trying to make it possible to trace counterfeit documents to the printer that produced them are (i) ______ the fact that the rotating drums and mirrors inside laser printers are imperfect devices that leave unique patterns of banding in their output. Although these patterns are (ii) ______ to the naked eye, they can be (iii) ______ and analyzed by computer programs that the researchers have spent the past year devising.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "exploiting",
+        "facing",
+        "manipulating"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "invisible",
+        "obvious",
+        "unappealing"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "detected",
+        "implemented",
+        "generated"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The “although” that begins the second sentence suggests that there is a contrast between the way the naked eye perceives the patterns in question and the way computer programs can view them. The answers to Blank (ii) and Blank (iii) must therefore reflect this contrast. “Invisible” and “detected” are the only pairing that does this. Blank (i) calls for a characterization of the relationship between the researchers and the inevitability of imperfections in printing technology. Since the passage asserts that researchers are using computers to analyze these imperfections, “exploiting” is the best choice for Blank (i). “Facing” does not imply the level of engagement detailed in the passage, while “manipulating” suggests that the researchers’ focus might be on changing the imperfections themselves, rather than analyzing them.\n\nThus the correct answer is exploiting (Choice A), invisible (Choice D), and detected (Choice G)."
+    },
+    {
+     "id": "q9",
+     "kind": "tc",
+     "passage": null,
+     "stem": "In her startlingly original writing, she went further than any other twentieth-century author in English (perhaps in any language) in (i) ______ literary language and form, (ii) ______ stylistic conventions, and (iii) ______ a rich and diverse structure of meaning.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "reinventing",
+        "canonizing",
+        "stabilizing"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "undoing",
+        "overpraising",
+        "misunderstanding"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "replicating",
+        "borrowing",
+        "introducing"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The writer's work is described as startlingly original, and the sentence specifies three ways in which the author achieved this originality. Therefore each blank must be filled with a word that reflects innovative rather than conventional ways of writing. For Blank (i), the choice must be “reinventing,” because neither “canonizing” nor “stabilizing” would indicate a break with traditional forms or language. Blank (ii) must contain a word that describes the writer’s relationship with convention; “undoing?” is the only one that reflects originality. Blank (iii) likewise requires a word that conveys the novelty of the writer's work. Both “replicating” and “borrowing” suggest a derivative approach to writing, so they are incorrect. “Introducing” implies that the writer’s structure is new; therefore it is the correct choice.\n\nThus the correct answer is reinventing (Choice A), undoing (Choice D), and introducing (Choice I)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

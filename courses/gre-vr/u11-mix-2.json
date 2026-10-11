@@ -1,0 +1,697 @@
+{
+ "id": "u11-mix-2",
+ "title": "混合练习 · 第 2 套（25 题）",
+ "en": "Mixed — Mixed Practice Set 2",
+ "minutes": 45,
+ "practice": true,
+ "objectives": [
+  "独立做完 25 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "mix",
+   "difficulty": "mixed",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Mixed Practice Set 2",
+   "passages": {
+    "p1": "Despite a dramatic increase in the number of people riding bicycles for recreation in Parkville, a recent report by the Parkville Department of Transportation shows that the number of accidents involving bicycles has decreased for the third consecutive year.",
+    "p2": "What makes a worker ant perform one particular task rather than another? From the 1970s to the mid-1980s, researchers emphasized internal factors within individual ants, such as polymorphism, the presence in the nest of workers of different shapes and sizes, each suited to a particular task. Other elements then considered to have primary influence upon an ant’s career were its age—it might change tasks as it got older—and its genetics. However, subsequent ant researchers have focused on external prompts for behavior. In advocating this approach, Deborah Gordon cites experiments in which intervention in a colony’s makeup perturbed worker activity. By removing workers or otherwise altering the nest conditions, researchers were able to change the tasks performed by individual workers.",
+    "p3": "This passage is excerpted from material published in 2001.\n\nIn 1998 scientists using the neutrino detector in Kamioka, Japan, were able to observe several thousand neutrinos—elusive, tiny subatomic particles moving at nearly the speed of light and passing through almost everything in their path. The Kamioka findings have potentially far-reaching ramifications. They strongly suggest that the neutrino has mass, albeit an infinitesimal amount. Even a tiny mass means that neutrinos would outweigh all the universe's visible matter, because of their vast numbers. The findings also suggest that a given neutrino does not have one stable mass or one stable identity; instead it oscillates from one identity or “flavor” (physicists’ term describing how neutrinos interact with other particles) to another. This oscillation may explain Why, although the Sun is a large source of neutrinos, detectors capture far fewer solar neutrinos than the best theory of solar physics predicts: the neutrinos may be changing to flavors undetectable by detectors. Finally, while the standard particle-physics model—which describes all matter in terms of twelve fundamental particles and four fundamental forces—does not allow for neutrinos with mass, there are theories that do. Further experiments to confirm that neutrinos have mass could help physicists determine which, if any, of these theories is correct.",
+    "p4": "Mayor: Four years ago, when we reorganized the city police department in order to save money, critics claimed that the reorganization would make the police less responsive to citizens and would thus lead to more crime. The police have Line compiled theft statistics from the years following the reorganization that show that the critics were wrong. There was an overall decrease in reports of thefts of all kinds, including small thefts.",
+    "p5": "During the 1920s, most advocates of scientific management, Frederick Taylor’s method for maximizing workers’ productivity by rigorously routinizing their jobs, opposed the five-day workweek. Although scientific managers conceded that reducing hours might provide an incentive to workers, in practice they more often used pay differentials to encourage higher productivity. Those reformers who wished to embrace both scientific management and reduced hours had to make a largely negative case, portraying the latter as an antidote to the rigors of the former.\n\nIn contrast to the scientific managers, Henry Ford claimed that shorter hours led to greater productivity and profits. However, few employers matched either Ford’s vision i0 or his specific interest in mass marketing a product—automobiles—that required leisure for its use, and few unions succeeded in securing shorter hours through bar-gaining. At its 1928 convention, the American Federation of Labor (AFL) boasted of approximately 165,000 members working five-day, 40-hour weeks. But although this represented an increase of about 75,000 since 1926, about 70 percent of the total came from five extremely well-organized building trades’ unions.",
+    "p6": "In November 1753, the British author Sarah Fielding accepted half the payment for her novel The Cry and asked that the other half, when due, go to her “or to whomsoever I shall appoint,’ perhaps indicating that the remaining share was intended for someone tine else. Indeed, many think that the novel was a collaborative venture between Fielding and Jane Collier. This particular collaboration was likely enough, as the two were close friends with common interests. They wrote jointly authored letters, were both published authors with a lively interest in each other’s work, and were enthusiastic supporters of didacticism and innovation in fiction—central concerns of The Cry. However, contemporaries ascribed the work solely to Fielding, and there is nothing in the novel that is incompatible with Fielding’s other writings."
+   },
+   "items": [
+    {
+     "id": "q1",
+     "kind": "tc",
+     "passage": null,
+     "stem": "By recognizing commonalities among all the major political parties and by promoting a collaborative decision-making process, the prime minister has made good on his promise to cultivate a leadership style that emphasizes ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "growth",
+        "politics",
+        "ideology",
+        "cooperation",
+        "differentiation"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The second half of the sentence states that the prime minister has kept his promise to cultivate a certain leadership style; the “by” that begins the first part of the sentence indicates that the actions it describes are cited as examples of this style of leadership. The blank, then, must be filled with a word that describes the prime minister's focus on recognizing commonalities and promoting collaboration. “Cooperation” does this. None of the other choices touches upon the prime minister's efforts to work with others in the political process; indeed, “ideology” and “differentiation” might well imply the opposite. Thus the correct answer is cooperation (Choice D)."
+    },
+    {
+     "id": "q2",
+     "kind": "tc",
+     "passage": null,
+     "stem": "In his unexpurgated autobiography, Mark Twain commented freely on the flaws and foibles of his country, making some observations so ______ that his heirs and editors feared they would damage Twain’s reputation if not withheld.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "buoyant",
+        "acerbic",
+        "premonitory",
+        "laudatory",
+        "temperate"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The blank must be filled with a word that characterizes Mark Twain’s comments on the “flaws and foibles” of his country; since pointing out flaws implies that the comments are critical, “laudatory,” meaning flattering, is not the correct choice. “Buoyant,” mean-ing lighthearted, would also be an unlikely adjective to apply to criticism, and both it and “temperate” suggest an inoffensiveness that would not explain the heirs’ and editors’ fears that publishing the comments would damage Twain's reputation. “Premonitory” suggests that Twain's observations were predictive or that their purpose was to warn, something not supported by any other information in the sentence. “Acerbic,” however, implies a bitterness of tone that could very plausibly accompany criticism, and it also suggests why Twain's heirs and editors were worried about the remarks’ effect on the writer's reputation.\n\nThus the correct answer is acerbic (Choice B)."
+    },
+    {
+     "id": "q3",
+     "kind": "tc",
+     "passage": null,
+     "stem": "That the artist chose to remain in his hometown does not mean that he remained (i) ______; on the contrary, he (ii) ______ the international artistic movements of his day.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "provincial",
+        "capricious",
+        "obstinate"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "knew nothing about",
+        "made light of",
+        "kept abreast of"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The first part of the sentence suggests that the answer to Blank (i) names a quality that someone who chose to remain in his hometown might tend to have; in addition, the second part of the sentence suggests that this quality has to do with that person's attitude toward the wider world. The answer choice for Blank (i) that best fits these conditions is “provincial,” so it is correct. Someone who is the opposite of provincial is interested in what is happening outside of his or her narrow domain, so the correct answer choice for Blank (ii) is “kept abreast of”\n\n“Obstinate” may seem a plausible choice for Blank (i), as those who fit the “provincial” stereotype often not only are uninterested in other people's opinions but also actively resist any pressure to change. However, “obstinate” by itself does not imply any particular attitude toward the world beyond one’s immediate environment, as one can be interested in other people's opinions while at the same time clinging firmly to one’s own.\n\nThus the correct answer is provincial (Choice A) and kept abreast of (Choice F)."
+    },
+    {
+     "id": "q4",
+     "kind": "tc",
+     "passage": null,
+     "stem": "An innovation of the eighteenth-century cookbook writer Mary Cole was that in her work she (i) ______ the earlier books from which her recipes were drawn. Even in those numerous instances in which she had collated into a single version, which she could have called her own, the recipes of several earlier writers, she (ii) ______ them.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "preserved",
+        "enhanced",
+        "acknowledged"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "took pains to cite",
+        "sought to imitate",
+        "could not surpass"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The second sentence suggests that Cole did not call certain recipes her own even though doing so would have been justified. Blank (ii) must describe Cole’s actual practice, which contrasts with calling the recipes her own. Among the answer choices only “took pains to cite” provides a direct contrast, so it is correct. Because the second sentence is presented as a special or extreme case of the first, the answer to Blank (i) must be similar in meaning to Blank (ii). “Acknowledged” is the only choice that fits this criterion, so it is the correct answer to Blank (i).\n\nThus the correct answer is acknowledged (Choice C) and took pains to cite\n\n(Choice D)."
+    },
+    {
+     "id": "q5",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The lizards snapped up insects that are so (i) ______ that other potential predators avoid them. Among the lizards’ prey were some beetles that they initially (ii) ______ because the insects were spraying their hot, irritant defense chemical at the time. Yet even these produced no apparent ill effects, since the lizards, having eaten, proceeded on their way (iii) ______ enough.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "rare",
+        "nutritious",
+        "noxious"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "sought",
+        "rejected",
+        "resembled"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "erratically",
+        "laboriously",
+        "nonchalantly"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Blank (i) calls for a description of insects that predators would generally avoid. “Noxious,” meaning harmful, is the correct answer; there is no reason to suspect that predators would avoid nutritious or rare prey. Blank (ii) characterizes the lizards’ initial response to beetles they eventually ate, and since it is followed by a clause beginning with “because,” the lizards’ response must be explained by the beetles’ irritant-spraying behavior. “Rejected” fits these criteria; animals routinely avoid unpleasant stimuli. “Sought” is incorrect because it is unlikely that lizards would seek out prey with such defensive behavior, and “resembled” is incorrect because nothing else in the passage suggests that the described behavior is shared by the lizards. Finally, the author states that eating the beetles apparently did not harm the lizards; the “since” of the last sentence introduces the evidence on which this observation is based. Thus Blank (iii) must be filled by a word that suggests the lizards were unharmed. “Erratic” or “laborious” postmeal locomotion might indicate otherwise; therefore the correct answer for Blank (iii) is “nonchalantly.”\n\nThus the correct answer is noxious (Choice C), rejected (Choice E), and nonchalantly (Choice I)."
+    },
+    {
+     "id": "q6",
+     "kind": "tc",
+     "passage": null,
+     "stem": "When the normally (i) ______ film director was interviewed, it was only the topic of her next movie that (ii) ______ her flow of words. Her (iii) ______ on that subject suggested that it was an unwelcome one.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "assiduous",
+        "loquacious",
+        "diffident"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "diverted",
+        "stanched",
+        "accentuated"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "taciturnity",
+        "alacrity",
+        "rhapsody"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The reader is told that the director's reaction to being asked about her next movie indicates that it is an unwelcome subject. Of the choices for Blank (iii), both “alacrity” and “rhapsody” would indicate excitement or eagerness to talk about this topic, making them implausible choices. “Taciturnity,” on the other hand, indicates an unwillingness or reserve about speaking; it is therefore the correct choice. This particular reaction is contrasted to the director’s normal conversational style, so the answer to Blank (i) must indicate a ready willingness to converse. “Loquacious,” meaning talkative, is the choice that fits; neither “diffident,” which means reserved, nor “assiduous,” which means diligent, conveys the necessary contrast to taciturnity. Finally, Blank (ii) suggests that the topic of the director’s next movie provoked a verbal reaction different from her usual one. Since the director is normally a talkative person, the unwelcome topic likely checked her conversation; therefore, “stanched” is the correct answer. “Accentuated” indicates the opposite, and while “diverted” might seem plausible, it suggests a potential change of topic unsupported by the rest of the passage.\n\nThus the correct answer is loquacious (Choice B), stanched (Choice E), and taciturnity (Choice G)."
+    },
+    {
+     "id": "q7",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Bureaucrats tend to (i) ______. So it is surprising that the European Commission is proposing to hand back some of its antitrust powers to national governments. Such a willingness to (ii) ______ power is quite (iii) ______ Perhaps the commission, so often a byword for meddling, bungling, and even corruption, is starting to put its house in order following the forced resignation of the previous lot of commissioners last year.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "value complex procedures",
+        "guard their authority jealously",
+        "shirk many of their responsibilities"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "devolve",
+        "misuse",
+        "appropriate"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "troubling",
+        "encouraging",
+        "predictable"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The second sentence states that the European Commission's current actions are surprising, so they must run counter to the general tendency of bureaucrats described in Blank (i). Since the commission is considering giving up powers it currently possesses, “guard their authority jealously” expresses the opposite of this action, so it is the correct choice. The other two options could potentially describe the process of delegating powers back to national governments; therefore the commission's actions would not be described as surprising in the context of either of those bureaucratic tendencies. Blank (ii) calls for a word that paraphrases the commission's proposal; since “devolve” is a synonym for delegate, it is the correct choice. “Appropriate” expresses the opposite, while “misuse” suggests a negative judgment about the commission's actions belied by the author’s hope that they mark a positive turn. Blank (iii) calls for an adjective describing the commission's actions. Since the author is hopeful that this latest proposal marks a new direction for a commission whose history is described in negative terms, the correct choice for Blank (iii) is “encouraging” “Predictable” does not fit because the proposal is described as potentially marking a break in the commission's former bad practices, and “troubling” does not work because that change is described as a positive rather than a negative one.\n\nThus the correct answer is guard their authority jealously (Choice B), devolve (Choice D), and encouraging (Choice H)."
+    },
+    {
+     "id": "q8",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "Which of the following, if true during the last three years, best reconciles the apparent discrepancy in the facts?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The Parkville Department of Recreation confiscated abandoned bicycles and sold them at auction to any interested Parkville residents.",
+        "Increased automobile and bus traffic in Parkville had been the leading cause of the most recent increase in automobile accidents.",
+        "Because of the local increase in the number of people bicycling for recreation, many out-of-town bicyclists ride in the Parkville area.",
+        "The Parkville Police Department enforced traffic rules for bicycle riders much more vigorously and began requiring recreational riders to pass a bicycle safety course.",
+        "The Parkville Department of Transportation canceled a program that required all bicycles to be inspected and registered each year."
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The correct answer is Choice D. Enforcing traffic rules and educating bicyclists about safety will obviously tend to reduce the number of bicycle accidents. Actions mentioned in the other answer choices will not have this effect. Choices A and C would explain the increase in the number of bicyclists in Parkville but not the decrease in bicycle accidents. The number of automobile accidents (Choice B) is not correlated with the number of bicycle accidents. Finally, cancellation of a bicycle inspection pro-gram (Choice E), if anything, would tend to increase the number of bicycle accidents."
+    },
+    {
+     "id": "q9",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "According to the passage, which of the following factors were considered from the 1970s to the mid-1980s to influence the division of labor among a colony's worker ants?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Ants’ inherited traits",
+        "The age of the ants",
+        "The ants’ experiences outside the nest"
+       ],
+       "pick": "any",
+       "correct": [
+        0,
+        1
+       ]
+      }
+     ],
+     "expl": "Choices A and B are correct. The question asks about the factors considered to affect ant roles in the earlier period under discussion. Describing the period from the 1970s to the mid-1980s, the passage states that “Other elements then considered to have primary influence upon an ant’s career were its age . . . and its genetics.”\n\nChoice C is incorrect: the passage never discusses ants’ experiences outside the nest."
+    },
+    {
+     "id": "q10",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "It can be inferred from the passage that Gordon and earlier researchers would agree with which of the following statements about worker ants?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Disruption of the nest can affect workers’ roles.",
+        "Genetics predominates over other factors in determining a worker ant’s role.",
+        "An individual worker's tasks can change during its lifetime."
+       ],
+       "pick": "any",
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is correct. The question asks about points that Gordon and earlier researchers would agree on.\n\nChoice A is incorrect: Nest disruption is an external factor favored by later researchers such as Gordon, but there is no suggestion that earlier researchers considered it a factor.\n\nChoice B is incorrect: Earlier researchers might have thought that genetics was a predominant factor, but the later work showed that other factors could override genetics. Choice C is correct: Both earlier and later researchers knew that an individual worker ant can change its role. According to the passage, the earlier researchers thought that an ant “might change tasks as it got older,” and later researchers “were able to change the tasks performed by individual workers.”"
+    },
+    {
+     "id": "q11",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "The last sentence has which of the following functions in the passage?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It explains how the experiments performed by Gordon differed from those performed by earlier researchers.",
+        "It justifies the methodology of the experiments cited by Gordon.",
+        "It gives details showing how the experiments cited by Gordon support her position."
+       ],
+       "pick": "any",
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is correct. The question asks about the role of the last sentence.\n\nChoice A is incorrect: the passage never mentions any experiments performed by earlier researchers.\n\nChoice B is incorrect: the last sentence simply describes the experiments and their results but does not make any attempt to justify their methodology.\n\nChoice C is correct: the experiments described in the last sentence show that ants’ roles in the nest can be affected by external conditions, and Gordon is described in the passage as “advocating this approach”"
+    },
+    {
+     "id": "q12",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The primary purpose of the passage is to",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "evaluate the merits of a particular theory in light of new evidence",
+        "discuss scientists’ inability to account for certain unexpected discoveries",
+        "point out certain shortcomings in a long-standing theory",
+        "compare several alternative explanations for a particular phenomenon",
+        "consider some implications of certain scientific findings"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "【文章概述】The passage discusses the observations of neutrinos made by physicists in Japan. It mentions two properties of neutrinos suggested by the observations—the nonzero mass and the ability to change flavor—and discusses the ramifications of these results.\n\nThe passage discusses the “potentially far-reaching ramifications” of two findings made during an observation of neutrinos: that neutrinos have nonzero mass and that they are capable of changing their flavor. Therefore the correct answer is Choice E."
+    },
+    {
+     "id": "q13",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "According to the passage, one significant implication of the discovery that",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "cast doubt on the solar origins of many of the neutrinos that reach Earth",
+        "help to establish the validity of the standard particle-physics model",
+        "indicate that most of the visible matter of the universe is composed of neutrinos",
+        "entail that the total weight of all the visible matter in the universe is less than that of all the neutrinos in the universe",
+        "mean that the speed with which neutrinos normally move can be slowed by certain types of matter"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The passage states that “Even a tiny mass [of a neutrino] means that neutrinos would outweigh all the universe's visible matter, because of their vast numbers.” Therefore the correct answer is Choice D."
+    },
+    {
+     "id": "q14",
+     "kind": "se",
+     "passage": null,
+     "stem": "In film studies—a visually oriented discipline that is ______ backlit close-ups, eyeline matches, and voyeuristic gazes—scholars have often been tone-deaf to the sounds of music.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "fixated on",
+        "obsessed with",
+        "unconcerned with",
+        "amused by",
+        "bothered by",
+        "indifferent to"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence suggests a difference between a scholarly discipline’s attentions to the visual versus the aural, with the latter being relatively ignored in favor of the former. The blank must therefore designate this attention, which “unconcerned with” and “indifferent to” do not. “Amused by” conveys a lesser degree of attention and a more positive affect than both “fixated on” and “obsessed with” and lacks another word that would produce a sentence with the same meaning.\n\nThus the correct answer is fixated on (Choice A) and obsessed with (Choice B)."
+    },
+    {
+     "id": "q15",
+     "kind": "se",
+     "passage": null,
+     "stem": "Consumers may think that genetic engineering of foods is something new, but humans have been modifying plants for ages; the ______ is not that new genes are introduced but that genes can now be moved from one species to another.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "novelty",
+        "quandary",
+        "advantage",
+        "innovation",
+        "discrepancy",
+        "predicament"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        3
+       ]
+      }
+     ],
+     "expl": "The last part of the sentence makes a distinction between the fact of genetic modification and the particulars of how this modification is done. This distinction is made in order to support the sentence’s implication that consumers who believe that genetic engineering itself is new are mistaken. Therefore, the distinction must relate to what about genetic engineering is in fact new, so the blank must be completed with words that are synonymous with “newness.” Both “novelty” and “innovation” fit this description, and the pairing produces sentences alike in meaning, so it is the correct answer. Of the other responses, while “quandary” and “predicament” are synonymous, nothing in the rest of the sentence mentions the problematic aspects of genetic engineering; therefore they do not fit the meaning of the sentence as well as the correct pairing. “Advantage” has no synonym among the choices, nor does the passage otherwise mention genetic engineering’s benefits. “Discrepancy” likewise has no synonyms among the choices; it also does not describe the subject of the distinction made in the latter half of the sentence.\n\nThus the correct answer is novelty (Choice A) and innovation (Choice D)."
+    },
+    {
+     "id": "q16",
+     "kind": "se",
+     "passage": null,
+     "stem": "Although the compound is abundant in the environment at large, its presence in the air is not ______; only in the form of underwater sediment does it cause damage.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "trivial",
+        "detectable",
+        "deleterious",
+        "substantive",
+        "detrimental",
+        "inconsequential"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        4
+       ]
+      }
+     ],
+     "expl": "The “only” that follows the blank indicates that the effect of the compound in water is an exception to its general state in the air. Since the compound is dangerous underwater, it follows that it is generally harmless in the air. The blank is preceded by “not” so in order for the phrase to mean “harmless,” it must be filled by words that are synonymous with “harmful” “Deleterious” and “detrimental” mean just that, and as synonyms they produce sentences alike in meaning, so they are the correct response. Of the other choices, “trivial” and “inconsequential” are synonyms, but they, like the other two choices, do not produce the necessary contrast with the last part of the sentence.\n\nThus the correct answer is deleterious (Choice C) and detrimental (Choice E)."
+    },
+    {
+     "id": "q17",
+     "kind": "se",
+     "passage": null,
+     "stem": "Deacon attempts what seems impossible: a book rich in scientific insights, in a demanding discipline, that nevertheless is accessible to ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "skeptics",
+        "experts",
+        "nonspecialists",
+        "zealots",
+        "authorities",
+        "laypersons"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        5
+       ]
+      }
+     ],
+     "expl": "The “nevertheless” that precedes the blank indicates that the book's accessibility contrasts in some way to its scientific insights and demanding subject matter. Among the choices for the blanks, there are two pairings that would yield similar meanings: “experts/authorities” and “nonspecialists/laypersons.” Considering these two pairings, it would not be surprising if a book rich in scientific insights were accessible to experts, whereas writing such a book accessible to those not in the field would be a feat. “Nonspecialists/laypersons,” then, provides the necessary contrast to the book's other qualities, so it is the correct response. The other two choices, “skeptics” and “zealots,” can be eliminated straightaway because neither has a synonym among the other responses; in addition, neither helps form the contrast that the use of “nevertheless” requires.\n\nThus the correct answer is nonspecialists (Choice C) and laypersons (Choice F)."
+    },
+    {
+     "id": "q18",
+     "kind": "se",
+     "passage": null,
+     "stem": "Despite relying on the well-to-do for commissions, the portrait painter was no ______: he depicted the character of those he painted as he perceived it.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "hypocrite",
+        "egotist",
+        "sycophant",
+        "adulator",
+        "braggart",
+        "coward"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        3
+       ]
+      }
+     ],
+     "expl": "The sentence indicates that despite being paid by wealthy patrons to paint their portraits, the painter depicted his subjects as he saw them. This fact indicates that the painter was not a “sycophant” or “adulator” in that he did not seek to flatter his patrons. Although both “hypocrite” and “coward” make some sense when inserted in the blank, neither produces a sentence similar in meaning to that produced by any other option. “Braggart” and “egotist” are similar in meaning, but neither fits the sentence’s focus on the painter’s honest depiction of his subjects.\n\nThus the correct answer is sycophant (Choice C) and adulator (Choice D)."
+    },
+    {
+     "id": "q19",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "Which of the following, if true, most seriously challenges the mayor's argument?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "When city police are perceived as unresponsive, victims of theft are less likely to report thefts to the police.",
+        "The mayor's critics generally agree that police statistics concerning crime reports provide the most reliable available data on crime rates.",
+        "In other cities where police departments have been similarly reorganized, the numbers of reported thefts have generally risen following reorganization.",
+        "The mayor’s reorganization of the police department failed to save as much money as it was intended to save.",
+        "During the four years immediately preceding the reorganization, reports of all types of theft had been rising steadily in comparison to reports of other crimes."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The argument—that the reorganization did not lead to more crime—hinges upon statistics compiled from reports of crime, and therefore assumes that such reports are indicative of the actual incidence of crime. Something that weakens this connection between reports and incidence of theft, then, would challenge the mayor's argument. Choice A does exactly that, so it is the correct answer. Choices B and E would strengthen rather than challenge the mayor’s argument, so they are incorrect. Choice C might give one reason to question the mayor’s conclusion, but it does not speak to his argument, which does not involve other cities, so it is not the correct choice. Choice D is incorrect because the mayor’s argument makes no claims regarding the economics of the reorganization, only its effectiveness at crime reduction."
+    },
+    {
+     "id": "q20",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "The passage is primarily concerned with discussing which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The relative merits of two points of view regarding a controversy",
+        "The potential benefits to workers in the 1920s of a change in employers’ policies",
+        "The reasons for a labor-management disagreement during the 1920s",
+        "The status of a contested labor issue during the 1920s",
+        "The role of labor unions in bringing about a reform"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The passage is primarily concerned with discussing the opposition to, and the advocacy and adoption of, 40-hour workweeks during the 1920s; therefore Choice D is the correct answer. Because the passage lays out different viewpoints but does not consider their relative merits, Choice A is not correct. The passage does not discuss the benefit to workers of a 40-hour work-week or the opinion or role of labor unions on the issue, so Choices B, C, and E are incorrect."
+    },
+    {
+     "id": "q21",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "It can be inferred that the author of the passage mentions “automobiles” (line 10) primarily to suggest that",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Ford’s business produced greater profits than did businesses requiring a workweek longer than five days",
+        "Ford, unlike most other employers, encouraged his employees to use the products they produced",
+        "Ford may have advocated shorter hours because of the particular nature of his business",
+        "unions were more likely to negotiate for shorter hours in some businesses than in others",
+        "automobile workers’ unions were more effective than other unions in securing a five-day workweek"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is the correct answer. The mention of “automobiles” is directly followed by the observation that it is a product whose use requires leisure. Thus it can be inferred that one factor leading Ford to advocate shorter hours is that workers with newfound leisure time would become consumers of his product. There is no indication that Ford was unlike other employers in encouraging employees to consume their own products, so Choice B is incorrect. Choice A is incorrect because the passage does not say that Ford’s business was highly profitable. Choices D and E are incorrect because the mention of automobiles is not connected to the likelihood or success of different types of unions in securing shorter hours."
+    },
+    {
+     "id": "q22",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "It can be inferred that the author of the passage would probably agree with which of the following claims about the boast referred to in lines 12-13?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It is based on a mistaken estimation of the number of AFL workers who were allowed to work a five-day, 40-hour week in 1928.",
+        "It could create a mistaken impression regarding the number of unions obtaining a five-day, 40-hour week during the 1920s.",
+        "It exaggerates the extent of the increase between 1926 and 1928 in AFL members working a five-day, 40-hour week.",
+        "It overestimates the bargaining prowess of the AFL building trades’ unions during the 1920s.",
+        "It is based on an overestimation of the number of union members in the AFL in 1928."
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence mentioning this boast is followed by an explanation that although the number of workers with 40-hour weeks increased significantly, most of this gain could be attributed to just a few unions. Since the author is seemingly correcting a misimpression—that this increase involved many unions—Choice B is the correct answer. Because the passage does not suggest that the statistics themselves are questionable, Choices A and C are incorrect. Since the passage makes no mention of the total number of AFL members, Choice E cannot be correct. Choice D is incorrect because the boast makes no reference to the building trades’ unions."
+    },
+    {
+     "id": "q23",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "According to the passage, the “reformers” (line 5) claimed that",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "neither scientific management nor reduced hours would result in an improvement in the working conditions of most workers",
+        "the impact that the routinization of work had on workers could be mitigated by a reduction in the length of their workweek",
+        "there was an inherent tension between the principles of scientific management and a commitment to reduced workweeks",
+        "scientific managers were more likely than other managers to use pay differentials to encourage higher productivity",
+        "reducing the length of the workweek would increase productivity more effectively than would increases in pay"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence in question states that the reformers had to portray reduced hours as “an antidote” to the rigors of scientific management. Since an antidote can negate or reverse ill effects, Choice B, which states that the effects of scientific management (previously described as “rigorously routinizing” jobs) can be mitigated by workweek reduction, is the correct choice. Choice A is incorrect because there is no evidence that the reformers made negative claims about the effect of changes on working conditions; similarly, since no mention is made of the reformers’ attitudes towards increases in pay, Choice E cannot be correct. The passage states something similar to Choice D, but this is not put into the mouths of the reformers, so that choice is incorrect. Choice C might seem appealing, since the debate on productivity is couched as one between scientific management and workweek reduction. But the reformers are claiming that the two can be combined to increase production. Therefore Choice C is incorrect."
+    },
+    {
+     "id": "q24",
+     "kind": "rc",
+     "passage": "p6",
+     "stem": "The passage presents which of the following as evidence in favor of Fielding and Collier’s having collaborated in writing The Cry?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Their friendship",
+        "Their joint authorship of correspondence",
+        "Their approach to fiction"
+       ],
+       "pick": "any",
+       "correct": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "expl": "All three choices are correct. The question asks what is offered as evidence of the joint authorship of The Cry. Choice A is correct: the passage states that Fielding and Collier “were close friends” Choice B is correct: the passage states that Fielding and Collier “wrote jointly authored letters” Choice C is correct: the passage states that Fielding and Collier were both “enthusiastic supporters of didacticism and innovation in fiction.”"
+    },
+    {
+     "id": "q25",
+     "kind": "rc",
+     "passage": "p6",
+     "stem": "It can be inferred that the author of the passage would agree with which of the following claims about The Cry?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It develops themes commonly found in published works.",
+        "It reflects an interest in the purposes to which fiction may be put.",
+        "It contains elements that are incompatible with any of Collier’s solo writings.",
+        "It shows that the extent of Collier and Fielding’s shared interests was not as wide as is generally thought.",
+        "Parts of it were written jointly by Fielding and Collier."
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The passage states that The Cry’s “central concerns” are “didacticism and innovation in fiction,’ so Choice B is correct. The passage does not discuss how popular the novel's themes are (Choice A), whether the writing is compatible with Collier’s (Choice C), or what the novel shows about the extent of Collier and Fielding’s joint interests (Choice D). Finally, Choice E is incorrect, as the author of the passage never takes a stand on whether the novel was written by Fielding alone or in collaboration with Collier."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

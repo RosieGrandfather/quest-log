@@ -1,0 +1,199 @@
+{
+ "id": "u09-se-hard",
+ "title": "句子等价 · 难度高（7 题）",
+ "en": "Sentence Equivalence — Practice Set 3: Hard",
+ "minutes": 15,
+ "practice": true,
+ "objectives": [
+  "独立做完 7 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "se",
+   "difficulty": "hard",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Sentence Equivalence · Practice Set 3: Hard",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "se",
+     "passage": null,
+     "stem": "If researchers can determine exactly what is wrong with people who suffer from this condition, they may be able to suggest drug therapies or other treatments that could ______ the effects of the damage.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "mitigate",
+        "exacerbate",
+        "specify",
+        "identify",
+        "ameliorate",
+        "stabilize"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        4
+       ]
+      }
+     ],
+     "expl": "The sentence suggests that more information about a damaging condition will allow researchers to lessen future negative effects. While “specify” and “identify” create sentences with approximately the same meaning, the sentence also suggests that the researchers are seeking to control effects that are already known rather than needing further specificity or identification. Even in this limited context, it is unreasonable that researchers would wish to “exacerbate” or increase the negative effects of damage, and there is no other word that creates a sentence with the same meaning. “Stabilize” implies that the negative effects would simply be controlled, rather than lessened, and likewise there is no other word that produces a sentence with the same meaning. Thus the correct answer is mitigate (Choice A) and ameliorate (Choice E)."
+    },
+    {
+     "id": "q2",
+     "kind": "se",
+     "passage": null,
+     "stem": "Some analysts worry about consumers’ perception that the electronics industry is always on the verge of major breakthroughs; that perception could hurt the industry by making consumers reluctant to buy products they believe will soon be ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "incompatible",
+        "devalued",
+        "obsolete",
+        "ubiquitous",
+        "everywhere",
+        "outmoded"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        5
+       ]
+      }
+     ],
+     "expl": "The blank characterizes products that consumers fear will be superseded in quality as a result of industry breakthroughs. While “ubiquitous” and “everywhere” produce sentences with the same meaning, they assume an increase in volume or sales that is not necessarily implied by innovatory breakthroughs. And while “devalued” makes for a coherent sentence, there is no other word that would produce a sentence with the same meaning. Thus the correct answer is obsolete (Choice C) and outmoded (Choice F)."
+    },
+    {
+     "id": "q3",
+     "kind": "se",
+     "passage": null,
+     "stem": "After people began to make the transition from gathering food to producing food, human societies followed markedly ______ courses; some adopted herding, others took to tillage, and still others stuck to foraging.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "divergent",
+        "rural",
+        "novel",
+        "unfamiliar",
+        "disparate",
+        "quotidian"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        4
+       ]
+      }
+     ],
+     "expl": "The sentence describes the variable courses of three different societies after the beginning of a transition, and the blank characterizes the differences among these courses. While “rural” and “quotidian” may describe a common quality of each course, they do not emphasize their variability. And while the words “novel” and “unfamiliar” are alike in meaning, they do not fit the context, since one of the paths taken (sticking to foraging) is precisely neither novel nor unfamiliar.\n\nThus the correct answer is divergent (Choice A) and disparate (Choice E)."
+    },
+    {
+     "id": "q4",
+     "kind": "se",
+     "passage": null,
+     "stem": "In The Simple Soybean, the author is much less restrained in his enthusiasm for the bean’s medical efficacy than he is in his technical writings, but he still cautions against treating soy as a ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "staple",
+        "supplement",
+        "herald",
+        "panacea",
+        "cure-all",
+        "harbinger"
+       ],
+       "pick": 2,
+       "correct": [
+        3,
+        4
+       ]
+      }
+     ],
+     "expl": "The blank characterizes the medical efficacy or effectiveness of soy. While the words “herald” and “harbinger” are similar in meaning, they do not characterize medical effectiveness as “panacea” and “cure-all” do. Nor do “staple” and “supplement,” each of which may refer to a medical regime or a dosage but not to efficacy.\n\nThus the correct answer is panacea (Choice D) and cure-all (Choice E)."
+    },
+    {
+     "id": "q5",
+     "kind": "se",
+     "passage": null,
+     "stem": "Parkin’s characterization of the movement as neoscholastic is too ______ to be accepted without further investigation.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "cursory",
+        "detailed",
+        "perfunctory",
+        "biased",
+        "self-evident",
+        "complete"
+       ],
+       "pick": 2,
+       "correct": [
+        0,
+        2
+       ]
+      }
+     ],
+     "expl": "The blank describes Parkin’s characterization as demanding further investigation. If the characterization is too “complete” or too “self-evident,” there is nothing further to investigate; if it is too “detailed” but not flawed, there is no reason to investigate further. The word “biased” does suggest that further investigation is necessary, but there is no other word that produces a sentence alike in meaning.\n\nThus the correct answer is cursory (Choice A) and perfunctory (Choice C)."
+    },
+    {
+     "id": "q6",
+     "kind": "se",
+     "passage": null,
+     "stem": "A recent study suggests that vitamin E supplements, despite widespread belief in their ______, are no better than sugar pills for delaying the onset of the degenerative disease.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "potential",
+        "misuse",
+        "popularity",
+        "efficacy",
+        "prevalence",
+        "usefulness"
+       ],
+       "pick": 2,
+       "correct": [
+        3,
+        5
+       ]
+      }
+     ],
+     "expl": "The sentence suggests that vitamin E supplements are ineffective in deterring the disease, and the use of the word “despite” indicates that this ineffectiveness contrasts with how they are widely viewed. The words that fill the blank, then, must mean the opposite of “ineffectiveness.” Among the answer choices, the words that do so are “efficacy” and “usefulness.” Of the other choices, “potential” is tempting, but it does not contrast as directly with “ineffectiveness,” nor does it have a near synonym among the other answers with which it could be paired. “Prevalence” and “popularity” might be initially attractive because the passage suggests that these words might describe the use of vitamin E supplements, but the blank calls for a word that characterizes how they are viewed rather than how they are used.\n\nThus the correct answer is efficacy (Choice D) and usefulness (Choice F)."
+    },
+    {
+     "id": "q7",
+     "kind": "se",
+     "passage": null,
+     "stem": "Despite her relaxed and flexible style, Ms. de la Fressange is ______ businesswoman who knows how to market her brand: herself.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "a ruthless",
+        "a creative",
+        "a canny",
+        "an industrious",
+        "a shrewd",
+        "an effective"
+       ],
+       "pick": 2,
+       "correct": [
+        2,
+        4
+       ]
+      }
+     ],
+     "expl": "The sentence describes Ms. de la Fressange as a businesswoman but none of the words besides “canny” and “shrewd” provide sentences that are alike in meaning.\n\nThus the correct answer is a canny (Choice C) and a shrewd (Choice E)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,283 @@
+{
+ "id": "u02-rc-med",
+ "title": "阅读理解 · 难度中（11 题）",
+ "en": "Reading Comprehension — Practice Set 2: Medium",
+ "minutes": 20,
+ "practice": true,
+ "objectives": [
+  "独立做完 11 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "rc",
+   "difficulty": "medium",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Reading Comprehension · Practice Set 2: Medium",
+   "passages": {
+    "p1": "That sales can be increased by the presence of sunlight within a store has been shown by the experience of the only Savefast department store with a large skylight. The sky-light allows sunlight into half of the store, reducing the need for artificial light. The rest of the store uses only artificial light. Since the store opened two years ago, the departments on the sunlit side have had substantially higher sales than the other departments.",
+    "p2": "While the best sixteenth-century Renaissance scholars mastered the classics of ancient Roman literature in the original Latin and understood them in their original historical context, most of the scholars’ educated contemporaries knew the classics only from tine school lessons on selected Latin texts. These were chosen by Renaissance teachers after much deliberation, for works written by and for the sophisticated adults of pagan Rome were not always considered suitable for the Renaissance young: the central Roman classics refused (as classics often do) to teach appropriate morality and frequently suggested the opposite. Teachers accordingly made students’ needs, not textual and historical accuracy, their supreme interest, chopping dangerous texts into short phrases, and using these i0 to impart lessons extemporaneously on a variety of subjects, from syntax to science. Thus, I believe that a modern reader cannot know the associations that a line of ancient Roman poetry or prose had for any particular educated sixteenth-century reader.",
+    "p3": "In humans, the pilomotor reflex leads to the response commonly known as goose bumps, and this response is widely considered to be vestigial—that is, something formerly having a greater physiological advantage than at present. It occurs when the tiny muscle at the base of a hair follicle contracts, pulling the hair upright. In animals with feathers, fur, or quills, this creates a layer of insulating warm air or a reason for predators to think twice before attacking. But human hair is too puny to serve these functions. Goose bumps in humans may, however, have acquired a new role. Like flushing—another thermoregulatory (heat-regulating) mechanism—goose bumps have become linked with emotional responses, notably fear, rage, or the pleasure of, say, listening to beautiful music. They may thus serve as a signal to others.",
+    "p4": "This passage is adapted from material published in 2001.\n\nFrederick Douglass was unquestionably the most famous African American of the nineteenth century; indeed when he died in 1895 he was among the most distinguished public figures in the United States. In his study of Douglass’ career as a major figure in the movement to abolish slavery and as a spokesman for Black rights, Waldo Martin has provoked controversy by contending that Douglass also deserves a prominent place in the intellectual history of the United States because he exemplified so many strands of nineteenth-century thought: romanticism, idealism, individualism, liberal humanism, and an unshakable belief in progress. But this very argument provides ammunition for those who claim that most of Douglass’ ideas, being so representative of their time, are now obsolete. Douglass’ vision of the future as a melting pot in which all racial and ethnic differences would dissolve into “a composite American nationality” appears from the pluralist perspective of many present-day intellectuals to be not only utopian but even wrongheaded. Yet there is a central aspect of Douglass’ thought that seems not in the least bit dated or irrelevant to current concerns. He has no rival in the history of the nineteenth-century United States as an insistent and effective critic of the doctrine of innate racial inequality. He not only attacked racist ideas in his speeches and writings, but he offered his entire career and all his achievements as living proof that racists were wrong in their belief that one race could be inherently superior to another. While Martin stresses Douglass’ antiracist egalitarianism, he does not adequately explain how this aspect of Douglass’ thought fits in with his espousal of the liberal Victorian attitudes that many present-day intellectuals consider to be naive and outdated. The fact is that Douglass was attracted to these democratic-capitalist ideals of his time because they could be used to attack slavery and the doctrine of White supremacy. His favorite rhetorical strategy was to expose the hypocrisy of those who, while professing adherence to the ideals of democracy and equality of opportunity, condoned slavery and racial discrimination. It would have been strange indeed if he had not embraced liberal idealism, because it proved its worth for the cause of racial equality during the national crisis that eventually resulted in emancipation and citizenship for African Americans. These points may seem obvious, but had Martin given them more attention, his analysis might have constituted a more convincing rebuttal to those critics who dismiss Douglass’ ideology as a relic of the past. If one accepts the proposition that Douglass’ deepest commitment was to Black equality and that he used the liberal ideals of his time as weapons in the fight for that cause, then it is hard to fault him for seizing the best weapons at hand.",
+    "p5": "The plant called the scarlet gilia can have either red or white flowers. It had long been thought that hummingbirds, which forage by day, pollinate its red flowers and that hawkmoths, which forage at night, pollinate its white flowers. To try to show that this pattern of pollination by colors exists, scientists recently covered some scarlet gilia flowers only at night and others only by day: plants with red flowers covered at night became pollinated; plants with white flowers covered by day became pollinated."
+   },
+   "items": [
+    {
+     "id": "q1",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "Which of the following, if true, most strengthens the argument?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "On particularly cloudy days, more artificial light is used to illuminate the part of the store under the skylight.",
+        "When the store is open at night, the departments in the part of the store under the skylight have sales that are no higher than those of other departments.",
+        "Many customers purchase items from departments in both parts of the store on a single shopping trip.",
+        "Besides the skylight, there are several significant architectural differences between the two parts of the store.",
+        "The departments in the part of the store under the skylight are the departments that generally have the highest sales in other stores in the Savefast chain."
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The passage compares sales of items in the sunlit part of the store with sales of items in the artificially lit part of the store and concludes that since the former are greater than the latter, the presence of sunlight increases sales. The assumption underlying this argument is that the only significant difference between the two parts of the store is the presence of sunlight—otherwise, the inherent popularity of goods sold in different locations, or some other factor, might account for the increased sales. Choice B helps rule out the possibility that other factors might be involved, by showing that sales are no greater when the sunlight is taken out of the equation. Therefore it is the correct answer. Choices D and E both suggest that factors besides sunlight might explain the discrepancy between sales; therefore they weaken rather than strengthen the argument, and so are incorrect. Neither Choice A nor Choice C point to differences between the two areas of the store; therefore they are both incorrect as well."
+    },
+    {
+     "id": "q2",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "The passage is primarily concerned with discussing the",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "unsuitability of the Roman classics for the teaching of morality",
+        "approach that sixteenth-century scholars took to learning the Roman classics",
+        "effect that the Roman classics had on educated people in the Renaissance",
+        "way in which the Roman classics were taught in the sixteenth century",
+        "contrast between the teaching of the Roman classics in the Renaissance and the teaching of the Roman classics today"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The passage focuses primarily on the way Roman classics were taught during the Renaissance, so Choice D is the correct answer. The approach that sixteenth-century scholars took is mentioned, but it serves only to introduce and contrast with the pedagogical methods used in schools; therefore Choice B is incorrect. The passage mentions a supposed incompatibility between Roman classics and the teaching of morality as motivating Renaissance teaching methods, but that incompatibility is not the passage’s main topic; thus Choice A is incorrect. Choices C and E are also incorrect, since the passage does not discuss the effect of Roman classics on educated Renaissance people or the teaching of Roman classics today."
+    },
+    {
+     "id": "q3",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "The information in the passage suggests that which of the following would most likely result from a student’s having studied the Roman classics under a typical sixteenth-century teacher?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The student recalls a line of Roman poetry in conjunction with a point learned about grammar.",
+        "The student argues that a Roman poem about gluttony is not morally offensive when it is understood in its historical context.",
+        "he student is easily able to express thoughts in Latin.",
+        "The student has mastered large portions of the Roman classics.",
+        "The student has a sophisticated knowledge of Roman poetry but little knowledge of Roman prose."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "Choice A is correct. The passage specifically mentions syntax as one of the subjects that the pieces of text served to illustrate; therefore it is logical that students would associate the text with the grammar point it was used to teach. Choices B and D are incorrect because the passage implies that students were not given the context or tools to place Roman classics in context, or to read and master large portions of works. Choices C and E are also incorrect, since the passage makes no mention of Latin composition being taught, or of any differences in the ways in which Roman poetry and prose were treated in schools."
+    },
+    {
+     "id": "q4",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "Which of the following, if true, would most seriously weaken the assertion made in the passage concerning what a modern reader cannot know?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Some modern readers are thoroughly familiar with the classics of ancient Roman literature because they majored in classics in college or obtained doctoral degrees in classics.",
+        "Some modern readers have learned which particular works of Roman literature were taught to students in the sixteenth century.",
+        "Modern readers can, with some effort, discover that sixteenth-century teachers selected some seemingly dangerous classical texts while excluding other seemingly innocuous texts.",
+        "Copies of many of the classical texts used by sixteenth-century teachers, including marginal notes describing the oral lessons that were based on the texts, can be found in museums today.",
+        "Many of the writings of the best sixteenth-century Renaissance scholars have been translated from Latin and are available to modern readers."
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The passage asserts that modern readers cannot know the associations Roman poetry had for Renaissance readers, because those associations arose from the specific ways Roman texts were presented in schools. This assertion assumes that there is no way for modern readers to know how such texts were taught during the Renaissance. Choice D shows a way that scholars can recover this pedagogical context and is therefore the correct choice. Since the passage’s assertion does not depend on modern readers’ familiarity with the classics, with their knowledge of which works were taught in schools, with the inclusion or exclusion by sixteenth-century teachers of specific texts, or with the accessibility of the works of Renaissance scholars, all the other choices are incorrect."
+    },
+    {
+     "id": "q5",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "In explaining the “new role” (line 7) that goose bumps in humans may have acquired, the author assumes which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Emotional responses in humans can be triggered by thermoregulatory mechanisms.",
+        "The perceptibility of emotional responses to other humans offers some kind of benefit.",
+        "If human hair were more substantial, goose bumps would not have acquired a new role.",
+        "Goose bumps in animals with feathers, fur, or quills may also be linked to emotional responses.",
+        "In humans, goose bumps represent an older physiological response than flushing."
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The passage addresses the question of why the pilomotor reflex has survived in human beings despite the fact that its original functions—to insulate and to appear larger to predators—are no longer useful. The suggested reason is that the reflex “has acquired a new role,’ namely, as a means to signal to others that one is experiencing a strong emotion. This assumes that the ability to send such a signal is useful to human beings; therefore Choice B is correct."
+    },
+    {
+     "id": "q6",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "Which of the following best describes the primary function of the next-to-last sentence (“Like ... music”)?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It makes a distinction between two types of mechanisms.",
+        "It corrects a common misconception about the role of goose bumps in humans.",
+        "It suggests reasons for the connection between emotional responses and goose bumps in humans.",
+        "It suggests that flushing and goose bumps signal the same emotional state.",
+        "It helps explain a possible role played by goose bumps in humans."
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "The next-to-last sentence says that goose bumps in humans now serve as an outward sign of strong emotion. If so, this would explain how they could have taken on another role, so Choice E is correct. The sentence does not make a distinction (Choice A), correct a misconception (Choice B), suggest any reason for the connection between emotion and goose bumps (Choice C), or suggest that flushing and goose bumps signal the same state (Choice D)."
+    },
+    {
+     "id": "q7",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "The passage as a whole can best be described as doing which of the following?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Explaining Douglass’ emergence as a major figure in the movement to abolish slavery",
+        "Tracing the origins of Douglass’ thought in nineteenth-century romanticism, idealism, and liberal humanism",
+        "Analyzing Douglass’ speeches and writings from a modern, pluralist perspective",
+        "Criticizing Martin for failing to stress the contradiction between Douglass’ principles and the liberal Victorian attitudes of his day",
+        "Formulating a response to those who consider Douglass’ political philosophy to be archaic and irrelevant"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "The passage discusses the views and intellectual legacy of Frederick Douglass. The key claim in the first paragraph is that while some of Douglass’ views are no longer widely accepted, “there is a central aspect of Douglass’ thought that seems not the least bit dated or irrelevant to our current concerns” (lines 13-14). The second paragraph critiques a study of Douglass’ career by Waldo Martin and claims that Martin has failed to offer a “convincing rebuttal to those critics who dismiss Douglass’ ideology as a relic of the past” (lines 30-31). This indicates that Choice E is correct."
+    },
+    {
+     "id": "q8",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "It can be inferred that the “present-day intellectuals” (line 12) believe that",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "although Douglass used democratic-capitalist ideas to attack slavery and racial inequality, he did not sincerely believe in those ideas",
+        "the view that Douglass was representative of the intellectual trends of his time is obsolete",
+        "Douglass’ opposition to the doctrine of innate racial inequality is irrelevant to current concerns",
+        "Douglass’ commitment to Black equality does not adequately account for his naive attachment to quaint liberal Victorian political views",
+        "Douglass’ goal of ultimately doing away with all racial and ethnic differences is neither achievable nor desirable"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "“Present-day intellectuals” are mentioned on line 12; the claim there is that these intellectuals consider Douglass’ vision of America as “a melting pot in which all racial and ethnic differences would dissolve” (lines 10-11) as “utopian” and “wrongheaded” (lines 12-13). This points to Choice E as correct."
+    },
+    {
+     "id": "q9",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "According to the passage, Douglass used which of the following as evidence against the doctrine of innate racial inequality?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "His own life story",
+        "His vision of a composite American nationality",
+        "The hypocrisy of self-professed liberal idealists",
+        "The inevitability of the emancipation of African Americans",
+        "The fact that most prominent intellectuals advocated the abolition of slavery"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "One of the claims in the passage is that Frederick Douglass “offered his entire career and all his achievements as living proof that racists were wrong in their belief that one race could be inherently superior to another” (lines 17-18). Thus Choice A is correct."
+    },
+    {
+     "id": "q10",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "Each of the following is mentioned in the passage as an element of Douglass’ ideology EXCEPT",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "idealism",
+        "egalitarianism",
+        "capitalism",
+        "pluralism",
+        "humanism"
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The passage claims that Douglass “exemplified . . . idealism, . . . liberal humanism” (lines 6-7); it implies that Douglass espoused “antiracist egalitarianism” (line 19) and states that “Douglass was attracted to... democratic-capitalist ideals of his time”\n\n(line 22). This rules out Choices A, B, C, and E and leaves Choice D as correct. Indeed, the mention of “Douglass’ vision of the future as a melting pot in which all racial and ethnic differences would dissolve” (lines 10-11) shows that Douglass was not a pluralist, ie. was not someone who aimed at preserving and celebrating ethnic and cultural differences."
+    },
+    {
+     "id": "q11",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "Which of the following, if true, would be additional evidence to suggest that hummingbirds are attracted to the red flowers and hawkmoths to the white flowers of the scarlet gilia?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Uncovered scarlet gilia flowers, whether red or white, became pollinated at approximately equal rates.",
+        "Some red flowers of the scarlet gilia that remained uncovered at all times never became pollinated.",
+        ", White flowers of the scarlet gilia that were covered at night became pollinated with greater frequency than white flowers of the scarlet gilia that were left uncovered.",
+        "Scarlet gilia plants with red flowers covered by day and scarlet gilia plants with white flowers covered at night remained unpollinated.",
+        "In late August, when most of the hummingbirds had migrated but hawkmoths were still plentiful, red scarlet gilia plants produced fruit more frequently than they had earlier in the season."
+       ],
+       "pick": 1,
+       "correct": [
+        3
+       ]
+      }
+     ],
+     "expl": "The results reported in the last sentence of the passage suggest that hummingbirds do pollinate red-flowered plants and that hawkmoths do pollinate white-flowered plants. But to prove that they are attracted preferentially to those colors requires knowing whether they also pollinate flowers of the other color that are uncovered during their respective foraging hours—white flowers uncovered during hummingbirds’ daytime hours, and red flowers uncovered during hawkmoths’ nocturnal hours. Choice D states that such plants remain unpollinated, so it is the correct answer. Of the other options, both Choices C and E could suggest the opposite of what is required, so they are incorrect. Choice A is incorrect because the comparative frequency at which uncovered gilia flowers are pollinated has no bearing on the argument. Likewise, the presence of some quantity of unpollinated flowers of either color does not affect the argument, so Choice B is also incorrect."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": "gre-vr",
+ "title": "GRE Verbal 官方练习题：12 套 Practice Set",
+ "subtitle": "ETS 官方 Verbal Reasoning 练习册里的真题，按原书分成 12 套：阅读理解、文本补全、句子等价各「低 / 中 / 高」难度三套，另有 3 套混合。每套做完再提交，才显示对错、官方解析和本套总结。",
+ "order": 16,
+ "order_note": "选修，申请准备：Verbal 是弱项，词汇课背一段时间后穿插着做",
+ "tier": "elective",
+ "units": [
+  {
+   "id": "u01-rc-easy",
+   "title": "阅读理解 · 难度低（9 题）",
+   "en": "Reading Comprehension — Practice Set 1: Easy",
+   "minutes": 20,
+   "file": "u01-rc-easy.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "easy",
+   "covers": "9 题 · 难度：低（照官方原文标注）"
+  },
+  {
+   "id": "u02-rc-med",
+   "title": "阅读理解 · 难度中（11 题）",
+   "en": "Reading Comprehension — Practice Set 2: Medium",
+   "minutes": 20,
+   "file": "u02-rc-med.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "medium",
+   "covers": "11 题 · 难度：中（照官方原文标注）"
+  },
+  {
+   "id": "u03-rc-hard",
+   "title": "阅读理解 · 难度高（10 题）",
+   "en": "Reading Comprehension — Practice Set 3: Hard",
+   "minutes": 20,
+   "file": "u03-rc-hard.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "hard",
+   "covers": "10 题 · 难度：高（照官方原文标注）"
+  },
+  {
+   "id": "u04-tc-easy",
+   "title": "文本补全 · 难度低（9 题）",
+   "en": "Text Completion — Practice Set 1: Easy",
+   "minutes": 20,
+   "file": "u04-tc-easy.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "easy",
+   "covers": "9 题 · 难度：低（照官方原文标注）"
+  },
+  {
+   "id": "u05-tc-med",
+   "title": "文本补全 · 难度中（8 题）",
+   "en": "Text Completion — Practice Set 2: Medium",
+   "minutes": 15,
+   "file": "u05-tc-med.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "medium",
+   "covers": "8 题 · 难度：中（照官方原文标注）"
+  },
+  {
+   "id": "u06-tc-hard",
+   "title": "文本补全 · 难度高（8 题）",
+   "en": "Text Completion — Practice Set 3: Hard",
+   "minutes": 15,
+   "file": "u06-tc-hard.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "hard",
+   "covers": "8 题 · 难度：高（照官方原文标注）"
+  },
+  {
+   "id": "u07-se-easy",
+   "title": "句子等价 · 难度低（5 题）",
+   "en": "Sentence Equivalence — Practice Set 1: Easy",
+   "minutes": 10,
+   "file": "u07-se-easy.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "easy",
+   "covers": "5 题 · 难度：低（照官方原文标注）"
+  },
+  {
+   "id": "u08-se-med",
+   "title": "句子等价 · 难度中（8 题）",
+   "en": "Sentence Equivalence — Practice Set 2: Medium",
+   "minutes": 15,
+   "file": "u08-se-med.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "medium",
+   "covers": "8 题 · 难度：中（照官方原文标注）"
+  },
+  {
+   "id": "u09-se-hard",
+   "title": "句子等价 · 难度高（7 题）",
+   "en": "Sentence Equivalence — Practice Set 3: Hard",
+   "minutes": 15,
+   "file": "u09-se-hard.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "hard",
+   "covers": "7 题 · 难度：高（照官方原文标注）"
+  },
+  {
+   "id": "u10-mix-1",
+   "title": "混合练习 · 第 1 套（25 题）",
+   "en": "Mixed — Mixed Practice Set 1",
+   "minutes": 45,
+   "file": "u10-mix-1.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "mixed",
+   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+  },
+  {
+   "id": "u11-mix-2",
+   "title": "混合练习 · 第 2 套（25 题）",
+   "en": "Mixed — Mixed Practice Set 2",
+   "minutes": 45,
+   "file": "u11-mix-2.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "mixed",
+   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+  },
+  {
+   "id": "u12-mix-3",
+   "title": "混合练习 · 第 3 套（25 题）",
+   "en": "Mixed — Mixed Practice Set 3",
+   "minutes": 45,
+   "file": "u12-mix-3.json",
+   "practice": true,
+   "hasQuiz": false,
+   "difficulty": "mixed",
+   "covers": "25 题 · 难度：官方未标难度（照官方原文标注）"
+  }
+ ]
+}

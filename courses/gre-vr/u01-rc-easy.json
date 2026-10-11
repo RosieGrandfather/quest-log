@@ -1,0 +1,233 @@
+{
+ "id": "u01-rc-easy",
+ "title": "阅读理解 · 难度低（9 题）",
+ "en": "Reading Comprehension — Practice Set 1: Easy",
+ "minutes": 20,
+ "practice": true,
+ "objectives": [
+  "独立做完 9 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "rc",
+   "difficulty": "easy",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Reading Comprehension · Practice Set 1: Easy",
+   "passages": {
+    "p1": "Ragwort was accidentally introduced to New Zealand in the late nineteenth century and, like so many invading foreign species, quickly became a pest. By the 1920s, the weed was rampant. What made matters worse was that its proliferation coincided with sweeping changes in agriculture and a massive shift from sheep farming to dairying. Ragwort contains a battery of toxic and resilient alkaloids: even honey made from its flowers contains the poison in dilute form. Livestock generally avoid grazing where ragwort is growing, but they will do so once it displaces grass and clover in their pasture. Though sheep can eat it for months before showing any signs of illness, if cattle eat it they sicken quickly, and fatality can even result.",
+    "p2": "Despite the fact that the health-inspection procedures for catering establishments are more stringent than those for ordinary restaurants, more of the cases of food poisoning reported to the city health department were brought on by banquets served by catering services than were brought on by restaurant meals.",
+    "p3": "African American newspapers in the 1930s faced many hardships. For instance, knowing that buyers of African American papers also bought general-circulation papers, advertisers of consumer products often ignored African American publications. Advertisers’ discrimination did free the African American press from advertiser domination. Editors could print politically charged material more readily than could the large national dailies, which depended on advertisers’ ideological approval to secure revenues. Unfortunately, it also made the selling price of Black papers much higher than that of general-circulation dailies. Often as much as two-thirds of publication costs had to come from subscribers or subsidies from community politicians and other i0 interest groups. And despite their editorial freedom, African American publishers often felt compelled to print a disproportionate amount of sensationalism, sports, and society news to boost circulation.",
+    "p4": "Years ago, consumers in Frieland began paying an energy tax in the form of two Frieland pennies for each unit of energy consumed that came from nonrenewable sources. Following the introduction of this energy tax, there was a steady reduction in the total yearly consumption of energy from nonrenewable sources.",
+    "p5": "Ina plausible but speculative scenario, oceanographer Douglas Martinson suggests that temperature increases caused by global warming would not significantly affect the stability of the Antarctic environment, where sea ice forms on the periphery of the continent in the autumn and winter and mostly disappears in the summer. True, less sea ice would form in the winter because global warming would cause temperatures to rise. However, Martinson argues, the effect of a warmer atmosphere may be offset as follows. The formation of sea ice causes the concentration of salt in surface waters to increase; less sea ice would mean a smaller increase in the concentration of salt. Less salty surface waters would be less dense and therefore less likely to sink and stir up deep water. The deep water, with all its stored heat, would rise to the surface at a slower rate. Thus, although the winter sea-ice cover might decrease, the surface waters would remain cold enough so that the decrease would not be excessive."
+   },
+   "items": [
+    {
+     "id": "q1",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "The passage suggests that the proliferation of ragwort was particularly ill-timed because it",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "coincided with and exacerbated a decline in agriculture",
+        "took place in conditions that enabled the ragwort to spread faster than it otherwise would have done",
+        "led to an increase in the amount of toxic compounds contained in the plants",
+        "prevented people from producing honey that could be eaten safely",
+        "had consequences for livestock that were more dramatic than they otherwise would have been"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "The passage mentions that ragwort’s impact on New Zealand’s agriculture was especially severe because the plant's proliferation “coincided with sweeping changes in agriculture that saw a massive shift from sheep farming to dairying.” The severity of the impact was increased because cattle, which were displacing sheep, are much more sensitive than sheep to the toxins contained in ragwort. This points to Choice E as the correct answer choice. Nothing in the passage suggests that the proliferation of ragwort coincided with a decline in agriculture (Choice A), occurred faster than it might have done (Choice B), or made the plants more toxic (Choice C). There is a suggestion that ragwort honey might not be safe for humans, but there is no indication that this made the timing of the proliferation particularly unfortunate."
+    },
+    {
+     "id": "q2",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "The passage implies which of the following about the problems ragwort poses to dairy farmers?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Milk produced by cows that eat ragwort causes illness in humans who drink it.",
+        "Ragwort can supplant the plants normally eaten by cattle.",
+        "Cattle, unlike sheep, are unable to differentiate between ragwort and healthy grazing."
+       ],
+       "pick": "any",
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "Choice B is correct. The question asks about the problems ragwort poses to dairy farmers.\n\nChoice A is incorrect: The passage does not mention the effect of ragwort consumption on the milk produced by cows.\n\nChoice B is correct: The passage mentions that livestock will eat ragwort “once it displaces grass and clover in their pasture.”\n\nChoice C is incorrect: The passage claims that “livestock generally avoid grazing where ragwort is growing,” but does not make a distinction between cattle and sheep."
+    },
+    {
+     "id": "q3",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "Which of the following, if true, helps explain the apparent paradox in the statement above?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "A significantly larger number of people eat in restaurants than attend catered banquets in any given time period.",
+        "Catering establishments know how many people they expect to serve, and therefore are less likely than restaurants to have, and serve, leftover food, a major source of food poisoning.",
+        "Many restaurants provide catering services for banquets in addition to serving individual meals.",
+        "The number of reported food-poisoning cases at catered banquets is unrelated to whether the meal is served on the caterer’s or the client’s premises.",
+        "People are unlikely to make a connection between a meal they have eaten and a subsequent illness unless the illness strikes a group who are in communication with one another."
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "The question calls for an explanation of why more cases of reported food poisoning might be attributed to catering services than to restaurants. Choices A and B both provide reasons why restaurants should account for more cases, so they are incorrect. Choice C would suggest that there would be negligible differences between the likelihood of food poisoning at restaurants and at catered events, so it also sheds no light on the paradox and is therefore incorrect. Since the argument does not pertain to the location of catered banquets, Choice D is incorrect. That leaves Choice E. People who attend banquets are more likely than restaurant patrons to be part of a group that communicates with one another, so Choice E would help explain the higher number of reported food poisonings and is the correct answer."
+    },
+    {
+     "id": "q4",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The passage suggests that if advertisers had more frequently purchased advertising in",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "African American newspapers would have given more attention to sports and society news than they did.",
+        "African American newspapers would have been available at lower prices than large national dailies were.",
+        "African American newspapers would have experienced constraints on their content similar to those experienced by large national dailies."
+       ],
+       "pick": "any",
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is correct. The question asks about the consequences of more advertising in African American newspapers.\n\nChoice A is incorrect: The passage states that publishers of African American newspapers felt compelled to publish sports and society news even without any pressure from advertisers, so advertising revenue was not a factor in their editorial decisions.\n\nChoice B is incorrect: The passage says that lack of advertising revenue made African American newspapers more expensive than the large national dailies, implying that if advertisers had purchased space, the difference in price would have been smaller; but nothing in the passage supports the claim that African American newspapers would have been cheaper than the large national dailies.\n\nChoice C is correct: The passage states that large newspapers could not readily print politically charged material because they “depended on advertisers’ ideological approval to secure revenues,’ so it can be expected that African American newspapers would have experienced similar constraints if they also had depended on advertisers for revenues."
+    },
+    {
+     "id": "q5",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The author of the passage suggests which of the following about the “advertisers” (line 3) mentioned in the passage?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "They assumed that advertising in African American newspapers would not significantly increase the sales of their products.",
+        "They failed to calculate accurately the circulation of African American newspapers.",
+        "They did not take African Americans’ newspaper reading into account when making decisions about where to advertise.",
+        "They avoided African American newspapers partly because of their sensationalism.",
+        "They tried to persuade African American newspapers to lower the rates charged for advertising."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The second sentence of the passage states that “knowing that buyers of African American newspapers also bought general-circulation papers, advertisers of consumer products often ignored African American publications.” This suggests that advertisers believed that the majority of the people who read African American newspapers would see the advertisements when they read general-circulation papers, and that the number of people who read only African American newspapers was too small to justify buying advertising space there. Therefore Choice A is correct."
+    },
+    {
+     "id": "q6",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "If the statements in the passage are true, then which of the following must on the basis of them be true?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "There was a steady decline in the yearly revenues generated by the energy tax in Frieland.",
+        "There was a steady decline in the total amount of energy consumed each year in Frieland.",
+        "There was a steady increase in the use of renewable energy sources in Frieland.",
+        "The revenues generated by the energy tax were used to promote the use of energy from renewable sources.",
+        "The use of renewable energy sources in Frieland greatly increased relative to the use of nonrenewable energy sources."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "Since the energy tax is based upon the number of units of nonrenewable energy consumed, and since the number of units of nonrenewable energy declined, revenues generated by the energy tax must have declined as well. Choice A is therefore the correct answer. The passage gives no information on changes in the total amount of energy consumed, changes in the amount of energy from renewable sources that was used, or what revenues raised by the tax were used for, so all the other choices are incorrect."
+    },
+    {
+     "id": "q7",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "It can be inferred from the passage that which of the following is true of the surface waters in the current Antarctic environment?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "They are more affected by annual fluctuations in atmospheric temperatures than they would be if they were less salty.",
+        "They are less salty than they would be if global warming were to occur.",
+        "They are more likely to sink and stir up deep waters than they would be if atmospheric temperatures were to increase.",
+        "They are able to offset some of the effects of global warming beyond the Antarctic region.",
+        "They are less affected by the temperature of deep water than they would be if atmospheric temperatures were to increase."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is correct. The passage states that rising temperatures would decrease the amount of sea ice formed in the winter, and that this change would result in surface water that is less salty, and thus less likely to sink. The current situation, then, results in the opposite: surface waters that are more likely to sink. Choices A and D are incorrect because the passage gives no information about how fluctuating temperatures would affect less salty water or about the relationship between the Antarctic region and the rest of the planet. Choices B and E are incorrect because they are both the opposite of what the passage implies about surface waters in the current environment."
+    },
+    {
+     "id": "q8",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "The passage suggests that Martinson believes which of the following about deep waters in the Antarctic region?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "They rise to the surface more quickly than they would if global warming were to occur.",
+        "They store heat that will exacerbate the effects of increases in atmospheric temperatures.",
+        "They would be likely to be significantly warmed by an increase in atmospheric temperatures.",
+        "They would be more salty than they currently are if global warming were to occur.",
+        "They are less likely to be stirred up when surface waters are intensely salty than when surface waters are relatively unsalty."
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "Choice A is correct. The passage states that, in Martinson’s scenario, the deep water would rise to the surface at a slower rate were warming to occur. He must believe, then, that the water currently rises to the surface more quickly. As for Choice B, while the passage indeed states that deep waters in Antarctica store heat, it also suggests that this heat would be less likely to reach the surface and worsen global warming. Choice B is therefore incorrect. Choice E is incorrect because it contradicts information given in the passage. Choices C and D are incorrect because, while the passage discusses the effects of global warming on the temperature and salinity of surface water, it gives no information of warming’s effects on the temperature and salinity of deep water."
+    },
+    {
+     "id": "q9",
+     "kind": "rc",
+     "passage": "p5",
+     "stem": "According to the passage, which of the following is true about the sea ice that surrounds the Antarctic continent?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The amount of sea ice that forms in the winter has been declining.",
+        "Most of the sea ice that forms in the winter remains intact in the summer.",
+        "Even small changes in the amount of sea ice dramatically affect the temperature of the surface waters.",
+        "Changes in the amount of sea ice due to global warming would significantly affect the stability of the Antarctic environment.",
+        "Changes in the amount of sea ice affect the degree of saltiness of the surface waters."
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "Choice E is correct: according to the passage, “less sea ice would mean a smaller increase in the concentration of salt.” Choices B, C, and D are incorrect because they are all contrary to the information presented in the passage. Choice A is incorrect because the passage does not compare current amounts of sea ice with past quantities; it instead proposes a hypothetical scenario involving a possible future decline of sea ice formation."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

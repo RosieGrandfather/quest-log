@@ -1,0 +1,256 @@
+{
+ "id": "u03-rc-hard",
+ "title": "阅读理解 · 难度高（10 题）",
+ "en": "Reading Comprehension — Practice Set 3: Hard",
+ "minutes": 20,
+ "practice": true,
+ "objectives": [
+  "独立做完 10 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "rc",
+   "difficulty": "hard",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Reading Comprehension · Practice Set 3: Hard",
+   "passages": {
+    "p1": "Supernovas in the Milky Way are the likeliest source for most of the cosmic rays reaching Earth. However, calculations show that supernovas cannot produce ultrahigh-energy cosmic rays (UHECRs), which have energies exceeding 10!* electron Line volts. It would seem sensible to seek the source of these in the universe’s most conspicuous energy factories: quasars and gamma-ray bursts billions of light-years away from Earth. But UHECRs tend to collide with photons of the cosmic microwave background—pervasive radiation that is a relic of the early universe. The odds favor a collision every 20 million light-years, each collision costing 20 percent of the cosmic ray’s energy. Consequently, no cosmic ray traveling much beyond 100 million light-years can retain the energy observed in UHECRs.",
+    "p2": "The massive influx of women cyclists—making up at least a third of the total market— was perhaps the most striking and profound social consequence of the mid-1890s cycling boom. Although the new, improved bicycle had appealed immediately to a few privileged women, its impact would have been modest had it not attracted a greater cross section of the female population. It soon became apparent that many of these pioneer women bicyclists had not taken up the sport as an idle pastime. Rather, they saw cycling as a noble cause to be promoted among all women as a means to improve the general female condition. Not only would cycling encourage healthy outdoor exercise, they reasoned, it would also hasten long-overdue dress reform. To feminists, the bicycle affirmed nothing less than the dignity and equality of women.",
+    "p3": "What causes a helix in nature to appear with either a dextral (“right-handed,’ or clockwise) twist or a sinistral (“left-handed,” or counterclockwise) twist is one of the most intriguing puzzles in the science of form. Most spiral-shaped snail species are predominantly dextral. But at one time, handedness (twist direction of the shell) was equally distributed within some snail species that have become predominantly dextral or, in a few species, predominantly sinistral. What mechanisms control handedness and keep left-handedness rare?\n\nIt would seem unlikely that evolution should discriminate against sinistral snails if sinistral and dextral snails are exact mirror images, for any disadvantage that a sinistral twist in itself could confer on its possessor is almost inconceivable. But left- and right-handed snails are not actually true mirror images of one another. Their shapes are noticeably different. Sinistral rarity might, then, be a consequence of possible disadvantages conferred by these other concomitant structural features. In addition, perhaps left- and right-handed snails cannot mate with each other, having incompatible twist directions. Presumably an individual of the rarer form would have relative difficulty in finding a mate of the same hand, thus keeping the rare form rare or creating geographically separated right- and left-handed populations. But this evolutionary mechanism combining dissymmetry, anatomy, and chance does not provide an adequate explanation of why right-handedness should have become predominant. It does not explain, for example, why the infrequent unions between snails of opposing hands produce fewer offspring of the rarer than the commoner form in species where each parent contributes equally to handedness. Nor does it explain why, in a species where one parent determines handedness, a brood is not exclusively right- or left-handed when the offspring would have the same genetic predisposition. In the European pond snail Lymnaea peregra, a predominantly dextral species whose handedness is maternally determined, a brood might be expected to be exclusively right- or left-handed—and this often occurs. However, some broods possess a few snails of the opposing hand, and in predominantly sinistral broods, the incidence of dextrality is surprisingly high.\n\nHere, the evolutionary theory must defer to a theory based on an explicit developmental mechanism that can favor either right- or left-handedness. In the case of Lymnaea peregra, studies indicate that a dextral gene is expressed during egg formation; i.e., before egg fertilization, the gene produces a protein, found in the cytoplasm of the egg, that controls the pattern of cell division and thus handedness. In experiments, an injection of cytoplasm from dextral eggs changes the pattern of sinistral eggs, but an injection from sinistral eggs does not influence dextral eggs. One explanation for the differing effects is that all Lymnaea peregra eggs begin left-handed but most switch to being right-handed. Thus the path to a solution to the puzzle of handedness in all snails appears to be as twisted as the helix itself.",
+    "p4": "X-ray examination of a recently discovered painting—judged by some authorities to be a self-portrait by Vincent van Gogh—revealed an underimage of a woman's face. Either van Gogh or another painter covered the first painting with the portrait now seen on the surface of the canvas. Because the face of the woman in the underimage also appears on canvases van Gogh is known to have painted, the surface painting must be an authentic self-portrait by van Gogh."
+   },
+   "items": [
+    {
+     "id": "q1",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "It can be inferred that the author of the passage would agree with which of the following about the origin of UHECRs that reach Earth?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The origin is something other than supernovas in the Milky Way.",
+        "The origin is most likely something other than very distant quasars or gamma-ray bursts.",
+        "The origin is most likely no more than a little over 100 million light-years away from Earth."
+       ],
+       "pick": "any",
+       "correct": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "expl": "All three choices are correct. The question asks about claims the author would agree with. Choice A is correct: The passage states that supernovas in the Milky Way “cannot produce ultrahigh-energy cosmic rays.” Choice B is correct: Since very distant quasars and gamma-ray bursts are “billions of light-years away from Earth,” they are too far away for a UHECR to reach Earth. Choice C is correct: The last sentence of the passage states that “no cosmic ray traveling much beyond 100 million light-years can retain the energy observed in UHECRs.””"
+    },
+    {
+     "id": "q2",
+     "kind": "rc",
+     "passage": "p1",
+     "stem": "In the context of the author’s argument, the last sentence performs which of the following functions?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It explains a criterion that was employed earlier in the argument.",
+        "It shows that an apparently plausible position is actually self-contradictory.",
+        "It is a conclusion drawn in the course of refuting a potential explanation.",
+        "It overturns an assumption on which an opposing position depends.",
+        "It states the main conclusion that the author is seeking to establish."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The last sentence is the conclusion of an argument in the last half of the passage; it puts a constraint on the possible origin of UHECRs relative to Earth and thereby rules out the possibility, mentioned earlier in the passage, that distant quasars and gamma-ray bursts could be the origin of UHECRs. Therefore Choice C is correct. It is important to note that the last sentence does not show any plausible position to be self-contradictory (Choice B), and that it does not state the author’s main conclusion (Choice E), since it is relevant to only one of the two hypotheses considered in the passage."
+    },
+    {
+     "id": "q3",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "Which of the following statements about women cyclists is supported by the passage?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "The newly improved bicycle of the mid-1890s appealed mostly to women in a privileged position.",
+        "The great majority of women in the mid-1890s considered cycling an idle pastime.",
+        "Women bicyclists promoted cycling as a healthy form of outdoor exercise."
+       ],
+       "pick": "any",
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Choice C is correct. The question asks which of three statements about women cyclists are supported by the passage.\n\nChoice A is incorrect: The second sentence of the passage states that the new bicycle appealed to a few privileged women right away, but then implies that it quickly “attracted a greater cross section of the female population.”\n\nChoice B is incorrect: The third sentence of the passage explicitly states that many women “had not taken up [bicycling] as an idle pastime.”\n\nChoice C is correct: The penultimate sentence of the passage implies that women bicyclists thought that cycling would “encourage healthy outdoor exercise.”"
+    },
+    {
+     "id": "q4",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "Which of the following does the passage suggest about pioneer women cyclists?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "They saw cycling as a means to promote the advancement of women.",
+        "They argued that cycling would encourage women to get involved in a variety of noble causes.",
+        "They provided several reasons for a cross section of the female population to use the bicycle."
+       ],
+       "pick": "any",
+       "correct": [
+        0,
+        2
+       ]
+      }
+     ],
+     "expl": "Choices A and C are correct. The question asks what the passage suggests about pioneer women cyclists.\n\nChoice A is correct: The passage states that pioneer women cyclists saw cycling “as a means to improve the general female condition” and believed that it “affirmed nothing less than the dignity and equality of women”\n\nChoice B is incorrect: The passage states that bicycle pioneers saw cycling itself as a noble cause but does not mention any other noble causes to which cycling would lead.\n\nChoice C is correct. The passage mentions that pioneer women cyclists saw at least two independent reasons for all women to use bicycles: they believed that cycling would “encourage healthy outdoor exercise” as well as “hasten long-overdue dress reform.”"
+    },
+    {
+     "id": "q5",
+     "kind": "rc",
+     "passage": "p2",
+     "stem": "Which of the following best describes the function of the second sentence ‘Although . . . population”)?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "It corrects a common misconception regarding the use of the bicycle in the mid-1890s.",
+        "It elaborates on a claim made in the previous sentence regarding a social consequence of the cycling boom.",
+        "It provides a context in which to understand the increased popularity of bicycle riding among privileged women.",
+        "It explains why cycling attracted such a significant cross section of women.",
+        "It describes the demographic characteristics of the consumer market for bicycles in the mid-1890s."
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The second sentence implies that the bicycle appealed at first only to “a few privileged women” but then “attracted a greater cross section of the female population,” thus informing the reader that “the massive influx of women cyclists” mentioned in the previous sentence did not happen all at once. Since the influx of women cyclists is the social consequence of the cycling boom mentioned in the previous sentence, the highlighted sentence describes this consequence in more detail. Therefore, Choice B is correct. The second sentence does not correct any misconceptions (Choice A), provide help in understanding the appeal of the bicycle to privileged women (Choice C), explain the attraction cycling held for a significant cross section of women (Choice D), or describe demographic characteristics of the consumer market for bicycles (Choice E)."
+    },
+    {
+     "id": "q6",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "Which of the following would serve as an example of “concomitant structural features” (line 13) that might disadvantage a snail of the rarer form?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "A shell and body that are an exact mirror image of a snail of the commoner form",
+        "A smaller population of the snails of the rarer form",
+        "A chip or fracture in the shell caused by an object falling on it",
+        "A pattern on the shell that better camouflages it",
+        "A smaller shell opening that restricts mobility and ingestion relative to that of a snail of the commoner form"
+       ],
+       "pick": 1,
+       "correct": [
+        4
+       ]
+      }
+     ],
+     "expl": "Choice A is incorrect: the passage states that “any disadvantage that a sinistral twist in itself could confer on its possessor is almost inconceivable.” Choice B is incorrect, as a smaller population would be the consequence of the disadvantage, not the cause of it. Choice C is incorrect, as damage caused by an external object is not a “structural feature” of a snail shell. Choice D is incorrect, as better camouflage is an advantage, not a disadvantage. The correct answer is Choice E: an impaired ability to move around and ingest food would be a disadvantage."
+    },
+    {
+     "id": "q7",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "The second paragraph of the passage is primarily concerned with offering possible reasons why",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "it is unlikely that evolutionary mechanisms could discriminate against sinistral snails",
+        "sinistrality is relatively uncommon among snail species",
+        "dextral and sinistral populations of a snail species tend to intermingle",
+        "a theory based on a developmental mechanism inadequately accounts for the predominance of dextrality across snail species",
+        "dextral snails breed more readily than sinistral snails, even within predominantly sinistral populations"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The first paragraph ends with the question “What mechanisms control handedness and keep left-handedness rare?” The second paragraph attempts to answer this question: perhaps, the paragraph suggests, sinistral rarity is a consequence either of natural selection working on “concomitant structural features,’ or of difficulties in mating for left-handed snails. Thus Choice B is correct. The paragraph starts by dismissing the idea that evolution could be working against left-handedness itself, but Choice A is incorrect because the paragraph is not concerned with offering reasons for that dismissal. The paragraph does not even suggest that opposite-handed populations tend to intermingle (Choice C) or that dextral snails breed more rapidly (Choice E), and it does not discuss developmental mechanisms (Choice D)."
+    },
+    {
+     "id": "q8",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "Which of the following accurately describes the relationship between the evolutionary and developmental theories discussed in the passage?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "Although the two theories reach the same conclusion, each is based on different assumptions.",
+        "They present contradictory explanations of the same phenomenon.",
+        "The second theory accounts for certain phenomena that the first cannot explain.",
+        "The second theory demonstrates why the first is valid only for very unusual, special cases.",
+        "They are identical and interchangeable in that the second theory merely restates the first in less technical terms."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The correct answer is Choice C. The third paragraph of the passage argues that the evolutionary theory cannot explain “why right-handedness should have become predominant” and lists some specific reproductive outcomes that cannot be accounted for by this theory. The next paragraph offers an alternative theory (developmental) that seems to do a better job of explaining these outcomes."
+    },
+    {
+     "id": "q9",
+     "kind": "rc",
+     "passage": "p3",
+     "stem": "It can be inferred from the passage that a predominantly sinistral snail species",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "a developmental mechanism that affects the cell-division pattern of snails",
+        "structural features that advantage dextral snails of the species",
+        "a relatively small number of snails of the same hand for dextral snails of the species to mate with",
+        "anatomical incompatibility that prevents mating between snails of opposing hands within the species",
+        "geographic separation of sinistral and dextral populations"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The question asks about possible reasons why a “sinistral snail species might stay predominantly sinistral”; this would happen if the offspring of a sinistral species is largely sinistral. Choices A, C, D, and E give plausible reasons for why this might happen: either genetic predisposition for sinistrality (Choice A) or lack of reproductive competition from dextral individuals (Choices C, D, and E). Therefore, the correct answer is Choice B: having structural features that advantage dextral snails would tend to reduce the number of sinistral individuals in a species and thus to eventually transform a sinistral species into a dextral one."
+    },
+    {
+     "id": "q10",
+     "kind": "rc",
+     "passage": "p4",
+     "stem": "The conclusion is properly drawn if which of the following is assumed?",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "If a canvas already bears a painted image produced by an artist, a second artist who uses the canvas to produce a new painting tends to be influenced by the style of the first artist.",
+        "Many painted canvases that can be reliably attributed to van Gogh contain underimages of subjects that appear on at least one other canvas that van Gogh is known to have painted.",
+        "Any painted canvas incorrectly attributed to van Gogh would not contain an underimage of a subject that appears in authentic paintings by that artist.",
+        "A painted canvas cannot be reliably attributed to an artist unless the authenticity of any underimage that painting might contain can be reliably attributed to the artist.",
+        "A painted canvas cannot be reliably attributed to a particular artist unless a reliable x-ray examination of the painting is performed."
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The passage’s argument makes a case for the painting’s being an authentic van Gogh self-portrait; it cites as evidence the fact that the canvas’s painted-over image is that of a woman who appears in other van Gogh paintings. This argument assumes that another artist would not have painted over the original image of the woman, so the correct answer is Choice C. Since the argument does not depend upon the painting's stylistic elements or upon the commonalities between this and other van Gogh paintings, Choices A and B are incorrect. Choices D and E establish criteria for attribution beyond the passage’s argument, so they are incorrect as well."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

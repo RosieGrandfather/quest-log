@@ -1,0 +1,304 @@
+{
+ "id": "u05-tc-med",
+ "title": "文本补全 · 难度中（8 题）",
+ "en": "Text Completion — Practice Set 2: Medium",
+ "minutes": 15,
+ "practice": true,
+ "objectives": [
+  "独立做完 8 道 ETS 官方真题，**全部做完再点提交**（提交前不显示对错，和真考一样）",
+  "提交后逐题看对错、正确答案和官方解析；错题先自己想一遍为什么错，再看解析",
+  "页面底部有本套对错总结：总分、正确率、各题型表现和错题清单"
+ ],
+ "blocks": [
+  {
+   "type": "gre-set",
+   "section": "tc",
+   "difficulty": "medium",
+   "source": "ETS《Official GRE Verbal Reasoning Practice Questions》· Text Completion · Practice Set 2: Medium",
+   "passages": {},
+   "items": [
+    {
+     "id": "q1",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The media once portrayed the governor as anything but ineffective; they now, however, make her out to be the epitome of ______.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "fecklessness",
+        "brilliance",
+        "dynamism",
+        "egoism",
+        "punctiliousness"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The sentence contrasts the media's former and current depictions of the governor. Since the governor was once presented as “anything but ineffective,’ the media once saw her as extremely competent. It follows that the phrase completed by the blank will have the opposite meaning. To be the epitome of something is to be representative of that trait, so the blank must be filled with a word that implies incompetence. “Brilliance” “dynamism, and “punctiliousness” are all positive traits, so they do not work in this context. “Egoism,” while often thought of as a negative trait, does not imply incompetence. That leaves “fecklessness,’ whose meaning includes ineffectiveness, making it a very good contrast with the first half of the sentence.\n\nThus, the correct answer is fecklessness (Choice A)."
+    },
+    {
+     "id": "q2",
+     "kind": "tc",
+     "passage": null,
+     "stem": "For most of the first half of the nineteenth century, science at the university was in ______ state, despite the presence of numerous luminaries.",
+     "groups": [
+      {
+       "label": "",
+       "options": [
+        "scintillating",
+        "apathetic",
+        "controversial",
+        "an incendiary",
+        "veracious"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "Since the presence of numerous luminaries, a positive thing, is portrayed as a factor that runs counter to the general state of science at the university, that general state must be negative. Therefore the word that fills the blank must describe a generally negative atmosphere. “Pathetic” certainly does. Of the other answers, “scintillating,” meaning brilliant, is just the opposite of what is called for, while “veracious” is similarly too positive. “Controversial” and “incendiary” both describe an argumentative or explosive environment that would not necessarily be mitigated by the presence of numerous luminaries.\n\nThus the correct answer is a pathetic (Choice B)."
+    },
+    {
+     "id": "q3",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Ina recent history of the Renaissance, by showing how the artistic efflorescence of that era was (i) ______ linked to its commercial vitality, Jardine demonstrated that the spirit of acquisitiveness may be (ii) ______ that of cultural creativity.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "questionably",
+        "intimately",
+        "skeptically"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "threatened by",
+        "inseparable from",
+        "comparable to"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The sentence talks about Jardine’s demonstrating a certain general relation between two social phenomena (“spirit of acquisitiveness” and “cultural creativity”) by showing that this relation was held between two particular historical instances of these phenomena (“commercial vitality” and “artistic efflorescence” of the Renaissance). Therefore, the phrase “(i) linked to” and the answer to Blank (ii) must be identical or very similar in meaning. The only answer choices that are related in this way are “intimately” and “inseparable from”: if two things are “intimately linked, then they are very plausibly “inseparable from” each other.\n\nThus the correct answer is intimately (Choice B) and inseparable from (Choice E)."
+    },
+    {
+     "id": "q4",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The setting in which the concert took place (i) ______: the group’s performance was elegant and polished, but the sound, which seeped across the cold, unresonant high school auditorium, was oddly (ii) ______ given the energy the players seemed to be putting into it.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "exacted a toll",
+        "encouraged nervousness",
+        "solved a dilemma"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "clangorous",
+        "tepid",
+        "inviting"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      }
+     ],
+     "expl": "The “but” in the sentence suggests that there is a contrast between the group’s overall performance and the quality of the sound; since the former is given a positive description (“elegant and polished”), the description of the latter in Blank (ii) must be negative. Furthermore, the quality of the sound must be in contrast with the apparent energy of the performers. The only answer choice for Blank (ii) that meets these conditions is “tepid,” so it is correct. The sentence as a whole suggests that the setting of the concert had a negative effect on the performance; the answer choice for Blank (i) that best fits this meaning is “exacted a toll,” so it is correct.\n\nAnswer Choice B for Blank (i), “encouraged nervousness,’ is also negative in mean-ing, but it is incorrect, because the sentence does not talk about the psychological state of the musicians or the audience.\n\nThus the correct answer is exacted a toll (Choice A) and tepid (Choice E)."
+    },
+    {
+     "id": "q5",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The governor has long been obsessed with excising the media from the politician-public relationship. That’s been the unifying aim of all her seemingly disconnected ventures since entering public life: a determination to (i) ______, and eventually (ii) ______, the media's hold on political communication.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "conceal",
+        "erode",
+        "rejuvenate"
+       ],
+       "pick": 1,
+       "correct": [
+        1
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "augment",
+        "consolidate",
+        "end"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "Blanks (i) and (ii) must describe what the governor wants to do to “the media’s hold on political communication.” From the first sentence, it is clear that the governor's goal is to “excise” or eliminate the media as an intermediary between politicians and the public; this must be the meaning of the answer to Blank (ii), which describes the governor's eventual, or long-term, goal. The only answer choice for Blank (ii) that has this meaning is “end,” so it is correct. The answer to Blank (i) must be a word that denotes the initial phase of a gradual process that ends with the complete elimination of the media’s influence; the answer choice that fits this meaning is “erode,” so it is correct.\n\nThus the correct answer is erode (Choice B) and end (Choice F)."
+    },
+    {
+     "id": "q6",
+     "kind": "tc",
+     "passage": null,
+     "stem": "Female labor was essential to the growth of eighteenth-century European textile industries, yet it remains difficult to (i) ______. Despite significant (ii) ______ in research about women, the role of female labor remains the single most glaring omission in most economic analyses of the history of European industrialization. Women far outnumbered men as workers in the textile industries, yet wage indices and discussions of growth, cost of living, and the like (iii) ______ about the male labor force.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "track",
+        "overestimate",
+        "ignore"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "advances",
+        "gaps",
+        "disinterest"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "incorporate data only",
+        "suppress most information",
+        "too rarely talk"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      }
+     ],
+     "expl": "The second sentence asserts that the role of women is generally left out from most analyses of industrialization. Given this omission, it follows that data about female labor would be hard to come by, making it difficult to measure its growth; therefore “track” is the correct answer for Blank (i). As for the other choices, since the author asserts that the role of female labor has routinely been overlooked, “ignore” cannot be correct. The conjunction “yet” in the first sentence indicates that the phrase containing Blank\n\n(i) contrasts with the importance of female labor; since “overestimate” emphasizes this importance, it also cannot be correct. The second sentence places research about female labor during industrialization into the larger context of research about women; the word “despite” that begins the sentence indicates that the latter runs counter to trends in the larger field. Neither “gaps” nor “disinterest” would provide the necessary contrast between the two, since “gaps” in the larger field of research about women would mirror the omission of the role of female labor and “disinterest” would explain such omissions.\n\n“Advances” does provide a contrast, and is thus the correct answer. In the sentence containing Blank (iii), “yet” indicates a contrast between the makeup of the workforce and the availability of data about the workforce. Because the author says that women outnumbered men in the workforce, the contrast would likely require data that mostly concerned men. Of the three choices for Blank (iii), “incorporate data only” conveys this sense. The other two options can be ruled out because of the previous sentence’s assertion that female labor is ignored by economic analyses. With women being excluded from the data, it follows that it is mostly about men; therefore it does not make sense to assert that information about male labor is suppressed or too infrequently discussed. Thus the correct answer is track (Choice A), advances (Choice D), and incorporate data only (Choice G)."
+    },
+    {
+     "id": "q7",
+     "kind": "tc",
+     "passage": null,
+     "stem": "It is a sad but just indictment of some high school history textbooks that they frequently report as (i) ______ claims that historians hotly debate or that are even completely (ii) ______ by (iii) ______ primary sources.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "factual",
+        "controversial",
+        "sensational"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "resolved",
+        "corroborated",
+        "contradicted"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "dubious",
+        "incomplete",
+        "reliable"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The use of the word “indictment,” meaning a charge of wrongdoing, indicates that the sentence is sharply criticizing the textbooks in question and that the blanks must be completed with words that support this critique. Blank (i) describes how such textbooks characterize historical claims that are hotly debated. Since such claims are in fact controversial, it would not be surprising or inaccurate for textbooks to report them as such, so “controversial” is not correct. Of the other two responses, “sensational” has some merit, suggesting that the textbooks resort to a melodramatic presentation of historical debate; however, “factual” is the better choice, implying as it does gross inaccuracies. That the critique of the textbooks centers upon accuracy rather than tone is confirmed by the rest of the sentence, which deals with the relationship between the textbooks’ claims and the primary sources upon which historical scholarship is based. The “even” that precedes Blank (ii) calls for a word that is yet further away from factual than “hotly debated” Of the choices, only “contradicted” fits this criterion; the other two options are the opposite of what is needed. Finally, Blank (iii) calls for a word that de-scribes the primary sources. Since the critique of the textbooks’ accuracy rests upon their divergence from these sources, the sources themselves must be characterized as authoritative. “Reliable” does exactly that, while “dubious” and “incomplete” suggest the opposite.\n\nThus the correct answer is factual (Choice A), contradicted (Choice F), and reliable (Choice I)."
+    },
+    {
+     "id": "q8",
+     "kind": "tc",
+     "passage": null,
+     "stem": "The reason minimum temperatures are going up more rapidly than maximums may involve cloud cover and evaporative cooling. Clouds tend to keep the days cooler by reflecting sunlight, and the nights warmer by (i) ______ loss of heat from Earth’s surface. Greater amounts of moisture in the soil from additional precipitation and cloudiness (ii) ______ the daytime temperature increases because part of the solar energy is (iii) ______ the evaporation of that moisture.",
+     "groups": [
+      {
+       "label": "Blank (i)",
+       "options": [
+        "inhibiting",
+        "exacerbating",
+        "replicating"
+       ],
+       "pick": 1,
+       "correct": [
+        0
+       ]
+      },
+      {
+       "label": "Blank (ii)",
+       "options": [
+        "augment",
+        "mask",
+        "restrain"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      },
+      {
+       "label": "Blank (iii)",
+       "options": [
+        "intensified by",
+        "unrelated to",
+        "used up in"
+       ],
+       "pick": 1,
+       "correct": [
+        2
+       ]
+      }
+     ],
+     "expl": "The second sentence asserts that clouds make for warmer nights by doing something to the loss of heat from Earth. Since less heat lost means more warmth, a word that means preventing or slowing heat loss is required for Blank (i). “Inhibiting” is therefore the answer. “Exacerbating” has the opposite meaning, while “replicating” makes no sense in this context. Since the first sentence asserts that daytime highs are increasing less rapidly than nighttime lows, Blank (ii) calls for a verb that indicates a moderation in rises in temperature during the day, and “restrain” has this sense. “Augment,’ meaning to increase, has the opposite meaning, while “mask” would indicate that measurements are not reflecting actual increases in temperature, an idea not supported by the rest of the passage. The “because” in the last sentence indicates that the second clause explains how daytime temperature increases are restrained; it does so by making reference to solar energy and the evaporation of moisture. Because solar energy is responsible for increases in daytime temperature, the answer to Blank (iii) requires a word that explains how evaporation can lessen or divert that energy for other purposes. “Used up in” does this because it indicates that less solar energy is available to warm the Earth’s surface when a portion of it is instead devoted to evaporation. Neither “intensified by” nor “unrelated to” indicate a connection between solar energy and evaporation that would lessen warming.\n\nThus the correct answer is inhibiting (Choice A), restrain (Choice F), and used up in (Choice I)."
+    }
+   ]
+  }
+ ],
+ "references": []
+}

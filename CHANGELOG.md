@@ -5,6 +5,14 @@
 格式：
 
 ```
+## 2026-10-11 — 新课 gre-vr：GRE Verbal 官方练习题（12 套，150 题），做完提交才显示对错
+- 新课 `gre-vr`（选修，`order: 16`）：题目、选项、答案、官方解析取自 ETS《Official GRE Verbal Reasoning Practice Questions》（扫描版 PDF，OCR 后人工+程序校对）；按原书分成 12 套：阅读理解 / 文本补全 / 句子等价各「低 / 中 / 高」三套（难度照原书标注），混合 3 套（原书未标难度）；每套是一节，`minutes` 按每题约 1.75 分钟估算（≤50）
+- 新内容块 `gre-set`：整套题一页做完，**点「提交」之前不显示对错**（有没做完的题会先提醒一次）；提交后逐题标对错、正确/你的答案、官方解析，页面底部有本套总结（对错数、正确率、分题型、错题清单，可「只看错题」「重做本套」）。整题全对才算对，没有部分分；没作答算错
+- 成绩存在 `studyProgress/{课程}__{章节}` 的 `practiceAttempts / practiceBest / practiceTotal / practiceLast` 字段（`practiceLast.answers` 每题存成字符串，因为 Firestore 不能存嵌套数组）；不发积分，进入同一节时顶部显示「上次提交」并可「查看上次作答」；课程列表里显示「做过 x/y」徽章
+- 文件：`js/core/practice.js`（判分，纯函数）、`tests/practice.test.js`（新）、`js/study/practice.js`（新，页面）、`js/study/render-content.js`、`js/study/views.js`、`js/data/study.js`、`css/study.css`；生成与检查：`tools/course/grvp/`（`sets.json` 数据、`build.py`、`practice_check.py`），`tools/course/validate.py` 对 `practice: true` 的节用 `practice_check`（不要求小测验）
+- 注意：原书版权页禁止复制和分发。仓库保持私有；如果用 GitHub Pages 发布，私有仓库的页面也可能被别人访问到，请确认站点可见性
+- 已知限制：原书的行号（题干里的 line N）没有保留，需用引号里的词在文章里找；题目来自 OCR，个别词可能有小错，发现请对照原书 PDF 改 `tools/course/grvp/sets.json` 后重新运行 `build.py`
+
 ## 2026-10-11 — gre-v 每两节并成一节（60 节 → 30 节，每节 40 词）
 - 每节 40 个词（8 段例句），约 50 分钟，测验仍是 5 题；`tools/course/grev/build.py` 里 `PER_UNIT` 改为 40
 - 新的第 N 节包含原来的第 2N-1、2N 节的词，节里记了 `legacyIds`，读「会 / 不会」标记时会把旧节的标记一起读进来，不会丢

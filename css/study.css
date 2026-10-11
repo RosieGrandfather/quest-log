@@ -247,3 +247,57 @@
 .vm-no.on{color:#b3261e;background:rgba(179,38,30,.12);border-color:#b3261e;font-weight:600;}
 .vcard[data-mark="unknown"]{box-shadow:inset 3px 0 0 #b3261e;}
 .vcard[data-mark="know"]{box-shadow:inset 3px 0 0 var(--teal);}
+
+/* 官方练习套题（js/study/practice.js） */
+.gset{display:flex;flex-direction:column;gap:14px;}
+.gset-source{font-size:12.5px;color:var(--ink-faint);line-height:1.6;}
+.gset-note{font-size:13.5px;color:var(--ink-soft);background:var(--surface-2);border-radius:10px;padding:9px 12px;line-height:1.65;}
+.gset-prev{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--teal-soft);color:var(--teal);border-radius:12px;padding:9px 12px;font-size:13.5px;}
+.gset-prev .btn-ghost{flex:none;}
+.gq-passage{background:var(--accent-soft);border:1px solid var(--border);border-radius:14px;padding:12px 16px;margin-top:6px;}
+.gq-passage p{margin:0 0 10px;line-height:1.85;font-size:16px;color:var(--ink);}
+.gq-passage p:last-child{margin-bottom:0;}
+.gq-again{padding:8px 14px;}
+.gq-again summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--ink-soft);}
+.gq-again[open] summary{margin-bottom:8px;}
+.gq{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 16px;scroll-margin-top:12px;}
+.gq-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.gq-kind{font-size:12px;color:var(--ink-faint);}
+.gq-verdict{margin-left:auto;font-size:12.5px;font-weight:800;}
+.gq.right{border-left:4px solid var(--teal);} .gq.right .gq-verdict{color:var(--teal);}
+.gq.wrong{border-left:4px solid var(--burgundy);} .gq.wrong .gq-verdict{color:var(--burgundy);}
+.gq-stem{font-size:16px;line-height:1.75;font-weight:600;}
+.gblank{display:inline-block;min-width:70px;border-bottom:2px solid var(--ink);margin:0 3px;vertical-align:-2px;}
+.gq-hint{font-size:12.5px;color:var(--ink-faint);margin:6px 0 2px;}
+.gq-grouplabel{font-size:12.5px;font-weight:800;color:var(--ink-soft);margin:10px 0 0;}
+.gopt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid var(--border);border-radius:10px;margin-top:7px;cursor:pointer;font-size:15px;line-height:1.55;}
+.gopt:has(input:checked){border-color:var(--ink);background:var(--surface-2);}
+.gopt input{margin-top:4px;accent-color:var(--ink);flex:none;}
+.gopt-letter{flex:none;width:20px;font-family:'IBM Plex Mono';font-size:12.5px;color:var(--ink-faint);margin-top:2px;}
+.gopt-text{flex:1;min-width:0;}
+.gopt-tag{flex:none;font-size:11.5px;font-weight:800;margin-left:6px;}
+.gset.revealed .gopt{cursor:default;}
+.gset.revealed .gopt.correct{border-color:var(--teal);background:var(--teal-soft);}
+.gset.revealed .gopt.correct .gopt-tag{color:var(--teal);}
+.gset.revealed .gopt.chosen-wrong{border-color:var(--burgundy);background:var(--burgundy-soft);}
+.gset.revealed .gopt.chosen-wrong .gopt-tag{color:var(--burgundy);}
+.gq-answer{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:14px;}
+.gq-answer .ok b{color:var(--teal);} .gq-answer .bad b{color:var(--burgundy);}
+.gq-explain .explain{margin-top:8px;}
+.gset.only-wrong .gq.right{display:none;}
+.gbar{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px 14px;box-shadow:0 -6px 18px rgba(0,0,0,.06);}
+.gbar[hidden]{display:none;}
+.gbar-count{font-size:14px;font-weight:700;color:var(--ink-soft);}
+.gbar-count.full{color:var(--teal);}
+.gbar-submit{flex:none;min-width:96px;}
+.gsummary{display:flex;flex-direction:column;gap:12px;scroll-margin-top:12px;}
+.gsummary[hidden]{display:none;}
+.gsum-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 16px;}
+.gsum-sub{font-size:12.5px;font-weight:800;color:var(--ink-soft);margin-bottom:6px;}
+.gsum-row{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:14.5px;}
+.gsum-row span:first-child{flex:1;}
+.gsum-pct{color:var(--ink-faint);width:44px;text-align:right;font-size:13px;}
+.gsum-wrong{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 16px;}
+.gsum-chip{font:inherit;font-size:13px;margin:0 6px 6px 0;padding:4px 10px;border-radius:999px;border:1px solid var(--burgundy);background:var(--burgundy-soft);color:var(--burgundy);cursor:pointer;}
+.gsum-allright{text-align:center;font-weight:800;color:var(--teal);padding:6px;}
+.gsum-btns{display:flex;gap:10px;} .gsum-btns > *{flex:1;}

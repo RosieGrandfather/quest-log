@@ -6,6 +6,7 @@ import { unitBodyHTML, mdToHTML, renderMath, wireVocab } from './render-content.
 import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { wireVocabMarks } from './vocab-marks.js';
+import { wirePractice } from './practice.js';
 import { startResume, stopResume, clearResume } from './resume.js';
 import { escapeHTML } from '../core/html.js';
 import { fmtDateLabel } from '../core/dates.js';
@@ -53,7 +54,10 @@ export async function renderRoute(){
 export async function refreshLive(){
   if(route.name==='home') await renderHome();
   else if(route.name==='course') await renderCourse(route.cid);
-  else if(route.name==='unit') await renderUnitActions(route.cid, route.uid);
+  else if(route.name==='unit'){
+    await renderUnitActions(route.cid, route.uid);
+    const g = document.querySelector('.gset'); if(g && g._refreshPrev) g._refreshPrev();
+  }
 }
 
 /* ---------- 课程列表 ---------- */
@@ -104,6 +108,7 @@ function unitBadges(course, u){
   const out = [];
   if(!u.file) out.push('<span class="badge soon">即将上线</span>');
   else if(done) out.push(`<span class="badge done">已学 · ${escapeHTML(fmtDateLabel(done))}</span>`);
+  if(u.practice && pr.practiceAttempts) out.push(`<span class="badge quiz-pass">做过 ${pr.practiceBest}/${pr.practiceTotal}</span>`);
   if(u.file && u.hasQuiz !== false){
     if(pr.quizPassed) out.push(`<span class="badge quiz-pass">测验 ${pr.quizBest}% ⭐</span>`);
     else if(pr.quizAttempts) out.push(`<span class="badge quiz-try">测验最高 ${pr.quizBest}%</span>`);
@@ -159,8 +164,9 @@ async function renderUnit(cid, uid){
       ${next ? `<a href="${unitHash(cid, next.id)}">${escapeHTML(next.title)} →</a>` : '<span></span>'}
     </nav>
     <button class="notes-fab" id="notesFab">📝 笔记</button>`;
-  renderMath(view());
+  if(!unit.practice) renderMath(view());     // 练习套题是纯英文原文，不做公式排版
   wireVocab(document.querySelector('.lesson'));
+  wirePractice(document.querySelector('.lesson'), course, unit);
   wireVocabMarks(document.querySelector('.lesson'), course, unit);
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
   enhanceCode(view());

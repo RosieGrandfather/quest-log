@@ -3,6 +3,7 @@
    课程内容来自我们自己仓库里的 JSON，属于可信内容。 */
 /* global marked, renderMathInElement */
 import { escapeHTML } from '../core/html.js';
+import { practiceHTML } from './practice.js';
 
 /* marked 会把公式里的 _ 和 * 当成斜体，所以先把 $...$ / $$...$$ 换成占位符，排版完再换回来 */
 export function mdToHTML(md){
@@ -111,6 +112,7 @@ function blockHTML(b){
       `<tr><td class="kw-zh">${escapeHTML(zh)}</td><td class="kw-en">${escapeHTML(en)}</td><td class="kw-desc">${mdToHTML(desc||'')}</td></tr>`).join('')}</table></div>`;
     case 'vocab': return `<div class="blk-vocab">${b.items.map(vocabCard).join('')}</div>`;
     case 'passage': return passageHTML(b);
+    case 'gre-set': return practiceHTML(b);
     default: return '';
   }
 }

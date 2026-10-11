@@ -92,3 +92,19 @@ export function saveVocabMark(cols, course, unit, word, value){
   return cols.vocabMarks.doc(unitKey(course.id, unit.id)).set(
     {courseId:course.id, unitId:unit.id, marks:{[word]:value}, updatedAt:Date.now()}, {merge:true});
 }
+
+/* 官方练习套题交卷：只记成绩和这次的作答（每题一个字符串，见 core/practice.js），不发积分。返回合并后的进度文档 */
+export async function submitPractice(cols, course, unit, answers, sum){
+  const key = unitKey(course.id, unit.id);
+  const ref = cols.studyProgress.doc(key);
+  const prev = (await ref.get()).data() || {};
+  const progress = {
+    courseId:course.id, unitId:unit.id,
+    practiceAttempts:(prev.practiceAttempts||0)+1,
+    practiceBest:Math.max(prev.practiceBest||0, sum.correct),
+    practiceTotal:sum.total,
+    practiceLast:{answers, correct:sum.correct, total:sum.total, ts:Date.now()},
+  };
+  await ref.set(progress, {merge:true});
+  return {...prev, ...progress};
+}
