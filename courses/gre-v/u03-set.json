@@ -2,372 +2,728 @@
  "id": "u03",
  "title": "S 级核心词 · 第 3 组",
  "en": "GRE Core Vocabulary · Set 3",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u05",
+  "u06"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "malodorous",
-     "ipa": "[ˌmælˈoʊdərəs]",
+     "w": "efficacious",
+     "ipa": "[ˌefɪˈkeɪʃəs]",
      "pos": "adj.",
-     "zh": "恶臭的",
-     "en": "having a bad smell",
+     "zh": "有效的",
+     "en": "producing the desired effect",
      "syn": [
-      "fetid",
-      "rank"
+      "effective",
+      "potent"
      ],
      "ant": [
-      "fragrant",
-      "aromatic"
+      "ineffectual",
+      "futile"
      ]
     },
     {
-     "w": "ad hoc",
-     "ipa": "[ˈeˈdi][ˈhɒk]",
-     "pos": "adj.",
-     "zh": "专门的",
-     "en": "created for a specific purpose; unplanned",
+     "w": "stamina",
+     "ipa": "[ˈstæmɪnə]",
+     "pos": "n.",
+     "zh": "耐力",
+     "en": "the strength to keep going over a long time",
      "syn": [
-      "improvised",
-      "makeshift"
+      "endurance",
+      "staying power"
      ],
      "ant": [
-      "permanent",
-      "systematic"
+      "weakness",
+      "fatigue"
      ]
     },
     {
-     "w": "proprietary",
-     "ipa": "[prəˈpraɪətɛri]",
-     "pos": "adj.",
-     "zh": "私营的",
-     "en": "owned privately; held by an owner",
+     "w": "boon",
+     "ipa": "[bʊn]",
+     "pos": "n.",
+     "zh": "恩惠，福利",
+     "en": "a benefit or blessing",
      "syn": [
-      "private",
-      "exclusive"
+      "blessing",
+      "advantage"
      ],
      "ant": [
-      "public"
+      "bane",
+      "curse"
      ]
     },
     {
-     "w": "chide",
-     "ipa": "[tʃaɪd]",
+     "w": "polarize",
+     "ipa": "[ˈpoʊləraɪz]",
      "pos": "v.",
-     "zh": "责备",
-     "en": "to scold mildly",
+     "zh": "使分开对立，使两极分化",
+     "en": "to divide into two opposing groups",
      "syn": [
-      "reprimand",
-      "rebuke"
+      "divide",
+      "split"
+     ],
+     "ant": [
+      "unify",
+      "reconcile"
+     ]
+    },
+    {
+     "w": "cagey",
+     "ipa": "[ˈkeɪdʒi]",
+     "pos": "adj.",
+     "zh": "不乐意说话的",
+     "en": "reluctant to give information",
+     "syn": [
+      "guarded",
+      "evasive"
+     ],
+     "ant": [
+      "forthcoming",
+      "candid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[efficacious]] new drug proved a [[boon]] to patients with little [[stamina]], though its price began to [[polarize]] the board, and the [[cagey]] director would say no more.",
+   "gloss": {
+    "efficacious": "有效的",
+    "stamina": "耐力",
+    "boon": "恩惠，福利",
+    "polarize": "使分开对立，使两极分化",
+    "cagey": "不乐意说话的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "acquiesce",
+     "ipa": "[ˌækwiˈes]",
+     "pos": "v.",
+     "zh": "勉强同意；默许",
+     "en": "to accept something reluctantly without protest",
+     "syn": [
+      "comply",
+      "assent"
+     ],
+     "ant": [
+      "resist",
+      "object"
+     ]
+    },
+    {
+     "w": "halfhearted",
+     "ipa": "[ˈhɑːfˈhɑːtɪd]",
+     "pos": "adj.",
+     "zh": "不感兴趣的，不热情的",
+     "en": "lacking enthusiasm or effort",
+     "syn": [
+      "lukewarm",
+      "perfunctory"
+     ],
+     "ant": [
+      "wholehearted",
+      "zealous"
+     ]
+    },
+    {
+     "w": "gainsay",
+     "ipa": "[ˌɡenˈse]",
+     "pos": "vt.",
+     "zh": "否认",
+     "en": "to deny or contradict",
+     "syn": [
+      "contradict",
+      "dispute"
+     ],
+     "ant": [
+      "affirm",
+      "concede"
+     ]
+    },
+    {
+     "w": "apropos",
+     "ipa": "[ˌæprəˈpo]",
+     "pos": "adj.",
+     "zh": "相关的；关于，有关",
+     "en": "relevant to the matter; concerning",
+     "syn": [
+      "pertinent",
+      "relevant"
+     ],
+     "ant": [
+      "irrelevant",
+      "inapposite"
+     ]
+    },
+    {
+     "w": "denounce",
+     "ipa": "[dɪˈnaʊns]",
+     "pos": "vt.",
+     "zh": "公开指责",
+     "en": "to condemn publicly",
+     "syn": [
+      "condemn",
+      "censure"
      ],
      "ant": [
       "praise",
-      "commend"
-     ]
-    },
-    {
-     "w": "camaraderie",
-     "ipa": "[ˌkɑːməˈrɑːdəri]",
-     "pos": "n.",
-     "zh": "友情",
-     "en": "friendship and trust among companions",
-     "syn": [
-      "fellowship",
-      "comradeship"
-     ],
-     "ant": [
-      "enmity",
-      "hostility"
+      "laud"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "A [[malodorous]] leak forced an [[ad hoc]] committee to inspect the [[proprietary]] machinery; the manager began to [[chide]] the crew, but their [[camaraderie]] soon softened his tone.",
+   "text": "After weeks of pressure the mayor chose to [[acquiesce]], giving a [[halfhearted]] nod; no one would [[gainsay]] her remark, [[apropos]] of the scandal, that the council must [[denounce]] corruption.",
    "gloss": {
-    "malodorous": "恶臭的",
-    "ad hoc": "专门的",
-    "proprietary": "私营的",
-    "chide": "责备",
-    "camaraderie": "友情"
+    "acquiesce": "勉强同意",
+    "halfhearted": "不感兴趣的，不热情的",
+    "gainsay": "否认",
+    "apropos": "相关的",
+    "denounce": "公开指责"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "resurgence",
-     "ipa": "[rɪˈsɜːrdʒəns]",
-     "pos": "n.",
-     "zh": "复兴",
-     "en": "a revival after a period of decline",
+     "w": "corroborate",
+     "ipa": "[kəˈrɑbəret]",
+     "pos": "v.",
+     "zh": "用证据或权威证实；为…提供证据，支持",
+     "en": "to confirm with additional evidence",
      "syn": [
-      "revival",
-      "renewal"
+      "confirm",
+      "substantiate"
      ],
      "ant": [
-      "decline",
-      "ebb"
+      "contradict",
+      "refute"
      ]
     },
     {
-     "w": "extraneous",
-     "ipa": "[ɪkˈstreɪniəs]",
+     "w": "dubious",
+     "ipa": "[ˈdubɪəs]",
      "pos": "adj.",
-     "zh": "无关的，不重要的",
-     "en": "not relevant or essential",
+     "zh": "充满不定性的，值得怀疑的",
+     "en": "doubtful; open to question",
      "syn": [
-      "irrelevant",
-      "superfluous"
+      "doubtful",
+      "questionable"
      ],
      "ant": [
-      "essential",
-      "relevant"
+      "certain",
+      "trustworthy"
      ]
     },
     {
-     "w": "dignified",
-     "ipa": "[ˈdɪɡnɪfaɪd]",
-     "pos": "adj.",
-     "zh": "高贵庄严的",
-     "en": "serious, stately and deserving respect",
+     "w": "preempt",
+     "ipa": "[priːˈempt]",
+     "pos": "v.",
+     "zh": "预先占有",
+     "en": "to forestall by acting first",
      "syn": [
-      "stately",
-      "august"
+      "forestall",
+      "anticipate"
      ],
-     "ant": [
-      "undignified",
-      "ungainly"
-     ]
+     "ant": []
     },
     {
-     "w": "variance",
-     "ipa": "[ˈvɛrɪəns]",
-     "pos": "n.",
-     "zh": "不一致，不和谐",
-     "en": "a disagreement or difference",
-     "syn": [
-      "discrepancy",
-      "divergence"
-     ],
-     "ant": [
-      "agreement",
-      "consistency"
-     ]
-    },
-    {
-     "w": "particularize",
-     "ipa": "[pəˈtɪkjələraɪz]",
+     "w": "disregard",
+     "ipa": "[ˌdɪsrɪˈɡɑrd]",
      "pos": "vt.",
-     "zh": "详述",
-     "en": "to give details or treat item by item",
+     "zh": "漠视，不关注；缺乏兴趣，缺乏关心",
+     "en": "to ignore or pay no attention to",
      "syn": [
-      "itemize",
-      "specify"
+      "ignore",
+      "overlook"
      ],
      "ant": [
-      "generalize"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "After a long decline, a [[resurgence]] of interest in the town's festival brought [[dignified]] guests and plenty of [[extraneous]] chatter; the council tried to [[particularize]] its plans but found a [[variance]] between its budget and its ambition.",
-   "gloss": {
-    "resurgence": "复兴",
-    "extraneous": "无关的，不重要的",
-    "dignified": "高贵庄严的",
-    "variance": "不一致，不和谐",
-    "particularize": "详述"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "invidious",
-     "ipa": "[ɪnˈvɪdɪəs]",
-     "pos": "adj.",
-     "zh": "惹人反感的；羡慕嫉妒恨的",
-     "en": "causing resentment; unfairly discriminating",
-     "syn": [
-      "offensive",
-      "discriminatory"
-     ],
-     "ant": [
-      "fair",
-      "just"
+      "heed",
+      "regard"
      ]
     },
     {
-     "w": "baffle",
-     "ipa": "[ˈbæfl]",
-     "pos": "vt.",
-     "zh": "使疑惑",
-     "en": "to confuse or perplex",
-     "syn": [
-      "perplex",
-      "bewilder"
-     ],
-     "ant": [
-      "enlighten",
-      "clarify"
-     ]
-    },
-    {
-     "w": "credulous",
-     "ipa": "[ˈkrɛdʒələs]",
+     "w": "judicious",
+     "ipa": "[dʒuˈdɪʃəs]",
      "pos": "adj.",
-     "zh": "轻信的，易受骗的",
-     "en": "too ready to believe",
-     "syn": [
-      "gullible",
-      "naive"
-     ],
-     "ant": [
-      "skeptical",
-      "incredulous"
-     ]
-    },
-    {
-     "w": "balk",
-     "ipa": "[bɔk]",
-     "pos": "vt.",
-     "zh": "阻碍；不愿接受，拒绝",
-     "en": "to refuse to proceed; to hinder",
-     "syn": [
-      "resist",
-      "shy away"
-     ],
-     "ant": [
-      "acquiesce",
-      "proceed"
-     ]
-    },
-    {
-     "w": "meager",
-     "ipa": "[ˈmiːgə]",
-     "pos": "adj.",
-     "zh": "贫乏的",
-     "en": "lacking in quantity or quality",
-     "syn": [
-      "scant",
-      "paltry"
-     ],
-     "ant": [
-      "ample",
-      "abundant"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "His [[invidious]] comparison of the two teams could [[baffle]] only a [[credulous]] listener; the coach would [[balk]] at the idea, pointing to the [[meager]] evidence.",
-   "gloss": {
-    "invidious": "惹人反感的",
-    "baffle": "使疑惑",
-    "credulous": "轻信的，易受骗的",
-    "balk": "阻碍",
-    "meager": "贫乏的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "circumspect",
-     "ipa": "[ˈsɜːrkəmspekt]",
-     "pos": "adj.",
-     "zh": "谨慎的，小心的",
-     "en": "careful to consider all consequences",
+     "zh": "明智的，慎重的",
+     "en": "showing good judgment",
      "syn": [
       "prudent",
-      "wary"
+      "sagacious"
      ],
      "ant": [
-      "reckless",
+      "foolish",
       "rash"
-     ]
-    },
-    {
-     "w": "finicky",
-     "ipa": "[ˈfɪnɪki]",
-     "pos": "adj.",
-     "zh": "过分讲究的，挑剔的",
-     "en": "overly fussy about details",
-     "syn": [
-      "fastidious",
-      "picky"
-     ],
-     "ant": [
-      "undemanding",
-      "easygoing"
-     ]
-    },
-    {
-     "w": "meander",
-     "ipa": "[miˈændər]",
-     "pos": "vi.",
-     "zh": "闲逛，漫步",
-     "en": "to wander without a fixed course",
-     "syn": [
-      "ramble",
-      "wander"
-     ],
-     "ant": [
-      "proceed directly"
-     ]
-    },
-    {
-     "w": "ebullient",
-     "ipa": "[ɪˈbʌliənt]",
-     "pos": "adj.",
-     "zh": "热情奔放的",
-     "en": "bubbling with enthusiasm",
-     "syn": [
-      "exuberant",
-      "effervescent"
-     ],
-     "ant": [
-      "subdued",
-      "glum"
-     ]
-    },
-    {
-     "w": "incontrovertible",
-     "ipa": "[ˌɪnkɑːntrəˈvɜːrtəbl]",
-     "pos": "adj.",
-     "zh": "不可争议的",
-     "en": "impossible to dispute",
-     "syn": [
-      "indisputable",
-      "undeniable"
-     ],
-     "ant": [
-      "dubious",
-      "questionable"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[circumspect]] inspector, though [[finicky]] about detail, let his attention [[meander]] during the [[ebullient]] celebration, until an [[incontrovertible]] clue jolted him alert.",
+   "text": "The new records [[corroborate]] the claim; although the witness seemed [[dubious]], the judge chose to [[preempt]] objections and [[disregard]] rumor, a [[judicious]] move.",
    "gloss": {
-    "circumspect": "谨慎的，小心的",
-    "finicky": "过分讲究的，挑剔的",
-    "meander": "闲逛，漫步",
-    "ebullient": "热情奔放的",
-    "incontrovertible": "不可争议的"
+    "corroborate": "用证据或权威证实",
+    "dubious": "充满不定性的，值得怀疑的",
+    "preempt": "预先占有",
+    "disregard": "漠视，不关注",
+    "judicious": "明智的，慎重的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "gawky",
+     "ipa": "[ˈɡɔːki]",
+     "pos": "adj.",
+     "zh": "(举止)笨拙的",
+     "en": "awkward and clumsy",
+     "syn": [
+      "clumsy",
+      "ungainly"
+     ],
+     "ant": [
+      "graceful",
+      "adroit"
+     ]
+    },
+    {
+     "w": "veracious",
+     "ipa": "[vəˈreɪʃəs]",
+     "pos": "adj.",
+     "zh": "诚实的，说实话的",
+     "en": "truthful and honest",
+     "syn": [
+      "truthful",
+      "honest"
+     ],
+     "ant": [
+      "mendacious",
+      "false"
+     ]
+    },
+    {
+     "w": "sanction",
+     "ipa": "[ˈsæŋkʃən]",
+     "pos": "vt.",
+     "zh": "批准，认可；制裁",
+     "en": "to give official approval; a penalty",
+     "syn": [
+      "approve",
+      "authorize"
+     ],
+     "ant": [
+      "prohibit",
+      "forbid"
+     ]
+    },
+    {
+     "w": "demoralize",
+     "ipa": "[dɪˈmɔːrəlaɪz]",
+     "pos": "vt.",
+     "zh": "使士气低落贬低，使堕落",
+     "en": "to weaken someone's confidence and morale",
+     "syn": [
+      "dishearten",
+      "discourage"
+     ],
+     "ant": [
+      "hearten",
+      "encourage"
+     ]
+    },
+    {
+     "w": "exasperate",
+     "ipa": "[ɪɡˈzæspəreɪt]",
+     "pos": "vt.",
+     "zh": "激怒",
+     "en": "to irritate intensely",
+     "syn": [
+      "infuriate",
+      "vex"
+     ],
+     "ant": [
+      "soothe",
+      "placate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[gawky]] clerk was a [[veracious]] man, but the board's decision to [[sanction]] him would [[demoralize]] the staff and [[exasperate]] his friends.",
+   "gloss": {
+    "gawky": "(举止)笨拙的",
+    "veracious": "诚实的，说实话的",
+    "sanction": "批准，认可",
+    "demoralize": "使士气低落贬低，使堕落",
+    "exasperate": "激怒"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tortuous",
+     "ipa": "[ˈtɔːrtʃuəs]",
+     "pos": "adj.",
+     "zh": "曲折的，拐弯抹角的",
+     "en": "full of twists and turns; indirect",
+     "syn": [
+      "winding",
+      "circuitous"
+     ],
+     "ant": [
+      "straightforward",
+      "direct"
+     ]
+    },
+    {
+     "w": "prognosis",
+     "ipa": "[prɑːɡˈnoʊsɪs]",
+     "pos": "n.",
+     "zh": "预后；预测",
+     "en": "a forecast, especially of the course of a disease",
+     "syn": [
+      "forecast",
+      "prediction"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disgorge",
+     "ipa": "[dɪsˈɡɔːrdʒ]",
+     "pos": "v.",
+     "zh": "呕吐出",
+     "en": "to pour out or discharge; to vomit",
+     "syn": [
+      "spew",
+      "discharge"
+     ],
+     "ant": [
+      "swallow",
+      "absorb"
+     ]
+    },
+    {
+     "w": "offish",
+     "ipa": "[ˈɔːfɪʃ]",
+     "pos": "adj.",
+     "zh": "冷淡的",
+     "en": "distant and aloof in manner",
+     "syn": [
+      "aloof",
+      "standoffish"
+     ],
+     "ant": [
+      "friendly",
+      "approachable"
+     ]
+    },
+    {
+     "w": "somber",
+     "ipa": "[ˈsɒmbə]",
+     "pos": "adj.",
+     "zh": "悲伤的，不愉快的",
+     "en": "dark and gloomy; serious",
+     "syn": [
+      "grave",
+      "dismal"
+     ],
+     "ant": [
+      "cheerful",
+      "bright"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[tortuous]] walk through the hospital corridors, the family heard the doctor's [[prognosis]] in [[somber]] silence; the usually warm nurse seemed [[offish]], and outside a burst pipe began to [[disgorge]] muddy water onto the street.",
+   "gloss": {
+    "tortuous": "曲折的，拐弯抹角的",
+    "prognosis": "预后",
+    "disgorge": "呕吐出",
+    "offish": "冷淡的",
+    "somber": "悲伤的，不愉快的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "parsimonious",
+     "ipa": "[ˌpɑrsəˈmonɪəs]",
+     "pos": "adj.",
+     "zh": "过度节俭的，吝啬的",
+     "en": "extremely unwilling to spend money",
+     "syn": [
+      "stingy",
+      "miserly"
+     ],
+     "ant": [
+      "generous",
+      "lavish"
+     ]
+    },
+    {
+     "w": "malfeasance",
+     "ipa": "[ˌmælˈfiːzəns]",
+     "pos": "n.",
+     "zh": "非法行为",
+     "en": "wrongdoing, especially by a public official",
+     "syn": [
+      "misconduct",
+      "wrongdoing"
+     ],
+     "ant": []
+    },
+    {
+     "w": "patent",
+     "ipa": "[ˈpætnt]",
+     "pos": "adj.",
+     "zh": "显而易见的；专利（权）",
+     "en": "obvious; protected by an official right",
+     "syn": [
+      "obvious",
+      "evident"
+     ],
+     "ant": [
+      "obscure",
+      "hidden"
+     ]
+    },
+    {
+     "w": "impending",
+     "ipa": "[ɪmˈpɛndɪŋ]",
+     "pos": "adj.",
+     "zh": "即将发生的",
+     "en": "about to happen",
+     "syn": [
+      "imminent",
+      "looming"
+     ],
+     "ant": [
+      "distant",
+      "remote"
+     ]
+    },
+    {
+     "w": "fabricate",
+     "ipa": "[ˈfæbrɪket]",
+     "pos": "vt.",
+     "zh": "捏造",
+     "en": "to invent falsely; to manufacture",
+     "syn": [
+      "invent",
+      "concoct"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[parsimonious]] treasurer was accused of [[malfeasance]] when the [[impending]] audit showed that he had tried to [[fabricate]] receipts; the fraud was so [[patent]] that no one would defend him.",
+   "gloss": {
+    "parsimonious": "过度节俭的，吝啬的",
+    "malfeasance": "非法行为",
+    "patent": "显而易见的",
+    "impending": "即将发生的",
+    "fabricate": "捏造"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "exalt",
+     "ipa": "[ɪɡˈzɔlt]",
+     "pos": "vt.",
+     "zh": "赞扬",
+     "en": "to praise highly; to raise in rank",
+     "syn": [
+      "extol",
+      "glorify"
+     ],
+     "ant": [
+      "denigrate",
+      "belittle"
+     ]
+    },
+    {
+     "w": "enigma",
+     "ipa": "[ɪˈnɪgmə]",
+     "pos": "n.",
+     "zh": "难以理解或解释的事物，谜",
+     "en": "a puzzling, mysterious person or thing",
+     "syn": [
+      "mystery",
+      "riddle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "concede",
+     "ipa": "[kənˈsid]",
+     "pos": "v.",
+     "zh": "承认",
+     "en": "to admit as true; to yield",
+     "syn": [
+      "admit",
+      "acknowledge"
+     ],
+     "ant": [
+      "deny",
+      "dispute"
+     ]
+    },
+    {
+     "w": "recant",
+     "ipa": "[rɪˈkænt]",
+     "pos": "vt.",
+     "zh": "撤回，放弃，改变",
+     "en": "to withdraw a statement or belief publicly",
+     "syn": [
+      "retract",
+      "renounce"
+     ],
+     "ant": [
+      "affirm",
+      "maintain"
+     ]
+    },
+    {
+     "w": "gregarious",
+     "ipa": "[grɪˈgɛrɪəs]",
+     "pos": "adj.",
+     "zh": "爱社交的；群居的",
+     "en": "fond of company; living in groups",
+     "syn": [
+      "sociable",
+      "outgoing"
+     ],
+     "ant": [
+      "reclusive",
+      "solitary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Critics used to [[exalt]] the painter as an [[enigma]]; she was [[gregarious]] in public but secretive in her studio, and when pressed she would [[concede]] a mistake yet never [[recant]] her principles.",
+   "gloss": {
+    "exalt": "赞扬",
+    "enigma": "难以理解或解释的事物，谜",
+    "concede": "承认",
+    "recant": "撤回，放弃，改变",
+    "gregarious": "爱社交的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "specious",
+     "ipa": "[ˈspiːʃəs]",
+     "pos": "adj.",
+     "zh": "似是而非的，欺骗性的",
+     "en": "seeming true but actually false",
+     "syn": [
+      "plausible-sounding",
+      "fallacious"
+     ],
+     "ant": [
+      "genuine",
+      "sound"
+     ]
+    },
+    {
+     "w": "deterioration",
+     "ipa": "[dɪˌtɪrɪəˈreʃən]",
+     "pos": "n.",
+     "zh": "恶化；堕落",
+     "en": "the process of becoming worse",
+     "syn": [
+      "decline",
+      "decay"
+     ],
+     "ant": [
+      "improvement",
+      "recovery"
+     ]
+    },
+    {
+     "w": "obligatory",
+     "ipa": "[əˈblɪɡətɔri]",
+     "pos": "adj.",
+     "zh": "强制性的",
+     "en": "required by rule or duty",
+     "syn": [
+      "compulsory",
+      "mandatory"
+     ],
+     "ant": [
+      "optional",
+      "voluntary"
+     ]
+    },
+    {
+     "w": "nugatory",
+     "ipa": "[ˈnuːɡətɔːri]",
+     "pos": "adj.",
+     "zh": "无关紧要的",
+     "en": "of no importance; worthless",
+     "syn": [
+      "trivial",
+      "inconsequential"
+     ],
+     "ant": [
+      "significant",
+      "valuable"
+     ]
+    },
+    {
+     "w": "canny",
+     "ipa": "[ˈkæni]",
+     "pos": "adj.",
+     "zh": "精明的，聪明的",
+     "en": "shrewd and careful, especially in practical matters",
+     "syn": [
+      "shrewd",
+      "astute"
+     ],
+     "ant": [
+      "naive",
+      "gullible"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[specious]] argument that the [[deterioration]] of the bridge was [[nugatory]] convinced no one; the [[canny]] engineer insisted that an annual inspection was [[obligatory]].",
+   "gloss": {
+    "specious": "似是而非的，欺骗性的",
+    "deterioration": "恶化",
+    "obligatory": "强制性的",
+    "nugatory": "无关紧要的",
+    "canny": "精明的，聪明的"
    }
   }
  ],
@@ -375,59 +731,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**credulous** 的意思最接近：",
+    "q": "**gawky** 的意思最接近：",
     "options": [
-     "过分讲究的，挑剔的",
-     "轻信的，易受骗的",
-     "无关的，不重要的",
-     "不可争议的"
+     "爱社交的；群居的",
+     "(举止)笨拙的",
+     "似是而非的，欺骗性的",
+     "明智的，慎重的"
     ],
     "answer": 1,
-    "explain": "credulous：轻信的，易受骗的（too ready to believe）。近义词：gullible, naive。"
+    "explain": "gawky：(举止)笨拙的（awkward and clumsy）。近义词：clumsy, ungainly。"
    },
    {
-    "q": "**chide** 的意思最接近：",
+    "q": "**polarize** 的意思最接近：",
     "options": [
-     "责备",
-     "闲逛，漫步",
-     "详述",
-     "使疑惑"
-    ],
-    "answer": 0,
-    "explain": "chide：责备（to scold mildly）。近义词：reprimand, rebuke。"
-   },
-   {
-    "q": "哪个词的意思是「复兴」？",
-    "options": [
-     "camaraderie",
-     "variance",
-     "resurgence",
-     "credulous"
-    ],
-    "answer": 2,
-    "explain": "resurgence：复兴（a revival after a period of decline）。"
-   },
-   {
-    "q": "哪个词和 **effervescent** 的意思最接近？",
-    "options": [
-     "finicky",
-     "ad hoc",
-     "meager",
-     "ebullient"
+     "用证据或权威证实；为…提供证据，支持",
+     "批准，认可；制裁",
+     "赞扬",
+     "使分开对立，使两极分化"
     ],
     "answer": 3,
-    "explain": "ebullient 与 effervescent 近义：bubbling with enthusiasm。"
+    "explain": "polarize：使分开对立，使两极分化（to divide into two opposing groups）。近义词：divide, split。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> The circumspect inspector, though finicky about detail, let his attention ____ during the ebullient celebration, until an incontrovertible clue jolted him alert.",
+    "q": "哪个词的意思是「难以理解或解释的事物，谜」？",
     "options": [
-     "particularize",
-     "balk",
-     "meander",
-     "baffle"
+     "stamina",
+     "malfeasance",
+     "prognosis",
+     "enigma"
+    ],
+    "answer": 3,
+    "explain": "enigma：难以理解或解释的事物，谜（a puzzling, mysterious person or thing）。"
+   },
+   {
+    "q": "哪个词和 **lukewarm** 的意思最接近？",
+    "options": [
+     "halfhearted",
+     "obligatory",
+     "parsimonious",
+     "somber"
+    ],
+    "answer": 0,
+    "explain": "halfhearted 与 lukewarm 近义：lacking enthusiasm or effort。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The gawky clerk was a veracious man, but the board's decision to sanction him would ____ the staff and exasperate his friends.",
+    "options": [
+     "concede",
+     "disgorge",
+     "demoralize",
+     "polarize"
     ],
     "answer": 2,
-    "explain": "meander：闲逛，漫步（to wander without a fixed course）。"
+    "explain": "demoralize：使士气低落贬低，使堕落（to weaken someone's confidence and morale）。"
    }
   ]
  }

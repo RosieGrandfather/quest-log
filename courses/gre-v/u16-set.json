@@ -2,354 +2,727 @@
  "id": "u16",
  "title": "S 级核心词 · 第 16 组",
  "en": "GRE Core Vocabulary · Set 16",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u31",
+  "u32"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "conviction",
-     "ipa": "[kənˈvɪkʃən]",
-     "pos": "n.",
-     "zh": "坚定的信念；定罪",
-     "en": "a firmly held belief; a finding of guilt",
+     "w": "imprudent",
+     "ipa": "[ɪmˈpruːdnt]",
+     "pos": "adj.",
+     "zh": "不明智的",
+     "en": "not showing good judgment",
      "syn": [
-      "belief",
-      "certainty"
+      "unwise",
+      "rash"
      ],
      "ant": [
-      "doubt",
-      "acquittal"
+      "prudent",
+      "wise"
      ]
     },
     {
-     "w": "discombobulate",
-     "ipa": "[ˌdɪskəmˈbɑbjəˌlet]",
+     "w": "providential",
+     "ipa": "[ˌprɑvɪˈdɛnʃl]",
+     "pos": "adj.",
+     "zh": "天意的，幸运(的)",
+     "en": "fortunate, as if by divine intervention",
+     "syn": [
+      "fortunate",
+      "lucky"
+     ],
+     "ant": [
+      "unlucky",
+      "untimely"
+     ]
+    },
+    {
+     "w": "genteel",
+     "ipa": "[dʒɛnˈtil]",
+     "pos": "adj.",
+     "zh": "有教养的，不粗俗的",
+     "en": "polite and refined, sometimes affectedly so",
+     "syn": [
+      "refined",
+      "polished"
+     ],
+     "ant": [
+      "vulgar",
+      "coarse"
+     ]
+    },
+    {
+     "w": "cajole",
+     "ipa": "[kəˈdʒoʊl]",
+     "pos": "v.",
+     "zh": "哄骗",
+     "en": "to persuade by flattery or coaxing",
+     "syn": [
+      "coax",
+      "wheedle"
+     ],
+     "ant": [
+      "coerce",
+      "force"
+     ]
+    },
+    {
+     "w": "mundane",
+     "ipa": "[mʌnˈdeɪn]",
+     "pos": "adj.",
+     "zh": "平凡的",
+     "en": "ordinary and dull; earthly",
+     "syn": [
+      "commonplace",
+      "banal"
+     ],
+     "ant": [
+      "extraordinary",
+      "exotic"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[genteel]] widow, who had made an [[imprudent]] loan, was rescued by a [[providential]] inheritance; her son had to [[cajole]] the bank into a [[mundane]] settlement.",
+   "gloss": {
+    "imprudent": "不明智的",
+    "providential": "天意的，幸运(的)",
+    "genteel": "有教养的，不粗俗的",
+    "cajole": "哄骗",
+    "mundane": "平凡的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "illustrious",
+     "ipa": "[ɪˈlʌstrɪəs]",
+     "pos": "adj.",
+     "zh": "著名的，杰出的",
+     "en": "famous and admired",
+     "syn": [
+      "eminent",
+      "renowned"
+     ],
+     "ant": [
+      "obscure",
+      "unknown"
+     ]
+    },
+    {
+     "w": "winnow",
+     "ipa": "[ˈwɪnoʊ]",
+     "pos": "v.",
+     "zh": "筛选",
+     "en": "to separate the good from the bad",
+     "syn": [
+      "sift",
+      "sort"
+     ],
+     "ant": []
+    },
+    {
+     "w": "acquisitive",
+     "ipa": "[əˈkwɪzətɪv]",
+     "pos": "adj.",
+     "zh": "贪婪的",
+     "en": "eager to gain possessions",
+     "syn": [
+      "greedy",
+      "covetous"
+     ],
+     "ant": [
+      "generous",
+      "unselfish"
+     ]
+    },
+    {
+     "w": "circuitous",
+     "ipa": "[sərˈkjuːɪtəs]",
+     "pos": "adj.",
+     "zh": "迂回的，不直接的",
+     "en": "roundabout; not direct",
+     "syn": [
+      "indirect",
+      "tortuous"
+     ],
+     "ant": [
+      "direct",
+      "straight"
+     ]
+    },
+    {
+     "w": "transient",
+     "ipa": "[ˈtrænzɪrnt]",
+     "pos": "adj.",
+     "zh": "短暂的，瞬时的",
+     "en": "lasting only briefly",
+     "syn": [
+      "fleeting",
+      "temporary"
+     ],
+     "ant": [
+      "permanent",
+      "lasting"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[illustrious]] scholar had to [[winnow]] thousands of letters; his [[acquisitive]] rivals took a [[circuitous]] route to the archive, but their fame proved [[transient]].",
+   "gloss": {
+    "illustrious": "著名的，杰出的",
+    "winnow": "筛选",
+    "acquisitive": "贪婪的",
+    "circuitous": "迂回的，不直接的",
+    "transient": "短暂的，瞬时的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "conspire",
+     "ipa": "[kənˈspaɪɚ]",
+     "pos": "v.",
+     "zh": "合谋，密谋",
+     "en": "to plan secretly together",
+     "syn": [
+      "plot",
+      "scheme"
+     ],
+     "ant": []
+    },
+    {
+     "w": "lambaste",
+     "ipa": "[læmˈbeɪst]",
      "pos": "vt.",
-     "zh": "使不安，使混乱",
-     "en": "to confuse or upset",
+     "zh": "严厉斥责",
+     "en": "to criticize harshly",
      "syn": [
-      "confuse",
-      "disconcert"
-     ],
-     "ant": []
-    },
-    {
-     "w": "embryonic",
-     "ipa": "[ˌembriˈɑːnɪk]",
-     "pos": "adj.",
-     "zh": "初期的，萌芽阶段的",
-     "en": "in an early stage of development",
-     "syn": [
-      "nascent",
-      "rudimentary"
+      "castigate",
+      "berate"
      ],
      "ant": [
-      "mature",
-      "developed"
+      "praise",
+      "laud"
      ]
     },
     {
-     "w": "marvel",
-     "ipa": "[ˈmɑrvl]",
-     "pos": "n.",
-     "zh": "对…感到惊奇；奇迹",
-     "en": "to be filled with wonder; a wonderful thing",
+     "w": "cunning",
+     "ipa": "[ˈkʌnɪŋ]",
+     "pos": "adj.",
+     "zh": "狡猾的",
+     "en": "clever in a sly way",
      "syn": [
-      "wonder",
-      "miracle"
+      "crafty",
+      "wily"
+     ],
+     "ant": [
+      "naive",
+      "artless"
+     ]
+    },
+    {
+     "w": "disavow",
+     "ipa": "[ˌdɪsəˈvaʊ]",
+     "pos": "vt.",
+     "zh": "拒绝承认，否认",
+     "en": "to deny responsibility or knowledge",
+     "syn": [
+      "disclaim",
+      "repudiate"
+     ],
+     "ant": [
+      "acknowledge",
+      "avow"
+     ]
+    },
+    {
+     "w": "onerous",
+     "ipa": "[ˈɑnərəs]",
+     "pos": "adj.",
+     "zh": "费时间花心思的",
+     "en": "burdensome",
+     "syn": [
+      "burdensome",
+      "arduous"
+     ],
+     "ant": [
+      "easy",
+      "light"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The ministers began to [[conspire]]; a [[cunning]] reporter would [[lambaste]] them, and they would [[disavow]] the plan to avoid its [[onerous]] cost.",
+   "gloss": {
+    "conspire": "合谋，密谋",
+    "lambaste": "严厉斥责",
+    "cunning": "狡猾的",
+    "disavow": "拒绝承认，否认",
+    "onerous": "费时间花心思的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "evanescent",
+     "ipa": "[ˌevəˈnesnt]",
+     "pos": "adj.",
+     "zh": "逐渐消失的，短暂的",
+     "en": "quickly fading away",
+     "syn": [
+      "fleeting",
+      "ephemeral"
+     ],
+     "ant": [
+      "lasting",
+      "permanent"
+     ]
+    },
+    {
+     "w": "churlish",
+     "ipa": "[ˈtʃɜːrlɪʃ]",
+     "pos": "adj.",
+     "zh": "粗鲁无礼的",
+     "en": "rude and surly",
+     "syn": [
+      "boorish",
+      "uncivil"
+     ],
+     "ant": [
+      "courteous",
+      "gracious"
+     ]
+    },
+    {
+     "w": "bristle",
+     "ipa": "[ˈbrɪsl]",
+     "pos": "v.",
+     "zh": "怒不可遏，咆哮",
+     "en": "to react angrily; to stand on end",
+     "syn": [
+      "bridle",
+      "flare up"
      ],
      "ant": []
     },
     {
-     "w": "proficient",
-     "ipa": "[prəˈfɪʃnt]",
+     "w": "superficial",
+     "ipa": "[ˌsupɚˈfɪʃl]",
      "pos": "adj.",
-     "zh": "熟练的，精通的",
-     "en": "skilled and competent",
+     "zh": "表面的，肤浅的",
+     "en": "on the surface only; shallow",
      "syn": [
-      "adept",
+      "shallow",
+      "cursory"
+     ],
+     "ant": [
+      "profound",
+      "thorough"
+     ]
+    },
+    {
+     "w": "transcend",
+     "ipa": "[trænˈsɛnd]",
+     "pos": "vt.",
+     "zh": "超越，超过极限",
+     "en": "to go beyond the limits of",
+     "syn": [
+      "surpass",
+      "exceed"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[evanescent]] joy faded; his [[churlish]] reply made her [[bristle]], and he offered only a [[superficial]] apology, which could not [[transcend]] the insult.",
+   "gloss": {
+    "evanescent": "逐渐消失的，短暂的",
+    "churlish": "粗鲁无礼的",
+    "bristle": "怒不可遏，咆哮",
+    "superficial": "表面的，肤浅的",
+    "transcend": "超越，超过极限"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "retard",
+     "ipa": "[ˈrɪtɑrd]",
+     "pos": "vt.",
+     "zh": "减速，延迟",
+     "en": "to slow down",
+     "syn": [
+      "delay",
+      "hinder"
+     ],
+     "ant": [
+      "accelerate",
+      "speed up"
+     ]
+    },
+    {
+     "w": "zenith",
+     "ipa": "[ˈzɛnɪθ]",
+     "pos": "n.",
+     "zh": "最高点，巅峰",
+     "en": "the highest point",
+     "syn": [
+      "peak",
+      "apex"
+     ],
+     "ant": [
+      "nadir",
+      "bottom"
+     ]
+    },
+    {
+     "w": "absolve",
+     "ipa": "[əbˈzɑlv]",
+     "pos": "v.",
+     "zh": "使无罪，解除责任",
+     "en": "to declare free from blame or guilt",
+     "syn": [
+      "exonerate",
+      "acquit"
+     ],
+     "ant": [
+      "condemn",
+      "blame"
+     ]
+    },
+    {
+     "w": "comity",
+     "ipa": "[ˈkɑməti]",
+     "pos": "n.",
+     "zh": "友好，社会和谐",
+     "en": "friendly courtesy and mutual respect",
+     "syn": [
+      "civility",
+      "amity"
+     ],
+     "ant": [
+      "hostility",
+      "discord"
+     ]
+    },
+    {
+     "w": "aggrandize",
+     "ipa": "[əˈɡrænˌdaɪz]",
+     "pos": "vt.",
+     "zh": "增加、提高(力量、财富、地位、声誉)等",
+     "en": "to increase the power or reputation of",
+     "syn": [
+      "exalt",
+      "inflate"
+     ],
+     "ant": [
+      "belittle",
+      "diminish"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Delays would [[retard]] the empire after it reached its [[zenith]]; the emperor tried to [[aggrandize]] himself, and no priest could [[absolve]] him or restore [[comity]].",
+   "gloss": {
+    "retard": "减速，延迟",
+    "zenith": "最高点，巅峰",
+    "absolve": "使无罪，解除责任",
+    "comity": "友好，社会和谐",
+    "aggrandize": "增加、提高(力量、财富、地位、声誉)等"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "collude",
+     "ipa": "[kəˈluːd]",
+     "pos": "v.",
+     "zh": "串通，共谋(做坏事)",
+     "en": "to cooperate secretly for a dishonest purpose",
+     "syn": [
+      "conspire",
+      "connive"
+     ],
+     "ant": []
+    },
+    {
+     "w": "subjugate",
+     "ipa": "[ˈsʌbdʒuɡeɪt]",
+     "pos": "vt.",
+     "zh": "征服，镇压",
+     "en": "to bring under control by force",
+     "syn": [
+      "conquer",
+      "subdue"
+     ],
+     "ant": [
+      "liberate",
+      "free"
+     ]
+    },
+    {
+     "w": "diverge",
+     "ipa": "[daɪˈvɜːdʒ]",
+     "pos": "vt.",
+     "zh": "(使)分叉，散开；分歧",
+     "en": "to branch off; to differ",
+     "syn": [
+      "branch",
+      "differ"
+     ],
+     "ant": [
+      "converge",
+      "merge"
+     ]
+    },
+    {
+     "w": "ambivalent",
+     "ipa": "[æmˈbɪvələnt]",
+     "pos": "adj.",
+     "zh": "(尤指感情、态度)矛盾的",
+     "en": "having mixed or conflicting feelings",
+     "syn": [
+      "torn",
+      "uncertain"
+     ],
+     "ant": [
+      "decided",
+      "certain"
+     ]
+    },
+    {
+     "w": "desultory",
+     "ipa": "[ˈdɛsəltɔri]",
+     "pos": "adj.",
+     "zh": "无计划的，无目的的",
+     "en": "lacking a plan or purpose",
+     "syn": [
+      "aimless",
+      "random"
+     ],
+     "ant": [
+      "methodical",
+      "purposeful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Two generals would [[collude]] to [[subjugate]] the province, but their plans began to [[diverge]]; the [[ambivalent]] public gave only [[desultory]] support.",
+   "gloss": {
+    "collude": "串通，共谋(做坏事)",
+    "subjugate": "征服，镇压",
+    "diverge": "(使)分叉，散开",
+    "ambivalent": "(尤指感情、态度)矛盾的",
+    "desultory": "无计划的，无目的的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "pristine",
+     "ipa": "[ˈprɪstin]",
+     "pos": "adj.",
+     "zh": "纯净的，质朴的，未被文明腐蚀的",
+     "en": "in its original, pure state",
+     "syn": [
+      "unspoiled",
+      "untouched"
+     ],
+     "ant": [
+      "corrupted",
+      "tarnished"
+     ]
+    },
+    {
+     "w": "encumber",
+     "ipa": "[ɪnˈkʌmbə]",
+     "pos": "vt.",
+     "zh": "阻碍；妨碍",
+     "en": "to burden or hinder",
+     "syn": [
+      "hamper",
+      "burden"
+     ],
+     "ant": [
+      "free",
+      "unburden"
+     ]
+    },
+    {
+     "w": "elephantine",
+     "ipa": "[ˌelɪˈfæntiːn]",
+     "pos": "adj.",
+     "zh": "巨大的；笨拙的",
+     "en": "huge; clumsy",
+     "syn": [
+      "gigantic",
+      "ponderous"
+     ],
+     "ant": [
+      "tiny",
+      "graceful"
+     ]
+    },
+    {
+     "w": "modicum",
+     "ipa": "[ˈmɑːdɪkəm]",
+     "pos": "n.",
+     "zh": "少量",
+     "en": "a small amount",
+     "syn": [
+      "bit",
+      "trace"
+     ],
+     "ant": [
+      "abundance"
+     ]
+    },
+    {
+     "w": "cowardice",
+     "ipa": "[ˈkaʊɚdɪs]",
+     "pos": "n.",
+     "zh": "懦弱，不坚定",
+     "en": "lack of courage",
+     "syn": [
+      "timidity",
+      "faintheartedness"
+     ],
+     "ant": [
+      "bravery",
+      "courage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[pristine]] valley was spoiled by an [[elephantine]] hotel that would [[encumber]] the town with debt; showing a [[modicum]] of sense was not [[cowardice]].",
+   "gloss": {
+    "pristine": "纯净的，质朴的，未被文明腐蚀的",
+    "encumber": "阻碍",
+    "elephantine": "巨大的",
+    "modicum": "少量",
+    "cowardice": "懦弱，不坚定"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "volatile",
+     "ipa": "[ˈvɑlətl]",
+     "pos": "adj.",
+     "zh": "多变的",
+     "en": "liable to change rapidly; explosive",
+     "syn": [
+      "unstable",
+      "fickle"
+     ],
+     "ant": [
+      "stable",
+      "steady"
+     ]
+    },
+    {
+     "w": "menial",
+     "ipa": "[ˈminjəl]",
+     "pos": "adj.",
+     "zh": "卑贱的，低下的",
+     "en": "lowly and unskilled; servile",
+     "syn": [
+      "lowly",
+      "humble"
+     ],
+     "ant": [
+      "prestigious",
       "skilled"
-     ],
-     "ant": [
-      "inept",
-      "unskilled"
      ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The young inventor, still [[proficient]] only in theory, felt a [[conviction]] that his [[embryonic]] design would make the judges [[marvel]]; one tough question could still [[discombobulate]] him.",
-   "gloss": {
-    "conviction": "坚定的信念",
-    "discombobulate": "使不安，使混乱",
-    "embryonic": "初期的，萌芽阶段的",
-    "marvel": "对…感到惊奇",
-    "proficient": "熟练的，精通的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "adjudicate",
-     "ipa": "[əˈdʒuːdɪkeɪt]",
-     "pos": "v.",
-     "zh": "裁决，判定",
-     "en": "to judge or settle formally",
-     "syn": [
-      "arbitrate",
-      "rule"
-     ],
-     "ant": []
     },
     {
-     "w": "robust",
-     "ipa": "[roˈbʌst]",
+     "w": "subordinate",
+     "ipa": "[səˈbɔdɪnet]",
      "pos": "adj.",
-     "zh": "精力充沛的；强壮的，健康的",
-     "en": "strong and healthy; sturdy",
+     "zh": "下级的；次要的；征服",
+     "en": "lower in rank; secondary; a junior",
      "syn": [
-      "sturdy",
-      "vigorous"
+      "inferior",
+      "secondary"
      ],
      "ant": [
-      "frail",
-      "weak"
+      "superior",
+      "principal"
      ]
     },
     {
-     "w": "epic",
-     "ipa": "[ˈɛpɪk]",
-     "pos": "adj.",
-     "zh": "宏大的，超凡脱俗的",
-     "en": "grand in scale; heroic",
-     "syn": [
-      "grand",
-      "monumental"
-     ],
-     "ant": [
-      "trivial",
-      "modest"
-     ]
-    },
-    {
-     "w": "rant",
-     "ipa": "[rænt]",
+     "w": "retribution",
+     "ipa": "[ˌrɛtrɪˈbjuʃən]",
      "pos": "n.",
-     "zh": "(尤指长时间的)训斥，责骂",
-     "en": "to speak or shout in a wild, angry way",
+     "zh": "报偿，报应",
+     "en": "deserved punishment",
      "syn": [
-      "rave",
-      "tirade"
-     ],
-     "ant": []
-    },
-    {
-     "w": "loath",
-     "ipa": "[loʊθ]",
-     "pos": "adj.",
-     "zh": "不情愿的，讨厌的",
-     "en": "unwilling; reluctant",
-     "syn": [
-      "reluctant",
-      "averse"
+      "vengeance",
+      "reprisal"
      ],
      "ant": [
-      "eager",
-      "willing"
+      "reward",
+      "forgiveness"
+     ]
+    },
+    {
+     "w": "myriad",
+     "ipa": "[ˈmɪriəd]",
+     "pos": "adj.",
+     "zh": "无限的，大量的",
+     "en": "countless; a great number",
+     "syn": [
+      "countless",
+      "innumerable"
+     ],
+     "ant": [
+      "few",
+      "scant"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The panel was [[loath]] to [[adjudicate]] the dispute, and a [[robust]] debate turned into an [[epic]] row, ending in a long [[rant]] from one member.",
+   "text": "In a [[volatile]] office, [[menial]] tasks fell to the [[subordinate]] staff, who feared [[retribution]] from [[myriad]] managers.",
    "gloss": {
-    "adjudicate": "裁决，判定",
-    "robust": "精力充沛的",
-    "epic": "宏大的，超凡脱俗的",
-    "rant": "(尤指长时间的)训斥，责骂",
-    "loath": "不情愿的，讨厌的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "peddle",
-     "ipa": "[ˈpɛdl]",
-     "pos": "v.",
-     "zh": "叫卖，兜售",
-     "en": "to sell goods, often door to door",
-     "syn": [
-      "hawk",
-      "sell"
-     ],
-     "ant": []
-    },
-    {
-     "w": "laconic",
-     "ipa": "[ˈlækrɪmos]",
-     "pos": "adj.",
-     "zh": "简洁(以至于显得粗鲁或难以理解)的",
-     "en": "using very few words",
-     "syn": [
-      "terse",
-      "concise"
-     ],
-     "ant": [
-      "verbose",
-      "wordy"
-     ]
-    },
-    {
-     "w": "lurid",
-     "ipa": "[ˈlʊrɪd]",
-     "pos": "adj.",
-     "zh": "恐怖的，令人反感的",
-     "en": "shocking and sensational; glaringly bright",
-     "syn": [
-      "sensational",
-      "gruesome"
-     ],
-     "ant": [
-      "mild",
-      "bland"
-     ]
-    },
-    {
-     "w": "plague",
-     "ipa": "[pleɡ]",
-     "pos": "n.",
-     "zh": "瘟疫；折磨，使…痛苦",
-     "en": "a deadly epidemic; to afflict persistently",
-     "syn": [
-      "scourge",
-      "torment"
-     ],
-     "ant": []
-    },
-    {
-     "w": "conducive",
-     "ipa": "[kənˈdusɪv]",
-     "pos": "adj.",
-     "zh": "有益的，有促进作用的",
-     "en": "helpful in bringing something about",
-     "syn": [
-      "favorable",
-      "beneficial"
-     ],
-     "ant": [
-      "detrimental",
-      "obstructive"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[laconic]] reporter refused to [[peddle]] [[lurid]] stories about the [[plague]], believing that calm reporting was more [[conducive]] to public trust.",
-   "gloss": {
-    "peddle": "叫卖，兜售",
-    "laconic": "简洁(以至于显得粗鲁或难以理解)的",
-    "lurid": "恐怖的，令人反感的",
-    "plague": "瘟疫",
-    "conducive": "有益的，有促进作用的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "querulous",
-     "ipa": "[ˈkwerələs]",
-     "pos": "adj.",
-     "zh": "抱怨的，爱发牢骚的",
-     "en": "complaining in a whining way",
-     "syn": [
-      "whining",
-      "petulant"
-     ],
-     "ant": [
-      "content",
-      "uncomplaining"
-     ]
-    },
-    {
-     "w": "lurk",
-     "ipa": "[lɜːk]",
-     "pos": "vi.",
-     "zh": "潜伏",
-     "en": "to wait hidden, ready to attack",
-     "syn": [
-      "skulk",
-      "prowl"
-     ],
-     "ant": []
-    },
-    {
-     "w": "altruism",
-     "ipa": "[ˈæltruɪzəm]",
-     "pos": "n.",
-     "zh": "利他主义，无私",
-     "en": "selfless concern for others",
-     "syn": [
-      "selflessness",
-      "philanthropy"
-     ],
-     "ant": [
-      "selfishness",
-      "egoism"
-     ]
-    },
-    {
-     "w": "condign",
-     "ipa": "[kənˈdaɪn]",
-     "pos": "adj.",
-     "zh": "应得的，恰当的",
-     "en": "deserved; fitting",
-     "syn": [
-      "deserved",
-      "fitting"
-     ],
-     "ant": [
-      "undeserved",
-      "unjust"
-     ]
-    },
-    {
-     "w": "preclude",
-     "ipa": "[prɪˈklud]",
-     "pos": "v.",
-     "zh": "预先阻止",
-     "en": "to prevent from happening",
-     "syn": [
-      "prevent",
-      "rule out"
-     ],
-     "ant": [
-      "permit",
-      "enable"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[querulous]] guard saw danger [[lurk]] behind every door; the volunteer's [[altruism]] earned [[condign]] praise, though safety rules would [[preclude]] her entry.",
-   "gloss": {
-    "querulous": "抱怨的，爱发牢骚的",
-    "lurk": "潜伏",
-    "altruism": "利他主义，无私",
-    "condign": "应得的，恰当的",
-    "preclude": "预先阻止"
+    "volatile": "多变的",
+    "menial": "卑贱的，低下的",
+    "subordinate": "下级的",
+    "retribution": "报偿，报应",
+    "myriad": "无限的，大量的"
    }
   }
  ],
@@ -357,59 +730,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**rant** 的意思最接近：",
+    "q": "**onerous** 的意思最接近：",
     "options": [
-     "坚定的信念；定罪",
-     "(尤指长时间的)训斥，责骂",
-     "瘟疫；折磨，使…痛苦",
-     "利他主义，无私"
+     "多变的",
+     "费时间花心思的",
+     "巨大的；笨拙的",
+     "(尤指感情、态度)矛盾的"
     ],
     "answer": 1,
-    "explain": "rant：(尤指长时间的)训斥，责骂（to speak or shout in a wild, angry way）。近义词：rave, tirade。"
+    "explain": "onerous：费时间花心思的（burdensome）。近义词：burdensome, arduous。"
    },
    {
-    "q": "**altruism** 的意思最接近：",
+    "q": "**circuitous** 的意思最接近：",
     "options": [
-     "利他主义，无私",
-     "(尤指长时间的)训斥，责骂",
-     "坚定的信念；定罪",
-     "对…感到惊奇；奇迹"
-    ],
-    "answer": 0,
-    "explain": "altruism：利他主义，无私（selfless concern for others）。近义词：selflessness, philanthropy。"
-   },
-   {
-    "q": "哪个词的意思是「初期的，萌芽阶段的」？",
-    "options": [
-     "lurid",
-     "laconic",
-     "embryonic",
-     "proficient"
-    ],
-    "answer": 2,
-    "explain": "embryonic：初期的，萌芽阶段的（in an early stage of development）。"
-   },
-   {
-    "q": "哪个词和 **terse** 的意思最接近？",
-    "options": [
-     "querulous",
-     "epic",
-     "laconic",
-     "embryonic"
-    ],
-    "answer": 2,
-    "explain": "laconic 与 terse 近义：using very few words。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> The panel was loath to ____ the dispute, and a robust debate turned into an epic row, ending in a long rant from one member.",
-    "options": [
-     "preclude",
-     "discombobulate",
-     "peddle",
-     "adjudicate"
+     "费时间花心思的",
+     "有教养的，不粗俗的",
+     "卑贱的，低下的",
+     "迂回的，不直接的"
     ],
     "answer": 3,
-    "explain": "adjudicate：裁决，判定（to judge or settle formally）。"
+    "explain": "circuitous：迂回的，不直接的（roundabout; not direct）。近义词：indirect, tortuous。"
+   },
+   {
+    "q": "哪个词的意思是「著名的，杰出的」？",
+    "options": [
+     "transient",
+     "illustrious",
+     "circuitous",
+     "ambivalent"
+    ],
+    "answer": 1,
+    "explain": "illustrious：著名的，杰出的（famous and admired）。"
+   },
+   {
+    "q": "哪个词和 **berate** 的意思最接近？",
+    "options": [
+     "disavow",
+     "subjugate",
+     "lambaste",
+     "diverge"
+    ],
+    "answer": 2,
+    "explain": "lambaste 与 berate 近义：to criticize harshly。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The illustrious scholar had to winnow thousands of letters; his ____ rivals took a circuitous route to the archive, but their fame proved transient.",
+    "options": [
+     "acquisitive",
+     "elephantine",
+     "mundane",
+     "genteel"
+    ],
+    "answer": 0,
+    "explain": "acquisitive：贪婪的（eager to gain possessions）。"
    }
   ]
  }

@@ -2,368 +2,717 @@
  "id": "u11",
  "title": "S 级核心词 · 第 11 组",
  "en": "GRE Core Vocabulary · Set 11",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u21",
+  "u22"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "imperious",
-     "ipa": "[ɪmˈpɪrɪəs]",
+     "w": "perceptible",
+     "ipa": "[pərˈseptəbl]",
      "pos": "adj.",
-     "zh": "傲慢的，专横的",
-     "en": "arrogantly commanding",
+     "zh": "可察觉的",
+     "en": "able to be noticed",
      "syn": [
-      "domineering",
-      "overbearing"
+      "noticeable",
+      "discernible"
      ],
      "ant": [
-      "meek",
-      "submissive"
+      "imperceptible",
+      "undetectable"
      ]
     },
     {
-     "w": "propitious",
-     "ipa": "[prəˈpɪʃəs]",
+     "w": "callow",
+     "ipa": "[ˈkælo]",
      "pos": "adj.",
-     "zh": "吉祥的",
-     "en": "favorable; showing good signs",
+     "zh": "不老练的，不成熟的",
+     "en": "young and inexperienced",
      "syn": [
-      "auspicious",
-      "favorable"
+      "immature",
+      "green"
      ],
      "ant": [
-      "inauspicious",
-      "ominous"
+      "mature",
+      "seasoned"
      ]
     },
     {
-     "w": "quirky",
-     "ipa": "[ˈkwəːki]",
-     "pos": "adj.",
-     "zh": "古怪的，奇葩的",
-     "en": "unconventional in an interesting way",
+     "w": "pandemonium",
+     "ipa": "[ˌpændəˈmoʊniəm]",
+     "pos": "n.",
+     "zh": "喧嚣，骚动",
+     "en": "wild noise and confusion",
      "syn": [
-      "eccentric",
-      "offbeat"
+      "chaos",
+      "uproar"
      ],
      "ant": [
-      "conventional",
-      "ordinary"
+      "order",
+      "calm"
      ]
     },
     {
-     "w": "taxing",
-     "ipa": "[ˈtæksɪŋ]",
+     "w": "baroque",
+     "ipa": "[bəˈroʊk]",
      "pos": "adj.",
-     "zh": "繁重的，费力的",
-     "en": "physically or mentally demanding",
+     "zh": "复杂，装饰华丽的",
+     "en": "extremely ornate and elaborate",
      "syn": [
-      "strenuous",
-      "demanding"
+      "ornate",
+      "flamboyant"
      ],
      "ant": [
-      "easy",
-      "effortless"
+      "simple",
+      "plain"
      ]
     },
     {
-     "w": "esoteric",
-     "ipa": "[ˌesəˈterɪk]",
-     "pos": "adj.",
-     "zh": "深奥难懂的",
-     "en": "understood only by a small group of experts",
-     "syn": [
-      "arcane",
-      "abstruse"
-     ],
-     "ant": [
-      "accessible",
-      "familiar"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[imperious]] professor, a [[quirky]] man with an [[esoteric]] specialty, set a [[taxing]] exam on what he called a [[propitious]] day for the whole department.",
-   "gloss": {
-    "imperious": "傲慢的，专横的",
-    "propitious": "吉祥的",
-    "quirky": "古怪的，奇葩的",
-    "taxing": "繁重的，费力的",
-    "esoteric": "深奥难懂的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "obfuscate",
-     "ipa": "[ˈɑːbfʌskeɪt]",
-     "pos": "vt.",
-     "zh": "使困惑，使模糊",
-     "en": "to make unclear or confusing",
-     "syn": [
-      "obscure",
-      "muddle"
-     ],
-     "ant": [
-      "clarify",
-      "elucidate"
-     ]
-    },
-    {
-     "w": "warble",
-     "ipa": "[ˈwɔːrbl]",
+     "w": "overshadow",
+     "ipa": "[ˌoʊvərˈʃædoʊ]",
      "pos": "v.",
-     "zh": "柔和地唱歌",
-     "en": "to sing with trills and quavers",
+     "zh": "(在重要性上)超越，超过",
+     "en": "to make seem less important",
      "syn": [
-      "trill",
-      "chirp"
+      "eclipse",
+      "dwarf"
      ],
      "ant": []
-    },
-    {
-     "w": "despotic",
-     "ipa": "[dɪˈspɒtɪk]",
-     "pos": "adj.",
-     "zh": "专制的，暴虐的",
-     "en": "ruling with absolute and cruel power",
-     "syn": [
-      "tyrannical",
-      "autocratic"
-     ],
-     "ant": [
-      "democratic",
-      "liberal"
-     ]
-    },
-    {
-     "w": "dearth",
-     "ipa": "[dɜːrθ]",
-     "pos": "n.",
-     "zh": "供应不足",
-     "en": "a scarcity or lack",
-     "syn": [
-      "scarcity",
-      "paucity"
-     ],
-     "ant": [
-      "abundance",
-      "plethora"
-     ]
-    },
-    {
-     "w": "captivate",
-     "ipa": "[ˈkæptɪveɪt]",
-     "pos": "v.",
-     "zh": "吸引",
-     "en": "to attract and hold attention",
-     "syn": [
-      "enchant",
-      "charm"
-     ],
-     "ant": [
-      "repel",
-      "bore"
-     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[despotic]] governor tried to [[obfuscate]] a [[dearth]] of food, but a street singer began to [[warble]] a song that would [[captivate]] the crowd and expose him.",
+   "text": "A barely [[perceptible]] cough from the [[callow]] usher was followed by [[pandemonium]]; the [[baroque]] chandelier crashed, and the noise began to [[overshadow]] the music.",
    "gloss": {
-    "obfuscate": "使困惑，使模糊",
-    "warble": "柔和地唱歌",
-    "despotic": "专制的，暴虐的",
-    "dearth": "供应不足",
-    "captivate": "吸引"
+    "perceptible": "可察觉的",
+    "callow": "不老练的，不成熟的",
+    "pandemonium": "喧嚣，骚动",
+    "baroque": "复杂，装饰华丽的",
+    "overshadow": "(在重要性上)超越，超过"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "stifle",
-     "ipa": "[ˈstaɪfl]",
-     "pos": "vt.",
-     "zh": "抑制(声音、呼吸等)；阻止，扼杀",
-     "en": "to suppress or smother",
+     "w": "magnitude",
+     "ipa": "[ˈmæɡnɪtud]",
+     "pos": "n.",
+     "zh": "重要，重大",
+     "en": "great size or importance",
      "syn": [
-      "suppress",
-      "smother"
+      "importance",
+      "scale"
      ],
      "ant": [
-      "encourage",
-      "foster"
+      "insignificance"
      ]
     },
     {
-     "w": "fungible",
-     "ipa": "[ˈfʌndʒəbl]",
+     "w": "palpable",
+     "ipa": "[ˈpælpəbl]",
      "pos": "adj.",
-     "zh": "可互换的",
-     "en": "interchangeable with others of the same kind",
+     "zh": "明显的，易觉察的",
+     "en": "so obvious it can almost be touched",
      "syn": [
-      "interchangeable",
-      "exchangeable"
+      "tangible",
+      "evident"
      ],
      "ant": [
-      "unique",
-      "irreplaceable"
+      "imperceptible",
+      "intangible"
      ]
     },
     {
-     "w": "halcyon",
-     "ipa": "[ˈhælsɪən]",
+     "w": "apocryphal",
+     "ipa": "[əˈpɑːkrɪfl]",
      "pos": "adj.",
-     "zh": "宁静的，平静的",
-     "en": "peaceful and happy",
+     "zh": "假的",
+     "en": "of doubtful authenticity",
      "syn": [
-      "tranquil",
-      "idyllic"
+      "spurious",
+      "dubious"
      ],
      "ant": [
-      "turbulent",
-      "stormy"
+      "authentic",
+      "genuine"
      ]
     },
     {
-     "w": "smother",
-     "ipa": "[ˈsmʌðɚ]",
+     "w": "censor",
+     "ipa": "[ˈsɛnsɚ]",
      "pos": "vt.",
-     "zh": "抑制，压制；使窒息",
-     "en": "to suppress; to suffocate",
+     "zh": "审查删改；审查员",
+     "en": "to remove objectionable material; an official who does so",
      "syn": [
-      "stifle",
+      "expurgate",
       "suppress"
      ],
      "ant": []
     },
     {
-     "w": "upbeat",
-     "ipa": "[ˈʌpbit]",
-     "pos": "adj.",
-     "zh": "心情好的；给人希望的，象征好运的",
-     "en": "cheerful and optimistic",
+     "w": "balloon",
+     "ipa": "[bəˈlun]",
+     "pos": "v.",
+     "zh": "迅速增加",
+     "en": "to swell or grow rapidly",
      "syn": [
-      "optimistic",
-      "positive"
+      "swell",
+      "expand"
      ],
      "ant": [
-      "downbeat",
-      "gloomy"
+      "shrink",
+      "contract"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "In the [[halcyon]] years, shares seemed [[fungible]] and every outlook was [[upbeat]]; now analysts [[stifle]] their fears and [[smother]] bad news.",
+   "text": "Officials tried to [[censor]] the news, but the [[magnitude]] of the crisis was [[palpable]]; debts began to [[balloon]], and [[apocryphal]] stories of a secret fund spread.",
    "gloss": {
-    "stifle": "抑制(声音、呼吸等)",
-    "fungible": "可互换的",
-    "halcyon": "宁静的，平静的",
-    "smother": "抑制，压制",
-    "upbeat": "心情好的"
+    "magnitude": "重要，重大",
+    "palpable": "明显的，易觉察的",
+    "apocryphal": "假的",
+    "censor": "审查删改",
+    "balloon": "迅速增加"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "tactless",
-     "ipa": "[ˈtæktləs]",
-     "pos": "adj.",
-     "zh": "不机智的，笨拙的",
-     "en": "lacking sensitivity in dealing with others",
+     "w": "rebuff",
+     "ipa": "[rɪˈbʌf]",
+     "pos": "vt.",
+     "zh": "严词拒绝",
+     "en": "to reject bluntly",
      "syn": [
-      "insensitive",
-      "undiplomatic"
+      "spurn",
+      "repel"
      ],
      "ant": [
-      "tactful",
-      "diplomatic"
+      "welcome",
+      "accept"
      ]
     },
     {
-     "w": "cogent",
-     "ipa": "[ˈkodʒənt]",
-     "pos": "adj.",
-     "zh": "令人信服的；相关的",
-     "en": "clear, logical and convincing",
-     "syn": [
-      "compelling",
-      "persuasive"
-     ],
-     "ant": [
-      "unconvincing",
-      "weak"
-     ]
-    },
-    {
-     "w": "bridle",
-     "ipa": "[ˈbraɪdl]",
-     "pos": "v.",
-     "zh": "限制",
-     "en": "to restrain or hold in check",
-     "syn": [
-      "curb",
-      "restrain"
-     ],
-     "ant": [
-      "unleash"
-     ]
-    },
-    {
-     "w": "neophyte",
-     "ipa": "[ˈniəfaɪt]",
+     "w": "truism",
+     "ipa": "[ˈtruːɪzəm]",
      "pos": "n.",
-     "zh": "初学者，新手",
-     "en": "a beginner",
+     "zh": "陈词滥调",
+     "en": "a statement obviously true and often repeated",
      "syn": [
-      "novice",
-      "tyro"
+      "platitude",
+      "cliché"
      ],
-     "ant": [
-      "veteran",
-      "expert"
-     ]
+     "ant": []
     },
     {
-     "w": "grumble",
-     "ipa": "[ˈɡrʌmbl]",
-     "pos": "vi.",
-     "zh": "(尤指低声地)抱怨，埋怨",
-     "en": "to complain in a low, discontented voice",
+     "w": "overwhelm",
+     "ipa": "[ˌovəˈwɛlm]",
+     "pos": "v.",
+     "zh": "淹没",
+     "en": "to overpower, in emotion or amount",
      "syn": [
-      "complain",
-      "mutter"
+      "overpower",
+      "inundate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "slant",
+     "ipa": "[slænt]",
+     "pos": "n.",
+     "zh": "倾向；角度；倾斜",
+     "en": "a particular point of view; to slope",
+     "syn": [
+      "bias",
+      "angle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "surmise",
+     "ipa": "[sɜːˈmaɪz]",
+     "pos": "n.",
+     "zh": "推测；揣测",
+     "en": "to guess without firm evidence",
+     "syn": [
+      "conjecture",
+      "guess"
      ],
      "ant": [
-      "praise",
-      "applaud"
+      "know"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[neophyte]] manager's remarks were [[tactless]], yet her proposal was [[cogent]]; the veterans began to [[grumble]], but the director urged them to [[bridle]] their impatience.",
+   "text": "He would [[rebuff]] any advice, repeating a [[truism]] that the facts [[overwhelm]]; his [[slant]] was clear, and we could only [[surmise]] why.",
    "gloss": {
-    "tactless": "不机智的，笨拙的",
-    "cogent": "令人信服的",
-    "bridle": "限制",
-    "neophyte": "初学者，新手",
-    "grumble": "(尤指低声地)抱怨，埋怨"
+    "rebuff": "严词拒绝",
+    "truism": "陈词滥调",
+    "overwhelm": "淹没",
+    "slant": "倾向",
+    "surmise": "推测"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "histrionic",
+     "ipa": "[ˈhɪstrɪˈɑnɪk]",
+     "pos": "adj.",
+     "zh": "夸张做作的",
+     "en": "overly dramatic and theatrical",
+     "syn": [
+      "theatrical",
+      "melodramatic"
+     ],
+     "ant": [
+      "restrained",
+      "understated"
+     ]
+    },
+    {
+     "w": "profusion",
+     "ipa": "[prəˈfjuʒn]",
+     "pos": "n.",
+     "zh": "丰富，大量",
+     "en": "a large amount; abundance",
+     "syn": [
+      "abundance",
+      "plethora"
+     ],
+     "ant": [
+      "scarcity",
+      "dearth"
+     ]
+    },
+    {
+     "w": "foreground",
+     "ipa": "[ˈfɔrɡraʊnd]",
+     "pos": "vt.",
+     "zh": "强调；突出",
+     "en": "to give prominence to",
+     "syn": [
+      "highlight",
+      "emphasize"
+     ],
+     "ant": []
+    },
+    {
+     "w": "accede",
+     "ipa": "[əkˈsid]",
+     "pos": "v.",
+     "zh": "赞成",
+     "en": "to agree to a request or demand",
+     "syn": [
+      "consent",
+      "yield"
+     ],
+     "ant": [
+      "refuse",
+      "decline"
+     ]
+    },
+    {
+     "w": "impetuous",
+     "ipa": "[ɪmˈpetʃuəs]",
+     "pos": "adj.",
+     "zh": "冲动的，性急的，轻率的",
+     "en": "acting quickly without thought",
+     "syn": [
+      "impulsive",
+      "rash"
+     ],
+     "ant": [
+      "cautious",
+      "deliberate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[histrionic]] speech contained a [[profusion]] of promises; to [[foreground]] the cause, the [[impetuous]] leader agreed to [[accede]] to every demand.",
+   "gloss": {
+    "histrionic": "夸张做作的",
+    "profusion": "丰富，大量",
+    "foreground": "强调",
+    "accede": "赞成",
+    "impetuous": "冲动的，性急的，轻率的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "allure",
+     "ipa": "[əˈlʊr]",
+     "pos": "vt.",
+     "zh": "吸引",
+     "en": "to attract or tempt",
+     "syn": [
+      "entice",
+      "tempt"
+     ],
+     "ant": [
+      "repel",
+      "repulse"
+     ]
+    },
+    {
+     "w": "relentless",
+     "ipa": "[rɪˈlɛntləs]",
+     "pos": "adj.",
+     "zh": "残酷的，无情的；固执的，不肯妥协的",
+     "en": "never letting up; unyielding",
+     "syn": [
+      "unremitting",
+      "implacable"
+     ],
+     "ant": [
+      "merciful",
+      "yielding"
+     ]
+    },
+    {
+     "w": "slippery",
+     "ipa": "[ˈslɪpəri]",
+     "pos": "adj.",
+     "zh": "光滑的；意义不明确的",
+     "en": "hard to hold; not trustworthy or clear",
+     "syn": [
+      "slick",
+      "elusive"
+     ],
+     "ant": [
+      "rough",
+      "reliable"
+     ]
+    },
+    {
+     "w": "cordial",
+     "ipa": "[ˈkɔrdʒəl]",
+     "pos": "adj.",
+     "zh": "热情的，友好的；令人振奋的，令人焕然一新的",
+     "en": "warm and friendly",
+     "syn": [
+      "warm",
+      "amiable"
+     ],
+     "ant": [
+      "hostile",
+      "cold"
+     ]
+    },
+    {
+     "w": "porous",
+     "ipa": "[ˈpɔrəs]",
+     "pos": "adj.",
+     "zh": "多孔可渗透的",
+     "en": "full of tiny holes; letting liquid pass",
+     "syn": [
+      "permeable",
+      "spongy"
+     ],
+     "ant": [
+      "impermeable",
+      "solid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[allure]] of the city proved [[relentless]], though a [[slippery]] dealer with a [[cordial]] smile sold him a hut with a [[porous]] roof.",
+   "gloss": {
+    "allure": "吸引",
+    "relentless": "残酷的，无情的",
+    "slippery": "光滑的",
+    "cordial": "热情的，友好的",
+    "porous": "多孔可渗透的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "flippancy",
+     "ipa": "[ˈflɪpənsi]",
+     "pos": "n.",
+     "zh": "轻率，无礼",
+     "en": "lack of seriousness",
+     "syn": [
+      "levity",
+      "frivolity"
+     ],
+     "ant": [
+      "seriousness",
+      "gravity"
+     ]
+    },
+    {
+     "w": "sterling",
+     "ipa": "[ˈstɝlɪŋ]",
+     "pos": "adj.",
+     "zh": "优秀的",
+     "en": "of excellent quality",
+     "syn": [
+      "excellent",
+      "superb"
+     ],
+     "ant": [
+      "inferior",
+      "shoddy"
+     ]
+    },
+    {
+     "w": "visionary",
+     "ipa": "[ˈvɪʒənɛri]",
+     "pos": "adj.",
+     "zh": "空想的，不切实际的；有远见的",
+     "en": "having imagination or foresight; impractical",
+     "syn": [
+      "farsighted",
+      "idealistic"
+     ],
+     "ant": [
+      "shortsighted",
+      "pragmatic"
+     ]
+    },
+    {
+     "w": "recapitulate",
+     "ipa": "[ˌriːkəˈpɪtʃuleɪt]",
+     "pos": "v./v.",
+     "zh": "概括，摘要",
+     "en": "to summarize the main points",
+     "syn": [
+      "summarize",
+      "recap"
+     ],
+     "ant": []
+    },
+    {
+     "w": "boorish",
+     "ipa": "[ˈbʊrɪʃ]",
+     "pos": "adj.",
+     "zh": "粗鲁无礼的",
+     "en": "rude and insensitive",
+     "syn": [
+      "crude",
+      "coarse"
+     ],
+     "ant": [
+      "refined",
+      "polite"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[flippancy]] annoyed a board that had praised his [[sterling]] record and [[visionary]] plans, and his [[boorish]] reply made the chair [[recapitulate]] the rules.",
+   "gloss": {
+    "flippancy": "轻率，无礼",
+    "sterling": "优秀的",
+    "visionary": "空想的，不切实际的",
+    "recapitulate": "概括，摘要",
+    "boorish": "粗鲁无礼的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "industrious",
+     "ipa": "[ɪnˈdʌstrɪəs]",
+     "pos": "adj.",
+     "zh": "勤勉的",
+     "en": "hardworking",
+     "syn": [
+      "diligent",
+      "assiduous"
+     ],
+     "ant": [
+      "lazy",
+      "indolent"
+     ]
+    },
+    {
+     "w": "lament",
+     "ipa": "[ləˈmɛnt]",
+     "pos": "v.",
+     "zh": "为…哀悼，表达痛苦或遗憾",
+     "en": "to express grief or regret",
+     "syn": [
+      "mourn",
+      "bewail"
+     ],
+     "ant": [
+      "rejoice",
+      "celebrate"
+     ]
+    },
+    {
+     "w": "ameliorate",
+     "ipa": "[əˈmilɪəˈret]",
+     "pos": "vt.",
+     "zh": "改善，改进",
+     "en": "to make better",
+     "syn": [
+      "improve",
+      "enhance"
+     ],
+     "ant": [
+      "worsen",
+      "aggravate"
+     ]
+    },
+    {
+     "w": "negotiate",
+     "ipa": "[nɪˈɡoʃɪet]",
+     "pos": "v.",
+     "zh": "商量，谈判",
+     "en": "to discuss in order to reach agreement",
+     "syn": [
+      "bargain",
+      "mediate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "consort",
+     "ipa": "[ˈkɑːnsɔːrt]",
+     "pos": "v.",
+     "zh": "结交",
+     "en": "to keep company with",
+     "syn": [
+      "associate",
+      "fraternize"
+     ],
+     "ant": [
+      "avoid",
+      "shun"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[industrious]] diplomat tried to [[negotiate]] a deal to [[ameliorate]] conditions, but the old ministers would [[lament]] his habit of [[consorting|consort]] with rebels.",
+   "gloss": {
+    "industrious": "勤勉的",
+    "lament": "为…哀悼，表达痛苦或遗憾",
+    "ameliorate": "改善，改进",
+    "negotiate": "商量，谈判",
+    "consort": "结交"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "prosaic",
+     "ipa": "[prəˈzeɪɪk]",
+     "pos": "adj.",
+     "zh": "单调的，常见的",
+     "en": "ordinary and unimaginative",
+     "syn": [
+      "mundane",
+      "humdrum"
+     ],
+     "ant": [
+      "poetic",
+      "imaginative"
+     ]
+    },
+    {
+     "w": "versatile",
+     "ipa": "[ˈvɝsətl]",
+     "pos": "adj.",
+     "zh": "多才多艺的，全能的",
+     "en": "able to do many different things",
+     "syn": [
+      "adaptable",
+      "flexible"
+     ],
+     "ant": [
+      "limited",
+      "inflexible"
+     ]
+    },
+    {
+     "w": "eccentric",
+     "ipa": "[ɪkˈsɛntrɪk]",
+     "pos": "adj.",
+     "zh": "行为出格的，不循规蹈矩的",
+     "en": "unconventional and slightly odd",
+     "syn": [
+      "quirky",
+      "offbeat"
+     ],
+     "ant": [
+      "conventional",
+      "normal"
+     ]
+    },
+    {
+     "w": "complacent",
+     "ipa": "[kəmˈplesnt]",
+     "pos": "adj.",
+     "zh": "自满的，自鸣得意的",
+     "en": "smugly self-satisfied",
+     "syn": [
+      "smug",
+      "self-satisfied"
+     ],
+     "ant": [
+      "dissatisfied",
+      "vigilant"
+     ]
+    },
+    {
+     "w": "esteem",
+     "ipa": "[ɪˈstim]",
+     "pos": "n./v.",
+     "zh": "尊重",
+     "en": "great respect and admiration",
+     "syn": [
+      "respect",
+      "regard"
+     ],
+     "ant": [
+      "contempt",
+      "disdain"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[prosaic]] clerk and the [[eccentric]] artist were both [[versatile]], though the [[complacent]] one lost the public's [[esteem]].",
+   "gloss": {
+    "prosaic": "单调的，常见的",
+    "versatile": "多才多艺的，全能的",
+    "eccentric": "行为出格的，不循规蹈矩的",
+    "complacent": "自满的，自鸣得意的",
+    "esteem": "尊重"
    }
   }
  ],
@@ -371,59 +720,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**imperious** 的意思最接近：",
+    "q": "**apocryphal** 的意思最接近：",
     "options": [
-     "古怪的，奇葩的",
-     "令人信服的；相关的",
-     "傲慢的，专横的",
-     "专制的，暴虐的"
+     "热情的，友好的；令人振奋的，令人焕然一新的",
+     "夸张做作的",
+     "假的",
+     "行为出格的，不循规蹈矩的"
     ],
     "answer": 2,
-    "explain": "imperious：傲慢的，专横的（arrogantly commanding）。近义词：domineering, overbearing。"
+    "explain": "apocryphal：假的（of doubtful authenticity）。近义词：spurious, dubious。"
    },
    {
-    "q": "**stifle** 的意思最接近：",
+    "q": "**versatile** 的意思最接近：",
     "options": [
-     "抑制(声音、呼吸等)；阻止，扼杀",
-     "使困惑，使模糊",
-     "抑制，压制；使窒息",
-     "限制"
-    ],
-    "answer": 0,
-    "explain": "stifle：抑制(声音、呼吸等)；阻止，扼杀（to suppress or smother）。近义词：suppress, smother。"
-   },
-   {
-    "q": "哪个词的意思是「初学者，新手」？",
-    "options": [
-     "neophyte",
-     "dearth",
-     "fungible",
-     "cogent"
-    ],
-    "answer": 0,
-    "explain": "neophyte：初学者，新手（a beginner）。"
-   },
-   {
-    "q": "哪个词和 **charm** 的意思最接近？",
-    "options": [
-     "grumble",
-     "captivate",
-     "stifle",
-     "smother"
-    ],
-    "answer": 1,
-    "explain": "captivate 与 charm 近义：to attract and hold attention。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> The despotic governor tried to ____ a dearth of food, but a street singer began to warble a song that would captivate the crowd and expose him.",
-    "options": [
-     "grumble",
-     "stifle",
-     "warble",
-     "obfuscate"
+     "单调的，常见的",
+     "自满的，自鸣得意的",
+     "热情的，友好的；令人振奋的，令人焕然一新的",
+     "多才多艺的，全能的"
     ],
     "answer": 3,
-    "explain": "obfuscate：使困惑，使模糊（to make unclear or confusing）。"
+    "explain": "versatile：多才多艺的，全能的（able to do many different things）。近义词：adaptable, flexible。"
+   },
+   {
+    "q": "哪个词的意思是「商量，谈判」？",
+    "options": [
+     "negotiate",
+     "balloon",
+     "rebuff",
+     "ameliorate"
+    ],
+    "answer": 0,
+    "explain": "negotiate：商量，谈判（to discuss in order to reach agreement）。"
+   },
+   {
+    "q": "哪个词和 **emphasize** 的意思最接近？",
+    "options": [
+     "recapitulate",
+     "foreground",
+     "allure",
+     "censor"
+    ],
+    "answer": 1,
+    "explain": "foreground 与 emphasize 近义：to give prominence to。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The prosaic clerk and the eccentric artist were both versatile, though the complacent one lost the public's ____.",
+    "options": [
+     "truism",
+     "magnitude",
+     "esteem",
+     "profusion"
+    ],
+    "answer": 2,
+    "explain": "esteem：尊重（great respect and admiration）。"
    }
   ]
  }

@@ -2,360 +2,725 @@
  "id": "u23",
  "title": "S 级核心词 · 第 23 组",
  "en": "GRE Core Vocabulary · Set 23",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u45",
+  "u46"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "innocuous",
-     "ipa": "[ɪˈnɑːkjuəs]",
+     "w": "arcane",
+     "ipa": "[ɑrˈken]",
      "pos": "adj.",
-     "zh": "无害的；不会引起敌意的",
-     "en": "harmless; not likely to offend",
+     "zh": "深奥的，难以理解的",
+     "en": "known only to a few; mysterious",
      "syn": [
-      "harmless",
-      "inoffensive"
+      "esoteric",
+      "obscure"
      ],
      "ant": [
-      "harmful",
-      "offensive"
+      "familiar",
+      "common"
      ]
     },
     {
-     "w": "numinous",
-     "ipa": "[ˈnuːmɪnəs]",
+     "w": "veto",
+     "ipa": "[ˈvito]",
+     "pos": "n./vt.",
+     "zh": "否决，禁止",
+     "en": "to forbid officially; a prohibition",
+     "syn": [
+      "forbid",
+      "reject"
+     ],
+     "ant": [
+      "approve",
+      "sanction"
+     ]
+    },
+    {
+     "w": "pellucid",
+     "ipa": "[pəˈluːsɪd]",
      "pos": "adj.",
-     "zh": "神秘的，超自然的",
-     "en": "mysterious and spiritual",
+     "zh": "清晰明确的，易懂的",
+     "en": "transparently clear",
      "syn": [
-      "spiritual",
-      "transcendent"
+      "lucid",
+      "limpid"
      ],
      "ant": [
-      "mundane",
-      "ordinary"
+      "opaque",
+      "murky"
      ]
     },
     {
-     "w": "jaded",
-     "ipa": "[ˈdʒeɪdɪd]",
+     "w": "clement",
+     "ipa": "[ˈklɛmənt]",
      "pos": "adj.",
-     "zh": "厌倦的，没兴趣没热情的",
-     "en": "worn out and bored from overexposure",
+     "zh": "宽容的，善良的；气候温和的",
+     "en": "mild; merciful",
      "syn": [
-      "weary",
-      "blasé"
+      "merciful",
+      "mild"
      ],
      "ant": [
-      "fresh",
-      "enthusiastic"
+      "harsh",
+      "severe"
      ]
     },
     {
-     "w": "sporadic",
-     "ipa": "[spəˈrædɪk]",
-     "pos": "adj.",
-     "zh": "断断续续的",
-     "en": "occurring occasionally and irregularly",
-     "syn": [
-      "occasional",
-      "intermittent"
-     ],
-     "ant": [
-      "constant",
-      "regular"
-     ]
-    },
-    {
-     "w": "capitulate",
-     "ipa": "[kəˈpɪtʃuleɪt]",
-     "pos": "v.",
-     "zh": "投降，默许",
-     "en": "to surrender",
-     "syn": [
-      "surrender",
-      "yield"
-     ],
-     "ant": [
-      "resist",
-      "withstand"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "An [[innocuous]] remark broke the [[numinous]] hush at the shrine; the [[jaded]] guide, whose smiles were [[sporadic]], at last chose to [[capitulate]] and sit down.",
-   "gloss": {
-    "innocuous": "无害的",
-    "numinous": "神秘的，超自然的",
-    "jaded": "厌倦的，没兴趣没热情的",
-    "sporadic": "断断续续的",
-    "capitulate": "投降，默许"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "clandestine",
-     "ipa": "[klænˈdestɪn]",
-     "pos": "adj.",
-     "zh": "隐藏的，秘密的",
-     "en": "done in secret",
-     "syn": [
-      "secret",
-      "covert"
-     ],
-     "ant": [
-      "open",
-      "overt"
-     ]
-    },
-    {
-     "w": "rescind",
-     "ipa": "[rɪˈsɪnd]",
-     "pos": "vt.",
-     "zh": "废除，取消",
-     "en": "to cancel or repeal",
-     "syn": [
-      "revoke",
-      "repeal"
-     ],
-     "ant": [
-      "enact",
-      "uphold"
-     ]
-    },
-    {
-     "w": "reiterate",
-     "ipa": "[rɪˈɪtəret]",
-     "pos": "v.",
-     "zh": "重申",
-     "en": "to say again",
-     "syn": [
-      "repeat",
-      "restate"
-     ],
-     "ant": []
-    },
-    {
-     "w": "didactic",
-     "ipa": "[daɪˈdæktɪk]",
-     "pos": "adj.",
-     "zh": "喜欢说教的，思修的",
-     "en": "intended to teach, often in a preachy way",
-     "syn": [
-      "instructive",
-      "preachy"
-     ],
-     "ant": []
-    },
-    {
-     "w": "cavil",
-     "ipa": "[ˈkævl]",
-     "pos": "v.",
-     "zh": "挑剔，吹毛求疵",
-     "en": "to raise petty objections",
-     "syn": [
-      "quibble",
-      "carp"
-     ],
-     "ant": []
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[clandestine]] meeting led the board to [[rescind]] its decision; the chair would [[reiterate]] a [[didactic]] speech, though some members would [[cavil]].",
-   "gloss": {
-    "clandestine": "隐藏的，秘密的",
-    "rescind": "废除，取消",
-    "reiterate": "重申",
-    "didactic": "喜欢说教的，思修的",
-    "cavil": "挑剔，吹毛求疵"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "precipitate",
-     "ipa": "[prɪˈsɪpɪteɪt]",
-     "pos": "adj.",
-     "zh": "仓促的；促成，引发",
-     "en": "hasty and rash; to cause suddenly",
-     "syn": [
-      "hasty",
-      "trigger"
-     ],
-     "ant": [
-      "deliberate",
-      "delay"
-     ]
-    },
-    {
-     "w": "agog",
-     "ipa": "[əˈɡɑːɡ]",
-     "pos": "adj.",
-     "zh": "极度感兴趣的",
-     "en": "eager and excited",
-     "syn": [
-      "eager",
-      "expectant"
-     ],
-     "ant": [
-      "indifferent",
-      "bored"
-     ]
-    },
-    {
-     "w": "unpretentious",
-     "ipa": "[ˌʌnprɪˈtɛnʃəs]",
-     "pos": "adj.",
-     "zh": "低调的，谦逊的；坦诚的，自然的",
-     "en": "modest and natural",
-     "syn": [
-      "modest",
-      "humble"
-     ],
-     "ant": [
-      "pretentious",
-      "showy"
-     ]
-    },
-    {
-     "w": "mediate",
-     "ipa": "[ˈmidɪet]",
-     "pos": "vt.",
-     "zh": "调解，调停",
-     "en": "to settle a dispute between parties",
-     "syn": [
-      "arbitrate",
-      "intervene"
-     ],
-     "ant": []
-    },
-    {
-     "w": "inevitable",
-     "ipa": "[ɪnˈɛvɪtəbl]",
-     "pos": "adj.",
-     "zh": "不可避免的，必然的",
-     "en": "certain to happen",
-     "syn": [
-      "unavoidable",
-      "inescapable"
-     ],
-     "ant": [
-      "avoidable",
-      "preventable"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[precipitate]] strike left the town [[agog]]; the [[unpretentious]] envoy was called to [[mediate]], since further talks seemed [[inevitable]].",
-   "gloss": {
-    "precipitate": "仓促的",
-    "agog": "极度感兴趣的",
-    "unpretentious": "低调的，谦逊的",
-    "mediate": "调解，调停",
-    "inevitable": "不可避免的，必然的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "amenable",
-     "ipa": "[əˈminəbl]",
-     "pos": "adj.",
-     "zh": "顺从的，服从的",
-     "en": "willing to cooperate; easily influenced",
-     "syn": [
-      "agreeable",
-      "compliant"
-     ],
-     "ant": [
-      "obstinate",
-      "resistant"
-     ]
-    },
-    {
-     "w": "whimsical",
-     "ipa": "[ˈwɪmzɪkl]",
-     "pos": "adj.",
-     "zh": "反复无常的",
-     "en": "playful and unpredictable",
-     "syn": [
-      "capricious",
-      "fanciful"
-     ],
-     "ant": [
-      "serious",
-      "predictable"
-     ]
-    },
-    {
-     "w": "reprehend",
-     "ipa": "[ˌreprɪˈhend]",
-     "pos": "vt.",
-     "zh": "谴责，责难，批评",
-     "en": "to criticize or rebuke",
-     "syn": [
-      "rebuke",
-      "censure"
-     ],
-     "ant": [
-      "praise",
-      "commend"
-     ]
-    },
-    {
-     "w": "cachet",
-     "ipa": "[kæˈʃeɪ]",
+     "w": "skullduggery",
+     "ipa": "skullduggery",
      "pos": "n.",
-     "zh": "同意；声望",
-     "en": "prestige; a mark of approval",
+     "zh": "欺诈，诡计",
+     "en": "underhanded trickery",
      "syn": [
-      "prestige",
-      "distinction"
+      "trickery",
+      "chicanery"
+     ],
+     "ant": [
+      "honesty",
+      "fair play"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[clement]] judge made the [[arcane]] contract [[pellucid]], then moved to [[veto]] the [[skullduggery]] behind it.",
+   "gloss": {
+    "arcane": "深奥的，难以理解的",
+    "veto": "否决，禁止",
+    "pellucid": "清晰明确的，易懂的",
+    "clement": "宽容的，善良的",
+    "skullduggery": "欺诈，诡计"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "chic",
+     "ipa": "[ʃɪk]",
+     "pos": "adj.",
+     "zh": "时髦的，潮的",
+     "en": "stylish",
+     "syn": [
+      "fashionable",
+      "elegant"
+     ],
+     "ant": [
+      "dowdy",
+      "unfashionable"
+     ]
+    },
+    {
+     "w": "supplement",
+     "ipa": "[ˈsʌplɪmənt]",
+     "pos": "n./v.",
+     "zh": "增补，补充",
+     "en": "to add to; an addition",
+     "syn": [
+      "augment",
+      "addendum"
      ],
      "ant": []
     },
     {
-     "w": "abstruse",
-     "ipa": "[əbˈstrus]",
+     "w": "tantamount",
+     "ipa": "[ˈtæntəˈmaʊnt]",
      "pos": "adj.",
-     "zh": "难以理解的",
-     "en": "hard to understand",
+     "zh": "等价的，与…相等的",
+     "en": "equivalent in effect",
      "syn": [
-      "recondite",
-      "esoteric"
+      "equivalent",
+      "equal"
+     ],
+     "ant": []
+    },
+    {
+     "w": "venerate",
+     "ipa": "[ˈvɛnəret]",
+     "pos": "vt.",
+     "zh": "尊敬",
+     "en": "to regard with deep respect",
+     "syn": [
+      "revere",
+      "honor"
      ],
      "ant": [
-      "clear",
+      "despise",
+      "scorn"
+     ]
+    },
+    {
+     "w": "contemplate",
+     "ipa": "[ˈkɑntəmplet]",
+     "pos": "v.",
+     "zh": "沉思，仔细思索",
+     "en": "to think deeply about; to consider",
+     "syn": [
+      "ponder",
+      "consider"
+     ],
+     "ant": [
+      "neglect"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The owner of the [[chic]] boutique would [[contemplate]] closing it; customers who [[venerate]] the brand called that [[tantamount]] to a betrayal, and a sale could [[supplement]] her income.",
+   "gloss": {
+    "chic": "时髦的，潮的",
+    "supplement": "增补，补充",
+    "tantamount": "等价的，与…相等的",
+    "venerate": "尊敬",
+    "contemplate": "沉思，仔细思索"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "seamy",
+     "ipa": "[ˈsiːmi]",
+     "pos": "adj.",
+     "zh": "肮脏的，堕落的",
+     "en": "sordid; unpleasant",
+     "syn": [
+      "sordid",
+      "squalid"
+     ],
+     "ant": [
+      "wholesome",
+      "respectable"
+     ]
+    },
+    {
+     "w": "civility",
+     "ipa": "[səˈvɪləti]",
+     "pos": "n.",
+     "zh": "彬彬有礼",
+     "en": "polite behavior",
+     "syn": [
+      "courtesy",
+      "politeness"
+     ],
+     "ant": [
+      "rudeness",
+      "incivility"
+     ]
+    },
+    {
+     "w": "compound",
+     "ipa": "[ˈkɑmpaʊnd]",
+     "pos": "n.",
+     "zh": "混合；使恶化；混合物",
+     "en": "to combine; to make worse; a mixture",
+     "syn": [
+      "combine",
+      "aggravate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pseudonym",
+     "ipa": "[ˈsuːdənɪm]",
+     "pos": "n.",
+     "zh": "假名，笔名",
+     "en": "a fictitious name used by an author",
+     "syn": [
+      "pen name",
+      "alias"
+     ],
+     "ant": []
+    },
+    {
+     "w": "absolute",
+     "ipa": "[ˈæbsəlut]",
+     "pos": "adj.",
+     "zh": "专制的；无限的；完美的，纯净不掺杂的；不容置疑的，确凿的",
+     "en": "complete; unlimited; certain",
+     "syn": [
+      "total",
+      "unqualified"
+     ],
+     "ant": [
+      "partial",
+      "conditional"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[seamy]] side of politics was hidden by [[civility]]; to [[compound]] the problem, a writer using a [[pseudonym]] demanded [[absolute]] secrecy.",
+   "gloss": {
+    "seamy": "肮脏的，堕落的",
+    "civility": "彬彬有礼",
+    "compound": "混合",
+    "pseudonym": "假名，笔名",
+    "absolute": "专制的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "sonorous",
+     "ipa": "[ˈsɑnərəs]",
+     "pos": "adj.",
+     "zh": "声音洪亮的",
+     "en": "deep and full in sound",
+     "syn": [
+      "resonant",
+      "rich"
+     ],
+     "ant": [
+      "thin",
+      "faint"
+     ]
+    },
+    {
+     "w": "rabid",
+     "ipa": "[ˈræbɪd]",
+     "pos": "adj.",
+     "zh": "狂热的，不冷静的",
+     "en": "fanatical; extremely enthusiastic",
+     "syn": [
+      "fanatical",
+      "zealous"
+     ],
+     "ant": [
+      "moderate",
+      "apathetic"
+     ]
+    },
+    {
+     "w": "deadpan",
+     "ipa": "[ˈdɛdpæn]",
+     "pos": "adj.",
+     "zh": "面无表情的；冷面幽默",
+     "en": "expressionless, especially in humor",
+     "syn": [
+      "expressionless",
+      "impassive"
+     ],
+     "ant": [
+      "animated",
+      "expressive"
+     ]
+    },
+    {
+     "w": "implacable",
+     "ipa": "[ɪmˈplækəbl]",
+     "pos": "adj.",
+     "zh": "固执的；无法平息的",
+     "en": "impossible to appease",
+     "syn": [
+      "relentless",
+      "unforgiving"
+     ],
+     "ant": [
+      "lenient",
+      "placable"
+     ]
+    },
+    {
+     "w": "confound",
+     "ipa": "[kənˈfaʊnd]",
+     "pos": "v.",
+     "zh": "使困惑；证明为假，证伪",
+     "en": "to confuse; to prove wrong",
+     "syn": [
+      "perplex",
+      "refute"
+     ],
+     "ant": [
+      "clarify",
+      "confirm"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[sonorous]] preacher, [[rabid]] in his views, had a [[deadpan]] manner that would [[confound]] even [[implacable]] critics.",
+   "gloss": {
+    "sonorous": "声音洪亮的",
+    "rabid": "狂热的，不冷静的",
+    "deadpan": "面无表情的",
+    "implacable": "固执的",
+    "confound": "使困惑"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "loquacious",
+     "ipa": "[ləˈkweɪʃəs]",
+     "pos": "adj.",
+     "zh": "话多的",
+     "en": "tending to talk a great deal",
+     "syn": [
+      "talkative",
+      "garrulous"
+     ],
+     "ant": [
+      "taciturn",
+      "reticent"
+     ]
+    },
+    {
+     "w": "gourmet",
+     "ipa": "[ˈɡʊrme]",
+     "pos": "n.",
+     "zh": "美食家",
+     "en": "a person with refined taste in food and drink",
+     "syn": [
+      "epicure",
+      "connoisseur"
+     ],
+     "ant": []
+    },
+    {
+     "w": "repulse",
+     "ipa": "[rɪˈpʌls]",
+     "pos": "vt.",
+     "zh": "使厌恶；击退，拒绝",
+     "en": "to drive back; to cause disgust in someone",
+     "syn": [
+      "repel",
+      "rebuff"
+     ],
+     "ant": [
+      "attract",
+      "welcome"
+     ]
+    },
+    {
+     "w": "exculpate",
+     "ipa": "[ˈekskʌlpeɪt]",
+     "pos": "vt.",
+     "zh": "声明无罪；开脱，使无罪",
+     "en": "to clear of blame or guilt",
+     "syn": [
+      "exonerate",
+      "absolve"
+     ],
+     "ant": [
+      "incriminate",
+      "blame"
+     ]
+    },
+    {
+     "w": "trifling",
+     "ipa": "[ˈtraɪflɪŋ]",
+     "pos": "adj.",
+     "zh": "细微的，不重要的",
+     "en": "of very little importance or value",
+     "syn": [
+      "trivial",
+      "petty"
+     ],
+     "ant": [
+      "significant",
+      "momentous"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[loquacious]] [[gourmet]] was [[repulsed|repulse]] by the greasy menu; a [[trifling]] error in the bill was enough to [[exculpate]] the waiter, though the critic kept talking for an hour.",
+   "gloss": {
+    "loquacious": "话多的",
+    "gourmet": "美食家",
+    "repulse": "使厌恶",
+    "exculpate": "声明无罪",
+    "trifling": "细微的，不重要的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "humdrum",
+     "ipa": "[ˈhʌmdrʌm]",
+     "pos": "adj.",
+     "zh": "无聊的，乏味的",
+     "en": "dull and lacking variety",
+     "syn": [
+      "monotonous",
+      "mundane"
+     ],
+     "ant": [
+      "exciting",
+      "stimulating"
+     ]
+    },
+    {
+     "w": "pompous",
+     "ipa": "[ˈpɑmpəs]",
+     "pos": "adj.",
+     "zh": "浮夸的；傲慢的",
+     "en": "self-important and overly formal",
+     "syn": [
+      "pretentious",
+      "bombastic"
+     ],
+     "ant": [
+      "humble",
+      "unassuming"
+     ]
+    },
+    {
+     "w": "adversity",
+     "ipa": "[ədˈvɝsəti]",
+     "pos": "n.",
+     "zh": "厄运，逆境",
+     "en": "difficulty or misfortune",
+     "syn": [
+      "hardship",
+      "misfortune"
+     ],
+     "ant": [
+      "prosperity",
+      "good fortune"
+     ]
+    },
+    {
+     "w": "fecund",
+     "ipa": "[ˈfikənd]",
+     "pos": "adj.",
+     "zh": "多产的，肥沃的",
+     "en": "producing much fruit or many offspring; fertile",
+     "syn": [
+      "fertile",
+      "prolific"
+     ],
+     "ant": [
+      "barren",
+      "sterile"
+     ]
+    },
+    {
+     "w": "inveigle",
+     "ipa": "[ɪnˈveɪɡl]",
+     "pos": "vt.",
+     "zh": "诱骗",
+     "en": "to win over by flattery or trickery",
+     "syn": [
+      "entice",
+      "cajole"
+     ],
+     "ant": [
+      "repel",
+      "deter"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[humdrum]] career, the [[pompous]] senator faced [[adversity]]; his once [[fecund]] campaign stalled, and he tried to [[inveigle]] old donors back with flattery.",
+   "gloss": {
+    "humdrum": "无聊的，乏味的",
+    "pompous": "浮夸的",
+    "adversity": "厄运，逆境",
+    "fecund": "多产的，肥沃的",
+    "inveigle": "诱骗"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "acerbic",
+     "ipa": "[əˈsɝbɪk]",
+     "pos": "adj.",
+     "zh": "尖酸的；刻薄的",
+     "en": "sharp and biting in tone or taste",
+     "syn": [
+      "caustic",
+      "tart"
+     ],
+     "ant": [
+      "gentle",
+      "mild"
+     ]
+    },
+    {
+     "w": "scruple",
+     "ipa": "[ˈskrupl]",
+     "pos": "n.",
+     "zh": "(良心上的)不安",
+     "en": "a moral doubt that keeps one from acting",
+     "syn": [
+      "qualm",
+      "compunction"
+     ],
+     "ant": [
+      "shamelessness"
+     ]
+    },
+    {
+     "w": "panegyric",
+     "ipa": "[ˌpænəˈdʒɪrɪk]",
+     "pos": "n.",
+     "zh": "赞颂之词，颂文",
+     "en": "a speech or writing of high praise",
+     "syn": [
+      "eulogy",
+      "encomium"
+     ],
+     "ant": [
+      "diatribe",
+      "tirade"
+     ]
+    },
+    {
+     "w": "protract",
+     "ipa": "[proʊˈtrækt]",
+     "pos": "v.",
+     "zh": "延长，拖长",
+     "en": "to make last longer than necessary",
+     "syn": [
+      "prolong",
+      "extend"
+     ],
+     "ant": [
+      "curtail",
+      "abbreviate"
+     ]
+    },
+    {
+     "w": "predilection",
+     "ipa": "[ˌpredlˈekʃn]",
+     "pos": "n.",
+     "zh": "爱好，偏袒",
+     "en": "a strong liking or preference",
+     "syn": [
+      "fondness",
+      "penchant"
+     ],
+     "ant": [
+      "aversion",
+      "dislike"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[acerbic]] review betrayed no [[scruple]] about tearing down the book; a [[panegyric]] from a rival would only [[protract]] the quarrel, for the critic had a [[predilection]] for harsh words.",
+   "gloss": {
+    "acerbic": "尖酸的",
+    "scruple": "(良心上的)不安",
+    "panegyric": "赞颂之词，颂文",
+    "protract": "延长，拖长",
+    "predilection": "爱好，偏袒"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "oblique",
+     "ipa": "[əˈbliːk]",
+     "pos": "adj.",
+     "zh": "斜的",
+     "en": "indirect, not straightforward; slanting",
+     "syn": [
+      "indirect",
+      "slanting"
+     ],
+     "ant": [
+      "direct",
       "straightforward"
      ]
+    },
+    {
+     "w": "eclectic",
+     "ipa": "[ɪˈklektɪk]",
+     "pos": "adj.",
+     "zh": "混合的，多元化的",
+     "en": "drawing from many different sources or styles",
+     "syn": [
+      "diverse",
+      "varied"
+     ],
+     "ant": [
+      "uniform",
+      "narrow"
+     ]
+    },
+    {
+     "w": "convert",
+     "ipa": "[kənˈvɝt]",
+     "pos": "v.",
+     "zh": "改变，转化",
+     "en": "to change from one form, use, or belief to another",
+     "syn": [
+      "transform",
+      "switch"
+     ],
+     "ant": [
+      "preserve"
+     ]
+    },
+    {
+     "w": "schism",
+     "ipa": "[ˈskɪzəm]",
+     "pos": "n.",
+     "zh": "分裂；分歧",
+     "en": "a split between parts of a group or organization",
+     "syn": [
+      "rift",
+      "division"
+     ],
+     "ant": [
+      "unity",
+      "union"
+     ]
+    },
+    {
+     "w": "supplant",
+     "ipa": "[səˈplænt]",
+     "pos": "vt.",
+     "zh": "排挤，篡夺…的位置",
+     "en": "to take the place of, often by force or scheming",
+     "syn": [
+      "displace",
+      "replace"
+     ],
+     "ant": [
+      "retain",
+      "preserve"
+     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[amenable]] teacher would never [[reprehend]] a [[whimsical]] student; the school's [[cachet]] came from its [[abstruse]] curriculum.",
+   "text": "The author's [[oblique]] and [[eclectic]] style tried to [[convert]] readers; a [[schism]] in the party let a new faction [[supplant]] the old leaders.",
    "gloss": {
-    "amenable": "顺从的，服从的",
-    "whimsical": "反复无常的",
-    "reprehend": "谴责，责难，批评",
-    "cachet": "同意",
-    "abstruse": "难以理解的"
+    "oblique": "斜的",
+    "eclectic": "混合的，多元化的",
+    "convert": "改变，转化",
+    "schism": "分裂",
+    "supplant": "排挤，篡夺…的位置"
    }
   }
  ],
@@ -363,59 +728,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**reiterate** 的意思最接近：",
+    "q": "**rabid** 的意思最接近：",
     "options": [
-     "谴责，责难，批评",
-     "废除，取消",
-     "重申",
-     "挑剔，吹毛求疵"
+     "固执的；无法平息的",
+     "狂热的，不冷静的",
+     "深奥的，难以理解的",
+     "面无表情的；冷面幽默"
+    ],
+    "answer": 1,
+    "explain": "rabid：狂热的，不冷静的（fanatical; extremely enthusiastic）。近义词：fanatical, zealous。"
+   },
+   {
+    "q": "**civility** 的意思最接近：",
+    "options": [
+     "假名，笔名",
+     "厄运，逆境",
+     "彬彬有礼",
+     "分裂；分歧"
     ],
     "answer": 2,
-    "explain": "reiterate：重申（to say again）。近义词：repeat, restate。"
+    "explain": "civility：彬彬有礼（polite behavior）。近义词：courtesy, politeness。"
    },
    {
-    "q": "**reprehend** 的意思最接近：",
+    "q": "哪个词的意思是「面无表情的；冷面幽默」？",
     "options": [
-     "废除，取消",
-     "谴责，责难，批评",
-     "重申",
-     "投降，默许"
-    ],
-    "answer": 1,
-    "explain": "reprehend：谴责，责难，批评（to criticize or rebuke）。近义词：rebuke, censure。"
-   },
-   {
-    "q": "哪个词的意思是「难以理解的」？",
-    "options": [
-     "inevitable",
-     "innocuous",
-     "didactic",
-     "abstruse"
+     "loquacious",
+     "chic",
+     "pellucid",
+     "deadpan"
     ],
     "answer": 3,
-    "explain": "abstruse：难以理解的（hard to understand）。"
+    "explain": "deadpan：面无表情的；冷面幽默（expressionless, especially in humor）。"
    },
    {
-    "q": "哪个词和 **compliant** 的意思最接近？",
+    "q": "哪个词和 **rift** 的意思最接近？",
     "options": [
-     "precipitate",
-     "amenable",
-     "clandestine",
-     "unpretentious"
+     "veto",
+     "pseudonym",
+     "compound",
+     "schism"
     ],
-    "answer": 1,
-    "explain": "amenable 与 compliant 近义：willing to cooperate; easily influenced。"
+    "answer": 3,
+    "explain": "schism 与 rift 近义：a split between parts of a group or organization。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> A precipitate strike left the town agog; the unpretentious envoy was called to mediate, since further talks seemed ____.",
+    "q": "选最适合填入空格的词：\n\n> A clement judge made the arcane contract pellucid, then moved to veto the ____ behind it.",
     "options": [
-     "inevitable",
-     "jaded",
-     "amenable",
-     "sporadic"
+     "skullduggery",
+     "compound",
+     "schism",
+     "veto"
     ],
     "answer": 0,
-    "explain": "inevitable：不可避免的，必然的（certain to happen）。"
+    "explain": "skullduggery：欺诈，诡计（underhanded trickery）。"
    }
   ]
  }

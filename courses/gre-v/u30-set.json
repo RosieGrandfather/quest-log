@@ -2,362 +2,675 @@
  "id": "u30",
  "title": "S 级核心词 · 第 30 组",
  "en": "GRE Core Vocabulary · Set 30",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 36 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u59",
+  "u60"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "endemic",
-     "ipa": "[ɛnˈdɛmɪk]",
+     "w": "debonair",
+     "ipa": "[ˌdɛbəˈnɛr]",
      "pos": "adj.",
-     "zh": "地方性的",
-     "en": "native to or common in a particular area",
+     "zh": "无忧无虑的，不在乎的；风度翩翩的",
+     "en": "charming, confident, and stylish",
      "syn": [
-      "native",
-      "local"
+      "suave",
+      "urbane"
      ],
      "ant": [
-      "foreign",
-      "imported"
+      "awkward",
+      "gauche"
      ]
     },
     {
-     "w": "emulate",
-     "ipa": "[ˈɛmjulet]",
+     "w": "paucity",
+     "ipa": "[ˈpɔːsəti]",
+     "pos": "n.",
+     "zh": "少量，缺乏",
+     "en": "a small or insufficient amount",
+     "syn": [
+      "scarcity",
+      "dearth"
+     ],
+     "ant": [
+      "abundance",
+      "plethora"
+     ]
+    },
+    {
+     "w": "repeal",
+     "ipa": "[rɪˈpiːl]",
      "pos": "vt.",
-     "zh": "效仿",
-     "en": "to imitate in order to equal or surpass",
+     "zh": "撤销，废除(法律等)",
+     "en": "to officially cancel a law",
      "syn": [
-      "imitate",
-      "mimic"
-     ],
-     "ant": []
-    },
-    {
-     "w": "venial",
-     "ipa": "[ˈvinɪəl]",
-     "pos": "adj.",
-     "zh": "可宽恕的",
-     "en": "minor and easily forgiven",
-     "syn": [
-      "pardonable",
-      "excusable"
+      "revoke",
+      "rescind"
      ],
      "ant": [
-      "grave",
-      "mortal"
+      "enact",
+      "institute"
      ]
     },
     {
-     "w": "stock",
-     "ipa": "[stɑk]",
+     "w": "blatant",
+     "ipa": "[ˈbleɪtnt]",
      "pos": "adj.",
-     "zh": "普通的，常备的",
-     "en": "commonly used and unoriginal",
+     "zh": "(让人生厌地)惹人注目的",
+     "en": "obvious in an offensive or shameless way",
      "syn": [
-      "standard",
-      "routine"
+      "flagrant",
+      "brazen"
+     ],
+     "ant": [
+      "subtle",
+      "discreet"
+     ]
+    },
+    {
+     "w": "integrity",
+     "ipa": "[ɪnˈtɛɡrəti]",
+     "pos": "n.",
+     "zh": "正直；完整性",
+     "en": "moral uprightness; wholeness",
+     "syn": [
+      "honesty",
+      "probity"
+     ],
+     "ant": [
+      "dishonesty",
+      "corruption"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[debonair]] host showed a [[paucity]] of shame and urged the senate to [[repeal]] the [[blatant]] rule; his [[integrity]] was never in doubt.",
+   "gloss": {
+    "debonair": "无忧无虑的，不在乎的",
+    "paucity": "少量，缺乏",
+    "repeal": "撤销，废除(法律等)",
+    "blatant": "(让人生厌地)惹人注目的",
+    "integrity": "正直"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "perilous",
+     "ipa": "[ˈpɛrələs]",
+     "pos": "adj.",
+     "zh": "危险的",
+     "en": "full of danger",
+     "syn": [
+      "hazardous",
+      "risky"
+     ],
+     "ant": [
+      "safe",
+      "secure"
+     ]
+    },
+    {
+     "w": "lopsided",
+     "ipa": "[ˌlɑpˈsaɪdɪd]",
+     "pos": "adj.",
+     "zh": "不平衡的，不协调的",
+     "en": "uneven, with one side heavier or larger",
+     "syn": [
+      "unbalanced",
+      "asymmetrical"
+     ],
+     "ant": [
+      "balanced",
+      "symmetrical"
+     ]
+    },
+    {
+     "w": "hyperbole",
+     "ipa": "[haɪˈpɜːbəli]",
+     "pos": "n.",
+     "zh": "夸张",
+     "en": "deliberate exaggeration for effect",
+     "syn": [
+      "exaggeration",
+      "overstatement"
+     ],
+     "ant": [
+      "understatement"
+     ]
+    },
+    {
+     "w": "cherubic",
+     "ipa": "[tʃəˈruːbɪk]",
+     "pos": "adj.",
+     "zh": "天使般可爱的",
+     "en": "sweet and innocent like a child",
+     "syn": [
+      "angelic",
+      "innocent"
+     ],
+     "ant": [
+      "devilish",
+      "sinister"
+     ]
+    },
+    {
+     "w": "blithe",
+     "ipa": "[blaɪð]",
+     "pos": "adj.",
+     "zh": "愉快高兴的；无忧无虑的；漫不经心的",
+     "en": "cheerful; or carelessly indifferent",
+     "syn": [
+      "carefree",
+      "nonchalant"
+     ],
+     "ant": [
+      "gloomy",
+      "concerned"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[perilous]] and [[lopsided]] deal was sold with [[hyperbole]] by a [[cherubic]] clerk, and the [[blithe]] buyers did not ask questions.",
+   "gloss": {
+    "perilous": "危险的",
+    "lopsided": "不平衡的，不协调的",
+    "hyperbole": "夸张",
+    "cherubic": "天使般可爱的",
+    "blithe": "愉快高兴的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "cliche",
+     "ipa": "clich",
+     "pos": "n./adj.",
+     "zh": "陈词滥调(的)",
+     "en": "an overused phrase or idea; trite",
+     "syn": [
+      "platitude",
+      "bromide"
      ],
      "ant": [
       "original",
+      "novel"
+     ]
+    },
+    {
+     "w": "conform",
+     "ipa": "[kənˈfɔrm]",
+     "pos": "vt.",
+     "zh": "使协调；遵照，遵从",
+     "en": "to comply with rules or standards",
+     "syn": [
+      "comply",
+      "adhere"
+     ],
+     "ant": [
+      "deviate",
+      "rebel"
+     ]
+    },
+    {
+     "w": "inure",
+     "ipa": "[ɪˈnjʊr]",
+     "pos": "vt.",
+     "zh": "使习惯接受不好的东西",
+     "en": "to accustom to something unpleasant",
+     "syn": [
+      "harden",
+      "toughen"
+     ],
+     "ant": [
+      "sensitize",
+      "expose"
+     ]
+    },
+    {
+     "w": "ingenuous",
+     "ipa": "[ɪnˈdʒɛnjuəs]",
+     "pos": "adj.",
+     "zh": "天真淳朴的",
+     "en": "innocent and trusting; without guile",
+     "syn": [
+      "naive",
+      "artless"
+     ],
+     "ant": [
+      "sophisticated",
+      "disingenuous"
+     ]
+    },
+    {
+     "w": "mollify",
+     "ipa": "[ˈmɑːlɪfaɪ]",
+     "pos": "vt.",
+     "zh": "平息，抚慰，缓和",
+     "en": "to soothe or reduce the anger of",
+     "syn": [
+      "appease",
+      "soothe"
+     ],
+     "ant": [
+      "aggravate",
+      "irritate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Every [[cliche]] he knew would [[conform]] to the plot; he tried to [[inure]] the [[ingenuous]] heir and [[mollify]] his critics.",
+   "gloss": {
+    "cliche": "陈词滥调(的)",
+    "conform": "使协调",
+    "inure": "使习惯接受不好的东西",
+    "ingenuous": "天真淳朴的",
+    "mollify": "平息，抚慰，缓和"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "endeavor",
+     "ipa": "[ɪnˈdevər]",
+     "pos": "n.",
+     "zh": "努力，奋斗；努力做，拼搏",
+     "en": "a serious attempt; to try hard",
+     "syn": [
+      "attempt",
+      "strive"
+     ],
+     "ant": [
+      "neglect",
+      "abandon"
+     ]
+    },
+    {
+     "w": "distinctive",
+     "ipa": "[dɪˈstɪŋktɪv]",
+     "pos": "adj.",
+     "zh": "完全不同的；特征性的，典型的",
+     "en": "clearly different; characteristic",
+     "syn": [
+      "characteristic",
+      "unique"
+     ],
+     "ant": [
+      "ordinary",
+      "generic"
+     ]
+    },
+    {
+     "w": "quotidian",
+     "ipa": "[kwoʊˈtɪdiən]",
+     "pos": "adj.",
+     "zh": "每日的；平凡的",
+     "en": "occurring every day; ordinary",
+     "syn": [
+      "daily",
+      "mundane"
+     ],
+     "ant": [
+      "extraordinary",
       "unusual"
      ]
     },
     {
-     "w": "reign",
-     "ipa": "[ren]",
-     "pos": "n.",
-     "zh": "统治权占统治地位或盛行",
-     "en": "to rule; to prevail",
+     "w": "mandatory",
+     "ipa": "[ˈmændətɔri]",
+     "pos": "adj.",
+     "zh": "强制的",
+     "en": "required by law or rule",
      "syn": [
-      "rule",
-      "prevail"
+      "compulsory",
+      "obligatory"
      ],
-     "ant": []
+     "ant": [
+      "optional",
+      "voluntary"
+     ]
+    },
+    {
+     "w": "insulate",
+     "ipa": "[ˈɪnsəlet]",
+     "pos": "vt.",
+     "zh": "使绝缘，使隔离，不受外界影响",
+     "en": "to protect by isolating or covering",
+     "syn": [
+      "isolate",
+      "shield"
+     ],
+     "ant": [
+      "expose",
+      "open up"
+     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "Where bribery is [[endemic]], clerks [[emulate]] their bosses and shrug off each [[venial]] fault with a [[stock]] excuse, while the old king's [[reign]] never seems to end.",
+   "text": "Her [[endeavor]] was [[distinctive]] and [[quotidian]]; the [[mandatory]] drills would [[insulate]] the crew from risk.",
    "gloss": {
-    "endemic": "地方性的",
-    "emulate": "效仿",
-    "venial": "可宽恕的",
-    "stock": "普通的，常备的",
-    "reign": "统治权占统治地位或盛行"
+    "endeavor": "努力，奋斗",
+    "distinctive": "完全不同的",
+    "quotidian": "每日的",
+    "mandatory": "强制的",
+    "insulate": "使绝缘，使隔离，不受外界影响"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "glean",
-     "ipa": "[ɡʌl]",
-     "pos": "v.",
-     "zh": "收集",
-     "en": "to gather bit by bit",
-     "syn": [
-      "gather",
-      "collect"
-     ],
-     "ant": [
-      "scatter"
-     ]
-    },
-    {
-     "w": "tamper",
-     "ipa": "[ˈtæmpɚ]",
-     "pos": "v.",
-     "zh": "恶意窜改，损害",
-     "en": "to interfere with in order to damage",
-     "syn": [
-      "meddle",
-      "interfere"
-     ],
-     "ant": []
-    },
-    {
-     "w": "restless",
-     "ipa": "[ˈrɛstləs]",
+     "w": "strident",
+     "ipa": "[ˈstraɪdnt]",
      "pos": "adj.",
-     "zh": "不平静的",
-     "en": "unable to rest or stay still",
+     "zh": "尖厉的；刺耳而强硬的",
+     "en": "loud and harsh in sound or tone",
      "syn": [
-      "fidgety",
-      "uneasy"
+      "shrill",
+      "grating"
      ],
      "ant": [
-      "calm",
-      "tranquil"
+      "soft",
+      "mellow"
      ]
     },
     {
-     "w": "fiasco",
-     "ipa": "[fɪˈæsko]",
-     "pos": "n.",
-     "zh": "大失败",
-     "en": "a complete and humiliating failure",
+     "w": "vaunt",
+     "ipa": "[vɔːnt]",
+     "pos": "vi.",
+     "zh": "吹嘘",
+     "en": "to boast about",
      "syn": [
-      "debacle",
-      "flop"
+      "brag",
+      "flaunt"
      ],
      "ant": [
-      "triumph",
-      "success"
+      "belittle",
+      "downplay"
      ]
     },
     {
-     "w": "precedent",
-     "ipa": "[ˈprɛsɪdənt]",
-     "pos": "n.",
-     "zh": "先例，前例；先前的",
-     "en": "an earlier example used as a guide",
+     "w": "abhor",
+     "ipa": "[əbˈhɔr]",
+     "pos": "v.",
+     "zh": "深恶痛绝，极度厌恶",
+     "en": "to regard with disgust and hatred",
      "syn": [
-      "example",
-      "standard"
+      "detest",
+      "loathe"
+     ],
+     "ant": [
+      "adore",
+      "cherish"
+     ]
+    },
+    {
+     "w": "reminiscent",
+     "ipa": "[ˌremɪˈnɪsnt]",
+     "pos": "adj.",
+     "zh": "怀旧的，引发回忆的",
+     "en": "tending to recall something past",
+     "syn": [
+      "evocative",
+      "suggestive"
      ],
      "ant": []
+    },
+    {
+     "w": "peremptory",
+     "ipa": "[pəˈremptəri]",
+     "pos": "adj.",
+     "zh": "不容反抗的；傲慢的",
+     "en": "insisting on immediate obedience; imperious",
+     "syn": [
+      "imperious",
+      "dictatorial"
+     ],
+     "ant": [
+      "tentative",
+      "deferential"
+     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "Detectives tried to [[glean]] facts from the [[restless]] witness; to [[tamper]] with the evidence would turn the case into a [[fiasco]] and set a bad [[precedent]].",
+   "text": "A [[strident]] tone would only [[vaunt]] his fame; the [[reminiscent]] crowd would [[abhor]] it, and a [[peremptory]] order ended the show.",
    "gloss": {
-    "glean": "收集",
-    "tamper": "恶意窜改，损害",
-    "restless": "不平静的",
-    "fiasco": "大失败",
-    "precedent": "先例，前例"
+    "strident": "尖厉的",
+    "vaunt": "吹嘘",
+    "abhor": "深恶痛绝，极度厌恶",
+    "reminiscent": "怀旧的，引发回忆的",
+    "peremptory": "不容反抗的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "bungle",
-     "ipa": "[ˈbʌŋɡl]",
-     "pos": "v.",
-     "zh": "办糟，失败",
-     "en": "to do badly and clumsily",
-     "syn": [
-      "botch",
-      "fumble"
-     ],
-     "ant": [
-      "accomplish",
-      "succeed"
-     ]
-    },
-    {
-     "w": "deluge",
-     "ipa": "[ˈdɛljʊdʒ]",
-     "pos": "n.",
-     "zh": "大暴雨；大量",
-     "en": "a great flood; an overwhelming amount",
-     "syn": [
-      "flood",
-      "torrent"
-     ],
-     "ant": [
-      "trickle",
-      "drought"
-     ]
-    },
-    {
-     "w": "grudge",
-     "ipa": "[ɡrʌdʒ]",
-     "pos": "n.",
-     "zh": "怨恨，仇恨",
-     "en": "a lasting feeling of resentment",
-     "syn": [
-      "resentment",
-      "rancor"
-     ],
-     "ant": [
-      "goodwill",
-      "forgiveness"
-     ]
-    },
-    {
-     "w": "defy",
-     "ipa": "[ˈdifaɪ]",
-     "pos": "vt.",
-     "zh": "蔑视",
-     "en": "to openly resist or disobey",
-     "syn": [
-      "resist",
-      "flout"
-     ],
-     "ant": [
-      "obey",
-      "comply"
-     ]
-    },
-    {
-     "w": "malignant",
-     "ipa": "[məˈlɪgnənt]",
+     "w": "dispassionate",
+     "ipa": "[dɪsˈpæʃənət]",
      "pos": "adj.",
-     "zh": "恶毒的，邪恶的",
-     "en": "evil in effect; harmful",
+     "zh": "客观公正的，不易被情绪或偏见影响的",
+     "en": "not influenced by strong emotion; impartial",
      "syn": [
-      "malevolent",
-      "virulent"
+      "impartial",
+      "objective"
      ],
      "ant": [
-      "benign",
-      "harmless"
+      "emotional",
+      "biased"
+     ]
+    },
+    {
+     "w": "doctrinaire",
+     "ipa": "[ˌdɑːktrəˈner]",
+     "pos": "adj.",
+     "zh": "教条主义的，照本宣科的",
+     "en": "rigidly applying a theory without regard to practicality",
+     "syn": [
+      "dogmatic",
+      "inflexible"
+     ],
+     "ant": [
+      "flexible",
+      "pragmatic"
+     ]
+    },
+    {
+     "w": "grueling",
+     "ipa": "[ˈgruːəlɪŋ]",
+     "pos": "adj.",
+     "zh": "累人的，极其艰苦的",
+     "en": "extremely tiring and demanding",
+     "syn": [
+      "exhausting",
+      "punishing"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    },
+    {
+     "w": "novice",
+     "ipa": "[ˈnɑvɪs]",
+     "pos": "n.",
+     "zh": "新手，初学者",
+     "en": "a person new to a skill or field",
+     "syn": [
+      "beginner",
+      "neophyte"
+     ],
+     "ant": [
+      "expert",
+      "veteran"
+     ]
+    },
+    {
+     "w": "manacle",
+     "ipa": "[ˈmænəkl]",
+     "pos": "vt.",
+     "zh": "限制，束缚；手铐",
+     "en": "to restrain; a shackle for the hands",
+     "syn": [
+      "shackle",
+      "fetter"
+     ],
+     "ant": [
+      "free",
+      "release"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The workers would [[bungle]] repairs after a [[deluge]]; a [[grudge]] made them [[defy]] their boss, whose [[malignant]] glare did not help.",
+   "text": "The [[dispassionate]] judge called the [[doctrinaire]] plan a [[grueling]] mistake that would [[manacle]] a [[novice]].",
    "gloss": {
-    "bungle": "办糟，失败",
-    "deluge": "大暴雨",
-    "grudge": "怨恨，仇恨",
-    "defy": "蔑视",
-    "malignant": "恶毒的，邪恶的"
+    "dispassionate": "客观公正的，不易被情绪或偏见影响的",
+    "doctrinaire": "教条主义的，照本宣科的",
+    "grueling": "累人的，极其艰苦的",
+    "novice": "新手，初学者",
+    "manacle": "限制，束缚"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "ubiquitous",
-     "ipa": "[juːˈbɪkwɪtəs]",
+     "w": "pithy",
+     "ipa": "[ˈpɪθi]",
      "pos": "adj.",
-     "zh": "无所不在的，普通的",
-     "en": "present everywhere",
+     "zh": "精练的，简洁的",
+     "en": "brief but full of meaning",
      "syn": [
-      "omnipresent",
-      "pervasive"
+      "concise",
+      "terse"
      ],
      "ant": [
-      "rare",
-      "scarce"
+      "rambling",
+      "long-winded"
      ]
     },
     {
-     "w": "disseminate",
-     "ipa": "[dɪˈsɛmɪnet]",
+     "w": "mar",
+     "ipa": "[mɑr]",
      "pos": "vt.",
-     "zh": "散播，传播",
-     "en": "to spread widely",
+     "zh": "破坏，削弱",
+     "en": "to spoil the appearance or quality of",
      "syn": [
-      "spread",
-      "circulate"
+      "spoil",
+      "blemish"
      ],
      "ant": [
-      "withhold",
-      "suppress"
+      "improve",
+      "enhance"
      ]
     },
     {
-     "w": "commensurate",
-     "ipa": "[kəˈmenʃərət]",
+     "w": "haphazard",
+     "ipa": "[ˈhæphæzəd]",
      "pos": "adj.",
-     "zh": "同样大小的；相称的，相当的",
-     "en": "corresponding in size or degree",
+     "zh": "无秩序的，无目标的",
+     "en": "lacking order or planning",
      "syn": [
-      "proportionate",
-      "equivalent"
+      "random",
+      "disorganized"
      ],
      "ant": [
-      "disproportionate",
-      "inadequate"
+      "methodical",
+      "systematic"
      ]
     },
     {
-     "w": "illuminate",
-     "ipa": "[ɪˈlumɪnet]",
+     "w": "audacious",
+     "ipa": "[ɔˈdeʃəs]",
+     "pos": "adj.",
+     "zh": "大胆的，(但往往)愚勇的",
+     "en": "boldly daring, sometimes recklessly",
+     "syn": [
+      "bold",
+      "daring"
+     ],
+     "ant": [
+      "timid",
+      "cautious"
+     ]
+    },
+    {
+     "w": "forestall",
+     "ipa": "[fɔːrˈstɔːl]",
      "pos": "vt.",
-     "zh": "阐明",
-     "en": "to light up; to make clear",
+     "zh": "预先阻止",
+     "en": "to prevent by acting ahead of time",
      "syn": [
-      "clarify",
-      "elucidate"
+      "preempt",
+      "avert"
      ],
      "ant": [
-      "obscure",
-      "confuse"
-     ]
-    },
-    {
-     "w": "recondite",
-     "ipa": "[ˈrekəndaɪt]",
-     "pos": "adj.",
-     "zh": "深奥的，难解的",
-     "en": "little known; hard to understand",
-     "syn": [
-      "abstruse",
-      "esoteric"
-     ],
-     "ant": [
-      "obvious",
-      "accessible"
+      "facilitate",
+      "permit"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "Smartphones are [[ubiquitous]] and [[disseminate]] news; a talk that can [[illuminate]] [[recondite]] ideas deserves a [[commensurate]] reward.",
+   "text": "A [[pithy]] note could [[mar]] the [[haphazard]] plan; an [[audacious]] clerk tried to [[forestall]] it.",
    "gloss": {
-    "ubiquitous": "无所不在的，普通的",
-    "disseminate": "散播，传播",
-    "commensurate": "同样大小的",
-    "illuminate": "阐明",
-    "recondite": "深奥的，难解的"
+    "pithy": "精练的，简洁的",
+    "mar": "破坏，削弱",
+    "haphazard": "无秩序的，无目标的",
+    "audacious": "大胆的，(但往往)愚勇的",
+    "forestall": "预先阻止"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "myopic",
+     "ipa": "[maɪˈɒpɪk]",
+     "pos": "adj.",
+     "zh": "缺乏远见的，缺乏辨识能力的",
+     "en": "lacking foresight; nearsighted",
+     "syn": [
+      "shortsighted",
+      "narrow"
+     ],
+     "ant": [
+      "farsighted",
+      "visionary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[myopic]] chief saw only the next quarter.",
+   "gloss": {
+    "myopic": "缺乏远见的，缺乏辨识能力的"
    }
   }
  ],
@@ -365,59 +678,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**endemic** 的意思最接近：",
+    "q": "**vaunt** 的意思最接近：",
     "options": [
-     "同样大小的；相称的，相当的",
-     "深奥的，难解的",
-     "地方性的",
-     "恶毒的，邪恶的"
-    ],
-    "answer": 2,
-    "explain": "endemic：地方性的（native to or common in a particular area）。近义词：native, local。"
-   },
-   {
-    "q": "**deluge** 的意思最接近：",
-    "options": [
-     "先例，前例；先前的",
-     "怨恨，仇恨",
-     "大失败",
-     "大暴雨；大量"
+     "使绝缘，使隔离，不受外界影响",
+     "使习惯接受不好的东西",
+     "平息，抚慰，缓和",
+     "吹嘘"
     ],
     "answer": 3,
-    "explain": "deluge：大暴雨；大量（a great flood; an overwhelming amount）。近义词：flood, torrent。"
+    "explain": "vaunt：吹嘘（to boast about）。近义词：brag, flaunt。"
    },
    {
-    "q": "哪个词的意思是「阐明」？",
+    "q": "**mandatory** 的意思最接近：",
     "options": [
-     "defy",
-     "illuminate",
-     "tamper",
-     "glean"
-    ],
-    "answer": 1,
-    "explain": "illuminate：阐明（to light up; to make clear）。"
-   },
-   {
-    "q": "哪个词和 **fidgety** 的意思最接近？",
-    "options": [
-     "restless",
-     "venial",
-     "ubiquitous",
-     "commensurate"
+     "强制的",
+     "精练的，简洁的",
+     "每日的；平凡的",
+     "客观公正的，不易被情绪或偏见影响的"
     ],
     "answer": 0,
-    "explain": "restless 与 fidgety 近义：unable to rest or stay still。"
+    "explain": "mandatory：强制的（required by law or rule）。近义词：compulsory, obligatory。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> Where bribery is endemic, clerks emulate their bosses and shrug off each venial fault with a ____ excuse, while the old king's reign never seems to end.",
+    "q": "哪个词的意思是「破坏，削弱」？",
     "options": [
-     "malignant",
-     "commensurate",
-     "stock",
-     "restless"
+     "mar",
+     "insulate",
+     "repeal",
+     "inure"
+    ],
+    "answer": 0,
+    "explain": "mar：破坏，削弱（to spoil the appearance or quality of）。"
+   },
+   {
+    "q": "哪个词和 **rescind** 的意思最接近？",
+    "options": [
+     "manacle",
+     "inure",
+     "repeal",
+     "mar"
     ],
     "answer": 2,
-    "explain": "stock：普通的，常备的（commonly used and unoriginal）。"
+    "explain": "repeal 与 rescind 近义：to officially cancel a law。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> A pithy note could ____ the haphazard plan; an audacious clerk tried to forestall it.",
+    "options": [
+     "manacle",
+     "mar",
+     "forestall",
+     "conform"
+    ],
+    "answer": 1,
+    "explain": "mar：破坏，削弱（to spoil the appearance or quality of）。"
    }
   ]
  }

@@ -8,7 +8,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..'))
 from unitlib import validate_unit, REPO
 
-PER_UNIT, PER_PASSAGE = 20, 5
+PER_UNIT, PER_PASSAGE = 40, 5     # 一节 40 词（8 段例句），约 45–50 分钟
 words = json.load(open(os.path.join(HERE, 'words_shuffled.json'), encoding='utf-8'))
 entries = {}
 for f in sorted(glob.glob(os.path.join(HERE, 'entries_*.txt'))):
@@ -99,11 +99,11 @@ for u in range(n_done // PER_UNIT + (1 if n_done % PER_UNIT else 0)):
         pas.append((text, gi))
     uid = f'u{u+1:02d}'
     rng = random.Random(1000 + u)
-    unit = dict(id=uid, title=f'S 级核心词 · 第 {u+1} 组', en=f'GRE Core Vocabulary · Set {u+1}', minutes=35,
+    unit = dict(id=uid, title=f'S 级核心词 · 第 {u+1} 组', en=f'GRE Core Vocabulary · Set {u+1}', minutes=50,
                 objectives=[f'认识并会读这 {len(its)} 个高频词：点 🔊 音标听发音，跟读一遍',
                             '记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片',
                             '在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）'],
-                blocks=blocks, references=[], quiz=dict(questions=make_quiz(uid, its, pas, rng)))
+                legacyIds=[f'u{2*u+1:02d}', f'u{2*u+2:02d}'], blocks=blocks, references=[], quiz=dict(questions=make_quiz(uid, its, pas, rng)))
     errors += validate_unit(unit, n_questions=5)
     units.append(unit)
 if errors: raise SystemExit('检查没通过：\n  ' + '\n  '.join(errors))
@@ -114,7 +114,7 @@ for unit in units:
     json.dump(unit, open(os.path.join(cdir, fn), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
     cu.append(dict(id=unit['id'], title=unit['title'], en=unit['en'], minutes=unit['minutes'], file=fn, direct=True))
 for u in range(len(units), n_units_total):      # 还没写好的组先占位
-    cu.append(dict(id=f'u{u+1:02d}', title=f'S 级核心词 · 第 {u+1} 组', en=f'GRE Core Vocabulary · Set {u+1}', minutes=35, file=None,
+    cu.append(dict(id=f'u{u+1:02d}', title=f'S 级核心词 · 第 {u+1} 组', en=f'GRE Core Vocabulary · Set {u+1}', minutes=50, file=None,
                    covers='待写'))
 course = dict(id='gre-v', title='GRE 核心词汇 S 级：机经里出现过的再要你命 3000',
               subtitle=f'把「再要你命 3000」里同时出现在机经（霍 V6）里的 {len(words)} 个词，按乱序拆成每组 {PER_UNIT} 个词的小节：中英释义、近义词、反义词、点音标发音、每 {PER_PASSAGE} 个词一段例句短文，最后 5 道小测验。',

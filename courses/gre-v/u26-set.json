@@ -2,352 +2,632 @@
  "id": "u26",
  "title": "S 级核心词 · 第 26 组",
  "en": "GRE Core Vocabulary · Set 26",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u51",
+  "u52"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "counterfeit",
-     "ipa": "[ˈkaʊntɚˈfɪt]",
-     "pos": "adj.",
-     "zh": "仿制的，假冒的；伪造",
-     "en": "fake; made to deceive",
-     "syn": [
-      "fake",
-      "forged"
-     ],
-     "ant": [
-      "genuine",
-      "authentic"
-     ]
-    },
-    {
-     "w": "voluminous",
-     "ipa": "[vəˈlʊmənəs]",
-     "pos": "adj.",
-     "zh": "卷数多的，大量的，庞大的",
-     "en": "very large in volume; wordy",
-     "syn": [
-      "bulky",
-      "copious"
-     ],
-     "ant": [
-      "slight",
-      "concise"
-     ]
-    },
-    {
-     "w": "compunction",
-     "ipa": "[kəmˈpʌŋkʃn]",
+     "w": "placebo",
+     "ipa": "[pləˈsibo]",
      "pos": "n.",
-     "zh": "焦虑，内疚，良心不安",
-     "en": "a feeling of guilt or uneasiness",
+     "zh": "安慰性的事物",
+     "en": "something given to comfort that has no real effect",
      "syn": [
-      "remorse",
-      "qualm"
+      "sop",
+      "sugar pill"
      ],
-     "ant": [
-      "shamelessness"
-     ]
+     "ant": []
     },
     {
-     "w": "slumber",
-     "ipa": "[ˈslʌmbɚ]",
-     "pos": "vi.",
-     "zh": "睡着",
-     "en": "to sleep; sleep",
-     "syn": [
-      "doze",
-      "nap"
-     ],
-     "ant": [
-      "wake"
-     ]
-    },
-    {
-     "w": "restorative",
-     "ipa": "[rɪˈstɔːrətɪv]",
-     "pos": "adj.",
-     "zh": "有益健康的",
-     "en": "helping to restore health or strength",
-     "syn": [
-      "healing",
-      "tonic"
-     ],
-     "ant": [
-      "debilitating"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The forger felt no [[compunction]] about printing [[counterfeit]] notes; in a shed full of [[voluminous]] ledgers he would [[slumber]] by day, and a [[restorative]] drink kept him alert at night.",
-   "gloss": {
-    "counterfeit": "仿制的，假冒的",
-    "voluminous": "卷数多的，大量的，庞大的",
-    "compunction": "焦虑，内疚，良心不安",
-    "slumber": "睡着",
-    "restorative": "有益健康的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "imperturbable",
-     "ipa": "[ˌɪmpərˈtɜːrbəbl]",
-     "pos": "adj.",
-     "zh": "沉着冷静的，淡定的",
-     "en": "not easily upset",
-     "syn": [
-      "unflappable",
-      "composed"
-     ],
-     "ant": [
-      "excitable",
-      "agitated"
-     ]
-    },
-    {
-     "w": "ramshackle",
-     "ipa": "[ˈræmʃækl]",
-     "pos": "adj.",
-     "zh": "摇摇欲坠的",
-     "en": "badly built and falling apart",
-     "syn": [
-      "rickety",
-      "dilapidated"
-     ],
-     "ant": [
-      "sturdy",
-      "sound"
-     ]
-    },
-    {
-     "w": "surreptitious",
-     "ipa": "[ˌsɜːrəpˈtɪʃəs]",
-     "pos": "adj.",
-     "zh": "偷偷摸摸的，保密的",
-     "en": "done in secret to avoid notice",
-     "syn": [
-      "stealthy",
-      "furtive"
-     ],
-     "ant": [
-      "open",
-      "overt"
-     ]
-    },
-    {
-     "w": "undue",
-     "ipa": "[ˌʌnˈdu]",
-     "pos": "adj.",
-     "zh": "过度的，过多的",
-     "en": "more than is necessary or proper",
-     "syn": [
-      "excessive",
-      "unwarranted"
-     ],
-     "ant": [
-      "due",
-      "appropriate"
-     ]
-    },
-    {
-     "w": "jovial",
-     "ipa": "[ˈdʒovɪəl]",
-     "pos": "adj.",
-     "zh": "愉快的",
-     "en": "cheerful and friendly",
-     "syn": [
-      "jolly",
-      "genial"
-     ],
-     "ant": [
-      "morose",
-      "glum"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[imperturbable]] landlord, a [[jovial]] man in a [[ramshackle]] inn, cast a [[surreptitious]] glance at the bill and charged no [[undue]] fee.",
-   "gloss": {
-    "imperturbable": "沉着冷静的，淡定的",
-    "ramshackle": "摇摇欲坠的",
-    "surreptitious": "偷偷摸摸的，保密的",
-    "undue": "过度的，过多的",
-    "jovial": "愉快的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "qualify",
-     "ipa": "[ˈkwɑləˌfaɪ]",
+     "w": "transgress",
+     "ipa": "[trænzˈɡres]",
      "pos": "vt.",
-     "zh": "使有资格；限定",
-     "en": "to make eligible; to limit or modify",
+     "zh": "违背，犯错",
+     "en": "to go beyond a limit or break a rule",
      "syn": [
-      "entitle",
-      "restrict"
+      "violate",
+      "trespass"
      ],
      "ant": [
-      "disqualify"
+      "obey",
+      "comply"
      ]
     },
     {
-     "w": "surmount",
-     "ipa": "[səˈmaʊnt]",
+     "w": "quell",
+     "ipa": "[kwɛl]",
+     "pos": "vt.",
+     "zh": "压制；使平静，使安静",
+     "en": "to put an end to by force; to calm",
+     "syn": [
+      "suppress",
+      "subdue"
+     ],
+     "ant": [
+      "incite",
+      "rouse"
+     ]
+    },
+    {
+     "w": "unimpeachable",
+     "ipa": "[ˌʌnɪmˈpitʃəbl]",
+     "pos": "adj.",
+     "zh": "无可置疑的",
+     "en": "beyond doubt or criticism",
+     "syn": [
+      "irreproachable",
+      "flawless"
+     ],
+     "ant": [
+      "questionable",
+      "dubious"
+     ]
+    },
+    {
+     "w": "strenuous",
+     "ipa": "[ˈstrɛnjuəs]",
+     "pos": "adj.",
+     "zh": "有活力的；艰苦的，费力的",
+     "en": "requiring great effort or energy",
+     "syn": [
+      "arduous",
+      "vigorous"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The doctor insisted the [[placebo]] was harmless, but a patient who would [[transgress]] the rules to [[quell]] her fear stayed an [[unimpeachable]] witness; the [[strenuous]] study ended.",
+   "gloss": {
+    "placebo": "安慰性的事物",
+    "transgress": "违背，犯错",
+    "quell": "压制",
+    "unimpeachable": "无可置疑的",
+    "strenuous": "有活力的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "outlandish",
+     "ipa": "[aʊtˈlændɪʃ]",
+     "pos": "adj.",
+     "zh": "古怪的，奇异的",
+     "en": "strikingly strange or unfamiliar",
+     "syn": [
+      "bizarre",
+      "eccentric"
+     ],
+     "ant": [
+      "ordinary",
+      "conventional"
+     ]
+    },
+    {
+     "w": "opportune",
+     "ipa": "[ˌɑːpərˈtuːn]",
+     "pos": "adj.",
+     "zh": "合适的，适当的",
+     "en": "happening at a suitable time",
+     "syn": [
+      "timely",
+      "auspicious"
+     ],
+     "ant": [
+      "inopportune",
+      "ill-timed"
+     ]
+    },
+    {
+     "w": "resign",
+     "ipa": "[rɪˈzaɪn]",
+     "pos": "vt.",
+     "zh": "辞职，放弃(职位)",
+     "en": "to give up a position; to accept something unwelcome",
+     "syn": [
+      "quit",
+      "relinquish"
+     ],
+     "ant": [
+      "retain",
+      "hold on to"
+     ]
+    },
+    {
+     "w": "languish",
+     "ipa": "[ˈlæŋɡwɪʃ]",
+     "pos": "vi.",
+     "zh": "变得衰弱",
+     "en": "to grow weak or lose vitality; to be neglected",
+     "syn": [
+      "wither",
+      "flag"
+     ],
+     "ant": [
+      "flourish",
+      "thrive"
+     ]
+    },
+    {
+     "w": "subservient",
+     "ipa": "[səbˈsɜːrviənt]",
+     "pos": "adj.",
+     "zh": "奉承的，屈从的",
+     "en": "too ready to obey; less important",
+     "syn": [
+      "servile",
+      "submissive"
+     ],
+     "ant": [
+      "domineering",
+      "assertive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[outlandish]] rumor said the [[opportune]] moment had come for the chief to [[resign]]; the firm would [[languish]] without him, and a [[subservient]] deputy would do nothing.",
+   "gloss": {
+    "outlandish": "古怪的，奇异的",
+    "opportune": "合适的，适当的",
+    "resign": "辞职，放弃(职位)",
+    "languish": "变得衰弱",
+    "subservient": "奉承的，屈从的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "mediocre",
+     "ipa": "[ˌmidɪˈokə]",
+     "pos": "adj.",
+     "zh": "平庸的；质量中等偏差的",
+     "en": "of only moderate quality; not good enough",
+     "syn": [
+      "middling",
+      "ordinary"
+     ],
+     "ant": [
+      "exceptional",
+      "outstanding"
+     ]
+    },
+    {
+     "w": "aver",
+     "ipa": "[əˈvɜːr]",
      "pos": "v.",
-     "zh": "战胜，获得胜利",
-     "en": "to overcome a difficulty",
+     "zh": "声称为真",
+     "en": "to state firmly that something is true",
      "syn": [
-      "overcome",
-      "conquer"
+      "assert",
+      "affirm"
      ],
      "ant": [
-      "succumb"
+      "deny",
+      "disavow"
      ]
     },
     {
-     "w": "inveigh",
-     "ipa": "[ɪnˈveɪ]",
-     "pos": "vi.",
-     "zh": "激烈抗议，表示强烈不满",
-     "en": "to protest or attack with strong words",
-     "syn": [
-      "rail",
-      "protest"
-     ],
-     "ant": [
-      "praise"
-     ]
-    },
-    {
-     "w": "turgid",
-     "ipa": "[ˈtɜːrdʒɪd]",
+     "w": "obsequious",
+     "ipa": "[əbˈsiːkwiəs]",
      "pos": "adj.",
-     "zh": "浮夸的，过分装饰的",
-     "en": "swollen; pompous and overblown",
+     "zh": "谄媚的，奴性的",
+     "en": "too eager to please or obey",
      "syn": [
-      "bombastic",
-      "bloated"
+      "fawning",
+      "sycophantic"
      ],
      "ant": [
-      "concise",
-      "plain"
+      "domineering",
+      "aloof"
      ]
     },
     {
-     "w": "shun",
-     "ipa": "[ʃʌn]",
-     "pos": "vt.",
-     "zh": "避开，避免",
-     "en": "to deliberately avoid",
+     "w": "stingy",
+     "ipa": "[ˈstɪndʒi]",
+     "pos": "adj.",
+     "zh": "小气的，吝啬的",
+     "en": "unwilling to spend or give",
      "syn": [
-      "avoid",
-      "eschew"
+      "miserly",
+      "parsimonious"
      ],
      "ant": [
-      "seek",
-      "embrace"
+      "generous",
+      "lavish"
+     ]
+    },
+    {
+     "w": "winsome",
+     "ipa": "[ˈwɪnsəm]",
+     "pos": "adj.",
+     "zh": "迷人的，漂亮的",
+     "en": "charming in a fresh, innocent way",
+     "syn": [
+      "engaging",
+      "appealing"
+     ],
+     "ant": [
+      "repellent",
+      "off-putting"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "To [[qualify]] for the final she had to [[surmount]] her fear; the critic would [[inveigh]] against her [[turgid]] prose, so she chose to [[shun]] the press.",
+   "text": "The [[mediocre]] pundit would [[aver]] anything; his [[obsequious]] fans, though [[stingy]] with praise for rivals, found his [[winsome]] smile hard to resist.",
    "gloss": {
-    "qualify": "使有资格",
-    "surmount": "战胜，获得胜利",
-    "inveigh": "激烈抗议，表示强烈不满",
-    "turgid": "浮夸的，过分装饰的",
-    "shun": "避开，避免"
+    "mediocre": "平庸的",
+    "aver": "声称为真",
+    "obsequious": "谄媚的，奴性的",
+    "stingy": "小气的，吝啬的",
+    "winsome": "迷人的，漂亮的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "vitriolic",
-     "ipa": "[ˌvɪtriˈɑːlɪk]",
+     "w": "imperative",
+     "ipa": "[ɪmˈpɛrətɪv]",
      "pos": "adj.",
-     "zh": "(言辞)刻薄的",
-     "en": "bitterly harsh and biting",
+     "zh": "命令的，强制性的；迫切的",
+     "en": "absolutely necessary; a command",
      "syn": [
-      "scathing",
-      "caustic"
+      "essential",
+      "vital"
      ],
      "ant": [
-      "gentle",
-      "kind"
+      "optional",
+      "trivial"
      ]
     },
     {
-     "w": "arrogance",
-     "ipa": "[ˈærəgəns]",
-     "pos": "n.",
-     "zh": "傲慢，自大",
-     "en": "an overbearing sense of superiority",
+     "w": "scant",
+     "ipa": "[skænt]",
+     "pos": "adj.",
+     "zh": "不足的，缺乏的",
+     "en": "barely enough; very little",
      "syn": [
-      "conceit",
-      "haughtiness"
+      "meager",
+      "sparse"
      ],
      "ant": [
-      "humility",
-      "modesty"
+      "ample",
+      "abundant"
      ]
     },
     {
-     "w": "exacerbate",
-     "ipa": "[ɪɡˈzæsərbeɪt]",
+     "w": "enamored",
+     "ipa": "[enˈæməd]",
+     "pos": "adj.",
+     "zh": "迷恋的，热爱的",
+     "en": "filled with love or fascination",
+     "syn": [
+      "smitten",
+      "infatuated"
+     ],
+     "ant": [
+      "indifferent",
+      "disenchanted"
+     ]
+    },
+    {
+     "w": "invigorate",
+     "ipa": "[ɪnˈvɪɡəret]",
      "pos": "vt.",
-     "zh": "使加剧，使恶化",
-     "en": "to make worse",
+     "zh": "使精神，使强壮，鼓舞激励",
+     "en": "to give energy and life to",
      "syn": [
-      "aggravate",
-      "worsen"
+      "energize",
+      "refresh"
      ],
      "ant": [
-      "alleviate",
-      "ameliorate"
+      "exhaust",
+      "enervate"
      ]
     },
     {
-     "w": "officious",
-     "ipa": "[əˈfɪʃəs]",
+     "w": "cow",
+     "ipa": "[kaʊ]",
+     "pos": "v.",
+     "zh": "恐吓，威胁",
+     "en": "to frighten into submission",
+     "syn": [
+      "intimidate",
+      "daunt"
+     ],
+     "ant": [
+      "embolden",
+      "encourage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "It is [[imperative]] that [[scant]] funds not leave the [[enamored]] founder blind; a coffee could [[invigorate]] him, and he must not [[cow]] his staff.",
+   "gloss": {
+    "imperative": "命令的，强制性的",
+    "scant": "不足的，缺乏的",
+    "enamored": "迷恋的，热爱的",
+    "invigorate": "使精神，使强壮，鼓舞激励",
+    "cow": "恐吓，威胁"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "grandiose",
+     "ipa": "[ˈɡrændɪos]",
      "pos": "adj.",
-     "zh": "多管闲事的",
-     "en": "too eager to give orders or advice",
+     "zh": "自命不凡的，浮夸的",
+     "en": "impressive in a pretentious way; larger than needed",
      "syn": [
-      "meddlesome",
-      "intrusive"
+      "pompous",
+      "showy"
      ],
      "ant": [
-      "unobtrusive",
-      "reserved"
+      "modest",
+      "humble"
      ]
     },
     {
-     "w": "ramification",
-     "ipa": "[ˌræmɪfɪˈkeɪʃn]",
-     "pos": "n.",
-     "zh": "影响，结果",
-     "en": "a consequence, often complicated",
+     "w": "abash",
+     "ipa": "[əˈbæʃ]",
+     "pos": "v.",
+     "zh": "使尴尬，使羞愧",
+     "en": "to make embarrassed or ashamed",
      "syn": [
-      "consequence",
-      "outgrowth"
+      "embarrass",
+      "disconcert"
+     ],
+     "ant": [
+      "embolden",
+      "reassure"
+     ]
+    },
+    {
+     "w": "exhilarate",
+     "ipa": "[ɪɡˈzɪləreɪt]",
+     "pos": "vt.",
+     "zh": "使高兴；使兴奋",
+     "en": "to fill with joy or excitement",
+     "syn": [
+      "elate",
+      "thrill"
+     ],
+     "ant": [
+      "depress",
+      "bore"
+     ]
+    },
+    {
+     "w": "eminent",
+     "ipa": "[ˈɛmɪnənt]",
+     "pos": "adj.",
+     "zh": "杰出的",
+     "en": "famous and respected in a field",
+     "syn": [
+      "distinguished",
+      "renowned"
+     ],
+     "ant": [
+      "obscure",
+      "unknown"
+     ]
+    },
+    {
+     "w": "acrimonious",
+     "ipa": "[ˌækrɪˈmoʊniəs]",
+     "pos": "adj.",
+     "zh": "刻薄的，充满仇恨的",
+     "en": "bitter and angry in tone",
+     "syn": [
+      "bitter",
+      "rancorous"
+     ],
+     "ant": [
+      "amicable",
+      "cordial"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[grandiose]] speech did not [[abash]] the mayor; it served to [[exhilarate]] the crowd and honor the [[eminent]] guest, though an [[acrimonious]] heckler spoiled the end.",
+   "gloss": {
+    "grandiose": "自命不凡的，浮夸的",
+    "abash": "使尴尬，使羞愧",
+    "exhilarate": "使高兴",
+    "eminent": "杰出的",
+    "acrimonious": "刻薄的，充满仇恨的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "underscore",
+     "ipa": "[ˌʌndərˈskɔːr]",
+     "pos": "vt.",
+     "zh": "强调",
+     "en": "to emphasize; to draw a line under",
+     "syn": [
+      "emphasize",
+      "highlight"
+     ],
+     "ant": [
+      "downplay",
+      "minimize"
+     ]
+    },
+    {
+     "w": "reserved",
+     "ipa": "[rɪˈzɜːvd]",
+     "pos": "adj.",
+     "zh": "内向的，缄默的",
+     "en": "quiet and keeping feelings to oneself",
+     "syn": [
+      "reticent",
+      "restrained"
+     ],
+     "ant": [
+      "outgoing",
+      "expansive"
+     ]
+    },
+    {
+     "w": "ostentatious",
+     "ipa": "[ˌɑstɛnˈteʃəs]",
+     "pos": "adj.",
+     "zh": "炫耀卖弄的",
+     "en": "designed to impress others; showy",
+     "syn": [
+      "flashy",
+      "pretentious"
+     ],
+     "ant": [
+      "modest",
+      "understated"
+     ]
+    },
+    {
+     "w": "jeopardy",
+     "ipa": "[ˈdʒɛpədi]",
+     "pos": "n.",
+     "zh": "危险",
+     "en": "danger of loss, harm, or failure",
+     "syn": [
+      "peril",
+      "risk"
+     ],
+     "ant": [
+      "safety",
+      "security"
+     ]
+    },
+    {
+     "w": "deter",
+     "ipa": "[dɪˈtɜː]",
+     "pos": "vt.",
+     "zh": "吓住，威慑",
+     "en": "to discourage someone from acting through fear of consequences",
+     "syn": [
+      "dissuade",
+      "discourage"
+     ],
+     "ant": [
+      "encourage",
+      "induce"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The report will [[underscore]] that the [[reserved]] manager can be [[ostentatious]] when a post is in [[jeopardy]]; the audit could [[deter]] such show.",
+   "gloss": {
+    "underscore": "强调",
+    "reserved": "内向的，缄默的",
+    "ostentatious": "炫耀卖弄的",
+    "jeopardy": "危险",
+    "deter": "吓住，威慑"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "immutable",
+     "ipa": "[ɪˈmjutəbl]",
+     "pos": "adj.",
+     "zh": "不可变的",
+     "en": "unchanging over time; unable to be changed",
+     "syn": [
+      "fixed",
+      "permanent"
+     ],
+     "ant": [
+      "changeable",
+      "variable"
+     ]
+    },
+    {
+     "w": "antediluvian",
+     "ipa": "[ˌæntɪdɪˈluvɪən]",
+     "pos": "adj.",
+     "zh": "非常古老的；过时的",
+     "en": "extremely old-fashioned; ancient",
+     "syn": [
+      "archaic",
+      "obsolete"
+     ],
+     "ant": [
+      "modern",
+      "up-to-date"
+     ]
+    },
+    {
+     "w": "trumpet",
+     "ipa": "[ˈtrʌmpɪt]",
+     "pos": "v.",
+     "zh": "大声说出或宣告",
+     "en": "to proclaim loudly and widely",
+     "syn": [
+      "proclaim",
+      "broadcast"
+     ],
+     "ant": [
+      "whisper",
+      "conceal"
+     ]
+    },
+    {
+     "w": "conjecture",
+     "ipa": "[kənˈdʒɛktʃɚ]",
+     "pos": "n.",
+     "zh": "推测，猜想",
+     "en": "a conclusion based on incomplete evidence; to guess",
+     "syn": [
+      "guess",
+      "speculation"
+     ],
+     "ant": [
+      "fact",
+      "certainty"
+     ]
+    },
+    {
+     "w": "pecuniary",
+     "ipa": "[pɪˈkjuːnieri]",
+     "pos": "adj.",
+     "zh": "金钱上的",
+     "en": "relating to money",
+     "syn": [
+      "financial",
+      "monetary"
      ],
      "ant": []
     }
@@ -355,13 +635,101 @@
   },
   {
    "type": "passage",
-   "text": "His [[vitriolic]] attack on the manager's [[arrogance]] could only [[exacerbate]] the dispute, while an [[officious]] clerk warned of the [[ramifications|ramification]].",
+   "text": "The [[immutable]] law shocked the [[antediluvian]] clerks; the ministry would [[trumpet]] each [[conjecture]] about the [[pecuniary]] gains.",
    "gloss": {
-    "vitriolic": "(言辞)刻薄的",
-    "arrogance": "傲慢，自大",
-    "exacerbate": "使加剧，使恶化",
-    "officious": "多管闲事的",
-    "ramification": "影响，结果"
+    "immutable": "不可变的",
+    "antediluvian": "非常古老的",
+    "trumpet": "大声说出或宣告",
+    "conjecture": "推测，猜想",
+    "pecuniary": "金钱上的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "glib",
+     "ipa": "[ɡlɪb]",
+     "pos": "adj.",
+     "zh": "流利圆滑的(常含有不真诚或欺诈的成分)，油腔滑调的；缺乏深度的，肤浅的",
+     "en": "fluent but insincere or shallow",
+     "syn": [
+      "slick",
+      "superficial"
+     ],
+     "ant": [
+      "halting",
+      "sincere"
+     ]
+    },
+    {
+     "w": "obliterate",
+     "ipa": "[əˈblɪtəreɪt]",
+     "pos": "vt.",
+     "zh": "除去",
+     "en": "to wipe out completely; to destroy without a trace",
+     "syn": [
+      "annihilate",
+      "erase"
+     ],
+     "ant": [
+      "preserve",
+      "restore"
+     ]
+    },
+    {
+     "w": "suffocate",
+     "ipa": "[ˈsʌfəkeɪt]",
+     "pos": "vt.",
+     "zh": "使窒息",
+     "en": "to die or make die from lack of air; to stifle",
+     "syn": [
+      "smother",
+      "stifle"
+     ],
+     "ant": []
+    },
+    {
+     "w": "saddle",
+     "ipa": "[ˈsædl]",
+     "pos": "vt.",
+     "zh": "使某人有负担",
+     "en": "to burden someone with a task or responsibility",
+     "syn": [
+      "burden",
+      "encumber"
+     ],
+     "ant": [
+      "relieve",
+      "unburden"
+     ]
+    },
+    {
+     "w": "hone",
+     "ipa": "[hon]",
+     "pos": "vt.",
+     "zh": "提升，改进",
+     "en": "to sharpen; to refine a skill",
+     "syn": [
+      "sharpen",
+      "perfect"
+     ],
+     "ant": [
+      "blunt",
+      "dull"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[glib]] excuse could not [[obliterate]] the shame; the heat began to [[suffocate]] the hall, and the court would [[saddle]] him with costs, so he chose to [[hone]] his story.",
+   "gloss": {
+    "glib": "流利圆滑的(常含有不真诚或欺诈的成分)，油腔滑调",
+    "obliterate": "除去",
+    "suffocate": "使窒息",
+    "saddle": "使某人有负担",
+    "hone": "提升，改进"
    }
   }
  ],
@@ -369,59 +737,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**inveigh** 的意思最接近：",
+    "q": "**antediluvian** 的意思最接近：",
     "options": [
-     "使加剧，使恶化",
-     "激烈抗议，表示强烈不满",
-     "睡着",
-     "避开，避免"
+     "不足的，缺乏的",
+     "非常古老的；过时的",
+     "炫耀卖弄的",
+     "流利圆滑的(常含有不真诚或欺诈的成分)，油腔滑调的；缺乏深度的，肤浅的"
     ],
     "answer": 1,
-    "explain": "inveigh：激烈抗议，表示强烈不满（to protest or attack with strong words）。近义词：rail, protest。"
+    "explain": "antediluvian：非常古老的；过时的（extremely old-fashioned; ancient）。近义词：archaic, obsolete。"
    },
    {
-    "q": "**vitriolic** 的意思最接近：",
+    "q": "**obliterate** 的意思最接近：",
     "options": [
-     "多管闲事的",
-     "有益健康的",
-     "过度的，过多的",
-     "(言辞)刻薄的"
-    ],
-    "answer": 3,
-    "explain": "vitriolic：(言辞)刻薄的（bitterly harsh and biting）。近义词：scathing, caustic。"
-   },
-   {
-    "q": "哪个词的意思是「有益健康的」？",
-    "options": [
-     "restorative",
-     "ramshackle",
-     "vitriolic",
-     "turgid"
+     "除去",
+     "吓住，威慑",
+     "辞职，放弃(职位)",
+     "违背，犯错"
     ],
     "answer": 0,
-    "explain": "restorative：有益健康的（helping to restore health or strength）。"
+    "explain": "obliterate：除去（to wipe out completely; to destroy without a trace）。近义词：annihilate, erase。"
    },
    {
-    "q": "哪个词和 **forged** 的意思最接近？",
+    "q": "哪个词的意思是「使精神，使强壮，鼓舞激励」？",
     "options": [
-     "officious",
-     "turgid",
-     "counterfeit",
-     "restorative"
+     "underscore",
+     "invigorate",
+     "saddle",
+     "transgress"
+    ],
+    "answer": 1,
+    "explain": "invigorate：使精神，使强壮，鼓舞激励（to give energy and life to）。"
+   },
+   {
+    "q": "哪个词和 **fixed** 的意思最接近？",
+    "options": [
+     "unimpeachable",
+     "acrimonious",
+     "immutable",
+     "subservient"
     ],
     "answer": 2,
-    "explain": "counterfeit 与 forged 近义：fake; made to deceive。"
+    "explain": "immutable 与 fixed 近义：unchanging over time; unable to be changed。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> To qualify for the final she had to surmount her fear; the critic would ____ against her turgid prose, so she chose to shun the press.",
+    "q": "选最适合填入空格的词：\n\n> The report will ____ that the reserved manager can be ostentatious when a post is in jeopardy; the audit could deter such show.",
     "options": [
-     "surmount",
-     "exacerbate",
-     "qualify",
-     "inveigh"
+     "exhilarate",
+     "quell",
+     "aver",
+     "underscore"
     ],
     "answer": 3,
-    "explain": "inveigh：激烈抗议，表示强烈不满（to protest or attack with strong words）。"
+    "explain": "underscore：强调（to emphasize; to draw a line under）。"
    }
   ]
  }

@@ -2,363 +2,731 @@
  "id": "u02",
  "title": "S 级核心词 · 第 2 组",
  "en": "GRE Core Vocabulary · Set 2",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u03",
+  "u04"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "lethargic",
-     "ipa": "[ləˈθɑːdʒɪk]",
+     "w": "malodorous",
+     "ipa": "[ˌmælˈoʊdərəs]",
      "pos": "adj.",
-     "zh": "没精打采的，行动迟缓的",
-     "en": "sluggish and lacking energy",
+     "zh": "恶臭的",
+     "en": "having a bad smell",
      "syn": [
-      "torpid",
-      "listless"
+      "fetid",
+      "rank"
      ],
      "ant": [
-      "energetic",
-      "lively"
+      "fragrant",
+      "aromatic"
      ]
     },
     {
-     "w": "ethos",
-     "ipa": "[ˈiːθɑːs]",
-     "pos": "n.",
-     "zh": "道德准则",
-     "en": "the characteristic spirit or guiding beliefs of a community",
-     "syn": [
-      "spirit",
-      "ideology"
-     ],
-     "ant": []
-    },
-    {
-     "w": "vague",
-     "ipa": "[veɡ]",
+     "w": "ad hoc",
+     "ipa": "[ˈeˈdi][ˈhɒk]",
      "pos": "adj.",
-     "zh": "表达不清的；轮廓不清晰的",
-     "en": "not clearly expressed or defined",
+     "zh": "专门的",
+     "en": "created for a specific purpose; unplanned",
      "syn": [
-      "nebulous",
-      "hazy"
+      "improvised",
+      "makeshift"
      ],
      "ant": [
-      "precise",
-      "explicit"
+      "permanent",
+      "systematic"
      ]
     },
     {
-     "w": "gaffe",
-     "ipa": "[ɡæf]",
-     "pos": "n.",
-     "zh": "(社交上)失礼，失态",
-     "en": "an embarrassing social blunder",
-     "syn": [
-      "blunder",
-      "faux pas"
-     ],
-     "ant": []
-    },
-    {
-     "w": "humble",
-     "ipa": "[ˈhʌmbl]",
+     "w": "proprietary",
+     "ipa": "[prəˈpraɪətɛri]",
      "pos": "adj.",
-     "zh": "谦逊的；顺从的，谦卑的",
-     "en": "modest and not proud; of low rank",
+     "zh": "私营的",
+     "en": "owned privately; held by an owner",
      "syn": [
-      "modest",
-      "meek"
+      "private",
+      "exclusive"
      ],
      "ant": [
-      "arrogant",
-      "haughty"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[lethargic]] mood hung over the office until the new manager restated the company's [[ethos]]; her speech was a little [[vague]] and contained a [[gaffe]] about the founder, but her [[humble]] apology won everyone back.",
-   "gloss": {
-    "lethargic": "没精打采的，行动迟缓的",
-    "ethos": "道德准则",
-    "vague": "表达不清的",
-    "gaffe": "(社交上)失礼，失态",
-    "humble": "谦逊的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "banal",
-     "ipa": "[bəˈnɑl]",
-     "pos": "adj.",
-     "zh": "非原创的，陈腐的",
-     "en": "so ordinary and unoriginal as to be boring",
-     "syn": [
-      "trite",
-      "hackneyed"
-     ],
-     "ant": [
-      "original",
-      "fresh"
+      "public"
      ]
     },
     {
-     "w": "allegiance",
-     "ipa": "[əˈlidʒəns]",
-     "pos": "n.",
-     "zh": "忠诚",
-     "en": "loyalty or commitment to a person, group or cause",
-     "syn": [
-      "loyalty",
-      "fealty"
-     ],
-     "ant": [
-      "betrayal",
-      "disloyalty"
-     ]
-    },
-    {
-     "w": "cosmopolitan",
-     "ipa": "[ˈkɑzməˈpɑlətn]",
-     "pos": "adj.",
-     "zh": "有世界性眼光的，包容的",
-     "en": "worldly; at home in many parts of the world",
-     "syn": [
-      "worldly",
-      "sophisticated"
-     ],
-     "ant": [
-      "provincial",
-      "parochial"
-     ]
-    },
-    {
-     "w": "countermand",
-     "ipa": "[ˈkaʊntərmænd]",
+     "w": "chide",
+     "ipa": "[tʃaɪd]",
      "pos": "v.",
-     "zh": "取消，撤销",
-     "en": "to revoke an earlier order",
+     "zh": "责备",
+     "en": "to scold mildly",
      "syn": [
-      "revoke",
-      "rescind"
-     ],
-     "ant": []
-    },
-    {
-     "w": "promulgate",
-     "ipa": "[ˈprɑːmlɡeɪt]",
-     "pos": "v.",
-     "zh": "正式宣布",
-     "en": "to announce or put into effect publicly",
-     "syn": [
-      "proclaim",
-      "announce"
-     ],
-     "ant": [
-      "suppress",
-      "conceal"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The speech was so [[banal]] that nobody noticed the pledge of [[allegiance]] to a [[cosmopolitan]] vision, until the minister moved to [[countermand]] an earlier order and [[promulgate]] a new rule.",
-   "gloss": {
-    "banal": "非原创的，陈腐的",
-    "allegiance": "忠诚",
-    "cosmopolitan": "有世界性眼光的，包容的",
-    "countermand": "取消，撤销",
-    "promulgate": "正式宣布"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "obtrusive",
-     "ipa": "[əbˈtrusɪv]",
-     "pos": "adj.",
-     "zh": "扎眼的，难看显眼的",
-     "en": "noticeable in an unwelcome or intrusive way",
-     "syn": [
-      "conspicuous",
-      "intrusive"
-     ],
-     "ant": [
-      "unobtrusive",
-      "discreet"
-     ]
-    },
-    {
-     "w": "insular",
-     "ipa": "[ˈɪnsələ]",
-     "pos": "adj.",
-     "zh": "(观念，想法等)孤立狭隘的",
-     "en": "narrow-minded; isolated from outside influences",
-     "syn": [
-      "parochial",
-      "narrow"
-     ],
-     "ant": [
-      "cosmopolitan",
-      "broad-minded"
-     ]
-    },
-    {
-     "w": "obloquy",
-     "ipa": "[ˈɑːbləkwi]",
-     "pos": "n.",
-     "zh": "谩骂，诽谤",
-     "en": "abusive language; public disgrace",
-     "syn": [
-      "vilification",
-      "calumny"
+      "reprimand",
+      "rebuke"
      ],
      "ant": [
       "praise",
-      "acclaim"
+      "commend"
      ]
     },
     {
-     "w": "pretense",
-     "ipa": "[ˈpriːtens]",
+     "w": "camaraderie",
+     "ipa": "[ˌkɑːməˈrɑːdəri]",
      "pos": "n.",
-     "zh": "虚假，伪装；自大，优越感",
-     "en": "a false show or claim; pretension",
+     "zh": "友情",
+     "en": "friendship and trust among companions",
      "syn": [
-      "façade",
-      "sham"
+      "fellowship",
+      "comradeship"
      ],
      "ant": [
-      "sincerity",
-      "candor"
+      "enmity",
+      "hostility"
      ]
-    },
-    {
-     "w": "attune",
-     "ipa": "[əˈtjuːn]",
-     "pos": "vt.",
-     "zh": "使协调，使和谐",
-     "en": "to bring into harmony or adjust to something",
-     "syn": [
-      "adjust",
-      "harmonize"
-     ],
-     "ant": []
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[obtrusive]] billboard offended the [[insular]] village, whose residents heaped [[obloquy]] on the developer; he answered with a [[pretense]] of regret and promised to [[attune]] his plans to local taste.",
+   "text": "A [[malodorous]] leak forced an [[ad hoc]] committee to inspect the [[proprietary]] machinery; the manager began to [[chide]] the crew, but their [[camaraderie]] soon softened his tone.",
    "gloss": {
-    "obtrusive": "扎眼的，难看显眼的",
-    "insular": "(观念，想法等)孤立狭隘的",
-    "obloquy": "谩骂，诽谤",
-    "pretense": "虚假，伪装",
-    "attune": "使协调，使和谐"
+    "malodorous": "恶臭的",
+    "ad hoc": "专门的",
+    "proprietary": "私营的",
+    "chide": "责备",
+    "camaraderie": "友情"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "fury",
-     "ipa": "[ˈfjʊri]",
+     "w": "resurgence",
+     "ipa": "[rɪˈsɜːrdʒəns]",
      "pos": "n.",
-     "zh": "暴怒",
-     "en": "violent, uncontrolled anger",
+     "zh": "复兴",
+     "en": "a revival after a period of decline",
      "syn": [
-      "rage",
-      "wrath"
+      "revival",
+      "renewal"
      ],
      "ant": [
-      "calm",
-      "serenity"
+      "decline",
+      "ebb"
      ]
     },
     {
-     "w": "discretionary",
-     "ipa": "[dɪˈskrɛʃəˈnɛri]",
+     "w": "extraneous",
+     "ipa": "[ɪkˈstreɪniəs]",
      "pos": "adj.",
-     "zh": "自主决定的",
-     "en": "left to one's own judgment; optional",
+     "zh": "无关的，不重要的",
+     "en": "not relevant or essential",
      "syn": [
-      "optional",
-      "elective"
+      "irrelevant",
+      "superfluous"
      ],
      "ant": [
-      "mandatory",
-      "compulsory"
+      "essential",
+      "relevant"
      ]
     },
     {
-     "w": "vociferous",
-     "ipa": "[voʊˈsɪfərəs]",
+     "w": "dignified",
+     "ipa": "[ˈdɪɡnɪfaɪd]",
      "pos": "adj.",
-     "zh": "喧哗的，大叫大嚷的",
-     "en": "loud and insistent in expressing opinions",
+     "zh": "高贵庄严的",
+     "en": "serious, stately and deserving respect",
      "syn": [
-      "clamorous",
-      "strident"
+      "stately",
+      "august"
      ],
      "ant": [
-      "quiet",
-      "reticent"
+      "undignified",
+      "ungainly"
      ]
     },
     {
-     "w": "understate",
-     "ipa": "[ˌʌndərˈsteɪt]",
+     "w": "variance",
+     "ipa": "[ˈvɛrɪəns]",
+     "pos": "n.",
+     "zh": "不一致，不和谐",
+     "en": "a disagreement or difference",
+     "syn": [
+      "discrepancy",
+      "divergence"
+     ],
+     "ant": [
+      "agreement",
+      "consistency"
+     ]
+    },
+    {
+     "w": "particularize",
+     "ipa": "[pəˈtɪkjələraɪz]",
      "pos": "vt.",
-     "zh": "保守陈述",
-     "en": "to describe as less important or serious than it is",
+     "zh": "详述",
+     "en": "to give details or treat item by item",
      "syn": [
-      "downplay",
-      "minimize"
+      "itemize",
+      "specify"
      ],
      "ant": [
-      "exaggerate",
-      "overstate"
-     ]
-    },
-    {
-     "w": "tribute",
-     "ipa": "[ˈtrɪbjut]",
-     "pos": "n.",
-     "zh": "称颂，颂词",
-     "en": "an expression of respect or gratitude",
-     "syn": [
-      "homage",
-      "accolade"
-     ],
-     "ant": [
-      "insult",
-      "condemnation"
+      "generalize"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "Her [[fury]] over the cut to the [[discretionary]] budget was [[vociferous]]; her boss tried to [[understate]] the damage and paid [[tribute]] to her years of service.",
+   "text": "After a long decline, a [[resurgence]] of interest in the town's festival brought [[dignified]] guests and plenty of [[extraneous]] chatter; the council tried to [[particularize]] its plans but found a [[variance]] between its budget and its ambition.",
    "gloss": {
-    "fury": "暴怒",
-    "discretionary": "自主决定的",
-    "vociferous": "喧哗的，大叫大嚷的",
-    "understate": "保守陈述",
-    "tribute": "称颂，颂词"
+    "resurgence": "复兴",
+    "extraneous": "无关的，不重要的",
+    "dignified": "高贵庄严的",
+    "variance": "不一致，不和谐",
+    "particularize": "详述"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "invidious",
+     "ipa": "[ɪnˈvɪdɪəs]",
+     "pos": "adj.",
+     "zh": "惹人反感的；羡慕嫉妒恨的",
+     "en": "causing resentment; unfairly discriminating",
+     "syn": [
+      "offensive",
+      "discriminatory"
+     ],
+     "ant": [
+      "fair",
+      "just"
+     ]
+    },
+    {
+     "w": "baffle",
+     "ipa": "[ˈbæfl]",
+     "pos": "vt.",
+     "zh": "使疑惑",
+     "en": "to confuse or perplex",
+     "syn": [
+      "perplex",
+      "bewilder"
+     ],
+     "ant": [
+      "enlighten",
+      "clarify"
+     ]
+    },
+    {
+     "w": "credulous",
+     "ipa": "[ˈkrɛdʒələs]",
+     "pos": "adj.",
+     "zh": "轻信的，易受骗的",
+     "en": "too ready to believe",
+     "syn": [
+      "gullible",
+      "naive"
+     ],
+     "ant": [
+      "skeptical",
+      "incredulous"
+     ]
+    },
+    {
+     "w": "balk",
+     "ipa": "[bɔk]",
+     "pos": "vt.",
+     "zh": "阻碍；不愿接受，拒绝",
+     "en": "to refuse to proceed; to hinder",
+     "syn": [
+      "resist",
+      "shy away"
+     ],
+     "ant": [
+      "acquiesce",
+      "proceed"
+     ]
+    },
+    {
+     "w": "meager",
+     "ipa": "[ˈmiːgə]",
+     "pos": "adj.",
+     "zh": "贫乏的",
+     "en": "lacking in quantity or quality",
+     "syn": [
+      "scant",
+      "paltry"
+     ],
+     "ant": [
+      "ample",
+      "abundant"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[invidious]] comparison of the two teams could [[baffle]] only a [[credulous]] listener; the coach would [[balk]] at the idea, pointing to the [[meager]] evidence.",
+   "gloss": {
+    "invidious": "惹人反感的",
+    "baffle": "使疑惑",
+    "credulous": "轻信的，易受骗的",
+    "balk": "阻碍",
+    "meager": "贫乏的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "circumspect",
+     "ipa": "[ˈsɜːrkəmspekt]",
+     "pos": "adj.",
+     "zh": "谨慎的，小心的",
+     "en": "careful to consider all consequences",
+     "syn": [
+      "prudent",
+      "wary"
+     ],
+     "ant": [
+      "reckless",
+      "rash"
+     ]
+    },
+    {
+     "w": "finicky",
+     "ipa": "[ˈfɪnɪki]",
+     "pos": "adj.",
+     "zh": "过分讲究的，挑剔的",
+     "en": "overly fussy about details",
+     "syn": [
+      "fastidious",
+      "picky"
+     ],
+     "ant": [
+      "undemanding",
+      "easygoing"
+     ]
+    },
+    {
+     "w": "meander",
+     "ipa": "[miˈændər]",
+     "pos": "vi.",
+     "zh": "闲逛，漫步",
+     "en": "to wander without a fixed course",
+     "syn": [
+      "ramble",
+      "wander"
+     ],
+     "ant": [
+      "proceed directly"
+     ]
+    },
+    {
+     "w": "ebullient",
+     "ipa": "[ɪˈbʌliənt]",
+     "pos": "adj.",
+     "zh": "热情奔放的",
+     "en": "bubbling with enthusiasm",
+     "syn": [
+      "exuberant",
+      "effervescent"
+     ],
+     "ant": [
+      "subdued",
+      "glum"
+     ]
+    },
+    {
+     "w": "incontrovertible",
+     "ipa": "[ˌɪnkɑːntrəˈvɜːrtəbl]",
+     "pos": "adj.",
+     "zh": "不可争议的",
+     "en": "impossible to dispute",
+     "syn": [
+      "indisputable",
+      "undeniable"
+     ],
+     "ant": [
+      "dubious",
+      "questionable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[circumspect]] inspector, though [[finicky]] about detail, let his attention [[meander]] during the [[ebullient]] celebration, until an [[incontrovertible]] clue jolted him alert.",
+   "gloss": {
+    "circumspect": "谨慎的，小心的",
+    "finicky": "过分讲究的，挑剔的",
+    "meander": "闲逛，漫步",
+    "ebullient": "热情奔放的",
+    "incontrovertible": "不可争议的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "stringent",
+     "ipa": "[ˈstrɪndʒənt]",
+     "pos": "adj.",
+     "zh": "严格的",
+     "en": "strict and demanding",
+     "syn": [
+      "rigorous",
+      "strict"
+     ],
+     "ant": [
+      "lax",
+      "lenient"
+     ]
+    },
+    {
+     "w": "imposing",
+     "ipa": "[ɪmˈpozɪŋ]",
+     "pos": "adj.",
+     "zh": "宏伟壮丽的",
+     "en": "impressive in size, power or appearance",
+     "syn": [
+      "grand",
+      "majestic"
+     ],
+     "ant": [
+      "unimpressive",
+      "modest"
+     ]
+    },
+    {
+     "w": "murky",
+     "ipa": "[ˈmɜːki]",
+     "pos": "adj.",
+     "zh": "模糊的，晦涩的",
+     "en": "dark and unclear; hard to understand",
+     "syn": [
+      "opaque",
+      "gloomy"
+     ],
+     "ant": [
+      "clear",
+      "limpid"
+     ]
+    },
+    {
+     "w": "novel",
+     "ipa": "[ˈnɑːvl]",
+     "pos": "adj.",
+     "zh": "新奇的",
+     "en": "new and original",
+     "syn": [
+      "original",
+      "innovative"
+     ],
+     "ant": [
+      "conventional",
+      "hackneyed"
+     ]
+    },
+    {
+     "w": "disingenuous",
+     "ipa": "[ˌdɪsɪnˈdʒenjuəs]",
+     "pos": "adj.",
+     "zh": "不真诚的，假惺惺的",
+     "en": "not candid; pretending to be naive",
+     "syn": [
+      "insincere",
+      "duplicitous"
+     ],
+     "ant": [
+      "candid",
+      "sincere"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[stringent]] rules, enforced by an [[imposing]] clerk, left applicants lost in a [[murky]] process; yet a [[novel]] appeal from a [[disingenuous]] lawyer slipped through.",
+   "gloss": {
+    "stringent": "严格的",
+    "imposing": "宏伟壮丽的",
+    "murky": "模糊的，晦涩的",
+    "novel": "新奇的",
+    "disingenuous": "不真诚的，假惺惺的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "escalate",
+     "ipa": "[ˈɛskəlet]",
+     "pos": "v.",
+     "zh": "(使)(战争等)升级，扩大",
+     "en": "to increase rapidly or intensify",
+     "syn": [
+      "intensify",
+      "mount"
+     ],
+     "ant": [
+      "subside",
+      "abate"
+     ]
+    },
+    {
+     "w": "compelling",
+     "ipa": "[kəmˈpɛlɪŋ]",
+     "pos": "adj.",
+     "zh": "极具说服力的",
+     "en": "convincing; powerfully attention-holding",
+     "syn": [
+      "persuasive",
+      "cogent"
+     ],
+     "ant": [
+      "unconvincing",
+      "feeble"
+     ]
+    },
+    {
+     "w": "badger",
+     "ipa": "[ˈbædʒɚ]",
+     "pos": "vt.",
+     "zh": "不断纠缠或骚扰",
+     "en": "to pester persistently",
+     "syn": [
+      "hound",
+      "harass"
+     ],
+     "ant": []
+    },
+    {
+     "w": "multifarious",
+     "ipa": "[ˌmʌltɪˈferiəs]",
+     "pos": "adj.",
+     "zh": "多种多样的",
+     "en": "having many varied parts or kinds",
+     "syn": [
+      "diverse",
+      "manifold"
+     ],
+     "ant": [
+      "uniform",
+      "homogeneous"
+     ]
+    },
+    {
+     "w": "maverick",
+     "ipa": "[ˈmævərɪk]",
+     "pos": "n.",
+     "zh": "特立独行之人；标新立异的，不合常规的",
+     "en": "an independent thinker who rejects group norms",
+     "syn": [
+      "nonconformist",
+      "individualist"
+     ],
+     "ant": [
+      "conformist"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "As the dispute began to [[escalate]], even a [[compelling]] report did not stop a rival from trying to [[badger]] the editor, and the [[multifarious]] voices of the public demanded a [[maverick]] reformer.",
+   "gloss": {
+    "escalate": "(使)(战争等)升级，扩大",
+    "compelling": "极具说服力的",
+    "badger": "不断纠缠或骚扰",
+    "multifarious": "多种多样的",
+    "maverick": "特立独行之人"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "nebulous",
+     "ipa": "[ˈnɛbjələs]",
+     "pos": "adj.",
+     "zh": "模糊的",
+     "en": "vague and without clear form",
+     "syn": [
+      "hazy",
+      "amorphous"
+     ],
+     "ant": [
+      "distinct",
+      "definite"
+     ]
+    },
+    {
+     "w": "prevaricate",
+     "ipa": "[prɪˈværɪkeɪt]",
+     "pos": "vi.",
+     "zh": "支吾其词，撒谎",
+     "en": "to speak evasively, avoiding the truth",
+     "syn": [
+      "equivocate",
+      "hedge"
+     ],
+     "ant": [
+      "be candid"
+     ]
+    },
+    {
+     "w": "florid",
+     "ipa": "[ˈflɔrɪd]",
+     "pos": "adj.",
+     "zh": "辞藻华丽的，花哨的",
+     "en": "overly ornate; reddish in color",
+     "syn": [
+      "flowery",
+      "ornate"
+     ],
+     "ant": [
+      "plain",
+      "austere"
+     ]
+    },
+    {
+     "w": "condescending",
+     "ipa": "[ˌkɒndɪˈsendɪŋ]",
+     "pos": "adj.",
+     "zh": "摆出高人一等的姿态的",
+     "en": "acting as if one were superior",
+     "syn": [
+      "patronizing",
+      "haughty"
+     ],
+     "ant": [
+      "humble",
+      "deferential"
+     ]
+    },
+    {
+     "w": "embolden",
+     "ipa": "[ɪmˈboʊldən]",
+     "pos": "vt.",
+     "zh": "鼓励，使大胆",
+     "en": "to give courage to",
+     "syn": [
+      "encourage",
+      "hearten"
+     ],
+     "ant": [
+      "discourage",
+      "intimidate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[nebulous]] plan led the minister to [[prevaricate]]; his [[florid]] answer, [[condescending]] in tone, did little to [[embolden]] his allies.",
+   "gloss": {
+    "nebulous": "模糊的",
+    "prevaricate": "支吾其词，撒谎",
+    "florid": "辞藻华丽的，花哨的",
+    "condescending": "摆出高人一等的姿态的",
+    "embolden": "鼓励，使大胆"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "delegate",
+     "ipa": "[ˈdɛlɪɡət]",
+     "pos": "n.",
+     "zh": "代理人，代表；移交(权力、任务等)",
+     "en": "a representative; to hand over authority or tasks",
+     "syn": [
+      "representative",
+      "entrust"
+     ],
+     "ant": []
+    },
+    {
+     "w": "indifferent",
+     "ipa": "[ɪnˈdɪfrənt]",
+     "pos": "adj.",
+     "zh": "不感兴趣的，冷漠的",
+     "en": "having no interest or concern",
+     "syn": [
+      "apathetic",
+      "detached"
+     ],
+     "ant": [
+      "eager",
+      "concerned"
+     ]
+    },
+    {
+     "w": "anomalous",
+     "ipa": "[əˈnɑmələs]",
+     "pos": "adj.",
+     "zh": "不普通的，不平常的",
+     "en": "deviating from what is normal",
+     "syn": [
+      "abnormal",
+      "atypical"
+     ],
+     "ant": [
+      "typical",
+      "regular"
+     ]
+    },
+    {
+     "w": "methodical",
+     "ipa": "[məˈθɑdɪkl]",
+     "pos": "adj.",
+     "zh": "井然有序的，有条理的",
+     "en": "done in an orderly, systematic way",
+     "syn": [
+      "systematic",
+      "orderly"
+     ],
+     "ant": [
+      "haphazard",
+      "disorganized"
+     ]
+    },
+    {
+     "w": "peripatetic",
+     "ipa": "[ˌperipəˈtetɪk]",
+     "pos": "adj.",
+     "zh": "巡游的，四处游历的",
+     "en": "traveling from place to place",
+     "syn": [
+      "itinerant",
+      "nomadic"
+     ],
+     "ant": [
+      "sedentary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Chosen as a [[delegate]], the [[peripatetic]] scholar stayed [[indifferent]] to the pomp and noted only an [[anomalous]] result in the otherwise [[methodical]] tally.",
+   "gloss": {
+    "delegate": "代理人，代表",
+    "indifferent": "不感兴趣的，冷漠的",
+    "anomalous": "不普通的，不平常的",
+    "methodical": "井然有序的，有条理的",
+    "peripatetic": "巡游的，四处游历的"
    }
   }
  ],
@@ -366,59 +734,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**humble** 的意思最接近：",
+    "q": "**anomalous** 的意思最接近：",
     "options": [
-     "(观念，想法等)孤立狭隘的",
-     "谦逊的；顺从的，谦卑的",
-     "表达不清的；轮廓不清晰的",
-     "扎眼的，难看显眼的"
-    ],
-    "answer": 1,
-    "explain": "humble：谦逊的；顺从的，谦卑的（modest and not proud; of low rank）。近义词：modest, meek。"
-   },
-   {
-    "q": "**pretense** 的意思最接近：",
-    "options": [
-     "暴怒",
-     "称颂，颂词",
-     "虚假，伪装；自大，优越感",
-     "道德准则"
-    ],
-    "answer": 2,
-    "explain": "pretense：虚假，伪装；自大，优越感（a false show or claim; pretension）。近义词：façade, sham。"
-   },
-   {
-    "q": "哪个词的意思是「喧哗的，大叫大嚷的」？",
-    "options": [
-     "humble",
-     "vague",
-     "discretionary",
-     "vociferous"
-    ],
-    "answer": 3,
-    "explain": "vociferous：喧哗的，大叫大嚷的（loud and insistent in expressing opinions）。"
-   },
-   {
-    "q": "哪个词和 **homage** 的意思最接近？",
-    "options": [
-     "allegiance",
-     "obloquy",
-     "tribute",
-     "ethos"
-    ],
-    "answer": 2,
-    "explain": "tribute 与 homage 近义：an expression of respect or gratitude。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> Her ____ over the cut to the discretionary budget was vociferous; her boss tried to understate the damage and paid tribute to her years of service.",
-    "options": [
-     "fury",
-     "tribute",
-     "pretense",
-     "ethos"
+     "不普通的，不平常的",
+     "宏伟壮丽的",
+     "不感兴趣的，冷漠的",
+     "轻信的，易受骗的"
     ],
     "answer": 0,
-    "explain": "fury：暴怒（violent, uncontrolled anger）。"
+    "explain": "anomalous：不普通的，不平常的（deviating from what is normal）。近义词：abnormal, atypical。"
+   },
+   {
+    "q": "**baffle** 的意思最接近：",
+    "options": [
+     "阻碍；不愿接受，拒绝",
+     "鼓励，使大胆",
+     "使疑惑",
+     "(使)(战争等)升级，扩大"
+    ],
+    "answer": 2,
+    "explain": "baffle：使疑惑（to confuse or perplex）。近义词：perplex, bewilder。"
+   },
+   {
+    "q": "哪个词的意思是「高贵庄严的」？",
+    "options": [
+     "methodical",
+     "imposing",
+     "incontrovertible",
+     "dignified"
+    ],
+    "answer": 3,
+    "explain": "dignified：高贵庄严的（serious, stately and deserving respect）。"
+   },
+   {
+    "q": "哪个词和 **nonconformist** 的意思最接近？",
+    "options": [
+     "delegate",
+     "maverick",
+     "resurgence",
+     "camaraderie"
+    ],
+    "answer": 1,
+    "explain": "maverick 与 nonconformist 近义：an independent thinker who rejects group norms。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> Her ____ plan led the minister to prevaricate; his florid answer, condescending in tone, did little to embolden his allies.",
+    "options": [
+     "nebulous",
+     "invidious",
+     "proprietary",
+     "circumspect"
+    ],
+    "answer": 0,
+    "explain": "nebulous：模糊的（vague and without clear form）。"
    }
   ]
  }

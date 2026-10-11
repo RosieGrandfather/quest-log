@@ -2,364 +2,719 @@
  "id": "u20",
  "title": "S 级核心词 · 第 20 组",
  "en": "GRE Core Vocabulary · Set 20",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u39",
+  "u40"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "catharsis",
-     "ipa": "[kəˈθɑːrsɪs]",
-     "pos": "n.",
-     "zh": "情绪的宣泄、释放",
-     "en": "emotional release that brings relief",
+     "w": "stalwart",
+     "ipa": "[ˈstɔlwɚt]",
+     "pos": "adj.",
+     "zh": "坚定的",
+     "en": "loyal and strong; hardy",
      "syn": [
-      "purging",
-      "release"
+      "steadfast",
+      "resolute"
+     ],
+     "ant": [
+      "wavering",
+      "disloyal"
+     ]
+    },
+    {
+     "w": "inconsequential",
+     "ipa": "[ɪnˌkɑːnsɪˈkwenʃl]",
+     "pos": "adj.",
+     "zh": "不重要的",
+     "en": "of no importance",
+     "syn": [
+      "trivial",
+      "negligible"
+     ],
+     "ant": [
+      "significant",
+      "momentous"
+     ]
+    },
+    {
+     "w": "intelligible",
+     "ipa": "[ɪnˈtɛlɪdʒəbl]",
+     "pos": "adj.",
+     "zh": "可理解的",
+     "en": "able to be understood",
+     "syn": [
+      "comprehensible",
+      "clear"
+     ],
+     "ant": [
+      "unintelligible",
+      "incomprehensible"
+     ]
+    },
+    {
+     "w": "decadent",
+     "ipa": "[ˈdekədənt]",
+     "pos": "adj.",
+     "zh": "堕落的，腐败的；道德上堕落的人",
+     "en": "in a state of moral or cultural decline",
+     "syn": [
+      "degenerate",
+      "self-indulgent"
+     ],
+     "ant": [
+      "virtuous",
+      "austere"
+     ]
+    },
+    {
+     "w": "tangible",
+     "ipa": "[ˈtændʒəbl]",
+     "pos": "adj.",
+     "zh": "可感知的",
+     "en": "able to be touched or clearly perceived",
+     "syn": [
+      "palpable",
+      "concrete"
+     ],
+     "ant": [
+      "intangible",
+      "abstract"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[stalwart]] reformer insisted that no detail was [[inconsequential]]; she made the law [[intelligible]], attacked the [[decadent]] elite, and wanted [[tangible]] results.",
+   "gloss": {
+    "stalwart": "坚定的",
+    "inconsequential": "不重要的",
+    "intelligible": "可理解的",
+    "decadent": "堕落的，腐败的",
+    "tangible": "可感知的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "serendipity",
+     "ipa": "[ˌserənˈdɪpəti]",
+     "pos": "n.",
+     "zh": "意外发现珍奇(或称心)事物的本领",
+     "en": "the happy knack of finding good things by chance",
+     "syn": [
+      "luck",
+      "fluke"
+     ],
+     "ant": [
+      "misfortune"
+     ]
+    },
+    {
+     "w": "solemnity",
+     "ipa": "[səˈlemnəti]",
+     "pos": "n.",
+     "zh": "庄严，严肃",
+     "en": "seriousness and dignity",
+     "syn": [
+      "gravity",
+      "earnestness"
+     ],
+     "ant": [
+      "levity",
+      "frivolity"
+     ]
+    },
+    {
+     "w": "refute",
+     "ipa": "[riˈfjʊt]",
+     "pos": "vt.",
+     "zh": "否认",
+     "en": "to prove wrong",
+     "syn": [
+      "rebut",
+      "disprove"
+     ],
+     "ant": [
+      "confirm",
+      "support"
+     ]
+    },
+    {
+     "w": "affable",
+     "ipa": "[ˈæfəbl]",
+     "pos": "adj.",
+     "zh": "和蔼的，温和的",
+     "en": "friendly and easy to talk to",
+     "syn": [
+      "amiable",
+      "genial"
+     ],
+     "ant": [
+      "aloof",
+      "surly"
+     ]
+    },
+    {
+     "w": "strike",
+     "ipa": "[straɪk]",
+     "pos": "n.",
+     "zh": "打击；攻击；罢工",
+     "en": "a sudden attack or blow; a work stoppage",
+     "syn": [
+      "blow",
+      "assault"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "By [[serendipity]] the [[affable]] stranger arrived at the hall; with [[solemnity]] he tried to [[refute]] rumors of a planned [[strike]].",
+   "gloss": {
+    "serendipity": "意外发现珍奇(或称心)事物的本领",
+    "solemnity": "庄严，严肃",
+    "refute": "否认",
+    "affable": "和蔼的，温和的",
+    "strike": "打击"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "unkempt",
+     "ipa": "[ˌʌnˈkempt]",
+     "pos": "adj.",
+     "zh": "凌乱的，无序的",
+     "en": "messy and untidy",
+     "syn": [
+      "disheveled",
+      "scruffy"
+     ],
+     "ant": [
+      "neat",
+      "tidy"
+     ]
+    },
+    {
+     "w": "eclipse",
+     "ipa": "[ɪˈklɪps]",
+     "pos": "vt.",
+     "zh": "使声望下降，使黯然失色",
+     "en": "to outshine; to overshadow",
+     "syn": [
+      "overshadow",
+      "surpass"
      ],
      "ant": []
     },
     {
-     "w": "respite",
-     "ipa": "[ˈrɛspɪt]",
+     "w": "grimy",
+     "ipa": "[ˈɡraɪmi]",
+     "pos": "adj.",
+     "zh": "肮脏的",
+     "en": "covered with dirt",
+     "syn": [
+      "filthy",
+      "grubby"
+     ],
+     "ant": [
+      "clean",
+      "spotless"
+     ]
+    },
+    {
+     "w": "apprehension",
+     "ipa": "[ˌæprɪˈhɛnʃən]",
      "pos": "n.",
-     "zh": "间歇，休息",
-     "en": "a short break from something difficult",
+     "zh": "忧虑；理解",
+     "en": "anxiety about the future; understanding",
      "syn": [
-      "break",
-      "lull"
+      "dread",
+      "unease"
      ],
      "ant": [
-      "continuation"
+      "confidence",
+      "calm"
      ]
     },
     {
-     "w": "skittish",
-     "ipa": "[ˈskɪtɪʃ]",
-     "pos": "adj.",
-     "zh": "容易受到惊吓的，胆小的；善变的，多变的",
-     "en": "nervous and easily startled; unpredictable",
+     "w": "bromide",
+     "ipa": "[ˈbroʊmaɪd]",
+     "pos": "n.",
+     "zh": "陈词滥调",
+     "en": "a trite, unoriginal remark",
      "syn": [
-      "jumpy",
-      "restive"
+      "platitude",
+      "cliché"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "An [[unkempt]] boy with a [[grimy]] face watched the [[eclipse]] with [[apprehension]], while his teacher repeated a [[bromide]].",
+   "gloss": {
+    "unkempt": "凌乱的，无序的",
+    "eclipse": "使声望下降，使黯然失色",
+    "grimy": "肮脏的",
+    "apprehension": "忧虑",
+    "bromide": "陈词滥调"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "contravene",
+     "ipa": "[ˌkɒntrəˈviːn]",
+     "pos": "v.",
+     "zh": "违反，反对",
+     "en": "to violate or conflict with",
+     "syn": [
+      "violate",
+      "breach"
      ],
      "ant": [
-      "calm",
-      "steady"
+      "obey",
+      "uphold"
      ]
     },
     {
-     "w": "dramatic",
-     "ipa": "[drəˈmætɪk]",
-     "pos": "adj.",
-     "zh": "显著的，惹人注意的",
-     "en": "sudden and striking",
-     "syn": [
-      "striking",
-      "sensational"
-     ],
-     "ant": [
-      "subtle",
-      "understated"
-     ]
-    },
-    {
-     "w": "ridicule",
-     "ipa": "[ˈrɪdɪˈkjʊl]",
+     "w": "espouse",
+     "ipa": "[ɪˈspaʊz]",
      "pos": "vt.",
-     "zh": "嘲笑",
-     "en": "to mock",
+     "zh": "支持；拥护",
+     "en": "to adopt or support a cause",
      "syn": [
-      "mock",
-      "deride"
+      "advocate",
+      "embrace"
+     ],
+     "ant": [
+      "reject",
+      "oppose"
+     ]
+    },
+    {
+     "w": "sinecure",
+     "ipa": "[ˈsaɪnɪkjʊr]",
+     "pos": "n.",
+     "zh": "拿钱不干事的职务；闲差事",
+     "en": "a job that requires little or no work",
+     "syn": [
+      "cushy job"
+     ],
+     "ant": []
+    },
+    {
+     "w": "tout",
+     "ipa": "[taʊt]",
+     "pos": "vt.",
+     "zh": "极力赞扬",
+     "en": "to promote or praise heavily",
+     "syn": [
+      "promote",
+      "hype"
+     ],
+     "ant": [
+      "denigrate",
+      "disparage"
+     ]
+    },
+    {
+     "w": "torpor",
+     "ipa": "[ˈtɔrpɚ]",
+     "pos": "n.",
+     "zh": "缺乏兴趣；(肉体或精神上的)迟钝，懒散",
+     "en": "a state of sluggish inactivity",
+     "syn": [
+      "lethargy",
+      "stupor"
+     ],
+     "ant": [
+      "vigor",
+      "energy"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The senator's job was a [[sinecure]]; to [[contravene]] the rules he would [[espouse]] new causes, [[tout]] his record, and sink into [[torpor]].",
+   "gloss": {
+    "contravene": "违反，反对",
+    "espouse": "支持",
+    "sinecure": "拿钱不干事的职务",
+    "tout": "极力赞扬",
+    "torpor": "缺乏兴趣"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "implement",
+     "ipa": "[ˈɪmplɪmɛnt]",
+     "pos": "vt.",
+     "zh": "执行；工具",
+     "en": "to put into effect; a tool",
+     "syn": [
+      "execute",
+      "carry out"
+     ],
+     "ant": []
+    },
+    {
+     "w": "accessible",
+     "ipa": "[əkˈsɛsəbl]",
+     "pos": "adj.",
+     "zh": "可以到达的；可理解的",
+     "en": "easy to reach or understand",
+     "syn": [
+      "reachable",
+      "approachable"
+     ],
+     "ant": [
+      "inaccessible",
+      "obscure"
+     ]
+    },
+    {
+     "w": "reproach",
+     "ipa": "[rɪˈprotʃ]",
+     "pos": "vt.",
+     "zh": "批评，责备",
+     "en": "to express disapproval or disappointment",
+     "syn": [
+      "rebuke",
+      "chide"
      ],
      "ant": [
       "praise",
-      "respect"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The play offered [[catharsis]] and a brief [[respite]] to a [[skittish]] audience, until the [[dramatic]] finale drew critics who would [[ridicule]] it.",
-   "gloss": {
-    "catharsis": "情绪的宣泄、释放",
-    "respite": "间歇，休息",
-    "skittish": "容易受到惊吓的，胆小的",
-    "dramatic": "显著的，惹人注意的",
-    "ridicule": "嘲笑"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "paltry",
-     "ipa": "[ˈpɔːltri]",
-     "pos": "adj.",
-     "zh": "无价值的，微不足道的",
-     "en": "trifling; very small in amount",
-     "syn": [
-      "meager",
-      "trifling"
-     ],
-     "ant": [
-      "substantial",
-      "ample"
+      "commend"
      ]
     },
     {
-     "w": "naive",
-     "ipa": "[naɪˈiv]",
-     "pos": "adj.",
-     "zh": "天真纯朴的",
-     "en": "lacking worldly experience",
+     "w": "excoriate",
+     "ipa": "[ˌeksˈkɔːrieɪt]",
+     "pos": "vt.",
+     "zh": "严厉批评",
+     "en": "to criticize very severely",
      "syn": [
-      "innocent",
-      "gullible"
+      "censure",
+      "flay"
      ],
      "ant": [
-      "sophisticated",
-      "worldly"
+      "laud",
+      "commend"
      ]
     },
     {
-     "w": "repetitious",
-     "ipa": "[ˌrepəˈtɪʃəs]",
+     "w": "restive",
+     "ipa": "[ˈrestɪv]",
      "pos": "adj.",
-     "zh": "重复的，反复的",
-     "en": "full of repetition",
+     "zh": "急躁的，忧虑的",
+     "en": "restless and impatient",
      "syn": [
-      "redundant",
-      "monotonous"
-     ],
-     "ant": [
-      "varied",
-      "concise"
-     ]
-    },
-    {
-     "w": "vicious",
-     "ipa": "[ˈvɪʃəs]",
-     "pos": "adj.",
-     "zh": "凶恶的，恶毒的",
-     "en": "cruel and violent; spiteful",
-     "syn": [
-      "savage",
-      "malicious"
-     ],
-     "ant": [
-      "gentle",
-      "kind"
-     ]
-    },
-    {
-     "w": "tempestuous",
-     "ipa": "[tɛmˈpɛstʃuəs]",
-     "pos": "adj.",
-     "zh": "突然的，剧烈的",
-     "en": "stormy; wildly emotional",
-     "syn": [
-      "stormy",
-      "turbulent"
+      "fidgety",
+      "impatient"
      ],
      "ant": [
       "calm",
-      "placid"
+      "patient"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[naive]] fan paid a [[paltry]] sum to hear a [[repetitious]] speech; a [[vicious]] heckler and a [[tempestuous]] crowd ended the evening.",
+   "text": "The manager failed to [[implement]] an [[accessible]] plan; the [[restive]] staff began to [[reproach]] him, and the press would [[excoriate]] the delay.",
    "gloss": {
-    "paltry": "无价值的，微不足道的",
-    "naive": "天真纯朴的",
-    "repetitious": "重复的，反复的",
-    "vicious": "凶恶的，恶毒的",
-    "tempestuous": "突然的，剧烈的"
+    "implement": "执行",
+    "accessible": "可以到达的",
+    "reproach": "批评，责备",
+    "excoriate": "严厉批评",
+    "restive": "急躁的，忧虑的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "uncanny",
-     "ipa": "[ʌnˈkæni]",
+     "w": "static",
+     "ipa": "[ˈstætɪk]",
      "pos": "adj.",
-     "zh": "离奇的，奇异的",
-     "en": "strange in a way that is hard to explain",
+     "zh": "静态的，停滞的",
+     "en": "not moving or changing",
      "syn": [
-      "eerie",
-      "weird"
+      "stationary",
+      "unchanging"
      ],
      "ant": [
-      "ordinary",
-      "normal"
+      "dynamic",
+      "changing"
      ]
     },
     {
-     "w": "drudgery",
-     "ipa": "[ˈdrʌdʒəri]",
+     "w": "discrepancy",
+     "ipa": "[dɪsˈkrɛpənsi]",
      "pos": "n.",
-     "zh": "苦工；单调、卑贱或无趣的工作",
-     "en": "tedious, hard work",
+     "zh": "(在事实和宣称之间的)差异或矛盾",
+     "en": "a lack of agreement between facts",
      "syn": [
-      "toil",
-      "grind"
+      "inconsistency",
+      "disparity"
      ],
      "ant": [
-      "leisure"
+      "consistency",
+      "agreement"
      ]
     },
     {
-     "w": "solicitous",
-     "ipa": "[səˈlɪsɪtəs]",
+     "w": "decrepit",
+     "ipa": "[dɪˈkrɛpɪt]",
      "pos": "adj.",
-     "zh": "为他人操心的，体谅他人的",
-     "en": "concerned and attentive to others",
+     "zh": "虚弱的，衰老的，破旧的",
+     "en": "worn out by age or use",
      "syn": [
-      "caring",
-      "attentive"
+      "dilapidated",
+      "feeble"
      ],
      "ant": [
-      "indifferent",
-      "neglectful"
+      "robust",
+      "sturdy"
      ]
     },
     {
-     "w": "ethereal",
-     "ipa": "[iˈθɪriəl]",
-     "pos": "adj.",
-     "zh": "轻巧精致的；非物质的，精神(上)的",
-     "en": "extremely delicate; heavenly",
+     "w": "sanity",
+     "ipa": "[ˈsænəti]",
+     "pos": "n.",
+     "zh": "心智健全，神智正常",
+     "en": "soundness of mind",
      "syn": [
-      "airy",
-      "celestial"
+      "rationality",
+      "lucidity"
      ],
      "ant": [
-      "earthly",
-      "solid"
+      "madness",
+      "insanity"
      ]
     },
     {
-     "w": "sage",
-     "ipa": "[sedʒ]",
-     "pos": "adj.",
-     "zh": "智者；睿智的",
-     "en": "a wise person; wise",
+     "w": "proclaim",
+     "ipa": "[prəˈklem]",
+     "pos": "v.",
+     "zh": "宣告，使…公之于众",
+     "en": "to announce publicly",
      "syn": [
-      "wise person",
-      "sagacious"
+      "declare",
+      "announce"
      ],
      "ant": [
-      "fool",
-      "simpleton"
+      "conceal",
+      "suppress"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "An [[uncanny]] hush fell over the kitchen where the [[drudgery]] had ended; a [[solicitous]] nurse hummed an [[ethereal]] tune beside the [[sage]] old cook.",
+   "text": "A [[static]] economy, a [[discrepancy]] in the books, and a [[decrepit]] office tested his [[sanity]], yet he continued to [[proclaim]] success.",
    "gloss": {
-    "uncanny": "离奇的，奇异的",
-    "drudgery": "苦工",
-    "solicitous": "为他人操心的，体谅他人的",
-    "ethereal": "轻巧精致的",
-    "sage": "智者"
+    "static": "静态的，停滞的",
+    "discrepancy": "(在事实和宣称之间的)差异或矛盾",
+    "decrepit": "虚弱的，衰老的，破旧的",
+    "sanity": "心智健全，神智正常",
+    "proclaim": "宣告，使…公之于众"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "slump",
-     "ipa": "[slʌmp]",
-     "pos": "n.",
-     "zh": "暴跌；萧条",
-     "en": "a sudden fall or decline",
-     "syn": [
-      "decline",
-      "downturn"
-     ],
-     "ant": [
-      "boom",
-      "surge"
-     ]
-    },
-    {
-     "w": "paradox",
-     "ipa": "[ˈpærədɑks]",
-     "pos": "n.",
-     "zh": "矛盾，悖论",
-     "en": "a seemingly contradictory but possibly true statement",
-     "syn": [
-      "contradiction",
-      "anomaly"
-     ],
-     "ant": []
-    },
-    {
-     "w": "disquisition",
-     "ipa": "[ˌdɪskwɪˈzɪʃn]",
-     "pos": "n.",
-     "zh": "专题论文",
-     "en": "a long formal discussion of a subject",
-     "syn": [
-      "treatise",
-      "dissertation"
-     ],
-     "ant": []
-    },
-    {
-     "w": "sloth",
-     "ipa": "[sloθ]",
-     "pos": "n.",
-     "zh": "怠惰，懒惰",
-     "en": "laziness",
-     "syn": [
-      "laziness",
-      "idleness"
-     ],
-     "ant": [
-      "diligence",
-      "industry"
-     ]
-    },
-    {
-     "w": "morbid",
-     "ipa": "[ˈmɔrbɪd]",
+     "w": "benign",
+     "ipa": "[bɪˈnaɪn]",
      "pos": "adj.",
-     "zh": "疾病的，疾病所指的；(思想性格)变态的",
-     "en": "unhealthily gloomy; related to disease",
+     "zh": "无害的",
+     "en": "gentle; not harmful",
      "syn": [
-      "gruesome",
-      "macabre"
+      "harmless",
+      "gentle"
      ],
      "ant": [
-      "cheerful",
-      "wholesome"
+      "malignant",
+      "harmful"
+     ]
+    },
+    {
+     "w": "consternation",
+     "ipa": "[ˌkɑnstɚˈneʃən]",
+     "pos": "n.",
+     "zh": "惊愕，恐慌，恐惧",
+     "en": "shock and dismay",
+     "syn": [
+      "dismay",
+      "alarm"
+     ],
+     "ant": [
+      "calm",
+      "composure"
+     ]
+    },
+    {
+     "w": "pitfall",
+     "ipa": "[ˈpɪtˈfɔl]",
+     "pos": "n.",
+     "zh": "陷阱",
+     "en": "a hidden danger or difficulty",
+     "syn": [
+      "trap",
+      "hazard"
+     ],
+     "ant": []
+    },
+    {
+     "w": "hodgepodge",
+     "ipa": "[ˈhɑdʒpɑdʒ]",
+     "pos": "n.",
+     "zh": "大杂烩",
+     "en": "a confused mixture",
+     "syn": [
+      "jumble",
+      "mishmash"
+     ],
+     "ant": []
+    },
+    {
+     "w": "nondescript",
+     "ipa": "[ˈnɑndɪskrɪpt]",
+     "pos": "adj.",
+     "zh": "平凡的，不吸引人的",
+     "en": "lacking any distinctive character",
+     "syn": [
+      "bland",
+      "featureless"
+     ],
+     "ant": [
+      "distinctive",
+      "remarkable"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[morbid]] columnist's [[disquisition]] blamed the [[slump]] on [[sloth]], a [[paradox]] in a nation that works so hard.",
+   "text": "The tumor proved [[benign]], to the doctor's relief; the [[consternation]] of staff over a [[nondescript]] file and a [[hodgepodge]] of records revealed a billing [[pitfall]].",
    "gloss": {
-    "slump": "暴跌",
-    "paradox": "矛盾，悖论",
-    "disquisition": "专题论文",
-    "sloth": "怠惰，懒惰",
-    "morbid": "疾病的，疾病所指的"
+    "benign": "无害的",
+    "consternation": "惊愕，恐慌，恐惧",
+    "pitfall": "陷阱",
+    "hodgepodge": "大杂烩",
+    "nondescript": "平凡的，不吸引人的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "marginal",
+     "ipa": "[ˈmɑrdʒɪnl]",
+     "pos": "adj.",
+     "zh": "不重要的",
+     "en": "small and not important; on the edge",
+     "syn": [
+      "minor",
+      "negligible"
+     ],
+     "ant": [
+      "central",
+      "significant"
+     ]
+    },
+    {
+     "w": "resilience",
+     "ipa": "[rɪˈzɪliəns]",
+     "pos": "n.",
+     "zh": "恢复能力",
+     "en": "the ability to recover quickly",
+     "syn": [
+      "toughness",
+      "elasticity"
+     ],
+     "ant": [
+      "fragility"
+     ]
+    },
+    {
+     "w": "scrupulous",
+     "ipa": "[ˈskrupjələs]",
+     "pos": "adj.",
+     "zh": "正直的；一丝不苟的",
+     "en": "careful and principled",
+     "syn": [
+      "conscientious",
+      "meticulous"
+     ],
+     "ant": [
+      "unscrupulous",
+      "careless"
+     ]
+    },
+    {
+     "w": "exacting",
+     "ipa": "[ɪɡˈzæktɪŋ]",
+     "pos": "adj.",
+     "zh": "严格的，苛求的；费时间花心思的",
+     "en": "demanding great effort or care",
+     "syn": [
+      "demanding",
+      "rigorous"
+     ],
+     "ant": [
+      "lenient",
+      "easy"
+     ]
+    },
+    {
+     "w": "feign",
+     "ipa": "[fen]",
+     "pos": "vt.",
+     "zh": "制造假象，装出…的样子",
+     "en": "to pretend",
+     "syn": [
+      "pretend",
+      "simulate"
+     ],
+     "ant": [
+      "reveal",
+      "show"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[marginal]] player showed [[resilience]]; the [[exacting]] coach, [[scrupulous]] about the rules, suspected that he would [[feign]] injury.",
+   "gloss": {
+    "marginal": "不重要的",
+    "resilience": "恢复能力",
+    "scrupulous": "正直的",
+    "exacting": "严格的，苛求的",
+    "feign": "制造假象，装出…的样子"
    }
   }
  ],
@@ -367,59 +722,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**drudgery** 的意思最接近：",
+    "q": "**tangible** 的意思最接近：",
     "options": [
-     "专题论文",
-     "矛盾，悖论",
-     "怠惰，懒惰",
-     "苦工；单调、卑贱或无趣的工作"
+     "无害的",
+     "不重要的",
+     "可理解的",
+     "可感知的"
     ],
     "answer": 3,
-    "explain": "drudgery：苦工；单调、卑贱或无趣的工作（tedious, hard work）。近义词：toil, grind。"
+    "explain": "tangible：可感知的（able to be touched or clearly perceived）。近义词：palpable, concrete。"
    },
    {
-    "q": "**ethereal** 的意思最接近：",
+    "q": "**pitfall** 的意思最接近：",
     "options": [
-     "容易受到惊吓的，胆小的；善变的，多变的",
-     "轻巧精致的；非物质的，精神(上)的",
-     "疾病的，疾病所指的；(思想性格)变态的",
-     "为他人操心的，体谅他人的"
-    ],
-    "answer": 1,
-    "explain": "ethereal：轻巧精致的；非物质的，精神(上)的（extremely delicate; heavenly）。近义词：airy, celestial。"
-   },
-   {
-    "q": "哪个词的意思是「情绪的宣泄、释放」？",
-    "options": [
-     "catharsis",
-     "disquisition",
-     "drudgery",
-     "respite"
-    ],
-    "answer": 0,
-    "explain": "catharsis：情绪的宣泄、释放（emotional release that brings relief）。"
-   },
-   {
-    "q": "哪个词和 **meager** 的意思最接近？",
-    "options": [
-     "morbid",
-     "dramatic",
-     "paltry",
-     "repetitious"
+     "打击；攻击；罢工",
+     "惊愕，恐慌，恐惧",
+     "陷阱",
+     "拿钱不干事的职务；闲差事"
     ],
     "answer": 2,
-    "explain": "paltry 与 meager 近义：trifling; very small in amount。"
+    "explain": "pitfall：陷阱（a hidden danger or difficulty）。近义词：trap, hazard。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> An uncanny hush fell over the kitchen where the drudgery had ended; a ____ nurse hummed an ethereal tune beside the sage old cook.",
+    "q": "哪个词的意思是「凌乱的，无序的」？",
     "options": [
-     "skittish",
-     "solicitous",
-     "tempestuous",
-     "uncanny"
+     "unkempt",
+     "inconsequential",
+     "static",
+     "exacting"
+    ],
+    "answer": 0,
+    "explain": "unkempt：凌乱的，无序的（messy and untidy）。"
+   },
+   {
+    "q": "哪个词和 **lethargy** 的意思最接近？",
+    "options": [
+     "hodgepodge",
+     "apprehension",
+     "sinecure",
+     "torpor"
+    ],
+    "answer": 3,
+    "explain": "torpor 与 lethargy 近义：a state of sluggish inactivity。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> An unkempt boy with a grimy face watched the eclipse with ____, while his teacher repeated a bromide.",
+    "options": [
+     "torpor",
+     "apprehension",
+     "solemnity",
+     "consternation"
     ],
     "answer": 1,
-    "explain": "solicitous：为他人操心的，体谅他人的（concerned and attentive to others）。"
+    "explain": "apprehension：忧虑；理解（anxiety about the future; understanding）。"
    }
   ]
  }

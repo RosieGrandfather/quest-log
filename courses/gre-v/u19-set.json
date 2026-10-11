@@ -2,352 +2,442 @@
  "id": "u19",
  "title": "S 级核心词 · 第 19 组",
  "en": "GRE Core Vocabulary · Set 19",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u37",
+  "u38"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "moribund",
-     "ipa": "[ˈmɔːrɪbʌnd]",
-     "pos": "adj.",
-     "zh": "即将过时的",
-     "en": "near death; no longer effective",
-     "syn": [
-      "dying",
-      "obsolescent"
-     ],
-     "ant": [
-      "thriving",
-      "vigorous"
-     ]
-    },
-    {
-     "w": "assuage",
-     "ipa": "[əˈswedʒ]",
+     "w": "deify",
+     "ipa": "[ˈdeɪɪfaɪ]",
      "pos": "vt.",
-     "zh": "缓和，减轻",
-     "en": "to make less severe; to soothe",
+     "zh": "尊崇，尊敬",
+     "en": "to treat as a god",
      "syn": [
-      "alleviate",
-      "appease"
+      "glorify",
+      "worship"
      ],
      "ant": [
-      "aggravate",
-      "exacerbate"
+      "vilify",
+      "demean"
      ]
     },
     {
-     "w": "deliberate",
-     "ipa": "[dɪˈlɪbərət]",
-     "pos": "adj.",
-     "zh": "深思熟虑的",
-     "en": "done on purpose; careful",
+     "w": "scrutinize",
+     "ipa": "[ˈskrutənaɪz]",
+     "pos": "vt.",
+     "zh": "仔细检查",
+     "en": "to examine very closely",
      "syn": [
-      "intentional",
-      "unhurried"
+      "inspect",
+      "examine"
      ],
      "ant": [
-      "accidental",
-      "hasty"
+      "glance",
+      "skim"
      ]
     },
     {
-     "w": "erudite",
-     "ipa": "[ˈɛrudaɪt]",
+     "w": "hierarchical",
+     "ipa": "[ˌhaɪəˈrɑrkɪkl]",
      "pos": "adj.",
-     "zh": "博学的",
-     "en": "having great learning",
+     "zh": "分等级的，等级制的",
+     "en": "arranged by rank or level",
      "syn": [
-      "learned",
-      "scholarly"
+      "ranked",
+      "tiered"
      ],
      "ant": [
-      "ignorant",
-      "uneducated"
+      "egalitarian",
+      "flat"
      ]
     },
     {
-     "w": "jejune",
-     "ipa": "[dʒɪˈdʒuːn]",
+     "w": "plaintive",
+     "ipa": "[ˈpleɪntɪv]",
      "pos": "adj.",
-     "zh": "无趣乏味的",
-     "en": "dull; childishly naive",
+     "zh": "悲伤的",
+     "en": "sounding sad and mournful",
      "syn": [
-      "insipid",
-      "naive"
+      "mournful",
+      "doleful"
      ],
      "ant": [
-      "sophisticated",
-      "engaging"
+      "joyful",
+      "cheerful"
+     ]
+    },
+    {
+     "w": "hermetic",
+     "ipa": "[hɜːˈmɛtɪk]",
+     "pos": "adj.",
+     "zh": "深奥的",
+     "en": "airtight; obscure and secretive",
+     "syn": [
+      "sealed",
+      "arcane"
+     ],
+     "ant": [
+      "open",
+      "accessible"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[moribund]] journal tried to [[assuage]] its readers with a [[deliberate]] relaunch, filled with [[erudite]] essays and a few [[jejune]] ones.",
+   "text": "The cult would [[deify]] its leader; the [[hierarchical]] order was hard to [[scrutinize]], since [[hermetic]] rituals and [[plaintive]] chants kept outsiders away.",
    "gloss": {
-    "moribund": "即将过时的",
-    "assuage": "缓和，减轻",
-    "deliberate": "深思熟虑的",
-    "erudite": "博学的",
-    "jejune": "无趣乏味的"
+    "deify": "尊崇，尊敬",
+    "scrutinize": "仔细检查",
+    "hierarchical": "分等级的，等级制的",
+    "plaintive": "悲伤的",
+    "hermetic": "深奥的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "usurp",
-     "ipa": "[juːˈzɜːrp]",
+     "w": "quiescent",
+     "ipa": "[kwiˈesnt]",
+     "pos": "adj.",
+     "zh": "平静的，静止的",
+     "en": "inactive or at rest",
+     "syn": [
+      "dormant",
+      "still"
+     ],
+     "ant": [
+      "active",
+      "restless"
+     ]
+    },
+    {
+     "w": "jubilant",
+     "ipa": "[ˈdʒubɪlənt]",
+     "pos": "adj.",
+     "zh": "喜悦的",
+     "en": "extremely joyful",
+     "syn": [
+      "elated",
+      "triumphant"
+     ],
+     "ant": [
+      "despondent",
+      "mournful"
+     ]
+    },
+    {
+     "w": "retract",
+     "ipa": "[rɪˈtrækt]",
      "pos": "vt.",
-     "zh": "篡夺，篡位",
-     "en": "to seize power illegally",
+     "zh": "收回，否认",
+     "en": "to take back a statement; to draw in",
      "syn": [
-      "seize",
-      "commandeer"
+      "withdraw",
+      "recant"
      ],
      "ant": [
-      "relinquish",
-      "cede"
+      "assert",
+      "extend"
      ]
     },
     {
-     "w": "cloying",
-     "ipa": "[ˈklɔɪɪŋ]",
+     "w": "outmoded",
+     "ipa": "[ˌaʊtˈmoʊdɪd]",
      "pos": "adj.",
-     "zh": "甜得发腻的；感情用事的",
-     "en": "too sweet or sentimental",
+     "zh": "过时的，废弃的",
+     "en": "no longer in fashion or use",
      "syn": [
-      "saccharine",
-      "sickly"
+      "obsolete",
+      "dated"
      ],
      "ant": [
-      "tart",
-      "restrained"
+      "modern",
+      "current"
      ]
     },
     {
-     "w": "precarious",
-     "ipa": "[prɪˈkɛrərɪəs]",
+     "w": "sanctimonious",
+     "ipa": "[ˌsæŋktɪˈmoʊniəs]",
      "pos": "adj.",
-     "zh": "危险的，不稳定的；可疑的，不明确的",
-     "en": "dangerously unstable",
+     "zh": "假装虔诚的",
+     "en": "pretending to be morally superior",
      "syn": [
-      "perilous",
-      "shaky"
+      "self-righteous",
+      "hypocritical"
      ],
      "ant": [
-      "secure",
-      "stable"
-     ]
-    },
-    {
-     "w": "mitigate",
-     "ipa": "[ˈmɪtɪɡeɪt]",
-     "pos": "vt.",
-     "zh": "减轻痛苦，使缓和",
-     "en": "to lessen the severity of",
-     "syn": [
-      "alleviate",
-      "temper"
-     ],
-     "ant": [
-      "aggravate",
-      "intensify"
-     ]
-    },
-    {
-     "w": "dulcet",
-     "ipa": "[ˈdʌlsɪt]",
-     "pos": "adj.",
-     "zh": "悦耳的，令人愉悦的",
-     "en": "sweet and soothing to the ear",
-     "syn": [
-      "melodious",
-      "mellifluous"
-     ],
-     "ant": [
-      "harsh",
-      "grating"
+      "humble",
+      "sincere"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "To [[usurp]] the throne, the prince spoke in [[dulcet]] tones; his [[cloying]] flattery could [[mitigate]] suspicion only briefly, leaving his position [[precarious]].",
+   "text": "The [[quiescent]] volcano did not stop the [[jubilant]] tourists; the [[sanctimonious]] guide had to [[retract]] his warning when he read an [[outmoded]] map.",
    "gloss": {
-    "usurp": "篡夺，篡位",
-    "cloying": "甜得发腻的",
-    "precarious": "危险的，不稳定的",
-    "mitigate": "减轻痛苦，使缓和",
-    "dulcet": "悦耳的，令人愉悦的"
+    "quiescent": "平静的，静止的",
+    "jubilant": "喜悦的",
+    "retract": "收回，否认",
+    "outmoded": "过时的，废弃的",
+    "sanctimonious": "假装虔诚的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "ambiguous",
-     "ipa": "[æmˈbɪɡjuəs]",
-     "pos": "adj.",
-     "zh": "不确定的",
-     "en": "open to more than one meaning",
+     "w": "grandeur",
+     "ipa": "[ˈɡrændʒə]",
+     "pos": "n.",
+     "zh": "宏伟，壮丽",
+     "en": "splendor and impressiveness",
      "syn": [
-      "equivocal",
-      "vague"
+      "magnificence",
+      "splendor"
      ],
      "ant": [
-      "clear",
-      "unequivocal"
+      "modesty",
+      "squalor"
      ]
     },
     {
-     "w": "antithetical",
-     "ipa": "[ˌæntɪˈθɛtɪkl]",
-     "pos": "adj.",
-     "zh": "完全对立的，相反的",
-     "en": "directly opposed",
+     "w": "augur",
+     "ipa": "[ˈɔːɡər]",
+     "pos": "n.",
+     "zh": "预示；占卜者",
+     "en": "to be a sign of the future; a soothsayer",
      "syn": [
-      "opposite",
-      "contrary"
+      "portend",
+      "foretell"
+     ],
+     "ant": []
+    },
+    {
+     "w": "paradigm",
+     "ipa": "[ˈpærəˈdaɪm]",
+     "pos": "n.",
+     "zh": "典范，模范",
+     "en": "a typical model or pattern",
+     "syn": [
+      "model",
+      "archetype"
+     ],
+     "ant": []
+    },
+    {
+     "w": "contract",
+     "ipa": "[ˈkɑntrækt]",
+     "pos": "n.",
+     "zh": "合同；收缩；感染",
+     "en": "an agreement; to shrink; to catch (an illness)",
+     "syn": [
+      "agreement",
+      "shrink"
      ],
      "ant": [
-      "compatible",
-      "similar"
+      "expand"
      ]
     },
     {
-     "w": "diminish",
-     "ipa": "[dɪˈmɪnɪʃ]",
-     "pos": "v.",
-     "zh": "(使)变小，(使)减少；轻视，贬低",
-     "en": "to make or become smaller; to belittle",
-     "syn": [
-      "lessen",
-      "reduce"
-     ],
-     "ant": [
-      "increase",
-      "enlarge"
-     ]
-    },
-    {
-     "w": "pivotal",
-     "ipa": "[ˈpɪvətl]",
+     "w": "brazen",
+     "ipa": "[ˈbrezn]",
      "pos": "adj.",
-     "zh": "最关键的，最为重要的",
-     "en": "of vital importance; central",
+     "zh": "蛮横大胆的，厚颜无耻的；大胆自信地去面对或从事",
+     "en": "bold and shameless",
      "syn": [
-      "crucial",
-      "key"
+      "shameless",
+      "audacious"
      ],
      "ant": [
-      "peripheral",
-      "minor"
-     ]
-    },
-    {
-     "w": "meteoric",
-     "ipa": "[ˌmitɪˈɔrɪk]",
-     "pos": "adj.",
-     "zh": "流星般迅速而短暂的",
-     "en": "rapid and brilliant, but brief",
-     "syn": [
-      "swift",
-      "dazzling"
-     ],
-     "ant": [
-      "gradual",
-      "slow"
+      "timid",
+      "bashful"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The treaty was [[ambiguous]], with clauses [[antithetical]] to one another, which would [[diminish]] its value; a [[pivotal]] vote ended the [[meteoric]] rise of its author.",
+   "text": "The [[grandeur]] of the palace seemed to [[augur]] well; the [[brazen]] builder, a [[paradigm]] of confidence, signed the [[contract]] without reading it.",
    "gloss": {
-    "ambiguous": "不确定的",
-    "antithetical": "完全对立的，相反的",
-    "diminish": "(使)变小，(使)减少",
-    "pivotal": "最关键的，最为重要的",
-    "meteoric": "流星般迅速而短暂的"
+    "grandeur": "宏伟，壮丽",
+    "augur": "预示",
+    "paradigm": "典范，模范",
+    "contract": "合同",
+    "brazen": "蛮横大胆的，厚颜无耻的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "meticulous",
-     "ipa": "[məˈtɪkjələs]",
+     "w": "sordid",
+     "ipa": "[ˈsɔːrdɪd]",
      "pos": "adj.",
-     "zh": "极为谨慎的",
-     "en": "extremely careful about details",
+     "zh": "肮脏的，不干净的；卑鄙的",
+     "en": "dirty; morally low",
      "syn": [
-      "scrupulous",
-      "painstaking"
+      "squalid",
+      "base"
+     ],
+     "ant": [
+      "pure",
+      "wholesome"
+     ]
+    },
+    {
+     "w": "intrinsic",
+     "ipa": "[ɪnˈtrɪnsɪk]",
+     "pos": "adj.",
+     "zh": "固有的，内在的",
+     "en": "belonging naturally; essential",
+     "syn": [
+      "inherent",
+      "innate"
+     ],
+     "ant": [
+      "extrinsic",
+      "external"
+     ]
+    },
+    {
+     "w": "punctilious",
+     "ipa": "[pʌŋkˈtɪliəs]",
+     "pos": "adj.",
+     "zh": "注意细节的，一丝不苟的",
+     "en": "very careful about details and etiquette",
+     "syn": [
+      "meticulous",
+      "scrupulous"
      ],
      "ant": [
       "careless",
-      "sloppy"
+      "lax"
      ]
     },
     {
-     "w": "pessimistic",
-     "ipa": "[ˌpɛsɪˈmɪstɪk]",
+     "w": "interminable",
+     "ipa": "[ɪnˈtɜːrmɪnəbl]",
      "pos": "adj.",
-     "zh": "悲观的",
-     "en": "expecting the worst",
+     "zh": "无尽头的",
+     "en": "seeming to have no end",
      "syn": [
-      "gloomy",
-      "cynical"
+      "endless",
+      "unending"
      ],
      "ant": [
-      "optimistic",
-      "hopeful"
+      "brief",
+      "finite"
      ]
     },
     {
-     "w": "panacea",
-     "ipa": "[ˌpænəˈsiːə]",
-     "pos": "n.",
-     "zh": "万能药，万灵药",
-     "en": "a cure for all problems",
+     "w": "relinquish",
+     "ipa": "[rɪˈlɪŋkwɪʃ]",
+     "pos": "vt.",
+     "zh": "放弃(职位、权力等)",
+     "en": "to give up or let go",
      "syn": [
-      "cure-all",
-      "elixir"
+      "surrender",
+      "cede"
      ],
-     "ant": []
+     "ant": [
+      "retain",
+      "keep"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[sordid]] affair showed the [[intrinsic]] weakness of the court; the [[punctilious]] judge made an [[interminable]] list and refused to [[relinquish]] control.",
+   "gloss": {
+    "sordid": "肮脏的，不干净的",
+    "intrinsic": "固有的，内在的",
+    "punctilious": "注意细节的，一丝不苟的",
+    "interminable": "无尽头的",
+    "relinquish": "放弃(职位、权力等)"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "squelch",
+     "ipa": "[skwɛltʃ]",
+     "pos": "vt.",
+     "zh": "压制，镇压(运动)",
+     "en": "to suppress forcefully",
+     "syn": [
+      "quash",
+      "suppress"
+     ],
+     "ant": [
+      "encourage"
+     ]
     },
     {
-     "w": "tonic",
-     "ipa": "[ˈtɑnɪk]",
+     "w": "distraught",
+     "ipa": "[dɪˈstrɔt]",
      "pos": "adj.",
-     "zh": "滋补的，有益健康的",
-     "en": "something that refreshes or invigorates",
+     "zh": "精神狂乱的，极疯狂的",
+     "en": "deeply upset and agitated",
      "syn": [
-      "restorative",
-      "boost"
+      "frantic",
+      "anguished"
+     ],
+     "ant": [
+      "composed",
+      "serene"
+     ]
+    },
+    {
+     "w": "garrulous",
+     "ipa": "[ˈɡærələs]",
+     "pos": "adj.",
+     "zh": "啰嗦的，话多得令人厌烦的",
+     "en": "excessively talkative",
+     "syn": [
+      "talkative",
+      "loquacious"
+     ],
+     "ant": [
+      "taciturn",
+      "reticent"
+     ]
+    },
+    {
+     "w": "blemish",
+     "ipa": "[ˈblemɪʃ]",
+     "pos": "n.",
+     "zh": "缺点，污点；损害，玷污",
+     "en": "a flaw or mark that spoils appearance",
+     "syn": [
+      "flaw",
+      "stain"
      ],
      "ant": []
     },
     {
-     "w": "compromise",
-     "ipa": "[ˈkɑmprəmaɪz]",
-     "pos": "v.",
-     "zh": "妥协；损害",
-     "en": "to settle by mutual concession; to weaken",
+     "w": "pry",
+     "ipa": "[praɪ]",
+     "pos": "vi.",
+     "zh": "刺探，打听",
+     "en": "to inquire too closely into private matters",
      "syn": [
-      "concede",
-      "settle"
+      "snoop",
+      "meddle"
      ],
      "ant": []
     }
@@ -355,13 +445,279 @@
   },
   {
    "type": "passage",
-   "text": "A [[meticulous]] editor, [[pessimistic]] about easy fixes, said that no [[panacea]] existed; a short break was a [[tonic]], and a [[compromise]] was best.",
+   "text": "The [[garrulous]] neighbor would [[pry]] into the [[distraught]] widow's life, until she tried to [[squelch]] the rumor of a [[blemish]] on her name.",
    "gloss": {
-    "meticulous": "极为谨慎的",
-    "pessimistic": "悲观的",
-    "panacea": "万能药，万灵药",
-    "tonic": "滋补的，有益健康的",
-    "compromise": "妥协"
+    "squelch": "压制，镇压(运动)",
+    "distraught": "精神狂乱的，极疯狂的",
+    "garrulous": "啰嗦的，话多得令人厌烦的",
+    "blemish": "缺点，污点",
+    "pry": "刺探，打听"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "valorize",
+     "ipa": "[ˈvæləˌraɪz]",
+     "pos": "v.",
+     "zh": "提升，赞美",
+     "en": "to give value or status to",
+     "syn": [
+      "elevate",
+      "glorify"
+     ],
+     "ant": [
+      "devalue"
+     ]
+    },
+    {
+     "w": "vigilant",
+     "ipa": "[ˈvɪdʒələnt]",
+     "pos": "adj.",
+     "zh": "警醒的，警惕的",
+     "en": "keeping careful watch",
+     "syn": [
+      "watchful",
+      "alert"
+     ],
+     "ant": [
+      "negligent",
+      "inattentive"
+     ]
+    },
+    {
+     "w": "pedagogical",
+     "ipa": "[ˌpedəˈɡɑːdʒɪkl]",
+     "pos": "adj.",
+     "zh": "教学的；教师的",
+     "en": "relating to teaching",
+     "syn": [
+      "educational",
+      "instructional"
+     ],
+     "ant": []
+    },
+    {
+     "w": "plastic",
+     "ipa": "[ˈplæstɪk]",
+     "pos": "adj.",
+     "zh": "可塑的",
+     "en": "easily shaped or molded",
+     "syn": [
+      "pliable",
+      "malleable"
+     ],
+     "ant": [
+      "rigid",
+      "inflexible"
+     ]
+    },
+    {
+     "w": "eulogize",
+     "ipa": "[ˈjʊləˈdʒaɪz]",
+     "pos": "vt.",
+     "zh": "称赞；颂扬",
+     "en": "to praise highly, especially in a speech",
+     "syn": [
+      "extol",
+      "laud"
+     ],
+     "ant": [
+      "denounce",
+      "disparage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The school wanted to [[valorize]] teaching with a [[pedagogical]] prize; the [[vigilant]] judges, assuming that young minds are [[plastic]], chose a speaker to [[eulogize]] the great teachers.",
+   "gloss": {
+    "valorize": "提升，赞美",
+    "vigilant": "警醒的，警惕的",
+    "pedagogical": "教学的",
+    "plastic": "可塑的",
+    "eulogize": "称赞"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "tenuous",
+     "ipa": "[ˈtenjuəs]",
+     "pos": "adj.",
+     "zh": "没有实际内容的，空洞的",
+     "en": "thin and weak; flimsy",
+     "syn": [
+      "flimsy",
+      "insubstantial"
+     ],
+     "ant": [
+      "solid",
+      "substantial"
+     ]
+    },
+    {
+     "w": "pejorative",
+     "ipa": "[pɪˈdʒɔːrətɪv]",
+     "pos": "adj.",
+     "zh": "轻蔑的，贬低的",
+     "en": "expressing contempt or disapproval",
+     "syn": [
+      "derogatory",
+      "disparaging"
+     ],
+     "ant": [
+      "complimentary",
+      "laudatory"
+     ]
+    },
+    {
+     "w": "apathy",
+     "ipa": "[ˈæpəθi]",
+     "pos": "n.",
+     "zh": "缺乏兴趣，不关心",
+     "en": "lack of interest or concern",
+     "syn": [
+      "indifference",
+      "lethargy"
+     ],
+     "ant": [
+      "enthusiasm",
+      "zeal"
+     ]
+    },
+    {
+     "w": "forbearance",
+     "ipa": "[fɔrˈbɛrəns]",
+     "pos": "n.",
+     "zh": "克制；忍耐",
+     "en": "patient self-control; tolerance",
+     "syn": [
+      "restraint",
+      "tolerance"
+     ],
+     "ant": [
+      "impatience",
+      "intolerance"
+     ]
+    },
+    {
+     "w": "univocal",
+     "ipa": "[juːˈnɪvəkəl]",
+     "pos": "adj.",
+     "zh": "含义明确的",
+     "en": "having only one meaning",
+     "syn": [
+      "unambiguous",
+      "explicit"
+     ],
+     "ant": [
+      "equivocal",
+      "ambiguous"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Critics called the evidence [[tenuous]] and the word \"fad\" [[pejorative]]; voter [[apathy]] and public [[forbearance]] lasted until a [[univocal]] verdict finally arrived.",
+   "gloss": {
+    "tenuous": "没有实际内容的，空洞的",
+    "pejorative": "轻蔑的，贬低的",
+    "apathy": "缺乏兴趣，不关心",
+    "forbearance": "克制",
+    "univocal": "含义明确的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "inveterate",
+     "ipa": "[ɪnˈvɛtərət]",
+     "pos": "adj.",
+     "zh": "根深蒂固的",
+     "en": "long-established and unlikely to change",
+     "syn": [
+      "habitual",
+      "ingrained"
+     ],
+     "ant": [
+      "occasional",
+      "recent"
+     ]
+    },
+    {
+     "w": "proliferate",
+     "ipa": "[prəˈlɪfəreɪt]",
+     "pos": "v.",
+     "zh": "快速繁殖；激增",
+     "en": "to multiply rapidly",
+     "syn": [
+      "multiply",
+      "burgeon"
+     ],
+     "ant": [
+      "dwindle",
+      "diminish"
+     ]
+    },
+    {
+     "w": "entice",
+     "ipa": "[ɪnˈtaɪs]",
+     "pos": "vt.",
+     "zh": "诱使",
+     "en": "to attract by offering something",
+     "syn": [
+      "tempt",
+      "lure"
+     ],
+     "ant": [
+      "repel",
+      "deter"
+     ]
+    },
+    {
+     "w": "random",
+     "ipa": "[ˈrændəm]",
+     "pos": "adj.",
+     "zh": "随机的，随意的",
+     "en": "made without a pattern or plan",
+     "syn": [
+      "arbitrary",
+      "haphazard"
+     ],
+     "ant": [
+      "deliberate",
+      "systematic"
+     ]
+    },
+    {
+     "w": "forage",
+     "ipa": "[ˈfɔrɪdʒ]",
+     "pos": "vi.",
+     "zh": "寻找",
+     "en": "to search for food or provisions",
+     "syn": [
+      "scavenge",
+      "hunt"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[inveterate]] gambler loved [[random]] chance; as casinos [[proliferate]], ads [[entice]] him, and he would [[forage]] for coins in every pocket.",
+   "gloss": {
+    "inveterate": "根深蒂固的",
+    "proliferate": "快速繁殖",
+    "entice": "诱使",
+    "random": "随机的，随意的",
+    "forage": "寻找"
    }
   }
  ],
@@ -369,59 +725,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**pivotal** 的意思最接近：",
+    "q": "**retract** 的意思最接近：",
     "options": [
-     "最关键的，最为重要的",
-     "滋补的，有益健康的",
-     "甜得发腻的；感情用事的",
-     "完全对立的，相反的"
-    ],
-    "answer": 0,
-    "explain": "pivotal：最关键的，最为重要的（of vital importance; central）。近义词：crucial, key。"
-   },
-   {
-    "q": "**jejune** 的意思最接近：",
-    "options": [
-     "无趣乏味的",
-     "深思熟虑的",
-     "悲观的",
-     "最关键的，最为重要的"
-    ],
-    "answer": 0,
-    "explain": "jejune：无趣乏味的（dull; childishly naive）。近义词：insipid, naive。"
-   },
-   {
-    "q": "哪个词的意思是「即将过时的」？",
-    "options": [
-     "deliberate",
-     "meteoric",
-     "dulcet",
-     "moribund"
-    ],
-    "answer": 3,
-    "explain": "moribund：即将过时的（near death; no longer effective）。"
-   },
-   {
-    "q": "哪个词和 **cynical** 的意思最接近？",
-    "options": [
-     "meteoric",
-     "pessimistic",
-     "jejune",
-     "antithetical"
+     "仔细检查",
+     "收回，否认",
+     "寻找",
+     "放弃(职位、权力等)"
     ],
     "answer": 1,
-    "explain": "pessimistic 与 cynical 近义：expecting the worst。"
+    "explain": "retract：收回，否认（to take back a statement; to draw in）。近义词：withdraw, recant。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> The ____ journal tried to assuage its readers with a deliberate relaunch, filled with erudite essays and a few jejune ones.",
+    "q": "**outmoded** 的意思最接近：",
     "options": [
-     "pessimistic",
-     "deliberate",
-     "moribund",
-     "precarious"
+     "过时的，废弃的",
+     "平静的，静止的",
+     "含义明确的",
+     "啰嗦的，话多得令人厌烦的"
+    ],
+    "answer": 0,
+    "explain": "outmoded：过时的，废弃的（no longer in fashion or use）。近义词：obsolete, dated。"
+   },
+   {
+    "q": "哪个词的意思是「宏伟，壮丽」？",
+    "options": [
+     "contract",
+     "apathy",
+     "paradigm",
+     "grandeur"
+    ],
+    "answer": 3,
+    "explain": "grandeur：宏伟，壮丽（splendor and impressiveness）。"
+   },
+   {
+    "q": "哪个词和 **surrender** 的意思最接近？",
+    "options": [
+     "scrutinize",
+     "deify",
+     "relinquish",
+     "forage"
     ],
     "answer": 2,
-    "explain": "moribund：即将过时的（near death; no longer effective）。"
+    "explain": "relinquish 与 surrender 近义：to give up or let go。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The sordid affair showed the intrinsic weakness of the court; the punctilious judge made an ____ list and refused to relinquish control.",
+    "options": [
+     "interminable",
+     "punctilious",
+     "quiescent",
+     "brazen"
+    ],
+    "answer": 0,
+    "explain": "interminable：无尽头的（seeming to have no end）。"
    }
   ]
  }

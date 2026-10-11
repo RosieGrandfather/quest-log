@@ -2,354 +2,435 @@
  "id": "u12",
  "title": "S 级核心词 · 第 12 组",
  "en": "GRE Core Vocabulary · Set 12",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u23",
+  "u24"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "rationale",
-     "ipa": "[ˌræʃəˈnæl]",
-     "pos": "n.",
-     "zh": "基本原理，解释",
-     "en": "the reasoning behind something",
-     "syn": [
-      "reasoning",
-      "justification"
-     ],
-     "ant": []
-    },
-    {
-     "w": "convulsion",
-     "ipa": "[kənˈvʌlʃn]",
-     "pos": "n.",
-     "zh": "骚乱",
-     "en": "a violent disturbance or upheaval",
-     "syn": [
-      "upheaval",
-      "fit"
-     ],
-     "ant": [
-      "calm"
-     ]
-    },
-    {
-     "w": "salient",
-     "ipa": "[ˈselɪənt]",
+     "w": "innocuous",
+     "ipa": "[ɪˈnɑːkjuəs]",
      "pos": "adj.",
-     "zh": "显著的，最突出的",
-     "en": "most noticeable or important",
+     "zh": "无害的；不会引起敌意的",
+     "en": "harmless; not likely to offend",
      "syn": [
-      "prominent",
-      "conspicuous"
+      "harmless",
+      "inoffensive"
      ],
      "ant": [
-      "minor",
-      "inconspicuous"
+      "harmful",
+      "offensive"
      ]
     },
     {
-     "w": "lag",
-     "ipa": "[læɡ]",
+     "w": "numinous",
+     "ipa": "[ˈnuːmɪnəs]",
+     "pos": "adj.",
+     "zh": "神秘的，超自然的",
+     "en": "mysterious and spiritual",
+     "syn": [
+      "spiritual",
+      "transcendent"
+     ],
+     "ant": [
+      "mundane",
+      "ordinary"
+     ]
+    },
+    {
+     "w": "jaded",
+     "ipa": "[ˈdʒeɪdɪd]",
+     "pos": "adj.",
+     "zh": "厌倦的，没兴趣没热情的",
+     "en": "worn out and bored from overexposure",
+     "syn": [
+      "weary",
+      "blasé"
+     ],
+     "ant": [
+      "fresh",
+      "enthusiastic"
+     ]
+    },
+    {
+     "w": "sporadic",
+     "ipa": "[spəˈrædɪk]",
+     "pos": "adj.",
+     "zh": "断断续续的",
+     "en": "occurring occasionally and irregularly",
+     "syn": [
+      "occasional",
+      "intermittent"
+     ],
+     "ant": [
+      "constant",
+      "regular"
+     ]
+    },
+    {
+     "w": "capitulate",
+     "ipa": "[kəˈpɪtʃuleɪt]",
      "pos": "v.",
-     "zh": "缓慢行走；萎靡，失去活力",
-     "en": "to fall behind; to lose vigor",
+     "zh": "投降，默许",
+     "en": "to surrender",
      "syn": [
-      "trail",
-      "dawdle"
+      "surrender",
+      "yield"
      ],
      "ant": [
-      "lead",
-      "advance"
-     ]
-    },
-    {
-     "w": "diffuse",
-     "ipa": "[dɪˈfjus]",
-     "pos": "adj.",
-     "zh": "啰嗦的；扩展，散开",
-     "en": "spread out; wordy",
-     "syn": [
-      "wordy",
-      "scattered"
-     ],
-     "ant": [
-      "concise",
-      "concentrated"
+      "resist",
+      "withstand"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[rationale]] for reform emerged after a political [[convulsion]]; the [[salient]] point was that growth would [[lag]] unless the party dropped its [[diffuse]] message.",
+   "text": "An [[innocuous]] remark broke the [[numinous]] hush at the shrine; the [[jaded]] guide, whose smiles were [[sporadic]], at last chose to [[capitulate]] and sit down.",
    "gloss": {
-    "rationale": "基本原理，解释",
-    "convulsion": "骚乱",
-    "salient": "显著的，最突出的",
-    "lag": "缓慢行走",
-    "diffuse": "啰嗦的"
+    "innocuous": "无害的",
+    "numinous": "神秘的，超自然的",
+    "jaded": "厌倦的，没兴趣没热情的",
+    "sporadic": "断断续续的",
+    "capitulate": "投降，默许"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "beige",
-     "ipa": "[beʒ]",
+     "w": "clandestine",
+     "ipa": "[klænˈdestɪn]",
      "pos": "adj.",
-     "zh": "缺乏特征的",
-     "en": "dull and lacking distinction",
+     "zh": "隐藏的，秘密的",
+     "en": "done in secret",
      "syn": [
-      "bland",
-      "nondescript"
+      "secret",
+      "covert"
      ],
      "ant": [
-      "distinctive",
-      "vivid"
+      "open",
+      "overt"
      ]
     },
     {
-     "w": "laudatory",
-     "ipa": "[ˈlɔdətɔri]",
-     "pos": "adj.",
-     "zh": "表示赞扬的",
-     "en": "expressing praise",
+     "w": "rescind",
+     "ipa": "[rɪˈsɪnd]",
+     "pos": "vt.",
+     "zh": "废除，取消",
+     "en": "to cancel or repeal",
      "syn": [
-      "complimentary",
-      "approving"
+      "revoke",
+      "repeal"
      ],
      "ant": [
-      "derogatory",
-      "critical"
+      "enact",
+      "uphold"
      ]
     },
     {
-     "w": "privation",
-     "ipa": "[praɪˈveʃən]",
+     "w": "reiterate",
+     "ipa": "[rɪˈɪtəret]",
+     "pos": "v.",
+     "zh": "重申",
+     "en": "to say again",
+     "syn": [
+      "repeat",
+      "restate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "didactic",
+     "ipa": "[daɪˈdæktɪk]",
+     "pos": "adj.",
+     "zh": "喜欢说教的，思修的",
+     "en": "intended to teach, often in a preachy way",
+     "syn": [
+      "instructive",
+      "preachy"
+     ],
+     "ant": []
+    },
+    {
+     "w": "cavil",
+     "ipa": "[ˈkævl]",
+     "pos": "v.",
+     "zh": "挑剔，吹毛求疵",
+     "en": "to raise petty objections",
+     "syn": [
+      "quibble",
+      "carp"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[clandestine]] meeting led the board to [[rescind]] its decision; the chair would [[reiterate]] a [[didactic]] speech, though some members would [[cavil]].",
+   "gloss": {
+    "clandestine": "隐藏的，秘密的",
+    "rescind": "废除，取消",
+    "reiterate": "重申",
+    "didactic": "喜欢说教的，思修的",
+    "cavil": "挑剔，吹毛求疵"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "precipitate",
+     "ipa": "[prɪˈsɪpɪteɪt]",
+     "pos": "adj.",
+     "zh": "仓促的；促成，引发",
+     "en": "hasty and rash; to cause suddenly",
+     "syn": [
+      "hasty",
+      "trigger"
+     ],
+     "ant": [
+      "deliberate",
+      "delay"
+     ]
+    },
+    {
+     "w": "agog",
+     "ipa": "[əˈɡɑːɡ]",
+     "pos": "adj.",
+     "zh": "极度感兴趣的",
+     "en": "eager and excited",
+     "syn": [
+      "eager",
+      "expectant"
+     ],
+     "ant": [
+      "indifferent",
+      "bored"
+     ]
+    },
+    {
+     "w": "unpretentious",
+     "ipa": "[ˌʌnprɪˈtɛnʃəs]",
+     "pos": "adj.",
+     "zh": "低调的，谦逊的；坦诚的，自然的",
+     "en": "modest and natural",
+     "syn": [
+      "modest",
+      "humble"
+     ],
+     "ant": [
+      "pretentious",
+      "showy"
+     ]
+    },
+    {
+     "w": "mediate",
+     "ipa": "[ˈmidɪet]",
+     "pos": "vt.",
+     "zh": "调解，调停",
+     "en": "to settle a dispute between parties",
+     "syn": [
+      "arbitrate",
+      "intervene"
+     ],
+     "ant": []
+    },
+    {
+     "w": "inevitable",
+     "ipa": "[ɪnˈɛvɪtəbl]",
+     "pos": "adj.",
+     "zh": "不可避免的，必然的",
+     "en": "certain to happen",
+     "syn": [
+      "unavoidable",
+      "inescapable"
+     ],
+     "ant": [
+      "avoidable",
+      "preventable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[precipitate]] strike left the town [[agog]]; the [[unpretentious]] envoy was called to [[mediate]], since further talks seemed [[inevitable]].",
+   "gloss": {
+    "precipitate": "仓促的",
+    "agog": "极度感兴趣的",
+    "unpretentious": "低调的，谦逊的",
+    "mediate": "调解，调停",
+    "inevitable": "不可避免的，必然的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "amenable",
+     "ipa": "[əˈminəbl]",
+     "pos": "adj.",
+     "zh": "顺从的，服从的",
+     "en": "willing to cooperate; easily influenced",
+     "syn": [
+      "agreeable",
+      "compliant"
+     ],
+     "ant": [
+      "obstinate",
+      "resistant"
+     ]
+    },
+    {
+     "w": "whimsical",
+     "ipa": "[ˈwɪmzɪkl]",
+     "pos": "adj.",
+     "zh": "反复无常的",
+     "en": "playful and unpredictable",
+     "syn": [
+      "capricious",
+      "fanciful"
+     ],
+     "ant": [
+      "serious",
+      "predictable"
+     ]
+    },
+    {
+     "w": "reprehend",
+     "ipa": "[ˌreprɪˈhend]",
+     "pos": "vt.",
+     "zh": "谴责，责难，批评",
+     "en": "to criticize or rebuke",
+     "syn": [
+      "rebuke",
+      "censure"
+     ],
+     "ant": [
+      "praise",
+      "commend"
+     ]
+    },
+    {
+     "w": "cachet",
+     "ipa": "[kæˈʃeɪ]",
      "pos": "n.",
-     "zh": "缺乏，穷困",
-     "en": "lack of basic necessities",
+     "zh": "同意；声望",
+     "en": "prestige; a mark of approval",
      "syn": [
-      "hardship",
-      "want"
+      "prestige",
+      "distinction"
      ],
-     "ant": [
-      "abundance",
-      "comfort"
-     ]
+     "ant": []
     },
     {
-     "w": "primitive",
-     "ipa": "[ˈprɪmətɪv]",
+     "w": "abstruse",
+     "ipa": "[əbˈstrus]",
      "pos": "adj.",
-     "zh": "原始的",
-     "en": "belonging to an early stage of development",
+     "zh": "难以理解的",
+     "en": "hard to understand",
      "syn": [
-      "rudimentary",
-      "crude"
-     ],
-     "ant": [
-      "advanced",
-      "sophisticated"
-     ]
-    },
-    {
-     "w": "turbid",
-     "ipa": "[ˈtɝbɪd]",
-     "pos": "adj.",
-     "zh": "混浊的",
-     "en": "cloudy or muddy; confused",
-     "syn": [
-      "muddy",
-      "murky"
+      "recondite",
+      "esoteric"
      ],
      "ant": [
       "clear",
-      "limpid"
+      "straightforward"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[beige]] report, [[laudatory]] only in places, described the [[privation]] of villagers who drew water from a [[turbid]] river and cooked on [[primitive]] stoves.",
+   "text": "The [[amenable]] teacher would never [[reprehend]] a [[whimsical]] student; the school's [[cachet]] came from its [[abstruse]] curriculum.",
    "gloss": {
-    "beige": "缺乏特征的",
-    "laudatory": "表示赞扬的",
-    "privation": "缺乏，穷困",
-    "primitive": "原始的",
-    "turbid": "混浊的"
+    "amenable": "顺从的，服从的",
+    "whimsical": "反复无常的",
+    "reprehend": "谴责，责难，批评",
+    "cachet": "同意",
+    "abstruse": "难以理解的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "petty",
-     "ipa": "[ˈpɛti]",
+     "w": "check",
+     "ipa": "[tʃɛk]",
+     "pos": "v.",
+     "zh": "使突然停止；抑制；相符",
+     "en": "to stop suddenly; to match or agree",
+     "syn": [
+      "halt",
+      "restrain"
+     ],
+     "ant": []
+    },
+    {
+     "w": "amorphous",
+     "ipa": "[əˈmɔrfəs]",
      "pos": "adj.",
-     "zh": "细微的，不重要的",
-     "en": "small and unimportant; narrow-minded",
+     "zh": "无固定形状的",
+     "en": "without clear shape or form",
      "syn": [
-      "trivial",
-      "minor"
+      "shapeless",
+      "formless"
      ],
      "ant": [
-      "significant",
-      "magnanimous"
+      "distinct",
+      "structured"
      ]
     },
     {
-     "w": "clarity",
-     "ipa": "[ˈklærəti]",
-     "pos": "n.",
-     "zh": "清晰，清楚",
-     "en": "the quality of being clear",
-     "syn": [
-      "lucidity",
-      "clearness"
-     ],
-     "ant": [
-      "obscurity",
-      "vagueness"
-     ]
-    },
-    {
-     "w": "truculent",
-     "ipa": "[ˈtrʌkjələnt]",
+     "w": "egalitarian",
+     "ipa": "[ɪˈgæləˈtɛrɪən]",
      "pos": "adj.",
-     "zh": "好战的，好斗的",
-     "en": "eager to fight; aggressively defiant",
+     "zh": "平等主义的",
+     "en": "believing in equal rights for all",
      "syn": [
-      "belligerent",
-      "combative"
+      "equalitarian",
+      "democratic"
      ],
      "ant": [
-      "peaceable",
-      "docile"
+      "elitist",
+      "hierarchical"
      ]
     },
     {
-     "w": "fanciful",
-     "ipa": "[ˈfænsɪfl]",
-     "pos": "adj.",
-     "zh": "不切实际的，荒谬的",
-     "en": "imaginative but unrealistic",
-     "syn": [
-      "whimsical",
-      "imaginary"
-     ],
-     "ant": [
-      "realistic",
-      "practical"
-     ]
-    },
-    {
-     "w": "enervate",
-     "ipa": "[ˈɛnəvet]",
+     "w": "facilitate",
+     "ipa": "[fəˈsɪləˈtet]",
      "pos": "vt.",
-     "zh": "使衰弱",
-     "en": "to weaken or drain energy from",
+     "zh": "使变容易，促进",
+     "en": "to make easier",
      "syn": [
-      "debilitate",
-      "sap"
+      "ease",
+      "expedite"
      ],
      "ant": [
-      "invigorate",
-      "energize"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "With [[clarity]] the judge dismissed the [[petty]] complaint of a [[truculent]] neighbor, whose [[fanciful]] claims could only [[enervate]] the court.",
-   "gloss": {
-    "petty": "细微的，不重要的",
-    "clarity": "清晰，清楚",
-    "truculent": "好战的，好斗的",
-    "fanciful": "不切实际的，荒谬的",
-    "enervate": "使衰弱"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "adversary",
-     "ipa": "[ˈædvɚsɛri]",
-     "pos": "n.",
-     "zh": "敌手，对手",
-     "en": "an opponent or enemy",
-     "syn": [
-      "opponent",
-      "foe"
-     ],
-     "ant": [
-      "ally",
-      "supporter"
+      "hinder",
+      "impede"
      ]
     },
     {
-     "w": "overt",
-     "ipa": "[oˈvɜːt]",
-     "pos": "adj.",
-     "zh": "明显的，公开的",
-     "en": "openly shown, not hidden",
+     "w": "tinker",
+     "ipa": "[ˈtɪŋkɚ]",
+     "pos": "v.",
+     "zh": "乱修，乱调整",
+     "en": "to fiddle with something in an attempt to fix it",
      "syn": [
-      "open",
-      "blatant"
-     ],
-     "ant": [
-      "covert",
-      "concealed"
-     ]
-    },
-    {
-     "w": "insipid",
-     "ipa": "[ɪnˈsɪpɪd]",
-     "pos": "adj.",
-     "zh": "平淡的，无聊的",
-     "en": "lacking flavor or interest",
-     "syn": [
-      "bland",
-      "vapid"
-     ],
-     "ant": [
-      "tasty",
-      "stimulating"
-     ]
-    },
-    {
-     "w": "conversant",
-     "ipa": "[kənˈvɜːrsnt]",
-     "pos": "adj.",
-     "zh": "熟悉的",
-     "en": "familiar through study or experience",
-     "syn": [
-      "familiar",
-      "versed"
-     ],
-     "ant": [
-      "ignorant",
-      "unfamiliar"
-     ]
-    },
-    {
-     "w": "idiosyncrasy",
-     "ipa": "[ˌɪdɪəˈsɪŋkrəsi]",
-     "pos": "n.",
-     "zh": "独特而奇怪的习惯",
-     "en": "a peculiar habit or characteristic",
-     "syn": [
-      "quirk",
-      "eccentricity"
+      "fiddle",
+      "meddle"
      ],
      "ant": []
     }
@@ -357,13 +438,283 @@
   },
   {
    "type": "passage",
-   "text": "Her [[adversary]], [[conversant]] with every opening, found her [[insipid]] style hard to read; her one [[idiosyncrasy]] was an [[overt]] smile before each trap.",
+   "text": "A new law will [[check]] the spread of [[amorphous]] rules, and an [[egalitarian]] panel will [[facilitate]] reform, if engineers do not [[tinker]] with it.",
    "gloss": {
-    "adversary": "敌手，对手",
-    "overt": "明显的，公开的",
-    "insipid": "平淡的，无聊的",
-    "conversant": "熟悉的",
-    "idiosyncrasy": "独特而奇怪的习惯"
+    "check": "使突然停止",
+    "amorphous": "无固定形状的",
+    "egalitarian": "平等主义的",
+    "facilitate": "使变容易，促进",
+    "tinker": "乱修，乱调整"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "inert",
+     "ipa": "[ɪˈnɜːrt]",
+     "pos": "adj.",
+     "zh": "(人)懒惰缺乏活力的；(物品)惰性的",
+     "en": "lacking energy or motion; chemically inactive",
+     "syn": [
+      "inactive",
+      "lifeless"
+     ],
+     "ant": [
+      "active",
+      "dynamic"
+     ]
+    },
+    {
+     "w": "palliate",
+     "ipa": "[ˈpælɪet]",
+     "pos": "vt.",
+     "zh": "平息，减轻",
+     "en": "to ease without curing; to downplay",
+     "syn": [
+      "alleviate",
+      "mitigate"
+     ],
+     "ant": [
+      "aggravate",
+      "intensify"
+     ]
+    },
+    {
+     "w": "incite",
+     "ipa": "[ɪnˈsaɪt]",
+     "pos": "vt.",
+     "zh": "煽动，激起",
+     "en": "to stir up or provoke to action",
+     "syn": [
+      "provoke",
+      "instigate"
+     ],
+     "ant": [
+      "quell",
+      "pacify"
+     ]
+    },
+    {
+     "w": "impecunious",
+     "ipa": "[ˌɪmpɪˈkjuːniəs]",
+     "pos": "adj.",
+     "zh": "贫穷的",
+     "en": "having little or no money",
+     "syn": [
+      "penniless",
+      "destitute"
+     ],
+     "ant": [
+      "wealthy",
+      "affluent"
+     ]
+    },
+    {
+     "w": "curt",
+     "ipa": "[kɝt]",
+     "pos": "adj.",
+     "zh": "言辞简略的，直接(以致显得粗鲁)的",
+     "en": "rudely brief",
+     "syn": [
+      "brusque",
+      "terse"
+     ],
+     "ant": [
+      "courteous",
+      "effusive"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[inert]] crowd woke up when a [[curt]] speaker began to [[incite]] the [[impecunious]] workers, while the mayor tried to [[palliate]] their anger.",
+   "gloss": {
+    "inert": "(人)懒惰缺乏活力的",
+    "palliate": "平息，减轻",
+    "incite": "煽动，激起",
+    "impecunious": "贫穷的",
+    "curt": "言辞简略的，直接(以致显得粗鲁)的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "belie",
+     "ipa": "[bɪˈlaɪ]",
+     "pos": "v.",
+     "zh": "掩饰；与…相对立；与…相矛盾",
+     "en": "to give a false impression of; to contradict",
+     "syn": [
+      "contradict",
+      "misrepresent"
+     ],
+     "ant": [
+      "confirm",
+      "reveal"
+     ]
+    },
+    {
+     "w": "flout",
+     "ipa": "[flaʊt]",
+     "pos": "n./v.",
+     "zh": "嘲弄性不理会，蔑视",
+     "en": "to openly disregard a rule",
+     "syn": [
+      "defy",
+      "scorn"
+     ],
+     "ant": [
+      "obey",
+      "observe"
+     ]
+    },
+    {
+     "w": "exuberant",
+     "ipa": "[ɪɡˈzuːbərənt]",
+     "pos": "adj.",
+     "zh": "非常高兴的，热情洋溢的",
+     "en": "full of high spirits",
+     "syn": [
+      "ebullient",
+      "lively"
+     ],
+     "ant": [
+      "subdued",
+      "dejected"
+     ]
+    },
+    {
+     "w": "soothe",
+     "ipa": "[sʊð]",
+     "pos": "vt.",
+     "zh": "带来慰藉，安慰",
+     "en": "to calm or comfort",
+     "syn": [
+      "calm",
+      "comfort"
+     ],
+     "ant": [
+      "agitate",
+      "irritate"
+     ]
+    },
+    {
+     "w": "anathema",
+     "ipa": "[əˈnæθəmə]",
+     "pos": "n.",
+     "zh": "令人讨厌的事物",
+     "en": "something strongly disliked or detested",
+     "syn": [
+      "abomination",
+      "bane"
+     ],
+     "ant": [
+      "blessing",
+      "boon"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His [[exuberant]] manner could [[belie]] his fear; to a man who loved to [[flout]] authority, rules were [[anathema]], and nothing could [[soothe]] his nerves.",
+   "gloss": {
+    "belie": "掩饰",
+    "flout": "嘲弄性不理会，蔑视",
+    "exuberant": "非常高兴的，热情洋溢的",
+    "soothe": "带来慰藉，安慰",
+    "anathema": "令人讨厌的事物"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "complicate",
+     "ipa": "[ˈkɑmplɪket]",
+     "pos": "vt.",
+     "zh": "使复杂化",
+     "en": "to make more difficult or intricate",
+     "syn": [
+      "confuse",
+      "entangle"
+     ],
+     "ant": [
+      "simplify",
+      "clarify"
+     ]
+    },
+    {
+     "w": "profligate",
+     "ipa": "[prɔflɪɡət]",
+     "pos": "adj./n.",
+     "zh": "挥霍的；挥霍者",
+     "en": "wastefully extravagant",
+     "syn": [
+      "wasteful",
+      "spendthrift"
+     ],
+     "ant": [
+      "thrifty",
+      "frugal"
+     ]
+    },
+    {
+     "w": "august",
+     "ipa": "[ˈɔːɡəst]",
+     "pos": "adj.",
+     "zh": "威严的，庄重的",
+     "en": "inspiring awe and respect",
+     "syn": [
+      "majestic",
+      "venerable"
+     ],
+     "ant": [
+      "undignified",
+      "humble"
+     ]
+    },
+    {
+     "w": "equivocate",
+     "ipa": "[ɪˈkwɪvəkeɪt]",
+     "pos": "vi.",
+     "zh": "(带有欺骗目的地)模棱两可地说，说谎话",
+     "en": "to use ambiguous language to avoid committing",
+     "syn": [
+      "hedge",
+      "prevaricate"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disdain",
+     "ipa": "[dɪsˈden]",
+     "pos": "vt.",
+     "zh": "轻视，鄙视",
+     "en": "to regard with contempt",
+     "syn": [
+      "scorn",
+      "despise"
+     ],
+     "ant": [
+      "esteem",
+      "admire"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[profligate]] heir tried to [[equivocate]] before the [[august]] court; to [[complicate]] matters further, he began to [[disdain]] the judge.",
+   "gloss": {
+    "complicate": "使复杂化",
+    "profligate": "挥霍的",
+    "august": "威严的，庄重的",
+    "equivocate": "(带有欺骗目的地)模棱两可地说，说谎话",
+    "disdain": "轻视，鄙视"
    }
   }
  ],
@@ -371,59 +722,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**convulsion** 的意思最接近：",
+    "q": "**incite** 的意思最接近：",
     "options": [
-     "敌手，对手",
-     "骚乱",
-     "清晰，清楚",
-     "独特而奇怪的习惯"
+     "重申",
+     "掩饰；与…相对立；与…相矛盾",
+     "煽动，激起",
+     "废除，取消"
     ],
-    "answer": 1,
-    "explain": "convulsion：骚乱（a violent disturbance or upheaval）。近义词：upheaval, fit。"
+    "answer": 2,
+    "explain": "incite：煽动，激起（to stir up or provoke to action）。近义词：provoke, instigate。"
    },
    {
-    "q": "**truculent** 的意思最接近：",
+    "q": "**profligate** 的意思最接近：",
     "options": [
-     "好战的，好斗的",
-     "啰嗦的；扩展，散开",
-     "细微的，不重要的",
-     "缺乏特征的"
+     "挥霍的；挥霍者",
+     "威严的，庄重的",
+     "(人)懒惰缺乏活力的；(物品)惰性的",
+     "平等主义的"
     ],
     "answer": 0,
-    "explain": "truculent：好战的，好斗的（eager to fight; aggressively defiant）。近义词：belligerent, combative。"
+    "explain": "profligate：挥霍的；挥霍者（wastefully extravagant）。近义词：wasteful, spendthrift。"
    },
    {
-    "q": "哪个词的意思是「混浊的」？",
+    "q": "哪个词的意思是「威严的，庄重的」？",
     "options": [
-     "primitive",
-     "conversant",
-     "turbid",
-     "laudatory"
-    ],
-    "answer": 2,
-    "explain": "turbid：混浊的（cloudy or muddy; confused）。"
-   },
-   {
-    "q": "哪个词和 **foe** 的意思最接近？",
-    "options": [
-     "rationale",
-     "convulsion",
-     "clarity",
-     "adversary"
+     "amenable",
+     "whimsical",
+     "didactic",
+     "august"
     ],
     "answer": 3,
-    "explain": "adversary 与 foe 近义：an opponent or enemy。"
+    "explain": "august：威严的，庄重的（inspiring awe and respect）。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> Her ____, conversant with every opening, found her insipid style hard to read; her one idiosyncrasy was an overt smile before each trap.",
+    "q": "哪个词和 **rebuke** 的意思最接近？",
     "options": [
-     "privation",
-     "convulsion",
-     "adversary",
-     "rationale"
+     "reprehend",
+     "rescind",
+     "equivocate",
+     "complicate"
     ],
-    "answer": 2,
-    "explain": "adversary：敌手，对手（an opponent or enemy）。"
+    "answer": 0,
+    "explain": "reprehend 与 rebuke 近义：to criticize or rebuke。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> His exuberant manner could belie his fear; to a man who loved to ____ authority, rules were anathema, and nothing could soothe his nerves.",
+    "options": [
+     "cachet",
+     "flout",
+     "anathema",
+     "clandestine"
+    ],
+    "answer": 1,
+    "explain": "flout：嘲弄性不理会，蔑视（to openly disregard a rule）。"
    }
   ]
  }

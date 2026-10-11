@@ -2,369 +2,739 @@
  "id": "u28",
  "title": "S 级核心词 · 第 28 组",
  "en": "GRE Core Vocabulary · Set 28",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u55",
+  "u56"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "deft",
-     "ipa": "[deft]",
+     "w": "unassailable",
+     "ipa": "[ˌʌnəˈseɪləbl]",
      "pos": "adj.",
-     "zh": "灵巧的，熟练的",
-     "en": "quick and skillful",
+     "zh": "无可争辩的，无法否认的，不可亵渎的",
+     "en": "impossible to attack or question",
      "syn": [
-      "adroit",
-      "dexterous"
+      "impregnable",
+      "irrefutable"
      ],
      "ant": [
-      "clumsy",
-      "inept"
+      "vulnerable",
+      "flimsy"
      ]
     },
     {
-     "w": "revoke",
-     "ipa": "[rɪˈvok]",
+     "w": "disaffected",
+     "ipa": "[ˌdɪsəˈfektɪd]",
+     "pos": "adj.",
+     "zh": "不满的，叛逆的",
+     "en": "no longer loyal or satisfied",
+     "syn": [
+      "alienated",
+      "discontented"
+     ],
+     "ant": [
+      "loyal",
+      "content"
+     ]
+    },
+    {
+     "w": "abject",
+     "ipa": "[ˈæbdʒɛkt]",
+     "pos": "adj.",
+     "zh": "(地位、身份)悲惨、凄凉的；卑微的，讨好的",
+     "en": "miserable; lacking self-respect",
+     "syn": [
+      "wretched",
+      "servile"
+     ],
+     "ant": [
+      "proud",
+      "dignified"
+     ]
+    },
+    {
+     "w": "withhold",
+     "ipa": "[wɪðˈhold]",
      "pos": "vt.",
-     "zh": "撤回，宣告无效",
-     "en": "to officially cancel",
+     "zh": "抑制；扣压，不给予",
+     "en": "to refuse to give; to hold back",
      "syn": [
-      "rescind",
-      "repeal"
+      "retain",
+      "restrain"
      ],
      "ant": [
-      "grant",
-      "uphold"
+      "give",
+      "release"
      ]
     },
     {
-     "w": "conscientious",
-     "ipa": "[ˈkɑnʃɪˈɛnʃəs]",
-     "pos": "adj.",
-     "zh": "有良心的，正直的；仔细的，一丝不苟的",
-     "en": "careful and principled",
+     "w": "defer",
+     "ipa": "[dɪˈfɝ]",
+     "pos": "v.",
+     "zh": "推迟，延期遵从",
+     "en": "to postpone; to yield to another's judgment",
      "syn": [
-      "diligent",
-      "scrupulous"
+      "postpone",
+      "submit"
      ],
      "ant": [
-      "negligent",
-      "careless"
+      "hasten",
+      "resist"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[unassailable]] ruler faced a [[disaffected]] clerk in [[abject]] misery, who would [[withhold]] his vote or [[defer]] it.",
+   "gloss": {
+    "unassailable": "无可争辩的，无法否认的，不可亵渎的",
+    "disaffected": "不满的，叛逆的",
+    "abject": "(地位、身份)悲惨、凄凉的",
+    "withhold": "抑制",
+    "defer": "推迟，延期遵从"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "delineate",
+     "ipa": "[dɪˈlɪnɪet]",
+     "pos": "vt.",
+     "zh": "描写，描绘",
+     "en": "to describe or outline precisely",
+     "syn": [
+      "depict",
+      "portray"
+     ],
+     "ant": [
+      "blur",
+      "obscure"
      ]
     },
     {
-     "w": "parochial",
-     "ipa": "[pəˈrokɪəl]",
-     "pos": "adj.",
-     "zh": "狭隘的",
-     "en": "narrow in outlook",
+     "w": "acumen",
+     "ipa": "[ˈækjəmən]",
+     "pos": "n.",
+     "zh": "不同寻常的洞察力和鉴别力",
+     "en": "keen insight and quick judgment",
      "syn": [
-      "provincial",
-      "insular"
+      "shrewdness",
+      "astuteness"
      ],
      "ant": [
-      "cosmopolitan",
-      "broad-minded"
+      "obtuseness",
+      "stupidity"
      ]
     },
     {
-     "w": "malign",
-     "ipa": "[məˈlaɪn]",
+     "w": "virulent",
+     "ipa": "[ˈvɪrələnt]",
      "pos": "adj.",
-     "zh": "恶意的；诽谤",
-     "en": "evil or harmful; to speak ill of",
+     "zh": "有毒的",
+     "en": "extremely harmful or bitter; poisonous",
      "syn": [
-      "slander",
-      "vilify"
+      "toxic",
+      "malignant"
      ],
      "ant": [
-      "praise",
+      "harmless",
       "benign"
      ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[deft]] lawyer, [[conscientious]] to the last detail, asked the court to [[revoke]] the order, calling the [[parochial]] town's attempt to [[malign]] her client unfair.",
-   "gloss": {
-    "deft": "灵巧的，熟练的",
-    "revoke": "撤回，宣告无效",
-    "conscientious": "有良心的，正直的",
-    "parochial": "狭隘的",
-    "malign": "恶意的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "voracious",
-     "ipa": "[vəˈreɪʃəs]",
-     "pos": "adj.",
-     "zh": "有很大含量的，贪吃的；贪婪的，如饥似渴的",
-     "en": "having a huge appetite; insatiable",
-     "syn": [
-      "ravenous",
-      "insatiable"
-     ],
-     "ant": [
-      "satiated",
-      "moderate"
-     ]
     },
     {
-     "w": "puerile",
-     "ipa": "[ˈpjʊrəl]",
-     "pos": "adj.",
-     "zh": "幼稚的，不成熟的",
-     "en": "childish and silly",
-     "syn": [
-      "childish",
-      "juvenile"
-     ],
-     "ant": [
-      "mature",
-      "adult"
-     ]
-    },
-    {
-     "w": "incommensurate",
-     "ipa": "[ˌɪnkəˈmenʃərət]",
-     "pos": "adj.",
-     "zh": "不相称的",
-     "en": "out of proportion; inadequate",
-     "syn": [
-      "disproportionate",
-      "inadequate"
-     ],
-     "ant": [
-      "proportionate",
-      "adequate"
-     ]
-    },
-    {
-     "w": "archaic",
-     "ipa": "[ɑrˈkeɪk]",
-     "pos": "adj.",
-     "zh": "过时的，久远的",
-     "en": "very old or old-fashioned",
-     "syn": [
-      "antiquated",
-      "obsolete"
-     ],
-     "ant": [
-      "modern",
-      "current"
-     ]
-    },
-    {
-     "w": "hasty",
-     "ipa": "[ˈhesti]",
-     "pos": "adj.",
-     "zh": "轻率的",
-     "en": "done too quickly without thought",
-     "syn": [
-      "rash",
-      "hurried"
-     ],
-     "ant": [
-      "deliberate",
-      "careful"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[voracious]] reader, she found the [[puerile]] plot and [[archaic]] language [[incommensurate]] with the praise, and she made a [[hasty]] exit.",
-   "gloss": {
-    "voracious": "有很大含量的，贪吃的",
-    "puerile": "幼稚的，不成熟的",
-    "incommensurate": "不相称的",
-    "archaic": "过时的，久远的",
-    "hasty": "轻率的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "condemn",
-     "ipa": "[kənˈdɛm]",
-     "pos": "vt.",
-     "zh": "谴责(…为不道德的、邪恶的)",
-     "en": "to express strong disapproval of; to sentence",
-     "syn": [
-      "censure",
-      "denounce"
-     ],
-     "ant": [
-      "praise",
-      "absolve"
-     ]
-    },
-    {
-     "w": "groundless",
-     "ipa": "[ˈɡraʊndləs]",
-     "pos": "adj.",
-     "zh": "没有依据的",
-     "en": "without basis or reason",
-     "syn": [
-      "unfounded",
-      "baseless"
-     ],
-     "ant": [
-      "justified",
-      "well-founded"
-     ]
-    },
-    {
-     "w": "jettison",
-     "ipa": "[ˈdʒɛtɪsn]",
-     "pos": "vt.",
-     "zh": "放弃，拒绝接受(想法，计划等)",
-     "en": "to throw overboard; to abandon",
-     "syn": [
-      "discard",
-      "abandon"
-     ],
-     "ant": [
-      "retain",
-      "keep"
-     ]
-    },
-    {
-     "w": "resonate",
-     "ipa": "[ˈrɛzəˈnet]",
-     "pos": "v.",
-     "zh": "引起共鸣；回响",
-     "en": "to evoke a strong response; to echo",
-     "syn": [
-      "echo",
-      "reverberate"
-     ],
-     "ant": []
-    },
-    {
-     "w": "affectation",
-     "ipa": "[ˌæfɛkˈteʃən]",
+     "w": "spur",
+     "ipa": "[spɝ]",
      "pos": "n.",
-     "zh": "虚伪，做作",
-     "en": "artificial behavior meant to impress",
+     "zh": "刺激物；刺激，激励",
+     "en": "something that urges on; to urge on",
      "syn": [
-      "pretense",
-      "mannerism"
+      "stimulus",
+      "prod"
      ],
      "ant": [
-      "sincerity",
-      "naturalness"
+      "deterrent",
+      "curb"
+     ]
+    },
+    {
+     "w": "phlegmatic",
+     "ipa": "[flɛɡˈmætɪk]",
+     "pos": "adj.",
+     "zh": "冷静的，无感情的，淡漠的",
+     "en": "calm and slow to show emotion",
+     "syn": [
+      "stolid",
+      "impassive"
+     ],
+     "ant": [
+      "excitable",
+      "passionate"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "Critics would [[condemn]] the [[groundless]] claim; the author agreed to [[jettison]] her [[affectation]] of style so that her words could [[resonate]].",
+   "text": "The court did not [[delineate]] its rule; her [[acumen]] was clear, for the [[virulent]] attack could only [[spur]] the [[phlegmatic]] board to act.",
    "gloss": {
-    "condemn": "谴责(…为不道德的、邪恶的)",
-    "groundless": "没有依据的",
-    "jettison": "放弃，拒绝接受(想法，计划等)",
-    "resonate": "引起共鸣",
-    "affectation": "虚伪，做作"
+    "delineate": "描写，描绘",
+    "acumen": "不同寻常的洞察力和鉴别力",
+    "virulent": "有毒的",
+    "spur": "刺激物",
+    "phlegmatic": "冷静的，无感情的，淡漠的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "dour",
-     "ipa": "[ˈdaʊr]",
-     "pos": "adj.",
-     "zh": "严厉的",
-     "en": "stern, gloomy and unfriendly",
+     "w": "sabotage",
+     "ipa": "[ˌsæbəˈtɑʒ]",
+     "pos": "n.",
+     "zh": "妨害，破坏；从事破坏活动",
+     "en": "deliberate damage or obstruction; to undermine",
      "syn": [
-      "grim",
-      "sullen"
+      "undermine",
+      "subvert"
+     ],
+     "ant": [
+      "support",
+      "aid"
+     ]
+    },
+    {
+     "w": "aggrieve",
+     "ipa": "[əˈgriːv]",
+     "pos": "vt.",
+     "zh": "使苦恼，使悲痛",
+     "en": "to cause distress or to treat unfairly",
+     "syn": [
+      "distress",
+      "wrong"
+     ],
+     "ant": [
+      "please",
+      "console"
+     ]
+    },
+    {
+     "w": "arduous",
+     "ipa": "[ˈɑrdʒuəs]",
+     "pos": "adj.",
+     "zh": "难以做到的，费劲的",
+     "en": "requiring great effort; exhausting",
+     "syn": [
+      "strenuous",
+      "grueling"
+     ],
+     "ant": [
+      "easy",
+      "effortless"
+     ]
+    },
+    {
+     "w": "venal",
+     "ipa": "[ˈvinl]",
+     "pos": "adj.",
+     "zh": "贪污受贿的",
+     "en": "willing to be bribed; corrupt",
+     "syn": [
+      "corruptible",
+      "mercenary"
+     ],
+     "ant": [
+      "incorruptible",
+      "honest"
+     ]
+    },
+    {
+     "w": "gloomy",
+     "ipa": "[ˈɡlumi]",
+     "pos": "adj.",
+     "zh": "忧郁的",
+     "en": "dark and depressing; low in spirits",
+     "syn": [
+      "dismal",
+      "glum"
      ],
      "ant": [
       "cheerful",
-      "genial"
-     ]
-    },
-    {
-     "w": "orthodox",
-     "ipa": "[ˈɔrθədɑks]",
-     "pos": "adj.",
-     "zh": "传统的",
-     "en": "conforming to accepted beliefs",
-     "syn": [
-      "conventional",
-      "traditional"
-     ],
-     "ant": [
-      "unorthodox",
-      "heretical"
-     ]
-    },
-    {
-     "w": "cursory",
-     "ipa": "[ˈkɜːrsəri]",
-     "pos": "adj.",
-     "zh": "匆忙的，不注意细节的",
-     "en": "hasty and superficial",
-     "syn": [
-      "perfunctory",
-      "superficial"
-     ],
-     "ant": [
-      "thorough",
-      "careful"
-     ]
-    },
-    {
-     "w": "croon",
-     "ipa": "[krun]",
-     "pos": "v.",
-     "zh": "低声歌唱或说话",
-     "en": "to sing or hum softly",
-     "syn": [
-      "hum",
-      "sing"
-     ],
-     "ant": []
-    },
-    {
-     "w": "indigenous",
-     "ipa": "[ɪnˈdɪdʒənəs]",
-     "pos": "adj.",
-     "zh": "土产的，本地的；与生俱来的，先天的",
-     "en": "native to a place; innate",
-     "syn": [
-      "native",
-      "inborn"
-     ],
-     "ant": [
-      "foreign",
-      "alien"
+      "bright"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[dour]] priest, an [[orthodox]] man, gave a [[cursory]] glance at the [[indigenous]] dancer who began to [[croon]] a lullaby.",
+   "text": "The rival chose to [[sabotage]] the plan and [[aggrieve]] the staff; the [[arduous]] climb left the [[venal]] guide [[gloomy]].",
    "gloss": {
-    "dour": "严厉的",
-    "orthodox": "传统的",
-    "cursory": "匆忙的，不注意细节的",
-    "croon": "低声歌唱或说话",
-    "indigenous": "土产的，本地的"
+    "sabotage": "妨害，破坏",
+    "aggrieve": "使苦恼，使悲痛",
+    "arduous": "难以做到的，费劲的",
+    "venal": "贪污受贿的",
+    "gloomy": "忧郁的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "deject",
+     "ipa": "[dɪˈdʒekt]",
+     "pos": "vt.",
+     "zh": "使沮丧",
+     "en": "to make sad or discouraged",
+     "syn": [
+      "dishearten",
+      "depress"
+     ],
+     "ant": [
+      "cheer",
+      "hearten"
+     ]
+    },
+    {
+     "w": "curtail",
+     "ipa": "[kɜːrˈteɪl]",
+     "pos": "vt.",
+     "zh": "缩短，削减",
+     "en": "to cut short or reduce",
+     "syn": [
+      "shorten",
+      "restrict"
+     ],
+     "ant": [
+      "extend",
+      "prolong"
+     ]
+    },
+    {
+     "w": "persistence",
+     "ipa": "[pəˈsɪstəns]",
+     "pos": "n.",
+     "zh": "坚持，持续",
+     "en": "firm continuation despite difficulty",
+     "syn": [
+      "perseverance",
+      "tenacity"
+     ],
+     "ant": [
+      "indecision",
+      "fickleness"
+     ]
+    },
+    {
+     "w": "feckless",
+     "ipa": "[ˈfekləs]",
+     "pos": "adj.",
+     "zh": "无成果的，没有价值的；粗心不负责任的",
+     "en": "ineffective and irresponsible",
+     "syn": [
+      "inept",
+      "irresponsible"
+     ],
+     "ant": [
+      "competent",
+      "responsible"
+     ]
+    },
+    {
+     "w": "elude",
+     "ipa": "[ɪˈlud]",
+     "pos": "vt.",
+     "zh": "躲闪，躲避；使无法理解，使困惑",
+     "en": "to escape from cleverly; to be hard to grasp",
+     "syn": [
+      "evade",
+      "dodge"
+     ],
+     "ant": [
+      "confront",
+      "catch"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The storm would [[deject]] the group, and the cost would [[curtail]] the trip; his [[persistence]] was admired, though the [[feckless]] clerk made the files [[elude]] him.",
+   "gloss": {
+    "deject": "使沮丧",
+    "curtail": "缩短，削减",
+    "persistence": "坚持，持续",
+    "feckless": "无成果的，没有价值的",
+    "elude": "躲闪，躲避"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "succinct",
+     "ipa": "[səkˈsɪŋkt]",
+     "pos": "adj.",
+     "zh": "简明的，简洁的",
+     "en": "briefly and clearly expressed",
+     "syn": [
+      "concise",
+      "terse"
+     ],
+     "ant": [
+      "verbose",
+      "wordy"
+     ]
+    },
+    {
+     "w": "arrest",
+     "ipa": "[əˈrɛst]",
+     "pos": "n./v.",
+     "zh": "停止；逮捕；吸引(某人)注意力",
+     "en": "to stop or check; to seize by legal authority; to catch attention",
+     "syn": [
+      "halt",
+      "capture"
+     ],
+     "ant": [
+      "release",
+      "free"
+     ]
+    },
+    {
+     "w": "uncouth",
+     "ipa": "[ʌnˈkʊθ]",
+     "pos": "adj.",
+     "zh": "粗俗的，没有品味的",
+     "en": "lacking good manners or refinement",
+     "syn": [
+      "crude",
+      "boorish"
+     ],
+     "ant": [
+      "refined",
+      "polished"
+     ]
+    },
+    {
+     "w": "conspicuous",
+     "ipa": "[kənˈspɪkjʊəs]",
+     "pos": "adj.",
+     "zh": "显而易见的，吸引人的",
+     "en": "easily seen; attracting attention",
+     "syn": [
+      "noticeable",
+      "prominent"
+     ],
+     "ant": [
+      "inconspicuous",
+      "hidden"
+     ]
+    },
+    {
+     "w": "surrender",
+     "ipa": "[səˈrɛndɚ]",
+     "pos": "vt.",
+     "zh": "交出，放弃，投降",
+     "en": "to give up or yield to another",
+     "syn": [
+      "yield",
+      "relinquish"
+     ],
+     "ant": [
+      "resist",
+      "fight on"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[succinct]] report could not [[arrest]] the [[uncouth]] crowd; the [[conspicuous]] fault was that the rebels refused to [[surrender]].",
+   "gloss": {
+    "succinct": "简明的，简洁的",
+    "arrest": "停止",
+    "uncouth": "粗俗的，没有品味的",
+    "conspicuous": "显而易见的，吸引人的",
+    "surrender": "交出，放弃，投降"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "demanding",
+     "ipa": "[dɪˈmændɪŋ]",
+     "pos": "adj.",
+     "zh": "要求高的；费力的",
+     "en": "requiring much effort or attention; hard to please",
+     "syn": [
+      "exacting",
+      "taxing"
+     ],
+     "ant": [
+      "easygoing",
+      "undemanding"
+     ]
+    },
+    {
+     "w": "exude",
+     "ipa": "[ɪɡˈzuːd]",
+     "pos": "v.",
+     "zh": "分泌，流出",
+     "en": "to give off a liquid or quality steadily",
+     "syn": [
+      "ooze",
+      "radiate"
+     ],
+     "ant": [
+      "absorb",
+      "suppress"
+     ]
+    },
+    {
+     "w": "aberrant",
+     "ipa": "[æˈbɛrənt]",
+     "pos": "adj.",
+     "zh": "异常的，非常规的",
+     "en": "departing from what is normal or expected",
+     "syn": [
+      "deviant",
+      "anomalous"
+     ],
+     "ant": [
+      "normal",
+      "typical"
+     ]
+    },
+    {
+     "w": "astute",
+     "ipa": "[əˈstut]",
+     "pos": "adj.",
+     "zh": "机敏的，有洞察力的",
+     "en": "quick to see and judge shrewdly",
+     "syn": [
+      "shrewd",
+      "perceptive"
+     ],
+     "ant": [
+      "obtuse",
+      "naive"
+     ]
+    },
+    {
+     "w": "heresy",
+     "ipa": "[ˈhɛrəsi]",
+     "pos": "n.",
+     "zh": "异教，和普遍观点相悖的说法",
+     "en": "a belief that goes against accepted doctrine",
+     "syn": [
+      "dissent",
+      "unorthodoxy"
+     ],
+     "ant": [
+      "orthodoxy",
+      "dogma"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[demanding]] chef would [[exude]] charm at the table, but he could not hide his [[aberrant]] temper, and the [[astute]] critic called his menu pure [[heresy]].",
+   "gloss": {
+    "demanding": "要求高的",
+    "exude": "分泌，流出",
+    "aberrant": "异常的，非常规的",
+    "astute": "机敏的，有洞察力的",
+    "heresy": "异教，和普遍观点相悖的说法"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "fickle",
+     "ipa": "[ˈfɪkl]",
+     "pos": "adj.",
+     "zh": "易变的",
+     "en": "changing often without reason",
+     "syn": [
+      "capricious",
+      "inconstant"
+     ],
+     "ant": [
+      "steadfast",
+      "loyal"
+     ]
+    },
+    {
+     "w": "detract",
+     "ipa": "[dɪˈtrækt]",
+     "pos": "vt.",
+     "zh": "贬低，降低价值；使分心",
+     "en": "to take away from the value or quality of",
+     "syn": [
+      "diminish",
+      "belittle"
+     ],
+     "ant": [
+      "enhance",
+      "add to"
+     ]
+    },
+    {
+     "w": "surrogate",
+     "ipa": "[ˈsɜːrəɡət]",
+     "pos": "n.",
+     "zh": "替代品",
+     "en": "a substitute, especially a person acting for another",
+     "syn": [
+      "stand-in",
+      "proxy"
+     ],
+     "ant": [
+      "original"
+     ]
+    },
+    {
+     "w": "anthropogenic",
+     "ipa": "[ˌænθrəpəˈdʒɛnɪk]",
+     "pos": "adj.",
+     "zh": "人为的",
+     "en": "caused by human activity",
+     "syn": [
+      "man-made"
+     ],
+     "ant": [
+      "natural"
+     ]
+    },
+    {
+     "w": "banish",
+     "ipa": "[ˈbænɪʃ]",
+     "pos": "vt.",
+     "zh": "驱逐出境",
+     "en": "to send away as a punishment; to drive away",
+     "syn": [
+      "exile",
+      "expel"
+     ],
+     "ant": [
+      "welcome",
+      "admit"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[fickle]] public may [[detract]] from his fame; a [[surrogate]] can speak for him, as [[anthropogenic]] change did not [[banish]] his ideas.",
+   "gloss": {
+    "fickle": "易变的",
+    "detract": "贬低，降低价值",
+    "surrogate": "替代品",
+    "anthropogenic": "人为的",
+    "banish": "驱逐出境"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "hobble",
+     "ipa": "[ˈhɑbl]",
+     "pos": "vt.",
+     "zh": "阻碍，妨碍",
+     "en": "to hamper progress; to walk with difficulty",
+     "syn": [
+      "hamper",
+      "impede"
+     ],
+     "ant": [
+      "facilitate",
+      "free"
+     ]
+    },
+    {
+     "w": "illusory",
+     "ipa": "[ɪˈlusəri]",
+     "pos": "adj.",
+     "zh": "幻觉的，虚幻的",
+     "en": "based on false appearance; not real",
+     "syn": [
+      "deceptive",
+      "imaginary"
+     ],
+     "ant": [
+      "real",
+      "genuine"
+     ]
+    },
+    {
+     "w": "vitiate",
+     "ipa": "[ˈvɪʃieɪt]",
+     "pos": "v.",
+     "zh": "削弱，损害",
+     "en": "to spoil or weaken the quality of",
+     "syn": [
+      "impair",
+      "undermine"
+     ],
+     "ant": [
+      "improve",
+      "strengthen"
+     ]
+    },
+    {
+     "w": "caricature",
+     "ipa": "[ˈkærɪkətʃɚ]",
+     "pos": "n.",
+     "zh": "用讽刺歪曲等手法的夸张，漫画，讽刺画；嘲笑性模仿或夸张",
+     "en": "an exaggerated portrayal that mocks; to portray this way",
+     "syn": [
+      "parody",
+      "burlesque"
+     ],
+     "ant": [
+      "accurate portrait"
+     ]
+    },
+    {
+     "w": "galvanize",
+     "ipa": "[ˈɡælvənaɪz]",
+     "pos": "vt.",
+     "zh": "(好似用电击)刺激",
+     "en": "to shock into action",
+     "syn": [
+      "spur",
+      "jolt"
+     ],
+     "ant": [
+      "dishearten",
+      "deter"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Debt began to [[hobble]] the firm, and its [[illusory]] profits could [[vitiate]] its plans; a [[caricature]] in the press helped [[galvanize]] the board.",
+   "gloss": {
+    "hobble": "阻碍，妨碍",
+    "illusory": "幻觉的，虚幻的",
+    "vitiate": "削弱，损害",
+    "caricature": "用讽刺歪曲等手法的夸张，漫画，讽刺画",
+    "galvanize": "(好似用电击)刺激"
    }
   }
  ],
@@ -372,59 +742,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**orthodox** 的意思最接近：",
+    "q": "**vitiate** 的意思最接近：",
     "options": [
-     "幼稚的，不成熟的",
-     "有很大含量的，贪吃的；贪婪的，如饥似渴的",
-     "传统的",
-     "土产的，本地的；与生俱来的，先天的"
-    ],
-    "answer": 2,
-    "explain": "orthodox：传统的（conforming to accepted beliefs）。近义词：conventional, traditional。"
-   },
-   {
-    "q": "**croon** 的意思最接近：",
-    "options": [
-     "放弃，拒绝接受(想法，计划等)",
-     "低声歌唱或说话",
-     "谴责(…为不道德的、邪恶的)",
-     "撤回，宣告无效"
+     "躲闪，躲避；使无法理解，使困惑",
+     "削弱，损害",
+     "驱逐出境",
+     "缩短，削减"
     ],
     "answer": 1,
-    "explain": "croon：低声歌唱或说话（to sing or hum softly）。近义词：hum, sing。"
+    "explain": "vitiate：削弱，损害（to spoil or weaken the quality of）。近义词：impair, undermine。"
    },
    {
-    "q": "哪个词的意思是「撤回，宣告无效」？",
+    "q": "**caricature** 的意思最接近：",
     "options": [
-     "revoke",
-     "croon",
-     "jettison",
-     "condemn"
+     "不同寻常的洞察力和鉴别力",
+     "替代品",
+     "用讽刺歪曲等手法的夸张，漫画，讽刺画；嘲笑性模仿或夸张",
+     "停止；逮捕；吸引(某人)注意力"
+    ],
+    "answer": 2,
+    "explain": "caricature：用讽刺歪曲等手法的夸张，漫画，讽刺画；嘲笑性模仿或夸张（an exaggerated portrayal that mocks; to portray this way）。近义词：parody, burlesque。"
+   },
+   {
+    "q": "哪个词的意思是「幻觉的，虚幻的」？",
+    "options": [
+     "illusory",
+     "succinct",
+     "disaffected",
+     "abject"
     ],
     "answer": 0,
-    "explain": "revoke：撤回，宣告无效（to officially cancel）。"
+    "explain": "illusory：幻觉的，虚幻的（based on false appearance; not real）。"
    },
    {
-    "q": "哪个词和 **perfunctory** 的意思最接近？",
+    "q": "哪个词和 **shrewdness** 的意思最接近？",
     "options": [
-     "indigenous",
-     "groundless",
-     "voracious",
-     "cursory"
+     "caricature",
+     "acumen",
+     "heresy",
+     "sabotage"
     ],
-    "answer": 3,
-    "explain": "cursory 与 perfunctory 近义：hasty and superficial。"
+    "answer": 1,
+    "explain": "acumen 与 shrewdness 近义：keen insight and quick judgment。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> Critics would condemn the groundless claim; the author agreed to jettison her affectation of style so that her words could ____.",
+    "q": "选最适合填入空格的词：\n\n> The court did not delineate its rule; her ____ was clear, for the virulent attack could only spur the phlegmatic board to act.",
     "options": [
-     "condemn",
-     "jettison",
-     "croon",
-     "resonate"
+     "surrogate",
+     "heresy",
+     "caricature",
+     "acumen"
     ],
     "answer": 3,
-    "explain": "resonate：引起共鸣；回响（to evoke a strong response; to echo）。"
+    "explain": "acumen：不同寻常的洞察力和鉴别力（keen insight and quick judgment）。"
    }
   ]
  }

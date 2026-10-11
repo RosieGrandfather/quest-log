@@ -2,363 +2,718 @@
  "id": "u15",
  "title": "S 级核心词 · 第 15 组",
  "en": "GRE Core Vocabulary · Set 15",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u29",
+  "u30"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "poignant",
-     "ipa": "[ˈpɔɪnjənt]",
+     "w": "urbane",
+     "ipa": "[ɜːrˈbeɪn]",
      "pos": "adj.",
-     "zh": "令人感伤的",
-     "en": "deeply moving, often with sadness",
+     "zh": "彬彬有礼的，文雅的",
+     "en": "polished and refined in manner",
      "syn": [
-      "touching",
-      "moving"
+      "suave",
+      "sophisticated"
      ],
      "ant": [
-      "unmoving",
-      "flippant"
+      "uncouth",
+      "rustic"
      ]
     },
     {
-     "w": "bumble",
-     "ipa": "[ˈbʌmbl]",
-     "pos": "vi.",
-     "zh": "笨拙地做；含糊地说",
-     "en": "to speak or act in a confused, clumsy way",
-     "syn": [
-      "fumble",
-      "stumble"
-     ],
-     "ant": []
-    },
-    {
-     "w": "coagulate",
-     "ipa": "[koʊˈæɡjuleɪt]",
-     "pos": "v.",
-     "zh": "(使)凝结，(使)变稠",
-     "en": "to change from liquid to thick or solid",
-     "syn": [
-      "clot",
-      "congeal"
-     ],
-     "ant": [
-      "dissolve",
-      "liquefy"
-     ]
-    },
-    {
-     "w": "shrewd",
-     "ipa": "[ʃrud]",
+     "w": "facetious",
+     "ipa": "[fəˈsiʃəs]",
      "pos": "adj.",
-     "zh": "精明的，机敏的",
-     "en": "clever and sharp in judgment",
+     "zh": "喜欢开玩笑的，轻浮的",
+     "en": "joking inappropriately",
      "syn": [
-      "astute",
-      "canny"
+      "flippant",
+      "jocular"
      ],
      "ant": [
-      "naive",
-      "gullible"
+      "serious",
+      "earnest"
      ]
     },
     {
-     "w": "nostalgia",
-     "ipa": "[nəˈstældʒə]",
+     "w": "analogous",
+     "ipa": "[əˈnæləɡəs]",
+     "pos": "adj.",
+     "zh": "相似的，可比较的",
+     "en": "similar in some respects",
+     "syn": [
+      "comparable",
+      "parallel"
+     ],
+     "ant": [
+      "dissimilar",
+      "unrelated"
+     ]
+    },
+    {
+     "w": "embargo",
+     "ipa": "[ɪmˈbɑːrɡoʊ]",
      "pos": "n.",
-     "zh": "怀旧，怀念",
-     "en": "a wistful longing for the past",
+     "zh": "贸易禁止令",
+     "en": "an official ban on trade",
      "syn": [
-      "wistfulness",
-      "yearning"
+      "ban",
+      "prohibition"
      ],
      "ant": []
+    },
+    {
+     "w": "dissension",
+     "ipa": "[dɪˈsenʃn]",
+     "pos": "n.",
+     "zh": "意见不合",
+     "en": "strong disagreement",
+     "syn": [
+      "discord",
+      "conflict"
+     ],
+     "ant": [
+      "accord",
+      "agreement"
+     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "A [[poignant]] film stirred [[nostalgia]] in the old man, who tried to [[bumble]] through a toast; in the kitchen a [[shrewd]] cook watched the sauce [[coagulate]].",
+   "text": "The [[urbane]] ambassador made a [[facetious]] remark that an [[embargo]] was [[analogous]] to a stern lecture; the [[dissension]] in the room was audible.",
    "gloss": {
-    "poignant": "令人感伤的",
-    "bumble": "笨拙地做",
-    "coagulate": "(使)凝结，(使)变稠",
-    "shrewd": "精明的，机敏的",
-    "nostalgia": "怀旧，怀念"
+    "urbane": "彬彬有礼的，文雅的",
+    "facetious": "喜欢开玩笑的，轻浮的",
+    "analogous": "相似的，可比较的",
+    "embargo": "贸易禁止令",
+    "dissension": "意见不合"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "notoriety",
-     "ipa": "[ˌnoʊtəˈraɪəti]",
+     "w": "relish",
+     "ipa": "[ˈrɛlɪʃ]",
      "pos": "n.",
-     "zh": "坏名声",
-     "en": "the state of being famous for something bad",
+     "zh": "享受；喜好",
+     "en": "to enjoy greatly; enjoyment",
      "syn": [
-      "infamy",
-      "disrepute"
+      "savor",
+      "enjoy"
      ],
      "ant": [
-      "renown",
-      "honor"
+      "dislike",
+      "loathe"
      ]
     },
     {
-     "w": "solitude",
-     "ipa": "[ˈsɑlətud]",
+     "w": "incursion",
+     "ipa": "[ɪnˈkɜːrʒn]",
      "pos": "n.",
-     "zh": "孤独，避世",
-     "en": "the state of being alone",
+     "zh": "入侵",
+     "en": "a sudden invasion",
      "syn": [
-      "seclusion",
-      "isolation"
+      "invasion",
+      "raid"
      ],
      "ant": [
-      "company",
-      "society"
+      "retreat",
+      "withdrawal"
      ]
     },
     {
-     "w": "censure",
-     "ipa": "[ˈsɛnʃɚ]",
+     "w": "adulate",
+     "ipa": "[ˈædʒəˌleɪt]",
      "pos": "v.",
-     "zh": "公开表示反对，谴责",
-     "en": "to express strong disapproval of",
+     "zh": "极度谄媚，拍马屁",
+     "en": "to praise excessively",
      "syn": [
-      "condemn",
-      "reprimand"
+      "flatter",
+      "fawn on"
      ],
      "ant": [
-      "commend",
-      "applaud"
+      "denigrate",
+      "disparage"
      ]
     },
     {
-     "w": "aggravate",
-     "ipa": "[ˈæɡrəvet]",
+     "w": "list",
+     "ipa": "[lɪst]",
+     "pos": "v.",
+     "zh": "(使)倾斜",
+     "en": "to lean to one side",
+     "syn": [
+      "tilt",
+      "lean"
+     ],
+     "ant": []
+    },
+    {
+     "w": "lugubrious",
+     "ipa": "[ləˈɡuːbriəs]",
+     "pos": "adj.",
+     "zh": "(故作夸张的)悲哀的",
+     "en": "mournful, often in an exaggerated way",
+     "syn": [
+      "gloomy",
+      "doleful"
+     ],
+     "ant": [
+      "jovial",
+      "cheerful"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The crew would [[relish]] a quiet night, but an [[incursion]] by pirates left the ship to [[list]]; the captain, whom fans used to [[adulate]], gave a [[lugubrious]] speech.",
+   "gloss": {
+    "relish": "享受",
+    "incursion": "入侵",
+    "adulate": "极度谄媚，拍马屁",
+    "list": "(使)倾斜",
+    "lugubrious": "(故作夸张的)悲哀的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "captious",
+     "ipa": "[ˈkæpʃəs]",
+     "pos": "adj.",
+     "zh": "吹毛求疵的，爱挑毛病的",
+     "en": "fond of finding fault",
+     "syn": [
+      "carping",
+      "fault-finding"
+     ],
+     "ant": [
+      "appreciative",
+      "accepting"
+     ]
+    },
+    {
+     "w": "rampant",
+     "ipa": "[ˈræmpənt]",
+     "pos": "adj.",
+     "zh": "(植物)生长茂盛的；猖獗的，不受限制的",
+     "en": "spreading uncontrollably",
+     "syn": [
+      "unchecked",
+      "widespread"
+     ],
+     "ant": [
+      "restrained",
+      "controlled"
+     ]
+    },
+    {
+     "w": "truncate",
+     "ipa": "[trʌŋˈket]",
      "pos": "vt.",
-     "zh": "加重，恶化",
-     "en": "to make worse; to annoy",
+     "zh": "截短；缩短(时间、篇幅等)",
+     "en": "to shorten by cutting",
      "syn": [
-      "exacerbate",
-      "worsen"
+      "shorten",
+      "abridge"
      ],
      "ant": [
-      "alleviate",
-      "soothe"
+      "lengthen",
+      "extend"
      ]
     },
     {
-     "w": "soft-pedal",
-     "ipa": "soft-pedal",
+     "w": "beleaguer",
+     "ipa": "[bɪˈliːgə]",
      "pos": "v.",
-     "zh": "降低…的力度",
-     "en": "to downplay or make less emphatic",
+     "zh": "使困扰，使烦恼，使消沉",
+     "en": "to surround with difficulties; to harass",
      "syn": [
-      "downplay",
-      "tone down"
-     ],
-     "ant": [
-      "emphasize",
-      "stress"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The senator's [[notoriety]] grew, and to avoid [[censure]] he sought [[solitude]]; his aides tried to [[soft-pedal]] the issue lest it [[aggravate]] the crisis.",
-   "gloss": {
-    "notoriety": "坏名声",
-    "solitude": "孤独，避世",
-    "censure": "公开表示反对，谴责",
-    "aggravate": "加重，恶化",
-    "soft-pedal": "降低…的力度"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "tepid",
-     "ipa": "[ˈtɛpɪd]",
-     "pos": "adj.",
-     "zh": "不太热心的",
-     "en": "lukewarm; lacking enthusiasm",
-     "syn": [
-      "lukewarm",
-      "halfhearted"
-     ],
-     "ant": [
-      "enthusiastic",
-      "fervent"
-     ]
-    },
-    {
-     "w": "plethora",
-     "ipa": "[ˈpleθərə]",
-     "pos": "n.",
-     "zh": "过量，过剩",
-     "en": "an excessive amount",
-     "syn": [
-      "surfeit",
-      "glut"
-     ],
-     "ant": [
-      "dearth",
-      "scarcity"
-     ]
-    },
-    {
-     "w": "fawn",
-     "ipa": "[fɔn]",
-     "pos": "vi.",
-     "zh": "阿谀奉承",
-     "en": "to flatter in order to win favor",
-     "syn": [
-      "grovel",
-      "toady"
+      "besiege",
+      "harass"
      ],
      "ant": []
     },
     {
-     "w": "repugnant",
-     "ipa": "[rɪˈpʌɡnənt]",
-     "pos": "adj.",
-     "zh": "令人厌恶的",
-     "en": "extremely distasteful",
-     "syn": [
-      "repulsive",
-      "abhorrent"
-     ],
-     "ant": [
-      "attractive",
-      "agreeable"
-     ]
-    },
-    {
-     "w": "downplay",
-     "ipa": "[ˌdaʊnˈple]",
+     "w": "importune",
+     "ipa": "[ˌɪmpɔːrˈtuːn]",
      "pos": "vt.",
-     "zh": "轻描淡写，不予重视",
-     "en": "to make something seem less important",
+     "zh": "恳求，迫切请求",
+     "en": "to ask persistently and urgently",
      "syn": [
-      "minimize",
-      "understate"
+      "beseech",
+      "implore"
      ],
-     "ant": [
-      "emphasize",
-      "exaggerate"
-     ]
+     "ant": []
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[tepid]] applause suggested a [[plethora]] of doubts; the courtiers who used to [[fawn]] now found the king's decrees [[repugnant]] and began to [[downplay]] their loyalty.",
+   "text": "The [[captious]] editor would [[truncate]] the report; with errors [[rampant]], he would [[beleaguer]] the writers and [[importune]] them to hurry.",
    "gloss": {
-    "tepid": "不太热心的",
-    "plethora": "过量，过剩",
-    "fawn": "阿谀奉承",
-    "repugnant": "令人厌恶的",
-    "downplay": "轻描淡写，不予重视"
+    "captious": "吹毛求疵的，爱挑毛病的",
+    "rampant": "(植物)生长茂盛的",
+    "truncate": "截短",
+    "beleaguer": "使困扰，使烦恼，使消沉",
+    "importune": "恳求，迫切请求"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "diminutive",
-     "ipa": "[dɪˈmɪnjətɪv]",
+     "w": "byzantine",
+     "ipa": "[ˈbaɪzəntaɪn]",
      "pos": "adj.",
-     "zh": "极小的",
-     "en": "extremely small",
+     "zh": "错综复杂的",
+     "en": "extremely complicated and secretive",
      "syn": [
-      "tiny",
-      "petite"
+      "labyrinthine",
+      "intricate"
      ],
      "ant": [
-      "huge",
-      "gigantic"
+      "straightforward",
+      "simple"
      ]
     },
     {
-     "w": "temperate",
-     "ipa": "[ˈtɛmpərət]",
-     "pos": "adj.",
-     "zh": "(言行举止)有分寸的；有节制的",
-     "en": "moderate; not extreme",
+     "w": "dampen",
+     "ipa": "[ˈdæmpən]",
+     "pos": "vt.",
+     "zh": "抑制，压抑(感情、精力等)，泼冷水",
+     "en": "to reduce the intensity of",
      "syn": [
+      "discourage",
+      "curb"
+     ],
+     "ant": [
+      "encourage",
+      "stimulate"
+     ]
+    },
+    {
+     "w": "preface",
+     "ipa": "[ˈprɛfəs]",
+     "pos": "n.",
+     "zh": "序言",
+     "en": "an introduction to a book or speech",
+     "syn": [
+      "foreword",
+      "prologue"
+     ],
+     "ant": [
+      "epilogue",
+      "afterword"
+     ]
+    },
+    {
+     "w": "zealot",
+     "ipa": "[ˈzelət]",
+     "pos": "n.",
+     "zh": "狂热者，极端主义者",
+     "en": "a fanatical supporter",
+     "syn": [
+      "fanatic",
+      "extremist"
+     ],
+     "ant": [
       "moderate",
-      "restrained"
-     ],
-     "ant": [
-      "extreme",
-      "intemperate"
+      "skeptic"
      ]
     },
     {
-     "w": "gossamer",
-     "ipa": "[ˈɡɑːsəmər]",
-     "pos": "n.",
-     "zh": "轻薄的东西；薄纱",
-     "en": "something very light and delicate",
-     "syn": [
-      "gauzy",
-      "filmy"
-     ],
-     "ant": [
-      "heavy",
-      "substantial"
-     ]
-    },
-    {
-     "w": "anecdote",
-     "ipa": "[ˈænɪkdot]",
-     "pos": "n.",
-     "zh": "短小有趣的故事，段子",
-     "en": "a short, amusing story about a real event",
-     "syn": [
-      "tale",
-      "story"
-     ],
-     "ant": []
-    },
-    {
-     "w": "untenable",
-     "ipa": "[ʌnˈtenəbl]",
+     "w": "seminal",
+     "ipa": "[ˈsemɪnl]",
      "pos": "adj.",
-     "zh": "防守不住的，站不住脚的",
-     "en": "impossible to defend",
+     "zh": "创新的",
+     "en": "strongly influential and original",
      "syn": [
-      "indefensible",
-      "unsustainable"
+      "groundbreaking",
+      "formative"
      ],
      "ant": [
-      "defensible",
-      "tenable"
+      "derivative",
+      "trivial"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[diminutive]] speaker, dressed in [[gossamer]] silk, told a [[temperate]] [[anecdote]] that showed the opposition's claim was [[untenable]].",
+   "text": "A [[byzantine]] rule threatened to [[dampen]] interest in the [[seminal]] book, whose [[preface]] was written by a [[zealot]].",
    "gloss": {
-    "diminutive": "极小的",
-    "temperate": "(言行举止)有分寸的",
-    "gossamer": "轻薄的东西",
-    "anecdote": "短小有趣的故事，段子",
-    "untenable": "防守不住的，站不住脚的"
+    "byzantine": "错综复杂的",
+    "dampen": "抑制，压抑(感情、精力等)，泼冷水",
+    "preface": "序言",
+    "zealot": "狂热者，极端主义者",
+    "seminal": "创新的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "endemic",
+     "ipa": "[ɛnˈdɛmɪk]",
+     "pos": "adj.",
+     "zh": "地方性的",
+     "en": "native to or common in a particular area",
+     "syn": [
+      "native",
+      "local"
+     ],
+     "ant": [
+      "foreign",
+      "imported"
+     ]
+    },
+    {
+     "w": "emulate",
+     "ipa": "[ˈɛmjulet]",
+     "pos": "vt.",
+     "zh": "效仿",
+     "en": "to imitate in order to equal or surpass",
+     "syn": [
+      "imitate",
+      "mimic"
+     ],
+     "ant": []
+    },
+    {
+     "w": "venial",
+     "ipa": "[ˈvinɪəl]",
+     "pos": "adj.",
+     "zh": "可宽恕的",
+     "en": "minor and easily forgiven",
+     "syn": [
+      "pardonable",
+      "excusable"
+     ],
+     "ant": [
+      "grave",
+      "mortal"
+     ]
+    },
+    {
+     "w": "stock",
+     "ipa": "[stɑk]",
+     "pos": "adj.",
+     "zh": "普通的，常备的",
+     "en": "commonly used and unoriginal",
+     "syn": [
+      "standard",
+      "routine"
+     ],
+     "ant": [
+      "original",
+      "unusual"
+     ]
+    },
+    {
+     "w": "reign",
+     "ipa": "[ren]",
+     "pos": "n.",
+     "zh": "统治权占统治地位或盛行",
+     "en": "to rule; to prevail",
+     "syn": [
+      "rule",
+      "prevail"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Where bribery is [[endemic]], clerks [[emulate]] their bosses and shrug off each [[venial]] fault with a [[stock]] excuse, while the old king's [[reign]] never seems to end.",
+   "gloss": {
+    "endemic": "地方性的",
+    "emulate": "效仿",
+    "venial": "可宽恕的",
+    "stock": "普通的，常备的",
+    "reign": "统治权占统治地位或盛行"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "glean",
+     "ipa": "[ɡʌl]",
+     "pos": "v.",
+     "zh": "收集",
+     "en": "to gather bit by bit",
+     "syn": [
+      "gather",
+      "collect"
+     ],
+     "ant": [
+      "scatter"
+     ]
+    },
+    {
+     "w": "tamper",
+     "ipa": "[ˈtæmpɚ]",
+     "pos": "v.",
+     "zh": "恶意窜改，损害",
+     "en": "to interfere with in order to damage",
+     "syn": [
+      "meddle",
+      "interfere"
+     ],
+     "ant": []
+    },
+    {
+     "w": "restless",
+     "ipa": "[ˈrɛstləs]",
+     "pos": "adj.",
+     "zh": "不平静的",
+     "en": "unable to rest or stay still",
+     "syn": [
+      "fidgety",
+      "uneasy"
+     ],
+     "ant": [
+      "calm",
+      "tranquil"
+     ]
+    },
+    {
+     "w": "fiasco",
+     "ipa": "[fɪˈæsko]",
+     "pos": "n.",
+     "zh": "大失败",
+     "en": "a complete and humiliating failure",
+     "syn": [
+      "debacle",
+      "flop"
+     ],
+     "ant": [
+      "triumph",
+      "success"
+     ]
+    },
+    {
+     "w": "precedent",
+     "ipa": "[ˈprɛsɪdənt]",
+     "pos": "n.",
+     "zh": "先例，前例；先前的",
+     "en": "an earlier example used as a guide",
+     "syn": [
+      "example",
+      "standard"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Detectives tried to [[glean]] facts from the [[restless]] witness; to [[tamper]] with the evidence would turn the case into a [[fiasco]] and set a bad [[precedent]].",
+   "gloss": {
+    "glean": "收集",
+    "tamper": "恶意窜改，损害",
+    "restless": "不平静的",
+    "fiasco": "大失败",
+    "precedent": "先例，前例"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "bungle",
+     "ipa": "[ˈbʌŋɡl]",
+     "pos": "v.",
+     "zh": "办糟，失败",
+     "en": "to do badly and clumsily",
+     "syn": [
+      "botch",
+      "fumble"
+     ],
+     "ant": [
+      "accomplish",
+      "succeed"
+     ]
+    },
+    {
+     "w": "deluge",
+     "ipa": "[ˈdɛljʊdʒ]",
+     "pos": "n.",
+     "zh": "大暴雨；大量",
+     "en": "a great flood; an overwhelming amount",
+     "syn": [
+      "flood",
+      "torrent"
+     ],
+     "ant": [
+      "trickle",
+      "drought"
+     ]
+    },
+    {
+     "w": "grudge",
+     "ipa": "[ɡrʌdʒ]",
+     "pos": "n.",
+     "zh": "怨恨，仇恨",
+     "en": "a lasting feeling of resentment",
+     "syn": [
+      "resentment",
+      "rancor"
+     ],
+     "ant": [
+      "goodwill",
+      "forgiveness"
+     ]
+    },
+    {
+     "w": "defy",
+     "ipa": "[ˈdifaɪ]",
+     "pos": "vt.",
+     "zh": "蔑视",
+     "en": "to openly resist or disobey",
+     "syn": [
+      "resist",
+      "flout"
+     ],
+     "ant": [
+      "obey",
+      "comply"
+     ]
+    },
+    {
+     "w": "malignant",
+     "ipa": "[məˈlɪgnənt]",
+     "pos": "adj.",
+     "zh": "恶毒的，邪恶的",
+     "en": "evil in effect; harmful",
+     "syn": [
+      "malevolent",
+      "virulent"
+     ],
+     "ant": [
+      "benign",
+      "harmless"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The workers would [[bungle]] repairs after a [[deluge]]; a [[grudge]] made them [[defy]] their boss, whose [[malignant]] glare did not help.",
+   "gloss": {
+    "bungle": "办糟，失败",
+    "deluge": "大暴雨",
+    "grudge": "怨恨，仇恨",
+    "defy": "蔑视",
+    "malignant": "恶毒的，邪恶的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ubiquitous",
+     "ipa": "[juːˈbɪkwɪtəs]",
+     "pos": "adj.",
+     "zh": "无所不在的，普通的",
+     "en": "present everywhere",
+     "syn": [
+      "omnipresent",
+      "pervasive"
+     ],
+     "ant": [
+      "rare",
+      "scarce"
+     ]
+    },
+    {
+     "w": "disseminate",
+     "ipa": "[dɪˈsɛmɪnet]",
+     "pos": "vt.",
+     "zh": "散播，传播",
+     "en": "to spread widely",
+     "syn": [
+      "spread",
+      "circulate"
+     ],
+     "ant": [
+      "withhold",
+      "suppress"
+     ]
+    },
+    {
+     "w": "commensurate",
+     "ipa": "[kəˈmenʃərət]",
+     "pos": "adj.",
+     "zh": "同样大小的；相称的，相当的",
+     "en": "corresponding in size or degree",
+     "syn": [
+      "proportionate",
+      "equivalent"
+     ],
+     "ant": [
+      "disproportionate",
+      "inadequate"
+     ]
+    },
+    {
+     "w": "illuminate",
+     "ipa": "[ɪˈlumɪnet]",
+     "pos": "vt.",
+     "zh": "阐明",
+     "en": "to light up; to make clear",
+     "syn": [
+      "clarify",
+      "elucidate"
+     ],
+     "ant": [
+      "obscure",
+      "confuse"
+     ]
+    },
+    {
+     "w": "recondite",
+     "ipa": "[ˈrekəndaɪt]",
+     "pos": "adj.",
+     "zh": "深奥的，难解的",
+     "en": "little known; hard to understand",
+     "syn": [
+      "abstruse",
+      "esoteric"
+     ],
+     "ant": [
+      "obvious",
+      "accessible"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Smartphones are [[ubiquitous]] and [[disseminate]] news; a talk that can [[illuminate]] [[recondite]] ideas deserves a [[commensurate]] reward.",
+   "gloss": {
+    "ubiquitous": "无所不在的，普通的",
+    "disseminate": "散播，传播",
+    "commensurate": "同样大小的",
+    "illuminate": "阐明",
+    "recondite": "深奥的，难解的"
    }
   }
  ],
@@ -366,59 +721,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**diminutive** 的意思最接近：",
+    "q": "**seminal** 的意思最接近：",
     "options": [
-     "防守不住的，站不住脚的",
-     "(言行举止)有分寸的；有节制的",
-     "极小的",
-     "不太热心的"
-    ],
-    "answer": 2,
-    "explain": "diminutive：极小的（extremely small）。近义词：tiny, petite。"
-   },
-   {
-    "q": "**repugnant** 的意思最接近：",
-    "options": [
-     "令人厌恶的",
-     "防守不住的，站不住脚的",
-     "(言行举止)有分寸的；有节制的",
-     "令人感伤的"
-    ],
-    "answer": 0,
-    "explain": "repugnant：令人厌恶的（extremely distasteful）。近义词：repulsive, abhorrent。"
-   },
-   {
-    "q": "哪个词的意思是「短小有趣的故事，段子」？",
-    "options": [
-     "notoriety",
-     "plethora",
-     "gossamer",
-     "anecdote"
-    ],
-    "answer": 3,
-    "explain": "anecdote：短小有趣的故事，段子（a short, amusing story about a real event）。"
-   },
-   {
-    "q": "哪个词和 **yearning** 的意思最接近？",
-    "options": [
-     "notoriety",
-     "nostalgia",
-     "gossamer",
-     "anecdote"
+     "同样大小的；相称的，相当的",
+     "创新的",
+     "深奥的，难解的",
+     "不平静的"
     ],
     "answer": 1,
-    "explain": "nostalgia 与 yearning 近义：a wistful longing for the past。"
+    "explain": "seminal：创新的（strongly influential and original）。近义词：groundbreaking, formative。"
    },
    {
-    "q": "选最适合填入空格的词：\n\n> A poignant film stirred nostalgia in the old man, who tried to bumble through a toast; in the kitchen a shrewd cook watched the sauce ____.",
+    "q": "**truncate** 的意思最接近：",
     "options": [
-     "aggravate",
-     "bumble",
-     "soft-pedal",
-     "coagulate"
+     "截短；缩短(时间、篇幅等)",
+     "办糟，失败",
+     "抑制，压抑(感情、精力等)，泼冷水",
+     "(使)倾斜"
+    ],
+    "answer": 0,
+    "explain": "truncate：截短；缩短(时间、篇幅等)（to shorten by cutting）。近义词：shorten, abridge。"
+   },
+   {
+    "q": "哪个词的意思是「喜欢开玩笑的，轻浮的」？",
+    "options": [
+     "byzantine",
+     "endemic",
+     "facetious",
+     "seminal"
+    ],
+    "answer": 2,
+    "explain": "facetious：喜欢开玩笑的，轻浮的（joking inappropriately）。"
+   },
+   {
+    "q": "哪个词和 **meddle** 的意思最接近？",
+    "options": [
+     "importune",
+     "adulate",
+     "glean",
+     "tamper"
     ],
     "answer": 3,
-    "explain": "coagulate：(使)凝结，(使)变稠（to change from liquid to thick or solid）。"
+    "explain": "tamper 与 meddle 近义：to interfere with in order to damage。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The workers would bungle repairs after a deluge; a ____ made them defy their boss, whose malignant glare did not help.",
+    "options": [
+     "grudge",
+     "incursion",
+     "preface",
+     "relish"
+    ],
+    "answer": 0,
+    "explain": "grudge：怨恨，仇恨（a lasting feeling of resentment）。"
    }
   ]
  }

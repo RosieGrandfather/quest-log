@@ -81,8 +81,12 @@ export async function loadNote(cols, course, unit){
 
 /* 词汇课「会 / 不会」标记：每节一篇文档 {marks:{词:'know'|'unknown'|''}} */
 export async function loadVocabMarks(cols, course, unit){
-  const snap = await cols.vocabMarks.doc(unitKey(course.id, unit.id)).get();
-  return snap.exists ? (snap.data().marks || {}) : {};
+  // 小节合并过（legacyIds 是合并前的旧小节 ID）：旧标记也读进来，新标记盖在上面
+  const ids = [...(unit.legacyIds || []), unit.id];
+  const snaps = await Promise.all(ids.map(id=> cols.vocabMarks.doc(unitKey(course.id, id)).get()));
+  const out = {};
+  snaps.forEach(sn=>{ if(sn.exists) Object.assign(out, sn.data().marks || {}); });
+  return out;
 }
 export function saveVocabMark(cols, course, unit, word, value){
   return cols.vocabMarks.doc(unitKey(course.id, unit.id)).set(

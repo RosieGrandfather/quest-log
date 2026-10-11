@@ -2,360 +2,723 @@
  "id": "u10",
  "title": "S 级核心词 · 第 10 组",
  "en": "GRE Core Vocabulary · Set 10",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u19",
+  "u20"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "convoluted",
-     "ipa": "[ˈkɑːnvəluːtɪd]",
+     "w": "moribund",
+     "ipa": "[ˈmɔːrɪbʌnd]",
      "pos": "adj.",
-     "zh": "复杂的，费解的",
-     "en": "extremely complex and twisted",
+     "zh": "即将过时的",
+     "en": "near death; no longer effective",
      "syn": [
-      "intricate",
-      "tangled"
+      "dying",
+      "obsolescent"
      ],
      "ant": [
-      "simple",
-      "straightforward"
+      "thriving",
+      "vigorous"
      ]
     },
     {
-     "w": "turbulent",
-     "ipa": "[ˈtɝbjələnt]",
-     "pos": "adj.",
-     "zh": "动荡的",
-     "en": "violently unsettled",
+     "w": "assuage",
+     "ipa": "[əˈswedʒ]",
+     "pos": "vt.",
+     "zh": "缓和，减轻",
+     "en": "to make less severe; to soothe",
      "syn": [
-      "stormy",
-      "chaotic"
+      "alleviate",
+      "appease"
+     ],
+     "ant": [
+      "aggravate",
+      "exacerbate"
+     ]
+    },
+    {
+     "w": "deliberate",
+     "ipa": "[dɪˈlɪbərət]",
+     "pos": "adj.",
+     "zh": "深思熟虑的",
+     "en": "done on purpose; careful",
+     "syn": [
+      "intentional",
+      "unhurried"
+     ],
+     "ant": [
+      "accidental",
+      "hasty"
+     ]
+    },
+    {
+     "w": "erudite",
+     "ipa": "[ˈɛrudaɪt]",
+     "pos": "adj.",
+     "zh": "博学的",
+     "en": "having great learning",
+     "syn": [
+      "learned",
+      "scholarly"
+     ],
+     "ant": [
+      "ignorant",
+      "uneducated"
+     ]
+    },
+    {
+     "w": "jejune",
+     "ipa": "[dʒɪˈdʒuːn]",
+     "pos": "adj.",
+     "zh": "无趣乏味的",
+     "en": "dull; childishly naive",
+     "syn": [
+      "insipid",
+      "naive"
+     ],
+     "ant": [
+      "sophisticated",
+      "engaging"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[moribund]] journal tried to [[assuage]] its readers with a [[deliberate]] relaunch, filled with [[erudite]] essays and a few [[jejune]] ones.",
+   "gloss": {
+    "moribund": "即将过时的",
+    "assuage": "缓和，减轻",
+    "deliberate": "深思熟虑的",
+    "erudite": "博学的",
+    "jejune": "无趣乏味的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "usurp",
+     "ipa": "[juːˈzɜːrp]",
+     "pos": "vt.",
+     "zh": "篡夺，篡位",
+     "en": "to seize power illegally",
+     "syn": [
+      "seize",
+      "commandeer"
+     ],
+     "ant": [
+      "relinquish",
+      "cede"
+     ]
+    },
+    {
+     "w": "cloying",
+     "ipa": "[ˈklɔɪɪŋ]",
+     "pos": "adj.",
+     "zh": "甜得发腻的；感情用事的",
+     "en": "too sweet or sentimental",
+     "syn": [
+      "saccharine",
+      "sickly"
+     ],
+     "ant": [
+      "tart",
+      "restrained"
+     ]
+    },
+    {
+     "w": "precarious",
+     "ipa": "[prɪˈkɛrərɪəs]",
+     "pos": "adj.",
+     "zh": "危险的，不稳定的；可疑的，不明确的",
+     "en": "dangerously unstable",
+     "syn": [
+      "perilous",
+      "shaky"
+     ],
+     "ant": [
+      "secure",
+      "stable"
+     ]
+    },
+    {
+     "w": "mitigate",
+     "ipa": "[ˈmɪtɪɡeɪt]",
+     "pos": "vt.",
+     "zh": "减轻痛苦，使缓和",
+     "en": "to lessen the severity of",
+     "syn": [
+      "alleviate",
+      "temper"
+     ],
+     "ant": [
+      "aggravate",
+      "intensify"
+     ]
+    },
+    {
+     "w": "dulcet",
+     "ipa": "[ˈdʌlsɪt]",
+     "pos": "adj.",
+     "zh": "悦耳的，令人愉悦的",
+     "en": "sweet and soothing to the ear",
+     "syn": [
+      "melodious",
+      "mellifluous"
+     ],
+     "ant": [
+      "harsh",
+      "grating"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "To [[usurp]] the throne, the prince spoke in [[dulcet]] tones; his [[cloying]] flattery could [[mitigate]] suspicion only briefly, leaving his position [[precarious]].",
+   "gloss": {
+    "usurp": "篡夺，篡位",
+    "cloying": "甜得发腻的",
+    "precarious": "危险的，不稳定的",
+    "mitigate": "减轻痛苦，使缓和",
+    "dulcet": "悦耳的，令人愉悦的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ambiguous",
+     "ipa": "[æmˈbɪɡjuəs]",
+     "pos": "adj.",
+     "zh": "不确定的",
+     "en": "open to more than one meaning",
+     "syn": [
+      "equivocal",
+      "vague"
+     ],
+     "ant": [
+      "clear",
+      "unequivocal"
+     ]
+    },
+    {
+     "w": "antithetical",
+     "ipa": "[ˌæntɪˈθɛtɪkl]",
+     "pos": "adj.",
+     "zh": "完全对立的，相反的",
+     "en": "directly opposed",
+     "syn": [
+      "opposite",
+      "contrary"
+     ],
+     "ant": [
+      "compatible",
+      "similar"
+     ]
+    },
+    {
+     "w": "diminish",
+     "ipa": "[dɪˈmɪnɪʃ]",
+     "pos": "v.",
+     "zh": "(使)变小，(使)减少；轻视，贬低",
+     "en": "to make or become smaller; to belittle",
+     "syn": [
+      "lessen",
+      "reduce"
+     ],
+     "ant": [
+      "increase",
+      "enlarge"
+     ]
+    },
+    {
+     "w": "pivotal",
+     "ipa": "[ˈpɪvətl]",
+     "pos": "adj.",
+     "zh": "最关键的，最为重要的",
+     "en": "of vital importance; central",
+     "syn": [
+      "crucial",
+      "key"
+     ],
+     "ant": [
+      "peripheral",
+      "minor"
+     ]
+    },
+    {
+     "w": "meteoric",
+     "ipa": "[ˌmitɪˈɔrɪk]",
+     "pos": "adj.",
+     "zh": "流星般迅速而短暂的",
+     "en": "rapid and brilliant, but brief",
+     "syn": [
+      "swift",
+      "dazzling"
+     ],
+     "ant": [
+      "gradual",
+      "slow"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The treaty was [[ambiguous]], with clauses [[antithetical]] to one another, which would [[diminish]] its value; a [[pivotal]] vote ended the [[meteoric]] rise of its author.",
+   "gloss": {
+    "ambiguous": "不确定的",
+    "antithetical": "完全对立的，相反的",
+    "diminish": "(使)变小，(使)减少",
+    "pivotal": "最关键的，最为重要的",
+    "meteoric": "流星般迅速而短暂的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "meticulous",
+     "ipa": "[məˈtɪkjələs]",
+     "pos": "adj.",
+     "zh": "极为谨慎的",
+     "en": "extremely careful about details",
+     "syn": [
+      "scrupulous",
+      "painstaking"
+     ],
+     "ant": [
+      "careless",
+      "sloppy"
+     ]
+    },
+    {
+     "w": "pessimistic",
+     "ipa": "[ˌpɛsɪˈmɪstɪk]",
+     "pos": "adj.",
+     "zh": "悲观的",
+     "en": "expecting the worst",
+     "syn": [
+      "gloomy",
+      "cynical"
+     ],
+     "ant": [
+      "optimistic",
+      "hopeful"
+     ]
+    },
+    {
+     "w": "panacea",
+     "ipa": "[ˌpænəˈsiːə]",
+     "pos": "n.",
+     "zh": "万能药，万灵药",
+     "en": "a cure for all problems",
+     "syn": [
+      "cure-all",
+      "elixir"
+     ],
+     "ant": []
+    },
+    {
+     "w": "tonic",
+     "ipa": "[ˈtɑnɪk]",
+     "pos": "adj.",
+     "zh": "滋补的，有益健康的",
+     "en": "something that refreshes or invigorates",
+     "syn": [
+      "restorative",
+      "boost"
+     ],
+     "ant": []
+    },
+    {
+     "w": "compromise",
+     "ipa": "[ˈkɑmprəmaɪz]",
+     "pos": "v.",
+     "zh": "妥协；损害",
+     "en": "to settle by mutual concession; to weaken",
+     "syn": [
+      "concede",
+      "settle"
+     ],
+     "ant": []
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A [[meticulous]] editor, [[pessimistic]] about easy fixes, said that no [[panacea]] existed; a short break was a [[tonic]], and a [[compromise]] was best.",
+   "gloss": {
+    "meticulous": "极为谨慎的",
+    "pessimistic": "悲观的",
+    "panacea": "万能药，万灵药",
+    "tonic": "滋补的，有益健康的",
+    "compromise": "妥协"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "catharsis",
+     "ipa": "[kəˈθɑːrsɪs]",
+     "pos": "n.",
+     "zh": "情绪的宣泄、释放",
+     "en": "emotional release that brings relief",
+     "syn": [
+      "purging",
+      "release"
+     ],
+     "ant": []
+    },
+    {
+     "w": "respite",
+     "ipa": "[ˈrɛspɪt]",
+     "pos": "n.",
+     "zh": "间歇，休息",
+     "en": "a short break from something difficult",
+     "syn": [
+      "break",
+      "lull"
+     ],
+     "ant": [
+      "continuation"
+     ]
+    },
+    {
+     "w": "skittish",
+     "ipa": "[ˈskɪtɪʃ]",
+     "pos": "adj.",
+     "zh": "容易受到惊吓的，胆小的；善变的，多变的",
+     "en": "nervous and easily startled; unpredictable",
+     "syn": [
+      "jumpy",
+      "restive"
      ],
      "ant": [
       "calm",
-      "tranquil"
+      "steady"
      ]
     },
     {
-     "w": "rapacious",
-     "ipa": "[rəˈpeɪʃəs]",
+     "w": "dramatic",
+     "ipa": "[drəˈmætɪk]",
      "pos": "adj.",
-     "zh": "过度贪婪的",
-     "en": "aggressively greedy",
+     "zh": "显著的，惹人注意的",
+     "en": "sudden and striking",
      "syn": [
-      "grasping",
-      "predatory"
+      "striking",
+      "sensational"
      ],
      "ant": [
-      "generous",
-      "charitable"
+      "subtle",
+      "understated"
      ]
     },
     {
-     "w": "vulnerable",
-     "ipa": "[ˈvʌlnərəbl]",
-     "pos": "adj.",
-     "zh": "易受攻击的，脆弱的",
-     "en": "open to attack or harm",
+     "w": "ridicule",
+     "ipa": "[ˈrɪdɪˈkjʊl]",
+     "pos": "vt.",
+     "zh": "嘲笑",
+     "en": "to mock",
      "syn": [
-      "exposed",
-      "defenseless"
+      "mock",
+      "deride"
      ],
      "ant": [
-      "invulnerable",
-      "secure"
-     ]
-    },
-    {
-     "w": "prudent",
-     "ipa": "[ˈpruːdɪʃ]",
-     "pos": "adj.",
-     "zh": "明智的；小心谨慎的，审慎的",
-     "en": "wise and careful",
-     "syn": [
-      "cautious",
-      "wise"
-     ],
-     "ant": [
-      "reckless",
-      "imprudent"
+      "praise",
+      "respect"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "In a [[turbulent]] market, [[rapacious]] traders exploited a [[convoluted]] contract that left small investors [[vulnerable]]; the [[prudent]] ones had already sold.",
+   "text": "The play offered [[catharsis]] and a brief [[respite]] to a [[skittish]] audience, until the [[dramatic]] finale drew critics who would [[ridicule]] it.",
    "gloss": {
-    "convoluted": "复杂的，费解的",
-    "turbulent": "动荡的",
-    "rapacious": "过度贪婪的",
-    "vulnerable": "易受攻击的，脆弱的",
-    "prudent": "明智的"
+    "catharsis": "情绪的宣泄、释放",
+    "respite": "间歇，休息",
+    "skittish": "容易受到惊吓的，胆小的",
+    "dramatic": "显著的，惹人注意的",
+    "ridicule": "嘲笑"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "dodge",
-     "ipa": "[dɑdʒ]",
-     "pos": "v.",
-     "zh": "躲避",
-     "en": "to avoid by a quick movement or trick",
+     "w": "paltry",
+     "ipa": "[ˈpɔːltri]",
+     "pos": "adj.",
+     "zh": "无价值的，微不足道的",
+     "en": "trifling; very small in amount",
      "syn": [
-      "evade",
-      "sidestep"
+      "meager",
+      "trifling"
      ],
      "ant": [
-      "confront",
-      "face"
+      "substantial",
+      "ample"
      ]
     },
     {
-     "w": "diabolic",
-     "ipa": "[ˌdaɪəˈbɑːlɪk]",
+     "w": "naive",
+     "ipa": "[naɪˈiv]",
      "pos": "adj.",
-     "zh": "恶魔一般的",
-     "en": "devilish; extremely wicked",
+     "zh": "天真纯朴的",
+     "en": "lacking worldly experience",
      "syn": [
-      "fiendish",
-      "wicked"
+      "innocent",
+      "gullible"
      ],
      "ant": [
-      "angelic",
-      "saintly"
+      "sophisticated",
+      "worldly"
      ]
     },
     {
-     "w": "filibuster",
-     "ipa": "[ˈfɪləˈbʌstə]",
-     "pos": "n./v.",
-     "zh": "拖延议事",
-     "en": "a long speech meant to delay legislation",
-     "syn": [
-      "stall",
-      "obstruct"
-     ],
-     "ant": []
-    },
-    {
-     "w": "putative",
-     "ipa": "[ˈpjuːtətɪv]",
+     "w": "repetitious",
+     "ipa": "[ˌrepəˈtɪʃəs]",
      "pos": "adj.",
-     "zh": "推测的，假定的",
-     "en": "generally supposed or reputed",
+     "zh": "重复的，反复的",
+     "en": "full of repetition",
      "syn": [
-      "supposed",
-      "alleged"
+      "redundant",
+      "monotonous"
      ],
      "ant": [
-      "actual",
-      "proven"
+      "varied",
+      "concise"
      ]
     },
     {
-     "w": "indolent",
-     "ipa": "[ˈɪndələnt]",
+     "w": "vicious",
+     "ipa": "[ˈvɪʃəs]",
      "pos": "adj.",
-     "zh": "懒惰的",
-     "en": "lazy",
+     "zh": "凶恶的，恶毒的",
+     "en": "cruel and violent; spiteful",
      "syn": [
-      "idle",
-      "slothful"
+      "savage",
+      "malicious"
      ],
      "ant": [
-      "industrious",
-      "diligent"
+      "gentle",
+      "kind"
+     ]
+    },
+    {
+     "w": "tempestuous",
+     "ipa": "[tɛmˈpɛstʃuəs]",
+     "pos": "adj.",
+     "zh": "突然的，剧烈的",
+     "en": "stormy; wildly emotional",
+     "syn": [
+      "stormy",
+      "turbulent"
+     ],
+     "ant": [
+      "calm",
+      "placid"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The senator tried to [[dodge]] the question with a [[filibuster]], calling the [[putative]] scheme of her [[indolent]] rival [[diabolic]].",
+   "text": "The [[naive]] fan paid a [[paltry]] sum to hear a [[repetitious]] speech; a [[vicious]] heckler and a [[tempestuous]] crowd ended the evening.",
    "gloss": {
-    "dodge": "躲避",
-    "diabolic": "恶魔一般的",
-    "filibuster": "拖延议事",
-    "putative": "推测的，假定的",
-    "indolent": "懒惰的"
+    "paltry": "无价值的，微不足道的",
+    "naive": "天真纯朴的",
+    "repetitious": "重复的，反复的",
+    "vicious": "凶恶的，恶毒的",
+    "tempestuous": "突然的，剧烈的"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "revision",
-     "ipa": "[rɪˈvɪʒən]",
+     "w": "uncanny",
+     "ipa": "[ʌnˈkæni]",
+     "pos": "adj.",
+     "zh": "离奇的，奇异的",
+     "en": "strange in a way that is hard to explain",
+     "syn": [
+      "eerie",
+      "weird"
+     ],
+     "ant": [
+      "ordinary",
+      "normal"
+     ]
+    },
+    {
+     "w": "drudgery",
+     "ipa": "[ˈdrʌdʒəri]",
      "pos": "n.",
-     "zh": "修订",
-     "en": "a change made to improve or correct",
+     "zh": "苦工；单调、卑贱或无趣的工作",
+     "en": "tedious, hard work",
      "syn": [
-      "amendment",
-      "alteration"
-     ],
-     "ant": []
-    },
-    {
-     "w": "irascible",
-     "ipa": "[ɪˈræsəbl]",
-     "pos": "adj.",
-     "zh": "易怒的",
-     "en": "easily angered",
-     "syn": [
-      "irritable",
-      "choleric"
+      "toil",
+      "grind"
      ],
      "ant": [
-      "placid",
-      "even-tempered"
+      "leisure"
      ]
     },
     {
-     "w": "intrepid",
-     "ipa": "[ɪnˈtrepɪd]",
+     "w": "solicitous",
+     "ipa": "[səˈlɪsɪtəs]",
      "pos": "adj.",
-     "zh": "大胆的",
-     "en": "fearless and adventurous",
+     "zh": "为他人操心的，体谅他人的",
+     "en": "concerned and attentive to others",
      "syn": [
-      "fearless",
-      "bold"
+      "caring",
+      "attentive"
      ],
      "ant": [
-      "timid",
-      "fearful"
+      "indifferent",
+      "neglectful"
      ]
     },
     {
-     "w": "rehabilitate",
-     "ipa": "[ˌriːəˈbɪlɪteɪt]",
-     "pos": "vt.",
-     "zh": "使复原，使康复",
-     "en": "to restore to health or good standing",
-     "syn": [
-      "restore",
-      "reform"
-     ],
-     "ant": []
-    },
-    {
-     "w": "heartfelt",
-     "ipa": "[ˈhɑrtfɛlt]",
+     "w": "ethereal",
+     "ipa": "[iˈθɪriəl]",
      "pos": "adj.",
-     "zh": "真心实意的",
-     "en": "deeply and sincerely felt",
+     "zh": "轻巧精致的；非物质的，精神(上)的",
+     "en": "extremely delicate; heavenly",
      "syn": [
-      "sincere",
-      "genuine"
+      "airy",
+      "celestial"
      ],
      "ant": [
-      "insincere",
-      "feigned"
+      "earthly",
+      "solid"
+     ]
+    },
+    {
+     "w": "sage",
+     "ipa": "[sedʒ]",
+     "pos": "adj.",
+     "zh": "智者；睿智的",
+     "en": "a wise person; wise",
+     "syn": [
+      "wise person",
+      "sagacious"
+     ],
+     "ant": [
+      "fool",
+      "simpleton"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "After the [[revision]] of the law, the [[irascible]] warden gave a [[heartfelt]] speech about how to [[rehabilitate]] prisoners, and an [[intrepid]] reporter wrote it up.",
+   "text": "An [[uncanny]] hush fell over the kitchen where the [[drudgery]] had ended; a [[solicitous]] nurse hummed an [[ethereal]] tune beside the [[sage]] old cook.",
    "gloss": {
-    "revision": "修订",
-    "irascible": "易怒的",
-    "intrepid": "大胆的",
-    "rehabilitate": "使复原，使康复",
-    "heartfelt": "真心实意的"
+    "uncanny": "离奇的，奇异的",
+    "drudgery": "苦工",
+    "solicitous": "为他人操心的，体谅他人的",
+    "ethereal": "轻巧精致的",
+    "sage": "智者"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "animate",
-     "ipa": "[ˈænɪmeɪt]",
-     "pos": "adj.",
-     "zh": "有活力的；使有活力，支持",
-     "en": "to give life or energy to; lively",
-     "syn": [
-      "enliven",
-      "invigorate"
-     ],
-     "ant": [
-      "dampen",
-      "deaden"
-     ]
-    },
-    {
-     "w": "requisite",
-     "ipa": "[ˈrɛkwəzɪt]",
+     "w": "slump",
+     "ipa": "[slʌmp]",
      "pos": "n.",
-     "zh": "必需的；必需品",
-     "en": "required; a necessary thing",
+     "zh": "暴跌；萧条",
+     "en": "a sudden fall or decline",
      "syn": [
-      "essential",
-      "indispensable"
+      "decline",
+      "downturn"
      ],
      "ant": [
-      "unnecessary",
-      "optional"
+      "boom",
+      "surge"
      ]
     },
     {
-     "w": "metamorphose",
-     "ipa": "[ˌmetəˈmɔːrfoʊz]",
-     "pos": "vt.",
-     "zh": "(使)变形",
-     "en": "to change completely in form",
+     "w": "paradox",
+     "ipa": "[ˈpærədɑks]",
+     "pos": "n.",
+     "zh": "矛盾，悖论",
+     "en": "a seemingly contradictory but possibly true statement",
      "syn": [
-      "transform",
-      "mutate"
+      "contradiction",
+      "anomaly"
      ],
      "ant": []
     },
     {
-     "w": "antedate",
-     "ipa": "[ˌæntiˈdeɪt]",
-     "pos": "vt.",
-     "zh": "比…早，早于",
-     "en": "to come before in time",
+     "w": "disquisition",
+     "ipa": "[ˌdɪskwɪˈzɪʃn]",
+     "pos": "n.",
+     "zh": "专题论文",
+     "en": "a long formal discussion of a subject",
      "syn": [
-      "precede",
-      "predate"
+      "treatise",
+      "dissertation"
+     ],
+     "ant": []
+    },
+    {
+     "w": "sloth",
+     "ipa": "[sloθ]",
+     "pos": "n.",
+     "zh": "怠惰，懒惰",
+     "en": "laziness",
+     "syn": [
+      "laziness",
+      "idleness"
      ],
      "ant": [
-      "postdate",
-      "follow"
+      "diligence",
+      "industry"
      ]
     },
     {
-     "w": "supersede",
-     "ipa": "[ˌsupəˈsid]",
-     "pos": "v.",
-     "zh": "取代，替代",
-     "en": "to replace something older",
+     "w": "morbid",
+     "ipa": "[ˈmɔrbɪd]",
+     "pos": "adj.",
+     "zh": "疾病的，疾病所指的；(思想性格)变态的",
+     "en": "unhealthily gloomy; related to disease",
      "syn": [
-      "replace",
-      "supplant"
+      "gruesome",
+      "macabre"
      ],
-     "ant": []
+     "ant": [
+      "cheerful",
+      "wholesome"
+     ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "In a museum lecture, the guide showed fossils that [[antedate]] the dinosaurs and explained how larvae [[metamorphose]] into adults; new discoveries [[supersede]] old textbooks, and a [[requisite]] spark of curiosity can [[animate]] even the dullest class.",
+   "text": "The [[morbid]] columnist's [[disquisition]] blamed the [[slump]] on [[sloth]], a [[paradox]] in a nation that works so hard.",
    "gloss": {
-    "animate": "有活力的",
-    "requisite": "必需的",
-    "metamorphose": "(使)变形",
-    "antedate": "比…早，早于",
-    "supersede": "取代，替代"
+    "slump": "暴跌",
+    "paradox": "矛盾，悖论",
+    "disquisition": "专题论文",
+    "sloth": "怠惰，懒惰",
+    "morbid": "疾病的，疾病所指的"
    }
   }
  ],
@@ -363,59 +726,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**indolent** 的意思最接近：",
+    "q": "**compromise** 的意思最接近：",
     "options": [
-     "有活力的；使有活力，支持",
-     "真心实意的",
-     "明智的；小心谨慎的，审慎的",
-     "懒惰的"
-    ],
-    "answer": 3,
-    "explain": "indolent：懒惰的（lazy）。近义词：idle, slothful。"
-   },
-   {
-    "q": "**irascible** 的意思最接近：",
-    "options": [
-     "动荡的",
-     "易怒的",
-     "大胆的",
-     "推测的，假定的"
+     "(使)变小，(使)减少；轻视，贬低",
+     "妥协；损害",
+     "篡夺，篡位",
+     "减轻痛苦，使缓和"
     ],
     "answer": 1,
-    "explain": "irascible：易怒的（easily angered）。近义词：irritable, choleric。"
+    "explain": "compromise：妥协；损害（to settle by mutual concession; to weaken）。近义词：concede, settle。"
    },
    {
-    "q": "哪个词的意思是「大胆的」？",
+    "q": "**morbid** 的意思最接近：",
     "options": [
-     "indolent",
-     "diabolic",
-     "rapacious",
-     "intrepid"
-    ],
-    "answer": 3,
-    "explain": "intrepid：大胆的（fearless and adventurous）。"
-   },
-   {
-    "q": "哪个词和 **fiendish** 的意思最接近？",
-    "options": [
-     "diabolic",
-     "animate",
-     "vulnerable",
-     "irascible"
-    ],
-    "answer": 0,
-    "explain": "diabolic 与 fiendish 近义：devilish; extremely wicked。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> The senator tried to dodge the question with a filibuster, calling the putative scheme of her indolent rival ____.",
-    "options": [
-     "heartfelt",
-     "animate",
-     "diabolic",
-     "prudent"
+     "凶恶的，恶毒的",
+     "悲观的",
+     "疾病的，疾病所指的；(思想性格)变态的",
+     "流星般迅速而短暂的"
     ],
     "answer": 2,
-    "explain": "diabolic：恶魔一般的（devilish; extremely wicked）。"
+    "explain": "morbid：疾病的，疾病所指的；(思想性格)变态的（unhealthily gloomy; related to disease）。近义词：gruesome, macabre。"
+   },
+   {
+    "q": "哪个词的意思是「矛盾，悖论」？",
+    "options": [
+     "respite",
+     "sloth",
+     "drudgery",
+     "paradox"
+    ],
+    "answer": 3,
+    "explain": "paradox：矛盾，悖论（a seemingly contradictory but possibly true statement）。"
+   },
+   {
+    "q": "哪个词和 **jumpy** 的意思最接近？",
+    "options": [
+     "naive",
+     "skittish",
+     "morbid",
+     "pivotal"
+    ],
+    "answer": 1,
+    "explain": "skittish 与 jumpy 近义：nervous and easily startled; unpredictable。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The play offered catharsis and a brief ____ to a skittish audience, until the dramatic finale drew critics who would ridicule it.",
+    "options": [
+     "respite",
+     "panacea",
+     "paradox",
+     "drudgery"
+    ],
+    "answer": 0,
+    "explain": "respite：间歇，休息（a short break from something difficult）。"
    }
   ]
  }

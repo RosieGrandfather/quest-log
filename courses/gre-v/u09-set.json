@@ -2,175 +2,531 @@
  "id": "u09",
  "title": "S 级核心词 · 第 9 组",
  "en": "GRE Core Vocabulary · Set 9",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u17",
+  "u18"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "austere",
-     "ipa": "[ɔˈstɪr]",
+     "w": "riveting",
+     "ipa": "[ˈrɪvɪtɪŋ]",
      "pos": "adj.",
-     "zh": "朴素的，朴实无华的",
-     "en": "plain and strict; without luxury",
+     "zh": "吸引人的，极迷人的",
+     "en": "completely absorbing",
      "syn": [
-      "severe",
-      "ascetic"
+      "engrossing",
+      "gripping"
      ],
      "ant": [
-      "lavish",
-      "indulgent"
+      "boring",
+      "tedious"
      ]
     },
     {
-     "w": "knotty",
-     "ipa": "[ˈnɑti]",
-     "pos": "adj.",
-     "zh": "复杂的，困难的",
-     "en": "complicated and difficult to solve",
+     "w": "infuriate",
+     "ipa": "[ɪnˈfjʊrɪet]",
+     "pos": "vt.",
+     "zh": "激怒",
+     "en": "to make extremely angry",
      "syn": [
-      "thorny",
-      "intricate"
+      "enrage",
+      "incense"
      ],
      "ant": [
-      "simple",
-      "straightforward"
+      "pacify",
+      "placate"
      ]
     },
     {
-     "w": "mercenary",
-     "ipa": "[ˈmɜːsənɛri]",
-     "pos": "adj.",
-     "zh": "唯利是图的，贪婪的",
-     "en": "motivated only by money",
+     "w": "endorse",
+     "ipa": "[ɪnˈdɔrs]",
+     "pos": "vt.",
+     "zh": "公开支持",
+     "en": "to publicly support or approve",
      "syn": [
-      "greedy",
-      "venal"
+      "support",
+      "back"
      ],
      "ant": [
-      "altruistic",
-      "selfless"
+      "oppose",
+      "denounce"
      ]
     },
     {
-     "w": "credence",
-     "ipa": "[ˈkriːdns]",
-     "pos": "n.",
-     "zh": "坚信",
-     "en": "belief or acceptance as true",
+     "w": "reconcile",
+     "ipa": "[ˈrɛkənsaɪl]",
+     "pos": "vt.",
+     "zh": "使和解，协调",
+     "en": "to restore harmony; to make compatible",
      "syn": [
-      "belief",
-      "trust"
+      "reunite",
+      "harmonize"
      ],
      "ant": [
-      "disbelief",
-      "distrust"
+      "estrange",
+      "alienate"
      ]
     },
     {
-     "w": "bureaucratic",
-     "ipa": "[ˌbjʊrəˈkrætɪk]",
-     "pos": "adj.",
-     "zh": "官僚主义的",
-     "en": "marked by rigid rules and red tape",
+     "w": "canonize",
+     "ipa": "[ˈkænəˈnaɪz]",
+     "pos": "vt.",
+     "zh": "使崇高，使神圣",
+     "en": "to declare officially holy; to treat as sacred",
      "syn": [
-      "officious",
-      "rule-bound"
+      "sanctify",
+      "exalt"
      ],
      "ant": [
-      "flexible",
-      "streamlined"
+      "vilify",
+      "desecrate"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[austere]] judge, who gave no [[credence]] to [[mercenary]] witnesses, found the [[knotty]] case buried in [[bureaucratic]] paperwork.",
+   "text": "Her [[riveting]] speech began to [[infuriate]] her rivals, but the mayor chose to [[endorse]] her plan, hoping to [[reconcile]] the parties and [[canonize]] the founder.",
    "gloss": {
-    "austere": "朴素的，朴实无华的",
-    "knotty": "复杂的，困难的",
-    "mercenary": "唯利是图的，贪婪的",
-    "credence": "坚信",
-    "bureaucratic": "官僚主义的"
+    "riveting": "吸引人的，极迷人的",
+    "infuriate": "激怒",
+    "endorse": "公开支持",
+    "reconcile": "使和解，协调",
+    "canonize": "使崇高，使神圣"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "minuscule",
-     "ipa": "[ˈmɪnəˌskjuːl]",
+     "w": "dilatory",
+     "ipa": "[ˈdɪlətɔːri]",
      "pos": "adj.",
-     "zh": "极小的",
-     "en": "extremely small",
+     "zh": "拖延的，磨蹭的",
+     "en": "slow to act; causing delay",
      "syn": [
-      "tiny",
-      "minute"
+      "tardy",
+      "slow"
      ],
      "ant": [
-      "enormous",
-      "gigantic"
+      "prompt",
+      "speedy"
      ]
     },
     {
-     "w": "tyro",
-     "ipa": "[ˈtaɪroʊ]",
+     "w": "consensus",
+     "ipa": "[kənˈsɛnsəs]",
      "pos": "n.",
-     "zh": "新手，业余爱好者",
-     "en": "a beginner",
+     "zh": "一致同意",
+     "en": "general agreement",
      "syn": [
-      "novice",
-      "neophyte"
+      "agreement",
+      "accord"
      ],
      "ant": [
-      "expert",
-      "veteran"
+      "dissent",
+      "disagreement"
      ]
     },
     {
-     "w": "condone",
-     "ipa": "[kənˈdon]",
+     "w": "calculated",
+     "ipa": "[ˈkælkjuletɪd]",
+     "pos": "adj.",
+     "zh": "经过计算(成败得失)的，经过深思熟虑的",
+     "en": "done with careful planning; deliberate",
+     "syn": [
+      "deliberate",
+      "intentional"
+     ],
+     "ant": [
+      "spontaneous",
+      "accidental"
+     ]
+    },
+    {
+     "w": "accentuate",
+     "ipa": "[əkˈsɛntʃuet]",
      "pos": "v.",
-     "zh": "宽恕；忽视",
-     "en": "to excuse or overlook a wrong",
+     "zh": "强调",
+     "en": "to emphasize or make more noticeable",
      "syn": [
-      "forgive",
-      "overlook"
+      "emphasize",
+      "highlight"
      ],
      "ant": [
-      "condemn",
-      "censure"
+      "downplay",
+      "mute"
      ]
     },
     {
-     "w": "conjure",
-     "ipa": "[ˈkʌndʒɚ]",
-     "pos": "vt.",
-     "zh": "召唤；使在脑海中浮现",
-     "en": "to call to mind; to summon by magic",
+     "w": "jaunty",
+     "ipa": "[ˈdʒɔnti]",
+     "pos": "adj.",
+     "zh": "轻快的，活泼的",
+     "en": "lively and cheerful in manner",
      "syn": [
-      "evoke",
-      "summon"
+      "sprightly",
+      "buoyant"
      ],
      "ant": [
-      "dispel"
+      "gloomy",
+      "staid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a [[dilatory]] start, the council reached a [[consensus]]; the [[calculated]] move was to [[accentuate]] the good news, delivered in a [[jaunty]] tone.",
+   "gloss": {
+    "dilatory": "拖延的，磨蹭的",
+    "consensus": "一致同意",
+    "calculated": "经过计算(成败得失)的，经过深思熟虑的",
+    "accentuate": "强调",
+    "jaunty": "轻快的，活泼的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "compliment",
+     "ipa": "[ˈkɑmpləmənt]",
+     "pos": "n./vt.",
+     "zh": "赞美；恭维",
+     "en": "a polite expression of praise; to praise",
+     "syn": [
+      "praise",
+      "flattery"
+     ],
+     "ant": [
+      "insult",
+      "criticism"
      ]
     },
     {
-     "w": "beset",
-     "ipa": "[bɪˈsɛt]",
+     "w": "prune",
+     "ipa": "[prun]",
      "pos": "vt.",
-     "zh": "使苦恼，骚扰；攻击，袭击",
-     "en": "to attack from all sides; to trouble persistently",
+     "zh": "修剪；修整",
+     "en": "to trim by cutting off parts",
      "syn": [
-      "plague",
-      "harass"
+      "trim",
+      "cut back"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disinclination",
+     "ipa": "[ˌdɪsˌɪnklɪˈneʃən]",
+     "pos": "n.",
+     "zh": "不喜欢，厌恶，不情愿",
+     "en": "a lack of willingness",
+     "syn": [
+      "reluctance",
+      "aversion"
+     ],
+     "ant": [
+      "eagerness",
+      "willingness"
+     ]
+    },
+    {
+     "w": "clumsy",
+     "ipa": "[ˈklʌmzi]",
+     "pos": "adj.",
+     "zh": "笨拙的",
+     "en": "awkward in movement or handling",
+     "syn": [
+      "awkward",
+      "ungainly"
+     ],
+     "ant": [
+      "graceful",
+      "adroit"
+     ]
+    },
+    {
+     "w": "disconcert",
+     "ipa": "[ˌdɪskənˈsɜːrt]",
+     "pos": "vt.",
+     "zh": "使不安",
+     "en": "to make uneasy or confused",
+     "syn": [
+      "unsettle",
+      "rattle"
+     ],
+     "ant": [
+      "reassure",
+      "calm"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Despite a [[disinclination]] to talk, the gardener accepted a [[compliment]] on how he would [[prune]] the roses, and his [[clumsy]] reply seemed to [[disconcert]] the visitors.",
+   "gloss": {
+    "compliment": "赞美",
+    "prune": "修剪",
+    "disinclination": "不喜欢，厌恶，不情愿",
+    "clumsy": "笨拙的",
+    "disconcert": "使不安"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "adjunct",
+     "ipa": "[ˈædʒʌŋkt]",
+     "pos": "n.",
+     "zh": "附属物，非必须部分",
+     "en": "something added but not essential",
+     "syn": [
+      "addition",
+      "appendage"
+     ],
+     "ant": []
+    },
+    {
+     "w": "hedge",
+     "ipa": "[hɛdʒ]",
+     "pos": "v.",
+     "zh": "闪烁其词",
+     "en": "to avoid committing oneself",
+     "syn": [
+      "equivocate",
+      "evade"
+     ],
+     "ant": [
+      "commit"
+     ]
+    },
+    {
+     "w": "worldly",
+     "ipa": "[ˈwɝldli]",
+     "pos": "adj.",
+     "zh": "世间的，世俗的；老练的",
+     "en": "concerned with material life; experienced",
+     "syn": [
+      "earthly",
+      "sophisticated"
+     ],
+     "ant": [
+      "spiritual",
+      "naive"
+     ]
+    },
+    {
+     "w": "prototype",
+     "ipa": "[ˈprotəˈtaɪp]",
+     "pos": "n.",
+     "zh": "原型",
+     "en": "an original model for later versions",
+     "syn": [
+      "model",
+      "archetype"
+     ],
+     "ant": [
+      "copy"
+     ]
+    },
+    {
+     "w": "stale",
+     "ipa": "[stel]",
+     "pos": "adj.",
+     "zh": "陈旧乏味的",
+     "en": "no longer fresh; overused",
+     "syn": [
+      "musty",
+      "hackneyed"
+     ],
+     "ant": [
+      "fresh",
+      "novel"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[adjunct]] professor, a [[worldly]] man, would [[hedge]] when asked about the [[prototype]], afraid that a [[stale]] answer would bore the judges.",
+   "gloss": {
+    "adjunct": "附属物，非必须部分",
+    "hedge": "闪烁其词",
+    "worldly": "世间的，世俗的",
+    "prototype": "原型",
+    "stale": "陈旧乏味的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lapse",
+     "ipa": "[læps]",
+     "pos": "n.",
+     "zh": "小过失",
+     "en": "a brief failure or mistake",
+     "syn": [
+      "slip",
+      "error"
+     ],
+     "ant": []
+    },
+    {
+     "w": "disparage",
+     "ipa": "[dɪˈspærɪdʒ]",
+     "pos": "vt.",
+     "zh": "贬低，轻蔑地说",
+     "en": "to belittle or speak slightingly of",
+     "syn": [
+      "belittle",
+      "denigrate"
+     ],
+     "ant": [
+      "praise",
+      "extol"
+     ]
+    },
+    {
+     "w": "mawkish",
+     "ipa": "[ˈmɔːkɪʃ]",
+     "pos": "adj.",
+     "zh": "矫情的，肉麻地感伤的",
+     "en": "sickly sentimental",
+     "syn": [
+      "sappy",
+      "maudlin"
+     ],
+     "ant": [
+      "dispassionate",
+      "unsentimental"
+     ]
+    },
+    {
+     "w": "credit",
+     "ipa": "[ˈkrɛdɪt]",
+     "pos": "n.",
+     "zh": "信任；功劳，荣誉",
+     "en": "belief or trust; praise or recognition",
+     "syn": [
+      "trust",
+      "acclaim"
+     ],
+     "ant": [
+      "blame"
+     ]
+    },
+    {
+     "w": "polymath",
+     "ipa": "[ˈpɑːlimæθ]",
+     "pos": "n.",
+     "zh": "学识渊博的人，博学者",
+     "en": "a person of wide learning",
+     "syn": [
+      "scholar",
+      "savant"
+     ],
+     "ant": [
+      "ignoramus"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "A momentary [[lapse]] led a rival to [[disparage]] the [[polymath]], calling his [[mawkish]] memoir undeserving of [[credit]].",
+   "gloss": {
+    "lapse": "小过失",
+    "disparage": "贬低，轻蔑地说",
+    "mawkish": "矫情的，肉麻地感伤的",
+    "credit": "信任",
+    "polymath": "学识渊博的人，博学者"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "fusty",
+     "ipa": "[ˈfʌsti]",
+     "pos": "adj.",
+     "zh": "过时的；腐臭的",
+     "en": "stale-smelling; old-fashioned",
+     "syn": [
+      "musty",
+      "antiquated"
+     ],
+     "ant": [
+      "fresh",
+      "modern"
+     ]
+    },
+    {
+     "w": "forfeit",
+     "ipa": "[ˈfɔrfət]",
+     "pos": "n.",
+     "zh": "丧失；罚金",
+     "en": "to lose as a penalty; a penalty",
+     "syn": [
+      "surrender",
+      "relinquish"
+     ],
+     "ant": [
+      "retain",
+      "gain"
+     ]
+    },
+    {
+     "w": "beguile",
+     "ipa": "[bɪˈɡaɪl]",
+     "pos": "v.",
+     "zh": "欺骗",
+     "en": "to charm or deceive",
+     "syn": [
+      "charm",
+      "deceive"
+     ],
+     "ant": [
+      "repel",
+      "enlighten"
+     ]
+    },
+    {
+     "w": "maudlin",
+     "ipa": "[ˈmɔːdlɪn]",
+     "pos": "adj.",
+     "zh": "多愁善感的，爱流泪的",
+     "en": "tearfully and foolishly sentimental",
+     "syn": [
+      "mawkish",
+      "weepy"
+     ],
+     "ant": [
+      "unemotional",
+      "stoic"
+     ]
+    },
+    {
+     "w": "charlatan",
+     "ipa": "[ˈʃɑːrlətən]",
+     "pos": "n.",
+     "zh": "骗子，装懂的人",
+     "en": "a person who falsely claims skill or knowledge",
+     "syn": [
+      "quack",
+      "fraud"
      ],
      "ant": []
     }
@@ -178,185 +534,189 @@
   },
   {
    "type": "passage",
-   "text": "A [[minuscule]] error by a [[tyro]] accountant, which the firm would not [[condone]], began to [[conjure]] fears of fraud, and soon the company was [[beset]] by questions.",
+   "text": "The [[charlatan]] used [[maudlin]] stories to [[beguile]] buyers in a [[fusty]] shop, and when he was caught he had to [[forfeit]] his deposit.",
    "gloss": {
-    "minuscule": "极小的",
-    "tyro": "新手，业余爱好者",
-    "condone": "宽恕",
-    "conjure": "召唤",
-    "beset": "使苦恼，骚扰"
+    "fusty": "过时的",
+    "forfeit": "丧失",
+    "beguile": "欺骗",
+    "maudlin": "多愁善感的，爱流泪的",
+    "charlatan": "骗子，装懂的人"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "refractory",
-     "ipa": "[rɪˈfræktəri]",
-     "pos": "adj.",
-     "zh": "倔强的，不顺从的",
-     "en": "stubborn and hard to control",
+     "w": "solace",
+     "ipa": "[ˈsɑːləs]",
+     "pos": "n.",
+     "zh": "安慰；安慰，安抚",
+     "en": "comfort in distress",
      "syn": [
-      "obstinate",
-      "unruly"
+      "consolation",
+      "comfort"
      ],
      "ant": [
-      "docile",
-      "compliant"
+      "distress",
+      "torment"
      ]
     },
     {
-     "w": "subvert",
-     "ipa": "[səbˈvɜːrt]",
-     "pos": "vt.",
-     "zh": "颠覆",
-     "en": "to undermine or overthrow",
+     "w": "trope",
+     "ipa": "[troʊp]",
+     "pos": "n.",
+     "zh": "比喻；陈词滥调",
+     "en": "a figure of speech; an overused theme",
      "syn": [
-      "undermine",
-      "overthrow"
+      "figure of speech",
+      "cliché"
+     ],
+     "ant": []
+    },
+    {
+     "w": "forsake",
+     "ipa": "[fɔrˈsekˌfə-]",
+     "pos": "vt.",
+     "zh": "彻底放弃，抛弃",
+     "en": "to abandon or give up completely",
+     "syn": [
+      "abandon",
+      "renounce"
      ],
      "ant": [
-      "uphold",
+      "keep",
+      "cherish"
+     ]
+    },
+    {
+     "w": "affliction",
+     "ipa": "[əˈflɪkʃn]",
+     "pos": "n.",
+     "zh": "痛苦，悲伤，折磨",
+     "en": "something that causes pain or suffering",
+     "syn": [
+      "suffering",
+      "ordeal"
+     ],
+     "ant": [
+      "comfort",
+      "blessing"
+     ]
+    },
+    {
+     "w": "stymie",
+     "ipa": "[ˈstaɪmi]",
+     "pos": "vt.",
+     "zh": "阻碍",
+     "en": "to block or frustrate",
+     "syn": [
+      "thwart",
+      "hinder"
+     ],
+     "ant": [
+      "facilitate",
+      "assist"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "In her [[affliction]] she found [[solace]] in a familiar [[trope]]: a hero who would never [[forsake]] a friend; no rule could [[stymie]] her hope.",
+   "gloss": {
+    "solace": "安慰",
+    "trope": "比喻",
+    "forsake": "彻底放弃，抛弃",
+    "affliction": "痛苦，悲伤，折磨",
+    "stymie": "阻碍"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "patronize",
+     "ipa": "[ˈpeɪtrəˌnaɪz]",
+     "pos": "vt.",
+     "zh": "赞助；以高人一等的态度对待",
+     "en": "to support; to treat as inferior",
+     "syn": [
+      "condescend",
       "support"
-     ]
-    },
-    {
-     "w": "copious",
-     "ipa": "[ˈkoʊpiəs]",
-     "pos": "adj.",
-     "zh": "丰富的，大量的",
-     "en": "plentiful",
-     "syn": [
-      "abundant",
-      "ample"
-     ],
-     "ant": [
-      "scant",
-      "meager"
-     ]
-    },
-    {
-     "w": "hamstring",
-     "ipa": "[ˈhæmstrɪŋ]",
-     "pos": "vt.",
-     "zh": "使无效，使无力",
-     "en": "to cripple or make ineffective",
-     "syn": [
-      "cripple",
-      "thwart"
      ],
      "ant": []
     },
     {
-     "w": "cavalier",
-     "ipa": "[ˌkævəˈlɪr]",
-     "pos": "n.",
-     "zh": "傲慢随便的；骑士",
-     "en": "casually dismissive; a gallant gentleman",
+     "w": "suppress",
+     "ipa": "[səˈprɛs]",
+     "pos": "vt.",
+     "zh": "用暴力终止，镇压；封锁，删除",
+     "en": "to put an end to by force; to hold back",
      "syn": [
-      "offhand",
-      "haughty"
+      "quell",
+      "stifle"
      ],
      "ant": [
-      "earnest",
-      "respectful"
+      "encourage",
+      "express"
+     ]
+    },
+    {
+     "w": "vehement",
+     "ipa": "[ˈviːəmənt]",
+     "pos": "adj.",
+     "zh": "(情感)强烈的，热情的",
+     "en": "showing intense feeling",
+     "syn": [
+      "fervent",
+      "passionate"
+     ],
+     "ant": [
+      "apathetic",
+      "mild"
+     ]
+    },
+    {
+     "w": "hybrid",
+     "ipa": "[ˈhaɪbrɪd]",
+     "pos": "n.",
+     "zh": "杂交品种，混合品种；杂交的",
+     "en": "a mixture of two different kinds",
+     "syn": [
+      "crossbreed",
+      "composite"
+     ],
+     "ant": [
+      "pure",
+      "purebred"
+     ]
+    },
+    {
+     "w": "pernicious",
+     "ipa": "[pərˈnɪʃəs]",
+     "pos": "adj.",
+     "zh": "有害的",
+     "en": "harmful in a subtle way",
+     "syn": [
+      "destructive",
+      "noxious"
+     ],
+     "ant": [
+      "beneficial",
+      "harmless"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[refractory]] student made [[copious]] notes while trying to [[subvert]] the class; the teacher's [[cavalier]] reply could not [[hamstring]] his campaign.",
+   "text": "The minister's [[vehement]] speech tried to [[suppress]] the rumors; critics said he would [[patronize]] voters and called the [[hybrid]] policy [[pernicious]].",
    "gloss": {
-    "refractory": "倔强的，不顺从的",
-    "subvert": "颠覆",
-    "copious": "丰富的，大量的",
-    "hamstring": "使无效，使无力",
-    "cavalier": "傲慢随便的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "obviate",
-     "ipa": "[ˈɑːbvieɪt]",
-     "pos": "vt.",
-     "zh": "排除，使不必要",
-     "en": "to make unnecessary",
-     "syn": [
-      "preclude",
-      "forestall"
-     ],
-     "ant": [
-      "necessitate"
-     ]
-    },
-    {
-     "w": "purport",
-     "ipa": "[pərˈpɔːrt]",
-     "pos": "v.",
-     "zh": "声称，打算",
-     "en": "to claim to be or do (often falsely)",
-     "syn": [
-      "claim",
-      "profess"
-     ],
-     "ant": []
-    },
-    {
-     "w": "detritus",
-     "ipa": "[dɪˈtraɪtəs]",
-     "pos": "n.",
-     "zh": "废品，碎屑，遗骸",
-     "en": "debris or waste left after breakdown",
-     "syn": [
-      "debris",
-      "rubble"
-     ],
-     "ant": []
-    },
-    {
-     "w": "snub",
-     "ipa": "[snʌb]",
-     "pos": "vt.",
-     "zh": "轻视，不理睬",
-     "en": "to ignore or treat coldly",
-     "syn": [
-      "slight",
-      "rebuff"
-     ],
-     "ant": [
-      "welcome",
-      "embrace"
-     ]
-    },
-    {
-     "w": "pensive",
-     "ipa": "[ˈpɛnsɪv]",
-     "pos": "adj.",
-     "zh": "沉思的，(尤指)哀思的",
-     "en": "thoughtful, often sadly so",
-     "syn": [
-      "reflective",
-      "wistful"
-     ],
-     "ant": [
-      "carefree",
-      "thoughtless"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[pensive]] clerk read a report that [[purports|purport]] to [[obviate]] the need for review, then swept the [[detritus]] from his desk and chose to [[snub]] the manager's request.",
-   "gloss": {
-    "obviate": "排除，使不必要",
-    "purport": "声称，打算",
-    "detritus": "废品，碎屑，遗骸",
-    "snub": "轻视，不理睬",
-    "pensive": "沉思的，(尤指)哀思的"
+    "patronize": "赞助",
+    "suppress": "用暴力终止，镇压",
+    "vehement": "(情感)强烈的，热情的",
+    "hybrid": "杂交品种，混合品种",
+    "pernicious": "有害的"
    }
   }
  ],
@@ -364,59 +724,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**obviate** 的意思最接近：",
+    "q": "**pernicious** 的意思最接近：",
     "options": [
-     "使无效，使无力",
-     "排除，使不必要",
-     "轻视，不理睬",
-     "使苦恼，骚扰；攻击，袭击"
+     "有害的",
+     "拖延的，磨蹭的",
+     "吸引人的，极迷人的",
+     "(情感)强烈的，热情的"
+    ],
+    "answer": 0,
+    "explain": "pernicious：有害的（harmful in a subtle way）。近义词：destructive, noxious。"
+   },
+   {
+    "q": "**prune** 的意思最接近：",
+    "options": [
+     "修剪；修整",
+     "使崇高，使神圣",
+     "欺骗",
+     "激怒"
+    ],
+    "answer": 0,
+    "explain": "prune：修剪；修整（to trim by cutting off parts）。近义词：trim, cut back。"
+   },
+   {
+    "q": "哪个词的意思是「信任；功劳，荣誉」？",
+    "options": [
+     "charlatan",
+     "credit",
+     "forfeit",
+     "compliment"
     ],
     "answer": 1,
-    "explain": "obviate：排除，使不必要（to make unnecessary）。近义词：preclude, forestall。"
+    "explain": "credit：信任；功劳，荣誉（belief or trust; praise or recognition）。"
    },
    {
-    "q": "**tyro** 的意思最接近：",
+    "q": "哪个词和 **model** 的意思最接近？",
     "options": [
-     "新手，业余爱好者",
-     "坚信",
-     "傲慢随便的；骑士",
-     "废品，碎屑，遗骸"
-    ],
-    "answer": 0,
-    "explain": "tyro：新手，业余爱好者（a beginner）。近义词：novice, neophyte。"
-   },
-   {
-    "q": "哪个词的意思是「召唤；使在脑海中浮现」？",
-    "options": [
-     "beset",
-     "subvert",
-     "hamstring",
-     "conjure"
+     "trope",
+     "affliction",
+     "adjunct",
+     "prototype"
     ],
     "answer": 3,
-    "explain": "conjure：召唤；使在脑海中浮现（to call to mind; to summon by magic）。"
+    "explain": "prototype 与 model 近义：an original model for later versions。"
    },
    {
-    "q": "哪个词和 **abundant** 的意思最接近？",
+    "q": "选最适合填入空格的词：\n\n> A momentary ____ led a rival to disparage the polymath, calling his mawkish memoir undeserving of credit.",
     "options": [
-     "copious",
-     "bureaucratic",
-     "refractory",
-     "minuscule"
-    ],
-    "answer": 0,
-    "explain": "copious 与 abundant 近义：plentiful。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> A minuscule error by a ____ accountant, which the firm would not condone, began to conjure fears of fraud, and soon the company was beset by questions.",
-    "options": [
-     "credence",
-     "detritus",
-     "tyro",
-     "cavalier"
+     "polymath",
+     "disinclination",
+     "lapse",
+     "credit"
     ],
     "answer": 2,
-    "explain": "tyro：新手，业余爱好者（a beginner）。"
+    "explain": "lapse：小过失（a brief failure or mistake）。"
    }
   ]
  }

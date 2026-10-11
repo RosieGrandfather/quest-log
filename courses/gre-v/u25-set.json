@@ -2,372 +2,733 @@
  "id": "u25",
  "title": "S 级核心词 · 第 25 组",
  "en": "GRE Core Vocabulary · Set 25",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u49",
+  "u50"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "sham",
-     "ipa": "[ʃæm]",
+     "w": "indoctrinate",
+     "ipa": "[ɪnˈdɑːktrɪneɪt]",
+     "pos": "vt.",
+     "zh": "教育，灌输思想",
+     "en": "to teach someone to accept a set of beliefs without question",
+     "syn": [
+      "brainwash",
+      "instruct"
+     ],
+     "ant": []
+    },
+    {
+     "w": "opprobrious",
+     "ipa": "[əˈprəʊbriəs]",
+     "pos": "adj.",
+     "zh": "辱骂的；臭名昭著的，令人鄙视的",
+     "en": "expressing scorn; deserving of disgrace",
+     "syn": [
+      "abusive",
+      "scurrilous"
+     ],
+     "ant": [
+      "laudatory",
+      "respectful"
+     ]
+    },
+    {
+     "w": "oblivious",
+     "ipa": "[əˈblɪvɪəs]",
+     "pos": "adj.",
+     "zh": "不知道的，不知情的",
+     "en": "not aware of what is happening around one",
+     "syn": [
+      "unaware",
+      "heedless"
+     ],
+     "ant": [
+      "aware",
+      "mindful"
+     ]
+    },
+    {
+     "w": "testimony",
+     "ipa": "[ˈtɛstəˈmoni]",
+     "pos": "n.",
+     "zh": "证词，声明",
+     "en": "a formal statement given as evidence; proof",
+     "syn": [
+      "evidence",
+      "attestation"
+     ],
+     "ant": []
+    },
+    {
+     "w": "surfeit",
+     "ipa": "[ˈsɜːrfɪt]",
+     "pos": "v./n.",
+     "zh": "(使)过量，(使)饮食过度",
+     "en": "an excessive amount; to overfill",
+     "syn": [
+      "excess",
+      "glut"
+     ],
+     "ant": [
+      "dearth",
+      "shortage"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The cult sought to [[indoctrinate]] the young with [[opprobrious]] slogans; the [[oblivious]] members gave [[testimony]] that showed a [[surfeit]] of blind loyalty.",
+   "gloss": {
+    "indoctrinate": "教育，灌输思想",
+    "opprobrious": "辱骂的",
+    "oblivious": "不知道的，不知情的",
+    "testimony": "证词，声明",
+    "surfeit": "(使)过量，(使)饮食过度"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "cantankerous",
+     "ipa": "[kænˈtæŋkərəs]",
+     "pos": "adj.",
+     "zh": "脾气不好的",
+     "en": "bad-tempered and difficult to deal with",
+     "syn": [
+      "crotchety",
+      "ornery"
+     ],
+     "ant": [
+      "affable",
+      "good-natured"
+     ]
+    },
+    {
+     "w": "debacle",
+     "ipa": "[deɪˈbɑːkl]",
+     "pos": "n.",
+     "zh": "溃败",
+     "en": "a sudden, complete failure or collapse",
+     "syn": [
+      "fiasco",
+      "rout"
+     ],
+     "ant": [
+      "triumph",
+      "success"
+     ]
+    },
+    {
+     "w": "fringe",
+     "ipa": "[frɪndʒ]",
+     "pos": "n.",
+     "zh": "边缘",
+     "en": "the outer edge; not part of the mainstream",
+     "syn": [
+      "periphery",
+      "margin"
+     ],
+     "ant": [
+      "center",
+      "core"
+     ]
+    },
+    {
+     "w": "discern",
+     "ipa": "[dɪˈsɜːn]",
      "pos": "v.",
-     "zh": "虚假的；假象",
-     "en": "false; a pretense",
+     "zh": "识别，辨别差异",
+     "en": "to perceive or recognize with effort",
      "syn": [
-      "fake",
-      "counterfeit"
+      "detect",
+      "distinguish"
      ],
      "ant": [
-      "genuine",
-      "authentic"
+      "overlook",
+      "miss"
      ]
     },
     {
-     "w": "stigma",
-     "ipa": "[ˈstɪɡmə]",
-     "pos": "n.",
-     "zh": "耻辱，污名",
-     "en": "a mark of disgrace",
-     "syn": [
-      "stain",
-      "taint"
-     ],
-     "ant": [
-      "honor",
-      "credit"
-     ]
-    },
-    {
-     "w": "cherished",
-     "ipa": "[ˈtʃerɪʃ]",
+     "w": "fastidious",
+     "ipa": "[fæˈstɪdɪəs]",
      "pos": "adj.",
-     "zh": "受喜爱的，珍爱的",
-     "en": "held dear",
+     "zh": "挑剔的，极仔细的，追求完美的",
+     "en": "very attentive to detail and hard to please",
      "syn": [
-      "beloved",
-      "treasured"
-     ],
-     "ant": [
-      "despised",
-      "neglected"
-     ]
-    },
-    {
-     "w": "umbrage",
-     "ipa": "[ˈʌmbrɪdʒ]",
-     "pos": "n.",
-     "zh": "不悦，生气",
-     "en": "offense or resentment",
-     "syn": [
-      "offense",
-      "pique"
-     ],
-     "ant": [
-      "pleasure",
-      "delight"
-     ]
-    },
-    {
-     "w": "affinity",
-     "ipa": "[əˈfɪnəti]",
-     "pos": "n.",
-     "zh": "喜欢，倾向；相似",
-     "en": "a natural liking; a similarity",
-     "syn": [
-      "kinship",
-      "attraction"
-     ],
-     "ant": [
-      "aversion",
-      "antipathy"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "He took [[umbrage]] at the claim that his marriage was a [[sham]], for the [[stigma]] would harm his [[cherished]] name, and he felt an [[affinity]] for the critic.",
-   "gloss": {
-    "sham": "虚假的",
-    "stigma": "耻辱，污名",
-    "cherished": "受喜爱的，珍爱的",
-    "umbrage": "不悦，生气",
-    "affinity": "喜欢，倾向"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "motley",
-     "ipa": "[ˈmɑːtli]",
-     "pos": "adj.",
-     "zh": "混杂的，富于变化的",
-     "en": "made up of diverse, often clashing elements",
-     "syn": [
-      "varied",
-      "assorted"
-     ],
-     "ant": [
-      "uniform",
-      "homogeneous"
-     ]
-    },
-    {
-     "w": "manifest",
-     "ipa": "[ˈmænɪfɛst]",
-     "pos": "adj.",
-     "zh": "显然的，明显易懂的；显现，显露",
-     "en": "clear and obvious; to show plainly",
-     "syn": [
-      "evident",
-      "apparent"
-     ],
-     "ant": [
-      "hidden",
-      "obscure"
-     ]
-    },
-    {
-     "w": "fervent",
-     "ipa": "[ˈfɝvənt]",
-     "pos": "adj.",
-     "zh": "充满感情的，热情洋溢的",
-     "en": "having intense, passionate feeling",
-     "syn": [
-      "ardent",
-      "zealous"
-     ],
-     "ant": [
-      "apathetic",
-      "cool"
-     ]
-    },
-    {
-     "w": "provident",
-     "ipa": "[ˈprɑvɪdənt]",
-     "pos": "adj.",
-     "zh": "有远见的；节俭的",
-     "en": "careful about the future; thrifty",
-     "syn": [
-      "prudent",
-      "frugal"
-     ],
-     "ant": [
-      "improvident",
-      "wasteful"
-     ]
-    },
-    {
-     "w": "contagious",
-     "ipa": "[kənˈtedʒəs]",
-     "pos": "adj.",
-     "zh": "传染的；(情绪等)唤起共鸣的",
-     "en": "spreading from person to person",
-     "syn": [
-      "infectious",
-      "catching"
-     ],
-     "ant": [
-      "noncommunicable"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "A [[motley]] crowd gathered; their [[fervent]] mood was [[contagious]], and the [[provident]] leader made her plan [[manifest]].",
-   "gloss": {
-    "motley": "混杂的，富于变化的",
-    "manifest": "显然的，明显易懂的",
-    "fervent": "充满感情的，热情洋溢的",
-    "provident": "有远见的",
-    "contagious": "传染的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "cumbersome",
-     "ipa": "[ˈkʌmbərsəm]",
-     "pos": "adj.",
-     "zh": "笨重的，难处理的",
-     "en": "large and awkward to handle",
-     "syn": [
-      "unwieldy",
-      "clumsy"
-     ],
-     "ant": [
-      "handy",
-      "compact"
-     ]
-    },
-    {
-     "w": "fathom",
-     "ipa": "[ˈfæðəm]",
-     "pos": "vt.",
-     "zh": "彻底理解，弄懂",
-     "en": "to understand after long thought",
-     "syn": [
-      "comprehend",
-      "grasp"
-     ],
-     "ant": [
-      "misunderstand"
-     ]
-    },
-    {
-     "w": "trenchant",
-     "ipa": "[ˈtrentʃənt]",
-     "pos": "adj.",
-     "zh": "(言辞)一针见血的",
-     "en": "sharp and incisive",
-     "syn": [
-      "incisive",
-      "cutting"
-     ],
-     "ant": [
-      "vague",
-      "mild"
-     ]
-    },
-    {
-     "w": "intangible",
-     "ipa": "[ɪnˈtændʒəbl]",
-     "pos": "adj.",
-     "zh": "无法感知的，无形的",
-     "en": "unable to be touched; vague",
-     "syn": [
-      "impalpable",
-      "abstract"
-     ],
-     "ant": [
-      "tangible",
-      "concrete"
-     ]
-    },
-    {
-     "w": "comprehend",
-     "ipa": "[ˌkɑmprɪˈhɛnd]",
-     "pos": "vt.",
-     "zh": "理解；包含",
-     "en": "to understand; to include",
-     "syn": [
-      "grasp",
-      "understand"
-     ],
-     "ant": [
-      "misconstrue"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[cumbersome]] manual was hard to [[fathom]], though a [[trenchant]] summary helped readers [[comprehend]] its [[intangible]] aims.",
-   "gloss": {
-    "cumbersome": "笨重的，难处理的",
-    "fathom": "彻底理解，弄懂",
-    "trenchant": "(言辞)一针见血的",
-    "intangible": "无法感知的，无形的",
-    "comprehend": "理解"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "permeable",
-     "ipa": "[ˈpɜːrmiəbl]",
-     "pos": "adj.",
-     "zh": "可渗透的",
-     "en": "allowing liquids or gases to pass through",
-     "syn": [
-      "porous",
-      "penetrable"
-     ],
-     "ant": [
-      "impermeable",
-      "impervious"
-     ]
-    },
-    {
-     "w": "slapdash",
-     "ipa": "[ˈslæpdæʃ]",
-     "pos": "adj.",
-     "zh": "马虎的",
-     "en": "done carelessly and hastily",
-     "syn": [
-      "careless",
-      "sloppy"
-     ],
-     "ant": [
       "meticulous",
-      "careful"
-     ]
-    },
-    {
-     "w": "discrete",
-     "ipa": "[dɪˈskrit]",
-     "pos": "adj.",
-     "zh": "离散的，不连续的",
-     "en": "separate and distinct",
-     "syn": [
-      "distinct",
-      "separate"
+      "finicky"
      ],
      "ant": [
-      "continuous",
-      "connected"
-     ]
-    },
-    {
-     "w": "exhort",
-     "ipa": "[ɪɡˈzɔrt]",
-     "pos": "vt.",
-     "zh": "敦促，力劝",
-     "en": "to urge strongly",
-     "syn": [
-      "urge",
-      "implore"
-     ],
-     "ant": [
-      "discourage",
-      "dissuade"
-     ]
-    },
-    {
-     "w": "feeble",
-     "ipa": "[ˈfibl]",
-     "pos": "adj.",
-     "zh": "衰弱的",
-     "en": "weak",
-     "syn": [
-      "frail",
-      "weak"
-     ],
-     "ant": [
-      "strong",
-      "robust"
+      "careless",
+      "slapdash"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "The [[permeable]] wall and [[slapdash]] repairs left [[discrete]] patches of damp; the foreman would [[exhort]] the [[feeble]] crew to hurry.",
+   "text": "The [[cantankerous]] host faced a [[debacle]] when guests from the [[fringe]] arrived; he could not [[discern]] which were friends, and the [[fastidious]] cook walked out.",
    "gloss": {
-    "permeable": "可渗透的",
-    "slapdash": "马虎的",
-    "discrete": "离散的，不连续的",
-    "exhort": "敦促，力劝",
-    "feeble": "衰弱的"
+    "cantankerous": "脾气不好的",
+    "debacle": "溃败",
+    "fringe": "边缘",
+    "discern": "识别，辨别差异",
+    "fastidious": "挑剔的，极仔细的，追求完美的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lull",
+     "ipa": "[lʌl]",
+     "pos": "n.",
+     "zh": "相对平静时期，间隙；使镇静，使安心",
+     "en": "a temporary period of calm; to soothe or deceive into calm",
+     "syn": [
+      "respite",
+      "pause"
+     ],
+     "ant": [
+      "surge",
+      "flurry"
+     ]
+    },
+    {
+     "w": "wane",
+     "ipa": "[wen]",
+     "pos": "vi.",
+     "zh": "减少，衰退，缺少的",
+     "en": "to decrease gradually in strength or size",
+     "syn": [
+      "ebb",
+      "dwindle"
+     ],
+     "ant": [
+      "wax",
+      "grow"
+     ]
+    },
+    {
+     "w": "wrest",
+     "ipa": "[rest]",
+     "pos": "v.",
+     "zh": "辛苦地获得",
+     "en": "to pull away by force or effort",
+     "syn": [
+      "wring",
+      "extract"
+     ],
+     "ant": [
+      "surrender",
+      "yield"
+     ]
+    },
+    {
+     "w": "far-fetched",
+     "ipa": "[ˈfrɛtfəl]",
+     "pos": "adj.",
+     "zh": "牵强的，不可信的",
+     "en": "unlikely and hard to believe",
+     "syn": [
+      "implausible",
+      "improbable"
+     ],
+     "ant": [
+      "plausible",
+      "credible"
+     ]
+    },
+    {
+     "w": "revelation",
+     "ipa": "[ˈrɛvəˈleʃən]",
+     "pos": "n.",
+     "zh": "爆料，揭示",
+     "en": "the disclosing of something previously hidden",
+     "syn": [
+      "disclosure",
+      "exposé"
+     ],
+     "ant": [
+      "concealment"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "After a brief [[lull]], the storm began to [[wane]]; sailors had to [[wrest]] the helm back, and the [[far-fetched]] tale of a sea beast was the biggest [[revelation]] of the trip.",
+   "gloss": {
+    "lull": "相对平静时期，间隙",
+    "wane": "减少，衰退，缺少的",
+    "wrest": "辛苦地获得",
+    "far-fetched": "牵强的，不可信的",
+    "revelation": "爆料，揭示"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "ploy",
+     "ipa": "[plɔɪ]",
+     "pos": "n.",
+     "zh": "计策，手段",
+     "en": "a clever maneuver to gain an advantage",
+     "syn": [
+      "ruse",
+      "stratagem"
+     ],
+     "ant": []
+    },
+    {
+     "w": "authentic",
+     "ipa": "[ɔˈθɛntɪk]",
+     "pos": "adj.",
+     "zh": "真实的，非仿造的",
+     "en": "real, not copied or fake",
+     "syn": [
+      "genuine",
+      "bona fide"
+     ],
+     "ant": [
+      "counterfeit",
+      "spurious"
+     ]
+    },
+    {
+     "w": "vilify",
+     "ipa": "[ˈvɪlɪfaɪ]",
+     "pos": "vt.",
+     "zh": "诽谤，辱骂",
+     "en": "to speak of someone in an abusively bad way",
+     "syn": [
+      "slander",
+      "malign"
+     ],
+     "ant": [
+      "praise",
+      "exalt"
+     ]
+    },
+    {
+     "w": "encomium",
+     "ipa": "[enˈkoʊmiəm]",
+     "pos": "n.",
+     "zh": "赞颂之词",
+     "en": "a speech or writing of glowing praise",
+     "syn": [
+      "panegyric",
+      "tribute"
+     ],
+     "ant": [
+      "diatribe",
+      "censure"
+     ]
+    },
+    {
+     "w": "divulge",
+     "ipa": "[daɪˈvʌldʒ]",
+     "pos": "vt.",
+     "zh": "泄露(秘密)",
+     "en": "to make known something private or secret",
+     "syn": [
+      "reveal",
+      "disclose"
+     ],
+     "ant": [
+      "conceal",
+      "withhold"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The reporter's [[ploy]] was to feign an [[authentic]] interest; she would [[vilify]] no one, but wrote an [[encomium]] to the clerk who agreed to [[divulge]] the facts.",
+   "gloss": {
+    "ploy": "计策，手段",
+    "authentic": "真实的，非仿造的",
+    "vilify": "诽谤，辱骂",
+    "encomium": "赞颂之词",
+    "divulge": "泄露(秘密)"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "propitiate",
+     "ipa": "[prəˈpɪʃieɪt]",
+     "pos": "v.",
+     "zh": "抚慰，劝解",
+     "en": "to win over or appease someone angry",
+     "syn": [
+      "appease",
+      "placate"
+     ],
+     "ant": [
+      "provoke",
+      "antagonize"
+     ]
+    },
+    {
+     "w": "quixotic",
+     "ipa": "[kwɪkˈsɑːtɪk]",
+     "pos": "adj.",
+     "zh": "不切实际的，空想的",
+     "en": "idealistic in an impractical way",
+     "syn": [
+      "romantic",
+      "visionary"
+     ],
+     "ant": [
+      "pragmatic",
+      "realistic"
+     ]
+    },
+    {
+     "w": "tendentious",
+     "ipa": "[tenˈdenʃəs]",
+     "pos": "adj.",
+     "zh": "有偏见的",
+     "en": "promoting a particular, often controversial, point of view",
+     "syn": [
+      "biased",
+      "slanted"
+     ],
+     "ant": [
+      "impartial",
+      "objective"
+     ]
+    },
+    {
+     "w": "measured",
+     "ipa": "[ˈmɛʒəd]",
+     "pos": "adj.",
+     "zh": "深思熟虑的",
+     "en": "careful and deliberate; restrained",
+     "syn": [
+      "deliberate",
+      "restrained"
+     ],
+     "ant": [
+      "hasty",
+      "reckless"
+     ]
+    },
+    {
+     "w": "encyclopedic",
+     "ipa": "[ɪnˌsaɪkləˈpiːdɪk]",
+     "pos": "adj.",
+     "zh": "全面的，百科全书式的",
+     "en": "covering a very wide range of knowledge",
+     "syn": [
+      "comprehensive",
+      "exhaustive"
+     ],
+     "ant": [
+      "limited",
+      "cursory"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The envoy tried to [[propitiate]] the [[tendentious]] council with a [[measured]] speech; her [[quixotic]] plan was praised for its [[encyclopedic]] detail.",
+   "gloss": {
+    "propitiate": "抚慰，劝解",
+    "quixotic": "不切实际的，空想的",
+    "tendentious": "有偏见的",
+    "measured": "深思熟虑的",
+    "encyclopedic": "全面的，百科全书式的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "germane",
+     "ipa": "[dʒɜːˈmen]",
+     "pos": "adj.",
+     "zh": "有关的，适当的",
+     "en": "closely connected to the subject at hand",
+     "syn": [
+      "relevant",
+      "pertinent"
+     ],
+     "ant": [
+      "irrelevant",
+      "extraneous"
+     ]
+    },
+    {
+     "w": "inception",
+     "ipa": "[ɪnˈsɛpʃən]",
+     "pos": "n.",
+     "zh": "开端，开始",
+     "en": "the start of something",
+     "syn": [
+      "beginning",
+      "genesis"
+     ],
+     "ant": [
+      "conclusion",
+      "termination"
+     ]
+    },
+    {
+     "w": "abstemious",
+     "ipa": "[əbˈstimɪəs]",
+     "pos": "adj.",
+     "zh": "(吃喝等)有节制的，节俭的",
+     "en": "sparing in eating or drinking; self-denying",
+     "syn": [
+      "temperate",
+      "ascetic"
+     ],
+     "ant": [
+      "gluttonous",
+      "self-indulgent"
+     ]
+    },
+    {
+     "w": "plummet",
+     "ipa": "[ˈplʌmɪt]",
+     "pos": "v.",
+     "zh": "突然下降",
+     "en": "to fall or drop sharply",
+     "syn": [
+      "plunge",
+      "nosedive"
+     ],
+     "ant": [
+      "soar",
+      "skyrocket"
+     ]
+    },
+    {
+     "w": "impenetrable",
+     "ipa": "[ɪmˈpɛnɪtrəbl]",
+     "pos": "adj.",
+     "zh": "不可渗透的，不可穿透的；难以理解的",
+     "en": "impossible to get through or understand",
+     "syn": [
+      "impervious",
+      "inscrutable"
+     ],
+     "ant": [
+      "accessible",
+      "lucid"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "His point was [[germane]] to the debate's [[inception]]; the [[abstemious]] clerk saw profits [[plummet]] as the new tax code stayed [[impenetrable]].",
+   "gloss": {
+    "germane": "有关的，适当的",
+    "inception": "开端，开始",
+    "abstemious": "(吃喝等)有节制的，节俭的",
+    "plummet": "突然下降",
+    "impenetrable": "不可渗透的，不可穿透的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "invincible",
+     "ipa": "[ɪnˈvɪnsəbl]",
+     "pos": "adj.",
+     "zh": "不可战胜的，不可超越的",
+     "en": "too strong to be defeated",
+     "syn": [
+      "unbeatable",
+      "indomitable"
+     ],
+     "ant": [
+      "vulnerable",
+      "weak"
+     ]
+    },
+    {
+     "w": "sparse",
+     "ipa": "[spɑrs]",
+     "pos": "adj.",
+     "zh": "稀疏的，稀少的",
+     "en": "thinly scattered; not dense",
+     "syn": [
+      "scanty",
+      "meager"
+     ],
+     "ant": [
+      "dense",
+      "abundant"
+     ]
+    },
+    {
+     "w": "avant-garde",
+     "ipa": "[ˌævɑː̃ˈɡɑːrd]",
+     "pos": "n.",
+     "zh": "(尤指艺术上的)先锋派",
+     "en": "new, experimental, ahead of its time; pioneers in the arts",
+     "syn": [
+      "innovative",
+      "pioneering"
+     ],
+     "ant": [
+      "conventional",
+      "traditional"
+     ]
+    },
+    {
+     "w": "probity",
+     "ipa": "[ˈprobəti]",
+     "pos": "n.",
+     "zh": "正直",
+     "en": "strong moral principles; honesty",
+     "syn": [
+      "integrity",
+      "rectitude"
+     ],
+     "ant": [
+      "dishonesty",
+      "corruption"
+     ]
+    },
+    {
+     "w": "sober",
+     "ipa": "[ˈsobɚ]",
+     "pos": "adj.",
+     "zh": "严肃的；节制的",
+     "en": "serious and sensible; not drunk",
+     "syn": [
+      "solemn",
+      "grave"
+     ],
+     "ant": [
+      "frivolous",
+      "excitable"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[invincible]] king ruled a [[sparse]] realm of fine [[avant-garde]] artists; his [[probity]] made him a [[sober]] judge.",
+   "gloss": {
+    "invincible": "不可战胜的，不可超越的",
+    "sparse": "稀疏的，稀少的",
+    "avant-garde": "(尤指艺术上的)先锋派",
+    "probity": "正直",
+    "sober": "严肃的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "stodgy",
+     "ipa": "[ˈstɑdʒi]",
+     "pos": "adj.",
+     "zh": "平庸的，乏味的",
+     "en": "dull, formal, and old-fashioned",
+     "syn": [
+      "staid",
+      "fusty"
+     ],
+     "ant": [
+      "lively",
+      "trendy"
+     ]
+    },
+    {
+     "w": "sanguine",
+     "ipa": "[ˈsæŋɡwɪn]",
+     "pos": "adj.",
+     "zh": "乐观的，确信的",
+     "en": "cheerfully optimistic, especially in a difficult situation",
+     "syn": [
+      "hopeful",
+      "upbeat"
+     ],
+     "ant": [
+      "pessimistic",
+      "gloomy"
+     ]
+    },
+    {
+     "w": "majestic",
+     "ipa": "[məˈdʒɛstɪk]",
+     "pos": "adj.",
+     "zh": "宏伟壮丽的",
+     "en": "grand and impressive",
+     "syn": [
+      "stately",
+      "imposing"
+     ],
+     "ant": [
+      "humble",
+      "modest"
+     ]
+    },
+    {
+     "w": "bigot",
+     "ipa": "[ˈbɪɡət]",
+     "pos": "n.",
+     "zh": "固执己见者，有偏见的人",
+     "en": "a person intolerantly attached to their own views",
+     "syn": [
+      "zealot",
+      "dogmatist"
+     ],
+     "ant": [
+      "liberal",
+      "open-minded person"
+     ]
+    },
+    {
+     "w": "oscillate",
+     "ipa": "[ˈɑːsɪleɪt]",
+     "pos": "vt.",
+     "zh": "犹豫，变化",
+     "en": "to swing back and forth; to waver",
+     "syn": [
+      "fluctuate",
+      "waver"
+     ],
+     "ant": [
+      "stabilize",
+      "hold steady"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The [[stodgy]] banker stayed [[sanguine]] before the [[majestic]] hall; a [[bigot]] in the crowd made him [[oscillate]] between rage and calm.",
+   "gloss": {
+    "stodgy": "平庸的，乏味的",
+    "sanguine": "乐观的，确信的",
+    "majestic": "宏伟壮丽的",
+    "bigot": "固执己见者，有偏见的人",
+    "oscillate": "犹豫，变化"
    }
   }
  ],
@@ -375,59 +736,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**comprehend** 的意思最接近：",
+    "q": "**divulge** 的意思最接近：",
     "options": [
-     "虚假的；假象",
-     "敦促，力劝",
-     "彻底理解，弄懂",
-     "理解；包含"
+     "辛苦地获得",
+     "(使)过量，(使)饮食过度",
+     "犹豫，变化",
+     "泄露(秘密)"
     ],
     "answer": 3,
-    "explain": "comprehend：理解；包含（to understand; to include）。近义词：grasp, understand。"
+    "explain": "divulge：泄露(秘密)（to make known something private or secret）。近义词：reveal, disclose。"
    },
    {
-    "q": "**intangible** 的意思最接近：",
+    "q": "**oblivious** 的意思最接近：",
     "options": [
-     "无法感知的，无形的",
-     "笨重的，难处理的",
-     "可渗透的",
-     "显然的，明显易懂的；显现，显露"
+     "不知道的，不知情的",
+     "牵强的，不可信的",
+     "宏伟壮丽的",
+     "稀疏的，稀少的"
     ],
     "answer": 0,
-    "explain": "intangible：无法感知的，无形的（unable to be touched; vague）。近义词：impalpable, abstract。"
+    "explain": "oblivious：不知道的，不知情的（not aware of what is happening around one）。近义词：unaware, heedless。"
    },
    {
-    "q": "哪个词的意思是「喜欢，倾向；相似」？",
+    "q": "哪个词的意思是「乐观的，确信的」？",
     "options": [
-     "umbrage",
-     "stigma",
-     "affinity",
-     "discrete"
+     "authentic",
+     "oblivious",
+     "sanguine",
+     "germane"
     ],
     "answer": 2,
-    "explain": "affinity：喜欢，倾向；相似（a natural liking; a similarity）。"
+    "explain": "sanguine：乐观的，确信的（cheerfully optimistic, especially in a difficult situation）。"
    },
    {
-    "q": "哪个词和 **careless** 的意思最接近？",
+    "q": "哪个词和 **slander** 的意思最接近？",
     "options": [
-     "permeable",
-     "slapdash",
-     "cherished",
-     "fervent"
+     "divulge",
+     "wrest",
+     "propitiate",
+     "vilify"
+    ],
+    "answer": 3,
+    "explain": "vilify 与 slander 近义：to speak of someone in an abusively bad way。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> His point was germane to the debate's inception; the abstemious clerk saw profits ____ as the new tax code stayed impenetrable.",
+    "options": [
+     "discern",
+     "plummet",
+     "propitiate",
+     "oscillate"
     ],
     "answer": 1,
-    "explain": "slapdash 与 careless 近义：done carelessly and hastily。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> The cumbersome manual was hard to fathom, though a trenchant summary helped readers comprehend its ____ aims.",
-    "options": [
-     "fervent",
-     "cumbersome",
-     "intangible",
-     "contagious"
-    ],
-    "answer": 2,
-    "explain": "intangible：无法感知的，无形的（unable to be touched; vague）。"
+    "explain": "plummet：突然下降（to fall or drop sharply）。"
    }
   ]
  }

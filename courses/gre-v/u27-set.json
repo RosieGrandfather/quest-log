@@ -2,356 +2,735 @@
  "id": "u27",
  "title": "S 级核心词 · 第 27 组",
  "en": "GRE Core Vocabulary · Set 27",
- "minutes": 35,
+ "minutes": 50,
  "objectives": [
-  "认识并会读这 20 个高频词：点 🔊 音标听发音，跟读一遍",
+  "认识并会读这 40 个高频词：点 🔊 音标听发音，跟读一遍",
   "记住每个词的**中文意思**和**英文释义**，并用近义词、反义词把意思连成一片",
   "在例句短文里认出这些词，体会它们在句子里的语气（褒、贬、中性）"
+ ],
+ "legacyIds": [
+  "u53",
+  "u54"
  ],
  "blocks": [
   {
    "type": "vocab",
    "items": [
     {
-     "w": "omniscient",
-     "ipa": "[ɑmˈnɪsɪənt]",
+     "w": "mercurial",
+     "ipa": "[mɜːrˈkjʊriəl]",
      "pos": "adj.",
-     "zh": "无所不知的",
-     "en": "knowing everything",
+     "zh": "(情绪)善变的",
+     "en": "changing mood or mind quickly and unpredictably",
      "syn": [
-      "all-knowing"
+      "capricious",
+      "volatile"
      ],
      "ant": [
-      "ignorant"
+      "steady",
+      "constant"
      ]
     },
     {
-     "w": "surly",
-     "ipa": "[ˈsɜːrli]",
-     "pos": "adj.",
-     "zh": "脾气不好的",
-     "en": "bad-tempered and unfriendly",
-     "syn": [
-      "sullen",
-      "churlish"
-     ],
-     "ant": [
-      "genial",
-      "affable"
-     ]
-    },
-    {
-     "w": "transitory",
-     "ipa": "[ˈtrænsətɔri]",
-     "pos": "adj.",
-     "zh": "短暂的",
-     "en": "lasting only a short time",
-     "syn": [
-      "fleeting",
-      "ephemeral"
-     ],
-     "ant": [
-      "permanent",
-      "enduring"
-     ]
-    },
-    {
-     "w": "squander",
-     "ipa": "[ˈskwɑndɚ]",
+     "w": "vanquish",
+     "ipa": "[ˈvæŋkwɪʃ]",
      "pos": "vt.",
-     "zh": "浪费",
-     "en": "to waste carelessly",
+     "zh": "打败，征服",
+     "en": "to defeat thoroughly",
      "syn": [
-      "waste",
-      "dissipate"
+      "conquer",
+      "overcome"
      ],
      "ant": [
-      "conserve",
-      "save"
+      "surrender",
+      "yield"
      ]
     },
     {
-     "w": "intermediary",
-     "ipa": "[ˌɪntərˈmiːdieri]",
+     "w": "largesse",
+     "ipa": "[lɑːrˈdʒes]",
      "pos": "n.",
-     "zh": "中间人",
-     "en": "a go-between",
+     "zh": "慷慨",
+     "en": "generosity in giving money or gifts",
      "syn": [
-      "mediator",
-      "broker"
-     ],
-     "ant": []
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "The [[surly]] agent, an [[intermediary]] who was not [[omniscient]], warned the star that fame is [[transitory]] and urged him not to [[squander]] it.",
-   "gloss": {
-    "omniscient": "无所不知的",
-    "surly": "脾气不好的",
-    "transitory": "短暂的",
-    "squander": "浪费",
-    "intermediary": "中间人"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "improvise",
-     "ipa": "[ˈɪmprəvaɪz]",
-     "pos": "v.",
-     "zh": "即兴而作",
-     "en": "to create or perform without preparation",
-     "syn": [
-      "ad-lib",
-      "extemporize"
+      "generosity",
+      "bounty"
      ],
      "ant": [
-      "plan",
-      "rehearse"
+      "stinginess",
+      "miserliness"
      ]
     },
     {
-     "w": "harbinger",
-     "ipa": "[ˈhɑrbɪndʒə]",
-     "pos": "n.",
-     "zh": "预言者",
-     "en": "a sign of what is to come",
+     "w": "gall",
+     "ipa": "[ɡɔl]",
+     "pos": "vt.",
+     "zh": "(使)焦躁，激怒",
+     "en": "to irritate or annoy; bold rudeness",
      "syn": [
-      "herald",
-      "forerunner"
-     ],
-     "ant": []
-    },
-    {
-     "w": "burlesque",
-     "ipa": "[bɜːrˈlesk]",
-     "pos": "n./v.",
-     "zh": "夸张滑稽地模仿以嘲弄他人的文学艺术作品，恶搞",
-     "en": "a mocking imitation of a serious work",
-     "syn": [
-      "parody",
-      "caricature"
-     ],
-     "ant": []
-    },
-    {
-     "w": "peculiarity",
-     "ipa": "[pɪˌkjuːliˈærəti]",
-     "pos": "n.",
-     "zh": "特征，特点",
-     "en": "a distinguishing feature or oddity",
-     "syn": [
-      "quirk",
-      "trait"
+      "irk",
+      "vex"
      ],
      "ant": [
-      "normality"
+      "please",
+      "soothe"
      ]
     },
     {
-     "w": "cryptic",
-     "ipa": "[ˈkrɪptɪk]",
-     "pos": "adj.",
-     "zh": "秘密的；难以理解的",
-     "en": "mysterious; hard to understand",
+     "w": "chimera",
+     "ipa": "[kaɪˈmɪrə]",
+     "pos": "n.",
+     "zh": "虚构的事物，幻觉",
+     "en": "an illusion or fanciful idea that cannot be achieved",
      "syn": [
-      "enigmatic",
-      "obscure"
+      "fantasy",
+      "illusion"
      ],
      "ant": [
-      "clear",
-      "explicit"
+      "reality",
+      "fact"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "A [[cryptic]] note, the [[harbinger]] of trouble, warned the comedian that the [[peculiarity]] of his [[burlesque]] would not be forgiven, but he would [[improvise]] anyway.",
+   "text": "The [[mercurial]] king would [[vanquish]] a foe one day and show [[largesse]] the next; his heir came to [[gall]] the court, for the throne was a [[chimera]].",
    "gloss": {
-    "improvise": "即兴而作",
-    "harbinger": "预言者",
-    "burlesque": "夸张滑稽地模仿以嘲弄他人的文学艺术作品，恶搞",
-    "peculiarity": "特征，特点",
-    "cryptic": "秘密的"
+    "mercurial": "(情绪)善变的",
+    "vanquish": "打败，征服",
+    "largesse": "慷慨",
+    "gall": "(使)焦躁，激怒",
+    "chimera": "虚构的事物，幻觉"
    }
   },
   {
    "type": "vocab",
    "items": [
     {
-     "w": "milieu",
-     "ipa": "[miːˈljɜː]",
+     "w": "averse",
+     "ipa": "[əˈvɝs]",
+     "pos": "adj.",
+     "zh": "反对的",
+     "en": "strongly opposed or disinclined",
+     "syn": [
+      "opposed",
+      "reluctant"
+     ],
+     "ant": [
+      "fond",
+      "eager"
+     ]
+    },
+    {
+     "w": "quandary",
+     "ipa": "[ˈkwɑːndəri]",
      "pos": "n.",
-     "zh": "环境，氛围",
-     "en": "the social or physical surroundings",
+     "zh": "困惑，窘境",
+     "en": "a state of uncertainty over what to do",
      "syn": [
-      "environment",
-      "setting"
-     ],
-     "ant": []
-    },
-    {
-     "w": "fraught",
-     "ipa": "[frɔt]",
-     "pos": "adj.",
-     "zh": "充满的",
-     "en": "filled with (something unpleasant)",
-     "syn": [
-      "laden",
-      "charged"
-     ],
-     "ant": [
-      "free",
-      "devoid"
-     ]
-    },
-    {
-     "w": "hackneyed",
-     "ipa": "[ˈhæknɪd]",
-     "pos": "adj.",
-     "zh": "陈腐的，缺乏创新的",
-     "en": "made trite by overuse",
-     "syn": [
-      "stale",
-      "banal"
-     ],
-     "ant": [
-      "fresh",
-      "original"
-     ]
-    },
-    {
-     "w": "decry",
-     "ipa": "[dɪˈkraɪ]",
-     "pos": "vt.",
-     "zh": "强烈反对，否定",
-     "en": "to publicly condemn",
-     "syn": [
-      "denounce",
-      "censure"
-     ],
-     "ant": [
-      "praise",
-      "extol"
-     ]
-    },
-    {
-     "w": "bootless",
-     "ipa": "[ˈbuːtlɪs]",
-     "pos": "adj.",
-     "zh": "无用的",
-     "en": "useless; without result",
-     "syn": [
-      "futile",
-      "vain"
-     ],
-     "ant": [
-      "fruitful",
-      "useful"
-     ]
-    }
-   ]
-  },
-  {
-   "type": "passage",
-   "text": "In the [[milieu]] of the old court, every conversation was [[fraught]] with risk; critics would [[decry]] [[hackneyed]] verse, and any protest felt [[bootless]].",
-   "gloss": {
-    "milieu": "环境，氛围",
-    "fraught": "充满的",
-    "hackneyed": "陈腐的，缺乏创新的",
-    "decry": "强烈反对，否定",
-    "bootless": "无用的"
-   }
-  },
-  {
-   "type": "vocab",
-   "items": [
-    {
-     "w": "apocalyptic",
-     "ipa": "[əˌpɑːkəˈlɪptɪk]",
-     "pos": "adj.",
-     "zh": "预言的，启示的；重要的，转折点的",
-     "en": "relating to disaster or the end of the world",
-     "syn": [
-      "prophetic",
-      "dire"
-     ],
-     "ant": []
-    },
-    {
-     "w": "munificent",
-     "ipa": "[mjuːˈnɪfɪsnt]",
-     "pos": "adj.",
-     "zh": "慷慨的",
-     "en": "extremely generous",
-     "syn": [
-      "generous",
-      "lavish"
-     ],
-     "ant": [
-      "stingy",
-      "miserly"
-     ]
-    },
-    {
-     "w": "repudiate",
-     "ipa": "[rɪˈpjuːdieɪt]",
-     "pos": "vt.",
-     "zh": "否认",
-     "en": "to reject as untrue or invalid",
-     "syn": [
-      "disown",
-      "renounce"
-     ],
-     "ant": [
-      "accept",
-      "endorse"
-     ]
-    },
-    {
-     "w": "contingency",
-     "ipa": "[kənˈtɪndʒənsi]",
-     "pos": "n.",
-     "zh": "可能发生的事",
-     "en": "a possible future event; an unforeseen event",
-     "syn": [
-      "eventuality",
-      "possibility"
+      "dilemma",
+      "predicament"
      ],
      "ant": [
       "certainty"
      ]
     },
     {
-     "w": "frivolous",
-     "ipa": "[ˈfrɪvələs]",
+     "w": "furtive",
+     "ipa": "[ˈfɜːrtɪv]",
      "pos": "adj.",
-     "zh": "轻浮的；不重要的",
-     "en": "not serious; silly",
+     "zh": "鬼鬼祟祟的；秘密的",
+     "en": "secretive and trying not to be noticed",
      "syn": [
-      "trivial",
-      "flippant"
+      "stealthy",
+      "surreptitious"
      ],
      "ant": [
-      "serious",
-      "weighty"
+      "open",
+      "forthright"
+     ]
+    },
+    {
+     "w": "alleviate",
+     "ipa": "[əˈlivɪˈet]",
+     "pos": "v.",
+     "zh": "缓和，减轻",
+     "en": "to make pain or a problem less severe",
+     "syn": [
+      "ease",
+      "mitigate"
+     ],
+     "ant": [
+      "aggravate",
+      "exacerbate"
+     ]
+    },
+    {
+     "w": "obstinate",
+     "ipa": "[ˈɑbstɪnət]",
+     "pos": "adj.",
+     "zh": "固执的",
+     "en": "stubbornly refusing to change",
+     "syn": [
+      "stubborn",
+      "headstrong"
+     ],
+     "ant": [
+      "compliant",
+      "amenable"
      ]
     }
    ]
   },
   {
    "type": "passage",
-   "text": "An [[apocalyptic]] sermon led the [[munificent]] donor to [[repudiate]] her [[frivolous]] past and plan for every [[contingency]].",
+   "text": "He was [[averse]] to the [[quandary]] of a [[furtive]] deal; he tried to [[alleviate]] the tension, but the [[obstinate]] partner refused.",
    "gloss": {
-    "apocalyptic": "预言的，启示的",
-    "munificent": "慷慨的",
-    "repudiate": "否认",
-    "contingency": "可能发生的事",
-    "frivolous": "轻浮的"
+    "averse": "反对的",
+    "quandary": "困惑，窘境",
+    "furtive": "鬼鬼祟祟的",
+    "alleviate": "缓和，减轻",
+    "obstinate": "固执的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "replete",
+     "ipa": "[rɪˈplit]",
+     "pos": "adj.",
+     "zh": "充满……的，富于……的",
+     "en": "filled or well supplied",
+     "syn": [
+      "abounding",
+      "teeming"
+     ],
+     "ant": [
+      "devoid",
+      "lacking"
+     ]
+    },
+    {
+     "w": "elicit",
+     "ipa": "[ɪˈlɪsɪt]",
+     "pos": "vt.",
+     "zh": "激起，唤起",
+     "en": "to draw out a response, reaction, or fact",
+     "syn": [
+      "evoke",
+      "extract"
+     ],
+     "ant": [
+      "suppress",
+      "stifle"
+     ]
+    },
+    {
+     "w": "taint",
+     "ipa": "[tent]",
+     "pos": "vt.",
+     "zh": "使(品质)污损",
+     "en": "to spoil or contaminate with something bad",
+     "syn": [
+      "contaminate",
+      "sully"
+     ],
+     "ant": [
+      "purify",
+      "cleanse"
+     ]
+    },
+    {
+     "w": "overweening",
+     "ipa": "[ˌoʊvərˈwiːnɪŋ]",
+     "pos": "adj.",
+     "zh": "傲慢的，专横的",
+     "en": "excessively confident or proud",
+     "syn": [
+      "arrogant",
+      "presumptuous"
+     ],
+     "ant": [
+      "humble",
+      "diffident"
+     ]
+    },
+    {
+     "w": "prerogative",
+     "ipa": "[prɪˈrɑːɡətɪv]",
+     "pos": "n.",
+     "zh": "特权，权力",
+     "en": "a right or privilege belonging to a person or group",
+     "syn": [
+      "privilege",
+      "entitlement"
+     ],
+     "ant": [
+      "duty",
+      "obligation"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The room was [[replete]] with notes that could [[elicit]] a reply; a leak might [[taint]] the [[overweening]] boss, who guarded his [[prerogative]] fiercely.",
+   "gloss": {
+    "replete": "充满……的，富于……的",
+    "elicit": "激起，唤起",
+    "taint": "使(品质)污损",
+    "overweening": "傲慢的，专横的",
+    "prerogative": "特权，权力"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "lionize",
+     "ipa": "[ˈlaɪənaɪz]",
+     "pos": "v.",
+     "zh": "追捧，把…捧为名人",
+     "en": "to treat as a celebrity",
+     "syn": [
+      "celebrate",
+      "glorify"
+     ],
+     "ant": [
+      "vilify",
+      "ignore"
+     ]
+    },
+    {
+     "w": "susceptible",
+     "ipa": "[səˈsɛptəbl]",
+     "pos": "adj.",
+     "zh": "容易受伤害的",
+     "en": "easily affected or influenced",
+     "syn": [
+      "vulnerable",
+      "prone"
+     ],
+     "ant": [
+      "immune",
+      "resistant"
+     ]
+    },
+    {
+     "w": "foster",
+     "ipa": "[ˈfɔstə]",
+     "pos": "vt.",
+     "zh": "促进，鼓励，培养",
+     "en": "to encourage the growth of; to nurture",
+     "syn": [
+      "nurture",
+      "cultivate"
+     ],
+     "ant": [
+      "hinder",
+      "stifle"
+     ]
+    },
+    {
+     "w": "fleeting",
+     "ipa": "[ˈflitɪŋ]",
+     "pos": "adj.",
+     "zh": "稍纵即逝的，短暂的",
+     "en": "lasting a very short time",
+     "syn": [
+      "brief",
+      "ephemeral"
+     ],
+     "ant": [
+      "lasting",
+      "enduring"
+     ]
+    },
+    {
+     "w": "converge",
+     "ipa": "[kənˈvɝdʒ]",
+     "pos": "v.",
+     "zh": "汇集，交汇于一点",
+     "en": "to come together at a point",
+     "syn": [
+      "meet",
+      "unite"
+     ],
+     "ant": [
+      "diverge",
+      "disperse"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Fans would [[lionize]] the star, who was [[susceptible]] to praise; his trainer chose to [[foster]] humility, for fame is [[fleeting]] and the paths soon [[converge]] on obscurity.",
+   "gloss": {
+    "lionize": "追捧，把…捧为名人",
+    "susceptible": "容易受伤害的",
+    "foster": "促进，鼓励，培养",
+    "fleeting": "稍纵即逝的，短暂的",
+    "converge": "汇集，交汇于一点"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "repertoire",
+     "ipa": "[ˈrɛpəˈtwɑr]",
+     "pos": "n.",
+     "zh": "(技术、设备或原料等的)详单",
+     "en": "the range of works or skills a person can perform",
+     "syn": [
+      "stock",
+      "range"
+     ],
+     "ant": []
+    },
+    {
+     "w": "pious",
+     "ipa": "[ˈpaɪəs]",
+     "pos": "adj.",
+     "zh": "(信仰上)虔诚的",
+     "en": "devoutly religious; sometimes hypocritically virtuous",
+     "syn": [
+      "devout",
+      "reverent"
+     ],
+     "ant": [
+      "irreverent",
+      "impious"
+     ]
+    },
+    {
+     "w": "narcissistic",
+     "ipa": "[ˈnɑːsɪsɪtik]",
+     "pos": "adj.",
+     "zh": "自恋的",
+     "en": "having excessive interest in oneself",
+     "syn": [
+      "self-absorbed",
+      "vain"
+     ],
+     "ant": [
+      "selfless",
+      "humble"
+     ]
+    },
+    {
+     "w": "intransigent",
+     "ipa": "[ɪnˈtrænzɪdʒənt]",
+     "pos": "adj.",
+     "zh": "不妥协的，固执的",
+     "en": "unwilling to change one's views or compromise",
+     "syn": [
+      "uncompromising",
+      "obdurate"
+     ],
+     "ant": [
+      "flexible",
+      "conciliatory"
+     ]
+    },
+    {
+     "w": "backhanded",
+     "ipa": "[ˌbækˈhændɪd]",
+     "pos": "adj.",
+     "zh": "间接的",
+     "en": "indirect and insincere; an ambiguous compliment",
+     "syn": [
+      "ambiguous",
+      "sarcastic"
+     ],
+     "ant": [
+      "sincere",
+      "direct"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The singer's [[repertoire]] was [[pious]], but his [[narcissistic]] and [[intransigent]] manager gave a [[backhanded]] compliment to the press.",
+   "gloss": {
+    "repertoire": "(技术、设备或原料等的)详单",
+    "pious": "(信仰上)虔诚的",
+    "narcissistic": "自恋的",
+    "intransigent": "不妥协的，固执的",
+    "backhanded": "间接的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "eschew",
+     "ipa": "[ɪsˈtʃuː]",
+     "pos": "vt.",
+     "zh": "刻意避开；戒绝",
+     "en": "to deliberately avoid or abstain from",
+     "syn": [
+      "shun",
+      "forswear"
+     ],
+     "ant": [
+      "embrace",
+      "adopt"
+     ]
+    },
+    {
+     "w": "plausible",
+     "ipa": "[ˈplɔzəbl]",
+     "pos": "adj.",
+     "zh": "可信的",
+     "en": "seeming reasonable or probable",
+     "syn": [
+      "credible",
+      "believable"
+     ],
+     "ant": [
+      "implausible",
+      "far-fetched"
+     ]
+    },
+    {
+     "w": "ungainly",
+     "ipa": "[ʌnˈɡeɪnli]",
+     "pos": "adj.",
+     "zh": "笨拙的，不雅的",
+     "en": "awkward in movement or form",
+     "syn": [
+      "clumsy",
+      "gawky"
+     ],
+     "ant": [
+      "graceful",
+      "elegant"
+     ]
+    },
+    {
+     "w": "engender",
+     "ipa": "[ɪnˈdʒɛndə]",
+     "pos": "vt.",
+     "zh": "引起，使发展",
+     "en": "to cause or give rise to a feeling or situation",
+     "syn": [
+      "produce",
+      "spawn"
+     ],
+     "ant": [
+      "stifle",
+      "prevent"
+     ]
+    },
+    {
+     "w": "substitute",
+     "ipa": "[ˈsʌbstɪtut]",
+     "pos": "n.",
+     "zh": "取代者，替代品；取代，替代",
+     "en": "a person or thing that takes the place of another",
+     "syn": [
+      "replacement",
+      "proxy"
+     ],
+     "ant": [
+      "original"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The critic chose to [[eschew]] a [[plausible]] but [[ungainly]] theory that could [[engender]] debate; no [[substitute]] was offered.",
+   "gloss": {
+    "eschew": "刻意避开",
+    "plausible": "可信的",
+    "ungainly": "笨拙的，不雅的",
+    "engender": "引起，使发展",
+    "substitute": "取代者，替代品"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "delve",
+     "ipa": "[delv]",
+     "pos": "v.",
+     "zh": "探究，钻探",
+     "en": "to search deeply into something",
+     "syn": [
+      "probe",
+      "burrow"
+     ],
+     "ant": [
+      "skim",
+      "ignore"
+     ]
+    },
+    {
+     "w": "consolidate",
+     "ipa": "[kənˈsɑlɪdet]",
+     "pos": "v.",
+     "zh": "加固，使安全",
+     "en": "to make stronger; to combine into one",
+     "syn": [
+      "strengthen",
+      "unify"
+     ],
+     "ant": [
+      "divide",
+      "weaken"
+     ]
+    },
+    {
+     "w": "moderate",
+     "ipa": "[ˈmɑdərət]",
+     "pos": "vt.",
+     "zh": "使缓和；适度的，中庸的",
+     "en": "to make less extreme; not extreme",
+     "syn": [
+      "temper",
+      "restrained"
+     ],
+     "ant": [
+      "extreme",
+      "intensify"
+     ]
+    },
+    {
+     "w": "spurn",
+     "ipa": "[spɜːrn]",
+     "pos": "vt.",
+     "zh": "摈弃，拒绝",
+     "en": "to reject with disdain",
+     "syn": [
+      "rebuff",
+      "scorn"
+     ],
+     "ant": [
+      "accept",
+      "embrace"
+     ]
+    },
+    {
+     "w": "redundant",
+     "ipa": "[rɪˈdʌndənt]",
+     "pos": "adj.",
+     "zh": "多余的，冗余的",
+     "en": "not needed because it repeats something",
+     "syn": [
+      "superfluous",
+      "surplus"
+     ],
+     "ant": [
+      "essential",
+      "necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "The team agreed to [[delve]] deeper; the firm wished to [[consolidate]] its power and [[moderate]] its tone, but it would [[spurn]] a [[redundant]] rule.",
+   "gloss": {
+    "delve": "探究，钻探",
+    "consolidate": "加固，使安全",
+    "moderate": "使缓和",
+    "spurn": "摈弃，拒绝",
+    "redundant": "多余的，冗余的"
+   }
+  },
+  {
+   "type": "vocab",
+   "items": [
+    {
+     "w": "panache",
+     "ipa": "[pəˈnæʃ]",
+     "pos": "n.",
+     "zh": "炫耀",
+     "en": "stylish confidence and flair",
+     "syn": [
+      "flair",
+      "élan"
+     ],
+     "ant": [
+      "dullness",
+      "clumsiness"
+     ]
+    },
+    {
+     "w": "verify",
+     "ipa": "[ˈvɛrɪfaɪ]",
+     "pos": "vt.",
+     "zh": "校验，证实",
+     "en": "to check that something is true",
+     "syn": [
+      "confirm",
+      "corroborate"
+     ],
+     "ant": [
+      "refute",
+      "falsify"
+     ]
+    },
+    {
+     "w": "flaccid",
+     "ipa": "[ˈflæsɪd]",
+     "pos": "adj.",
+     "zh": "不结实的，松弛的",
+     "en": "soft and limp; lacking vigor",
+     "syn": [
+      "limp",
+      "slack"
+     ],
+     "ant": [
+      "firm",
+      "rigid"
+     ]
+    },
+    {
+     "w": "satirize",
+     "ipa": "[ˈsætəraɪz]",
+     "pos": "vt.",
+     "zh": "讽刺",
+     "en": "to criticize or mock through humor and irony",
+     "syn": [
+      "lampoon",
+      "parody"
+     ],
+     "ant": []
+    },
+    {
+     "w": "ascetic",
+     "ipa": "[əˈsɛtɪk]",
+     "pos": "adj./n.",
+     "zh": "自制的(人)",
+     "en": "living a strict, self-denying life; one who does so",
+     "syn": [
+      "austere",
+      "abstinent"
+     ],
+     "ant": [
+      "hedonistic",
+      "indulgent"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "passage",
+   "text": "Her [[panache]] won the room; she would [[verify]] each claim, since a [[flaccid]] case could [[satirize]] itself, and an [[ascetic]] monk agreed.",
+   "gloss": {
+    "panache": "炫耀",
+    "verify": "校验，证实",
+    "flaccid": "不结实的，松弛的",
+    "satirize": "讽刺",
+    "ascetic": "自制的(人)"
    }
   }
  ],
@@ -359,59 +738,59 @@
  "quiz": {
   "questions": [
    {
-    "q": "**fraught** 的意思最接近：",
+    "q": "**fleeting** 的意思最接近：",
     "options": [
-     "充满的",
-     "轻浮的；不重要的",
-     "慷慨的",
-     "陈腐的，缺乏创新的"
-    ],
-    "answer": 0,
-    "explain": "fraught：充满的（filled with (something unpleasant)）。近义词：laden, charged。"
-   },
-   {
-    "q": "**munificent** 的意思最接近：",
-    "options": [
-     "无所不知的",
-     "无用的",
-     "慷慨的",
-     "轻浮的；不重要的"
-    ],
-    "answer": 2,
-    "explain": "munificent：慷慨的（extremely generous）。近义词：generous, lavish。"
-   },
-   {
-    "q": "哪个词的意思是「强烈反对，否定」？",
-    "options": [
-     "squander",
-     "improvise",
-     "decry",
-     "repudiate"
-    ],
-    "answer": 2,
-    "explain": "decry：强烈反对，否定（to publicly condemn）。"
-   },
-   {
-    "q": "哪个词和 **broker** 的意思最接近？",
-    "options": [
-     "milieu",
-     "intermediary",
-     "burlesque",
-     "contingency"
-    ],
-    "answer": 1,
-    "explain": "intermediary 与 broker 近义：a go-between。"
-   },
-   {
-    "q": "选最适合填入空格的词：\n\n> An apocalyptic sermon led the ____ donor to repudiate her frivolous past and plan for every contingency.",
-    "options": [
-     "cryptic",
-     "fraught",
-     "transitory",
-     "munificent"
+     "不结实的，松弛的",
+     "充满……的，富于……的",
+     "间接的",
+     "稍纵即逝的，短暂的"
     ],
     "answer": 3,
-    "explain": "munificent：慷慨的（extremely generous）。"
+    "explain": "fleeting：稍纵即逝的，短暂的（lasting a very short time）。近义词：brief, ephemeral。"
+   },
+   {
+    "q": "**lionize** 的意思最接近：",
+    "options": [
+     "追捧，把…捧为名人",
+     "校验，证实",
+     "使(品质)污损",
+     "引起，使发展"
+    ],
+    "answer": 0,
+    "explain": "lionize：追捧，把…捧为名人（to treat as a celebrity）。近义词：celebrate, glorify。"
+   },
+   {
+    "q": "哪个词的意思是「虚构的事物，幻觉」？",
+    "options": [
+     "chimera",
+     "prerogative",
+     "panache",
+     "repertoire"
+    ],
+    "answer": 0,
+    "explain": "chimera：虚构的事物，幻觉（an illusion or fanciful idea that cannot be achieved）。"
+   },
+   {
+    "q": "哪个词和 **shun** 的意思最接近？",
+    "options": [
+     "engender",
+     "eschew",
+     "taint",
+     "delve"
+    ],
+    "answer": 1,
+    "explain": "eschew 与 shun 近义：to deliberately avoid or abstain from。"
+   },
+   {
+    "q": "选最适合填入空格的词：\n\n> The singer's repertoire was ____, but his narcissistic and intransigent manager gave a backhanded compliment to the press.",
+    "options": [
+     "intransigent",
+     "overweening",
+     "pious",
+     "plausible"
+    ],
+    "answer": 2,
+    "explain": "pious：(信仰上)虔诚的（devoutly religious; sometimes hypocritically virtuous）。"
    }
   ]
  }
