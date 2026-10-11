@@ -5,6 +5,10 @@
 格式：
 
 ```
+## 2026-10-11 — gre-aw 去掉 3 个 Argument 单元（只留 Issue）
+- ETS 官网 Analytical Writing 页面写明：写作只有一篇 30 分钟的 "Analyze an Issue"，Argument 已不考。`tools/course/grw/build.py` 只生成 3 个 Issue 单元；`essays.json` 里 Argument 数据保留但不用。旧的 `courses/gre-aw/u04-arg-sample.json`、`u05-arg-t1.json`、`u06-arg-t2.json` 已不被 course.json 引用，可以手动删除
+- ETS 还公布了完整的 Issue 题库（官网 Analytical Writing 页面的 "Issue Topic pool"），以后可以从里面补题
+
 ## 2026-10-11 — 新课 gre-aw：GRE 写作官方练习（Issue 3 题 + Argument 3 题）
 - 新课 `gre-aw`（选修，tags: GRE），6 节，每节一道 ETS 官方作文题（官方指南的 Sample 题 + 两套模考的作文题），每题带官方评分标准、6–1 分各一篇官方样文和阅卷评语（英文原文，由 `tools/course/grw/extract.py` 从 PDF 文本层抽出）；官方指南里没有 ETS 网站上公开的完整题库，所以只有这 6 题
 - 新 block 类型 `gre-essay`：题目 + 30 分钟计时（可选，超时不锁）+ 打字区（字数统计，停手 1.2 秒自动保存到本机和云端，云端存在 `studyNotes` 集合的 `<课>__<节>__essay` 文档，和每节笔记分开）→ 点「写完了」后才显示评分标准、5 分标准自查清单、6–1 分样文（标签切换）和评语；少于 100 词会先提醒一次

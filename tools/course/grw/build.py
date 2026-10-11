@@ -1,5 +1,5 @@
 """GRE 写作练习课程生成器（gre-aw）。
-数据：essays.json（extract.py 从 ETS《Official Guide》的文本层抽出：3 道 Issue + 3 道 Argument，每题含 6–1 分各一篇官方样文和阅卷评语；评分标准）
+数据：essays.json（extract.py 从 ETS《Official Guide》的文本层抽出：3 道 Issue（Argument 已不考，不收），每题含 6–1 分各一篇官方样文和阅卷评语；评分标准）
 输出：courses/gre-aw/course.json 和 uNN-*.json
 运行：python tools/course/grw/build.py
 """
@@ -42,7 +42,7 @@ TITLES = {
     'arg-t1': ('Argument 2 · Tertia 岛的育儿研究', 'Analyze an Argument — Tertia island'),
     'arg-t2': ('Argument 3 · Movies Galore 缩减营业开支', 'Analyze an Argument — Movies Galore'),
 }
-order = ['issue-sample', 'issue-t1', 'issue-t2', 'arg-sample', 'arg-t1', 'arg-t2']
+order = ['issue-sample', 'issue-t1', 'issue-t2']      # 2023 年 9 月起 GRE 只考一篇 Issue（ETS 官网 Analytical Writing 页面），Argument 不再收
 by = {t['id']: t for t in tasks}
 out = os.path.join(REPO, 'courses', 'gre-aw')
 os.makedirs(out, exist_ok=True)
@@ -69,7 +69,7 @@ for i, tid in enumerate(order, 1):
     json.dump(unit, open(os.path.join(out, f'{uid}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     units.append({'id': uid, 'title': title, 'en': en, 'minutes': 45, 'file': f'{uid}.json', 'practice': True, 'hasQuiz': False})
 course = {
-    'id': 'gre-aw', 'title': 'GRE 写作官方练习：Issue 与 Argument 各 3 题',
+    'id': 'gre-aw', 'title': 'GRE 写作官方练习：Issue 3 题',
     'order': 18, 'order_note': '选修，申请准备：每题限时 30 分钟，写完对照官方评分标准、6–1 分样文和阅卷评语',
     'tier': 'elective', 'tags': ['GRE'], 'units': units,
 }
