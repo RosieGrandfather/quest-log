@@ -95,7 +95,6 @@ function courseCardHTML(c){
   return `<a class="course-card" href="${courseHash(c.id)}">
     ${stepLine(c)}
     <div class="course-title">${escapeHTML(c.title)}</div>
-    <div class="course-sub">${escapeHTML(c.subtitle||'')}</div>
     ${tags ? `<div class="ctags">${tags}</div>` : ''}
     <div class="reward-bar"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
     <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
