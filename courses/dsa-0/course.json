@@ -6,6 +6,13 @@
     "name": "Problem Solving with Algorithms and Data Structures using Python（Miller & Ranum，CC BY-NC-SA 4.0）与 MIT OCW 6.006（作为大纲依据）",
     "url": "https://runestone.academy/ns/books/published/pythonds/index.html"
   },
+  "order": 9,
+  "order_note": "选修，但申请 Master 时常被当作先修：想先准备申请就提前到必修之前学；其余时间可以穿插",
+  "tier": "elective",
+  "tags": [
+    "AI转型",
+    "面试"
+  ],
   "units": [
     {
       "id": "u01",
@@ -221,8 +228,5 @@
       "whole": "u11-dynamic-programming.json",
       "part_of": "u11"
     }
-  ],
-  "order": 9,
-  "order_note": "选修，但申请 Master 时常被当作先修：想先准备申请就提前到必修之前学；其余时间可以穿插",
-  "tier": "elective"
+  ]
 }

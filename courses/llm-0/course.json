@@ -2,6 +2,13 @@
   "id": "llm-0",
   "title": "大语言模型专项",
   "subtitle": "【占位课，内容待补】LLM 方向的专项：预训练到对齐到推理的完整链路。在 dl-0 与项目 B 之后",
+  "order": 13,
+  "order_note": "LLM 方向课：学完必修基础（含 dl-0 和项目 B）后再开始",
+  "tier": "track",
+  "track": "LLM",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -51,9 +58,5 @@
       "file": null,
       "covers": "思维链、可验证奖励、过程监督 vs 结果监督；连接 wm-0 的强化学习"
     }
-  ],
-  "order": 13,
-  "order_note": "LLM 方向课：学完必修基础（含 dl-0 和项目 B）后再开始",
-  "tier": "track",
-  "track": "LLM"
+  ]
 }

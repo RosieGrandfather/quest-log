@@ -2,6 +2,12 @@
   "id": "proj-a",
   "title": "项目 A：从零写反向传播与字符级语言模型（跟着 Karpathy）",
   "subtitle": "【占位课，内容待补】跟着 Andrej Karpathy 的 Neural Networks: Zero to Hero 前半部分，边看边自己敲：先从零写一个自动求导引擎，再一步步写字符级语言模型。这是项目课，不是讲义课：每个小节 = 看一段视频 + 自己把代码敲出来 + 做一道改动练习。适合在 ml-0 之后马上做，用来把反向传播、训练实践彻底吃透",
+  "order": 5,
+  "order_note": "项目课：ml-0 学完后马上做，趁热把反向传播和训练实践敲一遍",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -107,8 +113,5 @@
       "file": null,
       "covers": "一维卷积的视角、实验流程与调参、这条线接到 Transformer 的哪里"
     }
-  ],
-  "order": 5,
-  "order_note": "项目课：ml-0 学完后马上做，趁热把反向传播和训练实践敲一遍",
-  "tier": "core"
+  ]
 }

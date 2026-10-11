@@ -43,7 +43,7 @@ for i, s in enumerate(sets, 1):
 course = {
     'id': 'gre-vr', 'title': 'GRE Verbal 官方练习题：12 套 Practice Set',
     'subtitle': 'ETS 官方 Verbal Reasoning 练习册里的真题，按原书分成 12 套：阅读理解、文本补全、句子等价各「低 / 中 / 高」难度三套，另有 3 套混合。每套做完再提交，才显示对错、官方解析和本套总结。',
-    'order': 16, 'order_note': '选修，申请准备：Verbal 是弱项，词汇课背一段时间后穿插着做', 'tier': 'elective',
+    'order': 16, 'order_note': '选修，申请准备：Verbal 是弱项，词汇课背一段时间后穿插着做', 'tier': 'elective', 'tags': ['GRE'],
     'units': units,
 }
 json.dump(course, open(os.path.join(out, 'course.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

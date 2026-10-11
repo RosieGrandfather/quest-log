@@ -22,6 +22,8 @@ def main(online):
         cdir = os.path.join(COURSES, entry['path'])
         course = json.load(open(os.path.join(cdir, 'course.json'), encoding='utf-8'))
         if course['id'] != entry['id']: errors.append(f"index.json 的 id {entry['id']} ≠ course.json 的 {course['id']}")
+        tg = course.get('tags', [])
+        if not (isinstance(tg, list) and tg and all(isinstance(x, str) and x.strip() for x in tg) and len(set(tg)) == len(tg)): errors.append(f"{course['id']}: tags 应是不重复的非空标签列表（课程列表按它筛选）")
         ids = [u['id'] for u in course['units']]
         if len(ids) != len(set(ids)): errors.append(f"{course['id']}: 章节 id 重复")
         done = 0

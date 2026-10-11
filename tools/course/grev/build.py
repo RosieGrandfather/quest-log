@@ -118,6 +118,6 @@ for u in range(len(units), n_units_total):      # 还没写好的组先占位
                    covers='待写'))
 course = dict(id='gre-v', title='GRE 核心词汇 S 级：机经里出现过的再要你命 3000',
               subtitle=f'把「再要你命 3000」里同时出现在机经（霍 V6）里的 {len(words)} 个词，按乱序拆成每组 {PER_UNIT} 个词的小节：中英释义、近义词、反义词、点音标发音、每 {PER_PASSAGE} 个词一段例句短文，最后 5 道小测验。',
-              order=16, order_note='选修，申请准备：背 GRE 词汇，可以和别的课穿插着学', tier='elective', units=cu)
+              order=16, order_note='选修，申请准备：背 GRE 词汇，可以和别的课穿插着学', tier='elective', tags=['GRE'], units=cu)
 json.dump(course, open(os.path.join(cdir, 'course.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
 print(f'写入 courses/gre-v：{len(units)} 个小节（{n_done} 词），占位 {n_units_total-len(units)} 个')

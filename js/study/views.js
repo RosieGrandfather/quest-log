@@ -69,7 +69,6 @@ function courseProgress(course){
 
 /* 建议学习顺序：course.json 里的 order / order_note；小时数由各节 minutes 加总 */
 const TIER_LABEL = {core:'必修', elective:'选修', track:'方向课'};
-const TIER_HEAD = {core:'必修基础：学完它们，就可以开始自己做研究', elective:'选修：按需学（申请 Master 常要的数据结构、读论文要的进阶数学）', track:'方向课：学完必修基础后，选定方向再学'};
 function stepLine(c){
   if(!c.order) return '';
   const hours = Math.round(c.units.reduce((s,u)=>s+(u.minutes||0),0)/60);
@@ -77,27 +76,54 @@ function stepLine(c){
   return `<div class="course-step">${tier}<span class="step-no">第 ${c.order} 步</span> ${escapeHTML(c.order_note||'')} <span class="mono">· 约 ${hours} 小时</span></div>`;
 }
 
+/* 课程列表的筛选：一个标签（course.json 的 tags）+ 一个学习状态。选择记在本机浏览器里，下次打开还在 */
+const STATUS = [['all','全部'], ['doing','在学'], ['todo','未开始'], ['done','已完成']];
+let homeFilter = (()=>{
+  try{ const f = JSON.parse(localStorage.getItem('studyHomeFilter') || '{}'); return {tag: f.tag || '', status: STATUS.some(x=>x[0]===f.status) ? f.status : 'all'}; }
+  catch(e){ return {tag:'', status:'all'}; }
+})();
+const saveFilter = ()=>{ try{ localStorage.setItem('studyHomeFilter', JSON.stringify(homeFilter)); }catch(e){ /* 无痕模式等：不记也行 */ } };
+
+function courseStatus(c){
+  const p = courseProgress(c);
+  return p.done === 0 ? 'todo' : p.done >= p.total ? 'done' : 'doing';
+}
+
+function courseCardHTML(c){
+  const p = courseProgress(c);
+  const tags = (c.tags||[]).map(t=> `<span class="ctag">${escapeHTML(t)}</span>`).join('');
+  return `<a class="course-card" href="${courseHash(c.id)}">
+    ${stepLine(c)}
+    <div class="course-title">${escapeHTML(c.title)}</div>
+    <div class="course-sub">${escapeHTML(c.subtitle||'')}</div>
+    ${tags ? `<div class="ctags">${tags}</div>` : ''}
+    <div class="reward-bar"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
+    <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
+  </a>`;
+}
+
 async function renderHome(){
   const courses = await loadCourses();
   const full = await Promise.all(courses.map(c=> loadCourse(c.id)));
-  const card = c=>{
-    const p = courseProgress(c);
-    return `<a class="course-card" href="${courseHash(c.id)}">
-      ${stepLine(c)}
-      <div class="course-title">${escapeHTML(c.title)}</div>
-      <div class="course-sub">${escapeHTML(c.subtitle||'')}</div>
-      <div class="reward-bar"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
-      <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
-    </a>`;
-  };
-  let html = `<h2 class="view-title">我的课程</h2><div class="course-sub">按「第 N 步」的顺序学。先学完「必修基础」，就可以开始自己做研究；选修按需；方向课在选定方向后再学</div>`;
-  for(const tier of ['core','elective','track']){
-    const group = full.filter(c=> (c.tier||'core')===tier);
-    if(!group.length) continue;
-    const hours = Math.round(group.reduce((s,c)=>s+c.units.reduce((t,u)=>t+(u.minutes||0),0),0)/60);
-    html += `<div class="tier-head tier-head-${tier}">${TIER_HEAD[tier]} <span class="mono">· 约 ${hours} 小时</span></div>` + group.map(card).join('');
-  }
-  view().innerHTML = html;
+  const allTags = [...new Set(full.flatMap(c=> c.tags||[]))];
+  if(homeFilter.tag && !allTags.includes(homeFilter.tag)) homeFilter.tag = '';     // 标签被删掉了就回到「全部」
+  const count = (tag, status)=> full.filter(c=> (!tag || (c.tags||[]).includes(tag)) && (status==='all' || courseStatus(c)===status)).length;
+  const chip = (kind, val, label, n)=> `<button type="button" class="fchip${(kind==='tag' ? homeFilter.tag===val : homeFilter.status===val) ? ' on' : ''}" data-${kind}="${escapeHTML(val)}">${escapeHTML(label)} <span class="fcount">${n}</span></button>`;
+  const shown = full.filter(c=> (!homeFilter.tag || (c.tags||[]).includes(homeFilter.tag)) && (homeFilter.status==='all' || courseStatus(c)===homeFilter.status))
+    .slice().sort((a, b)=> (a.order||999) - (b.order||999));
+  view().innerHTML = `<h2 class="view-title">我的课程</h2>
+    <div class="filters">
+      <div class="frow" role="group" aria-label="按标签筛选">${chip('tag','','全部标签',count('', homeFilter.status))}${allTags.map(t=> chip('tag', t, t, count(t, homeFilter.status))).join('')}</div>
+      <div class="frow" role="group" aria-label="按学习状态筛选">${STATUS.map(([v, l])=> chip('status', v, l, count(homeFilter.tag, v))).join('')}</div>
+    </div>
+    <div class="course-sub">${shown.length ? `共 ${shown.length} 门，按「第 N 步」排序` : ''}</div>
+    ${shown.length ? shown.map(courseCardHTML).join('') : '<div class="entry-empty">没有符合条件的课，换一个标签或状态试试</div>'}`;
+  view().querySelector('.filters').addEventListener('click', e=>{
+    const b = e.target.closest('.fchip'); if(!b) return;
+    if(b.dataset.tag !== undefined) homeFilter.tag = (homeFilter.tag === b.dataset.tag) ? '' : b.dataset.tag;     // 再点一次取消
+    else homeFilter.status = b.dataset.status;
+    saveFilter(); renderHome();
+  });
 }
 
 /* ---------- 章节列表 ---------- */

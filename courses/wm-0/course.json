@@ -6,6 +6,13 @@
     "name": "Sutton & Barto《Reinforcement Learning: An Introduction》（作者免费公开）、Ha & Schmidhuber《World Models》、Dreamer 系列论文，并参考 UPenn CIS 6280、Berkeley CS285 的大纲",
     "url": "http://incompleteideas.net/book/the-book-2nd.html"
   },
+  "order": 11,
+  "order_note": "世界模型方向课：学完必修基础后再开始（需要 NumPy，部分节用 PyTorch）",
+  "tier": "track",
+  "track": "世界模型",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -224,9 +231,5 @@
       "whole": "u08-world-models.json",
       "part_of": "u08"
     }
-  ],
-  "order": 11,
-  "order_note": "世界模型方向课：学完必修基础后再开始（需要 NumPy，部分节用 PyTorch）",
-  "tier": "track",
-  "track": "世界模型"
+  ]
 }

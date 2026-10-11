@@ -6,6 +6,12 @@
     "name": "ARENA [0.0] Prerequisites",
     "url": "https://github.com/ARENA-education/ARENA_materials/blob/main/chapter0_fundamentals/instructions/pages/00_%5B0.0%5D_Prerequisites.md"
   },
+  "order": 3,
+  "order_note": "主线技术课，学完前两门再开始（它的第 10–15 节与 Python 基础有重叠，熟了可以略读）",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -397,8 +403,5 @@
       "whole": "u15-einsum-indexing.json",
       "part_of": "u15"
     }
-  ],
-  "order": 3,
-  "order_note": "主线技术课，学完前两门再开始（它的第 10–15 节与 Python 基础有重叠，熟了可以略读）",
-  "tier": "core"
+  ]
 }

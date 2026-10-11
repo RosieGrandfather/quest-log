@@ -301,3 +301,12 @@
 .gsum-chip{font:inherit;font-size:13px;margin:0 6px 6px 0;padding:4px 10px;border-radius:999px;border:1px solid var(--burgundy);background:var(--burgundy-soft);color:var(--burgundy);cursor:pointer;}
 .gsum-allright{text-align:center;font-weight:800;color:var(--teal);padding:6px;}
 .gsum-btns{display:flex;gap:10px;} .gsum-btns > *{flex:1;}
+
+/* 课程列表筛选：标签 + 学习状态 */
+.filters{display:flex;flex-direction:column;gap:8px;margin:10px 0 12px;}
+.frow{display:flex;flex-wrap:wrap;gap:6px;}
+.fchip{font:inherit;font-size:13.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--ink-soft);cursor:pointer;}
+.fchip.on{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:700;}
+.fcount{font-family:'IBM Plex Mono';font-size:11.5px;opacity:.7;margin-left:2px;}
+.ctags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.ctag{font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--border);}

@@ -2,6 +2,12 @@
   "id": "dl-0",
   "title": "深度学习主干：CNN、序列模型与 Transformer",
   "subtitle": "【占位课，内容待补】ml-0 之后、读论文之前的深度学习主干。目标：能读懂并自己实现 CNN、残差网络、注意力与 Transformer 的核心，知道现代大模型是怎么训练的。ARENA 的 Transformer 章节在它之后会更顺",
+  "order": 6,
+  "order_note": "ml-0 与项目 A 之后；ARENA 的 Transformer 章节在它之后更顺",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -75,8 +81,5 @@
       "file": null,
       "covers": "混合精度、梯度累积、分布式训练的概念、scaling laws、算力与显存估算"
     }
-  ],
-  "order": 6,
-  "order_note": "ml-0 与项目 A 之后；ARENA 的 Transformer 章节在它之后更顺",
-  "tier": "core"
+  ]
 }

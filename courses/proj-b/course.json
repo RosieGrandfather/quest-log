@@ -2,6 +2,12 @@
   "id": "proj-b",
   "title": "项目 B：从零写 GPT（跟着 Karpathy）",
   "subtitle": "【占位课，内容待补】跟着 Karpathy 的后半部分：从零写 GPT、写分词器、复现 GPT-2。放在 dl-0 的 Transformer 之后做：先在 dl-0 里理解，再在这里亲手敲出来。每个小节 = 看一段 + 敲代码 + 一道改动练习",
+  "order": 7,
+  "order_note": "dl-0 学完 Transformer 之后做，把它亲手敲出来",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -83,8 +89,5 @@
       "file": null,
       "covers": "数据管线、评测（HellaSwag 之类）、结果怎么看、能学到什么"
     }
-  ],
-  "order": 7,
-  "order_note": "dl-0 学完 Transformer 之后做，把它亲手敲出来",
-  "tier": "core"
+  ]
 }

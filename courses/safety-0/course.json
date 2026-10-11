@@ -2,6 +2,13 @@
   "id": "safety-0",
   "title": "AI 安全入门",
   "subtitle": "【占位课，内容待补】AI 安全方向的概念地图和入门阅读。偏概念与阅读，配合 ARENA 的可解释性章节做",
+  "order": 14,
+  "order_note": "AI 安全方向课：学完必修基础后再开始，可配合 ARENA 的可解释性章节",
+  "tier": "track",
+  "track": "AI 安全",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -51,9 +58,5 @@
       "file": null,
       "covers": "必读论文与博客、怎么跟踪新研究、可以做的小项目"
     }
-  ],
-  "order": 14,
-  "order_note": "AI 安全方向课：学完必修基础后再开始，可配合 ARENA 的可解释性章节",
-  "tier": "track",
-  "track": "AI 安全"
+  ]
 }

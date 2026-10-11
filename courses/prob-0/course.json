@@ -6,6 +6,12 @@
     "name": "MIT OCW 6.041 Probabilistic Systems Analysis 与 Harvard Statistics 110（作为大纲依据）",
     "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/"
   },
+  "order": 2,
+  "order_note": "学完 Python 后接着学。ARENA 的概率、信息论要用到",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -109,8 +115,5 @@
       "whole": "u06-ci-hypothesis-tests.json",
       "part_of": "u06"
     }
-  ],
-  "order": 2,
-  "order_note": "学完 Python 后接着学。ARENA 的概率、信息论要用到",
-  "tier": "core"
+  ]
 }

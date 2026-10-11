@@ -6,6 +6,12 @@
     "name": "Stanford CS229 讲义、An Introduction to Statistical Learning（作者免费公开）、吴恩达 Machine Learning Specialization（作为大纲依据）",
     "url": "https://cs229.stanford.edu/"
   },
+  "order": 4,
+  "order_note": "ARENA 0.0 之后学：补上机器学习本身（泛化、正则化、树模型、聚类与降维、训练神经网络的实践），再去学 ARENA 后续章节、世界模型衔接课和读论文",
+  "tier": "core",
+  "tags": [
+    "AI转型"
+  ],
   "units": [
     {
       "id": "u01",
@@ -215,8 +221,5 @@
       "whole": "u08-ml-workflow.json",
       "part_of": "u08"
     }
-  ],
-  "order": 4,
-  "order_note": "ARENA 0.0 之后学：补上机器学习本身（泛化、正则化、树模型、聚类与降维、训练神经网络的实践），再去学 ARENA 后续章节、世界模型衔接课和读论文",
-  "tier": "core"
+  ]
 }
