@@ -23,19 +23,7 @@
      "ans": [
       3
      ],
-     "img": "2025-01-06/4-01.webp",
-     "txt": {
-      "stem": [
-       "‘Select one entry for the blank. Fill the blank in the way that best completes the text."
-      ],
-      "opts": [
-       "Identifying the age of a human cell is tricky because of frequent _ its biological and chronological ages: a cell that has existed for a relatively short time céuld function erratically, as if elderly.",
-       "disagreement over correlation between underestimation of",
-       "misalignment of",
-       "inattention to",
-       "\"Select one answer choice."
-      ]
-     }
+     "img": "2025-01-06/4-01.webp"
     },
     {
      "n": 2,
@@ -70,13 +58,12 @@
      "img": "2025-01-06/4-03.webp",
      "txt": {
       "stem": [
-       "Recent research has shown a (i) ____ scientific thinking during preadolescence: while some studies demonstrate (ii) ____ the areas of experimentation, data interpretation, and understanding the nature of science, others, focusing on somewhat simplified tasks, have demonstrated competencies in elementary school or even younger children.",
-       "Blank (i) ____ Blank (ii)"
+       "Recent research has shown a (i) ____ scientific thinking during preadolescence: while some studies demonstrate (ii) ____ the areas of experimentation, data interpretation, and understanding the nature of science, others, focusing on somewhat simplified tasks, have demonstrated competencies in elementary school or even younger children."
       ],
       "cols": [
        [
         "surprising facility with",
-        "_ heterogeneous picture of",
+        "heterogeneous picture of",
         "reluctance to engage in"
        ],
        [
@@ -99,8 +86,7 @@
      "img": "2025-01-06/4-04.webp",
      "txt": {
       "stem": [
-       "The levels of risk associated with construction and development in growing cities are (i) ____ as a consequence of urbanization, precautionary works, and environmental change. Because most risk assessment studies are the result of specific research grants or single contracts, they are seldom updated to reflect changes. Therefore, there is a danger that existing results on hazard and risk, although (ii) ____ at the time they were produced, could become (iii) ____ as time passes.",
-       "Blank (i) ____ Blank (ii) ____ Blank (ili)"
+       "The levels of risk associated with construction and development in growing cities are (i) ____ as a consequence of urbanization, precautionary works, and environmental change. Because most risk assessment studies are the result of specific research grants or single contracts, they are seldom updated to reflect changes. Therefore, there is a danger that existing results on hazard and risk, although (ii) ____ at the time they were produced, could become (iii) ____ as time passes."
       ],
       "cols": [
        [
@@ -284,16 +270,15 @@
      "img": "2025-01-06/4-12.webp",
      "txt": {
       "stem": [
-       "Pop music continually recycles itself, building new hits around familiar themes, and successful new acts often do not even bother to disguise their",
-       "_] appropriations"
+       "Pop music continually recycles itself, building new hits around familiar themes, and successful new acts often do not even bother to disguise their ____"
       ],
       "opts": [
+       "appropriations",
        "innovations",
        "influences",
        "pilferage",
        "originality",
-       "complicity",
-       "i ‘Select two answer choices."
+       "complicity i ‘Select two answer choices."
       ]
      }
     },

@@ -12,6 +12,29 @@ def tsv_words(im,psm=4):
         except:continue
         W.append(dict(x=int(c[6]),y=int(c[7]),w=int(c[8]),h=int(c[9]),t=c[11].strip(),conf=conf,blk=int(c[2]),par=int(c[3]),ln=int(c[4])))
     return W
+def add_blanks(W,hl):
+    """把被去掉的下划线（填空处）补回成 '____' 词，插到对应文字行里"""
+    if not hl or not W:return W
+    d={}
+    for w in W:d.setdefault((w['blk'],w['par'],w['ln']),[]).append(w)
+    L=[]
+    for k,ws in d.items():
+        L.append((k,min(w['y'] for w in ws),max(w['y']+w['h'] for w in ws),statistics.median(w['h'] for w in ws)))
+    out=list(W);used=set()
+    for y,x0,x1 in hl:
+        wd=x1-x0
+        if not 120<=wd<=900:continue
+        if sum(1 for y2,a,b in hl if (y2,a,b)!=(y,x0,x1) and abs(a-x0)<40 and abs(b-x1)<40)>=2:continue   # 表格横线（同宽成排）不是填空下划线
+        best=None
+        for k,ty,by,h in L:
+            if ty-0.3*h<=y<=by+0.9*h and (best is None or abs(y-by)<abs(y-best[2])):best=(k,ty,by,h)
+        if not best:continue
+        k,ty,by,h=best
+        # 表格线（同一 y 附近成排的线）不算：下划线下方紧贴文字、且至少有一个单词与其横向重叠或相邻
+        near=[w for w in d[k] if w['x']<=x1+30 and w['x']+w['w']>=x0-30]
+        if not near and not (x0>min(w['x'] for w in d[k])-30):continue
+        out.append(dict(x=x0,y=ty,w=wd,h=int(h),t='____',conf=99.0,blk=k[0],par=k[1],ln=k[2]))
+    return out
 def lines_of(W,gapk=2.4):
     """group words into lines by (blk,par,ln), insert ____ for big gaps, return list of dict(x,y,h,text,x1)"""
     d={}
@@ -129,7 +152,7 @@ def parse_page(path):
         L=[l for l in L if not re.match(r'^questions? \d+',l['text'],re.I)]
         return dict(two=True,left=L,right=R)
     pp=prep(im,SC);hl=list(LASTHL)
-    return dict(two=False,left=[],right=clean(lines_of(tsv_words(pp))),hl=hl)
+    return dict(two=False,left=[],right=clean(lines_of(add_blanks(tsv_words(pp),hl))),hl=hl)
 def stem_opts(R,n):
     R=[l for l in R if not FOOT.match(l['text'].strip()) or len(l['text'])>60]
     g=groups(R)
@@ -158,6 +181,7 @@ def stem_opts(R,n):
 def fixtxt(t):
     t=re.sub(r"([A-Za-z])’ (s|t|re|ve|ll|d|m)\b",r"\1’\2",t)
     t=re.sub(r"\s+(____\s*)?[}\]\)|]+\s*$","",t)
+    t=re.sub(r"(?<=[A-Za-z,;:.’])\s+\|\s+(?=[a-z])",' I ',t)
     t=re.sub(r"\s*\|\s*",' ',t)
     t=re.sub(r"\((il|Ii|li|I1|ii|i|iii|ili|lii)\)(?!\s*____)(\s)",lambda m:'('+{'il':'ii','Ii':'ii','li':'ii','I1':'ii','ili':'iii','lii':'iii'}.get(m.group(1),m.group(1))+') ____'+m.group(2),t)
     t=re.sub(r"(____\s*)+","____ ",t)
@@ -221,6 +245,10 @@ def tc_lines(R,hl,blanks):
         for y in ys[1:]:
             if y-z[-1]>12:z.append(y)
         ys=z
+        if len(ys)==3:
+            g1,g2=ys[1]-ys[0],ys[2]-ys[1]
+            if max(g1,g2)>=1.6*min(g1,g2):
+                ys=sorted(ys+[(ys[0]+ys[1])/2 if g1>g2 else (ys[1]+ys[2])/2])
         if len(ys)<4:return None
         if len(ys)>4:ys=ys[-4:]
         top=ys[0] if top is None else min(top,ys[0])
@@ -234,7 +262,7 @@ def tc_lines(R,hl,blanks):
                     if ys[b]<=cy<ys[b+1]:band[b].append((l['y'],w['x'],w['t']))
         out.append([fixtxt(' '.join(t for _,_,t in sorted(b))) for b in band])
     if any(not o for col in out for o in col):return None
-    stemL=[l for l in R if l['y1']<top-5]
+    stemL=[l for l in R if l['y1']<top-5 and not re.match(r'^\s*Blank\b',l['text'])]
     g=groups(stemL)
     while g and INSTR.match(' '.join(x['text'] for x in g[0]).strip()) and len(g)>1:g=g[1:]
     return paras([l for gg in g for l in gg]),out
@@ -272,7 +300,7 @@ def tc_parse(R,blanks):
             else:g.append([y,y1,t])
         outc.append([fixtxt(x[2]) for x in g])
     cols=outc
-    stemL=[l for l in R if l['y']<ly-5]
+    stemL=[l for l in R if l['y']<ly-5 and not re.match(r'^\s*Blank\b',l['text'])]
     g=groups(stemL)
     while g and INSTR.match(' '.join(x['text'] for x in g[0]).strip()) and len(g)>1:g=g[1:]
     return paras([l for gg in g for l in gg]),cols

@@ -108,12 +108,12 @@
        "In spite of her fascination with chance, coincidence, and contingency, Stanning’s novels are ____ constructed, written from the head rather than the heart."
       ],
       "opts": [
-       "C hastily",
+       "hastily",
        "extravagantly",
        "painstakingly",
        "meticulously",
        "evocatively",
-       "C impulsively"
+       "impulsively"
       ]
      }
     },
@@ -125,7 +125,21 @@
       0,
       3
      ],
-     "img": "2025-01-02/2-07.webp"
+     "img": "2025-01-02/2-07.webp",
+     "txt": {
+      "stem": [
+       "at Bk sentence as a whole and produce completed sentences that are alike in meaning.",
+       "Despite the. ____ of medical information available through e-mail, the Internet, and mobile devices, not many patients are taking advantage of the potential of electronic communications for health-related needs."
+      ],
+      "opts": [
+       "wealth",
+       "complexity",
+       "intricacy",
+       "profusion",
+       "resurgence",
+       "overload"
+      ]
+     }
     },
     {
      "n": 8,
@@ -164,10 +178,10 @@
        "While there is no evidence that Bigfoot is real, several well-known species were once thought to be ____ ; the okapi, for instance, was known as the “African unicorn” until explorers obtained proof of its existence."
       ],
       "opts": [
-       "Ci threatened",
-       "C0 fabulous",
-       "C0 extinct",
-       "C0 defunct",
+       "threatened",
+       "fabulous",
+       "extinct",
+       "defunct",
        "legendary",
        "secretive"
       ]

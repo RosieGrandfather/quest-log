@@ -14,10 +14,58 @@ def fixw(m):
         if (a.lower() in ('a','i') or (len(a)>=2 and known(a))) and known(b) and len(b)>=3:return a+' '+b
     return w
 def rep(t):return re.sub(r"[A-Za-z]+",fixw,t)
+def blankfix(t):
+    # 重复空 / 空旁边的乱码短词
+    tk=t.split();out=[]
+    for i,x in enumerate(tk):
+        nb=(i+1<len(tk) and tk[i+1]=='____') or (out and out[-1]=='____')
+        if nb and len(x)<=3 and x!='____' and (any(not c.isalnum() for c in x.strip('.,;:?!')) and any(c.isalnum() for c in x) or (len(x)<=2 and any(c.isalpha() for c in x) and x.lower() not in SP and x.lower() not in('a','i'))) and not re.fullmatch(r'\(?i{1,3}\)?[.,;:]?',x):
+            continue
+        out.append(x)
+    t=' '.join(out)
+    t=re.sub(r'____\s*_+','____ ',t)
+    t=re.sub(r'\((i{1,3})\)([.,;:])\s+____',r'(\1) ____\2',t)
+    return re.sub(r'\s+',' ',re.sub(r'(____\s*)+','____ ',t)).strip()
+SHORT=set('a i of to in on as at by it or be is an no so up us we he me my if do go am ad'.split())
+def junkpara(t):
+    tk=[re.sub(r"[^A-Za-z']","",x).lower().replace('’',"'") for x in t.split()]
+    tk=[w for w in tk if w]
+    if not tk:return True
+    return sum(1 for w in tk if w in SP or w in('a','i'))/len(tk)<(0.99 if len(t)<30 else 0.6)
+def trim_lead(t):
+    tk=t.split()
+    def kn(x):
+        w=re.sub(r"[^A-Za-z']","",x).lower().replace('’',"'")
+        return x=='____' or re.fullmatch(r"[\d.,%$]+",x) is not None or (len(w)>=1 and (w in SP or w in ('a','i')))
+    for i in range(0,max(1,len(tk)-3)):
+        if all(kn(x) for x in tk[i:i+4]):
+            return ' '.join(tk[i:]) if i else t
+    return t
+def trimjunk(o):
+    tk=o.split()
+    while len(tk)>1 and len(tk[-1])<=2 and tk[-1].lower() not in SHORT:tk.pop()
+    while len(tk)>1 and len(tk[0])<=2 and tk[0].lower() not in SHORT:tk.pop(0)
+    return ' '.join(tk)
+def relabel(ps):
+    # (i)(ii)(iii) 编号被 OCR 读坏时按出现顺序重新编号
+    n=[0]
+    def f(m):
+        n[0]+=1;return ' ('+'i'*min(n[0],3)+') '
+    return [re.sub(r'(?<=\s)(?:\(|G|C|\[)?(?:i{1,3}|il|li|Ii|ll|l)(?:\)|\])[.,;:]?(?=\s)',lambda m:f(m)[:-1]+(m.group(0)[-1] if m.group(0)[-1] in '.,;:' else '')+' ',p) for p in ps]
 def unk(t):
     ws=[w for w in re.findall(r"[A-Za-z]+",t.replace('’',"'")) if len(w)>=4 and not w[0].isupper() and not w.isupper()]
     return sum(1 for w in ws if not known(w)),len(ws)
 def gate(v):
+    st=' '.join(v.get('stem') or [])
+    if v.get('cols') and st.count('____')<len(v['cols']):return False
+    if v.get('opts'):
+        wl=[len(o.split()) for o in v['opts']];
+        if max(wl)<=4 and '____' not in st:return False
+        sw=sorted(wl)
+        if sw[-1]>12 and sw[-2]<=4:return False
+        if sw[-1]>=4*max(sw[len(sw)//2],1)+4 and sw[-1]>10:return False
+    return gate0(v)
+def gate0(v):
     for o in (v.get('opts') or [])+[c for col in (v.get('cols') or []) for c in col]:
         if unk(o)[0]:return False
     for key in ('stem','pass'):
@@ -31,7 +79,7 @@ INS=[r'select one entry for the blank\.?',r'for each blank,? select one entry fr
 def strip_instr(ps):
     out=[]
     for i,p in enumerate(ps):
-        if i==0:
+        if i<4:
             for _ in range(4):
                 n=p
                 for r in INS:p=re.sub(r'^\s*'+r+r'\s*','',p,flags=re.I)
@@ -61,7 +109,14 @@ for f in sorted(os.listdir(RAW)):
     for key in sorted(d,key=lambda k:tuple(map(int,k.split('-')))):
         v=d[key]
         if not v.get('ok'):continue
-        if v.get('stem'):v['stem']=strip_instr(v['stem']) or v['stem']
+        if v.get('stem'):
+            v['stem']=[trim_lead(x) if j==0 else x for j,x in enumerate(v['stem'])]
+            v['stem']=[re.sub(r'\s*Blank\s*\(?i{1,3}\)?(\s*(____\s*)?Blank\s*\(?i{1,3}\)?)*(\s*____)?\s*$','',x) for x in v['stem']]
+            v['stem']=[re.sub(r'^\s*(____\s*)*Blank\s*\(?i{1,3}\)?(\s*(____\s*)?Blank\s*\(?i{1,3}\)?)*\s*(____\s*)*$','',x) for x in v['stem']]
+            v['stem']=[x for x in v['stem'] if x.strip()]
+        if v.get('stem') and len(v['stem'])>1:v['stem']=[x for x in v['stem'] if not junkpara(x)] or v['stem']
+        if v.get('stem'):v['stem']=[trim_lead(x) if j==0 else x for j,x in enumerate(strip_instr(v['stem']) or v['stem'])]
+        if v.get('pass'):v['pass']=[trim_lead(x) if j==0 else x for j,x in enumerate(v['pass'])]
         GL=re.compile(r'^(?:[©Q®]|[\(\[\{][^\s\w]?\w?[\]\)\}]?|[CL]J|[CLO]\))\s+')
         def cg(o):
             for _ in range(2):
@@ -79,7 +134,13 @@ for f in sorted(os.listdir(RAW)):
             v['ok']=False;continue
         for fld in ('stem','pass','opts'):
             if v.get(fld):v[fld]=[rep(x) for x in v[fld]]
-        if v.get('cols'):v['cols']=[[rep(x) for x in c] for c in v['cols']]
+        if v.get('stem'):
+            v['stem']=[blankfix(x) for x in v['stem']]
+            if v.get('cols'):v['stem']=relabel(v['stem']);v['stem']=[re.sub(r'\s+',' ',re.sub(r'\s+([.,;:])',r'\1',x)).strip() for x in v['stem']]
+        if v.get('cols'):v['cols']=[[trimjunk(rep(x)) for x in c] for c in v['cols']]
+        if v.get('opts'):v['opts']=[trimjunk(x) for x in v['opts']]
+        if v.get('opts'):v['opts']=[re.sub(r'\s*____\s*',' ',x).strip() for x in v['opts']]
+        if v.get('cols'):v['cols']=[[re.sub(r'\s*____\s*',' ',x).strip() for x in c] for c in v['cols']]
         if not gate(v):
             v['ok']=False;continue
         if v.get('pass'):

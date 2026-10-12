@@ -126,22 +126,7 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s3/4-09.webp",
-     "txt": {
-      "pass": [
-       "The post-1850 economic boom in the United States had its greatest impact on eastern mill towns, such as Lowell. Massachusetts. Formerly peaceful villages became bustling towns whose factories rose to dominate their skylines. Their populations sometimes tripled in a decade, forcing property less workers into overcrowded, dilapidated housing. Their economies came under the domination of industrialists who competed unfairly with one another and were contemptuous of the old ways. These industrialists had economic power and the social and political power that accompanied it; town politicians catered to their interests. Other property owners, especially small-business entrepreneurs and professionals, identified with them and applauded their successes. The factory workers inevitably found themselves alienated from property owners and helpless before their employers. Thus, economic class, social status, and power were inextricably intertwined; control over property and machinery was readily"
-      ],
-      "stem": [
-       "In the context in which it appears, “dominate” most nearly means"
-      ],
-      "opts": [
-       "dictate",
-       "tyrannize",
-       "control",
-       "command",
-       "oversee"
-      ]
-     }
+     "img": "2025-02-s3/4-09.webp"
     },
     {
      "n": 10,
@@ -151,21 +136,7 @@
       0,
       1
      ],
-     "img": "2025-02-s3/4-10.webp",
-     "txt": {
-      "stem": [
-       "Many macroscopic or higher-level properties on the basis of which we sort chemicals into types are not",
-       "the chemical structure itself but instead only manifest themselves under certain conditions or in particular contexts."
-      ],
-      "opts": [
-       "inherent in",
-       ". . ° to",
-       "equivalent to",
-       "influenced by",
-       "affected by",
-       "separable from"
-      ]
-     }
+     "img": "2025-02-s3/4-10.webp"
     },
     {
      "n": 11,
@@ -178,7 +149,7 @@
      "img": "2025-02-s3/4-11.webp",
      "txt": {
       "stem": [
-       "It is normal for artists who achieve great acclaim during their lifetimes to be considered. after their deaths, only to have their reputations restored by subsequent generations.",
+       "It is normal for artists who achieve great acclaim during their lifetimes to be considered. ____ after their deaths, only to have their reputations restored by subsequent generations.",
        "(C sacrosanct"
       ],
       "opts": [
@@ -202,10 +173,10 @@
      "img": "2025-02-s3/4-12.webp",
      "txt": {
       "stem": [
-       "At public appearances the leader was remarkably taciturn, typically making turning the floor over to a colleague."
+       "At public appearances the leader was remarkably taciturn, typically making ____ turning the floor over to a colleague."
       ],
       "opts": [
-       "trite CO",
+       "trite",
        "insightful",
        "inflammatory",
        "shrewd",
@@ -277,14 +248,12 @@
        "Scientists have long debated the exact timing of the lunar cataclysm, a period approximately 4 billion years ago when Earth and the Moon were pummeled with asteroids. A clue to this puzzle may come from spherules, millimeter-sized droplets of molten rock formed after an asteroid collides explosively with a planet. Upon impact, the asteroid vaporizes both itself and the target rock, producing a vapor plume that condenses into spherules. These form a layer preserved in rock, whose age can be estimated using radiometric dating. Scientists know of fourteen of these spherule layers scattered across Earth, but none dates to the theorized lunar cataclysm time period. Four layers, however, are from between 3.47 and 3.24 billion years ago, indicating perhaps a slow decline in"
       ],
       "stem": [
-       "Which of the following might plausibly account for the findings in the highlighted sentence? (1) Spherule layers older than 3.47 billion years exist, but they have",
-       "not been discovered yet.",
-       "(1) Spherule layers older than 3.47 billion years once existed, but they"
+       "Which of the following might plausibly account for the findings in the highlighted sentence?"
       ],
       "opts": [
-       "have since been destroyed.",
-       "Fewer asteroids collided with Earth than with the Moon during the",
-       "lunar cataclysm."
+       "Spherule layers older than 3.47 billion years exist, but they have not been discovered yet.",
+       "Spherule layers older than 3.47 billion years once existed, but they have since been destroyed.",
+       "Fewer asteroids collided with Earth than with the Moon during the lunar cataclysm."
       ]
      }
     }
