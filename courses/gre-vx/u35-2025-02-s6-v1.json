@@ -23,7 +23,19 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s6/2-01.webp"
+     "img": "2025-02-s6/2-01.webp",
+     "txt": {
+      "stem": [
+       "One thing both authors have in common is a striking amount of ____ : they claim to know how massive institutions, some of them richly endowed, all of them central to American society and culture, should be reshaped."
+      ],
+      "opts": [
+       "hubris",
+       "propriety",
+       "bias",
+       "prescience",
+       "indolence"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       2,
       2
      ],
-     "img": "2025-02-s6/2-02.webp"
+     "img": "2025-02-s6/2-02.webp",
+     "txt": {
+      "stem": [
+       "No one (i) ____ that building a ship powered by black holes or dark matter would be a formidable task. Yet remarkably there seems to be nothing in our present understanding of physics that (ii) ____ our doing so."
+      ],
+      "cols": [
+       [
+        "believes",
+        "admits",
+        "disputes"
+       ],
+       [
+        "anticipates",
+        "necessitates",
+        "precludes"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -53,7 +82,20 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s6/2-04.webp"
+     "img": "2025-02-s6/2-04.webp",
+     "txt": {
+      "pass": [
+       "Recently researchers have questioned the portrayal of pearly mussels, which are freshwater bivalves, as feeding exclusively on particles suspended in water (suspension feeding). Many ocean-dwelling bivalves siphon food from the sediment surface (deposit feeding) or use their foot to sweep edible material from the sediment (pedal feeding). It is known that juvenile pearly mussels can pedal feed, although researchers still do not know how the ability to pedal feed varies across species, over the lifetime of a single mussel, or with the relative availability"
+      ],
+      "stem": [
+       "Which of the following statements about how pearly mussels feed can be inferred from the passage?"
+      ],
+      "opts": [
+       "Juveniles of some pearly mussel species are unable to suspension feed.",
+       "If the feeding ability of pearly mussels does not change during their life cycle, then mature pearly mussels probably have the ability to pedal feed.",
+       "Pearly mussels are unlikely to engage in suspension feeding when the sediment contains abundant edible material."
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +104,22 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s6/2-05.webp"
+     "img": "2025-02-s6/2-05.webp",
+     "txt": {
+      "pass": [
+       "Recently researchers have questioned the portrayal of pearly mussels, which are freshwater bivalves, as feeding exclusively on particles suspended in water (suspension feeding). Many ocean-dwelling bivalves siphon food from the sediment surface (deposit feeding) or use their foot to sweep edible material from the sediment (pedal feeding). It is known that juvenile pearly mussels can pedal feed, although researchers still do not know how the ability to pedal feed varies across species, over the lifetime of a single mussel, or with the relative availability"
+      ],
+      "stem": [
+       "According to the passage, which of the following is true of bivalve feeding behavior?"
+      ],
+      "opts": [
+       "Many ocean-dwelling bivalves are exclusively suspension feeders.",
+       "Many ocean-dwelling bivalves get at least a portion of their nutrition from sediment.",
+       "Many ocean-dwelling bivalves employ different feeding mechanisms at different stages of their life.",
+       "Mature freshwater bivalves are known to both suspension feed and deposit feed.",
+       "Mature freshwater bivalves are known to get a portion of their nutrition by pedal feeding."
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +129,20 @@
       2,
       4
      ],
-     "img": "2025-02-s6/2-06.webp"
+     "img": "2025-02-s6/2-06.webp",
+     "txt": {
+      "stem": [
+       "When discussing the United States Army’s 1876 campaign against the Sioux, Powers is occasionally ____ context: he describes General Crook’s march to the Battle of the Rosebud but neglects to mention how it fit into the army’s overall strategy."
+      ],
+      "opts": [
+       "misinformed about",
+       "obsessed with",
+       "frugal with",
+       "preoccupied with",
+       "stinting with",
+       "unscrupulous about"
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +152,20 @@
       1,
       4
      ],
-     "img": "2025-02-s6/2-07.webp"
+     "img": "2025-02-s6/2-07.webp",
+     "txt": {
+      "stem": [
+       "Those familiar with the insular conditions that once prevailed in Russia may be surprised by the ____ of eighteenth-century Russian composer Natalia Kurakina, who translated novels from French into Italian and composed songs in both languages."
+      ],
+      "opts": [
+       "versatility",
+       "worldliness",
+       "dedication",
+       "ingenuity",
+       "cosmopolitanism",
+       "industriousness"
+      ]
+     }
     },
     {
      "n": 8,
@@ -92,7 +175,20 @@
       3,
       4
      ],
-     "img": "2025-02-s6/2-08.webp"
+     "img": "2025-02-s6/2-08.webp",
+     "txt": {
+      "stem": [
+       "Analysis of the structural features that were thought to ____ kinship between the two species prompted an investigation that dispelled that presumption and revealed that the two do share a family history."
+      ],
+      "opts": [
+       "signify",
+       "underrate",
+       "point to",
+       "preclude",
+       "rule out",
+       "exaggerate"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +198,21 @@
       2,
       5
      ],
-     "img": "2025-02-s6/2-09.webp"
+     "img": "2025-02-s6/2-09.webp",
+     "txt": {
+      "stem": [
+       "Responsibility for the nation’s decline rests squarely with a people who take for granted their claims to preeminence but do not ____ interest in or commitment to actually maintaining it.",
+       "_] foresee"
+      ],
+      "opts": [
+       "rebuff",
+       "evince",
+       "reject",
+       "predict",
+       "betray",
+       "‘Select two answer choices."
+      ]
+     }
     },
     {
      "n": 10,
@@ -111,7 +221,22 @@
      "ans": [
       3
      ],
-     "img": "2025-02-s6/2-10.webp"
+     "img": "2025-02-s6/2-10.webp",
+     "txt": {
+      "pass": [
+       "In 1825, emancipated slave Pierre Toussaint, who had become a successful New York hairdresser, commissioned miniature portraits of himself, his wife, Juliette, and his adopted niece. It was an unconventional choice. Judging by the extant evidence, those few antebellum African Americans who commissioned portraits chose bust-sized oil paintings, paintings that announced their status— their respectability, their prosperity, and their person hood —to the public at large. And, given the implicit publicity of these paintings, it is not surprising that so many represent men: African-descended ministers, activists, barbers, and men of affairs, men who were assuming positions of leadership within the North’s free black communities. It is not clear why Toussaint, a public- minded man who was deeply involved in a variety of philanthropic efforts, diverged from this pattern by choosing to represent himself, much less his entire family, in a genre so closely associated with domestic intimacy. Perhaps he associated miniatures with the gentility and refinement of his wealthy clientele. Perhaps he was attracted to the genre’s familial associations. Toussaint was, after all, a man who prized family, who expended great effort to preserve family ties against overwhelming odds; after moving to New York, he had tried repeatedly and unsuccessfully to recover family members who had been lost during the Haitian Revolution. Or perhaps miniatures recalled a pivotal moment in his own life, a moment that fused gentility, familial intimacy, and"
+      ],
+      "stem": [
+       "The “pattern” mentioned in the passage refers to"
+      ],
+      "opts": [
+       "the value placed by people of wealth and gentility on miniature portraits of family members",
+       "the increasing frequency with which African American families chose to commission portraits",
+       "an ascent in social status among antebellum African Americans who came to live in New York",
+       "the propensity of African Americans who commissioned portraits to favor paintings that called attention to their status",
+       "a tendency of wealthy New York families to patronize artists by commissioning paintings"
+      ]
+     }
     },
     {
      "n": 11,
@@ -120,7 +245,22 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s6/2-11.webp"
+     "img": "2025-02-s6/2-11.webp",
+     "txt": {
+      "pass": [
+       "In 1825, emancipated slave Pierre Toussaint, who had become a successful New York hairdresser, commissioned miniature portraits of himself, his wife, Juliette, and his adopted niece. It was an unconventional choice. Judging by the extant evidence, those few antebellum African Americans who commissioned portraits chose bust-sized oil paintings, paintings that announced their status— their respectability, their prosperity, and their person hood —to the public at large. And, given the implicit publicity of these paintings, it is not surprising that so many represent men: African-descended ministers, activists, barbers, and men of affairs, men who were assuming positions of leadership within the North’s free black communities. It is not clear why Toussaint, a public- minded man who was deeply involved in a variety of philanthropic efforts, diverged from this pattern by choosing to represent himself, much less his entire family, in a genre so closely associated with domestic intimacy. Perhaps he associated miniatures with the gentility and refinement of his wealthy clientele. Perhaps he was attracted to the genre’s familial associations. Toussaint was, after all, a man who prized family, who expended great effort to preserve family ties against overwhelming odds; after moving to New York, he had tried repeatedly and unsuccessfully to recover family members who had been lost during the Haitian Revolution. Or perhaps miniatures recalled a pivotal moment in his own life, a moment that fused gentility, familial intimacy, and"
+      ],
+      "stem": [
+       "The author mentions Toussaint’s efforts “to recover family members who had been lost during the Haitian Revolution” primarily to"
+      ],
+      "opts": [
+       "contrast Toussaint’s experience with that of other successful African Americans in New York",
+       "help explain why Toussaint became deeply involved in various philanthropic efforts",
+       "acknowledge the difficulties Toussaint faced following his emancipation from slavery",
+       "rule out one explanation for Toussaint’s preference for miniature over large family portraits",
+       "support a possible explanation for Toussaint’s commissioning of a particular genre of painting"
+      ]
+     }
     },
     {
      "n": 12,
@@ -129,7 +269,22 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s6/2-12.webp"
+     "img": "2025-02-s6/2-12.webp",
+     "txt": {
+      "pass": [
+       "In 1825, emancipated slave Pierre Toussaint, who had become a successful New York hairdresser, commissioned miniature portraits of himself, his wife, Juliette, and his adopted niece. It was an unconventional choice. Judging by the extant evidence, those few antebellum African Americans who commissioned portraits chose bust-sized oil paintings, paintings that announced their status— their respectability, their prosperity, and their person hood —to the public at large. And, given the implicit publicity of these paintings, it is not surprising that so many represent men: African-descended ministers, activists, barbers, and men of affairs, men who were assuming positions of leadership within the North’s free black communities. It is not clear why Toussaint, a public- minded man who was deeply involved in a variety of philanthropic efforts, diverged from this pattern by choosing to represent himself, much less his entire family, in a genre so closely associated with domestic intimacy. Perhaps he associated miniatures with the gentility and refinement of his wealthy clientele. Perhaps he was attracted to the genre’s familial associations. Toussaint was, after all, a man who prized family, who expended great effort to preserve family ties against overwhelming odds; after moving to New York, he had tried repeatedly and unsuccessfully to recover family members who had been lost during the Haitian Revolution. Or perhaps miniatures recalled a pivotal moment in his own life, a moment that fused gentility, familial intimacy, and"
+      ],
+      "stem": [
+       "The author mentions “bust-sized oil paintings” primarily in order to"
+      ],
+      "opts": [
+       "counter a particular assumption",
+       "cite a noteworthy example",
+       "elaborate on an assertion",
+       "account for a historical change",
+       "note an exception to a generalization"
+      ]
+     }
     }
    ]
   }

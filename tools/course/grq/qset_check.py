@@ -25,6 +25,14 @@ def validate_qset(unit, cdir):
         for p in (it.get('imgs') or [it.get('img')]): need(p, w)
         if it.get('exp') is not None: need(it.get('exp'), w)
         if it.get('fig'): need(it['fig'], w)
+        tx = it.get('txt')
+        if tx is not None:
+            if not isinstance(tx, dict) or not isinstance(tx.get('stem'), list) or not tx['stem'] or not all(isinstance(x, str) and x.strip() for x in tx['stem']): e.append(f'{w}: txt.stem 不对')
+            elif kind in ('mc1', 'mcn', 'se'):
+                no = it.get('nopt')
+                if not isinstance(tx.get('opts'), list) or len(tx['opts']) != no or not all(isinstance(x, str) and x.strip() for x in tx['opts']): e.append(f'{w}: txt.opts 数量应为 {no}')
+            elif kind == 'tc':
+                if not isinstance(tx.get('cols'), list) or len(tx['cols']) != it.get('blanks') or any(len(c) != 3 or not all(isinstance(x, str) and x.strip() for x in c) for c in tx['cols']): e.append(f'{w}: txt.cols 不对')
         if kind == 'ss':
             if not str(it.get('ansText', '')).strip(): e.append(f'{w}: 选句子题没有 ansText')
         elif kind == 'tc':

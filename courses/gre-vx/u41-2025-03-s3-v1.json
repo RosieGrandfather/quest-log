@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-03-s3/2-01.webp"
+     "img": "2025-03-s3/2-01.webp",
+     "txt": {
+      "stem": [
+       "The ____ effectiveness of lithium as a mood-altering drug for both manic and depressive states cannot be completely explained; most mood-altering drugs can only be used to modify one state or the other."
+      ],
+      "opts": [
+       "dubious",
+       "neglected",
+       "questionable",
+       "paradoxical",
+       "latent"
+      ]
+     }
     },
     {
      "n": 2,
@@ -53,7 +65,20 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s3/2-04.webp"
+     "img": "2025-03-s3/2-04.webp",
+     "txt": {
+      "pass": [
+       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than yin French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav Enestr6m and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers"
+      ],
+      "stem": [
+       "It can be inferred that the author of the passage would agree with which of the following statements about the relationship between Enestr6m’s conjecture and Derbyshire?"
+      ],
+      "opts": [
+       "Derbyshire’s assertion derives ultimately from a misunderstanding of Enestr6m’s conjecture.",
+       "Derbyshire’s bibliography suggests that he was familiar with Enestr6m’s conjecture.",
+       "Derbyshire wrote his work almost 300 years after EnestrOm’s conjecture was published."
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +87,22 @@
      "ans": [
       1
      ],
-     "img": "2025-03-s3/2-05.webp"
+     "img": "2025-03-s3/2-05.webp",
+     "txt": {
+      "pass": [
+       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than yin French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav Enestr6m and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers"
+      ],
+      "stem": [
+       "The highlighted text serves primarily to"
+      ],
+      "opts": [
+       "establish that Enestr6m published his conjecture before Derbyshire authored his history",
+       "allude to the speculative nature of Enestr6m’s explanation",
+       "account for the absence of any plausible explanation for Descartes’s choice of x for centuries after his work was published",
+       "point out the continuity of mathematical notation over extended periods of time",
+       "suggest that the frequency with which letters are used might have changed since Descartes’s time"
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +112,21 @@
       1,
       2
      ],
-     "img": "2025-03-s3/2-06.webp"
+     "img": "2025-03-s3/2-06.webp",
+     "txt": {
+      "stem": [
+       "Even though it was the soprano’s first major role with the company, there was no",
+       "in her masterful performance."
+      ],
+      "opts": [
+       "flamboyance",
+       "hesitancy",
+       "tentativeness",
+       "panache",
+       "flaw ;",
+       "exhibitionism"
+      ]
+     }
     },
     {
      "n": 7,
@@ -92,7 +146,20 @@
       0,
       1
      ],
-     "img": "2025-03-s3/2-08.webp"
+     "img": "2025-03-s3/2-08.webp",
+     "txt": {
+      "stem": [
+       "The brain has become, for many people, ____ the biological machinations of the self, and the self-knowledge promised by neuroscience has ignited a hunger to understand how new findings weigh in on age-old questions."
+      ],
+      "opts": [
+       "tantamount to",
+       "synonymous with",
+       "implicated in",
+       "divorced from",
+       "detached from",
+       "subservient to"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +169,20 @@
       1,
       2
      ],
-     "img": "2025-03-s3/2-09.webp"
+     "img": "2025-03-s3/2-09.webp",
+     "txt": {
+      "stem": [
+       "His lackadaisical approach to this project belies his well-known reputation for."
+      ],
+      "opts": [
+       "skill",
+       "assiduousness",
+       "industry",
+       "intelligence",
+       "facility",
+       "innovation"
+      ]
+     }
     },
     {
      "n": 10,
@@ -112,6 +192,21 @@
       3
      ],
      "img": "2025-03-s3/2-10.webp",
+     "txt": {
+      "pass": [
+       "Watson and Kennedy cite ethnohistoric documentation regarding Native American women’s primary involvement in horticulture and plant collecting in the Eastern Woodlands during the Mississippian period (A.D. JOO—1500) as evidence supporting the idea that women were involved in plant domestication in the Eastern Woodlands. In light of this evidence as well as data from other cultures showing that women generally have primary responsibility for plant-food production in small-scale societies, Watson and Kennedy find it surprising that women are absent from archaeologists’ explanations for the origins of horticulture in the region. They attribute this absence to the faulty assumption that women are not cultural innovators. They challenge Smith’s explanation of indigenous plant domestication for the way it removes intention and innovation from the scenario such that the plants “virtually domesticate themselves.” They also challenge Prentice’s theory that male shamans were responsible for domesticating gourds because Prentice’s scenario removes women from the one realm traditionally granted them, plant-food production, as soon as innovation or intervention enters the picture. In addition, they challenge the idea that after maize was introduced to northern latitudes it slowly and independently adapted to the new growing conditions. Instead, they argue that the rapid spread of maize after A.D. 900 suggests that women farmers had"
+      ],
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "defend a particular argument from its critics",
+       "summarize a particular scholarly theory",
+       "resolve a debate in a particular scholarly field",
+       "present a critique of a particular area of scholarship",
+       "evaluate the evidence used to support an unorthodox view"
+      ]
+     },
      "imgs": [
       "2025-03-s3/2-10.webp",
       "2025-03-s3/2-10b.webp"
@@ -124,7 +219,22 @@
      "ans": [
       1
      ],
-     "img": "2025-03-s3/2-11.webp"
+     "img": "2025-03-s3/2-11.webp",
+     "txt": {
+      "pass": [
+       "Watson and Kennedy cite ethnohistoric documentation regarding Native American women’s primary involvement in horticulture and plant collecting in the Eastern Woodlands during the Mississippian period (A.D. JOO—1500) as evidence supporting the idea that women were involved in plant domestication in the Eastern Woodlands. In light of this evidence as well as data from other cultures showing that women generally have primary responsibility for plant-food production in small-scale societies, Watson and Kennedy find it surprising that women are absent from archaeologists’ explanations for the origins of horticulture in the region. They attribute this absence to the faulty assumption that women are not cultural innovators. They challenge Smith’s explanation of indigenous plant domestication for the way it removes intention and innovation from the scenario such that the plants “virtually domesticate themselves.” They also challenge Prentice’s theory that male shamans were responsible for domesticating gourds because Prentice’s scenario removes women from the one realm traditionally granted them, plant-food production, as soon as innovation or intervention enters the picture. In addition, they challenge the idea that after maize was introduced to northern latitudes it slowly and independently adapted to the new growing conditions. Instead, they argue that the rapid spread of maize after A.D. 900 suggests that women farmers had"
+      ],
+      "stem": [
+       "The challenge referred to in the highlighted material pertains primarily to which of the following?"
+      ],
+      "opts": [
+       "When maize was first introduced into northern latitudes",
+       "What caused maize to proliferate in northern latitudes",
+       "Whether maize became the primary food crop in northern latitudes after A.D. 900",
+       "Whether maize became well established in northern latitudes prior to A.D. 900",
+       "When farmers in northern latitudes first began to crossbreed different varieties of maize"
+      ]
+     }
     },
     {
      "n": 12,
@@ -133,7 +243,22 @@
      "ans": [
       4
      ],
-     "img": "2025-03-s3/2-12.webp"
+     "img": "2025-03-s3/2-12.webp",
+     "txt": {
+      "pass": [
+       "Watson and Kennedy cite ethnohistoric documentation regarding Native American women’s primary involvement in horticulture and plant collecting in the Eastern Woodlands during the Mississippian period (A.D. JOO—1500) as evidence supporting the idea that women were involved in plant domestication in the Eastern Woodlands. In light of this evidence as well as data from other cultures showing that women generally have primary responsibility for plant-food production in small-scale societies, Watson and Kennedy find it surprising that women are absent from archaeologists’ explanations for the origins of horticulture in the region. They attribute this absence to the faulty assumption that women are not cultural innovators. They challenge Smith’s explanation of indigenous plant domestication for the way it removes intention and innovation from the scenario such that the plants “virtually domesticate themselves.” They also challenge Prentice’s theory that male shamans were responsible for domesticating gourds because Prentice’s scenario removes women from the one realm traditionally granted them, plant-food production, as soon as innovation or intervention enters the picture. In addition, they challenge the idea that after maize was introduced to northern latitudes it slowly and independently adapted to the new growing conditions. Instead, they argue that the rapid spread of maize after A.D. 900 suggests that women farmers had"
+      ],
+      "stem": [
+       "It can be inferred from the passage that Watson and Kennedy base their view about women’s involvement in plant domestication in the Eastern Woodlands in part on"
+      ],
+      "opts": [
+       "documentation showing that women in the Eastern Woodlands had responsibilities that differed from those of women in other cultures of that time",
+       "an analysis of several small-scale societies in which women were responsible for significant innovations",
+       "evidence that in the Eastern Woodlands plant-food production was considered women’s most important responsibility",
+       "documentation showing that small-scale societies did not separate plant domestication from horticulture and plant collecting",
+       "an assumption that those responsible for horticulture and plant collecting would also have been responsible for plant domestication"
+      ]
+     }
     }
    ]
   }

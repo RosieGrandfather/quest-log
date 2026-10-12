@@ -17,6 +17,10 @@ MAXW = 1000
 data = json.load(open(os.path.join(HERE, 'data.json'), encoding='utf-8'))
 pages_dir = sys.argv[1]
 only = set(sys.argv[2:])
+OCR = os.path.join(HERE, 'ocr')
+def load_txt(sid):
+    f = os.path.join(OCR, f'txt-{sid}.json')
+    return json.load(open(f, encoding='utf-8')) if os.path.exists(f) else {}
 out = os.path.join(REPO, 'courses', 'gre-vx')
 
 def header_bottom(im):
@@ -54,6 +58,7 @@ for s in data:
         if only and s['id'] not in only: continue
         M = sec['M']; items = []
         cache = {}
+        txts = load_txt(s['id'])
         for it in sec['items']:
             names = []
             for j, pg in enumerate(it['pages']):
@@ -62,6 +67,9 @@ for s in data:
                 names.append(nm)
             o = {k: it[k] for k in ('n', 'kind', 'nopt', 'blanks', 'ans', 'ansText') if k in it}
             o['img'] = names[0]
+            tx = txts.get(f'{sec["sec"]}-{it["n"]}')
+            if tx and tx.get('ok'):
+                o['txt'] = {k: tx[k] for k in ('pass', 'stem', 'opts', 'cols') if tx.get(k)}
             if len(names) > 1: o['imgs'] = names
             items.append(o)
         title = f'{s["zh"]} · Verbal {v}（{M} 题）'

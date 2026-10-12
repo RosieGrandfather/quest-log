@@ -35,7 +35,8 @@
 | 10 | `opt-0` 优化与进阶数学（8 节，**占位**） | 约 7 小时 | 读论文遇到推导时回来补 |
 | 15 | `gre-v` GRE 核心词汇 S 级（30 节 × 40 词） | 约 25 小时 | 申请准备：「再要你命 3000」里同时在机经出现过的 1196 个词，乱序；中英释义、近/反义词、点音标发音、例句短文、每节 5 题；可与主线穿插学 |
 | 15 | `gre-vr` GRE Verbal 官方练习题（12 套 150 题） | 约 8 小时 | 申请准备：ETS 官方 Verbal 真题，阅读 / 文本补全 / 句子等价各低·中·高三套 + 混合 3 套；做完整套再「提交」才显示对错、官方解析和本套总结；生成：`tools/course/grvp/build.py` |
-| 16 | `gre-vx` GRE Verbal 2025 年真题回忆（25 套 · 50 节 · 674 题） | 约 15 小时 | 申请准备：2025 年 1–4 月考场回忆真题的 Verbal 部分，每个 section 一节（12 题 18 分钟 / 15 题 23 分钟）；题目是考场截屏（`courses/gre-vx/img/`），题型有单选 / 多选 / 选两个 / 多空填空 / 选句子（自评不计分），做完整节再「提交」；答案来自原整理者的答案表，没有官方解析，个别答案可能有误；生成：`tools/course/grvx/build.py` |
+| 16 | `gre-vx` GRE Verbal 2025 年真题回忆（25 套 · 50 节 · 674 题） | 约 15 小时 | 申请准备：2025 年 1–4 月考场回忆真题的 Verbal 部分，每个 section 一节（12 题 18 分钟 / 15 题 23 分钟）；题目文字由 OCR 抽出显示（约 77% 的题；其余显示考场截屏 `courses/gre-vx/img/`，原图都留在「看原图」里），题型有单选 / 多选 / 选两个 / 多空填空 / 选句子（自评不计分），做完整节再「提交」；答案来自原整理者的答案表，没有官方解析，个别答案可能有误；生成：`tools/course/grvx/build.py` |
+| 17 | `gre-qx` GRE Quant 2025 年真题回忆（24 套 · 48 节 · 646 题） | 约 15 小时 | 申请准备：2025 年 1–4 月考场回忆真题的 Quant 部分，每个 section 一节（12 题 18 分钟 / 15 题 23 分钟）；题型有数量比较 / 单选 / 多选 / 数值填空（含分数），做完整节再「提交」；答案来自原整理者的答案表，没有官方解析；1 月 14 日那套的 Quant 答案表和题目对不上，未收；生成：`tools/course/grqx/build.py` |
 | 15 | `gre-q` GRE Quant 官方练习题（7 套 150 题） | 约 5 小时 | 申请准备：ETS 官方 Quant 真题（算术 / 代数 / 几何 / 数据分析各一套 + 混合 3 套，原书没标难度）；题目和解析是 PDF 截图（`courses/gre-q/img/`），下面放作答区（数量比较 / 单选 / 多选 / 数值·分数填空），做完整套再「提交」；生成：`tools/course/grq/build.py`（切图脚本在 `tools/course/grq/extract/`） |
 | 15 | `gre-aw` GRE 写作官方练习（3 节：Issue 3 题；Argument 2023 年起已不考，不收） | 约 2.3 小时 | 申请准备：ETS 官方 Analytical Writing 题目；页面里 30 分钟计时 + 打字（自动保存，存在 `studyNotes` 的 `…__essay` 文档 + 本机），写完才看官方评分标准、6–1 分样文和阅卷评语（英文原文）；生成：`tools/course/grw/build.py`（`extract.py` 从 PDF 文本层抽取）|
 | 16 | `pl300-0` PL-300：Power BI 数据分析师认证备考（13 节） | 约 9.5 小时 | 求职与技能证明：按微软官方 PL-300 考试大纲的四个技能域整理，每节用 Python 模拟 DAX / Power Query 语义，最后用官方免费练习评估量起点；不影响主线 |
@@ -55,7 +56,7 @@
 
 ## 下回怎么开始（接手的人先读这一节）
 
-当前状态（2026-10-09）：py-0、prob-0、arena-0.0、ml-0、dsa-0、wm-0 已有内容，`gre-v`（GRE 核心词汇，30 节，用 `tools/course/grev/build.py` 生成）、`gre-vr`（GRE Verbal 官方练习题，12 套，`practice: true`，用 `tools/course/grvp/build.py` 生成）、`gre-q`（GRE Quant 官方练习题，7 套，block 类型 `gre-qset`，用 `tools/course/grq/build.py` 生成）、`gre-vx`（GRE Verbal 2025 年真题回忆，50 节，同样用 `gre-qset`，用 `tools/course/grvx/build.py` 生成）、`gre-aw`（GRE 写作官方练习，3 节，block 类型 `gre-essay`，用 `tools/course/grw/build.py` 生成）、`pl300-0`（PL-300，13 节）和 `ba-0`（BA 入门，10 节）和 `sql-0`（SQL 实战，10 节）也已写好（均直接按 ≤50 分钟写），dl-0 的 u01「卷积神经网络」也已写好（直接按 50 分钟写，`direct: true`，用 `dump(..., n_questions=5)`），全部拆成 ≤50 分钟的小节；`proj-a`、`dl-0`（u02–u09）、`proj-b`、`proj-c`、`llm-0`、`safety-0`、`opt-0`、`rs-0` 是**占位课**（小节的 `file` 为空，用 `covers` 写这节要讲什么，页面显示「即将上线」）。
+当前状态（2026-10-09）：py-0、prob-0、arena-0.0、ml-0、dsa-0、wm-0 已有内容，`gre-v`（GRE 核心词汇，30 节，用 `tools/course/grev/build.py` 生成）、`gre-vr`（GRE Verbal 官方练习题，12 套，`practice: true`，用 `tools/course/grvp/build.py` 生成）、`gre-q`（GRE Quant 官方练习题，7 套，block 类型 `gre-qset`，用 `tools/course/grq/build.py` 生成）、`gre-vx`（GRE Verbal 2025 年真题回忆，50 节，同样用 `gre-qset`，用 `tools/course/grvx/build.py` 生成）、`gre-qx`（GRE Quant 2025 年真题回忆，48 节，用 `tools/course/grqx/build.py` 生成）、`gre-aw`（GRE 写作官方练习，3 节，block 类型 `gre-essay`，用 `tools/course/grw/build.py` 生成）、`pl300-0`（PL-300，13 节）和 `ba-0`（BA 入门，10 节）和 `sql-0`（SQL 实战，10 节）也已写好（均直接按 ≤50 分钟写），dl-0 的 u01「卷积神经网络」也已写好（直接按 50 分钟写，`direct: true`，用 `dump(..., n_questions=5)`），全部拆成 ≤50 分钟的小节；`proj-a`、`dl-0`（u02–u09）、`proj-b`、`proj-c`、`llm-0`、`safety-0`、`opt-0`、`rs-0` 是**占位课**（小节的 `file` 为空，用 `covers` 写这节要讲什么，页面显示「即将上线」）。
 
 建议顺序（先问 Yijia 想先出哪个）：
 

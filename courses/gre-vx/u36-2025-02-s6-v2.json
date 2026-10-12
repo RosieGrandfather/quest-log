@@ -34,7 +34,24 @@
       1,
       0
      ],
-     "img": "2025-02-s6/4-02.webp"
+     "img": "2025-02-s6/4-02.webp",
+     "txt": {
+      "stem": [
+       "For millennia, remembering was hard and costly, and people had to choose deliberately what should be remembered, allowing most things to be forgotten. The digital age has brought about an (i) ____ of the balance of remembering and forgetting. Committing information to digital memory has become (ii)"
+      ],
+      "cols": [
+       [
+        "attenuation",
+        "inversion",
+        "extension"
+       ],
+       [
+        "the default",
+        "a burden",
+        "an excuse"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -45,7 +62,29 @@
       0,
       1
      ],
-     "img": "2025-02-s6/4-03.webp"
+     "img": "2025-02-s6/4-03.webp",
+     "txt": {
+      "stem": [
+       "Those who blame the inadequacies of science education for students’ lack of reasoning skills perpetuate the unproductive notion of science as (i) ____ , unique in its capacity to inoculate us against superstition and ignorance. Certainly a good science education can (ii) ____ habits of mind, but the (iii) ____ effect of education in nonscientific, humanistic subjects such as literature and history should not be underrated."
+      ],
+      "cols": [
+       [
+        "vocational",
+        "empirical",
+        "salvational"
+       ],
+       [
+        "counter uncritical",
+        "discourage rigorous",
+        "temper creative"
+       ],
+       [
+        "unforeseen",
+        "salutary",
+        "pedestrian"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -56,7 +95,29 @@
       0,
       2
      ],
-     "img": "2025-02-s6/4-04.webp"
+     "img": "2025-02-s6/4-04.webp",
+     "txt": {
+      "stem": [
+       "When reviewing a book that advertises lying as its subject, the critic has a duty to screen the title for possible (i) ____ _ and it is therefore necessary to report that The Concise Book of Lying is not concise. If the book were making a case for deception, the mismatch might not matter: a (ii) ____ title might suit a book designed to disabuse us of our respect for (ili) ____ . But the book is not an apology for lying; it is on the side of truth."
+      ],
+      "cols": [
+       [
+        "ambiguity",
+        "mendacity",
+        "partiality"
+       ],
+       [
+        "misleading",
+        "dependable",
+        "verbose"
+       ],
+       [
+        "brevity",
+        "pedantry",
+        "veracity"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -74,7 +135,20 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s6/4-06.webp"
+     "img": "2025-02-s6/4-06.webp",
+     "txt": {
+      "pass": [
+       "Simulations indicate, and observations confirm, that the particles constituting Saturn’s rings are giving up angular momentum to moons of the planet. The simulations predict that over just a few hundred million years, the related energy transfer will cause the rings’ collapse. An analogous process occurs around young stars in the disks of matter from which planets emerge, and these protoplanetary disks do vanish that quickly, computer models show. Yet if Saturn’s rings are so short-lived, a large comet or moon—the rings’ presumed source—must have broken apart in Saturn’s vicinity within the past several hundred million years. That is quite unlikely. It would have been much more probable in the young solar system—4 billion years ago"
+      ],
+      "stem": [
+       "The passage suggests which of the following about the “energy transfer” ?"
+      ],
+      "opts": [
+       "Its effects are obscured by the angular momentum of Saturn’s moons.",
+       "It is part of a process that also imparts angular momentum to at least some of Saturn’s moons.",
+       "It proceeds more slowly than does an analogous energy transfer that occurs in the vicinity of young stars."
+      ]
+     }
     },
     {
      "n": 7,
@@ -83,13 +157,34 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s6/4-07.webp"
+     "img": "2025-02-s6/4-07.webp",
+     "txt": {
+      "pass": [
+       "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time. These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact. Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own. To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity. These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions,"
+      ],
+      "stem": [
+       "According to the passage, village sketches written by women in the United States in the 1830s and 1840s typically reflected"
+      ],
+      "opts": [
+       "the negotiations that characterized trade relationships between villages",
+       "the fact that these women did not often travel very far beyond their own village",
+       "the plurality of experiences and ideas that existed among the residents of a village"
+      ]
+     }
     },
     {
      "n": 8,
      "kind": "ss",
      "ansText": "第一句话",
-     "img": "2025-02-s6/4-08.webp"
+     "img": "2025-02-s6/4-08.webp",
+     "txt": {
+      "pass": [
+       "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time. These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact. Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own. To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity. These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions,"
+      ],
+      "stem": [
+       "Select the sentence in the passage that contrasts how men and women depicted life in village communities."
+      ]
+     }
     },
     {
      "n": 9,
@@ -98,7 +193,22 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s6/4-09.webp"
+     "img": "2025-02-s6/4-09.webp",
+     "txt": {
+      "pass": [
+       "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time. These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact. Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own. To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity. These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions,"
+      ],
+      "stem": [
+       "The passage indicates that when Gilligan spoke of “the ability to attend to voices other than one’s own,” she"
+      ],
+      "opts": [
+       "did not consider that ability to be a desirable psychological characteristic",
+       "did not believe that individuals differ greatly with respect to that ability",
+       "was implying that that ability enhances a sense of belonging in communities",
+       "was assuming that good writers are able to depict diverse characters",
+       "was not discussing the women who wrote village sketches"
+      ]
+     }
     },
     {
      "n": 10,
@@ -108,7 +218,20 @@
       4,
       5
      ],
-     "img": "2025-02-s6/4-10.webp"
+     "img": "2025-02-s6/4-10.webp",
+     "txt": {
+      "stem": [
+       "Despite her rather ____ choices, Moreland was neither a rebellious spirit nor someone who saw herself as anything out of the ordinary."
+      ],
+      "opts": [
+       "unconventional",
+       "impractical",
+       "quirky",
+       "flamboyant",
+       "successful",
+       "lucrative"
+      ]
+     }
     },
     {
      "n": 11,
@@ -118,7 +241,20 @@
       1,
       2
      ],
-     "img": "2025-02-s6/4-11.webp"
+     "img": "2025-02-s6/4-11.webp",
+     "txt": {
+      "stem": [
+       "Nicolaus Copernicus’ On the Revolutions of the Celestial Spheres, published in 1543, laid out the theory that Earth and the other planets go around the Sun, ____ a long-held belief that Earth was the center of the universe."
+      ],
+      "opts": [
+       "contravening",
+       "sanctioning",
+       "ratifying",
+       "consolidating",
+       "gainsaying",
+       "prefiguring"
+      ]
+     }
     },
     {
      "n": 12,
@@ -128,7 +264,22 @@
       0,
       5
      ],
-     "img": "2025-02-s6/4-12.webp"
+     "img": "2025-02-s6/4-12.webp",
+     "txt": {
+      "stem": [
+       "‘Select the two answer choices that, when used to complete the sentence, fit the meaning of the. ‘sentence as a whole and produce completed sentences that are alike in meaning.",
+       "It is normal for artists who achieve great acclaim during their lifetimes to be considered",
+       "shortly after their deaths, only to have their reputations restored by subsequent generations."
+      ],
+      "opts": [
+       "sacrosanct",
+       "outmoded",
+       "overrated",
+       "canonical",
+       "unfashionable",
+       "emblematic"
+      ]
+     }
     },
     {
      "n": 13,
@@ -137,7 +288,22 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s6/4-13.webp"
+     "img": "2025-02-s6/4-13.webp",
+     "txt": {
+      "pass": [
+       "When blood samples from elderly people were tested for levels of vitamin B72, it was found that those whose blood was deficient in B72 were four times more likely than were other elderly people to have symptoms characteristic of the early stages of Alzheimer’s disease, such as increasing forgetfulness. Clearly, therefore, either a diet low in B12 disposes a person to Alzheimer’s disease, or Alzheimer’s disease affects the absorption"
+      ],
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "People in the early stages of Alzheimer’s disease often neglect maintaining a healthy diet.",
+       "Most of those who develop Alzheimer’s disease do not exhibit any symptoms of the disease before the age of 60.",
+       "Many people who are in the early stages of Alzheimer’s disease are not aware that they have it.",
+       "Many young people have diets that are deficient in vitamin B 2.",
+       "Deficiencies in B vitamins other than B72 are not as strongly correlated with Alzheimer’s disease as is vitamin B12 deficiency."
+      ]
+     }
     },
     {
      "n": 14,
@@ -146,7 +312,22 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s6/4-14.webp"
+     "img": "2025-02-s6/4-14.webp",
+     "txt": {
+      "pass": [
+       "A longstanding scholarly neglect of the subject of cooking is partly attributable to the antiquated “separate spheres” schema that differentiated a private female sphere, which included food preparation and consumption, from a public male sphere, which included food production. While this concept never reflected most women’s daily realities—women are major food producers worldwide—the ideological polarization certainly influenced the development of academia: it effectively segregated women into working in low-status “domestic” disciplines such as dietetics and home economics, while the male-dominated realms of industrial agriculture, food technology, mass retailing, and corporate management enjoyed public respect and academic prestige. This institutionalized bias delayed serious attention to cooking even after feminists in the 1960s obliterated the notion of separate spheres and"
+      ],
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "examine the origins of an influential theory",
+       "account for the dearth of research on a particular subject",
+       "contrast two scholarly approaches to the study of a phenomenon",
+       "explain how a certain distinction came to dominate an academic discipline",
+       "question the aptness of a particular schema for understanding a development"
+      ]
+     }
     },
     {
      "n": 15,
@@ -155,7 +336,22 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s6/4-15.webp"
+     "img": "2025-02-s6/4-15.webp",
+     "txt": {
+      "pass": [
+       "A longstanding scholarly neglect of the subject of cooking is partly attributable to the antiquated “separate spheres” schema that differentiated a private female sphere, which included food preparation and consumption, from a public male sphere, which included food production. While this concept never reflected most women’s daily realities—women are major food producers worldwide—the ideological polarization certainly influenced the development of academia: it effectively segregated women into working in low-status “domestic” disciplines such as dietetics and home economics, while the male-dominated realms of industrial agriculture, food technology, mass retailing, and corporate management enjoyed public respect and academic prestige. This institutionalized bias delayed serious attention to cooking even after feminists in the 1960s obliterated the notion of separate spheres and"
+      ],
+      "stem": [
+       "The author mentions “feminists” primarily in order to"
+      ],
+      "opts": [
+       "elaborate on a particular rift in scholarly circles",
+       "answer a particular challenge to the “separate spheres” schema",
+       "cite a cultural development that influenced the study of food",
+       "help account for an ideological shift within academia",
+       "underscore the tenacity of an attitude that constrained scholarly inquiry"
+      ]
+     }
     }
    ]
   }

@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-01-03/3-01.webp"
+     "img": "2025-01-03/3-01.webp",
+     "txt": {
+      "stem": [
+       "The two scientists’ achievements are. ____ only in a narrowly conceived history of science: although both erred in scientific judgment, both also defended science in its infancy and established it as an intelligible and useful activity."
+      ],
+      "opts": [
+       "fundamental",
+       "indistinct",
+       "progressive",
+       "negligible",
+       "antithetical"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       1,
       0
      ],
-     "img": "2025-01-03/3-02.webp"
+     "img": "2025-01-03/3-02.webp",
+     "txt": {
+      "stem": [
+       "It would be imprecise to characterize her scholarship as (i) ____ : though her etymological discussions are necessarily esoteric, there is nothing (ii) ____ about the conclusions she derives from them."
+      ],
+      "cols": [
+       [
+        "derivative",
+        "arcane",
+        "careless"
+       ],
+       [
+        "obscure",
+        "controversial",
+        "innovative"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -53,7 +82,22 @@
      "ans": [
       1
      ],
-     "img": "2025-01-03/3-04.webp"
+     "img": "2025-01-03/3-04.webp",
+     "txt": {
+      "pass": [
+       "Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin’s ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. With a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler"
+      ],
+      "stem": [
+       "The function of the highlighted sentence is primarily to"
+      ],
+      "opts": [
+       "identify a common criticism of early recording technology",
+       "suggest a way in which early recording technology influenced the development of jazz",
+       "explain why early jazz recordings were not especially popular with the public",
+       "point to a difficulty in early recording technology that Edison struggled to overcome",
+       "explain why musicians such as Ellington were slow to embrace recording technology"
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +106,22 @@
      "ans": [
       3
      ],
-     "img": "2025-01-03/3-05.webp"
+     "img": "2025-01-03/3-05.webp",
+     "txt": {
+      "pass": [
+       "Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin’s ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. With a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler"
+      ],
+      "stem": [
+       "The passage suggests that Duke Ellington’s early recorded jazz works"
+      ],
+      "opts": [
+       "were significantly influenced by the simpler tunes of his era",
+       "tended to feature more solos than did the recorded works of other jazz musicians",
+       "borrowed certain melodic features from the work of Scott Joplin",
+       "were more similar in structure to earlier jazz works than to most works of his own time",
+       "often incorporated material written by African American composers of earlier eras 1 ol"
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +131,20 @@
       1,
       4
      ],
-     "img": "2025-01-03/3-06.webp"
+     "img": "2025-01-03/3-06.webp",
+     "txt": {
+      "stem": [
+       "Although in the mid-1970s nuclear power seemed poised for a still greater role in energy supply, in fact the ____ of its prestige had already begun."
+      ],
+      "opts": [
+       "evaluation",
+       "waning",
+       "defense",
+       "undermining",
+       "ebbing",
+       "vindication ="
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +154,21 @@
       2,
       5
      ],
-     "img": "2025-01-03/3-07.webp"
+     "img": "2025-01-03/3-07.webp",
+     "txt": {
+      "stem": [
+       "Though the art of writing was well established in Egypt and Mesopotamia long before the Shang period, the Chinese writing that appeared then seems to have been an entirely",
+       "development."
+      ],
+      "opts": [
+       "unique",
+       "banal",
+       "homegrown",
+       "practical",
+       "routine",
+       "indigenous"
+      ]
+     }
     },
     {
      "n": 8,
@@ -102,7 +188,20 @@
       1,
       3
      ],
-     "img": "2025-01-03/3-09.webp"
+     "img": "2025-01-03/3-09.webp",
+     "txt": {
+      "stem": [
+       "The writer’s expression of ____ sentiments in fluid, vigorous prose is a strange blending of the high and the low—like an opera performed by sloppily dressed, unkempt musicians."
+      ],
+      "opts": [
+       "patriotic",
+       "0 vile",
+       "noble",
+       "base",
+       "tender",
+       "lofty"
+      ]
+     }
     },
     {
      "n": 10,
@@ -111,7 +210,22 @@
      "ans": [
       4
      ],
-     "img": "2025-01-03/3-10.webp"
+     "img": "2025-01-03/3-10.webp",
+     "txt": {
+      "pass": [
+       "omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an important role as active carrion scavengers in intertidal"
+      ],
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "arguing that scientists are mistaken in viewing hermit crabs as omnivorous filter feeders",
+       "showing that hermit crabs are more sensitive to chemical cues than most other marine animals are",
+       "discussing various types of benefits provided by hermit crabs in intertidal ecosystems",
+       "explaining why carrion scavengers are critical to ecosystems near the California coast",
+       "exploring a less widely known ecological function performed by hermit crabs"
+      ]
+     }
     },
     {
      "n": 11,
@@ -120,7 +234,22 @@
      "ans": [
       1
      ],
-     "img": "2025-01-03/3-11.webp"
+     "img": "2025-01-03/3-11.webp",
+     "txt": {
+      "pass": [
+       "omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an important role as active carrion scavengers in intertidal"
+      ],
+      "stem": [
+       "Which of the following can be inferred from the passage about mussel carrion?",
+       "(J It is more suitable as a source of food for filter feeders",
+       "than for active scavengers."
+      ],
+      "opts": [
+       "Its appeal to hermit crabs is not based on its ability to provide adequate shelter.",
+       "Its shells are not used as shelter by any marine animals on the California coast.",
+       "ii"
+      ]
+     }
     },
     {
      "n": 12,
@@ -129,7 +258,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-03/3-12.webp"
+     "img": "2025-01-03/3-12.webp",
+     "txt": {
+      "pass": [
+       "omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an important role as active carrion scavengers in intertidal"
+      ],
+      "stem": [
+       "The passage suggests which of the following about gastropods that have been killed by predators?"
+      ],
+      "opts": [
+       "Their availability as sources of shells becomes evident to scavengers later than their availability as sources of food.",
+       "Their carrion constitutes the preferred food source for hermit crabs native to the California coast.",
+       "Their shells yield chemical cues that are less attractive to hermit crabs than the cues from mussel shells.",
+       "They typically attract more hermit crabs than does any other type of carrion.",
+       "They are usually so badly damaged that their shells become unsuitable as shelters for hermit crabs."
+      ]
+     }
     }
    ]
   }

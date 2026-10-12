@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-01-01/2-01.webp"
+     "img": "2025-01-01/2-01.webp",
+     "txt": {
+      "stem": [
+       "Discussions of impending water shortages are often couched in apocalyptic rhetoric, yet if the language is somewhat ____ , the basic message is sound: water is indeed scarce and growing scarcer."
+      ],
+      "opts": [
+       "abstract",
+       "complacent",
+       "ambiguous",
+       "overblown",
+       "unfamiliar"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       0,
       1
      ],
-     "img": "2025-01-01/2-02.webp"
+     "img": "2025-01-01/2-02.webp",
+     "txt": {
+      "stem": [
+       "The explanation of tornado formation according to which tornadoes form during a twisting clash of air masses is clearly (i) ____ : such clashes occur very frequently both in the United States and in countries where tornadoes are (ii) ____"
+      ],
+      "cols": [
+       [
+        "oversimplified",
+        "untestable",
+        "promising"
+       ],
+       [
+        "less intensively studied",
+        "virtually unknown",
+        "harder to predict"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       1,
       1
      ],
-     "img": "2025-01-01/2-03.webp"
+     "img": "2025-01-01/2-03.webp",
+     "txt": {
+      "stem": [
+       "Nineteenth-century England presents something of (i) ____ , at least to those who believe that (ii) ____ best promotes business ethics. The defining characteristic of English company law at that time was its extreme degree of permissiveness: laissez-fa ire ruled in Parliament, caveat emptor in the courts, creating the ideal breeding ground for fraud and dishonesty. Yet these were the years when London became the financial center of the world and established its status as a (iii) ____ place to do business."
+      ],
+      "cols": [
+       [
+        "a precedent",
+        "an enigma",
+        "an inspiration"
+       ],
+       [
+        "innovation",
+        "individualism",
+        "regulation"
+       ],
+       [
+        "prohibitively expensive",
+        "comparatively safe",
+        "culturally diverse"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -53,7 +104,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-01/2-04.webp"
+     "img": "2025-01-01/2-04.webp",
+     "txt": {
+      "pass": [
+       "Glaciologists have conjectured that increasing temperatures and decreasing precipitation caused the rapid observed retreat of glaciers throughout the European Alps after the mid-nineteenth century. However, such scenarios are inconsistent with temperature records and climate proxies. During the latter half of the nineteenth century through the early twentieth century, when glaciers were retreating rapidly, temperatures in the Alpine region were apparently cooler than in the late eighteenth to early nineteenth centuries, and precipitation was largely unchanged. Glaciers subject to these climatic conditions alone should have advanced instead of retreated. One possible _ explanation is the dramatic rise of industrial black carbon in the mid-nineteenth century. Black carbon deposits could have increased the absorption of solar radiation by snow, generally increasing glacier melt and resulting in"
+      ],
+      "stem": [
+       "It can be inferred from the passage that proponents of the “possible explanation” assume that any increase in the amount of solar radiation absorbed by snow would"
+      ],
+      "opts": [
+       "not have been fully offset by cooler temperatures in the latter half of the nineteenth century",
+       "not have been sufficient to significantly reduce precipitation levels in the early twentieth century",
+       "have been balanced by the warming effects of greenhouse gases in the latter half of the nineteenth century",
+       "have been more pronounced at higher elevations than at lower elevations in the early twentieth century",
+       "have been less significant during the latter half of the nineteenth century than in the early twentieth century"
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +128,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-01/2-05.webp"
+     "img": "2025-01-01/2-05.webp",
+     "txt": {
+      "pass": [
+       "Glaciologists have conjectured that increasing temperatures and decreasing precipitation caused the rapid observed retreat of glaciers throughout the European Alps after the mid-nineteenth century. However, such scenarios are inconsistent with temperature records and climate proxies. During the latter half of the nineteenth century through the early twentieth century, when glaciers were retreating rapidly, temperatures in the Alpine region were apparently cooler than in the late eighteenth to early nineteenth centuries, and precipitation was largely unchanged. Glaciers subject to these climatic conditions alone should have advanced instead of retreated. One possible _ explanation is the dramatic rise of industrial black carbon in the mid-nineteenth century. Black carbon deposits could have increased the absorption of solar radiation by snow, generally increasing glacier melt and resulting in"
+      ],
+      "stem": [
+       "Which of the following best describes the overall organization of the passage?"
+      ],
+      "opts": [
+       "A theory is identified, and the relevance of that theory to a particular case is illustrated.",
+       "A phenomenon is described, and two alternative explanations for that phenomenon are considered.",
+       "A hypothesis is presented, its limitations are noted, and an alternative hypothesis is offered.",
+       "An observation is noted, two competing theories about it are presented, and one theory is rejected.",
+       "An anomaly is mentioned, speculations about the cause of that anomaly are made, and additional research is proposed."
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +153,20 @@
       1,
       4
      ],
-     "img": "2025-01-01/2-06.webp"
+     "img": "2025-01-01/2-06.webp",
+     "txt": {
+      "stem": [
+       "Although in the mid-1970s nuclear power seemed poised for a still greater role in energy supply, in fact the ____ _of its prestige had already begun."
+      ],
+      "opts": [
+       "evaluation",
+       "waning",
+       "defense",
+       "undermining",
+       "ebbing",
+       "vindication"
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +176,20 @@
       1,
       4
      ],
-     "img": "2025-01-01/2-07.webp"
+     "img": "2025-01-01/2-07.webp",
+     "txt": {
+      "stem": [
+       "Although the virtues of supplementing wild fish populations with fish from hatcheries are often ____ e ____ . scientific studies have indicated that fish stocking can harm the wild, native species of the water body."
+      ],
+      "opts": [
+       "embraced",
+       "extolled",
+       "contested",
+       "evident",
+       "acclaimed",
+       "disputed"
+      ]
+     }
     },
     {
      "n": 8,
@@ -92,7 +199,20 @@
       0,
       2
      ],
-     "img": "2025-01-01/2-08.webp"
+     "img": "2025-01-01/2-08.webp",
+     "txt": {
+      "stem": [
+       "While the ____ of reliable sources in later narratives make many details of the early history of China’s Zhou dynasty unverifiable, the Zhou rulers’ successful rise to power is certain."
+      ],
+      "opts": [
+       "dearth",
+       "C1 ambiguity",
+       "paucity",
+       "opacity",
+       "authenticity",
+       "1 credibility"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +222,20 @@
       1,
       2
      ],
-     "img": "2025-01-01/2-09.webp"
+     "img": "2025-01-01/2-09.webp",
+     "txt": {
+      "stem": [
+       "Those who admired Callas felt that she was one of the greatest opera singers of all time, while others believed that her vocal inadequacies ____ __ such a claim."
+      ],
+      "opts": [
+       "weakened",
+       "precluded",
+       "invalidated",
+       "underlay",
+       "occasioned",
+       "transcended"
+      ]
+     }
     },
     {
      "n": 10,
@@ -111,7 +244,22 @@
      "ans": [
       3
      ],
-     "img": "2025-01-01/2-10.webp"
+     "img": "2025-01-01/2-10.webp",
+     "txt": {
+      "pass": [
+       "Archaeologists agree that corn agriculture, first developed by Native American peoples of what is now Mexico, was adopted by Native Americans of what is now the southwestern United States during the Late Archaic period, but the extent of these Late Archaic peoples’ dependence on corn agriculture is debated. Some archaeologists infer from the presence of houses, storage pits, and large quantities of corn kernels at Late Archaic sites that the inhabitants, once nomadic hunter- gatherers, had become settled farmers who, although they lacked the ceramic vessel-making technology typically associated with agriculture, grew and depended on corn. But other evidence strongly suggests that while _ Late Archaic people grew considerable quantities of corn, it was not their dietary mainstay. Food-processing equipment found at the sites indicates that Late Archaic people continued to rely heavily on wild plant foods. Corn is not a particularly nutritious food. People whose diets are heavily dependent on corn today soak it in limewater and grind it to prepare mush, processes that increase corn’s nutritional value; these steps would have been difficult to accomplish without ceramic"
+      ],
+      "stem": [
+       "The passage suggests that prior to the Late Archaic period, southwestern Native Americans"
+      ],
+      "opts": [
+       "had learned to cultivate crops other than corn",
+       "used storage pits in their homes primarily to store wild plant foods",
+       "prepared corn in a manner that would not have enhanced its nutritional value",
+       "depended on wild plant foods to meet a substantial part of their nutritional needs",
+       "used food-processing equipment that they would later adapt to prepare corn"
+      ]
+     }
     },
     {
      "n": 11,
@@ -120,7 +268,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-01/2-11.webp"
+     "img": "2025-01-01/2-11.webp",
+     "txt": {
+      "pass": [
+       "Archaeologists agree that corn agriculture, first developed by Native American peoples of what is now Mexico, was adopted by Native Americans of what is now the southwestern United States during the Late Archaic period, but the extent of these Late Archaic peoples’ dependence on corn agriculture is debated. Some archaeologists infer from the presence of houses, storage pits, and large quantities of corn kernels at Late Archaic sites that the inhabitants, once nomadic hunter- gatherers, had become settled farmers who, although they lacked the ceramic vessel-making technology typically associated with agriculture, grew and depended on corn. But other evidence strongly suggests that while _ Late Archaic people grew considerable quantities of corn, it was not their dietary mainstay. Food-processing equipment found at the sites indicates that Late Archaic people continued to rely heavily on wild plant foods. Corn is not a particularly nutritious food. People whose diets are heavily dependent on corn today soak it in limewater and grind it to prepare mush, processes that increase corn’s nutritional value; these steps would have been difficult to accomplish without ceramic"
+      ],
+      "stem": [
+       "The author of the passage mentions the nutritional value of corn primarily in order to"
+      ],
+      "opts": [
+       "establish the method of food preparation used by southwestern Native Americans of the Late Archaic period",
+       "explain why southwestern Native Americans of the Late Archaic period preferred certain food-processing methods",
+       "support a contention about the place of corn in the diets of southwestern Native Americans of the Late Archaic period",
+       "explain why some archaeologists have overestimated the prevalence of corn agriculture among southwestern Native Americans of the Late Archaic period",
+       "account for the quantities of corn grown by southwestern Native Americans of the Late Archaic period"
+      ]
+     }
     },
     {
      "n": 12,
@@ -129,7 +292,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-01/2-12.webp"
+     "img": "2025-01-01/2-12.webp",
+     "txt": {
+      "pass": [
+       "Archaeologists agree that corn agriculture, first developed by Native American peoples of what is now Mexico, was adopted by Native Americans of what is now the southwestern United States during the Late Archaic period, but the extent of these Late Archaic peoples’ dependence on corn agriculture is debated. Some archaeologists infer from the presence of houses, storage pits, and large quantities of corn kernels at Late Archaic sites that the inhabitants, once nomadic hunter- gatherers, had become settled farmers who, although they lacked the ceramic vessel-making technology typically associated with agriculture, grew and depended on corn. But other evidence strongly suggests that while _ Late Archaic people grew considerable quantities of corn, it was not their dietary mainstay. Food-processing equipment found at the sites indicates that Late Archaic people continued to rely heavily on wild plant foods. Corn is not a particularly nutritious food. People whose diets are heavily dependent on corn today soak it in limewater and grind it to prepare mush, processes that increase corn’s nutritional value; these steps would have been difficult to accomplish without ceramic"
+      ],
+      "stem": [
+       "The passage indicates that, historically, peoples who engaged in agriculture"
+      ],
+      "opts": [
+       "usually had ceramic vessel-making technology",
+       "usually combined wild and cultivated foods in their diets",
+       "seldom utilized food-processing equipment",
+       "seldom utilized pits for long-term storage of food",
+       "seldom cultivated corn in large quantities"
+      ]
+     }
     }
    ]
   }

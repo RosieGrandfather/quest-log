@@ -10,6 +10,8 @@ import { showToast } from '../ui/common.js';
 const L = 'ABCDEFGH';
 const img = (b, p, w, cls = '')=> `<img class="qimg ${cls}" src="${escapeHTML(b.base + p)}" ${w ? `style="width:${Math.round(w / 2)}px"` : ''} alt="" loading="lazy">`;
 const BLK = ['(i)', '(ii)', '(iii)'];
+const tx = t => escapeHTML(t).replace(/____/g, '<span class="qbl"></span>');
+const paraHTML = arr => (arr || []).map(x=> `<p>${tx(x)}</p>`).join('');
 const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选一项'
   : it.kind === 'mc1' ? '选一项'
   : it.kind === 'mcn' ? '选出所有正确的选项（可能不止一个）'
@@ -28,13 +30,16 @@ function controlsHTML(it, i){
   if(it.kind === 'tc'){
     return `<div class="qtc">${Array.from({length: it.blanks}, (_, j)=>
       `<div class="qblank"><span class="qblank-no">空 ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
-        `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span><span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
+        `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span>${it.txt && it.txt.cols ? `<span class="qtext">${tx(it.txt.cols[j][k])}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
   }
   const type = isMulti(it) ? 'checkbox' : 'radio';
   const n = it.kind === 'qc' ? 4 : it.nopt;
-  return `<div class="qopts ${it.kind}">${Array.from({length: n}, (_, k)=>
-    `<label class="qopt" data-k="${k}"><input type="${type}" name="q${i}" value="${k}"><span class="qletter">${L[k]}</span>${it.kind === 'qc' ? `<span class="qtext">${QC_TEXT[k]}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div>`;
+  const hasT = !!(it.txt && it.txt.opts);
+  return `<div class="qopts ${it.kind}${hasT ? ' has-txt' : ''}">${Array.from({length: n}, (_, k)=>
+    `<label class="qopt" data-k="${k}"><input type="${type}" name="q${i}" value="${k}"><span class="qletter">${L[k]}</span>${it.kind === 'qc' ? `<span class="qtext">${QC_TEXT[k]}</span>` : hasT ? `<span class="qtext">${tx(it.txt.opts[k])}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div>`;
 }
+
+const origImgs = (it, b)=> (it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('');
 
 function itemHTML(it, i, b){
   let fig = '';
@@ -46,7 +51,8 @@ function itemHTML(it, i, b){
   }
   return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
-    ${(it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('')}
+    ${it.txt ? `<div class="qtxt">${it.txt.pass ? `<div class="qpass"><div class="vp-tag">文章</div>${paraHTML(it.txt.pass)}</div>` : ''}<div class="qstemtxt">${paraHTML(it.txt.stem)}</div></div>
+    <details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : origImgs(it, b)}
     <div class="gq-hint">${hintOf(it)}</div>
     ${controlsHTML(it, i)}
     <div class="gq-explain" hidden></div>

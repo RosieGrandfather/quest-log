@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-04-s1/5-01.webp"
+     "img": "2025-04-s1/5-01.webp",
+     "txt": {
+      "stem": [
+       "though individual mosquitoes appear, historically they have shown an impressive ability to travel, sometimes as stowaways in water casks and drinking vessels on ships traveling to distant continents."
+      ],
+      "opts": [
+       "Peripatetic",
+       "Indistinguishable",
+       "Harmless",
+       "Frail",
+       "Noisome"
+      ]
+     }
     },
     {
      "n": 2,
@@ -32,7 +44,19 @@
      "ans": [
       2
      ],
-     "img": "2025-04-s1/5-02.webp"
+     "img": "2025-04-s1/5-02.webp",
+     "txt": {
+      "stem": [
+       "‘Select one entry for the blank. Fill the blank in the way that best completes the text."
+      ],
+      "opts": [
+       "Andrews’ new book can only be described as : it relies heavily on evidence that was cherry-picked to support the author’s predetermined conclusions.",
+       "incoherent",
+       "bombastic",
+       "tendentious",
+       "shortsighted turgid"
+      ]
+     }
     },
     {
      "n": 3,
@@ -43,7 +67,29 @@
       0,
       2
      ],
-     "img": "2025-04-s1/5-03.webp"
+     "img": "2025-04-s1/5-03.webp",
+     "txt": {
+      "stem": [
+       "Until recently superhero comics were seen as irredeemably (i) ____ ; they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____ ‘"
+      ],
+      "cols": [
+       [
+        "puerile",
+        "innocuous",
+        "facetious"
+       ],
+       [
+        "lowbrow",
+        "shrewd",
+        "\"realistic"
+       ],
+       [
+        "heartened",
+        "emulated",
+        "abashed"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -54,7 +100,29 @@
       1,
       0
      ],
-     "img": "2025-04-s1/5-04.webp"
+     "img": "2025-04-s1/5-04.webp",
+     "txt": {
+      "stem": [
+       "Whereas unimaginative novelists were once routinely accused of simply changing the personal names in works that would otherwise have been (i) ____ , today it is more common to learn, conversely, that a genuine piece of (ii) ____ has been (iii) ____ a writer’s true confessions. ____"
+      ],
+      "cols": [
+       [
+        "failures",
+        "romances",
+        "autobiographies"
+       ],
+       [
+        "analysis",
+        "fiction",
+        "inquiry"
+       ],
+       [
+        "modeled on",
+        "sold as",
+        "revealed as"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -63,7 +131,20 @@
      "ans": [
       0
      ],
-     "img": "2025-04-s1/5-05.webp"
+     "img": "2025-04-s1/5-05.webp",
+     "txt": {
+      "pass": [
+       "The discovery of subsurface life on Earth, surviving independently from surface life, refuted the belief that biological processes require not only liquid water but sunlight as well, thus greatly enhancing the possibility of life beyond Earth. Take Jupiter’s moon Europa. Space probes show a body covered with a thick layer of ice. As Europa orbits its planet, however, it flexes due to the gravitational tug-of-war between it, its sister moons, and Jupiter. Through friction, this flexing produces heat in the moon’s interior capable of melting ice. Indeed, observations suggest liquid water exists beneath Europa’s icy crust. Photosynthetic life is impossible there because sunlight is completely absent, but life such as the microbes that flourish deep within Earth may still"
+      ],
+      "stem": [
+       "Regarding life beyond Earth, the author of the passage implies that"
+      ],
+      "opts": [
+       "life could be dependent on a source of energy other than light from the nearest star",
+       "life might exist in an environment that did not provide everything that is needed for life on Earth to exist",
+       "life might take a form radically different from that of any life that is found on Earth"
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +153,22 @@
      "ans": [
       1
      ],
-     "img": "2025-04-s1/5-06.webp"
+     "img": "2025-04-s1/5-06.webp",
+     "txt": {
+      "pass": [
+       "The discovery of subsurface life on Earth, surviving independently from surface life, refuted the belief that biological processes require not only liquid water but sunlight as well, thus greatly enhancing the possibility of life beyond Earth. Take Jupiter’s moon Europa. Space probes show a body covered with a thick layer of ice. As Europa orbits its planet, however, it flexes due to the gravitational tug-of-war between it, its sister moons, and Jupiter. Through friction, this flexing produces heat in the moon’s interior capable of melting ice. Indeed, observations suggest liquid water exists beneath Europa’s icy crust. Photosynthetic life is impossible there because sunlight is completely absent, but life such as the microbes that flourish deep within Earth may still"
+      ],
+      "stem": [
+       "The highlighted sentence serves to introduce"
+      ],
+      "opts": [
+       "an instance that allows a hypothesis to be tested",
+       "speculation grounded in empirical discovery",
+       "a deduction from a newly advanced hypothesis",
+       "a large-scale effect of an apparently insignificant contingency",
+       "the derivation of a contradiction to refute a claim"
+      ]
+     }
     },
     {
      "n": 7,
@@ -81,7 +177,23 @@
      "ans": [
       4
      ],
-     "img": "2025-04-s1/5-07.webp"
+     "img": "2025-04-s1/5-07.webp",
+     "txt": {
+      "pass": [
+       "This passage is adapted from material published in 1996.",
+       "Hip-hop music has emerged as a powerful African American cultural form addressing a broad spectrum of social issues. Yet hip-hop’s breadth is belied by hip-hop criticism, which has focused primarily on controversies about the antisocial content of some of its lyrics. Such discussions have almost preempted more sophisticated critical analysis. For example, little has been written about hip-hop’s relationship to its artistic precursors. Critics might examine parallels between hip-hop and the Black Arts Movement of the 1960s. Both movements produced art expressing the alienation felt by many African Americans. Furthermore, like the Black Arts Movement, hip-hop artists have collided with the profit-oriented nature of institutions of cultural production. Black artists continue to face restrictive conventions that the writers Zora Neale Hurston and Langston Hughes faced in the Harlem Renaissance of the 1920s: commercial publishers’ tendency to favor particular themes, subjects, or treatments for Black artists’ work. The Black Arts Movement dealt with this dilemma by seeking outlets for autonomous cultural production, including theater companies and publishing houses. Hip-hop is similarly threatened by mainstream commercialism. As Palmer notes, many commercialized hip-hop lyrics are light and innocuous. Committed hip-hop artists have therefore sought out alternatives to mainstream"
+      ],
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "provide evidence to support a conventional view regarding an artistic movement",
+       "challenge a particular view about the impact of commercialism on an artistic movement",
+       "present a debate about possible parallels between two artistic movements",
+       "distinguish the concerns of certain contemporary artists from those of earlier artists",
+       "demonstrate that a particular field of criticism has neglected potentially interesting issues"
+      ]
+     }
     },
     {
      "n": 8,
@@ -90,7 +202,23 @@
      "ans": [
       3
      ],
-     "img": "2025-04-s1/5-08.webp"
+     "img": "2025-04-s1/5-08.webp",
+     "txt": {
+      "pass": [
+       "This passage is adapted from material published in 1996.",
+       "Hip-hop music has emerged as a powerful African American cultural form addressing a broad spectrum of social issues. Yet hip-hop’s breadth is belied by hip-hop criticism, which has focused primarily on controversies about the antisocial content of some of its lyrics. Such discussions have almost preempted more sophisticated critical analysis. For example, little has been written about hip-hop’s relationship to its artistic precursors. Critics might examine parallels between hip-hop and the Black Arts Movement of the 1960s. Both movements produced art expressing the alienation felt by many African Americans. Furthermore, like the Black Arts Movement, hip-hop artists have collided with the profit-oriented nature of institutions of cultural production. Black artists continue to face restrictive conventions that the writers Zora Neale Hurston and Langston Hughes faced in the Harlem Renaissance of the 1920s: commercial publishers’ tendency to favor particular themes, subjects, or treatments for Black artists’ work. The Black Arts Movement dealt with this dilemma by seeking outlets for autonomous cultural production, including theater companies and publishing houses. Hip-hop is similarly threatened by mainstream commercialism. As Palmer notes, many commercialized hip-hop lyrics are light and innocuous. Committed hip-hop artists have therefore sought out alternatives to mainstream"
+      ],
+      "stem": [
+       "The passage suggests which of the following about “committed hip-hop artists” ?"
+      ],
+      "opts": [
+       "Those who are commercially successful carefully balance controversial material with innocuous material in their lyrics.",
+       "Those who have sought out alternatives to mainstream commercial venues have had a considerable degree of financial success.",
+       "They have been viewed by hip-hop critics as artists whose artistic and commercial goals are constantly in conflict.",
+       "They tend to express feelings and ideas that put them in conflict with the interests of mainstream venues.",
+       "They recognize parallels between themselves and those active in the Black Arts Movement."
+      ]
+     }
     },
     {
      "n": 9,
@@ -109,7 +237,21 @@
       2,
       4
      ],
-     "img": "2025-04-s1/5-10.webp"
+     "img": "2025-04-s1/5-10.webp",
+     "txt": {
+      "stem": [
+       "Because the organization often trumpeted itself as a forum for",
+       "discussion, visitors were startled by the frequently heated tone of its recent debates."
+      ],
+      "opts": [
+       "elevated",
+       "vigorous",
+       "temperate",
+       "strenuous",
+       "dispassionate",
+       "strident"
+      ]
+     }
     },
     {
      "n": 11,
@@ -119,7 +261,20 @@
       3,
       4
      ],
-     "img": "2025-04-s1/5-11.webp"
+     "img": "2025-04-s1/5-11.webp",
+     "txt": {
+      "stem": [
+       "The folktale is perhaps the most. ____ form of literature: a story that everyone is free to tell and embellish because it belongs to no one in particular."
+      ],
+      "opts": [
+       "unpretentious",
+       "archaic",
+       "primitive",
+       "democratic",
+       "egalitarian",
+       "changeable"
+      ]
+     }
     },
     {
      "n": 12,
@@ -129,7 +284,20 @@
       2,
       4
      ],
-     "img": "2025-04-s1/5-12.webp"
+     "img": "2025-04-s1/5-12.webp",
+     "txt": {
+      "stem": [
+       "A priori mathematics, according to Galileo, does not. ____ the need for observation, but mathematics does allow us to deduce unobservable properties and thus to penetrate further into the structure of nature than observation does."
+      ],
+      "opts": [
+       "address",
+       "acknowledge",
+       "obviate",
+       "diminish",
+       "displace",
+       "appreciate"
+      ]
+     }
     },
     {
      "n": 13,
@@ -138,7 +306,22 @@
      "ans": [
       3
      ],
-     "img": "2025-04-s1/5-13.webp"
+     "img": "2025-04-s1/5-13.webp",
+     "txt": {
+      "pass": [
+       "Fossil evidence shows that within a century after the arrival of the first settlers on the island of Corme 16,000 years ago, the one species of kangaroo that had been thriving on Corme became extinct. Archaeologists contend that the primary cause of the kangaroo’s extinction was land-clearing rather than hunting. Evidence shows that the settlers burned large tracts of vegetation to clear land for cultivation, which would have greatly reduced the food available for the"
+      ],
+      "stem": [
+       "Which of the following, if true, provides most support for the archaeologists’ contention?"
+      ],
+      "opts": [
+       "The fossil record on Corme shows no evidence that any other mammals disappeared in the period following the arrival of settlers.",
+       "At the time settlers first arrived, Corme was in the midst of a period when its climate was becoming increasingly arid and its pattern of vegetation was consequently changing.",
+       "The earliest settlements on Corme were spread along the island’s coasts.",
+       "Archaeological excavation of the settlements on Corme has yielded large quantities of bones of many species of mammal and fish but very few kangaroo bones.",
+       "The earliest settlers on Corme cultivated food plants that they found growing wild on the island."
+      ]
+     }
     },
     {
      "n": 14,
@@ -147,7 +330,22 @@
      "ans": [
       2
      ],
-     "img": "2025-04-s1/5-14.webp"
+     "img": "2025-04-s1/5-14.webp",
+     "txt": {
+      "pass": [
+       "At first glance, the place of Henry James among Modernist writers remains somewhat problematic. His dozen or more novels and scores of short stories obey the classic rules. Unlike Modernist novels, whose focus on characters’ inner lives provoked critics’ complaints that “nothing happens,” James’s plots move forward at a relentless pace, with denouements occurring where convention has put them, at the end. Their dialogue, if at times high-flown, is naturalistic; their author appears as an all-knowing presence. Despite these literary orthodoxies, though, James’s works, especially his late novels, show something amazingly new and unexpected. His explorations of consciousness shy at no complexity and lend his otherwise conventional novels the focus on interiority that characterizes the Modernist project in"
+      ],
+      "stem": [
+       "The passage suggests that compared to Modernist novels, novels by Henry James tend to"
+      ],
+      "opts": [
+       "feature more unexpected plot twists",
+       "focus more on their characters’ inner lives",
+       "have more traditional narrative arcs",
+       "show less literary orthodoxy",
+       "be considerably longer"
+      ]
+     }
     },
     {
      "n": 15,

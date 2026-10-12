@@ -364,3 +364,17 @@
 .qopts.tc{margin-top:0;}
 .qne.ss input{width:min(420px,100%);}
 .qscroll-tag{font-size:12px;color:var(--ink-3,var(--ink));margin:6px 0 4px;opacity:.75;}
+
+/* 文字版题目（OCR）：文章 / 题干 / 选项 */
+.qtxt{font-size:15.5px;line-height:1.7;margin:6px 0 8px;}
+.qtxt p{margin:0 0 .7em;}
+.qpass{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 14px 4px;margin-bottom:10px;max-height:340px;overflow:auto;}
+.qstemtxt{font-weight:500;}
+.qbl{display:inline-block;min-width:3.2em;border-bottom:2px solid var(--ink);margin:0 .15em;vertical-align:baseline;}
+.qorig{margin:4px 0 8px;font-size:13px;}
+.qorig summary{cursor:pointer;color:var(--ink-3,var(--ink));opacity:.8;}
+.qorig .qimg{margin-top:6px;}
+.qopts.has-txt{flex-direction:column;align-items:stretch;}
+.qopts.has-txt .qopt{align-items:flex-start;}
+.qopts.tc{flex-direction:column;align-items:stretch;}
+.qopts.tc .qopt:has(.qtext){align-items:flex-start;}

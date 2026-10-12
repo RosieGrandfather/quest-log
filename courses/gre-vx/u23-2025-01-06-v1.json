@@ -33,7 +33,25 @@
       1,
       2
      ],
-     "img": "2025-01-06/2-02.webp"
+     "img": "2025-01-06/2-02.webp",
+     "txt": {
+      "stem": [
+       "lt would be naive to treat remarks made in diaries or personal letters as giving especially candid access to historical truth or even as being expressions of the writer’s true state of mind, since the (i) ____ for exaggeration and deception in those forms is virtually nonexistent. Diaries and letters are rarely sites for (ii)",
+       "Blank (i) ____ Blank (ii)"
+      ],
+      "cols": [
+       [
+        "motivation",
+        "penalty",
+        "tendency"
+       ],
+       [
+        "premeditated manipulation",
+        "childish theatrics",
+        "balanced reflection"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +62,30 @@
       0,
       1
      ],
-     "img": "2025-01-06/2-03.webp"
+     "img": "2025-01-06/2-03.webp",
+     "txt": {
+      "stem": [
+       "Pauline Kael’s first movie review tore into Charlie Chaplin for taking up the mantle of comic artist rather than claiming his roots as slapstick clown. It might seem strange that a reviewer with such highbrow reading tastes as Kael had would attack upward-reaching film entertainers for their pretensions and champion films that were mainstream entertainments. Yet such a stance could itself be seen as (i) ____ _ as it (ii) ____ a certain idea of true art from (iii) ____ . as if only literature should aspire to seriousness.",
+       "Blank (i) ____ Blank (ii) ____ Blank (iii)"
+      ],
+      "cols": [
+       [
+        "ascetic",
+        "elitist",
+        "egalitarian"
+       ],
+       [
+        "guards",
+        "redeems",
+        "displaces"
+       ],
+       [
+        "enervating refinement",
+        "popular encroachment",
+        "revolutionary claims"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -62,7 +103,22 @@
      "ans": [
       3
      ],
-     "img": "2025-01-06/2-05.webp"
+     "img": "2025-01-06/2-05.webp",
+     "txt": {
+      "pass": [
+       "The United States Civil Rights movement, which began in the 1950s and gained momentum in the 1960s and 1970s, owed a heavy debt to African American _ newspapers. This is not to suggest that the African American press caused the Civil Rights era. But its continual push from 1910 to 1950 for more African American rights, using a compelling form of advocacy journalism rather than the standard objective newspaper style, allowed those who in the 1950s began pushing nationally for equality to start at a far higher level than if the African American press had not existed. This point has largely been missed by many Americans, __ who seem to believe the Civil Rights era erupted from a standstill like a dormant geyser. But that is not how"
+      ],
+      "stem": [
+       "According to the passage, African American newspapers contributed to the Civil Rights movement primarily by"
+      ],
+      "opts": [
+       "exposing bias in supposedly objective newspaper accounts",
+       "connecting the movement’s leaders with local communities",
+       "providing a platform for leaders to be heard by a wide audience",
+       "laying the groundwork for a later national effort",
+       "building momentum for efforts that were already in progress"
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +128,21 @@
       2,
       5
      ],
-     "img": "2025-01-06/2-06.webp"
+     "img": "2025-01-06/2-06.webp",
+     "txt": {
+      "stem": [
+       "Though the art of writing was well established in Egypt and Mesopotamia long before the Shang period, the Chinese writing that appeared then seems to have been an entirely",
+       "development."
+      ],
+      "opts": [
+       "unique",
+       "banal",
+       "homegrown",
+       "practical",
+       "routine",
+       "indigenous"
+      ]
+     }
     },
     {
      "n": 7,
@@ -102,7 +172,21 @@
       0,
       1
      ],
-     "img": "2025-01-06/2-09.webp"
+     "img": "2025-01-06/2-09.webp",
+     "txt": {
+      "stem": [
+       "For all the: ____ the new CEO has received from the press recently, her staff have a decidedly less rosy view of her.",
+       "J encomiums"
+      ],
+      "opts": [
+       "tributes",
+       "evaluations",
+       "critiques",
+       "attention",
+       "publicity",
+       "«Teh. LVAIE"
+      ]
+     }
     },
     {
      "n": 10,
@@ -129,7 +213,23 @@
      "ans": [
       0
      ],
-     "img": "2025-01-06/2-12.webp"
+     "img": "2025-01-06/2-12.webp",
+     "txt": {
+      "pass": [
+       "It is fair to say that the discovery of chimpanzees using tools in the wild (van Lawick-Goodall 1968) was one of the most significant discoveries in field primatology and perhaps in animal behavior as a whole. This finding not only questioned the long-held assumption that using and manufacturing tools were the hallmark of humanity, but also reinvigorated the study of cognitive processes in apes. say reinvigorated because tool use had been used by psychologists to investigate ape cognition long before its discovery in the wild.",
+       "Both Kohler’s and Yerkes’ pioneering work in the 1920s on ape problem solving drew heavily on tool use. Yerkes saw tool use as an example of ideation, thinking in the absence of the actual stimuli, whereas Kohler saw it as an example of finding indirect solutions when the direct route was not possible. Kohler emphasized the insightful nature of several tool-use episodes, and he contrasted such a sudden mode of solution with the gradual trial-and-error learning that Thorndike had described with his puzzle boxes. Historically, this is the forerunner of a debate between association (i.e., apes respond to the presence of certain observable cues but without any real causal understanding) and reasoning"
+      ],
+      "stem": [
+       "Which of the following can be inferred from the passage about the study of cognitive processes in apes?"
+      ],
+      "opts": [
+       "It had produced little in the way of dramatic results in the period between the 1920s and van Lawick- Goodall’s discovery.",
+       "It has been sharply divided between those who study apes in the wild and those who study apes under experimental conditions.",
+       "Until very;recently, it had not fully assimilated van Lawick-Goodall’s discovery.",
+       "Until van Lawick-Goodall’s discovery, it was dominated by those skeptical that apes possessed cognitive understanding.",
+       "Until van Lawick-Goodall’s discovery, it focused almost entirely on tool use in apes."
+      ]
+     }
     }
    ]
   }

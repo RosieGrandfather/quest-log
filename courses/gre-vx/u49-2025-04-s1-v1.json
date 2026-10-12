@@ -23,7 +23,19 @@
      "ans": [
       2
      ],
-     "img": "2025-04-s1/3-01.webp"
+     "img": "2025-04-s1/3-01.webp",
+     "txt": {
+      "stem": [
+       "Wood is an environmentally friendly building material because it. ____ carbon dioxide, absorbing it during growth and retaining it even after it has been turned into lumber."
+      ],
+      "opts": [
+       "disperses",
+       "eradicates",
+       "_ sequesters",
+       "respires",
+       "regulates"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       2,
       1
      ],
-     "img": "2025-04-s1/3-02.webp"
+     "img": "2025-04-s1/3-02.webp",
+     "txt": {
+      "stem": [
+       "She is (i) ____ _on the Senate floor, just as she is elsewhere: her speech is (ii) ____ ==——_— with the verbal pomposity of much senatorial cratey"
+      ],
+      "cols": [
+       [
+        "gregarious",
+        "opinionated",
+        "plainspoken"
+       ],
+       [
+        "fraught",
+        "unadorned",
+        "consistent"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,30 @@
       2,
       0
      ],
-     "img": "2025-04-s1/3-03.webp"
+     "img": "2025-04-s1/3-03.webp",
+     "txt": {
+      "stem": [
+       "As a consequence of his need for (i) ____ and his (ii) ____ self-advertisement, Joseph Duveen’s career is better known than those of most of his fellow dealers of museum-quality material. The Wildensteins, for instance, were far more successful financially, but they were (iii) ____ beyond measure.",
+       "Blank (i) ____ Blank (ii) ____ Blank (iii)"
+      ],
+      "cols": [
+       [
+        "stability",
+        "autonomy",
+        "publicity"
+       ],
+       [
+        "maladroit",
+        "unavailing",
+        "indefatigable"
+       ],
+       [
+        "secretive",
+        "k desperate",
+        "knowledgeable"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -53,7 +105,22 @@
      "ans": [
       0
      ],
-     "img": "2025-04-s1/3-04.webp"
+     "img": "2025-04-s1/3-04.webp",
+     "txt": {
+      "pass": [
+       "Blood and Wolfe’s relative resources theory has been cited as an explanation for the well-documented finding that women have typically performed and continue to perform far more domestic labor in their households than men do. This theory holds that power in a family accrues to the spouse contributing the most resources to the household. Such power can be used to withdraw from monotonous housework. Where husbands specialize in income generation, while wives work part- time or are unpaid homemakers, the theory might explain the domestic division of labor. Yet Atkins and Boles found that wives who earn more than their husbands often do most of the domestic labor in their households, and Brayfield found that women whose husbands are unemployed also do most of the"
+      ],
+      "stem": [
+       "The findings of Atkins and Boles suggest which of the following?"
+      ],
+      "opts": [
+       "The division of domestic labor is not determined solely by the resources each spouse contributes to the household.",
+       "The division of domestic labor is not determined solely by traditional gender roles.",
+       "Husbands of high-income-earning wives are likely to perform different domestic tasks than husbands whose wives earn relatively little.",
+       "The ways in which household tasks are allocated between husbands and wives are changing as more wives engage in paid employment.",
+       "The allocation of power in a family is not a factor in determining the domestic division of labor."
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +129,25 @@
      "ans": [
       2
      ],
-     "img": "2025-04-s1/3-05.webp"
+     "img": "2025-04-s1/3-05.webp",
+     "txt": {
+      "pass": [
+       "Blood and Wolfe’s relative resources theory has been cited as an explanation for the well-documented finding that women have typically performed and continue to perform far more domestic labor in their households than men do. This theory holds that power in a family accrues to the spouse contributing the most resources to the household. Such power can be used to withdraw from monotonous housework. Where husbands specialize in income generation, while wives work part- time or are unpaid homemakers, the theory might explain the domestic division of labor. Yet Atkins and Boles found that wives who earn more than their husbands often do most of the domestic labor in their households, and Brayfield found that women whose husbands are unemployed also do most of the"
+      ],
+      "stem": [
+       "It can be inferred from the passage that the relative resources theory would predict which of the following?",
+       "©) Wives who engage in part-time paid employment",
+       "would do about the same amount of domestic labor",
+       "as wives who are employed full-time."
+      ],
+      "opts": [
+       "Wives who are full-time homemakers would do more of their household’s domestic labor than husbands who are not employed outside the home.",
+       "Husbands who are economically dependent on their wives would perform most of their household’s domestic labor.",
+       "Husbands whose wives engage in part-time paid employment would perform about the same amount of domestic labor as husbands of full-time",
+       "homemakers.",
+       "Husbands whose wives engage in part-time paid employment would earn less than husbands whose wives are full-time homemakers."
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +157,20 @@
       0,
       5
      ],
-     "img": "2025-04-s1/3-06.webp"
+     "img": "2025-04-s1/3-06.webp",
+     "txt": {
+      "stem": [
+       "Researchers’ use of charcoal particles in soil as a marker for human arrival in prehistoric North America is ____ : fire was a part of the continent’s natural ecology long before humans appeared."
+      ],
+      "opts": [
+       "unwise",
+       "unnecessary",
+       "fortuitous",
+       "inessential",
+       "ingenious",
+       "misguided"
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +180,20 @@
       0,
       2
      ],
-     "img": "2025-04-s1/3-07.webp"
+     "img": "2025-04-s1/3-07.webp",
+     "txt": {
+      "stem": [
+       "If aging is merely an avoidable by-product of life rather than a necessary progression, it is possible that we might eventually forestall"
+      ],
+      "opts": [
+       "senescence",
+       "dynamism",
+       "decrepitude",
+       "C privation",
+       "ennui",
+       "C vitality"
+      ]
+     }
     },
     {
      "n": 8,
@@ -92,7 +203,20 @@
       3,
       5
      ],
-     "img": "2025-04-s1/3-08.webp"
+     "img": "2025-04-s1/3-08.webp",
+     "txt": {
+      "stem": [
+       "Laboratory experiments testing whether memories can be purposely erased or implanted seem decidedly ____ compared to the sensational depictions of memory manipulation in movies, but such research has nevertheless yielded dramatic results."
+      ],
+      "opts": [
+       "sinister",
+       "outdated",
+       "ominous",
+       "prosaic",
+       "frivolous",
+       "pedestrian"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +226,20 @@
       2,
       3
      ],
-     "img": "2025-04-s1/3-09.webp"
+     "img": "2025-04-s1/3-09.webp",
+     "txt": {
+      "stem": [
+       "As modern organizations amass more and more digital information, they need guidance on how to deal with the information surplus in a way that is more ____ than simply increasing their storage capacity."
+      ],
+      "opts": [
+       "sustainable",
+       "onerous",
+       "judicious",
+       "discriminating",
+       "parsimonious",
+       "prohibitive"
+      ]
+     }
     },
     {
      "n": 10,
@@ -112,6 +249,21 @@
       3
      ],
      "img": "2025-04-s1/3-10.webp",
+     "txt": {
+      "pass": [
+       "In his essay “Classical Jazz and the Black Arts Movement,\" Lorenzo Thomas argues that the Black Arts movement of the 1960s grew out of the Harlem Renaissance of the 1920s, during which African American artists produced work consciously grounded in their cultural heritage. Both movements hoped to advance African Americans’ social position through cultural expression. Yet Black Arts movement scholar Larry Neal pronounced the Harlem Renaissance, which produced enduring works in many genres, “essentially a failure.\" According to Thomas, Neal’s statement reflects a difference in the two movements’ political and aesthetic philosophies. Whereas leaders of the Harlem Renaissance championed the cause of African Americans by demonstrating their achievements in “high art” as defined by European tradition, the Black Arts movement’s leaders celebrated an African American aesthetic conceived as openly oppositional to that tradition. This is evident in the status held by jazz within the two movements. Commentators of the Harlem Renaissance cited, as evidence of the sophistication of jazz, the adaptation of jazz elements by European classical composers such as Antonin Dvorak. Some hoped that jazz musicians themselves would develop jazz into forms resembling European orchestral music. By contrast, asserts Thomas, Black Arts movement participants celebrated jazz as a musical form grounded in African Americans’ historical experience that could not be evaluated using"
+      ],
+      "stem": [
+       "The author of the passage introduces the subject of jazz primarily in order to"
+      ],
+      "opts": [
+       "identify an exception to a generalization about the goals and values of the Black Arts movement",
+       "contrast the formal qualities distinctive of jazz with those distinctive of European orchestral music",
+       "suggest that, despite their differences, participants in the Harlem Renaissance and the Black Arts movement held many views in common",
+       "illustrate an essential difference between the political and aesthetic philosophies of participants in the Harlem Renaissance and the Black Arts movement",
+       "demonstrate that jazz held a special place among the art forms produced by African Americans during both the Harlem Renaissance and the Black Arts movement"
+      ]
+     },
      "imgs": [
       "2025-04-s1/3-10.webp",
       "2025-04-s1/3-10b.webp"
@@ -124,7 +276,22 @@
      "ans": [
       4
      ],
-     "img": "2025-04-s1/3-11.webp"
+     "img": "2025-04-s1/3-11.webp",
+     "txt": {
+      "pass": [
+       "In his essay “Classical Jazz and the Black Arts Movement,\" Lorenzo Thomas argues that the Black Arts movement of the 1960s grew out of the Harlem Renaissance of the 1920s, during which African American artists produced work consciously grounded in their cultural heritage. Both movements hoped to advance African Americans’ social position through cultural expression. Yet Black Arts movement scholar Larry Neal pronounced the Harlem Renaissance, which produced enduring works in many genres, “essentially a failure.\" According to Thomas, Neal’s statement reflects a difference in the two movements’ political and aesthetic philosophies. Whereas leaders of the Harlem Renaissance championed the cause of African Americans by demonstrating their achievements in “high art” as defined by European tradition, the Black Arts movement’s leaders celebrated an African American aesthetic conceived as openly oppositional to that tradition. This is evident in the status held by jazz within the two movements. Commentators of the Harlem Renaissance cited, as evidence of the sophistication of jazz, the adaptation of jazz elements by European classical composers such as Antonin Dvorak. Some hoped that jazz musicians themselves would develop jazz into forms resembling European orchestral music. By contrast, asserts Thomas, Black Arts movement participants celebrated jazz as a musical form grounded in African Americans’ historical experience that could not be evaluated using"
+      ],
+      "stem": [
+       "It can be inferred from the passage that, according to Thomas, the leaders of the Harlem Renaissance would probably agree with which of the following statements about the European artistic tradition?"
+      ],
+      "opts": [
+       "Its greatest achievements have been in the area of music rather than in the other arts.",
+       "Its possibilities have been more thoroughly explored by African American artists than by European artists.",
+       "It has been unable to absorb or respond to artistic achievements in the traditions of other cultures.",
+       "It has been a vehicle for a political philosophy that does not support the interests of African Americans.",
+       "It sets a standard by which the accomplishments of non-European artists may be measured."
+      ]
+     }
     },
     {
      "n": 12,
@@ -133,7 +300,22 @@
      "ans": [
       2
      ],
-     "img": "2025-04-s1/3-12.webp"
+     "img": "2025-04-s1/3-12.webp",
+     "txt": {
+      "pass": [
+       "In his essay “Classical Jazz and the Black Arts Movement,\" Lorenzo Thomas argues that the Black Arts movement of the 1960s grew out of the Harlem Renaissance of the 1920s, during which African American artists produced work consciously grounded in their cultural heritage. Both movements hoped to advance African Americans’ social position through cultural expression. Yet Black Arts movement scholar Larry Neal pronounced the Harlem Renaissance, which produced enduring works in many genres, “essentially a failure.\" According to Thomas, Neal’s statement reflects a difference in the two movements’ political and aesthetic philosophies. Whereas leaders of the Harlem Renaissance championed the cause of African Americans by demonstrating their achievements in “high art” as defined by European tradition, the Black Arts movement’s leaders celebrated an African American aesthetic conceived as openly oppositional to that tradition. This is evident in the status held by jazz within the two movements. Commentators of the Harlem Renaissance cited, as evidence of the sophistication of jazz, the adaptation of jazz elements by European classical composers such as Antonin Dvorak. Some hoped that jazz musicians themselves would develop jazz into forms resembling European orchestral music. By contrast, asserts Thomas, Black Arts movement participants celebrated jazz as a musical form grounded in African Americans’ historical experience that could not be evaluated using"
+      ],
+      "stem": [
+       "It can be inferred from the passage that proponents of the Black Arts movement did not view jazz in the same way as the commentators of the Harlem Renaissance primarily because proponents of the Black Arts movement"
+      ],
+      "opts": [
+       "favored work that was consciously grounded in their cultural heritage",
+       "did not feel that music necessarily needs to express a people’s historical experience",
+       "regarded European aesthetic norms as an inappropriate standard for critiquing the jazz tradition",
+       "considered European orchestral music less sophisticated than jazz",
+       "felt that European composers should not borrow elements from an African American musical form"
+      ]
+     }
     }
    ]
   }

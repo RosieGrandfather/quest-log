@@ -23,7 +23,19 @@
      "ans": [
       1
      ],
-     "img": "2025-03-s2/3-01.webp"
+     "img": "2025-03-s2/3-01.webp",
+     "txt": {
+      "stem": [
+       "of Even though the survey course was designated as interdisciplinary, it involved no real subject matter."
+      ],
+      "opts": [
+       "distillation",
+       "fusion",
+       "explication",
+       "dilution",
+       "encapsulation"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       2,
       1
      ],
-     "img": "2025-03-s2/3-02.webp"
+     "img": "2025-03-s2/3-02.webp",
+     "txt": {
+      "stem": [
+       "The geographer held a (i) ____ view of the succession of theoretical trends (environmental determinism, spatial determinism, and various types of critical theory) in her field, maintaining that theory can (ii) ____ what is transpiring in a complex environment by focusing excessively on the favored schemes and variables of the moment."
+      ],
+      "cols": [
+       [
+        "self-contradictory",
+        "sanguine",
+        "deprecatory"
+       ],
+       [
+        "exacerbate",
+        "obfuscate",
+        "magnify"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       2,
       2
      ],
-     "img": "2025-03-s2/3-03.webp"
+     "img": "2025-03-s2/3-03.webp",
+     "txt": {
+      "stem": [
+       "Unlike those glossy Architectural Digest photographs that are deliberately (i) ____ lest they distract from a focus on the building itself, Friedlander’s architectural photography is the product of his insistence that he is an individual looking at buildings and scenes as they actually exist. Friedlander reminds us that everyday objects (ii) ____ or, more exactly, that the unimpeded visual scene of a building without cars or power lines or street signs is a highly (iii) ____ photographic artifact."
+      ],
+      "cols": [
+       [
+        "impersonal",
+        "offhand",
+        "evocative"
+       ],
+       [
+        "are largely inessential",
+        "resist interpretation",
+        "normally interfere"
+       ],
+       [
+        "intriguing",
+        "imprecise",
+        "contrived"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -53,7 +104,22 @@
      "ans": [
       4
      ],
-     "img": "2025-03-s2/3-04.webp"
+     "img": "2025-03-s2/3-04.webp",
+     "txt": {
+      "pass": [
+       "The fact that certain musical qualities were shared by African American and White jazz musicians in the mid- 1950s was sometimes explained by claiming that jazz was “color-blind.” Yet a look at how the discourse of color blindness was deployed in 1950s jazz periodicals helps explain why many African American jazz musicians began to emphasize differences, rather than similarities, between the aesthetic styles of Black and White musicians. The discourse of “color blindness” tended to exaggerate the permeability of racial boundaries by failing to address the power relationships involved in a social climate where evasiveness about race was often used to silence African American perspectives on the meaning of jazz. While the expression of color-blind sentiments was not necessarily disingenuous, structural racial stratification remained powerful beyond the"
+      ],
+      "stem": [
+       "The passage suggests that the “differences”"
+      ],
+      "opts": [
+       "have been exaggerated by some commentators who pay inadequate attention to qualities shared by jazz musicians across racial lines",
+       "belied certain aspects of the 1950s social climate in which African American and White jazz musicians performed",
+       "were less aesthetically important to jazz than were the many qualities shared by African American and White musicians",
+       "may help to account for disparities in the professional success of African American and White jazz musicians in the 1950s",
+       "became important to African American jazz musicians who challenged a certain view of jazz that was evident in 1950s jazz periodicals"
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +128,22 @@
      "ans": [
       2
      ],
-     "img": "2025-03-s2/3-05.webp"
+     "img": "2025-03-s2/3-05.webp",
+     "txt": {
+      "pass": [
+       "The fact that certain musical qualities were shared by African American and White jazz musicians in the mid- 1950s was sometimes explained by claiming that jazz was “color-blind.” Yet a look at how the discourse of color blindness was deployed in 1950s jazz periodicals helps explain why many African American jazz musicians began to emphasize differences, rather than similarities, between the aesthetic styles of Black and White musicians. The discourse of “color blindness” tended to exaggerate the permeability of racial boundaries by failing to address the power relationships involved in a social climate where evasiveness about race was often used to silence African American perspectives on the meaning of jazz. While the expression of color-blind sentiments was not necessarily disingenuous, structural racial stratification remained powerful beyond the"
+      ],
+      "stem": [
+       "The passage suggests that some authors writing in 1950s jazz periodicals"
+      ],
+      "opts": [
+       "promoted a view of jazz that would remain influential well beyond the 1950s",
+       "failed to grasp the full extent of the similarities between Black and White jazz musicians",
+       "were sincere in their belief that race played no role in shaping the aesthetic aspects of jazz",
+       "criticized the general public’s obliviousness to the reality of racial boundaries within jazz",
+       "claimed that the differences between Black and White musicians had been underestimated"
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +153,20 @@
       1,
       5
      ],
-     "img": "2025-03-s2/3-06.webp"
+     "img": "2025-03-s2/3-06.webp",
+     "txt": {
+      "stem": [
+       "Critics of compost production often do not fully consider the potential environmental benefits of compost use—benefits that might ____ the energy consumption, gaseous emissions, and other negative environmental effects attributable to compost production."
+      ],
+      "opts": [
+       "trigger",
+       "offset",
+       "intensify",
+       "exacerbate",
+       "eliminate",
+       "counterbalance"
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +176,20 @@
       3,
       4
      ],
-     "img": "2025-03-s2/3-07.webp"
+     "img": "2025-03-s2/3-07.webp",
+     "txt": {
+      "stem": [
+       "Sokari Douglas Camp was ____ in the early 1990s by many of London’s commercially driven art dealers and galleries, some of whom apparently found her themes difficult to market."
+      ],
+      "opts": [
+       "criticized",
+       "lionized",
+       "misrepresented",
+       "neglected",
+       "forsaken",
+       "eulogized"
+      ]
+     }
     },
     {
      "n": 8,
@@ -92,7 +199,20 @@
       1,
       3
      ],
-     "img": "2025-03-s2/3-08.webp"
+     "img": "2025-03-s2/3-08.webp",
+     "txt": {
+      "stem": [
+       "Party leaders hoped to find a single compelling issue that would ____ party members across the country, prompting them to turn out in significant numbers on election day."
+      ],
+      "opts": [
+       "satisfy",
+       "rouse",
+       "intrigue",
+       "animate",
+       "hamper",
+       "impede"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +222,20 @@
       2,
       4
      ],
-     "img": "2025-03-s2/3-09.webp"
+     "img": "2025-03-s2/3-09.webp",
+     "txt": {
+      "stem": [
+       "Even the most skeptical readers could hardly deny that the novelist’s best books are remarkably ____ : they thrum with energy, imagination, and something resembling white-hot inspiration."
+      ],
+      "opts": [
+       "inventive",
+       "engaging",
+       "spirited",
+       "compassionate",
+       "vigorous",
+       "warmhearted"
+      ]
+     }
     },
     {
      "n": 10,

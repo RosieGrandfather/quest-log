@@ -23,7 +23,19 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s7/3-01.webp"
+     "img": "2025-02-s7/3-01.webp",
+     "txt": {
+      "stem": [
+       "The composition of waste from discarded electronics is quite ____ : electronic waste contains more than 1,000 different substances, including heavy metals and flame retardants."
+      ],
+      "opts": [
+       "volatile",
+       "ubiquitous",
+       "hazardous",
+       "ephemeral",
+       "heterogeneous"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       2,
       2
      ],
-     "img": "2025-02-s7/3-02.webp"
+     "img": "2025-02-s7/3-02.webp",
+     "txt": {
+      "stem": [
+       "Lorena de la Paz Carrete Lucero and her colleagues found (i) ____ brand loyalty among Mexican car purchasers, which suggests that regardless of customers’ current brand preferences, customers may be (ii) ____ competitors’ marketing strategies."
+      ],
+      "cols": [
+       [
+        "rising",
+        "uniform",
+        "little"
+       ],
+       [
+        "ignorant of",
+        "confused by",
+        "responsive to"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -53,7 +82,22 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s7/3-04.webp"
+     "img": "2025-02-s7/3-04.webp",
+     "txt": {
+      "pass": [
+       "W. E. B. Du Bois’s exhibit of African American history and culture at the 1900 Paris Exposition Universelle attracted the attention of a world of sociological scholarship whose values his work challenged. Du Bois believed that Spencerian sociologists failed in their attempts to gain greater understanding of human deeds because their work examined not deeds but theories and because they gathered data not to effect social progress but merely to theorize. In his exhibit, Du Bois sought to present cultural artifacts that would shift the focus of sociology from the construction of vast generalizations to the observation of particular, living individual elements of society and the working contributions of"
+      ],
+      "stem": [
+       "The passage implies that Du Bois attributed which of the following beliefs to Spencerian sociologists?"
+      ],
+      "opts": [
+       "Theorizing is important to the understanding of human actions.",
+       "Vast generalizations have limited value.",
+       "Data gathering is a relatively unimportant part of sociological research.",
+       "Sociology should focus on the living elements of society rather than cultural artifacts.",
+       "Particulars are more important than universals."
+      ]
+     }
     },
     {
      "n": 5,
@@ -63,7 +107,20 @@
       0,
       1
      ],
-     "img": "2025-02-s7/3-05.webp"
+     "img": "2025-02-s7/3-05.webp",
+     "txt": {
+      "pass": [
+       "W. E. B. Du Bois’s exhibit of African American history and culture at the 1900 Paris Exposition Universelle attracted the attention of a world of sociological scholarship whose values his work challenged. Du Bois believed that Spencerian sociologists failed in their attempts to gain greater understanding of human deeds because their work examined not deeds but theories and because they gathered data not to effect social progress but merely to theorize. In his exhibit, Du Bois sought to present cultural artifacts that would shift the focus of sociology from the construction of vast generalizations to the observation of particular, living individual elements of society and the working contributions of"
+      ],
+      "stem": [
+       "The passage implies that Du Bois believed which of the following statements about sociology?"
+      ],
+      "opts": [
+       "It should contribute to the betterment of society.",
+       "It should study what people actually do.",
+       "It should focus on how existing social structures determine individual behavior."
+      ]
+     }
     },
     {
      "n": 6,
@@ -73,7 +130,20 @@
       0,
       1
      ],
-     "img": "2025-02-s7/3-06.webp"
+     "img": "2025-02-s7/3-06.webp",
+     "txt": {
+      "stem": [
+       "An abundance of nutrient-rich pollution in estuaries causes algae to ____ . much as houseplants grow better when their soil contains added fertilizer."
+      ],
+      "opts": [
+       "abound",
+       "proliferate",
+       "stagnate",
+       "coalesce",
+       "collect",
+       "diversify"
+      ]
+     }
     },
     {
      "n": 7,
@@ -83,7 +153,20 @@
       4,
       5
      ],
-     "img": "2025-02-s7/3-07.webp"
+     "img": "2025-02-s7/3-07.webp",
+     "txt": {
+      "stem": [
+       "Despite the general ____ of Roman archaeological studies toward the major cities and their monuments, archaeology has contributed much to a better understanding of rural developments in Roman territory."
+      ],
+      "opts": [
+       "openness",
+       "indifference",
+       "hostility",
+       "animus",
+       "bias",
+       "orientation"
+      ]
+     }
     },
     {
      "n": 8,
@@ -93,7 +176,20 @@
       0,
       3
      ],
-     "img": "2025-02-s7/3-08.webp"
+     "img": "2025-02-s7/3-08.webp",
+     "txt": {
+      "stem": [
+       "In denying him a promotion, management cited his ____ decision making, charging that his judgments were based on vagaries rather than careful forethought."
+      ],
+      "opts": [
+       "capricious",
+       "dogmatic",
+       "atrocious",
+       "cavalier",
+       "authoritative",
+       "cogent"
+      ]
+     }
     },
     {
      "n": 9,
@@ -103,7 +199,20 @@
       3,
       5
      ],
-     "img": "2025-02-s7/3-09.webp"
+     "img": "2025-02-s7/3-09.webp",
+     "txt": {
+      "stem": [
+       "Leaders within the Native American culture known as Fort Ancient differed from those of the neighboring Mississippian groups, whose authority was often ____ : indeed, one expert has described the Fort Ancient society as intensely egalitarian."
+      ],
+      "opts": [
+       "quixotic",
+       "dubious",
+       "uncertain",
+       "coercive",
+       "L efficacious",
+       "imperious"
+      ]
+     }
     },
     {
      "n": 10,
@@ -113,6 +222,21 @@
       4
      ],
      "img": "2025-02-s7/3-10.webp",
+     "txt": {
+      "pass": [
+       "\\oue marine nermit craos are we <«nown or Jeing omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an"
+      ],
+      "stem": [
+       "Ri ____ passage is primarily concerned with"
+      ],
+      "opts": [
+       "arguing that scientists are mistaken in viewing hermit crabs as omnivorous filter feeders",
+       "showing that hermit crabs are more sensitive to chemical cues than most other marine animals are",
+       "discussing various types of benefits provided by hermit crabs in intertidal ecosystems",
+       "explaining why carrion scavengers are critical to ecosystems near the California coast",
+       "exploring a less widely known ecological function performed by hermit crabs"
+      ]
+     },
      "imgs": [
       "2025-02-s7/3-10.webp",
       "2025-02-s7/3-10b.webp"
@@ -125,7 +249,25 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s7/3-11.webp"
+     "img": "2025-02-s7/3-11.webp",
+     "txt": {
+      "pass": [
+       "\\oue marine nermit craos are we <«nown or Jeing omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an"
+      ],
+      "stem": [
+       "Consider each of the choices separately and select all that",
+       "apply.",
+       "Which of the following can be inferred from the passage about mussel carrion?",
+       "L) It is more suitable as a source of food for filter feeders"
+      ],
+      "opts": [
+       "than for active scavengers.",
+       "Its appeal to hermit crabs is not based on its ability to",
+       "provide adequate shelter.",
+       "Its shells are not used as shelter by any marine animals",
+       "on the California coast."
+      ]
+     }
     },
     {
      "n": 12,
@@ -134,7 +276,22 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s7/3-12.webp"
+     "img": "2025-02-s7/3-12.webp",
+     "txt": {
+      "pass": [
+       "\\oue marine nermit craos are we <«nown or Jeing omnivorous filter feeders, less is known about the role they may play as active carrion scavengers in intertidal ecosystems. Prior studies have revealed that intertidal hermit crabs can be attracted to chemical cues from gastropods (snails) killed by predators. Yet their attraction is usually assumed to be driven primarily by the availability of new shells for shelters rather than by food. Researchers conducted field experiments to assess hermit crabs’ potential role as generalist carrion scavengers on the California coast, examining their speed of attraction and the size of the aggregations they formed in response to chemical cues from freshly smashed gastropods and mussels, both of which indicated available carrion. Compared to all other marine species, hermit crabs were the fastest to arrive at the provisioning sites. Hermit crabs also dominated the provisioning sites, accumulating in the largest numbers, with aggregations of up to 20 individuals, which out competed all other scavengers for carrion. Notably, hermit crabs arrived equally quickly for both smashed gastropod and mussel, even though the latter does not offer suitable shells for hermit crabs and even though the former only yields shell-related chemical cues over time frames longer than the experiments. These results thus suggest that shell availability is not the only, or even the primary, reason marine intertidal hermit crabs aggregate at carrion sites; they also aggregate to forage, thereby playing an"
+      ],
+      "stem": [
+       "The passage suggests which of the following about gastropods that have been killed by predators?"
+      ],
+      "opts": [
+       "Their availability as sources of shells becomes evident to scavengers later than their availability as sources of food.",
+       "Their carrion constitutes the preferred food source for hermit crabs native to the California coast.",
+       "Their shells yield chemical cues that are less attractive to hermit crabs than the cues from mussel shells.",
+       "They typically attract more hermit crabs than does any other type of carrion.",
+       "They are usually so badly damaged that their shells become unsuitable as shelters for hermit crabs."
+      ]
+     }
     }
    ]
   }

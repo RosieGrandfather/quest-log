@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-01-24/5-01.webp"
+     "img": "2025-01-24/5-01.webp",
+     "txt": {
+      "stem": [
+       "OP RS ag Oa RERKS, BSAR. MLM"
+      ],
+      "opts": [
+       "Select one entry for the blank. Fill the blank in the way that best completes the text.",
+       "though individual mosquitoes appear, historically they have shown an impressive ability to travel, sometimes as stowaways in water casks and drinking vessels on ships traveling to distant continents.",
+       "Peripatetic Indistinguishable Harmless",
+       "Frail Noisome",
+       "‘Select one answer choice."
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,27 @@
       1,
       2
      ],
-     "img": "2025-01-24/5-02.webp"
+     "img": "2025-01-24/5-02.webp",
+     "txt": {
+      "stem": [
+       "For each blank select one entry from the corresponding column of choices. Fill all blanks in the way that",
+       "best completes the text.",
+       "The Newseum was a museum created by, for, and about journalists and newshounds. But for all its celebration of the news industry, its creators took care to avoid (i) ____ . Along with many testimonials to journalistic courage and a memorial to journalists who lost their lives on the job, the museum presented noteworthy examples of journalistic (ii)",
+       "Blank (i) ____ Blank (ii)"
+      ],
+      "cols": [
+       [
+        "cynicism",
+        "puffery",
+        "controversy"
+       ],
+       [
+        "3 altruism",
+        ". virtuosity",
+        "malfeasance"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +76,31 @@
       2,
       2
      ],
-     "img": "2025-01-24/5-03.webp"
+     "img": "2025-01-24/5-03.webp",
+     "txt": {
+      "stem": [
+       "For each blank select one entry from the corresponding column of choices, Fill all blanks in the way that",
+       "best completes the text.",
+       "It’s possible that the (i) ____ of the musicians about the director’s appointment is mostly an expression of (ii) ____ the selection process. No matter how much input orchestra players are allowed in choosing a music director, they never feel they have enough. Regardless, their criticisms of Webster’s expertise and stature within the field are nothing short of (iii) ____ Would they really prefer some of the other potential candidates whose names have been released?"
+      ],
+      "cols": [
+       [
+        "carping",
+        "conferring",
+        "crowing"
+       ],
+       [
+        "satisfaction with",
+        "indifference regarding",
+        "disgruntlement regarding"
+       ],
+       [
+        "prescient",
+        "stimulating",
+        "preposterous"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -64,7 +120,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-24/5-05.webp"
+     "img": "2025-01-24/5-05.webp",
+     "txt": {
+      "pass": [
+       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of non indigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these non indigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely"
+      ],
+      "stem": [
+       "The passage is concerned primarily with"
+      ],
+      "opts": [
+       "pointing out that a particular type of species extinction is rarely known to occur",
+       "proposing a possible explanation for conflicting data about a particular type of species extinction",
+       "resolving a debate about the frequency of a particular type of species extinction",
+       "comparing two theories regarding possible causes of a particular type of species extinction",
+       "refuting a proposed explanation for the increasingly rare occurrence of a particular type of species extinction"
+      ]
+     }
     },
     {
      "n": 6,
@@ -73,7 +144,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-24/5-06.webp"
+     "img": "2025-01-24/5-06.webp",
+     "txt": {
+      "pass": [
+       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of non indigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these non indigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely"
+      ],
+      "stem": [
+       "The author introduces statistics about North America’s non indigenous plant species primarily in order to"
+      ],
+      "opts": [
+       "undermine a proposed explanation for the absence of any evidence for the occurrence of a particular phenomenon",
+       "contrast the effect of introduced plant species in North America with the effect that introduced animal species have had",
+       "suggest that North America’s indigenous plants are a domain in which there has been ample scope for a particular effect to have occurred",
+       "emphasize how much the ecology of North America has been affected over the past 400 years by the introduction of non indigenous species",
+       "substantiate a claim about the overall effect that the introduction of non indigenous species tends to have on indigenous populations"
+      ]
+     }
     },
     {
      "n": 7,
@@ -91,7 +177,22 @@
      "ans": [
       1
      ],
-     "img": "2025-01-24/5-08.webp"
+     "img": "2025-01-24/5-08.webp",
+     "txt": {
+      "pass": [
+       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia __ Is less densely populated (resulting in lower chances of _ discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for"
+      ],
+      "stem": [
+       "The author of the passage notes Australia’s “smaller land area” in order to"
+      ],
+      "opts": [
+       "suggest that the number of habitation sites from between 40,000 and 25,000 years ago that have been found in Australia is somewhat surprising",
+       "help show why the absence of habitation sites from between 40,000 and 25,000 years ago in what is now the United States is problematic",
+       "indicate that Australia is not exactly comparable to the United States in size",
+       "emphasize a difference between Australia and the United States in population density",
+       "help explain a difference between Australia and the United States in the number of habitation sites from between 40,000 and 25,000 years ago"
+      ]
+     }
     },
     {
      "n": 9,
@@ -100,7 +201,22 @@
      "ans": [
       3
      ],
-     "img": "2025-01-24/5-09.webp"
+     "img": "2025-01-24/5-09.webp",
+     "txt": {
+      "pass": [
+       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia __ Is less densely populated (resulting in lower chances of _ discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for"
+      ],
+      "stem": [
+       "The author of the passage implies that, in what is now the United States, archaeological evidence of in habitation in the period from 40,000 to 25,000 years ago is lacking because that region"
+      ],
+      "opts": [
+       "had its oldest habitation sites inundated following a postglacial rise in sea level",
+       "has many resource-rich rivers that facilitated the dispersal of its early inhabitants from an initial concentration in coastal areas",
+       "was sparsely populated until about 25,000 years ago",
+       "was colonized less than 25,000 years ago",
+       "was inhabited only by hunter-gatherers until 25,000 ____ years ago"
+      ]
+     }
     },
     {
      "n": 10,
@@ -120,7 +236,20 @@
       0,
       5
      ],
-     "img": "2025-01-24/5-11.webp"
+     "img": "2025-01-24/5-11.webp",
+     "txt": {
+      "stem": [
+       "At the peak of the stock market’s vertiginous rise, some corporate pension plans became over funded: their assets ____ _ their liabilities."
+      ],
+      "opts": [
+       "outstripped",
+       "equaled",
+       "matched",
+       "encompassed",
+       "inflated",
+       "surpassed"
+      ]
+     }
     },
     {
      "n": 12,
@@ -130,7 +259,20 @@
       0,
       4
      ],
-     "img": "2025-01-24/5-12.webp"
+     "img": "2025-01-24/5-12.webp",
+     "txt": {
+      "stem": [
+       "Computerized facial-recognition systems can be ____ by any number of factors, from the dirt caked on a camera lens to a hat pulled low over a subject’s face."
+      ],
+      "opts": [
+       "neutralized",
+       "calibrated",
+       "augmented",
+       "ameliorated",
+       "stymied",
+       "confounded"
+      ]
+     }
     },
     {
      "n": 13,
@@ -148,7 +290,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-24/5-14.webp"
+     "img": "2025-01-24/5-14.webp",
+     "txt": {
+      "pass": [
+       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural"
+      ],
+      "stem": [
+       "The author suggests that according to historical demographers, the birth rate in early-modern German cities"
+      ],
+      "opts": [
+       "was affected by sanitary conditions",
+       "increased as a result of in-migration",
+       "was lower than the annual death rate",
+       "decreased as population density increased",
+       "was lower than the rate in communities with fewer than 10,000 inhabitants"
+      ]
+     }
     },
     {
      "n": 15,
@@ -157,7 +314,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-24/5-15.webp"
+     "img": "2025-01-24/5-15.webp",
+     "txt": {
+      "pass": [
+       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural"
+      ],
+      "stem": [
+       "Consider each of the choices separately and select all that",
+       "apply.",
+       "It can be inferred that historical demographers generally believe which of the following about communities of fewer than 10,000 people in early-modern Germany?"
+      ],
+      "opts": [
+       "Mortality rates were lower than those in cities of over 10,000 inhabitants.",
+       "In-migrations were not a significant factor in population trends.",
+       "Population levels remained quite stable for extended periods."
+      ]
+     }
     }
    ]
   }

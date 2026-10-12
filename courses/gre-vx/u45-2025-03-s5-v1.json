@@ -24,7 +24,19 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s5/2-01.webp"
+     "img": "2025-03-s5/2-01.webp",
+     "txt": {
+      "stem": [
+       "We often regard natural phenomena like rainfall as mysterious and unpredictable: although for short time spans and particular places they appear so, in fact on a truly global scale nature has been a model of"
+      ],
+      "opts": [
+       "reliability",
+       "diversity",
+       "complexity",
+       "plasticity",
+       "discontinuity"
+      ]
+     }
     },
     {
      "n": 2,
@@ -34,7 +46,24 @@
       1,
       1
      ],
-     "img": "2025-03-s5/2-02.webp"
+     "img": "2025-03-s5/2-02.webp",
+     "txt": {
+      "stem": [
+       "Seemingly (1) ____ her reputation for tediousness, the university president (ii) ____ a casual, chatty style in the speech she delivered."
+      ],
+      "cols": [
+       [
+        "intrigued by",
+        "embarrassed by",
+        "resigned to"
+       ],
+       [
+        "provoked",
+        "affected",
+        "expected"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -45,7 +74,29 @@
       1,
       1
      ],
-     "img": "2025-03-s5/2-03.webp"
+     "img": "2025-03-s5/2-03.webp",
+     "txt": {
+      "stem": [
+       "Whatever the level of the museum’s past (i) ____ American art, it pales beside its current (ii) ____ . Since opening its renovated and expanded building, the museum has relegated American paintings to hard-to-find corners of the museum. It is as if American art is (iil) ____ the overwhelmingly European narrative that dominates the permanent collection galleries."
+      ],
+      "cols": [
+       [
+        "advocacy of",
+        "enthusiasm for",
+        "neglect of"
+       ],
+       [
+        "craze",
+        "disdain",
+        "support"
+       ],
+       [
+        "fundamental to",
+        "excluded from",
+        "privileged over"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -54,7 +105,22 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s5/2-04.webp"
+     "img": "2025-03-s5/2-04.webp",
+     "txt": {
+      "pass": [
+       "In California’s Mojave Desert, archaeologists found two fluted projectile points, one on the surface, one buried, both similar to classic Clovis stone points from the American Plains. They obtained a radiocarbon date of 8,470 years from material associated with the buried point, a date far more recent than the known time range for Clovis points. There are three ways of accounting for this date. First, it is possible that fluted points were in use in this region around 8,470 years ago. Second, this point may somehow have been deposited at the California site long after its creation. Third, the 8,470-year date may be wrong; a second date from the same context providing an age of 4,360 years was rejected by archaeologists as"
+      ],
+      "stem": [
+       "According to the passage, which of the following statements is true about “a radiocarbon date of 8,470 years”?"
+      ],
+      "opts": [
+       "It is unexpected for material associated with classic Clovis points.",
+       "It implies that the buried point and the point on the surface are from the same time period.",
+       "It implies that projectile point technology developed much later than previously thought.",
+       "It suggests that the region around the California site was populated much later than previously thought.",
+       "It will likely prove to be inaccurate."
+      ]
+     }
     },
     {
      "n": 5,
@@ -63,7 +129,22 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s5/2-05.webp"
+     "img": "2025-03-s5/2-05.webp",
+     "txt": {
+      "pass": [
+       "In California’s Mojave Desert, archaeologists found two fluted projectile points, one on the surface, one buried, both similar to classic Clovis stone points from the American Plains. They obtained a radiocarbon date of 8,470 years from material associated with the buried point, a date far more recent than the known time range for Clovis points. There are three ways of accounting for this date. First, it is possible that fluted points were in use in this region around 8,470 years ago. Second, this point may somehow have been deposited at the California site long after its creation. Third, the 8,470-year date may be wrong; a second date from the same context providing an age of 4,360 years was rejected by archaeologists as"
+      ],
+      "stem": [
+       "If the second explanation is the only one of the three that is correct, then it can be inferred that"
+      ],
+      "opts": [
+       "the material associated with the buried point and the point itself are not from the same time period",
+       "the buried point and the point found on the surface are not from the same time period",
+       "the material associated with the buried point has been misdated",
+       "at least some classic Clovis points unearthed earlier have been misdated",
+       "archaeologists’ understanding of what constitutes a classic Clovis point may need to be revised"
+      ]
+     }
     },
     {
      "n": 6,
@@ -73,7 +154,21 @@
       0,
       1
      ],
-     "img": "2025-03-s5/2-06.webp"
+     "img": "2025-03-s5/2-06.webp",
+     "txt": {
+      "stem": [
+       "The news that compatibility issues with the electronic device had been resolved was received with",
+       "by analysts and consumers, since they assumed that newer technologies would soon make the device obsolete."
+      ],
+      "opts": [
+       "indifference",
+       "apathy",
+       "eagerness",
+       "consternation",
+       "condemnation",
+       "enthusiasm"
+      ]
+     }
     },
     {
      "n": 7,
@@ -83,7 +178,20 @@
       2,
       5
      ],
-     "img": "2025-03-s5/2-07.webp"
+     "img": "2025-03-s5/2-07.webp",
+     "txt": {
+      "stem": [
+       "Though the art of writing was well established in Egypt and Mesopotamia long before the Shang period, the Chinese writing that appeared then seems to have been an entirely ____ development."
+      ],
+      "opts": [
+       "unique",
+       "banal",
+       "homegrown",
+       "practical",
+       "routine",
+       "indigenous"
+      ]
+     }
     },
     {
      "n": 8,
@@ -93,7 +201,20 @@
       3,
       5
      ],
-     "img": "2025-03-s5/2-08.webp"
+     "img": "2025-03-s5/2-08.webp",
+     "txt": {
+      "stem": [
+       "In a time when so much new concert music failed to speak to listeners, the composer’s symphonies expressed with ____ wit and scorching emotional power the tragic history he lived through."
+      ],
+      "opts": [
+       "torpid",
+       "insouciant",
+       "patronizing",
+       "caustic",
+       "phlegmatic",
+       "stinging"
+      ]
+     }
     },
     {
      "n": 9,
@@ -103,7 +224,21 @@
       0,
       2
      ],
-     "img": "2025-03-s5/2-09.webp"
+     "img": "2025-03-s5/2-09.webp",
+     "txt": {
+      "stem": [
+       "Because it has usually been impossible to eradicate exotic species once they have become established, it is",
+       "to minimize introductions of species that have substantial probabilities of unwanted impacts."
+      ],
+      "opts": [
+       "prudent",
+       "customary",
+       "provident",
+       "superfluous",
+       "essential",
+       "pointless"
+      ]
+     }
     },
     {
      "n": 10,
@@ -112,13 +247,38 @@
      "ans": [
       4
      ],
-     "img": "2025-03-s5/2-10.webp"
+     "img": "2025-03-s5/2-10.webp",
+     "txt": {
+      "pass": [
+       "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often _ even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mi/es and Men in that it sum ply records stories, with no descriptive or interpretive information.",
+       "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to “escape its frame,” in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience. In"
+      ],
+      "stem": [
+       "The author of the passage suggests that Wideman’s comment is related to Hurston’s work in which of the following ways?"
+      ],
+      "opts": [
+       "His comment introduces uncertainty into the dating of the two versions of her folktale collection.",
+       "His comment was the inspiration for the method she used to compile her folktale collection.",
+       "His comment is derived from his evaluation of the changes she made in transforming the first version into the second.",
+       "His comment is distant enough in time from her work so as not to apply in precise terms to her work.",
+       "His comment provides a general basis for explaining what might have been her original intent for the folktale collection."
+      ]
+     }
     },
     {
      "n": 11,
      "kind": "ss",
      "ansText": "第二段第一句话",
-     "img": "2025-03-s5/2-11.webp"
+     "img": "2025-03-s5/2-11.webp",
+     "txt": {
+      "pass": [
+       "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often _ even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mi/es and Men in that it sum ply records stories, with no descriptive or interpretive information.",
+       "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to “escape its frame,” in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience. In"
+      ],
+      "stem": [
+       "Select the sentence that suggests a possible reason why Hurston wrote the version of Mules and Men that was published in 1935."
+      ]
+     }
     },
     {
      "n": 12,
@@ -127,7 +287,25 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s5/2-12.webp"
+     "img": "2025-03-s5/2-12.webp",
+     "txt": {
+      "pass": [
+       "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often _ even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mi/es and Men in that it sum ply records stories, with no descriptive or interpretive information.",
+       "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to “escape its frame,” in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience. In"
+      ],
+      "stem": [
+       "The passage provides information about all of the following EXCEPT",
+       "©) how it was established which version of the manuscript was",
+       "written first"
+      ],
+      "opts": [
+       "when Mules and Men was originally published",
+       "what the differences were between Mules and Men and the later",
+       "published version",
+       "how a mediating voice was provided in Mules and Men",
+       "what Wideman meant by “escape its frame”"
+      ]
+     }
     }
    ]
   }

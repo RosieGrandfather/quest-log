@@ -23,7 +23,19 @@
      "ans": [
       4
      ],
-     "img": "2025-01-23-1/2-01.webp"
+     "img": "2025-01-23-1/2-01.webp",
+     "txt": {
+      "stem": [
+       "The company’s steering committee, reluctant to be held to any specific commitments, released a strategic plan that was deliberately ____ ;"
+      ],
+      "opts": [
+       "unpopular",
+       "repetitive",
+       "stringent",
+       "inflexible",
+       "nebulous >"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       0,
       0
      ],
-     "img": "2025-01-23-1/2-02.webp"
+     "img": "2025-01-23-1/2-02.webp",
+     "txt": {
+      "stem": [
+       "The Cassini spacecraft initially found the bodies of liquid methane on Saturn’s moon Titan to be very (i) ____ . a surprising result since the reduced surface tension and viscosity of liquid methane, as compared to water on Earth, should make it (ii) ____ waves."
+      ],
+      "cols": [
+       [
+        "calm",
+        "deep",
+        "dense"
+       ],
+       [
+        "easier to excite",
+        "more difficult to measure",
+        "more likely to distort"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -53,7 +82,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-23-1/2-04.webp"
+     "img": "2025-01-23-1/2-04.webp",
+     "txt": {
+      "pass": [
+       "Ethel Waters was a musical pioneer and brilliant performer whose natural yet exacting phrasing sounds modern even today. Yet she never quite became an icon. The reason may lie in the nature of her art: she didn’t impose a signature style on her singing. She wasn’t enough of a jazz singer to find herself in the jazz pantheon, or enough of a blues artist to become an idol of later rock singers. Furthermore, her singing fame came primarily from the 1920s and early 1930s, before the LP record era, and later generations remembered her more as an actress than as a singer. Finally, her life story lacked the tragic denouement characteristic of such"
+      ],
+      "stem": [
+       "Which of the following statements best describes the purpose of the first sentence of the passage?"
+      ],
+      "opts": [
+       "It makes an assertion that the author will go on to defend.",
+       "It acknowledges an omission that the author finds difficult to explain.",
+       "It presents information that makes a claim in the subsequent sentence somewhat unexpected.",
+       "It introduces a critical consensus that the author challenges in the rest of the passage.",
+       "It points out an apparent contradiction that the author intends to resolve later in the passage."
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +106,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-23-1/2-05.webp"
+     "img": "2025-01-23-1/2-05.webp",
+     "txt": {
+      "pass": [
+       "Ethel Waters was a musical pioneer and brilliant performer whose natural yet exacting phrasing sounds modern even today. Yet she never quite became an icon. The reason may lie in the nature of her art: she didn’t impose a signature style on her singing. She wasn’t enough of a jazz singer to find herself in the jazz pantheon, or enough of a blues artist to become an idol of later rock singers. Furthermore, her singing fame came primarily from the 1920s and early 1930s, before the LP record era, and later generations remembered her more as an actress than as a singer. Finally, her life story lacked the tragic denouement characteristic of such"
+      ],
+      "stem": [
+       "The author of the passage would be most likely to agree with which of the following claims about Ethel Waters?"
+      ],
+      "opts": [
+       "Her personal biography may have something to do with her failure to achieve iconic status.",
+       "Her musical style had more influence in the realm of jazz than in the realm of blues.",
+       "Her phrasing may sound more natural to modern ears than it did to her contemporaries.",
+       "She lacked a single distinctive sound because of changes in singing style after the advent of LPs.",
+       "She would likely not have embarked on a career as an actress if she had achieved more fame as a singer."
+      ]
+     }
     },
     {
      "n": 6,
@@ -72,7 +131,21 @@
       0,
       1
      ],
-     "img": "2025-01-23-1/2-06.webp"
+     "img": "2025-01-23-1/2-06.webp",
+     "txt": {
+      "stem": [
+       "Because movie studios, under pressure to generate international sales, have favored big- budget pictures with fantasy plots, the representation of everyday domestic life has largely been ____ other media, such as television and literature.",
+       "LJ left to"
+      ],
+      "opts": [
+       "ceded to",
+       "ascribed to",
+       "attributed to",
+       "substituted for",
+       "replaced with",
+       "ru"
+      ]
+     }
     },
     {
      "n": 7,
@@ -82,7 +155,21 @@
       1,
       2
      ],
-     "img": "2025-01-23-1/2-07.webp"
+     "img": "2025-01-23-1/2-07.webp",
+     "txt": {
+      "stem": [
+       "In noting that critical and popular opinions about Li’s art coincided, Chang",
+       "the existence of an exception to her general theory of art criticism, which posits that critics’ views do not intersect with those of the general public."
+      ],
+      "opts": [
+       "asserted",
+       "conceded",
+       "acknowledged",
+       "doubted",
+       "pondered",
+       "questioned"
+      ]
+     }
     },
     {
      "n": 8,
@@ -92,7 +179,20 @@
       0,
       5
      ],
-     "img": "2025-01-23-1/2-08.webp"
+     "img": "2025-01-23-1/2-08.webp",
+     "txt": {
+      "stem": [
+       "Several environmental organizations have found themselves in the ____ position of endorsing a legislature that they have long criticized as being too quick to approve development projects."
+      ],
+      "opts": [
+       "uncharacteristic",
+       "unsurprising",
+       "unenviable",
+       "untenable",
+       "predictable",
+       "novel"
+      ]
+     }
     },
     {
      "n": 9,
@@ -102,7 +202,20 @@
       0,
       3
      ],
-     "img": "2025-01-23-1/2-09.webp"
+     "img": "2025-01-23-1/2-09.webp",
+     "txt": {
+      "stem": [
+       "The scientific study of laughter faces a frustrating paradox: ideal experiments take place in rigidly controlled environments with all but the most salient variables eliminated, but such sterile settings are often ____ laughter."
+      ],
+      "opts": [
+       "inimical to",
+       "devoid of",
+       "subverted by",
+       "adverse to",
+       "replete with",
+       "rife with"
+      ]
+     }
     },
     {
      "n": 10,
@@ -111,7 +224,23 @@
      "ans": [
       2
      ],
-     "img": "2025-01-23-1/2-10.webp"
+     "img": "2025-01-23-1/2-10.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burckhardt’s remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s— that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the province of women” —went unnoticed by Burckhardt _ ____ because he shared the humanist assumption that women’s province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as Burckhardt did, through the lens provided by the"
+      ],
+      "stem": [
+       "It can be inferred from the passage that Leonardo Bruni most likely believed which of the following?",
+       "©) The private sphere is superior to the public sphere."
+      ],
+      "opts": [
+       "Formal education was unnecessary for women in Renaissance Italy.",
+       "Rhetoric is useful primarily in the public sphere rather than in the private sphere.",
+       "Women in Renaissance Italy had less desire to study rhetoric than did men.",
+       "Most liberal arts are of little utility in the public sphere.",
+       "rR Wwe &"
+      ]
+     }
     },
     {
      "n": 11,
@@ -120,7 +249,22 @@
      "ans": [
       4
      ],
-     "img": "2025-01-23-1/2-11.webp"
+     "img": "2025-01-23-1/2-11.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burckhardt’s remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s— that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the province of women” —went unnoticed by Burckhardt _ ____ because he shared the humanist assumption that women’s province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as Burckhardt did, through the lens provided by the"
+      ],
+      "stem": [
+       "Which of the following is a criticism the author of the passage makes of Burckhardt’s work?"
+      ],
+      "opts": [
+       "Burckhardt’s discussion of women’s roles overemphasizes certain social and economic factors at the expense of other factors.",
+       "Burckhardt failed to conduct a detailed study of all of the works of Bruni.",
+       "Burckhardt was overly influenced by nineteenth- century assumptions about women’s roles.",
+       "Burckhardt relied heavily on sixteenth-century Italian pedagogic works; thus his work was narrowly focused.",
+       "Burckhardt overlooked important evidence because he shared an assumption contained in that evidence."
+      ]
+     }
     },
     {
      "n": 12,

@@ -64,7 +64,20 @@
       0,
       1
      ],
-     "img": "2025-02-s3/2-06.webp"
+     "img": "2025-02-s3/2-06.webp",
+     "txt": {
+      "stem": [
+       "Because movie studios, under pressure to generate international sales, have favored big-budget pictures with fantasy plots, the representation of everyday domestic life has largely been = = =—_— other media, such as television and literature."
+      ],
+      "opts": [
+       "left to",
+       "ceded to",
+       "ascribed to",
+       "attributed to",
+       "substituted for",
+       "replaced with"
+      ]
+     }
     },
     {
      "n": 7,
@@ -74,7 +87,20 @@
       0,
       3
      ],
-     "img": "2025-02-s3/2-07.webp"
+     "img": "2025-02-s3/2-07.webp",
+     "txt": {
+      "stem": [
+       "The ____ of native South American textiles at the time of the Spanish conquest should not be surprising: it represented the apogee of one of the world’s oldest and most sophisticated weaving and dyeing"
+      ],
+      "opts": [
+       "splendor",
+       "eccentricity",
+       "diversity",
+       "bri",
+       "practical",
+       "popularity"
+      ]
+     }
     },
     {
      "n": 8,
@@ -84,7 +110,20 @@
       1,
       5
      ],
-     "img": "2025-02-s3/2-08.webp"
+     "img": "2025-02-s3/2-08.webp",
+     "txt": {
+      "stem": [
+       "Maintaining a tolerant attitude toward pseudoscience might be considered ____ , but it could be argued"
+      ],
+      "opts": [
+       "that such a disposition lowers our defenses against more dangerous delusions that are based on similar",
+       "C0 naive",
+       "benign",
+       "C1 broad-minded",
+       "indulgent",
+       "credulous"
+      ]
+     }
     },
     {
      "n": 9,
@@ -121,7 +160,22 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s3/2-12.webp"
+     "img": "2025-02-s3/2-12.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burckhardt’s remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s—that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the province of women”—went unnoticed by Burckhardt because he shared the humanist assumption that women's province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as"
+      ],
+      "stem": [
+       "Which of the following, if true, would cast the most serious doubt on the position taken by the author of the passage regarding Burckhardt’s evaluation of historical evidence?"
+      ],
+      "opts": [
+       "Burckhardt’s scholarly works focus almost exclusively on sixteenth-century European humanists.",
+       "Burckhardt had read Bruni’s pedagogic works and had admired them.",
+       "Margaret King’s work has received considerable scholarly acclaim.",
+       "Many of Bruni’s colleagues felt that women should be excluded from instruction in all of the liberal arts.",
+       "Margaret King’s evidence is based largely on Bruni’s work, which was not representative of humanist texts."
+      ]
+     }
     }
    ]
   }

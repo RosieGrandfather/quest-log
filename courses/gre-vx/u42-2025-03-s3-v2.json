@@ -23,7 +23,19 @@
      "ans": [
       2
      ],
-     "img": "2025-03-s3/4-01.webp"
+     "img": "2025-03-s3/4-01.webp",
+     "txt": {
+      "stem": [
+       "For the early years of the twentieth century, ecology remained essentially a ____ science: ecologists went into the field, counted plants and animals, made lists, and that was pretty much that."
+      ],
+      "opts": [
+       "lay",
+       "resilient",
+       "descriptive",
+       "theoretical",
+       "pragmatic"
+      ]
+     }
     },
     {
      "n": 2,
@@ -32,7 +44,20 @@
      "ans": [
       2
      ],
-     "img": "2025-03-s3/4-02.webp"
+     "img": "2025-03-s3/4-02.webp",
+     "txt": {
+      "stem": [
+       "Readers are interested in Marx’s life because of his ideas, but Sperber’s book downplays his ideas to make room for his life, illustrating why intellectual biography can sometimes be a curiously",
+       "genre."
+      ],
+      "opts": [
+       "self-reflexive",
+       "self-glorifying",
+       "self-defeating",
+       "self-propagating",
+       "self-absorbed"
+      ]
+     }
     },
     {
      "n": 3,
@@ -53,7 +78,29 @@
       2,
       1
      ],
-     "img": "2025-03-s3/4-04.webp"
+     "img": "2025-03-s3/4-04.webp",
+     "txt": {
+      "stem": [
+       "Computers triumphed at chess not by (i) ____ human thought, but by playing like machines. The analogy with flight is (ii) ____ : as long as people tried to fly by imitating birds, they were doomed to failure; once they (iii) ____ the paradigm of the familiar, however, they were soon flying much faster than birds."
+      ],
+      "cols": [
+       [
+        "disregarding",
+        "validating",
+        "aping"
+       ],
+       [
+        "deceptive",
+        "unnecessary",
+        "instructive"
+       ],
+       [
+        "discovered",
+        "escaped",
+        "understood"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -62,7 +109,22 @@
      "ans": [
       0
      ],
-     "img": "2025-03-s3/4-05.webp"
+     "img": "2025-03-s3/4-05.webp",
+     "txt": {
+      "pass": [
+       "Important historical differences between Europe and North America may explain why many European migratory songbirds, in contrast to North American migratory songbirds, thrive in forest habitats fragmented by human activity. First, the Pleistocene glaciations may have been more severe in Europe than in North America. Virtually all Europe’s forests were erased during the most recent Ice Age. Any European songbirds dependent upon large, intact blocks of forest were unlikely to survive. In the southern part of North America, however, some forests managed to persist through the coldest times, to the advantage of some forest-dwelling songbirds. Second, European forests were being abused by humans for thousands of years before the North American forests were. Consequently, European birds have had more time to adapt to a human-dominated"
+      ],
+      "stem": [
+       "According to the passage, which of the following is true about today’s European migratory songbirds?"
+      ],
+      "opts": [
+       "They generally are not dependent on large, intact blocks of forest.",
+       "They generally are less sensitive to cold temperatures than are North American songbirds.",
+       "They tend to be unevenly distributed across Europe because of differences in habitat.",
+       "Most would be unlikely to survive additional fragmentation of their preferred habitat.",
+       "Most represent species that evolved after the Pleistocene glaciations."
+      ]
+     }
     },
     {
      "n": 6,
@@ -71,7 +133,22 @@
      "ans": [
       1
      ],
-     "img": "2025-03-s3/4-06.webp"
+     "img": "2025-03-s3/4-06.webp",
+     "txt": {
+      "pass": [
+       "Important historical differences between Europe and North America may explain why many European migratory songbirds, in contrast to North American migratory songbirds, thrive in forest habitats fragmented by human activity. First, the Pleistocene glaciations may have been more severe in Europe than in North America. Virtually all Europe’s forests were erased during the most recent Ice Age. Any European songbirds dependent upon large, intact blocks of forest were unlikely to survive. In the southern part of North America, however, some forests managed to persist through the coldest times, to the advantage of some forest-dwelling songbirds. Second, European forests were being abused by humans for thousands of years before the North American forests were. Consequently, European birds have had more time to adapt to a human-dominated"
+      ],
+      "stem": [
+       "In the author’s argument, the observation made in the highlighted portion of the passage primarily serves to"
+      ],
+      "opts": [
+       "identify a factor that helps explain why Europe’s songbird population is significantly smaller than North America’s",
+       "help explain a distinctive characteristic of European songbirds",
+       "shed light on why there is less habitat available for songbirds in Europe than for songbirds in North America",
+       "point to a reason why European songbirds have had more time to adapt to a human-dominated landscape than have North American birds",
+       "emphasize the long duration of the Pleistocene glaciations in North America relative to the Pleistocene glaciations in Europe"
+      ]
+     }
     },
     {
      "n": 7,
@@ -81,6 +158,23 @@
       2
      ],
      "img": "2025-03-s3/4-07.webp",
+     "txt": {
+      "pass": [
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
+       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but"
+      ],
+      "stem": [
+       "©) dismiss a long-standing interpretation of large Spanish",
+       "merchants and their role in the colonial commercial"
+      ],
+      "opts": [
+       "system",
+       "discuss two antithetical views of the difficulties faced by Spanish long-distance traders",
+       "reconsider certain assumptions about Spanish long- distance traders and their commercial practices",
+       "examine the reasons why some Spanish merchants who engaged in oceanic commerce succeeded while others failed",
+       "explain why oceanic commerce was so risky for Spanish merchants engaged in long-distance trading"
+      ]
+     },
      "imgs": [
       "2025-03-s3/4-07.webp",
       "2025-03-s3/4-07b.webp"
@@ -93,7 +187,23 @@
      "ans": [
       4
      ],
-     "img": "2025-03-s3/4-08.webp"
+     "img": "2025-03-s3/4-08.webp",
+     "txt": {
+      "pass": [
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
+       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but"
+      ],
+      "stem": [
+       "Which of the following can be inferred from the passage about the “defensive strategies” ?"
+      ],
+      "opts": [
+       "They led some large Spanish merchants into financial ruin.",
+       "They were effective only under very specific circumstances.",
+       "They were not widely used by large Spanish merchants.",
+       "There has been disagreement among historians as to how effective they were.",
+       "They have been viewed by some scholars as monopolistic in nature."
+      ]
+     }
     },
     {
      "n": 9,
@@ -104,7 +214,21 @@
       1,
       2
      ],
-     "img": "2025-03-s3/4-09.webp"
+     "img": "2025-03-s3/4-09.webp",
+     "txt": {
+      "pass": [
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
+       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but"
+      ],
+      "stem": [
+       "The author and the historians mentioned in the first sentence would probably agree on which of the following issues?"
+      ],
+      "opts": [
+       "Whether Spanish traders used their influence to protect their interests",
+       "Whether Spanish traders engaged in some uncompetitive practices",
+       "Whether Spain’s economic progress was inhibited by certain behaviors on the part of Spanish traders"
+      ]
+     }
     },
     {
      "n": 10,
@@ -114,7 +238,20 @@
       0,
       4
      ],
-     "img": "2025-03-s3/4-10.webp"
+     "img": "2025-03-s3/4-10.webp",
+     "txt": {
+      "stem": [
+       "The most interesting discoveries in astronomy are often the things researchers could never have anticipated; new instruments enable scientists to make such. ____ discoveries, which can then take years to understand."
+      ],
+      "opts": [
+       "inscrutable",
+       "quotidian",
+       "provocative",
+       "fortuitous",
+       "inexplicable",
+       "serendipitous"
+      ]
+     }
     },
     {
      "n": 11,
@@ -124,7 +261,20 @@
       0,
       2
      ],
-     "img": "2025-03-s3/4-11.webp"
+     "img": "2025-03-s3/4-11.webp",
+     "txt": {
+      "stem": [
+       "The simplicity of Ann Hamilton’s sculpture, a single drop of water snaking its way down a vast white wall, ____ the elaborate technical apparatus hidden beneath its surface."
+      ],
+      "opts": [
+       "minimized",
+       "undermined",
+       "belied",
+       "contradicted",
+       "conjured",
+       "evoked"
+      ]
+     }
     },
     {
      "n": 12,
@@ -134,7 +284,20 @@
       3,
       5
      ],
-     "img": "2025-03-s3/4-12.webp"
+     "img": "2025-03-s3/4-12.webp",
+     "txt": {
+      "stem": [
+       "For parents, the pleasure of letting children choose which book to read aloud together is not always ____ : well remember my inner groans when my child would constantly pick my least favorite book from the shelf."
+      ],
+      "opts": [
+       "intangible",
+       "enduring",
+       "impalpable",
+       "unalloyed",
+       "ephemeral",
+       "unqualified"
+      ]
+     }
     },
     {
      "n": 13,
@@ -143,7 +306,22 @@
      "ans": [
       2
      ],
-     "img": "2025-03-s3/4-13.webp"
+     "img": "2025-03-s3/4-13.webp",
+     "txt": {
+      "pass": [
+       "When on an airplane, Consuelo never enjoys movies that have been widely recommended because the poor quality of the picture spoils her enjoyment. Since in no circumstances does she ever enjoy movies that have been widely derided, it follows that she never enjoys"
+      ],
+      "stem": [
+       "Which of the following, if true, would enable the conclusion of the argument to be properly drawn?"
+      ],
+      "opts": [
+       "The only place where Consuelo enjoys widely recommended movies is a movie theater.",
+       "Widely recommended movies are never shown on airplanes.",
+       "If a movie shown on an airplane is not widely derided, then it is invariably widely recommended.",
+       "If the picture quality of the movies shown on airplanes was better, Consuelo would enjoy the widely recommended movies.",
+       "Some movies are neither widely recommended nor widely derided."
+      ]
+     }
     },
     {
      "n": 14,
@@ -152,7 +330,22 @@
      "ans": [
       1
      ],
-     "img": "2025-03-s3/4-14.webp"
+     "img": "2025-03-s3/4-14.webp",
+     "txt": {
+      "pass": [
+       "Susan Sontag’s theoretical essays on art and aesthetics generally have not received much attention from philosophers. Even those who prize her critical work have tended to sell short the early, more theoretical essays like “Against Interpretation” and “On Style.” Perhaps this neglect is self-wrought. Sontag is often at her best when engaged in critical practice, that is, criticism of particular works of art on their own terms. Her theoretical work, however, tends to be both abstracting and declamatory and, so, operates against her strong suit. Moreover, Sontag herself gave precedence to critical practice over theorizing. Accordingly, she is led to reduce the importance of those"
+      ],
+      "stem": [
+       "The statement in the highlighted sentence suggests which of the following about the philosophers mentioned in the passage?"
+      ],
+      "opts": [
+       "Their theories of aesthetics are fundamentally incompatible with Sontag’s.",
+       "Their view of Sontag’s work is affected by Sontag’s implicit judgment of it.",
+       "They see the distinction between critical theory and critical practice as untenable.",
+       "They regard criticism of particular works of art as a marginal task in aesthetic evaluation.",
+       "They conflate Sontag’s purely theoretical arguments with her analyses of specific artworks."
+      ]
+     }
     },
     {
      "n": 15,
@@ -161,7 +354,22 @@
      "ans": [
       3
      ],
-     "img": "2025-03-s3/4-15.webp"
+     "img": "2025-03-s3/4-15.webp",
+     "txt": {
+      "pass": [
+       "Susan Sontag’s theoretical essays on art and aesthetics generally have not received much attention from philosophers. Even those who prize her critical work have tended to sell short the early, more theoretical essays like “Against Interpretation” and “On Style.” Perhaps this neglect is self-wrought. Sontag is often at her best when engaged in critical practice, that is, criticism of particular works of art on their own terms. Her theoretical work, however, tends to be both abstracting and declamatory and, so, operates against her strong suit. Moreover, Sontag herself gave precedence to critical practice over theorizing. Accordingly, she is led to reduce the importance of those"
+      ],
+      "stem": [
+       "The passage suggests which of the following about “those who prize her critical work” ?"
+      ],
+      "opts": [
+       "They deliberately ignore Sontag’s own precepts regarding the relationship between critical theory and its application to particular artworks.",
+       "They attempt to address the objections of philosophers by practicing a variation of the critical practice Sontag championed.",
+       "They display a version of the same indifference to Sontag’s theoretical work expressed by philosophers as a whole.",
+       "They downplay “Against Interpretation” and “On Style” despite recognizing the importance of those essays to Sontag’s conceptualization of critical theory.",
+       "They misperceive Sontag’s critical practice as hostile to abstractions and categorical claims."
+      ]
+     }
     }
    ]
   }
