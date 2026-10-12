@@ -69,9 +69,29 @@ export function qsetHTML(b){
   </div>`;
 }
 
+/* 点题图放大：全屏遮罩，再点图片在「适合屏幕」和「放大 2 倍（可滚动）」间切换；点空白处 / ✕ / Esc 关闭 */
+function openZoom(src){
+  const ov = document.createElement('div');
+  ov.className = 'qzoom';
+  ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', '原图放大');
+  ov.innerHTML = `<button type="button" class="qzoom-x" aria-label="关闭">✕</button><div class="qzoom-hint">点图片：放大 / 还原　·　点空白处或按 Esc 关闭</div><div class="qzoom-box"><img src="${escapeHTML(src)}" alt=""></div>`;
+  const prevOverflow = document.body.style.overflow;
+  const close = ()=> { ov.remove(); document.body.style.overflow = prevOverflow; document.removeEventListener('keydown', onKey, true); };
+  const onKey = e=> { if(e.key === 'Escape'){ e.stopPropagation(); close(); } };
+  ov.addEventListener('click', e=> {
+    if(e.target.tagName === 'IMG') ov.classList.toggle('big');
+    else close();
+  });
+  document.addEventListener('keydown', onKey, true);
+  document.body.style.overflow = 'hidden';
+  document.body.appendChild(ov);
+  ov.querySelector('.qzoom-x').focus();
+}
+
 export function wireQset(root, course, unit){
   const box = root && root.querySelector('.qset');
   if(!box) return;
+  box.addEventListener('click', e=> { const im = e.target.closest && e.target.closest('img.qimg'); if(im) openZoom(im.currentSrc || im.src); });
   const b = unit.blocks.find(x=> x.type === 'gre-qset');
   const items = b.items;
   const key = unitKey(course.id, unit.id);

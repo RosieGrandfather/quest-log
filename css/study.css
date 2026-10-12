@@ -378,3 +378,13 @@
 .qopts.has-txt .qopt{align-items:flex-start;}
 .qopts.tc{flex-direction:column;align-items:stretch;}
 .qopts.tc .qopt:has(.qtext){align-items:flex-start;}
+
+/* 题图点击放大 */
+.qimg{cursor:zoom-in;}
+.qzoom{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.86);display:flex;flex-direction:column;align-items:center;}
+.qzoom-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:20px;cursor:pointer;z-index:2;}
+.qzoom-hint{color:#ddd;font-size:12px;padding:14px 56px 8px 12px;text-align:center;}
+.qzoom-box{flex:1;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;display:flex;align-items:flex-start;justify-content:center;padding:0 8px 16px;}
+.qzoom-box img{width:min(100%,1400px);height:auto;background:#fff;border-radius:6px;cursor:zoom-in;flex:none;}
+.qzoom.big .qzoom-box{justify-content:flex-start;}
+.qzoom.big .qzoom-box img{width:max(200%,1600px);max-width:none;cursor:zoom-out;}
