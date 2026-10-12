@@ -20,7 +20,7 @@
      "w": "urbane",
      "ipa": "[ɜːrˈbeɪn]",
      "pos": "adj.",
-     "zh": "彬彬有礼的，文雅的",
+     "zh": "彬彬有礼的，文雅的，温文尔雅的，有礼貌且老练的",
      "en": "polished and refined in manner",
      "syn": [
       "suave",
@@ -35,7 +35,7 @@
      "w": "facetious",
      "ipa": "[fəˈsiʃəs]",
      "pos": "adj.",
-     "zh": "喜欢开玩笑的，轻浮的",
+     "zh": "喜欢开玩笑的，爱说俏皮话的，轻浮的，（场合不当地）开玩笑的",
      "en": "joking inappropriately",
      "syn": [
       "flippant",
@@ -50,7 +50,7 @@
      "w": "analogous",
      "ipa": "[əˈnæləɡəs]",
      "pos": "adj.",
-     "zh": "相似的，可比较的",
+     "zh": "相似的，可比较的，类似的（常与 to/with 连用）",
      "en": "similar in some respects",
      "syn": [
       "comparable",
@@ -65,7 +65,7 @@
      "w": "embargo",
      "ipa": "[ɪmˈbɑːrɡoʊ]",
      "pos": "n.",
-     "zh": "贸易禁止令",
+     "zh": "n. 贸易禁止令，禁运，封港令，禁令；vt. 禁止（贸易、通行），实行禁运",
      "en": "an official ban on trade",
      "syn": [
       "ban",
@@ -77,7 +77,7 @@
      "w": "dissension",
      "ipa": "[dɪˈsenʃn]",
      "pos": "n.",
-     "zh": "意见不合",
+     "zh": "意见不合，分歧，争论，纠纷，不睦",
      "en": "strong disagreement",
      "syn": [
       "discord",
@@ -108,7 +108,7 @@
      "w": "relish",
      "ipa": "[ˈrɛlɪʃ]",
      "pos": "n.",
-     "zh": "享受；喜好",
+     "zh": "n. 享受，喜好，兴趣，津津有味；（食物的）调味品，佐料；vt. 享受，欣赏，品味，喜欢，期待",
      "en": "to enjoy greatly; enjoyment",
      "syn": [
       "savor",
@@ -123,7 +123,7 @@
      "w": "incursion",
      "ipa": "[ɪnˈkɜːrʒn]",
      "pos": "n.",
-     "zh": "入侵",
+     "zh": "入侵，侵犯，突然袭击，侵袭",
      "en": "a sudden invasion",
      "syn": [
       "invasion",
@@ -138,7 +138,7 @@
      "w": "adulate",
      "ipa": "[ˈædʒəˌleɪt]",
      "pos": "v.",
-     "zh": "极度谄媚，拍马屁",
+     "zh": "极度谄媚，拍马屁，过度奉承，盲目崇拜",
      "en": "to praise excessively",
      "syn": [
       "flatter",
@@ -153,7 +153,7 @@
      "w": "list",
      "ipa": "[lɪst]",
      "pos": "v.",
-     "zh": "(使)倾斜",
+     "zh": "vi./vt. （船、建筑物等）（使）倾斜；n. 倾斜；清单，名单，目录",
      "en": "to lean to one side",
      "syn": [
       "tilt",
@@ -165,7 +165,7 @@
      "w": "lugubrious",
      "ipa": "[ləˈɡuːbriəs]",
      "pos": "adj.",
-     "zh": "(故作夸张的)悲哀的",
+     "zh": "（故作夸张的）悲哀的，悲伤的，阴郁的，哀伤的",
      "en": "mournful, often in an exaggerated way",
      "syn": [
       "gloomy",
@@ -196,7 +196,7 @@
      "w": "captious",
      "ipa": "[ˈkæpʃəs]",
      "pos": "adj.",
-     "zh": "吹毛求疵的，爱挑毛病的",
+     "zh": "吹毛求疵的，爱挑毛病的，爱找茬的；（论证）诡辩的，陷人于难题的",
      "en": "fond of finding fault",
      "syn": [
       "carping",
@@ -211,7 +211,7 @@
      "w": "rampant",
      "ipa": "[ˈræmpənt]",
      "pos": "adj.",
-     "zh": "(植物)生长茂盛的；猖獗的，不受限制的",
+     "zh": "（植物）生长茂盛的，蔓延的；（坏事）猖獗的，泛滥的，肆虐的，不受限制的，狂暴的",
      "en": "spreading uncontrollably",
      "syn": [
       "unchecked",
@@ -226,7 +226,7 @@
      "w": "truncate",
      "ipa": "[trʌŋˈket]",
      "pos": "vt.",
-     "zh": "截短；缩短(时间、篇幅等)",
+     "zh": "截短，缩短，删节（时间、篇幅等）；截去…的顶端",
      "en": "to shorten by cutting",
      "syn": [
       "shorten",
@@ -241,7 +241,7 @@
      "w": "beleaguer",
      "ipa": "[bɪˈliːgə]",
      "pos": "v.",
-     "zh": "使困扰，使烦恼，使消沉",
+     "zh": "使困扰，使烦恼，使消沉；围攻，包围",
      "en": "to surround with difficulties; to harass",
      "syn": [
       "besiege",
@@ -253,7 +253,7 @@
      "w": "importune",
      "ipa": "[ˌɪmpɔːrˈtuːn]",
      "pos": "vt.",
-     "zh": "恳求，迫切请求",
+     "zh": "恳求，迫切请求，纠缠（以求得某事物）；adj. 纠缠不休的",
      "en": "to ask persistently and urgently",
      "syn": [
       "beseech",
@@ -281,7 +281,7 @@
      "w": "byzantine",
      "ipa": "[ˈbaɪzəntaɪn]",
      "pos": "adj.",
-     "zh": "错综复杂的",
+     "zh": "错综复杂的，（组织、程序）极其复杂而难懂的；拜占庭式的，拜占庭帝国的",
      "en": "extremely complicated and secretive",
      "syn": [
       "labyrinthine",
@@ -296,7 +296,7 @@
      "w": "dampen",
      "ipa": "[ˈdæmpən]",
      "pos": "vt.",
-     "zh": "抑制，压抑(感情、精力等)，泼冷水",
+     "zh": "抑制，压抑，减弱，使沮丧，向…泼冷水（感情、精力等）；使潮湿",
      "en": "to reduce the intensity of",
      "syn": [
       "discourage",
@@ -311,7 +311,7 @@
      "w": "preface",
      "ipa": "[ˈprɛfəs]",
      "pos": "n.",
-     "zh": "序言",
+     "zh": "n. 序言，前言，引言；vt. 为…作序，作为…的开端，以…开始",
      "en": "an introduction to a book or speech",
      "syn": [
       "foreword",
@@ -326,7 +326,7 @@
      "w": "zealot",
      "ipa": "[ˈzelət]",
      "pos": "n.",
-     "zh": "狂热者，极端主义者",
+     "zh": "狂热者，极端主义者，热心的人，盲信者",
      "en": "a fanatical supporter",
      "syn": [
       "fanatic",
@@ -341,7 +341,7 @@
      "w": "seminal",
      "ipa": "[ˈsemɪnl]",
      "pos": "adj.",
-     "zh": "创新的",
+     "zh": "（对后来发展）有重大影响的，开创性的，创新的；（精）液的，种子的",
      "en": "strongly influential and original",
      "syn": [
       "groundbreaking",
@@ -372,7 +372,7 @@
      "w": "endemic",
      "ipa": "[ɛnˈdɛmɪk]",
      "pos": "adj.",
-     "zh": "地方性的",
+     "zh": "（疾病、植物）某地区特有的，地方性的；某个领域（群体）中常见的，流行的，固有的",
      "en": "native to or common in a particular area",
      "syn": [
       "native",
@@ -387,7 +387,7 @@
      "w": "emulate",
      "ipa": "[ˈɛmjulet]",
      "pos": "vt.",
-     "zh": "效仿",
+     "zh": "效仿，努力赶上，仿效；（计算机）模拟",
      "en": "to imitate in order to equal or surpass",
      "syn": [
       "imitate",
@@ -399,7 +399,7 @@
      "w": "venial",
      "ipa": "[ˈvinɪəl]",
      "pos": "adj.",
-     "zh": "可宽恕的",
+     "zh": "（过错、罪过）可原谅的，可宽恕的，轻微的",
      "en": "minor and easily forgiven",
      "syn": [
       "pardonable",
@@ -414,7 +414,7 @@
      "w": "stock",
      "ipa": "[stɑk]",
      "pos": "adj.",
-     "zh": "普通的，常备的",
+     "zh": "adj. 普通的，常备的，老一套的，惯常的；n. 库存，股票，家畜，高汤；vt. 储存，备货",
      "en": "commonly used and unoriginal",
      "syn": [
       "standard",
@@ -429,7 +429,7 @@
      "w": "reign",
      "ipa": "[ren]",
      "pos": "n.",
-     "zh": "统治权占统治地位或盛行",
+     "zh": "n. 统治，统治时期，统治权，（占统治地位的）盛行；vi. 统治，当政，占主导地位，盛行",
      "en": "to rule; to prevail",
      "syn": [
       "rule",
@@ -457,7 +457,7 @@
      "w": "glean",
      "ipa": "[ɡʌl]",
      "pos": "v.",
-     "zh": "收集",
+     "zh": "收集（信息、知识等），一点点地搜集，（从各处）拼凑出；（收割后）拾穗",
      "en": "to gather bit by bit",
      "syn": [
       "gather",
@@ -471,7 +471,7 @@
      "w": "tamper",
      "ipa": "[ˈtæmpɚ]",
      "pos": "v.",
-     "zh": "恶意窜改，损害",
+     "zh": "恶意窜改，擅自改动，损害，乱动（with）",
      "en": "to interfere with in order to damage",
      "syn": [
       "meddle",
@@ -483,7 +483,7 @@
      "w": "restless",
      "ipa": "[ˈrɛstləs]",
      "pos": "adj.",
-     "zh": "不平静的",
+     "zh": "不平静的，不安的，焦躁不安的；得不到休息的；不安定的",
      "en": "unable to rest or stay still",
      "syn": [
       "fidgety",
@@ -498,7 +498,7 @@
      "w": "fiasco",
      "ipa": "[fɪˈæsko]",
      "pos": "n.",
-     "zh": "大失败",
+     "zh": "惨败，大失败，彻底失败，（尤指丢脸的）闹剧",
      "en": "a complete and humiliating failure",
      "syn": [
       "debacle",
@@ -513,7 +513,7 @@
      "w": "precedent",
      "ipa": "[ˈprɛsɪdənt]",
      "pos": "n.",
-     "zh": "先例，前例；先前的",
+     "zh": "n. 先例，前例，判例；adj. 在先的，先前的",
      "en": "an earlier example used as a guide",
      "syn": [
       "example",
@@ -541,7 +541,7 @@
      "w": "bungle",
      "ipa": "[ˈbʌŋɡl]",
      "pos": "v.",
-     "zh": "办糟，失败",
+     "zh": "v. 搞糟，搞砸，办糟，失败；n. 笨拙的工作，失败，拙劣的行为",
      "en": "to do badly and clumsily",
      "syn": [
       "botch",
@@ -556,7 +556,7 @@
      "w": "deluge",
      "ipa": "[ˈdɛljʊdʒ]",
      "pos": "n.",
-     "zh": "大暴雨；大量",
+     "zh": "n. 大暴雨，洪水，泛滥；（语言、事物的）涌至，大量；vt. 使泛滥，使应接不暇",
      "en": "a great flood; an overwhelming amount",
      "syn": [
       "flood",
@@ -571,7 +571,7 @@
      "w": "grudge",
      "ipa": "[ɡrʌdʒ]",
      "pos": "n.",
-     "zh": "怨恨，仇恨",
+     "zh": "n. 怨恨，仇恨，不满；vt. 吝惜，不愿给，勉强给，嫉妒",
      "en": "a lasting feeling of resentment",
      "syn": [
       "resentment",
@@ -586,7 +586,7 @@
      "w": "defy",
      "ipa": "[ˈdifaɪ]",
      "pos": "vt.",
-     "zh": "蔑视",
+     "zh": "蔑视，公然反抗，违抗；使不可能，使无法（做到）；挑战，激（某人）做某事",
      "en": "to openly resist or disobey",
      "syn": [
       "resist",
@@ -601,7 +601,7 @@
      "w": "malignant",
      "ipa": "[məˈlɪgnənt]",
      "pos": "adj.",
-     "zh": "恶毒的，邪恶的",
+     "zh": "恶毒的，邪恶的，有恶意的；（疾病）恶性的，致命的",
      "en": "evil in effect; harmful",
      "syn": [
       "malevolent",
@@ -632,7 +632,7 @@
      "w": "ubiquitous",
      "ipa": "[juːˈbɪkwɪtəs]",
      "pos": "adj.",
-     "zh": "无所不在的，普通的",
+     "zh": "无所不在的，普遍存在的，十分普遍的",
      "en": "present everywhere",
      "syn": [
       "omnipresent",
@@ -647,7 +647,7 @@
      "w": "disseminate",
      "ipa": "[dɪˈsɛmɪnet]",
      "pos": "vt.",
-     "zh": "散播，传播",
+     "zh": "散播，传播，宣传（信息、思想等）",
      "en": "to spread widely",
      "syn": [
       "spread",
@@ -662,7 +662,7 @@
      "w": "commensurate",
      "ipa": "[kəˈmenʃərət]",
      "pos": "adj.",
-     "zh": "同样大小的；相称的，相当的",
+     "zh": "同样大小（长度、范围）的；相称的，相当的，成比例的",
      "en": "corresponding in size or degree",
      "syn": [
       "proportionate",
@@ -677,7 +677,7 @@
      "w": "illuminate",
      "ipa": "[ɪˈlumɪnet]",
      "pos": "vt.",
-     "zh": "阐明",
+     "zh": "阐明，说明，启发；照亮，照明；使（图书）有彩饰",
      "en": "to light up; to make clear",
      "syn": [
       "clarify",
@@ -692,7 +692,7 @@
      "w": "recondite",
      "ipa": "[ˈrekəndaɪt]",
      "pos": "adj.",
-     "zh": "深奥的，难解的",
+     "zh": "深奥的，难解的，（知识）鲜为人知的",
      "en": "little known; hard to understand",
      "syn": [
       "abstruse",
@@ -729,7 +729,7 @@
      "不平静的"
     ],
     "answer": 1,
-    "explain": "seminal：创新的（strongly influential and original）。近义词：groundbreaking, formative。"
+    "explain": "seminal：（对后来发展）有重大影响的，开创性的，创新的；（精）液的，种子的（strongly influential and original）。近义词：groundbreaking, formative。"
    },
    {
     "q": "**truncate** 的意思最接近：",
@@ -740,7 +740,7 @@
      "(使)倾斜"
     ],
     "answer": 0,
-    "explain": "truncate：截短；缩短(时间、篇幅等)（to shorten by cutting）。近义词：shorten, abridge。"
+    "explain": "truncate：截短，缩短，删节（时间、篇幅等）；截去…的顶端（to shorten by cutting）。近义词：shorten, abridge。"
    },
    {
     "q": "哪个词的意思是「喜欢开玩笑的，轻浮的」？",
@@ -751,7 +751,7 @@
      "seminal"
     ],
     "answer": 2,
-    "explain": "facetious：喜欢开玩笑的，轻浮的（joking inappropriately）。"
+    "explain": "facetious：喜欢开玩笑的，爱说俏皮话的，轻浮的，（场合不当地）开玩笑的（joking inappropriately）。"
    },
    {
     "q": "哪个词和 **meddle** 的意思最接近？",
@@ -773,7 +773,7 @@
      "relish"
     ],
     "answer": 0,
-    "explain": "grudge：怨恨，仇恨（a lasting feeling of resentment）。"
+    "explain": "grudge：n. 怨恨，仇恨，不满；vt. 吝惜，不愿给，勉强给，嫉妒（a lasting feeling of resentment）。"
    }
   ]
  }

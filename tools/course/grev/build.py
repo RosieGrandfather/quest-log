@@ -20,6 +20,11 @@ for f in sorted(glob.glob(os.path.join(HERE, 'entries_*.txt'))):
         w, en, syn, ant, zh = [x.strip() for x in p]
         entries[w] = dict(en=en, syn=[x.strip() for x in syn.split(',') if x.strip() and x.strip() != '—'],
                           ant=[x.strip() for x in ant.split(',') if x.strip() and x.strip() != '—'], zh=zh)
+FULL = {}      # zh_full_NN.tsv：词<TAB>完整中文释义（词卡与题目解析用；选项和例句旁注仍用 entries 里的简短释义）
+for f in sorted(glob.glob(os.path.join(HERE, 'zh_full_*.tsv'))):
+    for ln in open(f, encoding='utf-8'):
+        if ln.strip():
+            k, v = ln.rstrip('\n').split('\t'); FULL[k.strip()] = v.strip()
 passages = {}
 for f in sorted(glob.glob(os.path.join(HERE, 'passages_*.txt'))):
     for ln in open(f, encoding='utf-8'):
@@ -31,33 +36,37 @@ if n_done < len(words): n_done = (n_done // PER_PASSAGE) * PER_PASSAGE
 n_units_total = -(-len(words) // PER_UNIT)
 print(f'已写好 {n_done} / {len(words)} 个词，共 {n_units_total} 组')
 errors = []
+SHORT = {}
 POS_FIX = {'parsimonious':'adj.', 'arrogance':'n.', 'metaphor':'n.', 'seemly':'adj.', 'deadpan':'adj.', 'invective':'n.'}
 def item(i):
     w = words[i]; e = entries[w['w']]
-    return dict(w=w['w'], ipa=w['ipa'], pos=POS_FIX.get(w['w'], w['pos']), zh=e['zh'] or w['zh'].replace('\n', ' '), en=e['en'], syn=e['syn'], ant=e['ant'])
+    short = e['zh'] or w['zh'].replace('\n', ' ')
+    SHORT[w['w']] = short
+    return dict(w=w['w'], ipa=w['ipa'], pos=POS_FIX.get(w['w'], w['pos']), zh=FULL.get(w['w'], short), en=e['en'], syn=e['syn'], ant=e['ant'])
+def sz(x): return SHORT.get(x['w'], x['zh'])     # 简短释义：做选项/旁注
 MARK = re.compile(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]')
 def lemmas(text): return [(m.group(2) or m.group(1)).strip() for m in MARK.finditer(text)]
 
 def make_quiz(uid, its, pas, rng):
     """5 题：词→中文 ×2、中文→词、近义词匹配、例句填空。选项干扰项取自同一小节或全表。"""
-    allzh = [x['zh'] for x in (item(i) for i in range(n_done)) ]
+    
     qs = []
     def pk(x): return (x['pos'] or '?')[0]
     def ranked(w):
-        pool = [x for x in its if x['w'] != w['w'] and x['zh'] != w['zh']]
+        pool = [x for x in its if x['w'] != w['w'] and sz(x) != sz(w)]
         rng.shuffle(pool); pool.sort(key=lambda x: pk(x) != pk(w))     # 同词性的优先当干扰项
         seen, out = set(), []
         for x in pool:                                               # 干扰项的中文不能重复
-            if x['zh'] not in seen: seen.add(x['zh']); out.append(x)
+            if sz(x) not in seen: seen.add(sz(x)); out.append(x)
         return out
-    def distract_zh(w): return [x['zh'] for x in ranked(w)][:3]
+    def distract_zh(w): return [sz(x) for x in ranked(w)][:3]
     def distract_words(w): return [x['w'] for x in ranked(w)][:3]
     pick = its[:]; rng.shuffle(pick)
     a, b, c, d, e = pick[:5]
     for w in (a, b):
-        qs.append(dict(q=f'**{w["w"]}** 的意思最接近：', correct=w['zh'], wrong=distract_zh(w),
+        qs.append(dict(q=f'**{w["w"]}** 的意思最接近：', correct=sz(w), wrong=distract_zh(w),
                        explain=f'{w["w"]}：{w["zh"]}（{w["en"]}）。近义词：{", ".join(w["syn"]) or "—"}。'))
-    qs.append(dict(q=f'哪个词的意思是「{c["zh"]}」？', correct=c['w'], wrong=distract_words(c),
+    qs.append(dict(q=f'哪个词的意思是「{sz(c)}」？', correct=c['w'], wrong=distract_words(c),
                    explain=f'{c["w"]}：{c["zh"]}（{c["en"]}）。'))
     dw = [x for x in its if x['syn']] 
     w = d if d['syn'] else dw[0]
@@ -93,7 +102,7 @@ for u in range(n_done // PER_UNIT + (1 if n_done % PER_UNIT else 0)):
         text = passages[g]
         found = sorted(lemmas(text)); want = sorted(x['w'] for x in gi)
         if found != want: errors.append(f'第 {g} 段例句里标出的词 {found} ≠ 应有的词 {want}')
-        gloss = {x['w']: re.split(r'[；;]', x['zh'])[0][:24] for x in gi}
+        gloss = {x['w']: re.split(r'[；;]', sz(x))[0][:24] for x in gi}
         blocks.append({"type": "vocab", "items": gi})
         blocks.append({"type": "passage", "text": text, "gloss": gloss})
         pas.append((text, gi))
