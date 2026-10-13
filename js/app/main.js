@@ -8,6 +8,7 @@ import { render } from './render.js';
 import { wireTasks } from './tasks.js';
 import { wireSections } from './sections.js';
 import { wireRewards } from './rewards.js';
+import { wireReminder, ensureDailyReminder, resetDailyReminder } from './reminder.js';
 
 let unsubs = [];
 function unsubscribeAll(){ unsubs.forEach(u=>u()); unsubs = []; }
@@ -36,6 +37,7 @@ function subscribeAll(){
 function checkDailyBonus(){
   if(!S.cols) return;
   ensureDailyLoginBonus(S.cols.log, pts=> showToast(`今日上线 +${pts} 积分 ✨`));
+  ensureDailyReminder();
 }
 
 function switchTab(name){
@@ -54,6 +56,7 @@ function wireUI(){
   wireTasks();
   wireSections();
   wireRewards();
+  wireReminder();
 }
 
 document.getElementById('signInBtn').addEventListener('click', ()=>{
@@ -64,6 +67,7 @@ document.getElementById('signInBtn').addEventListener('click', ()=>{
 document.getElementById('signOutBtn').addEventListener('click', ()=>{
   unsubscribeAll();
   resetDailyBonus();
+  resetDailyReminder();
   auth.signOut();
 });
 
@@ -84,6 +88,7 @@ auth.onAuthStateChanged(user=>{
     S.uid = null;
     S.cols = null;
     resetDailyBonus();
+  resetDailyReminder();
     unsubscribeAll();
     document.getElementById('gate').hidden = false;
     document.getElementById('appRoot').hidden = true;
