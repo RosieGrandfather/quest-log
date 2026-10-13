@@ -6,6 +6,7 @@ import { unitBodyHTML, mdToHTML, renderMath, wireVocab } from './render-content.
 import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { wireVocabMarks } from './vocab-marks.js';
+import { hasVocabExport, vocabExportHTML, wireVocabExport } from './vocab-export.js';
 import { wirePractice } from './practice.js';
 import { wireQset } from './qset.js';
 import { wireEssay } from './essay.js';
@@ -155,6 +156,7 @@ async function renderCourse(cid){
     ${course.source ? `<div class="course-source">内容依据：<a href="${escapeHTML(course.source.url)}" target="_blank" rel="noopener">${escapeHTML(course.source.name)}</a>（讲解为自编，未转载原文）</div>` : ''}
     <div class="reward-bar" style="margin-top:12px"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
     <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
+    ${hasVocabExport(course) ? vocabExportHTML() : ''}
     <div class="unit-list">${course.units.map((u, i)=>{
       const done = !!T.completed[unitKey(cid, u.id)];
       const cls = !u.file ? 'soon' : done ? 'done' : 'todo';
@@ -167,6 +169,7 @@ async function renderCourse(cid){
         </div>`;
       return u.file ? `<a class="unit-row ${cls}" href="${unitHash(cid, u.id)}">${inner}</a>` : `<div class="unit-row ${cls}">${inner}</div>`;
     }).join('')}</div>`;
+  if(hasVocabExport(course)) wireVocabExport(view(), course);
 }
 
 /* ---------- 学习页 ---------- */

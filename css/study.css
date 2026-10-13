@@ -216,7 +216,9 @@
 
 /* ---------- 词汇课：单词卡与例句短文 ---------- */
 .blk-vocab{display:grid;gap:10px;}
-.vcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 14px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 14px;
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(84px,24%,260px);column-gap:14px;align-items:start;}
+.vcard > *{grid-column:1;}
 .vhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
 .vword{font-size:20px;font-weight:800;color:var(--ink);}
 .vipa{font:inherit;font-size:13px;color:var(--teal);background:var(--teal-soft);border:1px solid transparent;border-radius:999px;padding:3px 10px;cursor:pointer;}
@@ -239,8 +241,10 @@
   font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:3px 9px;box-shadow:var(--shadow);}
 
 /* 词卡：会 / 不会 */
-.vmark{display:flex;gap:8px;margin:8px 0 2px;}
-.vm{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--border);border-radius:999px;padding:3px 14px;cursor:pointer;}
+/* 「会 / 不会」放在词卡最右边，上下两个大按钮，高度撑满整张卡 */
+.vcard > .vmark{grid-column:2;grid-row:1 / span 4;align-self:stretch;display:flex;flex-direction:column;gap:10px;margin:0;}
+.vm{font:inherit;font-size:clamp(16px,2.2vw,22px);color:var(--ink);background:transparent;border:1px solid var(--border);border-radius:16px;
+  flex:1;min-height:46px;width:100%;padding:6px 10px;cursor:pointer;}
 .vm:hover{border-color:var(--teal);}
 .vm:active{transform:scale(.97);}
 .vm-know.on{color:var(--teal);background:var(--teal-soft);border-color:var(--teal);font-weight:600;}
@@ -388,3 +392,19 @@
 .qzoom-box img{width:min(100%,1400px);height:auto;background:#fff;border-radius:6px;cursor:zoom-in;flex:none;}
 .qzoom.big .qzoom-box{justify-content:flex-start;}
 .qzoom.big .qzoom-box img{width:max(200%,1600px);max-width:none;cursor:zoom-out;}
+
+/* 词汇课课程页：不会的词汇汇总（js/study/vocab-export.js） */
+.vx{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin:14px 0 4px;}
+.vx-head{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.vx-title{font-weight:800;color:var(--ink);}
+.vx-sub{font-size:12.5px;color:var(--ink-faint);margin-top:2px;}
+.vx-body:not(:empty){margin-top:10px;}
+.vx-count{font-size:13.5px;color:var(--ink-soft);}
+.vx-actions{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+.vx-list{max-height:340px;overflow:auto;border-top:1px solid var(--border);}
+.vx-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:7px 2px;border-bottom:1px solid var(--border);}
+.vx-w{font-weight:800;color:var(--ink);}
+.vx-pos{font-size:12px;color:var(--ink-faint);font-style:italic;}
+.vx-zh{flex:1 1 220px;color:var(--ink);}
+.vx-u{font-size:11.5px;color:var(--ink-faint);}
+.vx-empty{font-size:13.5px;color:var(--ink-soft);}
