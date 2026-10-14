@@ -115,6 +115,38 @@ for u in range(n_done // PER_UNIT + (1 if n_done % PER_UNIT else 0)):
                 legacyIds=[f'u{2*u+1:02d}', f'u{2*u+2:02d}'], blocks=blocks, references=[], quiz=dict(questions=make_quiz(uid, its, pas, rng)))
     errors += validate_unit(unit, n_questions=5)
     units.append(unit)
+
+# ---------- 复习课：用她标「不会」的词写的原创短文（review_NN.txt：题材|标题|正文），接在 u30 后面 ----------
+UNK = set()
+for ln in open(os.path.join(HERE, 'unknown_words.txt'), encoding='utf-8'):
+    if not ln.startswith('#'): UNK |= {x.replace('_', ' ') for x in ln.split()}
+WI = {w['w']: i for i, w in enumerate(words)}
+review_units = []
+for rf in sorted(glob.glob(os.path.join(HERE, 'review_*.txt'))):
+    rn = int(re.search(r'review_(\d+)', rf).group(1)); rid = f'r{rn:02d}'
+    rows = [ln.rstrip('\n').split('|', 2) for ln in open(rf, encoding='utf-8') if ln.strip()]
+    seen, its, blocks, pas = {}, [], [], []
+    blocks.append({"type": "text", "md": '这一节不教新词，只让你在**完整的短文**里反复碰到你标过「不会」的词。每段都是原创短文，仿《经济学人》《大西洋月刊》《科学美国人》《伦敦书评》等的笔法写的（真实文章有版权，不能原样搬）。\n\n**读法**：先不点，按句子自己猜意思；猜不出来再点高亮的词看释义。同一个词会在不同段里重复出现，多碰几次自然就记住了。'})
+    for ti, (topic, title, text) in enumerate(rows):
+        lem = lemmas(text)
+        for l in lem:
+            if l not in WI or l not in entries: errors.append(f'{rid} 第 {ti+1} 段：{l} 不在词表里')
+            elif l not in UNK: errors.append(f'{rid} 第 {ti+1} 段：{l} 不是你标过「不会」的词')
+        gi = []
+        for l in dict.fromkeys(lem):
+            if l in WI and l in entries:
+                x = item(WI[l]); gi.append(x)
+                if l not in seen: seen[l] = x; its.append(x)
+        gloss = {x['w']: re.split(r'[；;]', sz(x))[0][:24] for x in gi}
+        blocks.append({"type": "text", "md": f'### {ti+1}. {title}（{topic}）'})
+        blocks.append({"type": "passage", "text": text, "gloss": gloss})
+        pas.append((text, gi))
+    unit = dict(id=rid, title=f'复习 · 第 {rn} 期：我标过「不会」的词', en=f'Review Set {rn}', minutes=40,
+                objectives=[f'在 {len(rows)} 段完整短文里认出 {len(its)} 个你标过「不会」的词', '先靠上下文猜意思，再点词核对', '重复出现的词多碰几次，加深印象'],
+                blocks=blocks, references=[], quiz=dict(questions=make_quiz(rid, its, pas, random.Random(2000 + rn))))
+    errors += validate_unit(unit, n_questions=5)
+    review_units.append(unit)
+    print(f'{rid}：{len(rows)} 段，{len(its)} 个不同的词，覆盖她 {len(UNK)} 个不会的词里的 {len(set(seen) & UNK)} 个')
 if errors: raise SystemExit('检查没通过：\n  ' + '\n  '.join(errors))
 cdir = os.path.join(REPO, 'courses', 'gre-v'); os.makedirs(cdir, exist_ok=True)
 cu = []
@@ -122,9 +154,14 @@ for unit in units:
     fn = f'{unit["id"]}-set.json'
     json.dump(unit, open(os.path.join(cdir, fn), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
     cu.append(dict(id=unit['id'], title=unit['title'], en=unit['en'], minutes=unit['minutes'], file=fn, direct=True))
+for unit in review_units:
+    fn = f'{unit["id"]}-review.json'
+    json.dump(unit, open(os.path.join(cdir, fn), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
 for u in range(len(units), n_units_total):      # 还没写好的组先占位
     cu.append(dict(id=f'u{u+1:02d}', title=f'S 级核心词 · 第 {u+1} 组', en=f'GRE Core Vocabulary · Set {u+1}', minutes=50, file=None,
                    covers='待写'))
+for unit in review_units:
+    cu.append(dict(id=unit['id'], title=unit['title'], en=unit['en'], minutes=unit['minutes'], file=f'{unit["id"]}-review.json', direct=True))
 course = dict(id='gre-v', title='GRE 核心词汇 S 级：机经里出现过的再要你命 3000',
               subtitle=f'把「再要你命 3000」里同时出现在机经（霍 V6）里的 {len(words)} 个词，按乱序拆成每组 {PER_UNIT} 个词的小节：中英释义、近义词、反义词、点音标发音、每 {PER_PASSAGE} 个词一段例句短文，最后 5 道小测验。',
               order=16, order_note='选修，申请准备：背 GRE 词汇，可以和别的课穿插着学', tier='elective', tags=['GRE'], units=cu)
