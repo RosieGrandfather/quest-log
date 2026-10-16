@@ -1,0 +1,200 @@
+{
+ "id": "u92-test46-s2",
+ "title": "Test 46 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 46, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 46 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Due to the many ____ in his committee presentation, Mark’s advisor suggested that he revise his work and practice in front of a mirror before presenting it to the entire department."
+      ],
+      "opts": [
+       "facilities",
+       "jeremiads",
+       "gaffes",
+       "obloquies",
+       "exploits"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Fears that the recent sharp rise in oil prices is an indication that oil is running out appear to be (i)____. The Middle East still contains vast oil supplies. Furthermore, even if new oil finds elsewhere have been (ii)____ than in the past, substantial quantities of oil can be profitably stripped from tar and shale."
+      ],
+      "cols": [
+       [
+        "contagious",
+        "unfounded",
+        "sagacious"
+       ],
+       [
+        "less frequent",
+        "more accessible",
+        "less publicized"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The claim that large budget deficits significantly depress private investment and thereby hurt future wages and living standards is (i)____; in reality, the (ii)____ effects of budget deficits are tiny."
+      ],
+      "cols": [
+       [
+        "fallacious",
+        "incomprehensible",
+        "incontrovertible"
+       ],
+       [
+        "adverse",
+        "unforeseen",
+        "ameliorate"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "People love to talk about their commutes to and from work: those with an easy commute tend to (i)____, while those who hate their commute think and speak of it as a core affliction, like a chronic illness. Once you raise the subject, the testimonies pour out, and, if your ears are tuned to it, you begin overhearing commute talk everywhere. People who are normally (ii)____ may, when describing their commutes, be unexpectedly(iii)____ divulging the intimate details of their lives."
+      ],
+      "cols": [
+       [
+        "grumble",
+        "commiserate",
+        "gloat"
+       ],
+       [
+        "inattentive",
+        "garrulous",
+        "circumspect"
+       ],
+       [
+        "candid in",
+        "economical in",
+        "flustered about"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Caricature can be revealing as well as amusing, and Ager’s novel is both: Ager’s delineation of class, ethnic, and generational struggle is exaggerated for comical effect, but it ____ nonetheless."
+      ],
+      "opts": [
+       "resonates",
+       "entertains",
+       "diverts",
+       "confuses",
+       "rings true",
+       "falls short"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Although the claim that no one knows what dark matter is remains ____, some scientists dispute the parallel assertion that dark matter has not been detected."
+      ],
+      "opts": [
+       "contentious",
+       "sound",
+       "questionable",
+       "unassailable",
+       "unverifiable",
+       "prominent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Benjamin Franklin’s reputation is so much one of appearing scientific investigation with commonsense empiricism that it is somewhat startling to realize how ____ the great experiment’s mentoring truly was."
+      ],
+      "opts": [
+       "reasonable",
+       "speculative",
+       "pragmatic",
+       "conjectural",
+       "careless",
+       "judicious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u51-test26-s1",
+ "title": "Test 26 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 26, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 26 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The space travels described in science fiction stories always used to be epic adventures, in comparison to which current journals in space seem quite ____."
+      ],
+      "opts": [
+       "mundane",
+       "exciting",
+       "dramatic",
+       "risky",
+       "heroic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The school system’s modest plan for curriculum improvements has (i)____ local educators: some call it (ii)____ effort, while others say it is a pragmatic approach given the complexity of the task."
+      ],
+      "cols": [
+       [
+        "surprised",
+        "impressed",
+        "divided"
+       ],
+       [
+        "genuine",
+        "halfhearted",
+        "practical"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFI",
+     "txt": {
+      "stem": [
+       "A certain amount of theoretical frenzy about comics today is (i)____. After all, similar frenzies have been in other art forms in periods of their rapid development, for instance, the debates about painting that roiled Renaissance Italy. But such intellectual (ii)____ rarely precedes creative glory. On the contrary, it commonly indicates that an artistic (iii)____, having been made and recognized, is over, and that a process of increasing strained emulation and diminishing returns has set in."
+      ],
+      "cols": [
+       [
+        "understandable",
+        "unprecedented",
+        "perplexing"
+       ],
+       [
+        "torpor",
+        "conservatism",
+        "arousal"
+       ],
+       [
+        "pitfall",
+        "tradition",
+        "breakthrough"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The Chavez Pass archaeological site was initially interpreted as indicative of ____ society, since it was thought to have been at the center of a cluster of smaller, contemporary settlements that it presumably controlled."
+      ],
+      "opts": [
+       "an expansionist",
+       "a hierarchical",
+       "an urban",
+       "a heterogeneous",
+       "a diverse",
+       "a stratified"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Although the essayist’s arguments did not ____ her most perceptive readers, the extreme subtlety of the paints she made explains why she was misinterpreted by most critics of her day."
+      ],
+      "opts": [
+       "convince",
+       "confound",
+       "entertain",
+       "persuade",
+       "perplex",
+       "enlighten"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Architects may be more extroverted and therefore the more ____ members of a bridge design team, but they are not always the most essential."
+      ],
+      "opts": [
+       "indispensable",
+       "conscientious",
+       "reliable",
+       "visible",
+       "valuable",
+       "salient"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Citing the corruption and intrigue that pervaded politics in the city, my colleague ____ the newspaper’s trove of journalism prizes, declaring that finding great stories in the city must be effortless."
+      ],
+      "opts": [
+       "slighted",
+       "ignored",
+       "lauded",
+       "disparaged",
+       "confounded",
+       "commended"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

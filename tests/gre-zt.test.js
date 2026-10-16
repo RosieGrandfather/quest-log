@@ -7,9 +7,9 @@ const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const course = read('../courses/gre-zt/course.json');
 const audit = read('../tools/course/grzt/audit.json');
 
-test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and text-only controls', () => {
+test('Zhang Wei first 100 sections (Test 1–50) preserve sequence, all 700 answer keys and text-only controls', () => {
   assert.ok(read('../courses/index.json').courses.some(c => c.id === course.id));
-  assert.equal(course.units.length, 50);
+  assert.equal(course.units.length, 100);
   let total = 0;
   const counts = {};
   for (const [i, entry] of course.units.entries()) {
@@ -26,6 +26,7 @@ test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and tex
       assert.equal(q.imgs, undefined);
       assert.equal(q.img, undefined);
       assert.equal(q.sourceAnswer, audit.items[i*7+j].sourceAnswer);
+      assert.equal(audit.items[i*7+j].unit, entry.id);
       const expected = [...q.sourceAnswer].map((c,k) => c.charCodeAt(0)-65-(q.kind==='tc'?3*k:0));
       assert.deepEqual(q.ans, expected);
       const options = q.kind==='tc' ? q.txt.cols.flat() : q.txt.opts;
@@ -44,6 +45,6 @@ test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and tex
     }
     assert.equal(summarize(block.items,answers).correct,7);
   }
-  assert.equal(total,350);
-  assert.deepEqual(counts,{mc1:60,tc:115,se:175});
+  assert.equal(total,700);
+  assert.deepEqual(counts,{mc1:116,tc:234,se:350});
 });

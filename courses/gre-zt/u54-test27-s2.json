@@ -1,0 +1,206 @@
+{
+ "id": "u54-test27-s2",
+ "title": "Test 27 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 27, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 27 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Consolidating memory is not instantaneous or even ____: every memory must be encoded and moved from short-term to long-term storage, and some of these memories are, for whatever reason, more vividly imprinted than others."
+      ],
+      "opts": [
+       "salutary",
+       "deliberate",
+       "sequential",
+       "momentary",
+       "inevitable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Recent scholarship has questioned the (i)____ of tropical forests around the world. Archaeologists have shown, for example, that the largest contiguous tract of what was thought to be virgin rain forest in the southern Amazon had been transformed into a cultural parkland before European contact, and many of the forest islands in West Africa’s savanna forest transition zone are (ii)____ as well."
+      ],
+      "cols": [
+       [
+        "diversity",
+        "naturalness",
+        "sustainability"
+       ],
+       [
+        "isolated",
+        "endangered",
+        "anthropogenic"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "Even the reader acquainted with the outlines of Pushkin’s biography will be (i)____ the (ii)____ so vividly conveyed in Binyon’s biography. Not only was Pushkin’s personal correspondence intercepted and his movements (iii)____, but Tsar Nicholas I’s decision to oversee Pushkin’s career obliged Pushkin to submit all his manuscripts for inspection."
+      ],
+      "cols": [
+       [
+        "attracted by",
+        "confused by",
+        "struck by"
+       ],
+       [
+        "suffocating lack of creative freedom",
+        "concern for contemporary society",
+        "underlying sense of historical change"
+       ],
+       [
+        "ignored",
+        "monitored",
+        "commended"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFI",
+     "txt": {
+      "stem": [
+       "Viewing people as ‘’social atoms’’ that obey rather simple rule (which are not unlike the laws of physics), one may discover certain (i)____. Take, for example, the way channels emerge when people move in crowds. In the midst of initially (ii)____ movements, one person begins to follow another—in an effort to avoid collisions—and streams of movement emerge. As more people join in, there is greater pull on others to join the flow, and the particular channels become (iii)____."
+      ],
+      "cols": [
+       [
+        "apparent contradictions",
+        "unproductive tendencies",
+        "lawlike regulations"
+       ],
+       [
+        "inflexible",
+        "straightforward",
+        "chaotic"
+       ],
+       [
+        "self-defeating",
+        "self-aggrandizing",
+        "self-perpetuating"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The ____ nature of the approval process for new drugs suggests that incentives to promote more expeditious decision making may be necessary."
+      ],
+      "opts": [
+       "pecuniary",
+       "commercial",
+       "arbitrary",
+       "sluggish",
+       "capricious",
+       "dilatory"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The critic claims that, contrary to its reputation for ____, the novelist’s prose is full of opaque language games."
+      ],
+      "opts": [
+       "scrupulousness",
+       "simplicity",
+       "mendacity",
+       "artlessness",
+       "polish",
+       "meticulousness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Not only is the advent of bookless or largely bookless libraries too large and powerful a change to be ____, it also offers too many real advantages for it to be considered a tragedy."
+      ],
+      "opts": [
+       "understood",
+       "averted",
+       "foreseen",
+       "forestalled",
+       "endured",
+       "anticipated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

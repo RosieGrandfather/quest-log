@@ -1,0 +1,196 @@
+{
+ "id": "u71-test36-s1",
+ "title": "Test 36 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 36, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 36 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Since many African farmers face a soil fertility problem, providing funding for fertilizer seems ____; closer examination of the data raises some troubling questions, however."
+      ],
+      "opts": [
+       "imprudent",
+       "expensive",
+       "unimpeachable",
+       "modern",
+       "worrisome"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The politician’s record while in office, though (i)____, hardly accounts for her high standard three decades later—a standing all the more (ii)____ because of continuing assaults on her reputation during those years."
+      ],
+      "cols": [
+       [
+        "bewildering",
+        "admirable",
+        "unappreciated"
+       ],
+       [
+        "unusual",
+        "regrettable",
+        "persistent"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFI",
+     "txt": {
+      "stem": [
+       "While the Prime Minister’s long-standing reputation for (i)____ practical power may (ii)____ his recently stated willingness to devolve real power to regional assemblies and local governments, it certainly does not (iii)____ his doing it."
+      ],
+      "cols": [
+       [
+        "centralizing",
+        "overseeing",
+        "exploring"
+       ],
+       [
+        "render inevitable",
+        "be based on",
+        "raise doubts about"
+       ],
+       [
+        "require",
+        "allow",
+        "preclude"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The juxtaposition of fertile alluvial soils originating in the Andes with the infertile inland soils of central Amazon Basin is one example of ____ of the soil conditions that can be found in the tropics."
+      ],
+      "opts": [
+       "intractability",
+       "heterogeneity",
+       "incompatibility",
+       "disparateness",
+       "instability",
+       "fragility"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Although most scientists hold that quantum theory and the theory of general relativity ought to be intimately connected, the theories have remained stubbornly ____."
+      ],
+      "opts": [
+       "consistent",
+       "unlinked",
+       "self-contradictory",
+       "estranged",
+       "arbitrary",
+       "congruent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "One big challenge with placebo responses is that they are ____: people given the same inert pill or potion may show wildly different reactions, and the effects vary widely according to each person’s illness."
+      ],
+      "opts": [
+       "capricious",
+       "illusory",
+       "unpredictable",
+       "chimerical",
+       "marginal",
+       "ephemeral"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The ____ of biographies of antebellum capitalists is particularly striking in contrast with the abundance of life stories of industrialists in later eras."
+      ],
+      "opts": [
+       "brevity",
+       "banality",
+       "utility",
+       "paucity",
+       "triteness",
+       "dearth"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

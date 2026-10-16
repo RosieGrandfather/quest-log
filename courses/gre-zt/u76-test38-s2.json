@@ -1,0 +1,200 @@
+{
+ "id": "u76-test38-s2",
+ "title": "Test 38 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 38, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 38 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "In the final scene of the movie, the character exhibits an almost unbelievable ____, remaining imperturbable in the face of intense and immediate physical danger."
+      ],
+      "opts": [
+       "cunning",
+       "endurance",
+       "arrogance",
+       "sangfroid",
+       "percipience"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The author’s best-selling book on Virginia Woolf is not (i)____ treatment of her subject; on the contrary, it presents (ii)____ portrait of the novelist, faults and all."
+      ],
+      "cols": [
+       [
+        "an idealized",
+        "a comprehensive",
+        "a compelling"
+       ],
+       [
+        "an unflinching",
+        "a slapdash",
+        "an erudite"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Nordhaus predicts that in the future we will increasingly be (i)____ ecological problems like global warming rather than (ii)____ them. We may, for example, make some headway in limiting emissions that contribute to warming, but much of our work will be in adapting to ecological problems and alleviating their effects."
+      ],
+      "cols": [
+       [
+        "managing",
+        "analyzing",
+        "transcending"
+       ],
+       [
+        "solving",
+        "addressing",
+        "mitigating"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFI",
+     "txt": {
+      "stem": [
+       "Compared with, say, the precision of a skein of geese winging its way across the autumn sky in a V formation, the seasonal marches of grazers across the Serengeti seem (i)____, and at times even (ii)____. But, in fact, years of careful observation by scientists have shown that there is (iii)____ those migrations of zebras, wildebeests, and Thomson’s gazelles."
+      ],
+      "cols": [
+       [
+        "disorganized",
+        "purposeful",
+        "massive"
+       ],
+       [
+        "illusionary",
+        "overwhelming",
+        "chaotic"
+       ],
+       [
+        "feats a tendency toward aggression in",
+        "an undeniable grandeur to",
+        "a definite order to"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "In her career as an editor, she pruned and shaped many a writer’s ____ prose into crisp lucidity."
+      ],
+      "opts": [
+       "wayward",
+       "transparent",
+       "errant",
+       "urbane",
+       "elegant",
+       "incisive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Philby secretly loathed the host of the party that he was attending, but it seemed ____ to say so publicly."
+      ],
+      "opts": [
+       "recondite",
+       "tactless",
+       "clever",
+       "malign",
+       "deft",
+       "impolitic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "In American Indian art, the supposed distinction between modern and traditional was fabricated by critics, and when artists have control over interpretation of their own work, the distinction appear, happily, to have been ____."
+      ],
+      "opts": [
+       "eliminated",
+       "reinforced",
+       "put to rest",
+       "intensified",
+       "recognized",
+       "established"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

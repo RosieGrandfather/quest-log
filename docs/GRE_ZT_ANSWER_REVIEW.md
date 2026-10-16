@@ -1,6 +1,8 @@
-# 张巍填空前50节答案校对
+# 张巍填空前100节答案校对
 
-日期：2026-10-16。范围：`gre-zt`，Test 1–25，每个Test两个Section，共350题。
+日期：2026-10-16。范围：`gre-zt`，Test 1–50，共100节700题，分两轮校对：第一轮为第1–50节（Test 1–25），第二轮为第51–100节（Test 26–50），第二轮见文末。
+
+# 第一轮：第1–50节
 
 ## 结论
 
@@ -40,10 +42,36 @@
 
 第42节的[新东方同题页](https://cc.xdf.cn/gre/201708/298360750.html)也包含上述不顺措辞。网络重复不能证明文字正确，因此不根据猜测自动补成unenlivened。
 
+# 第二轮：第51–100节（Test 26–50）
+
+## 结论
+
+350题的答案键均未修改。盲做结果与配套答案一致的有343题；不一致的7题逐题复读后，配套答案均有依据，其中3题仍只能低把握保留。
+
+## 方法
+
+- 盲做：把题干和选项给审题者时遮住了配套答案，分5批（每批10节）独立作答，每题记下答案和一句理由。字母沿用PDF的A–I全局编号。
+- 比对：把盲做答案与《填空2000答案.txt》逐题比对。不一致的题，重新读题干和全部选项，并查询公开的同题版本。
+- 边界：公开题库也不是ETS官方答案，网上一致只能作为旁证。
+
+## 7处不一致的处理
+
+| 课节 / 题号 | 配套答案 | 盲做 | 判断 |
+|---|---|---|---|
+| 第64节Q6 | DE | AD | 题干出自Viles的论文，原文措辞就是spatial homogeneity；趋势相似对应resemblance。[考满分同题](https://gre.kmf.com/explain/index/01vtjk)等多家给DE。保留。 |
+| 第72节Q2 | AF | BF | although…nevertheless是让步：常把缺乏经验说成优势(advantage)，但把明显的天真当成非凡美德仍令人意外。选impediment的话，让步关系不成立。保留。 |
+| 第79节Q3 | ADI | CDI | 第一空established与presented都能读通，新证据推翻的是“已被确立”的说法；后两空无争议。低把握保留。 |
+| 第83节Q5 | AC | CF | panacea/remedy与remedy/recipe都接近prescription。[考满分同题](https://gre-sanqian.kmf.com/explain/question/81pmzj-0.html?isFav=0)给AC。低把握保留。 |
+| 第86节Q2 | CF | AF | 看似exhaustive对应细节，但“carefully assembled”限定的是经过挑选的细节，exhaustive是陷阱。[考满分同题](https://gre.kmf.com/explain/index/baw8uk)给CF，正确率仅17%。保留。 |
+| 第86节Q3 | AD | AF | 淡化失败的理由是竞争方案也更站不住(tenuous)。[考满分同题](https://gre.kmf.com/explain/index/32w93k)等多家给AD。保留。 |
+| 第99节Q3 | CDI | ADI | 本题PDF文字混乱（如Plalladianism）。shopocracy前填superficial或disdained都说得通，公开整理版本也写disdained；后两空无争议。低把握保留。 |
+
+## 原PDF本身的措辞问题（第二轮发现）
+
+只记录、不改写：第52节Q2题干“avoids what he ____”像是缺了词；第59节Q3用了disgorge，搭配不自然；第97节Q3的“there has been ____ —seek utopia—on the frontier”与第三空的选项接不上，像是漏了文字；第99节Q3有拼写错误（Plalladianism），句子也很长。这些都不影响判断答案。
+
 ## 可复查记录
 
-- `tools/course/grzt/reviewed-sections.tsv`：50节的350个推理候选及逐题理由。字母沿用PDF的A–I全局编号，不使用网页填空列的局部A/B/C。
-- `docs/GRE_ZT_ANSWER_AUDIT.json`：350题的位置、来源答案、候选、状态、理由、PDF页码及来源哈希。
-- `tools/course/grzt/review_answers.py`：重新核对以上记录、本地TXT、PDF文字和课程JSON；不会更改答案或向课程添加讲解。
-
-本轮保持原来的无截图课程形式，回查页面只用于校对，不进入课程资源。
+- `tools/course/grzt/reviewed-sections.tsv`：100节700题的候选答案及逐题理由。第1–50节是第一轮的推理候选；第51–100节是第二轮盲做后定稿的候选，7处不一致按上表处理。
+- `docs/GRE_ZT_ANSWER_AUDIT.json`：700题的位置、来源答案、候选、状态、理由和PDF页码。第二轮的题另记 `blindCandidate` 盲做答案。
+- `tools/course/grzt/review_answers.py`：重新核对以上记录、本地TXT、PDF文字和课程JSON；不会更改答案，也不会向课程添加讲解。

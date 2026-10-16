@@ -1,0 +1,196 @@
+{
+ "id": "u89-test45-s1",
+ "title": "Test 45 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 45, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 45 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Since many prehistoric tools were made of materials, such as wood, bone, and antler, that tend to decay quickly, these archaeological specimens are ____ their stone counterparts."
+      ],
+      "opts": [
+       "cruder than",
+       "derived from",
+       "found with",
+       "rarer than",
+       "similar to"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The councilman was a highly respected, even (i)____ member of society, so when he was accused of fraud, people were (ii)____."
+      ],
+      "cols": [
+       [
+        "venerated",
+        "obscure",
+        "unassuming"
+       ],
+       [
+        "stunned",
+        "elated",
+        "gullible"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "Not all paleontologists agree that connections between the continents were (i)____ just after the extinction of the dinosaurs. Some hold the view that North America, Asia, and South America had (ii)____ immediately following the dinosaur extinction, pointing to (iii)____ between ancient kinds of mammals that existed on all three continents at this time in support of their argument."
+      ],
+      "cols": [
+       [
+        "significant",
+        "permanent",
+        "limited"
+       ],
+       [
+        "lasting differences",
+        "extensive contacts",
+        "trivial likeness"
+       ],
+       [
+        "similarities",
+        "intermediaries",
+        "hostilities"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "A formal floods resulting from usual monsoon rainfall are ____ the growth of plants, recently there has been an increase in the frequency of highly intensified floods that do not have such welcome effects."
+      ],
+      "opts": [
+       "conducive to",
+       "hindered by",
+       "devastating for",
+       "deleterious to",
+       "essential for",
+       "indispensable to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Those who read Empson’s correspondence for the first time may be disappointed that so much of it is professional rather than personal, but the distinction in this case is ____: every letter bears the full stamp of Empson’s personality."
+      ],
+      "opts": [
+       "unambiguous",
+       "artificial",
+       "significant",
+       "spurious",
+       "clear-cut",
+       "unique"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Analysis for the structural feather that were thought to ____ kinship between the two species prompted an investigation that dispelled that presumption and revealed that the two share a family history."
+      ],
+      "opts": [
+       "signify",
+       "underrate",
+       "point to",
+       "preclude",
+       "rule out",
+       "exaggerate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The book captures the ____ of several politicians who spoke publicly of old-time virtues in order to mask private vices."
+      ],
+      "opts": [
+       "probity",
+       "dissemblance",
+       "opportunism",
+       "rectitude",
+       "ingenuousness",
+       "duplicity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

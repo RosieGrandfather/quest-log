@@ -1,0 +1,196 @@
+{
+ "id": "u55-test28-s1",
+ "title": "Test 28 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 28, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 28 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Instead of demonstrating the ____ of archaeological applications of electronic remote sensing, the pioneering study became, to some skeptics, an illustration of the imprudence of interpreting sites based on virtual archaeology."
+      ],
+      "opts": [
+       "ubiquity",
+       "limitation",
+       "promise",
+       "redundancy",
+       "complexity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "A (i)____ to disseminate the vast scientific knowledge of our time to nonscientists shows real (ii)____ the magnificent achievement humanity is capable of, like allowing a great work of art to molder in a warehouse."
+      ],
+      "cols": [
+       [
+        "triumph",
+        "failure",
+        "diffusion"
+       ],
+       [
+        "indifference to",
+        "enthusiasm for",
+        "glory of"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "Fifty pages of footnotes, some of them presenting quite lengthy bibliographies, suggest that very few pertinent sources on the Black Arts movement in literature have (i)____ Thompson’s search; (ii)____, the text makes it clear that the author’s examination of these sources has been similarly (iii)____."
+      ],
+      "cols": [
+       [
+        "eluded",
+        "characterized",
+        "motivated"
+       ],
+       [
+        "moreover",
+        "however",
+        "consequently"
+       ],
+       [
+        "valuable",
+        "timely",
+        "exhaustive"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Her attempts to wrest fiction free from traditional constraints like plot and character were never entirely popular with readers; nonetheless, her fiction has had ____ influence on critical theory, novel, cinema, and even psychology."
+      ],
+      "opts": [
+       "a studied",
+       "a negligible",
+       "a decisive",
+       "an unmistakable",
+       "an insignificant",
+       "a restorative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Shifting Fortunes take a conventional approach to American union history by simply explaining the reasons behind union growth and decline in the nineteenth and twentieth centuries: it is a chronologically and thematically ____ study and nothing more."
+      ],
+      "opts": [
+       "complicated",
+       "confined",
+       "multifarious",
+       "onerous",
+       "circumscribed",
+       "taxing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "A clever form of diplomacy involves subtly inducing the other party to propose your preference so that your ____ their requests appears as the granting of concession."
+      ],
+      "opts": [
+       "accession to",
+       "inattention to",
+       "subversion of",
+       "abnegation of",
+       "repudiation of",
+       "acquiescence to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Scientist reported last month on a sign of relative solar ____; the solar wind, a rush of charged particles continually spewed from the Sun at a million miles an hour, had diminished to its lowest level in 50 years."
+      ],
+      "opts": [
+       "quiescence",
+       "turbulence",
+       "isolation",
+       "calm",
+       "remoteness",
+       "instability"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

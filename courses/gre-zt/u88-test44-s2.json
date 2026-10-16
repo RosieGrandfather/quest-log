@@ -1,0 +1,200 @@
+{
+ "id": "u88-test44-s2",
+ "title": "Test 44 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 44, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 44 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The inconspicuous location and lack of striking vistas that characterize the villa reflect the ____ aspect of its creator’s personality."
+      ],
+      "opts": [
+       "volatile",
+       "grandiose",
+       "gregarious",
+       "self-effacing",
+       "imperious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "There are far too many (i)____ in the report, such as incorrect date (albeit on (ii)____ points), inconsistency between the text and related tables, and discrepancies between the citations and the references."
+      ],
+      "cols": [
+       [
+        "unsupported generalizations",
+        "stylistic infelicities",
+        "little errors"
+       ],
+       [
+        "numerous",
+        "minor",
+        "perplexing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The physical (i)____ seen in the remains of soldiers who fought in the fifteenth-century battle of Towton is unsurprising, given the (ii)____ origins of the men who took the battlefield that day."
+      ],
+      "cols": [
+       [
+        "decay",
+        "strength",
+        "diversity"
+       ],
+       [
+        "disparate",
+        "unknown",
+        "controversial"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEG",
+     "txt": {
+      "stem": [
+       "Until now, old snapshots and home movies faded and crumbled and were eventually (i)____. Only a few precious mementos were preserved and passed along. But as photography moves into the digital realm, family albums and home videos see capable of (ii)____: our capacity to store them is, for all practical purposes, approaching the infinite. Is such a transformation a good thing? The natural world teaches us that (iii)____ are vital to ecological health. Does a similar principle apply to communal memory?"
+      ],
+      "cols": [
+       [
+        "archived",
+        "discarded",
+        "reproduced"
+       ],
+       [
+        "transmission",
+        "immortality",
+        "revolution"
+       ],
+       [
+        "death and decay",
+        "predator and prey",
+        "reproduction and renewal"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "It may not seem like a big deal for produce distributors to mix together soybeans from different farms, but a growing number of buyers are willing to pay a premium for soybeans the ____ of which is know: they like to know exactly where their food came from."
+      ],
+      "opts": [
+       "purity",
+       "output",
+       "heterogeneity",
+       "origin",
+       "yield",
+       "provenance"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "The book reaffirms the idea that Africans on the continent have not stopped ____ or responding to their own creations; in fact, African creative agents have ushered in their own modern forms rooted in traditional ideas."
+      ],
+      "opts": [
+       "exposing",
+       "detecting",
+       "absorbing",
+       "noticing",
+       "generating",
+       "originating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Flash floods are common in desert regions and were widespread before the evolution of trees and woodland soils; in contrast, flash floods are ____ in woodlands, where floodwaters, impeded by trees, form ponds."
+      ],
+      "opts": [
+       "overshadowed",
+       "redirected",
+       "obscured",
+       "precluded",
+       "mitigated",
+       "abated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

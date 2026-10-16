@@ -1,0 +1,196 @@
+{
+ "id": "u83-test42-s1",
+ "title": "Test 42 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 42, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 42 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The macromolecule RNA is common to all living beings, and DNA, which is found in all organisms except some bacteria, is almost as ____."
+      ],
+      "opts": [
+       "mercurial",
+       "amorphous",
+       "ubiquitous",
+       "manifest",
+       "exiguous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Argument may be an overly (i)____ word to apply to the gossamer contrivance that is A Summer of Humming birds. In what seems a self-conscious (ii)____ of its mascot the book flits from one subject or moment in history to another, following the various whims of its author."
+      ],
+      "cols": [
+       [
+        "archaic",
+        "imprecise",
+        "robust"
+       ],
+       [
+        "repudiation",
+        "emulation",
+        "misrepresentation"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "So (i)____ is the reputation of the country's police for corruption and other forms of (ii)____ that it has become a kind of tradition that every newly appointed police chief pledges to (iii)____ the force."
+      ],
+      "cols": [
+       [
+        "persisted",
+        "paralyzing",
+        "unfounded"
+       ],
+       [
+        "indolence",
+        "incompetence",
+        "criminality"
+       ],
+       [
+        "contradict",
+        "reform",
+        "reward"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Although the parents do not think highly of the educational system “as a whole”, they fail to treat teachers with ____ equally."
+      ],
+      "opts": [
+       "consideration",
+       "veneration",
+       "lucubration",
+       "opprobrium",
+       "reverence",
+       "disdain"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Economic growth has been identified as a ____ for poor countries to eradicate poverty, but this prescription also triggers great environmental concerns."
+      ],
+      "opts": [
+       "panacea",
+       "refuge",
+       "remedy",
+       "heaven",
+       "culprit",
+       "recipe"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "In mathematics, judgments about the validity of proofs are mediated by peer-reviewed journals; to ensure ____, reviewers are carefully chosen by journal editors, and the identity of scholars whose papers are under consideration are kept secret."
+      ],
+      "opts": [
+       "timelessness",
+       "originality",
+       "fairness",
+       "comprehensiveness",
+       "objectivity",
+       "novelty"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The sociologist argued that criminal behavior is an impermanent condition because it is the result of cyclical forces operating through ____ factors, not the manifestation of deeply rooted personal characteristics."
+      ],
+      "opts": [
+       "contingent",
+       "alarming",
+       "circumstantial",
+       "proliferating",
+       "unsustainable",
+       "intensifying"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

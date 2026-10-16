@@ -1,0 +1,200 @@
+{
+ "id": "u82-test41-s2",
+ "title": "Test 41 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 41, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 41 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Baker set a new standard for explaining difficult art in language the public could understand; consequently, her books remain exemplars of ____ in art-historical analysis."
+      ],
+      "opts": [
+       "fashion",
+       "rigor",
+       "lucidity",
+       "erudition",
+       "grandiosity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The (i)____ to disseminate the vast scientific knowledge of our time to nonscientists shows real (ii)____ the extent of achievements humanity is capable of, like allowing a great work of art to molder in a warehouse."
+      ],
+      "cols": [
+       [
+        "failure",
+        "plan",
+        "willingness"
+       ],
+       [
+        "pretentious regarding",
+        "sympathy toward",
+        "indifference to"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Unlike the elected branches of the United States government, where making personal connection with citizens is (i)____ and almost (ii)____ political efficacy, the United States Supreme Court continues to maintain that its members should communicate with the public almost exclusively through formal opinions—and even then through ceremonial rituals that date back to the nineteenth century."
+      ],
+      "cols": [
+       [
+        "frowned upon",
+        "rampant",
+        "disregarded"
+       ],
+       [
+        "a requirement for",
+        "a detriment to",
+        "an irrelevance to"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "Movement from bottom to top, from poor to rich, was rare, even movement from poor to middle class was (i)____. Statistical analysis of trends in occupation, income, and property ownership, Thernstrom wrote, “yielded rather (ii)____ conclusions about social mobility in nineteenth-century America.” So we might expect Thernstrom to be suspicious now of claims that differences in class could be (iii)____ if only the public schools did a better job."
+      ],
+      "cols": [
+       [
+        "an anomaly",
+        "a cinch",
+        "a conjecture"
+       ],
+       [
+        "multifaceted",
+        "pessimistic",
+        "unsophisticated"
+       ],
+       [
+        "distinguished",
+        "misapprehended",
+        "obliterated"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The astronomer admits that his interpretation of so-called Population III stars is ____ at present since no one has yet done any real calculations to see if it holds up under closer scrutiny."
+      ],
+      "opts": [
+       "spurious",
+       "speculative",
+       "predictive",
+       "conjectural",
+       "fabricated",
+       "implausible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Excessive focus on what might have been can cause in us feelings of restlessness and regret, but some scientists are beginning to think that fancying an alternative reality might have ____ effects as well."
+      ],
+      "opts": [
+       "subtle",
+       "adverse",
+       "restorative",
+       "pleasurable",
+       "unfavorable",
+       "tonic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "The territory’s tradition of simple and low taxes, combined with a comparatively easygoing government, has earned it the ____ of its citizens and is widely seen as a main reason for its stunning rise to prosperity."
+      ],
+      "opts": [
+       "opprobrium",
+       "vituperation",
+       "attention",
+       "dismissal",
+       "approbation",
+       "adulation"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

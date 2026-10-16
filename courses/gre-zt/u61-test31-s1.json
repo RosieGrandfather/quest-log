@@ -1,0 +1,196 @@
+{
+ "id": "u61-test31-s1",
+ "title": "Test 31 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 31, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/",
+   "source": "张巍GRE填空机经2000题 · Test 31 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Many creative photographers were delighted to find in instant photography a mode that encouraged them to stop viewing photography as ____ and start viewing it as something they could handle with spontaneity, even derision."
+      ],
+      "opts": [
+       "sacrosanct",
+       "ephemeral",
+       "malleable",
+       "egalitarian",
+       "autonomous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The author clearly supports the causes he writes about, but he is more a narrator than (i)____. Some say he should have included more (ii)____, but he is wise to let the fact speak for themselves. They are complex enough to prompt many kinds of interpretation, and he would bog down the complicated tale if he tried to adjudicate all of their competing claims."
+      ],
+      "cols": [
+       [
+        "a reporter",
+        "an advocate",
+        "an adversary"
+       ],
+       [
+        "statistical data",
+        "analysis of events",
+        "detailed description"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "Schechter is atypically (i)____ the film version of Stephen King’s horror novel The shining because the qualities for which the majority of other critics have approved it (its artful camera work and so on) get in the way of narrative and render the story less, rather than more, (ii)____ than other films of the same genre. This is not (iii)____ view, and we must be grateful to Schechter for putting it forward."
+      ],
+      "cols": [
+       [
+        "unimpressed with",
+        "confused by",
+        "enamored of"
+       ],
+       [
+        "heartbreaking",
+        "comical",
+        "terrifying"
+       ],
+       [
+        "a commonplace",
+        "a superior",
+        "an unfamiliar"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "As the biography makes plain, the scientist led ____ sort of life, rarely remaining in one place for long."
+      ],
+      "opts": [
+       "an enigmatic",
+       "an idiosyncratic",
+       "an itinerant",
+       "a cautious",
+       "a peripatetic",
+       "a circumspect"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "There is a revelation on almost every page of this book, and the author’s prose is ____ in the best possible way: blunt, sweet, off-kilter, and often quite funny."
+      ],
+      "opts": [
+       "eloquent",
+       "austere",
+       "somber",
+       "awkward",
+       "solemn",
+       "ungainly"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The potential reduction in water lost from the proposed reservoir from evaporation is ____ inconsequential: even the minimum projected reduction would save enough water to furnish the needs of a Denver-sized municipality."
+      ],
+      "opts": [
+       "nearly",
+       "comparatively",
+       "scarcely",
+       "rarely",
+       "hardly",
+       "relatively"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "____ the notion that attention is a limited resource, scientists have found lots of evidence that drivers with cell phones drives slower and are more apt to miss important details than drivers who drive solely on the road."
+      ],
+      "opts": [
+       "controverting",
+       "buttressing",
+       "questioning",
+       "bolstering",
+       "perpetuating",
+       "refuting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}
