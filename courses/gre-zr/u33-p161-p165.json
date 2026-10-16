@@ -1,0 +1,176 @@
+{
+ "id": "u33-p161-p165",
+ "title": "阅读 33 · Passage 161–165（5篇 · 5题）",
+ "en": "Reading Comprehension — Passages 161–165",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 161–165",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p161": {
+     "number": 161,
+     "paragraphs": [
+      "Although initially symptomless, glaucoma can eventually cause blindness when not properly treated. Tests under laboratory conditions of the traditional treatment, daily administration of eyedrops, show it to be as effective in relieving the internal ocular pressure that causes glaucoma as is a new laser-surgical procedure. Yet glaucoma-related blindness occurs in a significantly smaller percentage of patients who have had the surgery than of patients for whom only the eyedrop treatment was prescribed."
+     ],
+     "highlights": []
+    },
+    "p162": {
+     "number": 162,
+     "paragraphs": [
+      "In mountainous regions, the timberline is the highest altitude at which trees grow. In the Rocky Mountains, the current timberline is at the altitude above which growing season temperatures remain cooler than 10 degrees centigrade. Fossilized remains of trees that grew 10,000 years ago have been found 100 meters above the current Rocky Mountain timberline. Clearly, therefore, the climate of the Rocky Mountains is cooler now than it was 10,000 years ago."
+     ],
+     "highlights": []
+    },
+    "p163": {
+     "number": 163,
+     "paragraphs": [
+      "Cotton grass, which grows only in arctic regions, has been the only summertime source of protein available to caribou. Caribou that do not get adequate amounts of protein in the summer are unable to reproduce the following year. Rising average temperatures in arctic regions, however, are causing cotton grass to disappear. Therefore, if the warming trend continues, caribou are likely to become extinct."
+     ],
+     "highlights": []
+    },
+    "p164": {
+     "number": 164,
+     "paragraphs": [
+      "Although the percentage of first graders in Almaria who were excellent readers varied little between 1995 and 2010, the percentage of first graders who had considerable difficulty reading their schoolbooks increased markedly during that period. This evidence strongly indicates that the average reading ability of first graders decreased between 1995 and 2010."
+     ],
+     "highlights": []
+    },
+    "p165": {
+     "number": 165,
+     "paragraphs": [
+      "The Minoan civilization flourished on the island of Crete around 2000 B.C. The discovery on Crete of large numbers of bronze implements and the furnaces used in their manufacture shows that the Minoans had a thriving bronze industry. Moreover, many bronze artifacts from this period that are similar in style to those produced on Crete have been found in southern Greece. Hence it is probable that, besides making bronzeware for domestic use, the Minoans exported bronzeware to southern Greece."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p161",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of following, if true, most helps to explain the low rate glaucoma-related blindness among patients who had the surgery?"
+      ],
+      "opts": [
+       "Glaucoma-related blindness is no more common among patients who have had only the surgery than it is among patients who had the surgery after using the eyedrops.",
+       "Doctors rarely recommend the surgery for glaucoma patients who have already started the traditional course of treatment.",
+       "There is no known physiological cause of glaucoma other than increase in pressure inside the eye.",
+       "A significant percentage of the people for whom the eyedrop treatment has been prescribed fail to follow the prescribed daily regimen, because the eyedrops have unpleasant side effects.",
+       "The eyedrops traditionally prescribed to treat glaucoma are normally prescribed to treat other disease of the eye."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p162",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument relies?"
+      ],
+      "opts": [
+       "In the past 10,000 years, the only trees to have grown above today's timberline are the trees whose fossilized remains been found.",
+       "No trees grew 10,000 years ago at altitudes higher than the ones at which fossilized tree remains have been found.",
+       "The fossils are not of species of trees that were able to tolerate cooler growing temperatures than are the species that currently grow near the timberline.",
+       "The Rocky Mountains have not eroded significantly over the past 10,000 years.",
+       "The climate of the Rocky Mountains has never been significantly warmer than during the lifetime of the trees whose fossilized remains have been found."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p163",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "Cotton grass is the only one of the caribou’s food sources that is becoming scarce as temperatures rise in arctic regions.",
+       "Caribou that do not eat enough protein to reproduce do not live as long as caribou that do.",
+       "The warming trend in arctic regions will not enable other plants capable of providing protein to caribou to grow there.",
+       "The caribou is the only animal that depends on cotton grass as a major source of food.",
+       "If the warming trend continues and cotton grass disappears from arctic regions, then cotton grass will be extinct."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p164",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, provides the strongest additional support for the argument?"
+      ],
+      "opts": [
+       "The number of hours devoted to reading activities in first-grade classrooms in Almaria did not vary significantly, on average, between 1995 and 2010.",
+       "The percentage of first graders in Almaria who had difficulty solving arithmetic problems did not increase as much between 1995 and 2010 as did the percentage of first graders who had reading difficulties.",
+       "The number of children in Almaria who were enrolled as first graders decreased steadily between 1995 and 2010.",
+       "The average difficulty of the schoolbooks used in first-grade classrooms in Almaria decreased between 1995 and 2010.",
+       "The average number of schoolbooks used in first-grade classrooms in Almaria increased between 1995 and 2010."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 5,
+     "passage": "p165",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument given?"
+      ],
+      "opts": [
+       "Copper and tin, the main ingredients of bronze, were present in Southern Greece.",
+       "No furnaces dating from the Minoan era and suitable for the manufacture of bronze implements have been found in southern Greece.",
+       "The Minoans exported a great deal of pottery, which was highly valued by other ancient civilizations.",
+       "The fuel needed for Minoan bronzeware furnaces was provided by a variety of local species of hardwood.",
+       "Some of the pieces of bronzeware found on Crete were non-Minoan in origin."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

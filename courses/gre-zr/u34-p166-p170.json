@@ -1,0 +1,176 @@
+{
+ "id": "u34-p166-p170",
+ "title": "阅读 34 · Passage 166–170（5篇 · 5题）",
+ "en": "Reading Comprehension — Passages 166–170",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 166–170",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p166": {
+     "number": 166,
+     "paragraphs": [
+      "Although several ancient cultures practiced mummification, mummies from ancient Egypt are generally more well-preserved than mummies of similar antiquity from other cultures. One possible explanation for this difference is that the mummification techniques or material used by ancient Egyptians were better than those of other cultures. A second, more likely, explanation is that the extremely dry climate of ancient Egypt was largely responsible, given that dryness promotes the preservation of organic remains generally."
+     ],
+     "highlights": []
+    },
+    "p167": {
+     "number": 167,
+     "paragraphs": [
+      "The economy of Colonia has been in recession for the past eight years. Most companies that have not been forced into bankruptcy have survived thanks to the high efficiency of the employees they retained, which helped the companies control costs. In recent months, however, the Colonian economy has begun to recover, and companies are beginning to expand their workforces. Colonia, therefore, will soon experience a drop in average worker efficiency, since ______."
+     ],
+     "highlights": []
+    },
+    "p168": {
+     "number": 168,
+     "paragraphs": [
+      "A hoard of coins recently unearthed at an ancient Carthagian site bear an image of a face in profile with what appears to be a large mole on the cheek. Pointing out that an artist would be unlikely to include such a specific detail in a generalized portrayal of a face, some archaeologists have concluded that these coins portray an actual individual rather than an idealized type. However, this conclusion is unwarranted, since ______."
+     ],
+     "highlights": []
+    },
+    "p169": {
+     "number": 169,
+     "paragraphs": [
+      "People widely believed that the controlled use of fire originated 200,000 years ago with the human species Homo sapiens. However, a site containing a deposit, estimated to be nearly 500,000 years old, consisting of charcoal, burned animal bones, and charred rocks, has recently been found. Although homo sapiens did not exist at that time, this discovery provides no basis to the claim that the controlled use of fire preceded the Homo sapiens, since ______."
+     ],
+     "highlights": []
+    },
+    "p170": {
+     "number": 170,
+     "paragraphs": [
+      "Because of strong overall stylistic similarities, prehistoric cave paintings in El Castillo, Spain and others in Altamira, Spain, were thought to date from the same period. Recent pigment analyses, however, established the Altamira paintings as by far the older and as about the same age as a third group of paintings done in a different overall style. Nevertheless, this case does not prove that stylistic similarities cannot be a reliable indicator of closeness in age, since _____."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p166",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which is the following provide the most support for the argument?"
+      ],
+      "opts": [
+       "The materials used by ancient Egyptians for mummification were not used by any other ancient culture that practiced mummification.",
+       "Some ancient Egyptian mummies are better preserved than other ancient Egyptian mummies form around the same time.",
+       "No ancient people living in very damp areas practiced mummification.",
+       "Bodies from ancient Egyptian tombs dating from before the practice of mummification began are almost as well preserved as ancient Egyptian mummies.",
+       "Ancient mummies discovered in places other than Egypt have typically not been as well protected from the elements as ancient Egyptian mummies were."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p167",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most logically complete the argument?"
+      ],
+      "opts": [
+       "People who have been employed throughout the recession will, no doubt, continue to be employed.",
+       "Colonia is expected to begin importing more goods from other countries.",
+       "Most companies will find that few of the workers available for hiring are as efficient as those they retained during the recession.",
+       "During the recession, workers did not receive any raise in their pay.",
+       "Many companies that were forced into bankruptcy in the past eight years had a fair number of efficient workers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p168",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "Archaeologists cannot determine the actual identity of the individual portrayed just from the likeness that appears on the coins.",
+       "It cannot be established with certainty that Carthagian artists were on the whole less skillful at portraying human face than artists of other cultures.",
+       "None of the other designs of Carthagian coins that have been discovered features a face with a mole on it.",
+       "In ancient times it was quite common for the money circulated in a city or country to include coins that originated in other jurisdictions.",
+       "The relatively soft metal used for Carthagian coin molds sometimes resulted in the production of series of coins with unintended bumps."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p169",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the passage?"
+      ],
+      "opts": [
+       "The use of fire might have originated independently in several different parts of the world.",
+       "It is possible that fire was used much earlier than 500,000 years ago.",
+       "The charred rocks found in the deposit included several different kinds of stone, all of which are common in the immediate vicinity of the site.",
+       "Animal bones could have been discarded in a fire used for purposes such as protection or heat rather than for cooking.",
+       "It is impossible to determine whether a charred deposit dating from so long ago resulted from a fire caused by lightening or from the purposeful use of fire."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p170",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the passage?"
+      ],
+      "opts": [
+       "Experts who knew the results of the pigment analyses reexamined these paintings and found no previously unnoticed stylistic similarities between the Altamira paintings and the paintings in the third group.",
+       "There are certain stylistic features that the Altamira paintings share with all known paintings of their period and do not share with the El Castillo paintings.",
+       "Before dating by pigment analysis was widely practiced, stylistic similarities were the only means of determining whether two prehistoric cave paintings dated from the same period.",
+       "Determining the age of a prehistoric cave painting simply by reference to the age of the pigments used in that painting substitutes technology for artistic judgment.",
+       "There are experts who maintain that the results of the recent pigment analyses leave the striking stylistic similarities between the El Castillo paintings and the Altamira paintings unexplained."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

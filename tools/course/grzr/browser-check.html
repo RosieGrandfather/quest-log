@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>张巍阅读 · 本地检查</title>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/app.css"><link rel="stylesheet" href="/css/study.css">
+<style>body{max-width:960px;margin:24px auto;padding:0 16px}.check-toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}#status{white-space:pre-wrap}select{max-width:100%}</style>
+</head><body><h1>张巍阅读 · 本地检查</h1><p>此页面只使用内存模拟保存，不连接真实账号。</p>
+<div class="check-toolbar"><select id="lesson" aria-label="选择课节"></select><button id="run" type="button">运行40节自检</button></div><p id="status" role="status">加载中</p><div id="root"></div><div id="toast" hidden></div>
+<script>
+// The application Firebase module reads this stub; no SDK or account is loaded.
+window.firebaseConfig={};window.firebase={initializeApp(){},auth(){return{}},firestore(){return{}}};
+</script>
+<script type="module">
+import {qsetHTML,wireQset} from '/js/study/qset.js';
+import {T} from '/js/study/state.js';
+const course=await(await fetch('/courses/gre-zr/course.json')).json();
+const root=document.querySelector('#root'),status=document.querySelector('#status'),select=document.querySelector('#lesson');
+let writes=0;
+T.cols={studyProgress:{doc:()=>({get:async()=>({data:()=>({})}),set:async()=>{writes++;}})}};
+const units=await Promise.all(course.units.map(e=>fetch('/courses/gre-zr/'+e.file).then(r=>r.json())));
+for(const [i,e] of course.units.entries()){const o=document.createElement('option');o.value=i;o.textContent=e.title;select.append(o);}
+function show(i){T.progress={};const u=units[i];root.innerHTML=qsetHTML(u.blocks[0]);wireQset(root,course,u);return u;}
+select.addEventListener('change',()=>{show(Number(select.value));status.textContent='本地预览，不写入真实账号';});
+show(0);status.textContent='已加载40节';
+document.querySelector('#run').addEventListener('click',async()=>{
+ const button=document.querySelector('#run');button.disabled=true;writes=0;
+ let total=0,sentences=0,multi=0,highlights=0;
+ try{
+  for(let lesson=0;lesson<units.length;lesson++){
+   const u=show(lesson),b=u.blocks[0],ss=b.items.filter(q=>q.kind==='ss'||q.answerPending).length;
+   if(root.querySelectorAll('.qreading-passage').length!==5)throw Error(u.id+' shared articles');
+   if(root.querySelector('.qorig,.qimg'))throw Error(u.id+' unexpected screenshot');
+   if([...root.querySelectorAll('.gq-explain')].some(e=>!e.hidden))throw Error('answers visible before submission');
+   for(const [i,q]of b.items.entries()){
+    const sec=root.querySelector('#gq-'+i);
+    if(q.kind==='ss'){
+     const inputs=[...sec.querySelectorAll('.qsentence input')];
+     if(inputs.length!==q.txt.sentences.length)throw Error(u.id+' sentence count');
+     inputs.find(x=>x.value===q.ansText).click();sentences++;
+     if(sec.querySelector('.qne input'))throw Error('sentence question uses text input');
+    }else{
+     if(sec.querySelectorAll('.qtext').length!==q.nopt)throw Error('option display');
+     for(const k of q.ans)sec.querySelector(`input[value="${k}"]`).click();
+     if(q.kind==='mcn')multi++;
+    }
+    total++;
+   }
+   highlights+=root.querySelectorAll('.qsource-highlight').length;
+   root.querySelector('.gbar-submit').click();
+   await new Promise(r=>setTimeout(r,25));
+   if(root.querySelectorAll('.qq.right').length!==b.items.length-ss)throw Error(u.id+' scoring');
+   if([...root.querySelectorAll('.gq-explain')].some(e=>e.hidden))throw Error('answer reveal');
+   if(root.querySelectorAll('.explain').length!==b.items.filter(q=>q.explanation).length)throw Error('review notes');
+   if(root.querySelectorAll('.qsentence input:not(:disabled)').length)throw Error('sentence not locked');
+  }
+  if(total!==413||sentences!==11||multi!==62||writes!==40||!highlights)throw Error('totals');
+  status.textContent=`通过：40节 / 200篇 / ${total}题；${sentences}道选句、${multi}道多选；${writes}次内存保存；高亮正常。`;
+ }catch(e){status.textContent='失败：'+e.message;throw e;}
+ finally{show(0);select.value='0';button.disabled=false;}
+});
+</script></body></html>

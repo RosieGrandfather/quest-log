@@ -1,0 +1,346 @@
+{
+ "id": "u29-p141-p145",
+ "title": "阅读 29 · Passage 141–145（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 141–145",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 141–145",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p141": {
+     "number": 141,
+     "paragraphs": [
+      "As of late 1980s, neither theorists nor large-scale computer climate models could accurately predict whether cloud systems would help or hurt a warming globe. Some studies suggested that a four percent increase in stratocumulus clouds over the ocean could compensate for a doubling in atmospheric carbon dioxide, preventing a potentially disastrous planet-wide temperature increase. On the other hand, an increase in cirrus clouds could increase global warming.",
+      "That clouds represented the weakest element in climate models was illustrated by a study of fourteen such models. Comparing climate forecasts for a world with double the current amount of carbon dioxide, researchers found that the models agreed quite well if clouds were not included. But when clouds were incorporated, a wide range of forecasts was produced. With such discrepancies plaguing the models, scientists could not easily predict how quickly the world’s climate would change, nor could they tell which regions would face dustier droughts or deadlier monsoons."
+     ],
+     "highlights": []
+    },
+    "p142": {
+     "number": 142,
+     "paragraphs": [
+      "Many theorists now doubt that heat loss from Earth’s core and radioactive decay are sufficient by themselves to produce all the energy driving the tectonic plates whose movements have helped shaped Earth’s surface. This leaves a loose end in current geological theory. Herbert Shaw argues that because scientists have underestimated the input of substantial amounts of energy from extraterrestrial impactors (asteroids and comets striking Earth), they have difficulty accounting for the difference between the quantity of energy produced from sources intrinsic to Earth and that involved in plate tectonics. Whereas most geologists have treated the addition of energy through the bombardment of Earth’s surface by such impactors as a process separate and independent from the movement of Earth’s tectonic plates, Shaw asserts that these processes are indivisible. Shaw’s revolutionary “open-system” view recognizes a continuum between terrestrial and extraterrestrial dynamics, whereas modern plate tectonic theory, like the classical geology developed during the nineteenth century, is founded on the view that Earth’s geological features have changed through gradual, regular processes intrinsic to Earth, without reference to unique catastrophic events. Classical geology borrowed a decisive, if unspoken, premise from Newton—the independence of Earth’s processes from any astronomical context."
+     ],
+     "highlights": [
+      "continuum"
+     ]
+    },
+    "p143": {
+     "number": 143,
+     "paragraphs": [
+      "Human impacts on the natural environment during the later part of the Holocene (beginning about 4,000 years ago) complicate investigations into environmental change during that period because the signals produced by human-and climate-induced change are sometimes difficult to separate. For example, in the later Holocene, one indicator of increased aridity due to climate change is an increase in pollen from grasses, as forest vegetation gives way to grassland. Such a change in vegetation could alternatively be attributed to human impact in the form of agricultural development. Examples of such human impact from 4,000 years ago would be small-scale, however, since the broad ecosystem changes brought about by the widespread adoption of agricultural technologies occurred later."
+     ],
+     "highlights": [
+      "Examples of such human impact from 4,000 years ago would be small-scale, however, since the broad ecosystem changes brought about by the widespread adoption of agricultural technologies occurred later."
+     ]
+    },
+    "p144": {
+     "number": 144,
+     "paragraphs": [
+      "Meggers argued that agriculture depends on extracting nutrients from soils into edible crops, so premodern societies in Amazonia could never grow large because underlying soils are impoverished. In Meggers’ view the population size that a culture could reach depended upon the agricultural potential of its environment. Meggers accepted that fish and turtle resources of the Amazon made possible the long riverside villages the explorer Orellana described in 1542, but she dismissed as exaggerated Carvajal’s estimates of tens of thousands of people in those settlements, and she was sure those settlements did not have inland counterparts. Supporting this point, the Omagua, a riverbank people and one of the greatest chiefdoms observed by Carvajal as a member of Orellana’s expedition, regarded hinterland forests as unpopulated wilderness."
+     ],
+     "highlights": [
+      "In Meggers’ view the population size that a culture could reach depended upon the agricultural potential of its environment."
+     ]
+    },
+    "p145": {
+     "number": 145,
+     "paragraphs": [
+      "When selecting a nest, the female of the river blenny (a small fish) appears to be sensitive to both size and orientation. Blennies deposit their eggs preferably in nests under large stones and in nests facing southeast. Southeast-facing nests contain larger egg clutches, a fact that cannot be completely explained by differences in nest stone sizes. Moreover, in a recent study, current speeds upstream of the nest and at the nest entrance were similar for nests facing southeast and those facing in other directions. A southeast-facing entrance per se thus seems to be the specific nest feature preferred by females, rather than the effect of selective positioning on current at nest entrance. The reasons for this preference are unclear, however."
+     ],
+     "highlights": [
+      "current speeds"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p141",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage is primarily concerned with"
+      ],
+      "opts": [
+       "confirming a theory.",
+       "supporting a statement.",
+       "presenting new information.",
+       "predicting future discoveries.",
+       "comparing points of view."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p141",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that one reason the fourteen models described in the passage failed to agree was that"
+      ],
+      "opts": [
+       "they failed to incorporate the most up-to-date information about the effect of clouds on climate.",
+       "they were based on faulty information about factors other than clouds that affect climate.",
+       "they were based on different assumptions about the overall effects of clouds on climate.",
+       "their originators disagreed about the kinds of forecasts the models should provide.",
+       "their originators disagreed about the factors other than clouds that should be included in the models."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p141",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The information in the passage suggests that scientists would have to answer which of the following questions in order to predict the effect of clouds on the warming of the globe?"
+      ],
+      "opts": [
+       "What kinds of cloud systems will form over the Earth?",
+       "How can cloud systems be encouraged to form over the ocean?",
+       "What are the causes of the projected planetwide temperature increase?",
+       "What proportion of cloud systems are currently composed of cirrus clouds?",
+       "What proportion of the clouds in the atmosphere form over land masses?"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p142",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author’s primary purpose is to"
+      ],
+      "opts": [
+       "identify the influences informing a particular geological theory about the processes that have shaped Earth’s surface.",
+       "identify differences between two views of the extraterrestrial impactors and argue that the phenomenon has influenced the development of plate tectonic theory.",
+       "argue that an explanation is based on a dubious evidence and propose an alternative explanation.",
+       "discuss an explanation and place that explanation under theoretical context.",
+       "suggest that apparent discrepancy poses a serious problem for a particular theory that many have believed."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 5,
+     "passage": "p142",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions the “continuum” in order to"
+      ],
+      "opts": [
+       "point out a relationship between plate tectonics and the nineteenth-century geology.",
+       "explain how a theory of Newton’s could influence geology and plate tectonic theory.",
+       "distinguish between two sources of energy that contributed to the development of Earth’s surface.",
+       "point out a similarity between the surface of impactors and the surface of Earth.",
+       "identify a feature of Shaw’s view that deviates from current scientific theories."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p142",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about tectonic theory?"
+      ],
+      "opts": [
+       "It has led scientists to overlook an important contribution to classical geologists from Newton.",
+       "It has been more successful than was classical geology in accounting for heat loss from Earth’s core.",
+       "It is based on premise about Earth’s processes discerned in Newton’s thought.",
+       "It has correctly explained the effects of extraterrestrial impactors on Earth’s surface.",
+       "It corrects a fundamental flaw in classical geology."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p143",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "It provides an example of the kind of problems that often complicate investigations into environmental change.",
+       "It call into question the reliability of the established dates for later Holocene agricultural development.",
+       "It describes the nature of localized agricultural developments during the later Holocene.",
+       "It outlines a hypothesis that draws on evidence discussed earlier in the passage.",
+       "It limits the scope of a particular complication mentioned earlier in the passage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p143",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true regarding environmental changes 4,000 years ago?"
+      ],
+      "opts": [
+       "No localized increases in grass pollen were caused by agricultural development.",
+       "Increases in grass pollen were at least sometimes a reflection of an increase in aridity.",
+       "Wholesale ecosystem changes probably resulted from agricultural development.",
+       "Any small-scale changes occurring then would not be detectable now.",
+       "Environmental change helped induce the adoption of agricultural technologies."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 9,
+     "passage": "p144",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context of the passage the highlighted sentence serves to"
+      ],
+      "opts": [
+       "explain the broader rationale for a conclusion described in the preceding sentence.",
+       "suggest some of the drawbacks of the riverbank location of the villages described in the following sentence.",
+       "acknowledge information that appears to undermine a description attributed to Orellana.",
+       "introduce a principle that appears to be contradicted by the agricultural development of premodern Amazonia.",
+       "give a reason for an upward revision in earlier estimates for premodern Amazonia."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 10,
+     "passage": "p144",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "From the passage it can be inferred that Omagua depended on"
+      ],
+      "opts": [
+       "overland transport to communicate between villages.",
+       "foraging inland to obtain foodstuffs not available locally.",
+       "some form of fertilization to boost agricultural production.",
+       "fish and turtles for at least part of their diet.",
+       "trade with other peoples for some raw materials."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p145",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is concerned with which of the following?"
+      ],
+      "opts": [
+       "determining the different ways in which current speeds can influence the nesting preferences of female river blennies",
+       "establishing nest orientation as a determining factor in egg laying among female river blennies",
+       "questioning the importance of nest size as an influence on egg laying among female river blennies",
+       "comparing the features of female river blennies that face southeast with those of nests facing in other directions",
+       "examining how female river blennies determine the relative importance of nest size versus nest orientation"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 12,
+     "passage": "p145",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage considers “current speeds” in order to"
+      ],
+      "opts": [
+       "identify a factor that undermines the significance of nest stone size for female river blennies.",
+       "indicate one possible advantage of river blenny nests that do not face southeast.",
+       "eliminate a possible explanation for a nest orientation tendency among female river blennies.",
+       "indicate why female river blennies are sensitive to both size and orientation of possible nests.",
+       "suggest a reason why many female blennies prefer southeast-facing nests."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

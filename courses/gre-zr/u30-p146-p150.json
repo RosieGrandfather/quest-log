@@ -1,0 +1,345 @@
+{
+ "id": "u30-p146-p150",
+ "title": "阅读 30 · Passage 146–150（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 146–150",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 146–150",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p146": {
+     "number": 146,
+     "paragraphs": [
+      "The editors of the essay collection Romantic biography tell us repeatedly that biography is an invention of the Romantic period in British literature (late eighteenth and early nineteenth centuries), yet we are never shown that process of invention motion. Hazlitt, the most prominent example of the Romantic biographer, is almost invisible. The Romantic period was not just the period in which biography was invented—or, rather, the period in which some of its informing principles were invented, since biography could just as easily be said to have originated in the scandalous memoirs that formed part of the pre-Romantic culture of the novel. It was also the period in which biography, through its sheer ubiquity, became an object of major ideological significance within British culture."
+     ],
+     "highlights": [
+      "scandalous memoirs"
+     ]
+    },
+    "p147": {
+     "number": 147,
+     "paragraphs": [
+      "Our study revealed that nest-guarding long-tailed skinks (a species of lizard) homed (returned to their nests) more successfully when displaced shorter distances. There are two reasons why homing success rates decreased with increasing displacement distance. One possibility is that females were simply displaced too far to find their way home. However, this is unlikely given that some individuals managed to find their way home from each distance we used. The second possibility deals with trade-offs between the risks associated with making a long return trip and the benefits of returning. Animals should expend energy only when the associated costs are low. As reptiles increase the time spent moving, their daily energy expenditure increases dramatically. The energetic costs of returning home and the chances that the eggs will have been preyed upon during the return trip both increase substantially as displacement distance increases. For example, the 130 hours (5.5 days) that female skinks spent returning from a distance of 300 meters is sufficient for an egg-eating snake to locate and prey upon the entire clutch. However, females with larger clutches were more likely to home at distances over 50 meters. For these females, the relative fitness benefits associated with having more eggs successfully hatch may outweigh the energetic costs of returning to a nest site, even if the nest may have already been preyed upon."
+     ],
+     "highlights": [
+      "However, this is unlikely given that some individuals managed to find their way home from each distance we used."
+     ]
+    },
+    "p148": {
+     "number": 148,
+     "paragraphs": [
+      "In her book Fisher Row, Mary Prior examined a long swath of time covering the wax and wane of the occupational community of bargemen who lived canalside in Oxford, England. In Prior’s view, longtime spans are important because otherwise historians generalize too readily. Pamela Sharpe consciously followed Prior’s lead in her study of over 400 years of early modern English lace making. Early modern lace making has often been considered separately from the mechanized lace trade of the nineteenth century, but as Sharpe shows, a longer vision points to more continuity than change. The sort of time frame advocated by Prior makes the circumstances of the survival of handworked lace into the second half of the nineteenth century easier to comprehend."
+     ],
+     "highlights": []
+    },
+    "p149": {
+     "number": 149,
+     "paragraphs": [
+      "Researchers suspect that meteorites (particles of matter that fall to Earth’s surface from space) are pieces of asteroids, the many minor planets primarily inhabiting the region between Mars and Jupiter called the asteroid belt. The most common meteorites are ordinary chondrites—rocks containing tiny flecks of metal. By analyzing the spectrums of sunlight reflected by asteroids to determine the asteroids’ chemical composition, researchers have found that most of the brighter asteroids contain the same silicates and other compounds that dominate chondrites. These silicaceous, or S-type, asteroids are the most abundant type in the inner asteroid belt, the part of the asteroid belt from which objects are most likely to escape and travel to Earth. However, S-type asteroids reflect red and infrared light much better than they reflect green, blue, and violet light, suggesting that they have a higher metal content than do ordinary chondrites. This has led at least one researcher to posit that meteorites come from other types of asteroids that are too small and too dim to be detected. However, S-type asteroids could be ordinary chondrites that have been weathered by the effects of the space environment, making them seem redder and more metallic than they really are."
+     ],
+     "highlights": []
+    },
+    "p150": {
+     "number": 150,
+     "paragraphs": [
+      "French-born avant-garde composer Edger Varese (1883-1965) coined the phrase “organized sound” to distinguish his bold sonic experiment, which called for howling sirens and electronically taped ambient noises from conventional music. Many of his contemporaries would not have accepted his works as music at all. But Varese didn’t regard himself as an iconoclast. He traced his heritage to music’s ancient practices, and professed admiration for the music of the Gothic Middle Ages. This seems appropriate, for the medieval composers shared his view of music as a technical unfitting of sound. Unlike the nineteenth-century Romantics, they would have had no problem with a discussion of music in terms of acoustic frequencies and intensities, rather than in terms of particular emotions associated with them."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p146",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage mentions the “scandalous memoirs” that were written prior to the Romantic period primarily in order to"
+      ],
+      "opts": [
+       "indicate an alternative account of the origins of biography.",
+       "compare these memoirs to Romantic biography.",
+       "explain how biography became ubiquitous in British culture.",
+       "question the ideological significance accorded to biography.",
+       "suggest that biographies were not as popular as memoirs."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p146",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, biography attained great significance within British culture during the Romantic period because biographies"
+      ],
+      "opts": [
+       "were associated with scandal.",
+       "were easy to read and comprehend.",
+       "were so widespread in Britain at the time.",
+       "challenged conventional British ideologies.",
+       "contributed to the development of the novel."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p147",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "question the validity of research on nest-guarding behavior in long-tailed skinks.",
+       "consider explanations for a finding regarding long-tailed skinks.",
+       "discuss the importance of homing for long-tailed skinks.",
+       "describe the relationship between clutch size and homing success in long-tailed skinks.",
+       "identify the benefits of a behavior common among long-tailed skinks."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p147",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The claim in the highlighted sentence assumes which of the following about the individuals that managed to find their way home from each distance?"
+      ],
+      "opts": [
+       "They were less able to detect egg-eating predators than were the other long-tailed skinks studied.",
+       "They were more averse to risk than were the other long-tailed skinks studied.",
+       "They expended less energy when homing than did the other long-tailed skinks studied.",
+       "They did not possess better homing skills than did the other long-tailed skinks studied.",
+       "They had significantly smaller clutches than did the other long-tailed skinks studied."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 5,
+     "passage": "p147",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The “second possibility” implies which of the following as a possible explanation for the female long-tailed skinks that failed to home from distances over 50 meters ?"
+      ],
+      "opts": [
+       "They had relatively small clutches.",
+       "They were unable to find their way home.",
+       "They lacked sufficient energy to home successfully.",
+       "They had male long-tailed skinks guarding their clutches.",
+       "They detected evidence of egg-eating snakes In the vicinity of their nests."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p148",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "highlighting similarities in the conclusions reached by two historians.",
+       "calling attention to the unique issues associated with studying occupational communities.",
+       "criticizing the overly simplified findings of historians regarding a series of events.",
+       "pointing to the advantages of a particular historical approach.",
+       "revealing new evidence regarding a misunderstood era."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p148",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select the sentence that mentions an instance of an approach that is at odds with the one taken by Prior and Sharpe."
+      ],
+      "pass": [
+       "In her book Fisher Row, Mary Prior examined a long swath of time covering the wax and wane of the occupational community of bargemen who lived canalside in Oxford, England. In Prior’s view, longtime spans are important because otherwise historians generalize too readily. Pamela Sharpe consciously followed Prior’s lead in her study of over 400 years of early modern English lace making. Early modern lace making has often been considered separately from the mechanized lace trade of the nineteenth century, but as Sharpe shows, a longer vision points to more continuity than change. The sort of time frame advocated by Prior makes the circumstances of the survival of handworked lace into the second half of the nineteenth century easier to comprehend."
+      ],
+      "sentences": [
+       "In her book Fisher Row, Mary Prior examined a long swath of time covering the wax and wane of the occupational community of bargemen who lived canalside in Oxford, England.",
+       "In Prior’s view, longtime spans are important because otherwise historians generalize too readily.",
+       "Pamela Sharpe consciously followed Prior’s lead in her study of over 400 years of early modern English lace making.",
+       "Early modern lace making has often been considered separately from the mechanized lace trade of the nineteenth century, but as Sharpe shows, a longer vision points to more continuity than change.",
+       "The sort of time frame advocated by Prior makes the circumstances of the survival of handworked lace into the second half of the nineteenth century easier to comprehend."
+      ],
+      "highlights": [],
+      "sentenceParagraphLengths": [
+       5
+      ]
+     },
+     "kind": "ss",
+     "ansText": "Early modern lace making has often been considered separately from the mechanized lace trade of the nineteenth century, but as Sharpe shows, a longer vision points to more continuity than change.",
+     "sourceAnswer": "D    Early modern..."
+    },
+    {
+     "n": 8,
+     "passage": "p149",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "discuss the defining characteristics of chondrites.",
+       "compare the spectrums of light reflected by chondrites and S-type asteroids.",
+       "chronicle changes in the accepted interpretation of data concerning the chemical composition of asteroids.",
+       "weigh evidence for and against a particular hypothesis on the origin of meteorites.",
+       "question a current theory on the chemical composition of the most common type of meteorite."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 9,
+     "passage": "p149",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage most likely mentions that the inner asteroid belt is “the part of the asteroid belt from which objects are most likely to escape and travel to Earth” in order to"
+      ],
+      "opts": [
+       "distinguish between two important sources of meteorites that travel to Earth.",
+       "suggest that S-type asteroids are likely to be a source of meteorites.",
+       "call into question an assumption about the compounds that dominate chondrites.",
+       "explain why S-type asteroids do not reflect green, blue, and violet light as well as they reflect red and infrared light.",
+       "provide evidence to support an assertion about the abundance of S-type asteroids."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 10,
+     "passage": "p149",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that one reason for considering S-type asteroids to be likely sources of meteorites is that S-type asteroids"
+      ],
+      "opts": [
+       "are brighter than other types of asteroids.",
+       "are the most common type of asteroid throughout the asteroid belt.",
+       "reflect red and infrared light better than they reflect green, blue, and violet light.",
+       "contain the same silicates and other compounds that dominate chondrites.",
+       "are the only type of asteroid found in the inner asteroid belt."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p150",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would be most likely to agree with which of the following statements about Varese’s approach to composition?"
+      ],
+      "opts": [
+       "It ultimately influenced many works produced by Varese’s contemporaries.",
+       "It made him an iconoclast.",
+       "In some significant ways, it resonated with older models of music theory.",
+       "When compared to that used by composers of earlier eras, it was less systematic.",
+       "It used standard orchestral instruments in unusual ways."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 12,
+     "passage": "p150",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author alludes to the howling sirens featured in some of Varese’s works to"
+      ],
+      "opts": [
+       "identify a critical influence on Varese’s approach composition.",
+       "challenge accepted notions concerning the use of nontraditional instrumentation.",
+       "illustrate a similarity between Varese’s work and that of medieval composers.",
+       "emphasize the extent to which Varese’s work was innovative and unusual.",
+       "suggest that conventional music tends to employ a limited sound palette."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

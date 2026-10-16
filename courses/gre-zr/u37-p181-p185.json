@@ -1,0 +1,267 @@
+{
+ "id": "u37-p181-p185",
+ "title": "阅读 37 · Passage 181–185（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 181–185",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 181–185",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p181": {
+     "number": 181,
+     "paragraphs": [
+      "Although Klezmer—a style of traditional Jewish folk music from Eastern Europe—grew from very diverse musical traditions, Roma (Gypsy), Greek, and Romanian elements eventually became so predominant that some scholars refused to recognized klezmer as a separate genre. If one listens closely, however, one can learn to distinguish the sound of a Klezmer interpretation from other related performance styles. Yiddish-speaking Jews routinely use several uniquely descriptive words to identify the sounds found in the Jewish approach to music. Krekht (Yiddish for “groan”) refers to a wailing sound reminiscent of weeping, tshok refers to a laugh-like instrumental sound; and a kneytsh is a sob-like “catch”. These and other elements typical of klezmer are also found in other forms of Jewish musical expression, including cantorial music."
+     ],
+     "highlights": [
+      "some scholars"
+     ]
+    },
+    "p182": {
+     "number": 182,
+     "paragraphs": [
+      "Samples taken from the ice of glaciers show that during the last ice age there was far more dust in the atmosphere than there is now. Since greater amounts of dust in the atmosphere would result in less sunlight’s reaching the Earth’s surface, it is likely that the large amount of dust then present helped maintain low global temperatures and thus prolonged the ice age."
+     ],
+     "highlights": []
+    },
+    "p183": {
+     "number": 183,
+     "paragraphs": [
+      "Climatologists observed in 1964 that a slow warming of the surface of the North Atlantic in the 1910s and 1920s could well have been driven by a surge of warm water up the Gulf Stream. This Atlantic warming accompanied a global warming that by the 1940s had produced the highest global temperatures to that point in the records. It was so warm that statistical techniques used in the 1990s to detect the “fingerprint” of greenhouse warming in climate records also show the 1940s having greenhouse warming. However, no one believes enough greenhouse gases had reached the atmosphere by then to cause much of a human-induced warming. That inconsistency has led greenhouse contrarians to claim that any recent warming could be natural rather than anthropogenic."
+     ],
+     "highlights": [
+      "contrarians"
+     ]
+    },
+    "p184": {
+     "number": 184,
+     "paragraphs": [
+      "The area of literary rights is confusing for scholars whose work focuses on collaborative materials particularly materials of earlier Native American writers. Questions arise over authorship and the determination of literary heirs. For example, recognition of heirs turns on the European-based assumption of the private ownership of a written statement. The first person to writer down an oral tale can become legally recognized as the owner of that version of the story, just as the first chemist to patent a tribal healing practice becomes the owner of the resulting chemical formula. This instance on private rather than collective ownership, derived from the nineteenth-century notion of the autonomous, creative, authorial voice, flies in the face of those who come from an oral tradition. Thus a scholar concerned with finding literary heirs in order to afford them the benefits of copyright laws must in so doing accede to legal concept of ownership that has been used to appropriate knowledge from community-based cultures."
+     ],
+     "highlights": []
+    },
+    "p185": {
+     "number": 185,
+     "paragraphs": [
+      "In Stanton the average number of people injured per automobile accident is consistently higher for accidents involving a taxicab than for those not involving a taxicab. Although all Stanton taxicabs are equipped with passenger seat belts, taxicab drivers report that passengers tend not to use them. It is likely, therefore, that if taxicab passengers were required to use seat belts, the number of people injured per accident would soon be no higher for taxicabs than for other automobiles."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p181",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about Roma, Greek, and Romanian music?"
+      ],
+      "opts": [
+       "They are frequently difficult to distinguish from one another.",
+       "They have had a significant influence on klezmer music.",
+       "They were not recognized as separate genres by certain scholars.",
+       "They contain elements analogous to the tshok.",
+       "They were ignored by Yiddish-speaking Jewish musicians."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p181",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author would be likely to agree with the highlighted “some scholars” about whether"
+      ],
+      "opts": [
+       "any traditions other than Roam, Greek and Romanian contributed to the development of klezmer",
+       "the degree of resemblance between klezmer and the Roma, Greek, and Romanian traditions is enough to preclude klezmer’s being a separate musical genre",
+       "such musical devices as the krekhts are found throughout Jewish musical expression"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p182",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weaken the argument?"
+      ],
+      "opts": [
+       "Large amount of dust in the atmosphere would tend to keep heat from the Sun that reached the Earth’s surface from escaping into outer space.",
+       "The glacial samples show that during the period between the two most recent ice ages the level of atmospheric dust was far lower than it was during either of ice ages.",
+       "Volcanic eruptions in the recent past have released sufficient dust to cause detectable changes in global temperature patterns.",
+       "The amount of dust in the atmosphere was significantly greater in the middle of the last ice age than at the end.",
+       "Sunlight is the main heat source of the Earth’s surface."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p183",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the “contrarians” mentioned in the passage would agree with which of the"
+      ],
+      "opts": [
+       "The extent of the global warming that occurred between the 1940s and the 1990s has been exaggerated by some climatologists.",
+       "Changes in global temperatures in the 1990s are a part of a trend that is distinct from any trend that may have existed in the 1910s and 1920s.",
+       "Recent changes in global temperature may not be the direct result of human activity."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p183",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following statements about the global warming observed in the 1940s is implied by the passage?"
+      ],
+      "opts": [
+       "It was part of a climatic change that can be traced to the 1910s and 1920s.",
+       "Its cause was not apparent to climatologists until the 1990s.",
+       "It is doubtful that it was caused primarily by greenhouse gases produced by humans."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 6,
+     "passage": "p184",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The example of a chemical patent is used to illustrate a"
+      ],
+      "opts": [
+       "legal mechanism by which community knowledge can be turned into private property",
+       "technological development that goes beyond the scope of nineteenth-century science",
+       "government action that creates a temporary form of intellectual property",
+       "kind of expression that exists only in written, rather than oral, form",
+       "way in which medical innovation can be rewarded"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p184",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage focuses on a contrast between"
+      ],
+      "opts": [
+       "patents and copyrights as ways of protecting ownership",
+       "oral and written as means of artistic expression",
+       "literary heirs and authors of literary works as creative thinkers",
+       "individual and collective ownership of cultural products",
+       "contemporary and nineteenth-century views of authorship"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p184",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, the notion of a literary heir depends on a presupposition that can be traced to"
+      ],
+      "opts": [
+       "a confusion over the purposes of collaboration",
+       "a misunderstanding between people from different cultures",
+       "a nineteenth-century view of authors as creative individuals",
+       "oral traditions that hand down knowledge through generations",
+       "scholars who first recorded oral tales in written form"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p185",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true about Stanton, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "The number of automobile accidents has been declining in recent years.",
+       "Since taxicabs are driven more miles annually than most other vehicles, they are more likely to be in an accident during any given year than is the average vehicle.",
+       "There are more taxicabs in operation, relative to the overall number of motor vehicles, than there are in most cities of Stanton’s size.",
+       "The number of people, including the driver, who occupy a vehicle is generally greater for taxicabs than for other vehicles.",
+       "Not all passengers in automobiles other than taxicabs use seat belts."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,367 @@
+{
+ "id": "u27-p131-p135",
+ "title": "阅读 27 · Passage 131–135（5篇 · 13题）",
+ "en": "Reading Comprehension — Passages 131–135",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 131–135",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p131": {
+     "number": 131,
+     "paragraphs": [
+      "Animals live longer when their calorie intake is restricted to two-thirds of what is considered normal for their species. Animals so restricted are also generally healthier: most disease, including cancer, diabetes, and neurodegenerative illness, are forestalled. This phenomenon was long attributed to a simple slowing of metabolism (cells’ production of energy from fuel molecules) and consequent reproduction of its toxic by-products in response to less food. In fact, however, calorie restriction does not slow mammalian metabolism, and in yeast and worms, metabolism is both sped up and altered. Some scientists now theorize that calorie restriction is a biological stressor that, like natural food scarcity, induces a more complex defensive response, which in mammals includes changes in cellular defenses and repair."
+     ],
+     "highlights": [
+      "This phenomenon was long attributed to a simple slowing of metabolism",
+      "in yeast and worms, metabolism is both sped up and altered."
+     ]
+    },
+    "p132": {
+     "number": 132,
+     "paragraphs": [
+      "The “deindustrialization” thesis of Bluestone and Harrison asserts that the replacement of domestic with foreign manufacturing begun by United States corporations in the late 1960s resulted in a “hollowing out” of American industry, whereby workers displaced from manufacturing jobs through massive plant closings found themselves moving more or less permanently into lower-paying, less secure jobs or into unemployment. Critics of the deindustrialization thesis have argued that new service and high-technology sectors of the United States economy have recently created a substantial number of jobs. While these critics do not deny the painful aspects of this transition from an industrial to a service- and information-based economy, they argue that it will be short-term, and a necessary evil if the United States is to have long-term increases in living standards. Critics of the emerging economy, however, point to disturbing evidence of an “hourglass” effect: a shrinking middle tier of managerial and blue-collar unionized workers and consequent polarization of incomes. The emergence of a technical and financial elite, they argue, has brought forth a host of low-wage jobs to service the new economy, and it is this service sector that many ex-industrial workers must seek."
+     ],
+     "highlights": [
+      "Critics",
+      "“hourglass” effect:"
+     ]
+    },
+    "p133": {
+     "number": 133,
+     "paragraphs": [
+      "Some historians question the widely held belief that continually improving education led to gradual African American empowerment in the southern United States from the late nineteenth century through the mid-twentieth century. They note that the development of Black educational institutions in the segregated South was never rapid or steady: disparities between Black and White schools sometimes grew in the early decades of the twentieth century. And African Americans’ educational gains did not bring commensurate economic gains. Starting in the 1940s, even as Black and White schools in the South moved steadily toward equality, Black southerners remained politically marginalized and experienced systematic job discrimination. Although Black schools had achieved near parity with White schools in per capita spending and teachers’ salaries by 1965, African Americans’ income still lagged behind that of Whites. Nonetheless, educational progress did contribute toward economic and political empowerment. African Americans’ campaigns to support Black schools fostered a sense of community, nurtured political determination, and often increased literacy. More significantly, politically outspoken Black newspapers achieved record circulation during the 1940s, just as the literacy rate among African Americans approached 90 percent. Finally, the leadership of the Civil Rights movement of the 1960s was composed largely of graduates of Black colleges."
+     ],
+     "highlights": [
+      "Nonetheless, educational progress did contribute toward economic and political empowerment."
+     ]
+    },
+    "p134": {
+     "number": 134,
+     "paragraphs": [
+      "An influential early view held that ecosystems contain niches for a limited number of species and that competition for resources among species—whether native or nonnative invading ones —determines ecosystems’ species composition. However, factors other than competition often help explain invading species’ success. For example, the American grey squirrel, often cited as a classic example of competitively superior invading species, was introduced in England in 1876 and now thrives, while the native red squirrel population has declined. Although scientists have found gray squirrels to be more efficient foragers than red ones, they also note that even before the gray squirrel’s arrival, Britain’s red squirrel populations had a periodic tendency to die out, only to be subsequently reintroduced. Furthermore, many gray squirrels are silent carriers of a disease fatal to red squirrels."
+     ],
+     "highlights": []
+    },
+    "p135": {
+     "number": 135,
+     "paragraphs": [
+      "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Chicano population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and throughout college campuses. Perhaps the biggest difference, however, is the process. In earlier twentieth-century Mexico, murals resulted from the vision of individual artists. But today’s murals are characteristically the products of artists working with local residents on design and creation.",
+      "Such community engagement is characteristic of the Chicano art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Chicanos in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as the public-relations arm of the Chicano sociopolitical movement."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p131",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the passage, the function of the highlighted portion (in yeast... and altered) is to"
+      ],
+      "opts": [
+       "provide specific examples of organisms whose longevity does not increase in response to calorie restriction.",
+       "illustrate the probable means by which organisms placed on a calorie-restriction diet compensate for the reduction in available food-based level.",
+       "suggest the mechanism that is responsible for prolonging the life of organism whose calorie intake is significantly reduced.",
+       "give an example that explain why scientists’ thinking about the physiological effects of calorie restriction changed.",
+       "distinguish the different ways that mammalian and non-mammalian metabolisms respond to significant reductions in calorie intake."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p131",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about the explanation mentioned in the highlighted text (This phenomenon... of metabolism)?"
+      ],
+      "opts": [
+       "There are empirical findings that conflict with a presumption of the explanation.",
+       "The explanation predicts that the effect of calorie restriction on longevity will be the greatest for the species with the highest rate of metabolism.",
+       "The explanation predicts that the effects of calorie restriction will be uniformly positive."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p132",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The purpose of the passage is to"
+      ],
+      "opts": [
+       "analyze the events that contributed to an economic phenomenon.",
+       "present different views on the nature and impact of an economic phenomenon.",
+       "distinguish between the short-term and long-term effects of an economic phenomenon.",
+       "challenge a dominant theory about how to solve the problems created by an economic phenomenon.",
+       "present new evidence to suggest that an economic phenomenon is more complex than had previously been believed."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p132",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would most tend to weaken the deindustrialization thesis of Bluestone and Harrison?"
+      ],
+      "opts": [
+       "A survey of the spouses of former industrial workers reveals a significant increase in the number of working spouses since the mid-1960s.",
+       "Data from the most recent United States census show that fewer individuals list their occupation as industrial worker than in the census from ten years earlier.",
+       "A random survey of United States consumers indicates that a majority of those surveyed would prefer to buy United States-manufacturing goods if given the opportunity.",
+       "A recent study indicates that large numbers of former industrial workers have retrained and found employment as skilled, highly-paid computer workers.",
+       "Interviews with representatives at major agencies for temporary employment in the United States suggest that they value the skills of former industrial workers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 5,
+     "passage": "p132",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the highlighted “critics” believe which of the following about “hourglass” effect?"
+      ],
+      "opts": [
+       "It involves the relegation of industrial workers to less desirable jobs.",
+       "It requires that workers make short-term sacrifices to achieve long-term gains.",
+       "It affects non-unionized workers more strongly than it does unionized workers.",
+       "It represents an increase in unemployment for those in the service sector.",
+       "It threatens the status of the technological and financial elite."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p133",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage refers to the fact that “disparities between Black and White schools sometimes grew in the early decades of the twentieth century” most likely in order to"
+      ],
+      "opts": [
+       "support the argument that the economic struggles of southern Blacks were largely due to educational inequalities.",
+       "give an example of the differences between Black schools in the early part of the twentieth century and Black schools starting in the 1940s.",
+       "illustrate the unevenness of the progress made by Black schools in the southern United States.",
+       "help explain why Black remained politically marginalized and experienced systematic job discrimination in the segregated South.",
+       "provide evidence that educational progress was a precondition for economic progress in the segregated South."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p133",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the purpose of the highlighted sentence?"
+      ],
+      "opts": [
+       "It clarifies a point introduced in the preceding sentence.",
+       "It reiterates a point introduced in the first sentence of the passage.",
+       "It questions the accuracy of some of the evidence used to support the argument of the historians.",
+       "It introduces a perspective that runs contrary to the view of those who endorse the “belief.”",
+       "It qualifies the interpretation made by the historians."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p133",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the Civil Rights movement?"
+      ],
+      "opts": [
+       "It gave rise to a rapid increase in the number of Black newspapers published in the South.",
+       "Its political effectiveness was greatly enhanced by the increased circulation of Black newspapers.",
+       "Its leadership benefited from improvements in education for African Americans.",
+       "It was the force primarily responsible for increasing per capita spending in Black schools.",
+       "It was responsible for changing many historians’ view of the relation between education and African American empowerment."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p134",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage mentions the efficiency with which gray squirrels forage primarily in order to"
+      ],
+      "opts": [
+       "identify a factor that explains a certain phenomenon.",
+       "call attention to an inconsistency in a particular theory.",
+       "suggest that competition cannot be the factor responsible for a particular outcome.",
+       "acknowledge a fact that appears to support a view that the author intends to qualify.",
+       "cite evidence that is not consistent with an early influential view about species competition."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p134",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage would be most likely to agree with which of the following statements about the “early view?”"
+      ],
+      "opts": [
+       "It reflects a mistaken assumption about the means by which nonnative species are introduced into ecosystems.",
+       "Its basic premise is shown to be valid by the effect of American gray squirrels on Britain’s red squirrel population.",
+       "It presents a simplistic picture of the means by which species composition within ecosystems is determined.",
+       "It can effectively explain the formation of ecosystems that contain few species but cannot adequately account for the formation of complex ecosystems.",
+       "It understates the importance of competition as a factor determining species composition within ecosystems."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 11,
+     "passage": "p135",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "argue for the superiority of a style of art.",
+       "consider the impact of an art movement.",
+       "describe the political content of a certain works of art.",
+       "detail the characteristic style of an art movement.",
+       "place an art movement in its historical context."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 12,
+     "passage": "p135",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following statements about the “cultural centers” is true?"
+      ],
+      "opts": [
+       "They were the venue where many later leaders of the Chicano civil rights movement first became politically active.",
+       "Though later widespread, they originated in San Francisco area.",
+       "Springing up in a number of communities, they initially had largely apolitical goals centered on art instruction.",
+       "They constituted the nucleus from which the Chicano civil rights movement originated.",
+       "Founded by artists, they provided support for the Chicano civil rights movement."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 13,
+     "passage": "p135",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the relationship between the first paragraph and the second paragraph of the passage?"
+      ],
+      "opts": [
+       "The first focuses on the mural artists as individuals; the second, on their actions as a group.",
+       "The first compares the mural revival with an earlier artistic movement; the second describes the context contemporary to the revival.",
+       "The first defines the revival by distinguishing it from an earlier artistic movement; the second addresses the political goals of both the revival and its forerunner.",
+       "The first presents an apparently plausible account of the relationship between the revival and is forerunner, the second calls that account into question.",
+       "The first is concerned with the artistic aims and ambitions behind the San Francisco murals; the second considers their political significance."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,273 @@
+{
+ "id": "u15-p071-p075",
+ "title": "阅读 15 · Passage 71–75（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 71–75",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 71–75",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p71": {
+     "number": 71,
+     "paragraphs": [
+      "In a review of Lomborg’s The Skeptical Environmentalist, Lovejoy challenges Lomborg’s assertion that environmentalists' projections of species extinction due to habitat loss are overly pessimistic. For example, where Lomborg cites the lack of large numbers of recorded extinctions in the Brazilian Atlantic Forest despite the region's reduction to approximately ten percent of its original area, Lovejoy notes both lack of field biologists in the region to record species or their extinctions and an abundance of evidence suggesting that if the forest remains so reduced and fragmented, it will lose a sizable fraction of the species that can survive—for the moment—in their decimated habitats. Additionally, where Lomborg argues that few species became extinct when deforestation reduced the eastern forests of the United States to one or two percent of their original area, Lovejoy points out that only old-growth forests shrank to that extent: total forest cover never fell below about 50 percent, allowing much biodiversity to survive as new-growth forest returned."
+     ],
+     "highlights": [
+      "total forest cover"
+     ]
+    },
+    "p72": {
+     "number": 72,
+     "paragraphs": [
+      "Agricultural historians theorize that farming originated when the pressure of growing populations or shrinking resources imposed the need to find new species to adapt for food. This hypothesis is supported by impressive work by anthropologists who have observed transitions to agriculture that happened in recent times. But, as an explanation for why agriculture arose in the first place, it seems ill matched to the facts of chronology. Extinction —or even significant diminutions—in hunter’s prey species cannot be shown to have happened in any of the right places at any of the right times. Populations certainly grew in the most dedicated farming culture—but, in most places, more probably as a consequence than as a cause."
+     ],
+     "highlights": [
+      "Agricultural historians",
+      "facts of chronology."
+     ]
+    },
+    "p73": {
+     "number": 73,
+     "paragraphs": [
+      "Published interviews with artists are compelling because they offer glimpses of an artist’s personality and idiosyncrasies. However, as in the case of artist Andy Warhol, this perception of immediacy can be misleading, for interviews are highly contrived public performances, providing ample opportunity for self-promotion. Moreover, interviews are often heavily edited for publication, and their apparent spontaneity may be as false as that of a posed photograph. Nonetheless, such conversations remain an indispensable resource for scholars of art history, as they often differ qualitatively from other types of texts written by or about artists. Because they retain forms peculiar to spoke language, such as non sequiturs, anecdotes, and digressions, interviews with artists make unique contributions to art history."
+     ],
+     "highlights": [
+      "Because they retain forms peculiar to spoke language, such as non sequiturs, anecdotes, and digressions, interviews with artists make unique contributions to art history."
+     ]
+    },
+    "p74": {
+     "number": 74,
+     "paragraphs": [
+      "The damage that trucks do to highways escalates dramatically with the weight borne per axle. New regulations increase the maximum permitted vehicle weight; these regulations will therefore allow onto the highway trucks capable of doing even more damage than those currently permitted."
+     ],
+     "highlights": []
+    },
+    "p75": {
+     "number": 75,
+     "paragraphs": [
+      "Normally, seeds of Emmenathe penduliflora stay dormant for years and germinate only when a fire burns through their habitat. Nitrogen dioxide in the smoke induces the seeds to germinate. Fires clear the brush, allowing germinating seeds to receive the sunlight they need to grow. The plants mature quickly, produce seeds, and then die. In areas with heavy automobile traffic, however, the seed germinates in the absence of fire, with automobile exhaust supplying the required nitrogen dioxide."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p71",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "identifying some of the possible causes for a particular environmental phenomenon.",
+       "arguing that certain predictions regarding a particular environmental phenomenon are unduly pessimistic.",
+       "presenting certain challenges to a particular author's arguments by means of specific examples.",
+       "suggesting the need for conservation efforts to address a serious environmental problem.",
+       "discussing the relative merits of two opposing arguments in a particular debate."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p71",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Based on his argument about \"total forest cover,\" Lovejoy would probably agree with which of the following statements?"
+      ],
+      "opts": [
+       "Lomborg underestimates the number of species that became extinct as a result of deforestation of the eastern forests of the United States.",
+       "The damage done to the eastern forests of the United States is even greater than that done to the Brazilian Atlantic Forest.",
+       "The extent to which eastern forests of the United States were lost to deforestation is significantly greater than Lomborg suggests.",
+       "The reason that large numbers of species extinctions have not been recorded in eastern forests of the United States is that there are too few field biologists working in those forests.",
+       "The reason that few species of eastern forests of the United States became extinct as a result of deforestation is that no more than about half the total forest cover was lost at any given time."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p71",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage indicates that Lomborg would agree with which of the following claims regarding both the Brazilian Atlantic Forest and eastern forests of the United States?"
+      ],
+      "opts": [
+       "Deforestation has not reduced the size of the original area as much as environmentalists claim.",
+       "Reduction and fragmentation of the original forest severely threatens the continued existence of species that are able to survive for the moment in a decimated habitat.",
+       "A reduction of the amount of forested area has not resulted in large numbers of extinctions.",
+       "Species extinction occurred because the forest was reduced to roughly one to two percent of its original area.",
+       "The return of new-growth forest has allowed the continued survival of a wide variety of species."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p72",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would likely include which of the following evidence in the “facts of chronology”?"
+      ],
+      "opts": [
+       "the number of centuries separating the earliest transitions to agriculture from those observed by anthropologists",
+       "the earliest dates for which evidence of farming practices has been established",
+       "the known dates, if any, of extinctions of prey species that formed an important part of the diet of ancient human societies"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 5,
+     "passage": "p72",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage would be most likely to disagree with the “agricultural historians” over whether"
+      ],
+      "opts": [
+       "Preagricultural societies frequently adapted new species for food.",
+       "Preagricultural societies were vulnerable to fluctuations in the populations of species they hunted.",
+       "The earliest transitions to agriculture resulted in population growth.",
+       "Recent transitions to agriculture and the earliest such transitions were triggered by similar conditions.",
+       "The first adoption of agriculture immediately created dramatic changes in social structure."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p73",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context of the passage as a whole, the highlighted sentence serves to"
+      ],
+      "opts": [
+       "defend the value of a problematical source of information.",
+       "amplify the assertion presented in the preceding sentence.",
+       "cast doubt on the point made by the earlier comparison between interviews and photographs."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 7,
+     "passage": "p73",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “peculiar” most nearly means"
+      ],
+      "opts": [
+       "inexplicable",
+       "eccentric",
+       "pertinent",
+       "distinctive",
+       "uncommon"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p74",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The argument is open up to criticism on the grounds that it"
+      ],
+      "opts": [
+       "fails to establish that the level of damage done by trucks is a serious problem.",
+       "omits evidence about one of the two relevant factors.",
+       "ignores the possibility that careful driving can lessen damage to highways.",
+       "presumes that trucks are the only vehicles capable of causing substantial damage to highways.",
+       "presumes that something is bound to happen just because it is allowed to happen."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 9,
+     "passage": "p75",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The information given, if accurate, most strongly supports which of the following hypotheses?"
+      ],
+      "opts": [
+       "Fires in the habitat of E. Penduliflora do not entirely destroy the plant’s seeds even in the places where the fires burn most intensely.",
+       "The nitrogen dioxide in automobile exhaust cannot harm plants of E. Penduliflora after germination.",
+       "If human intervention decreases the number of fires in the habitat of E. Penduliflora, automobile exhaust can replicate the conditions the plant requires in order to thrive.",
+       "Within the habitat of E. Penduliflora, natural fires are significantly more frequent in areas with heavy automobile traffic than they are in other areas.",
+       "Unless E. Penduliflora seeds that have germinated can survive in the shade, automobile exhaust threatens the long-term survival of the plant in areas with heavy automobile traffic."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

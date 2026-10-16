@@ -1,0 +1,332 @@
+{
+ "id": "u28-p136-p140",
+ "title": "阅读 28 · Passage 136–140（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 136–140",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 136–140",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p136": {
+     "number": 136,
+     "paragraphs": [
+      "Although Elizabeth Stuart Phelps’ novel Doctor Zay (1882) dominates critical discussion of Phelps’ interest in woman doctors, preceding it were many little-known writings by Phelps. These writings underscored the achievements of already established women doctors, the imperative of medically educating and training women in the face of pernicious resistance, and the medical woman’s symbolic value as an agent of healing in post-Civil War America. An exploration of this largely overlooked early prose demonstrates that Phelps played an instrumental role in legitimizing the American medical woman during a crucial earlier period when the number of women doctors in the United States increased substantially, but the woman doctor remained perhaps the most controversial new presence on the nation’s occupational landscape."
+     ],
+     "highlights": []
+    },
+    "p137": {
+     "number": 137,
+     "paragraphs": [
+      "A bird’s plumage, while contributing to structural integrity and participating in aerial locomotion, completely obscures a bird’s internal activity from human view, greatly impeding our attempts to understand birds as functioning animals. Plumage has even made it difficult to describe bird movement. When describing the movement of mammals, writers turn to well-worn clichés like “grace in motion.” A mammal’s rippling muscles slide smoothly over one another in eye-catching ways. With a mammal, whether a mouse or hippopotamus, we recognize that the underlying body parts are similar to our own and we know these parts will act predictably. Not so with a bird. For centuries, we knew little more about a bird’s movement than that it was a mystery that seemed to be based on the flapping of wings."
+     ],
+     "highlights": []
+    },
+    "p138": {
+     "number": 138,
+     "paragraphs": [
+      "In the 1920s, Gerstmann described a set of problems found in people who have suffered damage to the brain’s left parietal lobe, problems that include being unable to understand arithmetic and having difficulty identifying one’s fingers. There is still no agreement on whether the symptoms Gerstmann noticed constitute a syndrome, but the parts of the brain used for storing facts about numbers and for representing the fingers are close to each other. Mental representations of numbers and of fingers may therefore be functionally connected. A 2005 experiment had people perform some tasks requiring dexterity and others involving matching pairs of numbers, while an area of their parietal lobes—the left angular gyrus—was stimulated by a magnetic field. Facility at both sets of tasks was impaired."
+     ],
+     "highlights": [
+      "the parts of the brain used for storing facts about numbers and for representing the fingers are close to each other."
+     ]
+    },
+    "p139": {
+     "number": 139,
+     "paragraphs": [
+      "Analyzing levels of proportional representation of American Indians in state and local government jobs is important for several reasons. First, the basic idea underlying the theory of representative bureaucracy is that the demographic composition of bureaucracy should mirror the demographic composition of the general public. This is because in addition to its symbolic value, increased access to managerial position may lead to greater responsiveness on the part of policy makers to the policy interests of traditionally disadvantaged groups such as American Indians. Second, the focus on higher level jobs in bureaucracies (as opposed to non-managerial positions) is especially important because managerial positions represent a major source of economic progress for members of traditionally disadvantaged groups, as these jobs confer good salaries, benefits, status, security, and mobility. Third, it is important to know if there has been growth in the American Indian share of more desirable public sector positions over the last two decades. For instance, Peterson and Duncan argue that the population and power of American Indians have been growing in certain states. Peterson and Duncan also suggest that this growth may reflect the possibility that American Indian population are becoming more active in nontraditional areas of politics, assimilating into mainstream culture, and securing with greater frequency leadership positions in non-tribal government."
+     ],
+     "highlights": [
+      "Peterson and Duncan also suggest that this growth may reflect the possibility that American Indian population are becoming more active in nontraditional areas of politics, assimilating into mainstream culture, and securing with greater frequency leadership positions in non-tribal government."
+     ]
+    },
+    "p140": {
+     "number": 140,
+     "paragraphs": [
+      "Some attine ants carry vegetation into their nests and add fungal material, thereby creating “gardens” in which fungal food for the ants grow. Because the ants play the behaviorally active role, it seems compelling to say that they cultivate and control the passive fungi. But even if that is true, the symbiotic association has existed for so long that cultivar traits may have evolved in the fungi that benefit the fungi but not necessarily the ants. Furthermore, many microorganisms have developed sophisticated mechanisms to manipulate the physiology and behavior of their symbiotic animals. It is not implausible, therefore, that the ants’ fungi have evolved chemical and physiological schemes that alter ant behavior to serve the fungus’ reproductive interests, possibly even compromising the reproductive interests for the ant hosts."
+     ],
+     "highlights": [
+      "manipulate"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p136",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage would be likely to agree with which of the following statements about Phelps’ writing?"
+      ],
+      "opts": [
+       "While Phelps’ earlier works did a great deal toward legitimizing the figure of the American woman doctor, her novel Doctor Zay did not.",
+       "Critics have tended to underestimate the impact Phelps’ earlier work had in helping to legitimize the figure of the American woman doctor during an important period.",
+       "The substantial increase in the number of woman doctors in post-Civil War America was a more significant factor than was Phelps’ writing in helping to legitimize woman doctors in post-Civil War America."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p136",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage provides information on which of the following?"
+      ],
+      "opts": [
+       "the public response to the emergence of women doctors during Phelps’ lifetime",
+       "how Phelps’ earlier works advanced the cause of American women doctors",
+       "the relative fame of Doctor Zay in comparison with Phelps’ other writings"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "ABC"
+    },
+    {
+     "n": 3,
+     "passage": "p137",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage mentions which of the following as an effect of bird plumage?"
+      ],
+      "opts": [
+       "It contributes to a bird’s ability to fly.",
+       "It hides the inner workings of birds.",
+       "It contributes to the structural soundness of birds."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "ABC"
+    },
+    {
+     "n": 4,
+     "passage": "p137",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author implies which of the following about the “underlying body parts” of nonhuman mammals?"
+      ],
+      "opts": [
+       "They are more similar to humans’ underlying body parts than most people assume.",
+       "They are more predictable in their workings than are the underlying body parts of humans.",
+       "Their smooth and grateful actions belie how complicated they actually are.",
+       "They work in much different ways than do the underlying body parts of most birds.",
+       "They are easier to observe and understand than are underlying parts of birds."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p138",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage would most likely agree that the highlighted statement suggests"
+      ],
+      "opts": [
+       "a flaw in the experiment conducted in 2005",
+       "a means by which dexterity might compensate for a loss of arithmetic ability",
+       "an explanation for some of Gerstmann’s observations",
+       "an anomaly in some of Gerstmann’s results",
+       "a reason to doubt damage to the left parietal lobe as a causal factor in certain symptoms"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p138",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage describes the “2005 experiment” and its results primarily in order to"
+      ],
+      "opts": [
+       "establish the proximity between the part of the brain used for storing numerical information and the part used for representing the fingers.",
+       "illustrate the implications that Gerstmann’s work may have for experimental research.",
+       "cast doubt on the idea that damage to the left parietal lobe causes the set of problems that Gerstmann described.",
+       "support a hypothesis about a significant association between parts of the brain related to fingers and to numbers.",
+       "suggest that the problems Gerstmann noted in relation to numbers and fingers have a different cause than the other problems associated with parietal lobe damage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p139",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "summarize a demographic trend over time.",
+       "present findings on a demographic group.",
+       "analyze the demographic composition of a type of job.",
+       "explain the need for particular social research.",
+       "argue for the implementation of a social policy."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p139",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as whole?"
+      ],
+      "opts": [
+       "It hypothesizes a phenomenon that might explain a point made in the preceding sentence.",
+       "It provides evidence that undermines that assertion made in the first sentence.",
+       "It offers a projection regarding the development of a trend mentioned earlier in the passage.",
+       "It presents an interpretation of a discrepancy noted earlier in the passage.",
+       "It proposed an implementation of a policy mentioned in the preceding sentence."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C",
+     "answerPending": true,
+     "answerReviewReason": "原答案C；复核倾向A。高亮句为前句人口与权力增长提供可能解释，未明确预测趋势未来如何发展，C的projection存在疑问。",
+     "explanation": "本题答案有争议，尚无可靠定论。争议理由：原答案C；复核倾向A。高亮句为前句人口与权力增长提供可能解释，未明确预测趋势未来如何发展，C的projection存在疑问。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 9,
+     "passage": "p139",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following regarding “access to managerial positions” for disadvantaged groups?"
+      ],
+      "opts": [
+       "This access is only significant when the percentage of disadvantaged group members in managerial positions mirrors the percent of that group in the general public.",
+       "This access is largely the result of policy decisions made response to interest of those groups.",
+       "This access has meaning apart from any policy benefits it confer on those groups.",
+       "This access often creates increased access to non-managerial position for those groups.",
+       "The extent of this access tends to be similar across different disadvantaged groups."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 10,
+     "passage": "p140",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage points out which of the following in order to explain the appeal of the notion that some attine ants cultivate and control fungus?"
+      ],
+      "opts": [
+       "The ants play the behaviorally active roles in the symbiotic relationship.",
+       "The ants purposefully carry vegetation into their nests for their own consumption.",
+       "Fungus is physiologically a passive substance.",
+       "Other organisms are able to manipulate their symbiotic partners.",
+       "The chemical and physiological properties of the fungus are subject to ant influence."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 11,
+     "passage": "p140",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, the word “manipulate” most nearly means"
+      ],
+      "opts": [
+       "influence",
+       "oversee",
+       "coerce",
+       "deceive",
+       "outmaneuver"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E",
+     "answerPending": true,
+     "answerReviewReason": "原答案E；复核倾向A：语境为影响共生动物的生理和行为。不过新东方公开同题也列E，现有证据不足以把独立判断宣称为标准答案。",
+     "explanation": "本题答案有争议，尚无可靠定论。争议理由：原答案E；复核倾向A：语境为影响共生动物的生理和行为。不过新东方公开同题也列E，现有证据不足以把独立判断宣称为标准答案。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    }
+   ]
+  }
+ ],
+ "references": []
+}

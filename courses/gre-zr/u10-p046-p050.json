@@ -1,0 +1,274 @@
+{
+ "id": "u10-p046-p050",
+ "title": "阅读 10 · Passage 46–50（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 46–50",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 46–50",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p46": {
+     "number": 46,
+     "paragraphs": [
+      "For the first time, funding for designing experiments to be conducted during space flights has been made available by the government space program to university biologists not already employed by the space program. From the fact that little interest has been expressed in this offer, however, it cannot be concluded that virtually the only biologists interested in research that such experiments could address are those biologists already employed by the space program, since _____."
+     ],
+     "highlights": []
+    },
+    "p47": {
+     "number": 47,
+     "paragraphs": [
+      "From the 1880s to the 1930s, the textile industry in Japan employed over half of all workers, most of them in the three major branches of silk reeling, cotton spinning, and weaving. Because the branches were highly diverse—in scale, skill requirements, and technology— historians traditionally have analyzed them separately. However, the workforces of all three were drawn primarily from the same population: young, mostly rural women aged 10 to 25. Noting this commonality, Hunter argues that a consideration of the three branches of production together is long overdue: examining elements common to the different branches of textile production may, she asserts, permit the identification of gender-based factors that may have influenced the operation of the Japanese female labor market as a whole."
+     ],
+     "highlights": []
+    },
+    "p48": {
+     "number": 48,
+     "paragraphs": [
+      "When studying shrimp feeding from hydro-thermal vents at the bottom of the ocean, biologists were surprised that the shrimps’ reproductive cycles followed seasonal patterns. Far beyond the reach of sunlight, and with food abundant around the vents all year round, why should such animals reproduce seasonally? The answer might involve their offspring, which in their larval form drift in the currents to colonize new vents. The larvae must feed during their trip, and their springtime release coincides with a peak in algae raining down from surface waters. So far, researchers have found no evidence of seasonal breeding among vent-dwelling species that provide their offspring with yolk to sustain them or among vent-dwelling species found in areas of the ocean with not seasonal algae blooms."
+     ],
+     "highlights": [
+      "So far, researchers have found no evidence of seasonal breeding among vent-dwelling species that provide their offspring with yolk to sustain them or among vent-dwelling species found in areas of the ocean with not seasonal algae blooms."
+     ]
+    },
+    "p49": {
+     "number": 49,
+     "paragraphs": [
+      "There is mounting evidence that the frequency and magnitude of landsliding is changing in many parts of the world in response to climate change. This is not surprising, given that precipitation is one of the two external triggering mechanisms—the other being seismic activity —involved in the formation of landslides. Evidence from the past clearly indicates that cycles of elevated landslide activity have been followed by cycles of low activity, and that these are correlated with climate fluctuations over a variety of timescales.",
+      "What sets current changes in landslide activity apart is the likely influence of anthropogenic [i.e., human-caused] factors, either acting alone or in concert with climate, which can further modify the process of landsliding and the nature of ecosystem responses. Among these factors, deforestation and land-use change have the potential to influence the frequency and magnitude of landsliding because of their direct effects on vegetation attributes that influence slope stability. The extent and conditions under which mountain ecosystems are resilient to these changes—that is, the amount of disturbance they can absorb before changing into states with different structure and function—are not known. Addressing this issue is crucial for the long-term conservation of mountain scapes."
+     ],
+     "highlights": [
+      "Evidence from the past"
+     ]
+    },
+    "p50": {
+     "number": 50,
+     "paragraphs": [
+      "There have been numerous well-documented extinctions of indigenous species caused by the introduction of non-indigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these non-indigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely caused by competition from non-indigenous species."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p46",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument given?"
+      ],
+      "opts": [
+       "relatively few of the biologists already employed by the space program have ever held university positions.",
+       "there are more research biologists in industry than at universities.",
+       "biologists are not the only scientists interested in research that could be furthered by the opportunity to conduct experiments in space.",
+       "the space program employs only a small percentage of the research biologists employed by the government.",
+       "much of the biological research currently funded by the government’s space program is concerned with the biological effects of a weightless environment."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p47",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following does the passage cite as an explanation for historians’ traditional analysis of the Japanese textile industry?"
+      ],
+      "opts": [
+       "a common workforce population across all branches of textile manufacturing",
+       "similarities in the skills required for silk reeling, cotton spinning, and weaving",
+       "the importance of the textile industry to the Japanese economy as a whole",
+       "the high number of female factory workers employed within the textile industry",
+       "differences in the technology used in the three major branches of textile production"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p47",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that Hunter regards which of the following to be a shortcoming of historians’ traditional analyses discussed in the passage?"
+      ],
+      "opts": [
+       "their failure to examine factors common to the three different branches of Japanese textile production",
+       "their separation of the Japanese textile industry into three major branches based on differences in scale, skill requirements, and technology",
+       "their failure to acknowledge the contribution made by rural women to the different branches of the textile industry"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p48",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence?"
+      ],
+      "opts": [
+       "It casts doubt on the accuracy of earlier observations of seasonal breeding among shrimp species living near hydro-thermal vents.",
+       "It undermines the explanation proposed for seasonal breeding among some shrimp species living near hydro-thermal vents.",
+       "It suggests that alternative theories are needed to explain seasonal breeding among shrimp species living near hydro-thermal vents.",
+       "It describes the survival benefits to shrimp of mating in parts of the ocean where algae blooms rain down abundantly.",
+       "It supports the explanation proffered for the seasonal breeding observed among some shrimp species living near hydro-thermal vents."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p49",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage cites “evidence from the past” in order to"
+      ],
+      "opts": [
+       "support a partial explanation",
+       "concede a potential objection",
+       "dismiss an apparent counterexample",
+       "highlight a scientific consensus",
+       "account for a historical anomaly"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p49",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage makes which of the following claims?"
+      ],
+      "opts": [
+       "A rise in precipitation resulting from human factors has increased the frequency and magnitude of landsliding.",
+       "Human factors have led to greater changes in landsliding activity than have cyclical climate fluctuations.",
+       "Decreases in landsliding activity have historically been accompanied by changes in climate.",
+       "Slope stability is more influenced by seismic activity than it is by human factors.",
+       "Changes in land-use patterns in mountain ecosystems are generally correlated with changes in climate."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p49",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author of the passage suggests which of the following about the role of human factors in landsliding activity?"
+      ],
+      "opts": [
+       "Human factors can intensify or alter the effects of climate change on landsliding activity.",
+       "It is likely that human factors affect landsliding activity more than climate change does.",
+       "Until recently, human factors did not have much impact on landsliding activity."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 8,
+     "passage": "p50",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is concerned primarily with"
+      ],
+      "opts": [
+       "pointing out that a particular type of species extinction is rarely known to occur.",
+       "proposing a possible explanation for conflicting data about a particular type of species extinction.",
+       "resolving a debate about the frequency of a particular type of species extinction.",
+       "comparing two theories regarding possible causes of a particular type of species extinction.",
+       "refuting a proposed explanation for the increasingly rare occurrence of a particular type of species extinction."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p50",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author introduces statistics about North America’s non-indigenous plant species primarily in order to"
+      ],
+      "opts": [
+       "undermine a proposed explanation for the absence of any evidence for the occurrence of a particular phenomenon",
+       "contrast the effect of introduced plant species in North America with the effect that introduced animal species have had",
+       "suggest that North America’s indigenous plants are a domain in which there has been ample scope for a particular effect to have occurred",
+       "emphasize how much the ecology of North America has been affected over the past 400 years by the introduction of non-indigenous species",
+       "substantiate a claim about the overall effect that the introduction of non-indigenous species tends to have on indigenous populations"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "retained-after-review"
+     }
+    }
+   ]
+  }
+ ],
+ "references": []
+}

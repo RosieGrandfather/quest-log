@@ -1,0 +1,296 @@
+{
+ "id": "u07-p031-p035",
+ "title": "阅读 07 · Passage 31–35（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 31–35",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 31–35",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p31": {
+     "number": 31,
+     "paragraphs": [
+      "Scientific consensus is that humans first began to have a warming effect on Earth’s climate within the past century, after coal-burning factories, power plants, and motor vehicles began releasing carbon dioxide (CO ) and other greenhouse gases in significant quantities into the 2 air. However, evidence suggests that human agricultural activities may have had such an effect much earlier: concentrations of CO started rising about 8000 years ago, even 2 though natural trends indicate they should have been dropping; methane levels rose similarly about 3,000 years later. Without these rises, however, current temperatures in northern parts of North America and Europe would be cooler by three to four degrees Celsius-enough to inhibit agriculture-and an ice age would probably have begun several thousand years ago in northeastern Canada."
+     ],
+     "highlights": [
+      "However, evidence suggests that human agricultural activities may have had such an effect much earlier:"
+     ]
+    },
+    "p32": {
+     "number": 32,
+     "paragraphs": [
+      "Princessfish are a species of coral-reef fish that are captured alive by divers who first stun the individual fish by squirting a certain poison at them. Since the divers limit their catch to a few individuals and take care not to overfish, the divers’ continuing activities will clearly not result in serious harm to populations of princessfish."
+     ],
+     "highlights": []
+    },
+    "p33": {
+     "number": 33,
+     "paragraphs": [
+      "With few exceptions, the many commercial frozen foods introduced in the United States in the 1950s found little consumer acceptance, in part because few Americans had significant freezer space. Most freestanding freezers were owned by farm families, who tended to fill their freezers with their own produce. Meanwhile, the working couples and small families in cities and towns whom the food industry had identified as the likeliest consumers of commercial frozen food lacked freezer space. While new refrigerators coming on the market had large separate freezer compartments, many consumers still used old refrigerators with tiny interior freezer compartments, and such consumers seemed convinced that they did not have space for a freestanding freezer in a small house or apartment."
+     ],
+     "highlights": [
+      "old refrigerators"
+     ]
+    },
+    "p34": {
+     "number": 34,
+     "paragraphs": [
+      "Archaeologists studying Bonito phase (ca. A.D. 900-1140) Native American ceramics from Chaco Canyon, New Mexico, observed that many pots had been altered after firing to revise their decorative designs--usually, intricate geometric patterns painted in black on white slipped surfaces. In some cases, a new design was imposed over an earlier one; less often, the original design was simply covered with white slip. Crown and Wills doubt that the alterations were made to correct design errors. Many Chaco pots with design errors were left unaltered. Furthermore, when errors were corrected, revisions were made prior to firing—either by painting directly over the error or by scraping off designs and applying new slip and paint, which is a less time-consuming method than repainting and refiring flawed pots."
+     ],
+     "highlights": []
+    },
+    "p35": {
+     "number": 35,
+     "paragraphs": [
+      "Reasons for uncertainty about the timing of the Thule migration [the movement of a proto-Inuit culture from Alaska to northern Canada and Greenland] are many, but primary among them are the well-known problems with radiocarbon dating in the Arctic. In particular, radiocarbon dates obtained on two kinds of organic remains that typically are common in the remains of Thule dwellings—driftwood and sea mammal bone—are likely to be older than the archaeological context in which they are found. Driftwood found in archaeological sites in the form of fuel or as part of an artifact assemble age may have sat on beaches for centuries before being utilized, and sea mammal bone is subject to the marine reservoir effect in which living tissue (including bone) incorporates ancient carbon, which also results in dates that are too old. Beyond this, however, many dates obtained in decades past simply seem too old, and there is a widespread suspicion among archaeologists that pretreatment methods may not always have eliminated the presence of substances derived from sea mammals, especially fat, which can be absorbed into wood, bone, and other materials and thereby contaminate them. As a result of these and other factors, both McGhee and Park have shown that the full spectrum of existing Thule radiocarbon dates, numbering in the hundreds, covers much too wide a range to reflect Thule chronology accurately."
+     ],
+     "highlights": [
+      "pretreatment methods"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p31",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence?"
+      ],
+      "opts": [
+       "It undermines the assumption that human activity has had a significant impact on Earth’s climate",
+       "It supports the assumption that Earth’s temperatures have risen appreciably over the past 100 years",
+       "It questions the assumption that greenhouse gases have had a warming effect on Earth's climate",
+       "It challenges the assumption that human activity began to affect Earth’s climate after the advent of industrialization",
+       "It supports the assumption that greenhouse gases are a direct by-product of industrial activities"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p31",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions “natural trends” most likely in order to"
+      ],
+      "opts": [
+       "propose a possible explanation for why current temperatures in North America and Europe are not as low as they might otherwise be",
+       "explain why levels of methane in Earth's atmosphere began to rise approximately 5,000 years ago",
+       "suggest that Earth’s climate would have become even warmer without the advent of human agricultural activities",
+       "identify factors that may have contributed to the rise of greenhouse gases in Earth’s atmosphere approximately 8,000 years ago and again some 3,000 years later",
+       "support the claim that human activity may have played a role in the rise in CO and 2 methane levels in the atmosphere thousands of years ago"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p32",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weaken the argument given?"
+      ],
+      "opts": [
+       "Princessfish cannot be captured alive by traditional methods of fishing.",
+       "The poison used to stun the princessfish has no effect on humans who eat them.",
+       "Demand for princessfish has remained steady during the last decade.",
+       "Traces of the poison that remain in the seawater damage the Corals that create and maintain the reefs on which princessfish depend.",
+       "Fish that have been stunned but have selected for capture by the divers soon recover from the temporary effect of the poison."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p33",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following regarding United States farm families in the early 1950s?"
+      ],
+      "opts": [
+       "Despite the fact that many farm families had sufficient freezer space to hold commercial frozen foods, the food industry did not consider farm families to be the likeliest consumers of such foods.",
+       "While farm families were more likely than other consumers to have sufficient freezer space to hold commercial frozen foods, they usually used that freezer space in other ways.",
+       "Although farm families were more likely than other consumers to have adequate household space for freestanding freezers, more farm families had refrigerators with separate freezing compartments than had freestanding freezers."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 5,
+     "passage": "p33",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions \"old refrigerators\" primarily in order to"
+      ],
+      "opts": [
+       "describe a drawback to a product innovation mentioned earlier in the sentence",
+       "elaborate on a claim regarding a group of consumers that was made earlier in the passage",
+       "help explain the basis for a marketing strategy alluded to earlier in the passage",
+       "explain why a group of consumers chose not to replace an outdated product with a newer model",
+       "discuss the impact of a particular consumer belief about a product discussed earlier in the passage"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p34",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions Crown and Wills primarily in order to"
+      ],
+      "opts": [
+       "distinguish among different factors that might have caused Chaco potters to alter their pots’ decorative designs.",
+       "introduce new evidence related to the question of why Chaco potters altered their pots’ decorative designs.",
+       "show how one potential explanation for the alteration of Chaco pots has been discounted.",
+       "present a hypothesis about why Chaco pots were altered to revise their decorative designs.",
+       "explain how archaeologists discerned the method by which Chaco pots were originally decorated."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p34",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true of Bonito phase Chaco pots?"
+      ],
+      "opts": [
+       "Relatively few of them have original designs concealed beneath white surfaces.",
+       "Relatively few of them were altered after firing.",
+       "Many of their alterations increased the intricacy of their painted designs.",
+       "Many of them have some flaw in their shape or structure.",
+       "Many of them were altered more than once."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p35",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "question a recommendation",
+       "outline a chronology",
+       "describe a method",
+       "criticize a hypothesis",
+       "summarize a problem"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 9,
+     "passage": "p35",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about the \"pretreatment methods\"?"
+      ],
+      "opts": [
+       "They may have caused the contamination of wood, bone, and other materials.",
+       "They were intended to remove potential sources of error in radiocarbon dates.",
+       "They were not intended to eliminate sea mammal fat from organic materials.",
+       "They reflect a fundamental misunderstanding of the proper use of radiocarbon dating.",
+       "They are likely to work properly on materials taken from regions outside the Arctic."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 10,
+     "passage": "p35",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the organization of the passage?"
+      ],
+      "opts": [
+       "The cause of an impediment is identified and various contributing factors are described.",
+       "A theory to explain a discrepancy is presented, evaluated, and then qualified.",
+       "A controversial hypothesis is described,and then reasons to question it are presented.",
+       "Some data supporting a viewpoint are questioned, and then an alternative interpretation is suggested",
+       "A common misconception about an occurrence is described and reason for the misconception is suggested."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

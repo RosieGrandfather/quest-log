@@ -1,0 +1,364 @@
+{
+ "id": "u08-p036-p040",
+ "title": "阅读 08 · Passage 36–40（5篇 · 13题）",
+ "en": "Reading Comprehension — Passages 36–40",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 36–40",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p36": {
+     "number": 36,
+     "paragraphs": [
+      "Astronomers have had difficulty accounting for certain planets discovered outside our solar system. They are called hot Jupiters because each is similar in mass to Jupiter, the largest solar-system planet, but orbits its parent star at a fraction of the distance at which Earth, let alone Jupiter, orbits the Sun. In the standard, solar-system-based theory of planetary formation, such a massive planet could not form so close to a star. So most attempts to explain a hot Jupiter’s existence envision it forming farther away, then migrating inward. According to one hypothesis, the planet’s gravitational field tugs on the protoplanetary disk of dust and gas from which it formed. The disk exerts its own gravitational tug, and this interplay of forces robs the planet of momentum in its orbital path, forcing it to spiral in toward the star. According to another hypothesis, the planet’s gravitational field is so strong that it creates a groove in the disk, partitioning it into inner and outer regions; the resulting gravitational interactions between the planet and these regions cause the planet to lose orbital momentum and spiral inward. Another question remains: what prevents the planet from continuing its spiral until it collides with the star?"
+     ],
+     "highlights": [
+      "attempts"
+     ]
+    },
+    "p37": {
+     "number": 37,
+     "paragraphs": [
+      "Because the subject matter was so personal, the work of several prominent mid-twentieth century poets has been termed “confessional” poetry. But confession is a bad metaphor for what those poets did. The motive for confession is penitential or therapeutic—by speaking openly about personal guilt and suffering, the poet hopes to make them easier to bear. But these poets always approached their writing as artists, and their motive was aesthetic. Writing from experiences like madness, despair, and lust, their aim was to make effective art, not to cure themselves. To treat their poems mainly as documents of personal experience is not just to diminish the poets’ achievement, but to ignore their unanimous disdain for the idea of confessional poetry."
+     ],
+     "highlights": []
+    },
+    "p38": {
+     "number": 38,
+     "paragraphs": [
+      "Astronomers who study planet formation once believed that comets—because they remain mostly in the distant Oort cloud, where temperatures are close to absolute zero—must be pristine relics of the material that formed the outer planets. The conceptual shift away from seeing comets as pristine relics began in the 1970s, when laboratory simulations revealed there was sufficient ultraviolet radiation reaching comets to darken their surfaces and there were sufficient cosmic rays to alter chemical bonds or even molecular structure near the surface. Nevertheless, astronomers still believed that when a comet approached the Sun— where they could study it—the Sun’s intense heat would remove the corrupted surface layer, exposing the interior. About the same time, though, scientists realized comets might contain decaying radioactive isotopes that could have warmed cometary interiors to temperatures that caused the interiors to evolve."
+     ],
+     "highlights": []
+    },
+    "p39": {
+     "number": 39,
+     "paragraphs": [
+      "Biologists studying wild monkeys sometimes need the genetic material DNA from a particular monkey to determine the animal's parentage. Until recently, DNA could be extracted only from blood. Collecting a blood sample required tranquilizing the donor animal. Now DNA can be extracted from hair. Monkeys shed large quantities of hair in places where they sleep. Therefore, researchers will now be able to determine the parentage of individual monkeys from DNA without tranquilizing the monkeys."
+     ],
+     "highlights": []
+    },
+    "p40": {
+     "number": 40,
+     "paragraphs": [
+      "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time. These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact. Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own. To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity. These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions, expectations, and beliefs."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p36",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions “Earth” primarily in order to"
+      ],
+      "opts": [
+       "stress the massive size of a hot Jupiter",
+       "emphasize the proximity of a hot Jupiter to its parent star",
+       "imply that hot Jupiters are unlikely to harbor extraterrestrial life",
+       "point out differences between Earth and Jupiter with regard to their orbital distance from the Sun",
+       "illustrate how hot Jupiters might fit into the standard theory of planetary formation"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p36",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following elements is part of one but not both of the hypotheses discussed in the passage?"
+      ],
+      "opts": [
+       "an interplay of gravitational forces",
+       "a loss of orbital momentum",
+       "a protoplanetary disk composed of dust and gas",
+       "a protoplanetary disk divided into two regions.",
+       "a tendency of the inward spiral"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p36",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the “attempts” share which of the following goals?"
+      ],
+      "opts": [
+       "to explain how a Jupiter-sized planet could form so close to its parent star.",
+       "to explain what prevents a hot Jupiter from colliding with its parent star.",
+       "to determine whether a hot Jupiter is formed from a protoplanetary disk of dust and gas.",
+       "to determine whether a hot Jupiter’s gravitational field is strong enough to create a groove in its protoplantary disk",
+       "to account for hot Jupiters in a way that is not inconsistent with the standard theory of planetary formation."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p37",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage suggests that applying the term “confessional” to the work of the poets discussed"
+      ],
+      "opts": [
+       "is mistaken in what it seems to imply about the poets’ motivation",
+       "might seem superficially appropriate given the subject matter of the poems",
+       "is an error arising from the absence of any other convenient term"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 5,
+     "passage": "p37",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that the poets discussed did NOT"
+      ],
+      "opts": [
+       "think that a poet’s motivation for writing was relevant in evaluating that poet’s work",
+       "experience any relief of their personal suffering as a result of writing",
+       "apply to their own work the label by which it has subsequently been know"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p38",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, astronomers recognize which of the following as being liable to cause changes to comets?"
+      ],
+      "opts": [
+       "cosmic rays",
+       "radioactive decay",
+       "ultraviolet radiation"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "AC",
+     "explanation": "原答案AC漏选B。文章分别说明宇宙射线、紫外线及内部放射性同位素衰变都会改变彗星；B正对应第三种机制。考满分同题也列ABC。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "corrected"
+     }
+    },
+    {
+     "n": 7,
+     "passage": "p38",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, astronomers’ belief that comets are pristine relics was"
+      ],
+      "opts": [
+       "overturned by analysis of what happens when comets approach the Sun",
+       "supported by what observations revealed about the composition of the outer planets",
+       "based on consideration of the conditions that prevail where comets are located"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p38",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author suggests that the realization described in the final sentence of the passage had which of the following effects?"
+      ],
+      "opts": [
+       "It introduced a new topic for study by astronomers interested in planetary formation.",
+       "It led astronomers to adopt a number of different strategies in trying to determine the composition of cometary interiors.",
+       "It called into question an assumption that astronomers had made about comets.",
+       "It cast doubt on astronomers’ ability to study the interior parts of comets,",
+       "It caused astronomers to revise their account of the composition of the outer planets."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p38",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author would agree with which of the following statements about the “laboratory simulations”?"
+      ],
+      "opts": [
+       "The simulations showed that despite the low temperatures in the Oort cloud, there was sufficient energy there to alter comets.",
+       "Astronomers were initially reluctant to accept what simulations showed about the composition of comets.",
+       "The simulations themselves did not eliminate the possibility that comets contain pristine relics of material from the early solar system."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 10,
+     "passage": "p39",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "The places in which monkeys sleep are easily accessible to researchers.",
+       "Information about a particular monkey’s parentage is the only kind of information that can be determined from DNA that has been extracted from that monkey’s hair.",
+       "For at least some samples of hair collected from monkey habitat it will be possible to associate hairs with the individual monkeys from which they came.",
+       "Examining DNA is the only way to determine the parentage of wild monkeys.",
+       "It will be necessary to obtain any hair samples used in determining a monkey’s parentage from a place where the monkey has slept."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 11,
+     "passage": "p40",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, village sketches written by women in the United States in the 1830s and 1840s typically reflected"
+      ],
+      "opts": [
+       "the negotiations that characterized trade relationships between villages",
+       "the fact that these women did not often travel very far beyond their own village",
+       "the plurality of experiences and ideas that existed among the residents of a village"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 12,
+     "passage": "p40",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select the sentence in the passage that contrasts how men and women depicted life in village communities."
+      ],
+      "pass": [
+       "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time. These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact. Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own. To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity. These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions, expectations, and beliefs."
+      ],
+      "sentences": [
+       "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time.",
+       "These women’s geographical mobility was restricted (although women writers of the time were not uniformly circumscribed in this way), and their subject matter reflected this fact.",
+       "Yet their texts were enriched by what Gilligan, writing in a different context, has called the ability to attend to voices other than one’s own.",
+       "To varying degrees, the women’s sketches portray differences among community members: all stress differences among men and among women (particularly the latter) as well as differences between the sexes, and some also depict cultural diversity.",
+       "These writers represent community as dynamic, as something that must be negotiated and renegotiated because of its members’ divergent histories, positions, expectations, and beliefs."
+      ],
+      "highlights": [],
+      "sentenceParagraphLengths": [
+       5
+      ]
+     },
+     "kind": "ss",
+     "ansText": "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time.",
+     "sourceAnswer": "BC  第一句  E"
+    },
+    {
+     "n": 13,
+     "passage": "p40",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage indicates that when Gilligan spoke of “the ability to attend to voices other than one’s own,” she"
+      ],
+      "opts": [
+       "did not consider that ability to be a desirable psychological characteristic",
+       "did not believe that individuals differ greatly with respect to that ability",
+       "was implying that that ability enhances a sense of belonging in communities",
+       "was assuming that good writers are able to depict diverse characters",
+       "was not discussing the women who wrote village sketches"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

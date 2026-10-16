@@ -1,0 +1,272 @@
+{
+ "id": "u05-p021-p025",
+ "title": "阅读 05 · Passage 21–25（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 21–25",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 21–25",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p21": {
+     "number": 21,
+     "paragraphs": [
+      "Since 1989, the size of Porcupine caribou herd in Alaska has undergone a steady downward trend, declining at a rate of 3 to 4 percent a year. Just why this is happening is not clear. Biologists have not observed marked changes in birthrate or calf survival, nor has there been an increase in the number of predators. Consequently, some biologists have turned their attention to global warming. The rise in spring temperatures may be changing conditions along the migration route in ways that make life difficult for caribou. For example, prematurely soggy snow might force the animals up onto windswept ridge tops, where they are easier prey for wolves."
+     ],
+     "highlights": []
+    },
+    "p22": {
+     "number": 22,
+     "paragraphs": [
+      "Most twentieth-century critics read Melville's Pierre as a parody of the sentimental novel. They point to its overblown prose and hyperbolic rendering of domestic manners to argue that Pierre is a barbed critique of bourgeois politesse. A variation of this reading stresses Melville's strategic sentimentalism, positing the Pierre's romantic-familial plot was meant to engage superficial readers, while the book's deeper elements were aimed at his true audience. Both readings emphasize Melville's aloofness and authorial control, imagining the writer by turns mocking and hoodwinking a feckless readership. Such a strategy, however, implies a cool detachment of the artist from his creation, when in fact Melville is never more personally involved or more in earnest than he is in Pierre."
+     ],
+     "highlights": [
+      "by turns mocking and hoodwinking a feckless readership."
+     ]
+    },
+    "p23": {
+     "number": 23,
+     "paragraphs": [
+      "New underwater tunnel projects increasingly rely upon immersed tube technology, which involves digging a channel in the seabed and then sinking prefabricated tunnel sections into it. As well as being more resilient in earthquakes, immersed tubes are generally faster and less expensive to build than traditional bored tunnels. To begin with, problems with one section of tunnel won't necessarily delay the entire project, and because immersed tubes can have a rectangular cross-section, they are a more efficient shape than circular tunnels for side-by-side railway lines. And while bored tunnels are usually considered stable only if their depth under the seabed at least equals their diameter, immersed tubes can sit immediately under the seafloor, allowing shallower approach gradients."
+     ],
+     "highlights": [
+      "To begin with, problems with one section of tunnel won't necessarily delay the entire project, and because immersed tubes can have a rectangular cross-section, they are a more efficient shape than circular tunnels for side-by-side railway lines."
+     ]
+    },
+    "p24": {
+     "number": 24,
+     "paragraphs": [
+      "Many shipwrecks dating from the period between A.D.300 and 600 have been discovered in the Ramian Sea. Well over half of those ships were carrying cargo stored in large ceramic jars, many of which were preserved largely intact on the ocean floor. During that period, such jars carried only liquid. Therefore, liquid cargo was probably carried by a majority of the cargo ships that navigated the Ramian Sea during that period."
+     ],
+     "highlights": []
+    },
+    "p25": {
+     "number": 25,
+     "paragraphs": [
+      "Livestock-grazing programs in arid zones that are based on the equilibrium view of rangelands —that grazing-induced land degradation will occur if livestock numbers exceed the availability of food—have failed. Contrary to the equilibrium view, traditional pastoral systems of land use are more appropriate. Such systems involve a high degree of opportunism to cope with unpredictable rainfall and fluctuating food distribution. Livestock mobility relives areas of concentration and allows herds to exploit unevenly distributed resources. A strategy of managing multiple livestock species allows optimal use of these variable grazing resources. These approaches to land use are similar to those recommended by nonequilibrium models, which assume that plant dynamics in arid zones are influenced more by rainfall than by grazing."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p21",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "consider possible causes of the decrease in the size of the Porcupine caribou herd since 1989.",
+       "propose a solution to one of the problems faced by the Porcupine caribou herd as a result of global warming.",
+       "advocate a hypothesis about the nature of the Porcupine caribou herd prior to 1989",
+       "discuss how different migration routes affect the Porcupine caribou herd.",
+       "predict changes to the Porcupine caribou herd that will occur as a result of global warming."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p21",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the migration of the Porcupine caribou herd in Alaska?"
+      ],
+      "opts": [
+       "Prior to 1989, the herd had not been preyed upon by wolves during migration.",
+       "Prior to the rise in spring temperatures, the herd typically did not travel along windswept ridge tops while migrating.",
+       "The herd has altered its migration pattern in response to predation."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p22",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, twentieth-century critics cite which of the following in support of the idea that in Pierre, Melville is “by turns mocking and hoodwinking a feckless readership”?"
+      ],
+      "opts": [
+       "Melville's personal involvement in his creation",
+       "Melville's use of an extravagant writing style",
+       "Melville's exaggerated depiction of bourgeois society"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 4,
+     "passage": "p22",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select the sentence that presents a reason for questioning twentieth century reading of Pierre."
+      ],
+      "pass": [
+       "Most twentieth-century critics read Melville's Pierre as a parody of the sentimental novel. They point to its overblown prose and hyperbolic rendering of domestic manners to argue that Pierre is a barbed critique of bourgeois politesse. A variation of this reading stresses Melville's strategic sentimentalism, positing the Pierre's romantic-familial plot was meant to engage superficial readers, while the book's deeper elements were aimed at his true audience. Both readings emphasize Melville's aloofness and authorial control, imagining the writer by turns mocking and hoodwinking a feckless readership. Such a strategy, however, implies a cool detachment of the artist from his creation, when in fact Melville is never more personally involved or more in earnest than he is in Pierre."
+      ],
+      "sentences": [
+       "Most twentieth-century critics read Melville's Pierre as a parody of the sentimental novel.",
+       "They point to its overblown prose and hyperbolic rendering of domestic manners to argue that Pierre is a barbed critique of bourgeois politesse.",
+       "A variation of this reading stresses Melville's strategic sentimentalism, positing the Pierre's romantic-familial plot was meant to engage superficial readers, while the book's deeper elements were aimed at his true audience.",
+       "Both readings emphasize Melville's aloofness and authorial control, imagining the writer by turns mocking and hoodwinking a feckless readership.",
+       "Such a strategy, however, implies a cool detachment of the artist from his creation, when in fact Melville is never more personally involved or more in earnest than he is in Pierre."
+      ],
+      "highlights": [
+       "by turns mocking and hoodwinking a feckless readership."
+      ],
+      "sentenceParagraphLengths": [
+       5
+      ]
+     },
+     "kind": "ss",
+     "ansText": "Such a strategy, however, implies a cool detachment of the artist from his creation, when in fact Melville is never more personally involved or more in earnest than he is in Pierre.",
+     "sourceAnswer": "BC such a strategy"
+    },
+    {
+     "n": 5,
+     "passage": "p23",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The highlighted sentence performs which of the following function in the passage?"
+      ],
+      "opts": [
+       "It helps explain how tunnels built for trains differ from those built primarily for automobiles.",
+       "It points out some of the advantages of bored tunnel technology.",
+       "It lists several attributes of immersed tube tunnels that support the previous sentence’s assertion.",
+       "It emphasizes the extent to which unanticipated delays can add to a project’s cost.",
+       "It introduces evidence that challenges certain claims about bored tunnels made earlier in the passage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p23",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that which of the following is characteristic of bored tunnels?"
+      ],
+      "opts": [
+       "They are the preferred option for crossing shallower spans of water.",
+       "Their stability suffers if they are not built deeply enough.",
+       "The shape of their cross-sections cannot be rectangular."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 7,
+     "passage": "p24",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The force of the evidence cited in the passage is most seriously weakened if which of the following is true?"
+      ],
+      "opts": [
+       "For ships on the Ramian Sea during the period, a full load of liquid cargo stored in large ceramic jars was not likely to be significantly heavier than a full load of other kinds of cargo that were typical of the period.",
+       "There are no surviving records dating from the period that detail specific cargoes shipped across the Ramian Sea.",
+       "The ratio of liquid to solid cargo shipped across the Ramian Sea did not vary significantly over the period.",
+       "The presence of a sizable quantity of large ceramic jars on the ocean floor is so visually striking that a shipwreck of a ship carrying such jars is more likely to be noticed and reported than are shipwrecks of ships carrying other cargoes.",
+       "During the period, grain and other solid cargo was shipped across the Ramian Sea in containers made from material other than clay."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p25",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, the equilibrium view of rangelands is defined in terms of the relationship between"
+      ],
+      "opts": [
+       "distribution of rainfall and patterns of grazing",
+       "predictability of rainfall and fluctuations in food distribution",
+       "mobility of livestock and extent of land degradation",
+       "livestock numbers and availability of food",
+       "number of livestock species and variability of grazing resources"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 9,
+     "passage": "p25",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that proponents of “nonequilibrium models” would agree with which of the following statements about grazing induced land degradation in arid zones?"
+      ],
+      "opts": [
+       "Traditional pastoral systems of land use have caused land degradation.",
+       "Land degradation will occur if livestock numbers exceed the availability of food.",
+       "The employment of opportunistic methods of land use can help avoid land degradation."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

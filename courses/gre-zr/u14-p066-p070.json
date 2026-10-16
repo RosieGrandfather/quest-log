@@ -1,0 +1,407 @@
+{
+ "id": "u14-p066-p070",
+ "title": "阅读 14 · Passage 66–70（5篇 · 15题）",
+ "en": "Reading Comprehension — Passages 66–70",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 66–70",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p66": {
+     "number": 66,
+     "paragraphs": [
+      "In recent decades, scholars of American literature have skillfully revealed authors’ simultaneous accommodation and resistance to an increasingly commercialized, capitalized environment during the early nineteenth century. Historians of the period have not, however, fully exploited literary criticism, due to the disciplinary boundaries that mark contemporary academic research. Few historians have extensive training in critical theory and its specialized languages, and the sheer volume of work in early American history and literature challenges anyone who would master either field, much less both. Moreover, historians study people across the nation, but much literary scholarship called “American” actually examines works produced in northeastern states. And historians usually study the operations of capitalism in its details, while literary critics produce a generalized picture of literary commodification."
+     ],
+     "highlights": []
+    },
+    "p67": {
+     "number": 67,
+     "paragraphs": [
+      "In 1755 British writer Samuel Johnson published an acerbic letter to Lord Chesterfield rebuking his patron for neglect and declining further support. Johnson’s rejection of his patron’s belated assistance has often been identified as a key moment in the history of publishing, marking the end of the culture of patronage. However, patronage had been in decline for 50 years, yet would survive, in attenuated form, for another 50. Indeed, Johnson was in 1762 awarded a pension by the Crown—a subtle form of sponsorship, tantamount to state patronage. The importance of Johnson’s letter is not so much historical as emotional; it would become a touchstone for all who repudiated patrons and for all who embraced the laws of the marketplace."
+     ],
+     "highlights": [
+      "However, patronage had been in decline for 50 years, yet would survive, in attenuated form, for another 50."
+     ]
+    },
+    "p68": {
+     "number": 68,
+     "paragraphs": [
+      "Historically, more cold-adapted antelope species originating in Eurasia have migrated into Africa, where the climate is generally warmer, than have warm-adapted African species into Eurasia. A likely explanation for this involves the fact that intercontinental migrations require both a land bridge connecting the two continents and the suitable habitat both on and across that land bridge. During periods of climatic cooling, such as the various ice ages, the land bridge is open for a long time (because sea level remains low) and is usable by cold-adapt species because cool habitats then extend across it. Thus during cooling most migrants would be expected to travel toward Africa, which is near the equator, since this is the direction dictated by habitat changes on a cooling Earth. In contrast, when the Earth is warm, the land bridge is reduced or gone because sea level is relatively high then. Only during the short lag between onset of global temperature change and sea level response can warm-adapted species migrate from the equator toward higher latitudes."
+     ],
+     "highlights": [
+      "short lag"
+     ]
+    },
+    "p69": {
+     "number": 69,
+     "paragraphs": [
+      "Historian Colin Calloway argues that in the late colonial period preceding the American Revolution (1775-1783), the British government sought to seal off territory west of the Appalachian Mountain from the encroachment of land-hungry White settlers, to negotiate with Native American peoples as independent foreign states, and to guarantee the integrity of traditional native American hunting grounds. By contrast, White Americans, released by the outbreak of the Revolution from the constraints of Britain’s allegedly benevolent policies, are portrayed by Calloway as ruthless land-grabbers whose new national government endorsed their rapacity. Bernard Bailyn argues, however, that the “Americans” who encroached on Native American land during the Revolution had been British only a few years before. When, during and after the Revolution, White Americans seized Native American land by any available means, they were continuing a tradition dating back to the earliest years of English settlement in North America. And, according to Bailyn, the British government’s prewar efforts to preserve the trans-Appalachian west for Native Americans resulted not from humanitarian virtue or ethnic tolerance but from British Merchants’ desire to maintain their lucrative trade with native Americans and the government’ s desire to control immigration and avoid costly conflict between White and Native Americans over land."
+     ],
+     "highlights": [
+      "the earliest years of English settlement in North America."
+     ]
+    },
+    "p70": {
+     "number": 70,
+     "paragraphs": [
+      "Because coal contains toxic materials such as arsenic and lead, and its use contributes to air pollution and acid rain, one might therefore conclude that no good case could be made for burning it for fuel. But that depends on where one is starting from. Switching to coal from firewood is beneficial for both the environment and the health of the individual. Firewood use results in deforestation, loss of ecosystems, and degradation of soil quality. Wood fires are also sooty, and their particulates contribute to global warming by decreasing the reflectivity of snow fields. Finally, firewood is generally burned in homes with poor ventilation and poses a greater health risk to the individuals than they would experience from a coal-fired utility that provides electricity to their homes."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p66",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "As discussed in the passage, the literary scholars and the historians differ in which of the following ways?"
+      ],
+      "opts": [
+       "the amount of scholarship that they produce",
+       "the nature of their geographic focus",
+       "the extent to which they are critical of early capitalism",
+       "the extent to which they are interested in interdisciplinary study",
+       "The extent to which they restrict their focus to a particular time period"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p66",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage cites which of the following as a reason for historians’ failure to fully exploit literary criticism?"
+      ],
+      "opts": [
+       "historians’ overly thematic approach to literature",
+       "historians’ conservative notion of what constitutes literature",
+       "historian’s lack of interest in critical theory",
+       "the distinctive nature of much literary criticism",
+       "the ahistorical quality of much literary criticism"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p66",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage cites which of the following as reasons for historians’ failure to fully exploit literary criticism?"
+      ],
+      "opts": [
+       "The amount of scholarship involved",
+       "The distinctive nature of literary criticism",
+       "The ahistorical quality of much literary criticism"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 4,
+     "passage": "p67",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions Johnson’s 1762 pension award in order to"
+      ],
+      "opts": [
+       "reveal that Johnson remained consistent in his rebuke of Lord Chesterfield well after 1755",
+       "provide evidence for a general trend in the latter half of the eighteenth century of private patronage’s being replaced by state sponsorship",
+       "situate the debate over the end of patronage within the wider realm of eighteenth-century economic history",
+       "suggest that Johnson’s letter to Chesterfield was noticed by the Crown only years after it was published",
+       "emphasize that patronage still helped support Johnson’s writing after his letter to Chesterfield"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p67",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted phrase in the context of the passage as a whole? (patronage had been in decline for 50 years, yet would survive, in attenuated form, for another 50)"
+      ],
+      "opts": [
+       "It points out the most obvious implications of Johnson’s letter to his patron.",
+       "It suggests a motivation for Johnson’s rejection of Chesterfield’ s patronage.",
+       "It provides information that qualifies the assertion that Johnson’s letter sharply defined of the end of a publishing era.",
+       "It provides a possible defense for Chesterfield’s alleged neglect of Johnson.",
+       "It refutes the notion the patrons are found primarily among the nobility."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p67",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions Johnson’s 1762 pension award in order to"
+      ],
+      "opts": [
+       "provide a specific example of patronage’s surviving into the second half of the eighteenth century",
+       "emphasize that patronage still helped support Johnson’s writing after his letter to Chesterfield",
+       "provide evidence for a general trend in the later half of the eighteenth century of private patronage’s being replaced by state sponsorship"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 7,
+     "passage": "p67",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "Which of the following statements about literary patronage may be inferred from the passage?"
+      ],
+      "opts": [
+       "It was strongly defended by most patrons.",
+       "It was regulated by the state in Britain after 1762.",
+       "It had largely fallen out of favor by 1800."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p68",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true of an Eurasia-Africa land bridge during ice ages?"
+      ],
+      "opts": [
+       "It offers suitable habitats for cold-adapted species of antelope.",
+       "It encourages migration from Africa to Eurasia of cold-adapted species of antelope.",
+       "It allows the survival of warm-adapted species of antelope that might otherwise home extinct.",
+       "It is more likely to exist early in an ice age than later in an ice age.",
+       "The habitats it offers change more quickly than do those offered by land bridges during other periods."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p68",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage implies that during the “short lag”, a land bridge between Africa and Eurasia would"
+      ],
+      "opts": [
+       "be inhabited primarily by species of antelope originating in Eurasia.",
+       "be characterized by areas of widely varying elevation above sea level.",
+       "be inhabited by a wide diversity of antelope species.",
+       "contain habitats that could sustain warm-adapt antelope species.",
+       "contain habitats similar to habitats at much higher latitudes in Eurasia."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p68",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following best accounts for the apparent bias in antelope-migration direction?"
+      ],
+      "opts": [
+       "Warm-adapted antelope species are rarely able to tolerate cool habitats, whereas cold-adapted antelope species usually can tolerate warm habitats.",
+       "During global warming periods, land bridges, when present, lack habitats suitable for sustaining warm-adapted antelope species.",
+       "Under most climatic conditions, Africa offers a larger number of suitable antelope habitats than does Eurasia.",
+       "Many more species of antelope have originated in Eurasia than have originated in Africa.",
+       "Land bridges are more likely to exist when climate change favors migration to warmer climates than when climate changes favors migration to cooler climates."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 11,
+     "passage": "p69",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "suggest that two different arguments about a particular historical period are both questionable.",
+       "present historical evidence that undermines a widely accepted viewpoints.",
+       "defend a revisionist historian’s thesis against traditionalist criticism.",
+       "outline opposing interpretations of a particular historical phenomenon.",
+       "resolve a dispute among historians over a controversial historical episode."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 12,
+     "passage": "p69",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The reference to “the earliest years of English settlement in North America” serves primarily to emphasize the point that"
+      ],
+      "opts": [
+       "Calloway has exaggerated the ruthlessness and rapacity of White settlers in their relations with native Americans prior to the American Revolution.",
+       "Seizure of Native American lands by White settlers had increased dramatically throughout the time of British Colonial rule.",
+       "At one time White settlers had negotiated with Native American people as independent foreign states.",
+       "White settlers had no legitimate ground for claiming title to land they seized west of the Appalachian Mountains.",
+       "Aggression by White settlers against Native Americans during and after the American Revolution was not a new phenomenon."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 13,
+     "passage": "p69",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred that both Bailyn and Calloway would probably agree with which of the following assertions regarding the relations between White Americans and Native Americans concerning the trans-Appalachian west"
+      ],
+      "opts": [
+       "The American Revolution unleashed an unprecedented wave of expropriation of Native American land by White settlers.",
+       "The British government’s prewar policy towards the Native Americans was determined largely by the interests of British merchants who traded with the Native Americans.",
+       "The British government tried to keep White settlers out of the trans-Appalachian west primarily in order to prevent disputes over land between those settlers and Native Americans.",
+       "The new national colonial government to negotiate with Native American peoples as independent foreign states.",
+       "One objective of the British government’s land policy prior to the American revolution was to prevent White settlers from moving to the western side of the Appalachian Mountains."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 14,
+     "passage": "p70",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage indicates which of the following about firewood?"
+      ],
+      "opts": [
+       "Its use has a damaging effect on the quality of soil.",
+       "Its advantages over coal as a fuel have been exaggerated.",
+       "Its effect on human health is partly a result of the conditions under which it is burned."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 15,
+     "passage": "p70",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions arsenic and lead primarily in order to"
+      ],
+      "opts": [
+       "identify some of the factors that might support a particular conclusion.",
+       "challenge an assertion about the toxicity of various sources of fuel.",
+       "establish the grounds for a recommendation concerning future energy use.",
+       "acknowledge a weakness of the hypothesis proposed by the author.",
+       "question the advantages of switching from one source of fuel to another."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

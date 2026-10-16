@@ -28,6 +28,12 @@ def validate_qset(unit, cdir):
         if it.get('exp') is not None: need(it.get('exp'), w)
         if it.get('fig'): need(it['fig'], w)
         tx = it.get('txt')
+        if it.get('passage'):
+            passage = b.get('passages', {}).get(it['passage'])
+            if not passage or not passage.get('paragraphs'):
+                e.append(f'{w}: 找不到共用阅读文章')
+            elif any(not any(h in p for p in passage['paragraphs']) for h in passage.get('highlights', [])):
+                e.append(f'{w}: 高亮文字不在原文中')
         if tx is not None:
             if not isinstance(tx, dict) or not isinstance(tx.get('stem'), list) or not tx['stem'] or not all(isinstance(x, str) and x.strip() for x in tx['stem']): e.append(f'{w}: txt.stem 不对')
             elif kind in ('mc1', 'mcn', 'se'):

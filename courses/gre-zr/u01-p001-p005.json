@@ -1,0 +1,357 @@
+{
+ "id": "u01-p001-p005",
+ "title": "阅读 01 · Passage 1–5（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 1–5",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 1–5",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p1": {
+     "number": 1,
+     "paragraphs": [
+      "Although social learning (the acquisition of specific behaviors by observing other individuals exhibiting those behaviors ) is well documented among fish, few studies have investigated social learning within a developmental context in these taxa. Rather than investigating the development of a particular skill, Chapman, Ward, and Krause investigated the role of group density during development in later foraging success in laboratory-housed guppies. When raised with a small number of conspecifics (members of the same species), guppies were quicker to locate food by following a trained adult guppy than were guppies raised in large groups. This counterintuitive finding is explained by the fact that guppies reared in the high-density condition were less likely to shoal (swim in a group ) with others and, therefore, were less likely to learn the benefits of social learning. Instead, fish reared in high-density situations may learn that conspecifics are to be viewed as competitors, rather than as potential sources of adaptive information. This finding suggests that at least for guppies, the early social environment may have an effect on the capacity for social learning, if not on the socially learned behaviors themselves."
+     ],
+     "highlights": []
+    },
+    "p2": {
+     "number": 2,
+     "paragraphs": [
+      "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mules and Men in that it simply records stories, with no descriptive or interpretive information.",
+      "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to escape its frame, in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience. In this, Hurston may have been ahead of her time."
+     ],
+     "highlights": []
+    },
+    "p3": {
+     "number": 3,
+     "paragraphs": [
+      "A decrease in face-to-face social contact can precipitate depression. Time spent using the Internet cannot be spent in face-to-face social contact, so psychologists have speculated that sharply increasing Internet use can cause depression. Studies of regular Internet users have found a significantly higher incidence of depression among those who had recently doubled the amount of time they spent using the Internet than among those whose use had not increased. Hence, the psychologists’ speculation is correct."
+     ],
+     "highlights": []
+    },
+    "p4": {
+     "number": 4,
+     "paragraphs": [
+      "African American drama has, until recently, been rooted in the mimetic tradition of modern American naturalism. The most distinctive attribute of this tradition is the mechanistic, materialistic conception of humanity. Naturalism sees each individual as inextricably bound to the environment and depicts each person as someone controlled by, instead of controlling, concrete reality. As long as African American drama maintained naturalism as its dominant mode, it could only express the “plight of African American people”. Its heroes might declare the madness of reality, but reality inevitably triumphed over them.",
+      "The surrealistic plays of Adrienne Kennedy mark one of the first departures from naturalism by an African American dramatist. The overall goal of her work has been to depict the world of the soul and the spirit, not to mirror concrete reality. Within this framework, Kennedy has been able to portray African American minds and souls liberated from their connections to the external environment."
+     ],
+     "highlights": []
+    },
+    "p5": {
+     "number": 5,
+     "paragraphs": [
+      "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources.",
+      "The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human-caused influxes of nutrients."
+     ],
+     "highlights": [
+      "apparently conflicting and ambiguous results"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p1",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "note a flaw in a scientific finding.",
+       "describe a particular scientific study.",
+       "present an interpretation of a finding.",
+       "note a difference between two scientific findings.",
+       "contrast two conditions in which a particular phenomenon has been observed."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p1",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Regarding research on fish, it can be inferred from the passage that"
+      ],
+      "opts": [
+       "research studies of the acquisition of important skills by fish have only recently begun to document the role of conspecifics in the learning process.",
+       "research on social learning in guppies suggests that guppies differ in important ways from most other fish in the means by which they learn particular skills.",
+       "research on social learning in fish has generally focused on the acquisition of skills other than foraging.",
+       "research has established that social learning occurs in some fish species without investigating the development context in which it occurs.",
+       "research to investigate social learning has been done more extensively on fish than on other aquatic animals."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p1",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred about the study by Chapman, Ward, and Krause?"
+      ],
+      "opts": [
+       "It was initially designed to investigate something other than social learning.",
+       "It required researchers to observe individual guppies at multiple points in their life spans.",
+       "It pointed to the possibility that population density may have little to do with guppies’ social learning.",
+       "It required the observation of guppies under conditions that closely mimicked the conditions of guppies in the wild.",
+       "It indicated that guppies gain adaptive information from being reared with a relatively large number of conspecifics."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p2",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Select the sentence that suggests a possible reason why Hurston wrote the version of Mules and Men that was published in 1935."
+      ],
+      "pass": [
+       "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mules and Men in that it simply records stories, with no descriptive or interpretive information.",
+       "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to escape its frame, in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience. In this, Hurston may have been ahead of her time."
+      ],
+      "sentences": [
+       "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind.",
+       "In this anthropological study, Hurston describes in detail the people who tell the stories, often even inserting herself into the storytelling scene.",
+       "Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929.",
+       "This version differs from Mules and Men in that it simply records stories, with no descriptive or interpretive information.",
+       "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales.",
+       "Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to escape its frame, in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the stories to a non-Black audience.",
+       "In this, Hurston may have been ahead of her time."
+      ],
+      "highlights": [],
+      "sentenceParagraphLengths": [
+       4,
+       3
+      ]
+     },
+     "kind": "ss",
+     "ansText": "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales.",
+     "sourceAnswer": "第二段第一句 E"
+    },
+    {
+     "n": 5,
+     "passage": "p2",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that Hurston may have done which of the following in preparing her original version?"
+      ],
+      "opts": [
+       "discussed her mode of presentation with her publisher before writing the first draft, in order to reduce the possibility of misunderstanding",
+       "shortened her presentation of the stories to the bare minimum in order to be able to present more folklore material",
+       "put it aside for several decades in order to maximize its potential audience when it was published",
+       "reluctantly agreed to reshape it in order to take out various elements with which her publisher had been dissatisfied",
+       "chose not to include editorial commentary, in order to present the stories on their own terms"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p3",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "In general, the reason that the people in the studies had doubled their Internet use was not that they had earlier experienced a significant decrease in opportunities for face-to-face social contact.",
+       "A sharp decrease in face-to-face social contact is the only change in daily activity that can lead to an increased incidence of depression.",
+       "Using the Internet presents no opportunities for people to increase the amount of face-to-face social contact they experienced in their daily lives.",
+       "Regular Internet users who are depressed will experience an immediate improvement in mood if they sharply decrease the amount of time they spend on the Internet.",
+       "Before they doubled the time they spent on the Internet, the people who did so were already more prone to depression than are regular Internet users in general."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C",
+     "answerPending": true,
+     "answerReviewReason": "原答案C；复核倾向A：需排除面对面交往机会先减少，同时造成上网增多与抑郁这一共同原因。C的绝对表述未必是论证必需条件；尚未取得可核验的官方答案。",
+     "explanation": "本题答案有争议，尚无可靠定论。争议理由：原答案C；复核倾向A：需排除面对面交往机会先减少，同时造成上网增多与抑郁这一共同原因。C的绝对表述未必是论证必需条件；尚未取得可核验的官方答案。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 7,
+     "passage": "p4",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best states the central idea of the passage?"
+      ],
+      "opts": [
+       "African American drama has been primarily influenced by naturalisms emphasis on the materialistic.",
+       "African American drama has traditionally acknowledged the relationship between the individual and the environment.",
+       "African American drama, traditionally naturalistic, has been little influenced by dramatist Kennedy’s spiritual and psychological approach to drama.",
+       "The work of Kennedy suggests a shift away from a commitment to strict naturalism in African American drama.",
+       "The work of Kennedy best exemplifies the current interest of African American artists in the spiritual and psychological worlds."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p4",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, Kennedy is concerned with depicting the"
+      ],
+      "opts": [
+       "internal rather than the external life of her characters.",
+       "madness of reality rather than the effects of reality.",
+       "effects of materialism on African American minds and souls.",
+       "relationship between naturalism and the human spirit.",
+       "effects that her characters have on the environment."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p4",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following statements, if true, would most strengthen the authors assertion that Kennedy’s work marks a serious departure from the tradition described in the first paragraph?"
+      ],
+      "opts": [
+       "Kennedy places the action in a real-life setting that is nevertheless unfamiliar to the average viewer or reader.",
+       "Kennedy movingly portrays the lives and struggles of prominent African Americans in the United States.",
+       "Kennedy uses characters found only in ancient African legends and mythology.",
+       "Kennedy provides insights into American mimetic tradition and dramatic convention.",
+       "Kennedy depicts the events in a style reminiscent of a television documentary."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 10,
+     "passage": "p5",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "assessing the empirical success of a theory.",
+       "explaining why no consistent theoretical account of a phenomenon has been possible.",
+       "advocating a potential solution to a theoretical impasse.",
+       "deducing testable predictions from a proposed theory.",
+       "describing the difficulties involved in explaining certain empirical results."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 11,
+     "passage": "p5",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author would most likely agree with which of the following assessments of the results from field studies"
+      ],
+      "opts": [
+       "Many of the results contradicted predictions of susceptibility to invasion that are based on the availability of resources unused by the community.",
+       "If fluctuating resource availability were taken into account, many of the apparent inconsistencies among the results could be explained.",
+       "The apparent inconsistencies and ambiguities in the results are caused by trying to make them fit an inadequate general theory of invasibility.",
+       "No general theory of invasibility has emerged because none of the studies has been able to assess the degree of an invasion accurately.",
+       "The results tend to show a degree of susceptibility to invasion that is lower than would be expected given the prevalence in the wild of nonnative species."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 12,
+     "passage": "p5",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the author, the theory based on fluctuating resource availability might resolve “apparently conflicting and ambiguous results” because"
+      ],
+      "opts": [
+       "It explains how a particular circumstance can produce disparate effects.",
+       "It does not assume that all of the results are instances of the phenomenon that the theory is intended to explain.",
+       "It predicts that seemingly minor variations in research methodology can have a dramatic effect on results.",
+       "Its account is based on a statistical tendency rather than on the supposition that the results arise from a causal connection.",
+       "It indicates why a similar outcome may be preceded by very different circumstances on different occasions."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

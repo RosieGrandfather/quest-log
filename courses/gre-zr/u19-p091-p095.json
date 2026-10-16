@@ -1,0 +1,204 @@
+{
+ "id": "u19-p091-p095",
+ "title": "阅读 19 · Passage 91–95（5篇 · 6题）",
+ "en": "Reading Comprehension — Passages 91–95",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 91–95",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p91": {
+     "number": 91,
+     "paragraphs": [
+      "A mouse’s immune system generally rejects proteins different from those produced by that mouse. The immune system of a pregnant mouse does not, however, reject the mouse’s fetuses, although the fetal tissue a fetus produces as it develops typically contains many such proteins. Some scientists hypothesize that the placenta surrounding the fetus physically blocks the mother’s immune system. But others, noting that the placenta produces IDO, an enzyme that suppresses the immune system, hypothesize that IDO plays a crucial role in protecting the fetus."
+     ],
+     "highlights": []
+    },
+    "p92": {
+     "number": 92,
+     "paragraphs": [
+      "Most popularizations of science actually do more harm than good. Why? The single most important feature of scientific work is not this or that specific result. Instead, what science accomplishes—and what physics in particular accomplishes so beautifully—is the linking of diverse phenomena, the binding together of a myriad of predictions and explanations. What nearly all popularizations do is systematically undermine the progressive reasoning that links principles, conventions, experiments, and laws. Bad science writing splinters the most interesting feature of science, its long run of connected argumentation, into isolated metaphors that last just long enough to evoke a particular result: black holes are said to be huge funnels and quantum electron orbits are characterized as diffuse clouds."
+     ],
+     "highlights": []
+    },
+    "p93": {
+     "number": 93,
+     "paragraphs": [
+      "The use of nets at beach resorts to protect swimming areas from sharks has been criticized by environmentalists because the nets needlessly kill thousands of marine animals annually. However, environmentalists have recently discovered that an electrified cable buried beneath the periphery of swimming areas causes sharks to swim away while harming neither humans nor marine life. Hence, by installing such cables, resort communities will be able to maintain tourism while satisfying environmentalists’ concerns."
+     ],
+     "highlights": []
+    },
+    "p94": {
+     "number": 94,
+     "paragraphs": [
+      "In general, naive individuals appear more likely to learn from interaction with familiar rather than unfamiliar members of their species. Kaveliers and colleagues (2005) reported that naive laboratory-bred deer mice showed greater social learning of defensive responses to biting flies after observing responses of familiar members than after observing responses of unfamiliar members. Earlier, Valsecchi and colleagues (1996) reported striking differences in social learning of food preferences among Mongolian gerbils, depending on whether they were exposed to familiar or unfamiliar demonstrators. At the time, this was unexpected because Gaief and colleagues (1984) had previously reported no familiarity effect in Norway rats on social learning of food preferences. However, Gaief et al (1998) subsequently uncovered a significant familiarity effect that was evident when demonstrators are some hours before interacting with observers but absent when demonstrators are immediately before interacting."
+     ],
+     "highlights": [
+      "Earlier, Valsecchi and colleagues (1996) reported striking differences in social learning of food preferences among Mongolian gerbils, depending on whether they were exposed to familiar or unfamiliar demonstrators.",
+      "Gaief and colleagues (1984)"
+     ]
+    },
+    "p95": {
+     "number": 95,
+     "paragraphs": [
+      "While historian Linda Nicholson sees women's participation in voluntary associations as activities consistent with the increasing relegation of women’s lives to a separate, “private” sphere in nineteenth-century Europe, historian Katherine Lynch argues that these kinds of activities enabled women to join with one another and to develop a kind of shadow citizenship within civil society, if not the formal state. These kinds of experiences were no substitute for actual political entitlements, Lynch suggests, but they deserve more attention for their importance in helping individuals forge enduring bonds of community and identity beyond domestic life. Only by limiting one’s notion of public life to formal political participation, she says, can one conclude that most women in Western society have ever been literally consigned to a separate or “private” sphere."
+     ],
+     "highlights": [
+      "These kinds of experiences"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p91",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In order to choose between the two hypotheses, it would be most useful to determine which of the following?"
+      ],
+      "opts": [
+       "whether mice sometimes produce IDO when they are not pregnant",
+       "whether the immune systems of fetal mice are capable of attacking the tissue of the mother",
+       "whether there are cases in which the immune system of a pregnant mouse rejects some fetuses but not others",
+       "whether IDO is the only substance capable of suppressing the immune system produced by mice",
+       "whether the immune systems of pregnant mice that are given a drug that inhibits IDO production subsequently reject the fetus"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p92",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions black holes in order to provide"
+      ],
+      "opts": [
+       "an instance of a factual error to which popularizations of science are prone.",
+       "a metaphor for the emptiness typical of most popular science writing.",
+       "a case in which a metaphor for a scientific process leads to a misunderstanding of that process.",
+       "an example of the metaphorical explanations the author believes are typical of bad science writing.",
+       "an illustration of a complex phenomenon for which most readers require simplified explanations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p93",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "Many seaside resort communities where sharks have never been sighted nonetheless paid to install buried electrified cables.",
+       "Tourism at resorts where sharks have been sighted has suffered only slightly despite the fact that many people claim to fear sharks.",
+       "Because they have a strong fear of sharks, many tourists prefer to swim at beaches that are known to be well protected from sharks.",
+       "The buried electrified cable is not the only innovation approved by environmentalists that is known to be successful in repelling sharks without harming them.",
+       "The marine mammals that are a major tourist attraction at many resorts do not enter areas around which there are buried electrified cables."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p94",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred about the report by Gaief and colleagues (1984) as it is described in the passage?"
+      ],
+      "opts": [
+       "It introduced a concept that the report by Kaveliers and colleagues was intended to clarify.",
+       "It highlighted an inaccuracy in the report by Valsecchi and colleagues.",
+       "It led to an incorrect supposition on the part of some scientists.",
+       "It played an important role in developing an understanding of social learning between members of different species.",
+       "It suggested that the familiarity effect is stronger in some species than in others."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p95",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The phrase “These kinds of experiences” in the passage refers to experiences in Lynch’s view are"
+      ],
+      "opts": [
+       "an early stage in women’s political participation",
+       "insufficiently appreciated for their role in women’s public life",
+       "properly assigned to the “private” sphere",
+       "a means of altering the political structure",
+       "historically atypical for women in Western society"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p95",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that Lynch would agree that formal political participation"
+      ],
+      "opts": [
+       "was increasingly important as the nineteenth century progressed.",
+       "was an underreported phenomenon among women in nineteenth century Europe within civil society.",
+       "is crucial to helping individuals form community ties.",
+       "is a significant component of public life.",
+       "is indicative of a kind of shadow citizenship."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

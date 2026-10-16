@@ -1,0 +1,213 @@
+{
+ "id": "u16-p076-p080",
+ "title": "阅读 16 · Passage 76–80（5篇 · 6题）",
+ "en": "Reading Comprehension — Passages 76–80",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 76–80",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p76": {
+     "number": 76,
+     "paragraphs": [
+      "In most coastal regions, the level of the sea is rising in relation to the land by one to two millimeters a year, and this trend would be explained by the hypothesis that at the North and South Poles, the amount of ice that melts during the summer now exceeds the amount forms during the winter. The hypothesis is not undermined by observations that sea levels are falling relative to the Scandinavian coast by four millimeters a year. Much land in northern latitudes, including Scandinavia, is still rising in response to being freed of the enormous weight of the ice that used to cover it during the last ice age, and in Scandinavia the land is now rising faster than the sea."
+     ],
+     "highlights": [
+      "sea levels are falling relative to the Scandinavian coast by four millimeters a year.",
+      "in Scandinavia the land is now rising faster than the sea."
+     ]
+    },
+    "p77": {
+     "number": 77,
+     "paragraphs": [
+      "Editors of major United States news magazines have been criticized for reducing the amount of space these magazines devote to international news. According to these editors, however, readers are wholly to blame for the reductions. After all, the editors point out, sales of magazine issues that prominently feature international news stories have declined significantly, and declining sales reflect declining reader interest. Yet even if true, this evidence does not refute the contention that editors should bear some of the blame for the reductions, unless editors are merely passive instruments responding to reader interest. And that is clearly an untenable view, since editors can often intensify reader interest in a news topic by giving it frequent coverage."
+     ],
+     "highlights": [
+      "sales of magazine issues that prominently feature international news stories have declined significantly,",
+      "editors can often intensify reader interest in a news topic by giving it frequent coverage."
+     ]
+    },
+    "p78": {
+     "number": 78,
+     "paragraphs": [
+      "Benovians set their clocks back an hour for the winter. The result is that, during winter’s short days, it is light when most commuters drive to work, but dark when they drive back home. Darkness contributes to accidents. Changing the clocks, however, does not actually increase the amount of driving done in the dark, so it is unlikely to have any effect on Benovia’s automobile accident rate."
+     ],
+     "highlights": []
+    },
+    "p79": {
+     "number": 79,
+     "paragraphs": [
+      "Elizabeth Bishop’s Complete Poems(1927-1979) has come to seem to most of its readers so achieved and sufficient as a life’s work that it is hard not to lose sight of how slowly Bishop wrote poems and of how few poems, finally, she completed. But Bishop herself never ceased to find her productivity inadequate. The size and pace of her output were always in her eyes a failing (vaguely moral in complexion) for which she apologized throughout her career, although, as I will argue in this essay, Bishop’s inability to write more poems than she did was also a refusal to do so. The small, manageable size of Bishop’s body of work has facilitated its extraordinary critical reception since her death. (Robert Lowell, whose oeuvre is so much larger, has never had a complete edition of his poetry published.) Yet the size of her work is also a sign of Bishop’s alienation, that is, her uneasy, resistant relation to the literary culture that today claims her as the major poet of her generation."
+     ],
+     "highlights": [
+      "complexion)"
+     ]
+    },
+    "p80": {
+     "number": 80,
+     "paragraphs": [
+      "Shoreland County recently purchased an area of wilderness land in the county to prevent it from being developed. In doing so, the county has forfeited all future property taxes on this land. Property taxes are assessed on market value, and if developed, the land would have contributed significantly to the county’s overall annual tax revenue. Because of the purchase, therefore, overall annual tax revenue will be lower than it would have been if development had occurred."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p76",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the passage, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first states observation the accuracy of which is challenged in the passage; the second is part of the ground on which that challenge is based.",
+       "The first states observations that, according to the passage, are incompatible with a certain hypothesis; the second is part of the grounds offered in support of a revision of that hypothesis.",
+       "The first states observations that, according to the passage , can be reconciled with a certain hypothesis; the second describes a phenomenon that is factual basis of that reconciliation.",
+       "The first presents a phenomenon, two competing explanations of which are considered in the passage; the second is the explanation of the phenomenon that the passage argues is correct.",
+       "The first provides evidence against a position; the second is that position."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p77",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument as a whole, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first is evidence that has been used to support a position that the argument opposes; the second is a point that the argument raises to cast doubt on the reasoning used to support that position.",
+       "The first presents a claim, the truth of which is evaluated in the argument, the second is information introduced to cast doubt on that claim.",
+       "The first presents a claim,the truth of which is evaluated in the argument, the second provides evidence in support of that claim.",
+       "The first cites evidence in support of the main conclusion of the argument, the second states that conclusion.",
+       "The first states an assumption that is explicitly made to support the main conclusion of the argument, the second is a position that the argument as whole opposes."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p78",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument relies?"
+      ],
+      "opts": [
+       "The average number of hours that Benovians drive when it is dark is greater for days during the winter than for days during other times of the year.",
+       "In Benovia, hazards to safe driving that are made worse by darkness are as likely to occur in the morning as in the evening.",
+       "The majority of cars on Benovia’s roads during a given day are those of people commuting to or from work.",
+       "The majority of automobile accidents in Benovia take place when it is dark.",
+       "Driving conditions are no worse in Benovia in the winter than during the rest of the year."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p79",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage indicates that the small size of Bishop’s body of work contributed to bringing about which of the following?"
+      ],
+      "opts": [
+       "bishop’s alienation from the literary culture of her generation",
+       "the favorable scholarly attention that Bishop’s work has received since her death",
+       "an interest among readers regarding why Bishop wrote so slowly"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB",
+     "answerPending": true,
+     "answerReviewReason": "原答案AB；复核倾向只选B。原文明确小作品量促进评论界关注，但只称其为疏离的表现，未明确说它造成疏离，A存在因果方向问题。",
+     "explanation": "本题答案有争议，尚无可靠定论。争议理由：原答案AB；复核倾向只选B。原文明确小作品量促进评论界关注，但只称其为疏离的表现，未明确说它造成疏离，A存在因果方向问题。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 5,
+     "passage": "p79",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “complexion” most nearly means"
+      ],
+      "opts": [
+       "appearance",
+       "constitution",
+       "hue",
+       "intricacy",
+       "personality"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p80",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "The money the county would have had to expend for services to residences or industry developed on the wilderness land would have exceeded the tax revenue from the developed land.",
+       "The market value of undeveloped properties in Shoreland County will not increase significantly in the foreseeable future.",
+       "The property taxes received by Shoreland County from the previous owners of the wilderness area were insignificant relative to the county’s overall annual tax revenue.",
+       "Land near the area bought by the county will not increase significantly in market value as a result of being near wilderness that is protected from development.",
+       "Shoreland County will not in the foreseeable future prevent the development of any other land in the county."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

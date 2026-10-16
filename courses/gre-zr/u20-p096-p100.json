@@ -1,0 +1,212 @@
+{
+ "id": "u20-p096-p100",
+ "title": "阅读 20 · Passage 96–100（5篇 · 6题）",
+ "en": "Reading Comprehension — Passages 96–100",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 96–100",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p96": {
+     "number": 96,
+     "paragraphs": [
+      "In the 1600s there was intense competition in Europe to discover how to make porcelain. The two groups of Europeans working in China—Dutch merchants and French missionaries—each tried to discover the Chinese manufacturers’ secrets. The first French missionary journal, was not published until 1717, several years after European porcelain manufacture began. Therefore, rather than copying the Chinese techniques, the European manufacturers must have learned by experiment."
+     ],
+     "highlights": []
+    },
+    "p97": {
+     "number": 97,
+     "paragraphs": [
+      "Editors of major United States newsmagazines have been criticized for reducing the amount of space these magazines devote to international news. According to these editors, however, readers are wholly to blame for the reductions. After all, the editors point out, sales of magazine issues that prominently feature international news stories have declined significantly, and declining sales reflect declining reader interest. Yet even if true, this evidence does not refute the contention that editors are merely passive instruments responding to reader interest. And that is clearly an untenable view, since editors can often intensify reader interest in a news topic by giving it frequent coverage."
+     ],
+     "highlights": [
+      "sales of magazine issues that prominently feature international news stories have declined significantly,",
+      "editors can often intensify reader interest in a news topic by giving it frequent coverage."
+     ]
+    },
+    "p98": {
+     "number": 98,
+     "paragraphs": [
+      "The crustaceans known as harpacticoids are very widespread in marine sediments, where they feed on microorganisms by ingesting the sediment particles to which the microorganisms adhere. Heavy metals, such as those found in industrial pollution, readily adhere to sediment particles. Harpacticoids are poisoned by heavy metals but are unaffected by most other pollutants. Therefore the concentration of harpacticoids in an area is a good indication of whether that marine environment contains heavy metals."
+     ],
+     "highlights": []
+    },
+    "p99": {
+     "number": 99,
+     "paragraphs": [
+      "Orcas are small whales that generally travel in groups called pods. Orcas that feed on marine mammals travel in very small pods, while those that feed on fish travel in relatively large pods. Since a larger pod has an increased collective ability to locate prey, it is likely that orcas that feed on mammals travel in small pods only because the mammals that they hunt can more easily detect a large pod and escape it."
+     ],
+     "highlights": []
+    },
+    "p100": {
+     "number": 100,
+     "paragraphs": [
+      "The male lion’s mane consists of hair of varying length and color, covering, to varying degrees, the head, neck, shoulders, and chest. Schaller suggested that the mane protects the area of the body “towards which most social contact is directed” by absorbing blows and bites. Darker mane hairs are thicker than lighter hairs, so darker manes may provide better protection. These ideas suggest that males with longer and darker manes will be wounded less frequently and/or with less severity on the area covered by the mane, but direct tests of this prediction are difficult. Individual males are seldom seen daily, and the mane itself obscures many wounds beneath it from view. Furthermore, even in the best studied population, serious fights between lions are rarely observed."
+     ],
+     "highlights": [
+      "Darker mane hairs are thicker than lighter hairs,",
+      "prediction"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p96",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, provides the strongest support for the argument?"
+      ],
+      "opts": [
+       "The techniques used by the first European makers of porcelain were essentially identical to techniques that Chinese porcelain maker used.",
+       "The first European-manufactured porcelain items were comparable in quality to some of the lower-quality porcelain that was then being imported into Europe from China.",
+       "The manuscript from which the 1717 journal article was published had been written down by French missionaries in China and sent to France some years before 1717.",
+       "The particular raw materials that are needed to make porcelain were not used in European ceramic making until the manufacture of porcelain began.",
+       "The first porcelain factory in Europe was founded in Germany by a manufacturer who had no channels of communication with China or Europeans working in China."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p97",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument as a whole, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first is evidence that has been used to support a position that the argument opposes; the second is a point that the argument raises to cast doubt on the reasoning used to support that position.",
+       "The first presents a claim, the truth of which is evaluated in the argument; the second is information introduced to cast doubt on that claim.",
+       "The first presents a claim, the truth of which is evaluated in the argument; the second provides evidence in support of that claim.",
+       "The first cites evidence in support of the main conclusion of the argument; the second states that conclusion.",
+       "The first states an assumption that is explicitly made to support the main conclusion of the argument; the second is a position that the argument as a whole opposes."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p98",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument relies?"
+      ],
+      "opts": [
+       "Industrial pollution is the principal source of heavy metals in marine sediments.",
+       "Harpacticoids are the only crustaceans that feed on microorganisms by ingesting sediment particles.",
+       "Harpacticoids are more susceptible to poisoning by heavy metals than are other marine organisms.",
+       "The microorganisms that harpacticoids feed on are not killed by pollutants that are harmless to harpacticoids.",
+       "The microorganisms that harpacticoids feed on absorb heavy metals."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p99",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strongly indicates that the conclusion is too sweeping?"
+      ],
+      "opts": [
+       "Orcas that feed on fish almost always remain in the pod into which they were born, while orcas that feed on mammals will form new pods if the one they are in becomes too big.",
+       "No orcas have been observed to switch back and forth between feeding on fish and feeding on mammals.",
+       "Pods of orcas generally include at least on mother and one or two of her offspring.",
+       "Unlike marine mammals, fish generally travel in large schools, which can provide food for large pods of orcas.",
+       "Individuals from different pods interact frequently, and pods are small, such interaction predominantly foraging activities."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A",
+     "answerPending": true,
+     "answerReviewReason": "原答案A；复核倾向D。鱼群足以供大群鲸进食可提供食物数量这一替代解释，削弱仅因被猎物发现的解释；A反而描述小群规模的维持机制。",
+     "explanation": "本题答案有争议，尚无可靠定论。争议理由：原答案A；复核倾向D。鱼群足以供大群鲸进食可提供食物数量这一替代解释，削弱仅因被猎物发现的解释；A反而描述小群规模的维持机制。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 5,
+     "passage": "p100",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describe the function of the highlighted portion of the passage?"
+      ],
+      "opts": [
+       "to summarize the results of an experiment",
+       "to provide evidence on which a particular prediction is offered",
+       "to offer a counterexample that undermines a propelled explanation",
+       "to identify a phenomenon that Schaller found difficult to explain",
+       "to explain the variation among individual lo manes"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p100",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage mentions which of the following as an obstacle to verify the “prediction” mentioned in the passage?"
+      ],
+      "opts": [
+       "Wounds to the mane area are often difficult to observe.",
+       "Only a few lion populations have been well studied.",
+       "The severity of fights between lions is difficult to determine.",
+       "Individual males seldom have strong distinguishing characteristics.",
+       "Researchers have relatively few opportunities to observe lion populations directly."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

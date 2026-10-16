@@ -1,0 +1,315 @@
+{
+ "id": "u18-p086-p090",
+ "title": "阅读 18 · Passage 86–90（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 86–90",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 86–90",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p86": {
+     "number": 86,
+     "paragraphs": [
+      "The surface of Venus contains calcite, a mineral that absorbs the gas sulfur dioxide. Sulfur dioxide is often produced by volcanic activity and is plentiful in Venus’ atmosphere, so there must be a source, perhaps volcanic, producing sulfur dioxide on Venus."
+     ],
+     "highlights": []
+    },
+    "p87": {
+     "number": 87,
+     "paragraphs": [
+      "What accounts for the low-lying, flat surface of Mars’s north? On Earth’s surface, higher- and lower-lying areas have different types of crust: one, thin and dense, is pulled toward Earth’s center more strongly by gravity, and the planet’s water naturally comes to sit over it, creating oceans. The processes that generate this oceanic crust drive plate tectonics.",
+      "Is Mars’s north similarly characterized by a sort of crust different from other areas of the planet? Some researchers do see signs of tectonic activity surrounding the northern basin that suggest that it was created through the formation of new crust, like ocean basins on Earth. However, McGill points to Northern bedrock structures that predate the features said to mark the start of the tectonic process. McGill instead believes that through some novel mechanism the ancient surface sank to its current depth as a single unit. This would explain why features around the basin’s edge, which would have formed as the surface dropped, seem to be younger than structures at its floor.",
+      "The third possibility is that the northern lowlands result from impacts. Some researchers suggest they formed as a series of big overlapping impact craters. Others arguing that the odds against such a pattern of impacts are large, postulate a single event-the impact of an object bigger than any asteroid the solar system now contains."
+     ],
+     "highlights": []
+    },
+    "p88": {
+     "number": 88,
+     "paragraphs": [
+      "The waters east of Cape Hangklip were once the center of a lucrative wild-caught abalone fishery, but illegal fishing in the mid-1990s escalated to such levels that the recreational fishery was closed in 2003. When abalones did not rebound, commercial fishing was also banned. Continual declines in abalone were attributed to poaching, but an invasion by rock lobsters during the early 1990s probably intensified the trend. Rock lobsters prey on sea urchins, and increased rock lobster densities coincided with significant decreases in urchins. In that area, urchins feed largely by trapping drift kelp, and in doing so provide juvenile abalone with both protective shelter and nourishment. Without urchins’ presence, juvenile abalones are less likely to survive to adulthood."
+     ],
+     "highlights": []
+    },
+    "p89": {
+     "number": 89,
+     "paragraphs": [
+      "Some conservationists, concerned about the rapid depletion through poachingof elephant herds in certain parts of Africa, are urging countries to which ivory is sold to ban ivory importation. This ban, they argue, would prevent ivory sellers from reaching their market, and elephant herds would have a chance to recover."
+     ],
+     "highlights": []
+    },
+    "p90": {
+     "number": 90,
+     "paragraphs": [
+      "One of the reasons why many early British colonies in North America failed amid the New World’s abundance was that the settlers’ mindset prevented them from living like the native inhabitants. From Native Americans, the settlers learned such skills as building brushwood weirs to trap fish, but they did not adopt the real key to success: mobility. The whole intellectual foundation of European civilization was fixity—a worldview profoundly different from that of Native Americans, who moved in response to changing food resources. Settlers were drawn to North America by tales its extraordinary abundance, not realizing that abundance is seasonal. Culture and ecological knowledge allowed Native Americans to exploit different food sources at different time of year."
+     ],
+     "highlights": [
+      "brushwood weirs"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p86",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "In the recent past, the level of sulfur dioxide in Venus’ atmosphere was not much higher than it is now.",
+       "If there is volcanic activity on the surface of Venus, it is not adequate to maintain the observed amount of sulfur dioxide in the atmosphere.",
+       "The sulfur dioxide in Venus’ atmosphere forms clouds that prevent direct observation of the surface.",
+       "Sulfur dioxide produced by volcanic activity on the Earth’s surface is also absorbed by minerals other than calcite.",
+       "The calcite on the surface of Venus is in sufficient supply to continue to absorb sulfur for millions of years to come."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p87",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explore an analogy between aspects of the geology of Mars and the geology of Earth.",
+       "describe how a certain feature of Mars’s surface formed.",
+       "point out the effect that new data has had on a scientific investigation.",
+       "summarize potential explanations of a large-scale geological feature.",
+       "present the rationale for a scientist’s theory and expose some of its weakness."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p87",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about geological features on Earth"
+      ],
+      "opts": [
+       "the relative elevation of the lowest-lying regions of the crust arises in part from forces generated within the planet",
+       "the difference in elevation between the ocean basins and their surroundings is greater than the difference between Mars’s northern basin and its surroundings",
+       "the formation of low-lying areas proceeds by a different process than the one that created Mars’s northern basin",
+       "the weight of the oceans does not affect the depth of the ocean basins",
+       "the proportions of the crust that is oceanic crust is increasing"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p87",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "As presented in the passage, McGill’s account of the formation of Mars’s northern basin differs from the other mentioned in that it alone"
+      ],
+      "opts": [
+       "explains the formation of certain northern bedrock features.",
+       "does not specify the force that caused the northern basin to be lower than its surroundings.",
+       "takes the northern basin to be a landform that is not analogous to any found on Earth.",
+       "denies that features around the northern basin are the result of tectonic activity.",
+       "attributes the creation of the northern lowlands to processes occurring within the planet."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p88",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, since the early 1990s, sea urchins in the waters east of Cape Hangklip have"
+      ],
+      "opts": [
+       "significantly changed their feeding habits.",
+       "suffered increased predation from a certain species.",
+       "experienced increased competition for kelp, their main source of nourishment.",
+       "seen a sharp decline in the availability of kelp, due to environmental changes.",
+       "rebounded as commercial fishing in the region has declined."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p88",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is a true statement about the feeding behaviors of sea urchins"
+      ],
+      "opts": [
+       "They change according to the type of food available in an area.",
+       "They are responsible for the decline of abalones in some regions.",
+       "They have a significant impact on the young of another species.",
+       "They make sea urchins more vulnerable to potential predators.",
+       "They result in marked decline in certain regions."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p88",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following statements about the Closing of the ‘‘recreational fishery’’ is supported by the passage?"
+      ],
+      "opts": [
+       "It was a measure taken in response to the invasion of the area by rock lobsters.",
+       "It had unintended effects on the region’s population of sea urchins.",
+       "It was enacted after the banning of commercial fishing in the region.",
+       "It did not stem the decline of abalone in the region.",
+       "It had a short-lived effect on the area’s abalone population."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p88",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the decline of abalones in the waters east of Cape Hangklip was probably due in part to"
+      ],
+      "opts": [
+       "an increase in the area’s population of rock lobsters.",
+       "illegal harvesting of adult abalones in the area.",
+       "a change in the feeding behavior of sea urchins."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 9,
+     "passage": "p89",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The conservationists’ recommendation as described is based on which of the following assumptions?"
+      ],
+      "opts": [
+       "The capacity of any illegal channels that may exist for the sale of ivory in export markets cannot expand to meet demand in those markets.",
+       "There now exist synthetic substitutes for ivory that are essentially indistinguishable from the natural product.",
+       "Bans on imports of ivory need to be combined with intensified efforts to stop poaching in order to be effective.",
+       "To the economies of those countries that have significant elephant herds, elephants are more valuable alive than dead.",
+       "In some parts of Africa where poaching has depleted elephant herds, those herds are already beyond recovery."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 10,
+     "passage": "p90",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author suggests which of the following about the early British colonies in North America that failed?"
+      ],
+      "opts": [
+       "Their inhabitants’ worldview was deeply affected with native people and practices.",
+       "Their inhabitants experienced critical food shortages in part because their culture hindered their ability to exploit seasonally available resources.",
+       "Their longevity would have been greater had the inhabitants adopted more of the fishing technologies used by Native Americans."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 11,
+     "passage": "p90",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions “brushwood weirs” primarily in order to"
+      ],
+      "opts": [
+       "demonstrate that Native Americans provided certain forms of assistance to colonial settlers.",
+       "identify a skill that allowed Native Americans to thrive in regions where colonies failed to.",
+       "distinguish the kinds of technologies used by Native Americans from those used by colonial settlers.",
+       "acknowledge that colonial settlers adopted certain American ways even though they failed in the New World.",
+       "contrast the assumptions of British colonial settlers and Native Americans in the New World."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

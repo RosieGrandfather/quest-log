@@ -1,0 +1,364 @@
+{
+ "id": "u26-p126-p130",
+ "title": "阅读 26 · Passage 126–130（5篇 · 13题）",
+ "en": "Reading Comprehension — Passages 126–130",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 126–130",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p126": {
+     "number": 126,
+     "paragraphs": [
+      "Hotter and more massive than the Sun, stars called “stragglers” are puzzling to astronomers because such rapidly burning stars would not be expected to persist in ancient star clusters. Some researchers believe that the typical blue stragglers formed when two ancient, lower-mass stars collide and merge form more massive, hotter star. Peter Leonard theorizes alternatively that in low density globular clusters, where mergers between single stars occur too infrequently to account for the observed quantity of blue stragglers, these stragglers are created instead by a group of stars. He suggests that a pair of stars already orbiting each other presents a larger target for a third star or another pair. Once this new grouping forms, close encounters between the stars could prompt any two to merge as a blue straggler. Leonard’s model predicts that each blue straggler has a distant orbiting companion —as appears true of many blue stragglers in the M67 cluster of the Milky Way galaxy."
+     ],
+     "highlights": [
+      "Some researchers believe that the typical blue stragglers formed when two ancient, lower-mass stars collide and merge form more massive, hotter star.",
+      "larger target"
+     ]
+    },
+    "p127": {
+     "number": 127,
+     "paragraphs": [
+      "Most seismologists assume that following a major earthquake and its aftershocks, the fault (a break in Earth’s crust where pressure can trigger an earthquake) will remain quiet until stresses have time to rebuild, typically over hundreds or thousands of years. Recent evidence of subtle interactions between earthquakes may overturn this assumption, however. According to the stress-triggering hypothesis, faults are unexpectedly responsive to subtle stresses they acquire as neighboring faults shift. Rather than simply dissipating, stress relieved during an earthquake travels along the fault, concentrating in sites nearby; even the smallest additional stresses may then trigger another quake along the fault or on a nearby fault. Although scientists have long viewed such subtle interactions as nonexistent, the hypothesis has explained the location and frequency of earthquakes following several destructive quakes in California, Japan, and Turkey."
+     ],
+     "highlights": []
+    },
+    "p128": {
+     "number": 128,
+     "paragraphs": [
+      "MacArthur and Wilson suggested that the biodiversity of an island will vary in direct proportion to a function of the island’s size (i.e., larger islands can support a greater number of species) and in inverse proportion to a function of its distance from the mainland (i.e., many remote islands will tend to support fewer species). Reduced biodiversity in an island context is likely to require significant adaptation on the part of colonizing human populations. Evans argues that this limitation makes islands ideal laboratories for the study of human adaptations to the natural environment, whilst Renfrew and Wagstaff, in the introduction to their study of Melos, focus on this limitation in biodiversity as a “significant characteristic of the island ecosystem.” For human communities, however, this limitation may potentially be offset by other factors. The reduced biodiversity of an island ecosystem applies only to terrestrial resources: the resources of the sea will be as rich as on any other coastal area, and may be equally important to human communities. A small island such as Malta or Melos allows all communities direct access to the sea, providing an important nutritional “safety net,” as well as an element of dietary diversity, which may actually give island communities an advantage over their landlocked counterparts. Islands may also have specific nonbiological resources (such as obsidian on Melos), which may be used in exchange with communities on other islands and adjacent mainlands."
+     ],
+     "highlights": []
+    },
+    "p129": {
+     "number": 129,
+     "paragraphs": [
+      "A critical consensus has emerged that Mary McCarthy will be remembered primarily as an essayist rather than as a novelist. But despite her formidable gifts as a polemical and discursive writer, and for all her reputation as an intellectual who sacrificed feeling to intelligence, what powers McCarthy’s best essays are her fictional rather than strictly intellectual gifts. She makes her points by telling stories or by way of vivid description, arresting images and subtle characterization. And for all her exacting sense of fact, McCarthy’s greatest contribution was to blur the distinctions between different kinds of prose writing: to show how fiction could be opened up to the thinking mind and how essays could profit from the techniques of fiction."
+     ],
+     "highlights": [
+      "discursive"
+     ]
+    },
+    "p130": {
+     "number": 130,
+     "paragraphs": [
+      "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia is less densely populated (resulting in lower chances of discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastlines, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for Australia."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p126",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The reference to a “larger target” serves primarily to suggest why a"
+      ],
+      "opts": [
+       "blue straggler would be more likely to collide and merge with another star than would be a lower-mass star.",
+       "pair of stars would be more likely to encounter other stars than would the typical blue straggler.",
+       "pair of stars would be more likely to interact with other stars than would a single star.",
+       "blue straggler would be more likely to interact with a pair of stars than it would with a third star.",
+       "third star would be more likely to encounter a pair than it would to encounter a blue straggler."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p126",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Information presented in the passage suggests which of the following about blue stragglers?"
+      ],
+      "opts": [
+       "They originate from stars that are hotter and more massive than the Sun.",
+       "They are burning more rapidly than other types of stars observed in ancient star clusters.",
+       "They are older than most other types of stars within the same star cluster.",
+       "They are less numerous in low-density globular clusters than are pairs of stars.",
+       "They generally originate from the oldest stars among those found in ancient star clusters."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p126",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage cites which of the following as evidence undermining the theory presented in the second sentence?"
+      ],
+      "opts": [
+       "a discrepancy between the number of mergers between single stars in certain low-density globular clusters and that in other low-density globular clusters",
+       "a discrepancy between the heat and mass of blue stragglers formed by one type of process and the heat and mass of blue stragglers formed by another type of process",
+       "a discrepancy between the frequency of star mergers in low-density globular clusters and those in high-density globular clusters",
+       "a discrepancy between the amount of heat and mass of ancient single stars and that of blue stragglers",
+       "a discrepancy between the number of mergers between single stars in certain star clusters and the number of blue stragglers in those clusters"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p127",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is an assumption that may be invalidated by recent seismological evidence?"
+      ],
+      "opts": [
+       "Earthquakes are caused by stresses building up in faults within Earth’s crust.",
+       "Most major earthquakes can be predicted with reasonable accuracy.",
+       "Faults are highly responsive to even minor stresses in neighboring faults.",
+       "Most major earthquakes are followed by predictable aftershocks.",
+       "A fault that has resulted in a major earthquake becomes quiet for a long period."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p127",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that most seismologists believe which of the following about fault stresses?"
+      ],
+      "opts": [
+       "They are dissipated when they result in an earthquake.",
+       "They are transferred between neighboring faults.",
+       "They will not cause a major earthquake along the same fault in the space of a few years."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 6,
+     "passage": "p128",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "evaluate two contrasting approaches to island biodiversity.",
+       "discuss the relevance of certain data pertaining to island biodiversity.",
+       "call into question a particular understanding of island biodiversity.",
+       "consider various reasons for reduced biodiversity on islands.",
+       "contrast large and small islands in terms of overall biodiversity."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p128",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the author, factors of potential importance to human communities on islands include"
+      ],
+      "opts": [
+       "the accessibility of the sea’s resources.",
+       "a diet superior in some respects to the diet of landlocked communities.",
+       "nonbiological resources that can be exploited."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "ABC"
+    },
+    {
+     "n": 8,
+     "passage": "p128",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author suggests that in considering the biodiversity of islands, Evans"
+      ],
+      "opts": [
+       "focuses too exclusively on terrestrial resources.",
+       "misunderstands the relationship between an island’s size and its terrestrial resources.",
+       "misinterprets the work of MacArthur and Wilson.",
+       "is wrong to assume that more remote islands support fewer species.",
+       "downplays the ways that human communities adapt to island biodiversity."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p129",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage suggests that Mary McCarthy’s writing is characterized by"
+      ],
+      "opts": [
+       "the use in her essays of devices more typical in works of fiction.",
+       "a narrowing of the differences between narrative and expository prose.",
+       "careful attention to factual accuracy."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "ABC"
+    },
+    {
+     "n": 10,
+     "passage": "p129",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “discursive” most nearly means"
+      ],
+      "opts": [
+       "prolific",
+       "sophistic",
+       "rambling",
+       "analytical",
+       "circuitous"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p130",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with doing which of the following?"
+      ],
+      "opts": [
+       "presenting an objection to a claim",
+       "accounting for an apparent anomaly",
+       "outlining an alternative interpretation",
+       "correcting a particular misconception",
+       "questioning the validity of a comparison"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 12,
+     "passage": "p130",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage implies which of the following about 25,000 years ago?"
+      ],
+      "opts": [
+       "The coastline of the region that is now the United States is longer than it was 40,000 years ago.",
+       "Rivers in what is now the United States were numerous than they are now.",
+       "Australia was less densely populated at that time than was the region that is now the United States.",
+       "Australia’s climate was significantly drier than it is now.",
+       "Global sea level was lower than it is now."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 13,
+     "passage": "p130",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author of the passage implies that, in what is now the United States, archaeological evidence of inhabitation in the period from 40,000 to 25,000 years ago is lacking because that region"
+      ],
+      "opts": [
+       "had its oldest habitation sites inundated following a postglacial rise in sea level.",
+       "has many resource-rich rivers that facilitated the dispersal of early inhabitants from an initial concentration in coastal areas.",
+       "was sparsely populated until about 25,000 years ago.",
+       "was colonized less than 25,000 years ago.",
+       "was inhabited only by hunter-gatherers until 25,000 years ago."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

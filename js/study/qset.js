@@ -20,6 +20,14 @@ const englishHint = it => it.kind === 'tc'
   : 'Select one answer choice.';
 const tx = t => escapeHTML(t).replace(/____/g, '<span class="qbl"></span>');
 const paraHTML = arr => (arr || []).map(x=> `<p>${tx(x)}</p>`).join('');
+const emphasizedText = (value, highlights = [])=> {
+  const html = tx(value);
+  const needles = highlights.map(tx).filter(Boolean).sort((a,b)=>b.length-a.length);
+  if(!needles.length) return html;
+  const pattern = needles.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+  return html.replace(new RegExp(pattern,'g'),s=>`<mark class="qsource-highlight">${s}</mark>`);
+};
+const passageHTML = passage => passage.paragraphs.map(p=>`<p>${emphasizedText(p,passage.highlights)}</p>`).join('');
 const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选一项'
   : it.kind === 'mc1' ? '选一项'
   : it.kind === 'mcn' ? '选出所有正确的选项（可能不止一个）'
@@ -53,14 +61,30 @@ function textHTML(it, i, english = false){
   const sentences = sentenceChoices(it);
   const stem = `<div class="qstemtxt">${paraHTML(it.txt.stem)}</div>`;
   if(sentences.length){
-    return `${stem}<div class="qpass qsentence-pass"><div class="vp-tag">${english ? 'Passage · Select a sentence' : '文章 · 点击一句话作答'}</div><div class="qsentences" role="radiogroup" aria-label="${english ? `Question ${it.n}: Select a sentence in the passage` : `第 ${it.n} 题：选择文章中的一句话`}"><p>${sentences.map((s, j)=>
-      `<label class="qsentence"><input type="radio" name="q${i}_sentence" value="${escapeHTML(s)}" aria-label="${english ? `Sentence ${j + 1}: ` : `第 ${j + 1} 句：`}${escapeHTML(s)}"><span>${tx(s)}</span></label>`).join(' ')}</p></div></div>`;
+    const lengths = it.txt.sentenceParagraphLengths || [sentences.length];
+    let offset = 0;
+    const sentenceHTML = lengths.map(length=>{
+      const start = offset; offset += length;
+      return `<p>${sentences.slice(start,offset).map((s,j)=>
+        `<label class="qsentence"><input type="radio" name="q${i}_sentence" value="${escapeHTML(s)}" aria-label="${english ? `Sentence ${start+j+1}: ` : `第 ${start+j+1} 句：`}${escapeHTML(s)}"><span>${emphasizedText(s,it.txt.highlights)}</span></label>`).join(' ')}</p>`;
+    }).join('');
+    return `${stem}<div class="qpass qsentence-pass"><div class="vp-tag">${english ? 'Passage · Select a sentence' : '文章 · 点击一句话作答'}</div><div class="qsentences" role="radiogroup" aria-label="${english ? `Question ${it.n}: Select a sentence in the passage` : `第 ${it.n} 题：选择文章中的一句话`}">${sentenceHTML}</div></div>`;
   }
   return `${it.txt.pass ? `<div class="qpass"><div class="vp-tag">${english ? 'Passage' : '文章'}</div>${paraHTML(it.txt.pass)}</div>` : ''}${stem}`;
 }
 
 function itemHTML(it, i, b){
   const english = b.base?.startsWith('courses/gre-vx/');
+  let reading = '';
+  const passage = b.passages?.[it.passage];
+  if(passage){
+    const first = b.items.findIndex(q=>q.passage===it.passage)===i;
+    const group = b.items.filter(q=>q.passage===it.passage);
+    const title = `Passage ${passage.number} · 第 ${group[0].n}–${group.at(-1).n} 题`;
+    reading = first
+      ? `<div class="gq-passage qreading-passage" data-passage="${escapeHTML(it.passage)}"><div class="vp-tag">${title}</div>${passageHTML(passage)}</div>`
+      : it.kind === 'ss' ? '' : `<details class="gq-passage gq-again"><summary>再看一遍文章（Passage ${passage.number}）</summary>${passageHTML(passage)}</details>`;
+  }
   let fig = '';
   if(it.fig){
     const [a, z] = it.figRange;
@@ -68,7 +92,7 @@ function itemHTML(it, i, b){
       ? `<div class="gq-passage qfig"><div class="vp-tag">图表 · 第 ${a}–${z} 题共用</div>${img(b, it.fig, it.figw)}</div>`
       : `<details class="gq-passage gq-again"><summary>再看一遍图表（第 ${a}–${z} 题）</summary>${img(b, it.fig, it.figw)}</details>`;
   }
-  return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
+  return `${reading}${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
     ${it.txt ? `<div class="qtxt">${textHTML(it, i, english)}</div>
     ${it.img || it.imgs?.length ? `<details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : ''}` : origImgs(it, b)}

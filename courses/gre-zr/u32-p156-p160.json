@@ -1,0 +1,179 @@
+{
+ "id": "u32-p156-p160",
+ "title": "阅读 32 · Passage 156–160（5篇 · 5题）",
+ "en": "Reading Comprehension — Passages 156–160",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 156–160",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p156": {
+     "number": 156,
+     "paragraphs": [
+      "Stylistic evidence and laboratory evidence strongly support the claim that the magnificent painting Garden of Eden is a work of the Flemish master van Eyck. Nevertheless, the painting must have been the work of someone else, as anyone with a little historical and zoological knowledge can tell merely by looking at the painting. The animals in the painting are all vivid representations of actual animals, including armadillos. Yet armadillos are native only to Americas, and van Eyck died decades before Europeans reached the Americas."
+     ],
+     "highlights": [
+      "the painting must have been the work of someone else,",
+      "The animals in the painting are all vivid representations of actual animals, including armadillos."
+     ]
+    },
+    "p157": {
+     "number": 157,
+     "paragraphs": [
+      "New methods developed in genetic research have led taxonomists to revise their views on the evolutionary relationships between many species. Traditionally the relatedness of species has been ascertained by a close comparison of their anatomy. The new methods infer the closeness of any two species’ relationship to each other directly from similarities between the species’ genetic codes."
+     ],
+     "highlights": []
+    },
+    "p158": {
+     "number": 158,
+     "paragraphs": [
+      "Sportfishers introduced the Zander, a type of perch, to Britain’s rivers and canals in the 1970s. Because zander eat large numbers of smaller fish, they have had a devastating effect on native fish populations. To protect the native fish, a government program removed a significant proportion of the zander from Britain’s waterways last year. Surprisingly, this year the loss of native fish to zander has been greater than before."
+     ],
+     "highlights": []
+    },
+    "p159": {
+     "number": 159,
+     "paragraphs": [
+      "There are many structural and thematic similarities between Piers Plowman by Langland (1330-1400) and House of Fame by Chaucer (1342-1400), two Middle English poems relating dream visions. Some critics have argued that because a number of the shared elements are uncommon in Middle English poetry, and because Langland’s poem probably predates Chaucer’s by a few years, Chaucer was most likely influenced by Piers Plowman when writing House of Fame."
+     ],
+     "highlights": []
+    },
+    "p160": {
+     "number": 160,
+     "paragraphs": [
+      "The Great Sphinx is a huge statue in Egypt that has a lion’s body with a man’s head. The face of the Sphinx has long been claimed to be that of pharaoh Khafre, who lived around 2600 B.C., but it cannot be: erosion patterns recently discovered on the lion’s legs can only have been caused by heavy rains, and the Sahara has not had heavy rains in over 10,000 years."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p156",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument given, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first is a position that the argument seeks to reject, the second is evidence that the argument uses against that position.",
+       "The first and the second are each pieces of evidence that have been used to support the position that the argument opposes.",
+       "The first presents the main conclusion of the argument; the second provides evidence in support of that conclusion.",
+       "The first is a judgment that serves as the basis for the main conclusion of the argument; the second states that main conclusion.",
+       "The first is an intermediate conclusion drawn in order to support a further conclusion stated in the argument; the second provides evidence in support of that intermediate conclusion."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p157",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following conclusions is best supported by the information?"
+      ],
+      "opts": [
+       "The apparent degree of relatedness of some species, as determined by anatomical criteria, is not borne out by their degree of genetic similarity.",
+       "When they know the differences between two species’ genetic codes, taxonomists can infer what the observable anatomical differences between those species must be.",
+       "The degree to which individuals of the same species are anatomically similar is determined more by their genetic codes than by such environmental factors as food supply.",
+       "The traditional anatomical methods by which taxonomists investigated the relatedness of species are incapable of any further refinement.",
+       "Without the use of genetic methods, taxonomists would never be able to obtain any accurate information about species’ degrees of relatedness to one another."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p158",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would most help to explain the greater effect of zander on the native fish population?"
+      ],
+      "opts": [
+       "The climate in Britain is very similar to the climate in regions to which zander are native.",
+       "Most of the zander removed were fully grown, and fully grown zander eat large numbers of smaller zander.",
+       "Every year a large number of zander are caught by sportfisher in Britain’s waterway.",
+       "Previous government programs designed to remove nonnative species from Britain’s waterways have failed.",
+       "Zander are just one of several nonnative fish that prey on the other fish found in Britain’s waterway."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p159",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the critics’ argument?"
+      ],
+      "opts": [
+       "Piers Plowman is one of Langland’s major works, whereas House of Fame is a minor work of Chaucer’s.",
+       "House of Fame survives in only three manuscript copies, substantially fewer than the number of manuscript copies that exist of Piers Plowman.",
+       "Because Piers Plowman became a well-known work in its day, it is likely that the similarities between it and House of Fame were detected by many of the people who read House of Fame soon after Chaucer wrote it.",
+       "Many of the themes and structures of Piers Plowman are also found in Latin, Italian, French works with which Chaucer could well have been familiar.",
+       "There is no evidence that Chaucer and Langland ever met or that they corresponded with each other about literary topics."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 5,
+     "passage": "p160",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "The face of the Sphinx bears a resemblance to the faces on certain stylized statues dating from both before and after the reign of Khafre.",
+       "Other erosion patterns that appear on the body of the Sphinx are of a sort that could be caused by wind and sand alone.",
+       "Other than the Sphinx, there are no surviving sculptures that have been claimed to portray the face of Khafre.",
+       "In the last 10,000 years the climate of Egypt has been so dry that even rains that are not heavy have been extremely infrequent.",
+       "The face of the Sphinx is small relative to the rest of the head, indicating that the face may have been recarved long after the Sphinx was built."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

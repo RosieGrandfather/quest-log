@@ -1,0 +1,246 @@
+{
+ "id": "u38-p186-p190",
+ "title": "阅读 38 · Passage 186–190（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 186–190",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 186–190",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p186": {
+     "number": 186,
+     "paragraphs": [
+      "Growing grapes in greenhouses containing air enriched with carbon dioxide increases crop yields, an effect that is enhanced when the growing temperature is also raised several degrees. Although enclosed cultivation is impractical in vineyards, increases in yields from grape cultivation in the open can be expected because emissions from the burning of fossil fuels will almost certainly lead to an increase in the carbon dioxide content of atmospheric air over the next century."
+     ],
+     "highlights": []
+    },
+    "p187": {
+     "number": 187,
+     "paragraphs": [
+      "One way to assess This is the American Earth, a collection of photographs selected and arranged by Nancy Newhall, is to apply Newshall’s own criteria for judging photographic art. Does this photographic essay achieve results impossible in other media? By contrasting the small with the vast—for example, placing a photo of a rock pool next to one of a spiral galaxy —Newhall exploits the camera’s ability to manipulate the size of an object, thereby challenging viewers to question their conventional concepts of size. However, a similar result could be achieved in the medium of painting.",
+      "Does the work bear its creator’s imprint, and does it draw viewers’ interest even after repeated viewings, Newhall’s second and third criteria? Indeed, Newhall’s work bears her unmistakable imprint in the juxtaposition of the photos and in the rhythmic prose accompanying them, but the individual viewer must decide whether Newhall’s work evokes, as it did for this reviewer, new experiences upon subsequent viewings."
+     ],
+     "highlights": []
+    },
+    "p188": {
+     "number": 188,
+     "paragraphs": [
+      "Spiders of many species change color to resemble the color of the flowers they sit on. Many animals that prey on such spiders possess color discrimination so acute that they, unlike human beings, can readily see the spiders despite the seeming camouflage. It is unlikely, therefore, that the spiders’ color changes confer significant survival benefit on these spiders."
+     ],
+     "highlights": []
+    },
+    "p189": {
+     "number": 189,
+     "paragraphs": [
+      "Most feminist labor historians believe that the emergence and rapid general adoption of industrial unionism in the late 1930s was essential for the success of efforts to organize large numbers of women workers into unions. They argue that industrial unionism’s commitment to recruiting unskilled workers and its abandonment of racial and gender exclusiveness was more attractive to women workers (who, according to these scholars, were largely unskilled) than was the earlier exclusionary craft-union model. The successful organization of women garment workers in the 1910s does not undermine this dominant view, since the garment unions welcomed women workers of every skill level, prefiguring the industrial form of unionism."
+     ],
+     "highlights": []
+    },
+    "p190": {
+     "number": 190,
+     "paragraphs": [
+      "The United States Civil Rights movement, which began in the 1950s and gained momentum in the 1960s and 1970s, owed a heavy debt to African American newspapers. This is not to suggest that the African American press caused the Civil Rights era. But its continual push from 1910 to 1950 or more African American rights, using a compelling form of advocacy journalism rather than the standard objective newspaper style, allowed those who in the 1950s began pushing nationally for equality to start at a far higher level than if the African American press had not existed. This point has largely been missed by many Americans, who seem to believe the Civil Rights era erupted from a standstill like a dormant geyser. But that is not how history occurs."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p186",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most weakens the argument?"
+      ],
+      "opts": [
+       "When grapes are grown in greenhouses, it is relatively easy to control the grape pests that thrive in air enriched with carbon dioxide.",
+       "Recent improvements in pest control have increased grape yields in many vineyards.",
+       "Increasing carbon dioxide levels in greenhouses has not been shown to improve the quality of grapes grown in greenhouses.",
+       "Increasing carbon dioxide levels in greenhouses increases the sweetness of raisins made from grapes grown in the greenhouses.",
+       "As the carbon dioxide level in the open air increases, temperatures at the Earth's surface will also increase."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p186",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following would be most useful to determine the possibility that the grapes yields increase with the raise of the temperature?"
+      ],
+      "opts": [
+       "Whether increasing carbon dioxide levels in greenhouses improves the eating quality of the grapes grown in the greenhouses",
+       "Whether in the future the market for grapes will be greater than it is now",
+       "Whether temperatures today often get so high in regions where grapes are grown that the grapes suffer serious damage",
+       "Whether the use of greenhouses for growing grapes serves research purposes only",
+       "Whether the economic benefits that might be derived from a major increase in world grape production would outweigh any economic harm resulting from negative health effects associated with increased worldwide carbon dioxide levels"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p187",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is a way in which This is the American Earth satisfies Newhall’s criteria for judging photographic art?"
+      ],
+      "opts": [
+       "It takes advantage of on of the camera’s unique abilities.",
+       "It leaves viewers with a particularly strong visual impression.",
+       "It contains elements identifying it as a particular person’s work.",
+       "It consistently evokes an emotional response from viewers.",
+       "It successfully destroys an overemphasis on humans’ concept of size."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p187",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, one of the criteria Newhall uses in making judgments about photographic art is the degree to which the art"
+      ],
+      "opts": [
+       "provides viewers with an experience what will encourage subsequent viewings.",
+       "challenges viewers to question their preconceptions.",
+       "evokes similar experiences for different viewers in different circumstances.",
+       "achieves results that have not been realized by earlier works of photographic art.",
+       "produces results that can only be achieved in the medium of photography."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p188",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following would it be most useful to determine in order to evaluate the argument?"
+      ],
+      "opts": [
+       "whether the spiders’ own ability to discriminate color-camouflaged species is as acute as that of their predators",
+       "whether the spiders have a color that could properly be regarded as their natural color",
+       "whether the spiders’ color-changes allow them to remain undetected by prey",
+       "whether different species of color-changing spiders tend to favor different species of flower",
+       "whether the color-changing spiders prey on any insects that themselves change color"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p189",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the author, the successful organization of women garment workers is consistent with the dominant view of women labor history because"
+      ],
+      "opts": [
+       "garment unions concentrated their recruitment efforts exclusively on attracting unskilled workers as members.",
+       "those women garment workers who joined the garment unions were not as skilled as those who refused to join.",
+       "garment unions accepted both skilled and unskilled workers as members.",
+       "garment unions lacked exclusionary racial rules as well as rules barring unskilled workers.",
+       "most garment workers were relatively skilled craft workers rather than unskilled workers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p190",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "challenge a particular scholarly argument.",
+       "identify the cause of a historical development.",
+       "present a summary of a long-standing debate.",
+       "explain the origins of a flawed theory.",
+       "correct a commonly held misconception."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p190",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, African American newspapers contributed to the Civil Rights movement primarily by"
+      ],
+      "opts": [
+       "exposing bias in supposedly objective newspaper accounts.",
+       "connecting the movement's leaders with local communities.",
+       "providing a platform for leaders to be heard by a wide audience.",
+       "laying the groundwork for a later national effort.",
+       "building momentum for efforts that were already in progress."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

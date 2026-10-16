@@ -1,0 +1,373 @@
+{
+ "id": "gre-zr",
+ "title": "张巍GRE阅读机经：前200篇 · 40节",
+ "subtitle": "每节5篇，建议约20分钟。纯文字原题，整节提交后看答案；选句题点击原文后自评，暂不附讲解。",
+ "order": 18,
+ "order_note": "选修，GRE阅读专项训练；时长为训练建议，并非官方独立阅读Section",
+ "tier": "elective",
+ "tags": [
+  "GRE"
+ ],
+ "units": [
+  {
+   "id": "u01-p001-p005",
+   "title": "阅读 01 · Passage 1–5（5篇 · 12题）",
+   "en": "Reading Comprehension — Passages 1–5",
+   "minutes": 20,
+   "practice": true,
+   "file": "u01-p001-p005.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u02-p006-p010",
+   "title": "阅读 02 · Passage 6–10（5篇 · 10题）",
+   "en": "Reading Comprehension — Passages 6–10",
+   "minutes": 20,
+   "practice": true,
+   "file": "u02-p006-p010.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u03-p011-p015",
+   "title": "阅读 03 · Passage 11–15（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 11–15",
+   "minutes": 20,
+   "practice": true,
+   "file": "u03-p011-p015.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u04-p016-p020",
+   "title": "阅读 04 · Passage 16–20（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 16–20",
+   "minutes": 20,
+   "practice": true,
+   "file": "u04-p016-p020.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u05-p021-p025",
+   "title": "阅读 05 · Passage 21–25（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 21–25",
+   "minutes": 20,
+   "practice": true,
+   "file": "u05-p021-p025.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u06-p026-p030",
+   "title": "阅读 06 · Passage 26–30（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 26–30",
+   "minutes": 20,
+   "practice": true,
+   "file": "u06-p026-p030.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u07-p031-p035",
+   "title": "阅读 07 · Passage 31–35（5篇 · 10题）",
+   "en": "Reading Comprehension — Passages 31–35",
+   "minutes": 20,
+   "practice": true,
+   "file": "u07-p031-p035.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u08-p036-p040",
+   "title": "阅读 08 · Passage 36–40（5篇 · 13题）",
+   "en": "Reading Comprehension — Passages 36–40",
+   "minutes": 20,
+   "practice": true,
+   "file": "u08-p036-p040.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u09-p041-p045",
+   "title": "阅读 09 · Passage 41–45（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 41–45",
+   "minutes": 20,
+   "practice": true,
+   "file": "u09-p041-p045.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u10-p046-p050",
+   "title": "阅读 10 · Passage 46–50（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 46–50",
+   "minutes": 20,
+   "practice": true,
+   "file": "u10-p046-p050.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u11-p051-p055",
+   "title": "阅读 11 · Passage 51–55（5篇 · 15题）",
+   "en": "Reading Comprehension — Passages 51–55",
+   "minutes": 20,
+   "practice": true,
+   "file": "u11-p051-p055.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u12-p056-p060",
+   "title": "阅读 12 · Passage 56–60（5篇 · 13题）",
+   "en": "Reading Comprehension — Passages 56–60",
+   "minutes": 20,
+   "practice": true,
+   "file": "u12-p056-p060.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u13-p061-p065",
+   "title": "阅读 13 · Passage 61–65（5篇 · 10题）",
+   "en": "Reading Comprehension — Passages 61–65",
+   "minutes": 20,
+   "practice": true,
+   "file": "u13-p061-p065.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u14-p066-p070",
+   "title": "阅读 14 · Passage 66–70（5篇 · 15题）",
+   "en": "Reading Comprehension — Passages 66–70",
+   "minutes": 20,
+   "practice": true,
+   "file": "u14-p066-p070.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u15-p071-p075",
+   "title": "阅读 15 · Passage 71–75（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 71–75",
+   "minutes": 20,
+   "practice": true,
+   "file": "u15-p071-p075.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u16-p076-p080",
+   "title": "阅读 16 · Passage 76–80（5篇 · 6题）",
+   "en": "Reading Comprehension — Passages 76–80",
+   "minutes": 20,
+   "practice": true,
+   "file": "u16-p076-p080.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u17-p081-p085",
+   "title": "阅读 17 · Passage 81–85（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 81–85",
+   "minutes": 20,
+   "practice": true,
+   "file": "u17-p081-p085.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u18-p086-p090",
+   "title": "阅读 18 · Passage 86–90（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 86–90",
+   "minutes": 20,
+   "practice": true,
+   "file": "u18-p086-p090.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u19-p091-p095",
+   "title": "阅读 19 · Passage 91–95（5篇 · 6题）",
+   "en": "Reading Comprehension — Passages 91–95",
+   "minutes": 20,
+   "practice": true,
+   "file": "u19-p091-p095.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u20-p096-p100",
+   "title": "阅读 20 · Passage 96–100（5篇 · 6题）",
+   "en": "Reading Comprehension — Passages 96–100",
+   "minutes": 20,
+   "practice": true,
+   "file": "u20-p096-p100.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u21-p101-p105",
+   "title": "阅读 21 · Passage 101–105（5篇 · 10题）",
+   "en": "Reading Comprehension — Passages 101–105",
+   "minutes": 20,
+   "practice": true,
+   "file": "u21-p101-p105.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u22-p106-p110",
+   "title": "阅读 22 · Passage 106–110（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 106–110",
+   "minutes": 20,
+   "practice": true,
+   "file": "u22-p106-p110.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u23-p111-p115",
+   "title": "阅读 23 · Passage 111–115（5篇 · 14题）",
+   "en": "Reading Comprehension — Passages 111–115",
+   "minutes": 20,
+   "practice": true,
+   "file": "u23-p111-p115.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u24-p116-p120",
+   "title": "阅读 24 · Passage 116–120（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 116–120",
+   "minutes": 20,
+   "practice": true,
+   "file": "u24-p116-p120.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u25-p121-p125",
+   "title": "阅读 25 · Passage 121–125（5篇 · 14题）",
+   "en": "Reading Comprehension — Passages 121–125",
+   "minutes": 20,
+   "practice": true,
+   "file": "u25-p121-p125.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u26-p126-p130",
+   "title": "阅读 26 · Passage 126–130（5篇 · 13题）",
+   "en": "Reading Comprehension — Passages 126–130",
+   "minutes": 20,
+   "practice": true,
+   "file": "u26-p126-p130.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u27-p131-p135",
+   "title": "阅读 27 · Passage 131–135（5篇 · 13题）",
+   "en": "Reading Comprehension — Passages 131–135",
+   "minutes": 20,
+   "practice": true,
+   "file": "u27-p131-p135.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u28-p136-p140",
+   "title": "阅读 28 · Passage 136–140（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 136–140",
+   "minutes": 20,
+   "practice": true,
+   "file": "u28-p136-p140.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u29-p141-p145",
+   "title": "阅读 29 · Passage 141–145（5篇 · 12题）",
+   "en": "Reading Comprehension — Passages 141–145",
+   "minutes": 20,
+   "practice": true,
+   "file": "u29-p141-p145.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u30-p146-p150",
+   "title": "阅读 30 · Passage 146–150（5篇 · 12题）",
+   "en": "Reading Comprehension — Passages 146–150",
+   "minutes": 20,
+   "practice": true,
+   "file": "u30-p146-p150.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u31-p151-p155",
+   "title": "阅读 31 · Passage 151–155（5篇 · 13题）",
+   "en": "Reading Comprehension — Passages 151–155",
+   "minutes": 20,
+   "practice": true,
+   "file": "u31-p151-p155.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u32-p156-p160",
+   "title": "阅读 32 · Passage 156–160（5篇 · 5题）",
+   "en": "Reading Comprehension — Passages 156–160",
+   "minutes": 20,
+   "practice": true,
+   "file": "u32-p156-p160.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u33-p161-p165",
+   "title": "阅读 33 · Passage 161–165（5篇 · 5题）",
+   "en": "Reading Comprehension — Passages 161–165",
+   "minutes": 20,
+   "practice": true,
+   "file": "u33-p161-p165.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u34-p166-p170",
+   "title": "阅读 34 · Passage 166–170（5篇 · 5题）",
+   "en": "Reading Comprehension — Passages 166–170",
+   "minutes": 20,
+   "practice": true,
+   "file": "u34-p166-p170.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u35-p171-p175",
+   "title": "阅读 35 · Passage 171–175（5篇 · 12题）",
+   "en": "Reading Comprehension — Passages 171–175",
+   "minutes": 20,
+   "practice": true,
+   "file": "u35-p171-p175.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u36-p176-p180",
+   "title": "阅读 36 · Passage 176–180（5篇 · 11题）",
+   "en": "Reading Comprehension — Passages 176–180",
+   "minutes": 20,
+   "practice": true,
+   "file": "u36-p176-p180.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u37-p181-p185",
+   "title": "阅读 37 · Passage 181–185（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 181–185",
+   "minutes": 20,
+   "practice": true,
+   "file": "u37-p181-p185.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u38-p186-p190",
+   "title": "阅读 38 · Passage 186–190（5篇 · 8题）",
+   "en": "Reading Comprehension — Passages 186–190",
+   "minutes": 20,
+   "practice": true,
+   "file": "u38-p186-p190.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u39-p191-p195",
+   "title": "阅读 39 · Passage 191–195（5篇 · 9题）",
+   "en": "Reading Comprehension — Passages 191–195",
+   "minutes": 20,
+   "practice": true,
+   "file": "u39-p191-p195.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u40-p196-p200",
+   "title": "阅读 40 · Passage 196–200（5篇 · 10题）",
+   "en": "Reading Comprehension — Passages 196–200",
+   "minutes": 20,
+   "practice": true,
+   "file": "u40-p196-p200.json",
+   "hasQuiz": false
+  }
+ ]
+}

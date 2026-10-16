@@ -1,0 +1,315 @@
+{
+ "id": "u03-p011-p015",
+ "title": "阅读 03 · Passage 11–15（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 11–15",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr/",
+   "source": "张巍GRE阅读机经440篇 · Passage 11–15",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p11": {
+     "number": 11,
+     "paragraphs": [
+      "Before feminist literary criticism emerged in the 1970s, the nineteenth-century United States writer Fanny Fern was regarded by most critics (when considered at all) as a prototype of weepy sentimentalism—a pious, insipid icon of conventional American culture. Feminist reclamations of Fern, by contrast, emphasize her nonsentimental qualities, particularly her sharply humorous social criticism. Most feminist scholars find it difficult to reconcile Fern’s sardonic social critiques with her effusive celebrations of many conventional values. Attempting to resolve this contradiction, Harris concludes that Fern employed flowery rhetoric strategically to disguise her subversive goals beneath apparent conventionality. However, Tompkins proposes an alternative view of sentimentality itself, suggesting that sentimental writing could serve radical, rather than only conservative ends by swaying readers emotionally, moving them to embrace social change."
+     ],
+     "highlights": [
+      "reclamations",
+      "sharply humorous social criticism.",
+      "Attempting to resolve this contradiction, Harris concludes that Fern employed flowery rhetoric strategically to disguise her subversive goals beneath apparent conventionality."
+     ]
+    },
+    "p12": {
+     "number": 12,
+     "paragraphs": [
+      "A plant-based automobile fuel has just become available in Ternland. A car can be driven as far on a gallon of the new plant-based fuel as a car can be driven on a gallon of gasoline, but a gallon of the plant-based fuel both costs less and results in less pollution. Therefore, drivers in Ternland who switch to it will reduce the amount they spend on fuel in a year while causing less environmental damage."
+     ],
+     "highlights": []
+    },
+    "p13": {
+     "number": 13,
+     "paragraphs": [
+      "Biologists have long debated about whether egg production in birds is biologically highly costly, some theorizing that egg production is energetically or nutritionally demanding. Lack, however, suggested that clutch size—the number of eggs a bird lays per breeding cycle—is far below the potential limit of egg production. He suggested that clutch size had instead evolved in relation to the number of young that the parents could successfully rear. Subsequently, most studies focused on limitations operating during chick rearing, particularly among altricial species (species in which the parents feed their young in the nest). Lack later recognized that in precocial species (species in which young feed themselves), clutch size might be explained by different factors—the availability of food for egg-laying females, for example."
+     ],
+     "highlights": []
+    },
+    "p14": {
+     "number": 14,
+     "paragraphs": [
+      "Carla L. Peterson’s Doers of the Word (1997), a study of African American women speakers and writers from 1830-1880, is an important addition to scholarship on nineteenth-century African American women. Its scope resembles that of Frances Smith Foster’s 1993 study, but its approach is quite different. For Foster, the Black women who came to literary voice in nineteenth-century America were claiming their rights as United States citizens, denying that anything should disqualify them from full membership in an enlightened national polity. Peterson sees these same women as having been fundamentally estranged from the nation by a dominant culture unsympathetic to Black women, and by a Black intelligentsia whose male view of race concerns left little room for Black female intellect."
+     ],
+     "highlights": []
+    },
+    "p15": {
+     "number": 15,
+     "paragraphs": [
+      "David Belasco’s 1912 Broadway production of The Governors Lady created a sensation with a scene set in a Childs cafeteria, a chain restaurant that was an innovator in food standardization and emblematic of modern everyday life. While Belasco’s meticulously detailed reproduction of an immediately recognizable setting impressed the public, it was derided by progressive theater critics who championed the New Stagecraft theories of European artists like Max Reinhardt. The New Stagecraft rejected theatrical literalism; it drew inspiration from the subjectivity and minimalism of modern painters, advocating simplified sets designed to express a dramatic texts central ideas. Such critics considered Belasco a craftsman who merely captured surface realities: a true artist eliminated the inessential to create more meaningful, expressive stage images."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p11",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the contradiction mentioned in the highlighted sentence?"
+      ],
+      "opts": [
+       "It was not generally addressed by critics before the 1970s.",
+       "It is apparent in only a small number of Ferns writings.",
+       "It has troubled many feminist critics who study Fern."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 2,
+     "passage": "p11",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Tompkins would be most likely to agree with which of the following about the critics mentioned in the passage?"
+      ],
+      "opts": [
+       "They accurately characterize the overall result Fern is aiming to achieve.",
+       "They are not as dismissive of Fern as some feminist critics have suggested.",
+       "They exaggerate the extent to which Fern intended her writing to serve a social purpose.",
+       "They wrongly assume that sentimental must be a pejorative term.",
+       "They fail to recognize the role that sentimental rhetoric plays to reader’s emotions."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p11",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage mentions Fern’s “sharply humorous social criticism” primarily in order to"
+      ],
+      "opts": [
+       "contrast Fern’s apparent intentions with the impression her writing made on Harris",
+       "suggest that many feminist critics have attributed to Fern intentions that she may not have had",
+       "identify an aspect of Fern’s writing that strikes some scholars as incompatible with other attributes of her writing",
+       "help account for the effect Fern's writing had on critics of her own time",
+       "identify the aspects of Fern's writing for which she was primarily known prior to the 1970s"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p11",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “reclamations” most nearly means"
+      ],
+      "opts": [
+       "reformations",
+       "rehabilitations",
+       "recapitulations",
+       "retractions",
+       "reiterations"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p12",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument relies?"
+      ],
+      "opts": [
+       "There is no expense associated with operating an automobile that is higher when the automobile uses the plant-based fuel than when it uses gasoline.",
+       "Automobiles that have been operated using the plant-based fuel can no longer be operated using regular gasoline.",
+       "The environmental damage attributable to automobiles is due almost entirely to the production and combustion of fuel automobiles use.",
+       "The advantages of the plant-based fuel over gasoline will not lead those who switch to the plant-based fuel to do more driving.",
+       "Most drivers in Ternland will switch from gasoline to the plant-based fuel."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p13",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests that biologists who say egg production in birds is biologically highly costly would agree that clutch size is determined primarily by"
+      ],
+      "opts": [
+       "the nutritional and energy demands of egg production",
+       "the number of young that the parents can rear successfully",
+       "reproductive limitations operating during chick rearing",
+       "the availability of food for newly hatched chicks",
+       "the differences between altricial and precocial species"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p13",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that Lack would agree with which of the following statements about factors affecting clutch size in birds?"
+      ],
+      "opts": [
+       "In altricial species, clutch size is determined primarily by factors operating after eggs are laid.",
+       "In precocial species, clutch size is determined primarily by factors operating after eggs are laid.",
+       "In many bird species, clutch size generally remains well below the potential limit of egg production."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 8,
+     "passage": "p14",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage indicates that Peterson identifies which of the following as obstacles faced by the women included in her study?"
+      ],
+      "opts": [
+       "the attitudes of Black male intellectuals toward female intellectual work",
+       "the discriminatory attitudes faced by Black women in nineteenth-century America as a whole",
+       "disagreements among Black women speakers and writers themselves about the impact of the Black intelligentsia"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 9,
+     "passage": "p14",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that Peterson’s study and Fosters study are similar with respect to which of the following?"
+      ],
+      "opts": [
+       "the writers that each takes up for examination",
+       "the degree to which each has influenced other scholars",
+       "the assumptions that each brings to nineteenth-century African American literature",
+       "their analysis of the nineteenth-century Black intelligentsia",
+       "their interpretation of nineteenth-century Americas dominant culture"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 10,
+     "passage": "p15",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage implies which of the following about Belasco’s production of The Governors Lady?"
+      ],
+      "opts": [
+       "It was dismissed by certain theater critics who misunderstood Belasco’s conception of modernity.",
+       "It was intended to marshal elements of the New Stagecraft to serve Belasco’s predilection for realistic staging.",
+       "It demonstrated that theatrical literalism could be used effectively to express a dramatic texts central ideas.",
+       "It elicited responses that reflected a discrepancy between popular tastes in entertainment and the tastes of progressive theater critics.",
+       "It relied on the appeal of an impressively realistic stage set to compensate for weaknesses in other aspects of the production."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p15",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the theater critics would be most likely to agree with which of the following statements about the theatrical productions?"
+      ],
+      "opts": [
+       "Theatrical productions that seek to eliminate the inessential also often eliminate theatrical elements that enhance the expressiveness of a play.",
+       "Theatrical productions that faithfully recreate the visual details of everyday life are unlikely to do justice to a good play’s central ideas.",
+       "Theatrical productions that employ the minimalism characteristic of modern paintings may have greater appeal to modern audiences than productions that rely on theatrical literalism.",
+       "Theatrical productions that aim to represent truths about modern life should not attempt to employ elements of the New Stagecraft.",
+       "Theatrical productions that attempt to produce authentic-looking scenes of everyday reality are likely to fail in that goal because of the theaters inherent limitations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}
