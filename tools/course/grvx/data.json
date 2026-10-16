@@ -49,10 +49,17 @@
 "p07.png"
 ],
 "kind": "mcn",
+"nopt": 3,
+"ans": [],
+"answerPending": true,
+"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"legacyAnswer": {
+"kind": "mcn",
 "nopt": 4,
 "ans": [
 3
 ]
+}
 },
 {
 "n": 5,
@@ -178,11 +185,18 @@
 "p30.png"
 ],
 "kind": "tc",
+"blanks": 3,
+"ans": [],
+"answerPending": true,
+"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"legacyAnswer": {
+"kind": "tc",
 "blanks": 2,
 "ans": [
 0,
 1
 ]
+}
 },
 {
 "n": 4,
@@ -316,10 +330,17 @@
 "p42.png"
 ],
 "kind": "mcn",
+"nopt": 3,
+"ans": [],
+"answerPending": true,
+"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"legacyAnswer": {
+"kind": "mcn",
 "nopt": 5,
 "ans": [
 4
 ]
+}
 }
 ]
 }
@@ -4746,11 +4767,18 @@
 "pages": [
 "p25.png"
 ],
+"kind": "mcn",
+"nopt": 3,
+"ans": [],
+"answerPending": true,
+"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"legacyAnswer": {
 "kind": "mc1",
 "nopt": 5,
 "ans": [
 1
 ]
+}
 },
 {
 "n": 12,

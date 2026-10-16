@@ -17,7 +17,9 @@ function Await-Result($Operation, $ResultType) {
 $engine = [Windows.Media.Ocr.OcrEngine]::TryCreateFromLanguage([Windows.Globalization.Language]::new('en-US'))
 if (!$engine) { throw 'Windows English OCR is unavailable.' }
 $results = [ordered]@{}
-foreach ($file in (Get-ChildItem -LiteralPath $InputDirectory -Filter '*.png' | Sort-Object Name)) {
+$files = @(Get-ChildItem -LiteralPath $InputDirectory -Filter '*.png' | Sort-Object Name)
+$completed = 0
+foreach ($file in $files) {
     $storage = Await-Result ([Windows.Storage.StorageFile]::GetFileFromPathAsync($file.FullName)) ([Windows.Storage.StorageFile])
     $stream = Await-Result ($storage.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStream])
     try {
@@ -30,6 +32,8 @@ foreach ($file in (Get-ChildItem -LiteralPath $InputDirectory -Filter '*.png' | 
             })
         } finally { $bitmap.Dispose() }
     } finally { $stream.Dispose() }
+    $completed++
+    if ($completed % 25 -eq 0) { Write-Output "OCR $completed / $($files.Count)" }
 }
 $json = ConvertTo-Json -InputObject $results -Depth 8
 [System.IO.File]::WriteAllText($OutputFile, $json, [System.Text.UTF8Encoding]::new($false))

@@ -73,7 +73,29 @@
       2,
       2
      ],
-     "img": "2025-03-s4/4-03.webp"
+     "img": "2025-03-s4/4-03.webp",
+     "txt": {
+      "stem": [
+       "Viewing people as “social atoms” that obey rather simple rules (which are not unlike the laws of physics), one may discover certain (i) ____ Take, for example, the way channels emerge when people move in crowds. In the midst of initially (ii) ____ movements, one person begins to follow another—in an effort to avoid collisions—and streams of movement emerge. As more people join in, there is greater pull on others to join the flow, and the particular channels become (iii) ____"
+      ],
+      "cols": [
+       [
+        "apparent contradictions",
+        "unproductive tendencies",
+        "lawlike regularities"
+       ],
+       [
+        "inflexible",
+        "straightforward",
+        "chaotic"
+       ],
+       [
+        "self-defeating",
+        "self-aggrandizing",
+        "self-perpetuating"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -84,7 +106,29 @@
       0,
       2
      ],
-     "img": "2025-03-s4/4-04.webp"
+     "img": "2025-03-s4/4-04.webp",
+     "txt": {
+      "stem": [
+       "Until recently superhero comics were seen as irredeemably (i) ____ they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____"
+      ],
+      "cols": [
+       [
+        "puerile",
+        "innocuous",
+        "facetious"
+       ],
+       [
+        "lowbrow",
+        "shrewd",
+        "realistic"
+       ],
+       [
+        "heartened",
+        "emulated",
+        "abashed"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -96,17 +140,17 @@
      "img": "2025-03-s4/4-05.webp",
      "txt": {
       "pass": [
-       "Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket pe ats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human"
+       "Dartmoor and Bodmin Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket peats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human impact."
       ],
       "stem": [
-       "It can be inferred that many people assume which of the following about the landscapes of Dartmoor and Bodmin Moor?"
+       "It can be inferred that many people assume which of the following about the landscapes of Dartmoor and Bodmin Moor? O Their land cover is a completely natural feature."
       ],
       "opts": [
-       "Their land cover is a completely natural feature.",
        "They have been shaped by humans in various and subtle ways.",
        "Their history of human impact began less than 5,000 years ago.",
        "They have more rock outcrops than does the typical granite landscape.",
-       "Their soils have been made difficult to use by human activity. Selec & »ne answer choice."
+       "Their soils have been made difficult to use by human activity.",
+       "ne answer choice."
       ]
      }
     },
@@ -122,17 +166,15 @@
      "img": "2025-03-s4/4-06.webp",
      "txt": {
       "pass": [
-       "Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket pe ats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human"
+       "Dartmoor and Bodmin Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket peats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human impact."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "According to the passage, which of the following factors have contributed to the impression that humans have had little impact on Dartmoor and Bodmin Moor?"
       ],
       "opts": [
        "Soils that are of poor quality",
-       "Blanket pe ats",
-       "The presence of tors and boulders Select on: # r more answer choices."
+       "Blanket peats",
+       "The presence of tors and boulders"
       ]
      }
     },
@@ -146,14 +188,14 @@
      "img": "2025-03-s4/4-07.webp",
      "txt": {
       "pass": [
-       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from 10 lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner"
+       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from IO lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner to those that are mutually beneficial."
       ],
       "stem": [
        "The primary concern of the passage is to"
       ],
       "opts": [
        "articulate objections to a new hypothesis",
-       "support widely held hypotheses with new evidence",
+       "CD support widely held hypotheses with new evidence",
        "reconcile seemingly incompatible hypotheses",
        "provide evidence against some widely held hypotheses",
        "summarize the evidence for a long-held hypothesis"
@@ -170,7 +212,7 @@
      "img": "2025-03-s4/4-08.webp",
      "txt": {
       "pass": [
-       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from 10 lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner"
+       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from IO lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner to those that are mutually beneficial."
       ],
       "stem": [
        "The author refers to “harmful parasites on lichens themselves” in order to"
@@ -194,7 +236,7 @@
      "img": "2025-03-s4/4-09.webp",
      "txt": {
       "pass": [
-       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from 10 lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner"
+       "Lichens consist of a fungus and an alga living in symbiotic union. Testing the widely held hypothesis that lichen-forming fungi are a closely knit, peripheral group of fungi, a team of scientists compared DNA sequences from IO lichen-forming and 65 non-lichen-forming fungus species. These scientists classified the lichen- forming fungi into five kinds that were more closely related to kinds of non-lichen-forming fungi than to one another. The closest relatives of the lichen-forming kinds included some fungi that benefit, and others that cause disease to, associated organisms. Therefore, lichen- forming fungi probably evolved from various species whose effects on associated organisms ranged from benign to malignant. Furthermore, lichen-forming fungi seem to have given rise to other fungi that act as harmful parasites on lichens themselves. These considerations undermine the long-standing hypothesis that symbiotic relationships normally evolve in an orderly progression from those that are harmful to one partner to those that are mutually beneficial."
       ],
       "stem": [
        "Which of the following statements about lichen-forming fungi can be inferred from the passage?"
@@ -262,7 +304,20 @@
       0,
       5
      ],
-     "img": "2025-03-s4/4-12.webp"
+     "img": "2025-03-s4/4-12.webp",
+     "txt": {
+      "stem": [
+       "Because chemistry’s position as one of the natural sciences has long seemed ____ historians have generally treated the foundation of chemical professorships as an inevitable component of the progression of universities."
+      ],
+      "opts": [
+       "manifest",
+       "impregnable",
+       "relevant",
+       "predictable",
+       "german",
+       "self-evident"
+      ]
+     }
     },
     {
      "n": 13,
@@ -274,7 +329,7 @@
      "img": "2025-03-s4/4-13.webp",
      "txt": {
       "pass": [
-       "Stress is a contributing factor in many illnesses, and for many people much of the stress in their lives is job- related. Purposeful leisure-time activities, as distinct from leisure time spent idly, are a good way of taking one’s mind off one’s job. Clearly, therefore, people who are under much job-related stress can get some measure of protection from stress-induced illness if they engage in"
+       "Stress is a contributing factor in many illnesses, and for many people much of the stress in their lives is job- related. Purposeful leisure-time activities, as distinct from leisure time spent idly, are a good way of taking one’s mind off one’s job. Clearly, therefore, people who are under much job-related stress can get some measure of protection from stress-induced illness if they engage in purposeful leisure-time activities."
       ],
       "stem": [
        "Which of the following, if true, most strengthens the argument?"
@@ -284,7 +339,7 @@
        "Generally, the people who experience the greatest job- related stress are those who have the least amount of leisure time.",
        "Many people who are under great stress on the job have no particular desire to engage in purposeful leisure-time activities.",
        "Medical treatments for people who have fallen ill do not usually include efforts to remove the stress that might have contributed to the illness.",
-       "Some inherently stressful jobs are so structured that the people holding those jobs are guaranteed adequate leisure time at reasonable intervals. Selec # »ne answer choice."
+       "Some inherently stressful jobs are so structured that the people holding those jobs are guaranteed adequate leisure time at reasonable intervals. ne answer choice."
       ]
      }
     },
@@ -298,7 +353,7 @@
      "img": "2025-03-s4/4-14.webp",
      "txt": {
       "pass": [
-       "Benjamin Franklin is portrayed in American history as the quintessential self-made man.In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular"
+       "Benjamin Franklin is portrayed in American history as the quintessential self-made man. In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular credit for collective effort."
       ],
       "stem": [
        "Which of the following best describes the function of the highlighted sentence?"
@@ -308,7 +363,7 @@
        "It introduces new evidence about Franklin’s role in the collaborative process.",
        "It explains Franklin’s reputation in terms of a broad scholarly phenomenon.",
        "It emphasizes the extent to which Franklin relied on others in his workshop.",
-       "It describes Franklin’s approach to writing scientific results. Sele: = sme answer choice."
+       "It describes Franklin’s approach to writing scientific results."
       ]
      }
     },
@@ -322,22 +377,23 @@
      "img": "2025-03-s4/4-15.webp",
      "txt": {
       "pass": [
-       "Benjamin Franklin is portrayed in American history as the quintessential self-made man.In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular"
+       "Benjamin Franklin is portrayed in American history as the quintessential self-made man. In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular credit for collective effort."
       ],
       "stem": [
-       "Emerson is mentioned in the passage primarily to"
+       "Emerson is mentioned in the passage primarily to identify the origin of a particular understanding of Franklin"
       ],
       "opts": [
-       "identify the origin of a particular understanding of Franklin",
        "elaborate on a view of Franklin that the author takes issue with",
        "point to a controversial claim about Franklin’s historical legacy",
        "introduce the question of who Franklin’s main scientific influences were",
-       "suggest that Franklin was resistant to collaboration with other scientists Sele: & »ne answer choice."
+       "suggest that Franklin was resistant to collaboration with other scientists",
+       "ne answer choice."
       ]
      }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

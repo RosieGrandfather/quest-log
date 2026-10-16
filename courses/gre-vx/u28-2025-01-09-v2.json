@@ -8,7 +8,7 @@
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
   "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
-  "「选句子」题没法在网页里点选，请写下你选的句子（序号或开头几个词），交卷后对照答案自评，不计入分数"
+  "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
   {
@@ -46,7 +46,24 @@
       1,
       2
      ],
-     "img": "2025-01-09/4-02.webp"
+     "img": "2025-01-09/4-02.webp",
+     "txt": {
+      "stem": [
+       "Rocks of the Morrison Formation in the western United States yield many dinosaur fossils but few plant fossils. This apparent (i) ____ of plants leads some scientists to speculate that the region was once mostly barren. But others have (ii) ____ noting that the herbivorous dinosaurs there would have needed an abundant food supply."
+      ],
+      "cols": [
+       [
+        "attrition",
+        "dearth",
+        "attenuation"
+       ],
+       [
+        "abdicated",
+        "acceded",
+        "demurred"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -57,7 +74,29 @@
       0,
       0
      ],
-     "img": "2025-01-09/4-03.webp"
+     "img": "2025-01-09/4-03.webp",
+     "txt": {
+      "stem": [
+       "Most of human language is (i) ____ with meaning (ii) ____ context and interpretation. But the meaning of mathematical statements (iii) ____ culture and history: if a thousand people read an equation, they read the same equation."
+      ],
+      "cols": [
+       [
+        "figurative",
+        "malleable",
+        "redundant"
+       ],
+       [
+        "dependent on",
+        "deviating from",
+        "varying despite"
+       ],
+       [
+        "transcends",
+        "retraces",
+        "permeates"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -68,7 +107,29 @@
       0,
       0
      ],
-     "img": "2025-01-09/4-04.webp"
+     "img": "2025-01-09/4-04.webp",
+     "txt": {
+      "stem": [
+       "The theater’s stately production certainly does keep (i) ____ and the high praise it has received for its (ii) ____ could thus be called justified. But perhaps the performance goes too far in that direction. The (iii) ____ story line that makes this one of Shakespeare’s most wayward (and least performed) plays has been smoothed into a well-drilled parade of avowals and betrayals, plots and counterplots, deaths and resurrections."
+      ],
+      "cols": [
+       [
+        "confusion at bay",
+        "fidelity in view",
+        "impropriety in check"
+       ],
+       [
+        "lucidity",
+        "subtlety",
+        "authenticity"
+       ],
+       [
+        "convoluted",
+        "familiar",
+        "facile"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -77,10 +138,17 @@
      "img": "2025-01-09/4-05.webp",
      "txt": {
       "pass": [
-       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971-1990, food poisoning— primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an"
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
       ],
       "stem": [
        "Select the sentence that describes the evidence from which the author derives an explanation of a phenomenon."
+      ],
+      "sentences": [
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful.",
+       "During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates.",
+       "Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct.",
+       "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices.",
+       "As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
       ]
      }
     },
@@ -95,11 +163,9 @@
      "img": "2025-01-09/4-06.webp",
      "txt": {
       "pass": [
-       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971-1990, food poisoning— primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an"
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "From the passage, which of the following can be inferred about Japanese meat-based recipes?"
       ],
       "opts": [
@@ -119,7 +185,7 @@
      "img": "2025-01-09/4-07.webp",
      "txt": {
       "pass": [
-       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using non textual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the myth makers, Ulrich thanks them for saving so many objects made"
+       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using nontextual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the mythmakers, Ulrich thanks them for saving so many objects made and used by ordinary women."
       ],
       "stem": [
        "The passage is primarily concerned with discussing"
@@ -143,7 +209,7 @@
      "img": "2025-01-09/4-08.webp",
      "txt": {
       "pass": [
-       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using non textual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the myth makers, Ulrich thanks them for saving so many objects made"
+       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using nontextual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the mythmakers, Ulrich thanks them for saving so many objects made and used by ordinary women."
       ],
       "stem": [
        "The passage identifies which of the following as a source of difficulty for historians attempting to draw conclusions from the hand-sewn objects referred to in the passage?"
@@ -167,7 +233,7 @@
      "img": "2025-01-09/4-09.webp",
      "txt": {
       "pass": [
-       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using non textual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the myth makers, Ulrich thanks them for saving so many objects made"
+       "Faced with the paucity of surviving texts by mid- eighteenth-century American women, historians interested in women’s experience have proven resourceful at using nontextual sources. Recently, Laurel Thatcher Ulrich has turned to objects hand-sewn by New England women, maintaining that objects such as sheets, pillowcases, and quilts reveal the “flow of common life” while providing a context for political events. Discerning the historical significance of these handmade objects is not easy, however. Between today and eighteenth-century New England there looms a formidable nineteenth-century mythology that romanticized that earlier, colonial era, with its household production system, as a simpler time of hard work and virtuous self-sufficiency. This myth emerged as compensation for the extreme wealth and poverty generated by industrialization. As household production declined, and factory-made, store-bought goods became widespread, antiquarians avidly collected and displayed the handmade objects of their idealized forebears. Attentive to the ideological distortions of nineteenth-century mythmaking, most historians are wary of trying to discern the original meaning of colonial objects, assuming that, nowadays, such objects reveal more about nineteenth-century collectors than about eighteenth-century users. By contrast, rather than disparaging the mythmakers, Ulrich thanks them for saving so many objects made and used by ordinary women."
       ],
       "stem": [
        "Regarding the “myth,” it can be inferred that Ulrich would probably disagree with most historians over"
@@ -192,7 +258,7 @@
      "img": "2025-01-09/4-10.webp",
      "txt": {
       "stem": [
-       "The debate among chemists as to how water behaves at the molecular level may seem to manytobean —_— ____ one, but water’s unusual molecular properties do have practical implications for other areas of science."
+       "The debate among chemists as to how water behaves at the molecular level may seem to many to be an ____ one, but water’s unusual molecular properties do have practical implications for other areas of science."
       ],
       "opts": [
        "irresolvable",
@@ -215,7 +281,7 @@
      "img": "2025-01-09/4-11.webp",
      "txt": {
       "stem": [
-       "At first, most of the famous fairy tales seem so implausible and so irrelevant to contemporary life that their ____ = ____ is hard to understand."
+       "At first, most of the famous fairy tales seem so implausible and so irrelevant to contemporary life that their ____ is hard to understand."
       ],
       "opts": [
        "universality",
@@ -260,7 +326,7 @@
      "img": "2025-01-09/4-13.webp",
      "txt": {
       "pass": [
-       "A law has been proposed requiring the cargo boxes of trucks carrying gravel to be covered by a tarpaulin, because vehicles driving close behind open-topped gravel trucks can be damaged by gravel flying off these trucks. The law is unlikely to substantially reduce such damage, however: flying gravel is much less likely to come from the cargo box itself than from the grooves of the tires, in which gravel can become wedged during"
+       "A law has been proposed requiring the cargo boxes of trucks carrying gravel to be covered by a tarpaulin, because vehicles driving close behind open-topped gravel trucks can be damaged by gravel flying off these trucks. The law is unlikely to substantially reduce such damage, however: flying gravel is much less likely to come from the cargo box itself than from the grooves of the tires, in which gravel can become wedged during loading."
       ],
       "stem": [
        "Which of the following, if true, provides the strongest support for the argument given?"
@@ -284,7 +350,7 @@
      "img": "2025-01-09/4-14.webp",
      "txt": {
       "pass": [
-       "Studies show that liking increases with familiarity for many classes of objects but not for representational paintings. Representational paintings have meaning, a factor that might idiosyncratically affect one’s liking for an artwork independent of its familiarity. A person who does not like flowers might not like van Gogh’s paintings of sunflowers no matter how familiar they are. Thus, preference for a painting’s content might conceal the effects of familiarity. Furthermore, art is embedded in a cultural context that might contribute to the effects of individual taste and general knowledge on judgments of liking. Some people might dislike the famous van Gogh paintings because they think the paintings are commercially exploited or because they’ve heard the"
+       "Studies show that liking increases with familiarity for many classes of objects but not for representational paintings. Representational paintings have meaning, a factor that might idiosyncratically affect one’s liking for an artwork independent of its familiarity. A person who does not like flowers might not like van Gogh’s paintings of sunflowers no matter how familiar they are. Thus, preference for a painting’s content might conceal the effects of familiarity. Furthermore, art is embedded in a cultural context that might contribute to the effects of individual taste and general knowledge on judgments of liking. Some people might dislike the famous van Gogh paintings because they think the paintings are commercially exploited or because they’ve heard the paintings are fakes."
       ],
       "stem": [
        "The author mentions the possibility that van Gogh’s famous paintings are commercially exploited primarily in order to"
@@ -309,7 +375,7 @@
      "img": "2025-01-09/4-15.webp",
      "txt": {
       "pass": [
-       "Studies show that liking increases with familiarity for many classes of objects but not for representational paintings. Representational paintings have meaning, a factor that might idiosyncratically affect one’s liking for an artwork independent of its familiarity. A person who does not like flowers might not like van Gogh’s paintings of sunflowers no matter how familiar they are. Thus, preference for a painting’s content might conceal the effects of familiarity. Furthermore, art is embedded in a cultural context that might contribute to the effects of individual taste and general knowledge on judgments of liking. Some people might dislike the famous van Gogh paintings because they think the paintings are commercially exploited or because they’ve heard the"
+       "Studies show that liking increases with familiarity for many classes of objects but not for representational paintings. Representational paintings have meaning, a factor that might idiosyncratically affect one’s liking for an artwork independent of its familiarity. A person who does not like flowers might not like van Gogh’s paintings of sunflowers no matter how familiar they are. Thus, preference for a painting’s content might conceal the effects of familiarity. Furthermore, art is embedded in a cultural context that might contribute to the effects of individual taste and general knowledge on judgments of liking. Some people might dislike the famous van Gogh paintings because they think the paintings are commercially exploited or because they’ve heard the paintings are fakes."
       ],
       "stem": [
        "The highlighted sentence performs which of the following functions in the passage?"
@@ -324,5 +390,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

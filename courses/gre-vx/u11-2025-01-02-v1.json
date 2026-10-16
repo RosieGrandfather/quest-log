@@ -23,7 +23,19 @@
      "ans": [
       2
      ],
-     "img": "2025-01-02/2-01.webp"
+     "img": "2025-01-02/2-01.webp",
+     "txt": {
+      "stem": [
+       "Mathematical knowledge has long been regarded as being essentially stable and hence rooted in a world of ideas only superficially ____ to historical forces."
+      ],
+      "opts": [
+       "indifferent",
+       "superior",
+       "susceptible",
+       "extraneous",
+       "oblivious"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       0,
       0
      ],
-     "img": "2025-01-02/2-02.webp"
+     "img": "2025-01-02/2-02.webp",
+     "txt": {
+      "stem": [
+       "Gutiérrez is the only one who seems to be (i) ____ the controversy sparked by his article: his appetite for scientific (ii) ____ seems, if anything, to be increasing with age."
+      ],
+      "cols": [
+       [
+        "relishing",
+        "quelling",
+        "whitewashing"
+       ],
+       [
+        "altercations",
+        "conundrums",
+        "breakthroughs"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       0,
       0
      ],
-     "img": "2025-01-02/2-03.webp"
+     "img": "2025-01-02/2-03.webp",
+     "txt": {
+      "stem": [
+       "Kennedy’s novels have a baffling way of engaging us as readers and then (i) ____ our involvement It is not that she gives us wooden characters or poor writing or foolish plots. Rather, her books seem so adroitly written and carefully conceived, they strike us as so (ii) ____ as we read them, that it comes as a surprise to reach the end and find them ultimately so (iii) ____"
+      ],
+      "cols": [
+       [
+        "intensifying",
+        "exploring",
+        "squandering"
+       ],
+       [
+        "technically accomplished",
+        "redundantly detailed",
+        "off-puttingly genteel"
+       ],
+       [
+        "tivial",
+        "deliberate",
+        "eloquent"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -56,17 +107,17 @@
      "img": "2025-01-02/2-04.webp",
      "txt": {
       "pass": [
-       "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin’s ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. With a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler"
+       "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin' 5 ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. VVith a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler tunes once they began recording their work."
       ],
       "stem": [
-       "The function of the highlighted sentence is primarily to"
+       "The function of the highlighted sentence is primarily to O identify a common criticism of early recording technology"
       ],
       "opts": [
-       "identify a common criticism of early recording technology",
        "suggest a way in which early recording technology influenced the development of jazz",
        "explain why early jazz recordings were not especially popular with the public",
        "point to a difficulty in early recording technology that Edison struggled to overcome",
-       "explain why musicians such as Ellington were slow to embrace recording technology"
+       "explain why musicians such as Ellington were slow to embrace recording technology",
+       "Se;ect one answer choice."
       ]
      }
     },
@@ -80,7 +131,7 @@
      "img": "2025-01-02/2-05.webp",
      "txt": {
       "pass": [
-       "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin’s ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. With a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler"
+       "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin' 5 ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. VVith a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler tunes once they began recording their work."
       ],
       "stem": [
        "The passage suggests that Duke Ellington’s early recorded jazz works"
@@ -128,7 +179,6 @@
      "img": "2025-01-02/2-07.webp",
      "txt": {
       "stem": [
-       "at Bk sentence as a whole and produce completed sentences that are alike in meaning.",
        "Despite the. ____ of medical information available through e-mail, the Internet, and mobile devices, not many patients are taking advantage of the potential of electronic communications for health-related needs."
       ],
       "opts": [
@@ -175,7 +225,7 @@
      "img": "2025-01-02/2-09.webp",
      "txt": {
       "stem": [
-       "While there is no evidence that Bigfoot is real, several well-known species were once thought to be ____ ; the okapi, for instance, was known as the “African unicorn” until explorers obtained proof of its existence."
+       "While there is no evidence that Bigfoot is real, several well-known species were once thought to be ____ ; the okapi, for instance, was known asthe “African unicorn” until explorers obtained proof of its existence."
       ],
       "opts": [
        "threatened",
@@ -197,17 +247,17 @@
      "img": "2025-01-02/2-10.webp",
      "txt": {
       "pass": [
-       "Geologists can determine the ages of rocks and fossils by using natural clocks, including the natural decay of unstable, radioactive atoms into stable forms. The element uranium occurs in minute concentrations in seawater, and certain types of organisms, particularly corals, absorb it as they grow. One isotope of uranium, **8y, decays through a series of steps to Th, an isotope of thorium. As a coral grows, it adds tiny amounts of *7Y to its skeleton. Over time, this 25 steadily transforms into *°Th. The proportion of the two isotopes changes in a predictable way over time, allowing us to calculate the ages of fossil corals in marine terraces back as far as five hundred thousand years. A drawback of uranium-thorium dating is that it doesn’t work on most fossils. Shells of molluscs like clams and snails are common in marine terrace deposits, but molluscs don’t take up uranium from seawater. Here, though, we have another trick: amino acid racemization. The proteins of living creatures contain amino acids in a specific molecular shape known as the L-configuration. Upon death, some of these amino acids begin shape-shifting to a new arrangement called the D-configuration—a process called racemization. Molluscs are particularly useful for amino acid dating because they live practically everywhere in shallow ocean habitats and because their shells are bound together with matrixes of amino acid-rich proteins. By measuring the ratio of the two types of amino acids in mollusc shell proteins, we can"
+       "Geologists can determine the ages of rocks and fossils by using natural clocks, including the natural decay of unstable, radioactive atoms into stable forms. The element uranium occurs in minute concentrations in seawater, and certain types of organisms, particularly corals, absorb it as they grow. One isotope of uranium, 23811, decays through a series of steps to 230Th, an isotope of thorium. As a coral grows, it adds tiny amounts of 2380 to its skeleton. Over time, this 2381.1 steadily transforms into 230Th. The proportion of the two isotopes changes in a predictable way over time, allowing us to calculate the ages of fossil corals in marine terraces back as far as five hundred thousand years. A drawback of uranium-thorium dating is that it doesn’t work on most fossils. Shells of molluscs like clams and snails are common in marine terrace deposits, but molluscs don’t take up uranium from seawater. Here, though, we have another trick: amino acid racemization. The proteins of living creatures contain amino acids in a specific molecular shape known as the L-configuration. Upon death, some of these amino acids begin shape-shifting to a new arrangement called the D-configuration—a process called racemization. Molluscs are particularly useful for amino acid dating because they live practically everywhere in shallow ocean habitats and because their shells are bound together with matrixes of amino acid-rich proteins. By measuring the ratio of the two types of amino acids in mollusc shell proteins, we can estimate the time since death."
       ],
       "stem": [
-       "The author of the passage would most a sta wh which of the following statements about"
+       "The author of the passage would most (Ikely agree with which of the following statements about 23&lJ?"
       ],
       "opts": [
        "Prior to five hundred thousand years ago, its concentrations in seawater were probably less than they are today.",
-       "Itis absorbed in different amounts by corals in different ocean habitats.",
+       "It is absorbed in different amounts by corals in different ocean habitats",
        "Its rate of decay prior to five hundred thousand years ago cannot be determined.",
-       "Itis useful in dating corals that lived more than five hundred thousand years ago.",
-       "Itis not useful in dating shells of clams or snails."
+       "It is useful in dating corals that lived more than five hundred thousand years ago.",
+       "It is not useful in dating shells of clams or snails."
       ]
      }
     },
@@ -221,7 +271,7 @@
      "img": "2025-01-02/2-11.webp",
      "txt": {
       "pass": [
-       "Geologists can determine the ages of rocks and fossils by using natural clocks, including the natural decay of unstable, radioactive atoms into stable forms. The element uranium occurs in minute concentrations in seawater, and certain types of organisms, particularly corals, absorb it as they grow. One isotope of uranium, **8y, decays through a series of steps to Th, an isotope of thorium. As a coral grows, it adds tiny amounts of *7Y to its skeleton. Over time, this 25 steadily transforms into *°Th. The proportion of the two isotopes changes in a predictable way over time, allowing us to calculate the ages of fossil corals in marine terraces back as far as five hundred thousand years. A drawback of uranium-thorium dating is that it doesn’t work on most fossils. Shells of molluscs like clams and snails are common in marine terrace deposits, but molluscs don’t take up uranium from seawater. Here, though, we have another trick: amino acid racemization. The proteins of living creatures contain amino acids in a specific molecular shape known as the L-configuration. Upon death, some of these amino acids begin shape-shifting to a new arrangement called the D-configuration—a process called racemization. Molluscs are particularly useful for amino acid dating because they live practically everywhere in shallow ocean habitats and because their shells are bound together with matrixes of amino acid-rich proteins. By measuring the ratio of the two types of amino acids in mollusc shell proteins, we can"
+       "Geologists can determine the ages of rocks and fossils by using natural clocks, including the natural decay of unstable, radioactive atoms into stable forms. The element uranium occurs in minute concentrations in seawater, and certain types of organisms, particularly corals, absorb it as they grow. One isotope of uranium, 23811, decays through a series of steps to 230Th, an isotope of thorium. As a coral grows, it adds tiny amounts of 2380 to its skeleton. Over time, this 2381.1 steadily transforms into 230Th. The proportion of the two isotopes changes in a predictable way over time, allowing us to calculate the ages of fossil corals in marine terraces back as far as five hundred thousand years. A drawback of uranium-thorium dating is that it doesn’t work on most fossils. Shells of molluscs like clams and snails are common in marine terrace deposits, but molluscs don’t take up uranium from seawater. Here, though, we have another trick: amino acid racemization. The proteins of living creatures contain amino acids in a specific molecular shape known as the L-configuration. Upon death, some of these amino acids begin shape-shifting to a new arrangement called the D-configuration—a process called racemization. Molluscs are particularly useful for amino acid dating because they live practically everywhere in shallow ocean habitats and because their shells are bound together with matrixes of amino acid-rich proteins. By measuring the ratio of the two types of amino acids in mollusc shell proteins, we can estimate the time since death."
       ],
       "stem": [
        "The highlighted sentence serves primarily to"
@@ -242,10 +292,26 @@
      "ans": [
       3
      ],
-     "img": "2025-01-02/2-12.webp"
+     "img": "2025-01-02/2-12.webp",
+     "txt": {
+      "pass": [
+       "Geologists can determine the ages of rocks and fossils by using natural clocks, including the natural decay of unstable, radioactive atoms into stable forms. The element uranium occurs in minute concentrations in seawater, and certain types of organisms, particularly corals, absorb it as they grow. One isotope of uranium, 23811, decays through a series of steps to 230Th, an isotope of thorium. As a coral grows, it adds tiny amounts of 2380 to its skeleton. Over time, this 2381.1 steadily transforms into 230Th. The proportion of the two isotopes changes in a predictable way over time, allowing us to calculate the ages of fossil corals in marine terraces back as far as five hundred thousand years. A drawback of uranium-thorium dating is that it doesn’t work on most fossils. Shells of molluscs like clams and snails are common in marine terrace deposits, but molluscs don’t take up uranium from seawater. Here, though, we have another trick: amino acid racemization. The proteins of living creatures contain amino acids in a specific molecular shape known as the L-configuration. Upon death, some of these amino acids begin shape-shifting to a new arrangement called the D-configuration—a process called racemization. Molluscs are particularly useful for amino acid dating because they live practically everywhere in shallow ocean habitats and because their shells are bound together with matrixes of amino acid-rich proteins. By measuring the ratio of the two types of amino acids in mollusc shell proteins, we can estimate the time since death."
+      ],
+      "stem": [
+       "The passage implies which of the following about differences between fossil molluscs and fossil corals?"
+      ],
+      "opts": [
+       "Fossil corals can be dated to a greater age than fossil molluscs can.",
+       "Fossil molluscs are more commonly found to have absorbed 230Th directly from seawater.",
+       "Fossil corals undergo racemization at a less predictable rate than fossil molluscs do.",
+       "Fossil molluscs are found in some marine terrace deposits that do not contain fossil corals.",
+       "Fossil corals contain amino acids that are not found in fossil molluscs."
+      ]
+     }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

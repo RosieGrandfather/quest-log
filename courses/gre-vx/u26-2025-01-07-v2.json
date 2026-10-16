@@ -8,7 +8,7 @@
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
   "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
-  "「选句子」题没法在网页里点选，请写下你选的句子（序号或开头几个词），交卷后对照答案自评，不计入分数"
+  "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
   {
@@ -24,7 +24,19 @@
      "ans": [
       1
      ],
-     "img": "2025-01-07/4-01.webp"
+     "img": "2025-01-07/4-01.webp",
+     "txt": {
+      "stem": [
+       "Many legislators who helped Roosevelt shape the New Deal ____ the fact that emerging social problems affected every segment of the population; nonetheless, they often acted with a view to aiding only their own constituents."
+      ],
+      "opts": [
+       "disregarded",
+       "bemoaned",
+       "ignored",
+       "disputed",
+       "downplayed"
+      ]
+     }
     },
     {
      "n": 2,
@@ -34,7 +46,24 @@
       1,
       0
      ],
-     "img": "2025-01-07/4-02.webp"
+     "img": "2025-01-07/4-02.webp",
+     "txt": {
+      "stem": [
+       "Although the (i) ____ of partnerships between universities and private industry are many, university•industry collaboration does raise some tricky questions about (ii) ____ missions. Publishing research for example, promotes a central goal for one institution but jeopardizes one for the other"
+      ],
+      "cols": [
+       [
+        "costs",
+        "advantages",
+        "intricacies"
+       ],
+       [
+        "divergent",
+        "educational",
+        "overambitious"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -45,7 +74,29 @@
       1,
       0
      ],
-     "img": "2025-01-07/4-03.webp"
+     "img": "2025-01-07/4-03.webp",
+     "txt": {
+      "stem": [
+       "Science is inherently (i) ____ Whether (ii) ____ a long-standing idea or showing disdain for received political wisdom, the scientific ethic, which demands that the scientist follow the evidence wherever it leads, is a threat to (iii) ____ of all kinds"
+      ],
+      "cols": [
+       [
+        "subversive",
+        "principled",
+        "collaborative"
+       ],
+       [
+        "substantiating",
+        "overturning",
+        "identifying"
+       ],
+       [
+        "authorities",
+        "skeptics",
+        "methodologies"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -56,7 +107,29 @@
       1,
       2
      ],
-     "img": "2025-01-07/4-04.webp"
+     "img": "2025-01-07/4-04.webp",
+     "txt": {
+      "stem": [
+       "There is something seductive about (i) ____ judgments in the arts. When a critic peremptorily announces that Titian’s canvases are the greatest ever painted or that Mondrian and Malevich are the only truly radical artists of the twentieth century, we enjoy seeing all the confusions of taste swept aside, even though we may (ii) ____ reservations about the ____ nature of these opinions."
+      ],
+      "cols": [
+       [
+        "well-informed",
+        "conventional",
+        "absolutist"
+       ],
+       [
+        "set aside",
+        "harbor",
+        "ignore"
+       ],
+       [
+        "categorical",
+        "diffident",
+        "patronizing"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -68,7 +141,7 @@
      "img": "2025-01-07/4-05.webp",
      "txt": {
       "pass": [
-       "From a biological perspective, culture may be broadly defined as shared variation in behavior that is generated and maintained by social learning—through imitation or teaching, for example. Social learning in animals is often difficult to demonstrate directly. But the presence of culture can be established by observation and deduction: when behavioral differences exist that cannot be accounted for by genetic or environmental factors, cultural transmission must be occurring. Critics respond that it is often difficult to rule out hypotheses that genes or learned individual responses to differing environments are responsible for behavioral patterns. Often implicit in this argument is the notion that social learning, considered a more complex and more cognitively demanding phenomenon than individual learning, should be invoked only as an explanation of"
+       "From a biological perspective, culture may be broadly defined as shared variation in behavior that is generated and maintained by social learning—through imitation or teaching, for example. Social learning in animals is often difficult to demonstrate directly. But the presence of culture can be established by observation and deduction: when behavioral differences exist that cannot be accounted for by genetic or environmental factors, cultural transmission must be occurring. Critics respond that it is often difficult to rule out hypotheses that genes or learned individual responses to differing environments are responsible for behavioral patterns. Often implicit in this argument is the notion that social learning, considered a more complex and more cognitively demanding phenomenon than individual learning, should be invoked only as an explanation of last resort."
       ],
       "stem": [
        "According to the passage, the occurrence of social learning can be established by"
@@ -93,11 +166,10 @@
      "img": "2025-01-07/4-06.webp",
      "txt": {
       "pass": [
-       "From a biological perspective, culture may be broadly defined as shared variation in behavior that is generated and maintained by social learning—through imitation or teaching, for example. Social learning in animals is often difficult to demonstrate directly. But the presence of culture can be established by observation and deduction: when behavioral differences exist that cannot be accounted for by genetic or environmental factors, cultural transmission must be occurring. Critics respond that it is often difficult to rule out hypotheses that genes or learned individual responses to differing environments are responsible for behavioral patterns. Often implicit in this argument is the notion that social learning, considered a more complex and more cognitively demanding phenomenon than individual learning, should be invoked only as an explanation of"
+       "From a biological perspective, culture may be broadly defined as shared variation in behavior that is generated and maintained by social learning—through imitation or teaching, for example. Social learning in animals is often difficult to demonstrate directly. But the presence of culture can be established by observation and deduction: when behavioral differences exist that cannot be accounted for by genetic or environmental factors, cultural transmission must be occurring. Critics respond that it is often difficult to rule out hypotheses that genes or learned individual responses to differing environments are responsible for behavioral patterns. Often implicit in this argument is the notion that social learning, considered a more complex and more cognitively demanding phenomenon than individual learning, should be invoked only as an explanation of last resort."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "The passage suggests which of the following about individual learning?"
+       "The passage suggests which of the following about individual teaming?"
       ],
       "opts": [
        "It does not occur as a result of imitation or teaching.",
@@ -116,7 +188,7 @@
      "img": "2025-01-07/4-07.webp",
      "txt": {
       "pass": [
-       "Economists use two competing models to describe the effects of commercial advertising—advertising as market competition and advertising as market power. The market competition model holds that the fundamental function of advertising is to provide information about products and brands. It is argued that information in ads permits greater marketplace efficiencies, such as lower prices and reduced monopoly power. In a similar vein, much discussion regarding political advertising has rested on its informational value. Does political advertising provide political information and help voters make informed decisions? Nelson argues that promoting bars of soap in commercial ads is no different than promoting political ideas/ideology from political candidates in political ads, on the grounds that information is being distributed in both cases. Others, such as Ferguson and Jamieson, disagree with Nelson’s proposition. Ferguson, for example, pointed out that choosing a political candidate is more like buying an experience good (where the quality is hard to evaluate prior to purchase) rather than a search good (where the quality is easily evaluated before the purchase). According to Ferguson, claims in political ads do not have true informational value, because it is difficult for voters to draw inferences about the future deeds of a candidate from what the ads say. Furthermore, Jamieson argues that political ads reshape the public image of political candidates and change voters’ feelings about the candidates with subtle emotional cues but without substantive information upon which to base"
+       "Economists use two competing models to describe the effects of commercial advertising—advertising as market competition and advertising as market power. The market competition model holds that the fundamental function of advertising is to provide information about products and brands. It is argued that information in ads permits greater marketplace efficiencies, such as lower prices and reduced monopoly power. In a similar vein, much discussion regarding political advertising has rested on its informational value. Does political advertising provide political information and help voters make informed decisions? Nelson argues that promoting bars of soap in commercial ads is no different than promoting political ideas/ideology from political candidates in political ads, on the grounds that information is being distributed in both cases. Others, such as Ferguson and Jamieson, disagree with Nelson’s proposition. Ferguson, for example, pointed out that choosing a political candidate is more like buying an experience good (where the quality is hard to evaluate prior to purchase) rather than a search good (where the quality is easily evaluated before the purchase). According to Ferguson, claims in political ads do not have true informational value, because it is difficult for voters to draw inferences about the future deeds of a candidate from what the ads say. Furthermore, Jamieson argues that political ads reshape the public image of political candidates and change voters’ feelings about the candidates with subtle emotional cues but without substantive information upon which to base a reasoned •udgment."
       ],
       "stem": [
        "The passage implies that Ferguson and Jamieson agree that political advertising"
@@ -140,7 +212,7 @@
      "img": "2025-01-07/4-08.webp",
      "txt": {
       "pass": [
-       "Economists use two competing models to describe the effects of commercial advertising—advertising as market competition and advertising as market power. The market competition model holds that the fundamental function of advertising is to provide information about products and brands. It is argued that information in ads permits greater marketplace efficiencies, such as lower prices and reduced monopoly power. In a similar vein, much discussion regarding political advertising has rested on its informational value. Does political advertising provide political information and help voters make informed decisions? Nelson argues that promoting bars of soap in commercial ads is no different than promoting political ideas/ideology from political candidates in political ads, on the grounds that information is being distributed in both cases. Others, such as Ferguson and Jamieson, disagree with Nelson’s proposition. Ferguson, for example, pointed out that choosing a political candidate is more like buying an experience good (where the quality is hard to evaluate prior to purchase) rather than a search good (where the quality is easily evaluated before the purchase). According to Ferguson, claims in political ads do not have true informational value, because it is difficult for voters to draw inferences about the future deeds of a candidate from what the ads say. Furthermore, Jamieson argues that political ads reshape the public image of political candidates and change voters’ feelings about the candidates with subtle emotional cues but without substantive information upon which to base"
+       "Economists use two competing models to describe the effects of commercial advertising—advertising as market competition and advertising as market power. The market competition model holds that the fundamental function of advertising is to provide information about products and brands. It is argued that information in ads permits greater marketplace efficiencies, such as lower prices and reduced monopoly power. In a similar vein, much discussion regarding political advertising has rested on its informational value. Does political advertising provide political information and help voters make informed decisions? Nelson argues that promoting bars of soap in commercial ads is no different than promoting political ideas/ideology from political candidates in political ads, on the grounds that information is being distributed in both cases. Others, such as Ferguson and Jamieson, disagree with Nelson’s proposition. Ferguson, for example, pointed out that choosing a political candidate is more like buying an experience good (where the quality is hard to evaluate prior to purchase) rather than a search good (where the quality is easily evaluated before the purchase). According to Ferguson, claims in political ads do not have true informational value, because it is difficult for voters to draw inferences about the future deeds of a candidate from what the ads say. Furthermore, Jamieson argues that political ads reshape the public image of political candidates and change voters’ feelings about the candidates with subtle emotional cues but without substantive information upon which to base a reasoned •udgment."
       ],
       "stem": [
        "In the context of the passage as a whole, the highlighted sentence serves primarily to"
@@ -161,7 +233,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-07/4-09.webp"
+     "img": "2025-01-07/4-09.webp",
+     "txt": {
+      "pass": [
+       "Economists use two competing models to describe the effects of commercial advertising—advertising as market competition and advertising as market power. The market competition model holds that the fundamental function of advertising is to provide information about products and brands. It is argued that information in ads permits greater marketplace efficiencies, such as lower prices and reduced monopoly power. In a similar vein, much discussion regarding political advertising has rested on its informational value. Does political advertising provide political information and help voters make informed decisions? Nelson argues that promoting bars of soap in commercial ads is no different than promoting political ideas/ideology from political candidates in political ads, on the grounds that information is being distributed in both cases. Others, such as Ferguson and Jamieson, disagree with Nelson’s proposition. Ferguson, for example, pointed out that choosing a political candidate is more like buying an experience good (where the quality is hard to evaluate prior to purchase) rather than a search good (where the quality is easily evaluated before the purchase). According to Ferguson, claims in political ads do not have true informational value, because it is difficult for voters to draw inferences about the future deeds of a candidate from what the ads say. Furthermore, Jamieson argues that political ads reshape the public image of political candidates and change voters’ feelings about the candidates with subtle emotional cues but without substantive information upon which to base a reasoned •udgment."
+      ],
+      "stem": [
+       "Which of the following statements, if true, would most clearly weaken Nelson’s argument as it is presented in the passage?"
+      ],
+      "opts": [
+       "Political advertisements that make false claims are subject to rebuttal by political advertigements for opposing candidates.",
+       "Most producers of political advertisements work directly for the political campaigns of the candidates the advertisements promote.",
+       "Soap advertisements typically rely on evocative images that do not relate to the effectiveness of the product being advertised.",
+       "Advertisements for familiar products, such as bars of soap, are evaluated more critically by audiences than are advertisements for less familiar products.",
+       "Voter disappointment in the candidates that they elect is analogous to the disappointment consumers of familiar products sometimes experience."
+      ]
+     }
     },
     {
      "n": 10,
@@ -174,7 +261,7 @@
      "img": "2025-01-07/4-10.webp",
      "txt": {
       "stem": [
-       "In person, Downing is generally rather. ____ ——_, seemingly incapable of smiling, let alone"
+       "In person, Downing is generally rather. ____ seemingly incapable of smiling, let alone laughing."
       ],
       "opts": [
        "complaisant",
@@ -220,7 +307,7 @@
      "img": "2025-01-07/4-12.webp",
      "txt": {
       "stem": [
-       "Whereas the original editor had sacrificed clarity for brevity and her successor had been too ____ , the new editor took an intermediate approach, explicit as to the purport of each document and not too ambitious in detail"
+       "Whereas the original editor had sacrificed clarity for brevity and her successor had been too ____ the new editor took an intermediate approach, explicit as to the purport of each document and not too ambitious in detail"
       ],
       "opts": [
        "discriminating",
@@ -242,7 +329,7 @@
      "img": "2025-01-07/4-13.webp",
      "txt": {
       "pass": [
-       "Historical preservation societies preserve old structures to educate visitors about local history. These groups generally choose to preserve old houses that are considered beautiful, leaving less aesthetically pleasing structures to be demolished. Thus, by giving visitors the impression that all old buildings are beautiful, the"
+       "Historical preservation societies preserve old structures to educate visitors about local history. These groups generally choose to preserve old houses that are considered beautiful, leaving less aesthetically pleasing structures to be demolished. Thus, by giving visitors the impression that all old buildings are beautiful, the groups systematically misrepresent history."
       ],
       "stem": [
        "Which of the following, if true, casts the most doubt on the argument?"
@@ -260,7 +347,22 @@
      "n": 14,
      "kind": "ss",
      "ansText": "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices",
-     "img": "2025-01-07/4-14.webp"
+     "img": "2025-01-07/4-14.webp",
+     "txt": {
+      "pass": [
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
+      ],
+      "stem": [
+       "Select the sentence that describes the evidence from which the author derives an explanation of a phenomenon."
+      ],
+      "sentences": [
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful.",
+       "During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates.",
+       "Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct.",
+       "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices.",
+       "As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
+      ]
+     }
     },
     {
      "n": 15,
@@ -273,14 +375,14 @@
      "img": "2025-01-07/4-15.webp",
      "txt": {
       "pass": [
-       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971-1990, food poisoning— primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an"
+       "Despite the widespread availability of electrical refrigeration, the antimicrobial properties of spices may still be useful. During 1971–1990, food poisoning—primarily bacterial—affected 29 out of every 100,000 Japanese but only 3 out of every 100,000 Koreans, despite the countries’ similar temperate climates. Lee’s suggestion that the difference may have been due to cultural variations in food handling and preparation may well be correct. But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices. As a result, an average Korean recipe most likely inhibits a significantly greater fraction of bacteria than an average Japanese recipe."
       ],
       "stem": [
        "From the passage, which of the following can be inferred about Japanese meat-based recipes?"
       ],
       "opts": [
        "Some of these recipes do not include any spices.",
-       "These recipes usually feature highly inhibitory spices.",
+       "(7 These recipes usually feature highly inhibitory spices.",
        "These recipes draw from a greater variety of spices than do Korean recipes."
       ]
      }
@@ -288,5 +390,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

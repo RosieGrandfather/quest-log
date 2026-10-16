@@ -63,7 +63,7 @@ function itemHTML(it, i, b){
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
     ${it.txt ? `<div class="qtxt">${textHTML(it, i)}</div>
     <details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : origImgs(it, b)}
-    <div class="gq-hint">${hintOf(it)}</div>
+    <div class="gq-hint">${hintOf(it)}${it.answerPending ? ' · 原答案待核对，本题暂不计分' : ''}</div>
     ${controlsHTML(it, i)}
     <div class="gq-explain" hidden></div>
   </section>`;
@@ -147,6 +147,10 @@ export function wireQset(root, course, unit){
   const onInput = e=>{
     if(revealed) return;
     const sec = e.target.closest('.qq'); if(!sec) return;
+    if(items[Number(sec.dataset.i)].kind === 'se' && sec.querySelectorAll('input:checked').length > 2){
+      e.target.checked = false;
+      showToast('这题请选择两个答案；先取消一个选项再更换');
+    }
     readOne(Number(sec.dataset.i)); updateCount(); warned = false;
     const w = $('.gset-warn'); if(w) w.remove();
   };
@@ -163,8 +167,8 @@ export function wireQset(root, course, unit){
       if(isGraded(it)){
         sec.classList.add(ok ? 'right' : 'wrong');
         sec.querySelector('.gq-verdict').textContent = ok ? '✓ 答对' : blank ? '✗ 没作答' : '✗ 答错';
-      } else sec.querySelector('.gq-verdict').textContent = '对照答案自评';
-      if(it.kind === 'tc'){
+      } else sec.querySelector('.gq-verdict').textContent = it.answerPending ? '答案待核对，不计分' : '对照答案自评';
+      if(isGraded(it) && it.kind === 'tc'){
         const got = a.split(',');
         sec.querySelectorAll('.qopt').forEach(lab=>{
           const k = Number(lab.dataset.k), j = Number(lab.dataset.b), isC = it.ans[j] === k, picked = got[j] === String(k);
@@ -172,7 +176,7 @@ export function wireQset(root, course, unit){
           lab.classList.toggle('chosen-wrong', picked && !isC);
           lab.querySelector('.gopt-tag').textContent = isC && picked ? '✓ 你选对了' : isC ? '正确答案' : picked ? '你的选择' : '';
         });
-      } else if(it.kind !== 'ne' && it.kind !== 'ss'){
+      } else if(isGraded(it) && it.kind !== 'ne' && it.kind !== 'ss'){
         const got = a.split(',');
         sec.querySelectorAll('.qopt').forEach(lab=>{
           const k = Number(lab.dataset.k), isC = it.ans.includes(k), picked = got.includes(String(k));
@@ -182,7 +186,7 @@ export function wireQset(root, course, unit){
         });
       }
       const ex = sec.querySelector('.gq-explain');
-      ex.innerHTML = `<div class="gq-answer"><span>${it.kind === 'ss' ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${it.kind === 'ss' ? '' : ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
+      ex.innerHTML = `<div class="gq-answer"><span>${!isGraded(it) ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${!isGraded(it) ? '' : ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
         ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });
@@ -195,7 +199,7 @@ export function wireQset(root, course, unit){
   function summaryHTML(sum){
     const kinds = Object.entries(sum.byKind).map(([k, v])=> `<div class="gsum-row"><span>${QKIND_LABEL[k]}</span><b>${v.correct} / ${v.total}</b><span class="gsum-pct">${Math.round(v.correct / v.total * 100)}%</span></div>`).join('');
     const selfc = sum.selfCheck && sum.selfCheck.length
-      ? `<div class="gsum-card"><div class="gsum-sub">选句子题（自评，不计分）</div>${sum.selfCheck.map(i=> `<button type="button" class="gsum-chip" data-goto="${i}">第 ${items[i].n} 题</button>`).join('')}</div>` : '';
+      ? `<div class="gsum-card"><div class="gsum-sub">自评或答案待核对的题目（不计分）</div>${sum.selfCheck.map(i=> `<button type="button" class="gsum-chip" data-goto="${i}">第 ${items[i].n} 题</button>`).join('')}</div>` : '';
     const wrongs = sum.wrong.length
       ? `<div class="gsum-wrong"><div class="gsum-sub">错题（点一下跳到那题）</div>${sum.wrong.map(i=> `<button type="button" class="gsum-chip" data-goto="${i}">第 ${items[i].n} 题</button>`).join('')}</div>`
       : '<div class="gsum-allright">🎉 全对！</div>';
@@ -256,6 +260,10 @@ export function wireQset(root, course, unit){
     const last = pr && pr.practiceLast;
     if(!last){ prevEl.hidden = true; return; }
     prevEl.hidden = false;
+    if(unit.answerFormat && last.answerFormat !== unit.answerFormat){
+      prevEl.innerHTML = '<span>旧版成绩已保留。题目文字和选项已校正，请重新作答。</span>';
+      return;
+    }
     prevEl.innerHTML = `<span>上次提交 <b>${last.correct} / ${last.total}</b> · 最高 ${pr.practiceBest} · 做过 ${pr.practiceAttempts} 次</span><button type="button" class="btn-ghost" data-act="view-last">查看上次作答</button>`;
   }
 
@@ -268,6 +276,7 @@ export function wireQset(root, course, unit){
     else if(t.dataset.act === 'view-last'){
       if(revealed) return;
       const last = T.progress[key].practiceLast;
+      if(unit.answerFormat && last.answerFormat !== unit.answerFormat) return;
       answers = items.map((it, i)=>{
         const saved = String((last.answers || [])[i] || '');
         // 旧版 A–E 下标不能当作改版后所选句子。

@@ -8,7 +8,7 @@
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
   "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
-  "第 5 题点击文章中的句子作答；交卷后自评，不计入分数。原 PDF 答案表尚待核对。"
+  "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
   {
@@ -49,7 +49,7 @@
      "img": "2025-01-14/2-02.webp",
      "txt": {
       "stem": [
-       "Although all of the major characters in Mendez’ play are historical figures who have been lampooned in many previous works, she (i) ____ this tradition in her avoidance of (ii) ____."
+       "Although all of the major characters in Mendez’ play are historical figures who have been lampooned in many previous works, she (i) ____ this tradition in her avoidance of (ii) ____ ."
       ],
       "cols": [
        [
@@ -101,17 +101,37 @@
     {
      "n": 4,
      "kind": "mcn",
-     "nopt": 4,
-     "ans": [
-      3
-     ],
-     "img": "2025-01-14/2-04.webp"
+     "nopt": 3,
+     "ans": [],
+     "answerPending": true,
+     "answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+     "legacyAnswer": {
+      "kind": "mcn",
+      "nopt": 4,
+      "ans": [
+       3
+      ]
+     },
+     "img": "2025-01-14/2-04.webp",
+     "txt": {
+      "pass": [
+       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and in works by Toni Morrison, Gayl Jones, and others."
+      ],
+      "stem": [
+       "The passage suggests that which of the following is an accurate characterization of the blues as defined by Ralph Ellison?"
+      ],
+      "opts": [
+       "They are not limited to a specific cultural tradition.",
+       "They emphasize personal experience over collective history.",
+       "They must appear in written works."
+      ]
+     }
     },
     {
      "n": 5,
      "kind": "ss",
-     "img": "2025-01-14/2-05.webp",
      "ansText": "待核对（尚未取得原 PDF 的答案表，请按题意自评）",
+     "img": "2025-01-14/2-05.webp",
      "txt": {
       "pass": [
        "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and in works by Toni Morrison, Gayl Jones, and others."
@@ -295,5 +315,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

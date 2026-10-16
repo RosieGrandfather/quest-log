@@ -113,7 +113,7 @@ export async function submitPractice(cols, course, unit, answers, sum){
     practiceAttempts:(prev.practiceAttempts||0)+1,
     practiceBest:Math.max(prev.practiceBest||0, sum.correct),
     practiceTotal:sum.total,
-    practiceLast:{answers, correct:sum.correct, total:sum.total, ts:Date.now()},
+    practiceLast:{answers, correct:sum.correct, total:sum.total, ts:Date.now(), answerFormat:unit.answerFormat || null},
   };
   await ref.set(progress, {merge:true});
   return {...prev, ...progress};

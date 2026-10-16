@@ -24,7 +24,19 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s3/2-01.webp"
+     "img": "2025-02-s3/2-01.webp",
+     "txt": {
+      "stem": [
+       "The paleontologist exammed the problem afresh. beheung that the accepted classification ____ the essential continuity of the specimens by making specious distinctions among them."
+      ],
+      "opts": [
+       "dispro'.ed",
+       "belled",
+       "conflated",
+       "dmllged",
+       "relaxed"
+      ]
+     }
     },
     {
      "n": 2,
@@ -34,7 +46,24 @@
       1,
       2
      ],
-     "img": "2025-02-s3/2-02.webp"
+     "img": "2025-02-s3/2-02.webp",
+     "txt": {
+      "stem": [
+       "When the columnist wrote about controversial issues, her own position was not always (i) ____ her analysis of the arguments being put forth on either side. If she (ii) ____ the reasoning of proponents of one side, that did not mean that she rejected their position."
+      ],
+      "cols": [
+       [
+        "immune to",
+        "inferable from",
+        "influenced by"
+       ],
+       [
+        "favored",
+        "summarized",
+        "challenged"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -45,7 +74,29 @@
       1,
       1
      ],
-     "img": "2025-02-s3/2-03.webp"
+     "img": "2025-02-s3/2-03.webp",
+     "txt": {
+      "stem": [
+       "Poets in the United States usually speak with more (i) ____ for authentic experience than for the imagination. They cultivate strategies to make themselves sound (ii) ____ , as if poems were eyewitness accounts and not (iii) ____ ."
+      ],
+      "cols": [
+       [
+        "reverence",
+        "disrespect",
+        "ineloquence"
+       ],
+       [
+        "visionary",
+        "matter-of-fact",
+        "uninvolved"
+       ],
+       [
+        "accurate reportage",
+        "artistic creations",
+        "vivid memories"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -54,7 +105,22 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s3/2-04.webp"
+     "img": "2025-02-s3/2-04.webp",
+     "txt": {
+      "pass": [
+       "Ralph Ellison was passionately interested in the Visual ans. He immersed lumself in Harlem's art scene m the 1930s. even apprentjctng With sculptor Rachmond Barthé for a tune. Yet be was of projects amring to provide a usual rendenng of his novel hn•isible Alan. He reluctantly allowed Franklin Library to publish two illustrated versaons of the novel but found the results disappotnung and repeatedly rejected proposed film versions of the book. Despite lus Involvement in visual arts. Ellison Insisted that only language could capture the complexity of American identity. This complexity consisted of the tension ansmg from the collision of the United States' written Ideals, as outlined tn the founding documents. and the hastoncal and contemporary experiences molding the national consciousness."
+      ],
+      "stem": [
+       "It can be inferred that the author mentions Ellison's apprenticeship With Richmond Barthé pnmarily Ili order to"
+      ],
+      "opts": [
+       "show that Ellison drew upon some aspects of the Visual arts in developtng Ins ideas for Invmble,lfan",
+       "show that Ellison •s claim for the supertorjty of language denved from lus expenence mth other an fornus",
+       "establish that Ellison had experience With an art form that interested many leading figures of the 1930s Harlem arts scene",
+       "suggest that the 1930s the Harlem art scene provided an environment tn which axttsts were likely to work in several media",
+       "qualify Ellison's reservations about usual rendenngs of lus work by showing that he not indifferent to usual art"
+      ]
+     }
     },
     {
      "n": 6,
@@ -67,7 +133,7 @@
      "img": "2025-02-s3/2-06.webp",
      "txt": {
       "stem": [
-       "Because movie studios, under pressure to generate international sales, have favored big-budget pictures with fantasy plots, the representation of everyday domestic life has largely been ____ = = =—_— other media, such as television and literature."
+       "Because movie studios, under pressure to generate international sales, have favored big-budget pictures with fantasy plots, the representation of everyday domestic life has largely been ____ other media, such as television and literature. E left to ceded to"
       ],
       "opts": [
        "left to",
@@ -90,14 +156,14 @@
      "img": "2025-02-s3/2-07.webp",
      "txt": {
       "stem": [
-       "The ____ of native South American textiles at the time of the Spanish conquest should not be surprising: it represented the apogee of one of the world’s oldest and most sophisticated weaving and dyeing"
+       "The ____ of native South American textiles at the time of the Spanish conquest should not be surprising: it represented the apogee of one of the world’s oldest and most sophisticated weaving and dyetng traditions. E splendor"
       ],
       "opts": [
        "splendor",
        "eccentricity",
        "diversity",
-       "bri",
-       "practical",
+       "brilliance",
+       "practicality",
        "popularity"
       ]
      }
@@ -110,7 +176,20 @@
       1,
       5
      ],
-     "img": "2025-02-s3/2-08.webp"
+     "img": "2025-02-s3/2-08.webp",
+     "txt": {
+      "stem": [
+       "Maintaining a tolerant attitude toward pseudoscience might be considered ____, but it could be argued that such a disposition lowers our defenses against more dangerous delusions that are based on similar confusions and fallacies."
+      ],
+      "opts": [
+       "naive",
+       "benign",
+       "broad-minded",
+       "indulgent",
+       "credulous",
+       "innocuous"
+      ]
+     }
     },
     {
      "n": 9,
@@ -120,7 +199,20 @@
       2,
       5
      ],
-     "img": "2025-02-s3/2-09.webp"
+     "img": "2025-02-s3/2-09.webp",
+     "txt": {
+      "stem": [
+       "Dogs’ intake of olfactory information is less ____ than that of humans because dogs exhale through the side slits of their nostrils, keeping a continuous flow of inhaled air in their snouts for smelling."
+      ],
+      "opts": [
+       "strenuous",
+       "mediated",
+       "punctuated",
+       "indirect",
+       "deliberate",
+       "intermittent"
+      ]
+     }
     },
     {
      "n": 10,
@@ -129,7 +221,22 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s3/2-10.webp"
+     "img": "2025-02-s3/2-10.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burkhardt's remarkable assertion that ____ stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from lus close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperatra• like Leonardo Brum •s—that women should study the liberal arts as men did With the exception of rhetoric. which \"Iles wholly outside the province of ____ unnouced by Burckhardt because he shared the humamst assumption that women's provmce svas the pavate sphere rather than the public sphere. The relegation of v,xunen to a \"private\" sphere was a complex historical phenotnenon that should be analyzed zn light of other social and econonuc changes occumng dunng the Renaissance. Histonans destrous of understanding women's expenence cannot View the period. as Burckhardt did. through the lens provided by the humanists."
+      ],
+      "stem": [
+       "It can be inferred from the passage that Leonardo Brum most likely belle,ed winch of the following? O The pnvate sphere js supenor to the public sphere."
+      ],
+      "opts": [
+       "Formal education qas unnecessao• for women in Renmssance Italy",
+       "Rhetoric is useful primarily in the public sphere rather thon in the pnvate sphere.",
+       "Women in Renaissance Italy had less destre to study rhetonc than did men.",
+       "Most liberal arts are of httle utility in the public sphere.",
+       "oo"
+      ]
+     }
     },
     {
      "n": 11,
@@ -138,7 +245,22 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s3/2-11.webp"
+     "img": "2025-02-s3/2-11.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burkhardt's remarkable assertion that ____ stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from lus close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperatra• like Leonardo Brum •s—that women should study the liberal arts as men did With the exception of rhetoric. which \"Iles wholly outside the province of ____ unnouced by Burckhardt because he shared the humamst assumption that women's provmce svas the pavate sphere rather than the public sphere. The relegation of v,xunen to a \"private\" sphere was a complex historical phenotnenon that should be analyzed zn light of other social and econonuc changes occumng dunng the Renaissance. Histonans destrous of understanding women's expenence cannot View the period. as Burckhardt did. through the lens provided by the humanists."
+      ],
+      "stem": [
+       "of the followjng IS a critictsm the author of the passage makes of Burckhardt •s work?"
+      ],
+      "opts": [
+       "Burckhardt•s discusston of women •s roles osetempbastzes certam social and «ononuc factors at the expense of factors.",
+       "Burckhardt faded to conduct a detailed study of all of the works of BrunL",
+       "Burckhardt was overly Influenced by nineteenth-century assumptions about women •s roles.",
+       "Burckhardt relied heavily on sLxteenth-century Italian pedagogjc qotks•. thus his work was narrowly focused.",
+       "Burckhardt overlooked important evidence because he shared an assumption contained in that eudence."
+      ]
+     }
     },
     {
      "n": 12,
@@ -150,22 +272,23 @@
      "img": "2025-02-s3/2-12.webp",
      "txt": {
       "pass": [
-       "remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s—that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the province of women”—went unnoticed by Burckhardt because he shared the humanist assumption that women's province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as"
+       "Nineteenth-century historian Jacob Burkhardt's remarkable assertion that ____ stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from lus close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperatra• like Leonardo Brum •s—that women should study the liberal arts as men did With the exception of rhetoric. which \"Iles wholly outside the province of ____ unnouced by Burckhardt because he shared the humamst assumption that women's provmce svas the pavate sphere rather than the public sphere. The relegation of v,xunen to a \"private\" sphere was a complex historical phenotnenon that should be analyzed zn light of other social and econonuc changes occumng dunng the Renaissance. Histonans destrous of understanding women's expenence cannot View the period. as Burckhardt did. through the lens provided by the humanists."
       ],
       "stem": [
        "Which of the following, if true, would cast the most serious doubt on the position taken by the author of the passage regarding Burckhardt’s evaluation of historical evidence?"
       ],
       "opts": [
        "Burckhardt’s scholarly works focus almost exclusively on sixteenth-century European humanists.",
-       "Burckhardt had read Bruni’s pedagogic works and had admired them.",
-       "Margaret King’s work has received considerable scholarly acclaim.",
-       "Many of Bruni’s colleagues felt that women should be excluded from instruction in all of the liberal arts.",
-       "Margaret King’s evidence is based largely on Bruni’s work, which was not representative of humanist texts."
+       "Burckhardt had read Bruni’s pedagogic works and bad admired them.",
+       "Margaret King's work receaved considerable scbolarly acclaim.",
+       "Many of Bruni’s colleagues felt that women should be excluded from instruction in all of dre liberal arts.",
+       "Margaret King’s evidence is based largely on Bruni’s wot±, which was not representative of humanist texts."
       ]
      }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

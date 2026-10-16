@@ -23,7 +23,19 @@
      "ans": [
       3
      ],
-     "img": "2025-01-24/5-01.webp"
+     "img": "2025-01-24/5-01.webp",
+     "txt": {
+      "stem": [
+       "____ though individual mosquitoes appear, historically they have shown an impressive ability to travel, sometimes as stowaways in water casks and drinking vessels on ships traveling to distant continents."
+      ],
+      "opts": [
+       "Peripatetic",
+       "Indistin uishable",
+       "Harmless",
+       "Frail",
+       "Noisome"
+      ]
+     }
     },
     {
      "n": 2,
@@ -36,7 +48,7 @@
      "img": "2025-01-24/5-02.webp",
      "txt": {
       "stem": [
-       "The Newseum was a museum created by, for, and about journalists and newshounds. But for all its celebration of the news industry, its creators took care to avoid (i) ____. Along with many testimonials to journalistic courage and a memorial to journalists who lost their lives on the job, the museum presented noteworthy examples of journalistic (ii) ____"
+       "The Newseum was a museum created by, for, and about journalists and newshounds. But for all its celebration of the news industry, its creators took care to avoid (i) ____ Along with many testimonials to journalistic courage and a memorial to journalists who lost their lives on the job, the museum presented noteworthy examples of journalistic (ii) ____"
       ],
       "cols": [
        [
@@ -94,7 +106,29 @@
       2,
       1
      ],
-     "img": "2025-01-24/5-04.webp"
+     "img": "2025-01-24/5-04.webp",
+     "txt": {
+      "stem": [
+       "Governments tend to be (i) ____ the Internet. Most are truly (ii) ____ its phenomenal growth and the opportunities it offers to both business and education. They also sense that any country attempting to hold it back risks looking foolish and technophobic. (iii) ____ , they find the Internet’s libertarian culture and contempt for national borders subversive and frankly terrifying."
+      ],
+      "cols": [
+       [
+        "ambivalent about",
+        "overly optimistic about",
+        "indifferent to"
+       ],
+       [
+        "unaware of",
+        "anxious about",
+        "excited by"
+       ],
+       [
+        "Moreover",
+        "At the same time",
+        "Consequently"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -106,7 +140,7 @@
      "img": "2025-01-24/5-05.webp",
      "txt": {
       "pass": [
-       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of non indigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these non indigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely"
+       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of nonindigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these nonindigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely caused by competition from nonindigenous species."
       ],
       "stem": [
        "The passage is concerned primarily with"
@@ -130,17 +164,17 @@
      "img": "2025-01-24/5-06.webp",
      "txt": {
       "pass": [
-       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of non indigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these non indigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely"
+       "There have been numerous well-documented extinctions of indigenous species caused by the introduction of nonindigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these nonindigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely caused by competition from nonindigenous species."
       ],
       "stem": [
-       "The author introduces statistics about North America’s non indigenous plant species primarily in order to"
+       "•LAB. The author introduces statistics about North America’s nonindigenous plant species primarily in order to"
       ],
       "opts": [
        "undermine a proposed explanation for the absence of any evidence for the occurrence of a particular phenomenon",
        "contrast the effect of introduced plant species in North America with the effect that introduced animal species have had",
        "suggest that North America’s indigenous plants are a domain in which there has been ample scope for a particular effect to have occurred",
-       "emphasize how much the ecology of North America has been affected over the past 400 years by the introduction of non indigenous species",
-       "substantiate a claim about the overall effect that the introduction of non indigenous species tends to have on indigenous populations"
+       "emphasize how much the ecology of North America has been affected over the past 400 years by the introduction of nonindigenous species",
+       "substantiate a claim about the overall effect that the introduction of nonindigenous species tends to have on indigenous populations"
       ]
      }
     },
@@ -151,7 +185,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-24/5-07.webp"
+     "img": "2025-01-24/5-07.webp",
+     "txt": {
+      "pass": [
+       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia is less densely populated (resulting in lower chances of discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for Australia."
+      ],
+      "stem": [
+       "The passage is primarily concerned with doing which of the following?"
+      ],
+      "opts": [
+       "Presenting an objection to a claim",
+       "Accounting for an apparent anomaly",
+       "Outlining an alternative interpretation",
+       "Correcting a particular misconception",
+       "Questioning the validity of a comparison"
+      ]
+     }
     },
     {
      "n": 8,
@@ -163,10 +212,10 @@
      "img": "2025-01-24/5-08.webp",
      "txt": {
       "pass": [
-       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia __ Is less densely populated (resulting in lower chances of _ discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for"
+       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia is less densely populated (resulting in lower chances of discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for Australia."
       ],
       "stem": [
-       "The author of the passage notes Australia’s “smaller land area” in order to"
+       "\"vas. The author of the passage notes Australia’s “smaller land area” in order to"
       ],
       "opts": [
        "suggest that the number of habitation sites from between 40,000 and 25,000 years ago that have been found in Australia is somewhat surprising",
@@ -187,10 +236,10 @@
      "img": "2025-01-24/5-09.webp",
      "txt": {
       "pass": [
-       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia __ Is less densely populated (resulting in lower chances of _ discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for"
+       "Some archaeologists speculate that the Americas might have been initially colonized between 40,000 and 25,000 years ago. However, to support this theory it is necessary to explain the absence of generally accepted habitation sites for that time interval in what is now the United States. Australia, which has a smaller land area than the United States, has many such sites, supporting the generally accepted claim that the continent was colonized by humans at least 40,000 years ago. Australia is less densely populated (resulting in lower chances of discovering sites) and with its overall greater aridity would have presented conditions less favorable for hunter-gatherer occupation. Proportionally, at least as much land area has been lost from the coastal regions of Australia because of postglacial sea-level rise as in the United States, so any coastal archaeological record in Australia should have been depleted about as much as a coastal record in the United States. Since there are so many resource-rich rivers leading inland from the United States coastline, it seems implausible that a growing population of humans would have confined itself to coasts for thousands of years. If inhabitants were present 25,000 years ago, the chances of their appearing in the archaeological record would seem to be greater than for Australia."
       ],
       "stem": [
-       "The author of the passage implies that, in what is now the United States, archaeological evidence of in habitation in the period from 40,000 to 25,000 years ago is lacking because that region"
+       "The author of the passage implies that, in what is now the United States, archaeological evidence of inhabitation in the period from 40,000 to 25,000 years ago is lacking because that region"
       ],
       "opts": [
        "had its oldest habitation sites inundated following a postglacial rise in sea level",
@@ -209,7 +258,20 @@
       3,
       5
      ],
-     "img": "2025-01-24/5-10.webp"
+     "img": "2025-01-24/5-10.webp",
+     "txt": {
+      "stem": [
+       "The series of paintings, as a whole, is remarkably ____ despite the distinctive character of each canvas."
+      ],
+      "opts": [
+       "jnterconnected",
+       "challenging",
+       "comprehensive",
+       "homogenous",
+       "provocative",
+       "uniform"
+      ]
+     }
     },
     {
      "n": 11,
@@ -222,7 +284,7 @@
      "img": "2025-01-24/5-11.webp",
      "txt": {
       "stem": [
-       "At the peak of the stock market’s vertiginous rise, some corporate pension plans became over funded: their assets ____ their liabilities."
+       "At the peak of the stock market’s vertiginous rise, some corporate pension plans became overfunded: their assets ____ their liabilities."
       ],
       "opts": [
        "outstripped",
@@ -264,7 +326,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-24/5-13.webp"
+     "img": "2025-01-24/5-13.webp",
+     "txt": {
+      "pass": [
+       "When aspirin relieves pain, it does so partly by blocking the body’s output of prostaglandins, chemicals that can produce inflammation and ain in the joints. Unfortunately, prostaglandins also prod ce a coating that protects the stomach from stomach acid, so taking aspirin can cause stomach upset. A recently developed medication promises to relieve pain without blocking prostaglandin production. Therefore, if this promise is fulfilled, the new medication will relieve pain without causing stomach upset."
+      ],
+      "stem": [
+       "The argument is most vulnerable to criticism on which of the following grounds?"
+      ],
+      "opts": [
+       "It relies on using a crucial term in two different senses.",
+       "It relies on vague suppositions about future developments in order to gloss over a current difficulty.",
+       "The fact that a certain effect can be produced in one way is taken to mean that the effect cannot be produced in any other way.",
+       "The fact that a substance is known to produce a certain effect some of the time is taken to mean that the substance produces the effect all of the time.",
+       "A substance that is said to have both positive and negative effects is treated as if it had only a negative effect."
+      ]
+     }
     },
     {
      "n": 14,
@@ -276,7 +353,7 @@
      "img": "2025-01-24/5-14.webp",
      "txt": {
       "pass": [
-       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural"
+       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural decrease did not apply to small towns."
       ],
       "stem": [
        "The author suggests that according to historical demographers, the birth rate in early-modern German cities"
@@ -300,12 +377,10 @@
      "img": "2025-01-24/5-15.webp",
      "txt": {
       "pass": [
-       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural"
+       "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First, in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10,000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate Sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in- migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10,000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural decrease did not apply to small towns."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
-       "It can be inferred that historical demographers generally believe which of the following about communities of fewer than 10,000 people in early-modern Germany?"
+       "•naa•. Consider each of the choices separately and select all that apply. It can be inferred that historical demographers generally believe which of the following about communities of fewer than 10,000 people in early-modern Germany?"
       ],
       "opts": [
        "Mortality rates were lower than those in cities of over 10,000 inhabitants.",
@@ -317,5 +392,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

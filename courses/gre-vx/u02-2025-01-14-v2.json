@@ -26,7 +26,7 @@
      "img": "2025-01-14/4-01.webp",
      "txt": {
       "stem": [
-       "Despite the fact that some of the company’s hiring and promotion practices have been widely ____ , these practices still persist in certain divisions of the company."
+       "Despite the fact that some of the company’s hiring and promotion practices have been widely ____ these practices still persist in certain divisions the company."
       ],
       "opts": [
        "misunderstood",
@@ -67,12 +67,41 @@
     {
      "n": 3,
      "kind": "tc",
-     "blanks": 2,
-     "ans": [
-      0,
-      1
-     ],
-     "img": "2025-01-14/4-03.webp"
+     "blanks": 3,
+     "ans": [],
+     "answerPending": true,
+     "answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+     "legacyAnswer": {
+      "kind": "tc",
+      "blanks": 2,
+      "ans": [
+       0,
+       1
+      ]
+     },
+     "img": "2025-01-14/4-03.webp",
+     "txt": {
+      "stem": [
+       "Once photographs depicting important family events such as vacations or weddings are assembled and presented in a family album, the collection of photographs is treated as (i) ____ record of events; but what we (ii) ____ to (iii) ____ is the active selection process that led to the making of the album."
+      ],
+      "cols": [
+       [
+        "a precious",
+        "a satirical",
+        "an objective"
+       ],
+       [
+        "tend",
+        "hesitate",
+        "aspire"
+       ],
+       [
+        "overlook",
+        "replicate",
+        "transform"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -86,7 +115,7 @@
      "img": "2025-01-14/4-04.webp",
      "txt": {
       "stem": [
-       "Until recently superhero comics were seen as irredeemably (i) ____; they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____"
+       "Until recently superhero comics were seen as irredeemably (i) ____ they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____"
       ],
       "cols": [
        [
@@ -117,7 +146,7 @@
      "img": "2025-01-14/4-05.webp",
      "txt": {
       "pass": [
-       "The graphic elements of Mesoamerican codex writing appear as figural representations, icons, and symbols that signify thought, ideas, and imagery rather than visible speech. Although ancient Mexicans designated some symbols to voice specific words, their larger graphic system did not correspond directly with spoken language. Because the symbols did not replicate any single linguistic system, speakers of various languages could translate the pictographs into their own respective tongues. Readers evaluated a combination of naturalistic images, pictorial conventions, and abstract symbols recorded within an organized structure. By knowing the basic conventions and the meanings of the symbols and recognizing their general arrangement, readers interpreted the pictographic messages. Precise reading orders are not always set, however; thus, different"
+       "The graphic elements of Mesoamerican codex writing appear as figural representations, icons, and symbols that signify thought, ideas, and imagery rather than visible speech. Although ancient Mexicans designated some symbols to voice specific words, their larger graphic system did not correspond directly with spoken language. Because the symbols did not replicate any single linguistic system, speakers of various languages could translate the pictographs into their own respective tongues. Readers evaluated a combination of naturalistic images, pictorial conventions, and abstract symbols recorded within an organized structure. By knowing the basic conventions and the meanings of the symbols and recognizing their general arrangement, readers interpreted the pictographic messages. Precise reading orders are not always set, however; thus, different readings and interpretations remain possible."
       ],
       "stem": [
        "According to the passage, which of the following is true regarding the symbols of the Mesoamerican codex graphic system?"
@@ -141,11 +170,9 @@
      "img": "2025-01-14/4-06.webp",
      "txt": {
       "pass": [
-       "The graphic elements of Mesoamerican codex writing appear as figural representations, icons, and symbols that signify thought, ideas, and imagery rather than visible speech. Although ancient Mexicans designated some symbols to voice specific words, their larger graphic system did not correspond directly with spoken language. Because the symbols did not replicate any single linguistic system, speakers of various languages could translate the pictographs into their own respective tongues. Readers evaluated a combination of naturalistic images, pictorial conventions, and abstract symbols recorded within an organized structure. By knowing the basic conventions and the meanings of the symbols and recognizing their general arrangement, readers interpreted the pictographic messages. Precise reading orders are not always set, however; thus, different"
+       "The graphic elements of Mesoamerican codex writing appear as figural representations, icons, and symbols that signify thought, ideas, and imagery rather than visible speech. Although ancient Mexicans designated some symbols to voice specific words, their larger graphic system did not correspond directly with spoken language. Because the symbols did not replicate any single linguistic system, speakers of various languages could translate the pictographs into their own respective tongues. Readers evaluated a combination of naturalistic images, pictorial conventions, and abstract symbols recorded within an organized structure. By knowing the basic conventions and the meanings of the symbols and recognizing their general arrangement, readers interpreted the pictographic messages. Precise reading orders are not always set, however; thus, different readings and interpretations remain possible."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "It can be inferred from the passage that the nature of the Mesoamerican codex graphic system enabled which of the following?"
       ],
       "opts": [
@@ -165,11 +192,10 @@
      "img": "2025-01-14/4-07.webp",
      "txt": {
       "pass": [
-       "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Mexican American population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and _ throughout college campuses. Perhaps the biggest difference, however, is the process. In early twentieth- century Mexico, murals resulted from the vision of individual artists. But today’s murals are _ characteristically the products of artists working with local residents on design and creation.",
-       "Such community engagement is characteristic of the Chicano (Mexican American) art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Mexican Americans in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as the public"
+       "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Mexican American population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and throughout college campuses. Perhaps the biggest difference, however, is the process. In early twentieth- century Mexico, murals resulted from the vision of individual artists. But today’s murals are characteristically the products of artists working with local residents on design and creation. Such community engagement is characteristic of the Chicano (Mexican American) art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Mexican Americans in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as ____ public- relations arm of the Chicano sociopolitical movement."
       ],
       "stem": [
-       "The primary purpose of the passage is to"
+       "ecz::. The primary purpose of the passage is to"
       ],
       "opts": [
        "argue for the superiority of a style of art",
@@ -187,7 +213,22 @@
      "ans": [
       0
      ],
-     "img": "2025-01-14/4-08.webp"
+     "img": "2025-01-14/4-08.webp",
+     "txt": {
+      "pass": [
+       "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Mexican American population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and throughout college campuses. Perhaps the biggest difference, however, is the process. In early twentieth- century Mexico, murals resulted from the vision of individual artists. But today’s murals are characteristically the products of artists working with local residents on design and creation. Such community engagement is characteristic of the Chicano (Mexican American) art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Mexican Americans in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as ____ public- relations arm of the Chicano sociopolitical movement."
+      ],
+      "stem": [
+       "According to the passage, which of the following statements about the “cultural centers” is true?"
+      ],
+      "opts": [
+       "They were the venue where many later leaders of the Chicano civil rights movement first became politically active.",
+       "Though later widespread, they originated in the San Francisco area.",
+       "Springing up in a number of communities, they initially had largely apolitical goals centered on art instruction.",
+       "They constituted the nucleus from which the Chicano civil rights movement originated.",
+       "Founded by artists, they provided support for the Chicano civil rights movement."
+      ]
+     }
     },
     {
      "n": 9,
@@ -199,11 +240,10 @@
      "img": "2025-01-14/4-09.webp",
      "txt": {
       "pass": [
-       "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Mexican American population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and _ throughout college campuses. Perhaps the biggest difference, however, is the process. In early twentieth- century Mexico, murals resulted from the vision of individual artists. But today’s murals are _ characteristically the products of artists working with local residents on design and creation.",
-       "Such community engagement is characteristic of the Chicano (Mexican American) art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Mexican Americans in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as the public"
+       "The revival of mural painting that has occurred in San Francisco since the 1970s, especially among the Mexican American population of the city’s Mission District, has marked differences from its social realist forerunner in Mexico and the United States some 40 years earlier. Rather than being government sponsored and limited to murals on government buildings, the contemporary mural movement sprang from the people themselves, with murals appearing on community buildings and throughout college campuses. Perhaps the biggest difference, however, is the process. In early twentieth- century Mexico, murals resulted from the vision of individual artists. But today’s murals are characteristically the products of artists working with local residents on design and creation. Such community engagement is characteristic of the Chicano (Mexican American) art movement as a whole, which evolved from the same foundations as the Chicano civil rights movement of the mid-1960s. Both were a direct response to the needs of Mexican Americans in the United States, who were fighting for the right to adequate education, political empowerment, and decent working conditions. Artists joined other cultural workers in making political statements and played a key role in taking these statements to the public. They developed collectives and established cultural centers that functioned as ____ public- relations arm of the Chicano sociopolitical movement."
       ],
       "stem": [
-       "SIRS. BRINE Which of the following best describes the relationship between the first paragraph and the second paragraph of the passage?"
+       "Which of the following best describes the relationship between the first paragraph and the second paragraph of the passage?"
       ],
       "opts": [
        "The first focuses on the mural artists as individuals; the second, on their actions as a group.",
@@ -225,7 +265,7 @@
      "img": "2025-01-14/4-10.webp",
      "txt": {
       "stem": [
-       "The recent exhibition on Dadaism is nothing if not ____ , for the visual arts are currently awash in Dadaist gestures and gambits of one variety or another."
+       "The recent exhibition on Da ism is nothing if not ____ for the visual arts are currently awash in Dadaist g tures and gambits of one variety or another."
       ],
       "opts": [
        "sensational",
@@ -248,7 +288,7 @@
      "img": "2025-01-14/4-11.webp",
      "txt": {
       "stem": [
-       "All of his previous efforts at ingratiating himself with the official were === ____ whenhe responded antagonistically to the official’s goading."
+       "All of his previous efforts at ingratiating himself with the official were ____ when he responded antagonistically to the official’s goading."
       ],
       "opts": [
        "assuaged",
@@ -293,10 +333,10 @@
      "img": "2025-01-14/4-13.webp",
      "txt": {
       "pass": [
-       "An alarming number of Mediterranean monk seals, an endangered species, have recently died. Postmortem analysis showed the presence of an as yet unidentified virus, as well as evidence of a known bacterial toxin. Seawater samples from the area where the seals died did contain unusually high concentrations of the toxic bacterium. Therefore, although both viruses and bacterial toxins can kill seals, it is more likely that these"
+       "An alarming number of Mediterranean monk seals, an endangered species, have recently died. Postmortem analysis showed the presence of an as yet unidentified virus, as well as evidence of a known bacterial toxin. Seawater samples from the area where the seals died did contain unusually high concentrations of the toxic bacterium. Therefore, although both viruses and bacterial toxins can kill seals, it is more likely that these deaths were the result of the bacterial toxin."
       ],
       "stem": [
-       "Which of the following, if true, provides additional evidence to support the conclusion?"
+       "eve. Which of the following, if true, provides additional evidence to support the conclusion?"
       ],
       "opts": [
        "Viruses are much more difficult to identify in postmortem analysis than bacteria are.",
@@ -317,21 +357,10 @@
      "img": "2025-01-14/4-14.webp",
      "txt": {
       "pass": [
-       "As a classic text on alchemy, George Ripley’s",
-       "Compound of Alchemy (1471) has received substantial",
-       "scholarly attention, primarily focused on the English print",
-       "editions published by Ralph Rabbards (1591). However,",
-       "the work known to sixteenth- and early seventeenth",
-       "century Europe was not the Compound known today",
-       "from Rabbards’ editions. Rabbards strived to produce",
-       "the fullest possible version of the text, including two",
-       "prefatory poems, “Prologue” and “Preface” , and an _ associated dedicatory poem. Yet no authoritative _ ____ “master text” dates from Ripley’s lifetime in'which all",
-       "of these elements are preserved. Rather, the",
-       "Compound’s text was adapted over a century of",
-       "circulation in the form of multiple copies, later reassembled by diligent scribes—a process that - continued even after the work’s translation into Latin"
+       "As a classic text on alchemy, George Ripley’s Compound of Alchemy (1471) has received substantial scholarly attention, primarily focused on the English print editions published by Ralph Rabbards (1591). However, the work known to sixteenth- and early seventeenth- century Europe was not the Compound known today from Rabbards’ editions. Rabbards strived to produce the fullest possible version of the text, including two prefatory poems, I “Prologue” and “Preface” and an associated dedicatory poem. Yet no authoritative “master text” dates from Ripley’s lifetime in which all of these elements are preserved. Rather, the Compound’s text was adapted over a century of circulation in the form of multiple copies, later reassembled by diligent scribes—a process that continued even after the work’s translation into Latin and European vernaculars."
       ],
       "stem": [
-       "RNDKs, SIRS. SKIL The passage suggests which of the following about “Prologue” and “Preface” ?"
+       "The passage suggests which of the following about “Prologue” and “Preface”"
       ],
       "opts": [
        "They may have been originally written by someone other than George Ripley.",
@@ -345,43 +374,35 @@
     {
      "n": 15,
      "kind": "mcn",
-     "nopt": 5,
-     "ans": [
-      4
-     ],
+     "nopt": 3,
+     "ans": [],
+     "answerPending": true,
+     "answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+     "legacyAnswer": {
+      "kind": "mcn",
+      "nopt": 5,
+      "ans": [
+       4
+      ]
+     },
      "img": "2025-01-14/4-15.webp",
      "txt": {
       "pass": [
-       "As a classic text on alchemy, George Ripley’s",
-       "Compound of Alchemy (1471) has received substantial",
-       "scholarly attention, primarily focused on the English print",
-       "editions published by Ralph Rabbards (1591). However,",
-       "the work known to sixteenth- and early seventeenth",
-       "century Europe was not the Compound known today",
-       "from Rabbards’ editions. Rabbards strived to produce",
-       "the fullest possible version of the text, including two",
-       "prefatory poems, “Prologue” and “Preface” , and an _ associated dedicatory poem. Yet no authoritative _ ____ “master text” dates from Ripley’s lifetime in'which all",
-       "of these elements are preserved. Rather, the",
-       "Compound’s text was adapted over a century of",
-       "circulation in the form of multiple copies, later reassembled by diligent scribes—a process that - continued even after the work’s translation into Latin"
+       "As a classic text on alchemy, George Ripley’s Compound of Alchemy (1471) has received substantial scholarly attention, primarily focused on the English print editions published by Ralph Rabbards (1591). However, the work known to sixteenth- and early seventeenth- century Europe was not the Compound known today from Rabbards’ editions. Rabbards strived to produce the fullest possible version of the text, including two prefatory poems, I “Prologue” and “Preface” and an associated dedicatory poem. Yet no authoritative “master text” dates from Ripley’s lifetime in which all of these elements are preserved. Rather, the Compound’s text was adapted over a century of circulation in the form of multiple copies, later reassembled by diligent scribes—a process that continued even after the work’s translation into Latin and European vernaculars."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
-       "The passage suggests which of the following about \"diligent scribes\" ?",
-       "__ They were instrumental in translating the Compound"
+       "The passage suggests which of the following about \"diligent scribes\""
       ],
       "opts": [
-       "into Latin in the seventeenth century.",
-       "Their efforts had a considerable impact on later",
-       "scholarly investigations of the Compound.",
-       "Many of them were guided in their work by Ralph",
-       "Rabbards’ print editions of the Compound."
+       "They were instrumental in translating the Compound into Latin in the seventeenth century.",
+       "Their efforts had a considerable impact on later scholarly investigations of the Compound.",
+       "Many of them were guided in their work by Ralph Rabbards' print editions of the Compound."
       ]
      }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

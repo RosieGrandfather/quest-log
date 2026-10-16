@@ -5,7 +5,7 @@
    作答统一存成字符串：选择题 "1,3"（选项下标），数值题 "12" 或分数 "5/2"。没有部分分。 */
 export const QKIND_LABEL = {qc:'数量比较', mc1:'单选题', mcn:'多选题', ne:'数值输入', se:'选两个', tc:'多空填空', ss:'选句子（自评）'};
 export const isMulti = it => it.kind === 'mcn' || it.kind === 'se';
-export const isGraded = it => it.kind !== 'ss';
+export const isGraded = it => it.kind !== 'ss' && it.answerPending !== true;
 export const QC_TEXT = ['Quantity A 更大', 'Quantity B 更大', '两者相等', '无法确定'];
 
 /* 句子边界由校对过的课程数据提供，避免缩写、引号被自动断句拆错。 */
@@ -35,11 +35,12 @@ const blanks = (item, a)=> { const p = String(a || '').split(','); return Array.
 export const isAnswered = (item, a)=> item.kind === 'ne'
   ? (item.frac ? /^\s*\S+\s*\/\s*\S+\s*$/.test(a || '') : String(a || '').trim() !== '')
   : item.kind === 'ss' ? (sentenceChoices(item).length ? sentenceChoices(item).includes(String(a || '')) : String(a || '').trim() !== '')
+  : item.kind === 'se' ? idx(a).length === 2
   : item.kind === 'tc' ? blanks(item, a).every(x=> x !== '')
   : idx(a).length > 0;
 
 export function gradeItem(item, a){
-  if(!isAnswered(item, a) || item.kind === 'ss') return false;
+  if(!isAnswered(item, a) || !isGraded(item)) return false;
   if(item.kind === 'tc') return blanks(item, a).every((x, i)=> Number(x) === item.ans[i]);
   if(item.kind === 'ne'){
     const x = parseNum(a), y = parseNum(String(item.ans));
@@ -66,7 +67,8 @@ export function summarize(items, answers){
 }
 
 const BL = ['(i)', '(ii)', '(iii)'];
-export const answerText = item => item.kind === 'ne' ? String(item.ans)
+export const answerText = item => item.answerPending ? '待核对（原答案数据与题图不一致）'
+  : item.kind === 'ne' ? String(item.ans)
   : item.kind === 'ss' ? String(item.ansText || '')
   : item.kind === 'tc' ? item.ans.map((k, i)=> `空${BL[i]} ${'ABCDEFGH'[k]}`).join('　')
   : item.ans.map(k=> 'ABCDEFGH'[k]).join('、');

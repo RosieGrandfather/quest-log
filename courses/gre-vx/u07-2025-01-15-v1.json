@@ -23,7 +23,19 @@
      "ans": [
       4
      ],
-     "img": "2025-01-15/3-01.webp"
+     "img": "2025-01-15/3-01.webp",
+     "txt": {
+      "stem": [
+       "Galileo Galilei's ____ the technical details of the telescopes he built was predictable: like any self—respecting inventor, he wanted to keep his art a secret."
+      ],
+      "opts": [
+       "meticulousness regarding",
+       "pride in",
+       "confusion regarding",
+       "proficiency with",
+       "reticence about"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       1,
       2
      ],
-     "img": "2025-01-15/3-02.webp"
+     "img": "2025-01-15/3-02.webp",
+     "txt": {
+      "stem": [
+       "The governor, clearly trying to live down a reputation for (i) ____ has recently demonstrated an unexpected ability to be (ii) ____ when dealing with state legislators."
+      ],
+      "cols": [
+       [
+        "elitism",
+        "pugnacity",
+        "vacillation"
+       ],
+       [
+        "candid",
+        "petulant",
+        "conciliatory"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       1,
       0
      ],
-     "img": "2025-01-15/3-03.webp"
+     "img": "2025-01-15/3-03.webp",
+     "txt": {
+      "stem": [
+       "Whatever the level of the museum's past (i) ____ American art, it pales beside its current (ii) ____ . Since opening its renovated and expanded building, the museum has relegated American paintings to hard—to—find corners of the museum. It is as if American art is (iii) ____ the overwhelmingly European narrative that dominates the permanent collection galleries."
+      ],
+      "cols": [
+       [
+        "advocacy of",
+        "enthusiasm for",
+        "neglect of"
+       ],
+       [
+        "craze",
+        "disdain",
+        "support"
+       ],
+       [
+        "fundamental to",
+        "excluded from",
+        "privileged over"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -53,7 +104,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-15/3-04.webp"
+     "img": "2025-01-15/3-04.webp",
+     "txt": {
+      "pass": [
+       "It must be acknowledged that data on ceramic artifacts do not provide the complete picture of regional economic interactions in the ancient Basin of Mexico. First, patterns of exchange between settlements cannot be understood purely through chemical compositional analysis, even when pottery provenance Can be securely determined: compositional data do not indicate exactly how pots moved from one place to another or how many times a vessel was exchanged. In addition, ceramics are not the only kind of material that was exchanged between settlements. The transport of bulky and breakable ceramic pots was costly, and clay resources were widely available. Therefore, the orbits within which most ceramics circulated are likely to have been smaller than those of artifacts made from more durable materials, such as obsidian."
+      ],
+      "stem": [
+       "According to the passage, the data on ____ artifacts"
+      ],
+      "opts": [
+       "suggest that obsidian was rarely used tor making vessels",
+       "are limited to what can be established by chemical compositional analysis",
+       "provide only a partial view of economic activity in the ancient Basin of Mexico",
+       "are often contradicted by the data on artifacts made from other materials",
+       "cannot help determine which settlements engaged in pottery exchanges"
+      ]
+     }
     },
     {
      "n": 5,
@@ -65,15 +131,15 @@
      "img": "2025-01-15/3-05.webp",
      "txt": {
       "pass": [
-       "interactions in the ancient Basin of Mexico. First, patterns of exchange between settlements cannot be understood purely through chemical compositional analysis, even when pottery provenance can be securely determined: compositional data do not indicate exactly how pots moved from one place to another or how many times a vessel was exchanged. in addition, ceramics are not the only kind of material that was exchanged between settlements. The transport of bulky and breakable ceramic pots was costly, and clay resources were widely available. Therefore, the orbits within which most ceramics circulated are likely to have been smaller than those of artifacts made from more durable materials, such as"
+       "It must be acknowledged that data on ceramic artifacts do not provide the complete picture of regional economic interactions in the ancient Basin of Mexico. First, patterns of exchange between settlements cannot be understood purely through chemical compositional analysis, even when pottery provenance Can be securely determined: compositional data do not indicate exactly how pots moved from one place to another or how many times a vessel was exchanged. In addition, ceramics are not the only kind of material that was exchanged between settlements. The transport of bulky and breakable ceramic pots was costly, and clay resources were widely available. Therefore, the orbits within which most ceramics circulated are likely to have been smaller than those of artifacts made from more durable materials, such as obsidian."
       ],
       "stem": [
-       "‘ted portion of the passage Can Neo determine"
+       "The passage implieå highlighted portion of the passage Can neap determine"
       ],
       "opts": [
-       "expensive the artifact was",
-       "often the artifact was exchanged",
-       "cost of transporting the artifact",
+       "how expensive the artifact was",
+       "how often the artifact was exchanged",
+       "the cost of transporting the artifact",
        "he region where the artifact was made",
        "the way the artifact was used"
       ]
@@ -87,7 +153,20 @@
       0,
       1
      ],
-     "img": "2025-01-15/3-06.webp"
+     "img": "2025-01-15/3-06.webp",
+     "txt": {
+      "stem": [
+       "The plays of Alice Childress (1916—1994) often present Black women in confrontations that rearrange what qualifies as ____ behavior: Childress's heroines, for example, often question the social protocols limiting the content of public conversations."
+      ],
+      "opts": [
+       "conventional",
+       "normative",
+       "surreptitious",
+       "exemplary",
+       "altruistic",
+       "magnanimous"
+      ]
+     }
     },
     {
      "n": 7,
@@ -97,7 +176,20 @@
       4,
       5
      ],
-     "img": "2025-01-15/3-07.webp"
+     "img": "2025-01-15/3-07.webp",
+     "txt": {
+      "stem": [
+       "Another challenge to biologists and land—use planners alike is that while human-induced changes to the landscape are sometimes ____ they can nevertheless drastically alter the habitat for some plants and animals."
+      ],
+      "opts": [
+       "indisputable",
+       "inappropriate",
+       "unacceptable",
+       "unfathomable",
+       "imperceptible",
+       "indiscernible"
+      ]
+     }
     },
     {
      "n": 8,
@@ -107,7 +199,20 @@
       3,
       5
      ],
-     "img": "2025-01-15/3-08.webp"
+     "img": "2025-01-15/3-08.webp",
+     "txt": {
+      "stem": [
+       "While the rate at which absolute global sea level is rising may seem ____ it has been far from an incidental factor in human history."
+      ],
+      "opts": [
+       "disconcerting",
+       "intractable",
+       "improbable",
+       "imperceptible",
+       "Unnerving",
+       "trivial"
+      ]
+     }
     },
     {
      "n": 9,
@@ -117,7 +222,20 @@
       1,
       3
      ],
-     "img": "2025-01-15/3-09.webp"
+     "img": "2025-01-15/3-09.webp",
+     "txt": {
+      "stem": [
+       "The ____ markings on some prehistoric bone and antler fragments could be accidents or the result of doodling, but may also represent a form of communication such as tally marks or even early calendars."
+      ],
+      "opts": [
+       "purposeful",
+       "enigmatic",
+       "random",
+       "inscrutable",
+       "conspicuous",
+       "deliberate"
+      ]
+     }
     },
     {
      "n": 10,
@@ -126,7 +244,22 @@
      "ans": [
       1
      ],
-     "img": "2025-01-15/3-10.webp"
+     "img": "2025-01-15/3-10.webp",
+     "txt": {
+      "pass": [
+       "methane is converted into heavier hydrocarbons by the Sun's ultraviolet light, all the methane in Titan's atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be continuously feeding methane into Titan's atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan's surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with thane."
+      ],
+      "stem": [
+       "liquid methane on Titan could accoun following?"
+      ],
+      "opts": [
+       "Differences in the humidity at different levels of Titan's atmosphere",
+       "An atmospheric humidity just above Titan's surface that is lower than would be expected above a pure methane ocean",
+       "The rate at which liquid methane accumulates on Titan's surface",
+       "The rate at which methane in Titan's atmosphere is converted into heavier hydrocarbons",
+       "The retention of a large amount of methane in Titan's atmosphere through sources of supply unrelated to volcanic eruptions"
+      ]
+     }
     },
     {
      "n": 11,
@@ -135,7 +268,19 @@
      "ans": [
       0
      ],
-     "img": "2025-01-15/3-11.webp"
+     "img": "2025-01-15/3-11.webp",
+     "txt": {
+      "stem": [
+       "disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be ____ O Something other than volcanic emotions wou\\d account continuously feeding methane into Titan's atmosphere. ____ for the amount of methane in Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow ____ CD The rate at which methane is supplied to ____ surface precisely calibrated at a moderate level, either the ____ would be much slower than is generally methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the ____ O Titan's surface temperature would be expected to ____ at surface. However, data indicate that the atmosphere just ____ a slow but steady rate. above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was ____ O The atmosphere near Titan’s surface would have a suggested by Lunine: when sunlight breaks down ____ humidity similar to that of the atmosphere at a grea\\er methane, the main product is ethane. Lunine noted that at ____ distance from the surface."
+      ],
+      "opts": [
+       "Titan's surface temperature, ethane is also a liquid. A",
+       "iquid mixture of methane and ethane would produce low",
+       "umidity. Such an ocean would slowly become richer in",
+       "hane while keeping the atmosphere supplied with",
+       "?thane."
+      ]
+     }
     },
     {
      "n": 12,
@@ -144,10 +289,23 @@
      "ans": [
       2
      ],
-     "img": "2025-01-15/3-12.webp"
+     "img": "2025-01-15/3-12.webp",
+     "txt": {
+      "stem": [
+       "atmosphere should, at the present conversion rate. have ____ how ultraviolet light and methane interact disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be ____ demonstrate that the large amount of methane in continuously feeding methane into Titan's atmosphere. ____ Titan's atmosphere cannot be ____ if current One possibility is that the methane comes from volcanic ____ estimates of Titan’s surface temperature ate correct eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the ____ O show why a precisely calibrated SUPP\\y rate of methane methane would have run out by now or excess methane ____ from volcanic eruptions is the most plausible would have started to accumulate as a liquid ocean on the ____ explanation for the large amount of methane ____ s surface. However, data indicate that the atmosphere just ____ atmosphere above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was ____ O explain how volcanic eruptions could in fact be the suggested by Lunine: when sunlight breaks down ____ source of the large amount of methane In Titan’s methane, the main product is ethane. Lunine noted that at ____ atmosphere"
+      ],
+      "opts": [
+       "Titan's surface temperature, ethane is also a liquid. A",
+       "liquid mixture of methane and ethane would produce low C) explain why the level of humidity produced by a mixture",
+       "humidity. Such an ocean would slowly become richer in of ethane and methane is not dependent on s",
+       "ethane while keeping the atmosphere supplied with •ur-face temperature",
+       "methane."
+      ]
+     }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

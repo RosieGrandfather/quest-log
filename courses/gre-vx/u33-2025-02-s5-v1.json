@@ -8,7 +8,7 @@
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
   "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
-  "「选句子」题没法在网页里点选，请写下你选的句子（序号或开头几个词），交卷后对照答案自评，不计入分数"
+  "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
   {
@@ -24,7 +24,19 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s5/2-01.webp"
+     "img": "2025-02-s5/2-01.webp",
+     "txt": {
+      "stem": [
+       "Since the deficit predicament is fundamentally a long-term problem, the legislature’s short-term approaches has actually compounded the difficulty in each succeeding year, eroding the state’s credit rating in the process."
+      ],
+      "opts": [
+       "vexation regarding",
+       "addiction to",
+       "aversion to",
+       "wariness of",
+       "demonization of"
+      ]
+     }
     },
     {
      "n": 2,
@@ -65,7 +77,7 @@
      "img": "2025-02-s5/2-03.webp",
      "txt": {
       "stem": [
-       "For a philosopher of the analytic tradition, Williams’ approach is somewhat (i) ____. Unlike most analytic philosophers, Williams has not kept himself (ii) ____ the rest of the humanities; in fact, he wishes to address colleagues in other fields in terms that will make sense to them. In particular, he objects to the (iii) ____ character of analytic philosophy: the amount it tries to accomplish by conceptual analysis and a priori argument alone. Williams is convinced that philosophy must use history, including historical imagination, to understand and defend values of any kind."
+       "For a philosopher of the analytic tradition, Williams’ approach is somewhat (i) ____ Unlike most analytic philosophers, Williams has not kept himself (ii) ____ the rest of the humanities; in fact, he wishes to address colleagues in other fields in terms that will make sense to them. In particular, he objects to the (iii) ____ character of analytic philosophy: the amount it tries to accomplish by conceptual analysis and a priori argument alone. Williams is convinced that philosophy must use history, including historical imagination, to understand and defend values of any kind."
       ],
       "cols": [
        [
@@ -80,7 +92,7 @@
        ],
        [
         "meticulously inclusive",
-        "strongly a historical",
+        "strongly ahistorical",
         "overly contentious"
        ]
       ]
@@ -96,7 +108,7 @@
      "img": "2025-02-s5/2-04.webp",
      "txt": {
       "pass": [
-       "Experiments and field observations show that in a Mediterranean plant community, drought has a counterintuitively positive effect on shrub seedling establishment. Due to decreased competition by annuals, droughts increase opportunities for shrub seedlings. Under non drought conditions, annuals competed with shrub seedlings more effectively, confirming the experimenters’ assumption that annuals benefit more than shrub seedlings from an increase in water availability. This may be attributed to their faster or more efficient uptake of soil resources. Similar patterns can be observed in other semi-arid communities. Jurena and Archer showed for a savanna community that root biomass of grasses increased in wetter conditions, decreasing grassland susceptibility to encroachment by"
+       "Experiments and field observations show that in a Mediterranean plant community, drought has a counterintuitively positive effect on shrub seedling establishment. Due to decreased competition by annuals, droughts increase opportunities for shrub seedlings. Under nondrought conditions, annuals competed with shrub seedlings more effectively, confirming the experimenters’ assumption that annuals benefit more than shrub seedlings from an increase in water availability. This may be attributed to their faster or more efficient uptake of soil resources. Similar patterns can be observed in other semi-arid communities. Jurena and Archer showed for a savanna community that root biomass of grasses increased in wetter conditions, decreasing grassland susceptibility to encroachment by shrub seedlings."
       ],
       "stem": [
        "It can be inferred from the passage that the “positive effect” occurs because"
@@ -120,7 +132,7 @@
      "img": "2025-02-s5/2-05.webp",
      "txt": {
       "pass": [
-       "Experiments and field observations show that in a Mediterranean plant community, drought has a counterintuitively positive effect on shrub seedling establishment. Due to decreased competition by annuals, droughts increase opportunities for shrub seedlings. Under non drought conditions, annuals competed with shrub seedlings more effectively, confirming the experimenters’ assumption that annuals benefit more than shrub seedlings from an increase in water availability. This may be attributed to their faster or more efficient uptake of soil resources. Similar patterns can be observed in other semi-arid communities. Jurena and Archer showed for a savanna community that root biomass of grasses increased in wetter conditions, decreasing grassland susceptibility to encroachment by"
+       "Experiments and field observations show that in a Mediterranean plant community, drought has a counterintuitively positive effect on shrub seedling establishment. Due to decreased competition by annuals, droughts increase opportunities for shrub seedlings. Under nondrought conditions, annuals competed with shrub seedlings more effectively, confirming the experimenters’ assumption that annuals benefit more than shrub seedlings from an increase in water availability. This may be attributed to their faster or more efficient uptake of soil resources. Similar patterns can be observed in other semi-arid communities. Jurena and Archer showed for a savanna community that root biomass of grasses increased in wetter conditions, decreasing grassland susceptibility to encroachment by shrub seedlings."
       ],
       "stem": [
        "The author of the passage would most likely agree with which of the following statements about the growth of shrub seedlings?"
@@ -142,7 +154,20 @@
       0,
       5
      ],
-     "img": "2025-02-s5/2-06.webp"
+     "img": "2025-02-s5/2-06.webp",
+     "txt": {
+      "stem": [
+       "In Ramachandran’s opinion, it is perfectly acceptable to propose bold speculations about the brain, even if these speculations seem ____ ; as Ramachandran frequentiy remarks, science thrives on risky conjecture."
+      ],
+      "opts": [
+       "unfounded",
+       "premature",
+       "controversial",
+       "verifiable",
+       "testable",
+       "baseless"
+      ]
+     }
     },
     {
      "n": 7,
@@ -152,7 +177,20 @@
       0,
       2
      ],
-     "img": "2025-02-s5/2-07.webp"
+     "img": "2025-02-s5/2-07.webp",
+     "txt": {
+      "stem": [
+       "Khirigsuurs, distinctive stone-mounded monuments, are so ____ in central and western Mongolia that it has been argued that they were the defining features of the human landscapes of prehistoric Inner Asia."
+      ],
+      "opts": [
+       "ubiquitous",
+       "multifarious",
+       "prevalent",
+       "varied",
+       "admired",
+       "overwhelming"
+      ]
+     }
     },
     {
      "n": 8,
@@ -210,8 +248,7 @@
      "img": "2025-02-s5/2-10.webp",
      "txt": {
       "pass": [
-       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete.",
-       "Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies. The debate usually centers on the presumed functions of the buildings. Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers. Over the years, each of those functions has been called into question. For example, . Schoep notes, \"The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure” ; she suggests using the more neutral term “court-centered building” instead. The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used. use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of"
+       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete. Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies. The debate usually centers on the presumed functions of the buildings. Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers. Over the years, each of those functions has been called into question. For example, I. Schoep notes, “The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure”; she suggests using the more neutral term “court-centered building” instead. The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used. I use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of buildings that share a set of formal elements."
       ],
       "stem": [
        "The author would most likely agree with which of the following statements about the buildings discussed in the passage?"
@@ -229,7 +266,25 @@
      "n": 11,
      "kind": "ss",
      "ansText": "The problem, however, comes not",
-     "img": "2025-02-s5/2-11.webp"
+     "img": "2025-02-s5/2-11.webp",
+     "txt": {
+      "pass": [
+       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete. Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies. The debate usually centers on the presumed functions of the buildings. Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers. Over the years, each of those functions has been called into question. For example, I. Schoep notes, “The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure”; she suggests using the more neutral term “court-centered building” instead. The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used. I use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of buildings that share a set of formal elements."
+      ],
+      "stem": [
+       "Select the sentence in the passage that summarizes the author’s primary opposition to a particular approach taken by Minoan archaeologists."
+      ],
+      "sentences": [
+       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete.",
+       "Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies.",
+       "The debate usually centers on the presumed functions of the buildings.",
+       "Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers.",
+       "Over the years, each of those functions has been called into question.",
+       "For example, I. Schoep notes, “The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure”; she suggests using the more neutral term “court-centered building” instead.",
+       "The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used.",
+       "I use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of buildings that share a set of formal elements."
+      ]
+     }
     },
     {
      "n": 12,
@@ -241,23 +296,23 @@
      "img": "2025-02-s5/2-12.webp",
      "txt": {
       "pass": [
-       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete.",
-       "Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies. The debate usually centers on the presumed functions of the buildings. Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers. Over the years, each of those functions has been called into question. For example, . Schoep notes, \"The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure” ; she suggests using the more neutral term “court-centered building” instead. The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used. use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of"
+       "This passage discusses Minoan buildings constructed during the Bronze Age on the Greek island of Crete. Although the term “Palace” is widely used and deeply ingrained in Minoan archaeology, Driessen has remarked that the term has been used to describe a number of quite different things and that there is no consensus on what the term signifies. The debate usually centers on the presumed functions of the buildings. Evans assumed that the buildings known as Palaces had several roles, including royal residences, administrative centers, economic centers, manufacturing centers, and cult centers. Over the years, each of those functions has been called into question. For example, I. Schoep notes, “The use of the term Palace carries with it a whole host of perhaps unhelpful baggage, which consciously or unconsciously encourages interpretation of the ‘Palace’ as the residence of a royal elite, occupying supreme position within a hierarchical social and political structure”; she suggests using the more neutral term “court-centered building” instead. The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used. I use the word “Palaces” (capitalized to signal its arbitrariness) not to imply a range of functions but to refer to a group of buildings that share a set of formal elements."
       ],
       "stem": [
-       "The author would most likely agree with which of the following as a response to . Schoep’s argument for using a “more neutral term” ?"
+       "The author would most likely agree with which of the following as a response to I. Schoep’s argument for using a “more neutral term”"
       ],
       "opts": [
-       "The term that . Schoep favors would exclude some sites that ought to be included in the category.",
+       "The term that l. Schoep favors would exclude some sites that ought to be included in the category.",
        "Given the profusion of terms that archaeologists have applied to the buildings that have been called Palaces, it is redundant to introduce another one.",
-       "If anew term is introduced, it should be based on the known functions of the buildings that have been called Palaces, rather than on their formal architectural features.",
-       "Itis possible to use the term “Palace” without being committed to the term’s functional implications.",
-       "Itis not true that the buildings that have been called Palaces are the only evidence for a hierarchical social structure in Minoan society."
+       "If a new term is introduced, it should be based on the known functions of the buildings that have been called Palaces, rather than on their formal architectural features.",
+       "It is possible to use the term \"Palace\" without being committed to the term’s functional implications.",
+       "It is not true that the buildings that have been called Palaces are the only evidence for a hierarchical social structure in Minoan society."
       ]
      }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

@@ -8,7 +8,7 @@
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
   "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
-  "「选句子」题没法在网页里点选，请写下你选的句子（序号或开头几个词），交卷后对照答案自评，不计入分数"
+  "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
   {
@@ -24,7 +24,19 @@
      "ans": [
       1
      ],
-     "img": "2025-01-16/2-01.webp"
+     "img": "2025-01-16/2-01.webp",
+     "txt": {
+      "stem": [
+       "Some people might object to pairing art and physics, since art is considered to be relatively ____ and physics, until recently, \"upulously avoided any mention of the inner thoughts that related to the outer world."
+      ],
+      "opts": [
+       "accessible",
+       "subjective",
+       "enigmatic",
+       "detached",
+       "conceptual"
+      ]
+     }
     },
     {
      "n": 2,
@@ -37,7 +49,6 @@
      "img": "2025-01-16/2-02.webp",
      "txt": {
       "stem": [
-       ". ____ i ____ N ____ s ____ oH ____ S ____ i ____ }9,° ____. ____ tt. ____ a ____",
        "Although all of the major characters in Mendez’ play are historical figures who have been lampooned in many previous works, she (i) ____ this tradition in her avoidance of (ii) ____"
       ],
       "cols": [
@@ -48,7 +59,7 @@
        ],
        [
         "ceremony",
-        "bile verisimilitude",
+        "verisimilitude",
         "caricature"
        ]
       ]
@@ -63,7 +74,29 @@
       0,
       0
      ],
-     "img": "2025-01-16/2-03.webp"
+     "img": "2025-01-16/2-03.webp",
+     "txt": {
+      "stem": [
+       "Because popular culture often portrays lawyers as shady and scientists as eccentric, we might expect cinematic depictions of scientists employed as expert witnesses in court cases to reflect badly on both law and science. Yet science and scientists rarely (i) ____ in movies involving trials. When a scientist is negatively portrayed, it is often because the legal process is represented as having ____ science; when a scientist is positively portrayed, it is often because science is represented as superior to law, as (iii) ____ law’s rhetorical and institutional instabilities."
+      ],
+      "cols": [
+       [
+        "play pivotal roles",
+        "come off well",
+        "suffer reputational losses"
+       ],
+       [
+        "tainted",
+        "vindicated",
+        "emulated"
+       ],
+       [
+        "a counterweight to",
+        "a derivative of",
+        "an exacerbation of"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -76,12 +109,9 @@
      "img": "2025-01-16/2-04.webp",
      "txt": {
       "pass": [
-       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and"
+       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and in works by Toni Morrison, Gayl Jones, and others."
       ],
       "stem": [
-       "math. LIAR A A.",
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "The passage suggests that which of the following is an accurate characterization of the blues as defined by Ralph Ellison?"
       ],
       "opts": [
@@ -98,10 +128,17 @@
      "img": "2025-01-16/2-05.webp",
      "txt": {
       "pass": [
-       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and"
+       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans. But invariably, the blues exceed rigid cultural boundaries. Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.” As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences. Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and in works by Toni Morrison, Gayl Jones, and others."
       ],
       "stem": [
-       "a ____ oO ____ —— ____ — ____"
+       "Select the sentence in the passage that describes a particular alternative to the conventional perspective on the blues."
+      ],
+      "sentences": [
+       "Blues music speaks histories that, from the conventional perspective, originate in the experiences of African Americans.",
+       "But invariably, the blues exceed rigid cultural boundaries.",
+       "Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.”",
+       "As an idiom, the blues record histories, yet Ellison’s definition privileges the personal and leaves uncertain the role of national histories, the stories that speak our collective experiences.",
+       "Locating the collective histories in the personal has proved a pivotal problem for readers in the written use of the blues both in Ellison’s fiction and in works by Toni Morrison, Gayl Jones, and others."
       ]
      }
     },
@@ -116,7 +153,6 @@
      "img": "2025-01-16/2-06.webp",
      "txt": {
       "stem": [
-       "At. LIAR. A 2A.",
        "Hilton discusses the well-developed capacity among the most influential and talented Victorians for writing on a wide range of topics, thus highlighting their lordly ____ specialization."
       ],
       "opts": [
@@ -140,7 +176,7 @@
      "img": "2025-01-16/2-07.webp",
      "txt": {
       "stem": [
-       "claims to recognize that ____ evidence is available to make definitive statements, she offers them nonetheless, arriving at some sweeping generalizations. ____ >"
+       "Although Wynne claims to recognize that ____ evidence is available to make definitive statements, she offers them nonetheless, arriving at some sweeping generalizations."
       ],
       "opts": [
        "concrete",
@@ -163,17 +199,15 @@
      "img": "2025-01-16/2-08.webp",
      "txt": {
       "stem": [
-       "A. Select the two answer choices that, when used to complete the sentence, fit the meaning of the sentence as a whole and produce completed sentences that are alike in meaning.",
-       "Software makers typically write licensing agreements disclaiming responsibility for any negative consequences of using their products, but as computers become integrated into everything from cars to medical devices, that stance will become ____",
-       "__ ambiguous"
+       "Software makers typically write licensing agreements disclaiming responsibility for any negative consequences of using their products, but as computers become integrated into everything from cars to medical devices, that stance will become ____"
       ],
       "opts": [
+       "ambiguous",
        "untenable",
        "disfavored",
        "indefensible",
        "unwarranted",
-       "gratuitous",
-       "Select two answer choices."
+       "gratuitous"
       ]
      }
     },
@@ -188,16 +222,15 @@
      "img": "2025-01-16/2-09.webp",
      "txt": {
       "stem": [
-       "The sleight of hand of architects whose ambition is to add subtly and seamlessly to early twentieth-century Beaux Arts buildings contradicts a first principle of historic preservation: the ____ historical periods should be clear.",
-       "__. changes within"
+       "The sleight of hand of architects whose ambition is to add subtly and seamlessly to early twentieth-century Beaux Arts buildings contradicts a first principle of historic preservation: the ____ historical periods should be clear."
       ],
       "opts": [
+       "changes within",
        "demarcation of",
        "essence of",
        "continuation of",
        "lines between",
-       "explication of",
-       "‘Select two answer choices."
+       "explication of"
       ]
      }
     },
@@ -211,7 +244,7 @@
      "img": "2025-01-16/2-10.webp",
      "txt": {
       "pass": [
-       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law,"
+       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law, more directly than did integrated abolitionist groups."
       ],
       "stem": [
        "The passage is primarily concerned with"
@@ -235,7 +268,7 @@
      "img": "2025-01-16/2-11.webp",
      "txt": {
       "pass": [
-       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law,"
+       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law, more directly than did integrated abolitionist groups."
       ],
       "stem": [
        "Which of the following is cited by the “scholars” as an example of the important work done by early abolitionist women?"
@@ -259,7 +292,7 @@
      "img": "2025-01-16/2-12.webp",
      "txt": {
       "pass": [
-       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law,"
+       "Julie Roy Jeffrey’s recent book The Great Silent Army of Abolitionism shows how women participated in all aspects of the antislavery movement in the United States, from its inception in the early 1830s through the end of the Civil War (1861-1865). While scholars have already pointed out the importance of women’s work in early abolitionist circles, especially in spreading a grassroots antislavery message through the constant and tireless circulation of petitions, Jeffrey disputes certain aspects of the traditional account of their participation. For example, even though the abolitionist movement split into political and nonpolitical wings at the end of the 1830s and women were largely relegated to the less politicized faction, Jeffrey does not accept the view that women’s participation became marginalized as a result. She demonstrates that women found numerous ways to persist effectively in the cause, such as by organizing the antislavery fundraising fairs of the 1840s. She also disputes the notion that African American women were relegated to secondary positions in the largely White movement: their own abolitionist societies, she argues, often responded to the crises of the pre-Civil War decades, such as the Fugitive Slave Law, more directly than did integrated abolitionist groups."
       ],
       "stem": [
        "The author mentions the “fund-raising fairs of the 1840s” primarily in order to"
@@ -276,5 +309,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

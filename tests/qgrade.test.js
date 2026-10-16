@@ -36,6 +36,7 @@ test('summarize and texts', ()=>{
 test('Verbal kinds: se, tc and self-checked ss', ()=>{
   const se = {kind:'se', ans:[0, 4]};
   assert.ok(gradeItem(se, '4,0')); assert.ok(!gradeItem(se, '0')); assert.ok(!gradeItem(se, '0,3'));
+  assert.ok(!isAnswered(se,'0')); assert.ok(isAnswered(se,'0,4')); assert.ok(!isAnswered(se,'0,1,4'));
   const tc = {kind:'tc', blanks:3, ans:[2, 1, 1]};
   assert.ok(gradeItem(tc, '2,1,1')); assert.ok(!gradeItem(tc, '1,2,1')); assert.ok(!isAnswered(tc, '2,,1')); assert.ok(!gradeItem(tc, '2,1'));
   assert.equal(answerText(tc), '空(i) C　空(ii) B　空(iii) B'); assert.equal(pickedText(tc, '0,1,2'), '空(i) A　空(ii) B　空(iii) C');
@@ -57,4 +58,15 @@ test('clickable sentences preserve full text and reject obsolete A–E answers',
   const result = summarize([item], [sentences[1]]);
   assert.equal(result.total, 0);
   assert.deepEqual(result.selfCheck, [0]);
+});
+
+test('questions with conflicting source keys accept answers without false grading', ()=>{
+  const item={kind:'mcn',nopt:3,ans:[],answerPending:true};
+  assert.ok(isAnswered(item,'0,1'));
+  assert.equal(gradeItem(item,'0,1'),false);
+  assert.match(answerText(item),/待核对/);
+  const result=summarize([item,{kind:'mc1',ans:[0]}],['0,1','0']);
+  assert.equal(result.total,1);
+  assert.equal(result.correct,1);
+  assert.deepEqual(result.selfCheck,[0]);
 });

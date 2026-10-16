@@ -41,6 +41,11 @@ def validate_qset(unit, cdir):
                     e.append(f'{w}: txt.sentences 应为非空句子列表')
                 elif ' '.join(ss) != ' '.join(tx.get('pass') or []):
                     e.append(f'{w}: 可点选句子与文章内容不一致')
+        elif it.get('answerPending') is True:
+            if not it.get('answerReviewReason'): e.append(f'{w}: 待核对答案缺少原因')
+            if kind == 'tc' and it.get('blanks') not in (2, 3): e.append(f'{w}: 填空数不合理')
+            if kind == 'se' and it.get('nopt') != 6: e.append(f'{w}: 选两个应有 6 个选项')
+            if kind in ('mc1','mcn') and not 3 <= it.get('nopt',0) <= 8: e.append(f'{w}: 选项数不合理')
         elif kind == 'tc':
             nb = it.get('blanks')
             if nb not in (2, 3): e.append(f'{w}: 填空数 blanks 应为 2 或 3')

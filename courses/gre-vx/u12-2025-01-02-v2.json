@@ -23,7 +23,19 @@
      "ans": [
       0
      ],
-     "img": "2025-01-02/4-01.webp"
+     "img": "2025-01-02/4-01.webp",
+     "txt": {
+      "stem": [
+       "The mountain pine beetle is not ____ like other major pests ravaging much of the American landscape: it is native to the western pine forests."
+      ],
+      "opts": [
+       "an interloper",
+       "a nuisance",
+       "an anomaly",
+       "a mystery",
+       "a predator"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       0,
       1
      ],
-     "img": "2025-01-02/4-02.webp"
+     "img": "2025-01-02/4-02.webp",
+     "txt": {
+      "stem": [
+       "Few consumers think of food as having a production history. Rather, our food seems (i) ____ those who grow, process, and serve it Our food supply system encourages us to ignore connections between what we eat and its past and, until recently, such (ii) ____ on our part scarcely impacted consumer health"
+      ],
+      "cols": [
+       [
+        "disconnected from",
+        "reflective of",
+        "overwhelming to"
+       ],
+       [
+        "insistence",
+        "unawareness",
+        "ambivalence"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       0,
       1
      ],
-     "img": "2025-01-02/4-03.webp"
+     "img": "2025-01-02/4-03.webp",
+     "txt": {
+      "stem": [
+       "Experience suggests that (i) ____ and market (ii) ____ are by no means (iii) ____ for corporations: executives at well-performing companies possess a keen business sense, but also tend to have oversized personalities."
+      ],
+      "cols": [
+       [
+        "intemal conflicts",
+        "logistical challenges",
+        "financial irregularities"
+       ],
+       [
+        "success",
+        "volatility",
+        "decline"
+       ],
+       [
+        "challenging",
+        "incompatible",
+        "irreversible"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -55,7 +106,29 @@
       0,
       1
      ],
-     "img": "2025-01-02/4-04.webp"
+     "img": "2025-01-02/4-04.webp",
+     "txt": {
+      "stem": [
+       "His new role gives the normally clownish actor a chance to impress audiences with his (i) ____ . He is among the most uninhibited comic performers around, but here he buttons his lip and stares straight ahead. Perhaps without quite knowing it, the audience waits for a wink, a hint that some of the (ii) ____ spirit that animated his previous movies might be lurking inside the (iii) ____ manner he presents in this film."
+      ],
+      "cols": [
+       [
+        "raillery",
+        "effusiveness",
+        "forbearance"
+       ],
+       [
+        "madcap",
+        "lugubrious",
+        "edifying"
+       ],
+       [
+        "facetious",
+        "reserved",
+        "beguiling"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -67,17 +140,17 @@
      "img": "2025-01-02/4-05.webp",
      "txt": {
       "pass": [
-       "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in lr eland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with. For example, T. H. Breen argued that the consumer boycott was a “brilliantly original American invention.” Breen did acknowledge that “a few isolated boycotts may have taken place in other countries.” However, Mary 0’ Dowd argues that from the late seventeenth century, Irish political discourse advocated for the non consumption of imported goods and support for home manufactures by women in ways that were"
+       "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
       ],
       "stem": [
-       "The passage is primarily concerned with"
+       "The passage is primarily concerned with O resolving a dispute"
       ],
       "opts": [
-       "resolving a dispute",
        "advocating a course of action",
        "tracing the evolution of a practice",
-       "i ting competing views of an issue",
-       "chronicling a series of events"
+       "citing competing views of an issue",
+       "chronicling a senes of events",
+       "Sekt one answer choice."
       ]
      }
     },
@@ -91,7 +164,7 @@
      "img": "2025-01-02/4-06.webp",
      "txt": {
       "pass": [
-       "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in lr eland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with. For example, T. H. Breen argued that the consumer boycott was a “brilliantly original American invention.” Breen did acknowledge that “a few isolated boycotts may have taken place in other countries.” However, Mary 0’ Dowd argues that from the late seventeenth century, Irish political discourse advocated for the non consumption of imported goods and support for home manufactures by women in ways that were"
+       "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
       ],
       "stem": [
        "In the context of the passage, the highlighted sentence serves to"
@@ -115,7 +188,7 @@
      "img": "2025-01-02/4-07.webp",
      "txt": {
       "pass": [
-       "To assess the impact of severe drought and drought- related fire on rain-forest vegetation, Leighton and Wirawan studied eastern Borneo following the 1982- 1983 drought (when rainfall was nearly 70 percent below normal) by comparing post drought data from various rain-forest plots with 1977-1979 data from the same plots. Some of the plots had been burned; others were only affected by drought. The large, normally evergreen canopy trees had begun shedding their leaves in February 1983 and were leafless when fires began in April 1983. The study revealed that canopy trees suffered more from drought than from fire: there was no difference in mortality between burned and unburned plots. Drought impact was greatest (37 to 71 percent of canopy trees killed) on steep slopes and ridges due to the limited water reserves of the shallow soil in such sites, while drought damage was least (11 percent of canopy trees killed) in a valley-bottom plot, which had deeper soil. Small trees and vines were largely unaffected by drought but were more easily killed by fire than were canopy trees. Thus, areas affected by drought alone witnessed a decline in larger trees’ importance, whereas areas affected by drought and fire saw an increase in their relative importance because of their"
+       "To assess the impact of severe drought and drought- related fire on rain-forest vegetation, Leighton and Wirawan studied eastern Borneo following the 1982- 1983 drought (when rainfall was nearly 70 percent below normal) by comparing postdrought data from various rain-forest plots with 1977-1979 data from the same plots. Some of the plots had been burned; others were only affected by drought. The large, normally evergreen canopy trees had begun shedding their leaves in February 1983 and were leafless when fires began in April 1983. The study revealed that canopy trees suffered more from drought than from fire: there was no difference in mortality between burned and unburned plots. Drought impact was greatest (37 to 71 percent of canopy trees killed) on steep slopes and ridges due to the limited water reserves of the shallow soil in such sites, while drought damage was least (11 percent of canopy trees killed) in a valley-bottom plot, which had deeper soil. Small trees and vines were largely unaffected by drought but were more easily killed by fire than were canopy trees. Thus, areas affected by drought alone witnessed a decline in larger trees’ importance, whereas areas affected by drought and fire saw an increase in their relative importance because of their greater survival rate."
       ],
       "stem": [
        "The primary purpose of the passage is to"
@@ -136,7 +209,22 @@
      "ans": [
       4
      ],
-     "img": "2025-01-02/4-08.webp"
+     "img": "2025-01-02/4-08.webp",
+     "txt": {
+      "pass": [
+       "To assess the impact of severe drought and drought- related fire on rain-forest vegetation, Leighton and Wirawan studied eastern Borneo following the 1982- 1983 drought (when rainfall was nearly 70 percent below normal) by comparing postdrought data from various rain-forest plots with 1977-1979 data from the same plots. Some of the plots had been burned; others were only affected by drought. The large, normally evergreen canopy trees had begun shedding their leaves in February 1983 and were leafless when fires began in April 1983. The study revealed that canopy trees suffered more from drought than from fire: there was no difference in mortality between burned and unburned plots. Drought impact was greatest (37 to 71 percent of canopy trees killed) on steep slopes and ridges due to the limited water reserves of the shallow soil in such sites, while drought damage was least (11 percent of canopy trees killed) in a valley-bottom plot, which had deeper soil. Small trees and vines were largely unaffected by drought but were more easily killed by fire than were canopy trees. Thus, areas affected by drought alone witnessed a decline in larger trees’ importance, whereas areas affected by drought and fire saw an increase in their relative importance because of their greater survival rate."
+      ],
+      "stem": [
+       "The passage’s description of Leighton and Wirawan’s research suggests that which of the following was required for a rain-forest plot to be selected for study?"
+      ],
+      "opts": [
+       "A wide variety of plant species and sizes",
+       "A wide range of soil depths and water reserves",
+       "Evidence of impact by both drought and fire",
+       "Ease of access for gathering postdrought data",
+       "Availability of data on predrought conditions"
+      ]
+     }
     },
     {
      "n": 9,
@@ -148,7 +236,7 @@
      "img": "2025-01-02/4-09.webp",
      "txt": {
       "pass": [
-       "To assess the impact of severe drought and drought- related fire on rain-forest vegetation, Leighton and Wirawan studied eastern Borneo following the 1982- 1983 drought (when rainfall was nearly 70 percent below normal) by comparing post drought data from various rain-forest plots with 1977-1979 data from the same plots. Some of the plots had been burned; others were only affected by drought. The large, normally evergreen canopy trees had begun shedding their leaves in February 1983 and were leafless when fires began in April 1983. The study revealed that canopy trees suffered more from drought than from fire: there was no difference in mortality between burned and unburned plots. Drought impact was greatest (37 to 71 percent of canopy trees killed) on steep slopes and ridges due to the limited water reserves of the shallow soil in such sites, while drought damage was least (11 percent of canopy trees killed) in a valley-bottom plot, which had deeper soil. Small trees and vines were largely unaffected by drought but were more easily killed by fire than were canopy trees. Thus, areas affected by drought alone witnessed a decline in larger trees’ importance, whereas areas affected by drought and fire saw an increase in their relative importance because of their"
+       "To assess the impact of severe drought and drought- related fire on rain-forest vegetation, Leighton and Wirawan studied eastern Borneo following the 1982- 1983 drought (when rainfall was nearly 70 percent below normal) by comparing postdrought data from various rain-forest plots with 1977-1979 data from the same plots. Some of the plots had been burned; others were only affected by drought. The large, normally evergreen canopy trees had begun shedding their leaves in February 1983 and were leafless when fires began in April 1983. The study revealed that canopy trees suffered more from drought than from fire: there was no difference in mortality between burned and unburned plots. Drought impact was greatest (37 to 71 percent of canopy trees killed) on steep slopes and ridges due to the limited water reserves of the shallow soil in such sites, while drought damage was least (11 percent of canopy trees killed) in a valley-bottom plot, which had deeper soil. Small trees and vines were largely unaffected by drought but were more easily killed by fire than were canopy trees. Thus, areas affected by drought alone witnessed a decline in larger trees’ importance, whereas areas affected by drought and fire saw an increase in their relative importance because of their greater survival rate."
       ],
       "stem": [
        "According to the passage, the conclusion that “canopy trees suffered more from drought than from fire” is based on data indicating that"
@@ -173,7 +261,7 @@
      "img": "2025-01-02/4-10.webp",
      "txt": {
       "stem": [
-       "In a field of egotists, Bloomfield is ____ , Often praising her competitors and punctuating her correspondence with self-deprecating remarks."
+       "In a field of egotists, Bloomfield is ____, often praising her competitors and punctuating her correspondence with self-deprecating remarks."
       ],
       "opts": [
        "unassuming",
@@ -196,7 +284,7 @@
      "img": "2025-01-02/4-11.webp",
      "txt": {
       "stem": [
-       "The apparent simplicity of a savanna or a prairie landscape is illusory, but the illusion takes realeffortto ____ -— because much of what actually occurs in these places takes place underground."
+       "The apparent simplicity of a savanna or a prairie landscape is illusory, but the illusion takes real effort to ____ because much of what actually occurs in these places takes place underground."
       ],
       "opts": [
        "dispel",
@@ -219,7 +307,7 @@
      "img": "2025-01-02/4-12.webp",
      "txt": {
       "stem": [
-       "Williams argues that philosophy has become ____ = —_—_soccupation these days, and that it should rather be “part of a more general attempt to make the best sense of our life.”"
+       "Williams argues that philosophy has become ____ occupation these days, and that it should rather be “part of a more general attempt to make the best sense of our life.”"
       ],
       "opts": [
        "a recondite",
@@ -241,15 +329,15 @@
      "img": "2025-01-02/4-13.webp",
      "txt": {
       "pass": [
-       "To reduce traffic congestion on Lochley city streets, a new road will be built to bypass the city, The road will offer a faster commute to nearly all people who live in suburbs and now commute via Lochley’s streets to their jobs in other suburbs. Those cars constitute one-quarter of the cars now using Lochley’s streets each weekday. Thus after the bypass road has been built, weekday traffic congestion on Lochley’s streets will be"
+       "To reduce traffic congestion on Lochley city streets, a new road will be built to bypass the city. The road will offer a faster commute to nearly all people who live in suburbs and now commute via Lochley’s streets to their jobs in other suburbs. Those cars constitute one-quarter of the cars now using Lochley’s streets each weekday. Thus after the bypass road has been built, weekday traffic congestion on Lochley’s streets will be substantially reduced."
       ],
       "stem": [
        "Which of the following, if true, most strengthens the argument?"
       ],
       "opts": [
        "Only a relatively small reduction in traffic congestion could be achieved by widening existing streets in Lochley.",
-       "Most of the suburban commuters now using city Streets in traveling to jobs in other suburbs travel one person to a car.",
-       "Commuters who travel from homes in Lochley to jobs in the suburbs account for a small proportion of Lochley’s traffic.",
+       "Most of the suburban commuters now using city Streets in traveling to jobs in other suburbs travel one person to a cat",
+       "Commuters who travel from homes in Lochley to jobs in the suburbs account for a small proportion of Lochte/ s traffic",
        "Few of the people who currently commute through Lochley stop there for shopping or other activities.",
        "After the bypass road is built, Lochley will perform more of its maintenance work on city streets on weekdays."
       ]
@@ -262,7 +350,22 @@
      "ans": [
       2
      ],
-     "img": "2025-01-02/4-14.webp"
+     "img": "2025-01-02/4-14.webp",
+     "txt": {
+      "pass": [
+       "The fact that certain musical qualities were shared by African American and White jazz musicians in the mid- 1950s was sometimes explained by claiming that jazz was. “color-blind.” Yet a look at how the discourse of color blindness was deployed in 1950s jazz periodicals helps explain why many African American jazz musicians began to emphasize differences, rather than similarities, between the aesthetic styles of Black and White musicians. The discourse of “color blindness” tended to exaggerate the permeability of racial boundaries by failing to address the power relationships involved in a social climate where evasiveness about race was often used to silence African American perspectives on the meaning of jazz. While the expression of color-blind sentiments was not necessarily disingenuous, structural racial stratification remained powerful beyond the bandstand."
+      ],
+      "stem": [
+       "The passage suggests that some authors writing in 1950s jazz periodicals"
+      ],
+      "opts": [
+       "promoted a view of jazz that wmild remain influential well beyond the 1950s",
+       "failed to grasp the full extent of the similarities between Black and White jazz musicians",
+       "were sincere in their belief that race played no role in shaping the aesthetic aspects of jazz",
+       "criticized the general public’s obliviousness to the reality of racial boundaries within jazz",
+       "dlaimed that the differences between Black and White musicians had been underestimated"
+      ]
+     }
     },
     {
      "n": 15,
@@ -274,7 +377,7 @@
      "img": "2025-01-02/4-15.webp",
      "txt": {
       "pass": [
-       "The fact that certain musical qualities were shared by African American and White jazz musicians in the mid- 1950s was sometimes explained by claiming that jazz was “color-blind.” Yet a look at how the discourse of color blindness was deployed in 1950s jazz periodicals helps explain why many African American jazz musicians began to emphasize differences, rather than similarities, between the aesthetic styles of Black and White musicians. The discourse of “color blindness” tended to exaggerate the permeability of racial boundaries by failing to address the power relationships involved in a social climate where evasiveness about race was often used to silence African American perspectives on the meaning of jazz. While the expression of color-blind sentiments was not necessarily disingenuous, structural racial stratification remained powerful beyond the"
+       "The fact that certain musical qualities were shared by African American and White jazz musicians in the mid- 1950s was sometimes explained by claiming that jazz was. “color-blind.” Yet a look at how the discourse of color blindness was deployed in 1950s jazz periodicals helps explain why many African American jazz musicians began to emphasize differences, rather than similarities, between the aesthetic styles of Black and White musicians. The discourse of “color blindness” tended to exaggerate the permeability of racial boundaries by failing to address the power relationships involved in a social climate where evasiveness about race was often used to silence African American perspectives on the meaning of jazz. While the expression of color-blind sentiments was not necessarily disingenuous, structural racial stratification remained powerful beyond the bandstand."
       ],
       "stem": [
        "The author mentions “power relationships” primarily to"
@@ -283,7 +386,7 @@
        "help summarize an argument that the author wishes to refute",
        "account for the inadequacy of a particular idea about jazz",
        "demonstrate a link between social and aesthetic factors affecting jazz musicians",
-       "emphasize the commitment of some jazz musicians to a particular view of jazz",
+       "emphasize the commitment of somejazz musicians to a particular view of jazz",
        "cite evidence to support a claim about stylistic developments within jazz in the 1950s"
       ]
      }
@@ -291,5 +394,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

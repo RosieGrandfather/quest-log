@@ -23,7 +23,19 @@
      "ans": [
       2
      ],
-     "img": "2025-01-05/3-01.webp"
+     "img": "2025-01-05/3-01.webp",
+     "txt": {
+      "stem": [
+       "According to one prominent critic, scientists enamored of the metaphor of the frontier tend to be ____ • they believe their single-authored work has more cultural value than collaborative research."
+      ],
+      "opts": [
+       "ra matic",
+       "sycophantic",
+       "individualistic",
+       "idealistic",
+       "eccentric"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       1,
       1
      ],
-     "img": "2025-01-05/3-02.webp"
+     "img": "2025-01-05/3-02.webp",
+     "txt": {
+      "stem": [
+       "Many of her followers remain (i) ____ to her, and even those who have rejected her leadership are unconvinced of the (ii) ____ of replacing her during the current turmoil."
+      ],
+      "cols": [
+       [
+        "opposed",
+        "loyal",
+        "cool"
+       ],
+       [
+        "disadvantage",
+        "wisdom",
+        "harm"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -44,7 +73,29 @@
       1,
       0
      ],
-     "img": "2025-01-05/3-03.webp"
+     "img": "2025-01-05/3-03.webp",
+     "txt": {
+      "stem": [
+       "We could think of virtuosity as the exhibition of something difficult done with apparent ease. Yet, if this is so, the (i) ____ of virtuosity is necessarily somewhat (ii) ____ for spectators must recognize that the appearance of ease is (iii) ____"
+      ],
+      "cols": [
+       [
+        "rarity",
+        "cultivation",
+        "appreciation"
+       ],
+       [
+        "ephemeral",
+        "paradoxical",
+        "inconsistent"
+       ],
+       [
+        "deceptive",
+        "spontaneous",
+        "seductive"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -56,11 +107,9 @@
      "img": "2025-01-05/3-04.webp",
      "txt": {
       "pass": [
-       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than yin French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav EnestrOm and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers"
+       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than y in French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav EnestrOm and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers therefore would have had more ____ s available."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "It can be inferred that the author of the passage would agree with which of the following statements about the relationship between Enestr6m’s conjecture and Derbyshire?"
       ],
       "opts": [
@@ -80,7 +129,7 @@
      "img": "2025-01-05/3-05.webp",
      "txt": {
       "pass": [
-       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than yin French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav EnestrOm and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers"
+       "In his history of algebra, John Derbyshire asserts that when Descartes chose the letter x to represent the principal unknown, he did so for the printer’s convenience, because x is used less often in French than yor z. In fact, according to cryptography texts, x is used more often than y in French. Derbyshire’s source for his assertion is Classic Math, whose author, Art Johnson, gives no footnote for the claim but who may have misunderstood a conjecture made in 1905—almost 300 years after Descartes—by Gustav EnestrOm and mentioned in a book included in Johnson’s bibliography. Enestr6m supposed that x was chosen because it occurs more often than y and z, and printers therefore would have had more ____ s available."
       ],
       "stem": [
        "The highlighted text serves primarily to"
@@ -90,7 +139,7 @@
        "allude to the speculative nature of Enestro6m’s explanation",
        "account for the absence of any plausible explanation for Descartes’s choice of x for centuries after his work was published",
        "point out the continuity of mathematical notation over extended periods of time",
-       "suggest that the frequency with which letters are used _ might have changed since Descartes’s time"
+       "suggest that the frequency with which letters are used might have changed since Descartes’s time"
       ]
      }
     },
@@ -125,7 +174,20 @@
       0,
       3
      ],
-     "img": "2025-01-05/3-07.webp"
+     "img": "2025-01-05/3-07.webp",
+     "txt": {
+      "stem": [
+       "For literary critics and book reviewers, the notion of critical authority has become ____ in an age of quick, teeming Internet response, where all the old critical standards and parameters are in the process of being reinvented."
+      ],
+      "opts": [
+       "fluid",
+       "transparent",
+       "obvious",
+       "unstable",
+       "justifiat",
+       "defensible"
+      ]
+     }
     },
     {
      "n": 8,
@@ -135,7 +197,20 @@
       2,
       5
      ],
-     "img": "2025-01-05/3-08.webp"
+     "img": "2025-01-05/3-08.webp",
+     "txt": {
+      "stem": [
+       "The author first accused the official of espionage in a 1981 book, and—though the case was far from ____ full of suppositions rather than compelling evidence—the accusation has been repeated relentlessly ever since."
+      ],
+      "opts": [
+       "unambitious",
+       "unconvincing",
+       "unassailable",
+       "implausible",
+       "coherent",
+       "airtight"
+      ]
+     }
     },
     {
      "n": 9,
@@ -145,7 +220,20 @@
       0,
       3
      ],
-     "img": "2025-01-05/3-09.webp"
+     "img": "2025-01-05/3-09.webp",
+     "txt": {
+      "stem": [
+       "It can be a daunting task to plunge into the disparate and extensive data sets on the carnivores and ____ meaningful patterns from their extraordinary morphological, behavioral, and ecological diversity."
+      ],
+      "opts": [
+       "distill",
+       "conjure",
+       "distinguish",
+       "extract",
+       "concea",
+       "hide"
+      ]
+     }
     },
     {
      "n": 10,
@@ -157,8 +245,7 @@
      "img": "2025-01-05/3-10.webp",
      "txt": {
       "pass": [
-       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
-       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one-dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active"
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part Of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds. None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but financial ruin could happen overnight."
       ],
       "stem": [
        "The primary purpose of the passage is to"
@@ -182,11 +269,10 @@
      "img": "2025-01-05/3-11.webp",
      "txt": {
       "pass": [
-       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
-       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one-dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active"
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part Of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds. None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but financial ruin could happen overnight."
       ],
       "stem": [
-       "Which of the following can be inferred from the passage about the “defensive strategies” ?"
+       "Which of the following can be inferred from the passage about the “defensive strategies”"
       ],
       "opts": [
        "They led some large Spanish merchants into financial ruin.",
@@ -209,12 +295,9 @@
      "img": "2025-01-05/3-12.webp",
      "txt": {
       "pass": [
-       "The large merchants who dominated long-distance trade in the Spanish empire for the better part of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds.",
-       "None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one-dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active"
+       "The large merchants who dominated long-distance trade in the Spanish empire for the better part Of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds. None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but financial ruin could happen overnight."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "The author and the historians mentioned in the first sentence would probably agree on which of the following issues?"
       ],
       "opts": [
@@ -227,5 +310,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

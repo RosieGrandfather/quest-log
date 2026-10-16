@@ -65,7 +65,7 @@ for s in data:
                 nm = f'{s["id"]}/{sec["sec"]}-{it["n"]:02d}{"" if j == 0 else "b"}.webp'
                 save(os.path.join(pages_dir, s['id'], pg), os.path.join(out, 'img', nm), cache)
                 names.append(nm)
-            o = {k: it[k] for k in ('n', 'kind', 'nopt', 'blanks', 'ans', 'ansText') if k in it}
+            o = {k: it[k] for k in ('n', 'kind', 'nopt', 'blanks', 'ans', 'ansText', 'answerPending', 'answerReviewReason', 'legacyAnswer') if k in it}
             o['img'] = names[0]
             tx = txts.get(f'{sec["sec"]}-{it["n"]}')
             if tx and tx.get('ok'):
@@ -83,7 +83,7 @@ for s in data:
         unit = {'id': uid, 'title': title, 'en': f'Verbal Reasoning — {s["id"]} section {v}', 'minutes': minutes, 'practice': True,
                 'objectives': objs,
                 'blocks': [{'type': 'gre-qset', 'base': 'courses/gre-vx/img/', 'source': f'2025 年 GRE 考场回忆真题（逐鹿留学整理）· {s["zh"]}', 'noteTail': '（考场截屏整理版，仅供个人学习；没有官方解析）', 'items': items}],
-                'references': []}
+                'references': [], 'answerFormat': 'gre-vx-text-v2'}
         errors += validate_qset(unit, out)
         json.dump(unit, open(os.path.join(out, f'{uid}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print(uid, len(items), flush=True)

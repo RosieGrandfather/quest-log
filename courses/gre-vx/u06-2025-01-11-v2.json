@@ -23,7 +23,19 @@
      "ans": [
       0
      ],
-     "img": "2025-01-11/5-01.webp"
+     "img": "2025-01-11/5-01.webp",
+     "txt": {
+      "stem": [
+       "Instead of flooding reporters with updates, the governor’s press office dispenses information with the ____ of an eyedropper."
+      ],
+      "opts": [
+       "parsimony",
+       "asperity",
+       "expediency",
+       "authority",
+       "imprecision"
+      ]
+     }
     },
     {
      "n": 2,
@@ -55,7 +67,29 @@
       0,
       2
      ],
-     "img": "2025-01-11/5-03.webp"
+     "img": "2025-01-11/5-03.webp",
+     "txt": {
+      "stem": [
+       "Wolosky claims that Ella Wheeler Wilcox joined other women poets such as Julia Ward Howe, Frances Harper, and Charlotte Perkins Gilman in critiquing materialism and possessive individualism. Wolosky’s description (i) ____ the poetry of Gilman, Howe, and Harper, but it is not entirely ____ in the case of Wilcox, who hardly (iii) ____ the materialism of her time. Rather Wilcox seems to have embraced the amassing of private property."
+      ],
+      "cols": [
+       [
+        "fits",
+        "conflates",
+        "misinterprets"
+       ],
+       [
+        "apt",
+        "puzzling",
+        "uncommon"
+       ],
+       [
+        "reflected",
+        "countenancec",
+        "impugned"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -66,7 +100,29 @@
       0,
       1
      ],
-     "img": "2025-01-11/5-04.webp"
+     "img": "2025-01-11/5-04.webp",
+     "txt": {
+      "stem": [
+       "Every few years, as a reviewer, one encounters a novel whose (i) ____ are so many in number, and so (ii) ____ that to correct them fully would produce a text that exceeded the novel itself in length. Faced with such a book, one wishes only to let it slip quietly to the seabed of culture, there to join thousands of other (iii) ____ books in their slow disintegration."
+      ],
+      "cols": [
+       [
+        "felicities",
+        "ineptitudes",
+        "curiosities"
+       ],
+       [
+        "thoroughgoing",
+        "innocuous",
+        "delightful"
+       ],
+       [
+        "profound",
+        "incompetent",
+        "indispensable"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -75,7 +131,22 @@
      "ans": [
       1
      ],
-     "img": "2025-01-11/5-05.webp"
+     "img": "2025-01-11/5-05.webp",
+     "txt": {
+      "pass": [
+       "Until recently, study of motor control in amphibian feeding was limited to a few model taxa (taxonomic groups), for example, toads (genus Bufo), frogs Rana), and salamanders (Ambystoma). Studies of these taxa suggested that amphibian feeding in general is highly stereotyped, that is, performed in much the same way every time, with little variation in the timing or extent of movements. However, recent studies of a great variety of salamanders, frogs, and caecilians (tropical amphibians) have revealed that the model taxa are probably exceptions among amphibians, and were unfortunate models on which to base generalizations about amphibian feeding. Indeed, Bufo is now known to be one of the most stereotyped amphibians in its feeding movements, and Ambystoma lies at the low end of variation for salamanders."
+      ],
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "identify certain previously overlooked factors that affect amphibian feeding",
+       "present evidence that casts doubt on a previously accepted hypothesis concerning amphibian feeding",
+       "evaluate a number of recent studies that examine feeding habits among amphibians",
+       "explain the evidence supporting the claim that amphibian feeding is highly stereotyped",
+       "contrast two hypotheses about the degree of variation in the timing and extent of movements evident in amphibian feeding"
+      ]
+     }
     },
     {
      "n": 6,
@@ -84,7 +155,22 @@
      "ans": [
       4
      ],
-     "img": "2025-01-11/5-06.webp"
+     "img": "2025-01-11/5-06.webp",
+     "txt": {
+      "pass": [
+       "Until recently, study of motor control in amphibian feeding was limited to a few model taxa (taxonomic groups), for example, toads (genus Bufo), frogs Rana), and salamanders (Ambystoma). Studies of these taxa suggested that amphibian feeding in general is highly stereotyped, that is, performed in much the same way every time, with little variation in the timing or extent of movements. However, recent studies of a great variety of salamanders, frogs, and caecilians (tropical amphibians) have revealed that the model taxa are probably exceptions among amphibians, and were unfortunate models on which to base generalizations about amphibian feeding. Indeed, Bufo is now known to be one of the most stereotyped amphibians in its feeding movements, and Ambystoma lies at the low end of variation for salamanders."
+      ],
+      "stem": [
+       "In the context in which it appears, “unfortunate” most nearly means"
+      ],
+      "opts": [
+       "deplorable",
+       "unwarranted",
+       "unsuccessful",
+       "inconvenient",
+       "infelicitous"
+      ]
+     }
     },
     {
      "n": 7,
@@ -96,8 +182,7 @@
      "img": "2025-01-11/5-07.webp",
      "txt": {
       "pass": [
-       "This passage is adapted from material published in 2001.",
-       "For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part"
+       "This passage is adapted from material published in 2001. For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part of an ongoing, living story."
       ],
       "stem": [
        "The primary purpose of the passage is to"
@@ -121,8 +206,7 @@
      "img": "2025-01-11/5-08.webp",
      "txt": {
       "pass": [
-       "This passage is adapted from material published in 2001.",
-       "For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part"
+       "This passage is adapted from material published in 2001. For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part of an ongoing, living story."
       ],
       "stem": [
        "The author notes that the Laguna stories Silko uses in Ceremony are taken “sometimes verbatim” from ethnographic print texts most likely in order to"
@@ -146,8 +230,7 @@
      "img": "2025-01-11/5-09.webp",
      "txt": {
       "pass": [
-       "This passage is adapted from material published in 2001.",
-       "For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part"
+       "This passage is adapted from material published in 2001. For Paula Gunn Allen, a Laguna Indian writer, the traditional Laguna stories that appear in Leslie Marmon Silko’s novel Ceremony (1977) constitute evidence of improper publication of secret clan material. Silko herself has stated that the source of these stories is Laguna oral tradition, a tradition she experienced directly growing up on the Laguna Pueblo reservation in New Mexico. Yet though Silko may have recalled the gist of any number of such stories prior to writing Ceremony, it is also the case that all but two of the traditional stories in the novel are known to have been taken, sometimes verbatim, from preexisting ethnographic print texts rather than immediately from remembered oral performance. Even if we agree with Gunn Allen that the original performers and transcribers of these stories might have been guilty of violating clan secrets, the fact that such texts exist in print outside Ceremony, and existed well before Silko was born, puts a very different face on the charge of giving away cultural property. Rather than revealing clan secrets, Silko is repatriating Laguna “artifacts,” rescuing them from their status as lifeless ethnographic museum pieces and returning them to circulation as part of an ongoing, living story."
       ],
       "stem": [
        "The passage suggests that ostensible support for Gunn Allen’s claim about the Laguna stories that Silko used in Ceremony is provided by which of the following?"
@@ -169,7 +252,20 @@
       3,
       5
      ],
-     "img": "2025-01-11/5-10.webp"
+     "img": "2025-01-11/5-10.webp",
+     "txt": {
+      "stem": [
+       "Individuals interested in longevity have sought to fine-tune their bodies with all kinds of ____ diets: only raw foods; only plants; only the flesh, fruit, and nuts that prehistoric humans would have hunted and foraged."
+      ],
+      "opts": [
+       "eccentric",
+       "meager",
+       "salutary",
+       "proscriptive",
+       "trendy",
+       "exacting"
+      ]
+     }
     },
     {
      "n": 11,
@@ -182,7 +278,7 @@
      "img": "2025-01-11/5-11.webp",
      "txt": {
       "stem": [
-       "By and large, the writing of professional philosophers over the last century gets ____ highim marks for lucidity, though one can certainly point to a few whose prose is notably"
+       "By and large, the writing of professional philosophers over the last century gets high marks for lucidity, though one can certainly point to a few whose prose is notably ____"
       ],
       "opts": [
        "slipshod",
@@ -205,16 +301,15 @@
      "img": "2025-01-11/5-12.webp",
      "txt": {
       "stem": [
-       "Some consider the theorem Emmy Noether first published in 1918 to be as important as Einstein’s theory of relativity, since much of today’s vanguard research in physics is ____ Noether’s theorem.",
-       "L) contradicted by"
+       "Some consider the theorem Emmy Noether first published in 1918 to be as important as Einstein’s theory of relativity, since much of today’s vanguard research in physics is ____ Noether• s theorem."
       ],
       "opts": [
+       "contradicted by",
        "undergirded by",
        "incompatible with",
        "dependent on",
        "devoted to",
-       "elucidated by",
-       "Sele ct two answer choices."
+       "elucidated by"
       ]
      }
     },
@@ -228,7 +323,7 @@
      "img": "2025-01-11/5-13.webp",
      "txt": {
       "pass": [
-       "Many criminologists argue that the chances that first- time offenders will be rehabilitated can be improved by giving them sentences that promote their reintegration into society rather than by sentencing them to jail. In support of this hypothesis, it is often pointed out that whereas 10 percent of first-time offenders sentenced to community service qo on to commit further crimes, fully 60 percent of first-time offenders who are imprisoned do so. The hypothesis thus seems strongly confirmed. In actual fact, however, the statistics cited do little to prove it, since judges tend to impose jail sentences on those first-time offenders they consider likely to commit"
+       "Many criminologists argue that the chances that first- time offenders will be rehabilitated can be improved by giving them sentences that promote their reintegration into society rather than by sentencing them to jail. In support of this hypothesis, it is often pointed out that whereas 10 percent of first-time offenders sentenced to community service qo on to commit further crimes, fully 60 percent of first-time offenders who are imprisoned do so. The hypothesis thus seems strongly confirmed. In actual fact, however, the statistics cited do little to prove it, since judges tend to impose jail sentences on those first-time offenders they consider likely to commit further crimes."
       ],
       "stem": [
        "In the argument given, the two highlighted portions play which of the following roles?"
@@ -252,7 +347,7 @@
      "img": "2025-01-11/5-14.webp",
      "txt": {
       "pass": [
-       "Communications in Europe and America were radically transformed in the 1600s and 1700s, but not because of any technological revolution. A printer from the 1500s magically catapulted into a print shop of the late 1700s would have found hand-operated wooden presses little altered from his own time. Viewed from the standpoint of social practices, politics, and institutions, however, the change in communications was enormous. Regular, publicly available postal service was introduced. The first newspapers, scientific journals, and other periodicals appeared, and with them emerged journalism in its earliest forms. The market for print expanded, and the law of intellectual property began to take its modern shape. Most important, from these developments a new sphere of public information, public debate, and public"
+       "Communications in Europe and America were radically transformed in the 1600s and 1700s, but not because of any technological revolution. A printer from the 1500s magically catapulted into a print shop of the late 1700s would have found hand-operated wooden presses little altered from his own time. Viewed from the standpoint of social practices, politics, and institutions, however, the change in communications was enormous. Regular, publicly available postal service was introduced. The first newspapers, scientific journals, and other periodicals appeared, and with them emerged journalism in its earliest forms. The market for print expanded, and the law of intellectual property began to take its modern shape. Most important, from these developments a new sphere of public information, public debate, and public opinion emerged."
       ],
       "stem": [
        "The main idea of the passage is that in Europe and America"
@@ -276,11 +371,9 @@
      "img": "2025-01-11/5-15.webp",
      "txt": {
       "pass": [
-       "Communications in Europe and America were radically transformed in the 1600s and 1700s, but not because of any technological revolution. A printer from the 1500s magically catapulted into a print shop of the late 1700s would have found hand-operated wooden presses little altered from his own time. Viewed from the standpoint of social practices, politics, and institutions, however, the change in communications was enormous. Regular, publicly available postal service was introduced. The first newspapers, scientific journals, and other periodicals appeared, and with them emerged journalism in its earliest forms. The market for print expanded, and the law of intellectual property began to take its modern shape. Most important, from these developments a new sphere of public information, public debate, and public"
+       "Communications in Europe and America were radically transformed in the 1600s and 1700s, but not because of any technological revolution. A printer from the 1500s magically catapulted into a print shop of the late 1700s would have found hand-operated wooden presses little altered from his own time. Viewed from the standpoint of social practices, politics, and institutions, however, the change in communications was enormous. Regular, publicly available postal service was introduced. The first newspapers, scientific journals, and other periodicals appeared, and with them emerged journalism in its earliest forms. The market for print expanded, and the law of intellectual property began to take its modern shape. Most important, from these developments a new sphere of public information, public debate, and public opinion emerged."
       ],
       "stem": [
-       "Consider each of the choices separately and select all that",
-       "apply.",
        "It can be inferred that the author would agree with which of the following statements concerning the first newspapers in Europe and America?"
       ],
       "opts": [
@@ -293,5 +386,6 @@
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

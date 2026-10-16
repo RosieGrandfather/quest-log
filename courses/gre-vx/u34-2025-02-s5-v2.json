@@ -23,7 +23,19 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s5/4-01.webp"
+     "img": "2025-02-s5/4-01.webp",
+     "txt": {
+      "stem": [
+       "Adapting to its changing environment and building its own ecological niche in interactions with other disciplines, the scientific discipline of ecology can be seen as highly."
+      ],
+      "opts": [
+       "anarchic",
+       "cerebral",
+       "opportunistic",
+       "speculative",
+       "competitive"
+      ]
+     }
     },
     {
      "n": 2,
@@ -33,7 +45,24 @@
       2,
       1
      ],
-     "img": "2025-02-s5/4-02.webp"
+     "img": "2025-02-s5/4-02.webp",
+     "txt": {
+      "stem": [
+       "Political debates supposedly exist to inform viewers who watch them with open minds to learn about the candidates and decide how to vote. Of course, given the (i) ____ that routinely permeates most debates, it is hard to (ii) ____ that they fulfill their purpose."
+      ],
+      "cols": [
+       [
+        "heated discussion",
+        "ideol ical division",
+        "notorious disingenuousness"
+       ],
+       [
+        "deny",
+        "maintain",
+        "complain"
+       ]
+      ]
+     }
     },
     {
      "n": 3,
@@ -56,7 +85,7 @@
         "evocative"
        ],
        [
-        "are largely inessential i",
+        "are largely inessential",
         "resist interpretation",
         "normally interfere"
        ],
@@ -77,7 +106,29 @@
       2,
       1
      ],
-     "img": "2025-02-s5/4-04.webp"
+     "img": "2025-02-s5/4-04.webp",
+     "txt": {
+      "stem": [
+       "Many historians of the ancient world are wary of sounding (i) ____ Write so much as a sentence and the temptation is immediately to CID ____ it Even in cases when the sources for a given event are (iil) ____ uncertainties and discrepancies crop up everywhere."
+      ],
+      "cols": [
+       [
+        "fusty",
+        "anachronistic",
+        "dogmatic"
+       ],
+       [
+        "recapitulate",
+        "forswear",
+        "qualify"
+       ],
+       [
+        "consistent",
+        "plentiful",
+        "biased"
+       ]
+      ]
+     }
     },
     {
      "n": 5,
@@ -86,7 +137,22 @@
      "ans": [
       3
      ],
-     "img": "2025-02-s5/4-05.webp"
+     "img": "2025-02-s5/4-05.webp",
+     "txt": {
+      "pass": [
+       "What is really meant by “ownership” of works of art? When a museum or an art gallery takes refuge in the argument that something it possesses has been legitimately acquired by the standards of its day and has been properly cared for ever since, it is not a trivial piece of special pleading, but a valid appeal to our sense of fairness. This sort of claim can be strengthened when a museum returns other objects not acquired lawfully. Such concessions recognize that injustices can occur, and they serve to undergird leqitimate claims rather than undermine them. But even with legitimate claims, possession of art is not out-and-out ownership, but a duty of care, since stewardship comes as the counterpart of possession."
+      ],
+      "stem": [
+       "The primary purpose of the last sentence of the passage is to"
+      ],
+      "opts": [
+       "describe a dilemma",
+       "refute an argument",
+       "explain an anomaly",
+       "affirm a principle",
+       "present a speculation"
+      ]
+     }
     },
     {
      "n": 6,
@@ -98,7 +164,7 @@
      "img": "2025-02-s5/4-06.webp",
      "txt": {
       "pass": [
-       "What is really meant by “ownership” of works of art? When a museum or an art gallery takes refuge in the argument that something it possesses has been legitimately acquired by the standards of its day and has been properly cared for ever since, it is not a trivial piece of special pleading, but a valid appeal to our sense of fairness. This sort of claim can be strengthened when a museum returns other objects not acquired lawfully. Such concessions recognize that injustices can occur, and they serve to undergird legitimate claims rather than undermine them. But even with legitimate claims, possession of art is not out-and-out ownership, but a duty of care, since stewardship comes as the counterpart"
+       "What is really meant by “ownership” of works of art? When a museum or an art gallery takes refuge in the argument that something it possesses has been legitimately acquired by the standards of its day and has been properly cared for ever since, it is not a trivial piece of special pleading, but a valid appeal to our sense of fairness. This sort of claim can be strengthened when a museum returns other objects not acquired lawfully. Such concessions recognize that injustices can occur, and they serve to undergird leqitimate claims rather than undermine them. But even with legitimate claims, possession of art is not out-and-out ownership, but a duty of care, since stewardship comes as the counterpart of possession."
       ],
       "stem": [
        "The passage suggests that a museum’s claim on some possessions may be strengthened by its return of unlawful acquisitions because such returns imply that"
@@ -119,7 +185,22 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s5/4-07.webp"
+     "img": "2025-02-s5/4-07.webp",
+     "txt": {
+      "pass": [
+       "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources. The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation of resources and very incomplete resource exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human caused influxes of nutrients."
+      ],
+      "stem": [
+       "It can be inferred that the author would most likely agree with which of the following assessments of the “results from field studies”"
+      ],
+      "opts": [
+       "Many of the results contradict predictions of susceptibility to invasion that are based on the availability of resources unused by the community.",
+       "If fluctuating resource availability were taken into account, many of the apparent inconsistencies among the results could be explained.",
+       "The apparent inconsistencies and ambiguities in the results are caused by trying to make them fit an inadequate general theory of invasibility.",
+       "No general theory of invasibility has emerged because none of the studies has been able to assess the degree of an invasion accurately.",
+       "The results tend to show a degree of susceptibility to invasion that is lower than would be expected given the prevalence in the wild of nonnative species."
+      ]
+     }
     },
     {
      "n": 8,
@@ -131,7 +212,7 @@
      "img": "2025-02-s5/4-08.webp",
      "txt": {
       "pass": [
-       "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources. The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation of resources and very incomplete resource exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human"
+       "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources. The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation of resources and very incomplete resource exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human caused influxes of nutrients."
       ],
       "stem": [
        "According to the author, the theory based on fluctuating resource availability might resolve “apparently conflicting and ambiguous results” because"
@@ -155,7 +236,7 @@
      "img": "2025-02-s5/4-09.webp",
      "txt": {
       "pass": [
-       "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources. The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation of resources and very incomplete resource exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human"
+       "Although many hypotheses have been proposed to explain why some plant communities are more susceptible than others to invasion by nonnative species, results from field studies have been inconsistent and no general theory of invasibility has yet emerged. However, a theory based on fluctuating resource availability could integrate most existing hypotheses and successfully resolve many of the apparently conflicting and ambiguous results of previous studies. The suggested theory is that a plant community becomes more susceptible to invasion whenever there is an increase in the amount of unused resources. The diversity in the range of resource-release mechanisms could partly explain the absence of consistent ecological correlates of invasibility. In particular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation of resources and very incomplete resource exploitation can each occur in both species-rich and species-poor communities. Though Lonsdale found a positive association between species richness and invasion, this may arise from the tendency of diverse plant communities to be nutrient poor and therefore more responsive to the effects of human caused influxes of nutrients."
       ],
       "stem": [
        "The passage treats Lonsdale’s finding as"
@@ -203,7 +284,7 @@
      "img": "2025-02-s5/4-11.webp",
      "txt": {
       "stem": [
-       "cars appear in countless science-fiction movies; indeed, in that context they are sO ____ that they do not get noticed."
+       "Self-driving cars appear in countless science-fiction movies; indeed, in that context they are sO ____ that they do not get noticed."
       ],
       "opts": [
        "unobtrusive",
@@ -248,8 +329,7 @@
      "img": "2025-02-s5/4-13.webp",
      "txt": {
       "pass": [
-       "Pharmaceutical Developer: Until recently, certain bacteria were considered too dangerous for use in vaccines. However, without a particular gene, these bacteria are harmless, and we can now remove the gene from these bacteria. Therefore, vaccines containing these bacteria can now be used safely.",
-       "Scientist: Actually, the safety of such vaccines remains doubtful. Genes often migrate from one strain of bacteria to another, and other strains of bacteria in the human body contain the harmful"
+       "Pharmaceutical Developer: Until recently, certain bacteria were considered too dangerous for use in vaccines. However, without a particular gene, these bacteria are harmless, and we can now remove the gene from these bacteria. Therefore, vaccines containing these bacteria can now be used safely. Scientist: Actually, the safety of such vaccines remains doubtful. Genes often migrate from one strain of bacteria to another, and other strains of bacteria in the human body contain the harmful gene."
       ],
       "stem": [
        "The scientist’s response does which of the following?"
@@ -273,7 +353,7 @@
      "img": "2025-02-s5/4-14.webp",
      "txt": {
       "pass": [
-       "Mark Twain relished the huge cutthroat trout fished from Lake Tahoe but reported them uncommonly difficult to catch. Tahoe’s extraordinary clarity may be one reason: Twain thought it an advantage that he could see the trout but did not realize that they could see him. Light bends when it enters water, rendering floating objects outside a given circle invisible from underwater. The radius of such a circle, known as Snell’s Window, expands with the relative depth of the viewer’s position. The Tahoe cutthroats lived very deep and could have seen Twain’s boat lonq before it came to rest overhead. Moreover, the eyes of trout continue to grow along with their overall body size, and larger eyes,"
+       "Mark Twain relished the huge cutthroat trout fished from Lake Tahoe but reported them uncommonly difficult to catch. Tahoe’s extraordinary clarity may be one reason: Twain thought it an advantage that he could see the trout but did not realize that they could see him. Light bends when it enters water, rendering floating objects outside a given circle invisible from underwater. The radius of such a circle, known as Snell’s Window, expands with the relative depth of the viewer’s position. The Tahoe cutthroats lived very deep and could have seen Twain’s boat lonq before it came to rest overhead. Moreover, the eyes of trout continue to grow along with their overall body size, and larger eyes, having more cones, provide sharper vision."
       ],
       "stem": [
        "Which of the following best describes the function of the highlighted sentence?"
@@ -294,10 +374,24 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s5/4-15.webp"
+     "img": "2025-02-s5/4-15.webp",
+     "txt": {
+      "pass": [
+       "Mark Twain relished the huge cutthroat trout fished from Lake Tahoe but reported them uncommonly difficult to catch. Tahoe’s extraordinary clarity may be one reason: Twain thought it an advantage that he could see the trout but did not realize that they could see him. Light bends when it enters water, rendering floating objects outside a given circle invisible from underwater. The radius of such a circle, known as Snell’s Window, expands with the relative depth of the viewer’s position. The Tahoe cutthroats lived very deep and could have seen Twain’s boat lonq before it came to rest overhead. Moreover, the eyes of trout continue to grow along with their overall body size, and larger eyes, having more cones, provide sharper vision."
+      ],
+      "stem": [
+       "The passage suggests which of the following about Snell’s Window? C It is smaller for viewers in shallow water."
+      ],
+      "opts": [
+       "Its radius is affected by the amount of light entering the water.",
+       "Its size is not correlated with the size of a viewer’s",
+       "eyes"
+      ]
+     }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }

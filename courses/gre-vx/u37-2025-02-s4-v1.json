@@ -23,7 +23,19 @@
      "ans": [
       4
      ],
-     "img": "2025-02-s4/2-01.webp"
+     "img": "2025-02-s4/2-01.webp",
+     "txt": {
+      "stem": [
+       "One of the reasons why so many rodent species live in rocky habitat is because it is. ____: it contains plenty of crevices and cavities in which animals can nest, seek shelter, and find shade."
+      ],
+      "opts": [
+       "ecologically stable",
+       "readily accessible",
+       "hydrologically variable",
+       "topographically complex",
+       "geographically widespread"
+      ]
+     }
     },
     {
      "n": 2,
@@ -36,7 +48,7 @@
      "img": "2025-02-s4/2-02.webp",
      "txt": {
       "stem": [
-       "Though she had some exposure to great art and high culture, it must be said that the ultra-athletic Marion Carstairs remained ____ siiieais her life primarily (i) ____ mental and artistic pursuits. She was by nature (ii)"
+       "Though she had some exposure to great art and high culture, it must be said that the ultra-athletic Marion Carstairs remained throughout her life primarily (i) ____ mental and artistic pursuits. She was by nature (ii) ____ ."
       ],
       "cols": [
        [
@@ -61,7 +73,29 @@
       0,
       2
      ],
-     "img": "2025-02-s4/2-03.webp"
+     "img": "2025-02-s4/2-03.webp",
+     "txt": {
+      "stem": [
+       "Unlike most other serious journals, which drain money from their owners, the Review has long been (i) ____ But the formula is not without its imperfections, which have grown more pronounced in recent years. The publication has always been erudite and (ii) ____ but not always lively and readable. (iii) ____ accompanied by a certain aversion to risk taking, has pervaded its pages for a long time."
+      ],
+      "cols": [
+       [
+        "lucrative",
+        "realistic",
+        "unesteemed"
+       ],
+       [
+        "authoritative",
+        "animated",
+        "trendy"
+       ],
+       [
+        "An originality",
+        "An impulsiveness",
+        "A staleness"
+       ]
+      ]
+     }
     },
     {
      "n": 4,
@@ -73,7 +107,7 @@
      "img": "2025-02-s4/2-04.webp",
      "txt": {
       "pass": [
-       "Early archaeologists studying prehistoric Mesoamerica applied the term “Olmec” to various artifacts of unknown provenance exhibiting an art style distinct from previously known styles of central Mexican cultures. Later, mid-twentieth-century archaeologists began excavating sites in Mexico’s Gulf Coast lowlands, where monumental sculptures with attributes of this distinct style were discovered. Consequently, the Gulf Coast region was identified as the Olmec civilization’s homeland. Thereafter, artifacts exhibiting this style from anywhere beyond the Gulf Coast have been assumed to represent Olmec influence. Although artifact dating is often problematic, Olmec-style objects from outside the homeland are often judged to be either contemporary with Olmec civilization or derived from it. Therefore, some objects are assumed to reflect Olmec origins for"
+       "this Early archaeologists studying prehistoric Mesoamerica applied the term “Olmec” to various artifacts of unknown provenance exhibiting an art style distinct from previously known styles of central Mexican cultures. Later, mid-twentieth-century archaeologists began excavating sites in Mexico’s Gulf Coast lowlands, where monumental sculptures with attributes of this distinct style were discovered. Consequently, the Gulf Coast region was identified as the Olmec civilization’s homeland. Thereafter, artifacts exhibiting this style from anywhere beyond the Gulf Coast have been assumed to represent Olmec influence. Although artifact dating is often problematic, Olmec-style objects from outside the homeland are often judged to be either contemporary with Olmec civilization or derived from it. Therefore, some objects are assumed to reflect Olmec origins for cultural developments in areas outside the Gulf Coast."
       ],
       "stem": [
        "The author mentions “artifact dating” primarily to"
@@ -97,7 +131,7 @@
      "img": "2025-02-s4/2-05.webp",
      "txt": {
       "pass": [
-       "Early archaeologists studying prehistoric Mesoamerica applied the term “Olmec” to various artifacts of unknown provenance exhibiting an art style distinct from previously known styles of central Mexican cultures. Later, mid-twentieth-century archaeologists began excavating sites in Mexico’s Gulf Coast lowlands, where monumental sculptures with attributes of this distinct style were discovered. Consequently, the Gulf Coast region was identified as the Olmec civilization’s homeland. Thereafter, artifacts exhibiting this style from anywhere beyond the Gulf Coast have been assumed to represent Olmec influence. Although artifact dating is often problematic, Olmec-style objects from outside the homeland are often judged to be either contemporary with Olmec civilization or derived from it. Therefore, some objects are assumed to reflect Olmec origins for"
+       "this Early archaeologists studying prehistoric Mesoamerica applied the term “Olmec” to various artifacts of unknown provenance exhibiting an art style distinct from previously known styles of central Mexican cultures. Later, mid-twentieth-century archaeologists began excavating sites in Mexico’s Gulf Coast lowlands, where monumental sculptures with attributes of this distinct style were discovered. Consequently, the Gulf Coast region was identified as the Olmec civilization’s homeland. Thereafter, artifacts exhibiting this style from anywhere beyond the Gulf Coast have been assumed to represent Olmec influence. Although artifact dating is often problematic, Olmec-style objects from outside the homeland are often judged to be either contemporary with Olmec civilization or derived from it. Therefore, some objects are assumed to reflect Olmec origins for cultural developments in areas outside the Gulf Coast."
       ],
       "stem": [
        "It can be inferred from the passage that the “Olmec-style objects”"
@@ -210,7 +244,22 @@
      "ans": [
       1
      ],
-     "img": "2025-02-s4/2-10.webp"
+     "img": "2025-02-s4/2-10.webp",
+     "txt": {
+      "pass": [
+       "The late zoologist Sidnie Manton acknowledged that arthropods—animals with jointed exoskeletons, such as flies, crabs, and spiders—are all descended from soft- bodied segmented worms. Yet he maintained that differences in limb form, musculature, and embryonic development indicate that these three arthropod groups —insects, crustaceans, and chelicerates, respectively— evolved independently from worms rather than from a common arthropod ancestor. Consequently, according to Manton, shared characteristics such as a jointed exoskeleton and large compound eyes represent cases of convergent evolution—similar yet independent developments—in these organisms. But if they evolved convergently, then one would expect significant differences in the neurological systems supporting sight. In fact, however, many nerve cells play virtually identical roles in supporting complex visual responses in both insects and crustaceans, suggesting that their common ancestor already possessed highly developed eyes, and therefore was probably already an arthropod. Yet the compound eyes of chelicerates differ neurologically from those of insects and crustaceans, suggesting that the eyes of chelicerates did evolve independently and providing partial confirmation of Manton’s views."
+      ],
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explain how insects and crustaceans differ from chelicerates",
+       "evaluate an account of the evolution of various types of arthropods",
+       "illustrate a case of convergent evolution among different types of arthropods",
+       "discuss various physiological features of insects, crustaceans, and chelicerates",
+       "identify underlying similarities in two contrasting theories regarding the evolution of certain arthropods"
+      ]
+     }
     },
     {
      "n": 11,
@@ -219,7 +268,22 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s4/2-11.webp"
+     "img": "2025-02-s4/2-11.webp",
+     "txt": {
+      "pass": [
+       "The late zoologist Sidnie Manton acknowledged that arthropods—animals with jointed exoskeletons, such as flies, crabs, and spiders—are all descended from soft- bodied segmented worms. Yet he maintained that differences in limb form, musculature, and embryonic development indicate that these three arthropod groups —insects, crustaceans, and chelicerates, respectively— evolved independently from worms rather than from a common arthropod ancestor. Consequently, according to Manton, shared characteristics such as a jointed exoskeleton and large compound eyes represent cases of convergent evolution—similar yet independent developments—in these organisms. But if they evolved convergently, then one would expect significant differences in the neurological systems supporting sight. In fact, however, many nerve cells play virtually identical roles in supporting complex visual responses in both insects and crustaceans, suggesting that their common ancestor already possessed highly developed eyes, and therefore was probably already an arthropod. Yet the compound eyes of chelicerates differ neurologically from those of insects and crustaceans, suggesting that the eyes of chelicerates did evolve independently and providing partial confirmation of Manton’s views."
+      ],
+      "stem": [
+       "It can be inferred that the author of the passage and Manton would be most likely to disagree over which of the following claims?"
+      ],
+      "opts": [
+       "Insects and crustaceans are both descended from segmented worms.",
+       "Insects and crustaceans each have unique limb form, musculature, and embryonic development.",
+       "The compound eyes of insects and crustaceans are a case of convergent evolution.",
+       "None of the characteristics common to insects and crustaceans can be found in segmented worms.",
+       "Insects and crustaceans are the most closely related of all the arthropod groups."
+      ]
+     }
     },
     {
      "n": 12,
@@ -228,10 +292,26 @@
      "ans": [
       0
      ],
-     "img": "2025-02-s4/2-12.webp"
+     "img": "2025-02-s4/2-12.webp",
+     "txt": {
+      "pass": [
+       "The late zoologist Sidnie Manton acknowledged that arthropods—animals with jointed exoskeletons, such as flies, crabs, and spiders—are all descended from soft- bodied segmented worms. Yet he maintained that differences in limb form, musculature, and embryonic development indicate that these three arthropod groups —insects, crustaceans, and chelicerates, respectively— evolved independently from worms rather than from a common arthropod ancestor. Consequently, according to Manton, shared characteristics such as a jointed exoskeleton and large compound eyes represent cases of convergent evolution—similar yet independent developments—in these organisms. But if they evolved convergently, then one would expect significant differences in the neurological systems supporting sight. In fact, however, many nerve cells play virtually identical roles in supporting complex visual responses in both insects and crustaceans, suggesting that their common ancestor already possessed highly developed eyes, and therefore was probably already an arthropod. Yet the compound eyes of chelicerates differ neurologically from those of insects and crustaceans, suggesting that the eyes of chelicerates did evolve independently and providing partial confirmation of Manton’s views."
+      ],
+      "stem": [
+       "It can be inferred from the passage that Manton believed which of the following about the “shared characteristics” mentioned in the passage?"
+      ],
+      "opts": [
+       "The shared characteristics are not all present in any single ancestor of these three arthropod groups.",
+       "The shared characteristics could be used to determine which of these three arthropod groups gave rise to the other two arthropod groups.",
+       "The shared characteristics are a good indication that all three groups of arthropods descended from segmented worms.",
+       "The shared characteristics are the most compelling evidence to date for the theory of convergent evolution.",
+       "The shared characteristics do not justify classifying all three animal groups as arthropods."
+      ]
+     }
     }
    ]
   }
  ],
- "references": []
+ "references": [],
+ "answerFormat": "gre-vx-text-v2"
 }
