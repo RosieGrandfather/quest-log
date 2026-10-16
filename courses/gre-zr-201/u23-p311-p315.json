@@ -1,0 +1,302 @@
+{
+ "id": "u23-p311-p315",
+ "title": "阅读 23 · Passage 311–315（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 311–315",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 311–315",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p311": {
+     "number": 311,
+     "paragraphs": [
+      "Victorian literature is much preoccupied with the social and moral effects of nineteenth-century capitalism, and literary critics long tended to address this preoccupation from an explicitly anticapitalist point of view, focusing particularly on Victorian novels’ depictions of poverty, economic disparity, exploitation, and greed. However, in 1990s, scholars’ inclination to take an explicitly critical stance toward capitalism in their studies of literature diminished, and a new body of scholarship emerged that is devoted to exploring, less polemically, the many ways in which literature reflects Victorian capitalism and its impact on individual lives.",
+      "This new work has caused some astonishment. In one essay, Rose remarked, “We are witnessing the emergence of something quite unprecedented—a capitalist criticism” and then suggested that literary criticism concerned with aspects of capitalism but not explicitly anticapitalist must be implicitly procapitalist. Yet Rose’s response derives more from the assumption that an illuminating analysis of literature will, of necessity, entail a critique of capitalism than from evidence in the works Rose discusses, which treat capitalism simply as a fact of life. Insofar as we can define a new movement within literary studies it would be misleading to call it capitalist criticism. Rather, much of this new work is looking to uncover neglected aspects of Victorian culture."
+     ],
+     "highlights": [
+      "preoccupation",
+      "new body of scholarship"
+     ]
+    },
+    "p312": {
+     "number": 312,
+     "paragraphs": [
+      "Editorial",
+      "Opponents of a proposal to extend the city's subway line to two new stations claim that the project will benefit only a small portion of the city’s population. These opponents are misguided. After all, the last time the line was extended, the greater availability of quick transport to the city reduced the number of private cars or city streets, thus benefiting everyone by easing rush-hour traffic."
+     ],
+     "highlights": [
+      "the project will benefit only a small portion of the city’s population."
+     ]
+    },
+    "p313": {
+     "number": 313,
+     "paragraphs": [
+      "While export prices remained robust, British India’s Tea CessCommittee (TCC) made only sporadic, small-scale attempts to create demand for tea in India by giving away pre-brewed cups in selected locations and selling small packets of leaf fragments. Still, by 1930 only a fraction of the Indian population had tasted tea, and more than 90 percent of the crop was exported. The Great Depression decisively changed the picture, however. International tea prices plunged, and by 1935 growers faced an unsold surplus of more than a hundred million pounds. The prospect of a huge “uninitiated” market suddenly seemed appealing, and the TCC, reorganized as the Indian Tea Market Expansion Board (ITMEB) and provided with an expanded budget, began the largest marketing campaign in Indian history."
+     ],
+     "highlights": [
+      "small packets of leaf fragments."
+     ]
+    },
+    "p314": {
+     "number": 314,
+     "paragraphs": [
+      "Since the 1970s, there has been a movement in African literary studies toward the recognition of national literatures in newly independent African states, such as Cameroon, Senegal, and Benin. But while in some of these national literatures there has undoubtedly emerged a sense of corporate identity, often marked by clear thematic and formal progressions, it remains an incontrovertible fact that the European languages in which these literatures are expressed have only an official acceptance: they are neither indigenous to the cultures on which they have been imposed, nor are they national in any real sense of the word. This must limit the claims of any of these literatures to national significance, however abundant the corpus or coherent the internal configurations."
+     ],
+     "highlights": [
+      "they are neither indigenous to the cultures on which they have been imposed, nor are they national in any real sense of the word."
+     ]
+    },
+    "p315": {
+     "number": 315,
+     "paragraphs": [
+      "Unlike most plants, cactuses absorb carbon dioxide from the air mainly at night. Night air contains greater quantities of certain types of carbon than does daytime air. Consequently, these types of carbon are more common in cactuses than in most other plants. Quintral plants, however, which grow as parasites on cactuses, contain nearly the same proportions of these types of carbon as cactuses. Therefore, quintral plants probably take significant quantities of carbon from their cactus hosts, since ______."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p311",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would be most likely to agree with which of the following statements about the “preoccupation”?"
+      ],
+      "opts": [
+       "It is an important aspect of Victorian literature that was largely neglected by scholars until the 1990s",
+       "It is a less dominant aspect of Victorian literature than has been claimed by critics who take an explicitly anticapitalist position in their work",
+       "It has been treated somewhat dismissively by critics who do not regard an examination of capitalismas an important aspect of literary criticism",
+       "It is evident in a more diverse range of representations of capitalism in Victorian fiction than many critics have acknowledged.",
+       "It has mistakenly been ascribed to some Victorian authors whose views of capitalism diverge from those of anticapitalist literary critics"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p311",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about the \"new body of scholarship\"?"
+      ],
+      "opts": [
+       "It takes no interest in the social and moral effects of nineteenth-century capitalism.",
+       "It is less methodologically sophisticated than the body of scholarship that it has superseded.",
+       "It involved a reinterpretation of representations of economic disparity and poverty in Victorian literature.",
+       "It emerged in response to the availability of new evidence about nineteenth-century economic conditions.",
+       "It has resulted in a broader consensus among scholars of Victorian literature than had existed prior to the 1990s."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p311",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred that Rose would disagree with the author of the passage about whether"
+      ],
+      "opts": [
+       "The movement that emerged in literary studies in the 1990s was motivated by anticapitalist sentiment",
+       "Victorian authors displayed ambivalence about capitalism in their works",
+       "recent literary criticism implicitly makes value judgments about Victorian capitalism",
+       "literary representations of economic conditions offer reliable evidence about past social conditions",
+       "literary critics should be concerned with the social conditions under which literary works are produced"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p311",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "suggest that a particular debate among literary critics has distorted their perceptions ofVictorian literature",
+       "describe and clarify the nature of a change in the direction of scholarship on Victorian literature",
+       "contrast two approaches to Victorian literature and suggest that one is preferable to the other",
+       "characterize a particular approach to Victorian literature and explain why the influence of that approach has diminished",
+       "note an apparent contradiction between a particular aspect of Victorian literature and the way it has been treated by literary critics"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p312",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument in the editorial, the part that is highlighted plays which of the following roles?"
+      ],
+      "opts": [
+       "stating the conclusion toward which the argument is directed",
+       "describing a circumstance that the argument seeks to explain",
+       "introducing the position to be refuted by the argument",
+       "serving as an intermediate conclusion that supports a further conclusion stated in the argument",
+       "introducing an explanation that is called into question by the argument"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p313",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests that “small packets of leaf fragments” were"
+      ],
+      "opts": [
+       "preferred by Indian consumers over other forms of tea",
+       "too valuable to be sold in large packets to consumers",
+       "marketed in response to a local surplus of unsold tea leaves",
+       "likely to sell for high prices if exported",
+       "an ineffective way to expand the local tea market"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 7,
+     "passage": "p313",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the Tea Cess Committee reorganized as the Indian Tea Market Expansion Board in order to"
+      ],
+      "opts": [
+       "appeal to Indian consumers’ sense of national identity",
+       "escape the TCC's reputation for selling low-quality tea",
+       "increase the prestige of tea by emphasizing its exotic origins",
+       "receive a larger budget for marketing tea in India",
+       "respond to economic conditions created by the Great Depression"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p314",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, certain African literatures have"
+      ],
+      "opts": [
+       "undergone significant changes since the 1970s",
+       "flourished as a result of governmental support",
+       "been directed primarily at non-African audiences",
+       "avoided openly discussing sensitive cultural issues",
+       "achieved a degree of internal cohesiveness"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 9,
+     "passage": "p314",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The highlighted portion of the passage serves primarily to"
+      ],
+      "opts": [
+       "support a conclusion stated later in the passage",
+       "qualify an assertion presented earlier in the passage",
+       "suggest an explanation for an anomaly mentioned in the passage",
+       "offer a tentative answer to a question raised in the passage",
+       "justify the use of a term introduced earlier in the passage"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 10,
+     "passage": "p315",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "in the desert climates where cactuses grow, carbon dioxide is significantly more abundant in the air during the day than at night",
+       "cactuses that have quintral plants growing as parasites on them do not absorb as much carbon dioxide from the air as do cactuses of comparable size that are free of parasites",
+       "quintral plants are the only kind of parasites that grow on such kinds of cactuses",
+       "in areas where quintral plants are common, individual cactuses often have several such plants growing on them",
+       "nearly all of the carbon dioxide absorbed from the air by quintral plants is absorbed during the day"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

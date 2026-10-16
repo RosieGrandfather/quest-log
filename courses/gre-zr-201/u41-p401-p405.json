@@ -1,0 +1,298 @@
+{
+ "id": "u41-p401-p405",
+ "title": "阅读 41 · Passage 401–405（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 401–405",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 401–405",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p401": {
+     "number": 401,
+     "paragraphs": [
+      "Accepted dogma holds that architecture developed subsequent to agriculture because of the need for storage of domesticated crops and animals. Yet storage technology must have been present before people domesticated animals and plants. Enclosure must also have been present; if you have animals or plants suitably separated by a border, fence, or corral, then you have the means to control their breeding. It does not matter how much you know about hybridization or crossbreeding; to preserve and continue what you have done, some sort of barrier is the absolute prerequisite. Experiments, or lucky findings, have to be repeated if they are to be successful, in which case there must be a special place where what has been achieved can be preserved."
+     ],
+     "highlights": [
+      "border, fence, or corral,"
+     ]
+    },
+    "p402": {
+     "number": 402,
+     "paragraphs": [
+      "Over the last 20 years, both the total amount of grain produced in Andesara and the total amount of grain consumed by the Andesaran population have increased. Over the same period, however, although the amount of grain produced has increased more than the total amount of grain consumed by Andesara’s inhabitants has increased, Andesara has gone from exporting more grain than it imports to importing more grain than it exports."
+     ],
+     "highlights": []
+    },
+    "p403": {
+     "number": 403,
+     "paragraphs": [
+      "Modern scholarship’s view of women’s labor in Han dynasty China(206B.C.- A.D. 220) shows women performing a wide variety of work roles. According to most modern scholars, for a household (the main economic organization in early Chinese society) to succeed economically, a man and a woman each had to work at many different kinds of gendered tasks. In contrast, writers during the Han dynasty, rather than emphasizing the multitude of daily tasks women performed, constructed an idealized representation of female labor, singling out cloth production as the most important job and linking it to the concept of successful womanhood. In reality, however, a woman who devoted herself to making cloth, ignoring other work, would have been considered irresponsible."
+     ],
+     "highlights": [
+      "representation"
+     ]
+    },
+    "p404": {
+     "number": 404,
+     "paragraphs": [
+      "A significant proportion of meteorites contain chondrules , small, glassy silicate spheres. The importance of chondrules is that they show that at some time the temperature was so high that the chondrule material was vaporized. The vapor then cooled quickly and the liquid silicates, condensing out of the vapor, formed small silicate spheres under the influence of surface tension. When these spheres solidified, they were incorporated into silicate fragments, and the material was eventually compressed into rock by gravitational forces. The fact that the chondrules cooled very quickly is revealed by the composition of the minerals within them. In the vapor phase, whole minerals would not have existed, but there would have been components that, combined in various ways, can form different minerals. Combinations of these components produced an initial collection of minerals within chondrules when they formed and, while the silicate was hot, the components changed partners to form more stable minerals-meaning ones of lower energy. Given enough time, the minerals in chondrules would have had the lowest possible energy consistent with using all available components; the mixture of minerals would then be equilibrated. However, the mixtures of minerals in chondrules are nonequilibrated一corresponding to a total energy far greater than the minimum possible. This shows that the chondrules became solid and cooled so quickly that the nonequilibrated state became frozen in, since individual components did not have enough energy to jostle their way through the material to form more stable minerals."
+     ],
+     "highlights": [
+      "In the vapor phase, whole minerals would not have existed, but there would have been components that, combined in various ways, can form different minerals."
+     ]
+    },
+    "p405": {
+     "number": 405,
+     "paragraphs": [
+      "Willa Cather’s ability to adopt different narrative personae in her fiction was significantly informed by her earlier journalistic writings, in which she used pseudonyms to navigate between a feminized domestic sphere and a masculinized professional sphere, widening her audience appeal. But Cather grew much more ambivalent about her magazine work as she began to write fiction: while early on journalism was crucial to her financial independence and vital to the cultivation of her developing writing skills, she eventually saw it as a threat to her artistic autonomy as a writer of literary fiction. It may thus not be surprising that the same author who claimed that writing \"has to be gone at like any other trade\" would also condemn journalism as the \"vandalism of literature.\""
+     ],
+     "highlights": [
+      "ability to adopt different narrative personae"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p401",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would be most likely to agree with which of the following assertions about agriculture?"
+      ],
+      "opts": [
+       "Early agriculture was not highly dependent on the ability of humans to hybridize plants.",
+       "Agriculture required people to develop tools that subsequently contributed to early experiments in architecture.",
+       "The advent of agriculture was an essential prerequisite for people to develop technologies for building enclosures and storage areas.",
+       "The beginnings of agriculture depended less on experiments and luck than adherents of the accepted dogma appear to believe.",
+       "The development of agriculture depended on people’s ability to segregate spaces in which plant and animal breeding could be controlled."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p401",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions a \"border, fence, or corral\" primarily to"
+      ],
+      "opts": [
+       "acknowledge a plausible aspect of the accepted dogma",
+       "illustrate a point that is being made",
+       "introduce evidence for a conclusion set out in the following sentence",
+       "anticipate an objection to the author’s central argument",
+       "establish a distinction between storage and enclosure"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p402",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In light of the information given, which of the following, if true, most helps to account for Andesara’s now importing more grain than it exports?"
+      ],
+      "opts": [
+       "The population of Andesara is substantially larger today than it was twenty years ago.",
+       "The proportion of Andesara’s annual grain production that is exported to neighboring countries is substantially smaller today than it was twenty years ago.",
+       "The proportion of Andesara’s annual grain production that is fed to cattle is substantially greater today than it was twenty years ago.",
+       "The proportion of Andesarans for whom grain is a major component of their diet is substantially smaller today than it was twenty years ago.",
+       "In some countries to which Andesara once exported grain, agricultural advances during the last twenty years have led to dramatic increases in food production."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p403",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true of Han dynasty writers' attitudes toward women and cloth production?"
+      ],
+      "opts": [
+       "These writers presented cloth production as a woman’s most important job.",
+       "These writers believed that women who devoted significant time to tasks other than cloth production were irresponsible.",
+       "These writers linked cloth production with the concept of successful womanhood."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 5,
+     "passage": "p403",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, \"representation\" most nearly means"
+      ],
+      "opts": [
+       "substitution",
+       "depiction",
+       "symbol",
+       "statement",
+       "reproduction"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p404",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that if a newly formed chondrule were to cool slowly, then"
+      ],
+      "opts": [
+       "its surface tension would be dissipated",
+       "it would be less susceptible to compression by gravitational forces",
+       "it would contain different minerals than if it had cooled quickly",
+       "its final mixture of minerals would closely resemble the initial collection",
+       "its components would lack sufficient energy to form minerals"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p404",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, chondrules are significant because they"
+      ],
+      "opts": [
+       "facilitate a better understanding of the chemical properties of silicates",
+       "explain why silicate fragments are common in meteorites",
+       "illuminate the interactions between chemical and gravitational forces",
+       "provide information about the mineral components present at the time of their formation",
+       "point to episodes involving extremely high temperatures"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p404",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "It describes a condition that is required for a critical process discussed in the passage.",
+       "It discusses an empirical possibility that is ruled out later in the passage.",
+       "It presents evidence that confirms a suggestion made earlier in the passage.",
+       "It helps reconcile two seemingly contradictory findings described in the passage.",
+       "It outlines a feature common to several physical processes mentioned in the passage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p405",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "examine the role of journalism in Cather’s success as a writer",
+       "suggest that Cather’s journalism made her fiction writing possible",
+       "reveal the sources of Cather’s financial independence",
+       "discuss Cather’s conflicted attitude toward journalism",
+       "document the evolution of Cather’s writing style"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p405",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage discusses Cather’s \"ability to adopt different narrative personae\" primarily in order to"
+      ],
+      "opts": [
+       "show how Cather’s fiction writing differed from her journalism",
+       "explain why Cather made statements that may appear contradictory",
+       "describe how Cather benefited from her work as a journalist",
+       "examine some of Cather’s strengths as a writer",
+       "consider how Cather matured as a writer"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

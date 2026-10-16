@@ -1,0 +1,386 @@
+{
+ "id": "u01-p201-p205",
+ "title": "阅读 01 · Passage 201–205（5篇 · 14题）",
+ "en": "Reading Comprehension — Passages 201–205",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 201–205",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p201": {
+     "number": 201,
+     "paragraphs": [
+      "Pueblo Bonito, the most impressive of the “great houses” at the prehistoric Chaco Canyon site in New Mexico, comprised over 600 rooms and 4 to 5 stories. Traditional interpretations have viewed the great houses as almost entirely residential, with some archaeologists estimating the population of Pueblo Bonito at 1,200. But Windes recently challenged this view by pointing out the paucity of hearths recorded during the excavation of Pueblo Bonito, which revealed only 3 upper-story hearths, in contrast to 59 ground-floor hearths: habituation rooms would have required hearths for cooking and heat. It is possible, however, that the collapse of upper-story floors disturbed evidence of upper-story hearths to such an extent that they were not revealed by early excavations such as those conducted by Pepper’s field crews in the 1890s and Judd’s in the 1920s. Additionally, reliance on room features for early population estimates is complicated by the Chacoan’s later remodeling, especially given Judd’s disinclination to destroy later structures and features to expose earlier ones. The failure of early excavations to strip off intact floors may have concealed evidence of hearths in upper-story rooms."
+     ],
+     "highlights": []
+    },
+    "p202": {
+     "number": 202,
+     "paragraphs": [
+      "Since the 1970s, archaeological sites in China’s Yangtze River region have yielded evidence of sophisticated rice-farming societies that predate signs of rice cultivation elsewhere in East Asia by a thousand years. Before this evidence was discovered, it had generally been assumed that rice farming began farther to the south. This scenario was based both on the geographic range of wild or free-living rice, which was not thought to extend as far north as the Yangtze, and on archaeological records of very early domestic rice from Southeast Asia and India (now known to be not so old as first reported). Proponents of the southern-origin theory point out that early rice-farming societies along the Yangtze were already highly developed and that evidence for the first stage of rice cultivation is missing. They argue that the first hunter-gatherers to develop rice agriculture must have done so in this southern zone, within the apparent present-day geographic range of wild rice.",
+      "Yet while most strands of wild rice reported in a 1984 survey were concentrated to the south of the Yangtze drainage, two northern outlier populations were also discovered in provinces along the middle and lower Yangtze, evidence that the Yangtze wetlands may fall within both the present-day and the historical geographic ranges of rice’s wild ancestor."
+     ],
+     "highlights": []
+    },
+    "p203": {
+     "number": 203,
+     "paragraphs": [
+      "The disappearance of Steller’s sea cow from the Bering and Copper islands by 1768 has long been blamed on intensive hunting. But its disappearance took only 28 years from the time Steller first described the species, a remarkably short time for hunting alone to depopulate the islands, especially given the large populations initially reported. However, by 1750, hunters had also targeted nearby sea otter populations. Fewer otters would have allowed sea urchin populations on which the otters preyed to expand and the urchins’ grazing pressure on kelp forests to increase. Sea cows were totally dependent on kelp for food, and within a decade of the onset of otter hunting. Steller noted that the islands’ sea cows appeared malnourished."
+     ],
+     "highlights": []
+    },
+    "p204": {
+     "number": 204,
+     "paragraphs": [
+      "The conventional story of the American colonists’ revolt against Britain holds that the founders of the United States established a form of government that, although flawed by its leaders’ failure to recognize the rights of women and African Americans, was nevertheless unsurpassed in its promise of human equality. There is, however, a cynical counterstory, which details the founders’ lust for property and their crass manipulation of the colonial population, and characterizes leaders like Thomas Jefferson as having wielded promises of equality merely as deceptive tools, discarded once the Revolution was won, and as having deliberately allowed the United States to be governed by a small, powerful elite. Both of these stories assume that a homogeneous revolutionary leadership employed an equally homogeneous egalitarian discourse to justify its actions. Even a cursory examination of the public discourse from the period, however, makes it clear that the leadership was anything but homogeneous in its discourse, and that overall the relative emphasis placed on the words “liberty” and “property” was far greater than that placed on “equality”."
+     ],
+     "highlights": [
+      "overall the relative emphasis placed on the words “liberty” and “property” was far greater than that placed on “equality”."
+     ]
+    },
+    "p205": {
+     "number": 205,
+     "paragraphs": [
+      "Zora Neale Hurston's 1942 autobiography, Dust Tracks on a Road, has received some of the most negative criticism of any of Hurston’s books. Among critics’ complaints—some from Hurston's warmest admirers—is the work’s fragmentary nature, a nature which, while presented in other Hurston’s texts, including the universally acclaimed novel Their Eyes Were Watching God, is particularly conspicuous in Dust Tracks. The complaints about Dust Tracks are valid if one insists on the cardinal conventions of autobiography: traditional autobiographical structure and formal organization, and a focused projection of the autobiographical persona. But Dust Tracks portrays a persona that resists reduction to a coherent unity—a person of many moods who is in tension with the world in which she moves. In order to correspond better to this persona, Dust Tracks focuses on the fragmented life of Hurston’s imagination: the psychological dynamics of her family, community stories, and characters of friends."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p201",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage would be most likely to agree with which of the following statements about Windes’ argument?"
+      ],
+      "opts": [
+       "It relies on evidence that is irrelevant to the examination of structures as large as Pueblo Bonito.",
+       "It fails to acknowledge crucial evidence from great houses other than Pueblo Bonito.",
+       "It fails to incorporate crucial evidence from excavations before the 1920s.",
+       "It is based on a false notion about the significance of hearths.",
+       "It is based on evidence that may be incomplete."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p201",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Windes would be most likely to agree with which of the following statements about room usage in Pueblo Bonito?"
+      ],
+      "opts": [
+       "Upper-story rooms were rarely used as storage areas.",
+       "Rooms that were remodeled were most likely to have been residential rooms.",
+       "The majority of residential rooms were located on the ground floor.",
+       "Early excavations of Pueblo Bonito disturbed much of the evidence indication room usage.",
+       "Upper-story rooms with hearths were probably used for different purposes than were lower story rooms with hearths."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p201",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred about the excavation work performed by Judd’s field crew?"
+      ],
+      "opts": [
+       "It did not unearth many room features that existed prior to Chacoan remodeling.",
+       "It did not unearth any evidence of upper-story hearths.",
+       "It revealed only habitation rooms.",
+       "It resulted in the collapse of some room features and upper-story floors.",
+       "It confirmed traditional population estimates for Pueblo Bonito."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p202",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would most clearly undermine the conclusion that the author makes based on the 1984 survey?"
+      ],
+      "opts": [
+       "Areas south of the Yangtze basin currently have less wild-rice habitat than they once did.",
+       "Surveys since 1984 have shown wild rice populations along the upper Yangtze as well as along the middle and lower Yangtze.",
+       "The populations of wild rice along the Yangtze represent strains of wild rice that migrated to the north relatively recently.",
+       "Early rice-farming societies along the Yangtze were not as highly developed as archaeologists once thought.",
+       "In East Asia, the historical geographic range of wild rice was more extensive than the present-day geographic range is."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p202",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Based on the passage, skeptics of the idea that rice cultivation began in the Yangtze River region pointed to which of the following for support?"
+      ],
+      "opts": [
+       "lack of evidence supporting the existence of rice-farming societies along the Yangtze at an early date",
+       "lack of evidence regarding the initial stages of rice cultivation in the Yangtze region",
+       "recent discoveries pertaining to the historical geographic range of rice's wild ancestor",
+       "new information regarding the dates of very early domestic rice from Southeast Asia",
+       "new theories pertaining to how hunter-gatherers first developed rice agriculture in East Asia"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p202",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about the “southern-origin theory?”"
+      ],
+      "opts": [
+       "The theory is based on an unconventional understanding of how hunter-gatherers first developed rice agriculture.",
+       "The theory fails to take into account the apparent fact that evidence for the first stage of rice cultivation in the north is missing.",
+       "The theory was developed primarily in response to a 1984 survey of wild rice’s geographic range.",
+       "Reassessment of the dates of some archaeological evidence has undermined support for the theory.",
+       "Evidence of sophisticated rice-farming societies in the Yangtze region provides support for the theory."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p203",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about kelp forests in the Bering and Copper is lands between 1750 and 1768?"
+      ],
+      "opts": [
+       "They were reduced significantly.",
+       "They disappeared entirely from the region.",
+       "They were the primary food source for sea otters.",
+       "They were harvested in record numbers by humans.",
+       "They increased pressure on sea urchin populations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p203",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, it is likely that during the mid-1700s, sea urchin populations near the Bering and Copper islands"
+      ],
+      "opts": [
+       "were diminished by sea cow predation.",
+       "experienced substantial increases.",
+       "migrated to waters with more plentiful food supplies.",
+       "were reduced by the pressures of hunting.",
+       "appeared to be malnourished."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 9,
+     "passage": "p204",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage implies that an examination of public discourse from the Revolutionary period shows that the"
+      ],
+      "opts": [
+       "revolutionary leadership was homogeneous in its attempts to justify its actions.",
+       "revolutionary leaders were more concerned with liberty and property than with equality.",
+       "revolutionary leaders initially desired to provide freedom and wealth for all colonial citizens.",
+       "colonial population was cynically manipulated into supporting the revolutionary leadership.",
+       "conventional story that the revolutionary leadership ignored the rights of women and African Americans is wrong."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 10,
+     "passage": "p204",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following best summarizes the primary difference between two accounts of the American Revolution?"
+      ],
+      "opts": [
+       "The first account acknowledges the failure of the revolutionary leaders to recognize the rights of women and African Americans, while the second does not address the issue of equal rights.",
+       "The first account claims that the government succeeded in its goal of providing equal rights for all of the colonists, while the second reports that the new nation was governed by a small, powerful elite.",
+       "The first account employs traditional historical scholarship and sources, while the second reports that new nation was governed by a small, powerful elite.",
+       "The first account suggests that the revolutionary leaders sincerely promised equality, while the second reports that the leaders’ false promises of equality were a deceptive means of gaining colonists’ support.",
+       "The first account does not address the issue of public discourse, while the second describes how public discourse shaped the outcome of the Revolutionary War."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p204",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "A subsequent research uncovered the following materials, which of them would most clearly call into question the position taken by the author in the highlighted portion"
+      ],
+      "opts": [
+       "A speech given by Thomas Jefferson during the Revolutionary War in which he speaks about the Revolution’s goal of providing all citizens with equal access to property.",
+       "Written statements by British leaders of the Revolutionary period revealing that the British monarchy continually warned its colonial subjects that the revolutionary leaders were making false promises of liberty and equality in order to gain support.",
+       "Unpublished essays by major revolutionary leaders contradicting one another with regard to the Revolution’s position on human equality.",
+       "The diaries of revolutionary leaders revealing that the goals of the revolution were defined differently by different people and the leaders of the new government embraced many different ideals and principles.",
+       "A series of leaflets written by various revolutionary leaders and distributed widely among the colonial population detailing the Revolution’s consistent dedication to the principles of human equality."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 12,
+     "passage": "p205",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explain why Dust Tracks has been less well received than other similarly structured works by Hurston.",
+       "argue that a supposed deficiency in Dust Tracks actually contributes to the work’s presentation of its subject.",
+       "compare the critical reaction to Dust Tracks with the critical reaction to Their Eyes Were Watching God.",
+       "point out specific similarities between the structure of Dust Tracks and the structure of Hurston’s other works.",
+       "suggest that some critics’ evaluations of Dust Tracks is influenced by their rejection of certain conventions of autobiography."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 13,
+     "passage": "p205",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage suggests that critics’ complaints about the structure of Dust Tracks are"
+      ],
+      "opts": [
+       "not valid, because Dust Tracks should not be judged by the standards of conventional autobiography.",
+       "unjustified, because they have not been directed at other Hurston texts that are similarly structured.",
+       "justified, given the extent to which Dust Tracks is autobiographical.",
+       "inexplicable, given the critical response to Their Eyes Were Watching God.",
+       "compelling, because Huston’s warmest admirers have complained the most strenuously."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 14,
+     "passage": "p205",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the organization of the passage?"
+      ],
+      "opts": [
+       "A situation is presented and an explanation of how that situation developed is offered.",
+       "Two opposing points of view are contrasted and their relative merits are evaluated.",
+       "An orthodox view is discussed, a challenge to it is analyzed, and the original view is affirmed.",
+       "A point of view is described and an analysis challenging that point of view follows.",
+       "A dispute is analyzed and several points of agreement between the two sides are identified."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

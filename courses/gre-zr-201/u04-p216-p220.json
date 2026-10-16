@@ -1,0 +1,327 @@
+{
+ "id": "u04-p216-p220",
+ "title": "阅读 04 · Passage 216–220（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 216–220",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 216–220",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p216": {
+     "number": 216,
+     "paragraphs": [
+      "Favorable environments do not necessarily lead to the occurrence of plant cultivation. South China is warmer and moister than North China and the Yangtze Basin, with wild rice and highly abundant natural resources. Yet archaeological data indicate that cereal cultivation did not occur in this region until approximately 7,000 to 6,500 years ago. This cultivation was likely a result of cultural contact with and expansion from the Yangtze Basin. Clearly, environmental factors were important for the occurrence of cultivation in China, but were not the absolute determining factors. While incipient cultivation might occur in areas of relatively abundant resources, it may not occur in areas of very abundant resources, such as South China, where foraging might be a more efficient way of life."
+     ],
+     "highlights": []
+    },
+    "p217": {
+     "number": 217,
+     "paragraphs": [
+      "Wildcats are improbable candidates for domestication. Like all felids [cats], wildcats are obligate carnivores, meaning they have a limited metabolic ability to digest anything except proteins. Wildcats live a solitary existence and defend exclusive territories, making them more attached to places than to people. Furthermore, cats do not perform directed tasks and their actual utility is debatable; even as mousers, in this latter role, terrier dogs and ferrets are preferable. Accordingly, there is little reason to believe an early agricultural community would have sought out and selected the wildcat as a house pet. Rather, the best inference is that wildcats exploiting human environments were simply tolerated by people and, over time and space, they gradually diverged from their “wild” relatives."
+     ],
+     "highlights": [
+      "Accordingly, there is little reason to believe an early agricultural community would have sought out and selected the wildcat as a house pet."
+     ]
+    },
+    "p218": {
+     "number": 218,
+     "paragraphs": [
+      "George Milner cites three primary problems with the labeling of Cahokia, the large archaeological site by the Mississippi River, as a state rather than a chiefdom. First, finds at Cahokia are essentially similar to finds at other Mississippian chiefdoms, except that the amount of earth moved in building the mounds at Cahokia was greater than elsewhere. Second, fewer people lived at Cahokia than is commonly estimated (Milner estimates that there were only a few thousand inhabitants, more common estimates are 10,000 or 20,000 inhabitants); therefore, extensive taxes, trade, and tribute were not necessary to support them. Finally, while there is evidence of extensive earth movement, craftwork, trade, and elite at Cahokia, this does not indicate that Cahokia was politically centralized, economically specialized, or aggressively expansionistic."
+     ],
+     "highlights": []
+    },
+    "p219": {
+     "number": 219,
+     "paragraphs": [
+      "Ecologists had assumed that trees in the consistently warm tropics grew at a slow but steady rate, unvarying from year to year. However, a study at La Selva, Costa Rica, showed that trees grew less in hotter years and more in cooler ones: between 1984 and 2000, dramatic differences occurred in the six species of trees studies, with trees adding twice as much wood in some cooler years as they did in the scorching El Nino year of 1997-1998. Because tree growth is an index of the balance between photosynthesis, in which trees absorb carbon dioxide (CO ) from the 2 atmosphere and release oxygen, and respiration, in which the opposite occurs, the La Selva data were the first hint that rapidly rising global temperatures, driven by human-generated emissions of CO , may be pushing tropical forests to release more CO , thereby intensifying global warming. 2 2 This raised serious questions about a popular theory that tropical forests act as a sponge, soaking up much of the excess CO that humans pump into the atmosphere. The La Selva data are 2 consistent with a model of global CO flux developed by Keeling, who concluded that the amount 2 of CO taken up in tropical landmasses rose in cooler years and fell in hotter ones, accounting for 2 year-to-year changes in the amount of CO that stays in the atmosphere. 2"
+     ],
+     "highlights": []
+    },
+    "p220": {
+     "number": 220,
+     "paragraphs": [
+      "In the 2,000-year period immediately before European contact, many native groups of the Northern Plains of North America specialized in big-game hunting, subsisting primarily on bison. Bison routinely became fat-depleted in the spring, reducing their nutritional value, yet these groups did not supplement their diets with the nutritious, fat-rich fish that were abundantly available. Malainey et al. find a possible explanation in late-eighteenth and early-nineteenth century accounts from three frontiersmen who had adapted to lean-meat diets during extended periods in the plains. Each had an opportunity to consume fish after extended meat dependence and upon eating it, became weak and ill. Malainey notes that prolonged lean meat dependence renders the body incapable of digesting lipids (fats), perhaps explaining native hunters’ fish avoidance."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p216",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author implies which of the following about natural resources in South China prior to 6,500 years ago?"
+      ],
+      "opts": [
+       "Their abundance may have actually served to discourage the development of plant cultivation.",
+       "They were not as abundant as most archaeologists have maintained.",
+       "They led indirectly to cultural contact with peoples from the Yangtze Basin.",
+       "Their importance has been downplayed by scholars studying the beginnings of plant cultivation in South China.",
+       "They had little influence on the types of plants that were eventually cultivated in South China."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p216",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about plant cultivation in the Yangtze Basin?"
+      ],
+      "opts": [
+       "It occurred in spite of an unfavorable climate.",
+       "It occurred prior to 6,500 years ago.",
+       "It occurred somewhat later than it occurred in North China.",
+       "It occurred largely because of the abundance of wild rice in the region.",
+       "It occurred as a result of cultural contact with South China."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p217",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would most likely agree that in early agricultural communities cats would have been"
+      ],
+      "opts": [
+       "more tolerant than ferrets of contact with humans",
+       "as incapable of performing directed tasks as ferrets",
+       "less likely to be solitary than ferrets",
+       "less useful than terrier dogs at controlling rodents",
+       "more easily domesticated than terrier dogs"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p217",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole"
+      ],
+      "opts": [
+       "It challenges a widely accepted theory presented in the passage.",
+       "It explains a fact that has long puzzled researchers.",
+       "It draws a conclusion from evidence presented in the passage.",
+       "It presents new facts in support of a hypothesis.",
+       "It formulates a new hypothesis from evidence presented in the passage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p218",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "underscore a characterization",
+       "outline a challenge",
+       "point out an ambiguity",
+       "discuss an oversimplification",
+       "define a category"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p218",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that political centralization is a feature that"
+      ],
+      "opts": [
+       "has not historically tended to emerge in centers with fewer than 20,000 inhabitants",
+       "distinguished other Mississippian chiefdoms from Cahokia",
+       "is considered characteristic of state but not of chiefdoms",
+       "often results from aggressive expansionism and economic specialization",
+       "has historically been necessary for extensive trade to occur"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p219",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "present additional evidence to support a popular theory",
+       "show the underlying similarities of two seemingly contradictory theories",
+       "point out the implications of a particular study for two related theories",
+       "provide an alternative explanation for a well-documented phenomenon",
+       "reconcile two competing theories that explain a phenomenon"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p219",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage supports which of the following statements about the trees in the La Selva study?"
+      ],
+      "opts": [
+       "During the El Nino year, they added considerably less wood than they did in cooler years during the period of 1984-2000.",
+       "During the El Nino year, they typically had higher rates of photosynthesis than they did in other years during the period of 1984-2000.",
+       "During the El Nino year, they released considerably more oxygen than they did in cooler years during the period of 1984-2000.",
+       "During the El Nino year, they took up considerably more CO than they did in cooler years 2 during the period of 1984-2000.",
+       "The amount of CO that they absorbed remained constant throughout the entire period of 1984-2 2000."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p219",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests that as temperatures rise, trees in the tropical regions"
+      ],
+      "opts": [
+       "continue to grow at a slow but steady rate",
+       "grow less and intensify photosynthesis",
+       "emit more CO and oxygen 2",
+       "increase overall respiration and decrease overall photosynthesis",
+       "grow more and absorb more CO 2"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D",
+     "answerPending": true,
+     "answerReviewReason": "配套答案D最接近净吸收下降，但净变化不能单独证明总呼吸增加且总光合作用减少，原文未分别测定两个过程。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案D最接近净吸收下降，但净变化不能单独证明总呼吸增加且总光合作用减少，原文未分别测定两个过程。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 10,
+     "passage": "p220",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions accounts from three white frontiersmen primarily in order to"
+      ],
+      "opts": [
+       "show how the frontiersmen’s dietary choices were influenced by the native groups with whom they came into contact.",
+       "suggest that these frontiersmen had not adapted well to a diet composed primarily of lean meat.",
+       "indicate what kind of diet was habitually followed by native big-game hunters of the Northern Plains.",
+       "identify evidence for a hypothesis regarding native hunters’ fish avoidance.",
+       "call into question an assumption about the effects of fish consumption on people who have adapted to a lean-meat diet."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 11,
+     "passage": "p220",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select the sentence that describes the phenomenon that the passage is concerned with finding an explanation for."
+      ],
+      "pass": [
+       "In the 2,000-year period immediately before European contact, many native groups of the Northern Plains of North America specialized in big-game hunting, subsisting primarily on bison. Bison routinely became fat-depleted in the spring, reducing their nutritional value, yet these groups did not supplement their diets with the nutritious, fat-rich fish that were abundantly available. Malainey et al. find a possible explanation in late-eighteenth and early-nineteenth century accounts from three frontiersmen who had adapted to lean-meat diets during extended periods in the plains. Each had an opportunity to consume fish after extended meat dependence and upon eating it, became weak and ill. Malainey notes that prolonged lean meat dependence renders the body incapable of digesting lipids (fats), perhaps explaining native hunters’ fish avoidance."
+      ],
+      "sentences": [
+       "In the 2,000-year period immediately before European contact, many native groups of the Northern Plains of North America specialized in big-game hunting, subsisting primarily on bison.",
+       "Bison routinely became fat-depleted in the spring, reducing their nutritional value, yet these groups did not supplement their diets with the nutritious, fat-rich fish that were abundantly available.",
+       "Malainey et al. find a possible explanation in late-eighteenth and early-nineteenth century accounts from three frontiersmen who had adapted to lean-meat diets during extended periods in the plains.",
+       "Each had an opportunity to consume fish after extended meat dependence and upon eating it, became weak and ill.",
+       "Malainey notes that prolonged lean meat dependence renders the body incapable of digesting lipids (fats), perhaps explaining native hunters’ fish avoidance."
+      ],
+      "highlights": [],
+      "sentenceParagraphLengths": [
+       5
+      ]
+     },
+     "kind": "ss",
+     "ansText": "Bison routinely became fat-depleted in the spring, reducing their nutritional value, yet these groups did not supplement their diets with the nutritious, fat-rich fish that were abundantly available.",
+     "sourceAnswer": "D 第二句"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

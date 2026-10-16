@@ -1,0 +1,302 @@
+{
+ "id": "u08-p236-p240",
+ "title": "阅读 08 · Passage 236–240（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 236–240",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 236–240",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p236": {
+     "number": 236,
+     "paragraphs": [
+      "Some psychologists have proposed the hypothesis that children in different cultures have different psychologies, demonstrated, for example, by culture-specific tendencies for the children’s behavior to be relatively self-assertive or obedient. However, that hypothesis is incorrect, since the psychological mechanisms by which children acquire behavioral traits are identical for all cultures."
+     ],
+     "highlights": []
+    },
+    "p237": {
+     "number": 237,
+     "paragraphs": [
+      "Scholars have tended to treat the ideas of American social reformer Jane Addams as unique, failing to compare them sufficiently with those of other social activists and public intellectuals. Recent work, however, has situated her more thoroughly in the thinking and events of her time. For example, labor historians have usefully contextualized Addams’ close work with labor unions in the 1890s. When Addams’ interest in the workers’ reform agenda is understood in relation to the history of trade unionism in Chicago and its impressive record of political action, her contribution emerges as far more cooperative than groundbreaking. Workers influenced her in ways not preciously appreciated. Such contextualizing efforts make it possible to see what Addams learned from other reformers and what she contributed herself."
+     ],
+     "highlights": [
+      "history of trade unionism in Chicago"
+     ]
+    },
+    "p238": {
+     "number": 238,
+     "paragraphs": [
+      "Because different mammalian species favor different environments, identifying and counting bones from prehistoric deposits in caves can reveal much about climatic change. However, using large mammals’ bones can be problematic. Some species, such as red deer, are very adaptable—both on open grassland and in thick woodland. Moreover, some large-animal bones may have traveled considerable distances before being discarded: both carnivores and humans can have large hunting territories and bring home large animals quite unlike those near their den or campsite. Consequently, the bones of the small mammals found with cave sediments provide a better index of climate change. They are generally more numerous, the species are more sensitive to environmental conditions, and few travel far within their short lives."
+     ],
+     "highlights": []
+    },
+    "p239": {
+     "number": 239,
+     "paragraphs": [
+      "Seeding a forest with nonnative species after a fire can impede native plant regeneration and spread invasive species in vulnerable fire-affected soils. Moreover, native seed sources are almost always sufficient for early nature reestablishment of native species, so planting should be considered only when natural regeneration is unlikely. Replanting dense stands of fast-growing conifers—a common postfire management practice—truncates the biologically rich early stage of ecological succession and can increase the severity of future fires. Other treatments should be carefully scrutinized for their potential to spread noxious weeds. For instance, straw much applied extensively to reduce erosion after the 2002 Hayman Fire in Colorado was contaminated with cheatgrass, an invasive grass difficult to control or eradicate once established."
+     ],
+     "highlights": []
+    },
+    "p240": {
+     "number": 240,
+     "paragraphs": [
+      "In the late 1990s, the Mars Global Surveyor spacecraft detected magnetized patches of terrain near the north pole of Mars and also in the Terra Sirenum region, which is in the planet’s southern hemisphere. These magnetic features may be relics of a global magnetic field in the vicinity of several huge, ancient craters in the Terra Sirenum region. Astronomers believe these craters were formed some 3.8 billion years ago from the impact of chunks of debris pelting the inner solar system, where Mars orbits the Sun. If a global magnetic field once existed on Mars, it must have vanished before these craters formed. Such large impacts beat rock to temperatures well above 600 degrees Celsius—high enough to erase any magnetic field that metallic particle within the rock strong at the time the craters formed, it would have realigned and remagnetized the articles as they cooled. The Surveyor findings thus suggest the magnetic field vanished early in the planet’s 4.5 billion year existence."
+     ],
+     "highlights": [
+      "chunks of debris",
+      "inner solar system,",
+      "The Surveyor findings thus suggest the magnetic field vanished early in the planet’s 4.5 billion year existence."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p236",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument, the author’s position and the position challenged by the author differ in the criteria they use to distinguish different"
+      ],
+      "opts": [
+       "behaviors",
+       "cultures",
+       "mechanisms",
+       "psychologies",
+       "traits"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p237",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "criticize Addams for not realizing the extent of her debt to other social activists and public intellectuals",
+       "describe how scholars have misunderstood Addams’ ideas regarding social reform",
+       "outline a debate within the historical community regarding Addams’ approach to social reform",
+       "emphasize the importance of placing Addams’ work in a larger framework of reform and activism",
+       "discuss the impact of Addams’ close work with labor union on working conditions in the 1890s"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p237",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author refers to the “history of trade unionism in Chicago” primarily as"
+      ],
+      "opts": [
+       "an issue that has been largely ignored by historians",
+       "an issue that has inspired contention among historians",
+       "a model for how trade unionists might engage in political action",
+       "an area in which Addams’ contributions have been underestimated",
+       "a valuable context for understanding the nature of Addams’ contributions"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p238",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage mentions which of the following as an obstacle to using animal bones to reconstruct past climate changes?"
+      ],
+      "opts": [
+       "The size of some carnivorous species’ hunting territories",
+       "The range over which some small mammals travel",
+       "The ability of some species to thrive in multiple types of environment"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 5,
+     "passage": "p238",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage mentions “red deer” as an instance of an animal that"
+      ],
+      "opts": [
+       "is likely to be transported long distances by carnivores or human",
+       "is frequently represented in prehistoric bone deposits",
+       "can be used to reconstruct past climate changes",
+       "can travel considerable distances over the course of its life",
+       "yields limited information about past environmental conditions"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p239",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is a consequence of replanting an area with dense stands of fast-growing confers after a fire?"
+      ],
+      "opts": [
+       "The normal progression of ecological development will be affected.",
+       "The conifers will be slower growing than if they had been less densely planted.",
+       "Subsequent fires may be more severe than they would have been if such a replanting had not been done."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 7,
+     "passage": "p239",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about native plant regeneration in forests after a fire?"
+      ],
+      "opts": [
+       "It is hampered by the changed nature of the fire-affected soils.",
+       "It will generally occur without the human interventions of reseeding or replanting.",
+       "The likelihood of its success increases when forest managers have on hand a good supply of native seed sources.",
+       "Native plants will inevitably have to compete with nonnative plants.",
+       "The earlier nature reestablishment occurs, the more complete it will be."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 8,
+     "passage": "p240",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, astronomers believe which of the following about the “chunks of debris”?"
+      ],
+      "opts": [
+       "They may have destroyed a global magnetic field that once existed on Mars.",
+       "They affected Mars more substantially than other planet in the inner solar system.",
+       "Some of them contained a higher concentration of metallic particles than did rocks on Mars.",
+       "Some of them caused craters that exist in the Terra Sirenum region of Mars.",
+       "Few of them were large enough to cause impacts that would beat rocks to 600 degrees Celsius."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 9,
+     "passage": "p240",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author’s conclusion in the final sentence of the passage is based in part on which of the following points?"
+      ],
+      "opts": [
+       "Elsewhere on Mars there are likely to be patches of magnetized terrain similar to those that the Mars Global Surveyor detected.",
+       "Planets other than Mars could have been affected by the chunks of debris that pelted the inner solar system 3.0 billion years ago.",
+       "A global magnetic field on Mars could have remagnetized metallic particles that had lost their magnetic field.",
+       "Not all collisions between debris chunks and planets result in the formation of craters.",
+       "Impacts much smaller than the ones that probably created the craters in the Terra Sirenum region do not heat rocks to temperatures above 600 degrees Celsius."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 10,
+     "passage": "p240",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions the “inner solar system” in the course of"
+      ],
+      "opts": [
+       "explaining how Mars may have acquired a global magnetic field",
+       "explaining how scientists estimate the probable age of Mars",
+       "accounting for the size and location of magnetized patches of terrain detected on Mars",
+       "casting doubt on one possible explanation for the disappearance of a global magnetic field on Mars",
+       "relating how features of the surfaces"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C",
+     "answerPending": true,
+     "answerReviewReason": "配套答案C；原PDF的E只到relating how features of the surfaces，正文磁场句也残缺。已核原页，无法完整比较选项。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案C；原PDF的E只到relating how features of the surfaces，正文磁场句也残缺。已核原页，无法完整比较选项。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    }
+   ]
+  }
+ ],
+ "references": []
+}

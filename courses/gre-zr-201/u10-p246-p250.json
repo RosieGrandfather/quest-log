@@ -1,0 +1,270 @@
+{
+ "id": "u10-p246-p250",
+ "title": "阅读 10 · Passage 246–250（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 246–250",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 246–250",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p246": {
+     "number": 246,
+     "paragraphs": [
+      "Geographers and historians have traditionally held the view that Antarctica was first sighted around 1820, but some sixteenth-century European maps show a body that resembles the polar landmass, even though explorers of the period never saw it. Some scholars, therefore, argue that the continent must have been discovered and mapped by the ancients, whose maps are known to have served as models for the European cartographers."
+     ],
+     "highlights": []
+    },
+    "p247": {
+     "number": 247,
+     "paragraphs": [
+      "One of the legends that has been attached to the nineteenth century writer Edgar Allan Poe is that he was addicted to morphine. Poe discussed virtually every known aspect of his life in his letters. However, nowhere in his voluminous correspondence does he mention his reputed morphine addiction. On the basis of this evidence, it is safe to conclude that reports of his supposed addiction are untrue."
+     ],
+     "highlights": []
+    },
+    "p248": {
+     "number": 248,
+     "paragraphs": [
+      "After the identification of three of the main macronutrients that plants need to grow—nitrogen, phosphorus, and potassium (N-P-K)—and the development of manufactured nitrogen fertilizer in the 1910s, agricultural soils began receiving large doses of N-P-K but little else. Early agronomists overlooked the importance of biological activity provided by the underground ecosystem of soil microbes, earthworms, and Mycorrhizal fungi. Chemical fertilizers such as N-P-K depress this activity, increasing plants’ vulnerability to pests and diseases. They might also diminish crops’ nutritional quality, which has declined substantially since the widespread adoption of chemical fertilizers. Some researchers attribute this decline to the condition of the soil; others cite the tendency of modern plant breeding to select for characteristics such as yield rather than nutritional quality."
+     ],
+     "highlights": []
+    },
+    "p249": {
+     "number": 249,
+     "paragraphs": [
+      "Meltzoff and Moore reported experiments showing that human newborns possess the ability to imitate certain facial expressions, such as a protruding tongue or an open mouth. Yet numerous researchers challenge Meltzoff’s interpretation that such neonatal imitation is the origin of later imitation, which appears at approximately eight to twelve months of age. These researchers point out that the neonatal imitative response disappears or is lessened at approximately two months. Moreover, since in follow-up studies only one type of imitative response toward a facial expression (that is, tongue protrusion) was observed, some researchers assert that neonatal imitation is not imitation at all but may simply be a form of exploratory behavior in response to interesting stimuli."
+     ],
+     "highlights": []
+    },
+    "p250": {
+     "number": 250,
+     "paragraphs": [
+      "In “The Franklin’s Tale”, from Chaucer’s fourteenth-century Canterbury Tales, a Clerk uses medieval astronomical tables, calculating lunar and solar positions, to predict an extraordinarily high flood tide. Literary scholar Phyllis Hodgson has concluded that Chaucer’s purpose here is artistic, not scientific, and that even though Chaucer was a master of astronomy and author of an astrolabe treatise, this “highly technical account of the Clerk’s astrological calculations need not be taken too seriously.” Recently, however, astronomer Don Olson concluded that Chaucer’s account actually describes a very rare astronomical configuration of the Sun, Moon, and Earth that produced an exceptionally high tide in December 1340. But why would Chaucer be aware of a high tide that occurred in 1340, some five decades before “The Franklin’s Tale” was written? Some scholars place Chaucer’s birth in late 1340s or early 1340s. When Chaucer was studying astronomy during the 1380s and 1390s, it is plausible that he investigated his own horoscope. Chaucer may have discovered the remarkable tide-raising configuration in 1340 while calculating celestial positions at the time of his own birth and then used this knowledge as inspiration for the plot device in “The Franklin’s Tale.”"
+     ],
+     "highlights": [
+      "Phyllis Hodgson"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p246",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, is most damaging to the inference drawn by the scholars?"
+      ],
+      "opts": [
+       "The question of who first sighted Antarctica in modern times is still much debated and no one has been able to present conclusive evidence.",
+       "Between 3,000 and 9,000 years ago, the world was warmer than it is now, and the polar landmass was presumably smaller.",
+       "There are only a few sixteenth-century global maps that show a continental landmass as the South Pole.",
+       "Most attributions of surprising accomplishments to ancient civilizations or even extra terrestrials are eventually discredited or rejected as preposterous.",
+       "Ancient philosophers believed that there had to be a large landmass at the South Pole to balance the northern continents and make the world symmetrical."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p247",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "The symptoms that legend attributes to Poe and that have been taken as evidence of morphine addiction could instead have been caused by a different condition.",
+       "Poe had enemies whose own careers could have been advanced if rumors that Poe was addicted to morphine were widely believed.",
+       "Poe would not have refrained, out of any considerations of privacy or reputation, from mentioning in his correspondence any addiction that he might have had.",
+       "Reports claiming that Poe was addicted to morphine did not begin to circulate until after his death.",
+       "None of the reports of Poe’s supposed addiction to morphine can be traced to individuals who knew Poe personally."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p248",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following typically distinguishes soil nourished exclusively by N-P-K fertilizers from unfertilized soils?"
+      ],
+      "opts": [
+       "lower average yields",
+       "higher earthworm populations",
+       "slower crop growth",
+       "less microbial activity",
+       "increased resistance to pests"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p248",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage would most likely agree that the widespread use of N-P-K fertilizers"
+      ],
+      "opts": [
+       "has encouraged plant breeders to select for yield rather than other characteristics",
+       "caused early agronomists to ignore the importance of biological activity in soils",
+       "has diverted attention away from the nutritional value of crops",
+       "spurred attempts to reproduce the effect of microbial activity in the soil",
+       "has resulted in plants that are less hardy"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p249",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about the experimental results reported by Meltzoff and Moore?"
+      ],
+      "opts": [
+       "They were, at best, only partially borne out by subsequent studies.",
+       "They cast doubt on the validity of a particular claim about newborns.",
+       "They formed the basis for revised interpretations of other behaviors of newborns.",
+       "They derived from a methodology that turned out to be flawed.",
+       "They challenged the distinction between imitative and nonimitative behavior in newborns."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p249",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, those who challenge “Meltzoff’s interpretation” do so on the basis that it"
+      ],
+      "opts": [
+       "implies inaccurate predictions",
+       "lacks testable consequences",
+       "assumes a discredited theory",
+       "leaves an unexplained gap",
+       "involves circular reasoning"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p250",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following statements regarding medieval astronomers can be inferred from the passage?"
+      ],
+      "opts": [
+       "They were skeptical of the idea that certain astronomical configurations could produce high flood tides.",
+       "They had an understanding of the effect of the Sun and Moon on ocean tides.",
+       "They could calculate lunar positions with some accuracy, but not the positions of the Sun and Earth.",
+       "Although they were highly skilled in celestial calculations, they were unlikely to apply this knowledge to predictions of events on Earth.",
+       "They possessed the mathematical skills for performing only the simplest of astronomical calculations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 8,
+     "passage": "p250",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that Hodgson would agree with which of the following statements about the Clerk’s astronomical calculations?"
+      ],
+      "opts": [
+       "The Clerk’s calculations do not add artistic merit to “The Franklin’s Tale.”",
+       "Chaucer’s purpose in describing the Clerk’s calculations is to instruct readers in the rudiments of astronomy.",
+       "Chaucer’s intent in using technical material was not to provide a scientifically valid discussion.",
+       "The Clerk’s ability to predict a high flood tide is implausible, given the level of scientific knowledge in the late fourteenth century.",
+       "The technical language that Chaucer uses in describing the calculations does not reflect the scientific terminology of the time."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p250",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explain how fourteenth-century astronomers used complicated astronomical calculations to predict unusually high tides",
+       "show how medieval and modern methods predict similar effects of astronomical configurations on tides",
+       "argue that modern literary scholars should take Chaucer’s scientific references throughout The Canterbury Tales more seriously",
+       "describe Chaucer’s fascination with astronomy in general and with horoscopes in particular",
+       "present an explanation that supports the scientific veracity of a particular passage in The Canterbury Tales"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

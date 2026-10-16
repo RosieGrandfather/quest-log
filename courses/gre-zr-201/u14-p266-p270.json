@@ -1,0 +1,259 @@
+{
+ "id": "u14-p266-p270",
+ "title": "阅读 14 · Passage 266–270（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 266–270",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 266–270",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p266": {
+     "number": 266,
+     "paragraphs": [
+      "Nielsen is aware that for many readers, including the anthologists who create textbooks, African American literature is thought to be primarily realistic in style and sociological or political in content. Avant-garde expressions—beyond the obvious examples offered by Langston Hughes, Amiri Baraka, and Ishmael reed—are frequently overlooked. While such a narrow view is more readily apparent in critical attention given to fiction than in that given to poetry, it certainly skews anthologies. Nielsen is acutely aware of the serious political motives that often underlie such compilations and is also concerned that the currently popular critical paradigm of an oral tradition might deflect proper attention due African American literary traditions."
+     ],
+     "highlights": []
+    },
+    "p267": {
+     "number": 267,
+     "paragraphs": [
+      "We take for granted that island populations must have a continental origin, and not the other way around. The number of islands that acquire their biota [i.e., plant and animal life] from a larger source supports this notion. There is, however, no fundamental mechanism in the equilibrium theory of island biogeography to preclude island species from colonizing the mainland. The belief in one-way biogeographic traffic has only begun to erode as phylogenetic analyses have revealed island origins for continental rodents and lizards. Among plants, the genus Exostema has successfully diversified in the continental Neotropics, while two populations in the angiosperm genus Erithalis have colonized Florida. At least two Neotropical bat lineages can be added to the growing list of island-to-continent colonizers."
+     ],
+     "highlights": [
+      "equilibrium theory"
+     ]
+    },
+    "p268": {
+     "number": 268,
+     "paragraphs": [
+      "The temperance movement, aimed at combating alcohol use, comprised the largest women’s movement and the largest group of women orators in nineteenth-century America. While the sheer quantity of material these women produced justifies critical attention, their importance is by no means solely quantitative. Although they lacked formal rhetorical training, these women exhibited an exceptional understanding of language use within their cultural context and demonstrated remarkably effective rhetorical strategies in relation to their own purposes and the audiences they addressed. Despite the success that temperance activists had in creating change, twentieth-century feminists tended to focus on the suffrage movement as women’s only significant political act, an oversight that has resulted in a distortion of women’s participation in the political process."
+     ],
+     "highlights": [
+      "critical"
+     ]
+    },
+    "p269": {
+     "number": 269,
+     "paragraphs": [
+      "It was recently discovered that the editors of a scholarly journal rejected a paper submitted for publication, even though expert reviewers had strongly recommended it. The editors said they had concerns about possible political reactions to this paper. This sorry episode shows that what many people have long suspected is true: that the journal routinely rejects papers on the basis of political rather than scholarly considerations."
+     ],
+     "highlights": []
+    },
+    "p270": {
+     "number": 270,
+     "paragraphs": [
+      "A year ago, the government of Portran predicted that Torre City would experience strong net job growth for the following year but that Glanville, Portran’s other major city, would not. Events have clearly proved otherwise, however; in Torre City, but not in Glanville, the number of people who are unemployed is greater now than it was a year ago."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p266",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests that compared with critical writing on African American fiction, critical writing on African American poetry"
+      ],
+      "opts": [
+       "is more often driven by serious political motives",
+       "is more influenced by currently popular critical paradigms",
+       "draws clearer distinctions between oral and literary traditions",
+       "acknowledges a broader range of style and content",
+       "focuses more on the sociological implications of the works discussed"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p266",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that Nielsen has which of the following concerns regarding anthologies of African American literature?"
+      ],
+      "opts": [
+       "that the anthologies overlook the work of the important avant-garde writers Langston Hughes, Amiri Baraka, and Ishmael Reed",
+       "that the anthologies focus on a particular type of literature at the expense of other types",
+       "that the anthologies give insufficient attention to the oral tradition in African American literature"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p267",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true of the “equilibrium theory”?"
+      ],
+      "opts": [
+       "It implies that very few island populations are able to colonize continental areas.",
+       "It can accommodate two-way biogeographic traffic between islands and mainlands.",
+       "It necessarily assumes that island species originate on continents.",
+       "It has been undermined recently by phylogenetic analyses.",
+       "It questions the distinction between island and continental populations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p267",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select the sentence that presents a presupposition."
+      ],
+      "pass": [
+       "We take for granted that island populations must have a continental origin, and not the other way around. The number of islands that acquire their biota [i.e., plant and animal life] from a larger source supports this notion. There is, however, no fundamental mechanism in the equilibrium theory of island biogeography to preclude island species from colonizing the mainland. The belief in one-way biogeographic traffic has only begun to erode as phylogenetic analyses have revealed island origins for continental rodents and lizards. Among plants, the genus Exostema has successfully diversified in the continental Neotropics, while two populations in the angiosperm genus Erithalis have colonized Florida. At least two Neotropical bat lineages can be added to the growing list of island-to-continent colonizers."
+      ],
+      "sentences": [
+       "We take for granted that island populations must have a continental origin, and not the other way around.",
+       "The number of islands that acquire their biota [i.e., plant and animal life] from a larger source supports this notion.",
+       "There is, however, no fundamental mechanism in the equilibrium theory of island biogeography to preclude island species from colonizing the mainland.",
+       "The belief in one-way biogeographic traffic has only begun to erode as phylogenetic analyses have revealed island origins for continental rodents and lizards.",
+       "Among plants, the genus Exostema has successfully diversified in the continental Neotropics, while two populations in the angiosperm genus Erithalis have colonized Florida.",
+       "At least two Neotropical bat lineages can be added to the growing list of island-to-continent colonizers."
+      ],
+      "highlights": [
+       "equilibrium theory"
+      ],
+      "sentenceParagraphLengths": [
+       6
+      ]
+     },
+     "kind": "ss",
+     "ansText": "We take for granted that island populations must have a continental origin, and not the other way around.",
+     "sourceAnswer": "B    We take for granted ... around"
+    },
+    {
+     "n": 5,
+     "passage": "p268",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “critical” most nearly means"
+      ],
+      "opts": [
+       "urgent",
+       "censorious",
+       "judgmental",
+       "scholarly",
+       "crucial"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "E",
+     "explanation": "原答案E更正为D。critical attention在历史研究关注妇女演说的语境指scholarly（学术的），不是crucial（关键的）。这是独立语义复核，并非ETS认证。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "corrected"
+     }
+    },
+    {
+     "n": 6,
+     "passage": "p268",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the temperance movement’s audiences?"
+      ],
+      "opts": [
+       "They were usually composed exclusively of women.",
+       "They were often persuaded by the speeches they heard by women temperance orators.",
+       "They were typically hostile to the idea of outlawing the use of alcohol.",
+       "They were more numerous in the beginning of the nineteenth century than they were at its end.",
+       "They were drawn largely from the same population as the audiences for women’s suffrage groups."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p269",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The reasoning in the argument is open to criticism on the grounds that the argument"
+      ],
+      "opts": [
+       "presumes that just because something happens frequently, it invariably happens",
+       "presumes that something is true simply on the grounds that many people think it",
+       "relies on evidence that contradicts the conclusion that is drawn",
+       "relies on a single example to establish a general claim",
+       "relies on claims made by people who are not experts in the field"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p270",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the editorial’s argument depends?"
+      ],
+      "opts": [
+       "The unemployment rate is higher in Torre City than in Glanville.",
+       "The unemployment rate in Torre City is higher now than it has ever been.",
+       "Since making the prediction a year ago, the government of Portran has taken no steps to improve job growth in the country.",
+       "Few, if any, unemployed people moved to Torre City from Glanville during the year.",
+       "Government predictions about the economy in Portran are generally not reliable."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

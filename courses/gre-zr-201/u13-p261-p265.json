@@ -1,0 +1,227 @@
+{
+ "id": "u13-p261-p265",
+ "title": "阅读 13 · Passage 261–265（5篇 · 7题）",
+ "en": "Reading Comprehension — Passages 261–265",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 261–265",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p261": {
+     "number": 261,
+     "paragraphs": [
+      "The sixteenth-century art historian Vasari wrote about a building only when he himself had seen it or a detailed model of it. The thorough description of the new chapel at Larcona contained in the second edition of Vasari’s Lives of the Artists must have been contributed by someone else, since the edition was published the year before Vasari’s travels took him to Larcona, and no model of the chapel was ever shown in Florence, Vasari’s home."
+     ],
+     "highlights": []
+    },
+    "p262": {
+     "number": 262,
+     "paragraphs": [
+      "Setting conservation objectives often mixes scientific knowledge with political feasibility in such a way that one cannot tell where the science stops and the political pragmatism takes over. For example, Tear found that for endangered species with recovery plans, over a quarter of the plans set quantitative recovery objectives at or below the species’ existing population size or number of populations. Most likely these objectives were so low because they were politically palatable. Another possible explanation for such modest recovery objectives is what is known as the shifting-baseline syndrome. In this scenario, successive generations of wildlife managers use as their baseline the conditions they experienced at the start of their careers, resulting in lower expectations with each new generation."
+     ],
+     "highlights": [
+      "modest",
+      "shifting-baseline syndrome."
+     ]
+    },
+    "p263": {
+     "number": 263,
+     "paragraphs": [
+      "People who have low bone density have a markedly higher-than-average incidence of stroke, as do people with high blood pressure. There are well-known mechanisms by which high blood pressure can cause a stroke, but since it is highly unlikely that there are any mechanisms by which low bone density can cause a stroke, or vice versa, a possible hypothesis to account for the association between low bone density and stroke is that __________."
+     ],
+     "highlights": []
+    },
+    "p264": {
+     "number": 264,
+     "paragraphs": [
+      "About 20 percent of professors at Torellia National University were not educated in Torellia. The average pay of professors at the university who were educated in Torellia is about 10 percent lower than that of professors with comparable levels of training and experience who were educated outside Torellia. These figures clearly indicate the existence of a university policy, though probably an unwritten one, of favoring foreign-educated professors over those educated in Torellia when determining salaries."
+     ],
+     "highlights": []
+    },
+    "p265": {
+     "number": 265,
+     "paragraphs": [
+      "Harriet Martineau’s Illustrations of Political Economy, a series of didactic novellas about industrialists and workers that were immensely popular upon their publication (1832-1834), are considered the first industrial novels. But instead of foregrounding suffering individuals, as other industrial novels do, they champion the impersonal economic laws that determine individuals’ behavior. Martineau’s explicit aim is to convince her readers of the truth of the principles laid out by such economic philosophers as Thomas Malthus. Yet the novellas’ embrace of predetermined truths blunts their narrative force. Their claim to be “illustrations,” in which stories of human choice serve only to make vivid an abstract law, contravenes the relation in most realist fiction between abstract law and lived experience, in which the former is found inadequate to explain the latter."
+     ],
+     "highlights": [
+      "Thomas Malthus."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p261",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "Vasari discussed with his collaborators the new chapel at Larcona described in the second edition of the book.",
+       "A model of the proposed chapel at Larcona was displayed in Rome, a city Vasari visited often.",
+       "There were many printings of the second edition of the book, all of them textually identical.",
+       "Vasari did not intend to provide in his book detailed descriptions of buildings outside of his native Florence.",
+       "Most sections of the book are devoted to works of art and buildings of Vasari’s native Florence."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p262",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “modest” most nearly means"
+      ],
+      "opts": [
+       "conventional",
+       "appropriate",
+       "unpretentious",
+       "diffident",
+       "unambitious"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p262",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, the “shifting-baseline syndrome” is a result of which of the following?"
+      ],
+      "opts": [
+       "modest recovery objectives determined by political pragmatism",
+       "the difficulty of determining existing population size and number of populations for endangered species",
+       "changes in the criteria that are used in determining whether a given quantitative objective has been met",
+       "each new generation of wildlife managers using recent conditions to set numerical baselines for wildlife populations",
+       "the way that hopes for recovery of endangered species populations color the expectations of successive generations of wildlife managers"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p263",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "a higher proportion of people with high blood pressure than of people with low bone density have strokes",
+       "whatever causes low bone density in people protects them from high blood pressure",
+       "there is a condition that can cause both low bone density and strokes",
+       "those people with high blood pressure who take steps to lower it in order to prevent a stroke generally take no steps to increase their bone density",
+       "there are few initial symptoms of high blood pressure or of low bone density"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p264",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously undermines the editorials conclusion?"
+      ],
+      "opts": [
+       "The salaries of professors at the university are increasing more slowly than the salaries of people with comparable levels of training and experience employed by corporations.",
+       "The business school of the university, where most of the professors who were educated outside Torellia teach, must pay high salaries to its faculty to compete with salaries available to them from corporations.",
+       "The benefits other than salary offered to the university’s professors are about the same for professors educated in Torellia as for those not educated in Torellia.",
+       "The university has an explicit policy setting broad salary ranges for professors at all levels of experience.",
+       "Most of the professors at the university who were educated outside Torellia are native-born citizens of Torellia."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p265",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred from the passage about industrial novels written after Martineau’s Illustrations of Political Economy?"
+      ],
+      "opts": [
+       "They drew on the same subject matter as Illustrations of Political Economy but approached that subject matter with a different emphasis.",
+       "They were written by authors who aimed to capitalize on the popularity of Illustrations of Political Economy.",
+       "They differed from Illustrations of Political Economy in that they were more directly concerned with abstract economic laws than with the experiences of individuals.",
+       "They were more popular with readers than were Illustrations of Political Economy.",
+       "They differed from Illustrations of Political Economy in that they tended to present industrialists more sympathetically than workers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p265",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions Thomas Malthus primarily to"
+      ],
+      "opts": [
+       "cite a feature of Martineau’s writing that makes it particularly vivid",
+       "clarify a poorly understood aspect of Martineau’s fiction",
+       "explain Martineau’s intentions in writing Illustrations of Political Economy",
+       "contrast Martineau’s fiction with the writings of economic philosophers",
+       "help account for the popularity of Martineau’s Illustrations of Political Economy"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

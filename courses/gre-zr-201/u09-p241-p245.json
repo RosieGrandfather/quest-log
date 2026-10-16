@@ -1,0 +1,390 @@
+{
+ "id": "u09-p241-p245",
+ "title": "阅读 09 · Passage 241–245（5篇 · 14题）",
+ "en": "Reading Comprehension — Passages 241–245",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 241–245",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p241": {
+     "number": 241,
+     "paragraphs": [
+      "Astronomers occasionally detect gamma-ray bursts in the sky. Matter crashing onto neutron stars in our galaxy would emit gamma-ray bursts with durations and intensities like those of the bursts observed by astronomers. Therefore, such interactions between matter and neutron stars are, plausibly, the explanation for these bursts."
+     ],
+     "highlights": []
+    },
+    "p242": {
+     "number": 242,
+     "paragraphs": [
+      "Paintings of property—anything that was possessed—such as those created by eighteenth-century British painter George Stubbs were condemned by several of Stubbs’s contemporaries: objects thus “individualized” would appeal to our appetite to own and enjoy them, whereas “generalized” objects in other paintings were no longer merely things but abstract ideas. To collect or commission paintings displaying lofty unconcern with materiality was considered by these commentators a mark of taste and civic virtue, the ability to subordinate private material interests to the abstract, public interest. Yet this notion of disinterested taste and virtue was founded on private interest: it was because the “public” man or woman already owned enough that he or she was presumed to be free from the urge to own more. Political power and status were thus based on the ownership of property, while at the same time they were legitimated by the claim that the avaricious behavior associated with the acquisition of property was somehow transcended by those who had already acquired it."
+     ],
+     "highlights": [
+      "paintings displaying lofty unconcern with materiality"
+     ]
+    },
+    "p243": {
+     "number": 243,
+     "paragraphs": [
+      "Typical of Argentine melodrama of the 1930s were the films starring Libertad Lamarque, the genre’s biggest box-office attraction. Her most frequent role was that of the tango singer whose romance with a wealthy suitor is blocked by his elitist family. Despite its widespread social acceptance by the 1930s, tango continued to be associated in film melodramas with criminality and vice. As Diana Paladino remarks, in these films, “the tango songstress was doomed from the start.” Nevertheless, if melodramatic logic dictated that Lamarque be punished for the transgressive act of singing tango, surely that judgment was not shared by the members of the audience, many of whom were drawn to her early movies precisely because of her fame as a tango singer."
+     ],
+     "highlights": []
+    },
+    "p244": {
+     "number": 244,
+     "paragraphs": [
+      "Progressivism, the wave of reform movements in the early twentieth century whose stated intention was to make United States society more democratic, has undergone significant scholarly reevaluation by historians over the years. In the 1960s, leftist scholars dismissed progressive reform as a mask for the empowerment of individuals forming a corporate, capitalist elite. In the two subsequent decades, many scholars began to question whether there was any such thing as progressivism; the phenomenon seemed so diverse and amorphous that the word itself, some claimed, had no meaning. In the early 1990s, however, the tone, if not always the substance, of historical accounts of progressivism changed again. Although some scholars admitted that progressivism was diverse, they insisted that there is an identifiable “progressive minimum,” a core of belief and action that lends coherence to the concept. Further, some scholars, while acknowledging that progressivism had some conservative and even reactionary results, argue that the motives behind many of the reform movements of the era were genuinely democratic."
+     ],
+     "highlights": [
+      "“progressive minimum,”"
+     ]
+    },
+    "p245": {
+     "number": 245,
+     "paragraphs": [
+      "Native American music is unique in the world in having almost no string instruments. The fretless, single-string violin of Mexico’s Seri Indians is therefore often remarked on in studies of Native American music. Most scholars assume that the Seri violin descended from the European violin. The Spanish introduced a variety of string instruments to Mexico following the conquest (1519), and these subsequently spread widely in many forms. However, Helen Roberts questions other scholars’ arguments that Mexican string instruments could not have preconquest origins simply because they are not mentioned by early Spanish sources and do not appear in indigenous Mexican illustrations. Roberts argues that because of their low volume, string instruments would not have been used in loud group contexts such as those depicted in Mexican manuscripts."
+     ],
+     "highlights": [
+      "The Spanish introduced a variety of string instruments to Mexico following the conquest (1519), and these subsequently spread widely in many forms.",
+      "simply"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p241",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strongly undermines the proposed explanation for gamma-ray bursts?"
+      ],
+      "opts": [
+       "Astronomers first detected gamma-ray bursts in 1973, whereas neutron stars were known to exist several decades before that.",
+       "Astronomers believe that neutron stars are the remnants of stars that once violently exploded and ejected most of their constituent matter.",
+       "Gamma-ray bursts vary in duration from as little as a thousandth of a second to more than 100 seconds.",
+       "Gamma-ray bursts occur just as often in regions of the sky where neutron stars are thought not to exist as they do where neutron stars are known to exist.",
+       "Some neutron stars emits short pulses of radio waves, which are known to be of lower frequency than gamma rays."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p242",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the relationship of the first sentence to the passage as a whole?"
+      ],
+      "opts": [
+       "It introduces a topic that is then placed in historical context.",
+       "It introduces two contradictory approaches that are ultimately reconciled.",
+       "It presents an argument that is then strengthened by evidence.",
+       "It argues in favor of a position that is subsequently modified.",
+       "It describes a viewpoint whose inconsistencies are later probed."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p242",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "With which of the following statements about “paintings displaying lofty unconcern with materiality” would the author be most likely to agree?"
+      ],
+      "opts": [
+       "Only the property-rich collector could appreciate paintings of this type.",
+       "Such paintings demonstrated the collector’s degree of taste and civic virtue.",
+       "Such paintings were often collected by people who were quite property-rich.",
+       "Collectors of such paintings often displayed them for the public’s benefit.",
+       "Collectors of such paintings were, as a class, the most avaricious members of their society."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p242",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true about the painting of property as it is described in the passage?"
+      ],
+      "opts": [
+       "It was typified in the work of George Stubbs.",
+       "It was usually commissioned by persons who had great political power.",
+       "It was regarded in the eighteenth century as a mark of good taste.",
+       "It was at its most popular in eighteenth-century Britain.",
+       "It was advocated primarily by those who owned a great deal of property."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p242",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "examine the origins of a particular style of painting",
+       "analyze the paintings of a particular school",
+       "point out the weakness that underlies a criticism",
+       "compare two different approaches to the painting of objects",
+       "rebut a criticism of a particular painter’s integrity"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p243",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following claims about Lamarque can be inferred from the passage?"
+      ],
+      "opts": [
+       "She considered herself to be primarily a tango singer rather than a movie actor.",
+       "By the end of her movie career, she was exercising considerable control over the writing and direction of her films.",
+       "Her personality differed greatly from those of the characters she portrayed in films.",
+       "Her popularity as a tango singer preceded her popularity as an actor.",
+       "She continued to act in movies after she had ceased performing as a tango singer."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p243",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the author of the passage, which of the following is true about the tango?"
+      ],
+      "opts": [
+       "By the time Lamarque starred in films as a tango singer, the tango was socially acceptable.",
+       "Outside Argentina the tango’s reputation was quite different from what prevailed in Argentina.",
+       "The tango began to gain popularity in Argentina once it became an element in melodramatic films.",
+       "By the 1930s, no one in Argentina associated the tango with criminality and vice.",
+       "Until the 1930s, the tango was primarily thought of as a dance form rather than as a genre of song."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p244",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most accurately describes the organization of the passage?"
+      ],
+      "opts": [
+       "A theory is proposed, refuted, and then amended.",
+       "The thesis of the passage is stated and several views for and against that thesis are compared and contrasted.",
+       "Opposing views are presented, classified, and then reconciled.",
+       "An assertion is made and an elaboration of that assertion is provided.",
+       "An argument is advanced and evidence is presented to refute it."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 9,
+     "passage": "p244",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, the term “progressive minimum” is used by scholars who have"
+      ],
+      "opts": [
+       "determined the quintessential elements of reform movements in general",
+       "claimed that progressivism was a movement grounded in a set of common beliefs",
+       "underrated the impact and historical significance of progressivism",
+       "defined progressivism as a unified effort led by a core of proponents",
+       "questioned the basic motivation underlying the inception of progressivism"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 10,
+     "passage": "p244",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "analyze the early-twentieth-century sociopolitical environment of the United States",
+       "affirm the profound differences among reformist groups contending for power in the early-twentieth-century United states",
+       "explain a radical approach to promoting democracy in the early twentieth-century United States",
+       "argue that the results achieved by several decades of reform activity begun in the early-twentieth-century United States were paradoxical",
+       "trace the course of inquiry over time regarding an aspect of early twentieth-century United States history"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 11,
+     "passage": "p245",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “simply” most nearly means"
+      ],
+      "opts": [
+       "artlessly",
+       "frankly",
+       "ordinarily",
+       "slightly",
+       "just"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 12,
+     "passage": "p245",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the view held by most scholars regarding the origins of the Seri violin is based in part on"
+      ],
+      "opts": [
+       "differences between the Seri violin and European violins",
+       "the rarity of string instruments among Native American peoples",
+       "the fact that the Seri violin lacks frets and has only a single string",
+       "a resemblance between the Seri violin and Spanish string instruments of the sixteenth century",
+       "the means by which string instruments spread in Mexico following the conquest"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 13,
+     "passage": "p245",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests that in Roberts’ view, the Seri violin"
+      ],
+      "opts": [
+       "may be represented in Mexican manuscripts that have yet to be found",
+       "was probably modeled on string instruments introduced to Mexico by the Spanish",
+       "was not likely to have been in use prior to the Spanish conquest of Mexico",
+       "was best suited for playing in relatively quiet settings",
+       "was probably capable of greater volume than most scholars have assumed"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 14,
+     "passage": "p245",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the purpose of the highlighted sentence in the passage as a whole?"
+      ],
+      "opts": [
+       "It introduces an alternative to a widely held view.",
+       "It casts doubt on a point made in the first sentence of the passage.",
+       "It explains why scholars disagree about a particular issue.",
+       "It cites evidence overlooked by scholars previously mentioned in the passage.",
+       "It suggests a reason for the assumption mentioned in the preceding sentence."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

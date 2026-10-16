@@ -1,0 +1,255 @@
+{
+ "id": "u31-p351-p355",
+ "title": "阅读 31 · Passage 351–355（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 351–355",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 351–355",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p351": {
+     "number": 351,
+     "paragraphs": [
+      "During the spring months of last year, 510 drivers who were stopped by Fisk County’s police and given breath tests failed the tests, having blood-alcohol levels above the legal limit for driving. This spring, after a vigorous advertising campaign against driving while intoxicated, only 320 drivers failed the tests. It cannot be concluded, however, that the campaign was responsible for the decrease, because the breath tests were administered to far fewer individuals this spring than last spring."
+     ],
+     "highlights": []
+    },
+    "p352": {
+     "number": 352,
+     "paragraphs": [
+      "Academics have been reconsidering the meaning of “wilderness” and its usefulness to conservation strategies. The idea of pristine wilderness is historically inaccurate, argue scholars of Native American history, who have demonstrated that Native Americans shaped their environments with their agricultural practices and residential patterns. Other scholars argue that wilderness is simply a cultural construct created in opposition to modern society, not a real place untouched by humans. Scientists in turn, have argued that the goal of wilderness preservation is based on a model in which ecosystems progress toward a stable equilibrium state, a model replaced in the 1970s with one stressing constant change. These insights complicate wilderness management which critics charge aims to preserve a supposedly stable environment that existed prior to human disturbance."
+     ],
+     "highlights": [
+      "Other scholars argue that wilderness is simply a cultural construct created in opposition to modern society, not a real place untouched by humans.",
+      "stressing constant change."
+     ]
+    },
+    "p353": {
+     "number": 353,
+     "paragraphs": [
+      "Union Official: Several workers who operate a certain type of machine have developed repetitive-motion injury, which is often caused by operating poorly designed machinery. Because physiologists employed by the machine’s manufacturer have found that workers who maintain good posture while using the machine do not risk developing the condition, the manufacturer contends that the machine's design is not responsible for the workers' condition. New evidence leads us to reject the manufacturer's contention. however. When our own experts conducted careful trials with both new and experienced machine operators, they concluded that the machine’s design makes it difficult for workers to maintain good posture while operating it over long periods."
+     ],
+     "highlights": [
+      "workers who maintain good posture while using the machine do not risk developing the condition,",
+      "the machine’s design makes it difficult for workers to maintain good posture while operating it over long periods."
+     ]
+    },
+    "p354": {
+     "number": 354,
+     "paragraphs": [
+      "Years ago, consumers in Frieland began paying an energy tax in the form of two Frieland pennies for each unit of energy consumed that came from nonrenewable sources. Following the introduction of this energy tax, there was a steady reduction in the total yearly consumption of energy from nonrenewable sources."
+     ],
+     "highlights": []
+    },
+    "p355": {
+     "number": 355,
+     "paragraphs": [
+      "This passage is adapted from an essay published in 2010.",
+      "As I write, the Large Hadron Collider, the world’s biggest atom-smasher at CERN in Geneva, has switched on with almost unprecedented media jamboree. Asked about the practical value of it all, Stephen Hawking has said that “modern society is based on advances in pure science that were not foreseen to have practical applications.” It’s a common claim, and it subtly reinforces the hierarchy that Medawar identified: technology and engineering are the humble offspring of pure science, the casual cast-offs of a more elevated pursuit.",
+      "I don’t believe that such pronouncements are intended to denigrate applied science as an intellectual activity; they merely speak into a culture in which that has already happened. Pure science undoubtedly does lead to applied spin-offs, but this is not the norm. Rather, most of our technology has come from explicit and painstaking efforts to develop it. And this is simply a part of the scientific enterprise. A dividing line between pure and applied science makes no sense at all, running as it does in a convoluted path through disciplines, departments, even individual scientific papers and careers. Research aimed at applications fills the pages of the leading journals in physics, chemistry, and the life and Earth sciences; curiosity-driven research with no real practical value is abundant in the “applied” literature of the materials, biotechnological, and engineering sciences. The fact that “pure” and “applied” science are useful and meaningful terms seduces us sometimes into thinking that they are real, absolute, and distinct categories."
+     ],
+     "highlights": [
+      "explicit and painstaking efforts"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p351",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "Between last spring and this spring, the legal limit of blood alcohol for driving in Fisk County remained unchanged.",
+       "In Fisk County, breath tests are administered only to drivers whose behavior makes police suspect that they are intoxicated.",
+       "The police of Fisk County do not generally test drivers for any intoxicating substances other than alcohol.",
+       "A similar advertising campaign conducted ten years ago was credited with temporarily reducing the incidence of driving while intoxicated.",
+       "The number of police patrolling Fisk County’s roads and highways was significantly lower this spring than last spring."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p352",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following statements best describes the function of the highlighted sentence?"
+      ],
+      "opts": [
+       "It undermines a claim made in the previous sentence.",
+       "It introduces a perspective that the author disputes.",
+       "It elaborates on a claim made earlier in the passage.",
+       "It introduces a traditional point of view.",
+       "It describes a recent scholarly controversy."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p352",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author suggests that the model “stressing constant change” is significant because it"
+      ],
+      "opts": [
+       "points to a way in which wilderness management can be conducted in modern society",
+       "undermines an assumption underlying wilderness management",
+       "helps to explain why wilderness management efforts have been unsuccessful",
+       "calls into question the idea that wilderness is a cultural construct",
+       "suggests that wilderness areas are more threatened than was previously thought"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p353",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the union official's argument, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first identifies evidence that was offered in support of the position opposed by the union official: the second gives information to undermine that support.",
+       "The first evaluates evidence that the manufacturer offers to support a claim; the second casts doubt on the impartiality of the experts cited by the manufacturer.",
+       "Each provides independent evidence in support of the conclusion of the argument as a whole.",
+       "The first provides evidence in support of the conclusion of the argument as a whole; the second states that conclusion.",
+       "The first states the position that the argument as a whole opposes; the second provides evidence against that position."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p354",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "If the statements in the passage are true, then which of the following must on the basis of them be true?"
+      ],
+      "opts": [
+       "There was a steady decline in the yearly revenues generated by the energy tax in Frieland.",
+       "There was a steady decline in the total amount of energy consumed each year in Frieland.",
+       "There was a steady increase in the use of renewable energy source in Frieland.",
+       "The revenues generated by the energy tax were used to promote the use of energy from renewable sources.",
+       "The use of renewable energy sources in Frieland greatly increased relative to the use of nonrenewable energy sources."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p355",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context of the passage, the mention of the Large Hadron Collider primarily serves to"
+      ],
+      "opts": [
+       "demonstrate the attention that is paid to what some consider pure science",
+       "introduce a change in the prevailing attitude toward science",
+       "call into question the currently existing priorities for scientific research",
+       "illustrate the contributions that applied science has made to pure science",
+       "cast doubt on the hierarchy identified by Medawar"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p355",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, the “explicit and painstaking efforts” are"
+      ],
+      "opts": [
+       "part of the same overall endeavor as pure science research",
+       "the foundation of the techniques that allow advances in pure science",
+       "needed before the findings of pure science have practical benefit",
+       "in danger of dying out because of the attractions of pure science",
+       "ultimately of greater importance than the great majority of work in pure science"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p355",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage implies that the statement made by Stephen Hawking has which shortcoming?"
+      ],
+      "opts": [
+       "It overstates the importance of technology for modern society.",
+       "It fails to recognize the distinct goals of pure and applied science.",
+       "It ignores the work involved in turning initial insights into useful technology.",
+       "It treats somewhat unusual cases as if they were the general rule.",
+       "It inappropriately understates the value of pure science."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

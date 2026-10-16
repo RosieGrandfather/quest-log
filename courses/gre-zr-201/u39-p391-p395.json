@@ -1,0 +1,340 @@
+{
+ "id": "u39-p391-p395",
+ "title": "阅读 39 · Passage 391–395（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 391–395",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 391–395",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p391": {
+     "number": 391,
+     "paragraphs": [
+      "Study of the geological history of the Moon is based on the law of superposition, which states that younger rocks and geological features visibly overlie older rocks and features. For example, lines—or “rays”—radiate outward from the crater Copernicus and overlie the rim of the neighboring crater Eratosthenes, demonstrating that Copernicus is younger. Both of these craters are younger than the dark lava plain, Mare Imbrium, upon which they lie. In contrast, the crater Archimedes is filled with and surrounded by this dark lava, from which its rim protrudes; thus, the impact that created Archimedes predates the lava eruption that flooded the whole region to create Mare Imbrium. All the foregoing features occur inside the giant lmbrium basin, itself a kind of colossal impact crater. Thus, the relative ages of surface features in the lmbrium-Copernicus region were unambiguously derivable from photographs taken from Earth well before any lunar missions. Their absolute ages, however, were only later inferred from physical samples of lunar rock."
+     ],
+     "highlights": []
+    },
+    "p392": {
+     "number": 392,
+     "paragraphs": [
+      "A longstanding scholarly neglect of the subject of cooking is partly attributable to the antiquated “separate spheres” schema that differentiated a private female sphere, which included food preparation and consumption, from a public male sphere, which included food production. While this concept never reflected most women’s daily realities-women are major food producers worldwide—the ideological polarization certainly influenced the development of academia: it effectively segregated women into working in low-status “domestic” disciplines such as dietetics and home economics, while the male-dominated realms of industrial agriculture, food technology, mass retailing, and corporate management enjoyed public respect and academic prestige. This institutionalized bias delayed serious attention to cooking even after feminists in the1960s obliterated the notion of separate spheres and more women entered all areas of academia."
+     ],
+     "highlights": [
+      "feminists"
+     ]
+    },
+    "p393": {
+     "number": 393,
+     "paragraphs": [
+      "In North America, crows have historically antagonized humans by ravaging corn crops, but advancing urbanization has recently made humans more tolerant of crows, and crows’ wariness has accordingly diminished. The future demeanor of the American crow (Corvus brachyrhynchos ) is suggested by intercontinental analogy to India’s house crow (Corvus splendens ), which has lived for many centuries in an essentially unarmed, animal-friendly, and densely populated culture. Its audacity extends to stealing food from street vendors and entering dwellings to remove food from the table. The extreme watchfulness of the American crow has grown out of a long history of persecution. As people treat crows with insouciance rather than aggression, less wariness results in reproductive success, and another kind of corvine conduct asserts itself."
+     ],
+     "highlights": [
+      "insouciance"
+     ]
+    },
+    "p394": {
+     "number": 394,
+     "paragraphs": [
+      "The source of vitamin C in the traditional Inuit diet was long a mystery. Most animals can synthesize vitamin C in their livers, but humans are among the exceptions. If humans do not ingest enough vitamin C, the result is scurvy, a potentially fatal connective-tissue disease. Most Americans today get ample supplies from orange juice, citrus fruits, and fresh vegetables. But getting enough vitamin C from a ship’s provisions was especially tricky for explorers voyaging to the Inuit’s native polar regions, and scurvy plagued European and United States expeditions there even in the twentieth century. However, Arctic peoples were free of the disease, even in the long winter, when they subsisted entirely on meat and fish they caught, often eaten raw."
+     ],
+     "highlights": []
+    },
+    "p395": {
+     "number": 395,
+     "paragraphs": [
+      "According to Helen Vendler, the value of any poetry anthology is measured by its representation of major poets. However, Brad Leithauser argues that an anthology has the greatest impact through its handling of minor poets. Were the editors of an anthology of twentieth-century American poetry to exclude T. S. Eliot, Eliot’s reputation would be unaffected, though the anthology itself would be handicapped by excluding one of the most influential English-language poets of the period. The situation is quite different with figures who are considered secondary, like Sara Teasdale or Allen Tate: because publishers rarely keep in print volumes by poets who sell in modest numbers, most such poets have no noteworthy existence outside of anthologies.",
+      "Furthermore, anthology editors' selections of particular poems may significantly benefit or harm the reputations of minor poets. If notable works by major poets are omitted, serious readers will easily find those poets' collected works elsewhere, but editors' choices of minor poets’ works may make the critical difference in whether or not readers choose to seek out more of such poets' work."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p391",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explain how a scientific law was inferred from processes that were first revealed by photographic evidence",
+       "reconstruct a chronology of events in order to explain the absence of certain expected lunar features",
+       "show how physical evidence has been used to substantiate inferences based on the application of a particular methodology",
+       "suggest how conclusions are formed about the absolute ages of geological features",
+       "illustrate how a general principle has been used to draw certain specific conclusions"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p391",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that which of the following geological events occurred first?"
+      ],
+      "opts": [
+       "The impact that formed the rays of Copernicus",
+       "The impact that formed Eratosthenes",
+       "The eruption that flooded Archimedes",
+       "The formation of the Imbrium basin",
+       "The creation of Mare Imbrium"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p391",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that a medium-sized lunar impact crater could be clearly determined to predate a smaller lunar impact crater if which of the following were observed in a photograph of the two craters?"
+      ],
+      "opts": [
+       "The smaller crater is entirely contained within the rim of the medium-sized crater.",
+       "The medium-sized crater partially obscures the rim of the smaller crater.",
+       "Lava surrounds the medium-sized crater on all sides, but does not surround the smaller crater.",
+       "The rim of the smaller crater is an unbroken circle, but the rim of the medium-sized crater is incomplete in places.",
+       "The smaller crater is streaked with the rays of the medium-sized crater."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p392",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "examine the origins of an influential theory",
+       "account for the dearth of research on a particular subject",
+       "contrast two scholarly approaches to the study of a phenomenon",
+       "explain how a certain distinction came to dominate an academic discipline",
+       "question the aptness of a particular schema for understanding a development"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p392",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions “feminists” primarily in order to"
+      ],
+      "opts": [
+       "elaborate on a particular rift in scholarly circles",
+       "answer a particular challenge to the “separate spheres” schema",
+       "cite a cultural development that influenced the study of food",
+       "help account for an ideological shift within academia",
+       "underscore the tenacity of an attitude that constrained scholarly inquiry"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p393",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following generalizations most directly underlies the author’s central point?"
+      ],
+      "opts": [
+       "Two different species of the same genus of birds may differ greatly in their characteristic behavior for reasons that have nothing to do with the environment in which they live.",
+       "Degrees of wariness tend to differ significantly among individuals of the same animal species as well as between different species within the same genus.",
+       "As human populations become more urbanized, humans become less attuned to the behavior of animals in their environment in ways that can negatively affect animals' reproductive success.",
+       "A given behavioral trait can have either a positive or negative effect on an animal’s reproductive success depending on the behavior of humans in the animal’s environment.",
+       "Human attitudes toward a given animal species tend to be somewhat arbitrary and are subject to change over time."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p393",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author implies which of the following about the “insouciance” mentioned in the passage?"
+      ],
+      "opts": [
+       "It reflects an advance in our understanding of crows’ behavior.",
+       "It has increased in one region of the world as urbanization has grown.",
+       "It is likely to increase in a particular region as farming in that region increases.",
+       "It reflects the influence of one culture’s attitudes toward animals on those of another culture.",
+       "It can have a positive influence on a given species' reproductive success in some contexts but a negative effect in others."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 8,
+     "passage": "p394",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about humans’ need for vitamin C?"
+      ],
+      "opts": [
+       "Humans can rely on vitamin C stored in the body for as long as a year.",
+       "Humans need vitamin C to maintain the health of connective tissue in the body.",
+       "The only way to meet the need for vitamin C is to consume fruit, fruit juices, and vegetables."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 9,
+     "passage": "p394",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most helps to resolve the mystery of the source of vitamin C in the traditional Inuit diet?"
+      ],
+      "opts": [
+       "American and European Arctic explorers who adopted an Inuit diet did not develop scurvy.",
+       "American and European expeditions generally relied on salted or canned meat and dried provisions, none of which provide vitamin C.",
+       "With the progressive abandonment of their traditional diet, the Inuit have become more susceptible to scurvy.",
+       "Vitamin C is present in meat and the connective tissue of animals but is destroyed by extended cooking.",
+       "The fact that fresh fruit and vegetables can ward off scurvy was recognized more than 150 years before vitamin C was identified."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p395",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Leithauser would be most likely to agree with which of the following statements about Vendler’s view of poetry anthologies?"
+      ],
+      "opts": [
+       "Vendler’s concern for the adequacy of an anthology’s representation of the works of major poets is based on a mistaken assumption about how editors select poems for inclusion in anthologies.",
+       "Vendler’s view of poetry anthologies would be more persuasive if it referred only to anthologies of pre- twentieth-century poetry.",
+       "The kind of poetry anthology that Vendler prefers does not reflect the preference of most serious readers.",
+       "Vendler is correct about how the value of poetry anthologies ought to be measured but mistaken about how that value is in fact generally measured.",
+       "The standard that Vendler uses to judge the value of a poetry anthology is not a complete measure of that anthology’s impact on readers and poets."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 11,
+     "passage": "p395",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Vendler would be most likely to agree with which of the following statements about the poet Sara Teasdale?"
+      ],
+      "opts": [
+       "She deserves wider recognition through the publication of volumes devoted exclusively to her work.",
+       "Her poems are more likely to be of interest to those who prefer to read a volume devoted to a single poet’s work than to those who prefer to read a poetry anthology.",
+       "Her poems have been given undue prominence by the editors of some anthologies of twentieth-century American poetry.",
+       "The appeal of her poems to serious readers is unlikely to be affected by whether or not her work is well represented in anthologies.",
+       "Her exclusion from an anthology of twentieth-century American poetry would not be an important criterion for measuring that anthology’s value."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 12,
+     "passage": "p395",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, Leithauser believes that anthology editors have a significant impact on the reputations of minor poets partly due to"
+      ],
+      "opts": [
+       "publishers’ assumptions about which anthologies are likely to sell well",
+       "publishers’ tendency not to keep in print books with modest sales",
+       "the tendency of most anthology editors to select works by the same poets for inclusion in their anthologies",
+       "anthology editors’ lack of interest in encouraging readers to seek out individual poems not included in their anthologies",
+       "the way in which anthology editors decide which poets should be considered major ones"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

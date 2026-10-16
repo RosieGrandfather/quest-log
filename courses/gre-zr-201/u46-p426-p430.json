@@ -1,0 +1,322 @@
+{
+ "id": "u46-p426-p430",
+ "title": "阅读 46 · Passage 426–430（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 426–430",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 426–430",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p426": {
+     "number": 426,
+     "paragraphs": [
+      "Only in the collecting sciences are raw data—specimens, fossils, artifacts—regarded as communal property, to which legitimate practitioners have rights of access. Collections are intellectual commons on which all producers depend, and the owners or keepers of collections are understood to be responsible for keeping them in good order and accessible to users. These moral precepts doubtless reflect the fact that important collections tend to end up in public museums. But I think they also derive from the reality that found objects, unlike manufactured data, are unique and irreplaceable resource, the loss of which deprives all practitioners of the means of best practice.",
+      "The moral economy of facts is quite different in sciences that generate facts artificially by measuring or experimenting. In these sciences raw data are regarded as private: because, I think, they are in principle unlimited and if lost can be produced again. Manufactured data become public only when published, and though publishing is expected, it is also understood to be selective and a personal matter, impelled more by imperatives of ambition and career than moral obligation. Individuals may perish professionally if they neglect to publish, but if they do perish someone else can always produce equivalent data, so there is no loss to the common good. Raw data are not an intellectual commons, as are collections. The experimental sciences operate more in a market economy than a moral one."
+     ],
+     "highlights": [
+      "Individuals may perish professionally if they neglect to publish, but if they do perish someone else can always produce equivalent data, so there is no loss to the common good."
+     ]
+    },
+    "p427": {
+     "number": 427,
+     "paragraphs": [
+      "Much of what researchers infer about the Early Preclassic period (2000-1000 B.C.E.) of the Olmec people derives from the study of monumental sculpture complemented by analogies to later Mesoamerican cultures, though not all scholars agree that stone art should guide interpretation or that it indicates greater sociopolitical complexity than in other societies. Indisputably, however, only the Olmec designed, created, transported, and utilized monumental sculpture in Early Preclassic Mesoamerica, which not only constitutes an important defining characteristic of their society but also reflects their unique inclination toward intense labor mobilizations. For this reason alone, sculpture should and does figure prominently in Olmec studies, just as the scale, frequency, and design of monumental architecture is used as a diachronic material measure of sociopolitical development throughout Mesoamerica."
+     ],
+     "highlights": [
+      "stone art"
+     ]
+    },
+    "p428": {
+     "number": 428,
+     "paragraphs": [
+      "Some biologists have suggested that the land-management activity of burning heather moorland, which is traditional in Ireland, creates a poor environment for the predatory and scavenging species of invertebrates such as ground beetles and spiders that normally live in heather. Yet a recent study that used pitfall trapping, the only technique that could lead to large numbers of the subject species being recorded, found that considerable numbers of these invertebrates occupy burnt heather. Admittedly, some scientists have criticized the use of pitfall traps, asserting that the number of invertebrates caught in such traps reflects the invertebrates’ activity as much as their population density, and that the number of catches also depends on environmental features, such as the amount of vegetation cover. But other researchers have demonstrated that pitfall trapping gives an adequate representation of the populations of the spider and ground beetle species in structurally complex habitats, thus corroborating the results of the study."
+     ],
+     "highlights": [
+      "biologists",
+      "the amount of vegetation cover."
+     ]
+    },
+    "p429": {
+     "number": 429,
+     "paragraphs": [
+      "Most of the smog that perpetually hangs over Dordon City results not from automobile exhaust, as has long been thought, but from leaks in the hundreds of thousands of small tanks of liquefied petroleum gas that residents of Dordon City use for cooking and heating. Therefore, so long as the use of leaky tanks continues, Dordon City cannot be free of smog."
+     ],
+     "highlights": []
+    },
+    "p430": {
+     "number": 430,
+     "paragraphs": [
+      "Although research in the 1940s showed that consuming comic books did not detrimentally affect children’s reading skills or habits, educators in the United States remained concerned about this perceived threat to children’s educational development. Their alarm reflected an underlying fear of losing control over children’s reading choices. Before comics, children mostly read what teachers and librarians deemed appropriate; now they could purchase comics with their pocket money and swap them with friends. Educators’ anti-comics sentiment made a lasting impression on the comics industry: defining comics as inherently juvenile shifted critical attention from their illustrated format to their content. Subsequent anti-comics activism, spearheaded by parents’ and religious groups, drove publishers to adopt a regulatory code in 1954, ensuring their products would be wholesome enough for children."
+     ],
+     "highlights": [
+      "Educators’ anti-comics sentiment made a lasting impression on the comics industry: defining comics as inherently juvenile shifted critical attention from their illustrated format to their content."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p426",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "resolving a dispute",
+       "defending a practice",
+       "summarize a dilemma",
+       "delineating a difference",
+       "explaining an anomaly"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p426",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage would most likely agree with which of the following statements about manufactured data?"
+      ],
+      "opts": [
+       "They are essential to the common good.",
+       "They cannot be easily replicated.",
+       "They can play a key role in career advancement.",
+       "They cannot be adequately interpreted until they have been published.",
+       "They are often manipulated to support the specific hypotheses."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p426",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "In the context of the passage as a whole, the highlighted sentence serves to"
+      ],
+      "opts": [
+       "warn of the consequences of overlooking a point made in the first sentence of the passage",
+       "cite an exception to a principle described in the preceding sentence",
+       "present a conditional scenario that is confirmed in the subsequent sentence",
+       "provide a rational for an assertion made in the final sentence of the passage",
+       "predict an outcome that if refuted in the final sentence of the passage"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p427",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about “stone art”?"
+      ],
+      "opts": [
+       "It no longer figures as prominently in Olmec studies as it did as one time.",
+       "It interests researchers in part because of its influence on the art of non-Olmec Mesoamerican cultures.",
+       "It constitutes the basis for some scholars’ views about the relative sociopolitical complexity of Olmec society."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p427",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author would most likely agree with which of the following claims about Olmec monumental sculpture?"
+      ],
+      "opts": [
+       "It was likely produced by teams of assistant artisans carrying master sculptor’s design.",
+       "It probably reflected a wide range of subject matter than can be inferred from surviving examples.",
+       "It should not be given as much prominence in research on the Olmec as certain other types of archaeological evidence.",
+       "It was not influenced by monumental sculpture produced by any other Mesoamerican cultures.",
+       "It has given rise to a somewhat narrower range of interpretations by researchers than it should have."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p428",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "consider the importance of a research finding",
+       "analyze and find fault with a research finding",
+       "present and defend a research finding",
+       "question the use of a particular research technique",
+       "advocate the use of a combination of research techniques"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p428",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions “the amount of vegetation cover” primarily in order to"
+      ],
+      "opts": [
+       "suggest a way in which burnt heather differs from other environments",
+       "emphasize the importance of considering all relevant environmental features when designing studies of invertebrates",
+       "indicates that pitfall traps should placed in areas of burnt heather that have relatively little vegetation cover",
+       "point out a factor that some scientists believe has created the impression that burnt heather is a poor environment for certain invertebrates",
+       "provide an example of a factor that some scientists believe undermines the reliability of pitfall trap data"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p428",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred that the “biologists” believe which of the following about the method of managing heather moorland described in the passage?"
+      ],
+      "opts": [
+       "It decreases the number of ground beetles that can survive in the moorland.",
+       "It improves the chances for predatory species to utilize environmental resources.",
+       "It decreases the activity level of predatory and scavenging invertebrates living in the moorland.",
+       "It forces researchers to rely on pitfall traps as the only practical available technique to sample invertebrates in the moorland.",
+       "It hinders researchers’ ability to sample invertebrates in the moorland over a prolonged period."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p429",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "The persistent smog that hangs over Dordon City is the major environmental problem that Dordon City faces.",
+       "The fossil fuels that are used for electrical power generation in Dordon City are not responsible for any of the smog in Dordon.",
+       "Selling liquefied petroleum gas in small tanks is the most economically efficient way of distributing this gas to Dordon City residents.",
+       "Not all the costs of making the technological changes necessary to prevent or reduce leaks of liquefied petroleum gas from the small tanks in which it is sold would be passed on to the consumers who purchased the gas",
+       "These are no feasible ways of altering the chemical composition of the liquefied petroleum gas used by residents of Dordon City that would prevent it from contributing to smog formation."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 10,
+     "passage": "p430",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the organization of the passage as a whole?"
+      ],
+      "opts": [
+       "A particular view is considered, then certain historical developments are presented as an outcome of that viewpoint.",
+       "A common misconception is corrected, then competing explanations for that misconception’s popularity are compared.",
+       "Two discrete groups within an activist movement are contrasted, then process that led those groups to cooperate is outlined.",
+       "Responsibility for a change is attributed to certain persons, then reasons to doubt the accuracy of that attribution are advanced.",
+       "The findings of certain scholars are summarized, then the reception of those findings over time is analyzed."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 11,
+     "passage": "p430",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage discusses “educators’ anti-comics sentiment” in the highlighted sentence primarily to"
+      ],
+      "opts": [
+       "characterize the nature of a particular concern about the effects of comics on children",
+       "describe the long-term influence of the early research on comics",
+       "explain the origins of a disagreement among those opposed to comics",
+       "distinguish the strategies adopted by different groups opposed to comics",
+       "identify a historical consequence of a certain perspective on comics"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,247 @@
+{
+ "id": "u33-p361-p365",
+ "title": "阅读 33 · Passage 361–365（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 361–365",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 361–365",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p361": {
+     "number": 361,
+     "paragraphs": [
+      "Serotonin is a chemical continuously released by brain cells. Because serotonin decomposes extremely quickly into other chemicals, including 5-HIAA, researchers measure levels of 5-HIAA as an indicator of serotonin levels in the body. Recently, people convicted of arson have been found to have consistently low levels of 5-HIAA. Therefore, researchers who regard the tendency to commit arson as an illness hypothesize that the illness could be cured if arsonists' serotonin levels could be raised."
+     ],
+     "highlights": []
+    },
+    "p362": {
+     "number": 362,
+     "paragraphs": [
+      "Until the mid-1980s, Swedish workers’ wages were largely determined through centralized collective bargaining at a national level, a policy aimed at achieving equal pay for equal work across companies and industries. This policy, designed to raise the relative wages of low-wage workers, resulted in a decrease in overall wage inequality in Sweden's labor market. Furthermore, this policy may have indirectly resulted in a relatively small gender wage gap (difference between women's wages and those of similarly qualified men): several recent studies have demonstrated that decentralized wage bargaining produces relatively large wage inequality in general and large gender wage differentials in particular, and international comparisons show that a society's overall wage inequality is positively related to the gender wage gap.",
+      "Therefore, in designing a study of organizational factors that perpetuate inequities in women's wages, researchers decided to gather data on the current situation in Swedish companies. The researchers reasoned that the occurrence of discriminatory wage-setting practices in Swedish companies could provide a conservative estimate of the prevalence of such practices in other developed countries. Despite increasing decentralization of Sweden's wage-bargaining process since the mid-1980s, they reasoned, the effects of the earlier policy on current wages should still be evident to some extent."
+     ],
+     "highlights": [
+      "decrease",
+      "studies"
+     ]
+    },
+    "p363": {
+     "number": 363,
+     "paragraphs": [
+      "In northern Senland, the number of motor vehicle accidents is about twice as high in January, when icy conditions on the roads are most frequent, than it is in June, when the weather is usually warm and dry. However, in northern Senland, the risk that a vehicle driven in January will be involved in an accident is probably even more than twice as high as it is for one driven in June, since _______."
+     ],
+     "highlights": []
+    },
+    "p364": {
+     "number": 364,
+     "paragraphs": [
+      "Conspicuous structural inconsistencies distinguish the Ephesiaka of Xenophon from other ancient Greek novels. Its narrative texture is uneven, the story's pace varies erratically, and compared with other novels, it is inferior in composition. The quality of the Ephesiaka was first questioned by Burger who maintained that much of the work is an epitome (summary). This idea was used to account for the work's narrative shortcomings the choppy pace, the lack of motivation for certain events, the abrupt introduction of characters. However, it is doubtful that Ephesiaka is an epitome because, as an epitome, it is a worse job than it is as a novel. Even in passages Burger thinks are epitomized, inconsequential details such as Anthia feeding her dogs are retained, but potentially significant actions of gods are excised."
+     ],
+     "highlights": []
+    },
+    "p365": {
+     "number": 365,
+     "paragraphs": [
+      "When people suffering from zencolia, a highly infectious disease, are given the drug nartol, their symptoms cease and the zencolia virus can no longer be detected. But when some zencolia patients discontinue treatment with nartol, they exhibit zencolia symptoms once more just months later, and the virus is again detectable. This result shows that treatment with nartol sometimes suppresses the zencolia virus below detectable levels without entirely eliminating the virus from the body."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p361",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The researchers’ hypothesis would be most seriously undermined if it were discovered that"
+      ],
+      "opts": [
+       "none of the other chemicals into which serotonin decomposes is present in the body in sufficient quantities to be a useful indicator of serotonin levels in the brain",
+       "levels of 5-HIAA in the brain normally fluctuate throughout the course of a single day",
+       "5-HIAA itself eventually decomposes into other chemicals",
+       "many people who have low levels of 5-HIAA in the brain and who commit arson commit no other serious crimes of any sort",
+       "arsonists tend to be deficient in the enzyme necessary to decompose serotonin"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p362",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the highlighted “studies” lend support to which of the following statements about women workers wages?"
+      ],
+      "opts": [
+       "In most countries, women workers’ wages would not likely be affected by centralized collective bargaining in the same way as they were in Sweden prior to the mid-1980s.",
+       "In most countries, women workers’ wages are closer to the wages of similarly qualified men than they are in Sweden.",
+       "Women workers’ wages are generally less affected by centralized collective bargaining than are men's wages.",
+       "Women workers’ wages are sometimes adversely affected by wage-setting practices that are intended to remedy overall wage inequality.",
+       "Women workers’ wages are generally closer to the wages of similarly qualified male workers where wages are set through centralized wage bargaining than where they are set through decentralized wage bargaining."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p362",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage attributes the highlighted “decrease” to which of the following?"
+      ],
+      "opts": [
+       "A decline in Sweden’s gender wage gap",
+       "A decline in low-wage workers’ wages in Sweden",
+       "A decline in women’s wages in Sweden.",
+       "A policy governing wage bargaining in Sweden",
+       "A change in Sweden’s wage-bargaining practices initiated in the mid-1980s"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p362",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "If the researchers’ reasoning presented in the last paragraph of the passage is correct, then which of the following would be most likely to be true?"
+      ],
+      "opts": [
+       "Organizational factors that perpetuate inequities in women’s wages are less prevalent in Swedish companies today than they were prior to the mid-1980s.",
+       "The gender wage gap in Sweden is larger today than it was prior to the mid-1980s but smaller than that in many other developed countries.",
+       "Discriminatory wage-setting practices have declined in Sweden since the mid-1980s but not as sharply as they have declined in many other developed countries.",
+       "Overall wage inequality in Sweden has declined mote sharply Since the mid-1980s than it did during the period when centralized wage-bargaining processes prevailed in Sweden.",
+       "Women workers occupy more high-level positions in Swedish companies than they do in companies in many other developed countries."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p363",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "Cities in northern Senland are notoriously inefficient at clearing residential roads of snow and ice.",
+       "People are much less likely to drive when the roads are icy than when the roads are dry.",
+       "When the roads are icy, drivers tend to drive at considerably lower speeds than they do when the roads are dry.",
+       "Even when the roads are icy, most commuters in northern Senland have no choice but to commute by car.",
+       "An unusually high proportion of northern Senland’s roads are mountain roads."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p364",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author mentions “Anthia feeding her dogs” primarily in order to support"
+      ],
+      "opts": [
+       "a comparison between the Ephesiaka and other ancient Greek novels",
+       "a criticism of Burger's view about what the Ephesiaka is",
+       "an explanation of the Ephesiaka's narrative shortcomings",
+       "reassessment of the Ephesiaka's quality as a work of literature",
+       "a claim about the effect of inconsequential details on the overall quality of Ephesiaka"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p364",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage disagrees with Burger about which of the following?"
+      ],
+      "opts": [
+       "whether it can be determined which ancient Greek texts are epitomes",
+       "the explanation for some apparent deficiencies in the Ephesiaka",
+       "the overall literary quality of the Ephesiaka"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 8,
+     "passage": "p365",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "When the zencolia virus enters the body of a person free of the virus, it takes several years from the time of infection before any zencolia symptoms appear.",
+       "There is no drug that is more effective than nartol in treating the symptoms of zencolia.",
+       "Taking nartol prevents a patient from becoming infected by the zencolia virus for as long as the drug is used.",
+       "Researchers have so far not been able to develop a vaccine that would reliably prevent infection or reinfection with the zencolia virus.",
+       "Some people are allergic to nartol but, thanks to the availability of a simple and effective allergy test, run little risk of having it prescribed for them if they contract zencolia."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

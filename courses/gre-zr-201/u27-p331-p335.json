@@ -1,0 +1,304 @@
+{
+ "id": "u27-p331-p335",
+ "title": "阅读 27 · Passage 331–335（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 331–335",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 331–335",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p331": {
+     "number": 331,
+     "paragraphs": [
+      "Simulations indicate, and observations confirm, that the particles constituting Saturn’s rings are giving up angular momentum to moons of the planet. The simulations predict that over just a few hundred million years, the related energy transfer will cause the rings’ collapse. An analogous process occurs around young stars in the disks of matter from which planets emerge, and these protoplanetary disks do vanish that quickly, computer models show. Yet if Saturn’s rings are so short-lived, a large comet or moon—the rings’ presumed source—must have broken apart in Saturn’s vicinity within the past several hundred million years. That is quite unlikely. It would have been much more probable in the young solar system—4 billion years ago or more."
+     ],
+     "highlights": [
+      "energy transfer"
+     ]
+    },
+    "p332": {
+     "number": 332,
+     "paragraphs": [
+      "The seemingly unrelated aims of functional strength and aesthetic appeal had been not only successfully integrated in many of the classic suspension bridges of the past two centuries but also commonly achieved by engineers alone or leading teams. Thomas Telford was in fact both engineer and architect of his Menai Suspension Bridge, and John Roebling was both engineer and architect of his Brooklyn Bridge. That these engineering structures especially have come to be regarded as architectural icons demonstrates the aesthetic heights that an engineer can achieve.",
+      "Engineers less artistically confident than Telford and Roebling have engaged consulting architects to advise them on the design of everything from the facades placed on massive anchorages and skyscraper-high towers to the finishing details like deck railings and lampposts. Othmar Ammann, the chief engineer of the George Washington and many other New York City bridges, often sought the help of famous architects. When the George Washington was but an idea on paper, Ammann engaged Cass Gilbert, the architect of the Woolworth Building and other landmarks, to depict how the towers might be finished in stone. Since money was tight when the bridge was being completed, however, the steel-framed towers were left bare-a look that the Swiss architect Le Corbusier found extremely appealing-and bare steel became the new aesthetic standard for monumental bridge towers."
+     ],
+     "highlights": []
+    },
+    "p333": {
+     "number": 333,
+     "paragraphs": [
+      "Most Oakville residents want a community swimming pool to be built but do not want to finance it with local tax revenues. Oakville’s mayor argues that although the town has no financial reserves, building pool will not lead to higher taxes, since an unused town-owned land parcel is available and admission fees will cover the entire cost of operating the pool as well as repayment of the $3 million debt for construction."
+     ],
+     "highlights": []
+    },
+    "p334": {
+     "number": 334,
+     "paragraphs": [
+      "Isobel Grundy rightly argues that in researching pre-nineteenth-century women’s historical writing, scholars must define history broadly and include historical fiction, biography, court memoirs, and family history. Grundy also believes that these writings provide “a history of a whole female culture, while embodying a pre-nineteenth-century feminine” relationship to history. On this point, I am skeptical, as I do not believe there was a characteristic women’s relationship to history. Instead, my research suggests that pre-nineteenth-century British women writers’ engagement with historical discourse depended on such things as their political commitments and class affiliations and their perceptions of developing historical genres and markets. We must give sufficient attention to the myriad individual authors and texts before generalizing widely about women writers’ engagements with history."
+     ],
+     "highlights": []
+    },
+    "p335": {
+     "number": 335,
+     "paragraphs": [
+      "Much of ecological theory consists of models that are so highly idealized that they are of little real-world predictive value. In addition, many of the parameters used in models—such as birth and death rates—are exceedingly difficult to estimate accurately in the field. Consequently, ecological theory is rarely directly relevant to the practice of conservation biology. One notable exception is MacArthur’s theory of island biogeography, which predicts the species richness of an island on the basis of its size and degree of isolation. This theory could provide important insights into nature preserves, which can be analogous to islands, often consisting of relatively undisturbed ecosystems surrounded by biologically distinct areas."
+     ],
+     "highlights": [
+      "Consequently, ecological theory is rarely directly relevant to the practice of conservation biology."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p331",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage mentions protoplanetary disks because"
+      ],
+      "opts": [
+       "the computer modeling techniques used to study them were later applied to Saturn’s rings",
+       "conclusions about them might reasonably be applied to Saturn’s rings",
+       "the accepted understanding of them is challenged by observations of Saturn’s rings",
+       "the material of which Saturn’s rings are composed must at one time have been in a protoplanetary disk around the Sun",
+       "observations of Saturn’s rings may serve as a substitute for observations of protoplanetary disks"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p331",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the “energy transfer”?"
+      ],
+      "opts": [
+       "Its effects are obscured by the angular momentum of Saturn’s moons.",
+       "It is part of a process that also imparts angular momentum to at least some of Saturn’s moons.",
+       "It proceeds more slowly than does an analogous energy transfer that occurs in the vicinity of young stars."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC",
+     "answerPending": true,
+     "answerReviewReason": "配套答案BC，复核倾向B。角动量转给卫星为明示；C认定土星转移更慢，但文章呈现模型与年龄预期相冲突的问题，并未测定或确认更慢。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案BC，复核倾向B。角动量转给卫星为明示；C认定土星转移更慢，但文章呈现模型与年龄预期相冲突的问题，并未测定或确认更慢。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 3,
+     "passage": "p332",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "explore the interplay between two professional disciplines",
+       "discuss the personal qualities needed to succeed in a particular endeavor",
+       "consider what qualities give aesthetic appeal to structures of a particular kind",
+       "present the evolution of a relationship between competing goals",
+       "explain how apparently disparate goals actually support each other"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "retained-after-review"
+     }
+    },
+    {
+     "n": 4,
+     "passage": "p332",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that Othmar Ammann was"
+      ],
+      "opts": [
+       "responsible for a design that became an aesthetic touchstone for later bridges",
+       "financially constrained from hiring the architects he wished for the George Washington Bridge",
+       "less certain of his aesthetic design abilities than Telford and Roebling were of theirs"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 5,
+     "passage": "p332",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true of Cass Gilbert’s ideas for finishing the towers of the George Washington Bridge?"
+      ],
+      "opts": [
+       "They had to be abandoned during construction.",
+       "They impressed Le Corbusier.",
+       "They were judged to be too costly when the project was initially proposed.",
+       "They derived from themes Gilbert had explored in the Woolworth Building.",
+       "They started a fashion that was followed in later bridge towers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p333",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the mayor’s argument?"
+      ],
+      "opts": [
+       "Admission to the community pool will cost most residents who frequently use it more than they would have paid in increased taxes for pool open to residents free of charge.",
+       "Because of the types of accidents that can happen in and around swimming pools, the largest part of the operating expenses for the community pool will be lifeguards’ salaries and liability insurance.",
+       "The operation of a pool would bring increased traffic to the road leading to the site of the proposed pool and would require the town to fund costly road improvements.",
+       "The same survey that established that a majority of Oakville’s residents would use a community pool also found that over one-third of the town’s residents would have preferred that it be built at a different site.",
+       "Opponents of the pool have not advanced any other proposals for the use of the currently unused town-owned land parcel."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p334",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies that its author would agree with which of the following statements about “historical fiction, biography, court memoirs, and family history”?"
+      ],
+      "opts": [
+       "These genres had their origins primarily among pre-nineteenth-century British women writers.",
+       "These genres were probably more reflective of women’s views in pre-nineteenth-century Britain than they were in later periods.",
+       "These genres can help scholars develop a comprehensive view of British women’s historical writing.",
+       "These genres have generally been regarded by scholars as more reliable sources of information about pre-nineteenth-century women than have other genres of historical writing.",
+       "These genres are remarkably homogeneous in the way they represent the lives of pre-nineteenth-century women in Britain."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p334",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following describes a difference between the author and Grundy regarding British women writers’ engagement with historical discourse?"
+      ],
+      "opts": [
+       "The author thinks the engagement was determined primarily in response to developing literary markets; Grundy thinks it had little to do with such markets.",
+       "The author believes the engagement is reflected in numerous genres; Grundy thinks that one genre is specifically feminine.",
+       "The author emphasizes the heterogeneity of factors that influenced the engagement Grundy suggests that the engagement was unified by one particular factor.",
+       "The author thinks the engagement was limited to women in certain social classes; Grundy thinks it was common to all classes.",
+       "The author believes the engagement was just beginning in the late 1700s; Grundy thinks it reached its peak then."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p335",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describe the function of the sentence highlighted in the passage?"
+      ],
+      "opts": [
+       "It suggests direction for future presented earlier in the passage.",
+       "It presents evidence that will support the theory that is introduced in the following sentence.",
+       "It questions the usefulness of a particular version of the theory.",
+       "It clarifies an ambiguous statement made earlier in the passage.",
+       "It presents a general rule to which the passage will identify exception."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 10,
+     "passage": "p335",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the author would probably agree with which of the following statements?"
+      ],
+      "opts": [
+       "The practice of conservation biology may be directly affected by MacArthur’s theory of island biogeography.",
+       "Undisturbed systems surrounded by biologically distinct areas be helpful in estimating birth and death rate parameters more accurately.",
+       "The similarity between nature preserves and the island studied in MacArthur’s biogeography theory may help predict species richness in nature preserves."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

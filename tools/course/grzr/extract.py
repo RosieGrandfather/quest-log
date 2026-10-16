@@ -36,7 +36,7 @@ def paragraphs(lines):
     return [p for p in result if p]
 
 
-def extract(pdf):
+def extract(pdf, first=1, last=200):
     result=[];current=None
     with pdfplumber.open(pdf) as doc:
         for pn in range(21,len(doc.pages)):
@@ -53,7 +53,9 @@ def extract(pdf):
                 h=re.fullmatch(r'Passage\s*(\d+)',text,re.I)
                 if h:
                     n=int(h[1])
-                    if n>200:return result
+                    if n>last:return result
+                    if n<first:
+                        current=None;continue
                     current={'n':n,'lines':[]};result.append(current)
                 elif current:
                     current['lines'].append({'page':pn+1,'top':round(min(w['top'] for w in ws),2),'text':text,

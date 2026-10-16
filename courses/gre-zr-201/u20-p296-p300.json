@@ -1,0 +1,257 @@
+{
+ "id": "u20-p296-p300",
+ "title": "阅读 20 · Passage 296–300（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 296–300",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 296–300",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p296": {
+     "number": 296,
+     "paragraphs": [
+      "Federal courts in the United States, especially before the famous 1962 case of Baker v. Carr, were often thought to be powerless in the area of election law, voting rights, and other legal questions clearly bearing on politics. This perception was not entirely correct, of course, as pre-1962 Supreme Court decisions such as that in the case of Smith v. Allwright demonstrated in the wake of that decision, voting participation among African Americans in the South increased substantially. However, political rights had not always been so clearly championed by the Supreme Court as they were in Smith v. Allwright. Indeed, the transformations between the Civil War and 1962 were such that, in reviewing voters’ rights cases over the intervening decades, one feels like an archaeologist cutting through distinct layers in which the judicial decisions uncovered reveal a pattern of ideological and societal change."
+     ],
+     "highlights": []
+    },
+    "p297": {
+     "number": 297,
+     "paragraphs": [
+      "In A Fine Brush on Ivory, his appreciation of novelist Jane Austen, Richard Jenkyns remarks that in Austen scholarship, there are pressure that cause ordinary critical circumspection to break down. Principal among those pressures is the peculiar affection in which the person of Jane Austen is held by many readers. This affection is not altogether explained by admiration for he genius, nor is it entirely a symptom of nostalgia for her orderly, decorous, even mysterious life. Writer has led critics to approach her work in mostly biographical or historical ways, often in defiance of other critical fashions, especially the various formal approaches that have dominated modern literary criticism."
+     ],
+     "highlights": [
+      "appreciation of"
+     ]
+    },
+    "p298": {
+     "number": 298,
+     "paragraphs": [
+      "The traditional color of fire trucks is red, but in cities that have introduced yellow trucks into their fleets, the rate of traffic accidents per mile driven among these trucks has been far lower than the rate among red trucks. Some critics of the innovation have questioned whether this difference should be attributed to color, given that the yellow trucks were generally newer than the red trucks with which they were compared. But this criticism can be dismissed. Certainly, the mere difference in accident rates is not decisive evidence. The decisive fact is that the rates differed significantly only in the hours around dawn and dusk. At these hours, the visibility of yellow is known to be better than that of red."
+     ],
+     "highlights": [
+      "this difference should be attributed to color,",
+      "the mere difference in accident rates is not decisive evidence."
+     ]
+    },
+    "p299": {
+     "number": 299,
+     "paragraphs": [
+      "Findings in biological anthropology suggest that Native Americans’ ancestors probably came to the Americas from northeastern Asia. Turner, for example, has studied the dentition of prehistoric and living Native Americans and northeastern Asians. Based on approximately twenty dental traits, including tooth-crown shape and number of roots, he has defined an overall dental pattern called Sinodonty, which includes three-rooted lower first molars and shovel-shaped incisors. This distinctive pattern is shared among most Native Americans and people from northeastern Asia, but is not found in people who originated in southern Asia, Africa, or Europe. Another less complex pattern—Sundadonty—is shared among the people of southeastern Asia and is also found in prehistoric American populations, but Turner believes that widespread Sinodonty demonstrates most Native Americans’ northeastern Asian origins."
+     ],
+     "highlights": []
+    },
+    "p300": {
+     "number": 300,
+     "paragraphs": [
+      "Belnovia’s government provides health care to all its citizens. Five years ago, with costs incurred from smoking-related health problems accounting for 5 percent of annual government expenditures, Belnovia’s health agency initiated a nationwide antismoking campaign. Although the campaign succeeded in reducing the number of smokers in Belnovia substantially, it clearly failed to reduce the annual costs incurred from smoking-related health problems, since these costs currently account for 6 percent of annual government expenditures."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p296",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage uses the analogy of the archaeology most probably in order to"
+      ],
+      "opts": [
+       "contrast judicial decisions made after 1962 concerning voters rights with decision made immediately after the Civil War",
+       "suggest that the author is perplexed by many judicial decisions regarding voters’ rights",
+       "characterize the nature of change in judicial thinking regarding voters’ rights",
+       "indicate that much of the history of voters’ rights has been lost since the Civil War",
+       "illustrate the lack of concern for voters’ rights exhibited by federal courts before the Civil War"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p296",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred regarding the case of Baker v. Carr?"
+      ],
+      "opts": [
+       "Its outcome required clarification in subsequent decisions rendered by the Supreme Court.",
+       "Its resolution attested to the power of federal courts to address legal issues related to politics.",
+       "It marked a radical change in judicial thinking in the United States.",
+       "It was decided before the Supreme Courts heard the case of Smith v. Allwright.",
+       "It has little historical significance aside from its focus on laws affecting politics."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p297",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, critics approach Jane Austen’s work in biographical or historical ways for which of the following reasons?"
+      ],
+      "opts": [
+       "They find her work particularly well suited to biographical and historical readings.",
+       "They are unsatisfied with the formal approaches that have dominated modern literary criticism.",
+       "They feel the need to know the baffling writer personally."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B",
+     "answerPending": true,
+     "answerReviewReason": "配套答案B，复核倾向C。亲近神秘作者的欲望可解释传记解读；违背形式主义风尚不等于不满意形式主义。原文Writer has led critics衔接也残缺，尚无完整版本消除疑问。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案B，复核倾向C。亲近神秘作者的欲望可解释传记解读；违背形式主义风尚不等于不满意形式主义。原文Writer has led critics衔接也残缺，尚无完整版本消除疑问。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 4,
+     "passage": "p297",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “appreciation of” most nearly means"
+      ],
+      "opts": [
+       "gratitude toward",
+       "awareness of",
+       "appraisal of",
+       "esteem for",
+       "grasp of"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p298",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the argument given, the two highlighted portions play which of the following roles?"
+      ],
+      "opts": [
+       "The first is a statement of the position the argument as a whole opposes; the second is a statement of the position it defends.",
+       "The first is a claim that the argument as a whole calls into question; the second denies the rationale presented by some critics of that claim.",
+       "The first is a claim that the argument as a whole calls into question; the second points out an error of reasoning made by defenders of that claim.",
+       "The first is the position defended in the argument; the second is an intermediate conclusion drawn to support that position.",
+       "The first is the position defended in the argument; the second concedes a point to critics of that position."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p299",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies that Turner’s conclusion regarding the origins of most Native American populations is based in part on which of the following findings?"
+      ],
+      "opts": [
+       "The presence of Sundadonty among prehistoric American populations",
+       "The prevalence of shovel-shaped incisors among Native Americans",
+       "The absence of Sinodonty among people from southern Asia, Africa, and Europe."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 7,
+     "passage": "p299",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, Sinodonty and Sundadonty differ from one another in that Sinodonty"
+      ],
+      "opts": [
+       "has been found among prehistoric Native American populations, while Sundadonty has not.",
+       "is a more complex dental pattern than Sundadonty is",
+       "occurs frequently in modern Native American populations, while Sundadonty does not."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "retained-after-review"
+     }
+    },
+    {
+     "n": 8,
+     "passage": "p300",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "Costs incurred from smoking-related health problems account for a greater portion of the Belnovian government’s overall health expenditures now than they did five years ago.",
+       "The average cost of treatment for smoking related health problems in Belnovia has not increased significantly over the past five years.",
+       "Overall health expenditure account for a greater portion of the Belnovian government’s annual expenditures now than they did five years’ ago.",
+       "Belnovia’s annual government expenditures are not significantly lower now than they were five years ago.",
+       "Smoking-related health problems usually persist long after a person has quit smoking."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

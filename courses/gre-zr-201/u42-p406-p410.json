@@ -1,0 +1,328 @@
+{
+ "id": "u42-p406-p410",
+ "title": "阅读 42 · Passage 406–410（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 406–410",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 406–410",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p406": {
+     "number": 406,
+     "paragraphs": [
+      "According to one current hypothesis, the typical evolutionary history of a species involves a quick origin, followed by a long period of stability of form, or stasis, and then rapid disappearance. The sudden appearance of new species, once attributed to supposed gaps in the fossil record, is thought to represent accurately the histories of species.",
+      "There is, however, doubt about some of the scientific evidence for this evolutionary pattern, particularly the extent to which species exhibit stasis. For example, species with a large population are more likely to exhibit relative stasis, but they are also more likely to be found in the fossil record. Moreover, it is invariably only the hard body parts of any organism that are fossilized. Variations over time in soft body parts, in biochemistry, and in behavior largely escape the fossil record; thus, fossil traces preserve only a minute portion of a species' traits. Furthermore, since so few individual organisms leave fossils, the record of a species is likely to understate variation in that species."
+     ],
+     "highlights": [
+      "doubt",
+      "pattern,"
+     ]
+    },
+    "p407": {
+     "number": 407,
+     "paragraphs": [
+      "In the Lake Ontario food chain, small fish called alewives are prey for predator fish such as salmon. Any successful effort to reduce pollution in Lake Ontario will also result in a reduced alewife population, but reductions of that population will not, as some have feared, lead to smaller populations of salmon in Lake Ontario, since _________."
+     ],
+     "highlights": []
+    },
+    "p408": {
+     "number": 408,
+     "paragraphs": [
+      "Critics have traditionally reacted with ambivalence to the structure of American author William Wells Brown’s novel Clotel (1853), noting, for instance, that the book contains \"enough material for a dozen novels.\" This comment is accurate in stating, hyperbolically, the richness of the novel, but its negative connotations need to be reinterpreted. Rather than a shortcoming, this wealth of material is in fact a crucial, deliberate element of Brown’s aesthetic. Brown’s narrative strategy is a finely tuned literary tool to re-create on the page— and to make readers experience, albeit mildly—the overwhelming, absurd, brutal, uncertain qualities of slavery. Brown mirrors in the very structure of the novel the uncertainty and limited control endemic to his characters' lives."
+     ],
+     "highlights": [
+      "Brown mirrors in the very structure of the novel the uncertainty and limited control endemic to his characters' lives."
+     ]
+    },
+    "p409": {
+     "number": 409,
+     "paragraphs": [
+      "Research shows that people often retain beliefs based on prior incorrect understanding when reading texts that contradict those beliefs, Yet readers do not reliably call!upon accurate prior knowledge when reading false statements. Prentice, Gerrig, and Bailis asked subjects to read a narrative that included some obviously false statements presented as though true. Participants were later asked to verify the truth of various statements and took longer than expected to reject false ones. Studies of this type suggest that readers may initially accept everything they read as true and only afterward reconcile false propositions with respect to their prior knowledge. In some cases, this reconciliation may be far from perfect, such that readers believe new false information may have actually been derived from their prior knowledge."
+     ],
+     "highlights": []
+    },
+    "p410": {
+     "number": 410,
+     "paragraphs": [
+      "The following passage comes from a study of gull bill markings.",
+      "Some species of gulls have uniformly colored bills, but many (62 percent in our sample) have beaks with differently colored tips, stripes, or spots that act as a focus for the pecking of newly hatched chicks as they beg for food. In an attempt to understand why, we determined whether adult gulls of those species with newly hatched chicks that are small in relation to the size of the adult are more likely to have such patterned beaks. This work is based on Hailman’s(1967) suggestion that gulls with greater bill depths (large species) tend to have only a restricted area of red on the bill (i.e., a red tip or spot), whereas smaller-billed species have uniform bills. We suggest that the most plausible reason for any size-related difference is that concentrating a small chick’s pecking on a particular part of the bill is more effective than is unfocused pecking in stimulating the adult to regurgitate food. As well as encouraging the chick to peck, the tip of the bill, or the gonys (where stripes and spots are located), might be more sensitive than are other parts of the beak to the feeble pecking of a small chick, or a small chick might more effectively occupy the parent’s visual field when pecking there."
+     ],
+     "highlights": [
+      "the parent’s visual field"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p406",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage provides evidence to refute which of the following aspects of the hypothesis described in the first paragraph?"
+      ],
+      "opts": [
+       "The belief that species disappear rapidly",
+       "The contention that form remains stable over long periods of time",
+       "The notion that gaps occur in the fossil record",
+       "The assertion that new species appear suddenly",
+       "The presumption that an evolutionary history can be typical"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p406",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Regarding the “doubt\" mentioned in the passage, the author would probably agree that it"
+      ],
+      "opts": [
+       "will be resolved once scientists have gathered more data relevant to certain critical cases",
+       "arises only because scientists assume that the sudden appearance of new species in the fossil record accurately represents the speed with which new species arose",
+       "results partially from tendencies in the fossil record that allow for uncertainty"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p406",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “pattern” most nearly means"
+      ],
+      "opts": [
+       "archetype",
+       "precedent",
+       "model",
+       "relationship",
+       "grouping"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A",
+     "answerPending": true,
+     "answerReviewReason": "配套答案A（archetype），复核倾向C（model）。pattern指快速出现、长期稳定、快速消失的演化模式，两词都有模式义，A也含典型原型义；未取得可靠解释确定近义词边界。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案A（archetype），复核倾向C（model）。pattern指快速出现、长期稳定、快速消失的演化模式，两词都有模式义，A也含典型原型义；未取得可靠解释确定近义词边界。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 4,
+     "passage": "p407",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "salmon cannot readily compensate for reduced numbers of alewives by finding other prey",
+       "lower pollution in Lake Ontario is unlikely to eliminate alewives from the lake entirely",
+       "the impact of pollution reduction on the population of other fish on which salmon prey in Lake Ontario will be similar to the impact it will have on alewives",
+       "changes in the size of a prey population sometimes cause substantial erratic fluctuations in the populations of the prey and their predators",
+       "alewives are a principal predator of baby salmon"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p408",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, certain narrative strategies employed by Brown in Clotel"
+      ],
+      "opts": [
+       "are characteristic of the author’s fictional works",
+       "are at odds with the novel’s overarching themes",
+       "anticipate the novel’s dramatic resolution",
+       "are directly related to the novel’s subject matter",
+       "are based on conventions used by early-nineteenth- century American writers"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p408",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence?"
+      ],
+      "opts": [
+       "It qualifies the claims for the novel made previously in the passage.",
+       "It validates traditional criticisms of the novel mentioned earlier in the passage.",
+       "It compares the novel’s structure to that of other contemporary works.",
+       "It elaborates upon an idea expressed in the previous sentence.",
+       "It concedes that certain qualities in the novel’s style could be considered flaws."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p409",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following assertions about readers can be inferred from the passage?"
+      ],
+      "opts": [
+       "The initial credence given by readers to written.statements is not necessarily dependent on the plausibility of those statements.",
+       "The amount of time it takes for readers to read a written text depends in part on whether information in the text is consistent with the readers’ prior beliefs.",
+       "Readers are more likely to understand a written text that confirms their prior beliefs than one that does not.",
+       "Readers have better recall of written texts that contradict their prior beliefs than of written texts that are consistent with their prior beliefs.",
+       "Readers are apt to misremember a text they have just read if that text contains information inconsistent with readers’ prior beliefs."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p409",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred about the study conducted by Prentice, Gerrig, and Bailis?"
+      ],
+      "opts": [
+       "They set out to study one phenomenon and ended up examining a phenomenon that was related but different.",
+       "They conducted their study by asking participants to read texts that discussed subject matter on which the participants were unlikely to have strong views.",
+       "They found evidence that people are more likely to retain incorrect beliefs that are contradicted by a written text than to reject false statements in a written text.",
+       "They designed their study to test a particular hypothesis that their findings did not ultimately support.",
+       "They began with an estimate of the time that participants would take to evaluate and reject false statements that were contrary to participants' prior knowledge."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 9,
+     "passage": "p410",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about food regurgitation in adult gulls as a chick-feeding behavior?"
+      ],
+      "opts": [
+       "It occurs most frequently when chicks are newly hatched.",
+       "It is at least partly prompted by tactile signals.",
+       "It is one of several means of feeding newly hatched chicks.",
+       "Its effectiveness is related to chick size.",
+       "Its occurrence is related to species' bill depth."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 10,
+     "passage": "p410",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context of the passage, the reference to \"the parent’s visual field\" serves primarily to"
+      ],
+      "opts": [
+       "propose a reason that red is found on gull bills more commonly than are other colors",
+       "describe the second of two mutually exclusive explanations for the coloration of gull bills",
+       "explain why it might be advantageous for gull bills to be marked in a particular way",
+       "explain why gull parents may give preference to certain chicks when feeding them",
+       "explain how a chick’s size may contribute to its effectiveness at begging for food"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 11,
+     "passage": "p410",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "According to the passage, a gull species' bill depth is associated with which of the following characteristics of the species?"
+      ],
+      "opts": [
+       "Chick feeding frequency",
+       "Chick survival rate",
+       "Parent longevity",
+       "Overall chick size",
+       "Overall adult size"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

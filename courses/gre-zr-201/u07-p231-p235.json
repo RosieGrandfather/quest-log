@@ -1,0 +1,176 @@
+{
+ "id": "u07-p231-p235",
+ "title": "阅读 07 · Passage 231–235（5篇 · 5题）",
+ "en": "Reading Comprehension — Passages 231–235",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 231–235",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p231": {
+     "number": 231,
+     "paragraphs": [
+      "When on an airplane, Consuelo never enjoys movies that have been widely recommended because the poor quality of the picture spoils her enjoyment. Since in no circumstances does she ever enjoy movies that have been widely derided, it follows that she never enjoys movies on airplanes."
+     ],
+     "highlights": []
+    },
+    "p232": {
+     "number": 232,
+     "paragraphs": [
+      "Recently an unusually high number of dolphins have been found dead of infectious diseases, and most of these had abnormally high tissue concentrations of certain compounds that, even in low concentrations, reduce dolphins’ resistance to infection. The only source of these compounds in the dolphins’ environment is boat paint. Therefore, since dolphins rid their bodies of the compounds rapidly once exposure ceases, their mortality rate should decline rapidly if such boat paints are banned."
+     ],
+     "highlights": []
+    },
+    "p233": {
+     "number": 233,
+     "paragraphs": [
+      "Iridium, a hard, whitish metal similar to platinum, is extremely rare on Earth. Extremely high concentrations of iridium on Earth result from only two scenarios: massive volcanic eruptions that release iridium from deep within the Earth and meteorites that shower down on Earth from space. When scientists found concentrations of iridium 30 times higher than normal in rock stratum from 65 million years ago, they concluded that a massive meteor or comet hit the Earth and caused the massive extinction of the dinosaurs."
+     ],
+     "highlights": []
+    },
+    "p234": {
+     "number": 234,
+     "paragraphs": [
+      "Upon maturity, monarch butterflies travel hundreds of miles from their places of origin and lay their eggs on milkweed. The caterpillars that emerge feed on milkweed and absorb the glycosides in milkweed sap. The specific glycosides present in milkweed differ from region to region within the monarch butterfly’s range. Since mature butterflies retain the glycosides, the glycosides in a mature monarch butterfly could be used to determine its place of origin."
+     ],
+     "highlights": []
+    },
+    "p235": {
+     "number": 235,
+     "paragraphs": [
+      "When rats are placed under conditions of stress, their adrenal glands immediately increase production of the hormone corticosterone, and soon thereafter the rats’ white blood cell count drops substantially. Yet rats without functioning adrenal glands experience little decrease in white blood cell count when placed under conditions of stress. It is likely, therefore, that an increase in corticosterone produced by a rat’s adrenal glands causes the rat’s white blood cell count to decrease."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p231",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would enable the conclusion of the argument to be properly drawn?"
+      ],
+      "opts": [
+       "The only place where Consuelo enjoys widely recommended movies is a movie theater.",
+       "Widely recommended movies are never shown on airplane.",
+       "If a movie shown on an airplane is not widely derided, then it is invariable widely recommended.",
+       "If the picture quality of the movies shown on airplanes was better, Consuelo would enjoy the widely recommended movies.",
+       "Some movies are neither widely recommended nor widely derided."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p232",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "The levels of the compounds typically used in boat paints today are lower than they were in boat paints manufactured a decade ago.",
+       "In high concentrations, the compounds are toxic to many types of marine animals.",
+       "The compounds break down into harmless substances after a few months of exposure to water or air.",
+       "High tissue levels of the compounds have recently been found in some marine animals, but there is no record of any of those animals dying in unusually large numbers recently.",
+       "The compounds do not leach out of the boat paint if the paint is applied exactly in accordance with the manufacturer’s directions."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p233",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strongly supports the scientists’ conclusion?"
+      ],
+      "opts": [
+       "Volcanoes massive enough to generate high concentrations of iridium are very rare.",
+       "Massive volcanic eruptions occurred frequently 80 million years ago.",
+       "Most scientists support the hypothesis that a cosmic impact wiped out the dinosaurs.",
+       "The massive extinction that occurred 70 million years ago killed not only the dinosaurs but also 70 percent of all life on Earth.",
+       "A comet struck the earth some 120 million years ago, but no widespread extinction occurred."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p234",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "Mature monarch butterflies do not feed on parts of milkweed that contain glycosides.",
+       "The glycosides in milkweed sap are slightly toxic to caterpillars of other species.",
+       "The vast majority of the monarch butterflies that are laying eggs in a given region will have traveled there from a single region.",
+       "There are substances other than glycosides in milkweed sap that accumulate in a monarch caterpillar and are retained in the body of the mature butterfly.",
+       "There are certain glycosides that are found in the sap of all milkweeds, no matter where they grow within the monarch butterfly’s range."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p235",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following would it be most useful to know in evaluating the reasoning of the argument?"
+      ],
+      "opts": [
+       "Whether the drop in white blood cell count that occurs in rats under conditions of stress is sufficient to make the rats more susceptible to diseases that white blood cells normally combat",
+       "Whether normal white blood cell counts vary widely among healthy rats that are not under conditions of stress",
+       "Whether the adrenal glands of rats that are under conditions of stress increase production of any hormone other than corticosterone",
+       "Whether the adrenal glands of rats produce elevated levels of corticosterone on occasions when the rats are not under conditions of stress",
+       "Whether rats’ adrenal glands are affected by hormones produced by any of the rats’ other organs."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

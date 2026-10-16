@@ -1,0 +1,349 @@
+{
+ "id": "u12-p256-p260",
+ "title": "阅读 12 · Passage 256–260（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 256–260",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 256–260",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p256": {
+     "number": 256,
+     "paragraphs": [
+      "Larvae of many marine invertebrate species delay their metamorphosis into juveniles when cues signaling an appropriate juvenile environment are absent, thereby increasing their likelihood of thriving as juveniles and of ultimately reaching adulthood. Nevertheless, delayed metamorphosis has potential costs for juveniles, including reduced growth and increased mortality. Nearly all evidence of such costs involves species whose larvae do not feed but rather subsist on stored nutrients, indicating that insufficient energy reserves may be an underlying cause of these costs. Supporting this hypothesis are laboratory studies showing that in a certain bryozoan, the prolonged larval swimming that results from delayed metamorphosis is associated with size reductions in the juvenile feeding organ (the lophophore) and that one factor influencing the size of juveniles of certain barnacle species is how long larvae delay metamorphosis. However, other studies show that while significantly fewer juvenile Capitella worms survived to adulthood when metamorphosis had been delayed, prolonged larval swimming had no significant effect on juvenile size, suggesting, perhaps, that in some species, factors other than insufficient energy reserves account for the negative effects of the larval stresses that result from delayed metamorphosis."
+     ],
+     "highlights": [
+      "hypothesis"
+     ]
+    },
+    "p257": {
+     "number": 257,
+     "paragraphs": [
+      "The presence of work themes in the painting of the Impressionist movement of the late nineteenth and early twentieth centuries has until recently been largely discounted, despite the body of Impressionist works that continued the tradition, initiated by Courbet and Millet and developed through the 1880s by Breton, Bastien-Lepage, Pissaro, and Berthe Morisot, of representing rural labor, and notwithstanding the significant body of Impressionist work—including that of Degas, Caillebotte, and Morisot—representing urban or suburban labor. The notion of Impressionism as concerned primarily with the representation of leisure has less to do, however, with the subject matter of the paintings than with the acceptance of the view, widely held in nineteenth-century France, that considered peasants performing physically demanding rural labor as the epitome of work. The numerous Impressionist representations of activities (often those of women) that we might classify as work—a woman serving beer in a cafe, many paintings by Degas of the ballet (a physically demanding activity by any standard)—were instead classified as representations of leisure by those who held this view."
+     ],
+     "highlights": [
+      "tradition,"
+     ]
+    },
+    "p258": {
+     "number": 258,
+     "paragraphs": [
+      "The ship Mary Rose, first launched in 1511, underwent extensive repairs in 1528 and 1536 and sank in 1543. Researchers raised the ship in 1982 and analyzed the wreck’s preserved timbers; some timbers came from trees felled after 1511, so they must have been added during repair. There were some beams, however, that came from trees felled before 1511. It is likely, therefore, that these beams were part of the original ship."
+     ],
+     "highlights": []
+    },
+    "p259": {
+     "number": 259,
+     "paragraphs": [
+      "Tea is rich in compounds called polyphenols, which are similar to certain compounds known to help prevent cancer. Among people in Japan, those who drink over ten cups of tea per day have lower rates of stomach cancer than others. On average, people in Japan drink much more tea than people in the United States and have lower rates of lung cancer. It is therefore likely that polyphenols also help prevent cancer."
+     ],
+     "highlights": []
+    },
+    "p260": {
+     "number": 260,
+     "paragraphs": [
+      "Few central Asian textiles from the Timurid period (1370-1526C. E.) have survived to be dated. However, scholars have long assumed that Timurid rugs with geometric patterns were replaced in royal courts by floral-patterned rugs only at the end of the 1400s, under the influence of the painter Behzād (circa 1455-circa 1536). Nevertheless, the presence of floral-patterned rugs in court scenes from two paintings in a 1440s Timurid manuscript suggests that floral-patterned rugs were already being used at that time. Whether the occasional presence of geometric rugs in similar paintings after the 1440s means the tradition of weaving rugs with geometric patterns also continued, or whether here the painters simply followed a well-established formula, is still an open question."
+     ],
+     "highlights": [
+      "Whether the occasional presence of geometric rugs in similar paintings after the 1440s means the tradition of weaving rugs with geometric patterns also continued, or whether here the painters simply followed a well-established formula, is still an open question."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p256",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests that the “bryozoan,” the “barnacle species,” and “Capitella worms” all share which of the following characteristics?"
+      ],
+      "opts": [
+       "The larvae of these species do not feed but rather subsist on stored nutrients.",
+       "The larvae of these species are unable to undergo metamorphosis if larval swimming is significantly prolonged.",
+       "The larvae of these species do not have enough energy to meet their needs when metamorphosis is delayed.",
+       "The juveniles of these species manifest the negative effects of delayed metamorphosis as a decrease in size.",
+       "The juveniles of these species are not significantly larger than their respective larvae."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p256",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The “hypothesis” implies that compared to marine invertebrate larvae that subsist on stored nutrients, marine invertebrate larvae that feed are less likely to"
+      ],
+      "opts": [
+       "exhibit prolonged larval swimming as a result of delayed metamorphosis",
+       "experience negative effects as a result of delayed metamorphosis",
+       "thrive as juveniles in environments inappropriate for juveniles",
+       "delay metamorphosis in the absence of appropriate environmental cues",
+       "delay metamorphosis for an extended period of time"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p256",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "weighing the relative benefits and costs of delayed metamorphosis",
+       "illustrating the range of costs that can result from delayed metamorphosis",
+       "speculating on why the costs of delayed metamorphosis have gone unrecognized",
+       "discussing a possible explanation of the costs of delayed metamorphosis",
+       "debunking the notion that the costs of delayed metamorphosis are negligible"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p257",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "propose a new theory about the techniques used to represent work themes in Impressionist painting",
+       "expand the meaning of the term “work” as it applies to painting",
+       "note that work themes were often overlooked in Impressionist painting and suggest a reason why",
+       "provide insight into why certain activities were not considered work in the late nineteenth century",
+       "provide specific examples of rural work themes in Impressionist painting and explain the significance of such themes"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p257",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The “tradition” refers to the"
+      ],
+      "opts": [
+       "view that work themes are of little importance in Impressionist painting",
+       "representation of leisure",
+       "representation of urban and suburban labor",
+       "representation of rural labor",
+       "works of Degas, Caillebotte, and Morisot"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p257",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "With which of the following statements about Impressionist painting would the author of the passage be most likely to agree?"
+      ],
+      "opts": [
+       "The view that Impressionist painting is concerned primarily with themes of leisure is based in part on a limited definition of what constitutes work.",
+       "Many Impressionist paintings once regarded as representing work themes are now viewed as being concerned primarily with the representation of leisure.",
+       "Most of the Impressionist paintings that treat work themes depict activities representing urban and suburban labor.",
+       "Although themes of work appear frequently in Impressionist paintings, these themes are limited to the traditional representations of work as rural physical labor.",
+       "Notwithstanding the large body of Impressionist painting in which work themes are present, the notion that Impressionist paintings are primarily about leisure activities is essentially correct."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p258",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "The repair caused the Mary Rose to be significantly more difficult to handle and ultimately may have led to the ship’s sinking.",
+       "The beams were fastened with wooden nails that came from trees felled after 1511.",
+       "The beams came from a part of the ship that quite commonly needs to be repaired every few years.",
+       "One structurally important timber came from a tree felled after 1528.",
+       "Shipbuilders of the 1500s preferred to work with recently felled wood that was still green with sap."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p259",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, provides the most support for the argument?"
+      ],
+      "opts": [
+       "Smoking, a known cause of lung cancer, is more common in Japan than it is in the United states.",
+       "Few people in the United States drink more than ten cups of tea per day.",
+       "Stomach cancer is much more common in Japan than it is in the United States.",
+       "Soy products, which are known to help prevent cancer, are more widely used in Japan than in the United States.",
+       "Coffee, which like tea is a source of caffeine, is more popular in the United States than in Japan."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p260",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, after the 1440s, Timurid paintings of court scenes"
+      ],
+      "opts": [
+       "generally followed well-established formulas",
+       "are more likely to have survived than Timurid textiles",
+       "were greatly influenced by the painter Behzād",
+       "are frequently found in Timurid manuscripts",
+       "sometimes showed rugs with geometric patterns"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 10,
+     "passage": "p260",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies which of the following about the introduction of floral-patterned rugs in Timurid royal courts?"
+      ],
+      "opts": [
+       "It explains the absence of any surviving geometric-patterned rugs.",
+       "It predates any influence wielded by the painter Behzād.",
+       "It occurred earlier than scholars have long thought."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 11,
+     "passage": "p260",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following statements best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "It notes a fact about Timurid rugs, that explains why they have been the subject of scholarly controversy.",
+       "It emphasizes the fragility of central Asian textiles from the period in question,",
+       "It situates Timurid rugs within the wider context of textile arts from the same period.",
+       "It suggests why the author is relying upon indirect evidence for the dating of trends in Timurid rugs.",
+       "It describes a constraint on the study of Timurid rugs that the author thinks has been overemphasized."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D",
+     "answerPending": true,
+     "answerReviewReason": "配套答案D适合解释首句存世织物少而采用间接证据，但原PDF高亮末句讨论几何图案是否仍织造。已核原页，高亮与选项不对应。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案D适合解释首句存世织物少而采用间接证据，但原PDF高亮末句讨论几何图案是否仍织造。已核原页，高亮与选项不对应。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 12,
+     "passage": "p260",
+     "sourceQuestion": 4,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “formula” most nearly means"
+      ],
+      "opts": [
+       "fact",
+       "symbol",
+       "ritual",
+       "maxim",
+       "recipe"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

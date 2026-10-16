@@ -1,0 +1,249 @@
+{
+ "id": "u29-p341-p345",
+ "title": "阅读 29 · Passage 341–345（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 341–345",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 341–345",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p341": {
+     "number": 341,
+     "paragraphs": [
+      "Because densely populated urban centers concentrate human activity, we think of them as pollution crisis zones. Ecology-minded discussions often focus on ways to make cities seem somewhat less oppressively man-made, such as increasing the area devoted to 40 parks or easing the intensity of development. But most such changes would actually undermine cities’ extraordinary energy efficiency. Per unit of area, cities in the United States generate more greenhouse gases, use more energy, and produce more solid waste than most other American regions of comparable size. On a map depicting negative environmental impacts in relation to surface area, therefore, cities would look like intense hot spots. If you plotted the same negative impacts by resident or household, however, the reverse would hold."
+     ],
+     "highlights": []
+    },
+    "p342": {
+     "number": 342,
+     "paragraphs": [
+      "No ambitious politician will challenge an elected public official running for reelection unless that official appears vulnerable. Nonetheless, public officials who do not appear vulnerable as they attempt to win reelection rarely run unopposed."
+     ],
+     "highlights": []
+    },
+    "p343": {
+     "number": 343,
+     "paragraphs": [
+      "The infectious disease known as whooping cough is commonly thought to be a childhood illness, but a recent study suggests that more adults contract this illness than was previously suspected. Although the disease is life-threatening in children, in adults it typically causes only a persistent cough which, though annoying, is rarely serious. Therefore, the incidence of whooping cough in adults poses no significant public health threat."
+     ],
+     "highlights": []
+    },
+    "p344": {
+     "number": 344,
+     "paragraphs": [
+      "Sensationalism—the purveyance of emotionally charged content, focused mainly on violent crime, to a broad public—has often been decried, but the full history of the phenomenon has yet to be written. Scholars have tended to dismiss sensationalism as unworthy of serious study, based on two pervasive though somewhat incompatible assumptions: first, that sensationalism is essentially a commercial product, built on the exploitation of modern mass media, and second, that it appeals almost entirely to a simple, basic emotion and thus has little history apart from the changing technological means of spreading it. An exploration of sensationalism’s early history, however, challenges both assumptions and suggests that they have tended to obscure the complexity and historicity of the genre."
+     ],
+     "highlights": [
+      "charged"
+     ]
+    },
+    "p345": {
+     "number": 345,
+     "paragraphs": [
+      "Some economists suggest that all firms would be expected to pay workers doing identical jobs the same wage. However, studies show that high-profit industries tend to pay more. While some of this observed wage gap could be due to difficulties in measuring workers' talent, it is unlikely that such measurement problems can explain everything. Although talent is hard to measure, factors with which it is presumably correlated, such as education and tenure, are not. Yet studies that control for those factors still find big wage disparities. Moreover, although receptionists, for example, do not become less talented when they leave a high-profit industry to work in an industry with lower profits, their pay tends to drop in line with the wage gap between the two."
+     ],
+     "highlights": [
+      "Moreover, although receptionists, for example, do not become less talented when they leave a high-profit industry to work in an industry with lower profits, their pay tends to drop in line with the wage gap between the two."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p341",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best expresses the main idea of the passage?"
+      ],
+      "opts": [
+       "Increasing the space devoted to parks in urban areas would not necessarily make cities seem less man-made.",
+       "Because they are densely populated, cities tend to have a disproportionately negative impact on the environment.",
+       "Although densely populated cities are relatively energy efficient, they are still the largest contributors to environmental pollution.",
+       "Decreasing the density of urban populations might in some respects worsen their environmental impact.",
+       "The extraordinary energy efficiency of cities suggests that concerns about the environment in urban areas may be unwarranted."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p341",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that in the United States relatively sparsely populated areas exceed cities in per capita rate of"
+      ],
+      "opts": [
+       "solid-waste production",
+       "intensity of development",
+       "greenhouse-gas emissions"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 3,
+     "passage": "p342",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "If the statements given are true, which of the following is a conclusion that can be properly drawn from them?"
+      ],
+      "opts": [
+       "No officeholder who is vulnerable will run for reelection if an ambitious politician is likely to challenge that officeholder.",
+       "If a person who is not an ambitious politician challenges an elected public official who is running for reelection, then that official does not appear vulnerable.",
+       "If an elected official running for reelection appears vulnerable, that official's challengers will all be ambitious politicians.",
+       "Some elected officials running for reelection are challenged by people who are not ambitious politicians.",
+       "Ambitious politicians will run for election to a public office only if the holder of that office is running for reelection and appears to be vulnerable."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p343",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "Whooping cough is more difficult to diagnose in adults than in children.",
+       "Adults with whooping cough do not readily transmit the disease to children.",
+       "Most adults who contract whooping cough get the disease from children with whom they are in close contact.",
+       "A disease poses no significant public health threat unless it is life-threatening.",
+       "Under comparable conditions of exposure, adults contract whooping cough more readily than do children."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 5,
+     "passage": "p344",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, scholars have not given sensationalism serious consideration because they believe sensationalism"
+      ],
+      "opts": [
+       "possesses largely emotional rather than rational content",
+       "is produced with an eye to making money",
+       "lacks historical complexity"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "retained-after-review"
+     }
+    },
+    {
+     "n": 6,
+     "passage": "p344",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the contest in which it appears, “charged” most nearly means"
+      ],
+      "opts": [
+       "electrified",
+       "accused",
+       "attacked",
+       "fraught",
+       "admonished"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p345",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following is true regarding difficulties in measuring workers’ talent."
+      ],
+      "opts": [
+       "These difficulties cannot fully explain the observed wage gap.",
+       "These difficulties are greater in high-profit industry than in low-profit industries.",
+       "These difficulties can be eliminated by controlling for education and tenure."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p345",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "to analyze an unusual trend regarding measurement problems that was referred to earlier in the passage",
+       "to offer a hypothesis that explains the measurement problems referred to earlier in the passage",
+       "to cite an instance that supports an assumption about measurement problems that was made earlier in the passage",
+       "to evaluate an assertion regarding the wage disparity that was mentioned in the preceding sentence",
+       "to qualify the claim regarding workers doing identical jobs that was made in the first sentence"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

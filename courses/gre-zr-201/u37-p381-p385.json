@@ -1,0 +1,222 @@
+{
+ "id": "u37-p381-p385",
+ "title": "阅读 37 · Passage 381–385（5篇 · 7题）",
+ "en": "Reading Comprehension — Passages 381–385",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 381–385",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p381": {
+     "number": 381,
+     "paragraphs": [
+      "Historian Sheilagh Ogilvie challenges the view that training by European craft guilds from 1560 to 1760 was necessary. Her main evidence, however, is based only on female employment in one guild. Like most other guilds, the Wildberg weaver’s guild banned women from becoming masters; however, it exempted master’s widow. Indeed, widows accounted for 14 percent of all masters. Ogilvie claims that these “untrained\" widow prove “the irrelevance of training.” But Wildberg master-widows were not untrained for, as Ogilvie notes elsewhere, wives and children worked with masters; their training may have been informal, but it existed nevertheless. At least 80 percent of widows were married to masters for longer than the standard six-year apprenticeship; an unknown proportion of the remainder had grown up in weaving families."
+     ],
+     "highlights": []
+    },
+    "p382": {
+     "number": 382,
+     "paragraphs": [
+      "Many scholars believe that it was Granziera who actually wrote the politically charged plays attributed to Urbani. But a comparison of the texts of those plays with Granziera’s known works shows a distinct difference in style: the frequency of words with at least three syllables in these plays is much lower than in the works known to have been written by Granziera. Therefore, Granziera is probably not the author of the plays attributed to Urbani."
+     ],
+     "highlights": []
+    },
+    "p383": {
+     "number": 383,
+     "paragraphs": [
+      "Fuel cells produce energy by reaction between hydrogen and atmosphere oxygen. Automobiles powered by fuel cells are touted as gasoline-conserving alternatives to conventional automobiles. However, automobiles cannot safely carry tanks of hydrogen. One type of fuel cell solves this problem by extracting hydrogen in small quantities, as needed, from gasoline. Although such fuel cells perpetuate gasoline usage, their widespread adoption would have a moderating effect on the country's total gasoline consumption, since _______."
+     ],
+     "highlights": []
+    },
+    "p384": {
+     "number": 384,
+     "paragraphs": [
+      "Despite regional differences in writing styles and thematic concerns, certain trends have emerged in African novels that demarcate their difference from the Western novel. Most notable is the influence of oral tradition. Stylistically, the African novel begins with a prose narrative, but allows for insertions of oral traditions such as folktales and songs. For example, in Chinua Achebe’s Things Fall Apart, when an elder recounts a folktale, Achebe inserts the actual folktale, enveloping an oral narrative within a written one. The easy transitions between oral traditions and the authorial voice consequently undermines the novelist’s claim to originality while bolstering the text with communal authority. Thus the African novel is often the work not of a single author, but a writer and a community."
+     ],
+     "highlights": [
+      "bolstering the text with communal authority."
+     ]
+    },
+    "p385": {
+     "number": 385,
+     "paragraphs": [
+      "The thylacine, a slender, wolf-like predator, lived on mainland Australia until about 3,000 years ago.The thylacine disappeared from the mainland shortly after the dingo, a kind of wild dog, was first brought to Australia. Dingoes flourished in Australia and preyed on many of the same animal species on which the thylacine relied. Thus, the introduction of the dingo probably caused the thylacine's disappearance there."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p381",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In context, the primary function of the final sentence of the passage is to"
+      ],
+      "opts": [
+       "provide evidence to undermine a central claim in Ogilvie’s argument",
+       "summarize the most important aspects of the data Ogilvie cites to support her analysis.",
+       "illustrate how the Wildberg weavers’ guild differed from other craft guilds of the period.",
+       "quantify the amount of formal training typically received by Wildberg master weavers.",
+       "clarify an ambiguity in the status of master-widows as guild members."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p381",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author's evaluation of Ogilvie’s argument focuses primarily on Ogilvie’s"
+      ],
+      "opts": [
+       "overgeneralization of a study of an atypical industry",
+       "failure to differentiate between formal apprenticeship training and subsequent practical experience",
+       "assumptions that certain guild members had no training",
+       "insufficient acknowledgement of certain exceptions to a guild’s rules",
+       "attempt to impose an artificial uniformity on an extended period in history"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p382",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the argument?"
+      ],
+      "opts": [
+       "All of the works known to have been written by Granziera are scholarly essays in political theory.",
+       "In the period in which Granziera and Urbani wrote, many works were published anonymously.",
+       "Whereas most of the plays attributed to Urbani are short, a few are very long.",
+       "Granziera and Urbani are known to have held similar political views.",
+       "It is relatively rare for an author to employ substantially different styles in different published works."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p383",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the passage above?"
+      ],
+      "opts": [
+       "Automobile powered by fuel cells of the type travel farther per gallon of gasoline than automobile powered by conventional engine.",
+       "There are other types of fuel cells that avoid the use of gasoline altogether by extracting hydrogen from alcohol.",
+       "Automobile powered by this type of fuel cells would be outnumbered by those powered by those conventional gasoline engines for many years.",
+       "Carbon dioxide, an atmosphere pollutant, is emitted by both the extraction of hydrogen from gasoline and the combustion of gasoline in a conventional automobile engine.",
+       "Automobiles powered by conventional engines cannot readily converted to run on fuel cells."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p384",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the context of the passage, the highlighted text serves primarily to"
+      ],
+      "opts": [
+       "indicate a problem with Achebe’s use of an actual folktale",
+       "identify a feature that distinguishes certain African novels from other African novels",
+       "analyze the nature of original prose narratives in African novels",
+       "point to one of the effects of including actual folktales within an otherwise original narrative",
+       "acknowledge a counterclaim to a point about the effects of inserting oral tradition into novels"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p384",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author implies that Chinua Achebe’s inclusion of a folktale within his novel has which of the following effects?"
+      ],
+      "opts": [
+       "It distinguishes Achebe’s work from that of other African novelists.",
+       "It makes the novel more of a collectively authored work.",
+       "It introduces a new thematic concern to the narrative."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p385",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "Dingoes also preyed on animal species that thylacines did not prey on.",
+       "On the Australian island of Tasmania, which was never inhabited by dingoes, thylacines survived into the 1900s.",
+       "The largest thylacines in Australia were much larger than dingoes.",
+       "Much of the dingo's diet today consists of animal species that were not found in Australia 3000 years ago.",
+       "Thylacines relied on their stamina rather than their speed to capture prey."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

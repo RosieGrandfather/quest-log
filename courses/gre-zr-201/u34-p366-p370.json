@@ -1,0 +1,273 @@
+{
+ "id": "u34-p366-p370",
+ "title": "阅读 34 · Passage 366–370（5篇 · 9题）",
+ "en": "Reading Comprehension — Passages 366–370",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 366–370",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p366": {
+     "number": 366,
+     "paragraphs": [
+      "Public schools in the United States do not collect data on the financial status of their students’ households. This creates difficulty for researchers wishing to ascertain, for a given school, the proportion of students coming from low-income households. A nationwide program, however, guarantees free school lunches for students who apply and can demonstrate economic need. Therefore, the desired information can be obtained using data on the number of students at each school who take free school lunches."
+     ],
+     "highlights": []
+    },
+    "p367": {
+     "number": 367,
+     "paragraphs": [
+      "Some historians argue that users of oral history should not have to learn special uses of symbols to understand interview transcripts easily; these historians advocate a strong role for editing in making transcripts readable and easily understood. Proponents of this approach recommend changing punctuation, rearranging words, and editing out false starts, crutch words, and the like to enhance the transcript’s conveyance of meaning. Others argue for a more cautious approach, asserting that deleted linguistic phenomena are important clues to understanding the meaning conveyed during the interview. They urge editors to conform as closely as possible to the original tape, making only those changes absolutely necessary to clarify for the reader what was said in the interview."
+     ],
+     "highlights": [
+      "conveyance"
+     ]
+    },
+    "p368": {
+     "number": 368,
+     "paragraphs": [
+      "Low bone density is the primary risk factor for bone fractures. People with a physically inactive lifestyle provide a case in point: their bone density decreases and, as a result, they become increasingly prone to bone fractures. People who routinely take Omega sleeping pills are also uncommonly prone to bone fractures, even as compared to users of other sleeping pills. Clearly, when data on Omega users’ bone density are collected, what they will show is below-average bone density."
+     ],
+     "highlights": []
+    },
+    "p369": {
+     "number": 369,
+     "paragraphs": [
+      "The emphasis on intimate conversation in political discourse originated with Saul Alinsky (1909-1972) but became American labor leader Cesar Chavez’s (1927-1993) supreme contribution to political theory and practice. Such one-on-one organizing, like the feminist consciousness-raising groups that share its spirit, was promoted not just as a way of discussing politics, but as a way of doing politics. Its opposite was political oratory, the great transforming speech before a gathering of listeners. This view was an enormous departure in democratic theory: the leader’s ability to inspire a crowd had long been a touchstone of popular politics, but now such speeches and speechmakers seemed suspect, even essentially undemocratic, because they were frequently full of bombast, and because they talked at the people instead of listening to them."
+     ],
+     "highlights": [
+      "feminist consciousness-raising groups",
+      "the leader’s ability to inspire a crowd had long been a touchstone of popular politics,"
+     ]
+    },
+    "p370": {
+     "number": 370,
+     "paragraphs": [
+      "Large groups of workers are unlikely to continue, generation after generation, to remain loyal to an occupation that significantly underrewards them relative to their efforts and the risks accepted, and which reduces their standard of living below that available from possible alternative forms of employment. Yet the established social history of nineteenth-century Cornish miners embraces a view that the nature of their labor made their lives particularly “nasty, brutish, and short”; that highly volatile earnings levels frequently plunged them into abject poverty; and that they were trapped in the industry by unbreakable cultural bonds. But Burt and Kippen argue that complex “cultural entrapment” explanations of miners’ continuing attachment to the industry are largely unnecessary. Their comparative analysis of Cornish miners with similar laboring groups shows that while mining did have deleterious health effects, average earnings were relatively high and probably more than compensated for any reduction in the total length of miner’s working career. Thus Cornish miners’ career choice was a rational economic one, and continued loyalty to the industry was soundly based on economic self-interest. Cultural issues may admittedly have been significant to individuals, but were not an inevitable part of the decision-making process."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p366",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following is an assumption on which the argument depends?"
+      ],
+      "opts": [
+       "Nearly all students eligible for the free lunches apply and are approved for them.",
+       "Ascertaining the proportion of individual schools’ students coming from low-income households can help school officials allocate funds for free school-lunch programs.",
+       "The distinction between students who are from low-income households and those who are not is the only economic distinction among public school students in which researchers are interested.",
+       "Without data on participation in free school-lunch programs, researchers cannot determine what proportion of a school’s students came from low-income households.",
+       "There are no available statistics other than participation in the free school-lunch program that would enable researchers to gauge the proportions of students from low-income households at different schools."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p367",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies that oral historians who advocate cautious editing of interview transcripts believe that"
+      ],
+      "opts": [
+       "the words of the interviewer, but not those of the interviewee, may be changed for increased clarity",
+       "the original tape of an interview is preferable as oral history to a transcript of the interview",
+       "there is little consensus among editors regarding what constitutes a necessary change",
+       "false starts and crutch words can help readers of interview transcripts understand what the speaker really means",
+       "False starts and crutch words do not constitute genuine linguistic phenomena"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p367",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “conveyance” most nearly means"
+      ],
+      "opts": [
+       "assignment",
+       "transportation",
+       "agreement",
+       "transmission",
+       "appropriation"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p368",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, it true, casts most doubt on the prediction?"
+      ],
+      "opts": [
+       "When taken regularly, Omega sleeping pills, more than other sleeping pills, cause people to be unsteady on their feet.",
+       "Omega sleeping pills, when taken regularly, can be taken in gradually decreasing dose without any diminution of the desired effect.",
+       "Measuring a person's bone density is not currently a part of a routine medical checkup.",
+       "In people whose bone density decreases, the likelihood of a hip fracture increases at a greater rate than does the likelihood of any other kind of bone fracture.",
+       "People who regularly take Omega sleeping pills are no more likely than people in general are to have a physically inactive lifestyle."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p369",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that members of “feminist consciousness-raising groups”"
+      ],
+      "opts": [
+       "distanced themselves from a theory that originated with Saul Alinsky",
+       "typically prioritized conversations about personal issues over political activism",
+       "developed a specialized rhetorical style that was inaccessible to outsiders",
+       "considered some traditional modes of political engagement to be inadequate",
+       "were skeptical about whether political discussion could lead to lasting change"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p369",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context of the passage, the highlighted portion serves primarily to"
+      ],
+      "opts": [
+       "shed light on the validity of a theory",
+       "question the reasonableness of a claim",
+       "identify an untenable assumption",
+       "cast doubt on an outmoded idea",
+       "highlight the radical nature of an approach"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 7,
+     "passage": "p370",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "defend a theory against criticism",
+       "challenge a generally accepted position",
+       "point out an oversimplification",
+       "describe the benefits of a certain economic decision",
+       "express doubt about the validity of a particular study"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 8,
+     "passage": "p370",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, the generally accepted social history of Cornish miners claims that these miners"
+      ],
+      "opts": [
+       "often lived in impoverished conditions",
+       "often changed careers in midlife when they were no longer strong enough for mining work",
+       "defied cultural bonds by continuing to work as miners despite the many health risks",
+       "underestimated the seriousness of the health risks associated with mining",
+       "made their career choices based on rational economic considerations"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 9,
+     "passage": "p370",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author of the passage would probably agree that if the working conditions and earnings of the nineteenth-century Cornish miners were as the established social history depicts, it would mean that the miners were"
+      ],
+      "opts": [
+       "devoted to their industry primarily for reasons of financial gain",
+       "unusual in their continued loyalty to the mining industry",
+       "uninfluenced by traditional cultural bonds",
+       "relatively unaware of the health risks associated with mining",
+       "convinced that mining offered more job security than did other available occupations"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

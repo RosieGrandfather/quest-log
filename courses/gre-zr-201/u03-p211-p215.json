@@ -1,0 +1,339 @@
+{
+ "id": "u03-p211-p215",
+ "title": "阅读 03 · Passage 211–215（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 211–215",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 211–215",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p211": {
+     "number": 211,
+     "paragraphs": [
+      "Founder mutations are a class of disease-causing genetic mutations, each derived from its own ancestral “founder” in whom the mutation originated. While most disease-causing mutated are found in humans at a rate of one in a few thousand to one in a few million people, founder mutation can occur at much higher rates. This apparent anomaly is partially explained by the fact that most founder mutations are recessive: only a person with copies of the affected gene from both parents becomes ill. Most people with only one copy of the gene—“carriers”—survive and pass the gene to offspring. Furthermore, the single copy of a founder mutation often confers a survival advantage on carriers. For example, the hereditary hemochromatosis mutation protects carriers from iron-deficiency anemia because the mutated gene allows increased efficiency of iron absorption."
+     ],
+     "highlights": [
+      "hereditary hemochromatosis mutation"
+     ]
+    },
+    "p212": {
+     "number": 212,
+     "paragraphs": [
+      "The recently announced discovery of the first known planet orbiting a pulsar (the ultradense, pulsating remnant off the supernova explosion of a star) turned out to be based on faulty data. Had this discovery been confirmed, theorists would have had difficulty accounting for the existence of such a planet. The supernova would certainly have destroyed any preexisting planets. This particular pulsar is relatively young, allowing little time for a new planet to have coalesced, and it rotates relatively slowly, implying that it has not interacted with any nearby star since the supernova.",
+      "But newer evidence of a different pulsar with planets is more promising. This is a rapidly spurring “millisecond pulsar” thought to be a much older object that has pulled gaseous material from a stellar neighbor, causing its rotational speed to increase. Leftover, unconsumed gas around such a pulsar could, in theory, coalesce into planets. Or the pulsar’s radiation might have vaporized a companion star, providing new material for planetary formation."
+     ],
+     "highlights": []
+    },
+    "p213": {
+     "number": 213,
+     "paragraphs": [
+      "There have been numerous well-documented extinctions of indigenous species caused by the introduction of nonindigenous predators and pathogens. However, surprisingly few extinctions of indigenous species can be attributed to competition from introduced species. For example, during the past 400 years, 4,000 plant species have been introduced into North America, and these nonindigenous plants currently account for nearly 20 percent of North America’s plant species. Yet no evidence exists that any indigenous North American plant species became extinct as a result of competition from introduced plant species. The scarcity of documented extinctions caused by competition from new species could mean that such extinctions take longer to occur than scientists initially believed or, alternatively, that extinctions are rarely caused by competition from nonindigenous species."
+     ],
+     "highlights": []
+    },
+    "p214": {
+     "number": 214,
+     "paragraphs": [
+      "Marine ecosystems certainly have less permanence than terrestrial ecosystems. Ashore, ecologists are not confronted with shifting ecological discontinuities, or with changes in the characteristic conditions of individual ecosystems, because, unless man intervenes, the tree line on a mountain or the passage between grassland and savannah remains approximately static over a human lifetime. It is only on the millennial scale that such boundaries migrate significantly, or that characteristic regional ecosystems disappear. Urban sprawl, deforestation, overgrazing, and intensive agriculture are accomplishing in a few decades what nature cannily do in centuries, but that sad fact does not alter the argument. Although the human population explosion can produce pressures that rapidly shift ecological boundaries and modify ecosystems ashore, it is paradoxically more difficult directly to modify the average locations of the ephemeral and shifting ecological boundaries of the sea. We can accomplish this only indirectly by atmospheric modification, resulting in a changed global climate and a shifted ocean circulation.",
+      "Indeed, if we are agreed that the regional characteristics of marine ecosystems are consequent on the characteristics of the physical environment, then we must assume that ecological conditions are as impermanent as the physical conditions themselves. And these, it is now well understood, are in continual flux and state of change at all scales of variability."
+     ],
+     "highlights": [
+      "ecological boundaries of the sea."
+     ]
+    },
+    "p215": {
+     "number": 215,
+     "paragraphs": [
+      "W.E.B. Du Bois’ exhibit of African American history and culture at the 1900 Paris Exposition Universelle attracted the attention of a world of sociological scholarship whose value his work challenged. Du Bois believed that Spencerian sociologists failed in their attempts to gain greater understanding of human deeds because their work examined not deeds but theories and because they gathered data not to affect social progress but merely to theorize. In his exhibit, Du Bois sought to present cultural artifacts that would shift the focus of sociology from the construction of vast generalizations to the observation of particular, living individual elements of society and the working contributions of individual people to a vast functioning social structure."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p211",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage indicates which of the following about founder mutations?"
+      ],
+      "opts": [
+       "Carriers of founder mutation may receive certain benefits from the mutated gene.",
+       "People who inherit founder mutations from both parents can become ill as a result.",
+       "Founder mutations are less likely than other mutations to be passed to offspring."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 2,
+     "passage": "p211",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions the “hereditary hemochromatosis mutation” primarily in order to illustrate"
+      ],
+      "opts": [
+       "the circumstances under which a founder mutation fails to cause a disease.",
+       "how difficult it is to predict the effects of founder mutations on carriers.",
+       "the difference between harmful founder mutation and those that are beneficial.",
+       "how a single copy of a founder mutation can benefit a carrier.",
+       "a challenge to a particular theory about the transmission of founder mutations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 3,
+     "passage": "p212",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "provide an example of the dangers of a recent discovery based on faulty data.",
+       "illustrate the difficulty of explanation concerning a recent discovery.",
+       "assess the credibility of recent findings concerning the as yet unverified existence of a class of objects.",
+       "argue that a certain hypothesis fails to account for a seemingly contradictory phenomenon.",
+       "demonstrate how difficult it might be to find out the reality of a phenomenon."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 4,
+     "passage": "p212",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describe the organization of the passage?"
+      ],
+      "opts": [
+       "Two sets of research findings relating to similar phenomenon are mentioned, and the theoretical implication of each are discussed.",
+       "A theoretical explanation of a phenomenon is presented and rejected, and a more attractive alternative is offered.",
+       "Two independent and divergent interpretations of a set of observational data are compared and one is favored over the other.",
+       "An example of careless scientific research is introduced and contrasted with a more rigorous analysis of the same material.",
+       "The state of knowledge of an unexplainable phenomenon is outlined and an approach to further investigation is recommended."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p212",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following can be inferred regarding the pulsar discussed in the first paragraph?"
+      ],
+      "opts": [
+       "Theorists initially doubted its existence.",
+       "If its existence had been confirmed, astronomers would and have turned their attention to the pulsar discussed in the second paragraph.",
+       "If the supernovas explosions that created it had been more powerful, the resulting radiation would have preceded the subsequent formation of a planet.",
+       "If it had interacted with a nearby star since the supernova explosion, it would rotate faster than it does.",
+       "Astronomers’ interest in it ultimately led to a new theory of planetary formation."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 6,
+     "passage": "p213",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is concerned primarily with"
+      ],
+      "opts": [
+       "pointing out that a particular type of species extinction is rarely known to occur.",
+       "proposing a possible explanation for conflicting data about a particular type of species extinction.",
+       "resolving a debate about the frequency of a particular type of species extinction.",
+       "comparing two theories regarding possible causes of a particular type of species extinction.",
+       "refuting a proposed explanation for the increasingly rare occurrence of a particular type of species extinction."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 7,
+     "passage": "p213",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author introduces statistics about North America’s nonindigenous plant species primarily in order to"
+      ],
+      "opts": [
+       "undermine a proposed explanation for the absence of any evidence for the occurrence of a particular phenomenon.",
+       "contrast the effect of introduced plant species in North America with the effect that introduced animal species have had.",
+       "suggest that North America’s indigenous plants are a domain in which there has been ample scope for a particular effect to have occurred.",
+       "emphasize how much the ecology of North America has been affected over the past 400 years by the introduction of nonindigenous species.",
+       "substantiate a claim about the overall effect that the introduction of nonindigenous species tends to have on indigenous populations."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p214",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "examine differences in the threats faced by marine and terrestrial ecosystems.",
+       "explain how human intervention has affected marine and terrestrial ecosystems.",
+       "discuss a distinguishing feature of marine ecosystems.",
+       "present a debate regarding the causes of marine ecosystem impermanence.",
+       "discuss certain consequences of marine ecosystem impermanence."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p214",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage indicates which of the following about the “ecological boundaries of the sea?”"
+      ],
+      "opts": [
+       "They have become increasingly sensitive to changes in global climate.",
+       "They are not significantly impacted by changes in Earth’s atmosphere.",
+       "Their stability is essential to the health of marine ecosystems.",
+       "They are more closely tied to surrounding physical conditions than are analogous boundaries on land.",
+       "They are less susceptible to direct human intervention than are analogous boundaries on land."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 10,
+     "passage": "p215",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies that Du Bois attributed which of the following beliefs to Spencerian sociologists?"
+      ],
+      "opts": [
+       "Theorizing is important to the understanding of human actions.",
+       "Vast generalizations have limited value.",
+       "Data gathering is a relatively unimportant part of sociological research.",
+       "Sociology should focus on the living elements of society rather than cultural artifacts.",
+       "Particulars are more important than universals."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 11,
+     "passage": "p215",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that Du Bois believed which of the following statements about sociology?"
+      ],
+      "opts": [
+       "It should contribute to the betterment of society.",
+       "It should study what people actually do.",
+       "It should focus on how existing social structures determine individual behavior."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 12,
+     "passage": "p215",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Du Bois believed which of the following statements about the artifacts he included in his exhibit?"
+      ],
+      "opts": [
+       "They tended to support an established view of African American history and culture.",
+       "They documented the contributions of particular African Americans to American social structure.",
+       "They were chosen to encourage Spencerian sociologists to form useful generalizations."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

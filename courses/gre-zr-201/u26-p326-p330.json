@@ -1,0 +1,299 @@
+{
+ "id": "u26-p326-p330",
+ "title": "阅读 26 · Passage 326–330（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 326–330",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 326–330",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p326": {
+     "number": 326,
+     "paragraphs": [
+      "Some recently discovered Hittite tablets corroborate many of the descriptions of ancient life that appear in the Iliad and even list Greek cities that reportedly sent ships to Troy. What this find entails is that the Iliad is not simply creative literature, as is commonly believed, and hence not a matter for literary discussion alone. Rather, it is also history and should be examined by historical science."
+     ],
+     "highlights": []
+    },
+    "p327": {
+     "number": 327,
+     "paragraphs": [
+      "The scientific method is not radically different from the rational attitude in everyday life or in other domains of human knowledge. Historians, detectives, and plumbers-indeed, all human beings-use the same basic methods of induction, deduction, and assessment of evidence as do physicists or biochemists. Modern science tries to carry out these operations in a more careful and systematic way by using controls and statistical tests, insisting on replication, and so forth. Moreover, scientific measurements are often much more precise than everyday observations; they allow us to discover hitherto unknown phenomena, and they often lead to discoveries that conflict with \"common sense.\" But the conflict is at the level of conclusions, not the basic approach."
+     ],
+     "highlights": [
+      "Modern science tries to carry out these operations in a more careful and systematic way by using controls and statistical tests, insisting on replication, and so forth."
+     ]
+    },
+    "p328": {
+     "number": 328,
+     "paragraphs": [
+      "As a classic text on alchemy, George Ripley’s Compound of Alchemy (1471) has received substantial scholarly attention, primarily focused on the English print editions published by Ralph Rabbards (1591). However, the work known to sixteenth-and early seventeenth-century Europe was not the Compound known today from Rabbards’ editions. Rabbards strived to produce the fullest possible version of the text, including two prefatory poems, “Prologue” and “Preface”, and an associated dedicatory poem. Yet no authoritative master text dates from Ripley's lifetime in which all of these elements are preserved. Rather, the Compound’s text was adapted over a century of circulation in the form of multiple copies, later reassembled by diligent scribes—a process that continued even after the work’s translation into Latin and European vernaculars."
+     ],
+     "highlights": []
+    },
+    "p329": {
+     "number": 329,
+     "paragraphs": [
+      "The distinction between the nutritional quality and quantity of prey is one component of the hypotheses that attempt to explain the declining populations of Steller sea lions in the Gulf of Alaska beginning in the 1970s. One view holds that the quantity of prey available was high overall, but because of the species composition of available prey (primarily non-fatty fish of the gadid family), the diet was nutritionally inferior-the junk food hypothesis. An alternative view is that gadids are nutritionally adequate but were not available in sufficient numbers because of fishing or some other factor. In either case, juvenile sea lions would be affected more than mature individuals because of the younger animals’ higher energy requirements and relative inexperience at foraging."
+     ],
+     "highlights": [
+      "An alternative view is that gadids are nutritionally adequate but were not available in sufficient numbers because of fishing or some other factor."
+     ]
+    },
+    "p330": {
+     "number": 330,
+     "paragraphs": [
+      "Recent archaeological excavations of the massive warehouses of Huánuco Pampa—an important city in the Incan empire of the twelfth to sixteenth centuries—initially led archaeologists to believe that the city was a center for the distribution of food and goods to settlements in the surrounding region. However, excavations in those settlements have yielded few traces of the pottery containers used to store goods in Huánuco Pampa’s warehouses. This absence of pottery traces is inconclusive since goods may have been distributed in containers other than those belonging to the warehouses.",
+      "One sixteenth-century Spanish document may inadvertently reveal the answer: while detailing countless instances of goods being brought to the warehouses from the surrounding region, the document says nothing about goods being distributed throughout the surrounding region from the warehouses. Thus initial suggestions about the city’s role as a distribution center may be incorrect: Huánuco Pampa’s reason for maintaining these huge warehouses may have been simply to ensure its own well-being during periods of hardship."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p326",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The argument given relies on which of the following as an assumption?"
+      ],
+      "opts": [
+       "The cities and events that were mentioned in the Iliad but not in the tablets are fictitious.",
+       "The Hittite tablets and the Iliad are not derived from a common source that had no basis in historical fact.",
+       "Before the discovery of the tablets, historians had never examined the Iliad.",
+       "Purported works of creative literature should be examined by historians to find out whether they record historical facts.",
+       "A work that does not contain historical facts is a mater for literary discussion."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p327",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage implies that one difference between modern science and “the rational attitude in everyday life” is that modern science"
+      ],
+      "opts": [
+       "is often undermined by everyday observations",
+       "is more likely to yield new discoveries",
+       "is undervalued by the nonscientific community",
+       "utilizes induction and deduction",
+       "calls for evaluation of relevant evidence"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 3,
+     "passage": "p327",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "It qualifies a statement made earlier in the passage.",
+       "It questions the validity of evidence presented earlier in the passage.",
+       "It contradicts a commonly held opinion.",
+       "It implies that there is a similarity between two processes of reasoning.",
+       "It advocates for a particular methodological approach."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p328",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about “Prologue” and “Preface”?"
+      ],
+      "opts": [
+       "They may have been originally written by someone other than George Ripley.",
+       "They were not included in copies of the Compound until long after Ripley's death.",
+       "They have been largely ignored by scholars who focused on the Rabbard’s editions.",
+       "They may not have appeared together in every sixteenth-century copy of the Compound.",
+       "Their overall content and style changed considerably over a century of circulation."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B",
+     "answerPending": true,
+     "answerReviewReason": "配套答案B，复核倾向D。作者在世时没有两序诗俱全的权威本，只支持各抄本未必两者都有，不能确定直到作者死后很久才加入的年代。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案B，复核倾向D。作者在世时没有两序诗俱全的权威本，只支持各抄本未必两者都有，不能确定直到作者死后很久才加入的年代。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 5,
+     "passage": "p328",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about “diligent scribes”?"
+      ],
+      "opts": [
+       "They were instrumental in translating the Compound into Latin in the seventeenth century.",
+       "Their efforts had a considerable impact on later scholarly investigations of the Compound.",
+       "Many of them were guided in their work by Ralph Rabbards' print editions of the Compound."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p329",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage indicates that proponents of the junk food hypothesis assert which of the following about non-fatty fish of the gadid family?"
+      ],
+      "opts": [
+       "They provide adequate nourishment for sea lions when supplemented with a small number of other species.",
+       "They provide adequate nutrition for adult sea lions but not for juveniles.",
+       "They have been steadily declining in quantity in the Gulf of Alaska since the 1970s.",
+       "They are inadequate to satisfy sea lions’ nutrition requirements even when available in abundance.",
+       "They are too challenging for juvenile sea lions to catch in significant numbers."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p329",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The highlighted sentence performs which of the following functions in the passage?"
+      ],
+      "opts": [
+       "It demonstrates that over-fishing in the Gulf of Alaska is the likely cause of Steller sea lion decline.",
+       "It supports an argument that the reason for the Steller sea lion decline in the Gulf of Alaska is unlikely to be determined.",
+       "It gives an explanation for the decline in Steller sea lions in the Gulf of Alaska that is at odds with the junk food hypothesis."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p330",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "comparing the merits of different kinds of historical evidence",
+       "tracing the origins of a widely held belief about a body of historical evidence",
+       "citing evidence that suggests a new interpretation of archaeological remains",
+       "evaluating the usefulness of particular historical sources",
+       "correcting a misperception by reexamining historical data"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p330",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author suggests which of the following about the sixteenth-century Spanish document discussed in the passage?"
+      ],
+      "opts": [
+       "Although the document was initially used by archaeologists to support a particular theory about Huánuco Pampa’s warehouses, it was subsequently interpreted as contradictory of that theory.",
+       "Although the document intends to record the flow of food and goods between Huánuco Pampa and the surrounding region, it provides a wealth of information about Huánuco Pampa’s political life.",
+       "Although it discusses warehouses in very general terms, the document reveals much information about how Huánuco Pampa allocated its warehoused supplies throughout the region.",
+       "Although the document does not discuss whether Huánuco Pampa distributed food and goods throughout the surrounding region, the fact that it does not implies that the city did not perform this function.",
+       "Although the document was known to archaeologists prior to the excavation of Huánuco Pampa, that excavation revealed the document to be more accurate about Huánuco Pampa’s daily life than was previously thought."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p330",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would cast the most doubt on the author’s reasoning about the probable purpose of the Huánuco Pampa warehouses?"
+      ],
+      "opts": [
+       "Further examination reveals that the sixteenth-century Spanish document cited by the author was intended solely to record the amount of food and goods farmers and artisans in the surrounding region contributed to Huánuco Pampa’s warehouses each year.",
+       "Several large warehouses similar to those of Huánuco Pampa are unearthed in subsequent archaeological excavations in the region surrounding Huánuco Pampa.",
+       "A contemporaneous document is discovered establishing that Huánuco Pampa’s political influence in the surrounding region was far greater than archaeologists and historians had previously supposed.",
+       "Traces of pottery storage containers similar in style to those of the Huánuco Pampa warehouses are discovered in a section of the Incan empire remote from Huánuco Pampa.",
+       "Archaeologists discover that Huánuco Pampa was able to maintain constant stores of goods in its warehouses despite fluctuations in agricultural conditions in the surrounding region."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

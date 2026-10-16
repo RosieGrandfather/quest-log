@@ -1,0 +1,306 @@
+{
+ "id": "u21-p301-p305",
+ "title": "阅读 21 · Passage 301–305（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 301–305",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 301–305",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p301": {
+     "number": 301,
+     "paragraphs": [
+      "Edith Wharton’s reputation may be secure, but it is the wrong kind of reputation: she is celebrated as a novelist concerned with elegant surfaces and manners. Critics have misunderstood the nature of her contribution to modern fiction largely because they misperceive her subject matter as genteel and effete. Even sympathetic critics fail to acknowledge the extent to which Wharton challenged contemporary mores. Between her early novel The House of Mirth (1905) and her last, The Buccaneers (1938), Wharton addressed subjects that many might think of as decidedly un-Whartonesque, including marital strife and rural and urban poverty. Yet she remains firmly enshrined as a scion of rarefied upper-class America, an image reinforced by Martin Scorsese’s sumptuous 1993 film adaptation of The Age of Innocence."
+     ],
+     "highlights": [
+      "Even sympathetic critics fail to acknowledge the extent to which Wharton challenged contemporary mores."
+     ]
+    },
+    "p302": {
+     "number": 302,
+     "paragraphs": [
+      "While captive orangutans learn to use tools, wild orangutans have not been observed doing so until recently when researchers witnessed orangutans near Suaq Balimbing in Sumatra using tools to extract insects from tree holes and seeds from the Neesia fruit. What explains this population's tool use? It is doubtful that the Suaq orangutans are intrinsically smarter: captive orangutans have demonstrated that the species has the brain capacity to use tools. Another explanation is environmental. While previously studied orangutans mostly inhabited dry forests, the Suaq orangutans inhabit a lush swamp where insects flourish in tree holes and Neesia fruit is abundant. However, orangutans in other habitats where Neesia grows do harvest the seeds, but without tools they obtain fewer than do the Suaq orangutans."
+     ],
+     "highlights": [
+      "orangutans in other habitats where Neesia"
+     ]
+    },
+    "p303": {
+     "number": 303,
+     "paragraphs": [
+      "In 431 B.C. several hundred cavalry soldiers received a state burial outside the gates of Athens. Archaeologists excavating at the location of these gates found the bones of hundreds of men that dated to the period of the funeral. There are other gravesites in the area; however, examination of the bones in question indicates that the men frequently rode horses, as would be true of cavalry soldiers. Therefore, the bones are probably those of the soldiers, since _______."
+     ],
+     "highlights": []
+    },
+    "p304": {
+     "number": 304,
+     "paragraphs": [
+      "In 1886 approximately 20 percent of United States workers belonged to the Knights of Labor, a labor-activist fraternal order. Nonetheless, soon after reaching this peak, the Knights membership began a rapid decline, and the organization never regained its national prominence. This collapse had wide-ranging repercussions: subsequent worker organizations took a less active and less broad-based organizational approach. The Knights’ defeat demoralized those who championed radical reform and the organization of workers as a class, while empowering those who promoted a less inclusive strategy.",
+      "Current scholarship has tended to attribute the Knights calamitous decline to two factors: persistent tension between skilled and unskilled workers, and fierce opposition from employer associations, which used extralegal means to undermine unions. Voss examined both factors and found that employer associations’ opposition, not conflict among the Knights, led to the Knights' rapid decline. But Voss’s account fails to explain why the Knights succumbed so easily when other union movements thrived. It seems that the Knights' particular organizational structure prompted factional disputes among members and, more important, that competition from rival trade and fraternal organizations lured members away. While dissension within the order might not itself have sufficed to cause its demise, the profusion of organizational alternatives during this period induced mass defection, and, subsequently, the transformation of the American labor movement."
+     ],
+     "highlights": [
+      "Current scholarship",
+      "organizations"
+     ]
+    },
+    "p305": {
+     "number": 305,
+     "paragraphs": [
+      "While direct bite-inflicted injury is the most commonly observed mechanism for Komodo dragons to dispatch prey, the role of bacteria in aiding prey death is poorly known. One study identified in the lizards’ saliva and oral cavities 58 species of bacteria, 93 percent of which are classified as potentially pathogenic. Auffenberg proposed that the bacteria are beneficial to the lizards in essence a slow-acting venom that facilitate prey capture by attacking lizards. He offered no mechanism by which the bacteria are acquired by lizards, however. Fry et al. questioned this interpretation, and proposed that sepsis-inducing bacteria are more plausibly acquired passively from prey and other environmental sources, with no role in prey acquisition. That model fits the observation that captive lizards (and presumably newborns) lack sepsis-inducing bacteria."
+     ],
+     "highlights": [
+      "beneficial"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p301",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would most likely agree with which of the following statements about Scorsese’s film adaptation of The Age of Innocence?"
+      ],
+      "opts": [
+       "It is not as true to the novel as are other film adaptations of Wharton’s works.",
+       "It has encouraged a misguided impression of Wharton and her work.",
+       "It was based on a highly unusual interpretation of The Age of Innocence.",
+       "It did some damage to Wharton’s reputation as a major figure in modern fiction.",
+       "It spent too much time dwelling on subject matter that many would consider un-Whartonesque."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 2,
+     "passage": "p301",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author implies which of the following about the challenge referred to in the highlighted sentence?"
+      ],
+      "opts": [
+       "It goes against the main current of modern fiction.",
+       "It has recently become a matter of scholarly controversy.",
+       "It became bolder and more pronounced at the end of Wharton’s career.",
+       "It does not manifest itself in Wharton's novel The Age of Innocence.",
+       "It spanned all or nearly all of Wharton’s writing career."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 3,
+     "passage": "p302",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage mentions “orangutans in other habitats where Neesia grows” primarily in order to"
+      ],
+      "opts": [
+       "explain why orangutans living in dry forests apparently do not use tools to obtain foods",
+       "propose an alternative to the environmental explanation for Suaqorangutans’ tool use",
+       "demonstrate how environment may influence orangutan populations’ brain capacity",
+       "contrast the food preferences of the Suaq orangutans with those of orangutans living in other habitats",
+       "suggest that the Suaq orangutans’ tool use cannot be explained merely by the availability of certain foods in their habitat"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p302",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about orangutans that live mostly in dry forests?"
+      ],
+      "opts": [
+       "They probably use some tools, though this tool use has not been observed by researchers",
+       "They dislike the foods that the orangutans living near Suaq Balimbing prefer.",
+       "They probably have the same capacity for tool use as have orangutans living near Suaq Balimbing."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p303",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "There are no historical records of any state burial of foot soldiers in that location around that period.",
+       "None of the other gravesites in the area contain the bones of women, who were not permitted to be soldiers in ancient Athens.",
+       "Few Athenian men who lived during that period rode horses frequently.",
+       "None of the bones at the gravesite are those of horses.",
+       "Ancient historians do not provide specific enough descriptions to enable archaeologists to pinpoint the burial's exact location."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 6,
+     "passage": "p304",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would be most likely to agree with which of the following statements about “Current scholarship”?"
+      ],
+      "opts": [
+       "It underestimates the extent to which the American labor movement was affected by the decline in influence of the Knights of Labor.",
+       "It tends to downplay the intensity of the tension between skilled and unskilled workers who belonged to the Knights of Labor",
+       "It offers a more accurate view of the factors that led to the decline of the Knights of Labor than was offered in earlier scholarship.",
+       "It tends to characterize the organizational structure of the Knights of Labor in ways that obscure its effect on the organization’s decline",
+       "It fails to identify a key factor that accounts for the decline in membership of the Knights of Labor."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 7,
+     "passage": "p304",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, the rapid decline in the Knights of Labor membership resulted in which of the following?"
+      ],
+      "opts": [
+       "Greater prominence of labor activists who advocated a relatively moderate approach to organizing workers",
+       "Increasing tensions between labor activists who advocated a broad-based approach to organizing workers and those who advocated a less inclusive approach",
+       "A decline in the number of workers who regarded labor organizing as an effective means of advancing their interests",
+       "An increase in the aggressiveness with which employer associations sought to undermine workers’ efforts to organize",
+       "An increase in public concern over the use of extralegal means to undermine workers’ efforts to organize"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p304",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The author implies that the “organizations” highlighted in the passage were"
+      ],
+      "opts": [
+       "strengthened by their adoption of the Knights' organizational structure",
+       "weakened by their separation of skilled from unskilled workers",
+       "more intent than the Knights had been on achieving radical political reforms",
+       "more aggressive than the Knights had been in countering the extralegal strategies used by employer associations",
+       "less committed than the Knights had been to including all workers"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 9,
+     "passage": "p305",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that Auffenberg regarded the bacteria in Komodo dragon saliva as “beneficial” because he believed that these bacteria"
+      ],
+      "opts": [
+       "play an important role in helping the lizards digest their food",
+       "play an important role in maintaining the lizards’ immune systems",
+       "are a weapon used by the lizards to incapacitate their prey",
+       "are transmitted directly from parent lizards to their offspring",
+       "deter larger predators from attacking the lizards"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 10,
+     "passage": "p305",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Select a sentence in the passage that highlights a gap in an explanation."
+      ],
+      "pass": [
+       "While direct bite-inflicted injury is the most commonly observed mechanism for Komodo dragons to dispatch prey, the role of bacteria in aiding prey death is poorly known. One study identified in the lizards’ saliva and oral cavities 58 species of bacteria, 93 percent of which are classified as potentially pathogenic. Auffenberg proposed that the bacteria are beneficial to the lizards in essence a slow-acting venom that facilitate prey capture by attacking lizards. He offered no mechanism by which the bacteria are acquired by lizards, however. Fry et al. questioned this interpretation, and proposed that sepsis-inducing bacteria are more plausibly acquired passively from prey and other environmental sources, with no role in prey acquisition. That model fits the observation that captive lizards (and presumably newborns) lack sepsis-inducing bacteria."
+      ],
+      "sentences": [
+       "While direct bite-inflicted injury is the most commonly observed mechanism for Komodo dragons to dispatch prey, the role of bacteria in aiding prey death is poorly known.",
+       "One study identified in the lizards’ saliva and oral cavities 58 species of bacteria, 93 percent of which are classified as potentially pathogenic.",
+       "Auffenberg proposed that the bacteria are beneficial to the lizards in essence a slow-acting venom that facilitate prey capture by attacking lizards.",
+       "He offered no mechanism by which the bacteria are acquired by lizards, however.",
+       "Fry et al. questioned this interpretation, and proposed that sepsis-inducing bacteria are more plausibly acquired passively from prey and other environmental sources, with no role in prey acquisition.",
+       "That model fits the observation that captive lizards (and presumably newborns) lack sepsis-inducing bacteria."
+      ],
+      "highlights": [
+       "beneficial"
+      ],
+      "sentenceParagraphLengths": [
+       6
+      ]
+     },
+     "kind": "ss",
+     "ansText": "He offered no mechanism by which the bacteria are acquired by lizards, however.",
+     "sourceAnswer": "C   第四句"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

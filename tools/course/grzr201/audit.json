@@ -1,0 +1,7716 @@
+{
+ "sourcePDF": "张巍GRE阅读机经440篇.pdf",
+ "pdfSHA256": "7802a91a9b58af1c2a71323050cf3825ba403c146a343d7e8a8424eac0e2f34c",
+ "answerTXT": "阅读440答案.txt",
+ "answerSHA256": "43f5c3baa746d4e222ddbf1cce2ac0a80bff0ad146d8b62e09062b071723184d",
+ "lessons": 48,
+ "passages": 240,
+ "questions": 480,
+ "kinds": {
+  "mc1": 423,
+  "mcn": 48,
+  "ss": 9
+ },
+ "answerPolicy": "逐题独立复核；不确定题提交后说明理由且不计分，选句题自评；不是ETS官方认证。",
+ "items": [
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 201,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    191
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 201,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    191
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 201,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    191
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 202,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    192
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 202,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    192
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 202,
+   "question": 3,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    192
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 203,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    193
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 203,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    193
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 204,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    194
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 204,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    194
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 204,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    194
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 205,
+   "question": 1,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    195
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 205,
+   "question": 2,
+   "lessonQuestion": 13,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    195
+   ]
+  },
+  {
+   "lesson": 1,
+   "unit": "u01-p201-p205",
+   "passage": 205,
+   "question": 3,
+   "lessonQuestion": 14,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    195
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 206,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    196
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 206,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    196
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 207,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "ss",
+   "sourceAnswer": "第四句   BC",
+   "answer": "The possibility exists that for many species, individual recognition observed in the laboratory might be an artifact of experimental designs, which enforce prolonged interaction between individuals and which prevent the diluting effects on social structure of immigration into and emigration from the shoal, factors that in nature would erode group stability and prevent the learning of individual identities.",
+   "answerPending": false,
+   "PDFPages": [
+    196
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 207,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    196
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 208,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    197
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 208,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    197
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 208,
+   "question": 3,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    197
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 209,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    198
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 209,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    198
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 210,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    199
+   ]
+  },
+  {
+   "lesson": 2,
+   "unit": "u02-p206-p210",
+   "passage": 210,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    199
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 211,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    200
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 211,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    200
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 212,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    201
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 212,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    201
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 212,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    201
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 213,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    202
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 213,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    202
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 214,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    203
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 214,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    203
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 215,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    204
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 215,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    204
+   ]
+  },
+  {
+   "lesson": 3,
+   "unit": "u03-p211-p215",
+   "passage": 215,
+   "question": 3,
+   "lessonQuestion": 12,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    204
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 216,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    205
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 216,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    205
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 217,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    206
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 217,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    206
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 218,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    207
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 218,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    207
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 219,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    208
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 219,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    208
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 219,
+   "question": 3,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    208
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 220,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    209
+   ]
+  },
+  {
+   "lesson": 4,
+   "unit": "u04-p216-p220",
+   "passage": 220,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "ss",
+   "sourceAnswer": "D 第二句",
+   "answer": "Bison routinely became fat-depleted in the spring, reducing their nutritional value, yet these groups did not supplement their diets with the nutritious, fat-rich fish that were abundantly available.",
+   "answerPending": false,
+   "PDFPages": [
+    209
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 221,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    209
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 221,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    209
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 222,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    210
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 222,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    210
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 223,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    210
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 223,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "ss",
+   "sourceAnswer": "A 倒数第二句",
+   "answer": "Red squirrels would have to collect 1,000 walnuts to achieve the same germination success that results from the handling of 150 walnuts by gray squirrels.",
+   "answerPending": false,
+   "PDFPages": [
+    210
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 224,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    211
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 224,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    211
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 224,
+   "question": 3,
+   "lessonQuestion": 9,
+   "kind": "ss",
+   "sourceAnswer": "C E 第一句",
+   "answer": "Norman Rockwell was the most popular illustrator in the United States during the mid-twentieth century, yet no important artist of his time showed interest in his work.",
+   "answerPending": false,
+   "PDFPages": [
+    211
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 225,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    212
+   ]
+  },
+  {
+   "lesson": 5,
+   "unit": "u05-p221-p225",
+   "passage": 225,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    212
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 226,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    212
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 226,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    212
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 227,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    213
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 227,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    213
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 227,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    213
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 228,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "ss",
+   "sourceAnswer": "第三句 C",
+   "answer": "Long marginalized by scholars as little more than an apprentice of Edouard Manet, Gonzales is revealed by the exhibition as possessing remarkable, if uneven, talents.",
+   "answerPending": false,
+   "PDFPages": [
+    214
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 228,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    214
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 229,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    214
+   ]
+  },
+  {
+   "lesson": 6,
+   "unit": "u06-p226-p230",
+   "passage": 230,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    215
+   ]
+  },
+  {
+   "lesson": 7,
+   "unit": "u07-p231-p235",
+   "passage": 231,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    215
+   ]
+  },
+  {
+   "lesson": 7,
+   "unit": "u07-p231-p235",
+   "passage": 232,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    215,
+    216
+   ]
+  },
+  {
+   "lesson": 7,
+   "unit": "u07-p231-p235",
+   "passage": 233,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    216
+   ]
+  },
+  {
+   "lesson": 7,
+   "unit": "u07-p231-p235",
+   "passage": 234,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    216
+   ]
+  },
+  {
+   "lesson": 7,
+   "unit": "u07-p231-p235",
+   "passage": 235,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    217
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 236,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    217
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 237,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    218
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 237,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    218
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 238,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    218
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 238,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    218
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 239,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    219
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 239,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    219
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 240,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    220
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 240,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    220
+   ]
+  },
+  {
+   "lesson": 8,
+   "unit": "u08-p236-p240",
+   "passage": 240,
+   "question": 3,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    220
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 241,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    221
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 242,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    222
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 242,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    222
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 242,
+   "question": 3,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    222
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 242,
+   "question": 4,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    222
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 243,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    223
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 243,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    223
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 244,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    224
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 244,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    224
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 244,
+   "question": 3,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    224
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 245,
+   "question": 1,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    225
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 245,
+   "question": 2,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    225
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 245,
+   "question": 3,
+   "lessonQuestion": 13,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    225
+   ]
+  },
+  {
+   "lesson": 9,
+   "unit": "u09-p241-p245",
+   "passage": 245,
+   "question": 4,
+   "lessonQuestion": 14,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    225
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 246,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    226
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 247,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    227
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 248,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    228
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 248,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    228
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 249,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    229
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 249,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    229
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 250,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    230
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 250,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    230
+   ]
+  },
+  {
+   "lesson": 10,
+   "unit": "u10-p246-p250",
+   "passage": 250,
+   "question": 3,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    230
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 251,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    231
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 251,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    231
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 252,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    232
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 252,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    232
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 252,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    232
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 253,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    233
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 253,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    233
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 254,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    234
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 254,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    234
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 255,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    235
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 255,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    235
+   ]
+  },
+  {
+   "lesson": 11,
+   "unit": "u11-p251-p255",
+   "passage": 255,
+   "question": 3,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    235
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 256,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    236
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 256,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    236
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 256,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    236
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 257,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    237
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 257,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    237
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 257,
+   "question": 3,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    237
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 258,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    238
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 259,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    238
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 260,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    239
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 260,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    239
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 260,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    239
+   ]
+  },
+  {
+   "lesson": 12,
+   "unit": "u12-p256-p260",
+   "passage": 260,
+   "question": 4,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    239
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 261,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    240
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 262,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    240
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 262,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    240
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 263,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    241
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 264,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    241
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 265,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    242
+   ]
+  },
+  {
+   "lesson": 13,
+   "unit": "u13-p261-p265",
+   "passage": 265,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    242
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 266,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    243
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 266,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    243
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 267,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    243
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 267,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "ss",
+   "sourceAnswer": "B    We take for granted ... around",
+   "answer": "We take for granted that island populations must have a continental origin, and not the other way around.",
+   "answerPending": false,
+   "PDFPages": [
+    243
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 268,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    244
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 268,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    244
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 269,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    244
+   ]
+  },
+  {
+   "lesson": 14,
+   "unit": "u14-p266-p270",
+   "passage": 270,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    245
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 271,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    245
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 272,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    246
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 272,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    246
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 273,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    246
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 273,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    246
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 274,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    247
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 274,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    247
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 274,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    247
+   ]
+  },
+  {
+   "lesson": 15,
+   "unit": "u15-p271-p275",
+   "passage": 275,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    247
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 276,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    248
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 276,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    248
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 277,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    248
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 278,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    249
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 279,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    249
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 279,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    249
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 280,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    250
+   ]
+  },
+  {
+   "lesson": 16,
+   "unit": "u16-p276-p280",
+   "passage": 280,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    250
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 281,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    251
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 281,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    251
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 281,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    251
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 282,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    252
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 282,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    252
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 283,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    253
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 283,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    253
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 283,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    253
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 284,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    254
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 284,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    254
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 285,
+   "question": 1,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    255
+   ]
+  },
+  {
+   "lesson": 17,
+   "unit": "u17-p281-p285",
+   "passage": 285,
+   "question": 2,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    255
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 286,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    256
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 286,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    256
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 287,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    256
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 288,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    257
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 289,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    257
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 289,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    257
+   ]
+  },
+  {
+   "lesson": 18,
+   "unit": "u18-p286-p290",
+   "passage": 290,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    258
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 291,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    259
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 291,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    259
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 291,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    259
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 291,
+   "question": 4,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    259
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 292,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    260
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 292,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    260
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 292,
+   "question": 3,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    260
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 293,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    261
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 293,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    261
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 294,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    262
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 294,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    262
+   ]
+  },
+  {
+   "lesson": 19,
+   "unit": "u19-p291-p295",
+   "passage": 295,
+   "question": 1,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    262
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 296,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    263
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 296,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    263
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 297,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    264
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 297,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    264
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 298,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    264
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 299,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    265
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 299,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    265
+   ]
+  },
+  {
+   "lesson": 20,
+   "unit": "u20-p296-p300",
+   "passage": 300,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    266
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 301,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    267
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 301,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    267
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 302,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    268
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 302,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    268
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 303,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    269
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 304,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    270
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 304,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    270
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 304,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    270
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 305,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    271
+   ]
+  },
+  {
+   "lesson": 21,
+   "unit": "u21-p301-p305",
+   "passage": 305,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "ss",
+   "sourceAnswer": "C   第四句",
+   "answer": "He offered no mechanism by which the bacteria are acquired by lizards, however.",
+   "answerPending": false,
+   "PDFPages": [
+    271
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 306,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    272
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 306,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    272
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 307,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    273
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 307,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    273
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 308,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    274
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 308,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    274
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 308,
+   "question": 3,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    274
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 309,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    275
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 309,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    275
+   ]
+  },
+  {
+   "lesson": 22,
+   "unit": "u22-p306-p310",
+   "passage": 310,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    276
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 311,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    277
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 311,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    277
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 311,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    277
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 311,
+   "question": 4,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    277,
+    278
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 312,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    278
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 313,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    279
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 313,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    279
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 314,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    280
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 314,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    280
+   ]
+  },
+  {
+   "lesson": 23,
+   "unit": "u23-p311-p315",
+   "passage": 315,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    281
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 316,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    282
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 316,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    282
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 317,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    283
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 318,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    284
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 318,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    284
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 319,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    285
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 320,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    286
+   ]
+  },
+  {
+   "lesson": 24,
+   "unit": "u24-p316-p320",
+   "passage": 320,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    286
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 321,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    287
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 321,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    287
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 322,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    288
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 322,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    288
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 322,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    288
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 323,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    289
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 323,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    289
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 324,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    290
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 325,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    291
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 325,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    291
+   ]
+  },
+  {
+   "lesson": 25,
+   "unit": "u25-p321-p325",
+   "passage": 325,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    291
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 326,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    292
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 327,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    293
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 327,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    293
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 328,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    294
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 328,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    294
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 329,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    295
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 329,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    295
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 330,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    296
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 330,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    296
+   ]
+  },
+  {
+   "lesson": 26,
+   "unit": "u26-p326-p330",
+   "passage": 330,
+   "question": 3,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    296,
+    297
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 331,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    297
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 331,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    297
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 332,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    298
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 332,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    298
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 332,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    298
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 333,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    299
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 334,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    300
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 334,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    300
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 335,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    301
+   ]
+  },
+  {
+   "lesson": 27,
+   "unit": "u27-p331-p335",
+   "passage": 335,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    301
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 336,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    302
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 337,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    303
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 337,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    303
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 337,
+   "question": 3,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    303
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 338,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    304
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 338,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    304
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 339,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    305
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 340,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    306
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 340,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    306
+   ]
+  },
+  {
+   "lesson": 28,
+   "unit": "u28-p336-p340",
+   "passage": 340,
+   "question": 3,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    306,
+    307
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 341,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    307
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 341,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    307
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 342,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    308
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 343,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    309
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 344,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    310
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 344,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    310
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 345,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    311
+   ]
+  },
+  {
+   "lesson": 29,
+   "unit": "u29-p341-p345",
+   "passage": 345,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    311
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 346,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    312
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 346,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    312
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 346,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    312
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 347,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    313
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 347,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    313
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 348,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    314
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 348,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    314
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 348,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    314
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 349,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    315
+   ]
+  },
+  {
+   "lesson": 30,
+   "unit": "u30-p346-p350",
+   "passage": 350,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    316
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 351,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    317
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 352,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    318
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 352,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    318
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 353,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    319
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 354,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    320
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 355,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    321
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 355,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    321
+   ]
+  },
+  {
+   "lesson": 31,
+   "unit": "u31-p351-p355",
+   "passage": 355,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    321
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 356,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    322
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 356,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    322
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 357,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    322
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 358,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    323
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 358,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    323
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 358,
+   "question": 3,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    323
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 359,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    324
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 360,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    325
+   ]
+  },
+  {
+   "lesson": 32,
+   "unit": "u32-p356-p360",
+   "passage": 360,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    325
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 361,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    325
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 362,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    326
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 362,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    326
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 362,
+   "question": 3,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    326
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 363,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    327
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 364,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    327
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 364,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    327
+   ]
+  },
+  {
+   "lesson": 33,
+   "unit": "u33-p361-p365",
+   "passage": 365,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    328
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 366,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    329
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 367,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    330
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 367,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    330
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 368,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    331
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 369,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    332
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 369,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    332
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 370,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    333
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 370,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    333
+   ]
+  },
+  {
+   "lesson": 34,
+   "unit": "u34-p366-p370",
+   "passage": 370,
+   "question": 3,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    333
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 371,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    334
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 371,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    334
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 372,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    335
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 373,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    336
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 373,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    336
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 373,
+   "question": 3,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    336
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 374,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    337
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 374,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    337
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 375,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    338
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 375,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    338
+   ]
+  },
+  {
+   "lesson": 35,
+   "unit": "u35-p371-p375",
+   "passage": 375,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    338
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 376,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "ss",
+   "sourceAnswer": "The first is --- recent amounts of modernism\n\nC",
+   "answer": "The first is self-consciously revisionist: her book restores to major prominence Leo Ornstein, George Antheil, and Dane Rudhyar, three composers almost always neglected in recent accounts of modernism.",
+   "answerPending": false,
+   "PDFPages": [
+    339
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 376,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    339
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 377,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    340
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 377,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    340
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 378,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    341
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 378,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    341
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 378,
+   "question": 3,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    341
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 379,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    342
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 379,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    342
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 380,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    343
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 380,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    343
+   ]
+  },
+  {
+   "lesson": 36,
+   "unit": "u36-p376-p380",
+   "passage": 380,
+   "question": 3,
+   "lessonQuestion": 12,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    343
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 381,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    344
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 381,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    344
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 382,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    345
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 383,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    346
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 384,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    347
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 384,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    347
+   ]
+  },
+  {
+   "lesson": 37,
+   "unit": "u37-p381-p385",
+   "passage": 385,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    348
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 386,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    349
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 386,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    349
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 387,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    350
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 387,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    350
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 387,
+   "question": 3,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    350
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 388,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    351
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 388,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    351
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 389,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    352
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 389,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    352
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 390,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    353
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 390,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    353
+   ]
+  },
+  {
+   "lesson": 38,
+   "unit": "u38-p386-p390",
+   "passage": 390,
+   "question": 3,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    353
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 391,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    354
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 391,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    354
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 391,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    354
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 392,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    355
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 392,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    355
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 393,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    356
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 393,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    356
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 394,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    357
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 394,
+   "question": 2,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    357
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 395,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    358
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 395,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    358
+   ]
+  },
+  {
+   "lesson": 39,
+   "unit": "u39-p391-p395",
+   "passage": 395,
+   "question": 3,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    358
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 396,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    359
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 396,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    359
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 396,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    359
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 397,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    360
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 398,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    360
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 398,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    360
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 399,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    361
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 399,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    361
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 400,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    362
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 400,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    362
+   ]
+  },
+  {
+   "lesson": 40,
+   "unit": "u40-p396-p400",
+   "passage": 400,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    362
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 401,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    363
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 401,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    363
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 402,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    363
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 403,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    364
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 403,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    364
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 404,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    365
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 404,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    365
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 404,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    365
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 405,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    366
+   ]
+  },
+  {
+   "lesson": 41,
+   "unit": "u41-p401-p405",
+   "passage": 405,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    366
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 406,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    367
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 406,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    367
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 406,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    367
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 407,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    367
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 408,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    368
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 408,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    368
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 409,
+   "question": 1,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    369
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 409,
+   "question": 2,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    369
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 410,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    370
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 410,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    370
+   ]
+  },
+  {
+   "lesson": 42,
+   "unit": "u42-p406-p410",
+   "passage": 410,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    370
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 411,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    371
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 412,
+   "question": 1,
+   "lessonQuestion": 2,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    371
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 412,
+   "question": 2,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    371
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 413,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    372
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 413,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    372
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 414,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    373
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 414,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    373
+   ]
+  },
+  {
+   "lesson": 43,
+   "unit": "u43-p411-p415",
+   "passage": 415,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    374
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 416,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    375
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 416,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    375
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 416,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    375
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 417,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    376
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 417,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    376
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 418,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    377
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 418,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    377
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 418,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    377
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 419,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    378
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 419,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    378
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 419,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    378
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 420,
+   "question": 1,
+   "lessonQuestion": 12,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    379
+   ]
+  },
+  {
+   "lesson": 44,
+   "unit": "u44-p416-p420",
+   "passage": 420,
+   "question": 2,
+   "lessonQuestion": 13,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    379
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 421,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    380
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 421,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    380
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 422,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    380
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 423,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    381
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 423,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    381
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 424,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    382
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 424,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    382
+   ]
+  },
+  {
+   "lesson": 45,
+   "unit": "u45-p421-p425",
+   "passage": 425,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    383
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 426,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    384
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 426,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    384
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 426,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    384
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 427,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    385
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 427,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    385
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 428,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    386
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 428,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    386
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 428,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    386
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 429,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    387
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 430,
+   "question": 1,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    388
+   ]
+  },
+  {
+   "lesson": 46,
+   "unit": "u46-p426-p430",
+   "passage": 430,
+   "question": 2,
+   "lessonQuestion": 11,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    388
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 431,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    389
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 431,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    389
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 431,
+   "question": 3,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    389
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 432,
+   "question": 1,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    390
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 432,
+   "question": 2,
+   "lessonQuestion": 5,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    390
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 433,
+   "question": 1,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    391
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 433,
+   "question": 2,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    391
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 433,
+   "question": 3,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    391
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 434,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    392
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 434,
+   "question": 2,
+   "lessonQuestion": 10,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    392
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 434,
+   "question": 3,
+   "lessonQuestion": 11,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    392
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 435,
+   "question": 1,
+   "lessonQuestion": 12,
+   "kind": "mcn",
+   "sourceAnswer": "AB",
+   "answer": [
+    0,
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    393
+   ]
+  },
+  {
+   "lesson": 47,
+   "unit": "u47-p431-p435",
+   "passage": 435,
+   "question": 2,
+   "lessonQuestion": 13,
+   "kind": "ss",
+   "sourceAnswer": "AB   Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.",
+   "answer": "Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.”",
+   "answerPending": false,
+   "PDFPages": [
+    393
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 436,
+   "question": 1,
+   "lessonQuestion": 1,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    393
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 436,
+   "question": 2,
+   "lessonQuestion": 2,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": true,
+   "PDFPages": [
+    393
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 437,
+   "question": 1,
+   "lessonQuestion": 3,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    394
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 437,
+   "question": 2,
+   "lessonQuestion": 4,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    394
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 438,
+   "question": 1,
+   "lessonQuestion": 5,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    395
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 438,
+   "question": 2,
+   "lessonQuestion": 6,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    395
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 438,
+   "question": 3,
+   "lessonQuestion": 7,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    395
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 439,
+   "question": 1,
+   "lessonQuestion": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    396
+   ]
+  },
+  {
+   "lesson": 48,
+   "unit": "u48-p436-p440",
+   "passage": 440,
+   "question": 1,
+   "lessonQuestion": 9,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "answerPending": false,
+   "PDFPages": [
+    396,
+    397
+   ]
+  }
+ ]
+}

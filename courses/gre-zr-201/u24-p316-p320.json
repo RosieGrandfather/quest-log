@@ -1,0 +1,254 @@
+{
+ "id": "u24-p316-p320",
+ "title": "阅读 24 · Passage 316–320（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 316–320",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 316–320",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p316": {
+     "number": 316,
+     "paragraphs": [
+      "Historical demographers have generally agreed on two interrelated features of the urban populations in early-modern Germany. First in accordance with the law of natural decrease, extremely high mortality rates in cities (urban areas with more than 10, 000 inhabitants) meant that their populations could not be sustained by reproduction alone. Population density, inadequate sanitary conditions, and poor housing made cities too vulnerable to disease and death. Second, when city populations did increase, it was as a result of in-migration sufficient to overcome the population losses caused by the high mortality. But because the parish registers of urban communities with fewer than 10, 000 inhabitants show that the annual number of births usually equaled or exceeded that of deaths, historical demographers assume that the law of natural decrease did not apply to small towns."
+     ],
+     "highlights": []
+    },
+    "p317": {
+     "number": 317,
+     "paragraphs": [
+      "Most of the studies of the effect of aging on short-term memory have led researchers to conclude that younger adults perform short-term-memory tasks better than people over the age of 65. But these studies were all conducted in afternoon sessions. In a recent study conducted both in morning and in afternoon sessions, the older participants performed much better in morning sessions than in afternoon sessions. The younger participants did not, however, perform any better in the morning."
+     ],
+     "highlights": []
+    },
+    "p318": {
+     "number": 318,
+     "paragraphs": [
+      "Early scholars described square dances as a type of ancient English country dance carried to the southern Appalachian Mountains and preserved unchanged for generations. However, while the Appalachian fiddle repertoire does include traditional reels that can be traced back to the British Isles, it also includes breakdowns, rags, and other musical features native to America. Appalachian songs similarly range from British ballads to African American blues. Given this musical diversity-not to mention the iconic presence of the banjo, an instrument with African roots-it would be naive to think the accompanying dances are purely English forms. While sections of Appalachia are relatively isolated, trade, travel, and immigration have continually introduced new cultural elements, including innovations in social dances, into the region's rural traditions."
+     ],
+     "highlights": [
+      "Early scholars"
+     ]
+    },
+    "p319": {
+     "number": 319,
+     "paragraphs": [
+      "That sales can be increased by the presence of sunlight within a store has been shown by the experience of the only Savefast department store with a large skylight. The skylight allows sunlight into half of the store, reducing the need for artificial light. The rest of the store uses only artificial light. Since the store opened two years ago, the departments on the sunlit side have had substantially higher sales than the other."
+     ],
+     "highlights": []
+    },
+    "p320": {
+     "number": 320,
+     "paragraphs": [
+      "Calculating hydroelectric plants’ environmental impact is not simple. Dam building requires steel and cement, the manufacture of which entails greenhouse gas emissions. Estimates for these emissions are relatively straightforward to make and show that the consequences are small compared to the benefits of generating greenhouse gas-free hydroelectric power. But more difficult-to-estimate greenhouse gas contributions occur during the plants operation. The submerging of large areas behind dams results in the microbial decomposition of vegetation, which produces substantial quantities of methane—a potent greenhouse gas. Furthermore, eradicating vegetation eliminates the consumption of the greenhouse gas CO by that vegetation. 2 Estimating amounts of these gases is difficult, and amounts vary depending upon the specific location, terrain, and power intensity of the dam with its associated lake."
+     ],
+     "highlights": [
+      "Estimates for these emissions are relatively straightforward to make and show that the consequences are small compared to the benefits of generating greenhouse gas-free hydroelectric power."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p316",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author suggests that according to historical demographers, the birth rate in early-modern German cities"
+      ],
+      "opts": [
+       "was affected by sanitary conditions",
+       "increased as a result of in-migration",
+       "was lower than the annual death rate",
+       "decreased as population density increased",
+       "was lower than the rate in communities with fewer than 10, 000 inhabitants"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p316",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that historical demographers generally believe which of the following about communities of fewer than 10, 000 people in early-modern Germany?"
+      ],
+      "opts": [
+       "mortality rates were lower than those in cities of over 10, 000 inhabitants.",
+       "in-migrations were not a significant factor in population trends.",
+       "population levels remained quite stable for extended periods."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A",
+     "answerPending": true,
+     "answerReviewReason": "配套答案A。小镇出生数不低于死亡数并不能单独推出其死亡率低于城市，出生率也可能不同。A虽最接近环境描述，但缺少死亡率直接比较证据。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案A。小镇出生数不低于死亡数并不能单独推出其死亡率低于城市，出生率也可能不同。A虽最接近环境描述，但缺少死亡率直接比较证据。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 3,
+     "passage": "p317",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The statements given are structured to lead to which of the following conclusions?"
+      ],
+      "opts": [
+       "Most previous studies led researchers to underestimate the ability of older adults to perform short-term-memory tasks",
+       "In the morning, people over 65 perform short-term-memory tasks better than younger adults do",
+       "There is no significant overall difference in long-term memory between older adults and younger adults.",
+       "The results of most previous studies of the effect of aging on short-term memory are best interpreted as showing that age has no effect on the ability to perform short-term-memory tasks.",
+       "Younger adults are able to perform short-term-memory tasks better if they perform them in the afternoon than if they perform them in the morning."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 4,
+     "passage": "p318",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests that which of the following was true of “early scholars”?"
+      ],
+      "opts": [
+       "They downplayed the African influence on traditional English dance forms.",
+       "They overlooked the importance of migration in Appalachian history.",
+       "They may have been unaware of the complexity of Appalachia’s musical traditions",
+       "They underestimated the prominence of the fiddle in Appalachian dance music.",
+       "They neglected the social context in which Appalachian square dances were performed"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 5,
+     "passage": "p318",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, Appalachian square dancing differs from English country dancing in that Appalachian square dancing"
+      ],
+      "opts": [
+       "is closely associated with the banjo",
+       "is particularly common in rural settings",
+       "can be performed to the tune of a reel",
+       "developed in isolation from outside influences",
+       "has changed significantly since it first emerged"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p319",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most strengthens the argument?"
+      ],
+      "opts": [
+       "On particularly cloudy days, more artificial light is used to illuminate the part of the store under the skylight.",
+       "When the store is open at night the departments in the part of the store under the skylight have sales that are no higher than those of other departments",
+       "Many customers purchase items from departments in both parts of the store on a single shopping trip.",
+       "Besides the skylight, there are several significant architectural differences between the two parts of the store.",
+       "The departments in the part of the store under the skylight are the departments that generally have the highest sales in other stores in the Savefast chain."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p320",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author would most likely agree with which of the following assertions about the environmental impact of hydroelectric power plants?"
+      ],
+      "opts": [
+       "It cannot be inferred from calculations of the environmental impact of a few hydroelectric plants.",
+       "It is not primarily determined by the effects of dam building on vegetation.",
+       "It cannot be calculated with sufficient accuracy to justify the requirement of environmental impact studies prior to plant construction.",
+       "It could be significantly improved if the amounts of steel and cement used for dam building could be decreased.",
+       "It is too substantial, when all factors are considered, to justify the building of new dams."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p320",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The highlighted sentence serves primarily to"
+      ],
+      "opts": [
+       "support a claim made at the beginning of the passage",
+       "acknowledge a problem inherent in a particular kind of calculation",
+       "anticipate and respond to a possible criticism of the author’s overall argument",
+       "introduce a problem that will be explored later in the passage",
+       "point out an exception to a general claim"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

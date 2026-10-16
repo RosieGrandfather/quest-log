@@ -1,0 +1,233 @@
+{
+ "id": "u18-p286-p290",
+ "title": "阅读 18 · Passage 286–290（5篇 · 7题）",
+ "en": "Reading Comprehension — Passages 286–290",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 286–290",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p286": {
+     "number": 286,
+     "paragraphs": [
+      "The most believable justification for higher taxes on automobile fuel is that fuel consumption diminishes the environment and thus increases the costs of traffic congestion. But the fact that burning fuel generates these “negative externalities” does not indicate that no tax on fuel could ever be too high. Economics is accurate about the tax that should, in principle, be levied to cope with negative externalities: the tax on a liter of fuel should equals the harm resulted from using a liter of fuel. If the tax is more than that, its costs (including the inconvenience to those who would rather have used their cars) will exceed its benefits (including any reduction in congestion and pollution)."
+     ],
+     "highlights": [
+      "the tax on a liter of fuel should equals the harm resulted from using a liter of fuel.",
+      "exceed"
+     ]
+    },
+    "p287": {
+     "number": 287,
+     "paragraphs": [
+      "The national crime rate has been declining, but television news coverage of crime has been increasing. Many media analysts hold that the increasing emphasis on crime is making viewers more mistrustful of others and more afraid of crime. To support this position, they cite survey results that show that the people most likely to be mistrustful of others and to overestimate the crime rate are those who watch the most television."
+     ],
+     "highlights": []
+    },
+    "p288": {
+     "number": 288,
+     "paragraphs": [
+      "Only since the Second World War has graphic design been categorized as a field worth knowing about and preserving, and most design collections have been narrowly defined. There are few extant archives of advertisements, some design collections include only political posters by established artists, other collections focus on such specific historical documents as election posters. Rigidly defined collections like these can foster pigeonholed concepts of design history. In contrast, Merrill Berman’s ambitious reach as a collector—one that includes avant— graphics, anonymous political posters, and commercial advertisements—preserves graphics in a wide range to show how graphic designs pervade a culture, not in isolation from on another but all mixed together part of the daily inundation of meanings and visual stimulation."
+     ],
+     "highlights": [
+      "Rigidly defined collections like these can foster pigeonholed concepts of design history."
+     ]
+    },
+    "p289": {
+     "number": 289,
+     "paragraphs": [
+      "During the early nineteenth century, the demand for ever-louder sound led to ever-increasing tension on piano strings, making evident the need for stronger framing. Sooner or later, long after factories had taken over the manufacture of other commodities, the Industrial Revolution nevertheless shaped the attitudes of those who decided whether to accept this innovation. To build pianos with steam-powered tools was one thing, to put a cast-iron frame at the center of the instrument, making the product itself a modern factory of sound rather than a fully handcrafted artwork, in wood, was quite another. The resulting debate was vigorous, with many feeling certain that iron in the piano would ruin the tone."
+     ],
+     "highlights": [
+      "tone."
+     ]
+    },
+    "p290": {
+     "number": 290,
+     "paragraphs": [
+      "Virtually everyone who speaks Torvic lives in Torvia, a small country that takes pride in its unique culture. Since Torvia trades with many other countries, however, most people who live in Torvia speak several languages, and many languages are taught in Torvia’s public schools. Nevertheless, from these facts it should not be inferred that most speakers of Torvic speak several languages, because ________."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p286",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the last sentence, “exceed” most closely means"
+      ],
+      "opts": [
+       "outstrip",
+       "magnify",
+       "delimit",
+       "offset",
+       "supplant"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p286",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best features the function of the indicated portion of the passage?"
+      ],
+      "opts": [
+       "It restates a point made earlier in the passage.",
+       "It provides the evidence on which a theory is based.",
+       "It presents a specific application of a general principle.",
+       "It summarizes a justification with which the author disagrees.",
+       "It suggests that the benefits of a particular strategy have been overestimated."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "E",
+     "explanation": "原答案E更正为C。高亮给出每升燃油税应等于每升所致损害，是将应对负外部性的一般原则具体应用于燃油；E所说收益被高估并不是这句话的功能。这是独立复核，并非ETS认证。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "corrected"
+     }
+    },
+    {
+     "n": 3,
+     "passage": "p287",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously weakens the support provided by the survey results for the media analysts’ position?"
+      ],
+      "opts": [
+       "There are many people who are deeply mistrustful of others and watch little or no television.",
+       "Most people who have themselves been victims of a crime overestimate the crime rate and are mistrustful of others.",
+       "Among people who say that they are not mistrustful of others, the great majority say that they believe that when an individual event is portrayed on television, it is portrayed accurately.",
+       "Most people who watch television news on a regular basis say that they find crime stories more interesting than most other kinds of stories.",
+       "People who are unusually suspicious and particularly afraid of crime tend to stay home watching television more than do people who are not."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 4,
+     "passage": "p288",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlight sentence"
+      ],
+      "opts": [
+       "It offers a critique of the design collections referenced in the preceding sentence",
+       "It questions the motivation behind Berman’s graphic design collection",
+       "It illustrates why graphic design was not viewed as an important field of study before the Second World War",
+       "It identifies an understanding of design history that informed Berman’s early career",
+       "It supports an argument against Berman’s eclectic approach to collecting"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p289",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following statements about the development of the piano can be inferred from the passage?"
+      ],
+      "opts": [
+       "Pianos continued to be made by artisans well into the nineteenth century.",
+       "The use of steam-powered tools in piano making led to a decline in tone quality.",
+       "Prior to the Industrial Revolution, the framing in piano was made entirely of wood."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 6,
+     "passage": "p289",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “tone” most exactly means"
+      ],
+      "opts": [
+       "interval",
+       "mood",
+       "timbre",
+       "pitch",
+       "shade"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p290",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "very few languages are as difficult to learn as a second language as Torvic is",
+       "of all the people in the world who speak several languages, only a small minority speak Torvic",
+       "few people who live in Torvia actually speak Torvic",
+       "few people who live in Torvia have ever lived outside Torvia",
+       "some of the languages taught in Torvia’s public schools are not spoken in any of the countries with which Torvia trades"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,320 @@
+{
+ "id": "u02-p206-p210",
+ "title": "阅读 02 · Passage 206–210（5篇 · 11题）",
+ "en": "Reading Comprehension — Passages 206–210",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 206–210",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p206": {
+     "number": 206,
+     "paragraphs": [
+      "African American painter Malvin Gray Johnson (1896-1934) grew up in urban environments, including New York City, but in 1934 visited and painted scenes from the small town of Brightwood, Virginia. Some critics have celebrate the Brightwood paintings, which depict a vibrant natural landscape and close-knit Black community, as Johnson’s discovery of an “authentic” African American life in the rural South. This view, which reflects a common tendency to regard African American artists’ imagery as unmediated documentation of direct experience, overlooks Johnson’s interpretive thinking. In truth, Johnson’s conceptualization of the South was largely formed before he left New York, where he had studied the French expressionist Paul Cézanne. Johnson’s Brightwood paintings reflect Cézanne’s stylistic influence and tendency to present rural life as an idyllic alternative to modern industrialism."
+     ],
+     "highlights": [
+      "Johnson’s Brightwood paintings reflect Cézanne’s stylistic influence and tendency to present rural life as an idyllic alternative to modern industrialism."
+     ]
+    },
+    "p207": {
+     "number": 207,
+     "paragraphs": [
+      "The ability to recognize specific individuals has profound implications for the evolution of complex social behaviors such as reciprocal altruism. Many researchers assumed that recognition of individuals, a phenomenon predominantly observed in laboratory studies of fish, might also operate extensively in free-ranging fish populations, where it could underpin these complex interactions. In fact, evidence of individual recognition in free-ranging fish populations is equivocal. The possibility exists that for many species, individual recognition observed in the laboratory might be an artifact of experimental designs, which enforce prolonged interaction between individuals and which prevent the diluting effects on social structure of immigration into and emigration from the shoal, factors that in nature would erode group stability and prevent the learning of individual identities."
+     ],
+     "highlights": []
+    },
+    "p208": {
+     "number": 208,
+     "paragraphs": [
+      "Hard Times, Charles Dickens’ shortest novel, was written and published in 1854. Despite the sensational success of its two immediate predecessors, David Copperfield and Bleak House, and its immediate successors, Little Dorritt and A Tale of Two Cities, Hard Times seems to have been Dickens’ least popular novel during his own lifetime and subsequently. One critic speculated that editorial cuts imposed on the novel for serialization were responsible. However, as Jane Jacobs points out, Hard Times was serialized in Household Words, a periodical that Dickens not only founded but edited. Part of the reason for the book’s relative unpopularity may have been its despairing message, its depiction of pervasive emptiness in almost everything life has to offer, from marriage and family to success and community. Jacobs also suggests that the book’s structure may have played a role: action is slow and scant throughout, and descriptions and conversations during the first two thirds of the book are repetitious. While the book’s tone changes abruptly in the last section, when Dickens, the master storyteller, jogs his characters into life by enmeshing them in convoluted coils of plot, the reader must first endure the tedious way in which Dickens establishes the novel’s settings and characters."
+     ],
+     "highlights": []
+    },
+    "p209": {
+     "number": 209,
+     "paragraphs": [
+      "Was resource intensification—an increase in labor and time devoted to subsistence activities in order to increase food yields—by Dorset Paleo-Eskimos and Recent Indians on the island of Newfoundland simply a response to population pressure? Not exactly. On Newfoundland, population pressure did not result from a steadily growing resident population but, rather, from the arrival and lingering presence of new and significantly different populations. Newfoundland’s hunter-gatherer populations—both resident and newcomer—adjusted to the presence of other populations through niche differentiation. Building on a tradition that emphasized marine resources, Dorset Paleo-Eskimos intensified their harvest of seals in response to the arrival of Recent Indians in the first few centuries A.D. Recent Indians who were more familiar with broad-based, interior-maritime adaptation, intensified this strategy to cope with the Dorset."
+     ],
+     "highlights": [
+      "Recent Indians who were more familiar with broad-based, interior-maritime adaptation, intensified this strategy to cope with the Dorset."
+     ]
+    },
+    "p210": {
+     "number": 210,
+     "paragraphs": [
+      "Having a larger assortment to choose from increases consumers’ expectations about matching their preferences. The heightened expectations seem logical, since assortments containing more or more varied items should increase the degree to which preferences can be matched. In practice, however, as assortment size increases, the degree to which consumers realize better preference matches often rises relatively little. Larger assortments may not actually offer more variety, the market may simply not supply an envisioned offering, or in the absence of sophisticated search tools, consumers may miss a better preference match even if it is available. Therefore, larger assortments can increase the likelihood that expectations will not be met, leaving consumers less satisfied with options chosen from larger rather than smaller assortments."
+     ],
+     "highlights": [
+      "leaving consumers less satisfied with options chosen from larger rather than smaller assortments."
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p206",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "contest a particular interpretation of Johnson’s Brightwood paintings.",
+       "compare Johnson’s Brightwood paintings to French Expressionist art.",
+       "use information about Johnson’s historical context to illuminate the social significance of his Brightwood paintings.",
+       "explain why the work of African American painters is sometimes misunderstood.",
+       "call attention to an aspect of Johnson’s technique that has been largely overlooked."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 2,
+     "passage": "p206",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The highlighted sentence has which of the following functions in the passage?"
+      ],
+      "opts": [
+       "It expands upon a point made in the previous sentence.",
+       "It helps explain a common tendency described earlier in the passage.",
+       "It identifies a way in which Johnson sought to differentiate his work from that of other artists."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p207",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Click on the sentence in the passage that speculates about the effect of human intervention on an observation."
+      ],
+      "pass": [
+       "The ability to recognize specific individuals has profound implications for the evolution of complex social behaviors such as reciprocal altruism. Many researchers assumed that recognition of individuals, a phenomenon predominantly observed in laboratory studies of fish, might also operate extensively in free-ranging fish populations, where it could underpin these complex interactions. In fact, evidence of individual recognition in free-ranging fish populations is equivocal. The possibility exists that for many species, individual recognition observed in the laboratory might be an artifact of experimental designs, which enforce prolonged interaction between individuals and which prevent the diluting effects on social structure of immigration into and emigration from the shoal, factors that in nature would erode group stability and prevent the learning of individual identities."
+      ],
+      "sentences": [
+       "The ability to recognize specific individuals has profound implications for the evolution of complex social behaviors such as reciprocal altruism.",
+       "Many researchers assumed that recognition of individuals, a phenomenon predominantly observed in laboratory studies of fish, might also operate extensively in free-ranging fish populations, where it could underpin these complex interactions.",
+       "In fact, evidence of individual recognition in free-ranging fish populations is equivocal.",
+       "The possibility exists that for many species, individual recognition observed in the laboratory might be an artifact of experimental designs, which enforce prolonged interaction between individuals and which prevent the diluting effects on social structure of immigration into and emigration from the shoal, factors that in nature would erode group stability and prevent the learning of individual identities."
+      ],
+      "highlights": [],
+      "sentenceParagraphLengths": [
+       4
+      ]
+     },
+     "kind": "ss",
+     "ansText": "The possibility exists that for many species, individual recognition observed in the laboratory might be an artifact of experimental designs, which enforce prolonged interaction between individuals and which prevent the diluting effects on social structure of immigration into and emigration from the shoal, factors that in nature would erode group stability and prevent the learning of individual identities.",
+     "sourceAnswer": "第四句   BC"
+    },
+    {
+     "n": 4,
+     "passage": "p207",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author would likely agree with which of the following statements about the prevalence of specific individual recognition that occurred in fish in the laboratory studies discussed?"
+      ],
+      "opts": [
+       "It suggests that the laboratory studies were well designed to simulate the natural habitats of the fish studied.",
+       "It might have been inflated due to continued exposure to the same individuals.",
+       "It does not provide reliable evidence about the behavior of free ranging fish."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1,
+      2
+     ],
+     "sourceAnswer": "BC"
+    },
+    {
+     "n": 5,
+     "passage": "p208",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage suggests which of the following about the last section of Hard Times?"
+      ],
+      "opts": [
+       "The last section compares unfavorably with the first part of the book in terms of literary quality.",
+       "In the last section the settings are presented in a more tedious fashion than is the case in other Dickens’ works mentioned in the passage.",
+       "In the last section the characters tend to be more optimistic than they are in the first part of the book",
+       "The last section is atypical of Dickens’ general storytelling style.",
+       "The last section would be more likely to appeal to readers than would the first part of the book."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 6,
+     "passage": "p208",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author of the passage mentions David Copperfield, Bleak House, Little Dorritt, and A Tale of Two Cities most likely in order to"
+      ],
+      "opts": [
+       "provide a context that helps to explain the public and critical reaction to Hard Times.",
+       "present examples of other works by Dickens that were not initially commercially successful.",
+       "suggest that Hard Times’ lack of popularity was an anomaly during this period in Dickens’ career",
+       "imply that the quality of Dickens’ writing improved over time.",
+       "question the idea that the novels immediately preceding and following Hard Times were extraordinarily successful."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 7,
+     "passage": "p208",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Each of the following is mentioned in the passage as a possible reason for the relative unpopularity of Hard Times EXCEPT for the"
+      ],
+      "opts": [
+       "repetitive conversations throughout most of the book",
+       "novel’s depiction of marriage and family",
+       "novel’s despairing message",
+       "convoluted plot development in the last part of the book",
+       "way that the novel establishes its characters"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 8,
+     "passage": "p209",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following resulted from the arrival of the Recent Indians?"
+      ],
+      "opts": [
+       "The Dorset Paleo-Eskimos were forced to compete with the Recent Indians for a limited supply of seals.",
+       "The Dorset Paleo-Eskimos spent more time harvesting seals than they had in the past.",
+       "The Dorset Paleo-Eskimos increased the amount of labor and time devoted to defending their territory.",
+       "The Dorset Paleo-Eskimos began to adopt new subsistence strategies they learned from the Recent Indians.",
+       "The previously steady growth of the Dorset Paleo-Eskimo population came to a halt."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 9,
+     "passage": "p209",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the highlighted sentence in the context of the passage as a whole?"
+      ],
+      "opts": [
+       "It points out a flaw in a theory discussed earlier in the passage.",
+       "It demonstrates the need for additional research on a phenomenon mentioned earlier in the passage.",
+       "It underscores the importance of a trait mentioned earlier in the passage.",
+       "It supports an assertion made earlier in the passage.",
+       "It questions the evidence for a tradition mentioned earlier in the passage."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p210",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In the highlighted portion of the passage, the author assumes that"
+      ],
+      "opts": [
+       "consumers’ attitude toward the assortment of choices they are presented with depends almost exclusively on the size of the range.",
+       "consumers who have clear preferences make their choices more quickly than those whose preferences are relatively vague.",
+       "consumers’ anticipation of meeting specific expectations directly affects their satisfaction with a selected option.",
+       "consumers presented with an assortment of choices often adjust the preferences they had beforehand.",
+       "consumers presented with a larger assortment of choices often make their decisions too quickly."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 11,
+     "passage": "p210",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the function of the first sentence in the author’s argument as a whole?"
+      ],
+      "opts": [
+       "It states a premise on which the author’s conclusion is based.",
+       "It provides information to support the inference made in the following sentence.",
+       "It introduces a concept that the author proves is illogical.",
+       "It summarizes a position that the author proceeds to dispute.",
+       "It presents the phenomenon the argument is intended to explain."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

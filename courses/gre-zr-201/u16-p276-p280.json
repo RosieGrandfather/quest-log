@@ -1,0 +1,249 @@
+{
+ "id": "u16-p276-p280",
+ "title": "阅读 16 · Passage 276–280（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 276–280",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 276–280",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p276": {
+     "number": 276,
+     "paragraphs": [
+      "While studying different-sized ant colonies, Cole discovered that when there were only a few ants in the space provided, each individual exhibited a chaotic pattern of activity and rest. As the density of the colony increased by the addition of more ants, Cole observed a sudden transition to dynamic order: patterns of activity and rest over the colony as a whole suddenly changed from chaotic to rhythmic. Why should the density of ants play an apparently crucial role in the transition from chaotic to ordered behavior? Ants interact with one another, and an active ant encountering an inactive one will stimulate the latter into movement. At low densities there are few encounters, but at higher densities activity can spread like a contagion through the colony."
+     ],
+     "highlights": [
+      "ordered"
+     ]
+    },
+    "p277": {
+     "number": 277,
+     "paragraphs": [
+      "Spiders of the species Argiope build distinctive zig-zag patterns, called stabilimenta, into their webs. Recent research has established that Argiope spiders use stabilimenta to collect drinking water. This discovery, far from discrediting the long-standing hypothesis that stabilimenta serve to reinforce the webs, actually supports that hypothesis since ________."
+     ],
+     "highlights": []
+    },
+    "p278": {
+     "number": 278,
+     "paragraphs": [
+      "A team of researchers has claimed that by drilling below the Earth’s surface, they have been able to recover microorganisms that inhabit depths where it was previously thought that no life existed. Although other microorganisms that were at first thought to have been recovered from these depths were later determined merely to have come from surface soil, that cannot be so in this case, because ________."
+     ],
+     "highlights": []
+    },
+    "p279": {
+     "number": 279,
+     "paragraphs": [
+      "In November 1753, the British author Sarah Fielding received half the payment for her novel The Cry and asked that the other half, when due, go to her “or to whomsoever I shall appoint,” probably implying that the remaining share was purposed for someone else. In fact, many believe that the novel was a collaborative venture between Fielding and Jane Collier. This specific collaboration was likely enough, as the two were close friends with similar interests. They wrote jointly authored letters, were both published authors with a lively interest in each other’s work, and were passionate supporters of didacticism and innovation in fiction—core concerns of The Cry. However, contemporaries accredit the work solely to Fielding, and there is nothing in the novel that is incompatible with Fielding’s other writings."
+     ],
+     "highlights": []
+    },
+    "p280": {
+     "number": 280,
+     "paragraphs": [
+      "The Moon once had a magnetic field, and Mars shows evidence of having had one early in its history, but neither object currently possess a magnetic field. But Mercury, which is halfway in size between the Moon and Mars, has an active and relatively strong magnetic field. Planetary scientists think that planets require a liquid core to sustain such a field, but the smaller the planet, the faster it cools. Mercury, by all right, should have a core as cold and dead as the Moon’s, yet the magnetic field persists. This may result from the presence of elements like sulfur that, when mixed with iron, lower the melting point and keep the core molten."
+     ],
+     "highlights": [
+      "by all right,",
+      "dead"
+     ]
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p276",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "According to the passage, which of the following statements about ant interactions is true?"
+      ],
+      "opts": [
+       "The interaction between active and inactive ants leads to a change in the inactive ant’s behavior.",
+       "When the density of an ant colony is low, there are relatively few interactions between ants.",
+       "When there are many ants in an ant colony, the perceived lack of space often leads ants to inactivity."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB"
+    },
+    {
+     "n": 2,
+     "passage": "p276",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “ordered” most nearly means"
+      ],
+      "opts": [
+       "prepared",
+       "prearranged",
+       "regular",
+       "peaceful",
+       "restricted"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 3,
+     "passage": "p277",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most logically completes the argument?"
+      ],
+      "opts": [
+       "The source of the spiders’ drinking water is not rainwater but morning dew.",
+       "Spiders would not make structures as energy-consuming as the stabilimenta are unless those structures conferred some benefit on the spiders.",
+       "The role of stabilimenta in collecting drinking water was discovered independently of attempts to verify the reinforcement hypothesis.",
+       "A spider web designed to trap rather than shed water needs to be structurally stronger than one that sheds water.",
+       "The threads that make up the stabilimenta are as strong as the threads that make up the rest of the web."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p278",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most logically completes the argument?"
+      ],
+      "opts": [
+       "Some of the microorganisms found by the researchers are incapable of living near the Earth’s surface.",
+       "Some of the microorganisms found by the researchers are known to inhabit the surface soil near the researchers’ drilling site.",
+       "When drilling below the Earth’s surface, it is impossible to prevent contamination of the drill by surface-soil microorganisms.",
+       "It is difficult to keep microorganisms alive once they have been recovered from underneath the Earth’s surface.",
+       "The drilling equipment used by the team of researchers was similar to drilling equipment used by most previous teams of researchers investigating life below the surface of the Earth."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p279",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage presents which of the following as evidence in favor of Fielding and Collier’s having collaborated in writing The Cry?"
+      ],
+      "opts": [
+       "Their friendship",
+       "Their joint authorship of correspondence",
+       "Their approach to fiction"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "sourceAnswer": "ABC"
+    },
+    {
+     "n": 6,
+     "passage": "p279",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage would agree with which of the following claims about The Cry?"
+      ],
+      "opts": [
+       "It develops themes commonly found in published works.",
+       "It reflects an interest in the purposes to which fiction may be put.",
+       "It contains elements that are incompatible with any of Collier’s solo writings.",
+       "It shows that the extent of Collier and Fielding’s shared interests was not as wide as is generally thought.",
+       "Parts of it were written jointly by Fielding and Collier."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p280",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary basis for the author’s use of the expression “by all right” is Mercury’s"
+      ],
+      "opts": [
+       "size",
+       "early history",
+       "temperature",
+       "magnetic field",
+       "chemical composition"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 8,
+     "passage": "p280",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context in which it appears, “dead” most nearly means"
+      ],
+      "opts": [
+       "latent",
+       "inert",
+       "dormant",
+       "deceased",
+       "obsolete"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

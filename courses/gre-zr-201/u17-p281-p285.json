@@ -1,0 +1,353 @@
+{
+ "id": "u17-p281-p285",
+ "title": "阅读 17 · Passage 281–285（5篇 · 12题）",
+ "en": "Reading Comprehension — Passages 281–285",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 281–285",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p281": {
+     "number": 281,
+     "paragraphs": [
+      "Experts have disagreed about where the genus Varanus (monitor lizards) derived. Since most existing species live in Australia, early researchers believed that Varanus originated in Australia and subsequently island hopped westward along the Indo-Australian archipelago. Herpetologist Robert Mertens later argued that Varanus possibly originated in the archipelago. Chromosomal analysis has since supported Mertens’ contention, and additionally, geologic evidence refers to a crash between the archipelago and the Australian landmass after Varanus originated—a fact that could account for the genus’ present distribution.",
+      "A relevant puzzle for scientists is the current distribution of Varanus’ largest surviving species, the Komodo dragon. These carnivores inhabited only on four small islands in the archipelago where, scientists note, the prey base is too small to support mammalian carnivores. But the Komodo dragon has recently been revealed to control body temperature much more efficiently than do mammalian carnivores, enabling it to survive on about a tenth of the food energy demanded by a mammalian carnivore of comparable size."
+     ],
+     "highlights": [
+      "geologic evidence"
+     ]
+    },
+    "p282": {
+     "number": 282,
+     "paragraphs": [
+      "For Temnothorax ants in search of suitable rock crevices for new nest sites, size is an important consideration, and certain behaviors suggest how scouts might compare the size of several sites. After entering a crevice, scouts invariably exit and reenter. During their first inspection, they mark their route with their personal pheromones. (Experiments have shown that workers can distinguish their own pheromones from those of nest mates.) Some researchers believe that these ants are counting the frequency of intersections between their two exploratory trails. The smaller the area, the more likely they are to cross a spot twice. The observation that Temnothorax scouts always pave out a path of the same length on their first visit to sites strongly supports this hypothesis."
+     ],
+     "highlights": [
+      "researchers",
+      "The observation that Temnothorax scouts always pave out a path of the same length on their first visit to sites strongly supports this hypothesis."
+     ]
+    },
+    "p283": {
+     "number": 283,
+     "paragraphs": [
+      "If a supernova (the explosion of a massive star) triggered star formation from dense clouds of gas and dust, and if the most massive star to be formed from the cloud evolved into a supernova and triggered a new round of star formation, and so on, then a chain of star-forming regions would result. If many such chains were created in a differentially rotating galaxy, the distribution of stars would resemble the observed distribution in a spiral galaxy.",
+      "This line of reasoning underlies an exciting new theory of spiral-galaxy structure. A computer simulation based on this theory has reproduced the appearance of many spiral galaxies without assuming an underlying density wave, the hallmark of the most widely accepted theory of the large-scale structure of spiral galaxies. That theory maintains that a density wave of spiral form sweeps through the central plane of a galaxy, compressing clouds of gas and dust, which collapse into stars that form a spiral pattern."
+     ],
+     "highlights": []
+    },
+    "p284": {
+     "number": 284,
+     "paragraphs": [
+      "In the mid-seventeenth century, some Native Americans in colonial New England started to keep and manage livestock for the first time, doing so according to their own cultural priorities and interests. Several factors influenced their decision to keep animals, including threats to their land base and to the productivity of their hunting. It might appear that animal husbandry as practiced by Europeans would have posed an insurmountable sociocultural challenge for Indians. Scholars studying the issue have argued that livestock would have compromised the mobility needed for winter hunting, destroyed crops, competed with wild game for resources, and violated prevailing conceptions of property and of human-animal interconnectedness. Such obstacles were indeed difficult, but creative ways to overcome them were found."
+     ],
+     "highlights": [
+      "Scholars studying the issue have argued that livestock would have compromised the mobility needed for winter hunting, destroyed crops, competed with wild game for resources, and violated prevailing conceptions of property and of human-animal interconnectedness."
+     ]
+    },
+    "p285": {
+     "number": 285,
+     "paragraphs": [
+      "Analyzing the physics of dance can add fundamentally to a dancer’s skill. Although dancers seldom see themselves totally in physical terms—as body mass moving through space under the influence of well-known forces and obeying physical laws—neither can they afford to ignore the physics of movement. For example, no matter how much a dancer wishes to leap off the floor and then start turning, the law of conservation of angular momentum absolutely prevents such a movement.",
+      "Some movements involving primarily vertical or horizontal motions of the body as a whole, in which rotations can be ignored, can be studied using simple equations of linear motion in three dimensions. However, rotational motions require more complex approaches that involve analyses of the way the body’s mass is distributed, the axes of rotation involved in different types of movement, and the sources of the forces that produce the rotational movement."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p281",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that the geographical distribution of the Komodo dragon is"
+      ],
+      "opts": [
+       "currently less restricted than it was at the time researchers first began investigating the origins of the genus Varanus",
+       "currently more restricted than it was at the time researchers first began investigating the origins of the genus Varanus",
+       "less restricted than is the distribution of the genus Varanus as a whole",
+       "more restricted than is the distribution of the genus Varanus as a whole",
+       "viewed as evidence in favor of the hypothesis that the genus Varanus originated in the Indo-Australian archipelago"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 2,
+     "passage": "p281",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following elements in the debate over the origin of Varanus is NOT provided in the passage?"
+      ],
+      "opts": [
+       "The evidence that led Mertens to argue that Varanus originated in the Indo-Australian archipelago",
+       "The evidence that led early researchers to argue that Varanus originated in Australia",
+       "A possible explanation of how Varanus might have spread to the Indo-Australian archipelago if it had originated in Australia",
+       "A possible explanation of how Varanus might have spread to Australia if it had originated in the Indo-Australian archipelago",
+       "An indication of the general present-day distribution of Varanus species between Australia and the Indo-Australian archipelago"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 3,
+     "passage": "p281",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "It can be inferred that which of the following is true of the “geologic evidence” ?"
+      ],
+      "opts": [
+       "It was first noted by Mertens as evidence in favor of his theory about the origins of Varanus.",
+       "It cannot rule out either one of the theories about the origins of Varanus discussed in the passage.",
+       "It accounts for the present distribution of the Komodo dragon.",
+       "It has led to renewed interest in the debate over the origins of Varanus.",
+       "It confirms the conclusions reached by early researchers concerning the origins of Varanus."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 4,
+     "passage": "p282",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "In light of the claim made by the “researchers”, it can be inferred that ants’ ability to distinguish their own pheromones from these of nest mates is important primarily because"
+      ],
+      "opts": [
+       "ants would otherwise be unable to tell whether potential mating sites were occupied by related colonies.",
+       "the ability aids in the assignment of specific tracks such as scouting for new nests, among the various members of a nest.",
+       "ants who could not distinguish their own personal pheromones would be unable to tell if they had previously embraced a site",
+       "pheromone differentiation is essential to account evaluation of potential nesting sites",
+       "pheromone differentiation is essential to ants’ ability to evaluate the size of crevices before entering them"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C",
+     "answerPending": true,
+     "answerReviewReason": "配套答案C，复核倾向D。辨别自己的轨迹可排除其他蚂蚁足迹以正确评估巢穴大小；C只谈判断以前来过，未直接说明计算轨迹交叉的目的。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案C，复核倾向D。辨别自己的轨迹可排除其他蚂蚁足迹以正确评估巢穴大小；C只谈判断以前来过，未直接说明计算轨迹交叉的目的。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 5,
+     "passage": "p282",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following best describe the function of the highlighted portion of the passage?"
+      ],
+      "opts": [
+       "It clarifies the relationship between the scout ants’ behavior and the quality of a potential nesting site.",
+       "It offers a hypothesis to explain why ants make only two trips through each potential nesting site",
+       "It attempts to reconcile the behavior of scout ants with the nesting locations eventually chosen by their colonies",
+       "It challenges the conclusion of researchers about scout ants’ specific behavior",
+       "It undermines observations of former experiments about Temnothorax ants’ ability to distinguish pheromones"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p283",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The primary purpose of the passage is to"
+      ],
+      "opts": [
+       "describe what results when a supernova triggers the creation of chains of star-forming regions",
+       "propose a modification in the most widely accepted theory of spiral-galaxy structure",
+       "compare and contrast the roles of clouds of gas and dust in two theories of spiral-galaxy structure",
+       "describe a new theory of spiral-galaxy structure and contrast it with the most widely accepted theory",
+       "describe a new theory of spiral-galaxy structure and discuss a reason why it is inferior to the most widely accepted theory"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 7,
+     "passage": "p283",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage implies that, according to the new theory of spiral-galaxy structure, a spiral galaxy can be created by supernovas when the supernovas are"
+      ],
+      "opts": [
+       "producing an underlying density wave",
+       "affected by a density wave of spiral form",
+       "distributed in a spiral pattern",
+       "located in the central plane of a galaxy",
+       "located in a differentially rotating galaxy"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p283",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would most discredit the new theory as described in the passage?"
+      ],
+      "opts": [
+       "The exact mechanism by which a star becomes a supernova is not yet completely known and may even differ for different stars.",
+       "Chains of star-forming regions like those postulated in the new theory have been observed in the vicinity of dense clouds of gas and dust.",
+       "The most massive stars formed from supernova explosions are unlikely to evolve into supernovas.",
+       "Computer simulations of supernovas provide a poor picture of what occurs just before a supernova explosion.",
+       "A density wave cannot compress clouds of gas and dust to a density high enough to create a star."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p284",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the primary function of the highlighted sentence?"
+      ],
+      "opts": [
+       "It identifies an atypical scholarly viewpoint regarding Native Americans and animal husbandry.",
+       "It helps to explain why animal husbandry was not adopted by more Native Americans in colonial New England.",
+       "It points out some of the typical misconceptions that scholars have regarding Native Americans in colonial New England.",
+       "It identifies factors that ultimately transformed the Native American way of life.",
+       "It identifies certain challenges that practicing animal husbandry posed for Native Americans in colonial New England."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 10,
+     "passage": "p284",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author would agree with which of the following statements about animal husbandry by Native Americans in colonial New England?"
+      ],
+      "opts": [
+       "Its adoption required some cultural adjustment by Native American societies.",
+       "Its influence eventually led to changes in the husbandry practices used by Europeans in the regions.",
+       "It may have allowed those who adopted it to compensate, in whole or in part, for reduced hunting yields."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 11,
+     "passage": "p285",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author mentions all of the following as contributing to an understanding of the physics of dance EXCEPT"
+      ],
+      "opts": [
+       "the law of conservation of angular momentum",
+       "analyses of the way in which the body’s mass is distributed",
+       "equations of linear motion in three dimensions",
+       "analyses of the sources that produce rotational motions",
+       "the technical terms for movements such as leaps and turns"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 12,
+     "passage": "p285",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Analysis of which of the following would require the kind of complex approach described in the last sentence?"
+      ],
+      "opts": [
+       "a long leap across space",
+       "a short jump upward with a return to the same place",
+       "a sustained and controlled turn in place",
+       "short, rapid steps forward and then backward without turning",
+       "quick side steps in a diagonal line"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,249 @@
+{
+ "id": "u43-p411-p415",
+ "title": "阅读 43 · Passage 411–415（5篇 · 8题）",
+ "en": "Reading Comprehension — Passages 411–415",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 411–415",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p411": {
+     "number": 411,
+     "paragraphs": [
+      "To provide extra revenue for improving city bus service, the mayor of Greenville proposed a fare increase. The director of the bus service, however, pointed out that the previous bus fare increase had resulted in so many regular riders’ quitting the bus system that revenues from bus service had decreased. Another fare increase, the director argued, would only lead to another revenue drop."
+     ],
+     "highlights": []
+    },
+    "p412": {
+     "number": 412,
+     "paragraphs": [
+      "The participation of women in the economy of Britain’s North American colonies in the eighteenth century has been underrated because of the assumption that household production could not become commercial. Such an assumption ignores the reality that women produced goods at home for exchange and sale. Barter among neighbors knitted the women of a community into vital trade networks that constituted the underground economy of eighteenth-century colonial North America. Unlike other informal local trade networks in early America, the economy of women never totally ceased to exist. The informal nature of the transactions did not provide the women who made them with much economic power, but it did allow them a small measure of control over how they spent their time."
+     ],
+     "highlights": [
+      "underground"
+     ]
+    },
+    "p413": {
+     "number": 413,
+     "paragraphs": [
+      "Scholars generally estimate subscribers to Freedom' Journal (1827-1829), the United States’ first African American newspaper, at around 800, based on subscriptions to The Rights of All, an African American newspaper founded in 1829 as a successor to Freedom’s Journal by a former editor of that newspaper. But Gross argues that many more than 800 readers probably subscribed to Freedom’s Journal because many of its subscribers, dissatisfied with the direction ultimately taken by the paper, refused to subscribe to The Rights of All. In any case, the figure of800 subscribers would make the circulation of Freedom’s Journal close to that of other weekly papers of the time. Its number of readers, however, would have been much larger: copies were often shared, and African American organizations subscribed to Freedom’s Journal, providing nonsubscribers access to the paper."
+     ],
+     "highlights": [
+      "But Gross argues that many more than 800 readers probably subscribed to Freedom’s Journal",
+      "subscribed to Freedom’s Journal,"
+     ]
+    },
+    "p414": {
+     "number": 414,
+     "paragraphs": [
+      "Scientists’ view of climate variability during the Holocene era (the geological period extending from about 11,000 years ago to the present) is rapidly changing, based in part on increased knowledge of large-scale climate systems such as the Southern Oscillation (“El Nino”), the North Atlantic Oscillation, the Asian monsoon, and the Pacific-North American pattern-all of which interact and impart climate variability to far-flung areas of the globe. There is also a greater appreciation for the diversity of climate variability. Early notions of globally synchronous cooling and warming, such as the Little Ice Age and Medieval Warm Period, have given way to a better-documented view that late Holocene climate variability is expressed as multidecadal temperature anomalies that tend to be region-specific."
+     ],
+     "highlights": [
+      "better-documented view"
+     ]
+    },
+    "p415": {
+     "number": 415,
+     "paragraphs": [
+      "All the music from fourteenth-century Europe for which written scores survive is so complex and is written in such difficult notation that it could have been played only by musicians whose lives were dedicated solely to such performance. Yet fourteenth-century European accounts, which in this respect probably give accurate portrayals of their times, describe many members of the nobility who excelled not only in musical performance, but also in dancing, poetry, and painting."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p411",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The director’s argument depends on which of the following as an assumption?"
+      ],
+      "opts": [
+       "The previous fare increase was the same amount as the proposed fare increase.",
+       "The previous fare increase did not cause people who rode the bus only occasionally to use bus service even less frequently.",
+       "A decrease in fares would result in increased ridership and increased revenues from bus service.",
+       "Many of the people who stopped using the bus system on account of the previous fare increase have in the meantime gone back to using it.",
+       "As compared to regular bus riders at the time of the previous fare increase, regular bus riders today are not significantly less likely to have alternative means of transportation available to them."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 2,
+     "passage": "p412",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The author of the passage suggests that the participation of women in the economy of Britain’s North American colonies in the eighteenth century had which of the following effects on women’s lives?"
+      ],
+      "opts": [
+       "It provided women with slightly more economic power than they would otherwise have had.",
+       "It provided women a larger amount of leisure time than they would otherwise have had.",
+       "It bound the women of a community together through activities that were mutually beneficial."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      2
+     ],
+     "sourceAnswer": "AC"
+    },
+    {
+     "n": 3,
+     "passage": "p412",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "In the context indicated, “underground” most nearly means"
+      ],
+      "opts": [
+       "subversive",
+       "secretive",
+       "subterranean",
+       "alternative",
+       "antiestablishment"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 4,
+     "passage": "p413",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "African American organizations' subscriptions to Freedom’s Journal are mentioned in the passage primarily in order to"
+      ],
+      "opts": [
+       "dispute Gross’s claim about the probable number of readers of Freedom’s Journal",
+       "identify the primary subscribers to both Freedom’s Journal and The Rights of All",
+       "help account for a possible difference between the number of subscribers to Freedom’s Journal and to The Rights of All",
+       "cite a factor that casts doubt on most scholars' assumptions about the number of subscribers to Freedom’s Journal",
+       "illustrate why the readership numbers for Freedom's Journal should be distinguished from the subscribers numbers"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 5,
+     "passage": "p413",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, would tend to undermine Gross’s argument mentioned in the highlighted portion of the passage?"
+      ],
+      "opts": [
+       "A larger number of African American organizations subscribed to Freedom’s Journa/ than to The Rights of All.",
+       "Many people who had not subscribed to Freedom’s Journal bought subscriptions toThe Rights of All.",
+       "Copies of The Rights of All were shared more frequently with nonsubscribers than were copies of Freedom’s Journal."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 6,
+     "passage": "p414",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following most accurately characterizes the \"better-documented view”?"
+      ],
+      "opts": [
+       "Periods of cooling and warming throughout the Holocene have been characterized by small variations in temperature.",
+       "Climate variability during the late Holocene era was not globally synchronous.",
+       "The Little Ice Age and Medieval Warm Period were typical of periods of global climate change that have occurred within the last 11,000 years or so.",
+       "The notion that climate variability is region-specific rather than global is based on an inaccurate understanding of how large-scale climate systems interact.",
+       "Large-scale climate systems have had much less impact on global climate than earlier research suggested"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    },
+    {
+     "n": 7,
+     "passage": "p414",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author mentions the Little Ice Age and the Medieval Warm Period primarily as examples of"
+      ],
+      "opts": [
+       "global temperature changes that occurred during the Holocene era",
+       "the diversity of climate variability during the Holocene era",
+       "now-unsupportable interpretations of climatic events that occurred in the Holocene era",
+       "temperature anomalies in the Holocene era that scientists have linked to the interaction of large-scale climate systems",
+       "evidence for the claim that most temperature anomalies in the Holocene era have tended to be region-specific"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 8,
+     "passage": "p415",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The statements given, if true, most strongly support which of the following?"
+      ],
+      "opts": [
+       "Some members of the nobility in fourteenth-century Europe abandoned other activities in order to become professional musicians.",
+       "There were styles of music performed in the fourteenth century for which no written scores survive.",
+       "Professional musicians in fourteenth-century Europe had more highly developed skills than do the most skilled professional musicians today.",
+       "The fourteenth-century European accounts that describe members of the nobility as excelling in musical performance do not specify the amount of time these members devoted to music.",
+       "Professional musicians in fourteenth-century Europe did not perform for gatherings of members of the nobility."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "sourceAnswer": "B"
+    }
+   ]
+  }
+ ],
+ "references": []
+}

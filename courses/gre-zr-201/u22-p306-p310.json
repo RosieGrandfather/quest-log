@@ -1,0 +1,305 @@
+{
+ "id": "u22-p306-p310",
+ "title": "阅读 22 · Passage 306–310（5篇 · 10题）",
+ "en": "Reading Comprehension — Passages 306–310",
+ "minutes": 20,
+ "practice": true,
+ "answerFormat": "gre-zr-text-v1",
+ "objectives": [
+  "独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。",
+  "提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。",
+  "选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zr-201/",
+   "source": "张巍GRE阅读机经440篇 · Passage 306–310",
+   "noteTail": "（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）",
+   "passages": {
+    "p306": {
+     "number": 306,
+     "paragraphs": [
+      "The hypothesis that paranormal phenomena are real but lie outside the limits of science is supported by considerable evidence. The Society for Psychical Research has collected stories of ordinary people apparently demonstrating paranormal abilities. Entirely anecdotal, this evidence has nothing to do with science, since it cannot be reproduced under controlled conditions. But the society took great trouble to interview first-hand witnesses and to document the stories carefully. One fact that emerges clearly from the stories is that paranormal events occur, if they occur at all, only when people are experiencing strong emotion. This would immediately explain why paranormal phenomena are not observable under the conditions of a well-controlled scientific experiment. Strong emotion is inherently incompatible with controlled scientific procedures."
+     ],
+     "highlights": [
+      "Strong emotion is inherently incompatible with controlled scientific procedures."
+     ]
+    },
+    "p307": {
+     "number": 307,
+     "paragraphs": [
+      "More than two decades after the death of George Balanchine, the choreographer’s legacy is strangely unclear. In part this is because ballet has shallow roots in American culture. When Balanchine arrived in the United States in 1933, American ballet was little more than a vaudeville act. During the next 50 years, he raised American ballet to an internationally recognized art, producing an impressive body of great ballets and laying a foundation for generations to come— or so it was thought at the time of his death. But dance has no written tradition and disappears easily from collective memory: unless Balanchine’s dances are alive and interesting now, we are likely to forget why they ever seemed so important."
+     ],
+     "highlights": []
+    },
+    "p308": {
+     "number": 308,
+     "paragraphs": [
+      "This passage is adapted from material published in 2019.",
+      "In 2018, the U.S. Congress passed the “45Q legislation,” which significantly increases corporate tax credits for various uses of CO (carbon dioxide). The most controversial use is “enhanced oil 2 recovery.” An oil company purchases CO , transports it by pipeline and injects it into depleted oil 2 wells, pushing out extra oil it could not extract by conventional means. A climate change solution that entails producing more fossil fuels may sound Orwellian, and some environmental critics have attacked 45Q as just another fossil-fuel subsidy program in disguise. But enhanced oil recovery appears to reduce current emissions because the captured CO , typically from natural 2 gas or ethanol refineries, gets sequestered underground. Some environmentalists, such as Kurt Waltzer of the Clean Air Task Force, argue that turning carbon capture into an energy technology, rather than an emissions technology, is the first step toward broad commercial adoption of CO 2 removal. It turns recaptured CO , into a product to be bought or sold rather than simply a cost to 2 be endured."
+     ],
+     "highlights": [
+      "some environmental critics",
+      "Kurt Waltzer"
+     ]
+    },
+    "p309": {
+     "number": 309,
+     "paragraphs": [
+      "Despite today’s more efficient electrical generators, modern electric-only power plants waste more of their fuel sources potential energy than did Thomas Edison’s power plants of the late 1800s. Edison used cast-off steam from his generators to warm nearby homes and factories. But few modern power plants use this residual heat, instead venting it into the air. When newer, larger plants required more real estate, they were built farther from customers. Moreover, because electricity travels easily, plants were located wherever they could tap the energy of a river or where local coal was especially cheap. The heat generated during the production of electricity does not travel far, however, so when power plants moved out to the horizon, the steam went to waste."
+     ],
+     "highlights": []
+    },
+    "p310": {
+     "number": 310,
+     "paragraphs": [
+      "Manatees are large marine mammals that inhabit the coastal waters of southern Florida and feed on the vegetation that grows in shallow waters. They frequently gather in the vicinity of power stations that release heated water into the sea. Since the warmer water supports abundant vegetation, some biologists have hypothesized that manatees gather in these areas because they are attracted to this convenient source of food."
+     ],
+     "highlights": []
+    }
+   },
+   "items": [
+    {
+     "n": 1,
+     "passage": "p306",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following best describes the role played in the passage by the highlighted sentence?"
+      ],
+      "opts": [
+       "It states the main conclusion of the author’s argument.",
+       "It provides a basis for a recommended course of action.",
+       "It articulates a principle that supports the claim made in the preceding sentence.",
+       "It is intended to undermine the credibility of apparent evidence that the author has mentioned earlier in the passage.",
+       "It serves to emphasize a limitation of the evidence collected by the Society for Psychical Research."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 2,
+     "passage": "p306",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage would agree with which of the following descriptions of the evidence collected by the Society for Psychical Research?"
+      ],
+      "opts": [
+       "carefully recorded",
+       "unscientific",
+       "credible"
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      0,
+      1
+     ],
+     "sourceAnswer": "AB",
+     "answerPending": true,
+     "answerReviewReason": "配套答案AB，复核倾向ABC。A仔细记录和B非科学明确；开头称有相当支持证据似支持C可信，但if they occur at all又保留存在与否，C是否过强有歧义。",
+     "explanation": "本题答案不确定，存在争议，尚无可靠定论。争议理由：配套答案AB，复核倾向ABC。A仔细记录和B非科学明确；开头称有相当支持证据似支持C可信，但if they occur at all又保留存在与否，C是否过强有歧义。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending"
+     }
+    },
+    {
+     "n": 3,
+     "passage": "p307",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred that the author of the passage would probably agree with which of the following statements about ballet’s lack of a written tradition?"
+      ],
+      "opts": [
+       "This lack is one reason that ballet has shallow roots in American culture.",
+       "This lack makes it imperative that a ballet be performed regularly for it to remain alive.",
+       "This lack makes it more difficult to preserve a particular ballet in the public’s consciousness."
+      ]
+     },
+     "kind": "mcn",
+     "nopt": 3,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "retained-after-review"
+     }
+    },
+    {
+     "n": 4,
+     "passage": "p307",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The passage suggests that at the time of Balanchine’s death, many people thought which of the following about Balanchine’s work?"
+      ],
+      "opts": [
+       "There was little danger that Balanchine’s work would be forgotten.",
+       "It was unlikely that Balanchine’s body of work would ever be equaled.",
+       "Balanchine’s work had only shallow roots in American culture.",
+       "Balanchine’s work was difficult to understand due to the lack of a written balletic tradition.",
+       "Balanchine’s work made work by other American choreographers look like a vaudeville act."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 5,
+     "passage": "p308",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "The passage is primarily concerned with"
+      ],
+      "opts": [
+       "discussing a controversial aspect of specific legislation relating to CO 2",
+       "explaining the science of a new process for capturing CO 2",
+       "highlighting the shortcomings of a specific method of combating climate change",
+       "arguing that emissions technologies are the most effective method of combating climate change",
+       "summarizing the advantages of relying on legislation to combat climate change"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    },
+    {
+     "n": 6,
+     "passage": "p308",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "According to the passage, “some environmental critics” object to the 45Q legislation on which of the following grounds?"
+      ],
+      "opts": [
+       "It will drive up the price of captured CO . 2",
+       "The process of extracting extra oil could have unforeseen environmental consequences.",
+       "Fossil fuels extracted via enhanced oil recovery typically produce more carbon emissions than ethanol or natural gas.",
+       "It will replace current subsidy programs that have been proved effective.",
+       "Its proponents' claims that it is part of a climate change solution are misleading."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 7,
+     "passage": "p308",
+     "sourceQuestion": 3,
+     "txt": {
+      "stem": [
+       "The passage suggests that Kurt Waltzer would likely agree with which of the following statements about the 45Q legislation"
+      ],
+      "opts": [
+       "It will likely replace some of the fossil-fuel subsidy programs that are currently in effect",
+       "It is likely to impede the development of economically efficient ways of recapturing CO for 2 sequestration.",
+       "The positive effects of other portions of the legislation will likely outweigh the environmental harm caused by its controversial aspects",
+       "The incentives it provides for the production of more fossil fuel are an ineffective means of reducing the production of CO byproducts. 2",
+       "Its provision of corporate tax credits for using CO for enhanced oil recovery may offer a net 2 gain in environmental terms"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "sourceAnswer": "E"
+    },
+    {
+     "n": 8,
+     "passage": "p309",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "It can be inferred from the passage that, in general, locating modern power plants closer to population centers would have"
+      ],
+      "opts": [
+       "compromised efforts to conserve energy in populated areas",
+       "decreased the demand for heating within those population centers",
+       "resulted in higher costs for the fuel used by those plants",
+       "required much larger plants than those currently operating",
+       "obliged power companies to find an alternative to coal as a fuel source"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "sourceAnswer": "C"
+    },
+    {
+     "n": 9,
+     "passage": "p309",
+     "sourceQuestion": 2,
+     "txt": {
+      "stem": [
+       "The author suggests that steam generated by modern power plants is not used for heating because"
+      ],
+      "opts": [
+       "steam generally proves incompatible with most modern industrial needs",
+       "other means of heating have become more cost-effective",
+       "steam is no longer produced in sufficient quantities to be useful",
+       "insufficient demand for heating exists nearby",
+       "transporting steam long distances would prove to be prohibitively expensive"
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "sourceAnswer": "D"
+    },
+    {
+     "n": 10,
+     "passage": "p310",
+     "sourceQuestion": 1,
+     "txt": {
+      "stem": [
+       "Which of the following, if true, most seriously undermines the hypothesis?"
+      ],
+      "opts": [
+       "When a power station near which manatees usually gather is shutdown for even a few hours, manatees move elsewhere.",
+       "Other marine animals that feed on vegetation also congregate in large numbers in the vicinity of power stations.",
+       "All of the species of vegetation that grow near the power stations also grow elsewhere in the coastal waters of southern Florida, though not nearly as abundantly.",
+       "Even more manatees than usual gather near power stations during the winter months, when vegetation growth away from power stations slows.",
+       "Manatees also tend to gather in waters where high levels of nutrients support especially abundant vegetation."
+      ]
+     },
+     "kind": "mc1",
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "sourceAnswer": "A"
+    }
+   ]
+  }
+ ],
+ "references": []
+}
