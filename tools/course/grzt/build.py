@@ -10,6 +10,7 @@ import unicodedata
 from pathlib import Path
 
 import pdfplumber
+from glossary import annotate_unit, annotate_course
 
 REPO = Path(__file__).resolve().parents[3]
 # course id -> Tests covered, audit file. Section n of the book is Test (n+1)//2.
@@ -171,11 +172,13 @@ def build(cid,pdf,key,keys):
                   '独立完成7道原题，整节完成后提交。','提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。'],
               'blocks':[{'type':'gre-qset','base':f'courses/{cid}/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
                          'noteTail':'（原题及配套答案，仅供个人学习；暂不附讲解）','items':items}],'references':[]}
+        if cid=='gre-zt':annotate_unit(unit)
         (out/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
         units.append({k:unit[k] for k in ['id','title','en','minutes','practice']}|{'file':f'{uid}.json','hasQuiz':False,'difficulty':s['difficulty']})
     name=f'前{hi}个Section' if lo==1 else f'第{lo}–{hi}个Section'
     course={'id':cid,'title':f'张巍GRE填空机经：{name}','subtitle':f'Test {first}–{last}，每个Section一节，共{nsec}节{7*nsec}题。原题与配套答案，完成整节后提交查看对错，暂不附讲解。',
             'order':17,'order_note':'选修，GRE填空专项练习','tier':'elective','tags':['GRE'],'units':units}
+    if cid=='gre-zt':annotate_course(course)
     (out/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
     report={'sourcePDF':pdf.name,'pdfSHA256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'answerSHA256':hashlib.sha256(key.read_bytes()).hexdigest(),'course':cid,'tests':[first,last],'sections':nsec,'questions':len(audit),'items':audit}
     (Path(__file__).parent/COURSES[cid]['audit']).write_text(json.dumps(report,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')

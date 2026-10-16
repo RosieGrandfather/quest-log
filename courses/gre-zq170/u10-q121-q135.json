@@ -1,0 +1,232 @@
+{
+ "id": "u10-q121-q135",
+ "title": "第5组 · Quant 2（15题 · 26分钟）",
+ "en": "Hard Quant — Questions 121–135",
+ "minutes": 26,
+ "practice": true,
+ "answerFormat": "gre-zq170-v1",
+ "objectives": [
+  "原书第121–135题，共15题，限时26分钟；做完整节再提交。",
+  "正式GRE数学第一节12题21分钟、第二节15题26分钟；本课按题数和时间配组。",
+  "比较题选一项，多选题须全选正确；数值题按原题要求输入数字、分数或四舍五入结果。",
+  "题目保留原式和图表，169题答案已逐题独立验算并与配套DOCX核对；提交前不显示答案。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zq170/img/",
+   "source": "巍哥GRE数学170难题4.0（2026年）· 原书第121–135题",
+   "noteTail": "（保留原题公式与图表；配套答案已逐题独立验算，非ETS官方认证）",
+   "items": [
+    {
+     "n": 1,
+     "sourceQuestion": 121,
+     "kind": "mcn",
+     "sourceAnswer": "CE",
+     "img": "q121-1.webp",
+     "imgs": [
+      "q121-1.webp"
+     ],
+     "ans": [
+      2,
+      4
+     ],
+     "nopt": 7
+    },
+    {
+     "n": 2,
+     "sourceQuestion": 122,
+     "kind": "ne",
+     "sourceAnswer": "1800",
+     "img": "q122-1.webp",
+     "imgs": [
+      "q122-1.webp"
+     ],
+     "ans": "1800"
+    },
+    {
+     "n": 3,
+     "sourceQuestion": 123,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "img": "q123-1.webp",
+     "imgs": [
+      "q123-1.webp"
+     ],
+     "ans": [
+      0
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 4,
+     "sourceQuestion": 124,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "img": "q124-1.webp",
+     "imgs": [
+      "q124-1.webp"
+     ],
+     "ans": [
+      4
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 5,
+     "sourceQuestion": 125,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "img": "q125-1.webp",
+     "imgs": [
+      "q125-1.webp"
+     ],
+     "ans": [
+      0
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 6,
+     "sourceQuestion": 126,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "img": "q126-1.webp",
+     "imgs": [
+      "q126-1.webp",
+      "q126-2.webp"
+     ],
+     "ans": [
+      3
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 7,
+     "sourceQuestion": 127,
+     "kind": "qc",
+     "sourceAnswer": "A",
+     "img": "q127-1.webp",
+     "imgs": [
+      "q127-1.webp"
+     ],
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 8,
+     "sourceQuestion": 128,
+     "kind": "qc",
+     "sourceAnswer": "C",
+     "img": "q128-1.webp",
+     "imgs": [
+      "q128-1.webp"
+     ],
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 9,
+     "sourceQuestion": 129,
+     "kind": "ne",
+     "sourceAnswer": "105",
+     "img": "q129-1.webp",
+     "imgs": [
+      "q129-1.webp"
+     ],
+     "ans": "105"
+    },
+    {
+     "n": 10,
+     "sourceQuestion": 130,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "img": "q130-1.webp",
+     "imgs": [
+      "q130-1.webp"
+     ],
+     "ans": [
+      4
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 11,
+     "sourceQuestion": 131,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "img": "q131-1.webp",
+     "imgs": [
+      "q131-1.webp",
+      "q131-2.webp"
+     ],
+     "ans": [
+      1
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 12,
+     "sourceQuestion": 132,
+     "kind": "qc",
+     "sourceAnswer": "C",
+     "img": "q132-1.webp",
+     "imgs": [
+      "q132-1.webp"
+     ],
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 13,
+     "sourceQuestion": 133,
+     "kind": "qc",
+     "sourceAnswer": "C",
+     "img": "q133-1.webp",
+     "imgs": [
+      "q133-1.webp"
+     ],
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 14,
+     "sourceQuestion": 134,
+     "kind": "qc",
+     "sourceAnswer": "D",
+     "img": "q134-1.webp",
+     "imgs": [
+      "q134-1.webp"
+     ],
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 15,
+     "sourceQuestion": 135,
+     "kind": "qc",
+     "sourceAnswer": "B",
+     "img": "q135-1.webp",
+     "imgs": [
+      "q135-1.webp",
+      "q135-2.webp"
+     ],
+     "ans": [
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": [
+  {
+   "label": "ETS官方GRE考试结构：数学12题21分钟、15题26分钟",
+   "url": "https://www.ets.org/gre/test-takers/general-test/prepare/test-structure.html"
+  }
+ ]
+}

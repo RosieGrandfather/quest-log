@@ -19,6 +19,7 @@ const englishHint = it => it.kind === 'tc'
   : it.kind === 'ss' ? 'Select a sentence in the passage.'
   : 'Select one answer choice.';
 const tx = t => escapeHTML(t).replace(/____/g, '<span class="qbl"></span>');
+const optionText = (text, zh)=> `<span class="qtext">${tx(text)}${zh ? `<span class="qgloss" hidden>${escapeHTML(zh)}</span>` : ''}</span>`;
 const paraHTML = arr => (arr || []).map(x=> `<p>${tx(x)}</p>`).join('');
 const emphasizedText = (value, highlights = [])=> {
   const html = tx(value);
@@ -46,13 +47,13 @@ function controlsHTML(it, i, english = false){
   if(it.kind === 'tc'){
     return `<div class="qtc">${Array.from({length: it.blanks}, (_, j)=>
       `<div class="qblank"><span class="qblank-no">${english ? 'Blank' : '空'} ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
-        `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span>${it.txt && it.txt.cols ? `<span class="qtext">${tx(it.txt.cols[j][k])}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
+        `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span>${it.txt && it.txt.cols ? optionText(it.txt.cols[j][k],it.txt.colsZh?.[j]?.[k]) : ''}<span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
   }
   const type = isMulti(it) ? 'checkbox' : 'radio';
   const n = it.kind === 'qc' ? 4 : it.nopt;
   const hasT = !!(it.txt && it.txt.opts);
   return `<div class="qopts ${it.kind}${hasT ? ' has-txt' : ''}">${Array.from({length: n}, (_, k)=>
-    `<label class="qopt" data-k="${k}"><input type="${type}" name="q${i}" value="${k}"><span class="qletter">${L[k]}</span>${it.kind === 'qc' ? `<span class="qtext">${QC_TEXT[k]}</span>` : hasT ? `<span class="qtext">${tx(it.txt.opts[k])}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div>`;
+    `<label class="qopt" data-k="${k}"><input type="${type}" name="q${i}" value="${k}"><span class="qletter">${L[k]}</span>${it.kind === 'qc' ? `<span class="qtext">${QC_TEXT[k]}</span>` : hasT ? optionText(it.txt.opts[k],it.txt.optsZh?.[k]) : ''}<span class="gopt-tag"></span></label>`).join('')}</div>`;
 }
 
 const origImgs = (it, b)=> (it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('');
@@ -195,6 +196,7 @@ export function wireQset(root, course, unit){
   function reveal(){
     revealed = true;
     box.classList.add('revealed');
+    box.querySelectorAll('.qgloss').forEach(x=>{ x.hidden = false; });
     box.querySelectorAll('input').forEach(x=>{ x.disabled = true; });
     items.forEach((it, i)=>{
       const sec = box.querySelector(`#gq-${i}`), a = answers[i] || '';
@@ -283,6 +285,7 @@ export function wireQset(root, course, unit){
     revealed = false; warned = false; answers = items.map(()=> '');
     review = null; started = true;
     box.classList.remove('revealed', 'only-wrong');
+    box.querySelectorAll('.qgloss').forEach(x=>{ x.hidden = true; });
     items.forEach((it, i)=>{
       const sec = box.querySelector(`#gq-${i}`);
       sec.classList.remove('right', 'wrong');

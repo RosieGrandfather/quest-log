@@ -1,0 +1,130 @@
+{
+ "id": "gre-zq170",
+ "title": "张巍GRE数学170难题：13节限时训练",
+ "subtitle": "169道数学题；6组12题21分钟＋15题26分钟，另加7题13分钟补充练习。第170项为词汇复习提醒。",
+ "order": 19,
+ "order_note": "选修，按现行GRE数学题数与时长编排；难题专项训练",
+ "tier": "elective",
+ "tags": [
+  "GRE"
+ ],
+ "units": [
+  {
+   "id": "u01-q001-q012",
+   "title": "第1组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 1–12",
+   "minutes": 21,
+   "practice": true,
+   "file": "u01-q001-q012.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u02-q013-q027",
+   "title": "第1组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 13–27",
+   "minutes": 26,
+   "practice": true,
+   "file": "u02-q013-q027.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u03-q028-q039",
+   "title": "第2组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 28–39",
+   "minutes": 21,
+   "practice": true,
+   "file": "u03-q028-q039.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u04-q040-q054",
+   "title": "第2组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 40–54",
+   "minutes": 26,
+   "practice": true,
+   "file": "u04-q040-q054.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u05-q055-q066",
+   "title": "第3组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 55–66",
+   "minutes": 21,
+   "practice": true,
+   "file": "u05-q055-q066.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u06-q067-q081",
+   "title": "第3组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 67–81",
+   "minutes": 26,
+   "practice": true,
+   "file": "u06-q067-q081.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u07-q082-q093",
+   "title": "第4组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 82–93",
+   "minutes": 21,
+   "practice": true,
+   "file": "u07-q082-q093.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u08-q094-q108",
+   "title": "第4组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 94–108",
+   "minutes": 26,
+   "practice": true,
+   "file": "u08-q094-q108.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u09-q109-q120",
+   "title": "第5组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 109–120",
+   "minutes": 21,
+   "practice": true,
+   "file": "u09-q109-q120.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u10-q121-q135",
+   "title": "第5组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 121–135",
+   "minutes": 26,
+   "practice": true,
+   "file": "u10-q121-q135.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u11-q136-q147",
+   "title": "第6组 · Quant 1（12题 · 21分钟）",
+   "en": "Hard Quant — Questions 136–147",
+   "minutes": 21,
+   "practice": true,
+   "file": "u11-q136-q147.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u12-q148-q162",
+   "title": "第6组 · Quant 2（15题 · 26分钟）",
+   "en": "Hard Quant — Questions 148–162",
+   "minutes": 26,
+   "practice": true,
+   "file": "u12-q148-q162.json",
+   "hasQuiz": false
+  },
+  {
+   "id": "u13-q163-q169",
+   "title": "补充练习（7题 · 13分钟）",
+   "en": "Hard Quant — Questions 163–169",
+   "minutes": 13,
+   "practice": true,
+   "file": "u13-q163-q169.json",
+   "hasQuiz": false
+  }
+ ]
+}

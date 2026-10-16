@@ -327,6 +327,8 @@
 .qopt input{accent-color:var(--teal);}
 .qletter{font-weight:800;font-family:'IBM Plex Mono';}
 .qtext{flex:1;}
+.qgloss{display:block;margin-top:4px;font-size:13px;font-weight:400;line-height:1.5;color:var(--ink-soft,var(--ink));}
+.qgloss[hidden]{display:none;}
 .qopt .gopt-tag{font-size:12px;font-weight:700;margin-left:auto;color:var(--teal);}
 .qset.revealed .qopt{cursor:default;}
 .qset.revealed .qopt.correct{border-color:var(--teal);background:var(--teal-soft);}

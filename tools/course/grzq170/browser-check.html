@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="/">
+<title>数学170难题 · 本地检查</title><link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/study.css">
+<style>body{max-width:960px;margin:24px auto;padding:0 16px}#status{white-space:pre-wrap}select{max-width:100%}</style></head>
+<body><h1>数学170难题 · 本地检查</h1><p>只在内存模拟保存，不连接真实账号。</p><select id="lesson" aria-label="选择课节"></select><button id="run">运行13节自检</button><p id="status" role="status">加载中</p><div id="root"></div><div id="toast" hidden></div>
+<script>window.firebaseConfig={};window.firebase={initializeApp(){},auth(){return{}},firestore(){return{}}};</script>
+<script type="module">
+import{qsetHTML,wireQset}from'/js/study/qset.js';import{T}from'/js/study/state.js';
+const course=await(await fetch('/courses/gre-zq170/course.json')).json();
+const units=await Promise.all(course.units.map(e=>fetch('/courses/gre-zq170/'+e.file).then(r=>r.json())));
+const root=document.querySelector('#root'),status=document.querySelector('#status'),select=document.querySelector('#lesson');let writes=0;
+T.cols={studyProgress:{doc:()=>({get:async()=>({data:()=>({})}),set:async()=>{writes++;}})}};
+for(const[i,u]of units.entries()){const o=document.createElement('option');o.value=i;o.textContent=u.title;select.append(o);}
+function show(i){T.progress={};const u=units[i];root.innerHTML=qsetHTML(u.blocks[0]);wireQset(root,course,u);return u;}
+select.addEventListener('change',()=>{show(Number(select.value));status.textContent='本地预览';});show(0);status.textContent='已加载13节：12题21分钟、15题26分钟交替，最后7题13分钟';
+document.querySelector('#run').addEventListener('click',async()=>{
+ const button=document.querySelector('#run');button.disabled=true;writes=0;let total=0,pictures=0;
+ try{
+  for(let lesson=0;lesson<units.length;lesson++){
+   const u=show(lesson),b=u.blocks[0];
+   if([...root.querySelectorAll('.gq-explain')].some(e=>!e.hidden))throw Error('answers visible before submission');
+   for(const image of root.querySelectorAll('img')){image.loading='eager';try{await image.decode();}catch(e){throw Error('image decode: '+image.getAttribute('src'));}if(!image.naturalWidth)throw Error('missing image');pictures++;}
+   for(const[i,q]of b.items.entries()){
+    const sec=root.querySelector('#gq-'+i);
+    if(q.kind==='ne'){
+     const inputs=sec.querySelectorAll('.qne input'),values=q.frac?q.ans.split('/'):[q.ans];
+     inputs.forEach((input,j)=>{input.value=values[j];input.dispatchEvent(new Event('input',{bubbles:true}));});
+    }else{if(sec.querySelectorAll('.qopts input').length!==(q.kind==='qc'?4:q.nopt))throw Error('option count');for(const k of q.ans)sec.querySelector(`input[value="${k}"]`).click();}
+    total++;
+   }
+   root.querySelector('.gbar-submit').click();await new Promise(r=>setTimeout(r,25));
+   if(root.querySelectorAll('.qq.right').length!==b.items.length)throw Error(u.id+' grading');
+   if([...root.querySelectorAll('.gq-explain')].some(e=>e.hidden))throw Error('answers not revealed');
+  }
+  if(total!==169||writes!==13)throw Error('totals');
+  status.textContent=`通过：13节 / ${total}道数学题；${pictures}张题图加载成功；${writes}次内存保存；单选、多选、比较、数值及分数输入正常。`;
+ }catch(e){status.textContent='失败：'+e.message;throw e;}
+ finally{show(0);select.value='0';button.disabled=false;}
+});
+</script></body></html>

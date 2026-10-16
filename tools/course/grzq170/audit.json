@@ -1,0 +1,3130 @@
+{
+ "sourcePDF": "巍哥GRE数学170难题4.0（2026年）.pdf",
+ "pdfSHA256": "eac1f71a3e40a55da5c5558bebb86c9337b1c0dff9eb90cd122582b616870544",
+ "answerDOCX": "难题170答案.docx",
+ "answerSHA256": "f30f84203da61dc7789d768d087fcb67f1c79f77d30522cc7a9352888d43baf6",
+ "officialTimingSource": "https://www.ets.org/gre/test-takers/general-test/prepare/test-structure.html",
+ "officialTimingChecked": "2026-10-16",
+ "questions": 169,
+ "units": 13,
+ "minutes": 295,
+ "kinds": {
+  "mcn": 31,
+  "ne": 23,
+  "mc1": 64,
+  "qc": 51
+ },
+ "answerPolicy": "169题逐题独立解题后对照配套DOCX，全部一致；57题另有程序复算，未发现需更正或待定答案；非ETS认证。",
+ "answerReview": {
+  "file": "answer-review.json",
+  "reviewed": 169,
+  "retained": 169,
+  "corrected": 0,
+  "pending": 0,
+  "computerChecked": 57
+ },
+ "sourceItem170": "所有的GRE数学单词都背好了吗？（复习提醒，不计分）",
+ "items": [
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 1,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    5
+   ],
+   "images": [
+    "q001-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 2,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "AC",
+   "PDFPages": [
+    5
+   ],
+   "images": [
+    "q002-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 3,
+   "kind": "ne",
+   "sourceAnswer": "121",
+   "answer": "121",
+   "reviewStatus": "retained",
+   "independentAnswer": "121",
+   "PDFPages": [
+    5
+   ],
+   "images": [
+    "q003-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 4,
+   "kind": "ne",
+   "sourceAnswer": "11/17",
+   "answer": "11/17",
+   "reviewStatus": "retained",
+   "independentAnswer": "11/17",
+   "PDFPages": [
+    5
+   ],
+   "images": [
+    "q004-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 5,
+   "kind": "ne",
+   "sourceAnswer": "24/87",
+   "answer": "24/87",
+   "reviewStatus": "retained",
+   "independentAnswer": "24/87",
+   "PDFPages": [
+    6
+   ],
+   "images": [
+    "q005-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 6,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ABC",
+   "PDFPages": [
+    6
+   ],
+   "images": [
+    "q006-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 7,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    7
+   ],
+   "images": [
+    "q007-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 8,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    7
+   ],
+   "images": [
+    "q008-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 9,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    7
+   ],
+   "images": [
+    "q009-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 10,
+   "kind": "mcn",
+   "sourceAnswer": "BD",
+   "answer": [
+    1,
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BD",
+   "PDFPages": [
+    7
+   ],
+   "images": [
+    "q010-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 11,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    7
+   ],
+   "images": [
+    "q011-1.webp"
+   ]
+  },
+  {
+   "section": 1,
+   "unit": "u01-q001-q012",
+   "question": 12,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    8
+   ],
+   "images": [
+    "q012-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 13,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    9
+   ],
+   "images": [
+    "q013-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 14,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    9
+   ],
+   "images": [
+    "q014-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 15,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    9
+   ],
+   "images": [
+    "q015-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 16,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    10
+   ],
+   "images": [
+    "q016-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 17,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    10
+   ],
+   "images": [
+    "q017-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 18,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    10
+   ],
+   "images": [
+    "q018-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 19,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    11
+   ],
+   "images": [
+    "q019-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 20,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    11
+   ],
+   "images": [
+    "q020-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 21,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    11
+   ],
+   "images": [
+    "q021-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 22,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    11,
+    12
+   ],
+   "images": [
+    "q022-1.webp",
+    "q022-2.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 23,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    12
+   ],
+   "images": [
+    "q023-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 24,
+   "kind": "mcn",
+   "sourceAnswer": "BDE",
+   "answer": [
+    1,
+    3,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BDE",
+   "PDFPages": [
+    12
+   ],
+   "images": [
+    "q024-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 25,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BC",
+   "PDFPages": [
+    12
+   ],
+   "images": [
+    "q025-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 26,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    12
+   ],
+   "images": [
+    "q026-1.webp"
+   ]
+  },
+  {
+   "section": 2,
+   "unit": "u02-q013-q027",
+   "question": 27,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    12,
+    13
+   ],
+   "images": [
+    "q027-1.webp",
+    "q027-2.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 28,
+   "kind": "ne",
+   "sourceAnswer": "153/190",
+   "answer": "153/190",
+   "reviewStatus": "retained",
+   "independentAnswer": "153/190",
+   "PDFPages": [
+    13
+   ],
+   "images": [
+    "q028-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 29,
+   "kind": "ne",
+   "sourceAnswer": "216 square feet",
+   "answer": "216",
+   "reviewStatus": "retained",
+   "independentAnswer": "216",
+   "PDFPages": [
+    13
+   ],
+   "images": [
+    "q029-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 30,
+   "kind": "ne",
+   "sourceAnswer": "3/4",
+   "answer": "3/4",
+   "reviewStatus": "retained",
+   "independentAnswer": "3/4",
+   "PDFPages": [
+    14
+   ],
+   "images": [
+    "q030-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 31,
+   "kind": "ne",
+   "sourceAnswer": "1.29",
+   "answer": "1.29",
+   "reviewStatus": "retained",
+   "independentAnswer": "1.29",
+   "PDFPages": [
+    14
+   ],
+   "images": [
+    "q031-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 32,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    14
+   ],
+   "images": [
+    "q032-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 33,
+   "kind": "mcn",
+   "sourceAnswer": "AD",
+   "answer": [
+    0,
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "AD",
+   "PDFPages": [
+    14,
+    15
+   ],
+   "images": [
+    "q033-1.webp",
+    "q033-2.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 34,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    15
+   ],
+   "images": [
+    "q034-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 35,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    15,
+    16
+   ],
+   "images": [
+    "q035-1.webp",
+    "q035-2.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 36,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    16
+   ],
+   "images": [
+    "q036-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 37,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    16
+   ],
+   "images": [
+    "q037-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 38,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    16
+   ],
+   "images": [
+    "q038-1.webp"
+   ]
+  },
+  {
+   "section": 3,
+   "unit": "u03-q028-q039",
+   "question": 39,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    16,
+    17
+   ],
+   "images": [
+    "q039-1.webp",
+    "q039-2.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 40,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    17
+   ],
+   "images": [
+    "q040-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 41,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    17
+   ],
+   "images": [
+    "q041-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 42,
+   "kind": "ne",
+   "sourceAnswer": "6000$",
+   "answer": "6000",
+   "reviewStatus": "retained",
+   "independentAnswer": "6000",
+   "PDFPages": [
+    17
+   ],
+   "images": [
+    "q042-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 43,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    17,
+    18
+   ],
+   "images": [
+    "q043-1.webp",
+    "q043-2.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 44,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q044-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 45,
+   "kind": "ne",
+   "sourceAnswer": "7",
+   "answer": "7",
+   "reviewStatus": "retained",
+   "independentAnswer": "7",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q045-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 46,
+   "kind": "ne",
+   "sourceAnswer": "2500 employees",
+   "answer": "2500",
+   "reviewStatus": "retained",
+   "independentAnswer": "2500",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q046-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 47,
+   "kind": "ne",
+   "sourceAnswer": "22 people",
+   "answer": "22",
+   "reviewStatus": "retained",
+   "independentAnswer": "22",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q047-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 48,
+   "kind": "ne",
+   "sourceAnswer": "0.003",
+   "answer": "0.003",
+   "reviewStatus": "retained",
+   "independentAnswer": "0.003",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q048-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 49,
+   "kind": "ne",
+   "sourceAnswer": "15.8%",
+   "answer": "15.8",
+   "reviewStatus": "retained",
+   "independentAnswer": "15.8",
+   "PDFPages": [
+    18
+   ],
+   "images": [
+    "q049-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 50,
+   "kind": "mcn",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    18,
+    19
+   ],
+   "images": [
+    "q050-1.webp",
+    "q050-2.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 51,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    19
+   ],
+   "images": [
+    "q051-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 52,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    19
+   ],
+   "images": [
+    "q052-1.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 53,
+   "kind": "mcn",
+   "sourceAnswer": "C D E F G H",
+   "answer": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CDEFGH",
+   "PDFPages": [
+    19,
+    20
+   ],
+   "images": [
+    "greeting-cards.webp",
+    "q053-1.webp",
+    "q053-2.webp"
+   ]
+  },
+  {
+   "section": 4,
+   "unit": "u04-q040-q054",
+   "question": 54,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    19,
+    20
+   ],
+   "images": [
+    "greeting-cards.webp",
+    "q054-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 55,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    19,
+    20
+   ],
+   "images": [
+    "greeting-cards.webp",
+    "q055-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 56,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    19,
+    20
+   ],
+   "images": [
+    "greeting-cards.webp",
+    "q056-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 57,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    20,
+    21
+   ],
+   "images": [
+    "q057-1.webp",
+    "q057-2.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 58,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    21
+   ],
+   "images": [
+    "q058-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 59,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    21
+   ],
+   "images": [
+    "q059-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 60,
+   "kind": "mcn",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    21
+   ],
+   "images": [
+    "q060-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 61,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    21,
+    22
+   ],
+   "images": [
+    "q061-1.webp",
+    "q061-2.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 62,
+   "kind": "mcn",
+   "sourceAnswer": "BE",
+   "answer": [
+    1,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BE",
+   "PDFPages": [
+    22
+   ],
+   "images": [
+    "q062-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 63,
+   "kind": "mcn",
+   "sourceAnswer": "BD",
+   "answer": [
+    1,
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BD",
+   "PDFPages": [
+    22
+   ],
+   "images": [
+    "q063-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 64,
+   "kind": "mcn",
+   "sourceAnswer": "BCDE",
+   "answer": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BCDE",
+   "PDFPages": [
+    22,
+    23
+   ],
+   "images": [
+    "q064-1.webp",
+    "q064-2.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 65,
+   "kind": "mcn",
+   "sourceAnswer": "ABCDE",
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ABCDE",
+   "PDFPages": [
+    23
+   ],
+   "images": [
+    "q065-1.webp"
+   ]
+  },
+  {
+   "section": 5,
+   "unit": "u05-q055-q066",
+   "question": 66,
+   "kind": "mcn",
+   "sourceAnswer": "CDE",
+   "answer": [
+    2,
+    3,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CDE",
+   "PDFPages": [
+    23
+   ],
+   "images": [
+    "q066-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 67,
+   "kind": "mcn",
+   "sourceAnswer": "ACE",
+   "answer": [
+    0,
+    2,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ACE",
+   "PDFPages": [
+    23
+   ],
+   "images": [
+    "q067-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 68,
+   "kind": "mcn",
+   "sourceAnswer": "BC",
+   "answer": [
+    1,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BC",
+   "PDFPages": [
+    23,
+    24
+   ],
+   "images": [
+    "q068-1.webp",
+    "q068-2.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 69,
+   "kind": "mcn",
+   "sourceAnswer": "CE",
+   "answer": [
+    2,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CE",
+   "PDFPages": [
+    24
+   ],
+   "images": [
+    "q069-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 70,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    24
+   ],
+   "images": [
+    "q070-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 71,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    24
+   ],
+   "images": [
+    "q071-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 72,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    24,
+    25
+   ],
+   "images": [
+    "q072-1.webp",
+    "q072-2.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 73,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    25
+   ],
+   "images": [
+    "q073-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 74,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    25
+   ],
+   "images": [
+    "q074-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 75,
+   "kind": "mcn",
+   "sourceAnswer": "CDE",
+   "answer": [
+    2,
+    3,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CDE",
+   "PDFPages": [
+    25
+   ],
+   "images": [
+    "q075-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 76,
+   "kind": "ne",
+   "sourceAnswer": "6.75",
+   "answer": "6.75",
+   "reviewStatus": "retained",
+   "independentAnswer": "6.75",
+   "PDFPages": [
+    25
+   ],
+   "images": [
+    "q076-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 77,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    25
+   ],
+   "images": [
+    "q077-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 78,
+   "kind": "ne",
+   "sourceAnswer": "2433600",
+   "answer": "2433600",
+   "reviewStatus": "retained",
+   "independentAnswer": "2433600",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q078-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 79,
+   "kind": "ne",
+   "sourceAnswer": "108",
+   "answer": "108",
+   "reviewStatus": "retained",
+   "independentAnswer": "108",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q079-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 80,
+   "kind": "mcn",
+   "sourceAnswer": "AD",
+   "answer": [
+    0,
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "AD",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q080-1.webp"
+   ]
+  },
+  {
+   "section": 6,
+   "unit": "u06-q067-q081",
+   "question": 81,
+   "kind": "mcn",
+   "sourceAnswer": "CD",
+   "answer": [
+    2,
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CD",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q081-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 82,
+   "kind": "mcn",
+   "sourceAnswer": "ABE",
+   "answer": [
+    0,
+    1,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ABE",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q082-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 83,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    26
+   ],
+   "images": [
+    "q083-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 84,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    27
+   ],
+   "images": [
+    "q084-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 85,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    27
+   ],
+   "images": [
+    "q085-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 86,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    27
+   ],
+   "images": [
+    "q086-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 87,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    27
+   ],
+   "images": [
+    "q087-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 88,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    27
+   ],
+   "images": [
+    "q088-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 89,
+   "kind": "mcn",
+   "sourceAnswer": "A B C D E H",
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ABCDEH",
+   "PDFPages": [
+    28
+   ],
+   "images": [
+    "q089-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 90,
+   "kind": "mcn",
+   "sourceAnswer": "DEF",
+   "answer": [
+    3,
+    4,
+    5
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "DEF",
+   "PDFPages": [
+    28
+   ],
+   "images": [
+    "q090-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 91,
+   "kind": "ne",
+   "sourceAnswer": "-2",
+   "answer": "-2",
+   "reviewStatus": "retained",
+   "independentAnswer": "-2",
+   "PDFPages": [
+    28
+   ],
+   "images": [
+    "q091-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 92,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    28
+   ],
+   "images": [
+    "q092-1.webp"
+   ]
+  },
+  {
+   "section": 7,
+   "unit": "u07-q082-q093",
+   "question": 93,
+   "kind": "ne",
+   "sourceAnswer": "0.25",
+   "answer": "0.25",
+   "reviewStatus": "retained",
+   "independentAnswer": "0.25",
+   "PDFPages": [
+    28
+   ],
+   "images": [
+    "q093-text.webp",
+    "q093-rounding.webp",
+    "q093-graph.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 94,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    28,
+    29
+   ],
+   "images": [
+    "q094-diagram.webp",
+    "q094-2.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 95,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    29
+   ],
+   "images": [
+    "q095-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 96,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    29
+   ],
+   "images": [
+    "q096-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 97,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    29
+   ],
+   "images": [
+    "q097-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 98,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    30
+   ],
+   "images": [
+    "q098-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 99,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    30
+   ],
+   "images": [
+    "q099-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 100,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    30,
+    31
+   ],
+   "images": [
+    "q100-1.webp",
+    "q100-2.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 101,
+   "kind": "mcn",
+   "sourceAnswer": "ACE",
+   "answer": [
+    0,
+    2,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ACE",
+   "PDFPages": [
+    31
+   ],
+   "images": [
+    "q101-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 102,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    31
+   ],
+   "images": [
+    "q102-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 103,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    31,
+    32
+   ],
+   "images": [
+    "q103-1.webp",
+    "q103-2.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 104,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    32
+   ],
+   "images": [
+    "q104-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 105,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    32
+   ],
+   "images": [
+    "q105-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 106,
+   "kind": "ne",
+   "sourceAnswer": "126",
+   "answer": "126",
+   "reviewStatus": "retained",
+   "independentAnswer": "126",
+   "PDFPages": [
+    32
+   ],
+   "images": [
+    "q106-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 107,
+   "kind": "mcn",
+   "sourceAnswer": "BE",
+   "answer": [
+    1,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "BE",
+   "PDFPages": [
+    32
+   ],
+   "images": [
+    "q107-1.webp"
+   ]
+  },
+  {
+   "section": 8,
+   "unit": "u08-q094-q108",
+   "question": 108,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    33
+   ],
+   "images": [
+    "q108-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 109,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    33
+   ],
+   "images": [
+    "q109-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 110,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    33
+   ],
+   "images": [
+    "q110-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 111,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    33
+   ],
+   "images": [
+    "q111-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 112,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    34
+   ],
+   "images": [
+    "q112-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 113,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    34
+   ],
+   "images": [
+    "q113-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 114,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    34
+   ],
+   "images": [
+    "q114-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 115,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    34
+   ],
+   "images": [
+    "q115-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 116,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    34,
+    35
+   ],
+   "images": [
+    "q116-1.webp",
+    "q116-2.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 117,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    35
+   ],
+   "images": [
+    "q117-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 118,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    35
+   ],
+   "images": [
+    "q118-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 119,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    35
+   ],
+   "images": [
+    "q119-1.webp"
+   ]
+  },
+  {
+   "section": 9,
+   "unit": "u09-q109-q120",
+   "question": 120,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    35
+   ],
+   "images": [
+    "q120-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 121,
+   "kind": "mcn",
+   "sourceAnswer": "CE",
+   "answer": [
+    2,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "CE",
+   "PDFPages": [
+    36
+   ],
+   "images": [
+    "q121-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 122,
+   "kind": "ne",
+   "sourceAnswer": "1800",
+   "answer": "1800",
+   "reviewStatus": "retained",
+   "independentAnswer": "1800",
+   "PDFPages": [
+    36
+   ],
+   "images": [
+    "q122-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 123,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    36
+   ],
+   "images": [
+    "q123-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 124,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    36
+   ],
+   "images": [
+    "q124-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 125,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    36
+   ],
+   "images": [
+    "q125-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 126,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    36,
+    37
+   ],
+   "images": [
+    "q126-1.webp",
+    "q126-2.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 127,
+   "kind": "qc",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    37
+   ],
+   "images": [
+    "q127-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 128,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    37
+   ],
+   "images": [
+    "q128-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 129,
+   "kind": "ne",
+   "sourceAnswer": "105",
+   "answer": "105",
+   "reviewStatus": "retained",
+   "independentAnswer": "105",
+   "PDFPages": [
+    37
+   ],
+   "images": [
+    "q129-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 130,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    37
+   ],
+   "images": [
+    "q130-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 131,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    37,
+    38
+   ],
+   "images": [
+    "q131-1.webp",
+    "q131-2.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 132,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    38
+   ],
+   "images": [
+    "q132-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 133,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    38
+   ],
+   "images": [
+    "q133-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 134,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    38
+   ],
+   "images": [
+    "q134-1.webp"
+   ]
+  },
+  {
+   "section": 10,
+   "unit": "u10-q121-q135",
+   "question": 135,
+   "kind": "qc",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    38,
+    39
+   ],
+   "images": [
+    "q135-1.webp",
+    "q135-2.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 136,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    39
+   ],
+   "images": [
+    "q136-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 137,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    39
+   ],
+   "images": [
+    "q137-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 138,
+   "kind": "ne",
+   "sourceAnswer": "32",
+   "answer": "32",
+   "reviewStatus": "retained",
+   "independentAnswer": "32",
+   "PDFPages": [
+    39
+   ],
+   "images": [
+    "q138-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 139,
+   "kind": "mcn",
+   "sourceAnswer": "ABC",
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ABC",
+   "PDFPages": [
+    39
+   ],
+   "images": [
+    "q139-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 140,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    39,
+    40
+   ],
+   "images": [
+    "q140-1.webp",
+    "q140-2.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 141,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    40
+   ],
+   "images": [
+    "q141-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 142,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    40
+   ],
+   "images": [
+    "q142-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 143,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    40
+   ],
+   "images": [
+    "q143-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 144,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    41
+   ],
+   "images": [
+    "q144-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 145,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    41
+   ],
+   "images": [
+    "q145-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 146,
+   "kind": "mcn",
+   "sourceAnswer": "AC",
+   "answer": [
+    0,
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "AC",
+   "PDFPages": [
+    41
+   ],
+   "images": [
+    "q146-1.webp"
+   ]
+  },
+  {
+   "section": 11,
+   "unit": "u11-q136-q147",
+   "question": 147,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    41
+   ],
+   "images": [
+    "q147-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 148,
+   "kind": "qc",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    41
+   ],
+   "images": [
+    "q148-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 149,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    42
+   ],
+   "images": [
+    "q149-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 150,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    42
+   ],
+   "images": [
+    "q150-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 151,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    42
+   ],
+   "images": [
+    "q151-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 152,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    42
+   ],
+   "images": [
+    "q152-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 153,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    42
+   ],
+   "images": [
+    "q153-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 154,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    42,
+    43
+   ],
+   "images": [
+    "q154-1.webp",
+    "q154-2.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 155,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    43
+   ],
+   "images": [
+    "q155-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 156,
+   "kind": "mc1",
+   "sourceAnswer": "E",
+   "answer": [
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "E",
+   "PDFPages": [
+    43
+   ],
+   "images": [
+    "q156-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 157,
+   "kind": "mc1",
+   "sourceAnswer": "B",
+   "answer": [
+    1
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "B",
+   "PDFPages": [
+    43
+   ],
+   "images": [
+    "q157-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 158,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    43
+   ],
+   "images": [
+    "q158-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 159,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    44
+   ],
+   "images": [
+    "q159-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 160,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    44
+   ],
+   "images": [
+    "q160-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 161,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    44
+   ],
+   "images": [
+    "q161-1.webp"
+   ]
+  },
+  {
+   "section": 12,
+   "unit": "u12-q148-q162",
+   "question": 162,
+   "kind": "mc1",
+   "sourceAnswer": "C",
+   "answer": [
+    2
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "C",
+   "PDFPages": [
+    44
+   ],
+   "images": [
+    "q162-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 163,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    44
+   ],
+   "images": [
+    "q163-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 164,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    44,
+    45
+   ],
+   "images": [
+    "q164-1.webp",
+    "q164-2.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 165,
+   "kind": "qc",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    45
+   ],
+   "images": [
+    "q165-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 166,
+   "kind": "mc1",
+   "sourceAnswer": "D",
+   "answer": [
+    3
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "D",
+   "PDFPages": [
+    45
+   ],
+   "images": [
+    "q166-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 167,
+   "kind": "mc1",
+   "sourceAnswer": "A",
+   "answer": [
+    0
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "A",
+   "PDFPages": [
+    45
+   ],
+   "images": [
+    "q167-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 168,
+   "kind": "mcn",
+   "sourceAnswer": "ACE",
+   "answer": [
+    0,
+    2,
+    4
+   ],
+   "reviewStatus": "retained",
+   "independentAnswer": "ACE",
+   "PDFPages": [
+    45
+   ],
+   "images": [
+    "q168-1.webp"
+   ]
+  },
+  {
+   "section": 13,
+   "unit": "u13-q163-q169",
+   "question": 169,
+   "kind": "ne",
+   "sourceAnswer": "-3",
+   "answer": "-3",
+   "reviewStatus": "retained",
+   "independentAnswer": "-3",
+   "PDFPages": [
+    46
+   ],
+   "images": [
+    "q169-1.webp"
+   ]
+  }
+ ]
+}

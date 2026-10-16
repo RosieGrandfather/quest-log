@@ -1,0 +1,1311 @@
+{
+ "date": "2026-10-16",
+ "method": "逐题独立解题后对照配套答案；有限计数、分数、边界与正态分位再用标准库复算。",
+ "reviewed": 169,
+ "retained": 169,
+ "corrected": 0,
+ "pending": 0,
+ "computerCheckedQuestions": [
+  4,
+  5,
+  10,
+  12,
+  17,
+  28,
+  31,
+  37,
+  39,
+  40,
+  43,
+  45,
+  49,
+  61,
+  62,
+  63,
+  64,
+  73,
+  76,
+  78,
+  79,
+  81,
+  86,
+  87,
+  88,
+  89,
+  90,
+  92,
+  93,
+  111,
+  114,
+  116,
+  118,
+  119,
+  121,
+  122,
+  124,
+  126,
+  128,
+  133,
+  136,
+  138,
+  139,
+  142,
+  144,
+  145,
+  149,
+  156,
+  157,
+  158,
+  160,
+  162,
+  164,
+  166,
+  167,
+  168,
+  169
+ ],
+ "computedResults": {
+  "4": "11/17",
+  "5": "8/29",
+  "10": "BD",
+  "12": "51",
+  "17": "True",
+  "28": "153/190",
+  "31": "129/100",
+  "37": "81",
+  "39": "18",
+  "40": "3",
+  "43": "{4, 6}",
+  "45": "7",
+  "49": "15.8",
+  "61": "125",
+  "62": "[150, 300]",
+  "63": "BD",
+  "64": "{(30, 80), (40, 60)}",
+  "73": "(100, 125)",
+  "76": "{6.75}",
+  "78": "2433600",
+  "79": "108",
+  "81": "(5.5, 5.5, 4.25)",
+  "86": "-8",
+  "87": "[5]",
+  "88": "[(4, -1)]",
+  "89": "ABCDEH",
+  "90": "DEF",
+  "92": "[(9, 17), (12, 16), (15, 15), (18, 14), (21, 13)]",
+  "93": "1/64",
+  "111": "4.5",
+  "114": "3/5",
+  "116": "6",
+  "118": "21",
+  "119": "72",
+  "121": "[3, 5]",
+  "122": "1800",
+  "124": "231",
+  "126": "54",
+  "128": "[100]",
+  "133": "([53, 59], [83, 89])",
+  "136": "[(10, 10)]",
+  "138": "32",
+  "139": "[(0, 0)]",
+  "142": "[(1, 3, 3)]",
+  "144": "10",
+  "145": "[2, 15, 28, 41, 54, 67, 80, 93]",
+  "149": "[6, 7, 8, 9]",
+  "156": "[-14, -13, -12, -11, -10, 10, 11, 12, 13, 14]",
+  "157": "1/8",
+  "158": "78125",
+  "160": "11",
+  "162": "2",
+  "164": "set()",
+  "166": "13",
+  "167": "2/7",
+  "168": "{'M', 'P', 'J'}",
+  "169": "[-3]"
+ },
+ "items": [
+  {
+   "question": 1,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "7/1.04<书价≤10/1.04，税至多约0.385，小于0.45；9.51和6.8分别反驳A与B"
+  },
+  {
+   "question": 2,
+   "sourceAnswer": "AC",
+   "independentAnswer": "AC",
+   "status": "retained",
+   "reason": "216=2³×3³整除n²，故n必为36的倍数；12与36必整除n，24与72不一定"
+  },
+  {
+   "question": 3,
+   "sourceAnswer": "121",
+   "independentAnswer": "121",
+   "status": "retained",
+   "reason": "交集最大为两集合较小人数121，且总人数236容许化学集合包含于代数集合"
+  },
+  {
+   "question": 4,
+   "sourceAnswer": "11/17",
+   "independentAnswer": "11/17",
+   "status": "retained",
+   "reason": "两组患病人数分别300×0.08=24、400×0.11=44，44/(24+44)=11/17"
+  },
+  {
+   "question": 5,
+   "sourceAnswer": "24/87",
+   "independentAnswer": "24/87",
+   "status": "retained",
+   "reason": "女42男45，终身教职人数42/3+45×2/9=24，占总87"
+  },
+  {
+   "question": 6,
+   "sourceAnswer": "ABC",
+   "independentAnswer": "ABC",
+   "status": "retained",
+   "reason": "两截距同号给负斜率；横纵差乘积负同样给负斜率，三个条件分别充分"
+  },
+  {
+   "question": 7,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "原排第19小，加8个更低工资后第27小；88人每四分位22人，第27为第二四分位第5小"
+  },
+  {
+   "question": 8,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "小于58的合数所需各素因子幂均在25!中；58=2×29首次含大于25的素因子"
+  },
+  {
+   "question": 9,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "三个不共线点的两条垂直平分线唯一相交，即唯一外心"
+  },
+  {
+   "question": 10,
+   "sourceAnswer": "BD",
+   "independentAnswer": "BD",
+   "status": "retained",
+   "reason": "n=1,3,4,6,7对应7,15,19,27,31，只有15与27非素数"
+  },
+  {
+   "question": 11,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "(3×0.08+7×0.18)/10=0.15"
+  },
+  {
+   "question": 12,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "人文男250×14%=35，女200×17%=34，35/69约50.72%"
+  },
+  {
+   "question": 13,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "相邻变化望远镜求和为9-3.2=5.8十亿美元，除9约644百万"
+  },
+  {
+   "question": 14,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "正态分布大于均值加2标准差的概率约0.02275，小于1/6"
+  },
+  {
+   "question": 15,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "x≠1时左式恒为-1，所以1/x=-1，x=-1小于-1/2"
+  },
+  {
+   "question": 16,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "实际缺陷总数50×1.12-9=47，平均47/50=0.94"
+  },
+  {
+   "question": 17,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "正态60到90百分位在均值右侧，分位函数凸，75分位低于650与850的中点750"
+  },
+  {
+   "question": 18,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "x=2时27>16；x=10时3¹¹<4¹⁰，大小可变"
+  },
+  {
+   "question": 19,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "用区间最小值算均值下界984/95>10，中位数第48个在6–10内，均值必大"
+  },
+  {
+   "question": 20,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "xy²<0使x<0，xy>0使y<0；(-1,-2)及(-2,-1)给相反大小"
+  },
+  {
+   "question": 21,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "令s=r+2、t=r+4，则B-A=t-r-2=2"
+  },
+  {
+   "question": 22,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "x+y=13n+5，n=1时个位8、n=2时个位1，分别大于及小于5"
+  },
+  {
+   "question": 23,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "A-B=x²+1-(2x-1)=(x-1)²+1>0"
+  },
+  {
+   "question": 24,
+   "sourceAnswer": "BDE",
+   "independentAnswer": "BDE",
+   "status": "retained",
+   "reason": "各组极差30、20、10、20、20，原组极差20"
+  },
+  {
+   "question": 25,
+   "sourceAnswer": "BC",
+   "independentAnswer": "BC",
+   "status": "retained",
+   "reason": "a<b<0使|a|>|b|，a²-b²与ab为正；a-b及a²b负，a²+ab²可正可负"
+  },
+  {
+   "question": 26,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "8点选4共70组，正方形只有两组交替顶点，2/70=1/35"
+  },
+  {
+   "question": 27,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "A使男最高比女最高高5.8且男最矮比女最矮高3.6，总极差19；均值中位数差不能定端点"
+  },
+  {
+   "question": 28,
+   "sourceAnswer": "153/190",
+   "independentAnswer": "153/190",
+   "status": "retained",
+   "reason": "从18个好灯选2除从20个选2，为153/190"
+  },
+  {
+   "question": 29,
+   "sourceAnswer": "216 square feet",
+   "independentAnswer": "216",
+   "status": "retained",
+   "reason": "外框24×18减花园18×12，得216平方英尺"
+  },
+  {
+   "question": 30,
+   "sourceAnswer": "3/4",
+   "independentAnswer": "3/4",
+   "status": "retained",
+   "reason": "中点(2,4.5)，与截距点(-4,0)的斜率为4.5/6=3/4"
+  },
+  {
+   "question": 31,
+   "sourceAnswer": "1.29",
+   "independentAnswer": "1.29",
+   "status": "retained",
+   "reason": "加权和44、总频数34，44/34=1.294117…按百分位取1.29"
+  },
+  {
+   "question": 32,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "1/(2¹¹5¹⁷)=2⁶/10¹⁷=64/10¹⁷，仅6和4两个非零数码"
+  },
+  {
+   "question": 33,
+   "sourceAnswer": "AD",
+   "independentAnswer": "AD",
+   "status": "retained",
+   "reason": "直角三角形AB固定，D直接给BC；A使C为60度亦定BC=10。B等腰可有不同等边组合，C与E只定D的位置关系"
+  },
+  {
+   "question": 34,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "同一PV常数K，A=K/40，B=1.2K/50=0.024K，小于0.025K"
+  },
+  {
+   "question": 35,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "图中射线为y=x，(c,d)在其上方故d>c，(w,z)在下方故w>z，相加得w+d>c+z"
+  },
+  {
+   "question": 36,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "圆心(6,6)到(2,2)半径平方32，内接正方形面积2r²=64"
+  },
+  {
+   "question": 37,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "两位数90个减11至99九个重复数字，共81"
+  },
+  {
+   "question": 38,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "恰一事件概率r+s-2rs；至少一事件r+s-rs，后者大rs>0"
+  },
+  {
+   "question": 39,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "20组乘积中至少1×8=4×2重复，故不同乘积少于20"
+  },
+  {
+   "question": 40,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "10模11等于-1，偶次幂加2余3"
+  },
+  {
+   "question": 41,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "3s=t+7可使s正或负"
+  },
+  {
+   "question": 42,
+   "sourceAnswer": "6000$",
+   "independentAnswer": "6000",
+   "status": "retained",
+   "reason": "大型车占20%，120千辆除20为每销售员6000辆"
+  },
+  {
+   "question": 43,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "824正整数次幂个位在4和6间循环，只有2种，小于4"
+  },
+  {
+   "question": 44,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "相邻整数r,t使r²+t奇，(-1)奇次幂=-1"
+  },
+  {
+   "question": 45,
+   "sourceAnswer": "7",
+   "independentAnswer": "7",
+   "status": "retained",
+   "reason": "150至154循环得分4,1,-3,4,1，和7"
+  },
+  {
+   "question": 46,
+   "sourceAnswer": "2500 employees",
+   "independentAnswer": "2500",
+   "status": "retained",
+   "reason": "剩余3750中墨西哥占2/3，得2500"
+  },
+  {
+   "question": 47,
+   "sourceAnswer": "22 people",
+   "independentAnswer": "22",
+   "status": "retained",
+   "reason": "前方11、后方10，再加本人"
+  },
+  {
+   "question": 48,
+   "sourceAnswer": "0.003",
+   "independentAnswer": "0.003",
+   "status": "retained",
+   "reason": "平方根9/1000000为3/1000"
+  },
+  {
+   "question": 49,
+   "sourceAnswer": "15.8%",
+   "independentAnswer": "15.8",
+   "status": "retained",
+   "reason": "(1.10/0.95-1)×100约15.8"
+  },
+  {
+   "question": 50,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "|z|≤1只保证z²≤1；z=-1/2反驳另外两项"
+  },
+  {
+   "question": 51,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "线性变换标准差乘斜率绝对值，3最大"
+  },
+  {
+   "question": 52,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "5.4跨度为4.5σ，σ=1.2，均值12.1+1.5σ=13.9"
+  },
+  {
+   "question": 53,
+   "sourceAnswer": "C D E F G H",
+   "independentAnswer": "CDEFGH",
+   "status": "retained",
+   "reason": "非前十类销售额5.8/1.25-3.9=0.74十亿美元，可容纳但不超过其总额的选项C至H"
+  },
+  {
+   "question": 54,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "柱图1990约4.5、1993约5.8，相对增长约29%，最近28%"
+  },
+  {
+   "question": 55,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "900/42约21.4，最近20"
+  },
+  {
+   "question": 56,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "0.4×155=62百万张，单价1至8，收入62至496百万"
+  },
+  {
+   "question": 57,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "交集5%，仅科学15%占科学总20%的75%"
+  },
+  {
+   "question": 58,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "最小和为十个1、十个10、一个16，共126，均值6"
+  },
+  {
+   "question": 59,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "奇数端点之间偶数个数(k-j)/2，去掉最大偶数得减1"
+  },
+  {
+   "question": 60,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "R增长1.05×1.12-1=17.6%；S下降1-0.93×0.85=20.95%"
+  },
+  {
+   "question": 61,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "正态第15百分位z约-1.036，标准差约130/1.036=125.4"
+  },
+  {
+   "question": 62,
+   "sourceAnswer": "BE",
+   "independentAnswer": "BE",
+   "status": "retained",
+   "reason": "同步间隔LCM(10,15,25)=150分钟，8点后至13:30为10:30及13:00"
+  },
+  {
+   "question": 63,
+   "sourceAnswer": "BD",
+   "independentAnswer": "BD",
+   "status": "retained",
+   "reason": "代入4x+3y<60且坐标正，只有(5,12)与(12,3)"
+  },
+  {
+   "question": 64,
+   "sourceAnswer": "BCDE",
+   "independentAnswer": "BCDE",
+   "status": "retained",
+   "reason": "2x+y=140、xy=2400，x=30或40，边长30,80或40,60"
+  },
+  {
+   "question": 65,
+   "sourceAnswer": "ABCDE",
+   "independentAnswer": "ABCDE",
+   "status": "retained",
+   "reason": "交集可0至48，B独有可5至53，全部选项均可"
+  },
+  {
+   "question": 66,
+   "sourceAnswer": "CDE",
+   "independentAnswer": "CDE",
+   "status": "retained",
+   "reason": "距均值12不超过一个标准差6，区间6至18"
+  },
+  {
+   "question": 67,
+   "sourceAnswer": "ACE",
+   "independentAnswer": "ACE",
+   "status": "retained",
+   "reason": "递推前五项5,7,11,19,35，与选项交集5,11,35"
+  },
+  {
+   "question": 68,
+   "sourceAnswer": "BC",
+   "independentAnswer": "BC",
+   "status": "retained",
+   "reason": "并集概率在1/2至5/6，1/2与3/4可取"
+  },
+  {
+   "question": 69,
+   "sourceAnswer": "CE",
+   "independentAnswer": "CE",
+   "status": "retained",
+   "reason": "A休息44至48及92至96小时与B重叠，为周三和周五上午8点至中午"
+  },
+  {
+   "question": 70,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "9的倍数无质数，19的倍数只有19为质数"
+  },
+  {
+   "question": 71,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "按不同质因数计，n=2时减少一种，n=4时不变"
+  },
+  {
+   "question": 72,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "任意r均可有斜率2且过(3,r)的直线"
+  },
+  {
+   "question": 73,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "偶数位三位数4×5×5=100；奇数位5³=125"
+  },
+  {
+   "question": 74,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "质数和12只可能5与7，均小于8"
+  },
+  {
+   "question": 75,
+   "sourceAnswer": "CDE",
+   "independentAnswer": "CDE",
+   "status": "retained",
+   "reason": "P(A)P(B)=1/2且概率≤1，故P(A)在1/2至1"
+  },
+  {
+   "question": 76,
+   "sourceAnswer": "6.75",
+   "independentAnswer": "6.75",
+   "status": "retained",
+   "reason": "a+b=13且xy=13，正整数x,y为1和13，总和27除4"
+  },
+  {
+   "question": 77,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "相邻边斜率互为负倒数，四边斜率乘积1"
+  },
+  {
+   "question": 78,
+   "sourceAnswer": "2433600",
+   "independentAnswer": "2433600",
+   "status": "retained",
+   "reason": "10³×26²+26³×10²=2433600"
+  },
+  {
+   "question": 79,
+   "sourceAnswer": "108",
+   "independentAnswer": "108",
+   "status": "retained",
+   "reason": "一位9、两位9、三位90，共108；1000非回文"
+  },
+  {
+   "question": 80,
+   "sourceAnswer": "AD",
+   "independentAnswer": "AD",
+   "status": "retained",
+   "reason": "穿二三象限不能过原点，且不能水平；可竖直或任意正负非零斜率"
+  },
+  {
+   "question": 81,
+   "sourceAnswer": "CD",
+   "independentAnswer": "CD",
+   "status": "retained",
+   "reason": "排序中位数5.5，均值55/10=5.5，众数3；众数小于均值，(5.5+3)/2=4.25"
+  },
+  {
+   "question": 82,
+   "sourceAnswer": "ABE",
+   "independentAnswer": "ABE",
+   "status": "retained",
+   "reason": "奇数的整数正幂为奇数；C,D偶数；E取c=d=1为1"
+  },
+  {
+   "question": 83,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "成本2000/1.25+2000/0.75=4266.67，净亏266.67"
+  },
+  {
+   "question": 84,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "第一式化x-2y=3，第二式x-2y=-3，矛盾"
+  },
+  {
+   "question": 85,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "利息A[(1+R)³-1]=A(3R+3R²+R³)"
+  },
+  {
+   "question": 86,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "令u=|x+4|，u²-10u-24=0得u=12，x=8或-16，和-8"
+  },
+  {
+   "question": 87,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "平方得x²-3x-10=0，x=5,-2；根号要求x≥-1只留5"
+  },
+  {
+   "question": 88,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "y≥0会导致x=6且12+y=7矛盾；y<0时解得x=4,y=-1，和3"
+  },
+  {
+   "question": 89,
+   "sourceAnswer": "A B C D E H",
+   "independentAnswer": "ABCDEH",
+   "status": "retained",
+   "reason": "化为|4-k/3|>2，即k<6或k>18，选-15,-10,-5,0,5,20"
+  },
+  {
+   "question": 90,
+   "sourceAnswer": "DEF",
+   "independentAnswer": "DEF",
+   "status": "retained",
+   "reason": "移项化x-y>0，逐项选择x>y"
+  },
+  {
+   "question": 91,
+   "sourceAnswer": "-2",
+   "independentAnswer": "-2",
+   "status": "retained",
+   "reason": "x=0时2|4x-4|-10=-2"
+  },
+  {
+   "question": 92,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "直线x+3y=60，整数横坐标在7至22且为3的倍数：9,12,15,18,21，共5点"
+  },
+  {
+   "question": 93,
+   "sourceAnswer": "0.25",
+   "independentAnswer": "0.25",
+   "status": "retained",
+   "reason": "三角形面积k√k=1/8，k=1/4"
+  },
+  {
+   "question": 94,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "C为89度，A可以小于或大于89度，不能依图形长短推定"
+  },
+  {
+   "question": 95,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "BD/AB<1而BC/DC>1"
+  },
+  {
+   "question": 96,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "同弦AB所对同侧圆周角相等"
+  },
+  {
+   "question": 97,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "矩形面积≤25，正方形时等25，非正方形小于25"
+  },
+  {
+   "question": 98,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "未标直角或圆心角，弦长可大于等于小于半径"
+  },
+  {
+   "question": 99,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "没有平行标记，y=75而x不定"
+  },
+  {
+   "question": 100,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "两个直角只固定AC=6√2，AB与BC可互换长短"
+  },
+  {
+   "question": 101,
+   "sourceAnswer": "ACE",
+   "independentAnswer": "ACE",
+   "status": "retained",
+   "reason": "第三边须x+3<L<5x+5；A恒可，C在0.4<x<4可，E在x>4可"
+  },
+  {
+   "question": 102,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "面积乘1.5²=2.25，增加125%"
+  },
+  {
+   "question": 103,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "面积24sinθ，可取2、12、24"
+  },
+  {
+   "question": 104,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "正方形边25，菱形高20、偏移15，交叠梯形面积(25+10)×20/2=350，阴影275"
+  },
+  {
+   "question": 105,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "同年利率复利频率越高终值越大，日计息最大"
+  },
+  {
+   "question": 106,
+   "sourceAnswer": "126",
+   "independentAnswer": "126",
+   "status": "retained",
+   "reason": "Tuk=1.6Kim，Lee=0.8Kim，Pat=1.25Lee=Kim"
+  },
+  {
+   "question": 107,
+   "sourceAnswer": "BE",
+   "independentAnswer": "BE",
+   "status": "retained",
+   "reason": "目标0.036×5x/12=0.015x，B与E相等"
+  },
+  {
+   "question": 108,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "0.05%=1/2000，小于1/200"
+  },
+  {
+   "question": 109,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "0.22<2/9，但x未限定符号，正负时比较反转"
+  },
+  {
+   "question": 110,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "以Bart进价1计，Anne售价2.5×1.15=2.875，大于Bart的2.85"
+  },
+  {
+   "question": 111,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "年利率4[(76662.25/61293)^(1/20)-1]约4.5%"
+  },
+  {
+   "question": 112,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "交集概率0.6不超过P(A)，故P(A)≥0.6>0.3"
+  },
+  {
+   "question": 113,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "放回后第二人匹配第一球的概率1/10"
+  },
+  {
+   "question": 114,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "A有4/5质数，B有3/4质数，相乘3/5"
+  },
+  {
+   "question": 115,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "固定A，中心角60至300度弦长大于半径，占240/360=2/3"
+  },
+  {
+   "question": 116,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "15!中3的指数floor(15/3)+floor(15/9)=6"
+  },
+  {
+   "question": 117,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "三种颜色最坏先各拿一只，第4只保证同色"
+  },
+  {
+   "question": 118,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "在7位中选2位放3，另5位依次填52115，共C(7,2)=21"
+  },
+  {
+   "question": 119,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "男女各成块，2!×3!×3!=72"
+  },
+  {
+   "question": 120,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "三位各5种奇数字，共125"
+  },
+  {
+   "question": 121,
+   "sourceAnswer": "CE",
+   "independentAnswer": "CE",
+   "status": "retained",
+   "reason": "C(8,3)=C(8,5)=56"
+  },
+  {
+   "question": 122,
+   "sourceAnswer": "1800",
+   "independentAnswer": "1800",
+   "status": "retained",
+   "reason": "6个不同字母，长度4至6的排列数360+720+720=1800"
+  },
+  {
+   "question": 123,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "只需选3个孩子穿绿衫，C(6,3)=20"
+  },
+  {
+   "question": 124,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "21位内放一个2有21种，放两个1有C(21,2)=210种，总231"
+  },
+  {
+   "question": 125,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "10×3度数除2=15次握手"
+  },
+  {
+   "question": 126,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "数字乘积210：三位567有6种；四位1567与2357各24种，共54"
+  },
+  {
+   "question": 127,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "男生27、左撇27，总45，交集至少9，大于8"
+  },
+  {
+   "question": 128,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "两性均存在且吸烟人数为整数，女工数是100的倍数，只能100；男女各100，吸烟10+49=59"
+  },
+  {
+   "question": 129,
+   "sourceAnswer": "105",
+   "independentAnswer": "105",
+   "status": "retained",
+   "reason": "相向速度56+49=105，一小时前相距105英里"
+  },
+  {
+   "question": 130,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "女且终身40%，男且终身30%，占男总40%的75%"
+  },
+  {
+   "question": 131,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "仅知x<0<y，只保证xy<0；x=-100,y=1反驳I，x=-1,y=2反驳II"
+  },
+  {
+   "question": 132,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "各只有质数13和2自身，共1个"
+  },
+  {
+   "question": 133,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "53,59与83,89，各2个"
+  },
+  {
+   "question": 134,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "质数对5,13积65；7,11积77，分居70两边"
+  },
+  {
+   "question": 135,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "连续三整数乘积x(x-1)(x+1)总被3整除，余0<1"
+  },
+  {
+   "question": 136,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "x=yx²/100且x>0得xy=100，整数均>5只可能x=y=10"
+  },
+  {
+   "question": 137,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "x=1+24k，x=1小于24而25大于24"
+  },
+  {
+   "question": 138,
+   "sourceAnswer": "32",
+   "independentAnswer": "32",
+   "status": "retained",
+   "reason": "16000=2^7×5³，正约数(7+1)(3+1)=32"
+  },
+  {
+   "question": 139,
+   "sourceAnswer": "ABC",
+   "independentAnswer": "ABC",
+   "status": "retained",
+   "reason": "模2有w=xy+x+y，仅x,y均偶时w偶；故偶w推偶x、奇x或奇y推奇w"
+  },
+  {
+   "question": 140,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "x=y=1时gcd=1；x=3,y=2时gcd(6,6)=6，不能唯一确定"
+  },
+  {
+   "question": 141,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "n恰含一个2，n²不被8整除；19不整除n；n≡2模4使(n+4)/2奇，三项皆假"
+  },
+  {
+   "question": 142,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "16000=2^7×5³，绿3故蓝3已贡献2^6，还需红1"
+  },
+  {
+   "question": 143,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "3x-2y奇；y=0反驳II负数要求；y²-x恒正反驳III"
+  },
+  {
+   "question": 144,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "恰3约数为质数平方，质数≤30有10个"
+  },
+  {
+   "question": 145,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "2+13k<100，k=0至7共8个"
+  },
+  {
+   "question": 146,
+   "sourceAnswer": "AC",
+   "independentAnswer": "AC",
+   "status": "retained",
+   "reason": "目标560^4，A因式分解及C=(70×8)^4相等，B=560^6、D=560^8"
+  },
+  {
+   "question": 147,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "等差序列均值与中位数均为首尾平均"
+  },
+  {
+   "question": 148,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "模14余数只可能3或10，n偶只能10"
+  },
+  {
+   "question": 149,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "6组可2组4人4组3人；7组可6组3人1组2人，故n可等于或大于6"
+  },
+  {
+   "question": 150,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "20⁺/4⁺可取20.1/4.9小于5⁺，亦可取20.9/4.01大于5.1"
+  },
+  {
+   "question": 151,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "按原价加权的20%与30%折扣，可高于或低于25%"
+  },
+  {
+   "question": 152,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "大于2的质数皆奇，n+5为至少8的偶数；其他项各有质数反例"
+  },
+  {
+   "question": 153,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "原数和反转数各位数字和相同，模9相同，因此差被9整除"
+  },
+  {
+   "question": 154,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "红发20%且不属棕发，非棕发45%，比20/45=4/9"
+  },
+  {
+   "question": 155,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "360/48000月利率0.75%，简单年利率9%"
+  },
+  {
+   "question": 156,
+   "sourceAnswer": "E",
+   "independentAnswer": "E",
+   "status": "retained",
+   "reason": "N为±10至±14，共10种"
+  },
+  {
+   "question": 157,
+   "sourceAnswer": "B",
+   "independentAnswer": "B",
+   "status": "retained",
+   "reason": "同时为2和8倍数等于8倍数，125/1000=1/8"
+  },
+  {
+   "question": 158,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "总款1000+0.05(M-25000)+0.03M=0.08M-250≤6000，M≤78125"
+  },
+  {
+   "question": 159,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "首个周二可在1至7号，第四周二在22至28号，共7个日期"
+  },
+  {
+   "question": 160,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "4质数选至少2个，C(4,2)+C(4,3)+C(4,4)=11"
+  },
+  {
+   "question": 161,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "3英寸分48段，内部切口47个"
+  },
+  {
+   "question": 162,
+   "sourceAnswer": "C",
+   "independentAnswer": "C",
+   "status": "retained",
+   "reason": "3的幂模5周期4，283余3，余数3³模5=2"
+  },
+  {
+   "question": 163,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "原式为(-1)^k-(-1)^(k+1)；奇数n使k=n³+2n奇，故值-1-1=-2"
+  },
+  {
+   "question": 164,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "26在原式为2^6，m为其因子使2^6/m仍为2的幂，不可能等于3n"
+  },
+  {
+   "question": 165,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "只知74位于第60百分位以上，数据分布不能决定是否超过第70百分位"
+  },
+  {
+   "question": 166,
+   "sourceAnswer": "D",
+   "independentAnswer": "D",
+   "status": "retained",
+   "reason": "枚举用2,4,6,9各一次的两位数，最小正差62-49=13"
+  },
+  {
+   "question": 167,
+   "sourceAnswer": "A",
+   "independentAnswer": "A",
+   "status": "retained",
+   "reason": "第一盘确定后，同套剩4盘，总剩14盘，概率4/14=2/7"
+  },
+  {
+   "question": 168,
+   "sourceAnswer": "ACE",
+   "independentAnswer": "ACE",
+   "status": "retained",
+   "reason": "固定Scott<Jim<Mike<Kate，将Pete放在Kate之前所有允许位置，中位可Jim、Mike或Pete"
+  },
+  {
+   "question": 169,
+   "sourceAnswer": "-3",
+   "independentAnswer": "-3",
+   "status": "retained",
+   "reason": "设中位m，积为m(m²-1)(m²-4)(m²-9)；m=0可，|m|=1至3不可，|m|≥4乘因子>1，故唯一m=0，最小-3"
+  }
+ ]
+}

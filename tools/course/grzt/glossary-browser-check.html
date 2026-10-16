@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="/">
+<title>填空选项释义 · 本地检查</title><link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/study.css">
+<style>body{max-width:960px;margin:24px auto;padding:0 16px}#status{white-space:pre-wrap}select{max-width:100%}</style></head>
+<body><h1>填空选项释义 · 本地检查</h1><p>仅使用内存保存，不连接真实学习账号。</p><select id="lesson" aria-label="选择课节"></select><button id="run" disabled>检查100节释义</button><p id="status" role="status">加载中</p><div id="root"></div><div id="toast" hidden></div>
+<script>window.firebaseConfig={};window.firebase={initializeApp(){},auth(){return{}},firestore(){return{}}};</script>
+<script type="module">
+import{qsetHTML,wireQset}from'/js/study/qset.js';import{T}from'/js/study/state.js';
+const course=await(await fetch('/courses/gre-zt/course.json')).json();
+const units=await Promise.all(course.units.map(e=>fetch('/courses/gre-zt/'+e.file).then(r=>r.json())));
+const root=document.querySelector('#root'),status=document.querySelector('#status'),select=document.querySelector('#lesson');let writes=0;
+T.cols={studyProgress:{doc:()=>({get:async()=>({data:()=>({})}),set:async()=>{writes++;}})}};
+for(const[i,u]of units.entries()){const o=document.createElement('option');o.value=i;o.textContent=u.title;select.append(o);}
+function show(i,keep=false){if(!keep)T.progress={};const u=units[i];root.innerHTML=qsetHTML(u.blocks[0]);wireQset(root,course,u);return u;}
+function visible(expected){for(const el of root.querySelectorAll('.qgloss'))if((getComputedStyle(el).display!=='none')!==expected)throw Error('释义可见性错误');}
+function fill(u){for(const[i,q]of u.blocks[0].items.entries())for(const[j,k]of q.ans.entries())root.querySelector(q.kind==='tc'?`#gq-${i} input[name="q${i}_${j}"][value="${k}"]`:`#gq-${i} input[value="${k}"]`).click();}
+const tick=()=>new Promise(r=>setTimeout(r,10));
+select.addEventListener('change',()=>{show(Number(select.value));status.textContent='本地预览';});show(0);status.textContent='100节已加载；提交前隐藏释义';
+document.querySelector('#run').addEventListener('click',async()=>{
+ const button=document.querySelector('#run');button.disabled=true;writes=0;let count=0,total=0;
+ try{
+  for(let lesson=0;lesson<units.length;lesson++){
+   const u=show(lesson);visible(false);
+   if(root.querySelector('.qimg,.qorig'))throw Error('意外出现题图');
+   for(const[i,q]of u.blocks[0].items.entries()){
+    const expected=q.kind==='tc'?q.txt.colsZh.flat():q.txt.optsZh;
+    const labels=[...root.querySelectorAll(`#gq-${i} .qgloss`)];
+    if(labels.length!==expected.length||labels.some((e,k)=>e.textContent!==expected[k]))throw Error(u.id+' 选项释义错位');
+    count+=labels.length;total++;
+   }
+   fill(u);root.querySelector('.gbar-submit').click();await tick();visible(true);
+   if(root.querySelectorAll('.qq.right').length!==7)throw Error(u.id+' 判分');
+   if(lesson===0){
+    root.querySelector('[data-act="redo"]').click();visible(false);
+    root.querySelector('[data-act="view-last"]').click();visible(true);
+    if(root.querySelectorAll('.qq.right').length!==7)throw Error('恢复上次作答');
+    root.querySelector('[data-act="redo"]').click();visible(false);
+    root.querySelector('.gbar-submit').click();visible(false);
+    if(!root.querySelector('.gset-warn'))throw Error('未答完确认');
+    root.querySelector('.gbar-submit').click();await tick();visible(true);
+    if(root.querySelectorAll('.qq.wrong').length!==7)throw Error('空白提交');
+   }
+  }
+  if(total!==700||count!==4411||writes!==101)throw Error('总数不符');
+  // Reopen the final saved submission to exercise automatic restoration too.
+  show(99,true);visible(true);
+  status.textContent=`通过：100节 / ${total}题 / ${count}个选项释义；提交、未作答提交、重做、查看上次作答及自动恢复正常；${writes}次内存保存。`;
+ }catch(e){status.textContent='失败：'+e.message;console.error(e);}
+ finally{button.disabled=false;}
+});
+document.querySelector('#run').disabled=false;
+</script></body></html>

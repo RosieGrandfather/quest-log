@@ -1,0 +1,186 @@
+{
+ "id": "u03-q028-q039",
+ "title": "第2组 · Quant 1（12题 · 21分钟）",
+ "en": "Hard Quant — Questions 28–39",
+ "minutes": 21,
+ "practice": true,
+ "answerFormat": "gre-zq170-v1",
+ "objectives": [
+  "原书第28–39题，共12题，限时21分钟；做完整节再提交。",
+  "正式GRE数学第一节12题21分钟、第二节15题26分钟；本课按题数和时间配组。",
+  "比较题选一项，多选题须全选正确；数值题按原题要求输入数字、分数或四舍五入结果。",
+  "题目保留原式和图表，169题答案已逐题独立验算并与配套DOCX核对；提交前不显示答案。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zq170/img/",
+   "source": "巍哥GRE数学170难题4.0（2026年）· 原书第28–39题",
+   "noteTail": "（保留原题公式与图表；配套答案已逐题独立验算，非ETS官方认证）",
+   "items": [
+    {
+     "n": 1,
+     "sourceQuestion": 28,
+     "kind": "ne",
+     "sourceAnswer": "153/190",
+     "img": "q028-1.webp",
+     "imgs": [
+      "q028-1.webp"
+     ],
+     "ans": "153/190",
+     "frac": true
+    },
+    {
+     "n": 2,
+     "sourceQuestion": 29,
+     "kind": "ne",
+     "sourceAnswer": "216 square feet",
+     "img": "q029-1.webp",
+     "imgs": [
+      "q029-1.webp"
+     ],
+     "ans": "216"
+    },
+    {
+     "n": 3,
+     "sourceQuestion": 30,
+     "kind": "ne",
+     "sourceAnswer": "3/4",
+     "img": "q030-1.webp",
+     "imgs": [
+      "q030-1.webp"
+     ],
+     "ans": "3/4",
+     "frac": true
+    },
+    {
+     "n": 4,
+     "sourceQuestion": 31,
+     "kind": "ne",
+     "sourceAnswer": "1.29",
+     "img": "q031-1.webp",
+     "imgs": [
+      "q031-1.webp"
+     ],
+     "ans": "1.29"
+    },
+    {
+     "n": 5,
+     "sourceQuestion": 32,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "img": "q032-1.webp",
+     "imgs": [
+      "q032-1.webp"
+     ],
+     "ans": [
+      1
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 6,
+     "sourceQuestion": 33,
+     "kind": "mcn",
+     "sourceAnswer": "AD",
+     "img": "q033-1.webp",
+     "imgs": [
+      "q033-1.webp",
+      "q033-2.webp"
+     ],
+     "ans": [
+      0,
+      3
+     ],
+     "nopt": 5
+    },
+    {
+     "n": 7,
+     "sourceQuestion": 34,
+     "kind": "qc",
+     "sourceAnswer": "A",
+     "img": "q034-1.webp",
+     "imgs": [
+      "q034-1.webp"
+     ],
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 8,
+     "sourceQuestion": 35,
+     "kind": "qc",
+     "sourceAnswer": "A",
+     "img": "q035-1.webp",
+     "imgs": [
+      "q035-1.webp",
+      "q035-2.webp"
+     ],
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 9,
+     "sourceQuestion": 36,
+     "kind": "qc",
+     "sourceAnswer": "C",
+     "img": "q036-1.webp",
+     "imgs": [
+      "q036-1.webp"
+     ],
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 10,
+     "sourceQuestion": 37,
+     "kind": "qc",
+     "sourceAnswer": "A",
+     "img": "q037-1.webp",
+     "imgs": [
+      "q037-1.webp"
+     ],
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 11,
+     "sourceQuestion": 38,
+     "kind": "qc",
+     "sourceAnswer": "B",
+     "img": "q038-1.webp",
+     "imgs": [
+      "q038-1.webp"
+     ],
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 12,
+     "sourceQuestion": 39,
+     "kind": "qc",
+     "sourceAnswer": "B",
+     "img": "q039-1.webp",
+     "imgs": [
+      "q039-1.webp",
+      "q039-2.webp"
+     ],
+     "ans": [
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": [
+  {
+   "label": "ETS官方GRE考试结构：数学12题21分钟、15题26分钟",
+   "url": "https://www.ets.org/gre/test-takers/general-test/prepare/test-structure.html"
+  }
+ ]
+}
