@@ -201,7 +201,7 @@ export function wireQset(root, course, unit){
       const ex = sec.querySelector('.gq-explain');
       ex.innerHTML = `<div class="gq-answer"><span>${!scored ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${!scored ? '' : ok ? 'ok' : 'bad'}">${unresolved ? '上次保存的原始作答' : '你的答案'}：<b>${escapeHTML(unresolved ? review.rawAnswers[i] : pickedText(it, a))}</b></span></div>
         ${unresolved ? `<p>${escapeHTML(unresolved)}</p>` : ''}
-        ${it.explanation ? `<div class="explain"><strong>答案依据（独立复核）</strong><p>${escapeHTML(it.explanation)}</p></div>` : ''}
+        ${it.explanation ? `<div class="explain"><strong>${it.answerPending ? '答案核对说明（暂不计分）' : '答案解析（独立复核）'}</strong><p>${escapeHTML(it.explanation)}</p></div>` : ''}
         ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });
