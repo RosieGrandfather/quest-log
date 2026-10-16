@@ -1,0 +1,200 @@
+{
+ "id": "u66-test83-s2",
+ "title": "Test 83 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 83, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 83 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The economist argued that however much the government might trumpet the value of ____, it had been as bold as any other in its spending programs."
+      ],
+      "opts": [
+       "thrift",
+       "consumption",
+       "dialogue",
+       "cooperation",
+       "transparency"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "It was not until 1995 that a planet beyond our solar system was first sighted, a discovery that greatly excited astronomers. Many had supposed that the processes that gave rise to our solar system were not (i)____, and that there were other planets in the universe. Now, observations had (ii)____."
+      ],
+      "cols": [
+       [
+        "manifest",
+        "replicable",
+        "unique"
+       ],
+       [
+        "caught up with belief",
+        "provided grounds for skepticism",
+        "put assumptions to the test"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Many of us remember a time when discovery and the thrill of learning were forces in our lives and were (i)____. Frequently that time happened in a great classroom somewhere, in the hands of the one (ii)____ teacher we can each remember."
+      ],
+      "cols": [
+       [
+        "elusive",
+        "inconsequential",
+        "exciting"
+       ],
+       [
+        "consummate",
+        "truculent",
+        "superfluous"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "The enthusiasm that many English artists and writers felt regarding the Labour Party (i)____ amid complaints that arts funding remained as (ii)____. And even though the government recently announced a significant funding boost for the Arts Council, some art leaders still refuse to (iii)____ Labour."
+      ],
+      "cols": [
+       [
+        "intensified",
+        "resurfaced",
+        "waned"
+       ],
+       [
+        "far-reaching",
+        "parsimonious",
+        "staggering"
+       ],
+       [
+        "trust",
+        "condemn",
+        "ignore"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Meteorology is one of the few fields of applied science that demands prediction; since prediction involves considerable uncertainty and uncertainty is ____ scientists, meteorology will continue to exist in a fraught intellectual space."
+      ],
+      "opts": [
+       "mysterious to",
+       "anathema to",
+       "discredited by",
+       "pivotal for",
+       "repellent to",
+       "familiar to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "One virtue of cornmeal as a component of the diets of laborers in early Puerto Rico was the mildness of its taste, a trait that enabled it to ____ the strong flavors of other foods."
+      ],
+      "opts": [
+       "mimic",
+       "temper",
+       "camouflage",
+       "neutralize",
+       "complement",
+       "augment"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Asteroids of diameter less than 100km never melted but asteroids with larger diameters did so and became ____ with the heavier Fe-Ni material forming the core and the silicates forming the crust."
+      ],
+      "opts": [
+       "stratified",
+       "destabilized",
+       "weakened",
+       "liquefied",
+       "differentiated",
+       "distinguished"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

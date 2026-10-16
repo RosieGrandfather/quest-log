@@ -1,0 +1,200 @@
+{
+ "id": "u44-test72-s2",
+ "title": "Test 72 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 72, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 72 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The wonder of Amy Chapman was her ____, her tenacious devotion to certain causes."
+      ],
+      "opts": [
+       "subtle allure",
+       "refractory willfulness",
+       "obstinate self-regard",
+       "brazen hubris",
+       "staunch fealty"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Far from (i)____ the actions taken by the newspaper’s executives, William praised the executive’s resistance to corruption—yet he doubted that their policies were practical enough to warrant (ii)____ by other papers."
+      ],
+      "cols": [
+       [
+        "lionizing",
+        "impugning",
+        "surveying"
+       ],
+       [
+        "criticism",
+        "admiration",
+        "emulation"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "If you follow your intuition, you will more often than not err by misclassifying a random event as (i)____. We are far too willing to (ii)____ the belief that much of what we see in life is random."
+      ],
+      "cols": [
+       [
+        "uncharacteristic",
+        "systematic",
+        "arbitrary"
+       ],
+       [
+        "countenance",
+        "reject",
+        "champion"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "Excitement is often considered anathema in science writing because it interjects the scientist’s emotion and values into the work. Indeed, one should not be too quick to (i)____ of science. At the same time, however, this (ii)____ stance can occasionally be (iii)____, cloaking more than it reveals."
+      ],
+      "cols": [
+       [
+        "evaluate the principles",
+        "embrace the rhetoric",
+        "abandon the objectivity"
+       ],
+       [
+        "unpopular",
+        "dispassionate",
+        "inflexible"
+       ],
+       [
+        "misleading",
+        "unnecessary",
+        "haphazard"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "One can only bemoan how the wonderfully rich collections of genuine fossil specimens seen of yore in museum displays are being replaced by the ____ talking plastic of so-called virtual reality."
+      ],
+      "opts": [
+       "ubiquitous",
+       "exasperating",
+       "estimable",
+       "showy",
+       "meretricious",
+       "worthwhile"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Potential readers may well be put off by the rather opaque quality of the prose in this book, which at times seems deliberately ____ the uninitiated reader."
+      ],
+      "opts": [
+       "aimed at",
+       "inclined toward",
+       "inconvenient for",
+       "tailored for",
+       "inaccessible to",
+       "insurmountable for"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "If aging is merely an avoidable by-product of life rather than a necessary progression, it is possible that we might eventually forestall ____."
+      ],
+      "opts": [
+       "senescence",
+       "dynamism",
+       "decrepitude",
+       "privation",
+       "ennui",
+       "voidness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

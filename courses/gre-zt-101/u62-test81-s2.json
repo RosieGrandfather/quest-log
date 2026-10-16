@@ -1,0 +1,200 @@
+{
+ "id": "u62-test81-s2",
+ "title": "Test 81 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 81, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 81 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The sand paintings that McCall created—a synthesis of painting, sculpture, and photography— were meant to be ____, preserved only in the memories of witnesses."
+      ],
+      "opts": [
+       "archetypal",
+       "incendiary",
+       "ephemeral",
+       "naturalistic",
+       "dazzling"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Among the most popular Currier&levs lithographic prints in nineteenth-century America were bird’s-eye views of great cities such as New York, Chicago, and San Francisco. These were edited into books, and the cities’ (i)____ meant that new views were (ii)____ for successive editions."
+      ],
+      "cols": [
+       [
+        "tremendous productivity",
+        "extraordinary growth",
+        "unparalleled activity"
+       ],
+       [
+        "hard to obtain",
+        "rendered superfluous",
+        "regularly required"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The scientists who first proposed that Moon’s craters had resulted from impacts (i)____: almost all of these craters were circular, and yet most impactors in heliocentric orbit would have an oblique path and hence would be expected to form (ii)____ craters."
+      ],
+      "cols": [
+       [
+        "devised a theory",
+        "misinterpreted a finding",
+        "confronted difficulty"
+       ],
+       [
+        "massive",
+        "elongated",
+        "shallow"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "It is inevitable that ongoing research presupposes some accepted science as a principle. Usually no one even notices the implication that the accepted principle is being (i)____ unless there emerges (ii)____ that turns out to be sufficiently (iii)____ that the assumptions underlying the research come to be considered."
+      ],
+      "cols": [
+       [
+        "jeopardized",
+        "revised",
+        "tested"
+       ],
+       [
+        "an anomaly",
+        "a consensus",
+        "a distinction"
+       ],
+       [
+        "trivial",
+        "transparent",
+        "recalcitrant"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Although dry weather in medieval England was not ____, documentary evidence suggests that the cluster of intense droughts between 1323 and 1333 was exceptional."
+      ],
+      "opts": [
+       "anomalous",
+       "severe",
+       "uncommon",
+       "seasonal",
+       "frequent",
+       "pervasive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Among some demographic groups, the Internet is ____: almost everybody who wants Internet access has it."
+      ],
+      "opts": [
+       "necessary",
+       "indispensable",
+       "irresistible",
+       "pervasive",
+       "ubiquitous",
+       "homogeneous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "What Dr. Walther has shown is that many of the standard statistical techniques that are supposed to insure against ____ correlations are inadequate in this case."
+      ],
+      "opts": [
+       "numerical",
+       "specious",
+       "elementary",
+       "paltry",
+       "quantifiable",
+       "spurious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

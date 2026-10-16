@@ -1,0 +1,196 @@
+{
+ "id": "u33-test67-s1",
+ "title": "Test 67 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 67, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 67 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "He accused some people who ____ him of being by contrast supportive of another candidate, who shared a similar stance on most political issues."
+      ],
+      "opts": [
+       "offended",
+       "lauded",
+       "excoriated",
+       "promoted",
+       "noticed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Just as large manufacturing companies with dominant positions in large domestic markets were once able to resist (i)____ despite ample signs that foreign competition was rapidly overtaking them, strong and wealthy states can (ii)____ and still manage to limp along for many years."
+      ],
+      "cols": [
+       [
+        "innovation",
+        "temptation",
+        "inertia"
+       ],
+       [
+        "exploit vulnerable markets",
+        "dominate international affairs",
+        "maintain misguided policies"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADH",
+     "txt": {
+      "stem": [
+       "Despite the (i)____ in negotiations apparently signaled by the recent agreement between the two neighboring countries, the countries remain (ii)____ even about the import of that agreement. One wants to prolong agreed—to resumption of limited cross—border traffic, believing it can become entrenched as a new status quo. The other, by contrast, insists that the resumption is (iii)____ and has been undertaken voluntarily and provisionally in order to show goodwill."
+      ],
+      "cols": [
+       [
+        "progress",
+        "stalemate",
+        "setbacks"
+       ],
+       [
+        "unreconciled",
+        "vague",
+        "flexible"
+       ],
+       [
+        "requisite",
+        "temporary",
+        "advantageous"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The ____ of highly social species like rhesus monkeys—and like humans—is that their complex sociality is the reason for their success, but it’s also the source of their greatest troubles."
+      ],
+      "opts": [
+       "virtue",
+       "irony",
+       "delight",
+       "paradox",
+       "myth",
+       "joy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Since new movie stars seem to be cut from only a few bolts of the same bland cloth these days, it is ____ just to be in the presence, once again, of a true original."
+      ],
+      "opts": [
+       "unremarkable",
+       "reassuring",
+       "routine",
+       "invigorating",
+       "overwhelming",
+       "refreshing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Once the judge had been found guilty of corruption, it was not long before he found himself ____ his position."
+      ],
+      "opts": [
+       "revolted by",
+       "divested of",
+       "stripped of",
+       "recognized by",
+       "enamored of",
+       "absorbed by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Eschewing today’s hovered-over kids as less plausible characters for an adventure story, Rebeca Stead set her new children’s novel in nineteen-seventies New York to show children with a great deal of ____."
+      ],
+      "opts": [
+       "autonomy",
+       "independence",
+       "resilience",
+       "self-assurance",
+       "sympathy",
+       "sensitivity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

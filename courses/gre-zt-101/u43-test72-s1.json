@@ -1,0 +1,196 @@
+{
+ "id": "u43-test72-s1",
+ "title": "Test 72 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 72, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 72 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The architecture of the Shanghai Bund was for decades presented as an archetypal symbol of abhorrent Western influence, which may be one of the reasons that these grand buildings were ____ for so many years."
+      ],
+      "opts": [
+       "imitated",
+       "extolled",
+       "commemorated",
+       "disdained",
+       "unnoticed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The governor is known for her unwillingness to (i)____ policy decisions in the face of opponents typically, if she announces a specific policy and is confronted with objections from interest groups, she (ii)____ the policy."
+      ],
+      "cols": [
+       [
+        "adhere to",
+        "compromise on",
+        "disavow"
+       ],
+       [
+        "resumes",
+        "appraises",
+        "abandons"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFI",
+     "txt": {
+      "stem": [
+       "The essential difference between writing nonfiction and fiction is that the artist can (i)____ a completed vision of the world, while the journalist never can, the real world being always (ii)____. Art provides freedom from the bewildering complexities of constant change. Indeed, it is the very (iii)____ of well-wrought fiction that can sometimes make it fell more real than reality."
+      ],
+      "cols": [
+       [
+        "shun",
+        "correct",
+        "realize"
+       ],
+       [
+        "diverting",
+        "tragic",
+        "unfinished"
+       ],
+       [
+        "popularity",
+        "rarity",
+        "clarity"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Although the courts have ____ an extremely flexible test for determining the admissibility of expert testimony, that does not mean that all experts will be allowed to testify."
+      ],
+      "opts": [
+       "underwritten",
+       "administered",
+       "waived",
+       "renounced",
+       "endorsed",
+       "rescinded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "For more than 100 years, anarchism has been an embarrassing estranged sibling in the family of international radicalism, and its bad behavior had made it easy to ____ the awkward but important questions anarchism poses."
+      ],
+      "opts": [
+       "exacerbate",
+       "answer",
+       "dismiss",
+       "ignore",
+       "aggravate",
+       "embrace"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Rosen argues that in the early years of the United States, individual states played important roles in the governance of American Indians, thereby ____ the common assumption that Indian policy was exclusively the federal government’s domain."
+      ],
+      "opts": [
+       "reinforcing",
+       "belying",
+       "adducing",
+       "contradicting",
+       "increasing",
+       "demonstrating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Katherine’s disobedient behavior earned her a ____ from her parent."
+      ],
+      "opts": [
+       "eulogy",
+       "rebuke",
+       "panegyric",
+       "mockery",
+       "commendation",
+       "agreement"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

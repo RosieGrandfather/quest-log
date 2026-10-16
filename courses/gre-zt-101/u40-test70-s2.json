@@ -1,0 +1,200 @@
+{
+ "id": "u40-test70-s2",
+ "title": "Test 70 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 70, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 70 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "He defended the government’s equivocations regarding the mysterious contrail as resulting not from ____ as critics say, but from a benightedness about its own doings that is almost inevitable, given the multitudinousness of its agencies."
+      ],
+      "opts": [
+       "obtuseness",
+       "mendacity",
+       "abnegation",
+       "guilelessness",
+       "trenchancy"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Hyana Kusiemko and her colleagues speculate that the (i)____ support among low-income works for increases in the minimum wage is a form of last-place aversion: people who are in a marginally better position than the worst off seek to (ii)____ to distinguish themselves from those in last place."
+      ],
+      "cols": [
+       [
+        "unwavering",
+        "vociferous",
+        "tepid"
+       ],
+       [
+        "disavow their willingness",
+        "retain their ability",
+        "dissemble their need"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Unlike the elected branches of the United States government, where making personal connection with citizens is (i)____ and almost (ii)____ political efficacy, the United States Supreme Court continues to maintain that its members should communicate with the public almost exclusively through formal opinions—and even then through ceremonial rituals that date back to the nineteenth century."
+      ],
+      "cols": [
+       [
+        "frowned upon",
+        "rampant",
+        "disregarded"
+       ],
+       [
+        "a requirement for",
+        "a detriment to",
+        "an irrelevance to"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEH",
+     "txt": {
+      "stem": [
+       "Scientists suspect that the impact with which a bat lands is a function of (i)____. Bats that roost on hard cave ceiling must land (ii)____ to avoid injury. By contrast, since foliage is (iii)____, a hard landing won’t hurt, and might even give the bat time to make sure it has a good grip."
+      ],
+      "cols": [
+       [
+        "wind speed",
+        "roosting location",
+        "a bat’s size"
+       ],
+       [
+        "quickly",
+        "softly",
+        "securely"
+       ],
+       [
+        "plentiful",
+        "pliable",
+        "seasonal"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The latest publications predicting disastrous coastal erosion are likely to seem ____ to knowledgeable readers because variations on the same claims have been effectively refuted in the past few years."
+      ],
+      "opts": [
+       "intriguing",
+       "dubious",
+       "baffling",
+       "alarming",
+       "unsettling",
+       "suspect"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Ursula Le Guin claims that looking at schoolbooks from around 1900 can be ____, given that the level of literacy and general cultural knowledge expected of a mere ten-year-old was, she notes, “rather awesome”."
+      ],
+      "opts": [
+       "reassuring",
+       "stimulating",
+       "dreary",
+       "tedious",
+       "scary",
+       "intimidating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Conchita evinced ____ the arts: her favorite activities included visiting museums, attending plays or concerts, and reading poetry aloud."
+      ],
+      "opts": [
+       "a proclivity for",
+       "a preoccupation with",
+       "an indifference toward",
+       "an optimism about",
+       "an affinity for",
+       "a detachment from"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

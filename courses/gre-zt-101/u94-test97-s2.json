@@ -1,0 +1,194 @@
+{
+ "id": "u94-test97-s2",
+ "title": "Test 97 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 97, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 97 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Unlike some models of mathematical tasks that distinguish between lower and higher cognitive demands, Carolyn Kieran’s model focuses only on the type of algebraic activity and thus is not ____ with regard to cognitive demand."
+      ],
+      "opts": [
+       "consistent",
+       "equitable",
+       "indeterminate",
+       "discriminatory",
+       "extraneous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "All the scholars at the conference agree on the character of the general philosophical concepts under discussion, but this does not imply ____ with regard to details."
+      ],
+      "opts": [
+       "an element of controversy",
+       "an excess of uncertainty",
+       "a lack of conformity",
+       "a mood of curiosity",
+       "a community of opinion"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The (i)____ of the entrepreneur that the microfinance boom has helped foster is understandably appealing. But thinking that everyone is, and should be, an entrepreneur can encourage a tendency to (ii)____ the virtues of larger businesses and the income that a steady job can provide."
+      ],
+      "cols": [
+       [
+        "demise",
+        "evolution",
+        "cult"
+       ],
+       [
+        "emphasize",
+        "advertise",
+        "underrate"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "In the early twentieth century, rural women in the United States could feel caught between, on one hand, national myths upholding a \"natural\" lifestyle that by definition seemed to eschew science and technology, and, on the other hand, a desire to (i)____ the new, modern standards of mechanized household practice that (ii)____ their (iii)____ by aligning them more and more with city women and modern life generally."
+      ],
+      "cols": [
+       [
+        "disrupt",
+        "adopt",
+        "improve"
+       ],
+       [
+        "appeared to accentuate",
+        "helped to explain",
+        "threatened to compromise"
+       ],
+       [
+        "distinctiveness",
+        "skepticism",
+        "satisfaction"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "For those attempting the art, the record of past futurologists’ prognostications can be ____: it includes many confident predictions of technological revolution that never happened, such as domed cities and nuclear-powered cars."
+      ],
+      "opts": [
+       "incomplete",
+       "intriguing",
+       "mundane",
+       "humbling",
+       "prosaic",
+       "chastening"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Advertising’s role in popular music culture has been redefined: instead of a last resort for the creation and distribution of popular music, advertising now functions as a ____ of music that might otherwise go unheard."
+      ],
+      "opts": [
+       "promoter",
+       "reflection",
+       "component",
+       "foe",
+       "champion",
+       "rival"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Though the art of writing was well established in Egypt and Mesopotamia long before the Shang period, the Chinese writing that appeared then seems to have been an entirely ____ development."
+      ],
+      "opts": [
+       "unique",
+       "banal",
+       "homegrown",
+       "practical",
+       "routine",
+       "indigenous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

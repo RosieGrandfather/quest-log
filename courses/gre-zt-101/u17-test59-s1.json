@@ -1,0 +1,196 @@
+{
+ "id": "u17-test59-s1",
+ "title": "Test 59 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 59, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 59 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Like her literary heroine, George Eliot, Barbara Kingsolvers is an old-fashioned ____, deeply curious about all branches of human learning."
+      ],
+      "opts": [
+       "prodigy",
+       "polymath",
+       "tyro",
+       "ante",
+       "philistine"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "I knew well, from experience with hundreds of hired crew members on her boats, how (i)____ attitudes can be: how one negative influence can impel an otherwise (ii)____ member of a crew to quit."
+      ],
+      "cols": [
+       [
+        "insipid",
+        "infectious",
+        "innocuous"
+       ],
+       [
+        "untested",
+        "captious",
+        "contented"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "His new role gives the normally clownish actor a chance to impress audiences with his (i)____. He is among the most uninhibited comic performers around, but here he buttons his lip and stares straight ahead. Perhaps without quite knowing it, the audience waits for a wink, a hint that some of the (ii)____ spirit that animated his previous movies might be lurking inside the (iii)____ manner he presents in this film."
+      ],
+      "cols": [
+       [
+        "raillery",
+        "effusiveness",
+        "forbearance"
+       ],
+       [
+        "madcap",
+        "lugubrious",
+        "edifying"
+       ],
+       [
+        "facetious",
+        "reserved",
+        "beguiling"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Since Venus and Earth are so similar in their mass and density, Mueller suggested that the two planets have similar compositions and, therefore there must be surface features on Venus that have terrestrial ____."
+      ],
+      "opts": [
+       "causes",
+       "consequences",
+       "counterparts",
+       "parallels",
+       "properties",
+       "outcomes"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "It turns out that the seeming spontaneity of his letter actually involved a good deal of ____: the writer carefully revises them before mailing them, and he worked hard to establish the right tone."
+      ],
+      "opts": [
+       "deliberation",
+       "whimsicality",
+       "inventiveness",
+       "effort",
+       "capriciousness",
+       "consideration"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "There is ____ quality to Beryl Bainbridge’s best novels, what Hilary Martel calls “an air of mystery, as if something has been inked in and then sponged away, leaving a faint trace for the reader to pick up”."
+      ],
+      "opts": [
+       "an elegiac",
+       "a cryptic",
+       "a deceptive",
+       "a plaintive",
+       "an elusive",
+       "a mesmerizing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Another challenge to biologists and land-use planners alike is that while human-induced changes to the landscape are somethings ____, they can nevertheless drastically alter the habitat for some plants and animals."
+      ],
+      "opts": [
+       "indisputable",
+       "inappropriate",
+       "unacceptable",
+       "unfathomable",
+       "imperceptible",
+       "indiscernible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u63-test82-s1",
+ "title": "Test 82 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 82, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 82 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "From its nineteenth-century beginnings onward, photography was often tasked with providing ____ images of individuals, yet at the same time, photographs were prized for their perceived realism and truthfulness."
+      ],
+      "opts": [
+       "recognizable",
+       "candid",
+       "idealized",
+       "replicable",
+       "detailed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "When the United States government created the Post Office at the founding of the republic, it didn’t invite rival postal firms to compete; in fact, it created a monopoly. That monopoly, however, was (i)____ free expression because of policies Congress adopted, which (ii)____ the circulation of newspapers irrespective of their viewpoint and spread postal service throughout the country."
+      ],
+      "cols": [
+       [
+        "conducive to",
+        "threatened by",
+        "dependent on"
+       ],
+       [
+        "subsidized",
+        "limited",
+        "trivialized"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "Having displayed his art collection in a vast modernist white space in (i)____ former warehouse, Mr. Saatchi has chosen for his new site its polar opposite, a riverside monument to civic pomposity that once housed the local government. There is nothing (ii)____ about the new location: the building’s design is bureaucratic baroque, (iii)____ style that is as declamatory as a task-force report and as self-regarding as a campaign speech."
+      ],
+      "cols": [
+       [
+        "a decadent",
+        "a claustrophobic",
+        "an unprepossessing"
+       ],
+       [
+        "atavistic",
+        "spare",
+        "pretentious"
+       ],
+       [
+        "an ascetic",
+        "a grandiose",
+        "an understated"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Motorcycle riders in London have discovered an ingenious, albeit ____ way of parking illegally without getting a ticket."
+      ],
+      "opts": [
+       "inventive",
+       "unscrupulous",
+       "astute",
+       "dishonest",
+       "impractical",
+       "shrewd"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The writer’s expression of ____ sentiments in fluid, vigorous prose is a strange blending of the high and the low-like an opera performed by sloppily dressed, unkempt musicians."
+      ],
+      "opts": [
+       "patriotic",
+       "vile",
+       "noble",
+       "base",
+       "tender",
+       "lofty"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "California’s building codes are more ____ than those elsewhere in the United States to ensure that structures are capable of protecting people from frequent seismic events."
+      ],
+      "opts": [
+       "circuitous",
+       "exacting",
+       "controversial",
+       "stringent",
+       "convoluted",
+       "extensive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Jean Kimmel and Emily Hoffman argue for expanding the definition of child-care subsidies to include all programs that ____ or otherwise offset expenses for nonparental child care."
+      ],
+      "opts": [
+       "tally",
+       "tabulate",
+       "alter",
+       "defray",
+       "pay",
+       "simplify"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

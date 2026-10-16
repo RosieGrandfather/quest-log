@@ -75,3 +75,52 @@
 - `tools/course/grzt/reviewed-sections.tsv`：100节700题的候选答案及逐题理由。第1–50节是第一轮的推理候选；第51–100节是第二轮盲做后定稿的候选，7处不一致按上表处理。
 - `docs/GRE_ZT_ANSWER_AUDIT.json`：700题的位置、来源答案、候选、状态、理由和PDF页码。第二轮的题另记 `blindCandidate` 盲做答案。
 - `tools/course/grzt/review_answers.py`：重新核对以上记录、本地TXT、PDF文字和课程JSON；不会更改答案，也不会向课程添加讲解。
+
+# 第三轮：`gre-zt-101` 第1–100节（Test 51–100）
+
+## 结论
+
+700题都没有改答案键。盲做结果与配套答案一致的有680题；20题不一致，逐题复读后：
+
+- 9题配套答案有依据，盲做时读错或漏答：16.Q4、22.Q2、52.Q3、58.Q4、63.Q5、67.Q3、75.Q3、83.Q6、89.Q3。其中58、67、89三题盲做只填了前两空，与配套答案一致。
+- 10题两种答案都说得通，保留配套答案并照常计分，标为低把握：25.Q4、31.Q7、41.Q4、54.Q7、75.Q6、76.Q4、79.Q3、80.Q4、80.Q5、95.Q6。
+- 1题判定配套答案不可靠：96.Q5。原答案仍保留在数据里，但该题在课程中显示为「待核对，不计分」，交卷后附说明。
+
+## 方法
+
+- 盲做：遮住配套答案，分10批（每批10节）独立作答，每题记下答案和一句理由。字母沿用PDF的A–I全局编号。
+- 比对与复读：盲做答案与《填空2000答案.txt》不一致的题，重新读题干和全部选项，并尝试查询公开的同题版本。本批大多数题在网上找不到可核对的同题版本，所以主要依靠上下文推理。
+- 边界：不是ETS官方答案认证；公开题库也只能作为旁证。
+
+## 不计分的题：第96节Q5
+
+题干：The mayor’s hunger for power was ____: in her own heart, she was utterly convinced that all her energies were being poured out in the service of a cause greater than herself.
+
+配套答案为C/F（logical / understandable）。冒号后在解释前半句：她打心底认定自己是在为更大的事业付出，也就是说她并不承认、也没意识到自己的权力欲。按这个逻辑应选B/E（unacknowledged / subconscious），配套答案和冒号后的解释接不上。由于没有可靠来源证实，没有直接改答案，而是用项目已有的 `answerPending` 标为待核对、不计分，交卷后显示上述说明。
+
+## 低把握保留的10题
+
+| 课节 / 题号 | 配套答案 | 盲做 | 说明 |
+|---|---|---|---|
+| 25.Q4 | AF | AD | regular/consistent 是更紧的同义对，abundant 也贴合 water scarcity |
+| 31.Q7 | BF | BE | scarce/nonexistent 讲数量，inadequate 讲质量 |
+| 41.Q4 | AE | EF | 公开题库有AE和EF两种答案，stymied/confounded 也很自然 |
+| 54.Q7 | CE | BE | eminently/particularly 与 predominantly/particularly 都不是严格同义 |
+| 75.Q6 | AD | DE | interested in 比 drawn to 弱，captivated by 也说得通 |
+| 76.Q4 | BDG | BDI | 第三空 illusory 与 regard it as a process 都可能，后者语法也不顺，原文可能有误 |
+| 79.Q3 | BDH | CDH | 第一空 altruistic 与 the ultimate 都能读通 |
+| 80.Q4 | ADH | BDH | 第一空 encourage 与 prevent 都能和后文 has allowed 衔接 |
+| 80.Q5 | BC | CF | dismissed/repudiated 也是一对同义词 |
+| 95.Q6 | DF | DE | dedicated reader 更配 ferret out，summarize 也说得通 |
+
+## 原PDF本身的问题（本批）
+
+建课时已在 `build.py` 修正：3题选项A与题干末句同在一行、题干末尾被截断（第28、44、55节）；2题PDF漏印空格线（第58节Q1的“as if it were a ____ Gothic”，第65节Q3的(ii)(iii)）；1题把(i)写成(I)。只记录、未改写的：第65节Q3第二句缺动词；第76节Q4第三空选项时态不一致。
+
+## 可复查记录
+
+- `tools/course/grzt/reviewed-sections-101.tsv`：100节700题的定稿候选及逐题理由。
+- `docs/GRE_ZT101_ANSWER_AUDIT.json`：700题的来源答案、盲做答案、定稿候选、状态、理由和PDF页码。
+- `tools/course/grzt/review_answers.py`：同时核对两门课的记录、本地TXT、PDF与课程JSON；不会修改答案。
+- 不计分的题在 `tools/course/grzt/build.py` 的 `PENDING` 里登记，重新生成课程时会保留。
+

@@ -1,0 +1,200 @@
+{
+ "id": "u20-test60-s2",
+ "title": "Test 60 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 60, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 60 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Even though the municipal government was not totally ____ the positive review of the charter, the mayor nevertheless decided to veto the laws."
+      ],
+      "opts": [
+       "garrulous about",
+       "enthusiastic about",
+       "sanguine about",
+       "approbatory to",
+       "unsympathetic with"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "To abolish the existence of nation-states is neither feasible nor desirable; but insofar as there are collective interests that transcend national boundaries, the (i)____ of nation-states must be (ii)____ to international institutions."
+      ],
+      "cols": [
+       [
+        "sovereignty",
+        "traditions",
+        "genealogy"
+       ],
+       [
+        "subordinated",
+        "attributable",
+        "analogous"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The virtual absence of cougars from late prehistoric faunas in the North American Great Basin (i)____ a general scarcity of carnivores from these sites: bobcats, coyotes, and badgers are routinely found, and even such historically (ii)____ carnivores as bears and wolves are found as well."
+      ],
+      "cols": [
+       [
+        "largely parallels",
+        "does not reflect",
+        "is a consequence of"
+       ],
+       [
+        "widespread",
+        "rare",
+        "representative"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "Since the 1920s, historical fiction writers in China have emancipated the genre from the traditional notion that (i)____ was the ultimate goal of history writing. Yet the traditional commitment to (ii)____ was not simply (iii)____: this new genre was expected to capture the essence of historical truth even as it allowed space for the writer’s imagination."
+      ],
+      "cols": [
+       [
+        "comprehensiveness",
+        "factuality",
+        "entertainment"
+       ],
+       [
+        "veracity",
+        "thoroughness",
+        "pleasure"
+       ],
+       [
+        "jettisoned",
+        "rationalized",
+        "acknowledged"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Jaime Javier Rodriguez notes that popular art forms often conceal a daunting complexity: frequently what appears ____ becomes intricate and challenging when closely examined."
+      ],
+      "opts": [
+       "tedious",
+       "canned",
+       "convoluted",
+       "vacuous",
+       "tortuous",
+       "formulaic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Many theorists believe that measures to prevent industrial pollution necessarily increase production costs, but several recent reports document innovations that ____ environmental harm while also delivering economic benefits."
+      ],
+      "opts": [
+       "offset",
+       "preclude",
+       "disclose",
+       "mitigate",
+       "curtail",
+       "divulge"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "A closer examination of the author’s footnotes explains the datedness of his argument: he has ignored most of the recent work in the field, drawing instead mainly on research that is now decidedly ____."
+      ],
+      "opts": [
+       "familiar",
+       "germane",
+       "obsolete",
+       "relevant",
+       "discredited",
+       "outmoded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

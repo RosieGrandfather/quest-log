@@ -1,0 +1,194 @@
+{
+ "id": "u72-test86-s2",
+ "title": "Test 86 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 86, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 86 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Despite the fact that it is quite difficult to find, in everyday discourse, causal explanations taking the form Hume proposed, many philosophers have regarded Hume’s model as ____ causal accounts."
+      ],
+      "opts": [
+       "paradigmatic of",
+       "unworkable for",
+       "tendentious about",
+       "superfluous to",
+       "irreducible to"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "As a longtime fan of the fashion photography Web site, I wasn’t sure if I wanted to see its images presented in a book, with all of the (i)____ that implies. What I’ve always enjoyed about the photos is their (ii)____: they are disposable snapshots of what’s going on in the world of style right now."
+      ],
+      "cols": [
+       [
+        "nonchalance",
+        "commercialism",
+        "permanency"
+       ],
+       [
+        "elegant",
+        "ephemeral",
+        "mundane"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Research indicates that many people hold (i)____ views about government, believing that elected officials should be able to overcome differences and get things done while also regarding a willingness to compromise as a sign of (ii)____."
+      ],
+      "cols": [
+       [
+        "cynical",
+        "self-contradictory",
+        "shortsighted"
+       ],
+       [
+        "fickleness",
+        "pragmatism",
+        "intractability"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In the early 1990s, the discovery of a new microbe in wastewater led microbiologists to (i)____ ammonia’s conversion to nitrogen compounds. Called anammox (for anaerobic ammonia oxidation), the microbe was converting into nitrogen gas in the absence of oxygen, a reaction previously assumed to be (ii)____."
+      ],
+      "cols": [
+       [
+        "question existing dogma about",
+        "abandon efforts to facilitate",
+        "raise health concerns regarding"
+       ],
+       [
+        "hazardous",
+        "irreversible",
+        "impossible"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "It is troubling that blogs, which may be among the least reliable sources of information in human history, occupy such ____ positions in Internet search engine results."
+      ],
+      "opts": [
+       "enviable",
+       "conspicuous",
+       "suspect",
+       "dubious",
+       "controversial",
+       "prominent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "There is a vast disparity of computational power between mathematical ____ like many of us and a mathematical prodigy like Ramanujan."
+      ],
+      "opts": [
+       "dullards",
+       "enthusiasts",
+       "virtuosos",
+       "tyros",
+       "geniuses",
+       "novices"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "An academic with a questionable record in either teaching, administration, or research may still be well regarded at many schools, but simultaneous failure in all three areas normally results in ____ by superiors."
+      ],
+      "opts": [
+       "exculpation",
+       "dismissal",
+       "impeachment",
+       "disapprobation",
+       "censure",
+       "acquittal"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,200 @@
+{
+ "id": "u46-test73-s2",
+ "title": "Test 73 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 73, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 73 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The combination of Isabella Beeton’s short life and the ____ of evidence for some parts of her story means that at times her biography, Kathryn Hughes, is forced to fill out her narrative with background information."
+      ],
+      "opts": [
+       "reliability",
+       "plethora",
+       "relevance",
+       "paucity",
+       "transparency"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "This book, a more (i)____ version of a highly technical report, is designed for the layperson, yet it is nothing if not (ii)____: it grapples with very complex questions about the world economy."
+      ],
+      "cols": [
+       [
+        "accessible",
+        "professional",
+        "formidable"
+       ],
+       [
+        "ambitious",
+        "popular",
+        "persuasive"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Even though the idea that medical research should be rigorously objective is (i)____ one in the medical community, the editors of medical journals often display a disquieting (ii)____ when it comes to articles submitted by researchers who accept money from the makers of the products they evaluate in their research; editors rarely ask whether that research is truly disinterested."
+      ],
+      "cols": [
+       [
+        "a neglected",
+        "an uncontroversial",
+        "an unproductive"
+       ],
+       [
+        "capriciousness",
+        "credulity",
+        "stringency"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDG",
+     "txt": {
+      "stem": [
+       "With the grand ambition of sending unbreakable coded messages, some physicists are using exotic tools—quantum mechanics and streams of individual photons—to shut out (i)____. But a wire and a few resistors may (ii)____ a message as securely, according to a physicist who claims to have devised a simple and uncrackable scheme. The idea shows that more (iii)____ methods might compete with budding quantum cryptography."
+      ],
+      "cols": [
+       [
+        "inaccurate transmissions",
+        "pernicious influences",
+        "prying eyes"
+       ],
+       [
+        "convey",
+        "decode",
+        "intercept"
+       ],
+       [
+        "mundane",
+        "complex",
+        "celebrated"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Many innovative breakthroughs come about when people venture beyond their own areas of expertise, because often it takes an outsider to ask the naïve questions that may yield ____ solution."
+      ],
+      "opts": [
+       "a constructive",
+       "an unconventional",
+       "an amicable",
+       "an agreeable",
+       "a practical",
+       "an original"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "In a major ____ for bat populations in the United States, on average 90 percent of the hibernating bats in four important caves and mines in New York died in the space of one year."
+      ],
+      "opts": [
+       "achievement",
+       "reversal",
+       "venture",
+       "calamity",
+       "undertaking",
+       "disaster"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Human and animal shyness are not ____: in humans, shyness refers to an individual’s awkwardness and apprehension in social situations, a different meaning than that used for animals."
+      ],
+      "opts": [
+       "prevalent",
+       "comparable",
+       "useful",
+       "disadvantageous",
+       "detrimental",
+       "analogous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

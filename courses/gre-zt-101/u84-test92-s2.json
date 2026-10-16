@@ -1,0 +1,200 @@
+{
+ "id": "u84-test92-s2",
+ "title": "Test 92 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 92, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 92 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Demographic relationships that have been ____ may not be useful targets for prolonged study: that very characteristic suggests that they may continue to change rapidly."
+      ],
+      "opts": [
+       "static",
+       "enervated",
+       "intransigent",
+       "moribund",
+       "mutable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The lobbyist argues that current environmental regulations must be (i)____ to prevent a recession, thus reviving the notion that economic progress and environmental protection are inherently (ii)____."
+      ],
+      "cols": [
+       [
+        "introduced",
+        "softened",
+        "reviewed"
+       ],
+       [
+        "inviolable",
+        "incompatible",
+        "unsustainable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The apparent promise of clean alternatives to environmentally harmful fossil fuels might actually (i)____ fossil-fuel industries by framing energy problems not as a matter of excessive consumption but rather as a remediable lack of clean energy production, thus enticing citizens to (ii)____ the current energy consumption patterns from which fossil-fuel industries profit."
+      ],
+      "cols": [
+       [
+        "benefit",
+        "pressure",
+        "transform"
+       ],
+       [
+        "call attention to",
+        "demand changes in",
+        "remain complacent about"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "The danger often facing authors of satirical works is that if the audience is not (i)____ the joke, the piece may end up (ii)____ the behavior it was trying to (iii)____."
+      ],
+      "cols": [
+       [
+        "already frustrated by",
+        "willing to laugh at",
+        "discerning enough to get"
+       ],
+       [
+        "reinforcing",
+        "depicting",
+        "elucidating"
+       ],
+       [
+        "conceal",
+        "support",
+        "ridicule"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "In the nineteenth century, the dish known as lobster Newburg was sometimes associated with the culinary accessory known as the chafing dish, but Welsh rarebit was considered the truly ____ chafing dish recipe."
+      ],
+      "opts": [
+       "indigenous",
+       "sumptuous",
+       "ubiquitous",
+       "paradigmatic",
+       "newfangled",
+       "archetypal"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The airline might receive fewer complaints if it got passengers to their destinations on time: in the past few years, only one airline has been more ____."
+      ],
+      "opts": [
+       "unprofitable",
+       "aggressive",
+       "remiss",
+       "dilatory",
+       "impeccable",
+       "assiduous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Selling a product with no known or even ____ substitute and with ever-growing demand for it seems as if it would be quite lucrative, but in fact the three biggest private-sector water companies in the world are eager to get out of the business."
+      ],
+      "opts": [
+       "recognized",
+       "practicable",
+       "profitable",
+       "acknowledged",
+       "imaginable",
+       "conceivable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

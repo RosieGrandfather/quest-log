@@ -1,0 +1,200 @@
+{
+ "id": "u50-test75-s2",
+ "title": "Test 75 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 75, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 75 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "While the current coffee craze was sparked by the emergence of flavorful, high-quality gourmet varieties, a slew of studies suggesting that concerns about coffee’s health effects may be ____ has nurtured the trend."
+      ],
+      "opts": [
+       "underemphasized",
+       "exacerbated",
+       "unfounded",
+       "documented",
+       "recapitulated"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "While the philosopher was known for valuing (i)____ in the classroom, she was also, by contrast, a scrupulous and patient reviser, who (ii)____ her lectures for print."
+      ],
+      "cols": [
+       [
+        "predictability",
+        "spontaneity",
+        "correctness"
+       ],
+       [
+        "superficially proofread",
+        "haphazardly adapted",
+        "laboriously reworked"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Catherine the Great comes across in her memoirs as (i)____ ruler with a razor-sharp intellect, letting nothing stand in the way of her ambitions. In short, the impression the memoirs give is entirely in accord with her reputation for being (ii)____."
+      ],
+      "cols": [
+       [
+        "an oblivious",
+        "an uncompromising",
+        "a moralistic"
+       ],
+       [
+        "ambivalent",
+        "benevolent",
+        "formidable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "The cowbird can seem a rather comical creature with a slow, awkward walk and often upraised tail. Less (i)____ is the cowbirds’ habit of laying their eggs in the nests of other birds. The (ii)____ nesters will usually accept the cowbird egg and raise the baby cowbird as their own. Unfortunately, cowbird eggs hatch sooner than the eggs of other species and the young cowbirds (iii)____, using their size to their advantage in getting more food from the parents."
+      ],
+      "cols": [
+       [
+        "amusing",
+        "painful",
+        "galling"
+       ],
+       [
+        "feckless",
+        "resistant",
+        "unwitting"
+       ],
+       [
+        "grow quickly",
+        "leave the nest",
+        "share their food"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The economist noted that the occupations she analyzed in her study, which included waitresses, flight attendants, clerical workers, and domestic workers, ____ categorization: none can be captured by a single distinguishing characteristic."
+      ],
+      "opts": [
+       "mask",
+       "obviate",
+       "invite",
+       "confound",
+       "resist",
+       "encourage"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "On stage, jazz artist James Carter often veers dangerously close to the ____: he becomes a man possessed, his tenor saxophone wailing and whimpering with a musicality so muscular it threatens to consume him."
+      ],
+      "opts": [
+       "lugubrious",
+       "doleful",
+       "intemperate",
+       "excessive",
+       "idiosyncratic",
+       "sublime"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Wheelan proceeds from the assumption that statistics are ____ and, consequently, can be taught with minimal intimidation through examples."
+      ],
+      "opts": [
+       "intuitive",
+       "essential",
+       "habitual",
+       "instinctive",
+       "indispensable",
+       "straightforward"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,194 @@
+{
+ "id": "u80-test90-s2",
+ "title": "Test 90 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 90, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 90 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Though acquaintances are first overwhelmed by his ____, they soon appreciate that, contrary to appearances, he is not without self-interest."
+      ],
+      "opts": [
+       "egotism",
+       "magnanimity",
+       "ambition",
+       "profligacy",
+       "brilliance"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "In 1831, a domestic insurrection that had stirred central Italy was squelched by the Austrian army, but while this invasion destroyed the immediate results of the movement, it could not ____ the insurrections causes, which continued to be felt."
+      ],
+      "opts": [
+       "ignore",
+       "extirpate",
+       "fathom",
+       "anticipate",
+       "underscore"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "If all stars are fiery gas balls like our own sun, and if the principle that the situation of our own solar system is not (i)____ is (ii)____, then one might think that many other stars should be surrounded by a retinue of planets and moons."
+      ],
+      "cols": [
+       [
+        "obvious",
+        "permanent",
+        "special"
+       ],
+       [
+        "true",
+        "redundant",
+        "tested"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADH",
+     "txt": {
+      "stem": [
+       "In considering whether to (i)____ mergers of large corporations, governments now must consider the impact of such mergers on a country’s international competitiveness; for example, the United States has allowed the mergers of (ii)____ such as Lockheed and Boeing in the aerospace industry in the belief European consortiums, backed by government funding, could pose a threat to American (iii)____ in that industry."
+      ],
+      "cols": [
+       [
+        "encourage",
+        "prevent",
+        "investigate"
+       ],
+       [
+        "behemoths",
+        "offshoots",
+        "mavericks"
+       ],
+       [
+        "chauvinism",
+        "preeminence",
+        "sovereignty"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "While Elizabeth Barrett Browning often wrote in restrictively intricate verse forms such as the Petrarchan sonnet, she also sometimes ____ formal constraints in poetry."
+      ],
+      "opts": [
+       "defended",
+       "neglected",
+       "dismissed",
+       "appropriated",
+       "vindicated",
+       "repudiated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Journal editors note that the peer review process has difficulty detecting ____: deliberate misinformation, if it is clever enough, might sail right through no matter how scrupulous the reviews."
+      ],
+      "opts": [
+       "bias",
+       "inconsistency",
+       "fraud",
+       "negligence",
+       "duplicity",
+       "carelessness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The rapid melting of glaciers around the globe, while an ominous reminder of global warming, has been ____ for archaeologists, since glaciers are storehouses of frozen materials from prehistoric times."
+      ],
+      "opts": [
+       "a conundrum",
+       "a nuisance",
+       "an inconvenience",
+       "a boon",
+       "a windfall",
+       "a puzzle"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

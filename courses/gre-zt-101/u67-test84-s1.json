@@ -1,0 +1,196 @@
+{
+ "id": "u67-test84-s1",
+ "title": "Test 84 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 84, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 84 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Geologists suggest that as the most productive oil reservoirs begin to dry up, the expensive cost and high risk of drilling in the marginal area become less ____ and more acceptable."
+      ],
+      "opts": [
+       "onerous",
+       "efficacious",
+       "auspicious",
+       "benign",
+       "natural"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Because it is discussed by humanities scholars from diverse disciplinary backgrounds, “affect” has been (i)____ defined; nonetheless there has been (ii)____ the terms “emotion” and “affect” across academic writing in the humanities."
+      ],
+      "cols": [
+       [
+        "clearly",
+        "variously",
+        "narrowly"
+       ],
+       [
+        "a paucity of interest in",
+        "a variety of interpretations of",
+        "a consistent distinction between"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "Fifteen years ago, the author of this scholarly monograph would have (i)____ found a university press willing to publish it. But today specialized books of this sort are (ii)____ species. Their main purchasers—university libraries—have far less money to spend on these items than they once did. Computerized catalogues, subscription content, expensive scientific journals, exploding storage costs: all these demands are (iii)____ library budgets."
+      ],
+      "cols": [
+       [
+        "voluntarily",
+        "never",
+        "readily"
+       ],
+       [
+        "a thriving",
+        "an anomalous",
+        "an imperiled"
+       ],
+       [
+        "putting tremendous pressure on",
+        "leading to irregularities in",
+        "causing increasing appropriations to"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "In science, ____ can sometimes inhibit understanding; indeed, the advantage of the technique for staining brain tissue developed in 1873 by Golgi was that it showed so little."
+      ],
+      "opts": [
+       "biases",
+       "projections",
+       "prejudices",
+       "minutiae",
+       "approximations",
+       "particulars"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Faced with so much conflicting information on the internet, many people come to believe that all sources are so ____ that efforts to discriminate between the true and the false are inevitably futile."
+      ],
+      "opts": [
+       "slanted",
+       "imprecise",
+       "splenetic",
+       "tendentious",
+       "surreptitious",
+       "acrimonious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The auditors are relying on the failing bank to make changes that it has steadfastly resisted for years and even now does not seem ____ to carry out."
+      ],
+      "opts": [
+       "able",
+       "impatient",
+       "destined",
+       "disinclined",
+       "loath",
+       "keen"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Though it once seemed so disastrous, with hindsight the disintegration of the artists' collective is revealed as generative, for each of the dispersed factions acted as a ____, reproducing the collective's founding inspiration in a new setting."
+      ],
+      "opts": [
+       "strand",
+       "seed",
+       "shard",
+       "fragment",
+       "germ",
+       "blueprint"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

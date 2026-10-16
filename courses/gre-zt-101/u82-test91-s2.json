@@ -1,0 +1,200 @@
+{
+ "id": "u82-test91-s2",
+ "title": "Test 91 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 91, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 91 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "In its literature and its political discourse, the nation has created various narratives about itself that tend to ____ intractable social divisions in the interest of perpetuating a dubious myth of unity."
+      ],
+      "opts": [
+       "denounce",
+       "obscure",
+       "corroborate",
+       "anatomize",
+       "explicate"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The city’s traffic-planning department has been working hard to (i)____ drivers. Closely spaced stop lights have been added on roads into town, causing delays. Pedestrian underpasses designed to allow traffic to flow freely across major intersections have been (ii)____."
+      ],
+      "cols": [
+       [
+        "assist",
+        "calm",
+        "discourage"
+       ],
+       [
+        "enhanced",
+        "stabilized",
+        "removed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Gelles urges readers of Abigail Adams’ letters to consider their (i)____: in Adams’ era women were denied a public persona separate from that of their husbands. That said, Gelles then (ii)____ to promote Adams from a writer of private letters to a public figure, arguing that she was a significant force for change."
+      ],
+      "cols": [
+       [
+        "value",
+        "context",
+        "style"
+       ],
+       [
+        "strains",
+        "neglects",
+        "fails"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDG",
+     "txt": {
+      "stem": [
+       "Rocke’s history of the emergence of the theory of chemical structure encapsulates over 30 years of research on nineteenth-century chemistry. This is (i)____, since structure theory emerged gradually through the efforts of a network of chemists distributed across several countries. Rocke focuses on just a few key figures, a strategy that necessarily involves some (ii)____ of detail but that leads to (iii)____ account of the subject."
+      ],
+      "cols": [
+       [
+        "something often",
+        "a regrettable ploy",
+        "no mean feat"
+       ],
+       [
+        "sacrifice",
+        "redundancy",
+        "appreciation"
+       ],
+       [
+        "a digestible undertaken",
+        "an untrustworthy",
+        "a digressive"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The author first accused the official of espionage in a 1981 book, and—though the case was far from ____, full of suppositions rather than compelling evidence—the accusation has been repeated relentlessly ever since."
+      ],
+      "opts": [
+       "unambitious",
+       "unconvincing",
+       "unassailable",
+       "implausible",
+       "coherent",
+       "airtight"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Planetary systems are ____, with the orbits of even the largest planets able to evolve and migrate, especially in the early period when interaction between forming planets and the protoplanetary disc is strong."
+      ],
+      "opts": [
+       "stable",
+       "dynamic",
+       "predictable",
+       "idiosyncratic",
+       "mutable",
+       "enigmatic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In hindsight, it is easy to say that the geological evidence for ice ages was ____ and to wonder why such periods in the Earth's past were not recognized earlier."
+      ],
+      "opts": [
+       "accessible",
+       "overwhelming",
+       "emerging",
+       "irresistible",
+       "intriguing",
+       "tenuous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

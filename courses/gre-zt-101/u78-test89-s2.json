@@ -1,0 +1,200 @@
+{
+ "id": "u78-test89-s2",
+ "title": "Test 89 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 89, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 89 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Not only was Jarry ____ the pandemonium his play sparkled, he actually worked to foment the conflict, organizing a posse to boo if the rest of the audience applauded and cheer if the other attendees booed."
+      ],
+      "opts": [
+       "riled by",
+       "surprised by",
+       "unperturbed by",
+       "critical of",
+       "detached from"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Some have challenged scientists who attribute the surge in amphibian deaths to habitat loss, since numerous populations have (i)____ in protected parks and nature reserved—even in remote wilderness areas: places that are removed from humans’ modern effluvium and that are presumably (ii)____ such effects."
+      ],
+      "cols": [
+       [
+        "rebounded",
+        "stabilized",
+        "declined"
+       ],
+       [
+        "preserved with",
+        "insulated from",
+        "enhanced by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Though nations no longer (i)____ nuclear physicists—the men and women who once delivered the destructive power of the atom bomb—physics still has the same power to (ii)____ but in another way, by revealing the basic truths that underpin reality."
+      ],
+      "cols": [
+       [
+        "compete for",
+        "worry about",
+        "cower before"
+       ],
+       [
+        "produce awe",
+        "incite debates",
+        "challenge orthodoxy"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "In the nineteenth century the (i) ____ advanced mechanical printing techniques made it possible for newspaper owners to print newspapers cheaply and in mass quantities, but unlike many other mechanized industries, where machines (ii) ____ workers, the new printing machines required trained compositors to run them, thereby (iii) ____ the demand for skilled printing labor."
+      ],
+      "cols": [
+       [
+        "wide application of",
+        "extensive resistance to",
+        "great expense of"
+       ],
+       [
+        "marginalized",
+        "intrigued",
+        "isolated"
+       ],
+       [
+        "ignoring",
+        "anticipating",
+        "increasing"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The colors of brocaded silks made by Merina weavers in Madagascar were not ____: magenta, blue, black, pink, yellow, and brown characterize pieces before 1880, while thereafter green, purple, and orange come to the fore."
+      ],
+      "opts": [
+       "invariable",
+       "generic",
+       "conventional",
+       "repetitious",
+       "static",
+       "traditional"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "This novel resembles a piece of music in the way it ____ variations on separate themes that contrast, conflict, and combine to form ever-more-fascinating patterns."
+      ],
+      "opts": [
+       "deploys",
+       "alters",
+       "rejects",
+       "marshals",
+       "reiterates",
+       "repudiates"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The ocean's heat capacity (the amount of heat needed to change its temperature) is far greater than that of dry land and thus ____ the ocean's seasonal temperature changes."
+      ],
+      "opts": [
+       "reflects",
+       "mutes",
+       "alters",
+       "determines",
+       "attenuates",
+       "parallels"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

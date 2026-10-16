@@ -1,0 +1,200 @@
+{
+ "id": "u08-test54-s2",
+ "title": "Test 54 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 54, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 54 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The monitoring is not ____: on the contrary, the defendant and his or her attorney are required to be given notice of the government’s listening activities."
+      ],
+      "opts": [
+       "obtrusive",
+       "circumspect",
+       "surreptitious",
+       "adroit",
+       "meticulous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Even if the merits of the proposal are (i)____, faculty members may be reluctant to (ii)____, given their fear of offending the group that champions it."
+      ],
+      "cols": [
+       [
+        "unparalleled",
+        "dubious",
+        "obvious"
+       ],
+       [
+        "demur",
+        "approve",
+        "acquiesce"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Whatever the acknowledged (i)____ of the market and the merits of considering ways to (ii)____ them, implementing public policies toward this end entails the inevitable risk that those policies will simply create new deficiencies even as they address old ones."
+      ],
+      "cols": [
+       [
+        "attractions",
+        "shortcomings",
+        "complexities"
+       ],
+       [
+        "remedy",
+        "enhance",
+        "restore"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "People accustomed to thinking that the human lifespan (i)____ the outer bounds of animal longevity tend to dismiss tales of musket balls being found in the shells of living turtles. Samantha Romney, however, argues that while such stories may be (ii)____, some turtles do indeed exhibit a phenomenon known as “negligible (iii)____,” showing no signs of aging even as they pass the two-century mark."
+      ],
+      "cols": [
+       [
+        "belies",
+        "demarcates",
+        "antedates"
+       ],
+       [
+        "apocryphal",
+        "authentic",
+        "heresy"
+       ],
+       [
+        "rejuvenation",
+        "superannuation",
+        "senescence"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Experimentation in the arts often generates befuddlement, and even ____ of innovative art generally have voiced perplexity regarding this new, experimental artwork."
+      ],
+      "opts": [
+       "proponents",
+       "vilifiers",
+       "defenders",
+       "belittlers",
+       "vendors",
+       "luminaries"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The sailors realized too late that winds had shifted the ice in such a way as to obstruct the ship’s path; this process had been so ____ that it was completed by the time they discovered the effect."
+      ],
+      "opts": [
+       "gradual",
+       "negligible",
+       "unpredictable",
+       "time-consuming",
+       "inconsequential",
+       "imperceptible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "What makes the precisely oriented flight of a honeybee swarm to its new home so ____ is that only a small percentage of its members know the swarm travel route and final destination."
+      ],
+      "opts": [
+       "exact",
+       "unpredictable",
+       "amazing",
+       "erratic",
+       "reliable",
+       "wondrous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

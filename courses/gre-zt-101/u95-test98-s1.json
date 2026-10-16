@@ -1,0 +1,196 @@
+{
+ "id": "u95-test98-s1",
+ "title": "Test 98 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 98, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 98 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Suspicion is arguably a natural self-protective instinct essential to the survival of individuals and societies: a human being or community that is totally ____ is inviting trouble."
+      ],
+      "opts": [
+       "exultant",
+       "regressive",
+       "reclusive",
+       "ingenuous",
+       "apprehensive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In general memoirs focus sharply on particular, and particularly memorable, events rather than on the entire life. This (i)____ structure inevitably emphasizes drama at the expense of (ii)____."
+      ],
+      "cols": [
+       [
+        "circular",
+        "episodic",
+        "panoramic"
+       ],
+       [
+        "excitement",
+        "completeness",
+        "plausibility"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "Human brains are amazing organs but they are not perfect. Cognitive biases, as we know, sometimes produce errors. Yet the term \"error\" could be (i)____ in that it suggests that there might be (ii)____ way in which cognition should work. Such a binary opposition is (iii)____."
+      ],
+      "cols": [
+       [
+        "corrective",
+        "serviceable",
+        "problematic"
+       ],
+       [
+        "a uniquely correct",
+        "a surprisingly novel",
+        "an infinitely fluid"
+       ],
+       [
+        "incontrovertible",
+        "reductive",
+        "warranted"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Although the writer meant for the book to serve as a kind of tribute to motherhood, the approach here is hardly a ____ affair."
+      ],
+      "opts": [
+       "memorable",
+       "saccharine",
+       "problematic",
+       "divisible",
+       "sentimental",
+       "controversial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Although biologists know that thousands of species of microbes and invertebrates inhabit one square meter of temperate grassland soil, the identities of those creatures and their contributions to sustaining the biosphere remain ____."
+      ],
+      "opts": [
+       "obscure",
+       "self-evident",
+       "immaterial",
+       "murky",
+       "contested",
+       "obvious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Although a dedicated reader of the book can ____ a brief of chronology of Chappell’s life, the book is nevertheless not a real biography of Chapelle."
+      ],
+      "opts": [
+       "miss",
+       "imagine",
+       "overlook",
+       "extract",
+       "ferret out",
+       "summarize"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Physicians today increasingly rely on endoscopic surgery, ____ large scalpels and clamps in favor of endoscopy’s cameras and flexible tools that can snake into the body through tiny holes."
+      ],
+      "opts": [
+       "designing",
+       "de-emphasizing",
+       "rediscovering",
+       "engineering",
+       "downplaying",
+       "rejecting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

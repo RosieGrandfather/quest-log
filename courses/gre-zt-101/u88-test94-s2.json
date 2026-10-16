@@ -1,0 +1,200 @@
+{
+ "id": "u88-test94-s2",
+ "title": "Test 94 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 94, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 94 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The nineteenth-century legislator Robert Barnwell Rhett was known for using language so intemperate that even in an era of considerable political ____, it came almost to occupy a category of its own."
+      ],
+      "opts": [
+       "malfeasance",
+       "upheaval",
+       "hypocrisy",
+       "invective",
+       "retrenchment"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The enlightenment philosophers of the eighteenth century acknowledged that unrestricted freedom to publish could (i)____ motivated by envy or hatred, but they hoped that any such (ii)____ enabled by expanded liberties would suffer from being publicly exposed."
+      ],
+      "cols": [
+       [
+        "encourage blandishments",
+        "facilitate calumny",
+        "constrain vituperation"
+       ],
+       [
+        "evasion",
+        "defamation",
+        "prurience"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The man was an avowed (i)____: he made no secret of his disdain for (ii)____ endeavor."
+      ],
+      "cols": [
+       [
+        "partisan",
+        "dilettante",
+        "philistine"
+       ],
+       [
+        "political",
+        "aesthetic",
+        "amateur"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDH",
+     "txt": {
+      "stem": [
+       "It is a common complaint that female explorers have been unfairly (i)____ in modern historical accounts. Amelia Earhart, Freya Stark, and Gertrude Bell may be (ii)____, but only a special would recognize the names of Fanny Workman or Janet Wulsin. Whether that is a matter of (iii)____ or a fair reflection of their achievements is debatable."
+      ],
+      "cols": [
+       [
+        "scrutinized",
+        "ignored",
+        "attacked"
+       ],
+       [
+        "well enough known",
+        "largely overlooked",
+        "subject to criticism"
+       ],
+       [
+        "analysis",
+        "prejudice",
+        "objectivity"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "In this instance, aesthetics ____ structure, and the unconventional design of the long, slender-decked bridge allowed its deck to move sideways excessively."
+      ],
+      "opts": [
+       "prevailed over",
+       "harmonized with",
+       "bowed to",
+       "dominated",
+       "invigorated",
+       "complemented"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Her success is not ____, for she writes clearly about complicated subjects and provides lucid explanations and penetrating insights."
+      ],
+      "opts": [
+       "undeniable",
+       "undeserved",
+       "unanticipated",
+       "unparalleled",
+       "unsurpassed",
+       "unexpected"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Although the shrewdness of Lynn Nottage’s protagonist does seem ____, it is worth remembering that this character is trying to operate a business in a place where there is little room for heart."
+      ],
+      "opts": [
+       "appealing",
+       "anachronistic",
+       "hypocritical",
+       "attractive",
+       "callous",
+       "insensitive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

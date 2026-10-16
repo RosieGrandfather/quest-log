@@ -1,0 +1,196 @@
+{
+ "id": "u45-test73-s1",
+ "title": "Test 73 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 73, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 73 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The author affects ____ in the tone of his novels that is quite at odds with his predilection for invective in his nonfiction publications."
+      ],
+      "opts": [
+       "a tenacity",
+       "a neutrality",
+       "a pugnacity",
+       "an effusiveness",
+       "an irascibility"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Trying to fix problems that affect vast numbers of people has an intuitive appeal that politicians and policymakers find (i)____, but several warehouses of research studies show that intuition is often a poor guide to fixing (ii)____ problems."
+      ],
+      "cols": [
+       [
+        "logical",
+        "irresistible",
+        "off-putting"
+       ],
+       [
+        "localized",
+        "systemic",
+        "theoretical"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Give a computer (i)____ task—winning at chess, say, or predicting the weather—and the machine bests humans nearly every time. Yet when problems are (ii)____, or require combining varied sources, computers are (iii)____ human intelligence."
+      ],
+      "cols": [
+       [
+        "a well-defined",
+        "a random",
+        "an open-ended"
+       ],
+       [
+        "nuanced",
+        "inconsequential",
+        "solvable"
+       ],
+       [
+        "no match for",
+        "unyielding to",
+        "able to dwarf"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The idea that Jim was ____, that he loved fighting for the sake of fighting, was a mistake, in reality he was a kind and gentle person."
+      ],
+      "opts": [
+       "truculent",
+       "audacious",
+       "brazen",
+       "obtuse",
+       "pugnacious",
+       "sapiential"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Meera Mukherjee observed that while the work of the artisan has its well-defined contours, the artist is without palpable ____: like an explorer, the artist continually faces new regions of experience."
+      ],
+      "opts": [
+       "opportunities",
+       "rewards",
+       "bounds",
+       "risks",
+       "limits",
+       "hazards"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The panel’s failure to acknowledge the microbiologist as important in her field cannot be ____ a lack of accomplishment on her part, since her status as an important contributor to biology has been indisputably established."
+      ],
+      "opts": [
+       "attributed to",
+       "tantamount to",
+       "related to",
+       "explained by",
+       "obviated by",
+       "averted by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In 1839, working-class revolutions have been a real possibility in the industrialized countries of western Europe, but because revolutionary groups were poorly organized and led, government and employers regarded the movements with understandable ____."
+      ],
+      "opts": [
+       "distaste",
+       "placidity",
+       "concern",
+       "complacency",
+       "foreboding",
+       "solicitude"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

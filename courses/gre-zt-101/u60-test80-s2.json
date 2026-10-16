@@ -1,0 +1,200 @@
+{
+ "id": "u60-test80-s2",
+ "title": "Test 80 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 80, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 80 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "A sunset, the poet asserted, is beautiful in part because it is ____: fleeting and never to be repeated."
+      ],
+      "opts": [
+       "expeditious",
+       "vibrant",
+       "transitory",
+       "evocative",
+       "archetypal"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Recently the novelist has (i)____ the radically experimental forms with which he made his reputation in favor of more (ii)____ narratives, fencing in and turning an imagination meant to run wild."
+      ],
+      "cols": [
+       [
+        "trumpeted",
+        "forsaken",
+        "replicated"
+       ],
+       [
+        "conventional",
+        "pretentious",
+        "provocative"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Evidence suggest that populations of migratory birds in both the New and Old Worlds have (i)____, a (ii)____ that carries the potential for significant ecological damage far beyond the shrinking numbers of the birds themselves."
+      ],
+      "cols": [
+       [
+        "scattered",
+        "stabilized",
+        "plummeted"
+       ],
+       [
+        "dispersal",
+        "decline",
+        "displacement"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AEH",
+     "txt": {
+      "stem": [
+       "The patients given a placebo in the course of clinical trials receive much more than a pharmacologically inert substance. Like the patients receiving the experimental drug, they (i)____ a thorough medical evaluation, a chance to discuss their condition with competent professionals, a diagnosis, and a treatment plan. Although viewed by many as (ii)____ the healing process, these factors may actually provide an important clue as to why placebo often work: they are part of an experience that can itself be a (iii)____ illness."
+      ],
+      "cols": [
+       [
+        "get",
+        "avoid",
+        "welcome"
+       ],
+       [
+        "essential for",
+        "incidental to",
+        "consequences of"
+       ],
+       [
+        "research laboratory for",
+        "powerful antidote to",
+        "breeding ground of"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The campaign official argued that the large swings in the candidate's approval ratings were a result not of the ____ of the electorate but rather of the polls' margins of error and divergent methodologies."
+      ],
+      "opts": [
+       "exactitude",
+       "resurgence",
+       "capriciousness",
+       "volatility",
+       "partisanship",
+       "scrupulousness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Some consider the theorem Emmy Noether first published in 1918 to be as important as Einstein’s theory of relativity, since much of today’s vanguard research in physics is ____ Noether’s theorem."
+      ],
+      "opts": [
+       "contradicted by",
+       "undergirded by",
+       "incompatible with",
+       "dependent on",
+       "devoted to",
+       "elucidated by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Beauford Delaney's dynamic depictions of Harlem and Greenwich Village, dating from 1929 to 1953, ____ the energy of the city, while the equally captivating abstract compositions from his Paris years of 1953 to 1979 demonstrate his sustained exploration of color."
+      ],
+      "opts": [
+       "authenticate",
+       "convey",
+       "elicit",
+       "impart",
+       "stifle",
+       "suppress"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

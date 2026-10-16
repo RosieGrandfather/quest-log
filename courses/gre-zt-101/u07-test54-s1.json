@@ -1,0 +1,196 @@
+{
+ "id": "u07-test54-s1",
+ "title": "Test 54 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 54, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 54 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Some species camouflage patterns may be ____, granting those species a higher chance of survival in a heterogeneous environment."
+      ],
+      "opts": [
+       "plastic",
+       "subtle",
+       "singular",
+       "consistent",
+       "imitable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In the popular conception, (i)____ is inextricably tied up with (ii)____: doing something truly creative, we are inclined to think, requires the freshness and energy of youth. Orson Welles made his masterpiece, Citizen Kane, at twenty-five, and Mozart wrote his breakthrough Piano concerto no.9 at twenty-one."
+      ],
+      "cols": [
+       [
+        "progress",
+        "genius",
+        "destiny"
+       ],
+       [
+        "serendipity",
+        "precocity",
+        "dedication"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Methods were developed to remove distortions caused by either the research environment or the researcher. Such methods, especially with respect to the researcher, were considered to (i)____ those (ii)____ subjectivity whose unbridled expression was thought to otherwise (iii)____ research."
+      ],
+      "cols": [
+       [
+        "restrain",
+        "reveal",
+        "supersede"
+       ],
+       [
+        "incursions of",
+        "efficacy of",
+        "restrictions on"
+       ],
+       [
+        "corrupt",
+        "obviate",
+        "facilitate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The latest publications predicting disastrous coastal erosion are unlikely to ____ knowledgeable readers because variations on the same claims have been effectively refuted in the past few years."
+      ],
+      "opts": [
+       "intrigue",
+       "reassure",
+       "baffle",
+       "alarm",
+       "unsettle",
+       "calm"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Some social insects, such as bees and ants, are celebrated for their industriousness and engineering feat, but popular culture has not generally ____ termites for theirs—even though they can build mounds twenty feet high."
+      ],
+      "opts": [
+       "considered",
+       "reprehended",
+       "applauded",
+       "deprecated",
+       "exonerated",
+       "extolled"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Because the organization often trumpeted itself as a forum for ____ discussion, visitors were startled by the frequently heated tone of its recent debates."
+      ],
+      "opts": [
+       "elevated",
+       "vigorous",
+       "temperate",
+       "strenuous",
+       "dispassionate",
+       "strident"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Many scholars studying leadership ____ cult of the celebrity that has been fostered both by the media and by politicians’ public relations staffs, arguing that it trivialized politics."
+      ],
+      "opts": [
+       "abet",
+       "decry",
+       "question",
+       "analyze",
+       "countenance",
+       "condemn"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

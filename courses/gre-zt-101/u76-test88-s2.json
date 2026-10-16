@@ -1,0 +1,200 @@
+{
+ "id": "u76-test88-s2",
+ "title": "Test 88 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 88, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 88 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Notwithstanding a lack of ____, nineteenth-century anthologies such as Evert and George Duyckinck’s Cyclopaedia of American Literature represents serious attempts to collect the national writings up to that point as a way of establishing the viability of American letters."
+      ],
+      "opts": [
+       "bias",
+       "earnestness",
+       "rigor",
+       "ambition",
+       "ambiguity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Despite the recent proliferation of gourmet and specialty salts, studies suggest that it would take an unusually (i)____ palate to (ii)____ foods prepared with different salts—most salts taste the same to most people."
+      ],
+      "cols": [
+       [
+        "broad",
+        "indiscriminate",
+        "sensitive"
+       ],
+       [
+        "distinguish",
+        "enjoy",
+        "modify"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "In the search for truth, the knowledge gained by scientists consists of approximations with varying degrees of certainty. Such (i)____ truth can be highly (ii)____, as the rapid and relatively steady progress of medical knowledge well exemplifies."
+      ],
+      "cols": [
+       [
+        "unambiguous",
+        "esoteric",
+        "provisional"
+       ],
+       [
+        "useful",
+        "equivocal",
+        "contentious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "The mind has a tendency to (i)____ abstractions, so that one might envision the ego existing somewhere physically in the brain, but Freud (ii)____ such a physical structure: rather, he (iii)____."
+      ],
+      "cols": [
+       [
+        "create",
+        "hypostatize",
+        "incorporate"
+       ],
+       [
+        "did not posit",
+        "did not preclude",
+        "did not abjure"
+       ],
+       [
+        "believed that it is illusory",
+        "theorized that it is autonomous",
+        "regard it as a process"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Throughout the trial the plaintiff has been ____, refusing to comply with orders with which she disagreed."
+      ],
+      "opts": [
+       "histrionic",
+       "refractory",
+       "meticulous",
+       "recalcitrant",
+       "idiosyncratic",
+       "conscientious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Psychologists have discovered that some of the most ____ advice on study habits is flat wrong, leading them to revise the guidelines they offer to students."
+      ],
+      "opts": [
+       "popular",
+       "hallowed",
+       "respected",
+       "unassailable",
+       "effective",
+       "beneficial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Despite a reputation, once richly deserved, for ____ in adopting new technologies, most big carmakers are pouring resources both into battery power and other alternative forms of propulsion, and into automated driving."
+      ],
+      "opts": [
+       "indolence",
+       "stoicism",
+       "sloth",
+       "patience",
+       "dispassion",
+       "misjudgment"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

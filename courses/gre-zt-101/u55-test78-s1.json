@@ -1,0 +1,196 @@
+{
+ "id": "u55-test78-s1",
+ "title": "Test 78 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 78, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 78 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Although most of the lakes have merged, salinity levels are not ____ throughout the lake systems: an upward-trending salinity gradient extends southeast from Pelican Lake to East Stump Lake, a distance of nearly 80 kilometers."
+      ],
+      "opts": [
+       "known",
+       "equable",
+       "rising",
+       "problematic",
+       "unprecedented"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Here was one of the main (i)____ of oceanography during the first two decades after the Second World War. Support for oceanographic research was based on its utility for making war on other nation. Yet at the same time, oceanography retained an identity that tied it closely to (ii)____."
+      ],
+      "cols": [
+       [
+        "fallacies",
+        "paradoxes",
+        "assumptions"
+       ],
+       [
+        "international cooperation",
+        "military secrecy",
+        "naval strategy"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "There is (i)____ evidence that the giant African land snail a. fulica is a serious threat to the spread of human disease. Giant snails do carry rat lungworm—infection by which is a common cause of meningitis—but so do many other snail species. Moreover, if the threat posed by a. fulica were (ii)____, one would expect to see an increase in disease rates (iii)____ a rise in the spread of snails. However, in places like New Caledonia, explosions in giant snail populations have coincided with a fall in the number of meningitis cases."
+      ],
+      "cols": [
+       [
+        "abundant",
+        "ambiguous",
+        "little"
+       ],
+       [
+        "contained",
+        "recognized",
+        "major"
+       ],
+       [
+        "corresponding to",
+        "predating",
+        "giving way to"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The decision to rely on mechanical biological treatment to process the two million tons of waste that the region produces annually was ____ to experts, who had long been aware that this approach had several shortcomings."
+      ],
+      "opts": [
+       "alarming",
+       "infuriating",
+       "perplexing",
+       "humiliating",
+       "baffling",
+       "surprising"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Although some literary scholars may express disdain for words meant for popular audiences, only the most ____ proponent of so-called great literature could dismiss the works in a recent anthology of African science fiction as formulaic pulp."
+      ],
+      "opts": [
+       "radical",
+       "pedantic",
+       "oblivious",
+       "hidebound",
+       "illiberal",
+       "charitable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Biologists agree that snakes descended from lizards, but exactly where this first happened has been a matter of debate since the 1800s, when two ____ theories emerged."
+      ],
+      "opts": [
+       "complex",
+       "competing",
+       "dubious",
+       "conclusive",
+       "contending",
+       "irrefutable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The early stages of being trained to ride a motorcycle are all about developing muscle memory, repeating combinations of hand-foot movements until they are ____ and precise."
+      ],
+      "opts": [
+       "aberrant",
+       "innate",
+       "reflexive",
+       "inborn",
+       "automatic",
+       "calculated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

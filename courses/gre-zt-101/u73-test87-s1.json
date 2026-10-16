@@ -1,0 +1,196 @@
+{
+ "id": "u73-test87-s1",
+ "title": "Test 87 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 87, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 87 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Because of its ____, DNA can be invaluable as exculpatory evidence following a criminal conviction: it can be reliably tested years after a crime has occurred."
+      ],
+      "opts": [
+       "versatility",
+       "recognizability",
+       "durability",
+       "verifiability",
+       "distinctiveness"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Many civic institutions tend to (i)____, when they do not actively discourage, the better natures of the citizenry. People are individually altruistic social animals who nonetheless teach themselves to be (ii)____ in the public sphere."
+      ],
+      "cols": [
+       [
+        "expose",
+        "ignore",
+        "presuppose"
+       ],
+       [
+        "selfish",
+        "critical",
+        "adamant"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "Computers’ triumph in chess had been engineered not by creating machines that (i)____ human thought, as most experts in artificial intelligence had expected, but by perfecting machines that played like machines. The analogy with flight is (ii)____: as long as people tried to fly by imitating birds, attaching wings to their arms and flapping madly, they were (iii)____ to fail. Once engineering escaped the paradigm of the familiar, however, people were soon flying much faster than birds."
+      ],
+      "cols": [
+       [
+        "aped",
+        "shelved",
+        "subverted"
+       ],
+       [
+        "disingenuous",
+        "instructive",
+        "narrow"
+       ],
+       [
+        "expected",
+        "likely",
+        "doomed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The scholar defended W.E.B. Du Bois from the charge of being ____ by pointing out that whenever Du Bois changed his views, he acknowledged it, explained his reasons for doing so, and moved on."
+      ],
+      "opts": [
+       "inconsistent",
+       "insensitive",
+       "erratic",
+       "unsympathetic",
+       "pugnacious",
+       "irresponsible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Sea turtle’s grazing on sea grass is less ____ near Bermuda than elsewhere: Bermuda protects sea turtles as an endangered species but does not protect their predators, tiger sharks."
+      ],
+      "opts": [
+       "consistent",
+       "pervasive",
+       "inhibited",
+       "destructive",
+       "damaging",
+       "constrained"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Comparing seawater to ice in asteroids to determine the origin of Earth's water is ____: the bulk of Earth's water, hidden deep underground, differs in composition from seawater."
+      ],
+      "opts": [
+       "instructive",
+       "inapposite",
+       "unnecessary",
+       "premature",
+       "misguided",
+       "challenging"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Jane Austen belonged to the social class about which she mainly wrote, and although her novels offer abundant satire, one never has the sense that she viewed the basic elements of this social sphere as ____."
+      ],
+      "opts": [
+       "laudable",
+       "unfathomable",
+       "ignoble",
+       "reprehensible",
+       "inviolable",
+       "praiseworthy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

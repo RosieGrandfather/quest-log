@@ -1,0 +1,200 @@
+{
+ "id": "u14-test57-s2",
+ "title": "Test 57 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 57, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 57 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "One thing both authors have in common is a striking amount of ____: they claim to know how massive institutions, some of them richly endowed, all of them central to American society and culture, should be reshaped."
+      ],
+      "opts": [
+       "hubris",
+       "propriety",
+       "bias",
+       "prescience",
+       "indolence"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The company president’s reputation for unflappability could easily be understood upon observing her (i)____ performance during a particularly (ii)____ board meeting."
+      ],
+      "cols": [
+       [
+        "supercilious",
+        "histrionic",
+        "composed"
+       ],
+       [
+        "productive",
+        "contentious",
+        "lifeless"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "In the 1980s, many historians sounded urgent calls for (i)____ in American historical writing, as longer and longer monographs on smaller subjects were being written—dazzling studies, but pieces of a puzzle no one was putting together. This scholarship was not illuminating the central themes of history but (ii)____."
+      ],
+      "cols": [
+       [
+        "indulgence",
+        "detail",
+        "synthesis"
+       ],
+       [
+        "obscuring",
+        "criticizing",
+        "celebrating"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "Observers of modern presidential campaigns who (i)____ the highly (ii)____ productions that pass for campaigns these days do sometimes find reason for hope in the occasional mix-ups that (iii)____ candidates on the trail despite the presence of political strategist’s plotting every event with the tactical precision of military commanders."
+      ],
+      "cols": [
+       [
+        "relish",
+        "misinterpret",
+        "despair over"
+       ],
+       [
+        "ambitious",
+        "chaotic",
+        "choreographed"
+       ],
+       [
+        "rattle",
+        "bolster",
+        "legitimate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Lustig’s critics argue that what makes him a compelling public speaker is his practice of citing evidence that is merely suggestive in support of a claim and insisting that this evidence is ____."
+      ],
+      "opts": [
+       "invaluable",
+       "irrelevant",
+       "indubitable",
+       "immaterial",
+       "insignificant",
+       "incontrovertible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "The series of documentaries certainly does not promote the country’s recent diplomatic initiatives; in fact, some of the films appear to be ____ those initiatives."
+      ],
+      "opts": [
+       "commendations of",
+       "reparations of",
+       "tributes to",
+       "rationalizations of",
+       "denunciations of",
+       "indictments of"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "If Wilson’s article style changed overtime, it was in the wrong retrograde direction, ____ experimentation and inclining toward works that seemed hobbled by a fear of risk."
+      ],
+      "opts": [
+       "belaboring",
+       "shunning",
+       "eschewing",
+       "overemphasizing",
+       "misconstruing",
+       "mocking"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

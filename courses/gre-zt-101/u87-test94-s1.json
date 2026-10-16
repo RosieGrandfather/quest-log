@@ -1,0 +1,196 @@
+{
+ "id": "u87-test94-s1",
+ "title": "Test 94 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 94, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 94 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The simultaneous ascension in the postwar United States of both the bulldozer and children’s “bulldozer books” was far from ____; it reflected parallels between the landscapes of fact and feeling in a country undergoing massive physical upheaval."
+      ],
+      "opts": [
+       "coincidental",
+       "calculated",
+       "discouraging",
+       "significant",
+       "disruptive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Far from being (i)____ the corporate world because of cutbacks, serious scientific researchers are playing a growing role in innovation in certain firms. The explanation for this apparent paradox is that innovative companies are not looking for full-time scientists; they want moonlighting academics, professors (ii)____ to work temporary projects."
+      ],
+      "cols": [
+       [
+        "banished from",
+        "relegated to",
+        "reinstated in"
+       ],
+       [
+        "disinclined",
+        "unauthorized",
+        "disposed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "With so many scientific papers chasing so few pages in the most prestigious journals, the winners could be the ones most likely to oversell themselves—to trumpet amazing or important results that later turn out to be false. This would produce a (i)____ picture of scientific knowledge, with less (ii)____ but more (iii)____ results either relegated to obscure journals or left unpublished."
+      ],
+      "cols": [
+       [
+        "comprehensive",
+        "bewildering",
+        "distorted"
+       ],
+       [
+        "dramatic",
+        "threatening",
+        "arbitrary"
+       ],
+       [
+        "controversial",
+        "obvious",
+        "accurate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The teacher was known for being stern with ____ students, but kind to any member of the class who seemed the least bit tractable."
+      ],
+      "opts": [
+       "complaisant",
+       "supercilious",
+       "recalcitrant",
+       "pliable",
+       "incorrigible",
+       "mendacious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Piersma and Gill suggest that bar-tailed godwits—long-billed shorebirds of the Eurasian and Alaskan tundra—rank among the most ____ of the long-range fliers, traveling 11,000 kilometers nonstop across the Pacific."
+      ],
+      "opts": [
+       "unpredictable",
+       "versatile",
+       "erratic",
+       "unflagging",
+       "renowned",
+       "indefatigable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "While prudence is recognized as a kind of virtue, there is nonetheless a tendency to view someone who is prudent as, in some sense, ____, too narrow and dull to partake of spontaneously arising opportunities."
+      ],
+      "opts": [
+       "timid",
+       "laudable",
+       "wanting",
+       "inculpable",
+       "exemplary",
+       "deficient"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The society of the ancient Moche of northern Peru was ____ one : it was ruled by local lords who were overseen by an elite composed of administrative and religious authorities."
+      ],
+      "opts": [
+       "an enduring",
+       "an inflexible",
+       "an abiding",
+       "a stratified",
+       "a cohesive",
+       "a hierarchical"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

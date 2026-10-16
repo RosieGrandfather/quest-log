@@ -1,0 +1,196 @@
+{
+ "id": "u25-test63-s1",
+ "title": "Test 63 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 63, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 63 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Although Emily Bronte is impassioned about gender equality, she is anything but ____ to endorse more privileges endowed to women."
+      ],
+      "opts": [
+       "zealous",
+       "apathetic",
+       "abhorrent",
+       "stubborn",
+       "lethargic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Earlier discussions with neighboring countries (i)____ due to the government’s failure to alter policies that those countries find objectionable. Moreover, there is every reason to (ii)____ the success of further talks, since the government if anything different, more intransigent."
+      ],
+      "cols": [
+       [
+        "commenced",
+        "advanced",
+        "foundered"
+       ],
+       [
+        "doubt",
+        "undermine",
+        "anticipate"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "Anthony Kenny states that although his A New History of Western Philosophy is intended for undergraduates, he aimed to write it in a lighthearted manner that will give (i)____ to those who read the history “not for curricular purposes but for their own enjoyment”. His book is certainly enlightening, and although the bibliography includes technical works liable to (ii)____ the newcomer, the work is written at a level that generally (iii)____ between elementary and advanced."
+      ],
+      "cols": [
+       [
+        "solace",
+        "pleasure",
+        "offense"
+       ],
+       [
+        "baffle",
+        "initiate",
+        "suit"
+       ],
+       [
+        "strikes a good balance",
+        "makes fine distinctions",
+        "rejects the difference"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Precipitation is not ____ in the Atacama Desert west of Andes mountains, and water scarcity is compounded by problems with water appropriation, the existence of agro pastoralists is in jeopardy."
+      ],
+      "opts": [
+       "regular",
+       "negligible",
+       "evident",
+       "consistent",
+       "insignificant",
+       "abundant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "What differentiates this book from more traditional works on grammar is that it reserves its ____ not for students of writing, bur for teachers who harbor unduly restrictive views."
+      ],
+      "opts": [
+       "mockery",
+       "skepticism",
+       "scolding",
+       "approbation",
+       "admonishment",
+       "commendation"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Like ants’ propensity to congregate on one food pile and neglect another, the human tendency to make choices that ____ the observed behavior of others is a self-reinforcing process."
+      ],
+      "opts": [
+       "imitate",
+       "confirm",
+       "avoid",
+       "emulate",
+       "inhibit",
+       "constrain"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The difficulty of reforming electoral politics is not lack of right tools but the need to put them into the hands of impartial agents: the goal should be to build capacity while ____ partisanship."
+      ],
+      "opts": [
+       "expediting",
+       "constraining",
+       "facilitating",
+       "deterring",
+       "exacerbating",
+       "lamenting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

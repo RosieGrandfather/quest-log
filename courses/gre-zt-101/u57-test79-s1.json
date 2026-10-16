@@ -1,0 +1,196 @@
+{
+ "id": "u57-test79-s1",
+ "title": "Test 79 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 79, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 79 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The assumption that children learn about science primarily in the classroom is so ____ that few scientists, educators or policymakers question it, despite an ever-growing body of evidence demonstrating that most science is learnt outside of school."
+      ],
+      "opts": [
+       "tenuous",
+       "subtle",
+       "irrefutable",
+       "pervasive",
+       "misconstrued"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Psychologists note that in making purchase decisions, consumers often unconsciously use mental shortcuts, such as familiarity with a brand name to (i)____ routine problems efficiently. Thus, part of what companies aim for developing a brand is very specifically to (ii)____ consumers’ conscious thought."
+      ],
+      "cols": [
+       [
+        "identify",
+        "resolve",
+        "postpone"
+       ],
+       [
+        "amplify",
+        "ascertain",
+        "circumvent"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "This book cannot be evaluated properly without examining the author’s choice of format, which is the (i)____ of the format of standard academic works; here the photographs take center stage, with the text playing only a supporting role. This layout poses many dangers for the serious historian, not the least of which being the (ii)____ reception that academics—motivated partly by (iii)____ but also by genuine concern over scholarly standards—generally reserve for books apparently aimed at the popular market."
+      ],
+      "cols": [
+       [
+        "duplicate",
+        "epitome",
+        "inverse"
+       ],
+       [
+        "scornful",
+        "deferential",
+        "good-natured"
+       ],
+       [
+        "academic integrity",
+        "snobbish elitism",
+        "collegial sympathy"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The adipose tissue in which our bodies store fat from the food we eat has traditionally been thought of as ____, but in reality this tissue constitutes a dynamic organ, not a mere repository."
+      ],
+      "opts": [
+       "capacious",
+       "deleterious",
+       "inert",
+       "detrimental",
+       "passive",
+       "Inessential"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The sound of disembodied human breathing in Miyazaki's films is at once a presence, close to the listener's ear, and a ghostly absence due to its lack of a visual ____."
+      ],
+      "opts": [
+       "image",
+       "counterpart",
+       "urgency",
+       "correlative",
+       "cue",
+       "background"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The problem a generation ago was not the new art itself but the heightened intensity of conviction surrounding it, which is thankfully absent in our wonderfully ____ times."
+      ],
+      "opts": [
+       "fervid",
+       "impassioned",
+       "undogmatic",
+       "receptive",
+       "nostalgic",
+       "optimistic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "He found his new acquaintance to be ____: trying to understand her personality was like peering into an unknown dimension."
+      ],
+      "opts": [
+       "vacuous",
+       "unflappable",
+       "unfathomable",
+       "obdurate",
+       "inscrutable",
+       "imperturbable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

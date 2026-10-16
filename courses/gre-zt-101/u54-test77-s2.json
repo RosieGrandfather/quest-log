@@ -1,0 +1,200 @@
+{
+ "id": "u54-test77-s2",
+ "title": "Test 77 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 77, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 77 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Because of the newspaper’s ____ joint bylines, lots of reporters were compelled to do anonymous work on stories credited to other people."
+      ],
+      "opts": [
+       "toleration of",
+       "aversion to",
+       "instigation of",
+       "endorsement of",
+       "leniency toward"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Though she had some exposure to great art and high culture, it must be said the ultra athletic Marion Carstairs remained throughout her life primarily (i)____ mental and artistic pursuits. She was by nature (ii)____."
+      ],
+      "cols": [
+       [
+        "a product of",
+        "indifferent to",
+        "obsessed with"
+       ],
+       [
+        "neither bookish nor cerebral",
+        "a model of delicacy and refinement",
+        "both didactic and argumentative"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "At the heart of present-day studies computational authorship attribution lies the hypothesis that each author has so personal a writing style that it can function as stylistic DNA. Any given author style, in other words, is regarded as (i)____ and (ii)____ every other authors writing style."
+      ],
+      "cols": [
+       [
+        "stable",
+        "generative",
+        "unintentional"
+       ],
+       [
+        "distinguishable from",
+        "related to",
+        "influenced by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The amount of water flowing through United States streams has (i)____ during this century, although without giving rise to more frequent floods, according to a new study by the United States Geological Survey. The country appears to be getting (ii)____ even as its stream flow becomes less (iii)____."
+      ],
+      "cols": [
+       [
+        "markedly declined",
+        "steadily increased",
+        "slowly stabilized"
+       ],
+       [
+        "wetter",
+        "hotter",
+        "drier"
+       ],
+       [
+        "benign",
+        "predictable",
+        "destructive"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "In owls with a facial disk, the ears are hidden behind it and are ____ placed: having one higher than the other allows the birds to locate prey both horizontally and vertically for more accurate detection."
+      ],
+      "opts": [
+       "advantageously",
+       "asymmetrically",
+       "unevenly",
+       "unobtrusively",
+       "discreetly",
+       "precisely"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Family photos of the author suggest that she was ____ child: she seemed to wear a permanent frown."
+      ],
+      "opts": [
+       "a sullen",
+       "an amiable",
+       "a surly",
+       "a beautiful",
+       "a prudent",
+       "a stunning"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Restoring the old practice of producing fish in rice fields does not just make environmental and economic sense; it has the added advantage that it ____ benefits the very poor."
+      ],
+      "opts": [
+       "abnormally",
+       "predominantly",
+       "eminently",
+       "moderately",
+       "particularly",
+       "unnaturally"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

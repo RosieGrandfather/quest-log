@@ -1,0 +1,194 @@
+{
+ "id": "u90-test95-s2",
+ "title": "Test 95 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 95, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 95 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The notion that the director is the center of the team has been ____, but in fact it has not been accepted by academia."
+      ],
+      "opts": [
+       "rejected",
+       "proven",
+       "abnegated",
+       "enduring",
+       "presented"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The paradoxical characteristic of the reliable employee Donna is her ____, as we consider her usual feigning illness to escape from her labor."
+      ],
+      "opts": [
+       "halcyon",
+       "charlatan",
+       "malingering",
+       "retribution",
+       "earnestness"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Researchers in University of Maryland discover that many people subconsciously think that in assessment of others competence and warmth are (i)____: when they feel someone is highly capable, they will assert that he or she must have a tendency to be (ii)____."
+      ],
+      "cols": [
+       [
+        "clearly interconnected",
+        "inversely related",
+        "physically paralyzed"
+       ],
+       [
+        "passive",
+        "ephemeral",
+        "unfeeling"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "Some chemists argue that although molecular motors are (i)____, they are (ii)____ by themselves; nevertheless, the chemical principles behind them might be (iii)____: using the same light-activated mechanism that drives certain molecular motors, researchers have developed around 100 drug-like compound that can be switched on or off in response to light."
+      ],
+      "cols": [
+       [
+        "intricate",
+        "untested",
+        "appealing"
+       ],
+       [
+        "promising",
+        "straightforward",
+        "useless"
+       ],
+       [
+        "well established",
+        "highly valuable",
+        "imperfectly understood"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "In The Balance Within, Sternberg ____ hyperbole, opting for an admirable simplicity and clarity while introducing neuroimmunology as a potential foundation of psychosomatic medicine."
+      ],
+      "opts": [
+       "evokes",
+       "transcends",
+       "elicits",
+       "condemns",
+       "eschews",
+       "avoids"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Williams argues that philosophy has become ____ occupation these days, and that it should rather be “part of a more general attempt to make the best sense of our life.”"
+      ],
+      "opts": [
+       "a recondite",
+       "a challenging",
+       "an esoteric",
+       "an exacting",
+       "a salacious",
+       "an altruistic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "As modern organizations amass more and more digital information, they need guidance on how to deal with the information surplus in a way that is more ____ than simply increasing their storage capacity."
+      ],
+      "opts": [
+       "sustainable",
+       "onerous",
+       "judicious",
+       "discriminating",
+       "parsimonious",
+       "prohibitive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,194 @@
+{
+ "id": "u64-test82-s2",
+ "title": "Test 82 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 82, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 82 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The tenor of Me, as indicated by the title, tends to be ____, sometimes insufferably so."
+      ],
+      "opts": [
+       "self-effacing",
+       "panegyric",
+       "vainglorious",
+       "discursive",
+       "overmodest"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The main thrust of her argument was that wage difference, far from being ____, do in fact reflect education, skills, experience, and other factors that make employees more productive."
+      ],
+      "opts": [
+       "rational",
+       "divergent",
+       "arbitrary",
+       "discernible",
+       "attributable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Goodin notes that people have (i)____ cognitive capacities and that they therefore must consider some factors as (ii)____ so as to be able to make decisions about other things."
+      ],
+      "cols": [
+       [
+        "limited",
+        "adaptable",
+        "overlooked"
+       ],
+       [
+        "essential",
+        "variable",
+        "given"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "(i)____, we can safely infer causality by appealing to a set of general principles (Newtonian mechanics, for example) that are well understood and have been shown to apply in comparably straightforward circumstances. However, for the opposing class, which consists of (ii)____ systems like the global economy, human physiology, or the human mind itself, explanations of singular events are usually (iii)____, absent the requisite accounting for the intricate dynamics of such systems."
+      ],
+      "cols": [
+       [
+        "In unknown settings",
+        "For complicated events",
+        "In simple situations"
+       ],
+       [
+        "complex",
+        "homogeneous",
+        "equivalent"
+       ],
+       [
+        "consistent",
+        "unjustified",
+        "unequivocal"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "While the coauthors of the new guide to the American artistic experience have received accolades for their wide-ranging work, they do not ____ that the publication is exhaustive in content."
+      ],
+      "opts": [
+       "hope",
+       "care",
+       "assert",
+       "insist",
+       "doubt",
+       "question"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Journal editors note that the peer review process has difficulty detecting ____ : deliberate misinformation, if it is clever enough, might sail right through no matter how scrupulous the reviews."
+      ],
+      "opts": [
+       "bias",
+       "inconsistency",
+       "fraud",
+       "negligence",
+       "duplicity",
+       "carelessness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Coral reefs are often referred to as the rain forests of the sea, ____ comparison given that only tropical rain forests can compete with the sheer concentration of biodiversity found in coral reefs."
+      ],
+      "opts": [
+       "a factitious",
+       "an imaginative",
+       "a fitting",
+       "an artificial",
+       "an apposite",
+       "a creative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

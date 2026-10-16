@@ -1,0 +1,196 @@
+{
+ "id": "u23-test62-s1",
+ "title": "Test 62 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 62, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 62 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "She demonstrates a great extent of ____, as she has traveled to many more countries and places around the world than any of her kindred."
+      ],
+      "opts": [
+       "perfidiousness",
+       "peregrination",
+       "jubilation",
+       "sagaciousness",
+       "conspicuousness"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The laser has been widely utilized in many industries such as the packaging industry, CD player manufacturing, and all sorts of commonplace articles; however, the (i)____ of the laser doesn’t mean the laser can only be used in (ii)____ ways."
+      ],
+      "cols": [
+       [
+        "rare extermination",
+        "sporadic usage",
+        "everyday presence"
+       ],
+       [
+        "assorted",
+        "pedestrian",
+        "pointless"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "For many years Cole experienced (i)____ his professional circle. He was a (ii)____ figure in the Middle East Studies Association of North America, editing for five years its flagship publication, and in 2004 he was even elected the association’s incoming president. But because his research focused on highly (iii)____ aspects of the eighteenth-and-nineteenth century Middle East, he was unlikely to achieve any sort of public acclaim."
+      ],
+      "cols": [
+       [
+        "obscurity within",
+        "estrangement from",
+        "anonymity outside"
+       ],
+       [
+        "leading",
+        "provocative",
+        "traditional"
+       ],
+       [
+        "relevant",
+        "esoteric",
+        "disputed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Established scientists recognize that peer review of manuscripts submitted to scientific journals is critical to science, but this recognition ____ a certain ambivalence in them, since reviewing takes time away from their research."
+      ],
+      "opts": [
+       "obviates",
+       "mitigates",
+       "engenders",
+       "tempers",
+       "induces",
+       "exacerbates"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Despite ____ leaving their old jobs behind, workers were eager to move because there were to be no layoffs under the union contract at the new location."
+      ],
+      "opts": [
+       "jubilation over",
+       "indifference to",
+       "misgivings about",
+       "outrage over",
+       "trepidation over",
+       "enthusiasm for"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "After the Turkish Republic was established, traditional hamams (bathhouses) seemed to many Turks to be outmoded, but thanks to tourism, hamams have experienced a ____, becoming important cultural sites for foreign and Turkish visitors alike."
+      ],
+      "opts": [
+       "proliferation",
+       "retrenchment",
+       "transformation",
+       "revival",
+       "slump",
+       "renaissance"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "In spite of her fascination with chance, coincidence, and contingency, Stanning’s novels are ____ constructed, written from the head rather than the heart."
+      ],
+      "opts": [
+       "hastily",
+       "extravagantly",
+       "painstakingly",
+       "meticulously",
+       "evocatively",
+       "impulsively"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

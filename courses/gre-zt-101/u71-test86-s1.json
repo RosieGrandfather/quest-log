@@ -1,0 +1,196 @@
+{
+ "id": "u71-test86-s1",
+ "title": "Test 86 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 86, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 86 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Wood is an environmentally friendly building material because it ____ carbon dioxide, absorbing it during growth and retaining it even after it has been turned into lumber."
+      ],
+      "opts": [
+       "disperses",
+       "eradicates",
+       "sequesters",
+       "respires",
+       "regulates"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Early in the development of ice age theories, physicists identified the processing( slow gyration) and wobbling of Earth’s spin axis as the likely drivers of the ice ages, but geologists (i)____, and even the painstaking work done in the 1920s and 1930s by Mihution Mplankovitch failed to (ii)____ of many of the day’s geological experts."
+      ],
+      "cols": [
+       [
+        "demurred",
+        "acquiesced",
+        "expatriate"
+       ],
+       [
+        "anticipate the ascent",
+        "assuage the qualms",
+        "acknowledge the consensus"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "The fall of the monarchical order produced a score of fragile successor states in Europe that (i)____ ethnic discontent and revanchism. This (ii)____, when fused with those states’ inherent feebleness, make for power voids and political (iii)____."
+      ],
+      "cols": [
+       [
+        "kept down",
+        "overshadowed",
+        "simmered with"
+       ],
+       [
+        "cosmopolitanism",
+        "hierarchy",
+        "volatility"
+       ],
+       [
+        "cures",
+        "fluidities",
+        "redundancies"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Monarch butterflies sequester toxins in their skin to discourage predators, but black-backed orioles (Icterus abeillei) ____ the defense: they consume only the soft insides of the butterfly."
+      ],
+      "opts": [
+       "anticipate",
+       "disable",
+       "ignore",
+       "skirt",
+       "circumvent",
+       "disregard"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Though it lacked ____ demeanor, Guatemala City was nonetheless a compelling place to be in 1954."
+      ],
+      "opts": [
+       "an engaging",
+       "a winning",
+       "a sophisticated",
+       "a detached",
+       "a workaday",
+       "a quotidian"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "By eating tiny organisms and incorporating their prey’s nutrients into their own bodies, large insects become “nutrient packages” for larger insectivores for whom the pursuit of tiny organisms would be ____."
+      ],
+      "opts": [
+       "unwieldy",
+       "insalubrious",
+       "unremunerative",
+       "unnecessary",
+       "inopportune",
+       "unprofitable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Researchers comparing test subjects’ abilities to interpret others’ facial expressions found that while some expressions were easy to interpret, others were difficult because they were so ____ the person making the expression."
+      ],
+      "opts": [
+       "habitual for",
+       "customary for",
+       "peculiar to",
+       "idiosyncratic to",
+       "opaque to",
+       "inoffensive to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

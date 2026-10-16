@@ -1,0 +1,200 @@
+{
+ "id": "u02-test51-s2",
+ "title": "Test 51 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 51, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 51 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The presidents’ cordial greeting may seem to be a small gesture of friendliness, but it is not without ____ in the heretofore stifled atmosphere of the society’s meetings."
+      ],
+      "opts": [
+       "significance",
+       "impertinence",
+       "nostalgia",
+       "precedent",
+       "triviality"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Because reading on the Web entails quickly scanning and sorting through a deluge of information, many wonder if our level of engagement with the text (i)____ or if the ability to read closely and carefully is one that can be (ii)____ if we simply spend more time immersed in a book."
+      ],
+      "cols": [
+       [
+        "irreparably compromised",
+        "tentatively disrupted",
+        "permanently restored"
+       ],
+       [
+        "fully reactivated",
+        "further degraded",
+        "summarily disregarded"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "From time to time, all scientific disciplines encounter observations that do not fit the theories of the day. At first such observations tend to be treated as (i)____, but those scientists (ii)____ them sometimes discover that they have to abandon established principles in order to account for the new findings."
+      ],
+      "cols": [
+       [
+        "anomalies",
+        "discoveries",
+        "harbinger"
+       ],
+       [
+        "averse to scrutinizing",
+        "willing to investigate",
+        "unable to acknowledge"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDH",
+     "txt": {
+      "stem": [
+       "The perennial problem for critics of nineteenth-century novelist Charlotte Yonge is the relationship of her realism to her (i)____. While admiring her complex psychological portraits and detailed descriptions of quotidian family life, readers since her own time have tended to fault her improbable manipulation of plot to teach a moral lesson. Indeed, many critics (ii)____ her because of her willingness to (iii)____."
+      ],
+      "cols": [
+       [
+        "pessimism",
+        "didacticism",
+        "eclecticism"
+       ],
+       [
+        "dismiss",
+        "applaud",
+        "underestimate"
+       ],
+       [
+        "squander suspense",
+        "sacrifice credibility",
+        "deflate pretension"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "A priori mathematics, according to Galileo, does not ____ the need for observation, but mathematics does allow us to deduce unobservable properties and thus to penetrate further into the structure of nature than observation does."
+      ],
+      "opts": [
+       "address",
+       "acknowledge",
+       "obviate",
+       "diminish",
+       "displace",
+       "appreciate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "One of the peculiarities of humans is that we irrationally gravitate to the predictable and avoid risk, whatever the reasons for this ____, it is hardly a sound basis for dealing with complex, long- term problems."
+      ],
+      "opts": [
+       "eccentricity",
+       "predilection",
+       "vacillation",
+       "proclivity",
+       "wavering",
+       "cowardice"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "An abundance of nutrient-rich pollution in estuaries causes algae to ____, much as houseplants grow better when their soil contains added fertilizer."
+      ],
+      "opts": [
+       "abound",
+       "proliferate",
+       "stagnate",
+       "coalesce",
+       "collect",
+       "diversify"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

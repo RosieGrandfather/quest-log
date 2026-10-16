@@ -1,0 +1,196 @@
+{
+ "id": "u61-test81-s1",
+ "title": "Test 81 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 81, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 81 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The evidence depicts an ____ system of tree inspections and care, one in which the crucial job of spotting dangers is left to untrained workers, and essential repairs and pruning are delayed to save money."
+      ],
+      "opts": [
+       "overeager",
+       "ineffective",
+       "uneconomical",
+       "unflagging",
+       "intuitive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Even though company’s CEO professes to be (i)____ and urges the deal forward, its investors are unlikely to be so (ii)____ about its prospect. Many were uncomfortable at the way the corporation was forced to spend much of last year expansion, and this new venture is potentially even more risky."
+      ],
+      "cols": [
+       [
+        "apprehensive",
+        "apathetic",
+        "confident"
+       ],
+       [
+        "indifferent",
+        "sanguine",
+        "anxious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Transportation maps of Alaska are (i)____ in large part by what they (ii)____: lines identifying roads and railroads. With a single track bisecting the state and a handful of spokes to the east and south, Alaska is notable for its (iii)____ of transportation options."
+      ],
+      "cols": [
+       [
+        "demarcated",
+        "characterized",
+        "elucidated"
+       ],
+       [
+        "lack",
+        "obscure",
+        "evince"
+       ],
+       [
+        "panoply",
+        "scope",
+        "dearth"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Aboriginal people of Victoria Australia neither rejected Western material culture nor demonstrated an obsession with it in fact, Western artifacts such as pipes and handkerchiefs were appreciated for their symbolic rather than their ____ value."
+      ],
+      "opts": [
+       "utilitarian",
+       "intrinsic",
+       "communicative",
+       "aesthetic",
+       "pragmatic",
+       "theoretical"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Despite dogs’ talent for detecting those high-pitched whistles that are inaudible to us, dogs’ ability to locate sounds is ____ compared with ours."
+      ],
+      "opts": [
+       "imprecise",
+       "innate",
+       "impractical",
+       "inherent",
+       "inexact",
+       "impaired"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Because they were traditionally ____, Jam monks in sixteenth-century India particularly valued special dispensations from the royal court granting them freedom of movement."
+      ],
+      "opts": [
+       "erudite",
+       "ascetic",
+       "apolitical",
+       "peripatetic",
+       "solitary",
+       "itinerant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The coagulated latex of the gutta-percha tree, which grows wild in Sumatra Kalimantan and May, can be formed into a natural plastic that, although inelastic under ordinary conditions becomes ____ when placed in hot water."
+      ],
+      "opts": [
+       "smooth",
+       "pliable",
+       "permeable",
+       "malleable",
+       "pervious",
+       "buoyant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u83-test92-s1",
+ "title": "Test 92 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 92, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 92 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The notion that prehistoric farming of Micronesia’s Mariana Islands degraded the soils upon which savannas now occur is ____ by soil scientists, who attribute nutrient-poor savanna soils instead to long geological periods of tropical weathering."
+      ],
+      "opts": [
+       "bolstered",
+       "proposed",
+       "contradicted",
+       "elucidated",
+       "revived"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The reason geological activity on Mars is so (i)____ while on Earth it remains (ii)____ is that Earth’s diameter is about twice the size of Mars. Because Mars is smaller than Earth, it cooled faster, and therefore it lost the interrial heat that drives tectonic activity."
+      ],
+      "cols": [
+       [
+        "localized",
+        "moribund",
+        "violent"
+       ],
+       [
+        "vital",
+        "unnoticed",
+        "predictable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "The (i)____ of community ecology and population ecology is (ii)____ insofar as the two subdisciplines partly address issues at different hierarchical levels and different spatial and temporal scales. But it is harmful insofar as it (iii)____ the fields’ mutual enrichment."
+      ],
+      "cols": [
+       [
+        "expansion",
+        "divergence",
+        "maturation"
+       ],
+       [
+        "anomalous",
+        "timely",
+        "understandable"
+       ],
+       [
+        "hampers",
+        "protracts",
+        "overstates"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Machiavelli's painful account of the Pazzi political conspiracy and the recriminations that followed seems to have been penned with ____ intent: to dampen naive enthusiasm for such adventures by warning of their dangers."
+      ],
+      "opts": [
+       "an equivocal",
+       "an ulterior",
+       "a prophylactic",
+       "a pragmatic",
+       "an inhibitory",
+       "a duplicitous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Just as the short strings of a violin cannot produce the deep, long-wavelength notes of a double bass, so photons—which are vibrations not of strings but of electromagnetic fields—are ____ by the physical characteristics of objects that conduct electricity."
+      ],
+      "opts": [
+       "conveyed",
+       "bound",
+       "amplified",
+       "thwarted",
+       "transmitted",
+       "circumscribed"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Most farmers alternate corn and soybean crops in their fields rather than periodically leaving fields unplanted, as was once customary, but such ____ cropping can deplete the organic content of the soil."
+      ],
+      "opts": [
+       "strenuous",
+       "consistent",
+       "continuous",
+       "unremitting",
+       "haphazard",
+       "slipshod"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Kelly Cherry’s fiction speaks to various postmodern debates regarding history and perception, but does not become so abstract that the reader feels the narrative has been ____ an intellectual agenda."
+      ],
+      "opts": [
+       "dependent on",
+       "ceded to",
+       "surrendered to",
+       "facilitated by",
+       "hampered by",
+       "expedited by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

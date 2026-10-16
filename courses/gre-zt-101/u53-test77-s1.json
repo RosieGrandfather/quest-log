@@ -1,0 +1,196 @@
+{
+ "id": "u53-test77-s1",
+ "title": "Test 77 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 77, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 77 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "By cosmic standards, Earth and its fellow terrestrial planets are chemical ____: they consist of primarily four elements (iron, magnesium, silicon, and oxygen) that are rare elsewhere in the universe."
+      ],
+      "opts": [
+       "prototypes",
+       "mavericks",
+       "malefactors",
+       "paragons",
+       "old-timers"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The shift from extraction to cultivation in forestry involves transforming the production of trees into a source of industrial productivity, leading to a greater degree of (i)____ between biophysical nature on the one hand and industry on the other. In the process, nature is increasingly (ii)____ industry and science."
+      ],
+      "cols": [
+       [
+        "separation",
+        "antagonism",
+        "entanglement"
+       ],
+       [
+        "excluded from",
+        "appropriated by",
+        "superfluous to"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "Since the 1920s, historical fiction writers in China have emancipated the genre from the traditional notion that (i)____ was the ultimate goal of history writing. Yet the traditional commitment to (ii)____ was not simply (iii)____: this new genre was expected to capture the essence of historical truth even as it allowed space for the writer’s imagination."
+      ],
+      "cols": [
+       [
+        "comprehensiveness",
+        "factuality",
+        "entertainment"
+       ],
+       [
+        "veracity",
+        "thoroughness",
+        "pleasure"
+       ],
+       [
+        "jettisoned",
+        "rationalized",
+        "acknowledged"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The developmental track for human beings-from rudimentary awareness to complex forms of rational agency-is quite ____ development proceeds with even minimally good physical and psychological health in any minimally favorable environment."
+      ],
+      "opts": [
+       "sophisticated",
+       "contingent",
+       "robust",
+       "situational",
+       "elusive",
+       "reliable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Despite the implications of their noble status, many aristocrats were virtually penniless and lived in a state of ____."
+      ],
+      "opts": [
+       "indigence",
+       "opulence",
+       "eminence",
+       "penury",
+       "depravity",
+       "complacency"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "The 1966 Mexican art exhibition \"Confrontation 66\" seemed to define the Mexican art world as one in which political alignment was ____, yet painter Joy Laville rose to prominence with paintings devoid of contentiousness."
+      ],
+      "opts": [
+       "inconsequential",
+       "ineluctable",
+       "requisite",
+       "perilous",
+       "pointless",
+       "obsolete"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Although both salinization and alkalinization impact water quality, they have generally been treated as ____ phenomena; however, new research proves that the processes, which impact most of the drainage area of the United States, are in fact closely linked."
+      ],
+      "opts": [
+       "unrelated",
+       "insignificant",
+       "unimportant",
+       "reversible",
+       "separate",
+       "incremental"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

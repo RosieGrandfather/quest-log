@@ -1,0 +1,200 @@
+{
+ "id": "u12-test56-s2",
+ "title": "Test 56 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 56, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 56 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "During the Renaissance, history was thought to be ____: it supplied instances of good and bad behavior in the past, thus informing the ethical precepts of the present."
+      ],
+      "opts": [
+       "amoral",
+       "subjective",
+       "superfluous",
+       "exemplary",
+       "progressive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The report is admittedly (i)____ : it is intended to suggest new lines of research rather than to deal with the subject in a (ii)____ manner."
+      ],
+      "cols": [
+       [
+        "sketchy",
+        "exculpatory",
+        "flippant"
+       ],
+       [
+        "cavalier",
+        "deceptive",
+        "thorough"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Memoirs are inherently (i)____, but Larry McMurtry’s volume of reminiscences about his life with books—not as a novelist but as a reader and bookstore owner—is especially (ii)____: nearly every page sounds a note of farewell to an age of books that he sees as passing."
+      ],
+      "cols": [
+       [
+        "unreliable",
+        "wistful",
+        "self-serving"
+       ],
+       [
+        "whimsical",
+        "ungracious",
+        "valedictory"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "Persian prose writers from the second half of the twelfth century onward were characteristically (i)____ the literary form of their works, a fact that some scholars have perceived as a derogation of those works’ content. It may be better interpreted as (ii)____ the development of an awareness of authorship, for the awareness of authorship (iii)____ the awareness of form."
+      ],
+      "cols": [
+       [
+        "ambivalent about",
+        "indifferent to",
+        "preoccupied with"
+       ],
+       [
+        "a retreat from",
+        "an indication of",
+        "a justification for"
+       ],
+       [
+        "evolves through",
+        "extends beyond",
+        "holds back"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Scientists are investigating odors so faint that people cannot ____ them in order to see whether such odors can nevertheless change the way people interact."
+      ],
+      "opts": [
+       "tolerate",
+       "endure",
+       "avoid",
+       "dispel",
+       "detect",
+       "discern"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "The tribes’ ____ a settled mode of living was derived from their long-standing traditions, which, though differing from one tribal group to another, always included a resistance to nomadic lifestyles."
+      ],
+      "opts": [
+       "curiosity about",
+       "proclivity toward",
+       "predilection for",
+       "unfamiliarity with",
+       "rejection of",
+       "disdain for"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In politics, tactical calculations about which groups a candidate should appeal to are never pleasant, but they are not always ____, and sometimes they are necessary."
+      ],
+      "opts": [
+       "injudicious",
+       "sleazy",
+       "effective",
+       "sordid",
+       "useful",
+       "exceptional"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

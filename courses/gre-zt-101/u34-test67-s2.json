@@ -1,0 +1,200 @@
+{
+ "id": "u34-test67-s2",
+ "title": "Test 67 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 67, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 67 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Common and easily accessible resources (prey for predators or hosts for parasites) should be, all other things being equal, used frequently, yet in some environments apparently accessible and suitable resources remain ____."
+      ],
+      "opts": [
+       "vulnerable",
+       "unobtainable",
+       "sustainable",
+       "depleted",
+       "unexploited"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Regardless of the putative decline of (i)____ in contemporary culture, such (ii)____ remains essential to civil discourse. It allows people to avoid embarrassing or maligning an adversary, and it serves as a form of irony that draws attention to a problem that can scarcely be exaggerated."
+      ],
+      "cols": [
+       [
+        "understatement",
+        "originality",
+        "partisanship"
+       ],
+       [
+        "inventiveness",
+        "objectivity",
+        "restraint"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "In science education, it is important to differentiate between inaccurate ideas that are conceptually (i)____ and understandings that are inaccurate, and yet can (ii)____ learning of more sophisticated understanding. The former are simply wrong, the latter can be seen as incomplete, overly simplistic, or tied to only a few limited contexts."
+      ],
+      "cols": [
+       [
+        "unproductive",
+        "unproblematic",
+        "distinct"
+       ],
+       [
+        "foster",
+        "delay",
+        "resemble"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "One of the fundamental problems with learning mathematics is that while the number sense may be (i)____, exact calculation requires cultural tools—symbols and algorithms—that are relatively new and must therefore be absorbed by areas of the brain designed for other purposes, which is easier when what we are learning (ii)____ our built-in circuitry. With an understanding of it we can at least (iii)____ our teaching methods by reflecting on the constraints it imposes."
+      ],
+      "cols": [
+       [
+        "innate",
+        "modern",
+        "complex"
+       ],
+       [
+        "harmonizes with",
+        "intrudes on",
+        "goes beyond"
+       ],
+       [
+        "preserve",
+        "discard",
+        "adapt"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "It is commonly said that each person’s aesthetic taste is ____, yet that notion overlooks a large body of shared aesthetic preferences."
+      ],
+      "opts": [
+       "unchangeable",
+       "acquired",
+       "distinct",
+       "learned",
+       "idiosyncratic",
+       "inexplicable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Unlike the theatrical adaptation of Nicholas Nickleby, which attempted to ____ its source precisely, the adaption of Les Mislabels chooses sweeping and hurtling motion over the savoring of minute details."
+      ],
+      "opts": [
+       "gut",
+       "digest",
+       "render",
+       "reproduce",
+       "eviscerate",
+       "relish"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Our eating habits are rooted in our physiology, but they are also ____ the culture in which we grow up."
+      ],
+      "opts": [
+       "symbolic of",
+       "mediated by",
+       "influenced by",
+       "ascribed to",
+       "inferable from",
+       "universal in"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

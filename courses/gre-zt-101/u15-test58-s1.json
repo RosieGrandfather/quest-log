@@ -1,0 +1,196 @@
+{
+ "id": "u15-test58-s1",
+ "title": "Test 58 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 58, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 58 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Since the deficit predicament is fundamentally a long-term problem, the legislature’s ____ short-term approaches has actually compounded the difficulty in each succeeding year, eroding the state credit rating in the process."
+      ],
+      "opts": [
+       "vexation regarding",
+       "skepticism about",
+       "addiction to",
+       "wariness of",
+       "demonization of"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "There has been (i)____ elephant’s fabled mental capacities until recently, when these behavioral observations have begun to be (ii)____ by brain science. MRI scans of an elephant’s brain suggest that even relative to its overall size it has a large hippocampus, the component in the mammalian brain linked to memory and an important part of its limbic system, which is involved in precessing emotions."
+      ],
+      "cols": [
+       [
+        "surprising credence given to",
+        "a widespread dismissal of",
+        "only anecdotal evidence for"
+       ],
+       [
+        "buttressed",
+        "anticipated",
+        "overwhelmed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "However luminous an insight might seem initially, brilliance is not a reliable predictor of (i)____, and sure enough the history of physical chemistry is replete with theories that were as (ii)____ as any but that (iii)____."
+      ],
+      "cols": [
+       [
+        "popularity",
+        "originality",
+        "validity"
+       ],
+       [
+        "opaque",
+        "ingenious",
+        "useful"
+       ],
+       [
+        "slowly developed",
+        "eventually collapsed",
+        "ultimately prevailed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Considering how difficult it is to prove or disprove the existence of life on Mars, which is practically our neighbor, it is quite ____ challenge to do the same for any Earthlike planets that might exist outside our solar system."
+      ],
+      "opts": [
+       "a formidable",
+       "an impossible",
+       "a hopeless",
+       "a daunting",
+       "an urgent",
+       "an immediate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "While it’s hard to know for sure, I suspect that the well-known authority’s silence on this contentious topic reflects the cautious ____ of a sensible scientist confronted with mixed data and mountains of speculation."
+      ],
+      "opts": [
+       "neutrality",
+       "impartiality",
+       "optimism",
+       "diffidence",
+       "commitment",
+       "buoyancy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Very few companies take the trouble to discover where the wood in their products originate; consumers do not demand this information, and consequently ____ regarding illicit timber has become the norm."
+      ],
+      "opts": [
+       "greed",
+       "indifference",
+       "outrage",
+       "timidity",
+       "apprehension",
+       "apathy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Humanity’s struggle with bedbugs is ____: archaeologists have recovered remains of the parasites dating back 3,500 years to the time of the Egyptian pharaohs."
+      ],
+      "opts": [
+       "disconcerting",
+       "unexceptional",
+       "perennial",
+       "preordained",
+       "inevitable",
+       "long-standing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u29-test65-s1",
+ "title": "Test 65 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 65, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 65 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The threat of litigation makes the art authentication industry ____ realm: connoisseurs refuse to communicate in writing and confidential agreements bind authenticators to silence."
+      ],
+      "opts": [
+       "an opportunistic",
+       "a clandestine",
+       "a moralizing",
+       "a xenophobic",
+       "an anarchistic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "It was fine to be (i)____ in the old days when papers were still not losing readers and ad revenue was not tough to come by, but many editors today are uneasy about bludgeoning their readers with the inherently (ii)____ work of cartoonists."
+      ],
+      "cols": [
+       [
+        "comprehensive",
+        "opinionated",
+        "profligate"
+       ],
+       [
+        "unbalanced",
+        "flawed",
+        "vacuous"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "The Golden Gates Bridge has been quite (i)____ by most aesthetic and functional criteria. However, as a structure it has had some limitations. Shortly after it opened, its roadway proved to be (ii)____ under certain wind conditions, so it was stiffened. The additional steel that provided that stiffening naturally added weight to the structure, and this made it (iii)____ later to add a proposed rail system beneath the roadway."
+      ],
+      "cols": [
+       [
+        "inadequate",
+        "unusual",
+        "successful"
+       ],
+       [
+        "quite noisy",
+        "overly flexible",
+        "dangerously windswept"
+       ],
+       [
+        "unnecessary",
+        "impossible",
+        "feasible"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Upon realizing that the indicators of a stressful situation can be extremely ____, the psychologist reconsidered her claim that a reliable way of reducing stress is to recognize stressful situations and then avoid them."
+      ],
+      "opts": [
+       "acute",
+       "exiguous",
+       "persistent",
+       "overstated",
+       "tenuous",
+       "unrelenting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "For wily political press officers, the art of spin is not quite supplanting truth with lies, but instead it aspires to replace awkward complexity with catchy ____; successful spin creates the impression of unavoidable common sense."
+      ],
+      "opts": [
+       "novelties",
+       "slogans",
+       "falsehoods",
+       "duplicity",
+       "simplicity",
+       "intelligibility"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "British composer Benjamin Britter would seem to have ____ place in the cultural pantheon, yet, at the same time that place is still contested by some."
+      ],
+      "opts": [
+       "an illustrious",
+       "an assured",
+       "a precarious",
+       "a modest",
+       "a settled",
+       "a tenuous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Once the scientists began to research the matter, it didn’t take them long to find out that life far beneath the ocean floor was not only possible, but ____."
+      ],
+      "opts": [
+       "vulnerable",
+       "prevalent",
+       "conspicuous",
+       "fragile",
+       "extensive",
+       "essential"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

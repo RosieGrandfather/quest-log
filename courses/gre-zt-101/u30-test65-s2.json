@@ -1,0 +1,200 @@
+{
+ "id": "u30-test65-s2",
+ "title": "Test 65 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 65, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 65 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Some of the areas of research covered in the collection have already attracted substantial scholarly interest, while others are more ____, hence requiring pioneering effort to map the territory and suggest productive avenues of inquiry."
+      ],
+      "opts": [
+       "intricate",
+       "pristine",
+       "parochial",
+       "heterogeneous",
+       "onerous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Some academic criticism of popular novels has been (i)____ in character, being based on the assumption that the wider the appeal, the more (ii)____ the novel."
+      ],
+      "cols": [
+       [
+        "rigorous",
+        "exculpatory",
+        "elitist"
+       ],
+       [
+        "undesirable",
+        "accomplished",
+        "comprehensible"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Since he had demonstrated (i)____ talent as an amateur, several of his acquaintances (ii)____ a career on the stage, but he followed his parents’ wishes, becoming an engineer."
+      ],
+      "cols": [
+       [
+        "an innocuous",
+        "an unremarkable",
+        "the requisite"
+       ],
+       [
+        "aided him in pursuing",
+        "badgered him to pursue",
+        "swayed him into pursuing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "The prime minister underestimates the fatigue that her continual (i)____ induces, even among those who are largely (ii)____ her aims. Constantly referring to the bold challenges and tremendous opportunities that she and the country face, the prime minister insists that she is (iii)____ the country, when most people would be grateful if she succeeded just in improving it a bit."
+      ],
+      "cols": [
+       [
+        "complaining",
+        "diffidence",
+        "overclaiming"
+       ],
+       [
+        "sympathetic to",
+        "confused by",
+        "troubled by"
+       ],
+       [
+        "deliberately analyzing",
+        "radically transforming",
+        "slowly fine-turning"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Compared with their parties, politicians are ____: they are considerably less enduring than the organizations in which they function."
+      ],
+      "opts": [
+       "essential",
+       "redundant",
+       "crucial",
+       "unreliable",
+       "transitory",
+       "temporary"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The notion’s ____ notwithstanding—it was first proposed by a Nobel Prize-winning physicist— it was neglected for many years until some unexpected observations led to its revival."
+      ],
+      "opts": [
+       "pedigree",
+       "antecedents",
+       "precursors",
+       "origin",
+       "brilliance",
+       "novelty"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Psychologists have discovered that some of the most ____ advice on study habits is flat wrong, leading them to revise the guidelines they offer to students."
+      ],
+      "opts": [
+       "popular",
+       "hallowed",
+       "respected",
+       "unassailable",
+       "effective",
+       "beneficial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

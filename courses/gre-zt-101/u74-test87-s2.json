@@ -1,0 +1,200 @@
+{
+ "id": "u74-test87-s2",
+ "title": "Test 87 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 87, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 87 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Throughout the High Middle Ages, the English government became increasingly ____: the document produced in the eleventh century could be placed on one large table, while the documents produced in the thirteenth fill whole rooms."
+      ],
+      "opts": [
+       "despotic",
+       "ceremonial",
+       "aristocratic",
+       "prolix",
+       "insular"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "It is unfortunate that essays by literary critics so infrequently (i)____ the opinions of novelists and poets, for creative writers are often quite (ii)____ about their own philosophies and are frequently more familiar with alternative systems of thought than critics are."
+      ],
+      "cols": [
+       [
+        "influence",
+        "challenge",
+        "incorporate"
+       ],
+       [
+        "articulate",
+        "inconsistent",
+        "prejudiced"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "At one time researchers viewed the placebo effect as (i)____, a statistical (ii)____ faced by those attempting an objective evaluation of the efficacy of potentially legitimate therapies. That view has changed: the placebo effect is today seen as an important part of the healing process."
+      ],
+      "cols": [
+       [
+        "a boon",
+        "a touchstone",
+        "an impediment"
+       ],
+       [
+        "increment",
+        "annoyance",
+        "deviation"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "The lack of (i)____ the poetry of the postwar decades has led not, as one might have expected, to (ii)____ poetry, but to a curious closure in which all poets and forms of poetry are (iii)____ and alone, not even respected establishment poets."
+      ],
+      "cols": [
+       [
+        "interest in",
+        "consensus about",
+        "innovation in"
+       ],
+       [
+        "pluralistic debate on",
+        "popular acceptance of",
+        "any experimentation in"
+       ],
+       [
+        "marginalized",
+        "revered",
+        "tolerated"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Orbiting Jupiter just beyond Europa, the giant moon Ganymede—bigger than the planet Mercury —appears rather ____ on the outside, but it may be warm and active within."
+      ],
+      "opts": [
+       "desiccated",
+       "forbidding",
+       "weathered",
+       "inert",
+       "adamant",
+       "dormant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Although the use of cameras to study animal behavior was certainly not ____, cameras were nevertheless not used to study individual frogs in their natural habitat until 2009."
+      ],
+      "opts": [
+       "ideal",
+       "unprecedented",
+       "laborious",
+       "impractical",
+       "novel",
+       "perfect"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "In nineteenth-century Puerto Rico, the consumption of salted cod spread among the entire population; on the tables of humbler families it became ____ food, adding flavor to other products and supplying much-needed protein."
+      ],
+      "opts": [
+       "an exotic",
+       "an affordable",
+       "an essential",
+       "a supplemental",
+       "a complementary",
+       "a commonplace"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u59-test80-s1",
+ "title": "Test 80 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 80, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 80 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "____ is valuable in science, even when a scientific idea is true, it can be misused through grandiosity."
+      ],
+      "opts": [
+       "humility",
+       "experimentation",
+       "patience",
+       "cooperation",
+       "exposure"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "She knew well, from experience with hundreds of hired crew members on her boats, how (i)____ attitudes can be: one negative influence can impel an otherwise (ii)____ member of a crew to quit."
+      ],
+      "cols": [
+       [
+        "insipid",
+        "infectious",
+        "innocuous"
+       ],
+       [
+        "untested",
+        "captious",
+        "contented"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "Thinking (i)____ about one’s choices can sometimes (ii)____ decision making. For example, in one study in which college students selected their favorite poster from a set, those asked to explain their selection ended up less (iii)____ their choices than those who were not asked. Researchers concluded that thinking of reasons interferes with people’s ability to access gut-level reactions that are crucial to sound decision making."
+      ],
+      "cols": [
+       [
+        "uncritically",
+        "haphazardly",
+        "explicitly"
+       ],
+       [
+        "speed the process of",
+        "reduce satisfaction with",
+        "enhance the quality of"
+       ],
+       [
+        "happy with",
+        "confused by",
+        "concerned by"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "A decisive way to test planet formation hypotheses is to study planetesimals, but these objects are quite ____, neither numerous nor large enough to emit significant radiation that can be captured by telescopes."
+      ],
+      "opts": [
+       "unpredictable",
+       "inconspicuous",
+       "clustered",
+       "radioactive",
+       "discreet",
+       "erratic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The ____ of native South American textiles at the time of the Spanish conquest should not be surprising: it represented the apogee of one of the world's oldest and most sophisticated weaving and dyeing traditions."
+      ],
+      "opts": [
+       "splendor",
+       "eccentricity",
+       "diversity",
+       "brilliance",
+       "practicality",
+       "popularity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "If it is wrong to justify human selfishness on the basis of the alleged selfishness of nature, then it is equally mistaken to espouse ____ merely because some animals happily assist each other."
+      ],
+      "opts": [
+       "pragmatism",
+       "moderation",
+       "restraint",
+       "altruism",
+       "benevolence",
+       "permissiveness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In many branches of science, our knowledge and technology have advanced so rapidly that new studies carried out with improved instruments and techniques may well ____ research done just twenty years earlier."
+      ],
+      "opts": [
+       "confirm",
+       "supplant",
+       "elaborate",
+       "supersede",
+       "question",
+       "validate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

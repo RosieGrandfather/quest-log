@@ -1,0 +1,196 @@
+{
+ "id": "u01-test51-s1",
+ "title": "Test 51 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 51, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 51 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The painter’s problem, like that of an author whose early literary masterpiece exhausts the themes it embodies, is how to ____ his first highly acclaimed efforts with works of comparable significance and presence."
+      ],
+      "opts": [
+       "combine",
+       "illuminate",
+       "realize",
+       "amend",
+       "follow"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Managers who categorically squelch insights from low-tiered employees run the obvious hazard of (i)____ creativity; conversely, these very same managers are more likely to (ii)____ any ideas that flow down from the top brass."
+      ],
+      "cols": [
+       [
+        "fomenting",
+        "smothering",
+        "sparking"
+       ],
+       [
+        "unquestioningly embrace",
+        "arbitrarily denounce",
+        "conditionally approve"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "Vaccine denial has all the hallmarks of a belief system that is not (i)____. The notion that childhood vaccines are driving autism rates has been (ii)____ by multiple epidemiological studies. Yet the true believers are (iii)____, critiquing each new study that challenges their views, and rallying to the defense of disgraced researchers whose work was retracted."
+      ],
+      "cols": [
+       [
+        "amenable to refutation",
+        "susceptible to fashion",
+        "open to criticism"
+       ],
+       [
+        "resuscitated",
+        "documented",
+        "upended"
+       ],
+       [
+        "indignant",
+        "persistent",
+        "phlegmatic"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Governments are often willing to pay the direct costs of preparing for emergencies that may never happen: they make room in their budgets to prepare for ____ but unlikely events."
+      ],
+      "opts": [
+       "plausible",
+       "anticipated",
+       "dangerous",
+       "conceivable",
+       "foreseen",
+       "unimaginable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Sports stars are often ____ figures, regarded as representative of the city or country for which they compete."
+      ],
+      "opts": [
+       "totemic",
+       "iconoclastic",
+       "protean",
+       "idealized",
+       "irreverent",
+       "emblematic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The life of a secret agent is dangerous enough, but the life of a double agent is infinitely more ____: a single slip can send an agent crashing to destruction."
+      ],
+      "opts": [
+       "arduous",
+       "precarious",
+       "clandestine",
+       "perilous",
+       "covert",
+       "exhilarating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The writer’s assignment of the critic includes personal ____ such as jibes about his physical girth and style of delivery, and is not the better for it."
+      ],
+      "opts": [
+       "aspersions",
+       "commendations",
+       "falsehoods",
+       "fantasies",
+       "whims",
+       "slurs"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

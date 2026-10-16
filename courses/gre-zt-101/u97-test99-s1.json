@@ -1,0 +1,196 @@
+{
+ "id": "u97-test99-s1",
+ "title": "Test 99 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 99, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 99 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The researchers theorized that people in power focus so keenly on their own prerogatives that they become oblivious to those around them and that their subordinates, not wanting to provoke the boss, ____ this process."
+      ],
+      "opts": [
+       "subvert",
+       "imitate",
+       "abet",
+       "expose",
+       "underestimate"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Intuitively, something is considered to the matter if, and only if, there is mass along with energy and/or momentum associated with it. In other words, possession of mass along with energy and/or momentum is regarded as (i)____, rather than (ii)____, property of matter."
+      ],
+      "cols": [
+       [
+        "an optimal",
+        "an essential",
+        "a contingent"
+       ],
+       [
+        "a unique",
+        "an irreducible",
+        "an accidental"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "Although the (i)____ and the not infrequent appearance of terms like synaptogenesis and N- methyl-D-aspartate glutamate receptor can be (ii)____ in a book aimed at the general reader, Konner's overall style is (iii)____ enough that you feel as though you are in the company of a helpful and hopeful teacher who is eager to share what he's found."
+      ],
+      "cols": [
+       [
+        "occasional glimpses of",
+        "deft deployment of",
+        "repeated use of jargon"
+       ],
+       [
+        "placating",
+        "galvanizing",
+        "daunting"
+       ],
+       [
+        "disputatious humor",
+        "conversational examples",
+        "baroque"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "While the environmental detection of nuclear explosions has become ____, the ability to detect nuclear weapons programs well before they result in a nuclear device would better serve security objectives."
+      ],
+      "opts": [
+       "immediate",
+       "unnecessary",
+       "redundant",
+       "straightforward",
+       "surreptitious",
+       "unproblematic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Eliot’s satire stops short of cruelty; inveterately ____, even when it comes to her most flawed characters, her default authorial positions is one of pity."
+      ],
+      "opts": [
+       "exacting",
+       "magnanimous",
+       "demanding",
+       "considerate",
+       "generous",
+       "self-indulgent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Psychologist once ____ fiction as a way of understanding people because it is made up, but in the past 25 years cognitive psychologists have developed a new appreciation for the significance of fictional stories."
+      ],
+      "opts": [
+       "overlooked",
+       "countenanced",
+       "underestimated",
+       "scorned",
+       "sanctioned",
+       "disparaged"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Geologists’ customary distinction between planetary mantle and core material appears increasingly ____: liquid oxides can be considered either molten mantle constituents or electrically conducting core components."
+      ],
+      "opts": [
+       "incontrovertible",
+       "untenable",
+       "dogmatic",
+       "flawed",
+       "contradictory",
+       "confusing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

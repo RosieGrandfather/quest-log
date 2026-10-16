@@ -1,0 +1,196 @@
+{
+ "id": "u03-test52-s1",
+ "title": "Test 52 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 52, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-101/",
+   "source": "张巍GRE填空机经2000题 · Test 52 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The purpose of accounts of the Amazons for their male Greek recorders was ____, to teach both male and female Greeks that all-female groups, formed by withdrawal from traditional society, are destructive and dangerous."
+      ],
+      "opts": [
+       "deceptive",
+       "didactic",
+       "pre-cautious",
+       "vengeful",
+       "reflective"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "While in their consideration of the unique way athletics and academics are combined in United States universities, Markovits and Rensmann do not (i)____ Gumbrecht’s idealizing vision of the compatibility of college athletics with the intellectual missions of institutions of higher learning, neither do they regard college athletics as (ii)____: they believe that big-time sports have a rightful place in university life."
+      ],
+      "cols": [
+       [
+        "fully endorse",
+        "intentionally recapitulate",
+        "entirely misconstrue"
+       ],
+       [
+        "indispensable",
+        "venal",
+        "profitable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The order applies to all Federal agency whose actions may affect the status of invasive species and requires agencies to identify such actions and to the extent practicable and permitted by law, and since invasive species severely reduce the number of native species and even (i)____ their existence, the agency has determined and made public its determination that the benefits of such actions clearly outweigh the potential harm caused by invasive species; and that all feasible and (ii)____ measures to (iii)____ risk of harm of the introduction of invasive species will be taken in conjunction with the actions."
+      ],
+      "cols": [
+       [
+        "escalate",
+        "preclude",
+        "diminish"
+       ],
+       [
+        "prudent",
+        "mawkish",
+        "braggart"
+       ],
+       [
+        "remedy",
+        "counterbalance",
+        "minimize"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The stories of silent drama may often have been ____; yet, within those broad outlines, the true artists among silent-film actors could express shadings that had no immediate analogue in language."
+      ],
+      "opts": [
+       "implausible",
+       "incredible",
+       "conventional",
+       "elemental",
+       "rudimentary",
+       "confusing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In the wild, no other mammal ____ individuals from another species: badgers do not tend hares, deer do not nurture baby squirrels, lions do not care for giraffes."
+      ],
+      "opts": [
+       "protects",
+       "fosters",
+       "aids",
+       "cajoles",
+       "adopts",
+       "coaxes"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Recent research runs counter to the long-cherished notion that a small drop in body temperature during and after surgery is either ____ or actually protects the patient by slowing metabolism and reducing the body’s demand for blood and oxygen."
+      ],
+      "opts": [
+       "beneficial",
+       "immaterial",
+       "inconsequential",
+       "preventive",
+       "prophylactic",
+       "redundant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "In the northeastern United States, beaver populations had been critically reduced or even ____ in large areas at the end of nineteenth century; as a result, several states instituted prohibitions on beaver trapping."
+      ],
+      "opts": [
+       "diminished",
+       "extirpated",
+       "eliminated",
+       "devalued",
+       "weakened",
+       "underrated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}
