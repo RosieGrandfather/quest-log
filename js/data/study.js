@@ -1,6 +1,7 @@
 /* 学习区的数据读写：进度、笔记、积分。
    积分全部写进主页面同一个 log 集合，所以回到主页面积分 / 历史 / 连续打卡都会自动更新。 */
 import { awardOnce } from './awards.js';
+import { snapshotAnswers } from '../core/qreview.js';
 import { localISO } from '../core/dates.js';
 import { UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, unitKey, studyStreak, streakBonuses, dayUnitsBonus } from '../core/study.js';
 
@@ -113,7 +114,8 @@ export async function submitPractice(cols, course, unit, answers, sum){
     practiceAttempts:(prev.practiceAttempts||0)+1,
     practiceBest:Math.max(prev.practiceBest||0, sum.correct),
     practiceTotal:sum.total,
-    practiceLast:{answers, correct:sum.correct, total:sum.total, ts:Date.now(), answerFormat:unit.answerFormat || null},
+    practiceLast:{answers, correct:sum.correct, total:sum.total, ts:Date.now(), answerFormat:unit.answerFormat || null,
+      ...(unit.blocks?.find(b=>b.type==='gre-qset') ? {answerItems:snapshotAnswers(unit.blocks.find(b=>b.type==='gre-qset').items,answers)} : {})},
   };
   await ref.set(progress, {merge:true});
   return {...prev, ...progress};
