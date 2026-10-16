@@ -32,7 +32,8 @@ test('hard quant follows official 12-question/21-minute and 15-question/26-minut
  }
  assert.equal(total,169);assert.equal(audit.questions,169);
  assert.equal(course.units.reduce((s,u)=>s+u.minutes,0),295);
- assert.match(units.at(-1).objectives.join(' '),/第170项.*不计作数学题/);
+ assert.ok(units.every(u=>!('objectives' in u)),'no 学完这节你能 box in 张巍 practice');
+ assert.match(course.subtitle,/第170项为词汇复习提醒/);
 });
 
 test('hard quant preserves unusual multi-select controls, cross-page formulas and shared charts across section boundaries',()=>{

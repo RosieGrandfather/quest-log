@@ -10,7 +10,6 @@ from pathlib import Path
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
-NOTE='提交后每个英文选项下方显示中文释义；重做时重新隐藏。'
 
 @lru_cache(maxsize=1)
 def meanings():
@@ -29,7 +28,6 @@ def annotate_unit(unit):
     for block in unit['blocks']:
         if block['type']=='gre-qset':
             for item in block['items']:add_meanings(item)
-    if NOTE not in unit['objectives']:unit['objectives'].append(NOTE)
 
 def annotate_course(course):
     if '选项中文释义' not in course['subtitle']:

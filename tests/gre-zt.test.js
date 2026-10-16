@@ -23,6 +23,7 @@ test(`Zhang Wei ${id} (Test ${firstTest}–${lastTest}) preserves sequence, ever
   for (const [i, entry] of course.units.entries()) {
     const unit = read(`../courses/${id}/` + entry.file);
     const block = unit.blocks[0];
+    assert.ok(!('objectives' in unit), 'no 学完这节你能 box in 张巍 practice');
     assert.equal(entry.id, `u${String(i+1).padStart(2,'0')}-test${String(Math.floor(i/2)+firstTest).padStart(2,'0')}-s${i%2+1}`);
     assert.equal(block.items.length, 7);
     const answers = [];

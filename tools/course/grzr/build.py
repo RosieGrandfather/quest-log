@@ -132,10 +132,7 @@ def main():
         total=len(items)
         title=f'阅读 {lesson:02d} · Passage {batch[0]["n"]}–{batch[-1]["n"]}（5篇 · {total}题）'
         unit={'id':uid,'title':title,'en':f'Reading Comprehension — Passages {batch[0]["n"]}–{batch[-1]["n"]}',
-              'minutes':20,'practice':True,'answerFormat':'gre-zr-text-v1','objectives':[
-                  '独立阅读5篇文章并完成全部题目，建议用时约20分钟；完成整节后提交。',
-                  '提交后核对答案；已做独立复核，争议题暂不计分，仅更正或争议题附核对说明。',
-                  '选句题直接点击文章中的句子，提交后对照参考句自评，不计入自动评分。'],
+              'minutes':20,'practice':True,'answerFormat':'gre-zr-text-v1',
               'blocks':[{'type':'gre-qset','base':'courses/gre-zr/','source':f'张巍GRE阅读机经440篇 · Passage {batch[0]["n"]}–{batch[-1]["n"]}',
                          'noteTail':'（纯阅读练习，建议约20分钟；配套答案经独立复核，争议题暂不计分）',
                          'passages':passages,'items':items}],'references':[]}

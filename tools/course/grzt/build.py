@@ -168,8 +168,7 @@ def build(cid,pdf,key,keys):
             items.append(it)
             audit.append({'unit':uid,'question':q['n'],'pages':[p0+1,p1+1],'sourceAnswer':a,'options':n})
         unit={'id':uid,'title':title,'en':f'Text Completion — Test {s["test"]}, Section {s["section"]}',
-              'minutes':15,'practice':True,'answerFormat':'gre-zt-v1','objectives':[
-                  '独立完成7道原题，整节完成后提交。','提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。'],
+              'minutes':15,'practice':True,'answerFormat':'gre-zt-v1',
               'blocks':[{'type':'gre-qset','base':f'courses/{cid}/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
                          'noteTail':'（原题及配套答案，仅供个人学习；暂不附讲解）','items':items}],'references':[]}
         if cid=='gre-zt':annotate_unit(unit)

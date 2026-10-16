@@ -38,14 +38,9 @@ def main():
         supplement=section==13
         label='补充练习'if supplement else f'第{(section+1)//2}组 · Quant {1 if section%2 else 2}'
         title=f'{label}（{size}题 · {minutes}分钟）'
-        objectives=[f'原书第{first}–{last}题，共{size}题，限时{minutes}分钟；做完整节再提交。',
-                    '正式GRE数学第一节12题21分钟、第二节15题26分钟；本课按题数和时间配组。',
-                    '比较题选一项，多选题须全选正确；数值题按原题要求输入数字、分数或四舍五入结果。',
-                    '题目保留原式和图表，169题答案已逐题独立验算并与配套DOCX核对；提交前不显示答案。']
-        if supplement:objectives.append('本节为最后7道数学题，13分钟按正式单题节奏折算，不是完整正式Section。原书第170项为“所有GRE数学单词都背好了吗”的复习提醒，不计作数学题或分数。')
         u={'id':uid,'title':title,'en':f'Hard Quant — Questions {first}–{last}',
            'minutes':minutes,'practice':True,'answerFormat':'gre-zq170-v1',
-           'objectives':objectives,'blocks':[{'type':'gre-qset','base':'courses/gre-zq170/img/',
+           'blocks':[{'type':'gre-qset','base':'courses/gre-zq170/img/',
            'source':f'巍哥GRE数学170难题4.0（2026年）· 原书第{first}–{last}题',
            'noteTail':'（保留原题公式与图表；配套答案已逐题独立验算，非ETS官方认证）',
            'items':items}], 'references':[{'label':'ETS官方GRE考试结构：数学12题21分钟、15题26分钟','url':ETS}]}
