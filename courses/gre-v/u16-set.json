@@ -29,6 +29,11 @@
      "ant": [
       "prudent",
       "wise"
+     ],
+     "root": "im-(不) + prudent(谨慎的) → 不谨慎的",
+     "rel": [
+      "prudent 谨慎的",
+      "provide 提供"
      ]
     },
     {
@@ -44,6 +49,12 @@
      "ant": [
       "unlucky",
       "untimely"
+     ],
+     "root": "pro-(提前) + vid(看) + -ential(……的) → 天意预先看好的 → 恰好的、幸运的",
+     "rel": [
+      "provide 提供",
+      "providence 天意",
+      "video 视频"
      ]
     },
     {
@@ -59,6 +70,13 @@
      "ant": [
       "vulgar",
       "coarse"
+     ],
+     "root": "gent(家世、同族) + -eel(……的) → 出身好的 → 有教养的",
+     "rel": [
+      "gentle 温和的",
+      "gentleman 绅士",
+      "genre 体裁",
+      "gender 性别"
      ]
     },
     {
@@ -89,7 +107,8 @@
      "ant": [
       "extraordinary",
       "exotic"
-     ]
+     ],
+     "root": "mund(世界) + -ane(……的) → 尘世的 → 平凡的"
     }
    ]
   },
@@ -120,6 +139,12 @@
      "ant": [
       "obscure",
       "unknown"
+     ],
+     "root": "il-(in-，向) + lustr(光亮) + -ious(……的) → 发光的 → 著名的",
+     "rel": [
+      "illustrate 说明",
+      "luster 光泽",
+      "lucid 清晰的"
      ]
     },
     {
@@ -132,7 +157,12 @@
       "sift",
       "sort"
      ],
-     "ant": []
+     "ant": [],
+     "root": "wind(风) + -ow → 借风力扬谷 → 筛选",
+     "rel": [
+      "wind 风",
+      "window 窗(风眼)"
+     ]
     },
     {
      "w": "acquisitive",
@@ -147,6 +177,13 @@
      "ant": [
       "generous",
       "unselfish"
+     ],
+     "root": "ac-(ad-，向) + quis(寻求) + -itive(……的) → 一直追着想得到的 → 贪婪的",
+     "rel": [
+      "acquire 获得",
+      "require 要求",
+      "inquire 询问",
+      "request 请求"
      ]
     },
     {
@@ -162,6 +199,13 @@
      "ant": [
       "direct",
       "straight"
+     ],
+     "root": "circu(圈) + it(走) + -ous(……的) → 绕圈走的 → 迂回的",
+     "rel": [
+      "circuit 环路",
+      "circle 圆",
+      "circumference 周长",
+      "exit 出口"
      ]
     },
     {
@@ -177,6 +221,12 @@
      "ant": [
       "permanent",
       "lasting"
+     ],
+     "root": "trans-(穿过) + i(走) + -ent(……的) → 走过去的 → 短暂的",
+     "rel": [
+      "transit 通过",
+      "transitory 短暂的",
+      "exit 出口"
      ]
     }
    ]
@@ -205,7 +255,15 @@
       "plot",
       "scheme"
      ],
-     "ant": []
+     "ant": [],
+     "root": "con-(一起) + spir(呼吸) + -e → 一起呼吸 → 合谋",
+     "rel": [
+      "inspire 激励",
+      "respire 呼吸",
+      "spirit 精神",
+      "aspire 渴望",
+      "expire 到期"
+     ]
     },
     {
      "w": "lambaste",
@@ -250,6 +308,11 @@
      "ant": [
       "acknowledge",
       "avow"
+     ],
+     "root": "dis-(不) + a-(ad-，向) + vow(誓言) → 撤销誓言 → 否认",
+     "rel": [
+      "vow 誓言",
+      "avow 公开承认"
      ]
     },
     {
@@ -265,6 +328,11 @@
      "ant": [
       "easy",
       "light"
+     ],
+     "root": "oner(负担) + -ous(……的) → 负担重的 → 繁重的",
+     "rel": [
+      "onus 重担",
+      "exonerate 免除责任"
      ]
     }
    ]
@@ -296,6 +364,13 @@
      "ant": [
       "lasting",
       "permanent"
+     ],
+     "root": "e-(出) + van(空) + -escent(开始……的) → 渐渐变空的 → 逐渐消失的",
+     "rel": [
+      "vanish 消失",
+      "vacuum 真空",
+      "vain 徒劳的",
+      "void 空的"
      ]
     },
     {
@@ -311,7 +386,8 @@
      "ant": [
       "courteous",
       "gracious"
-     ]
+     ],
+     "root": "churl(农夫、粗人) + -ish(……的) → 像粗人一样的 → 粗鲁的"
     },
     {
      "w": "bristle",
@@ -338,6 +414,12 @@
      "ant": [
       "profound",
       "thorough"
+     ],
+     "root": "super-(上) + fici(面，同 face) + -al(……的) → 只在表面的 → 肤浅的",
+     "rel": [
+      "face 脸",
+      "surface 表面",
+      "facade 门面"
      ]
     },
     {
@@ -350,7 +432,14 @@
       "surpass",
       "exceed"
      ],
-     "ant": []
+     "ant": [],
+     "root": "trans-(越过) + scend(爬) → 爬过去 → 超越",
+     "rel": [
+      "ascend 上升",
+      "descend 下降",
+      "condescend 屈尊",
+      "scan 扫描"
+     ]
     }
    ]
   },
@@ -381,6 +470,10 @@
      "ant": [
       "accelerate",
       "speed up"
+     ],
+     "root": "re-(向后) + tard(慢) → 使往后慢下来 → 延缓",
+     "rel": [
+      "tardy 迟到的"
      ]
     },
     {
@@ -396,7 +489,8 @@
      "ant": [
       "nadir",
       "bottom"
-     ]
+     ],
+     "root": "阿拉伯语 samt ar-ras(头顶上的路)，传入欧洲后写成 zenith → 天顶 → 顶点"
     },
     {
      "w": "absolve",
@@ -411,6 +505,13 @@
      "ant": [
       "condemn",
       "blame"
+     ],
+     "root": "ab-(离开) + solv(松开) + -e → 解开(罪责) → 免罪",
+     "rel": [
+      "solve 解决",
+      "dissolve 溶解",
+      "resolve 决心",
+      "absolute 绝对的"
      ]
     },
     {
@@ -426,7 +527,8 @@
      "ant": [
       "hostility",
       "discord"
-     ]
+     ],
+     "root": "来自拉丁 comis(礼貌、友好) → 礼让、友好"
     },
     {
      "w": "aggrandize",
@@ -441,6 +543,12 @@
      "ant": [
       "belittle",
       "diminish"
+     ],
+     "root": "ag-(ad-，向) + grand(大) + -ize(使) → 使变大 → 夸大、增强",
+     "rel": [
+      "grand 宏大的",
+      "grandeur 壮丽",
+      "grandiose 夸大的"
      ]
     }
    ]
@@ -469,7 +577,14 @@
       "conspire",
       "connive"
      ],
-     "ant": []
+     "ant": [],
+     "root": "col-(com-，一起) + lud(玩、演) + -e → 一起演戏 → 串通",
+     "rel": [
+      "ludicrous 荒唐的",
+      "delude 欺骗",
+      "illusion 幻觉",
+      "prelude 前奏"
+     ]
     },
     {
      "w": "subjugate",
@@ -484,6 +599,12 @@
      "ant": [
       "liberate",
       "free"
+     ],
+     "root": "sub-(下) + jug(轭) + -ate(动词) → 套上牛轭 → 征服",
+     "rel": [
+      "conjugal 婚姻的(con- + jug 同轭)",
+      "conjugate 动词变位",
+      "yoke 轭"
      ]
     },
     {
@@ -499,6 +620,11 @@
      "ant": [
       "converge",
       "merge"
+     ],
+     "root": "di-(分开) + verg(转、倾斜) + -e → 转向两边 → 分叉",
+     "rel": [
+      "converge 汇聚",
+      "verge 边缘"
      ]
     },
     {
@@ -514,6 +640,13 @@
      "ant": [
       "decided",
       "certain"
+     ],
+     "root": "ambi-(两边) + val(价值、力量) + -ent(……的) → 两边都有分量的 → 矛盾的",
+     "rel": [
+      "valid 有效的",
+      "value 价值",
+      "equivalent 相等的",
+      "prevail 盛行"
      ]
     },
     {
@@ -529,6 +662,13 @@
      "ant": [
       "methodical",
       "purposeful"
+     ],
+     "root": "de-(下) + sult(跳) + -ory(……的) → 从这匹马跳到那匹马 → 无计划的",
+     "rel": [
+      "salient 显著的",
+      "assault 攻击",
+      "result 结果",
+      "insult 侮辱"
      ]
     }
    ]
@@ -560,6 +700,12 @@
      "ant": [
       "corrupted",
       "tarnished"
+     ],
+     "root": "prist(最初) + -ine(……的) → 最初的样子 → 纯净的",
+     "rel": [
+      "prime 首要的",
+      "primitive 原始的",
+      "primary 主要的"
      ]
     },
     {
@@ -575,6 +721,10 @@
      "ant": [
       "free",
       "unburden"
+     ],
+     "root": "en-(使) + cumber(阻碍) → 使有负担 → 妨碍",
+     "rel": [
+      "cumbersome 笨重的"
      ]
     },
     {
@@ -590,6 +740,10 @@
      "ant": [
       "tiny",
       "graceful"
+     ],
+     "root": "elephant(大象) + -ine(……的) → 像大象的 → 庞大笨拙的",
+     "rel": [
+      "elephant 大象"
      ]
     },
     {
@@ -604,6 +758,13 @@
      ],
      "ant": [
       "abundance"
+     ],
+     "root": "mod(适度) + -icum → 适度的量 → 少量",
+     "rel": [
+      "moderate 适度的",
+      "modest 谦虚的",
+      "modify 修改",
+      "mode 方式"
      ]
     },
     {
@@ -619,6 +780,10 @@
      "ant": [
       "bravery",
       "courage"
+     ],
+     "root": "coward(胆小鬼，来自 cauda 尾巴，夹着尾巴逃的动物) + -ice(名词) → 懦弱",
+     "rel": [
+      "coward 懦夫"
      ]
     }
    ]
@@ -650,6 +815,10 @@
      "ant": [
       "stable",
       "steady"
+     ],
+     "root": "vol(飞) + -atile(易于……的) → 容易飞走的 → 易变的",
+     "rel": [
+      "volley 齐射"
      ]
     },
     {
@@ -665,6 +834,12 @@
      "ant": [
       "prestigious",
       "skilled"
+     ],
+     "root": "meni(家) + -al(……的) → 家里干活的仆人 → 卑贱的",
+     "rel": [
+      "mansion 大宅",
+      "remain 留下",
+      "manor 庄园"
      ]
     },
     {
@@ -680,6 +855,13 @@
      "ant": [
       "superior",
       "principal"
+     ],
+     "root": "sub-(下) + ordin(次序) + -ate(……的) → 次序在下的 → 下级的",
+     "rel": [
+      "order 顺序",
+      "ordinary 普通的",
+      "coordinate 协调",
+      "ordinal 序数"
      ]
     },
     {
@@ -695,6 +877,13 @@
      "ant": [
       "reward",
       "forgiveness"
+     ],
+     "root": "re-(回) + tribut(给予) + -ion(名词) → 还回去 → 报应",
+     "rel": [
+      "tribute 贡品",
+      "contribute 贡献",
+      "distribute 分发",
+      "attribute 归因于"
      ]
     },
     {
@@ -710,7 +899,8 @@
      "ant": [
       "few",
       "scant"
-     ]
+     ],
+     "root": "希腊语 myrias = 一万 → 无数的"
     }
    ]
   },

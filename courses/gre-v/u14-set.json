@@ -27,6 +27,13 @@
      ],
      "ant": [
       "ignorant"
+     ],
+     "root": "omni-(全) + sci(知) + -ent(……的) → 全知的",
+     "rel": [
+      "omnivore 杂食动物",
+      "omnipotent 全能的",
+      "science 科学",
+      "conscious 有意识的"
      ]
     },
     {
@@ -42,7 +49,8 @@
      "ant": [
       "genial",
       "affable"
-     ]
+     ],
+     "root": "sur(= sir，先生) + -ly(……的) → 摆出大爷架子的 → 粗鲁的"
     },
     {
      "w": "transitory",
@@ -57,6 +65,13 @@
      "ant": [
       "permanent",
       "enduring"
+     ],
+     "root": "trans-(穿过) + it(走) + -ory(……的) → 走过去的 → 短暂的",
+     "rel": [
+      "transit 通过",
+      "transient 短暂的",
+      "exit 出口",
+      "perish 消亡"
      ]
     },
     {
@@ -84,7 +99,14 @@
       "mediator",
       "broker"
      ],
-     "ant": []
+     "ant": [],
+     "root": "inter-(之间) + medi(中) + -ary(人) → 站在中间的人 → 中间人",
+     "rel": [
+      "medium 中间的",
+      "mediate 调解",
+      "immediate 立即的",
+      "Mediterranean 地中海(陆地中间)"
+     ]
     }
    ]
   },
@@ -115,6 +137,13 @@
      "ant": [
       "plan",
       "rehearse"
+     ],
+     "root": "im-(不) + pro-(预先) + vis(看) + -e → 没有预先看过的 → 即兴的",
+     "rel": [
+      "provide 提供",
+      "provision 供应",
+      "supervise 监督",
+      "revise 修订"
      ]
     },
     {
@@ -127,7 +156,11 @@
       "herald",
       "forerunner"
      ],
-     "ant": []
+     "ant": [],
+     "root": "harbor(住处) + -inger → 先去安排住处的人 → 先行者、预兆",
+     "rel": [
+      "harbor 港口、庇护所"
+     ]
     },
     {
      "w": "burlesque",
@@ -139,7 +172,12 @@
       "parody",
       "caricature"
      ],
-     "ant": []
+     "ant": [],
+     "root": "burl(玩笑) + -esque(……风格的) → 滑稽讽刺的模仿",
+     "rel": [
+      "grotesque 怪诞的",
+      "picturesque 如画的"
+     ]
     },
     {
      "w": "peculiarity",
@@ -153,6 +191,12 @@
      ],
      "ant": [
       "normality"
+     ],
+     "root": "pecul(私有财产，原指牛群) + -iar + -ity(名词) → 私有的 → 特性",
+     "rel": [
+      "peculiar 特有的",
+      "pecuniary 金钱的",
+      "impecunious 没钱的"
      ]
     },
     {
@@ -168,6 +212,12 @@
      "ant": [
       "clear",
       "explicit"
+     ],
+     "root": "crypt(隐藏) + -ic(……的) → 藏起来的 → 含义隐晦的",
+     "rel": [
+      "crypt 地下室",
+      "encrypt 加密",
+      "apocryphal 杜撰的"
      ]
     }
    ]
@@ -196,7 +246,12 @@
       "environment",
       "setting"
      ],
-     "ant": []
+     "ant": [],
+     "root": "法语 mi(中) + lieu(地方) → 中间的地方 → 周围环境",
+     "rel": [
+      "medium 中间的",
+      "lieutenant 副官(代位的人)"
+     ]
     },
     {
      "w": "fraught",
@@ -211,6 +266,10 @@
      "ant": [
       "free",
       "devoid"
+     ],
+     "root": "同 freight(货运)，装满货物 → 充满(麻烦、危险)的",
+     "rel": [
+      "freight 货运"
      ]
     },
     {
@@ -226,7 +285,8 @@
      "ant": [
       "fresh",
       "original"
-     ]
+     ],
+     "root": "hackney(供出租的马) + -ed → 被租来反复骑的马 → 陈腐老一套的"
     },
     {
      "w": "decry",
@@ -241,6 +301,10 @@
      "ant": [
       "praise",
       "extol"
+     ],
+     "root": "de-(向下) + cry(喊) → 喊着贬低 → 强烈谴责",
+     "rel": [
+      "cry 叫喊"
      ]
     },
     {
@@ -256,7 +320,8 @@
      "ant": [
       "fruitful",
       "useful"
-     ]
+     ],
+     "root": "boot(益处，古义) + -less(无) → 无益的、徒劳的"
     }
    ]
   },
@@ -284,7 +349,11 @@
       "prophetic",
       "dire"
      ],
-     "ant": []
+     "ant": [],
+     "root": "apo-(去掉) + calypt(遮盖) + -ic(……的) → 揭开盖子 → 启示的；世界末日的",
+     "rel": [
+      "eucalyptus 桉树(花蕾盖得好)"
+     ]
     },
     {
      "w": "munificent",
@@ -299,6 +368,13 @@
      "ant": [
       "stingy",
       "miserly"
+     ],
+     "root": "muni(礼物、职责) + fic(做) + -ent(……的) → 做出礼物的 → 慷慨的",
+     "rel": [
+      "community 社区",
+      "municipal 市政的",
+      "immune 免疫的(免除职责)",
+      "commune 公社"
      ]
     },
     {
@@ -314,6 +390,11 @@
      "ant": [
       "accept",
       "endorse"
+     ],
+     "root": "re-(回) + pud(羞耻) + -iate → 羞耻地推回去 → 拒绝承认",
+     "rel": [
+      "impudent 无耻的",
+      "pudency 羞耻"
      ]
     },
     {
@@ -328,6 +409,13 @@
      ],
      "ant": [
       "certainty"
+     ],
+     "root": "con-(一起) + ting(触) + -ency(名词) → 碰到一起的事 → 偶发事件",
+     "rel": [
+      "contact 接触",
+      "tangent 切线",
+      "contagious 传染的",
+      "tangible 可触摸的"
      ]
     },
     {
@@ -389,6 +477,13 @@
      "ant": [
       "grant",
       "uphold"
+     ],
+     "root": "re-(回) + vok(叫) + -e → 叫回来 → 撤销",
+     "rel": [
+      "vocal 声音的",
+      "evoke 唤起",
+      "provoke 激怒",
+      "invoke 祈求"
      ]
     },
     {
@@ -404,6 +499,12 @@
      "ant": [
       "negligent",
       "careless"
+     ],
+     "root": "con-(共同) + sci(知) + -entious(……的) → 凭良知(共同的知)的 → 认真负责的",
+     "rel": [
+      "conscience 良心",
+      "conscious 有意识的",
+      "science 科学"
      ]
     },
     {
@@ -419,6 +520,10 @@
      "ant": [
       "cosmopolitan",
       "broad-minded"
+     ],
+     "root": "par-(旁边) + och(住) + -ial(……的) → 住在教区旁边的 → 狭隘的",
+     "rel": [
+      "parish 教区"
      ]
     },
     {
@@ -434,6 +539,13 @@
      "ant": [
       "praise",
       "benign"
+     ],
+     "root": "mal-(坏) + -ign(生) → 生来坏的 → 恶意的",
+     "rel": [
+      "malignant 恶性的",
+      "benign 良性的",
+      "malice 恶意",
+      "malady 疾病"
      ]
     }
    ]
@@ -465,6 +577,13 @@
      "ant": [
       "satiated",
       "moderate"
+     ],
+     "root": "vor(吞) + -acious(易于……的) → 好吞咽的 → 贪吃的",
+     "rel": [
+      "devour 吞食",
+      "carnivore 食肉动物",
+      "herbivore 食草动物",
+      "omnivore 杂食动物"
      ]
     },
     {
@@ -480,6 +599,10 @@
      "ant": [
       "mature",
       "adult"
+     ],
+     "root": "puer(男孩) + -ile(……的) → 孩子似的 → 幼稚的",
+     "rel": [
+      "puberty 青春期"
      ]
     },
     {
@@ -495,6 +618,13 @@
      "ant": [
       "proportionate",
       "adequate"
+     ],
+     "root": "in-(不) + com-(共同) + mensur(量) + -ate(……的) → 没有共同量度的 → 不相称的",
+     "rel": [
+      "measure 测量",
+      "dimension 维度",
+      "immense 巨大的(不可测)",
+      "commensurate 相称的"
      ]
     },
     {
@@ -510,6 +640,13 @@
      "ant": [
       "modern",
       "current"
+     ],
+     "root": "arch(最初、古老) + -aic(……的) → 古老的",
+     "rel": [
+      "archive 档案",
+      "archaeology 考古学",
+      "architect 建筑师(arch- 首 + tect 工匠)",
+      "monarch 君主"
      ]
     },
     {
@@ -525,6 +662,11 @@
      "ant": [
       "deliberate",
       "careful"
+     ],
+     "root": "haste(匆忙) + -y(……的) → 匆忙的",
+     "rel": [
+      "haste 匆忙",
+      "hasten 加速"
      ]
     }
    ]
@@ -556,6 +698,12 @@
      "ant": [
       "praise",
       "absolve"
+     ],
+     "root": "con-(完全) + demn(判罚、损失) → 完全判罪 → 谴责",
+     "rel": [
+      "damn 诅咒",
+      "damage 损害",
+      "indemnify 赔偿"
      ]
     },
     {
@@ -571,7 +719,8 @@
      "ant": [
       "justified",
       "well-founded"
-     ]
+     ],
+     "root": "ground(根据) + -less(无) → 没有根据的"
     },
     {
      "w": "jettison",
@@ -586,6 +735,13 @@
      "ant": [
       "retain",
       "keep"
+     ],
+     "root": "jet(扔) + -ison → 扔出去 → 抛弃",
+     "rel": [
+      "jet 喷射",
+      "eject 弹出",
+      "reject 拒绝",
+      "project 投射"
      ]
     },
     {
@@ -598,7 +754,14 @@
       "echo",
       "reverberate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(回) + son(声) + -ate(动词) → 声音回响 → 共鸣",
+     "rel": [
+      "sonic 声音的",
+      "sonata 奏鸣曲",
+      "dissonance 不和谐音",
+      "unison 齐唱"
+     ]
     },
     {
      "w": "affectation",
@@ -613,6 +776,13 @@
      "ant": [
       "sincerity",
       "naturalness"
+     ],
+     "root": "af-(ad-，向) + fect(做) + -ation(名词) → 刻意做出来的样子 → 做作",
+     "rel": [
+      "affect 影响",
+      "effect 效果",
+      "perfect 完美",
+      "infect 感染"
      ]
     }
    ]
@@ -659,6 +829,12 @@
      "ant": [
       "unorthodox",
       "heretical"
+     ],
+     "root": "ortho-(正) + dox(观点) → 正统的观点 → 传统的",
+     "rel": [
+      "orthography 正字法",
+      "paradox 悖论",
+      "doctrine 教义"
      ]
     },
     {
@@ -674,6 +850,13 @@
      "ant": [
       "thorough",
       "careful"
+     ],
+     "root": "curs(跑) + -ory(……的) → 跑着过去的 → 草率的",
+     "rel": [
+      "current 水流",
+      "cursor 光标",
+      "occur 发生",
+      "course 课程"
      ]
     },
     {
@@ -701,6 +884,13 @@
      "ant": [
       "foreign",
       "alien"
+     ],
+     "root": "indi-(内) + gen(生) + -ous(……的) → 在这里出生的 → 本土的",
+     "rel": [
+      "gene 基因",
+      "generate 产生",
+      "native 本地的",
+      "genius 天才"
      ]
     }
    ]

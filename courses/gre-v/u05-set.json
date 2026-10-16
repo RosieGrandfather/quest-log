@@ -44,6 +44,10 @@
      "ant": [
       "simple",
       "straightforward"
+     ],
+     "root": "knot(结) + -y(……的) → 打满结的 → 棘手的",
+     "rel": [
+      "knot 结"
      ]
     },
     {
@@ -59,6 +63,13 @@
      "ant": [
       "altruistic",
       "selfless"
+     ],
+     "root": "merc(商品、报酬) + -enary(……的) → 为报酬而做的 → 唯利是图的；雇佣兵",
+     "rel": [
+      "merchant 商人",
+      "commerce 商业",
+      "market 市场",
+      "mercy 慈悲(原义：报酬、恩惠)"
      ]
     },
     {
@@ -74,6 +85,13 @@
      "ant": [
       "disbelief",
       "distrust"
+     ],
+     "root": "cred(信) + -ence(名词) → 相信、信任",
+     "rel": [
+      "credit 信用",
+      "credible 可信的",
+      "incredible 难以置信的",
+      "credulous 轻信的"
      ]
     },
     {
@@ -89,6 +107,12 @@
      "ant": [
       "flexible",
       "streamlined"
+     ],
+     "root": "bureau(办公桌、办公室) + -cracy(统治) + -atic(……的) → 办公桌后面的统治 → 官僚的",
+     "rel": [
+      "bureau 办公室",
+      "democracy 民主",
+      "aristocracy 贵族统治"
      ]
     }
    ]
@@ -120,6 +144,13 @@
      "ant": [
       "enormous",
       "gigantic"
+     ],
+     "root": "minus(更小) + -cule(小) → 小中之小 → 极小的",
+     "rel": [
+      "minus 减",
+      "minor 较小的",
+      "minute 微小的",
+      "diminish 减少"
      ]
     },
     {
@@ -150,6 +181,12 @@
      "ant": [
       "condemn",
       "censure"
+     ],
+     "root": "con-(完全) + don(给) → 完全送出(不追究) → 宽恕、容忍",
+     "rel": [
+      "donate 捐赠",
+      "donor 捐献者",
+      "pardon 原谅"
      ]
     },
     {
@@ -164,6 +201,13 @@
      ],
      "ant": [
       "dispel"
+     ],
+     "root": "con-(一起) + jur(发誓) → 一起发誓召唤 → 变出、召唤",
+     "rel": [
+      "jury 陪审团",
+      "perjury 作伪证",
+      "injury 伤害(in- 不 + jur 公正)",
+      "just 公正的"
      ]
     },
     {
@@ -176,7 +220,13 @@
       "plague",
       "harass"
      ],
-     "ant": []
+     "ant": [],
+     "root": "be-(周围) + set(坐、放) → 围着坐下 → 困扰",
+     "rel": [
+      "set 放置",
+      "besiege 围攻",
+      "sit 坐"
+     ]
     }
    ]
   },
@@ -207,6 +257,13 @@
      "ant": [
       "docile",
       "compliant"
+     ],
+     "root": "re-(向后) + frag(折断) + -tory(……的) → 折回来的 → 倔强难驾驭的",
+     "rel": [
+      "fragile 易碎的",
+      "fragment 碎片",
+      "fracture 骨折",
+      "refract 折射"
      ]
     },
     {
@@ -222,6 +279,13 @@
      "ant": [
       "uphold",
       "support"
+     ],
+     "root": "sub-(下) + vert(转) → 从下面翻转 → 颠覆",
+     "rel": [
+      "convert 转变",
+      "divert 转移",
+      "reverse 反转",
+      "subversion 颠覆"
      ]
     },
     {
@@ -237,6 +301,12 @@
      "ant": [
       "scant",
       "meager"
+     ],
+     "root": "co-(加强) + op(财富、资源) + -ious(……的) → 财富很多的 → 大量的",
+     "rel": [
+      "opulent 富裕的",
+      "cornucopia 丰饶之角",
+      "copy 复制(原义：丰富)"
      ]
     },
     {
@@ -249,7 +319,11 @@
       "cripple",
       "thwart"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ham(腿后的肌腱) + string(筋、弦) → 割断腿筋 → 使无法行动",
+     "rel": [
+      "string 弦"
+     ]
     },
     {
      "w": "cavalier",
@@ -264,6 +338,12 @@
      "ant": [
       "earnest",
       "respectful"
+     ],
+     "root": "caval(马) + -ier(人) → 骑马的人 → 骑士；态度傲慢随便的",
+     "rel": [
+      "cavalry 骑兵",
+      "chivalrous 有骑士风度的",
+      "chevalier 骑士(法)"
      ]
     }
    ]
@@ -294,6 +374,13 @@
      ],
      "ant": [
       "necessitate"
+     ],
+     "root": "ob-(在……前) + vi(路) + -ate(动词) → 挡在路上 → 排除",
+     "rel": [
+      "obvious 明显的(挡在路上，一眼看到)",
+      "via 经由",
+      "deviate 偏离",
+      "trivial 琐碎的"
      ]
     },
     {
@@ -306,7 +393,14 @@
       "claim",
       "profess"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pur-(pro-，向前) + port(拿) → 把话拿到前面来说 → 声称",
+     "rel": [
+      "transport 运输",
+      "report 报告",
+      "support 支持",
+      "import 进口"
+     ]
     },
     {
      "w": "detritus",
@@ -318,7 +412,13 @@
       "debris",
       "rubble"
      ],
-     "ant": []
+     "ant": [],
+     "root": "de-(下) + trit(磨) + -us → 磨下来的东西 → 碎屑",
+     "rel": [
+      "attrition 磨损",
+      "trite 陈腐的(磨烂了)",
+      "contrite 悔恨的"
+     ]
     },
     {
      "w": "snub",
@@ -348,6 +448,13 @@
      "ant": [
       "carefree",
       "thoughtless"
+     ],
+     "root": "pens(悬、称重、思考) + -ive(……的) → 在心里掂量的 → 沉思的",
+     "rel": [
+      "ponder 沉思",
+      "expense 开销",
+      "suspense 悬念",
+      "compensate 补偿"
      ]
     }
    ]
@@ -379,6 +486,13 @@
      "ant": [
       "simple",
       "straightforward"
+     ],
+     "root": "con-(一起) + volut(卷) + -ed → 卷在一起的 → 错综复杂的",
+     "rel": [
+      "revolve 旋转",
+      "evolve 进化",
+      "involve 卷入",
+      "volume 卷、册"
      ]
     },
     {
@@ -394,6 +508,13 @@
      "ant": [
       "calm",
       "tranquil"
+     ],
+     "root": "turb(搅动) + -ulent(充满……的) → 充满搅动的 → 动荡的",
+     "rel": [
+      "disturb 打扰",
+      "turbine 涡轮",
+      "trouble 麻烦",
+      "perturb 使不安"
      ]
     },
     {
@@ -409,6 +530,12 @@
      "ant": [
       "generous",
       "charitable"
+     ],
+     "root": "rap(抓、夺) + -acious(易于……的) → 爱抢夺的 → 贪婪的",
+     "rel": [
+      "rapt 入迷的(被抓走了)",
+      "rapture 狂喜",
+      "ravage 掠夺"
      ]
     },
     {
@@ -424,6 +551,10 @@
      "ant": [
       "invulnerable",
       "secure"
+     ],
+     "root": "vulner(伤口) + -able(能……的) → 能被伤害的 → 脆弱的",
+     "rel": [
+      "invulnerable 刀枪不入的"
      ]
     },
     {
@@ -439,6 +570,13 @@
      "ant": [
       "reckless",
       "imprudent"
+     ],
+     "root": "pru-(= pro-，向前) + dent(= vid，看) → 事先看到后果 → 谨慎的",
+     "rel": [
+      "provide 提供(pro- + vid)",
+      "providence 远见",
+      "video 视频",
+      "evident 明显的"
      ]
     }
    ]
@@ -485,6 +623,12 @@
      "ant": [
       "angelic",
       "saintly"
+     ],
+     "root": "dia-(穿过) + bol(扔) + -ic(……的) → 把话扔过去(诽谤) → 魔鬼的",
+     "rel": [
+      "devil 魔鬼",
+      "problem 问题(pro- 向前 + bol 扔)",
+      "symbol 符号(sym- 一起 + bol 扔)"
      ]
     },
     {
@@ -497,7 +641,12 @@
       "stall",
       "obstruct"
      ],
-     "ant": []
+     "ant": [],
+     "root": "荷兰语 vrijbuiter(自由 + 抢掠) → 海盗；引申为在议会中搅局拖延",
+     "rel": [
+      "freebooter 海盗",
+      "booty 战利品"
+     ]
     },
     {
      "w": "putative",
@@ -512,6 +661,13 @@
      "ant": [
       "actual",
       "proven"
+     ],
+     "root": "put(想、算) + -ative(……的) → 被大家认为是的 → 公认的",
+     "rel": [
+      "compute 计算",
+      "dispute 争论",
+      "reputation 名誉(re- + put)",
+      "amputate 截肢(am- + put 切)"
      ]
     },
     {
@@ -527,6 +683,11 @@
      "ant": [
       "industrious",
       "diligent"
+     ],
+     "root": "in-(不) + dol(痛) + -ent(……的) → 不觉得痛(也不想动) → 懒惰的",
+     "rel": [
+      "condolence 吊唁(con- 一起 + dol 痛)",
+      "dolor 悲痛"
      ]
     }
    ]
@@ -555,7 +716,14 @@
       "amendment",
       "alteration"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(再) + vis(看) + -ion(名词) → 再看一遍 → 修订",
+     "rel": [
+      "vision 视觉",
+      "supervise 监督",
+      "visit 访问",
+      "advise 建议"
+     ]
     },
     {
      "w": "irascible",
@@ -570,6 +738,11 @@
      "ant": [
       "placid",
       "even-tempered"
+     ],
+     "root": "ir(怒，同 ire) + -ascible(易于……的) → 易怒的",
+     "rel": [
+      "ire 愤怒",
+      "irate 暴怒的"
      ]
     },
     {
@@ -585,6 +758,10 @@
      "ant": [
       "timid",
       "fearful"
+     ],
+     "root": "in-(不) + trep(颤抖) + -id(……的) → 不发抖的 → 无畏的",
+     "rel": [
+      "trepidation 惶恐不安"
      ]
     },
     {
@@ -597,7 +774,14 @@
       "restore",
       "reform"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(重新) + habil(适合、有能力) + -itate(使) → 重新使有能力 → 康复",
+     "rel": [
+      "ability 能力",
+      "habit 习惯",
+      "inhabit 居住",
+      "exhibit 展示"
+     ]
     },
     {
      "w": "heartfelt",
@@ -612,7 +796,8 @@
      "ant": [
       "insincere",
       "feigned"
-     ]
+     ],
+     "root": "heart(心) + felt(感觉到的) → 发自内心的"
     }
    ]
   },
@@ -643,6 +828,12 @@
      "ant": [
       "dampen",
       "deaden"
+     ],
+     "root": "anim(生命、灵魂) + -ate → 有生命的；使有生气",
+     "rel": [
+      "animal 动物",
+      "unanimous 一致的(un- 一 + anim 心)",
+      "magnanimous 宽宏大量的"
      ]
     },
     {
@@ -658,6 +849,13 @@
      "ant": [
       "unnecessary",
       "optional"
+     ],
+     "root": "re-(反复) + quis(寻求) + -ite → 一再需要的 → 必需的",
+     "rel": [
+      "require 要求",
+      "acquire 获得",
+      "inquire 询问",
+      "query 询问"
      ]
     },
     {
@@ -670,7 +868,13 @@
       "transform",
       "mutate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "meta-(变化) + morph(形状) + -ose(使) → 改变形状",
+     "rel": [
+      "morph 变形",
+      "amorphous 无定形的",
+      "morphology 形态学"
+     ]
     },
     {
      "w": "antedate",
@@ -685,6 +889,12 @@
      "ant": [
       "postdate",
       "follow"
+     ],
+     "root": "ante-(之前) + date(日期) → 日期在前 → 早于",
+     "rel": [
+      "anterior 前面的",
+      "antecedent 先行事物",
+      "anticipate 预期"
      ]
     },
     {
@@ -697,7 +907,14 @@
       "replace",
       "supplant"
      ],
-     "ant": []
+     "ant": [],
+     "root": "super-(在上) + sed(坐) → 坐到上面替代 → 取代",
+     "rel": [
+      "preside 主持",
+      "resident 居民",
+      "session 会期",
+      "sediment 沉淀物"
+     ]
     }
    ]
   },

@@ -29,6 +29,13 @@
      "ant": [
       "meek",
       "submissive"
+     ],
+     "root": "imper(命令) + -ious(……的) → 发号施令的 → 专横的",
+     "rel": [
+      "emperor 皇帝",
+      "imperial 帝国的",
+      "imperative 紧急的、命令",
+      "empire 帝国"
      ]
     },
     {
@@ -44,6 +51,13 @@
      "ant": [
       "inauspicious",
       "ominous"
+     ],
+     "root": "pro-(向前) + pit(= pet，冲向) + -ious(……的) → 事事顺着你冲的方向 → 吉利的、有利的",
+     "rel": [
+      "petition 请愿",
+      "compete 竞争",
+      "appetite 食欲",
+      "impetuous 冲动的"
      ]
     },
     {
@@ -74,6 +88,11 @@
      "ant": [
       "easy",
       "effortless"
+     ],
+     "root": "tax(征税、压上重担) + -ing → 加重负担的 → 繁重的",
+     "rel": [
+      "tax 税",
+      "taxation 征税"
      ]
     },
     {
@@ -89,6 +108,10 @@
      "ant": [
       "accessible",
       "familiar"
+     ],
+     "root": "eso(内部) + -teric + -ic → 内部圈子的 → 深奥难懂的",
+     "rel": [
+      "exoteric 外行也懂的"
      ]
     }
    ]
@@ -120,7 +143,8 @@
      "ant": [
       "clarify",
       "elucidate"
-     ]
+     ],
+     "root": "ob-(遮挡) + fusc(暗) + -ate(使) → 遮暗 → 使模糊"
     },
     {
      "w": "warble",
@@ -147,6 +171,11 @@
      "ant": [
       "democratic",
       "liberal"
+     ],
+     "root": "despot(暴君、家主) + -ic(……的) → 暴君式的 → 专制的",
+     "rel": [
+      "despot 暴君",
+      "despotism 专制"
      ]
     },
     {
@@ -162,6 +191,12 @@
      "ant": [
       "abundance",
       "plethora"
+     ],
+     "root": "dear(贵、稀少) + -th(名词后缀) → 贵得买不到 → 缺乏",
+     "rel": [
+      "dear 昂贵的",
+      "depth 深度",
+      "growth 增长"
      ]
     },
     {
@@ -177,6 +212,14 @@
      "ant": [
       "repel",
       "bore"
+     ],
+     "root": "capt(抓) + -ivate(使) → 抓住 → 迷住",
+     "rel": [
+      "capture 捕获",
+      "captive 俘虏",
+      "capable 有能力的",
+      "accept 接受",
+      "concept 概念"
      ]
     }
    ]
@@ -223,6 +266,12 @@
      "ant": [
       "unique",
       "irreplaceable"
+     ],
+     "root": "fung(= funct，履行、执行) + -ible(能……的) → 能互相替代履行的 → 可互换的",
+     "rel": [
+      "function 功能",
+      "perfunctory 敷衍的",
+      "defunct 已废弃的"
      ]
     },
     {
@@ -238,7 +287,8 @@
      "ant": [
       "turbulent",
       "stormy"
-     ]
+     ],
+     "root": "希腊神话：翠鸟 halcyon 在冬至前后筑巢，传说此时风浪平息 → 平静的"
     },
     {
      "w": "smother",
@@ -265,6 +315,11 @@
      "ant": [
       "downbeat",
       "gloomy"
+     ],
+     "root": "up(向上) + beat(拍子) → 轻快向上的节拍 → 乐观的",
+     "rel": [
+      "downbeat 悲观的",
+      "beat 节拍"
      ]
     }
    ]
@@ -296,6 +351,13 @@
      "ant": [
       "tactful",
       "diplomatic"
+     ],
+     "root": "tact(触觉、分寸) + -less(无) → 没有分寸的",
+     "rel": [
+      "tact 机智、圆滑",
+      "contact 接触",
+      "tangible 可触摸的",
+      "intact 完好的(没被碰过)"
      ]
     },
     {
@@ -311,6 +373,12 @@
      "ant": [
       "unconvincing",
       "weak"
+     ],
+     "root": "co-(一起) + ag(驱动) + -ent(……的) → 把论据推到一起 → 令人信服的",
+     "rel": [
+      "agent 代理人",
+      "agenda 议程",
+      "exact 精确的"
      ]
     },
     {
@@ -325,7 +393,8 @@
      ],
      "ant": [
       "unleash"
-     ]
+     ],
+     "root": "bridle 本义是马笼头，用来勒住马 → 抑制、约束"
     },
     {
      "w": "neophyte",
@@ -340,6 +409,12 @@
      "ant": [
       "veteran",
       "expert"
+     ],
+     "root": "neo-(新) + phyt(植物、生长) → 新长出来的 → 新手",
+     "rel": [
+      "neon 氖(新发现的气体)",
+      "neolithic 新石器时代的",
+      "novel 新颖的"
      ]
     },
     {
@@ -383,7 +458,13 @@
       "reasoning",
       "justification"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ration(理性、计算) + -ale → 理性的依据 → 基本原理",
+     "rel": [
+      "ratio 比率",
+      "rational 理性的",
+      "reason 理由"
+     ]
     },
     {
      "w": "convulsion",
@@ -397,6 +478,10 @@
      ],
      "ant": [
       "calm"
+     ],
+     "root": "con-(一起) + vuls(拉扯) + -ion(名词) → 肌肉一起被扯 → 痉挛",
+     "rel": [
+      "revulsion 强烈反感(re- + vuls 拉回)"
      ]
     },
     {
@@ -412,6 +497,13 @@
      "ant": [
       "minor",
       "inconspicuous"
+     ],
+     "root": "sal(跳) + -ient(……的) → 跳出来的 → 显著的",
+     "rel": [
+      "assault 攻击(as- + sault 跳向)",
+      "result 结果(re- + sult 跳回)",
+      "insult 侮辱(in- + sult 跳到身上)",
+      "somersault 翻筋斗"
      ]
     },
     {
@@ -442,6 +534,13 @@
      "ant": [
       "concise",
       "concentrated"
+     ],
+     "root": "dif-(dis-，散开) + fus(倒) + -e → 倒得到处都是 → 扩散；冗长的",
+     "rel": [
+      "fuse 融合",
+      "refuse 拒绝",
+      "confuse 混淆",
+      "infuse 注入"
      ]
     }
    ]
@@ -488,6 +587,12 @@
      "ant": [
       "derogatory",
       "critical"
+     ],
+     "root": "laud(赞美) + -atory(……的) → 赞扬的",
+     "rel": [
+      "applaud 鼓掌",
+      "laud 称赞",
+      "plaudit 赞赏"
      ]
     },
     {
@@ -503,6 +608,12 @@
      "ant": [
       "abundance",
       "comfort"
+     ],
+     "root": "priv(单独、被剥夺) + -ation(名词) → 被剥夺 → 匮乏",
+     "rel": [
+      "private 私人的",
+      "deprive 剥夺",
+      "privilege 特权"
      ]
     },
     {
@@ -518,6 +629,13 @@
      "ant": [
       "advanced",
       "sophisticated"
+     ],
+     "root": "prim(第一) + -itive(……的) → 最初的 → 原始的",
+     "rel": [
+      "prime 首要的",
+      "primary 主要的",
+      "prince 王子",
+      "premier 首位的"
      ]
     },
     {
@@ -533,6 +651,12 @@
      "ant": [
       "clear",
       "limpid"
+     ],
+     "root": "turb(搅动) + -id(……的) → 被搅浑的 → 混浊的",
+     "rel": [
+      "disturb 打扰",
+      "turbulent 动荡的",
+      "turbine 涡轮"
      ]
     }
    ]
@@ -564,6 +688,10 @@
      "ant": [
       "significant",
       "magnanimous"
+     ],
+     "root": "pet(小，来自法语 petit) + -y(……的) → 小的 → 琐碎的",
+     "rel": [
+      "petite 娇小的"
      ]
     },
     {
@@ -579,6 +707,12 @@
      "ant": [
       "obscurity",
       "vagueness"
+     ],
+     "root": "clar(清楚) + -ity(名词) → 清楚",
+     "rel": [
+      "clear 清楚的",
+      "declare 宣布(de- + clar，讲清楚)",
+      "clarify 澄清"
      ]
     },
     {
@@ -594,7 +728,8 @@
      "ant": [
       "peaceable",
       "docile"
-     ]
+     ],
+     "root": "来自拉丁 trux(凶狠) + -ulent(充满……的) → 满脸凶相的 → 好斗的"
     },
     {
      "w": "fanciful",
@@ -609,6 +744,12 @@
      "ant": [
       "realistic",
       "practical"
+     ],
+     "root": "fancy(幻想，由 fantasy 缩写) + -ful(充满……的) → 充满幻想的",
+     "rel": [
+      "fantasy 幻想",
+      "phantom 幽灵",
+      "fantastic 极好的"
      ]
     },
     {
@@ -624,6 +765,11 @@
      "ant": [
       "invigorate",
       "energize"
+     ],
+     "root": "e-(出、去掉) + nerv(筋、力) + -ate(使) → 抽掉筋力 → 使衰弱。注意：别当成 energy 的近亲，意思相反",
+     "rel": [
+      "nerve 神经",
+      "nervous 紧张的"
      ]
     }
    ]
@@ -655,6 +801,13 @@
      "ant": [
       "ally",
       "supporter"
+     ],
+     "root": "ad-(向) + vers(转) + -ary(人) → 转过身来面对你的人 → 对手",
+     "rel": [
+      "adverse 不利的",
+      "converse 交谈",
+      "reverse 反转",
+      "advertise 广告(转向注意)"
      ]
     },
     {
@@ -670,6 +823,11 @@
      "ant": [
       "covert",
       "concealed"
+     ],
+     "root": "古法语 ouvert(打开的) → 敞开的 → 公开的",
+     "rel": [
+      "aperture 孔径",
+      "overture 序曲"
      ]
     },
     {
@@ -685,6 +843,12 @@
      "ant": [
       "tasty",
       "stimulating"
+     ],
+     "root": "in-(无) + sip(味道) + -id(……的) → 没味道的 → 乏味的",
+     "rel": [
+      "savor 品味",
+      "sapient 睿智的",
+      "sage 智者"
      ]
     },
     {
@@ -700,6 +864,12 @@
      "ant": [
       "ignorant",
       "unfamiliar"
+     ],
+     "root": "con-(一起) + vers(转) + -ant(……的) → 常常在一起打转的 → 熟悉的",
+     "rel": [
+      "converse 交谈",
+      "conversation 谈话",
+      "versatile 多才多艺的"
      ]
     },
     {
@@ -712,7 +882,13 @@
       "quirk",
       "eccentricity"
      ],
-     "ant": []
+     "ant": [],
+     "root": "idio(自己的) + syn(一起) + crasy(混合) → 自己独有的混合 → 个人特质",
+     "rel": [
+      "idiom 习语",
+      "idiot 白痴(原指只顾私事的人)",
+      "synonym 同义词"
+     ]
     }
    ]
   },

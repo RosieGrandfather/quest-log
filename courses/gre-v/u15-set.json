@@ -29,6 +29,12 @@
      "ant": [
       "uncouth",
       "rustic"
+     ],
+     "root": "urb(城市) + -ane(……的) → 城里人的 → 文雅的",
+     "rel": [
+      "urban 城市的",
+      "suburb 郊区",
+      "urbanize 城市化"
      ]
     },
     {
@@ -44,7 +50,8 @@
      "ant": [
       "serious",
       "earnest"
-     ]
+     ],
+     "root": "来自拉丁 facetus(诙谐的、优雅的) → 爱开玩笑的"
     },
     {
      "w": "analogous",
@@ -59,6 +66,13 @@
      "ant": [
       "dissimilar",
       "unrelated"
+     ],
+     "root": "ana-(按照) + log(比例、话) + -ous(……的) → 按比例对应的 → 类似的",
+     "rel": [
+      "analogy 类比",
+      "logic 逻辑",
+      "dialogue 对话",
+      "apology 道歉"
      ]
     },
     {
@@ -71,7 +85,13 @@
       "ban",
       "prohibition"
      ],
-     "ant": []
+     "ant": [],
+     "root": "em-(进入) + barg(= bar，栏) → 拦起来 → 禁运",
+     "rel": [
+      "bar 栏杆",
+      "barrier 屏障",
+      "barricade 路障"
+     ]
     },
     {
      "w": "dissension",
@@ -86,6 +106,13 @@
      "ant": [
       "accord",
       "agreement"
+     ],
+     "root": "dis-(分开) + sens(感觉) + -ion(名词) → 感觉不一致 → 意见分歧",
+     "rel": [
+      "consensus 共识",
+      "dissent 异议",
+      "sense 感觉",
+      "sentiment 情感"
      ]
     }
    ]
@@ -132,6 +159,13 @@
      "ant": [
       "retreat",
       "withdrawal"
+     ],
+     "root": "in-(进入) + curs(跑) + -ion(名词) → 跑进来 → 入侵",
+     "rel": [
+      "current 水流",
+      "cursor 光标",
+      "excursion 远足",
+      "recur 复发"
      ]
     },
     {
@@ -147,7 +181,8 @@
      "ant": [
       "denigrate",
       "disparage"
-     ]
+     ],
+     "root": "ad-(向) + ul(摇尾) + -ate(动词) → 像狗摇尾巴讨好 → 谄媚"
     },
     {
      "w": "list",
@@ -174,7 +209,8 @@
      "ant": [
       "jovial",
       "cheerful"
-     ]
+     ],
+     "root": "来自拉丁 lugere(哀悼) + -ious → 哀伤的"
     }
    ]
   },
@@ -205,6 +241,13 @@
      "ant": [
       "appreciative",
       "accepting"
+     ],
+     "root": "capt(抓) + -ious(……的) → 专抓人把柄的 → 吹毛求疵的",
+     "rel": [
+      "capture 捕获",
+      "captive 俘虏",
+      "capable 有能力的",
+      "accept 接受"
      ]
     },
     {
@@ -220,6 +263,10 @@
      "ant": [
       "restrained",
       "controlled"
+     ],
+     "root": "ramp(爬、后腿站立) + -ant(……的) → 像野兽直立扑来 → 猖獗的",
+     "rel": [
+      "ramp 斜坡"
      ]
     },
     {
@@ -235,6 +282,10 @@
      "ant": [
       "lengthen",
       "extend"
+     ],
+     "root": "trunc(树干、截断) + -ate(动词) → 截成树桩 → 截短",
+     "rel": [
+      "trunk 树干"
      ]
     },
     {
@@ -247,7 +298,8 @@
       "besiege",
       "harass"
      ],
-     "ant": []
+     "ant": [],
+     "root": "be-(周围) + leaguer(围攻的营地，荷兰语) → 围住 → 困扰"
     },
     {
      "w": "importune",
@@ -259,7 +311,14 @@
       "beseech",
       "implore"
      ],
-     "ant": []
+     "ant": [],
+     "root": "im-(不) + port(港口) + -une → 到不了港口、靠不了岸 → 纠缠恳求",
+     "rel": [
+      "opportune 适时的(op- 向 + port 港)",
+      "port 港口",
+      "portal 入口",
+      "export 出口"
+     ]
     }
    ]
   },
@@ -290,7 +349,8 @@
      "ant": [
       "straightforward",
       "simple"
-     ]
+     ],
+     "root": "Byzantium(拜占庭帝国)，官僚体制繁复 → 错综复杂的"
     },
     {
      "w": "dampen",
@@ -305,6 +365,10 @@
      "ant": [
       "encourage",
       "stimulate"
+     ],
+     "root": "damp(潮湿) + -en(使) → 使潮湿 → 抑制",
+     "rel": [
+      "damp 潮湿的"
      ]
     },
     {
@@ -320,6 +384,13 @@
      "ant": [
       "epilogue",
       "afterword"
+     ],
+     "root": "pre-(前) + fac(说) + -e → 先说的话 → 序言",
+     "rel": [
+      "fate 命运(被说出的)",
+      "fable 寓言",
+      "fame 名声",
+      "infant 婴儿(in- 不 + fant 说话)"
      ]
     },
     {
@@ -335,6 +406,12 @@
      "ant": [
       "moderate",
       "skeptic"
+     ],
+     "root": "zeal(热情) + -ot(人) → 狂热者",
+     "rel": [
+      "zeal 热忱",
+      "zealous 热心的",
+      "jealous 嫉妒的"
      ]
     },
     {
@@ -350,6 +427,12 @@
      "ant": [
       "derivative",
       "trivial"
+     ],
+     "root": "semin(种子) + -al(……的) → 种子的 → 开创性的",
+     "rel": [
+      "seminar 研讨会",
+      "seminary 神学院",
+      "disseminate 散播"
      ]
     }
    ]
@@ -381,6 +464,13 @@
      "ant": [
       "foreign",
       "imported"
+     ],
+     "root": "en-(在内) + dem(人民) + -ic(……的) → 在这一群人里的 → 地方性的",
+     "rel": [
+      "epidemic 流行病(epi- 在上)",
+      "pandemic 大流行",
+      "democracy 民主",
+      "demography 人口学"
      ]
     },
     {
@@ -393,7 +483,8 @@
       "imitate",
       "mimic"
      ],
-     "ant": []
+     "ant": [],
+     "root": "来自拉丁 aemulus(竞争者) → 与人争胜 → 效仿、赶超"
     },
     {
      "w": "venial",
@@ -408,6 +499,11 @@
      "ant": [
       "grave",
       "mortal"
+     ],
+     "root": "ven(恩惠、爱) + -ial(……的) → 值得宽恕的",
+     "rel": [
+      "Venus 维纳斯(爱神)",
+      "venerate 崇敬"
      ]
     },
     {
@@ -435,7 +531,14 @@
       "rule",
       "prevail"
      ],
-     "ant": []
+     "ant": [],
+     "root": "reg(统治) + -n → 统治",
+     "rel": [
+      "regal 帝王的",
+      "regime 政权",
+      "regulate 管理",
+      "region 地区"
+     ]
     }
    ]
   },
@@ -477,7 +580,12 @@
       "meddle",
       "interfere"
      ],
-     "ant": []
+     "ant": [],
+     "root": "tamper 是 temper(调和、改变)的变体 → 乱改",
+     "rel": [
+      "temper 调和",
+      "temperate 有节制的"
+     ]
     },
     {
      "w": "restless",
@@ -492,7 +600,8 @@
      "ant": [
       "calm",
       "tranquil"
-     ]
+     ],
+     "root": "rest(休息) + -less(无) → 无法休息的"
     },
     {
      "w": "fiasco",
@@ -507,7 +616,8 @@
      "ant": [
       "triumph",
       "success"
-     ]
+     ],
+     "root": "意大利语 fiasco = 瓶子，威尼斯吹玻璃工做砸的瓶子 → 惨败"
     },
     {
      "w": "precedent",
@@ -519,7 +629,14 @@
       "example",
       "standard"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pre-(前) + ced(走) + -ent → 先走过的 → 先例",
+     "rel": [
+      "precede 在前",
+      "proceed 前进",
+      "concede 让步",
+      "accede 同意"
+     ]
     }
    ]
   },
@@ -565,6 +682,13 @@
      "ant": [
       "trickle",
       "drought"
+     ],
+     "root": "de-(向下) + lu(洗) + -ge → 冲洗而下 → 洪水",
+     "rel": [
+      "lavatory 盥洗室",
+      "laundry 洗衣房",
+      "lavish 奢侈的",
+      "dilute 稀释"
      ]
     },
     {
@@ -595,6 +719,13 @@
      "ant": [
       "obey",
       "comply"
+     ],
+     "root": "de-(否定) + fy(= fid，信任) → 撕毁信任 → 公然反抗",
+     "rel": [
+      "faith 信念",
+      "fidelity 忠诚",
+      "confide 吐露",
+      "diffident 缺乏自信的"
      ]
     },
     {
@@ -610,6 +741,12 @@
      "ant": [
       "benign",
       "harmless"
+     ],
+     "root": "mal-(坏) + gn(生) + -ant(……的) → 生来坏的 → 恶性的",
+     "rel": [
+      "benign 良性的",
+      "malign 恶意的",
+      "malice 恶意"
      ]
     }
    ]
@@ -641,7 +778,8 @@
      "ant": [
       "rare",
       "scarce"
-     ]
+     ],
+     "root": "ubi(哪里) + -quitous → 哪里都在"
     },
     {
      "w": "disseminate",
@@ -656,6 +794,12 @@
      "ant": [
       "withhold",
       "suppress"
+     ],
+     "root": "dis-(散开) + semin(种子) + -ate(动词) → 撒种子 → 散播",
+     "rel": [
+      "seminal 开创性的",
+      "seminar 研讨会",
+      "seed 种子"
      ]
     },
     {
@@ -671,6 +815,13 @@
      "ant": [
       "disproportionate",
       "inadequate"
+     ],
+     "root": "com-(共同) + mensur(量) + -ate(……的) → 有共同量度的 → 相称的",
+     "rel": [
+      "measure 测量",
+      "dimension 维度",
+      "immense 巨大的(不可测)",
+      "incommensurate 不相称的"
      ]
     },
     {
@@ -686,6 +837,13 @@
      "ant": [
       "obscure",
       "confuse"
+     ],
+     "root": "il-(in-，向) + lumin(光) + -ate(使) → 照亮 → 阐明",
+     "rel": [
+      "luminous 发光的",
+      "lunar 月亮的",
+      "illustrate 说明",
+      "lucid 清晰的"
      ]
     },
     {
@@ -701,6 +859,10 @@
      "ant": [
       "obvious",
       "accessible"
+     ],
+     "root": "re-(向后) + con-(一起) + dit(放) + -e → 放到深处藏起来 → 深奥的",
+     "rel": [
+      "abscond 潜逃(abs- 离开 + cond 藏)"
      ]
     }
    ]

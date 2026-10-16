@@ -26,7 +26,14 @@
       "justify",
       "authorize"
      ],
-     "ant": []
+     "ant": [],
+     "root": "war(保护，同 guard) + -rant → 保护 → 保证；批准",
+     "rel": [
+      "guarantee 保证",
+      "guard 守卫",
+      "ward 病房",
+      "warranty 保修单"
+     ]
     },
     {
      "w": "viable",
@@ -41,6 +48,13 @@
      "ant": [
       "impractical",
       "unworkable"
+     ],
+     "root": "vi(生活) + -able(能……的) → 能活下去的 → 可行的",
+     "rel": [
+      "vital 生命的",
+      "vivid 生动的",
+      "survive 幸存",
+      "revive 复活"
      ]
     },
     {
@@ -53,7 +67,11 @@
       "implore",
       "entreat"
      ],
-     "ant": []
+     "ant": [],
+     "root": "be-(加强) + seech(= seek) → 苦苦寻求 → 恳求",
+     "rel": [
+      "seek 寻找"
+     ]
     },
     {
      "w": "metaphor",
@@ -65,7 +83,14 @@
       "figure of speech",
       "symbol"
      ],
-     "ant": []
+     "ant": [],
+     "root": "meta-(变、超) + phor(带) → 把意思带到另一处 → 隐喻",
+     "rel": [
+      "transfer 转移",
+      "fertile 多产的",
+      "ferry 渡船",
+      "prefer 更喜欢"
+     ]
     },
     {
      "w": "nitpick",
@@ -77,7 +102,8 @@
       "carp",
       "quibble"
      ],
-     "ant": []
+     "ant": [],
+     "root": "nit(虱卵) + pick(挑) → 挑虱卵 → 吹毛求疵"
     }
    ]
   },
@@ -107,7 +133,8 @@
      ],
      "ant": [
       "plain speech"
-     ]
+     ],
+     "root": "bomb(棉花填充物) → 塞满棉花 → 浮夸空洞的话"
     },
     {
      "w": "connoisseur",
@@ -122,6 +149,13 @@
      "ant": [
       "novice",
       "philistine"
+     ],
+     "root": "con-(完全) + nois(= nosc，知道) + -eur(人) → 完全懂行的人 → 鉴赏家",
+     "rel": [
+      "recognize 认出",
+      "cognitive 认知的",
+      "notice 注意",
+      "ignorance 无知"
      ]
     },
     {
@@ -137,7 +171,8 @@
      "ant": [
       "open-minded",
       "progressive"
-     ]
+     ],
+     "root": "hide(皮) + bound(绑) → 皮绷得紧紧的 → 死板的"
     },
     {
      "w": "pertinent",
@@ -152,6 +187,13 @@
      "ant": [
       "irrelevant",
       "immaterial"
+     ],
+     "root": "per-(完全) + tin(握住) + -ent(……的) → 紧扣的 → 相关的",
+     "rel": [
+      "pertain 有关",
+      "tenant 租户",
+      "contain 包含",
+      "retain 保留"
      ]
     },
     {
@@ -167,7 +209,8 @@
      "ant": [
       "insignificant",
       "vague"
-     ]
+     ],
+     "root": "tell(说) + -ing → 说明问题的 → 有力的"
     }
    ]
   },
@@ -198,7 +241,8 @@
      "ant": [
       "meek",
       "unassuming"
-     ]
+     ],
+     "root": "over(在上) + bear(承受、压) + -ing → 压在别人头上的 → 专横的"
     },
     {
      "w": "lavish",
@@ -213,6 +257,12 @@
      "ant": [
       "frugal",
       "stingy"
+     ],
+     "root": "lav(洗、倾倒) + -ish(……的) → 倾泻而出的 → 奢侈的",
+     "rel": [
+      "lavatory 盥洗室",
+      "laundry 洗衣房",
+      "deluge 洪水"
      ]
     },
     {
@@ -228,7 +278,8 @@
      "ant": [
       "authentic",
       "genuine"
-     ]
+     ],
+     "root": "spur(私生的) + -ious(……的) → 非婚生的 → 假的"
     },
     {
      "w": "prolix",
@@ -243,6 +294,11 @@
      "ant": [
       "concise",
       "terse"
+     ],
+     "root": "pro-(向前) + lix(流) → 一直向前流不停 → 啰嗦的",
+     "rel": [
+      "liquid 液体",
+      "fluid 流体"
      ]
     },
     {
@@ -258,6 +314,10 @@
      "ant": [
       "respectful",
       "pertinent"
+     ],
+     "root": "im-(不) + pertinent(相关的、合分寸的) → 不合分寸的 → 无礼的",
+     "rel": [
+      "pertinent 相关的"
      ]
     }
    ]
@@ -289,6 +349,12 @@
      "ant": [
       "oppose",
       "undermine"
+     ],
+     "root": "champ(战场、田野) + -ion(名词) → 战场上的人 → 拥护；冠军",
+     "rel": [
+      "camp 营地",
+      "campus 校园",
+      "campaign 战役"
      ]
     },
     {
@@ -304,6 +370,11 @@
      "ant": [
       "entangle",
       "implicate"
+     ],
+     "root": "ex-(出) + tric(障碍、纠缠) + -ate(动词) → 从纠缠里解出来",
+     "rel": [
+      "intricate 错综复杂的(in- + tric)",
+      "trick 诡计"
      ]
     },
     {
@@ -319,6 +390,12 @@
      "ant": [
       "temporary",
       "fleeting"
+     ],
+     "root": "e-(= ae，年龄) + tern + -al(……的) → 年岁无尽的 → 永恒的",
+     "rel": [
+      "age 年龄",
+      "longevity 长寿",
+      "medieval 中世纪的"
      ]
     },
     {
@@ -333,7 +410,8 @@
      ],
      "ant": [
       "solemnity"
-     ]
+     ],
+     "root": "droll(滑稽、诙谐) + -ness(名词) → 诙谐"
     },
     {
      "w": "meet",
@@ -348,6 +426,11 @@
      "ant": [
       "improper",
       "unsuitable"
+     ],
+     "root": "此处 meet 是古义「合适的」，与 measure 同源 → 量得刚好 → 适当的",
+     "rel": [
+      "measure 测量",
+      "fit 合适"
      ]
     }
    ]
@@ -378,6 +461,13 @@
      ],
      "ant": [
       "improvise"
+     ],
+     "root": "pre-(预先) + medit(考虑) + -ate(动词) → 事先考虑 → 预谋",
+     "rel": [
+      "meditate 冥想",
+      "medicine 药",
+      "remedy 补救",
+      "medical 医学的"
      ]
     },
     {
@@ -393,6 +483,13 @@
      "ant": [
       "prologue",
       "preface"
+     ],
+     "root": "epi-(在……之后) + log(话) + -ue → 最后的话 → 尾声",
+     "rel": [
+      "prologue 序言",
+      "dialogue 对话",
+      "monologue 独白",
+      "catalog 目录"
      ]
     },
     {
@@ -405,7 +502,13 @@
       "model",
       "exemplar"
      ],
-     "ant": []
+     "ant": [],
+     "root": "para-(旁边) + gon(磨石、试金石) → 拿来对照比较的标准 → 典范",
+     "rel": [
+      "parallel 平行的",
+      "paragraph 段落",
+      "parasite 寄生虫"
+     ]
     },
     {
      "w": "bargain",
@@ -429,7 +532,14 @@
       "implore",
       "beg"
      ],
-     "ant": []
+     "ant": [],
+     "root": "en-(使) + treat(对待、拉) → 拉着人求 → 恳求",
+     "rel": [
+      "treat 对待",
+      "treaty 条约",
+      "retreat 撤退",
+      "portray 描绘"
+     ]
     }
    ]
   },
@@ -460,7 +570,8 @@
      "ant": [
       "formal",
       "literary"
-     ]
+     ],
+     "root": "verna(家生奴隶、本地人) + -cular → 本地人说的话 → 方言"
     },
     {
      "w": "contumacious",
@@ -475,6 +586,12 @@
      "ant": [
       "obedient",
       "compliant"
+     ],
+     "root": "con-(完全) + tum(膨胀) + -acious(……的) → 傲气膨胀不服从的",
+     "rel": [
+      "tumor 肿瘤",
+      "tumult 骚动",
+      "tumid 肿胀的"
      ]
     },
     {
@@ -490,6 +607,13 @@
      "ant": [
       "settled",
       "stationary"
+     ],
+     "root": "it(走) + -iner + -ant(……的) → 到处走的 → 巡回的",
+     "rel": [
+      "itinerary 行程",
+      "exit 出口",
+      "transit 通过",
+      "ambition 野心"
      ]
     },
     {
@@ -504,7 +628,8 @@
      ],
      "ant": [
       "patronize"
-     ]
+     ],
+     "root": "来自人名 Charles Boycott，爱尔兰地主，被佃户集体抵制 → 联合抵制"
     },
     {
      "w": "acclaim",
@@ -519,6 +644,14 @@
      "ant": [
       "criticism",
       "censure"
+     ],
+     "root": "ac-(ad-，向) + claim(喊) → 向着喊 → 欢呼",
+     "rel": [
+      "claim 声称",
+      "exclaim 惊呼",
+      "proclaim 宣布",
+      "declare 宣布",
+      "clamor 喧嚷"
      ]
     }
    ]
@@ -550,6 +683,13 @@
      "ant": [
       "assent",
       "agree"
+     ],
+     "root": "dis-(分开) + sent(感觉) → 感觉不同 → 持异议",
+     "rel": [
+      "consent 同意",
+      "consensus 共识",
+      "sense 感觉",
+      "sentiment 情感"
      ]
     },
     {
@@ -565,6 +705,13 @@
      "ant": [
       "original",
       "innovative"
+     ],
+     "root": "de-(向下) + riv(河) + -ative(……的) → 从河里分出来的支流 → 派生的、非原创的",
+     "rel": [
+      "river 河",
+      "arrive 到达(靠岸)",
+      "rival 对手(同河岸)",
+      "derive 派生"
      ]
     },
     {
@@ -580,7 +727,8 @@
      "ant": [
       "strengthen",
       "invigorate"
-     ]
+     ],
+     "root": "de-(去掉) + bilit(力量) + -ate(使) → 去掉力气 → 使衰弱"
     },
     {
      "w": "coerce",
@@ -595,7 +743,8 @@
      "ant": [
       "persuade",
       "induce"
-     ]
+     ],
+     "root": "co-(一起) + erc(圈住、限制) + -e → 围起来逼迫 → 强制"
     },
     {
      "w": "doom",
@@ -610,6 +759,10 @@
      "ant": [
       "save",
       "spare"
+     ],
+     "root": "doom 本义是判决 → 命运已判 → 注定",
+     "rel": [
+      "deem 认为"
      ]
     }
    ]
@@ -656,6 +809,10 @@
      "ant": [
       "beneficial",
       "helpful"
+     ],
+     "root": "delet(毁灭) + -erious(……的) → 有毁灭作用的 → 有害的",
+     "rel": [
+      "delete 删除"
      ]
     },
     {
@@ -668,7 +825,8 @@
       "rework",
       "regurgitate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(重新) + hash(剁碎) → 重新剁碎再做一遍 → 旧话重提"
     },
     {
      "w": "revolt",
@@ -683,6 +841,13 @@
      "ant": [
       "attract",
       "obey"
+     ],
+     "root": "re-(反) + volt(转) → 转过来反抗 → 反叛",
+     "rel": [
+      "revolve 旋转",
+      "evolve 进化",
+      "volume 卷",
+      "involve 卷入"
      ]
     },
     {
@@ -695,7 +860,14 @@
       "relate",
       "apply"
      ],
-     "ant": []
+     "ant": [],
+     "root": "per-(完全) + tain(握) → 紧握着 → 有关",
+     "rel": [
+      "contain 包含",
+      "retain 保留",
+      "maintain 维持",
+      "tenant 租户"
+     ]
     }
    ]
   },

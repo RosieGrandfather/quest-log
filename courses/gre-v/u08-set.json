@@ -29,6 +29,13 @@
      "ant": [
       "unmoving",
       "flippant"
+     ],
+     "root": "poign(刺) + -ant(……的) → 刺人的 → 令人辛酸的",
+     "rel": [
+      "pungent 刺鼻的",
+      "point 点",
+      "puncture 刺破",
+      "punctuate 加标点"
      ]
     },
     {
@@ -56,6 +63,11 @@
      "ant": [
       "dissolve",
       "liquefy"
+     ],
+     "root": "co-(一起) + ag(驱赶) + -ulate → 赶到一起 → 凝结",
+     "rel": [
+      "cogent 令人信服的",
+      "agent 代理人"
      ]
     },
     {
@@ -83,7 +95,12 @@
       "wistfulness",
       "yearning"
      ],
-     "ant": []
+     "ant": [],
+     "root": "nost(回家) + alg(痛) + -ia(名词) → 想回家的痛 → 怀旧",
+     "rel": [
+      "analgesic 止痛药(an- 无 + alg)",
+      "neuralgia 神经痛"
+     ]
     }
    ]
   },
@@ -114,6 +131,13 @@
      "ant": [
       "renown",
       "honor"
+     ],
+     "root": "not(知道) + -ori + -ety(名词) → 人人都知道(的坏名声)",
+     "rel": [
+      "notice 注意",
+      "notion 概念",
+      "notify 通知",
+      "notorious 臭名昭著的"
      ]
     },
     {
@@ -129,6 +153,13 @@
      "ant": [
       "company",
       "society"
+     ],
+     "root": "sol(单独) + -itude(名词) → 独处",
+     "rel": [
+      "solo 独奏",
+      "sole 唯一的",
+      "solitary 孤独的",
+      "desolate 荒凉的"
      ]
     },
     {
@@ -144,6 +175,12 @@
      "ant": [
       "commend",
       "applaud"
+     ],
+     "root": "cens(评判) + -ure(名词) → 评判 → 谴责",
+     "rel": [
+      "censor 审查员",
+      "census 人口普查",
+      "censorship 审查制度"
      ]
     },
     {
@@ -159,6 +196,13 @@
      "ant": [
       "alleviate",
       "soothe"
+     ],
+     "root": "ag-(ad-，向) + grav(重) + -ate(使) → 使变重 → 加重",
+     "rel": [
+      "gravity 重力",
+      "grave 严重的",
+      "grief 悲痛",
+      "gravitate 受引力吸引"
      ]
     },
     {
@@ -174,7 +218,8 @@
      "ant": [
       "emphasize",
       "stress"
-     ]
+     ],
+     "root": "soft(轻) + pedal(踏板) → 轻踩踏板 → 淡化"
     }
    ]
   },
@@ -205,7 +250,8 @@
      "ant": [
       "enthusiastic",
       "fervent"
-     ]
+     ],
+     "root": "tep(温) + -id(……的) → 微温的"
     },
     {
      "w": "plethora",
@@ -220,6 +266,13 @@
      "ant": [
       "dearth",
       "scarcity"
+     ],
+     "root": "pleth(满) + -ora → 满溢 → 过多",
+     "rel": [
+      "plenty 充足",
+      "plenary 全体出席的",
+      "complete 完整的",
+      "supplement 补充"
      ]
     },
     {
@@ -232,7 +285,8 @@
       "grovel",
       "toady"
      ],
-     "ant": []
+     "ant": [],
+     "root": "本义指狗摇尾巴讨主人欢心 → 奉承、讨好"
     },
     {
      "w": "repugnant",
@@ -247,6 +301,12 @@
      "ant": [
       "attractive",
       "agreeable"
+     ],
+     "root": "re-(反) + pugn(拳头、打) + -ant(……的) → 反过来打人的 → 令人厌恶的",
+     "rel": [
+      "pugnacious 好斗的",
+      "impugn 抨击",
+      "pugilist 拳击手"
      ]
     },
     {
@@ -262,7 +322,8 @@
      "ant": [
       "emphasize",
       "exaggerate"
-     ]
+     ],
+     "root": "down(往下) + play(演) → 往小里演 → 轻描淡写"
     }
    ]
   },
@@ -293,6 +354,13 @@
      "ant": [
       "huge",
       "gigantic"
+     ],
+     "root": "di-(完全) + minu(小) + -tive(……的) → 小的",
+     "rel": [
+      "diminish 减少",
+      "minute 微小的",
+      "minus 减",
+      "minor 较小的"
      ]
     },
     {
@@ -308,6 +376,12 @@
      "ant": [
       "extreme",
       "intemperate"
+     ],
+     "root": "temper(调和) + -ate(……的) → 调和适度的 → 有节制的",
+     "rel": [
+      "temperature 温度",
+      "temper 脾气",
+      "temperament 性情"
      ]
     },
     {
@@ -323,7 +397,8 @@
      "ant": [
       "heavy",
       "substantial"
-     ]
+     ],
+     "root": "goose(鹅) + summer(夏) → 晚秋鹅肉季节漂浮的蛛丝 → 薄纱"
     },
     {
      "w": "anecdote",
@@ -335,7 +410,13 @@
       "tale",
       "story"
      ],
-     "ant": []
+     "ant": [],
+     "root": "an-(不) + ec-(ex-，出) + dot(给) → 没有公开发表过的 → 轶事",
+     "rel": [
+      "antidote 解毒剂(anti- + dot 给)",
+      "dose 剂量",
+      "donate 捐赠"
+     ]
     },
     {
      "w": "untenable",
@@ -350,6 +431,14 @@
      "ant": [
       "defensible",
       "tenable"
+     ],
+     "root": "un-(不) + ten(握住) + -able(能……的) → 抓不住的 → 站不住脚的",
+     "rel": [
+      "tenant 租户",
+      "tenacious 顽强的",
+      "retain 保留",
+      "maintain 维持",
+      "contain 包含"
      ]
     }
    ]
@@ -381,6 +470,13 @@
      "ant": [
       "doubt",
       "acquittal"
+     ],
+     "root": "con-(完全) + vict(征服) + -ion(名词) → 被完全说服 → 坚信；定罪",
+     "rel": [
+      "convince 说服",
+      "victory 胜利",
+      "evict 驱逐",
+      "invincible 不可战胜的"
      ]
     },
     {
@@ -420,7 +516,14 @@
       "wonder",
       "miracle"
      ],
-     "ant": []
+     "ant": [],
+     "root": "marv(惊奇) + -el → 令人惊奇的事物",
+     "rel": [
+      "miracle 奇迹",
+      "admire 钦佩",
+      "mirror 镜子",
+      "mirage 海市蜃楼"
+     ]
     },
     {
      "w": "proficient",
@@ -435,6 +538,13 @@
      "ant": [
       "inept",
       "unskilled"
+     ],
+     "root": "pro-(向前) + fic(做) + -ient(……的) → 越做越往前的 → 熟练的",
+     "rel": [
+      "efficient 高效的",
+      "sufficient 足够的",
+      "deficient 不足的",
+      "profit 利润"
      ]
     }
    ]
@@ -463,7 +573,14 @@
       "arbitrate",
       "rule"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ad-(向) + ju(法) + dic(说) + -ate → 对着法律说话 → 裁决",
+     "rel": [
+      "judge 法官",
+      "judicial 司法的",
+      "verdict 裁决",
+      "dictate 口述"
+     ]
     },
     {
      "w": "robust",
@@ -478,6 +595,10 @@
      "ant": [
       "frail",
       "weak"
+     ],
+     "root": "rob(橡木，象征强壮) + -ust(……的) → 强健的",
+     "rel": [
+      "corroborate 证实(加固)"
      ]
     },
     {
@@ -493,7 +614,8 @@
      "ant": [
       "trivial",
       "modest"
-     ]
+     ],
+     "root": "来自希腊语 epos(词、诗) → 史诗；宏大的"
     },
     {
      "w": "rant",
@@ -520,6 +642,10 @@
      "ant": [
       "eager",
       "willing"
+     ],
+     "root": "古英语 lath(讨厌) → 不情愿的",
+     "rel": [
+      "loathe 憎恨"
      ]
     }
    ]
@@ -563,7 +689,8 @@
      "ant": [
       "verbose",
       "wordy"
-     ]
+     ],
+     "root": "Laconia 拉科尼亚，斯巴达所在地，斯巴达人说话简短 → 言简意赅的"
     },
     {
      "w": "lurid",
@@ -605,6 +732,14 @@
      "ant": [
       "detrimental",
       "obstructive"
+     ],
+     "root": "con-(一起) + duc(引导) + -ive(……的) → 引到一起的 → 有助于……的",
+     "rel": [
+      "conduct 引导",
+      "educate 教育(e- 引出)",
+      "produce 生产",
+      "introduce 介绍",
+      "reduce 减少"
      ]
     }
    ]
@@ -636,6 +771,10 @@
      "ant": [
       "content",
       "uncomplaining"
+     ],
+     "root": "quer(抱怨) + -ulous(易于……的) → 爱抱怨的",
+     "rel": [
+      "quarrel 争吵"
      ]
     },
     {
@@ -663,6 +802,13 @@
      "ant": [
       "selfishness",
       "egoism"
+     ],
+     "root": "altru(别人，来自 alter 另一个) + -ism(主义) → 想着别人 → 利他主义",
+     "rel": [
+      "alter 改变",
+      "alternate 交替",
+      "alternative 选择",
+      "alter ego 另一个自我"
      ]
     },
     {
@@ -678,6 +824,12 @@
      "ant": [
       "undeserved",
       "unjust"
+     ],
+     "root": "con-(完全) + dign(值得) → 完全相称的 → 应得的",
+     "rel": [
+      "dignity 尊严",
+      "dignified 庄重的",
+      "deign 屈尊"
      ]
     },
     {
@@ -693,6 +845,13 @@
      "ant": [
       "permit",
       "enable"
+     ],
+     "root": "pre-(预先) + clud(关) + -e → 先把门关上 → 排除",
+     "rel": [
+      "include 包含",
+      "exclude 排除",
+      "conclude 结束",
+      "seclude 隔离"
      ]
     }
    ]

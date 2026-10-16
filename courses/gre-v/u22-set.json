@@ -29,6 +29,12 @@
      "ant": [
       "harmful",
       "detrimental"
+     ],
+     "root": "salut(健康) + -ary(……的) → 有益健康的",
+     "rel": [
+      "salute 敬礼(祝你健康)",
+      "salubrious 有益健康的",
+      "salvation 拯救"
      ]
     },
     {
@@ -44,6 +50,13 @@
      "ant": [
       "fact",
       "certainty"
+     ],
+     "root": "sup-(sub-，下) + pos(放) + -ition(名词) → 放在底下的前提 → 假设",
+     "rel": [
+      "suppose 假设",
+      "position 位置",
+      "compose 组成",
+      "impose 强加"
      ]
     },
     {
@@ -56,7 +69,8 @@
       "bully",
       "intimidate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "brow(眉毛) + beat(打) → 皱眉压人 → 恐吓"
     },
     {
      "w": "inquisitive",
@@ -71,6 +85,13 @@
      "ant": [
       "uninterested",
       "incurious"
+     ],
+     "root": "in-(向) + quis(问、寻) + -itive(……的) → 爱追问的 → 好奇爱打听的",
+     "rel": [
+      "inquire 询问",
+      "acquire 获得",
+      "require 要求",
+      "question 问题"
      ]
     },
     {
@@ -86,6 +107,13 @@
      "ant": [
       "intensify",
       "escalate"
+     ],
+     "root": "a-(ad-，向) + bat(打) + -e → 打下去 → 减弱",
+     "rel": [
+      "battle 战斗",
+      "debate 辩论",
+      "combat 战斗",
+      "battery 电池"
      ]
     }
    ]
@@ -132,7 +160,8 @@
      "ant": [
       "clear",
       "famous"
-     ]
+     ],
+     "root": "ob-(盖住) + scur(遮盖) + -e → 盖住 → 模糊的"
     },
     {
      "w": "deprecate",
@@ -147,6 +176,12 @@
      "ant": [
       "praise",
       "commend"
+     ],
+     "root": "de-(离开) + prec(祈求) + -ate(动词) → 祈求它别发生 → 反对",
+     "rel": [
+      "precarious 不稳靠的",
+      "pray 祈祷",
+      "imprecate 诅咒"
      ]
     },
     {
@@ -162,6 +197,11 @@
      "ant": [
       "soften",
       "adapt"
+     ],
+     "root": "oss(骨) + -ify(使) → 变成骨头 → 僵化",
+     "rel": [
+      "osteoporosis 骨质疏松",
+      "osseous 骨的"
      ]
     },
     {
@@ -208,7 +248,8 @@
      "ant": [
       "tiny",
       "minuscule"
-     ]
+     ],
+     "root": "Gargantua，拉伯雷小说里的巨人 → 巨大的"
     },
     {
      "w": "complacency",
@@ -223,6 +264,13 @@
      "ant": [
       "concern",
       "vigilance"
+     ],
+     "root": "com-(加强) + plac(使高兴) + -ency(名词) → 对自己很满意 → 自满",
+     "rel": [
+      "complacent 自满的",
+      "please 取悦",
+      "placid 平静的",
+      "placebo 安慰剂"
      ]
     },
     {
@@ -238,6 +286,11 @@
      "ant": [
       "obedient",
       "tractable"
+     ],
+     "root": "away(离开) + -ward(朝……方向) → 朝着偏离的方向 → 不服管束的",
+     "rel": [
+      "way 路",
+      "awkward 笨拙的"
      ]
     },
     {
@@ -253,6 +306,10 @@
      "ant": [
       "respect",
       "praise"
+     ],
+     "root": "mock(嘲笑) + -ery(名词) → 嘲弄",
+     "rel": [
+      "mock 嘲笑"
      ]
     },
     {
@@ -299,7 +356,8 @@
      "ant": [
       "aesthete",
       "connoisseur"
-     ]
+     ],
+     "root": "Philistines 非利士人，圣经中被视作粗俗的对手 → 庸俗的人"
     },
     {
      "w": "legacy",
@@ -311,7 +369,13 @@
       "inheritance",
       "heritage"
      ],
-     "ant": []
+     "ant": [],
+     "root": "leg(委托) + -acy(名词) → 委托留下的东西 → 遗产",
+     "rel": [
+      "delegate 代表",
+      "colleague 同事",
+      "legate 使节"
+     ]
     },
     {
      "w": "nuance",
@@ -323,7 +387,12 @@
       "subtlety",
       "shade"
      ],
-     "ant": []
+     "ant": [],
+     "root": "nu(云，来自 nue) + -ance(名词) → 云彩颜色的细微过渡 → 细微差别",
+     "rel": [
+      "nebula 星云",
+      "nebulous 模糊的"
+     ]
     },
     {
      "w": "gild",
@@ -335,7 +404,11 @@
       "embellish",
       "adorn"
      ],
-     "ant": []
+     "ant": [],
+     "root": "gild(金子) → 镀金",
+     "rel": [
+      "gold 黄金"
+     ]
     },
     {
      "w": "conundrum",
@@ -380,6 +453,12 @@
      "ant": [
       "restrained",
       "subdued"
+     ],
+     "root": "flamb(火焰) + -oyant(……的) → 火焰般的 → 艳丽夺目的",
+     "rel": [
+      "flame 火焰",
+      "flamingo 火烈鸟",
+      "inflame 激怒"
      ]
     },
     {
@@ -395,6 +474,10 @@
      "ant": [
       "order",
       "neatness"
+     ],
+     "root": "dis-(不) + array(排列) → 排列被打乱 → 混乱",
+     "rel": [
+      "array 排列"
      ]
     },
     {
@@ -410,6 +493,13 @@
      "ant": [
       "profane",
       "violable"
+     ],
+     "root": "sacro(神圣) + sanct(神圣) → 双重神圣的 → 不可侵犯的",
+     "rel": [
+      "sacred 神圣的",
+      "sanction 批准",
+      "sanctuary 圣所",
+      "sacrifice 牺牲(sacri- + fic 做)"
      ]
     },
     {
@@ -425,6 +515,13 @@
      "ant": [
       "obey",
       "face"
+     ],
+     "root": "circum-(周围) + vent(来、走) → 绕着走 → 规避",
+     "rel": [
+      "circumspect 谨慎的",
+      "convene 召集",
+      "prevent 阻止",
+      "venue 场所"
      ]
     },
     {
@@ -440,7 +537,8 @@
      "ant": [
       "laudatory",
       "gentle"
-     ]
+     ],
+     "root": "scath(伤害，古词) + -ing → 伤人的 → 严厉尖刻的"
     }
    ]
   },
@@ -471,7 +569,8 @@
      "ant": [
       "primary",
       "main"
-     ]
+     ],
+     "root": "ancill(女仆) + -ary(……的) → 像女仆一样辅助的 → 附属的"
     },
     {
      "w": "trepidation",
@@ -486,6 +585,10 @@
      "ant": [
       "calm",
       "composure"
+     ],
+     "root": "trepid(颤抖) + -ation(名词) → 发抖 → 惶恐",
+     "rel": [
+      "intrepid 无畏的"
      ]
     },
     {
@@ -501,7 +604,8 @@
      "ant": [
       "quell",
       "suppress"
-     ]
+     ],
+     "root": "fov(温暖、热敷) + -ment → 把热敷在伤口上 → 加热催动 → 煽动"
     },
     {
      "w": "parch",
@@ -531,6 +635,12 @@
      "ant": [
       "correct",
       "upright"
+     ],
+     "root": "err(游荡) + -ant(……的) → 游荡的 → 误入歧途的",
+     "rel": [
+      "err 犯错",
+      "error 错误",
+      "erratic 不稳定的"
      ]
     }
    ]
@@ -562,6 +672,13 @@
      "ant": [
       "essential",
       "necessary"
+     ],
+     "root": "super-(超过) + flu(流) + -ous(……的) → 流溢出来的 → 多余的",
+     "rel": [
+      "fluid 流体",
+      "influence 影响",
+      "fluctuate 波动",
+      "flu 流感"
      ]
     },
     {
@@ -577,6 +694,10 @@
      "ant": [
       "rigid",
       "stubborn"
+     ],
+     "root": "mall(锤) + -eable(能……的) → 能被锤打的 → 可塑的",
+     "rel": [
+      "mallet 木槌"
      ]
     },
     {
@@ -592,6 +713,13 @@
      "ant": [
       "valid",
       "sound"
+     ],
+     "root": "fall(欺骗) + -acious(易于……的) → 欺骗性的 → 谬误的",
+     "rel": [
+      "fail 失败",
+      "false 错误的",
+      "fault 过错",
+      "fallacy 谬误"
      ]
     },
     {
@@ -607,6 +735,10 @@
      "ant": [
       "brisk",
       "lively"
+     ],
+     "root": "slug(蛞蝓、慢) + -ish(……的) → 像蛞蝓一样慢的",
+     "rel": [
+      "slug 蛞蝓"
      ]
     },
     {
@@ -650,7 +782,13 @@
       "delight",
       "bask"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(反) + bel(战争) → 造反、闹腾 → 狂欢(与 rebel 同源)",
+     "rel": [
+      "rebel 反叛",
+      "belligerent 好战的",
+      "bellicose 好战的"
+     ]
     },
     {
      "w": "flit",
@@ -679,7 +817,8 @@
      "ant": [
       "permanent",
       "enduring"
-     ]
+     ],
+     "root": "ep-(在) + hemer(一天) + -al(……的) → 只在一天里存在的 → 短暂的"
     },
     {
      "w": "pastiche",
@@ -691,7 +830,13 @@
       "medley",
       "parody"
      ],
-     "ant": []
+     "ant": [],
+     "root": "来自意大利语 pasta(面团、糊) → 糊在一起的东西 → 拼凑模仿之作",
+     "rel": [
+      "paste 糊",
+      "pasta 意面",
+      "pastry 糕点"
+     ]
     },
     {
      "w": "prophetic",
@@ -703,7 +848,13 @@
       "predictive",
       "visionary"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pro-(预先) + phet(说) + -ic(……的) → 预先说出的 → 预言的",
+     "rel": [
+      "prophet 先知",
+      "euphemism 委婉语",
+      "fate 命运"
+     ]
     }
    ]
   },

@@ -29,6 +29,10 @@
      "ant": [
       "familiar",
       "common"
+     ],
+     "root": "arc(箱子，锁起来的) + -ane(……的) → 锁在箱子里的 → 神秘难懂的",
+     "rel": [
+      "ark 方舟(箱子)"
      ]
     },
     {
@@ -44,7 +48,8 @@
      "ant": [
       "approve",
       "sanction"
-     ]
+     ],
+     "root": "拉丁语 veto = 我禁止 → 否决"
     },
     {
      "w": "pellucid",
@@ -59,6 +64,13 @@
      "ant": [
       "opaque",
       "murky"
+     ],
+     "root": "per-(通过) + luc(光) + -id(……的) → 光能穿透的 → 清澈明白的",
+     "rel": [
+      "lucid 清晰的",
+      "translucent 半透明的",
+      "elucidate 阐明",
+      "illuminate 照亮"
      ]
     },
     {
@@ -74,6 +86,10 @@
      "ant": [
       "harsh",
       "severe"
+     ],
+     "root": "clem(温和) + -ent(……的) → 温和的",
+     "rel": [
+      "inclement 恶劣的(天气)"
      ]
     },
     {
@@ -132,7 +148,14 @@
       "augment",
       "addendum"
      ],
-     "ant": []
+     "ant": [],
+     "root": "sup-(sub-，下) + ple(满) + -ment(名词) → 在下面补满 → 补充",
+     "rel": [
+      "complete 完整的",
+      "implement 执行",
+      "plenty 充足",
+      "replete 充满的"
+     ]
     },
     {
      "w": "tantamount",
@@ -144,7 +167,11 @@
       "equivalent",
       "equal"
      ],
-     "ant": []
+     "ant": [],
+     "root": "tant(那么多) + amount(价值) → 与……价值相等",
+     "rel": [
+      "amount 数量"
+     ]
     },
     {
      "w": "venerate",
@@ -159,6 +186,12 @@
      "ant": [
       "despise",
       "scorn"
+     ],
+     "root": "ven(爱、敬) + -er-ate(动词) → 敬爱 → 崇敬",
+     "rel": [
+      "Venus 爱神",
+      "venial 可原谅的",
+      "revere 崇敬"
      ]
     },
     {
@@ -173,6 +206,11 @@
      ],
      "ant": [
       "neglect"
+     ],
+     "root": "con-(一起) + templ(神殿、划定的观察区) + -ate(动词) → 在神殿里观察 → 沉思",
+     "rel": [
+      "temple 神殿",
+      "template 模板"
      ]
     }
    ]
@@ -204,6 +242,10 @@
      "ant": [
       "wholesome",
       "respectable"
+     ],
+     "root": "seam(接缝) + -y(……的) → 缝线外露的一面 → 丑陋的一面",
+     "rel": [
+      "seam 接缝"
      ]
     },
     {
@@ -219,6 +261,13 @@
      "ant": [
       "rudeness",
       "incivility"
+     ],
+     "root": "civil(公民的) + -ity(名词) → 公民应有的素养 → 礼貌",
+     "rel": [
+      "civil 公民的",
+      "city 城市",
+      "citizen 公民",
+      "civilization 文明"
      ]
     },
     {
@@ -231,7 +280,14 @@
       "combine",
       "aggravate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "com-(一起) + pound(放，= pon) → 放在一起 → 混合物",
+     "rel": [
+      "component 组成部分",
+      "expound 阐述",
+      "propound 提出",
+      "postpone 推迟"
+     ]
     },
     {
      "w": "pseudonym",
@@ -243,7 +299,13 @@
       "pen name",
       "alias"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pseudo-(假) + onym(名字) → 假名",
+     "rel": [
+      "pseudoscience 伪科学",
+      "anonymous 匿名的",
+      "synonym 同义词"
+     ]
     },
     {
      "w": "absolute",
@@ -258,6 +320,13 @@
      "ant": [
       "partial",
       "conditional"
+     ],
+     "root": "ab-(离开) + solut(松开) + -e → 松开了一切束缚 → 绝对的",
+     "rel": [
+      "absolve 免罪",
+      "solve 解决",
+      "dissolve 溶解",
+      "resolve 决心"
      ]
     }
    ]
@@ -289,6 +358,13 @@
      "ant": [
       "thin",
       "faint"
+     ],
+     "root": "son(声音) + -orous(……的) → 声音响亮的",
+     "rel": [
+      "sonic 声音的",
+      "resonate 共鸣",
+      "sonata 奏鸣曲",
+      "dissonance 不和谐音"
      ]
     },
     {
@@ -304,6 +380,11 @@
      "ant": [
       "moderate",
       "apathetic"
+     ],
+     "root": "rab(狂怒、狂犬) + -id(……的) → 狂犬病的 → 狂热的",
+     "rel": [
+      "rabies 狂犬病",
+      "rage 暴怒"
      ]
     },
     {
@@ -319,7 +400,8 @@
      "ant": [
       "animated",
       "expressive"
-     ]
+     ],
+     "root": "dead(死) + pan(脸，俚语) → 一张死脸 → 面无表情的"
     },
     {
      "w": "implacable",
@@ -334,6 +416,13 @@
      "ant": [
       "lenient",
       "placable"
+     ],
+     "root": "im-(不) + plac(使平静) + -able(能……的) → 无法使平息的",
+     "rel": [
+      "placid 平静的",
+      "placate 安抚",
+      "complacent 自满的",
+      "please 取悦"
      ]
     },
     {
@@ -349,6 +438,13 @@
      "ant": [
       "clarify",
       "confirm"
+     ],
+     "root": "con-(完全) + found(= fus，倒) → 一股脑倒在一起 → 弄糊涂",
+     "rel": [
+      "fuse 融合",
+      "confuse 混淆",
+      "refund 退款",
+      "profuse 大量的"
      ]
     }
    ]
@@ -380,6 +476,13 @@
      "ant": [
       "taciturn",
       "reticent"
+     ],
+     "root": "loqu(说) + -acious(易于……的) → 爱说话的",
+     "rel": [
+      "eloquent 雄辩的",
+      "colloquial 口语的",
+      "soliloquy 独白",
+      "obloquy 谩骂"
      ]
     },
     {
@@ -407,6 +510,13 @@
      "ant": [
       "attract",
       "welcome"
+     ],
+     "root": "re-(回) + puls(推) + -e → 推回去 → 使厌恶",
+     "rel": [
+      "pulse 脉搏",
+      "impulse 冲动",
+      "compel 强迫",
+      "propulsion 推进"
      ]
     },
     {
@@ -422,6 +532,12 @@
      "ant": [
       "incriminate",
       "blame"
+     ],
+     "root": "ex-(去除) + culp(罪过) + -ate(动词) → 去掉罪责",
+     "rel": [
+      "culprit 罪犯",
+      "culpable 有罪的",
+      "inculpate 归罪"
      ]
     },
     {
@@ -437,6 +553,10 @@
      "ant": [
       "significant",
       "momentous"
+     ],
+     "root": "trifle(琐事) + -ing(……的) → 琐碎的",
+     "rel": [
+      "trifle 小事"
      ]
     }
    ]
@@ -468,7 +588,8 @@
      "ant": [
       "exciting",
       "stimulating"
-     ]
+     ],
+     "root": "hum(嗡嗡声) + drum(鼓) → 单调的嗡嗡声 → 无聊的"
     },
     {
      "w": "pompous",
@@ -483,6 +604,10 @@
      "ant": [
       "humble",
       "unassuming"
+     ],
+     "root": "pomp(盛大排场) + -ous(……的) → 爱摆排场的 → 自大的",
+     "rel": [
+      "pomp 排场"
      ]
     },
     {
@@ -498,6 +623,13 @@
      "ant": [
       "prosperity",
       "good fortune"
+     ],
+     "root": "ad-(向) + vers(转) + -ity(名词) → 迎面转过来的(不利事) → 逆境",
+     "rel": [
+      "adverse 不利的",
+      "adversary 对手",
+      "reverse 反转",
+      "converse 交谈"
      ]
     },
     {
@@ -513,6 +645,11 @@
      "ant": [
       "barren",
       "sterile"
+     ],
+     "root": "fec(生育) + -und(……的) → 多产的",
+     "rel": [
+      "fertile 肥沃的",
+      "fetus 胎儿"
      ]
     },
     {
@@ -528,7 +665,8 @@
      "ant": [
       "repel",
       "deter"
-     ]
+     ],
+     "root": "来自法语 aveugle(盲的) → 蒙住眼睛骗人 → 诱骗"
     }
    ]
   },
@@ -559,6 +697,12 @@
      "ant": [
       "gentle",
       "mild"
+     ],
+     "root": "acerb(酸、苦) + -ic(……的) → 酸苦的 → 尖酸的",
+     "rel": [
+      "exacerbate 加剧",
+      "acid 酸",
+      "acute 尖锐的"
      ]
     },
     {
@@ -573,6 +717,10 @@
      ],
      "ant": [
       "shamelessness"
+     ],
+     "root": "scrup(尖石子) → 鞋里的尖石子硌脚 → 良心上的不安、顾虑",
+     "rel": [
+      "scrupulous 一丝不苟的"
      ]
     },
     {
@@ -588,6 +736,13 @@
      "ant": [
       "diatribe",
       "tirade"
+     ],
+     "root": "pan-(全) + egyr(集会) + -ic → 在全体集会上宣读的颂词",
+     "rel": [
+      "panorama 全景",
+      "pandemic 大流行",
+      "category 类别(agor 集会)",
+      "allegory 寓言"
      ]
     },
     {
@@ -603,6 +758,13 @@
      "ant": [
       "curtail",
       "abbreviate"
+     ],
+     "root": "pro-(向前) + tract(拉) → 向前拉长 → 延长",
+     "rel": [
+      "attract 吸引",
+      "contract 收缩",
+      "extract 提取",
+      "distract 使分心"
      ]
     },
     {
@@ -618,6 +780,13 @@
      "ant": [
       "aversion",
       "dislike"
+     ],
+     "root": "pre-(前) + dilect(爱) + -ion(名词) → 事先就偏爱",
+     "rel": [
+      "diligent 勤勉的(选中所爱)",
+      "elect 选举",
+      "select 挑选",
+      "collect 收集"
      ]
     }
    ]
@@ -649,7 +818,8 @@
      "ant": [
       "direct",
       "straightforward"
-     ]
+     ],
+     "root": "ob-(向) + liqu(斜) + -e → 歪着的 → 斜的、间接的"
     },
     {
      "w": "eclectic",
@@ -664,6 +834,13 @@
      "ant": [
       "uniform",
       "narrow"
+     ],
+     "root": "ec-(出) + lect(挑选) + -ic(……的) → 从各家挑选出来的 → 兼收并蓄的",
+     "rel": [
+      "select 挑选",
+      "elect 选举",
+      "collect 收集",
+      "intellect 智力"
      ]
     },
     {
@@ -678,6 +855,13 @@
      ],
      "ant": [
       "preserve"
+     ],
+     "root": "con-(完全) + vert(转) → 转变",
+     "rel": [
+      "divert 转移",
+      "subvert 颠覆",
+      "reverse 反转",
+      "conversion 转变"
      ]
     },
     {
@@ -693,6 +877,11 @@
      "ant": [
       "unity",
       "union"
+     ],
+     "root": "schism(分裂) 与 scissors 同源，都有「切开」之意 → 分裂",
+     "rel": [
+      "scissors 剪刀",
+      "rescind 废除"
      ]
     },
     {
@@ -708,6 +897,11 @@
      "ant": [
       "retain",
       "preserve"
+     ],
+     "root": "sup-(sub-，下) + plant(脚底) → 从下面把脚拨开 → 取而代之",
+     "rel": [
+      "plant 植物(脚扎在地里)",
+      "transplant 移植"
      ]
     }
    ]

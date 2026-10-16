@@ -29,6 +29,11 @@
      "ant": [
       "vilify",
       "demean"
+     ],
+     "root": "de(= deus，神) + -ify(使) → 使成为神 → 奉若神明",
+     "rel": [
+      "deity 神",
+      "divine 神圣的"
      ]
     },
     {
@@ -44,6 +49,10 @@
      "ant": [
       "glance",
       "skim"
+     ],
+     "root": "scrut(翻找旧物) + -ize(动词) → 一件件翻检 → 仔细审查",
+     "rel": [
+      "scrutiny 细查"
      ]
     },
     {
@@ -59,6 +68,13 @@
      "ant": [
       "egalitarian",
       "flat"
+     ],
+     "root": "hier(神圣) + arch(统治) + -ical(……的) → 神职人员的统治，分层级的 → 等级制的",
+     "rel": [
+      "monarch 君主",
+      "anarchy 无政府状态",
+      "patriarch 家长",
+      "hieroglyph 象形文字(神圣的刻字)"
      ]
     },
     {
@@ -74,6 +90,11 @@
      "ant": [
       "joyful",
       "cheerful"
+     ],
+     "root": "plaint(哀诉) + -ive(……的) → 哀诉的",
+     "rel": [
+      "complain 抱怨",
+      "plaintiff 原告"
      ]
     },
     {
@@ -89,7 +110,8 @@
      "ant": [
       "open",
       "accessible"
-     ]
+     ],
+     "root": "来自赫尔墨斯(Hermes Trismegistus)，炼金术传说之祖，其秘法密封保守 → 深奥的；密封的"
     }
    ]
   },
@@ -120,6 +142,12 @@
      "ant": [
       "active",
       "restless"
+     ],
+     "root": "quiesc(安静) + -ent(……的) → 静止的",
+     "rel": [
+      "quiet 安静的",
+      "acquiesce 默许",
+      "requiem 安魂曲"
      ]
     },
     {
@@ -135,6 +163,11 @@
      "ant": [
       "despondent",
       "mournful"
+     ],
+     "root": "jubil(欢呼) + -ant(……的) → 欢呼的",
+     "rel": [
+      "jubilee 庆典",
+      "jubilation 欢腾"
      ]
     },
     {
@@ -150,6 +183,14 @@
      "ant": [
       "assert",
       "extend"
+     ],
+     "root": "re-(回) + tract(拉) → 拉回来 → 收回",
+     "rel": [
+      "attract 吸引",
+      "contract 合同、收缩",
+      "distract 使分心",
+      "extract 提取",
+      "tractor 拖拉机"
      ]
     },
     {
@@ -165,6 +206,12 @@
      "ant": [
       "modern",
       "current"
+     ],
+     "root": "out(出) + mode(方式、风尚) + -ed → 超出了流行方式 → 过时的",
+     "rel": [
+      "mode 方式",
+      "modern 现代的",
+      "modify 修改"
      ]
     },
     {
@@ -180,6 +227,13 @@
      "ant": [
       "humble",
       "sincere"
+     ],
+     "root": "sanct(神圣) + -imonious(……的) → 装出神圣样子的 → 假装虔诚的",
+     "rel": [
+      "sanction 批准",
+      "sacred 神圣的",
+      "saint 圣人",
+      "sanctuary 圣所"
      ]
     }
    ]
@@ -211,6 +265,12 @@
      "ant": [
       "modesty",
       "squalor"
+     ],
+     "root": "grand(大) + -eur(名词) → 宏伟",
+     "rel": [
+      "grand 宏大的",
+      "aggrandize 夸大",
+      "grandiose 夸大的"
      ]
     },
     {
@@ -223,7 +283,12 @@
       "portend",
       "foretell"
      ],
-     "ant": []
+     "ant": [],
+     "root": "古罗马占卜官，观察鸟飞的方向预测吉凶 → 预兆；预示",
+     "rel": [
+      "auspicious 吉利的(au 鸟)",
+      "inaugurate 就职(古时先占卜)"
+     ]
     },
     {
      "w": "paradigm",
@@ -235,7 +300,13 @@
       "model",
       "archetype"
      ],
-     "ant": []
+     "ant": [],
+     "root": "para-(旁边) + digm(展示) → 放在旁边展示的样板 → 范例",
+     "rel": [
+      "indicate 指示",
+      "index 索引",
+      "diction 措辞"
+     ]
     },
     {
      "w": "contract",
@@ -249,6 +320,13 @@
      ],
      "ant": [
       "expand"
+     ],
+     "root": "con-(一起) + tract(拉) → 拉到一起 → 合同；收缩",
+     "rel": [
+      "attract 吸引",
+      "extract 提取",
+      "subtract 减去",
+      "abstract 抽象的"
      ]
     },
     {
@@ -264,6 +342,10 @@
      "ant": [
       "timid",
       "bashful"
+     ],
+     "root": "braz(黄铜) + -en(……做的) → 铜做的(脸皮厚如铜) → 厚颜无耻的",
+     "rel": [
+      "brass 黄铜"
      ]
     }
    ]
@@ -295,7 +377,8 @@
      "ant": [
       "pure",
       "wholesome"
-     ]
+     ],
+     "root": "sord(脏) + -id(……的) → 肮脏的"
     },
     {
      "w": "intrinsic",
@@ -310,6 +393,12 @@
      "ant": [
       "extrinsic",
       "external"
+     ],
+     "root": "intrin-(向内) + sec(紧挨着) + -ic(……的) → 在内部的 → 固有的",
+     "rel": [
+      "extrinsic 外在的",
+      "introvert 内向的",
+      "introspect 内省"
      ]
     },
     {
@@ -325,6 +414,13 @@
      "ant": [
       "careless",
       "lax"
+     ],
+     "root": "punct(点) + -ilious(……的) → 一点一点都讲究的 → 一丝不苟的",
+     "rel": [
+      "punctual 准时的",
+      "punctuate 加标点",
+      "puncture 刺破",
+      "compunction 内疚"
      ]
     },
     {
@@ -340,6 +436,13 @@
      "ant": [
       "brief",
       "finite"
+     ],
+     "root": "in-(不) + termin(边界、终点) + -able(能……的) → 没有终点的 → 没完没了的",
+     "rel": [
+      "terminal 终点站",
+      "terminate 终止",
+      "determine 决定",
+      "exterminate 消灭"
      ]
     },
     {
@@ -355,6 +458,12 @@
      "ant": [
       "retain",
       "keep"
+     ],
+     "root": "re-(加强) + linqu(离开) + -ish(动词) → 离开 → 放弃",
+     "rel": [
+      "delinquent 违法的",
+      "relic 遗物",
+      "derelict 被遗弃的"
      ]
     }
    ]
@@ -400,6 +509,12 @@
      "ant": [
       "composed",
       "serene"
+     ],
+     "root": "dis-(分开) + traught(拉，同 tract) → 被拉成两半的 → 心神错乱的",
+     "rel": [
+      "distract 使分心",
+      "attract 吸引",
+      "extract 提取"
      ]
     },
     {
@@ -415,7 +530,8 @@
      "ant": [
       "taciturn",
       "reticent"
-     ]
+     ],
+     "root": "garr(唠叨) + -ulous(易于……的) → 爱唠叨的"
     },
     {
      "w": "blemish",
@@ -469,6 +585,13 @@
      ],
      "ant": [
       "devalue"
+     ],
+     "root": "valor(价值) + -ize(使) → 提升价值",
+     "rel": [
+      "value 价值",
+      "valid 有效的",
+      "equivalent 相等的",
+      "prevail 盛行"
      ]
     },
     {
@@ -484,6 +607,12 @@
      "ant": [
       "negligent",
       "inattentive"
+     ],
+     "root": "vigil(醒着) + -ant(……的) → 保持清醒的 → 警惕的",
+     "rel": [
+      "vigil 守夜",
+      "vigor 活力",
+      "surveillance 监视"
      ]
     },
     {
@@ -496,7 +625,13 @@
       "educational",
       "instructional"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ped(孩子) + agog(带领) + -ical(……的) → 带孩子的 → 教育学的",
+     "rel": [
+      "pediatrics 儿科",
+      "demagogue 煽动家",
+      "pedant 书呆子"
+     ]
     },
     {
      "w": "plastic",
@@ -511,6 +646,10 @@
      "ant": [
       "rigid",
       "inflexible"
+     ],
+     "root": "plast(塑造) + -ic(……的) → 可塑的",
+     "rel": [
+      "plaster 石膏"
      ]
     },
     {
@@ -526,6 +665,13 @@
      "ant": [
       "denounce",
       "disparage"
+     ],
+     "root": "eu-(好) + log(说) + -ize(动词) → 说好话 → 颂扬",
+     "rel": [
+      "eulogy 颂词",
+      "euphemism 委婉语",
+      "euphoria 欣快",
+      "apology 道歉"
      ]
     }
    ]
@@ -557,6 +703,13 @@
      "ant": [
       "solid",
       "substantial"
+     ],
+     "root": "tenu(细) + -ous(……的) → 细的 → 单薄的",
+     "rel": [
+      "attenuate 减弱",
+      "extenuate 减轻",
+      "thin 薄的",
+      "tender 嫩的"
      ]
     },
     {
@@ -572,6 +725,11 @@
      "ant": [
       "complimentary",
       "laudatory"
+     ],
+     "root": "pejor(更坏) + -ative(……的) → 变坏的 → 贬义的",
+     "rel": [
+      "impair 损害",
+      "pessimistic 悲观的"
      ]
     },
     {
@@ -587,6 +745,13 @@
      "ant": [
       "enthusiasm",
       "zeal"
+     ],
+     "root": "a-(无) + path(感受) + -y(名词) → 没有感受 → 冷漠",
+     "rel": [
+      "sympathy 同情",
+      "empathy 共情",
+      "pathetic 可怜的",
+      "antipathy 反感"
      ]
     },
     {
@@ -602,6 +767,11 @@
      "ant": [
       "impatience",
       "intolerance"
+     ],
+     "root": "for-(远离) + bear(承受) + -ance(名词) → 忍着不发作 → 克制",
+     "rel": [
+      "bear 承受",
+      "forbear 克制"
      ]
     },
     {
@@ -617,6 +787,13 @@
      "ant": [
       "equivocal",
       "ambiguous"
+     ],
+     "root": "uni-(一) + voc(声音、词) + -al(……的) → 只有一种说法 → 含义明确的",
+     "rel": [
+      "vocal 声音的",
+      "equivocate 含糊其词",
+      "unity 统一",
+      "unique 独特的"
      ]
     }
    ]
@@ -648,6 +825,10 @@
      "ant": [
       "occasional",
       "recent"
+     ],
+     "root": "in-(在内) + veter(老) + -ate(……的) → 老到根里的 → 根深蒂固的",
+     "rel": [
+      "veteran 老兵"
      ]
     },
     {
@@ -663,6 +844,11 @@
      "ant": [
       "dwindle",
       "diminish"
+     ],
+     "root": "prol(后代) + -ifer(带来) + -ate(动词) → 带来后代 → 繁殖、激增",
+     "rel": [
+      "prolific 多产的",
+      "proletariat 无产阶级(靠后代贡献国家)"
      ]
     },
     {
@@ -678,6 +864,10 @@
      "ant": [
       "repel",
       "deter"
+     ],
+     "root": "en-(使) + tic(火把、点燃) + -e → 点燃欲望 → 诱惑",
+     "rel": [
+      "tinder 火种"
      ]
     },
     {
@@ -705,7 +895,13 @@
       "scavenge",
       "hunt"
      ],
-     "ant": []
+     "ant": [],
+     "root": "forage 与 fodder 同源 → 饲料 → 搜寻食物",
+     "rel": [
+      "fodder 饲料",
+      "food 食物",
+      "feed 喂"
+     ]
     }
    ]
   },

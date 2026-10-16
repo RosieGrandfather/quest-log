@@ -29,7 +29,8 @@
      "ant": [
       "wavering",
       "disloyal"
-     ]
+     ],
+     "root": "stal(站稳，古英语) + wart(= worth，值得) → 站得稳又值得依靠的 → 坚定的"
     },
     {
      "w": "inconsequential",
@@ -44,6 +45,13 @@
      "ant": [
       "significant",
       "momentous"
+     ],
+     "root": "in-(不) + con-(一起) + sequ(跟随) + -ential(……的) → 不会有后续结果的 → 不重要的",
+     "rel": [
+      "sequence 顺序",
+      "consequence 后果",
+      "subsequent 随后的",
+      "pursue 追求"
      ]
     },
     {
@@ -59,6 +67,13 @@
      "ant": [
       "unintelligible",
       "incomprehensible"
+     ],
+     "root": "inter-(之间) + leg(挑选、读) + -ible(能……的) → 能从中挑出意思的 → 可理解的",
+     "rel": [
+      "intelligent 聪明的",
+      "intellect 智力",
+      "legible 可辨认的",
+      "select 挑选"
      ]
     },
     {
@@ -74,6 +89,13 @@
      "ant": [
       "virtuous",
       "austere"
+     ],
+     "root": "de-(向下) + cad(落) + -ent(……的) → 往下掉的 → 堕落的",
+     "rel": [
+      "decay 腐烂",
+      "cadence 节奏(声音落下)",
+      "accident 意外(落到身上)",
+      "incident 事件"
      ]
     },
     {
@@ -89,6 +111,13 @@
      "ant": [
       "intangible",
       "abstract"
+     ],
+     "root": "tang(触) + -ible(能……的) → 摸得着的 → 有形的",
+     "rel": [
+      "tangent 切线",
+      "contact 接触",
+      "intangible 无形的",
+      "tact 分寸"
      ]
     }
    ]
@@ -119,7 +148,8 @@
      ],
      "ant": [
       "misfortune"
-     ]
+     ],
+     "root": "英国作家沃波尔据童话《锡兰三王子》(锡兰古名 Serendip)造词 → 意外发现珍奇的运气"
     },
     {
      "w": "solemnity",
@@ -134,6 +164,13 @@
      "ant": [
       "levity",
       "frivolity"
+     ],
+     "root": "sol(全) + emn(年) + -ity(名词) → 每年一次的隆重仪式 → 庄严",
+     "rel": [
+      "annual 每年的",
+      "anniversary 周年",
+      "biennial 两年一次的",
+      "perennial 常年的"
      ]
     },
     {
@@ -149,6 +186,11 @@
      "ant": [
       "confirm",
       "support"
+     ],
+     "root": "re-(回) + fut(打、倒) + -e → 打回去 → 驳斥",
+     "rel": [
+      "futile 徒劳的",
+      "confute 驳倒"
      ]
     },
     {
@@ -164,6 +206,13 @@
      "ant": [
       "aloof",
       "surly"
+     ],
+     "root": "af-(ad-，向) + fa(说) + -able(能……的) → 好说话的 → 和蔼的",
+     "rel": [
+      "fable 寓言",
+      "fate 命运(被说出的)",
+      "preface 序言",
+      "infant 婴儿(不会说话)"
      ]
     },
     {
@@ -207,6 +256,10 @@
      "ant": [
       "neat",
       "tidy"
+     ],
+     "root": "un-(不) + kempt(梳过的，同 comb) → 没梳过的 → 凌乱的",
+     "rel": [
+      "comb 梳子"
      ]
     },
     {
@@ -219,7 +272,12 @@
       "overshadow",
       "surpass"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ec-(出) + lips(离开、遗漏) → 离开原位 → 日食、月食；使黯然失色",
+     "rel": [
+      "ellipse 椭圆(缺一块)",
+      "ellipsis 省略号"
+     ]
     },
     {
      "w": "grimy",
@@ -234,7 +292,8 @@
      "ant": [
       "clean",
       "spotless"
-     ]
+     ],
+     "root": "grime(污垢) + -y(……的) → 满是污垢的"
     },
     {
      "w": "apprehension",
@@ -249,6 +308,13 @@
      "ant": [
       "confidence",
       "calm"
+     ],
+     "root": "ap-(ad-，向) + prehend(抓) + -sion(名词) → 被抓住心 → 忧虑",
+     "rel": [
+      "comprehend 理解",
+      "apprehend 逮捕",
+      "reprehend 谴责",
+      "prison 监狱"
      ]
     },
     {
@@ -261,7 +327,8 @@
       "platitude",
       "cliché"
      ],
-     "ant": []
+     "ant": [],
+     "root": "brom(溴) + -ide → 溴化物，旧时用作镇静剂，让人昏昏沉沉 → 陈词滥调"
     }
    ]
   },
@@ -292,6 +359,13 @@
      "ant": [
       "obey",
       "uphold"
+     ],
+     "root": "contra-(反) + ven(来) + -e → 反着来 → 违反",
+     "rel": [
+      "contrary 相反的",
+      "contradict 反驳",
+      "convene 召集",
+      "prevent 阻止"
      ]
     },
     {
@@ -307,6 +381,13 @@
      "ant": [
       "reject",
       "oppose"
+     ],
+     "root": "es-(ex-) + spous(誓约、配偶) + -e → 订下婚约 → 拥护(某种主张)",
+     "rel": [
+      "spouse 配偶",
+      "respond 回应",
+      "sponsor 赞助人",
+      "responsible 负责的"
      ]
     },
     {
@@ -318,7 +399,14 @@
      "syn": [
       "cushy job"
      ],
-     "ant": []
+     "ant": [],
+     "root": "sine(没有) + cur(照料) + -e → 不需操心的职位 → 闲职",
+     "rel": [
+      "curious 好奇的",
+      "cure 治疗",
+      "secure 安全的",
+      "accurate 精确的"
+     ]
     },
     {
      "w": "tout",
@@ -348,6 +436,11 @@
      "ant": [
       "vigor",
       "energy"
+     ],
+     "root": "torp(麻木) + -or(名词) → 麻木、迟钝",
+     "rel": [
+      "torpid 迟钝的",
+      "torpedo 鱼雷(原指能麻痹人的电鳐)"
      ]
     }
    ]
@@ -376,7 +469,14 @@
       "execute",
       "carry out"
      ],
-     "ant": []
+     "ant": [],
+     "root": "im-(在里) + ple(满) + -ment(名词) → 把它填满完成 → 执行",
+     "rel": [
+      "complete 完整的",
+      "supplement 补充",
+      "plenty 充足",
+      "replete 充满的"
+     ]
     },
     {
      "w": "accessible",
@@ -391,6 +491,13 @@
      "ant": [
       "inaccessible",
       "obscure"
+     ],
+     "root": "ac-(ad-，向) + cess(走) + -ible(能……的) → 能走到的 → 可到达的",
+     "rel": [
+      "access 通道",
+      "process 过程",
+      "excess 过度",
+      "recede 后退"
      ]
     },
     {
@@ -406,6 +513,12 @@
      "ant": [
       "praise",
       "commend"
+     ],
+     "root": "re-(回) + proach(靠近，= prope 近) → 把过错拉到面前来 → 责备",
+     "rel": [
+      "approach 靠近",
+      "proximity 邻近",
+      "approximate 大约的"
      ]
     },
     {
@@ -421,7 +534,8 @@
      "ant": [
       "laud",
       "commend"
-     ]
+     ],
+     "root": "ex-(去掉) + cori(皮) + -ate(动词) → 剥皮 → 痛斥"
     },
     {
      "w": "restive",
@@ -436,6 +550,10 @@
      "ant": [
       "calm",
       "patient"
+     ],
+     "root": "rest(留下，来自拉丁 restare) + -ive(……的) → 原指马站住不肯往前走 → 焦躁不驯的",
+     "rel": [
+      "arrest 逮捕(使停住)"
      ]
     }
    ]
@@ -467,6 +585,13 @@
      "ant": [
       "dynamic",
       "changing"
+     ],
+     "root": "stat(站) + -ic(……的) → 站着不动的 → 静止的",
+     "rel": [
+      "station 车站",
+      "status 地位",
+      "state 状态",
+      "stable 稳定的"
      ]
     },
     {
@@ -482,6 +607,10 @@
      "ant": [
       "consistency",
       "agreement"
+     ],
+     "root": "dis-(分开) + crep(嘎吱响) + -ancy(名词) → 声音对不上 → 不一致",
+     "rel": [
+      "decrepit 衰老的"
      ]
     },
     {
@@ -497,6 +626,10 @@
      "ant": [
       "robust",
       "sturdy"
+     ],
+     "root": "de-(去掉) + crep(嘎吱响) + -it → 一动就嘎吱响的 → 衰老的",
+     "rel": [
+      "discrepancy 不一致"
      ]
     },
     {
@@ -512,6 +645,13 @@
      "ant": [
       "madness",
       "insanity"
+     ],
+     "root": "san(健康) + -ity(名词) → 健康、神志清醒",
+     "rel": [
+      "sane 神志清醒的",
+      "sanitary 卫生的",
+      "sanatorium 疗养院",
+      "insane 疯狂的"
      ]
     },
     {
@@ -527,6 +667,13 @@
      "ant": [
       "conceal",
       "suppress"
+     ],
+     "root": "pro-(向前) + claim(喊) → 向前喊 → 宣告",
+     "rel": [
+      "claim 声称",
+      "exclaim 惊呼",
+      "acclaim 欢呼",
+      "declare 宣布"
      ]
     }
    ]
@@ -558,6 +705,13 @@
      "ant": [
       "malignant",
       "harmful"
+     ],
+     "root": "ben(好) + -ign(生) → 生来好的 → 良性的、和蔼的",
+     "rel": [
+      "benefit 益处",
+      "benevolent 仁慈的",
+      "malign 恶意的",
+      "benediction 祝福"
      ]
     },
     {
@@ -573,6 +727,11 @@
      "ant": [
       "calm",
       "composure"
+     ],
+     "root": "con-(完全) + stern(铺倒、撒倒) + -ation(名词) → 吓得倒下一片 → 惊愕",
+     "rel": [
+      "prostrate 俯卧的",
+      "street 街道(铺平的路)"
      ]
     },
     {
@@ -585,7 +744,8 @@
       "trap",
       "hazard"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pit(坑) + fall(落) → 落进坑里 → 陷阱"
     },
     {
      "w": "hodgepodge",
@@ -597,7 +757,8 @@
       "jumble",
       "mishmash"
      ],
-     "ant": []
+     "ant": [],
+     "root": "hotchpotch(混着炖的菜) 的变体 → 大杂烩"
     },
     {
      "w": "nondescript",
@@ -612,6 +773,13 @@
      "ant": [
       "distinctive",
       "remarkable"
+     ],
+     "root": "non-(不) + de-(向下) + script(写) → 没法写下特征的 → 毫无特色的",
+     "rel": [
+      "describe 描述",
+      "script 脚本",
+      "prescribe 开处方",
+      "subscribe 订阅"
      ]
     }
    ]
@@ -643,6 +811,10 @@
      "ant": [
       "central",
       "significant"
+     ],
+     "root": "margin(边缘) + -al(……的) → 边缘的",
+     "rel": [
+      "margin 页边、边缘"
      ]
     },
     {
@@ -657,6 +829,13 @@
      ],
      "ant": [
       "fragility"
+     ],
+     "root": "re-(回) + sil(跳) + -ience(名词) → 跳回来 → 恢复力",
+     "rel": [
+      "result 结果(re- + sult 跳)",
+      "salient 显著的",
+      "assault 攻击",
+      "desultory 无计划的"
      ]
     },
     {
@@ -672,6 +851,10 @@
      "ant": [
       "unscrupulous",
       "careless"
+     ],
+     "root": "scrup(尖石子) + -ulous(……的) → 鞋里有颗尖石子，一路都不安 → 对良心特别较真 → 一丝不苟的",
+     "rel": [
+      "scruple 顾虑"
      ]
     },
     {
@@ -687,6 +870,12 @@
      "ant": [
       "lenient",
       "easy"
+     ],
+     "root": "ex-(出) + act(逼、做) + -ing → 逼出来的 → 苛求的",
+     "rel": [
+      "exact 精确的",
+      "act 行动",
+      "exigent 紧急的"
      ]
     },
     {
@@ -702,6 +891,13 @@
      "ant": [
       "reveal",
       "show"
+     ],
+     "root": "fein(= fig，塑造) → 捏造出来 → 假装",
+     "rel": [
+      "fiction 虚构",
+      "figure 图形",
+      "figment 虚构物",
+      "effigy 肖像"
      ]
     }
    ]

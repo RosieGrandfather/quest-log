@@ -29,6 +29,13 @@
      "ant": [
       "straight",
       "correct"
+     ],
+     "root": "a-(在) + wry(扭曲) → 扭歪了的 → 出岔子",
+     "rel": [
+      "wry 苦笑的",
+      "wrist 手腕",
+      "wrong 错误的(扭了)",
+      "wrestle 摔跤"
      ]
     },
     {
@@ -41,7 +48,14 @@
       "maneuver",
       "exploit"
      ],
-     "ant": []
+     "ant": [],
+     "root": "mani(手) + pul(满) + -ate(动词) → 一手握满地摆弄 → 操作",
+     "rel": [
+      "manual 手动的",
+      "manufacture 制造",
+      "manuscript 手稿",
+      "manifest 明显的"
+     ]
     },
     {
      "w": "glamorous",
@@ -56,6 +70,10 @@
      "ant": [
       "dull",
       "plain"
+     ],
+     "root": "glamour 原是 grammar 的变体，古人认为学者会魔法 → 魅力 → 迷人的",
+     "rel": [
+      "grammar 语法"
      ]
     },
     {
@@ -71,6 +89,11 @@
      "ant": [
       "accuse",
       "blame"
+     ],
+     "root": "ex-(去除) + oner(负担) + -ate(动词) → 卸下负担 → 免责",
+     "rel": [
+      "onerous 繁重的",
+      "onus 重担"
      ]
     },
     {
@@ -86,6 +109,12 @@
      "ant": [
       "expand",
       "lengthen"
+     ],
+     "root": "a-(ad-，向) + bridge(= brev，短) → 弄短 → 删节",
+     "rel": [
+      "brief 简短的",
+      "abbreviate 缩写",
+      "brevity 简洁"
      ]
     }
    ]
@@ -117,6 +146,13 @@
      "ant": [
       "obvious",
       "blatant"
+     ],
+     "root": "sub-(下) + tle(= tex，织) → 织得很细密的 → 微妙的",
+     "rel": [
+      "textile 纺织品",
+      "text 文本",
+      "texture 质地",
+      "context 上下文"
      ]
     },
     {
@@ -132,6 +168,11 @@
      "ant": [
       "lively",
       "stimulating"
+     ],
+     "root": "vap(蒸汽) + -id(……的) → 蒸汽跑光了、走了气的 → 乏味的",
+     "rel": [
+      "vapor 蒸汽",
+      "evaporate 蒸发"
      ]
     },
     {
@@ -147,7 +188,8 @@
      "ant": [
       "confirm",
       "validate"
-     ]
+     ],
+     "root": "de-(去除) + bunk(胡扯，来自 bunkum) → 揭穿胡扯"
     },
     {
      "w": "detach",
@@ -162,6 +204,12 @@
      "ant": [
       "attach",
       "join"
+     ],
+     "root": "de-(离开) + tach(钉、粘) → 拔掉钉子 → 分离",
+     "rel": [
+      "attach 附上",
+      "attack 攻击(钉上去、冲上去)",
+      "tack 图钉"
      ]
     },
     {
@@ -174,7 +222,13 @@
       "involve",
       "necessitate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "en-(使) + tail(切，限定继承) → 把继承切定在某人身上 → 必然牵涉",
+     "rel": [
+      "tailor 裁缝(切布的人)",
+      "detail 细节(切开)",
+      "retail 零售(切回小份)"
+     ]
     }
    ]
   },
@@ -220,6 +274,12 @@
      "ant": [
       "unrelated",
       "dissimilar"
+     ],
+     "root": "kind(种类、亲属) + -red(状态) → 同类亲属 → 类似的",
+     "rel": [
+      "kind 种类",
+      "kin 亲属",
+      "kindergarten 幼儿园"
      ]
     },
     {
@@ -235,7 +295,8 @@
      "ant": [
       "murky",
       "opaque"
-     ]
+     ],
+     "root": "limp(清澈) + -id(……的) → 清澈的"
     },
     {
      "w": "provenance",
@@ -247,7 +308,15 @@
       "origin",
       "source"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pro-(向前) + ven(来) + -ance(名词) → 出来的地方 → 来源",
+     "rel": [
+      "convene 召集",
+      "event 事件",
+      "venue 场所",
+      "prevent 阻止",
+      "adventure 冒险"
+     ]
     },
     {
      "w": "dogmatic",
@@ -262,6 +331,12 @@
      "ant": [
       "open-minded",
       "flexible"
+     ],
+     "root": "dogma(信条) + -tic(……的) → 教条式的 → 武断的",
+     "rel": [
+      "dogma 教条",
+      "orthodox 正统的",
+      "paradox 悖论"
      ]
     }
    ]
@@ -302,7 +377,14 @@
       "revive",
       "revitalize"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(再) + sus-(sub-，下) + cit(唤起) + -ate → 从下面再唤起来 → 复苏",
+     "rel": [
+      "excite 激动",
+      "incite 煽动",
+      "cite 引用",
+      "solicit 恳求"
+     ]
     },
     {
      "w": "onset",
@@ -317,6 +399,11 @@
      "ant": [
       "end",
       "conclusion"
+     ],
+     "root": "on(在上) + set(放、攻) → 压上来 → 开始",
+     "rel": [
+      "offset 抵消",
+      "upset 使不安"
      ]
     },
     {
@@ -329,7 +416,8 @@
       "doddle",
       "soft touch"
      ],
-     "ant": []
+     "ant": [],
+     "root": "push(推) + over(倒) → 一推就倒的东西 → 轻而易举的事"
     },
     {
      "w": "aspersion",
@@ -344,6 +432,12 @@
      "ant": [
       "praise",
       "compliment"
+     ],
+     "root": "a-(ad-，向) + sper(撒、洒) + -sion(名词) → 往人身上泼 → 诽谤",
+     "rel": [
+      "disperse 驱散",
+      "sparse 稀疏的",
+      "sprinkle 洒"
      ]
     }
    ]
@@ -375,6 +469,13 @@
      "ant": [
       "uniformity",
       "sameness"
+     ],
+     "root": "di-(分开) + vers(转) + -ity(名词) → 转向不同方向 → 多样性",
+     "rel": [
+      "diverse 多样的",
+      "divert 转移",
+      "reverse 反转",
+      "universe 宇宙"
      ]
     },
     {
@@ -390,6 +491,13 @@
      "ant": [
       "yielding",
       "weak"
+     ],
+     "root": "ten(握) + -acious(易于……的) → 抓得紧的 → 顽强的",
+     "rel": [
+      "tenant 租户",
+      "tenure 任期",
+      "retain 保留",
+      "maintain 维持"
      ]
     },
     {
@@ -402,7 +510,14 @@
       "text",
       "draft"
      ],
-     "ant": []
+     "ant": [],
+     "root": "manu(手) + script(写) → 手写的东西 → 手稿",
+     "rel": [
+      "manual 手动的",
+      "script 剧本",
+      "describe 描述",
+      "subscribe 订阅"
+     ]
     },
     {
      "w": "articulate",
@@ -417,6 +532,11 @@
      "ant": [
       "inarticulate",
       "mumbling"
+     ],
+     "root": "artic(关节) + -ul-ate → 分成一节一节清晰地说 → 清晰表达",
+     "rel": [
+      "article 文章、条款",
+      "arthritis 关节炎"
      ]
     },
     {
@@ -432,6 +552,13 @@
      "ant": [
       "obscure",
       "confuse"
+     ],
+     "root": "e-(出) + luc(光) + -id-ate → 照出来 → 阐明",
+     "rel": [
+      "lucid 清晰的",
+      "translucent 半透明的",
+      "luminous 发光的",
+      "illuminate 照亮"
      ]
     }
    ]
@@ -463,6 +590,13 @@
      "ant": [
       "subordinate",
       "minor"
+     ],
+     "root": "domin(主人) + -ant(……的) → 做主的 → 占支配地位的",
+     "rel": [
+      "dominate 支配",
+      "domain 领域",
+      "dominion 统治权",
+      "domestic 家庭的"
      ]
     },
     {
@@ -475,7 +609,14 @@
       "understatement",
       "circumlocution"
      ],
-     "ant": []
+     "ant": [],
+     "root": "eu-(好) + phem(说) + -ism(名词) → 好听的说法 → 委婉语",
+     "rel": [
+      "euphoria 欣快",
+      "eulogy 颂词",
+      "prophet 先知",
+      "blaspheme 亵渎"
+     ]
     },
     {
      "w": "pedant",
@@ -487,7 +628,13 @@
       "stickler",
       "nitpicker"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ped(教育、孩子) + -ant(人) → 教小孩的人 → 书呆子",
+     "rel": [
+      "pedagogy 教育学",
+      "pediatrics 儿科",
+      "encyclopedia 百科全书"
+     ]
     },
     {
      "w": "incipient",
@@ -502,6 +649,13 @@
      "ant": [
       "full-blown",
       "advanced"
+     ],
+     "root": "in-(进入) + cip(拿) + -ient(……的) → 刚拿起来的 → 初起的",
+     "rel": [
+      "accept 接受",
+      "receive 接收",
+      "concept 概念",
+      "anticipate 预期"
      ]
     },
     {
@@ -517,6 +671,11 @@
      "ant": [
       "disrespect",
       "defiance"
+     ],
+     "root": "o-(ob-，向) + bey(服从) + -ance(名词) → 服从 → 敬礼",
+     "rel": [
+      "obey 服从",
+      "obedient 顺从的"
      ]
     }
    ]
@@ -548,6 +707,12 @@
      "ant": [
       "familiar",
       "ordinary"
+     ],
+     "root": "exo(外) + -tic(……的) → 外面来的 → 异国情调的",
+     "rel": [
+      "exoskeleton 外骨骼",
+      "exodus 大批出走",
+      "extra 额外的"
      ]
     },
     {
@@ -563,7 +728,8 @@
      "ant": [
       "sensible",
       "sober"
-     ]
+     ],
+     "root": "mad(疯) + cap(头) → 疯头疯脑的人 → 鲁莽的人"
     },
     {
      "w": "demagogue",
@@ -575,7 +741,13 @@
       "rabble-rouser",
       "agitator"
      ],
-     "ant": []
+     "ant": [],
+     "root": "dem(人民) + agog(带领) → 带着民众走的人 → 煽动家",
+     "rel": [
+      "democracy 民主",
+      "epidemic 流行病",
+      "pedagogy 教育学"
+     ]
     },
     {
      "w": "snag",
@@ -602,6 +774,12 @@
      "ant": [
       "confused",
       "obscure"
+     ],
+     "root": "luc(光) + -id(……的) → 明亮的 → 清晰的",
+     "rel": [
+      "elucidate 阐明",
+      "translucent 半透明的",
+      "illuminate 照亮"
      ]
     }
    ]
@@ -647,7 +825,8 @@
      "ant": [
       "confront",
       "tackle"
-     ]
+     ],
+     "root": "side(侧面) + step(步) → 往旁边跨一步 → 回避"
     },
     {
      "w": "lucrative",
@@ -662,6 +841,10 @@
      "ant": [
       "unprofitable",
       "futile"
+     ],
+     "root": "lucr(利润) + -ative(……的) → 有利可图的",
+     "rel": [
+      "lucre 钱财"
      ]
     },
     {
@@ -677,6 +860,11 @@
      "ant": [
       "applaud",
       "welcome"
+     ],
+     "root": "de-(完全) + plor(哭) + -e → 痛哭 → 谴责、痛惜",
+     "rel": [
+      "implore 恳求",
+      "explore 探索(原义：喊出声打猎)"
      ]
     },
     {
@@ -692,6 +880,12 @@
      "ant": [
       "sensible",
       "reasonable"
+     ],
+     "root": "pre-(前) + post(后) + -erous(……的) → 前后颠倒的 → 荒谬的",
+     "rel": [
+      "posterior 后面的",
+      "posterity 后代",
+      "postpone 推迟"
      ]
     }
    ]

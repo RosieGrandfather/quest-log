@@ -29,6 +29,10 @@
      "ant": [
       "boring",
       "tedious"
+     ],
+     "root": "rivet(铆钉) + -ing → 像铆钉一样把注意力钉住 → 极吸引人的",
+     "rel": [
+      "rivet 铆钉"
      ]
     },
     {
@@ -44,6 +48,11 @@
      "ant": [
       "pacify",
       "placate"
+     ],
+     "root": "in-(使) + furi(狂怒) + -ate(使) → 使狂怒",
+     "rel": [
+      "fury 暴怒",
+      "furious 狂怒的"
      ]
     },
     {
@@ -59,6 +68,10 @@
      "ant": [
       "oppose",
       "denounce"
+     ],
+     "root": "en-(在……上) + dors(背) → 签在票据背面 → 公开支持",
+     "rel": [
+      "dorsal 背部的"
      ]
     },
     {
@@ -74,6 +87,11 @@
      "ant": [
       "estrange",
       "alienate"
+     ],
+     "root": "re-(重新) + con-(一起) + cili(召集) + -ate(使) → 重新叫到一起 → 使和解",
+     "rel": [
+      "council 委员会",
+      "conciliate 安抚"
      ]
     },
     {
@@ -89,6 +107,10 @@
      "ant": [
       "vilify",
       "desecrate"
+     ],
+     "root": "canon(准则、教规) + -ize(使) → 列入教规 → 封圣；尊为经典",
+     "rel": [
+      "canon 经典、教规"
      ]
     }
    ]
@@ -120,6 +142,12 @@
      "ant": [
       "prompt",
       "speedy"
+     ],
+     "root": "di-(分开) + lat(带、拖) + -ory(……的) → 拖开 → 拖延的",
+     "rel": [
+      "delay 延误",
+      "relate 联系",
+      "translate 翻译"
      ]
     },
     {
@@ -135,6 +163,13 @@
      "ant": [
       "dissent",
       "disagreement"
+     ],
+     "root": "con-(一起) + sens(感觉) + -us → 大家感觉一致 → 共识",
+     "rel": [
+      "sense 感觉",
+      "sensitive 敏感的",
+      "consent 同意",
+      "dissent 异议"
      ]
     },
     {
@@ -150,6 +185,11 @@
      "ant": [
       "spontaneous",
       "accidental"
+     ],
+     "root": "calcul(小石子，古人用来计数) + -ate + -ed → 用石子算过的 → 精心盘算的",
+     "rel": [
+      "calculus 微积分",
+      "calculator 计算器"
      ]
     },
     {
@@ -165,6 +205,12 @@
      "ant": [
       "downplay",
       "mute"
+     ],
+     "root": "ac-(ad-，向) + cent(唱) + -uate(使) → 往重处唱 → 强调",
+     "rel": [
+      "accent 口音",
+      "chant 吟唱",
+      "incentive 激励(in- + cent)"
      ]
     },
     {
@@ -211,6 +257,13 @@
      "ant": [
       "insult",
       "criticism"
+     ],
+     "root": "com-(完全) + pli(满) + -ment(名词) → 把礼数填满 → 恭维。注意：别和 complement(补足)混淆",
+     "rel": [
+      "complete 完整的",
+      "plenty 充足",
+      "supplement 补充",
+      "implement 实施"
      ]
     },
     {
@@ -238,6 +291,13 @@
      "ant": [
       "eagerness",
       "willingness"
+     ],
+     "root": "dis-(不) + in-(向) + clin(倾斜) + -ation(名词) → 不往那边倾 → 不愿意",
+     "rel": [
+      "incline 倾向",
+      "decline 下降",
+      "recline 斜靠",
+      "climate 气候(原指地球倾斜度)"
      ]
     },
     {
@@ -268,6 +328,12 @@
      "ant": [
       "reassure",
       "calm"
+     ],
+     "root": "dis-(不) + con-(一起) + cert(协调，同 concert) → 打乱了协调 → 使不安",
+     "rel": [
+      "concert 音乐会",
+      "concerto 协奏曲",
+      "concerted 协同的"
      ]
     }
    ]
@@ -296,7 +362,14 @@
       "addition",
       "appendage"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ad-(向) + junct(连接) → 连上去的东西 → 附属物",
+     "rel": [
+      "join 连接",
+      "junction 交汇处",
+      "conjunction 连词",
+      "injunction 禁令"
+     ]
     },
     {
      "w": "hedge",
@@ -325,7 +398,8 @@
      "ant": [
       "spiritual",
       "naive"
-     ]
+     ],
+     "root": "world(世界) + -ly(……的) → 世俗的"
     },
     {
      "w": "prototype",
@@ -339,6 +413,12 @@
      ],
      "ant": [
       "copy"
+     ],
+     "root": "proto-(最初) + type(类型) → 最初的型 → 原型",
+     "rel": [
+      "protagonist 主角",
+      "protocol 协议",
+      "typical 典型的"
      ]
     },
     {
@@ -382,7 +462,13 @@
       "slip",
       "error"
      ],
-     "ant": []
+     "ant": [],
+     "root": "laps(滑落) → 滑下去 → 小失误",
+     "rel": [
+      "collapse 崩塌",
+      "elapse 流逝",
+      "relapse 复发"
+     ]
     },
     {
      "w": "disparage",
@@ -397,6 +483,13 @@
      "ant": [
       "praise",
       "extol"
+     ],
+     "root": "dis-(不) + par(同等) + -age → 不当作同等看待 → 贬低",
+     "rel": [
+      "pair 一对",
+      "parity 平等",
+      "compare 比较",
+      "peer 同辈"
      ]
     },
     {
@@ -426,6 +519,13 @@
      ],
      "ant": [
       "blame"
+     ],
+     "root": "cred(信) + -it → 信任、信誉",
+     "rel": [
+      "credible 可信的",
+      "credulous 轻信的",
+      "credence 相信",
+      "creed 信条"
      ]
     },
     {
@@ -440,6 +540,13 @@
      ],
      "ant": [
       "ignoramus"
+     ],
+     "root": "poly-(多) + math(学习) → 学得多的人 → 博学者",
+     "rel": [
+      "polygon 多边形",
+      "polyglot 通晓多种语言的人",
+      "mathematics 数学",
+      "polytheism 多神教"
      ]
     }
    ]
@@ -471,7 +578,8 @@
      "ant": [
       "fresh",
       "modern"
-     ]
+     ],
+     "root": "来自古法语 fust(酒桶)，酒桶发霉的气味 → 陈腐的"
     },
     {
      "w": "forfeit",
@@ -486,6 +594,12 @@
      "ant": [
       "retain",
       "gain"
+     ],
+     "root": "for-(在外) + feit(做、犯) → 做错事要付出代价 → 丧失",
+     "rel": [
+      "counterfeit 伪造的",
+      "fact 事实",
+      "factory 工厂"
      ]
     },
     {
@@ -501,6 +615,10 @@
      "ant": [
       "repel",
       "enlighten"
+     ],
+     "root": "be-(使) + guile(诡计) → 用诡计迷惑",
+     "rel": [
+      "guile 狡诈"
      ]
     },
     {
@@ -516,7 +634,8 @@
      "ant": [
       "unemotional",
       "stoic"
-     ]
+     ],
+     "root": "来自 Mary Magdalen(抹大拉的马利亚)，画像里常在哭泣 → 爱哭的、多愁善感的"
     },
     {
      "w": "charlatan",
@@ -528,7 +647,8 @@
       "quack",
       "fraud"
      ],
-     "ant": []
+     "ant": [],
+     "root": "来自意大利语 ciarlare(喋喋不休) → 靠嘴吹牛的人 → 江湖骗子"
     }
    ]
   },
@@ -559,6 +679,11 @@
      "ant": [
       "distress",
       "torment"
+     ],
+     "root": "sol(安慰) + -ace(名词) → 安慰",
+     "rel": [
+      "console 安慰(con- + sol)",
+      "consolation 慰藉"
      ]
     },
     {
@@ -571,7 +696,12 @@
       "figure of speech",
       "cliché"
      ],
-     "ant": []
+     "ant": [],
+     "root": "trop(转) → 词义转到别处 → 比喻、修辞",
+     "rel": [
+      "tropic 回归线(太阳转向处)",
+      "entropy 熵(en- + trop 转变)"
+     ]
     },
     {
      "w": "forsake",
@@ -586,6 +716,12 @@
      "ant": [
       "keep",
       "cherish"
+     ],
+     "root": "for-(完全) + sake(争论、事由) → 彻底不管 → 抛弃",
+     "rel": [
+      "forbid 禁止",
+      "forgo 放弃",
+      "forget 忘记"
      ]
     },
     {
@@ -601,6 +737,12 @@
      "ant": [
       "comfort",
       "blessing"
+     ],
+     "root": "af-(ad-，向) + flict(打击) + -ion(名词) → 受到打击 → 折磨",
+     "rel": [
+      "conflict 冲突",
+      "inflict 施加",
+      "afflict 折磨"
      ]
     },
     {
@@ -616,7 +758,8 @@
      "ant": [
       "facilitate",
       "assist"
-     ]
+     ],
+     "root": "高尔夫术语：对手的球挡在洞前 → 阻碍"
     }
    ]
   },
@@ -644,7 +787,14 @@
       "condescend",
       "support"
      ],
-     "ant": []
+     "ant": [],
+     "root": "patron(赞助人、父亲) + -ize(动词) → 像父亲对孩子那样 → 以高人一等的态度对待",
+     "rel": [
+      "patron 赞助人",
+      "paternal 父亲的",
+      "patriot 爱国者",
+      "patriarch 家长"
+     ]
     },
     {
      "w": "suppress",
@@ -659,6 +809,13 @@
      "ant": [
       "encourage",
       "express"
+     ],
+     "root": "sup-(sub-，下) + press(压) → 往下压 → 镇压",
+     "rel": [
+      "press 压",
+      "compress 压缩",
+      "depress 压抑",
+      "express 表达"
      ]
     },
     {
@@ -674,6 +831,12 @@
      "ant": [
       "apathetic",
       "mild"
+     ],
+     "root": "veh(载运、带着走) + -ement → 被情绪带着冲 → 激烈的",
+     "rel": [
+      "vehicle 车辆",
+      "convey 运送",
+      "vector 向量"
      ]
     },
     {
@@ -689,7 +852,8 @@
      "ant": [
       "pure",
       "purebred"
-     ]
+     ],
+     "root": "拉丁 hybrida：家猪与野猪的杂种 → 混合物"
     },
     {
      "w": "pernicious",
@@ -704,6 +868,12 @@
      "ant": [
       "beneficial",
       "harmless"
+     ],
+     "root": "per-(完全) + nec(杀、死) + -ious(……的) → 能致死的 → 有害的",
+     "rel": [
+      "noxious 有害的",
+      "innocuous 无害的",
+      "obnoxious 令人讨厌的"
      ]
     }
    ]

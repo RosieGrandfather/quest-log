@@ -26,7 +26,14 @@
       "sop",
       "sugar pill"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pla(c)-(拉丁 placere 取悦) → “我将取悦你” → 安慰剂",
+     "rel": [
+      "please 取悦",
+      "pleasant 愉快的",
+      "complacent 自满的",
+      "implacable 无法安抚的"
+     ]
     },
     {
      "w": "transgress",
@@ -41,6 +48,13 @@
      "ant": [
       "obey",
       "comply"
+     ],
+     "root": "trans-(越过) + gress(走) → 走过界线 → 违背",
+     "rel": [
+      "progress 前进",
+      "regress 倒退",
+      "digress 离题",
+      "aggressive 好斗的"
      ]
     },
     {
@@ -71,6 +85,13 @@
      "ant": [
       "questionable",
       "dubious"
+     ],
+     "root": "un-(不) + im-(进入) + peach(←pedica 脚镣，绊住) → 无法被指控 → 无可指责",
+     "rel": [
+      "impede 阻碍",
+      "pedal 踏板",
+      "pedestrian 行人",
+      "expedite 加速"
      ]
     },
     {
@@ -86,6 +107,13 @@
      "ant": [
       "easy",
       "effortless"
+     ],
+     "root": "stren(紧绷，用力) + -ous → 费力的",
+     "rel": [
+      "strain 拉紧",
+      "strict 严格的",
+      "stringent 严厉的",
+      "restrain 抑制"
      ]
     }
    ]
@@ -132,6 +160,13 @@
      "ant": [
       "inopportune",
       "ill-timed"
+     ],
+     "root": "op-(朝向) + port(港口) → 顺风驶向港口 → 时机恰好",
+     "rel": [
+      "port 港口",
+      "import 进口",
+      "portal 门户",
+      "importune 纠缠"
      ]
     },
     {
@@ -147,6 +182,13 @@
      "ant": [
       "retain",
       "hold on to"
+     ],
+     "root": "re-(回) + sign(签名，标记) → 签字退回 → 辞职",
+     "rel": [
+      "signal 信号",
+      "design 设计",
+      "assign 分配",
+      "signature 签名"
      ]
     },
     {
@@ -162,6 +204,13 @@
      "ant": [
       "flourish",
       "thrive"
+     ],
+     "root": "langu(松弛，无力) + -ish → 萎靡",
+     "rel": [
+      "languid 无精打采的",
+      "languor 倦怠",
+      "lax 松懈的",
+      "relax 放松"
      ]
     },
     {
@@ -177,6 +226,13 @@
      "ant": [
       "domineering",
       "assertive"
+     ],
+     "root": "sub-(在下) + serv(服务) + -ient → 在下面服务 → 屈从的",
+     "rel": [
+      "servant 仆人",
+      "service 服务",
+      "servile 奴性的",
+      "deserve 应得"
      ]
     }
    ]
@@ -208,6 +264,13 @@
      "ant": [
       "exceptional",
       "outstanding"
+     ],
+     "root": "medi(中间) + ocr(山峰 ocris) → 爬到半山腰 → 平庸",
+     "rel": [
+      "medium 中等的",
+      "median 中位数",
+      "mediate 调解",
+      "Mediterranean 地中海"
      ]
     },
     {
@@ -223,6 +286,13 @@
      "ant": [
       "deny",
       "disavow"
+     ],
+     "root": "a-(to) + ver(真) → 说是真的 → 断言",
+     "rel": [
+      "verify 证实",
+      "verdict 裁决",
+      "veracity 真实性",
+      "very 很"
      ]
     },
     {
@@ -238,6 +308,13 @@
      "ant": [
       "domineering",
       "aloof"
+     ],
+     "root": "ob-(朝向) + sequ(跟随) + -ious → 一路跟着人 → 谄媚的",
+     "rel": [
+      "sequence 序列",
+      "consequence 后果",
+      "subsequent 随后的",
+      "pursue 追求"
      ]
     },
     {
@@ -299,6 +376,13 @@
      "ant": [
       "optional",
       "trivial"
+     ],
+     "root": "im-(进入) + per(命令，准备) + -ative → 命令的 → 必要的",
+     "rel": [
+      "emperor 皇帝",
+      "empire 帝国",
+      "imperial 帝国的",
+      "prepare 准备"
      ]
     },
     {
@@ -329,6 +413,13 @@
      "ant": [
       "indifferent",
       "disenchanted"
+     ],
+     "root": "en-(使) + amor(爱) + -ed → 被爱迷住",
+     "rel": [
+      "amorous 多情的",
+      "amateur 业余爱好者",
+      "amiable 和蔼的",
+      "amity 友好"
      ]
     },
     {
@@ -344,6 +435,13 @@
      "ant": [
       "exhaust",
       "enervate"
+     ],
+     "root": "in-(使) + vigor(活力) + -ate → 使有活力",
+     "rel": [
+      "vigor 活力",
+      "vigorous 精力旺盛的",
+      "vigil 守夜",
+      "vigilant 警觉的"
      ]
     },
     {
@@ -390,6 +488,13 @@
      "ant": [
       "modest",
       "humble"
+     ],
+     "root": "grand(大) + -iose → 夸大的",
+     "rel": [
+      "grand 宏大的",
+      "grandeur 壮丽",
+      "aggrandize 夸大",
+      "grandfather 祖父"
      ]
     },
     {
@@ -420,6 +525,11 @@
      "ant": [
       "depress",
       "bore"
+     ],
+     "root": "ex-(出，加强) + hilar(快乐) + -ate → 使欢欣",
+     "rel": [
+      "hilarious 极可笑的",
+      "hilarity 欢闹"
      ]
     },
     {
@@ -435,6 +545,13 @@
      "ant": [
       "obscure",
       "unknown"
+     ],
+     "root": "e-(出) + min(突出) + -ent → 突出的 → 杰出",
+     "rel": [
+      "prominent 突出的",
+      "imminent 迫近的",
+      "preeminent 卓越的",
+      "mount 山"
      ]
     },
     {
@@ -450,6 +567,13 @@
      "ant": [
       "amicable",
       "cordial"
+     ],
+     "root": "acr(尖，辛辣) + -imonious → 刻薄的",
+     "rel": [
+      "acrid 刺鼻的",
+      "acerbic 尖刻的",
+      "acute 敏锐的",
+      "acid 酸"
      ]
     }
    ]
@@ -481,6 +605,12 @@
      "ant": [
       "downplay",
       "minimize"
+     ],
+     "root": "under(下) + score(划线) → 在下划线 → 强调",
+     "rel": [
+      "score 得分，刻痕",
+      "scar 疤痕",
+      "shear 剪"
      ]
     },
     {
@@ -511,6 +641,13 @@
      "ant": [
       "modest",
       "understated"
+     ],
+     "root": "os-(ob 朝向) + tent(伸出) + -ious → 伸出来给人看 → 炫耀的",
+     "rel": [
+      "tend 倾向",
+      "extend 延伸",
+      "tension 紧张",
+      "pretend 假装"
      ]
     },
     {
@@ -526,6 +663,13 @@
      "ant": [
       "safety",
       "security"
+     ],
+     "root": "jeo(←jeu 游戏) + parti(分开) → 胜负未定的局面 → 危险",
+     "rel": [
+      "party 一方",
+      "part 部分",
+      "parity 平等",
+      "depart 离开"
      ]
     },
     {
@@ -541,6 +685,13 @@
      "ant": [
       "encourage",
       "induce"
+     ],
+     "root": "de-(离开) + terr(吓) → 吓走 → 阻止",
+     "rel": [
+      "terror 恐怖",
+      "terrify 使恐惧",
+      "terrible 可怕的",
+      "terrific 极好的"
      ]
     }
    ]
@@ -572,6 +723,13 @@
      "ant": [
       "changeable",
       "variable"
+     ],
+     "root": "im-(不) + mut(变) + -able → 不可变的",
+     "rel": [
+      "mutate 变异",
+      "mutation 突变",
+      "transmute 变形",
+      "commute 通勤"
      ]
     },
     {
@@ -587,6 +745,13 @@
      "ant": [
       "modern",
       "up-to-date"
+     ],
+     "root": "ante-(之前) + diluv(洪水) + -ian → 大洪水之前的 → 远古的",
+     "rel": [
+      "antecedent 先行词",
+      "anterior 前面的",
+      "deluge 洪水",
+      "dilute 稀释"
      ]
     },
     {
@@ -617,6 +782,13 @@
      "ant": [
       "fact",
       "certainty"
+     ],
+     "root": "con-(共同) + ject(投掷) + -ure → 把想法抛到一起 → 猜想",
+     "rel": [
+      "project 投射",
+      "reject 拒绝",
+      "inject 注射",
+      "subject 主题"
      ]
     },
     {
@@ -629,7 +801,13 @@
       "financial",
       "monetary"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pecu(牲畜，家畜是古代的钱) + -iary → 金钱的",
+     "rel": [
+      "peculiar 特有的",
+      "impecunious 贫穷的",
+      "fee 费用(同源)"
+     ]
     }
    ]
   },
@@ -675,6 +853,13 @@
      "ant": [
       "preserve",
       "restore"
+     ],
+     "root": "ob-(朝向，反) + lit(←litera 字母) + -ate → 把字抹掉 → 彻底毁掉",
+     "rel": [
+      "literate 识字的",
+      "literal 字面的",
+      "literature 文学",
+      "alliteration 头韵"
      ]
     },
     {
@@ -717,6 +902,11 @@
      "ant": [
       "blunt",
       "dull"
+     ],
+     "root": "(古英语 han 石头) → 用磨刀石磨",
+     "rel": [
+      "whet 磨快",
+      "whetstone 磨刀石"
      ]
     }
    ]

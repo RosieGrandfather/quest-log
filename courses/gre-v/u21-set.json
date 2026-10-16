@@ -29,6 +29,13 @@
      "ant": [
       "disprove",
       "refute"
+     ],
+     "root": "sub-(下) + stant(站) + -iate(使) → 使站得稳 → 证实",
+     "rel": [
+      "substance 物质",
+      "constant 恒定的",
+      "stable 稳定的",
+      "stand 站"
      ]
     },
     {
@@ -43,6 +50,13 @@
      ],
      "ant": [
       "analysis"
+     ],
+     "root": "syn-(一起) + thes(放) + -is(名词) → 放在一起 → 综合",
+     "rel": [
+      "thesis 论点",
+      "hypothesis 假设",
+      "antithetical 对立的",
+      "theme 主题"
      ]
     },
     {
@@ -58,6 +72,13 @@
      "ant": [
       "soothing",
       "calming"
+     ],
+     "root": "in-(向) + cend(烧) + -iary(……的) → 点火的 → 煽动性的",
+     "rel": [
+      "incense 激怒",
+      "candle 蜡烛",
+      "candid 坦率的",
+      "incandescent 白炽的"
      ]
     },
     {
@@ -73,6 +94,10 @@
      "ant": [
       "undermine",
       "overturn"
+     ],
+     "root": "up(向上) + hold(握) → 举着不放 → 支持",
+     "rel": [
+      "hold 握住"
      ]
     },
     {
@@ -85,7 +110,14 @@
       "relic",
       "throwback"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ana-(逆、错) + chron(时间) + -ism(名词) → 时间错乱 → 不合时代的事物",
+     "rel": [
+      "chronic 慢性的",
+      "chronology 年表",
+      "synchronize 同步",
+      "chronicle 编年史"
+     ]
     }
    ]
   },
@@ -116,6 +148,13 @@
      "ant": [
       "specific",
       "distinctive"
+     ],
+     "root": "gener(种类、生) + -ic(……的) → 属类的 → 普遍的",
+     "rel": [
+      "general 一般的",
+      "generate 产生",
+      "gender 性别",
+      "genre 体裁"
      ]
     },
     {
@@ -131,7 +170,8 @@
      "ant": [
       "satisfy",
       "gratify"
-     ]
+     ],
+     "root": "来自希腊神话 Tantalus(坦塔罗斯)：站在水中，水果就在头顶，却始终够不着 → 逗弄、激起欲望"
     },
     {
      "w": "synonymous",
@@ -146,6 +186,13 @@
      "ant": [
       "antonymous",
       "opposite"
+     ],
+     "root": "syn-(一起) + onym(名字) + -ous(……的) → 同名的 → 同义的",
+     "rel": [
+      "anonymous 匿名的",
+      "antonym 反义词",
+      "pseudonym 笔名",
+      "acronym 首字母缩写"
      ]
     },
     {
@@ -161,6 +208,12 @@
      "ant": [
       "genuine",
       "tasteful"
+     ],
+     "root": "merc(报酬) + -tricious(……的) → 靠卖弄换钱的 → 华而不实的",
+     "rel": [
+      "merit 优点",
+      "mercenary 唯利是图的",
+      "commerce 商业"
      ]
     },
     {
@@ -176,6 +229,14 @@
      "ant": [
       "retain",
       "claim"
+     ],
+     "root": "ced(走、让) + -e → 让出去 → 割让",
+     "rel": [
+      "concede 让步",
+      "precede 在前",
+      "recede 后退",
+      "accede 同意",
+      "secede 脱离"
      ]
     }
    ]
@@ -207,6 +268,13 @@
      "ant": [
       "quell",
       "prevent"
+     ],
+     "root": "in-(向) + stig(刺) + -ate(动词) → 刺一下 → 煽动",
+     "rel": [
+      "stigma 污名",
+      "instinct 本能",
+      "distinguish 区分",
+      "extinguish 熄灭"
      ]
     },
     {
@@ -222,6 +290,13 @@
      "ant": [
       "tolerant",
       "broad-minded"
+     ],
+     "root": "sect(切) + -arian(……的) → 切出来的小派别的 → 宗派的",
+     "rel": [
+      "section 部分",
+      "sector 部门",
+      "insect 昆虫(身体分节)",
+      "dissect 解剖"
      ]
     },
     {
@@ -237,7 +312,8 @@
      "ant": [
       "sufficient",
       "adequate"
-     ]
+     ],
+     "root": "want(缺) + -ing → 缺少的"
     },
     {
      "w": "rectitude",
@@ -252,6 +328,13 @@
      "ant": [
       "dishonesty",
       "corruption"
+     ],
+     "root": "rect(直) + -itude(名词) → 直 → 正直",
+     "rel": [
+      "correct 正确的",
+      "direct 直接的",
+      "erect 竖立",
+      "rectify 纠正"
      ]
     },
     {
@@ -264,7 +347,14 @@
       "fraud",
       "charlatan"
      ],
-     "ant": []
+     "ant": [],
+     "root": "im-(在上) + pos(放) + -tor(人) → 把自己放到别人位置上的人 → 冒充者",
+     "rel": [
+      "impose 强加",
+      "position 位置",
+      "compose 组成",
+      "expose 暴露"
+     ]
     }
    ]
   },
@@ -295,6 +385,12 @@
      "ant": [
       "claim",
       "embrace"
+     ],
+     "root": "re-(回) + nounc(宣告) + -e → 宣告放弃",
+     "rel": [
+      "announce 宣布",
+      "pronounce 发音",
+      "denounce 谴责"
      ]
     },
     {
@@ -310,6 +406,13 @@
      "ant": [
       "mild",
       "dull"
+     ],
+     "root": "acut(尖) + -e → 尖的 → 急性的、敏锐的",
+     "rel": [
+      "acid 酸",
+      "acerbic 尖刻的",
+      "exacerbate 加剧",
+      "acupuncture 针灸"
      ]
     },
     {
@@ -325,6 +428,13 @@
      "ant": [
       "docile",
       "tractable"
+     ],
+     "root": "fract(打破) + -ious(……的) → 爱闹翻的 → 难管束的",
+     "rel": [
+      "fraction 分数",
+      "fracture 骨折",
+      "fragile 易碎的",
+      "refractory 倔强的"
      ]
     },
     {
@@ -340,6 +450,11 @@
      "ant": [
       "impartiality",
       "fairness"
+     ],
+     "root": "crony(老朋友，来自 chron 时间，老相识) + -ism(主义) → 任人唯亲",
+     "rel": [
+      "chronic 慢性的",
+      "chronology 年表"
      ]
     },
     {
@@ -355,7 +470,8 @@
      "ant": [
       "impartial",
       "open-minded"
-     ]
+     ],
+     "root": "Nicolas Chauvin，拿破仑老兵，极端狂热爱国 → 沙文主义的"
     }
    ]
   },
@@ -386,6 +502,12 @@
      "ant": [
       "modern",
       "up-to-date"
+     ],
+     "root": "antiqu(古) + -ated → 变古旧了的",
+     "rel": [
+      "antique 古董",
+      "ancient 古代的",
+      "antiquity 古代"
      ]
     },
     {
@@ -401,6 +523,13 @@
      "ant": [
       "expand",
       "extend"
+     ],
+     "root": "circum-(周围) + scrib(写、划) + -e → 在周围画一圈 → 限制",
+     "rel": [
+      "circumspect 谨慎的",
+      "describe 描述",
+      "script 脚本",
+      "subscribe 订阅"
      ]
     },
     {
@@ -416,6 +545,13 @@
      "ant": [
       "aversion",
       "disinclination"
+     ],
+     "root": "pro-(向前) + cliv(坡) + -ity(名词) → 往前倾斜 → 倾向",
+     "rel": [
+      "incline 倾向",
+      "decline 下降",
+      "recline 斜靠",
+      "climate 气候"
      ]
     },
     {
@@ -431,7 +567,8 @@
      "ant": [
       "reluctance",
       "sluggishness"
-     ]
+     ],
+     "root": "alacr(轻快、敏捷) + -ity(名词) → 敏捷、乐意"
     },
     {
      "w": "fatigue",
@@ -446,6 +583,10 @@
      "ant": [
       "vigor",
       "energy"
+     ],
+     "root": "fatig(疲倦) + -ue → 疲劳",
+     "rel": [
+      "indefatigable 不知疲倦的"
      ]
     }
    ]
@@ -477,6 +618,13 @@
      "ant": [
       "acquit",
       "exonerate"
+     ],
+     "root": "in-(向) + dict(说) + -e → 对着说出罪状 → 起诉",
+     "rel": [
+      "dictate 口述",
+      "predict 预言",
+      "verdict 裁决",
+      "contradict 反驳"
      ]
     },
     {
@@ -492,6 +640,13 @@
      "ant": [
       "theoretical",
       "hypothetical"
+     ],
+     "root": "em-(在里) + peir(试验) + -ical(……的) → 在实际中试出来的 → 经验的",
+     "rel": [
+      "experience 经验",
+      "experiment 实验",
+      "expert 专家",
+      "peril 危险"
      ]
     },
     {
@@ -507,6 +662,10 @@
      "ant": [
       "unseemly",
       "improper"
+     ],
+     "root": "seem(合适，古义) + -ly(……的) → 看着合适的 → 得体的",
+     "rel": [
+      "seem 看起来"
      ]
     },
     {
@@ -522,6 +681,13 @@
      "ant": [
       "loyal",
       "obedient"
+     ],
+     "root": "sed-(分开) + it(走) + -ious(……的) → 走到一边去的 → 煽动叛乱的",
+     "rel": [
+      "sedition 煽动叛乱",
+      "exit 出口",
+      "transit 通过",
+      "initial 开始的"
      ]
     },
     {
@@ -534,7 +700,12 @@
       "equivalent",
       "peer"
      ],
-     "ant": []
+     "ant": [],
+     "root": "counter-(对面) + part(部分) → 对面的那一份 → 对应的人或物",
+     "rel": [
+      "part 部分",
+      "counter 柜台、对立"
+     ]
     }
    ]
   },
@@ -579,6 +750,13 @@
      ],
      "ant": [
       "neglect"
+     ],
+     "root": "minister(仆人) + -ation(名词) → 服侍、照料",
+     "rel": [
+      "minister 部长(仆人)",
+      "administer 管理",
+      "minus 减",
+      "minor 较小的"
      ]
     },
     {
@@ -593,6 +771,11 @@
      ],
      "ant": [
       "odorless"
+     ],
+     "root": "re-(回) + dol(气味) + -ent(……的) → 散发着气味的",
+     "rel": [
+      "olfactory 嗅觉的",
+      "odor 气味"
      ]
     },
     {
@@ -608,6 +791,13 @@
      "ant": [
       "indiscreet",
       "careless"
+     ],
+     "root": "dis-(分开) + cret(筛) + -e → 能分辨轻重的 → 谨慎的",
+     "rel": [
+      "discrete 分立的",
+      "discern 辨别",
+      "secret 秘密",
+      "discretion 谨慎"
      ]
     },
     {
@@ -623,6 +813,12 @@
      "ant": [
       "definite",
       "confident"
+     ],
+     "root": "tent(试、伸) + -ative(……的) → 试探性的",
+     "rel": [
+      "attempt 尝试",
+      "tempt 诱惑",
+      "tentacle 触角"
      ]
     }
    ]
@@ -654,6 +850,12 @@
      "ant": [
       "orthodox",
       "conventional"
+     ],
+     "root": "hetero-(异) + dox(观点) → 不同的观点 → 异端的",
+     "rel": [
+      "orthodox 正统的",
+      "paradox 悖论",
+      "heterogeneous 异质的"
      ]
     },
     {
@@ -669,6 +871,12 @@
      "ant": [
       "planned",
       "deliberate"
+     ],
+     "root": "spont(自愿) + -aneous(……的) → 出于自愿的 → 自发的",
+     "rel": [
+      "sponsor 赞助人",
+      "respond 回应",
+      "spouse 配偶"
      ]
     },
     {
@@ -681,7 +889,12 @@
       "interfere",
       "intrude"
      ],
-     "ant": []
+     "ant": [],
+     "root": "meddle 本义是掺和 → 干涉",
+     "rel": [
+      "medley 大杂烩",
+      "mix 混合"
+     ]
     },
     {
      "w": "forge",
@@ -693,7 +906,12 @@
       "counterfeit",
       "fashion"
      ],
-     "ant": []
+     "ant": [],
+     "root": "forge 来自 fabr(工匠) → 锻造；伪造",
+     "rel": [
+      "fabric 织物",
+      "fabricate 捏造"
+     ]
     },
     {
      "w": "perfunctory",
@@ -708,6 +926,12 @@
      "ant": [
       "thorough",
       "zealous"
+     ],
+     "root": "per-(通过) + funct(执行) + -ory(……的) → 只是走过场地执行 → 敷衍的",
+     "rel": [
+      "function 功能",
+      "fungible 可互换的",
+      "defunct 已废弃的"
      ]
     }
    ]

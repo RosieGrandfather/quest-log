@@ -26,7 +26,11 @@
       "omen",
       "portend"
      ],
-     "ant": []
+     "ant": [],
+     "root": "pre-(预先) + sag(感知) → 预先感觉到 → 预兆",
+     "rel": [
+      "sagacious 睿智的"
+     ]
     },
     {
      "w": "extol",
@@ -41,6 +45,11 @@
      "ant": [
       "denounce",
       "disparage"
+     ],
+     "root": "ex-(向上) + tol(举、抬) → 高高举起 → 赞美",
+     "rel": [
+      "elate 使振奋",
+      "tolerate 忍受"
      ]
     },
     {
@@ -71,6 +80,10 @@
      "ant": [
       "exciting",
       "engaging"
+     ],
+     "root": "ted(厌倦) + -ious(……的) → 令人厌倦的",
+     "rel": [
+      "tedium 乏味"
      ]
     },
     {
@@ -86,6 +99,13 @@
      "ant": [
       "survive",
       "thrive"
+     ],
+     "root": "per-(彻底) + ish(去，同 it) → 彻底走掉 → 死亡、消亡",
+     "rel": [
+      "exit 出口",
+      "transit 通过",
+      "circuit 环路",
+      "ambition 野心(amb- + it)"
      ]
     }
    ]
@@ -117,6 +137,13 @@
      "ant": [
       "succeed",
       "prosper"
+     ],
+     "root": "found(建立) + -er(人) → 创立者",
+     "rel": [
+      "foundation 基础",
+      "fund 资金",
+      "profound 深刻的",
+      "fundamental 基本的"
      ]
     },
     {
@@ -131,7 +158,8 @@
      ],
      "ant": [
       "succeed"
-     ]
+     ],
+     "root": "back(回) + fire(火) → 火从后面烧回来 → 事与愿违"
     },
     {
      "w": "embrace",
@@ -146,6 +174,11 @@
      "ant": [
       "reject",
       "spurn"
+     ],
+     "root": "em-(使进入) + brace(双臂) → 揽入怀中 → 欣然接受",
+     "rel": [
+      "bracelet 手镯",
+      "brace 支撑"
      ]
     },
     {
@@ -161,6 +194,11 @@
      "ant": [
       "shortage",
       "dearth"
+     ],
+     "root": "glut(吞咽) → 吞得太多 → 过剩",
+     "rel": [
+      "glutton 贪吃者",
+      "gluttony 暴食"
      ]
     },
     {
@@ -176,6 +214,12 @@
      "ant": [
       "praise",
       "commend"
+     ],
+     "root": "cast(纯洁) + -ig(使) + -ate → 使变纯洁(靠惩罚) → 严厉批评",
+     "rel": [
+      "chaste 纯洁的",
+      "chastise 惩罚",
+      "chasten 惩戒"
      ]
     }
    ]
@@ -207,6 +251,12 @@
      "ant": [
       "eulogy",
       "praise"
+     ],
+     "root": "dia-(穿过) + trib(磨) + -e → 磨来磨去、骂个不停 → 长篇抨击",
+     "rel": [
+      "attrition 磨损",
+      "trite 陈腐的",
+      "contrite 悔恨的"
      ]
     },
     {
@@ -237,6 +287,12 @@
      "ant": [
       "deliberate",
       "knowing"
+     ],
+     "root": "un-(不) + wit(知道) + -ing → 不知情的",
+     "rel": [
+      "wit 机智",
+      "witness 目击者",
+      "wisdom 智慧"
      ]
     },
     {
@@ -252,7 +308,8 @@
      "ant": [
       "depress",
       "dishearten"
-     ]
+     ],
+     "root": "buoy 本义是浮标 → 使浮起；鼓舞"
     },
     {
      "w": "anonymous",
@@ -267,6 +324,13 @@
      "ant": [
       "named",
       "identified"
+     ],
+     "root": "an-(无) + onym(名字) + -ous(……的) → 没有名字的 → 匿名的",
+     "rel": [
+      "synonym 同义词",
+      "antonym 反义词",
+      "pseudonym 笔名",
+      "acronym 首字母缩写"
      ]
     }
    ]
@@ -298,6 +362,12 @@
      "ant": [
       "placate",
       "appease"
+     ],
+     "root": "ant-(反) + agon(争斗) + -ize(使) → 使成为对手 → 激起敌意",
+     "rel": [
+      "agony 极度痛苦",
+      "protagonist 主角",
+      "antagonist 对手"
      ]
     },
     {
@@ -313,6 +383,13 @@
      "ant": [
       "emotional",
       "expressive"
+     ],
+     "root": "im-(不) + pass(感受) + -ive(……的) → 没有感受的 → 无表情的",
+     "rel": [
+      "passion 激情",
+      "passive 被动的",
+      "compassion 同情",
+      "patient 有耐心的"
      ]
     },
     {
@@ -328,6 +405,12 @@
      "ant": [
       "depress",
       "dishearten"
+     ],
+     "root": "e-(出、上) + lat(举、带) → 举起来 → 使振奋",
+     "rel": [
+      "relate 联系",
+      "translate 翻译(trans- + lat)",
+      "dilate 扩张"
      ]
     },
     {
@@ -357,6 +440,10 @@
      ],
      "ant": [
       "uphold"
+     ],
+     "root": "over(越过) + ride(骑) → 骑到上面压倒 → 否决",
+     "rel": [
+      "overturn 推翻"
      ]
     }
    ]
@@ -387,6 +474,13 @@
      ],
      "ant": [
       "suppress"
+     ],
+     "root": "e-(出) + voc(叫) + -e → 叫出来 → 唤起",
+     "rel": [
+      "vocal 声音的",
+      "revoke 撤销",
+      "provoke 激怒",
+      "invoke 祈求"
      ]
     },
     {
@@ -401,6 +495,13 @@
      ],
      "ant": [
       "hindsight"
+     ],
+     "root": "pre-(先) + sci(知道) + -ence(名词) → 先知 → 预知",
+     "rel": [
+      "science 科学",
+      "conscious 有意识的",
+      "conscience 良心",
+      "omniscient 全知的"
      ]
     },
     {
@@ -416,6 +517,12 @@
      "ant": [
       "blame",
       "condemn"
+     ],
+     "root": "vind(主张权利) + dic(说) + -ate → 宣告自己有理 → 证明无罪、证明正确",
+     "rel": [
+      "revenge 复仇",
+      "avenge 为……报仇",
+      "dictate 口述"
      ]
     },
     {
@@ -431,6 +538,13 @@
      "ant": [
       "pacify",
       "mollify"
+     ],
+     "root": "in-(在上) + cens(烧) → 点燃 → 激怒；也指香",
+     "rel": [
+      "incendiary 纵火的",
+      "candle 蜡烛",
+      "candid 坦率的",
+      "incandescent 白炽的"
      ]
     },
     {
@@ -446,6 +560,11 @@
      "ant": [
       "professional",
       "expert"
+     ],
+     "root": "来自意大利语 dilettare(取悦、喜爱) → 只图兴趣的人 → 浅尝辄止者",
+     "rel": [
+      "delight 喜悦",
+      "delectable 美味的"
      ]
     }
    ]
@@ -477,6 +596,13 @@
      "ant": [
       "flexible",
       "yielding"
+     ],
+     "root": "in-(不) + ex-(出) + or(祈求) + -able(能……的) → 求不动的 → 不可阻挡的",
+     "rel": [
+      "oral 口头的",
+      "oration 演说",
+      "adore 崇拜",
+      "orator 演说家"
      ]
     },
     {
@@ -492,6 +618,12 @@
      "ant": [
       "unhealthy",
       "noxious"
+     ],
+     "root": "salu(健康) + -brious(……的) → 有益健康的",
+     "rel": [
+      "salute 敬礼(祝你健康)",
+      "salutary 有益的",
+      "salvation 拯救"
      ]
     },
     {
@@ -507,6 +639,11 @@
      "ant": [
       "generosity",
       "munificence"
+     ],
+     "root": "av(渴望) + -arice(名词) → 贪婪",
+     "rel": [
+      "avid 热切的",
+      "avaricious 贪婪的"
      ]
     },
     {
@@ -522,7 +659,8 @@
      "ant": [
       "lenient",
       "mild"
-     ]
+     ],
+     "root": "Draco 德拉古，古雅典立法者，以严刑著称 → 极其严酷的"
     },
     {
      "w": "futile",
@@ -537,6 +675,12 @@
      "ant": [
       "fruitful",
       "productive"
+     ],
+     "root": "fut(倒、泻) + -ile(……的) → 倒出去收不回来 → 徒劳的",
+     "rel": [
+      "fuse 融合",
+      "refute 驳斥",
+      "effuse 流露"
      ]
     }
    ]
@@ -567,7 +711,8 @@
      ],
      "ant": [
       "finale"
-     ]
+     ],
+     "root": "法语 débuter：de-(离开) + but(靶子、目标) → 离开起点 → 首次亮相"
     },
     {
      "w": "deadlock",
@@ -579,7 +724,8 @@
       "stalemate",
       "impasse"
      ],
-     "ant": []
+     "ant": [],
+     "root": "dead(死) + lock(锁) → 锁死 → 僵局"
     },
     {
      "w": "impede",
@@ -594,6 +740,13 @@
      "ant": [
       "facilitate",
       "expedite"
+     ],
+     "root": "im-(在里) + ped(脚) → 绊住脚 → 妨碍",
+     "rel": [
+      "pedal 脚踏板",
+      "pedestrian 行人",
+      "expedite 加速(ex- 解开脚)",
+      "centipede 蜈蚣"
      ]
     },
     {
@@ -606,7 +759,8 @@
       "specify",
       "require"
      ],
-     "ant": []
+     "ant": [],
+     "root": "古罗马人立约时折断稻草(stipula)为凭证 → 约定、规定"
     },
     {
      "w": "awkward",
@@ -621,6 +775,12 @@
      "ant": [
       "graceful",
       "smooth"
+     ],
+     "root": "awk(反方向，古北欧语) + -ward(朝……方向) → 反着来的 → 笨拙的",
+     "rel": [
+      "backward 向后的",
+      "forward 向前的",
+      "toward 朝向"
      ]
     }
    ]
@@ -649,7 +809,13 @@
       "summary",
       "abstract"
      ],
-     "ant": []
+     "ant": [],
+     "root": "syn-(一起) + opsis(看) → 一起看 → 概要",
+     "rel": [
+      "optic 视觉的",
+      "autopsy 尸检(auto- 亲自 + 看)",
+      "synonym 同义词"
+     ]
     },
     {
      "w": "overwrought",
@@ -664,6 +830,10 @@
      "ant": [
       "calm",
       "restrained"
+     ],
+     "root": "over(过度) + wrought(work 的旧过去分词) → 做得过头的 → 过度紧张的",
+     "rel": [
+      "work 工作"
      ]
     },
     {
@@ -694,6 +864,11 @@
      "ant": [
       "tentative",
       "qualified"
+     ],
+     "root": "cat-(向下) + agor(宣告、集会) + -ical(……的) → 当众宣告 → 绝对的",
+     "rel": [
+      "category 类别",
+      "allegory 寓言"
      ]
     },
     {
@@ -709,6 +884,12 @@
      "ant": [
       "strengthen",
       "intensify"
+     ],
+     "root": "at-(ad-，向) + tenu(细) + -ate(使) → 使变细 → 使减弱",
+     "rel": [
+      "tenuous 单薄的",
+      "extenuate 减轻罪责",
+      "thin 薄的"
      ]
     }
    ]

@@ -26,7 +26,14 @@
       "brainwash",
       "instruct"
      ],
-     "ant": []
+     "ant": [],
+     "root": "in-(使进入) + doctr(教) + -ate(动词) → 把教条灌进去 → 灌输",
+     "rel": [
+      "doctrine 教义",
+      "doctor 医生(原指有学问的人)",
+      "document 文件",
+      "docile 温顺的(易教)"
+     ]
     },
     {
      "w": "opprobrious",
@@ -41,6 +48,11 @@
      "ant": [
       "laudatory",
       "respectful"
+     ],
+     "root": "op-(ob-，对着) + probr(耻辱) + -ious(……的) → 对着人抛耻辱的 → 辱骂的",
+     "rel": [
+      "opprobrium 耻辱",
+      "reproach 责备"
      ]
     },
     {
@@ -56,6 +68,11 @@
      "ant": [
       "aware",
       "mindful"
+     ],
+     "root": "ob-(朝着) + liv(抹去) + -ious(……的) → 被抹去了记忆的 → 浑然不觉的",
+     "rel": [
+      "oblivion 遗忘",
+      "obliterate 抹去"
      ]
     },
     {
@@ -68,7 +85,14 @@
       "evidence",
       "attestation"
      ],
-     "ant": []
+     "ant": [],
+     "root": "test(证人、见证) + -imony(名词) → 证词",
+     "rel": [
+      "testify 作证",
+      "attest 证明",
+      "protest 抗议",
+      "contest 比赛、争辩"
+     ]
     },
     {
      "w": "surfeit",
@@ -83,6 +107,12 @@
      "ant": [
       "dearth",
       "shortage"
+     ],
+     "root": "sur-(超过) + feit(做) → 做得过头 → 过量",
+     "rel": [
+      "counterfeit 仿造的",
+      "forfeit 丧失",
+      "fact 事实"
      ]
     }
    ]
@@ -114,7 +144,8 @@
      "ant": [
       "affable",
       "good-natured"
-     ]
+     ],
+     "root": "来自中古英语 contek(争吵) → 爱吵架的"
     },
     {
      "w": "debacle",
@@ -129,7 +160,8 @@
      "ant": [
       "triumph",
       "success"
-     ]
+     ],
+     "root": "法语 débâcler：de-(解开) + bâcler(闩门) → 闩被打开，河冰崩解 → 溃败"
     },
     {
      "w": "fringe",
@@ -144,7 +176,8 @@
      "ant": [
       "center",
       "core"
-     ]
+     ],
+     "root": "fringe(穗边、边缘) → 边缘"
     },
     {
      "w": "discern",
@@ -159,6 +192,13 @@
      "ant": [
       "overlook",
       "miss"
+     ],
+     "root": "dis-(分开) + cern(筛) → 筛开来看 → 辨别",
+     "rel": [
+      "discreet 谨慎的",
+      "discrete 分立的",
+      "secret 秘密",
+      "concern 关心"
      ]
     },
     {
@@ -174,7 +214,8 @@
      "ant": [
       "careless",
       "slapdash"
-     ]
+     ],
+     "root": "fast(骄傲、厌恶) + tid(= taed，厌烦) + -ious(……的) → 容易厌烦的 → 挑剔的"
     }
    ]
   },
@@ -205,6 +246,10 @@
      "ant": [
       "surge",
       "flurry"
+     ],
+     "root": "lull 来自哄孩子睡觉的拟声 → 使平静；平静期",
+     "rel": [
+      "lullaby 摇篮曲"
      ]
     },
     {
@@ -220,6 +265,10 @@
      "ant": [
       "wax",
       "grow"
+     ],
+     "root": "wane(缺) → 渐渐缺少 → 衰退",
+     "rel": [
+      "want 缺少"
      ]
     },
     {
@@ -235,6 +284,12 @@
      "ant": [
       "surrender",
       "yield"
+     ],
+     "root": "wrest(扭、拧) → 用力扭夺过来 → 夺取",
+     "rel": [
+      "wrist 手腕(能扭动处)",
+      "wrestle 摔跤",
+      "wring 拧"
      ]
     },
     {
@@ -250,6 +305,10 @@
      "ant": [
       "plausible",
       "credible"
+     ],
+     "root": "far(远) + fetched(取来的) → 从很远处硬取来的 → 牵强的",
+     "rel": [
+      "fetch 取来"
      ]
     },
     {
@@ -264,6 +323,12 @@
      ],
      "ant": [
       "concealment"
+     ],
+     "root": "re-(去掉) + vel(面纱) + -ation(名词) → 揭开面纱 → 揭示",
+     "rel": [
+      "reveal 揭示",
+      "veil 面纱",
+      "develop 发展(去掉包裹)"
      ]
     }
    ]
@@ -292,7 +357,13 @@
       "ruse",
       "stratagem"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ploy 是 employ 缩略(使用) → 所用的手段 → 花招",
+     "rel": [
+      "employ 雇用",
+      "deploy 部署",
+      "implicit 隐含的"
+     ]
     },
     {
      "w": "authentic",
@@ -307,6 +378,12 @@
      "ant": [
       "counterfeit",
       "spurious"
+     ],
+     "root": "auth(自己) + -entic(……的) → 出自本人之手的 → 真实的",
+     "rel": [
+      "author 作者",
+      "authority 权威",
+      "authorize 授权"
      ]
     },
     {
@@ -322,6 +399,12 @@
      "ant": [
       "praise",
       "exalt"
+     ],
+     "root": "vil(卑贱) + -ify(使) → 使显得卑贱 → 诽谤",
+     "rel": [
+      "vile 卑鄙的",
+      "villain 恶棍",
+      "villa 别墅(农庄)"
      ]
     },
     {
@@ -337,6 +420,10 @@
      "ant": [
       "diatribe",
       "censure"
+     ],
+     "root": "en-(在) + com(狂欢游行) + -ium → 狂欢游行中唱的赞歌 → 颂词",
+     "rel": [
+      "comedy 喜剧(狂欢中的歌)"
      ]
     },
     {
@@ -352,6 +439,11 @@
      "ant": [
       "conceal",
       "withhold"
+     ],
+     "root": "di-(分开) + vulg(大众) + -e → 散给大众 → 泄露",
+     "rel": [
+      "vulgar 粗俗的(大众的)",
+      "vulgarize 通俗化"
      ]
     }
    ]
@@ -383,6 +475,12 @@
      "ant": [
       "provoke",
       "antagonize"
+     ],
+     "root": "pro-(向前) + pit(冲向，= pet) + -iate(使) → 向着神冲去求情 → 抚慰",
+     "rel": [
+      "propitious 吉利的",
+      "petition 请愿",
+      "appetite 食欲"
      ]
     },
     {
@@ -398,7 +496,8 @@
      "ant": [
       "pragmatic",
       "realistic"
-     ]
+     ],
+     "root": "来自小说 Don Quixote(堂吉诃德)，为幻想中的骑士理想拼命 → 不切实际的"
     },
     {
      "w": "tendentious",
@@ -413,6 +512,13 @@
      "ant": [
       "impartial",
       "objective"
+     ],
+     "root": "tend(倾向、伸向) + -entious(……的) → 总往一边倾斜的 → 有偏见的",
+     "rel": [
+      "tend 倾向",
+      "tendency 趋势",
+      "intend 打算",
+      "extend 延伸"
      ]
     },
     {
@@ -428,6 +534,12 @@
      "ant": [
       "hasty",
       "reckless"
+     ],
+     "root": "measure(量) + -ed → 量过的 → 经过斟酌的",
+     "rel": [
+      "measure 测量",
+      "dimension 维度",
+      "immense 巨大的"
      ]
     },
     {
@@ -443,6 +555,12 @@
      "ant": [
       "limited",
       "cursory"
+     ],
+     "root": "en-(在) + cyclo(圈) + paed(教育) + -ic(……的) → 圈起来的全面教育 → 百科全书式的",
+     "rel": [
+      "cycle 循环",
+      "pedagogy 教育学",
+      "pedant 书呆子"
      ]
     }
    ]
@@ -474,6 +592,12 @@
      "ant": [
       "irrelevant",
       "extraneous"
+     ],
+     "root": "germ(同源、同胞兄弟) + -ane(……的) → 同胞兄弟的 → 有血缘联系的 → 相关的",
+     "rel": [
+      "germ 胚芽",
+      "german 同父母的",
+      "generate 产生"
      ]
     },
     {
@@ -489,6 +613,13 @@
      "ant": [
       "conclusion",
       "termination"
+     ],
+     "root": "in-(进入) + cep(拿) + -tion(名词) → 开始拿起来 → 开端",
+     "rel": [
+      "accept 接受",
+      "receive 接收",
+      "concept 概念",
+      "intercept 拦截"
      ]
     },
     {
@@ -504,7 +635,8 @@
      "ant": [
       "gluttonous",
       "self-indulgent"
-     ]
+     ],
+     "root": "abs-(离开) + tem(= tim，酒、醉) + -ious(……的) → 远离酒的 → 有节制的"
     },
     {
      "w": "plummet",
@@ -519,6 +651,11 @@
      "ant": [
       "soar",
       "skyrocket"
+     ],
+     "root": "plumb(铅锤) + -et → 像铅锤一样直落 → 骤降",
+     "rel": [
+      "plumber 水管工(原指铅管工)",
+      "plumb 铅锤"
      ]
     },
     {
@@ -534,6 +671,11 @@
      "ant": [
       "accessible",
       "lucid"
+     ],
+     "root": "im-(不) + pene(里面) + trat(进) + -able(能……的) → 无法进入内部的",
+     "rel": [
+      "penetrate 穿透",
+      "penetration 渗透"
      ]
     }
    ]
@@ -565,6 +707,13 @@
      "ant": [
       "vulnerable",
       "weak"
+     ],
+     "root": "in-(不) + vinc(征服) + -ible(能……的) → 不可征服的",
+     "rel": [
+      "victory 胜利",
+      "convince 说服",
+      "convict 定罪",
+      "evict 驱逐"
      ]
     },
     {
@@ -580,6 +729,12 @@
      "ant": [
       "dense",
       "abundant"
+     ],
+     "root": "spars(撒、散) + -e → 撒得稀稀落落的 → 稀疏的",
+     "rel": [
+      "disperse 驱散",
+      "aspersion 诽谤",
+      "sprinkle 洒"
      ]
     },
     {
@@ -595,6 +750,12 @@
      "ant": [
       "conventional",
       "traditional"
+     ],
+     "root": "法语 avant(前) + garde(卫兵) → 先头部队 → 前卫派",
+     "rel": [
+      "advance 前进",
+      "guard 守卫",
+      "vanguard 先锋"
      ]
     },
     {
@@ -610,6 +771,13 @@
      "ant": [
       "dishonesty",
       "corruption"
+     ],
+     "root": "prob(好、试) + -ity(名词) → 经得起检验的好品质 → 正直",
+     "rel": [
+      "approbation 赞许",
+      "probe 探查",
+      "prove 证明",
+      "probable 可能的"
      ]
     },
     {
@@ -625,6 +793,10 @@
      "ant": [
       "frivolous",
       "excitable"
+     ],
+     "root": "so-(不) + ber(= ebr，醉) → 不醉的 → 清醒的、严肃的",
+     "rel": [
+      "inebriated 醉酒的"
      ]
     }
    ]
@@ -656,7 +828,8 @@
      "ant": [
       "lively",
       "trendy"
-     ]
+     ],
+     "root": "stodge(塞满、浓稠的食物) + -y → 腻味沉闷的"
     },
     {
      "w": "sanguine",
@@ -671,6 +844,11 @@
      "ant": [
       "pessimistic",
       "gloomy"
+     ],
+     "root": "sangu(血) + -ine(……的) → 古人认为血旺的人乐观 → 乐观的",
+     "rel": [
+      "sanguinary 血腥的",
+      "consanguinity 血缘关系"
      ]
     },
     {
@@ -686,6 +864,13 @@
      "ant": [
       "humble",
       "modest"
+     ],
+     "root": "major(更大) → majest(庄严) + -ic(……的) → 庄严的",
+     "rel": [
+      "major 主要的",
+      "majority 多数",
+      "mayor 市长",
+      "maximum 最大的"
      ]
     },
     {
@@ -701,7 +886,8 @@
      "ant": [
       "liberal",
       "open-minded person"
-     ]
+     ],
+     "root": "来自法语 bigot，原为骂人词 → 固执己见者"
     },
     {
      "w": "oscillate",
@@ -716,6 +902,10 @@
      "ant": [
       "stabilize",
       "hold steady"
+     ],
+     "root": "oscill(摆动、荡秋千) + -ate(动词) → 摆来摆去 → 犹豫不定",
+     "rel": [
+      "oscillation 振荡"
      ]
     }
    ]

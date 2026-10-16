@@ -29,6 +29,13 @@
      "ant": [
       "steady",
       "constant"
+     ],
+     "root": "Mercury 墨丘利/水星，行动迅速、水银易流动 → 善变的",
+     "rel": [
+      "mercury 水银",
+      "Mercury 水星",
+      "merchant 商人",
+      "commerce 商业"
      ]
     },
     {
@@ -44,6 +51,13 @@
      "ant": [
       "surrender",
       "yield"
+     ],
+     "root": "vinc/vanq(征服) + -ish → 打败",
+     "rel": [
+      "victory 胜利",
+      "convince 说服",
+      "invincible 不可战胜的",
+      "evict 驱逐"
      ]
     },
     {
@@ -59,6 +73,12 @@
      "ant": [
       "stinginess",
       "miserliness"
+     ],
+     "root": "larg(大) + -esse → 大方 → 慷慨的赠与",
+     "rel": [
+      "large 大的",
+      "enlarge 扩大",
+      "largo 广板"
      ]
     },
     {
@@ -120,6 +140,13 @@
      "ant": [
       "fond",
       "eager"
+     ],
+     "root": "a-(ab 离开) + vers(转) → 转身避开 → 反对的",
+     "rel": [
+      "reverse 反转",
+      "diverse 多样的",
+      "adverse 不利的",
+      "aversion 厌恶"
      ]
     },
     {
@@ -149,6 +176,11 @@
      "ant": [
       "open",
       "forthright"
+     ],
+     "root": "furt(偷，←fur 贼) + -ive → 偷偷摸摸的",
+     "rel": [
+      "furtively 偷偷地",
+      "ferret 雪貂(同源)"
      ]
     },
     {
@@ -164,6 +196,13 @@
      "ant": [
       "aggravate",
       "exacerbate"
+     ],
+     "root": "al-(ad 向) + lev(轻) + -iate → 使变轻 → 减轻",
+     "rel": [
+      "levity 轻率",
+      "elevate 提升",
+      "lever 杠杆",
+      "relieve 缓解"
      ]
     },
     {
@@ -179,6 +218,13 @@
      "ant": [
       "compliant",
       "amenable"
+     ],
+     "root": "ob-(对着) + stin(站，←stare) + -ate → 站着不动 → 固执",
+     "rel": [
+      "stand 站",
+      "obstacle 障碍",
+      "destiny 命运",
+      "stable 稳定的"
      ]
     }
    ]
@@ -210,6 +256,13 @@
      "ant": [
       "devoid",
       "lacking"
+     ],
+     "root": "re-(再，加强) + plet(满) → 充满",
+     "rel": [
+      "complete 完整的",
+      "deplete 耗尽",
+      "plenty 大量",
+      "implement 实施"
      ]
     },
     {
@@ -225,6 +278,13 @@
      "ant": [
       "suppress",
       "stifle"
+     ],
+     "root": "e-(出) + lic(引诱) + -it → 引出",
+     "rel": [
+      "delicious 美味的",
+      "delight 愉悦",
+      "lace 花边",
+      "allure 吸引"
      ]
     },
     {
@@ -270,6 +330,13 @@
      "ant": [
       "duty",
       "obligation"
+     ],
+     "root": "pre-(前) + rog(问，请求) + -ative → 先被征询投票的人 → 特权",
+     "rel": [
+      "interrogate 审问",
+      "arrogant 傲慢的",
+      "abrogate 废除",
+      "derogatory 贬损的"
      ]
     }
    ]
@@ -301,6 +368,12 @@
      "ant": [
       "vilify",
       "ignore"
+     ],
+     "root": "lion(狮子) + -ize(使) → 把…当狮子捧",
+     "rel": [
+      "lion 狮子",
+      "lioness 母狮",
+      "dandelion 蒲公英"
      ]
     },
     {
@@ -316,6 +389,13 @@
      "ant": [
       "immune",
       "resistant"
+     ],
+     "root": "sus-(sub 下面) + cept(拿，接受) + -ible → 能被拿住的 → 易受影响",
+     "rel": [
+      "accept 接受",
+      "except 除外",
+      "concept 概念",
+      "perceive 察觉"
      ]
     },
     {
@@ -346,6 +426,12 @@
      "ant": [
       "lasting",
       "enduring"
+     ],
+     "root": "flee(←fly 飞，逃) + -ing → 飞逝的",
+     "rel": [
+      "flee 逃走",
+      "fly 飞",
+      "flight 飞行"
      ]
     },
     {
@@ -361,6 +447,12 @@
      "ant": [
       "diverge",
       "disperse"
+     ],
+     "root": "con-(共同) + verg(倾斜，转向) → 一起转向 → 汇聚",
+     "rel": [
+      "diverge 分歧",
+      "verge 边缘",
+      "convergence 汇合"
      ]
     }
    ]
@@ -389,7 +481,14 @@
       "stock",
       "range"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(再) + pert(找到，←parire 产生) + -oire → 能拿出的东西",
+     "rel": [
+      "pare",
+      "parent 父母",
+      "apparatus 器械",
+      "prepare 准备"
+     ]
     },
     {
      "w": "pious",
@@ -404,6 +503,13 @@
      "ant": [
       "irreverent",
       "impious"
+     ],
+     "root": "pi(敬重，←pius) + -ous → 虔诚的",
+     "rel": [
+      "pity 同情",
+      "piety 虔诚",
+      "expiate 赎罪",
+      "impious 不敬的"
      ]
     },
     {
@@ -419,6 +525,12 @@
      "ant": [
       "selfless",
       "humble"
+     ],
+     "root": "Narcissus 那喀索斯(爱上自己倒影的美少年) + -istic → 自恋的",
+     "rel": [
+      "narcissism 自恋",
+      "narcissus 水仙花",
+      "narcotic 麻醉剂(形近)"
      ]
     },
     {
@@ -434,6 +546,13 @@
      "ant": [
       "flexible",
       "conciliatory"
+     ],
+     "root": "in-(不) + trans(穿过) + ig(←agere 驱赶) + -ent → 不肯过去 → 不妥协",
+     "rel": [
+      "transit 通过",
+      "transact 交易",
+      "agent 代理人",
+      "agile 敏捷的"
      ]
     },
     {
@@ -449,6 +568,12 @@
      "ant": [
       "sincere",
       "direct"
+     ],
+     "root": "back(反) + hand(手) + -ed → 反手打的 → 间接的、暗讽的",
+     "rel": [
+      "backhand 反手",
+      "handy 便利的",
+      "handout 讲义"
      ]
     }
    ]
@@ -495,6 +620,12 @@
      "ant": [
       "implausible",
       "far-fetched"
+     ],
+     "root": "plaus(鼓掌赞同) + -ible → 能让人鼓掌的 → 似乎有理",
+     "rel": [
+      "applaud 鼓掌",
+      "applause 掌声",
+      "plaudit 赞赏"
      ]
     },
     {
@@ -525,6 +656,13 @@
      "ant": [
       "stifle",
       "prevent"
+     ],
+     "root": "en-(使) + gener(生) + -ate → 使产生",
+     "rel": [
+      "generate 产生",
+      "generation 一代",
+      "genre 种类",
+      "genuine 真正的"
      ]
     },
     {
@@ -539,6 +677,12 @@
      ],
      "ant": [
       "original"
+     ],
+     "root": "sub-(下面) + stitu(放，站) + -te → 放在下面顶替 → 替代",
+     "rel": [
+      "constitute 构成",
+      "institute 机构",
+      "destitute 赤贫的"
      ]
     }
    ]
@@ -585,6 +729,13 @@
      "ant": [
       "divide",
       "weaken"
+     ],
+     "root": "con-(加强) + solid(坚固) + -ate → 巩固",
+     "rel": [
+      "solid 固体的",
+      "solidarity 团结",
+      "solder 焊接",
+      "soldier 士兵"
      ]
     },
     {
@@ -600,6 +751,13 @@
      "ant": [
       "extreme",
       "intensify"
+     ],
+     "root": "moder(尺度，适中) + -ate → 使适度",
+     "rel": [
+      "modest 谦虚的",
+      "modify 修改",
+      "mode 方式",
+      "modern 现代的"
      ]
     },
     {
@@ -630,6 +788,13 @@
      "ant": [
       "essential",
       "necessary"
+     ],
+     "root": "re-(再) + und(波浪，涌) + -ant → 满溢出来的 → 多余的",
+     "rel": [
+      "abound 丰富",
+      "abundant 充足的",
+      "inundate 淹没",
+      "undulate 起伏"
      ]
     }
    ]
@@ -676,6 +841,13 @@
      "ant": [
       "refute",
       "falsify"
+     ],
+     "root": "ver(真) + -ify(使) → 证实",
+     "rel": [
+      "very 很",
+      "verdict 裁决",
+      "veracity 真实",
+      "aver 断言"
      ]
     },
     {
@@ -691,6 +863,11 @@
      "ant": [
       "firm",
       "rigid"
+     ],
+     "root": "flacc(松软，←flaccus) + -id → 松弛的",
+     "rel": [
+      "flabby 松垮的",
+      "flag 无力地垂下"
      ]
     },
     {
@@ -703,7 +880,13 @@
       "lampoon",
       "parody"
      ],
-     "ant": []
+     "ant": [],
+     "root": "satir(讽刺，←satura 杂烩) + -ize → 讽刺",
+     "rel": [
+      "satire 讽刺",
+      "satirist 讽刺作家",
+      "saturate 使饱和(形近)"
+     ]
     },
     {
      "w": "ascetic",

@@ -29,6 +29,14 @@
      "ant": [
       "imperceptible",
       "undetectable"
+     ],
+     "root": "per-(通过) + cept(拿、抓) + -ible(能……的) → 能被抓到的 → 可察觉的",
+     "rel": [
+      "perceive 察觉",
+      "receive 接收",
+      "conceive 构想",
+      "deceive 欺骗",
+      "accept 接受"
      ]
     },
     {
@@ -44,7 +52,8 @@
      "ant": [
       "mature",
       "seasoned"
-     ]
+     ],
+     "root": "本义指还没长羽毛的雏鸟(来自 calvus 光秃的) → 不成熟的"
     },
     {
      "w": "pandemonium",
@@ -59,6 +68,12 @@
      "ant": [
       "order",
       "calm"
+     ],
+     "root": "pan-(全) + demon(恶魔) + -ium(地方) → 众魔聚集之地 → 大混乱",
+     "rel": [
+      "pandemic 大流行",
+      "panorama 全景",
+      "demon 恶魔"
      ]
     },
     {
@@ -74,7 +89,8 @@
      "ant": [
       "simple",
       "plain"
-     ]
+     ],
+     "root": "来自葡萄牙语 barroco，指形状不规则的珍珠 → 繁复华丽的巴洛克风格"
     },
     {
      "w": "overshadow",
@@ -86,7 +102,8 @@
       "eclipse",
       "dwarf"
      ],
-     "ant": []
+     "ant": [],
+     "root": "over(在上) + shadow(阴影) → 罩在阴影里 → 使黯然失色"
     }
    ]
   },
@@ -116,6 +133,13 @@
      ],
      "ant": [
       "insignificance"
+     ],
+     "root": "magn(大) + -itude(名词) → 大小、重大",
+     "rel": [
+      "magnify 放大",
+      "magnate 大亨",
+      "magnanimous 宽宏大量的",
+      "magnificent 壮丽的"
      ]
     },
     {
@@ -131,6 +155,11 @@
      "ant": [
       "imperceptible",
       "intangible"
+     ],
+     "root": "palp(摸) + -able(能……的) → 摸得到的 → 明显的",
+     "rel": [
+      "palm 手掌",
+      "palpitation 心悸"
      ]
     },
     {
@@ -146,6 +175,12 @@
      "ant": [
       "authentic",
       "genuine"
+     ],
+     "root": "apo-(离开) + crypt(隐藏) + -al(……的) → 被藏起来、不被承认的 → 杜撰的",
+     "rel": [
+      "crypt 地下室",
+      "cryptic 神秘的",
+      "encrypt 加密"
      ]
     },
     {
@@ -158,7 +193,12 @@
       "expurgate",
       "suppress"
      ],
-     "ant": []
+     "ant": [],
+     "root": "cens(评判) → 审查官 → 审查",
+     "rel": [
+      "censure 谴责",
+      "census 人口普查"
+     ]
     },
     {
      "w": "balloon",
@@ -173,6 +213,11 @@
      "ant": [
       "shrink",
       "contract"
+     ],
+     "root": "ball(球) + -oon(大) → 大球 → 迅速膨胀",
+     "rel": [
+      "ball 球",
+      "ballot 选票(原为小球)"
      ]
     }
    ]
@@ -204,7 +249,8 @@
      "ant": [
       "welcome",
       "accept"
-     ]
+     ],
+     "root": "re-(回) + buff(打、拍) → 打回去 → 拒绝"
     },
     {
      "w": "truism",
@@ -216,7 +262,13 @@
       "platitude",
       "cliché"
      ],
-     "ant": []
+     "ant": [],
+     "root": "tru(真) + -ism → 真话 → 老生常谈的道理",
+     "rel": [
+      "true 真实的",
+      "truth 真理",
+      "trust 信任"
+     ]
     },
     {
      "w": "overwhelm",
@@ -228,7 +280,8 @@
       "overpower",
       "inundate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "over(在上) + whelm(淹没) → 淹没"
     },
     {
      "w": "slant",
@@ -254,6 +307,13 @@
      ],
      "ant": [
       "know"
+     ],
+     "root": "sur-(在上) + mis(放、送) → 放上去一个想法 → 推测",
+     "rel": [
+      "submit 提交",
+      "permit 允许",
+      "mission 使命",
+      "promise 承诺"
      ]
     }
    ]
@@ -285,7 +345,8 @@
      "ant": [
       "restrained",
       "understated"
-     ]
+     ],
+     "root": "histrio(演员) + -ic(……的) → 演员式的 → 夸张做作的"
     },
     {
      "w": "profusion",
@@ -300,6 +361,13 @@
      "ant": [
       "scarcity",
       "dearth"
+     ],
+     "root": "pro-(向前) + fus(倒) + -ion(名词) → 倾倒出来 → 大量",
+     "rel": [
+      "fuse 融合",
+      "diffuse 扩散",
+      "confuse 混淆",
+      "refund 退款"
      ]
     },
     {
@@ -312,7 +380,13 @@
       "highlight",
       "emphasize"
      ],
-     "ant": []
+     "ant": [],
+     "root": "fore-(前) + ground(地面) → 前景 → 突出",
+     "rel": [
+      "foreword 前言",
+      "forehead 前额",
+      "forecast 预测"
+     ]
     },
     {
      "w": "accede",
@@ -327,6 +401,13 @@
      "ant": [
       "refuse",
       "decline"
+     ],
+     "root": "ac-(ad-，向) + ced(走) + -e → 走向对方 → 同意",
+     "rel": [
+      "precede 在前",
+      "proceed 前进",
+      "concede 让步",
+      "succeed 成功、继承"
      ]
     },
     {
@@ -342,6 +423,13 @@
      "ant": [
       "cautious",
       "deliberate"
+     ],
+     "root": "im-(向) + pet(冲) + -uous(……的) → 向前冲的 → 冲动的",
+     "rel": [
+      "compete 竞争",
+      "petition 请愿",
+      "appetite 食欲",
+      "propitious 吉利的"
      ]
     }
    ]
@@ -373,6 +461,10 @@
      "ant": [
       "repel",
       "repulse"
+     ],
+     "root": "al-(ad-，向) + lure(诱饵) → 引到诱饵处 → 吸引",
+     "rel": [
+      "lure 诱饵"
      ]
     },
     {
@@ -388,6 +480,10 @@
      "ant": [
       "merciful",
       "yielding"
+     ],
+     "root": "re-(加强) + lent(软) + -less(无) → 不肯软下来的 → 无情的",
+     "rel": [
+      "lenient 宽大的"
      ]
     },
     {
@@ -403,6 +499,10 @@
      "ant": [
       "rough",
       "reliable"
+     ],
+     "root": "slip(滑) + -ery(……的) → 易滑的",
+     "rel": [
+      "slip 滑倒"
      ]
     },
     {
@@ -418,6 +518,13 @@
      "ant": [
       "hostile",
       "cold"
+     ],
+     "root": "cord(心) + -ial(……的) → 发自内心的 → 热情友好的",
+     "rel": [
+      "core 核心",
+      "courage 勇气",
+      "record 记录(re- + cord 记在心里)",
+      "accord 一致"
      ]
     },
     {
@@ -433,6 +540,10 @@
      "ant": [
       "impermeable",
       "solid"
+     ],
+     "root": "por(孔、通道) + -ous(……的) → 多孔的",
+     "rel": [
+      "pore 毛孔"
      ]
     }
    ]
@@ -494,6 +605,13 @@
      "ant": [
       "shortsighted",
       "pragmatic"
+     ],
+     "root": "vis(看) + -ion + -ary(……的) → 看得见未来的 → 有远见的；空想的",
+     "rel": [
+      "vision 视觉",
+      "revise 修订",
+      "supervise 监督",
+      "provide 提供"
      ]
     },
     {
@@ -506,7 +624,14 @@
       "summarize",
       "recap"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(再) + capit(头、标题) + -ulate → 把各条标题再说一遍 → 概括",
+     "rel": [
+      "capital 首都",
+      "captain 队长",
+      "decapitate 斩首",
+      "chapter 章"
+     ]
     },
     {
      "w": "boorish",
@@ -521,6 +646,10 @@
      "ant": [
       "refined",
       "polite"
+     ],
+     "root": "boor(农夫、乡下人) + -ish(……的) → 像乡下人一样粗鲁的",
+     "rel": [
+      "neighbor 邻居(近邻的农夫)"
      ]
     }
    ]
@@ -552,6 +681,11 @@
      "ant": [
       "lazy",
       "indolent"
+     ],
+     "root": "industr(勤奋) + -ious(……的) → 勤勉的",
+     "rel": [
+      "industry 工业、勤勉",
+      "industrial 工业的"
      ]
     },
     {
@@ -567,6 +701,10 @@
      "ant": [
       "rejoice",
       "celebrate"
+     ],
+     "root": "lam(哭号) + -ent → 哀号 → 哀叹",
+     "rel": [
+      "lamentable 可悲的"
      ]
     },
     {
@@ -594,7 +732,13 @@
       "bargain",
       "mediate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "neg-(不) + otium(闲暇) + -ate → 不得闲，忙着办事 → 谈判",
+     "rel": [
+      "otiose 闲散无用的",
+      "negative 否定的",
+      "deny 否认"
+     ]
     },
     {
      "w": "consort",
@@ -609,6 +753,13 @@
      "ant": [
       "avoid",
       "shun"
+     ],
+     "root": "con-(一起) + sort(命运、签) → 同一命运的人 → 结交",
+     "rel": [
+      "sort 种类",
+      "assort 分类",
+      "resort 求助",
+      "sorcerer 巫师"
      ]
     }
    ]
@@ -640,6 +791,10 @@
      "ant": [
       "poetic",
       "imaginative"
+     ],
+     "root": "pros(散文) + -aic(……的) → 散文式的(不是诗) → 平淡的",
+     "rel": [
+      "prose 散文"
      ]
     },
     {
@@ -655,6 +810,13 @@
      "ant": [
       "limited",
       "inflexible"
+     ],
+     "root": "vers(转) + -atile(易于……的) → 容易转换的 → 多才多艺的",
+     "rel": [
+      "converse 交谈",
+      "reverse 反转",
+      "universe 宇宙",
+      "diverse 多样的"
      ]
     },
     {
@@ -670,6 +832,12 @@
      "ant": [
       "conventional",
       "normal"
+     ],
+     "root": "ec-(ex-，出) + centr(中心) + -ic(……的) → 偏离中心的 → 古怪的",
+     "rel": [
+      "center 中心",
+      "concentric 同心的",
+      "concentrate 集中"
      ]
     },
     {
@@ -685,6 +853,12 @@
      "ant": [
       "dissatisfied",
       "vigilant"
+     ],
+     "root": "com-(加强) + plac(使满意) + -ent(……的) → 对自己很满意的 → 自满的",
+     "rel": [
+      "please 取悦",
+      "placid 平静的",
+      "placebo 安慰剂"
      ]
     },
     {
@@ -700,6 +874,11 @@
      "ant": [
       "contempt",
       "disdain"
+     ],
+     "root": "e-(ex-) + stim(估价) → 估价 → 尊重",
+     "rel": [
+      "estimate 估计",
+      "aim 瞄准"
      ]
     }
    ]

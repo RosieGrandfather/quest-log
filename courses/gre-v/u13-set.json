@@ -44,6 +44,13 @@
      "ant": [
       "honor",
       "credit"
+     ],
+     "root": "stig(刺、点) + -ma(名词) → 刺上去的印记 → 污名",
+     "rel": [
+      "instigate 煽动(in- + stig 刺)",
+      "instinct 本能",
+      "distinguish 区分",
+      "extinguish 熄灭"
      ]
     },
     {
@@ -59,6 +66,11 @@
      "ant": [
       "despised",
       "neglected"
+     ],
+     "root": "cher(亲爱的，同 dear) + -ish + -ed → 被当作亲爱的 → 珍爱的",
+     "rel": [
+      "charity 慈善",
+      "caress 爱抚"
      ]
     },
     {
@@ -74,6 +86,12 @@
      "ant": [
       "pleasure",
       "delight"
+     ],
+     "root": "umbr(阴影) + -age(名词) → 脸上蒙了层阴影 → 不悦、愤怒",
+     "rel": [
+      "umbrella 伞",
+      "somber 阴沉的",
+      "penumbra 半影"
      ]
     },
     {
@@ -89,6 +107,13 @@
      "ant": [
       "aversion",
       "antipathy"
+     ],
+     "root": "af-(ad-，向) + fin(边界) + -ity(名词) → 紧挨着边界 → 亲近感",
+     "rel": [
+      "final 最终的",
+      "define 定义",
+      "confine 限制",
+      "finish 完成"
      ]
     }
    ]
@@ -135,6 +160,13 @@
      "ant": [
       "hidden",
       "obscure"
+     ],
+     "root": "mani(手) + fest(打击、抓) → 手一抓就抓到的 → 明显的",
+     "rel": [
+      "manual 手动的",
+      "manufacture 制造",
+      "manipulate 操纵",
+      "manuscript 手稿"
      ]
     },
     {
@@ -150,6 +182,11 @@
      "ant": [
       "apathetic",
       "cool"
+     ],
+     "root": "ferv(沸、热) + -ent(……的) → 滚烫的 → 热情的",
+     "rel": [
+      "fervor 热忱",
+      "effervescent 冒泡的"
      ]
     },
     {
@@ -165,6 +202,13 @@
      "ant": [
       "improvident",
       "wasteful"
+     ],
+     "root": "pro-(提前) + vid(看) + -ent(……的) → 提前看到的 → 有远见的",
+     "rel": [
+      "provide 提供",
+      "providence 远见",
+      "prudent 谨慎的",
+      "video 视频"
      ]
     },
     {
@@ -179,6 +223,13 @@
      ],
      "ant": [
       "noncommunicable"
+     ],
+     "root": "con-(一起) + tag(触摸) + -ious(……的) → 一起碰到的 → 传染的",
+     "rel": [
+      "contact 接触",
+      "tangible 可触摸的",
+      "tact 分寸",
+      "intact 完好的"
      ]
     }
    ]
@@ -210,6 +261,10 @@
      "ant": [
       "handy",
       "compact"
+     ],
+     "root": "cumber(阻碍) + -some(……的) → 碍事的 → 笨重的",
+     "rel": [
+      "encumber 妨碍"
      ]
     },
     {
@@ -224,7 +279,8 @@
      ],
      "ant": [
       "misunderstand"
-     ]
+     ],
+     "root": "fath(张开的双臂) → 测水深的单位(约两臂长) → 测深；彻底理解"
     },
     {
      "w": "trenchant",
@@ -239,6 +295,11 @@
      "ant": [
       "vague",
       "mild"
+     ],
+     "root": "trench(切) + -ant(……的) → 切开式的 → 一针见血的",
+     "rel": [
+      "trench 壕沟",
+      "retrench 削减"
      ]
     },
     {
@@ -254,6 +315,13 @@
      "ant": [
       "tangible",
       "concrete"
+     ],
+     "root": "in-(不) + tang(触) + -ible(能……的) → 摸不到的 → 无形的",
+     "rel": [
+      "tangible 可触摸的",
+      "contact 接触",
+      "tangent 切线",
+      "contagious 传染的"
      ]
     },
     {
@@ -268,6 +336,13 @@
      ],
      "ant": [
       "misconstrue"
+     ],
+     "root": "com-(完全) + prehend(抓) → 完全抓住 → 理解",
+     "rel": [
+      "apprehend 逮捕",
+      "reprehend 谴责",
+      "prison 监狱",
+      "surprise 惊讶"
      ]
     }
    ]
@@ -299,6 +374,10 @@
      "ant": [
       "impermeable",
       "impervious"
+     ],
+     "root": "per-(穿过) + me(走) + -able(能……的) → 能穿过去的 → 可渗透的",
+     "rel": [
+      "permeate 渗透"
      ]
     },
     {
@@ -314,7 +393,8 @@
      "ant": [
       "meticulous",
       "careful"
-     ]
+     ],
+     "root": "slap(啪) + dash(冲) → 啪地一抹冲过去 → 草率的"
     },
     {
      "w": "discrete",
@@ -329,6 +409,13 @@
      "ant": [
       "continuous",
       "connected"
+     ],
+     "root": "dis-(分开) + cret(筛) + -e → 筛开的 → 分离的",
+     "rel": [
+      "discreet 谨慎的",
+      "secret 秘密",
+      "discern 辨别",
+      "concrete 具体的"
      ]
     },
     {
@@ -344,7 +431,8 @@
      "ant": [
       "discourage",
       "dissuade"
-     ]
+     ],
+     "root": "ex-(加强) + hort(鼓励) → 极力劝说"
     },
     {
      "w": "feeble",
@@ -390,6 +478,12 @@
      "ant": [
       "genuine",
       "authentic"
+     ],
+     "root": "counter-(相反) + feit(做) → 对着真的做一个 → 仿造的",
+     "rel": [
+      "fact 事实",
+      "factory 工厂",
+      "forfeit 丧失"
      ]
     },
     {
@@ -405,6 +499,13 @@
      "ant": [
       "slight",
       "concise"
+     ],
+     "root": "volumin(卷) + -ous(……的) → 卷数很多的 → 大量的",
+     "rel": [
+      "volume 卷、体积",
+      "revolve 旋转",
+      "evolve 进化",
+      "involve 卷入"
      ]
     },
     {
@@ -419,6 +520,13 @@
      ],
      "ant": [
       "shamelessness"
+     ],
+     "root": "com-(完全) + punct(刺) + -ion(名词) → 心被扎了一下 → 内疚",
+     "rel": [
+      "puncture 刺破",
+      "punctual 准时的",
+      "poignant 辛酸的",
+      "pungent 刺鼻的"
      ]
     },
     {
@@ -447,6 +555,11 @@
      ],
      "ant": [
       "debilitating"
+     ],
+     "root": "re-(重新) + stor(建立) + -ative(……的) → 重新建立起来的 → 有助于恢复的",
+     "rel": [
+      "store 储备",
+      "restore 恢复"
      ]
     }
    ]
@@ -478,6 +591,12 @@
      "ant": [
       "excitable",
       "agitated"
+     ],
+     "root": "im-(不) + per-(完全) + turb(搅动) + -able(能……的) → 无法被搅乱的 → 沉着的",
+     "rel": [
+      "disturb 打扰",
+      "turbulent 动荡的",
+      "turbid 混浊的"
      ]
     },
     {
@@ -508,6 +627,12 @@
      "ant": [
       "open",
       "overt"
+     ],
+     "root": "sur-(下) + rept(抓) + -itious(……的) → 从底下偷偷抓取的 → 偷偷摸摸的",
+     "rel": [
+      "rapt 入迷的",
+      "rapacious 贪婪的",
+      "ravage 掠夺"
      ]
     },
     {
@@ -523,6 +648,12 @@
      "ant": [
       "due",
       "appropriate"
+     ],
+     "root": "un-(不) + due(应得的) → 不应得的 → 过度的",
+     "rel": [
+      "due 应得的",
+      "duty 责任",
+      "debt 债务"
      ]
     },
     {
@@ -538,6 +669,10 @@
      "ant": [
       "morose",
       "glum"
+     ],
+     "root": "Jove(朱庇特，罗马主神，性情快活) + -ial(……的) → 快活的",
+     "rel": [
+      "Jupiter 木星"
      ]
     }
    ]
@@ -568,6 +703,12 @@
      ],
      "ant": [
       "disqualify"
+     ],
+     "root": "qual(什么样) + -ify(使) → 使具备某种性质 → 使合格",
+     "rel": [
+      "quality 质量",
+      "quantity 数量",
+      "qualification 资格"
      ]
     },
     {
@@ -582,6 +723,13 @@
      ],
      "ant": [
       "succumb"
+     ],
+     "root": "sur-(在上) + mount(爬) → 爬过去 → 克服",
+     "rel": [
+      "mountain 山",
+      "amount 数量",
+      "paramount 至上的",
+      "dismount 下马"
      ]
     },
     {
@@ -596,6 +744,12 @@
      ],
      "ant": [
       "praise"
+     ],
+     "root": "in-(向) + veh(带、载) → 带着怒气冲向 → 激烈抗议",
+     "rel": [
+      "vehicle 车辆",
+      "vehement 激烈的",
+      "convey 运送"
      ]
     },
     {
@@ -611,7 +765,8 @@
      "ant": [
       "concise",
       "plain"
-     ]
+     ],
+     "root": "turg(肿胀) + -id(……的) → 肿胀的 → (文辞)浮夸的"
     },
     {
      "w": "shun",
@@ -657,7 +812,8 @@
      "ant": [
       "gentle",
       "kind"
-     ]
+     ],
+     "root": "vitriol(旧称硫酸，矾油) + -ic(……的) → 像硫酸一样腐蚀人的 → 刻薄的"
     },
     {
      "w": "arrogance",
@@ -672,6 +828,13 @@
      "ant": [
       "humility",
       "modesty"
+     ],
+     "root": "ar-(ad-，向) + rog(要求) + -ance(名词) → 向别人索要(尊敬) → 傲慢",
+     "rel": [
+      "interrogate 审问",
+      "prerogative 特权",
+      "derogatory 贬损的",
+      "abrogate 废除"
      ]
     },
     {
@@ -687,6 +850,13 @@
      "ant": [
       "alleviate",
       "ameliorate"
+     ],
+     "root": "ex-(加强) + acerb(酸、苦) + -ate(使) → 使变得更苦 → 加剧",
+     "rel": [
+      "acerbic 尖刻的",
+      "acid 酸",
+      "acute 敏锐的",
+      "acrid 刺鼻的"
      ]
     },
     {
@@ -702,6 +872,12 @@
      "ant": [
       "unobtrusive",
       "reserved"
+     ],
+     "root": "offic(职责、帮忙) + -ious(……的) → 过分热心尽职的 → 多管闲事的",
+     "rel": [
+      "office 办公室",
+      "official 官方的",
+      "officer 官员"
      ]
     },
     {
@@ -714,7 +890,11 @@
       "consequence",
       "outgrowth"
      ],
-     "ant": []
+     "ant": [],
+     "root": "ram(树枝) + -ify(使) + -ation(名词) → 分出许多枝杈 → 后果、影响",
+     "rel": [
+      "ramify 分叉"
+     ]
     }
    ]
   },

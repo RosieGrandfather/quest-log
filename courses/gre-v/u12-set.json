@@ -29,6 +29,13 @@
      "ant": [
       "harmful",
       "offensive"
+     ],
+     "root": "in-(不) + noc(害) + -uous(……的) → 不会害人的 → 无害的",
+     "rel": [
+      "noxious 有害的",
+      "obnoxious 令人讨厌的",
+      "innocent 无辜的",
+      "pernicious 有害的"
      ]
     },
     {
@@ -44,7 +51,8 @@
      "ant": [
       "mundane",
       "ordinary"
-     ]
+     ],
+     "root": "numin(神灵) + -ous(……的) → 有神灵气息的 → 神秘的"
     },
     {
      "w": "jaded",
@@ -59,7 +67,8 @@
      "ant": [
       "fresh",
       "enthusiastic"
-     ]
+     ],
+     "root": "jade(疲惫的老马) + -ed → 像累垮的老马 → 厌倦的"
     },
     {
      "w": "sporadic",
@@ -74,6 +83,12 @@
      "ant": [
       "constant",
       "regular"
+     ],
+     "root": "spor(撒种) + -adic(……的) → 像种子零星撒下的 → 零星的",
+     "rel": [
+      "spore 孢子",
+      "diaspora 流散",
+      "sperm 精子"
      ]
     },
     {
@@ -89,6 +104,12 @@
      "ant": [
       "resist",
       "withstand"
+     ],
+     "root": "capit(头、章节) + -ulate → 按条款(章节)谈判 → 投降",
+     "rel": [
+      "capital 首都",
+      "chapter 章",
+      "recapitulate 概括"
      ]
     }
    ]
@@ -120,7 +141,8 @@
      "ant": [
       "open",
       "overt"
-     ]
+     ],
+     "root": "clam(悄悄) + -destine → 悄悄的 → 秘密的"
     },
     {
      "w": "rescind",
@@ -135,6 +157,11 @@
      "ant": [
       "enact",
       "uphold"
+     ],
+     "root": "re-(回) + scind(切) → 切掉 → 废除",
+     "rel": [
+      "scissors 剪刀",
+      "schism 分裂"
      ]
     },
     {
@@ -147,7 +174,12 @@
       "repeat",
       "restate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "re-(再) + iter(再次) + -ate(动词) → 再来一次 → 重申",
+     "rel": [
+      "iterate 迭代",
+      "iteration 迭代"
+     ]
     },
     {
      "w": "didactic",
@@ -159,7 +191,8 @@
       "instructive",
       "preachy"
      ],
-     "ant": []
+     "ant": [],
+     "root": "didac(教) + -tic(……的) → 教诲的 → 说教的"
     },
     {
      "w": "cavil",
@@ -202,6 +235,12 @@
      "ant": [
       "deliberate",
       "delay"
+     ],
+     "root": "pre-(前) + cipit(头) + -ate → 头朝前栽下去 → 仓促的",
+     "rel": [
+      "precipice 悬崖",
+      "capital 首都",
+      "captain 队长"
      ]
     },
     {
@@ -232,6 +271,12 @@
      "ant": [
       "pretentious",
       "showy"
+     ],
+     "root": "un-(不) + pre-(前) + tent(伸) + -ious(……的) → 不把东西伸到前面显摆 → 不炫耀的",
+     "rel": [
+      "pretend 假装",
+      "tension 张力",
+      "extend 延伸"
      ]
     },
     {
@@ -244,7 +289,14 @@
       "arbitrate",
       "intervene"
      ],
-     "ant": []
+     "ant": [],
+     "root": "medi(中间) + -ate(动词) → 站在中间 → 调解",
+     "rel": [
+      "medium 中间的",
+      "median 中间值",
+      "immediate 立即的",
+      "mediocre 平庸的"
+     ]
     },
     {
      "w": "inevitable",
@@ -259,7 +311,8 @@
      "ant": [
       "avoidable",
       "preventable"
-     ]
+     ],
+     "root": "in-(不) + e-(出) + vit(躲避) + -able(能……的) → 躲不开的 → 不可避免的"
     }
    ]
   },
@@ -290,6 +343,11 @@
      "ant": [
       "obstinate",
       "resistant"
+     ],
+     "root": "a-(向) + men(带、赶) + -able(能……的) → 能被牵着走的 → 顺从的",
+     "rel": [
+      "demeanor 举止",
+      "promenade 漫步"
      ]
     },
     {
@@ -305,6 +363,10 @@
      "ant": [
       "serious",
       "predictable"
+     ],
+     "root": "whim(奇想) + -ical(……的) → 异想天开的",
+     "rel": [
+      "whim 一时的念头"
      ]
     },
     {
@@ -320,6 +382,13 @@
      "ant": [
       "praise",
       "commend"
+     ],
+     "root": "re-(回) + pre-(抓) + hend(抓) → 抓回来训斥 → 谴责",
+     "rel": [
+      "comprehend 理解",
+      "apprehend 逮捕",
+      "prehensile 善于抓握的",
+      "surprise 惊讶"
      ]
     },
     {
@@ -332,7 +401,8 @@
       "prestige",
       "distinction"
      ],
-     "ant": []
+     "ant": [],
+     "root": "法语 cachet：印章 → 盖了印的声望 → 威望"
     },
     {
      "w": "abstruse",
@@ -347,6 +417,12 @@
      "ant": [
       "clear",
       "straightforward"
+     ],
+     "root": "abs-(离开) + trus(推) + -e → 推到一边藏起来 → 深奥难懂的",
+     "rel": [
+      "intrude 闯入",
+      "protrude 突出",
+      "obtrusive 突出的"
      ]
     }
    ]
@@ -390,6 +466,12 @@
      "ant": [
       "distinct",
       "structured"
+     ],
+     "root": "a-(无) + morph(形状) + -ous(……的) → 没有形状的",
+     "rel": [
+      "morph 变形",
+      "metamorphose 变形",
+      "morphology 形态学"
      ]
     },
     {
@@ -405,6 +487,13 @@
      "ant": [
       "elitist",
       "hierarchical"
+     ],
+     "root": "egal(平等，来自法语) + -itarian(主义者) → 平等主义的",
+     "rel": [
+      "equal 平等的",
+      "equity 公平",
+      "equation 方程式",
+      "adequate 充分的"
      ]
     },
     {
@@ -420,6 +509,12 @@
      "ant": [
       "hinder",
       "impede"
+     ],
+     "root": "facil(容易) + -itate(使) → 使容易",
+     "rel": [
+      "facile 轻易的",
+      "facility 设施",
+      "difficult 困难的(dif- 不 + facil)"
      ]
     },
     {
@@ -463,6 +558,12 @@
      "ant": [
       "active",
       "dynamic"
+     ],
+     "root": "in-(无) + ert(技艺、活力) → 没有活力的",
+     "rel": [
+      "art 艺术",
+      "artisan 工匠",
+      "inertia 惯性"
      ]
     },
     {
@@ -478,7 +579,8 @@
      "ant": [
       "aggravate",
       "intensify"
-     ]
+     ],
+     "root": "pall(斗篷) + -iate(使) → 用斗篷盖住 → 掩盖病痛 → 缓和"
     },
     {
      "w": "incite",
@@ -493,6 +595,13 @@
      "ant": [
       "quell",
       "pacify"
+     ],
+     "root": "in-(向) + cit(催动) + -e → 催着去做 → 煽动",
+     "rel": [
+      "excite 激动",
+      "cite 引用",
+      "solicit 恳求",
+      "resuscitate 复苏"
      ]
     },
     {
@@ -508,6 +617,11 @@
      "ant": [
       "wealthy",
       "affluent"
+     ],
+     "root": "im-(无) + pecun(钱财，原指牛群) + -ious(……的) → 没有钱财的",
+     "rel": [
+      "pecuniary 金钱的",
+      "peculiar 特有的(原指私有财产)"
      ]
     },
     {
@@ -523,6 +637,11 @@
      "ant": [
       "courteous",
       "effusive"
+     ],
+     "root": "curt(截短的) → 简短而不客气的",
+     "rel": [
+      "curtail 缩减",
+      "short 短的"
      ]
     }
    ]
@@ -554,6 +673,10 @@
      "ant": [
       "confirm",
       "reveal"
+     ],
+     "root": "be-(完全) + lie(说谎) → 用谎言掩饰 → 掩饰、与……相矛盾",
+     "rel": [
+      "lie 谎言"
      ]
     },
     {
@@ -584,7 +707,8 @@
      "ant": [
       "subdued",
       "dejected"
-     ]
+     ],
+     "root": "ex-(加强) + uber(丰沛) + -ant(……的) → 丰沛满溢的 → 热情洋溢的"
     },
     {
      "w": "soothe",
@@ -614,6 +738,12 @@
      "ant": [
       "blessing",
       "boon"
+     ],
+     "root": "ana-(向上) + them(放) → 被放上去献祭、被诅咒的东西 → 令人厌恶的事物",
+     "rel": [
+      "thesis 论点",
+      "theme 主题",
+      "hypothesis 假设"
      ]
     }
    ]
@@ -645,6 +775,13 @@
      "ant": [
       "simplify",
       "clarify"
+     ],
+     "root": "com-(一起) + plic(折叠) + -ate(使) → 折在一起 → 使复杂化",
+     "rel": [
+      "implicate 牵连",
+      "explicit 明确的(展开)",
+      "replicate 复制",
+      "duplicate 副本"
      ]
     },
     {
@@ -660,6 +797,12 @@
      "ant": [
       "thrifty",
       "frugal"
+     ],
+     "root": "pro-(向前) + flig(打击) + -ate → 把钱一路打出去 → 挥霍的",
+     "rel": [
+      "conflict 冲突",
+      "inflict 施加",
+      "afflict 折磨"
      ]
     },
     {
@@ -675,6 +818,13 @@
      "ant": [
       "undignified",
       "humble"
+     ],
+     "root": "aug(增长、尊贵) + -ust(……的) → 令人敬重的",
+     "rel": [
+      "augment 增加",
+      "author 作者",
+      "authority 权威",
+      "auction 拍卖"
      ]
     },
     {
@@ -687,7 +837,14 @@
       "hedge",
       "prevaricate"
      ],
-     "ant": []
+     "ant": [],
+     "root": "equi-(相等) + voc(声音) + -ate(动词) → 两种说法同样有分量 → 含糊其词",
+     "rel": [
+      "equal 平等的",
+      "vocal 声音的",
+      "advocate 倡导者",
+      "vocabulary 词汇"
+     ]
     },
     {
      "w": "disdain",
@@ -702,6 +859,12 @@
      "ant": [
       "esteem",
       "admire"
+     ],
+     "root": "dis-(不) + dain(= dign，值得) → 认为不值得 → 鄙视",
+     "rel": [
+      "dignity 尊严",
+      "deign 屈尊",
+      "condign 应得的"
      ]
     }
    ]

@@ -29,6 +29,10 @@
      "ant": [
       "undermine",
       "weaken"
+     ],
+     "root": "butt(顶、撞) + -ress → 顶住墙的支墩 → 支撑",
+     "rel": [
+      "butt 顶住"
      ]
     },
     {
@@ -44,6 +48,11 @@
      "ant": [
       "free",
       "release"
+     ],
+     "root": "im-(在里) + mur(墙) + -e → 关在墙里 → 禁闭",
+     "rel": [
+      "mural 壁画",
+      "intramural 校内的"
      ]
     },
     {
@@ -59,6 +68,13 @@
      "ant": [
       "disparity",
       "inequality"
+     ],
+     "root": "par(同等) + -ity(名词) → 平等",
+     "rel": [
+      "pair 一对",
+      "disparage 贬低",
+      "compare 比较",
+      "peer 同辈"
      ]
     },
     {
@@ -74,6 +90,12 @@
      "ant": [
       "advanced",
       "sophisticated"
+     ],
+     "root": "rudiment(基础) + -ary(……的) → 初始的",
+     "rel": [
+      "rudiment 基础",
+      "rude 粗鲁的(原指未加工)",
+      "erudite 博学的"
      ]
     },
     {
@@ -89,6 +111,12 @@
      "ant": [
       "animate",
       "enliven"
+     ],
+     "root": "petr(石头) + -ify(使) → 变成石头 → 吓呆",
+     "rel": [
+      "petroleum 石油(石头油)",
+      "petrol 汽油",
+      "Peter 彼得(磐石)"
      ]
     }
    ]
@@ -120,6 +148,13 @@
      "ant": [
       "disapprove",
       "forbid"
+     ],
+     "root": "count-(一起) + ten(握) + -ance(名词) → 脸上保持的样子 → 容忍",
+     "rel": [
+      "contain 包含",
+      "continent 大陆",
+      "content 内容",
+      "abstain 戒除"
      ]
     },
     {
@@ -150,6 +185,13 @@
      "ant": [
       "alike",
       "akin"
+     ],
+     "root": "dis-(分开) + par(同等) + -ate(……的) → 不能同等看待的 → 迥然不同的",
+     "rel": [
+      "separate 分开",
+      "prepare 准备",
+      "repair 修理",
+      "apparatus 仪器"
      ]
     },
     {
@@ -165,6 +207,11 @@
      "ant": [
       "overt",
       "open"
+     ],
+     "root": "co-(完全) + vert(= ouvert，打开的反义) → 盖上的 → 隐蔽的",
+     "rel": [
+      "overt 公开的",
+      "cover 覆盖"
      ]
     },
     {
@@ -211,6 +258,13 @@
      "ant": [
       "deliberate",
       "intentional"
+     ],
+     "root": "in-(不) + ad-(向) + vert(转) + -ent(……的) → 没有转过去注意 → 非故意的",
+     "rel": [
+      "advertise 广告(转向注意)",
+      "adverse 不利的",
+      "divert 转移",
+      "convert 转变"
      ]
     },
     {
@@ -238,7 +292,14 @@
       "fabricate",
       "devise"
      ],
-     "ant": []
+     "ant": [],
+     "root": "con-(一起) + coct(煮) → 一起煮 → 调制；编造",
+     "rel": [
+      "cook 烹饪",
+      "kitchen 厨房",
+      "biscuit 饼干(两次烤)",
+      "precocious 早熟的(先熟)"
+     ]
     },
     {
      "w": "misrepresent",
@@ -252,6 +313,11 @@
      ],
      "ant": [
       "portray accurately"
+     ],
+     "root": "mis-(错) + re-(再) + present(呈现) → 错误地呈现",
+     "rel": [
+      "present 呈现",
+      "represent 代表"
      ]
     },
     {
@@ -267,6 +333,12 @@
      "ant": [
       "superior",
       "inferior"
+     ],
+     "root": "par(同等) → 地位相同的人",
+     "rel": [
+      "pair 一对",
+      "parity 平等",
+      "compare 比较"
      ]
     }
    ]
@@ -298,6 +370,10 @@
      "ant": [
       "adore",
       "cherish"
+     ],
+     "root": "loath(讨厌) 的动词形式 → 厌恶",
+     "rel": [
+      "loath 不情愿的"
      ]
     },
     {
@@ -313,6 +389,11 @@
      "ant": [
       "praise",
       "laud"
+     ],
+     "root": "vitu(缺点) + per-(完全) + -ate(动词) → 专挑缺点来骂 → 痛斥",
+     "rel": [
+      "vice 恶习",
+      "vicious 恶毒的"
      ]
     },
     {
@@ -328,6 +409,13 @@
      "ant": [
       "light",
       "nimble"
+     ],
+     "root": "pond(重量) + -erous(……的) → 沉重的",
+     "rel": [
+      "ponder 沉思(称量)",
+      "preponderate 占优势",
+      "pound 磅",
+      "expend 花费"
      ]
     },
     {
@@ -388,6 +476,11 @@
      "ant": [
       "placid",
       "even-tempered"
+     ],
+     "root": "chol(胆汁) + -eric(……的) → 古人认为胆汁多则易怒",
+     "rel": [
+      "cholera 霍乱",
+      "melancholy 忧郁(黑胆汁)"
      ]
     },
     {
@@ -403,6 +496,12 @@
      "ant": [
       "gloat",
       "rejoice"
+     ],
+     "root": "com-(一起) + miser(可怜) + -ate(动词) → 一起觉得可怜 → 同情",
+     "rel": [
+      "miserable 悲惨的",
+      "misery 痛苦",
+      "miser 守财奴"
      ]
     },
     {
@@ -418,6 +517,11 @@
      "ant": [
       "disrespect",
       "contempt"
+     ],
+     "root": "hom(人) + -age(名词) → 对主人宣誓效忠的「人」 → 敬意",
+     "rel": [
+      "human 人类",
+      "homicide 杀人"
      ]
     },
     {
@@ -448,7 +552,8 @@
      "ant": [
       "praise",
       "extol"
-     ]
+     ],
+     "root": "de-(完全) + nigr(黑) + -ate(使) → 把别人抹黑 → 诋毁"
     }
    ]
   },
@@ -479,6 +584,12 @@
      "ant": [
       "flexible",
       "yielding"
+     ],
+     "root": "ob-(对着) + dur(硬) + -ate(……的) → 硬着对抗的 → 固执的",
+     "rel": [
+      "durable 耐用的",
+      "endure 忍受",
+      "duration 持续时间"
      ]
     },
     {
@@ -509,7 +620,8 @@
      "ant": [
       "humility",
       "modesty"
-     ]
+     ],
+     "root": "来自希腊语 hybris(狂妄、侮辱) → 狂妄自大"
     },
     {
      "w": "anodyne",
@@ -524,6 +636,11 @@
      "ant": [
       "provocative",
       "irritating"
+     ],
+     "root": "an-(无) + odyn(痛) + -e → 无痛的 → 止痛药；无害的",
+     "rel": [
+      "analgesic 止痛药",
+      "nostalgia 怀旧(回家之痛)"
      ]
     },
     {
@@ -539,6 +656,13 @@
      "ant": [
       "impartial",
       "neutral"
+     ],
+     "root": "part(部分) + -isan(人) → 站在某一边的人 → 偏袒者",
+     "rel": [
+      "part 部分",
+      "partial 偏袒的",
+      "party 党派",
+      "particle 微粒"
      ]
     }
    ]
@@ -570,6 +694,13 @@
      "ant": [
       "unrepentant",
       "impenitent"
+     ],
+     "root": "con-(完全) + trit(磨) + -e → 心被磨碎的 → 痛悔的",
+     "rel": [
+      "attrition 磨损",
+      "trite 陈腐的",
+      "detritus 碎屑",
+      "diatribe 长篇抨击"
      ]
     },
     {
@@ -600,6 +731,13 @@
      "ant": [
       "trivial",
       "insignificant"
+     ],
+     "root": "moment(动力、重要) + -ous(……的) → 重大的",
+     "rel": [
+      "moment 时刻",
+      "momentum 动量",
+      "movement 运动",
+      "motion 运动"
      ]
     },
     {
@@ -615,6 +753,13 @@
      "ant": [
       "abbreviate",
       "skim over"
+     ],
+     "root": "be-(加强) + labor(劳动) → 反复使劲弄",
+     "rel": [
+      "labor 劳动",
+      "laboratory 实验室",
+      "elaborate 精心制作的",
+      "collaborate 合作"
      ]
     },
     {
@@ -630,6 +775,13 @@
      "ant": [
       "nobody",
       "unknown"
+     ],
+     "root": "lumin(光) + -ary(人) → 发光者 → 杰出人物",
+     "rel": [
+      "luminous 发光的",
+      "illuminate 照亮",
+      "lunar 月亮的",
+      "lucid 清晰的"
      ]
     }
    ]
@@ -661,6 +813,13 @@
      "ant": [
       "relevant",
       "pertinent"
+     ],
+     "root": "im-(不) + material(物质、要紧的) → 不要紧的 → 无关紧要的",
+     "rel": [
+      "material 物质",
+      "matter 事情",
+      "mother 母亲",
+      "matrix 母体"
      ]
     },
     {
@@ -676,6 +835,13 @@
      "ant": [
       "agitated",
       "turbulent"
+     ],
+     "root": "plac(平静、使高兴) + -id(……的) → 平静的",
+     "rel": [
+      "please 取悦",
+      "complacent 自满的",
+      "implacable 无法平息的",
+      "placebo 安慰剂"
      ]
     },
     {
@@ -688,7 +854,13 @@
       "prophecy",
       "augury"
      ],
-     "ant": []
+     "ant": [],
+     "root": "div(神) + -in- + -ation(名词) → 与神沟通 → 占卜",
+     "rel": [
+      "divine 神圣的",
+      "deity 神",
+      "deify 奉若神明"
+     ]
     },
     {
      "w": "conflate",
@@ -703,6 +875,11 @@
      "ant": [
       "distinguish",
       "separate"
+     ],
+     "root": "con-(一起) + fla(吹) + -te → 吹到一起 → 合并",
+     "rel": [
+      "inflate 膨胀",
+      "deflate 放气"
      ]
     },
     {
@@ -718,6 +895,11 @@
      "ant": [
       "thwart",
       "hinder"
+     ],
+     "root": "a-(ad-，向) + bet(咬、使咬) → 怂恿狗去咬 → 唆使",
+     "rel": [
+      "bait 诱饵",
+      "bite 咬"
      ]
     }
    ]

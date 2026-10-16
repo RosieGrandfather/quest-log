@@ -44,7 +44,8 @@
      "ant": [
       "luxurious",
       "lavish"
-     ]
+     ],
+     "root": "来自古希腊城邦斯巴达 Sparta，以简朴严苛闻名 → 简朴的"
     },
     {
      "w": "penchant",
@@ -59,6 +60,12 @@
      "ant": [
       "aversion",
       "dislike"
+     ],
+     "root": "pench(倾斜，与 pend 同源) + -ant → 心偏向某处 → 嗜好",
+     "rel": [
+      "pendulum 摆",
+      "depend 依靠",
+      "pending 悬而未决"
      ]
     },
     {
@@ -89,6 +96,12 @@
      "ant": [
       "reprehensible",
       "deplorable"
+     ],
+     "root": "ex-(出) + empl(拿) + -ary(……的) → 拿出来做样子的 → 可作楷模的",
+     "rel": [
+      "example 例子",
+      "sample 样品",
+      "exempt 免除"
      ]
     }
    ]
@@ -117,7 +130,13 @@
       "imitate",
       "ape"
      ],
-     "ant": []
+     "ant": [],
+     "root": "mim(模仿) + -ic → 模仿",
+     "rel": [
+      "mime 哑剧",
+      "mimicry 模仿",
+      "pantomime 哑剧"
+     ]
     },
     {
      "w": "exigent",
@@ -132,6 +151,12 @@
      "ant": [
       "trivial",
       "unimportant"
+     ],
+     "root": "ex-(出) + ig(= ag，驱赶) + -ent(……的) → 逼出来的 → 紧急的",
+     "rel": [
+      "exact 精确的",
+      "agent 代理人",
+      "agile 敏捷的"
      ]
     },
     {
@@ -146,7 +171,8 @@
      ],
      "ant": [
       "conformist"
-     ]
+     ],
+     "root": "Bohemia(波西米亚，被误认为吉卜赛人来源地) → 不受拘束的艺术家"
     },
     {
      "w": "dissonance",
@@ -161,6 +187,13 @@
      "ant": [
       "harmony",
       "accord"
+     ],
+     "root": "dis-(不) + son(声音) + -ance(名词) → 不和谐的声音",
+     "rel": [
+      "sonic 声音的",
+      "resonance 共鸣",
+      "unison 齐唱",
+      "sonata 奏鸣曲"
      ]
     },
     {
@@ -176,6 +209,13 @@
      "ant": [
       "commend",
       "praise"
+     ],
+     "root": "ad-(向) + mon(提醒) + -ish(动词) → 向人提醒 → 告诫",
+     "rel": [
+      "monitor 监视器",
+      "monument 纪念碑",
+      "summon 召唤",
+      "admonition 告诫"
      ]
     }
    ]
@@ -207,6 +247,11 @@
      "ant": [
       "incongruous",
       "inconsistent"
+     ],
+     "root": "con-(一起) + gru(靠拢、一致) + -ent(……的) → 走到一起的 → 一致的",
+     "rel": [
+      "incongruous 不协调的",
+      "congruity 一致"
      ]
     },
     {
@@ -222,6 +267,12 @@
      "ant": [
       "agreeable",
       "peaceable"
+     ],
+     "root": "con-(一起) + tent(拉、伸) + -ious(……的) → 互相拉扯的 → 有争议的",
+     "rel": [
+      "contend 争夺",
+      "tension 张力",
+      "pretend 假装"
      ]
     },
     {
@@ -237,6 +288,13 @@
      "ant": [
       "diverse",
       "varied"
+     ],
+     "root": "mono-(单一) + lith(石头) + -ic(……的) → 一整块石头似的 → 整体的",
+     "rel": [
+      "monopoly 垄断",
+      "monotone 单调",
+      "lithograph 石版画",
+      "megalith 巨石"
      ]
     },
     {
@@ -252,7 +310,8 @@
      "ant": [
       "undermine",
       "weaken"
-     ]
+     ],
+     "root": "本义是长枕头，垫在下面支撑 → 支持、加强"
     },
     {
      "w": "proffer",
@@ -266,6 +325,13 @@
      ],
      "ant": [
       "withhold"
+     ],
+     "root": "pro-(向前) + fer(带、拿) → 拿到对方面前 → 提供",
+     "rel": [
+      "offer 提供",
+      "transfer 转移",
+      "refer 提及",
+      "prefer 更喜欢"
      ]
     }
    ]
@@ -297,6 +363,10 @@
      "ant": [
       "buyer",
       "customer"
+     ],
+     "root": "vend(卖) + -or(人) → 卖东西的人",
+     "rel": [
+      "vending machine 自动售货机"
      ]
     },
     {
@@ -312,6 +382,13 @@
      "ant": [
       "unimaginative",
       "dull"
+     ],
+     "root": "in-(内) + gen(生、天生) + -ious(……的) → 天生内在的聪明 → 巧妙的",
+     "rel": [
+      "engine 发动机",
+      "genius 天才",
+      "gene 基因",
+      "generate 产生"
      ]
     },
     {
@@ -327,6 +404,12 @@
      "ant": [
       "lengthen",
       "extend"
+     ],
+     "root": "ab-(ad-，向) + brev(短) + -iate(使) → 弄短 → 缩写",
+     "rel": [
+      "brief 简短的",
+      "brevity 简洁",
+      "abridge 删节"
      ]
     },
     {
@@ -342,6 +425,12 @@
      "ant": [
       "separate",
       "split"
+     ],
+     "root": "co-(一起) + al(养、长) + -esce(开始) → 一起长成一体 → 合并",
+     "rel": [
+      "alumni 校友(被养大的人)",
+      "adult 成年人(长大了)",
+      "adolescent 青少年"
      ]
     },
     {
@@ -357,6 +446,13 @@
      "ant": [
       "superficial",
       "trivial"
+     ],
+     "root": "sub-(下) + stant(站) + -ive(……的) → 站在底下支撑的 → 实质性的",
+     "rel": [
+      "substance 物质",
+      "constant 恒定的",
+      "stable 稳定的",
+      "stand 站"
      ]
     }
    ]
@@ -385,7 +481,12 @@
       "prelude",
       "proposal"
      ],
-     "ant": []
+     "ant": [],
+     "root": "法语 ouvrir(打开) → 打开 → 序曲；友好的第一步",
+     "rel": [
+      "aperture 孔径",
+      "overt 公开的"
+     ]
     },
     {
      "w": "warp",
@@ -411,7 +512,13 @@
       "infer",
       "project"
      ],
-     "ant": []
+     "ant": [],
+     "root": "extra-(往外) + pol(整理、打磨) + -ate → 往已知范围之外推 → 推断",
+     "rel": [
+      "interpolate 插值",
+      "extra 额外的",
+      "polish 打磨"
+     ]
     },
     {
      "w": "approbation",
@@ -426,6 +533,13 @@
      "ant": [
       "disapproval",
       "censure"
+     ],
+     "root": "ap-(ad-，向) + prob(好、试) + -ation → 认为是好的 → 赞许",
+     "rel": [
+      "approve 批准",
+      "probe 探查",
+      "prove 证明",
+      "probable 可能的"
      ]
     },
     {
@@ -441,6 +555,12 @@
      "ant": [
       "steady",
       "consistent"
+     ],
+     "root": "er(游荡) + -atic(……的) → 到处乱走的 → 不稳定的",
+     "rel": [
+      "err 犯错",
+      "error 错误",
+      "errant 漂泊的"
      ]
     }
    ]
@@ -472,6 +592,10 @@
      "ant": [
       "dynamic",
       "flowing"
+     ],
+     "root": "stagn(不流动的水) + -ant(……的) → 死水般的",
+     "rel": [
+      "stagnate 停滞"
      ]
     },
     {
@@ -487,6 +611,13 @@
      "ant": [
       "extrinsic",
       "acquired"
+     ],
+     "root": "in-(内) + her(粘) + -ent(……的) → 粘在内部的 → 固有的",
+     "rel": [
+      "adhere 粘附",
+      "cohere 连贯",
+      "hesitate 犹豫",
+      "adhesive 粘合剂"
      ]
     },
     {
@@ -498,7 +629,12 @@
      "syn": [
       "self-sustaining"
      ],
-     "ant": []
+     "ant": [],
+     "root": "self(自己) + perpetuate(per- 贯穿 + pet 趋向 → 一直延续) → 自己延续下去的",
+     "rel": [
+      "perpetual 永久的",
+      "perpetuity 永久"
+     ]
     },
     {
      "w": "courteous",
@@ -513,6 +649,11 @@
      "ant": [
       "rude",
       "discourteous"
+     ],
+     "root": "court(宫廷) + -eous(……的) → 有宫廷教养的 → 有礼貌的",
+     "rel": [
+      "court 宫廷",
+      "courtesy 礼貌"
      ]
     },
     {
@@ -528,6 +669,11 @@
      "ant": [
       "reasoned",
       "systematic"
+     ],
+     "root": "arbitr(裁判) + -ary(……的) → 裁判说了算的 → 任意的",
+     "rel": [
+      "arbitrate 仲裁",
+      "arbiter 仲裁者"
      ]
     }
    ]
@@ -559,6 +705,13 @@
      "ant": [
       "potent",
       "powerful"
+     ],
+     "root": "im-(不) + pot(能力) + -ent(……的) → 没有能力的 → 无力的",
+     "rel": [
+      "potent 强有力的",
+      "potential 潜力",
+      "omnipotent 全能的",
+      "possible 可能的"
      ]
     },
     {
@@ -574,6 +727,10 @@
      "ant": [
       "flawed",
       "faulty"
+     ],
+     "root": "im-(不) + pecc(犯错) + -able(能……的) → 不会犯错的 → 无可挑剔的",
+     "rel": [
+      "peccadillo 小过失"
      ]
     },
     {
@@ -589,6 +746,13 @@
      "ant": [
       "unseemly",
       "boorish"
+     ],
+     "root": "decor(得体、装饰) + -ous(……的) → 得体的",
+     "rel": [
+      "decor 装饰",
+      "decorate 装饰",
+      "decent 得体的",
+      "decorum 礼节"
      ]
     },
     {
@@ -601,7 +765,13 @@
       "spoof",
       "burlesque"
      ],
-     "ant": []
+     "ant": [],
+     "root": "par(旁边) + od(歌) + -y → 在旁边唱的歌 → 滑稽模仿",
+     "rel": [
+      "ode 颂歌",
+      "melody 旋律",
+      "paradox 悖论(para- 旁)"
+     ]
     },
     {
      "w": "succor",
@@ -615,6 +785,13 @@
      ],
      "ant": [
       "hindrance"
+     ],
+     "root": "suc-(sub-，向下) + cor(跑) → 跑到下面去帮忙 → 救助",
+     "rel": [
+      "current 水流",
+      "occur 发生",
+      "cursor 光标",
+      "course 课程"
      ]
     }
    ]
@@ -643,7 +820,14 @@
       "backdated",
       "retrospective"
      ],
-     "ant": []
+     "ant": [],
+     "root": "retro-(向后) + act(做、作用) + -ive(……的) → 作用往后追 → 有追溯效力的",
+     "rel": [
+      "retrospect 回顾",
+      "retrograde 倒退",
+      "active 活跃的",
+      "react 反应"
+     ]
     },
     {
      "w": "enlighten",
@@ -658,6 +842,11 @@
      "ant": [
       "mystify",
       "confuse"
+     ],
+     "root": "en-(使) + light(光) + -en(使) → 使光明 → 启发",
+     "rel": [
+      "light 光",
+      "enlightenment 启蒙"
      ]
     },
     {
@@ -673,6 +862,13 @@
      "ant": [
       "indiscretion",
       "recklessness"
+     ],
+     "root": "dis-(分开) + cret(筛、区分) + -ion(名词) → 能区分判断的能力 → 谨慎、自行决定",
+     "rel": [
+      "discreet 谨慎的",
+      "discrete 分立的",
+      "secret 秘密",
+      "discern 辨别"
      ]
     },
     {
@@ -688,6 +884,12 @@
      "ant": [
       "impropriety",
       "indecency"
+     ],
+     "root": "propri(自己的、合适的) + -ety(名词) → 自己该有的样子 → 得体",
+     "rel": [
+      "proper 恰当的",
+      "property 财产",
+      "appropriate 适当的"
      ]
     },
     {
@@ -703,6 +905,13 @@
      "ant": [
       "lazy",
       "negligent"
+     ],
+     "root": "as-(ad-，向) + sid(坐) + -uous(……的) → 坐着不动的 → 勤勉的",
+     "rel": [
+      "reside 居住",
+      "preside 主持",
+      "resident 居民",
+      "sediment 沉淀物"
      ]
     }
    ]
