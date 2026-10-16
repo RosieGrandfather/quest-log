@@ -1,5 +1,6 @@
-"""Build the first 50 Zhang Wei text-completion sections. Local sources only.
-Run with bundled Python: build.py [--source-dir PATH].
+"""Build Zhang Wei text-completion sections, one course per Test range. Local sources only.
+Run with bundled Python: build.py [--source-dir PATH] [--batch 1|2].
+batch 1 = gre-zt (Test 1-25), batch 2 = gre-zt2 (Test 26-50).
 """
 import argparse
 import hashlib
@@ -11,17 +12,20 @@ from pathlib import Path
 import pdfplumber
 
 REPO = Path(__file__).resolve().parents[3]
-OUT = REPO / 'courses/gre-zt'
+BATCHES = {
+    1: dict(course='gre-zt', tests=(1, 25), name='前50个Section', audit='audit.json'),
+    2: dict(course='gre-zt2', tests=(26, 50), name='第51–100个Section', audit='audit-2.json'),
+}
 LETTERS = 'ABCDEFGHI'
 
 
 def clean(t):
     t = unicodedata.normalize('NFKC', t)
-    t = re.sub(r'【微信公众号[^】]*】', '', t)
+    t = re.sub(r'【\s*微\s*信[^】]*】', '', t)
     return re.sub(r'\s+', ' ', t).strip()
 
 
-def extract(pdf):
+def extract(pdf, tests=(1, 25)):
     sections, current, question = [], None, None
     with pdfplumber.open(pdf) as doc:
         for pi in range(13, len(doc.pages)):
@@ -42,10 +46,9 @@ def extract(pdf):
                     continue
                 head = re.match(r'test\s*(\d+)\s*section\s*([12])\s*[(（]\s*(easy|medium|hard)', text, re.I)
                 if head:
-                    if len(sections)==50:
-                        if question: question['end']=[pi,y-3]
-                        return sections
                     if question: question['end']=[pi,y-3]
+                    if int(head[1])>tests[1]:
+                        return [s for s in sections if s['test']>=tests[0]]
                     current={'test':int(head[1]),'section':int(head[2]),'difficulty':head[3].lower(),'items':[]}
                     sections.append(current)
                     question=None
@@ -68,13 +71,19 @@ def extract(pdf):
                 else:
                     last=next(reversed(question['opts']))
                     question['opts'][last]+=' '+text
-    raise RuntimeError('Did not find end of section 50')
+    raise RuntimeError(f'Did not find end of Test {tests[1]}')
 
 
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--source-dir',type=Path,default=Path('C:/projects/learning/GRE prep/张巍GRE/verbal'))
+    ap.add_argument('--batch',type=int,choices=sorted(BATCHES),default=1)
     args=ap.parse_args()
+    b=BATCHES[args.batch]
+    cid=b['course']
+    out=REPO/'courses'/cid
+    first,last=b['tests']
+    nsec=2*(last-first+1)
     pdf=next(args.source_dir.glob('*2000*.pdf'))
     key=args.source_dir/'填空2000答案.txt'
     keys={}
@@ -83,8 +92,9 @@ def main():
         if m:=re.match(r'test\s+(\d+)',line,re.I):t=int(m[1])
         elif m:=re.match(r'section\s+([12])\s+(.+)',line,re.I):
             keys[t,int(m[1])]=[x for x in m[2].strip().split('/') if x]
-    sections=extract(pdf)
-    OUT.mkdir(parents=True,exist_ok=True)
+    sections=extract(pdf,b['tests'])
+    assert len(sections)==nsec,(len(sections),nsec)
+    out.mkdir(parents=True,exist_ok=True)
     units=[]
     audit=[]
     for si,s in enumerate(sections,1):
@@ -115,15 +125,15 @@ def main():
         unit={'id':uid,'title':title,'en':f'Text Completion — Test {s["test"]}, Section {s["section"]}',
               'minutes':15,'practice':True,'answerFormat':'gre-zt-v1','objectives':[
                   '独立完成7道原题，整节完成后提交。','提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。'],
-              'blocks':[{'type':'gre-qset','base':'courses/gre-zt/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
+              'blocks':[{'type':'gre-qset','base':f'courses/{cid}/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
                          'noteTail':'（原题及配套答案，仅供个人学习；暂不附讲解）','items':items}],'references':[]}
-        (OUT/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
+        (out/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
         units.append({k:unit[k] for k in ['id','title','en','minutes','practice']}|{'file':f'{uid}.json','hasQuiz':False,'difficulty':s['difficulty']})
-    course={'id':'gre-zt','title':'张巍GRE填空机经：前50个Section','subtitle':'Test 1–25，每个Section一节，共50节350题。原题与配套答案，完成整节后提交查看对错，暂不附讲解。',
+    course={'id':cid,'title':f'张巍GRE填空机经：{b["name"]}','subtitle':f'Test {first}–{last}，每个Section一节，共{nsec}节{7*nsec}题。原题与配套答案，完成整节后提交查看对错，暂不附讲解。',
             'order':17,'order_note':'选修，GRE填空专项练习','tier':'elective','tags':['GRE'],'units':units}
-    (OUT/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
-    report={'sourcePDF':pdf.name,'pdfSHA256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'answerSHA256':hashlib.sha256(key.read_bytes()).hexdigest(),'sections':50,'questions':len(audit),'items':audit}
-    (Path(__file__).parent/'audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
+    (out/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
+    report={'sourcePDF':pdf.name,'pdfSHA256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'answerSHA256':hashlib.sha256(key.read_bytes()).hexdigest(),'course':cid,'tests':[first,last],'sections':nsec,'questions':len(audit),'items':audit}
+    (Path(__file__).parent/b['audit']).write_text(json.dumps(report,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
     print(f'{len(units)} sections, {len(audit)} questions')
 
 

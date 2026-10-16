@@ -1,0 +1,196 @@
+{
+ "id": "u37-test44-s1",
+ "title": "Test 44 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 44, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 44 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The jury's verdict was such a surprise that the populace rioted in the streets; nothing less than a reversal of the verdict could ____ them."
+      ],
+      "opts": [
+       "mollify",
+       "emulsify",
+       "denigrate",
+       "petrify",
+       "disabuse"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Research into butterfly wings could have (i)____ implications, since knowledge of their optical and thermal properties may be (ii)____ controlling the behavior of computer chips, which likewise consist of finely structured thin film."
+      ],
+      "cols": [
+       [
+        "ecological",
+        "aesthetic",
+        "technological"
+       ],
+       [
+        "tantamount to",
+        "germane to",
+        "advance by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "Communal feeding is a remarkable behavioral aspect of this generally solitary animal. It is also a misunderstood behavior and one of the reasons is that Tasmanian devils have a bad reputation. Far from being a (i)____, communal devil feeding is (ii)____ and purposeful, and is described as (iii)____ behavior. The screaming and apparent fighting is an elaborate combination and variety of vocalizations and postures by which order is maintained."
+      ],
+      "cols": [
+       [
+        "free-for-all",
+        "rarity",
+        "necessity"
+       ],
+       [
+        "structured",
+        "vicious",
+        "infrequent"
+       ],
+       [
+        "innate",
+        "acquired",
+        "ritualized"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "The action in Zadie Smith’s novel On Beauty is mediated by an unabashedly ____ narrator who does not hesitate to inform us, as once upon a time the narrators of novels were wont to do, how we behave in general and how society usually works."
+      ],
+      "opts": [
+       "knowing",
+       "obtrusive",
+       "conspicuous",
+       "antiquated",
+       "mysterious",
+       "secretive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Since the data we have analyzed are so ____, it would be hazardous to draw a definite conclusion."
+      ],
+      "opts": [
+       "copious",
+       "overwhelming",
+       "abundant",
+       "meager",
+       "paltry",
+       "uncertain"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The phrase “bread and circuses” refers to early Roman politicians’ plans to ____ the votes of the poor by handing out cheap food and entertainment."
+      ],
+      "opts": [
+       "belie",
+       "surmount",
+       "secure",
+       "control",
+       "cherish",
+       "earn"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "They applaud the musicals of the 1930s and 1940s, whose plethora of stars, jokes, dances witty dialogue, and general gaiety make today’s offering seem ____ by comparison."
+      ],
+      "opts": [
+       "cheerless",
+       "vacuous",
+       "mirthful",
+       "insincere",
+       "gloomy",
+       "jovial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

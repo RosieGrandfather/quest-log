@@ -1,0 +1,196 @@
+{
+ "id": "u49-test50-s1",
+ "title": "Test 50 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 50, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 50 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Barry was a skilled ____: though his arguments were completely flawed, they were clever- sounding enough to deceive everyone who heard them."
+      ],
+      "opts": [
+       "sophist",
+       "scholar",
+       "quibbler",
+       "doctrinaire",
+       "pedant"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "There has been great enthusiasm in the United States for reducing fossil fuel dependence by increasing production of biofuels from crops such as corn and switchgrass, but this (i)____ about biofuel’s potential should be (ii)____ by a realistic appraisal of the costs and challenges of biofuel production."
+      ],
+      "cols": [
+       [
+        "forbearance",
+        "exuberance",
+        "obduracy"
+       ],
+       [
+        "tempered",
+        "delineated",
+        "exacerbated"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "As the study of the foundation of western Shanghai reveals, there was a sense of elegance in the refined, simple lines that characterized the entire row, bereft of the exuberant, emphatic, assertive, ornament that constituted the latest British architectural fashion, which expressed its detestation of Plalladianism and neoclassicism—London’s Regent Street then being regarded as abhorrent—calling it the product of a (i)____ “shopocracy”. The (ii)____ of Western architectural taste—oscillating between simplicity and ornamental (iii)____—must have bemused Chinese observers who had long accepted that both approaches were valid and could co-exist."
+      ],
+      "cols": [
+       [
+        "superficial",
+        "quintessential",
+        "disdained"
+       ],
+       [
+        "impermanence",
+        "eternality",
+        "subtlety"
+       ],
+       [
+        "profundity",
+        "modesty",
+        "exuberance"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "As a way of ____ the negative impacts of overdependence on a single export product—crude oil, the Nigerian government passed legislation in 1999 intended to revitalize the moribund solid minerals sector."
+      ],
+      "opts": [
+       "assuming",
+       "checking",
+       "disguising",
+       "stemming",
+       "downplaying",
+       "shouldering"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "After many years of feeling ____ by his seniors managers, Clark was becoming hopeful of advancement."
+      ],
+      "opts": [
+       "vilified",
+       "stymied",
+       "hindered",
+       "aggrieved",
+       "circumvented",
+       "overlooked"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Even before she went to art school, Veronica found the standard design categories ____: she didn’t understand why designing buildings and designing tables should require different sensibilities."
+      ],
+      "opts": [
+       "provocative",
+       "limiting",
+       "stimulating",
+       "confusing",
+       "confining",
+       "exhilarating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Upon realizing that the indicators of a stressful situation can be extremely ____, the psychologist reconsidered her claim that a reliable way of reducing stress is to recognize stressful situations and then avoid them."
+      ],
+      "opts": [
+       "acute",
+       "exiguous",
+       "persistent",
+       "overstated",
+       "tenuous",
+       "unrelenting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

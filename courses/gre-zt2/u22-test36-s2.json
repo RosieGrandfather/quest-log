@@ -1,0 +1,206 @@
+{
+ "id": "u22-test36-s2",
+ "title": "Test 36 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 36, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 36 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Having regarded Marcus relationship to their boss as entirely ____, Jo was flabbergasted when Marcus publicly made clear his objections to some changes the boss was introducing."
+      ],
+      "opts": [
+       "professional",
+       "sycophantic",
+       "prosaic",
+       "dissident",
+       "collegial"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Although it is not uncommon for journalists to portray political inexperience on the part of public officials as an (i)____, it was nevertheless surprising when members of the press treated the new senator’s obvious (ii)____ as an extraordinary virtue."
+      ],
+      "cols": [
+       [
+        "advantage",
+        "impediment",
+        "exception"
+       ],
+       [
+        "nonchalance",
+        "acumen",
+        "naiveté"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "Wolosky claims that Ella Wheeler Wilcox joined other women poets such as Julia Ward Howe, Frances Harper, and Charlotte Perkins Gilman in critiquing materialism and possessive individualism. Wolosky’s description (i)____ the poetry of Gilman, Howe, and Harper, but it is not entirely (ii)____ in the case of Wilcox, who hardly (iii)____ the materialism of her time. Rather, Wilcox seems to have embraced the amassing of private property."
+      ],
+      "cols": [
+       [
+        "fits",
+        "conflates",
+        "misinterprets"
+       ],
+       [
+        "apt",
+        "puzzling",
+        "uncommon"
+       ],
+       [
+        "reflected",
+        "countenanced",
+        "impugned"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AEG",
+     "txt": {
+      "stem": [
+       "What she disliked in the fictions of some of her peers was the excessive (i)____. In her novel, by contrast, she was marked by a (ii)____: she always (iii)____."
+      ],
+      "cols": [
+       [
+        "explicitness",
+        "deviousness",
+        "divergence"
+       ],
+       [
+        "ebullience",
+        "reticence",
+        "introspection"
+       ],
+       [
+        "keeps some details undisclosed",
+        "ends the book with a bleak note",
+        "draws on unusual sources"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "He was one of the most powerful chess players over and one of the most ____; at the height of his fame he all but dropped out of chess, entering into a self-imposed exile."
+      ],
+      "opts": [
+       "perplexing",
+       "creative",
+       "troubled",
+       "infuriating",
+       "enigmatic",
+       "imaginative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "A small degree of ____ is always desirable in a published diary. A sense of authenticity is seldom worth the diarist’s questionable grammar or careless phrasing."
+      ],
+      "opts": [
+       "characterization",
+       "emendation",
+       "documentation",
+       "revision",
+       "substantiation",
+       "individualization"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "In his heyday, Sonny Bono’s role in public was ____: he was an accomplished lyricist, a mayoral success story, delegate from Palm Springs, and the husband of an internationally acclaimed vocalist."
+      ],
+      "opts": [
+       "protean",
+       "versatile",
+       "pedestrian",
+       "prominent",
+       "circumscribed",
+       "illustrious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

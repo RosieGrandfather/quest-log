@@ -1,0 +1,196 @@
+{
+ "id": "u13-test32-s1",
+ "title": "Test 32 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 32, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 32 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Carmen’s affection for her sister, though not ____, was plainly too great to permit a painless departure."
+      ],
+      "opts": [
+       "unsteady",
+       "ambivalent",
+       "careless",
+       "unbounded",
+       "noticeable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Making loans and fighting poverty are normally two of the least glamorous pursuits around, but remarkably enough put the two together, and you have an economic innovation that has become not just (i)____ but downright (ii)____."
+      ],
+      "cols": [
+       [
+        "popular",
+        "pointless",
+        "dangerous"
+       ],
+       [
+        "chic",
+        "unfathomable",
+        "sensible"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEI",
+     "txt": {
+      "stem": [
+       "The research on otters’ environmental requirements is surprisingly (i)____. One reason for this has to do with the estimation of how much they use different areas. Doing so may be (ii)____ in some kinds of terrain, such as Shetland where the Eurasian otters are active in daytime and have clear individual markings. There it is possible to identify the individuals over stretches of coast of a few kilometers and to see what kinds of coast they use. However, the field conditions are (iii)____."
+      ],
+      "cols": [
+       [
+        "straightforward",
+        "controversial",
+        "difficult"
+       ],
+       [
+        "quite problematic",
+        "relatively simple",
+        "largely unnecessary"
+       ],
+       [
+        "routine",
+        "deceptive",
+        "exceptional"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Travel writers have a special burden of forming ____ story—that is, one with a beginning, middle, and end—out of the unformed moments that make up the act of traveling."
+      ],
+      "opts": [
+       "a compelling",
+       "a coherent",
+       "an original",
+       "a serious",
+       "an orderly",
+       "an innovative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "There are many ways in which rat brains and human brains are ____. Indeed, rat brains are often used as generalized models for all mammalian brains, including our own."
+      ],
+      "opts": [
+       "identical",
+       "analogous",
+       "mysterious",
+       "comparable",
+       "adaptable",
+       "inexplicable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Space is often referred to as the final frontier, as the only realm of which humankind has still to gain substantial understanding, yet the ocean realm is another vast area about which our knowledge is ____."
+      ],
+      "opts": [
+       "erroneous",
+       "confusing",
+       "frustrating",
+       "rudimentary",
+       "delusive",
+       "sketchy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "The occasional minor errors, while annoying, do not ____ the basic scholarship or the valuable contribution of this book."
+      ],
+      "opts": [
+       "support",
+       "uphold",
+       "expose",
+       "explain",
+       "vitiate",
+       "impair"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u47-test49-s1",
+ "title": "Test 49 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 49, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 49 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Within the field of emotional intelligence research, disagreements remain about whether emotional intelligence can be learned and strengthened or is ____ characteristic."
+      ],
+      "opts": [
+       "an expressed",
+       "an inborn",
+       "an invented",
+       "a cultivated",
+       "a perceptible"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Recent years have seen a disheartening string of revelations in which everyday items once considered (i)____ are found to contain (ii)____ chemicals."
+      ],
+      "cols": [
+       [
+        "ubiquitous",
+        "innocuous",
+        "insalubrious"
+       ],
+       [
+        "benign",
+        "complex",
+        "baneful"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "Most advocates of space exploration by the United States would not explicitly associate spaceflight with (i)____, yet that belief, Launius and McCurdy write, is among the roots of arguments (ii)____ human spaceflight. Throughout United States history there has been (iii)____ —seek utopia—on the frontier, and many space advocates have used that notion to make their case for exploring and settling space."
+      ],
+      "cols": [
+       [
+        "entertainment",
+        "irrationality",
+        "utopia"
+       ],
+       [
+        "questioning",
+        "analyzing",
+        "prompting"
+       ],
+       [
+        "a hostile region fit only for the most self-reliant",
+        "the ideal location for one to better oneself",
+        "a paradise corrupted by European civilization"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Consuming 25 to 35 percent of their body weight each day, sea otters are not only ____ but highly specialized eaters, organizing themselves into groups that zero in on specific kinds of prey."
+      ],
+      "opts": [
+       "prodigious",
+       "undiscriminating",
+       "fastidious",
+       "picky",
+       "voracious",
+       "omnivorous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "The concept of the Hellenistic period in ancient history has proved useful but also ____, with scholars disagreeing on the dates when the period began and ended."
+      ],
+      "opts": [
+       "slippery",
+       "elusive",
+       "fruitless",
+       "deceptive",
+       "futile",
+       "compelling"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The current ____ of repackaged music under Miles Davis’ name might prompt any reasonable person to conclude that the recording vault has been plundered bare."
+      ],
+      "opts": [
+       "glut",
+       "revival",
+       "hodgepodge",
+       "surfeit",
+       "modicum",
+       "dearth"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "People enjoy listening to the governor’s inspiring speeches, and his eloquence lulls his adversaries into underestimating his ____, the tempered steel beneath the sleek suits."
+      ],
+      "opts": [
+       "tenacity",
+       "resolve",
+       "resourcefulness",
+       "kindness",
+       "compassion",
+       "frankness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

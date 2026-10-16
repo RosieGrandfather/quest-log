@@ -1,0 +1,200 @@
+{
+ "id": "u36-test43-s2",
+ "title": "Test 43 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 43, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 43 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "His ____ character enables him to work with people who often hold sometimes even conflict views."
+      ],
+      "opts": [
+       "choleric",
+       "intransigent",
+       "officious",
+       "irenic",
+       "prudent"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The author of this biography gives an accurate and (i)____ account of the subject’s life story, but all the carefully assembled detail fails to compensate for the general lack of (ii)____ in her writing."
+      ],
+      "cols": [
+       [
+        "exhaustive",
+        "glib",
+        "selective"
+       ],
+       [
+        "specificity",
+        "veracity",
+        "vivacity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Although she admitted that her airport expansion plan had recently collapsed, the governor (i)____ the significance of the failure, pointing out that competing economic development proposals are now more (ii)____."
+      ],
+      "cols": [
+       [
+        "minimized",
+        "touted",
+        "acknowledged"
+       ],
+       [
+        "tenuous",
+        "complicated",
+        "important"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BFH",
+     "txt": {
+      "stem": [
+       "Industry-sponsored scientific research on chemical safety often (i)____. Media reports regularly imply that industry support of scientific work is alone sufficient to (ii)____ that research. Even though the source of funding has been determined to be a less significant cause of bias than other factors, industry support suffices, in the minds of many people, to (iii)____ the credibility of scientific work."
+      ],
+      "cols": [
+       [
+        "uncovers risks",
+        "elicits skepticism",
+        "promotes innovation"
+       ],
+       [
+        "fund",
+        "vindicate",
+        "invalidate"
+       ],
+       [
+        "adopt",
+        "vitiate",
+        "bolster"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Experiments show that it is shockingly easy to elicit a sense of ____ among a group of strangers: just tell them they’ll be working as a team, and they immediately start working as a team."
+      ],
+      "opts": [
+       "dominance",
+       "hierarchy",
+       "obedience",
+       "solidarity",
+       "camaraderie",
+       "optimism"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Typefaces, in one sense, are just like styles of shoes: they ____ because different people have different tastes and identities and because both creators and users value novelty for its own sake."
+      ],
+      "opts": [
+       "bemuse",
+       "converge",
+       "proliferate",
+       "abound",
+       "evolve",
+       "coincide"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "It’s a sign of John Dramani Mahama’s maturity as a writer that he is willing to consider his country’s future so ____: his memoir is appealingly honest, given to clear-eyed assessments rather than exaggerated accounts of achievements."
+      ],
+      "opts": [
+       "cheerfully",
+       "dispassionately",
+       "insightfully",
+       "evocatively",
+       "analytically",
+       "blithely"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

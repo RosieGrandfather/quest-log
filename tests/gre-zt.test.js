@@ -4,18 +4,23 @@ import {readFileSync} from 'node:fs';
 import {gradeItem, summarize} from '../js/core/qgrade.js';
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
-const course = read('../courses/gre-zt/course.json');
-const audit = read('../tools/course/grzt/audit.json');
+const BATCHES = [
+  {id: 'gre-zt', audit: 'audit.json', firstTest: 1, counts: {mc1:60,tc:115,se:175}},
+  {id: 'gre-zt2', audit: 'audit-2.json', firstTest: 26, counts: {mc1:56,tc:119,se:175}},
+];
 
-test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and text-only controls', () => {
+for (const {id, audit: auditFile, firstTest, counts: expectedCounts} of BATCHES)
+test(`Zhang Wei ${id} (Test ${firstTest}–${firstTest+24}) preserves sequence, all 350 answer keys and text-only controls`, () => {
+  const course = read(`../courses/${id}/course.json`);
+  const audit = read('../tools/course/grzt/' + auditFile);
   assert.ok(read('../courses/index.json').courses.some(c => c.id === course.id));
   assert.equal(course.units.length, 50);
   let total = 0;
   const counts = {};
   for (const [i, entry] of course.units.entries()) {
-    const unit = read('../courses/gre-zt/' + entry.file);
+    const unit = read(`../courses/${id}/` + entry.file);
     const block = unit.blocks[0];
-    assert.equal(entry.id, `u${String(i+1).padStart(2,'0')}-test${String(Math.floor(i/2)+1).padStart(2,'0')}-s${i%2+1}`);
+    assert.equal(entry.id, `u${String(i+1).padStart(2,'0')}-test${String(Math.floor(i/2)+firstTest).padStart(2,'0')}-s${i%2+1}`);
     assert.equal(block.items.length, 7);
     const answers = [];
     for (const [j, q] of block.items.entries()) {
@@ -26,6 +31,7 @@ test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and tex
       assert.equal(q.imgs, undefined);
       assert.equal(q.img, undefined);
       assert.equal(q.sourceAnswer, audit.items[i*7+j].sourceAnswer);
+      assert.equal(audit.items[i*7+j].unit, entry.id);
       const expected = [...q.sourceAnswer].map((c,k) => c.charCodeAt(0)-65-(q.kind==='tc'?3*k:0));
       assert.deepEqual(q.ans, expected);
       const options = q.kind==='tc' ? q.txt.cols.flat() : q.txt.opts;
@@ -45,5 +51,5 @@ test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and tex
     assert.equal(summarize(block.items,answers).correct,7);
   }
   assert.equal(total,350);
-  assert.deepEqual(counts,{mc1:60,tc:115,se:175});
+  assert.deepEqual(counts,expectedCounts);
 });

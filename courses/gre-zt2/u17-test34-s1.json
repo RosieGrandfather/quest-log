@@ -1,0 +1,196 @@
+{
+ "id": "u17-test34-s1",
+ "title": "Test 34 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 34, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 34 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The science community’s perennial lament over inadequate budgets has come to seem increasing ____, because government support for science and engineering has never been greater."
+      ],
+      "opts": [
+       "vital",
+       "hopeless",
+       "poignant",
+       "condescending",
+       "disingenuous"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In aquatic environments, the herbicide atrazine is more likely to (i)____ developing amphibians when it is highly diluted than when it is much more concentrated, a new study suggests. Although counterintuitive, the finding is (ii)____ some past research on atrazine and studies showing that other hormonally active compounds are most damaging at trace concentrations."
+      ],
+      "cols": [
+       [
+        "supplant",
+        "kill",
+        "circumvent"
+       ],
+       [
+        "unanticipated given",
+        "consistent with",
+        "undiminished by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Leo Tolstoy wrote many works of nonfiction and professed (i)____ these explorations of ethics and religion compared with his novels and short stories. The fiction writer in him, however, was hard to (ii)____. Handi Murdd is a short novel with the breadth and power of an epic, with vivid characterization and intense storytelling that sweep the reader away. While the reader senses the moral concerns of the tale’s creator, the novel is a far cry from the (iii)____ of Tolstoy’s nonfiction."
+      ],
+      "cols": [
+       [
+        "a preference for",
+        "an aversion to",
+        "an indifference toward"
+       ],
+       [
+        "suppress",
+        "identify",
+        "incite"
+       ],
+       [
+        "didacticism",
+        "fluidity",
+        "creativity"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The concept of increasing complexity of organisms has ____ history among evolutionary biologists, and yet many laypeople would unhesitatingly say that the pattern applies to the history of life on Earth."
+      ],
+      "opts": [
+       "an illustrious",
+       "a sordid",
+       "a curious",
+       "a contentious",
+       "a distinguished",
+       "a fraught"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The story lines of silent dramas may often have been ____, yet within those basic narrative outlines, the true artists among silent-film actors could express emotional shadings that have no analogue in spoken language."
+      ],
+      "opts": [
+       "implausible",
+       "incredible",
+       "conventional",
+       "elemental",
+       "rudimentary",
+       "confusing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The candidate seeks to depict his opponent as being ____, as one who is simply unable to make a decision and stand his ground."
+      ],
+      "opts": [
+       "inconstant",
+       "cowardly",
+       "opportunistic",
+       "petty",
+       "capricious",
+       "spiteful"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Given the ____ of solid case studies of environment degradation, this new study adds very little to our knowledge of the field."
+      ],
+      "opts": [
+       "erroneousness",
+       "plethora",
+       "surfeit",
+       "inaccuracy",
+       "rigor",
+       "outcome"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}
