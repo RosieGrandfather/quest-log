@@ -65,7 +65,7 @@ for s in data:
                 nm = f'{s["id"]}/{sec["sec"]}-{it["n"]:02d}{"" if j == 0 else "b"}.webp'
                 save(os.path.join(pages_dir, s['id'], pg), os.path.join(out, 'img', nm), cache)
                 names.append(nm)
-            o = {k: it[k] for k in ('n', 'kind', 'nopt', 'blanks', 'ans', 'ansText', 'answerPending', 'answerReviewReason', 'legacyAnswer') if k in it}
+            o = {k: it[k] for k in ('n', 'kind', 'nopt', 'blanks', 'ans', 'ansText', 'answerPending', 'answerReviewReason', 'legacyAnswer', 'answerReview', 'explanation') if k in it}
             o['img'] = names[0]
             tx = txts.get(f'{sec["sec"]}-{it["n"]}')
             if tx and tx.get('ok'):
@@ -78,12 +78,14 @@ for s in data:
         objs = [f'按真实考试节奏做完 {M} 题（建议 {minutes} 分钟），**全部做完再点提交**（提交前不显示对错）',
                 '提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题',
                 '这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表']
+        if sec.get('answerFormat'):
+            objs[2] = '这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案'
         if missing: objs.append(f'原 PDF 缺第 {"、".join(map(str, missing))} 题的截图，所以这一节只有 {len(items)} 题')
         if any(i['kind'] == 'ss' for i in items): objs.append('「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数')
         unit = {'id': uid, 'title': title, 'en': f'Verbal Reasoning — {s["id"]} section {v}', 'minutes': minutes, 'practice': True,
                 'objectives': objs,
                 'blocks': [{'type': 'gre-qset', 'base': 'courses/gre-vx/img/', 'source': f'2025 年 GRE 考场回忆真题（逐鹿留学整理）· {s["zh"]}', 'noteTail': '（考场截屏整理版，仅供个人学习；没有官方解析）', 'items': items}],
-                'references': [], 'answerFormat': 'gre-vx-text-v2'}
+                'references': [], 'answerFormat': sec.get('answerFormat', 'gre-vx-text-v2')}
         errors += validate_qset(unit, out)
         json.dump(unit, open(os.path.join(out, f'{uid}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print(uid, len(items), flush=True)

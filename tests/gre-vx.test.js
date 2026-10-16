@@ -1,9 +1,45 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
+import {summarize, answerText} from '../js/core/qgrade.js';
 
 const read = relative => JSON.parse(readFileSync(new URL(relative,import.meta.url),'utf8'));
 const course=read('../courses/gre-vx/course.json');
+
+test('first section reviewed words and sentences score correctly, and survive regeneration',()=>{
+  const unit=read('../courses/gre-vx/u01-2025-01-14-v1.json');
+  const items=unit.blocks[0].items;
+  // Independent semantic expectations, not a copy of item.ans.
+  const words=[['subjective'],['deviates from','caricature'],
+    ['suffer reputational losses','tainted','a counterweight to'],
+    ['They are not limited to a specific cultural tradition.','They emphasize personal experience over collective history.'],
+    null,['disdain for','scorn for'],['insufficient','meager'],['untenable','indefensible'],
+    ['demarcation of','lines between'],
+    ['considering the work of a particular scholar on a certain subject in contrast to other work on the same subject'],
+    ['The circulation of antislavery petitions'],
+    ['give an example of evidence used by Jeffrey to support her challenge to the claim that women’s participation in the abolitionist movement became marginalized at the end of the 1830s']];
+  const answers=items.map((it,i)=>it.kind==='ss' ? it.txt.sentences[2]
+    : words[i].map((word,j)=>(it.kind==='tc'?it.txt.cols[j]:it.txt.opts).indexOf(word)).join(','));
+  const score=summarize(items,answers);
+  assert.equal(score.correct,11);
+  assert.equal(score.total,11);
+  assert.deepEqual(score.selfCheck,[4]);
+  assert.equal(answerText(items[4]),items[4].txt.sentences[2]);
+  assert.notEqual(unit.answerFormat,'gre-vx-text-v2');
+  const source=read('../tools/course/grvx/data.json')[0].sections[0];
+  assert.equal(source.answerFormat,unit.answerFormat);
+  for(const it of items){
+    const original=source.items.find(q=>q.n===it.n);
+    for(const key of ['ans','ansText','explanation','answerReview','answerPending'])
+      assert.deepEqual(it[key],original[key],`question ${it.n}: ${key}`);
+    assert.equal(it.answerReview.status,'independently-reviewed');
+    assert.ok(it.explanation);
+  }
+  // The ten previously graded keys all incorrectly rejected the correct answers.
+  const previous=items.filter(q=>q.n!==4&&q.n!==5).map(it=>({...it,...it.answerReview.previous}));
+  const previousAnswers=answers.filter((a,i)=>i!==3&&i!==4);
+  assert.equal(summarize(previous,previousAnswers).correct,0);
+});
 
 test('every GRE Verbal 2025 question has text and compatible answer controls',()=>{
   let count=0;

@@ -1,5 +1,11 @@
 # 改动日志 (Changelog)
 
+## 2026-10-16 — GRE Verbal 2025 第一节：修正错误答案键
+- 用户反馈第一节全部判错；按题意逐题独立复核，发现原十道计分题答案全部错误。修正十题答案，补 Q4 为 A/B、Q5 为第三句；Q4 恢复计分，Q5 继续自评。不是 ETS 官方答案表，其他 49 节尚未整体复核。
+- 同步第一节 JSON、生成源与生成器，保留旧答案和复核来源；交卷后显示中文依据。本节作答版本更新，避免恢复旧的错误判分记录；没有修改真实 Firebase 成绩或积分，也没有改整体架构。
+- 新增 `docs/GRE_VX_FIRST_SECTION_ANSWERS.md`、可重复运行的 `tools/course/grvx/review_first_answers.py` 与正确作答回归测试。未 commit/push，未发布线上。
+- 验证：74 项 Node 测试通过；本地 Edge 提交正确答案为 11/11，检查交卷后依据、自评、恢复和旧版本保护；仅使用模拟存储。
+
 ## 2026-10-16 — GRE Verbal 2025：补齐全部题目文字并匹配作答方式
 - 覆盖 50 节 674 题，补齐原来缺文字的 180 题，重新 OCR 全部 685 张截图并修正分栏、倾斜照片、缺字、表格与选项错位、文章滚动尾部等异常；全部题保留原图。9 道选句子题均提供文章内点选，116 道多空题按空分列，单选/多选显示文字，175 道选两个题限制恰好两项。
 - 同步全部 `courses/gre-vx/u*.json`、OCR 文字源和 `tools/course/grvx/data.json`；生成器支持全部修正。新增 `review_windows.py`、`apply_review.py`、人工修订和选句子文章库；检查方法及逐题记录见 `docs/GRE_VX_FULL_REVIEW.md`、`GRE_VX_OCR_AUDIT.json`。

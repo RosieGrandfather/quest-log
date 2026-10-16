@@ -187,6 +187,7 @@ export function wireQset(root, course, unit){
       }
       const ex = sec.querySelector('.gq-explain');
       ex.innerHTML = `<div class="gq-answer"><span>${!isGraded(it) ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${!isGraded(it) ? '' : ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
+        ${it.explanation ? `<div class="explain"><strong>答案依据（独立复核）</strong><p>${escapeHTML(it.explanation)}</p></div>` : ''}
         ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });
@@ -261,7 +262,7 @@ export function wireQset(root, course, unit){
     if(!last){ prevEl.hidden = true; return; }
     prevEl.hidden = false;
     if(unit.answerFormat && last.answerFormat !== unit.answerFormat){
-      prevEl.innerHTML = '<span>旧版成绩已保留。题目文字和选项已校正，请重新作答。</span>';
+      prevEl.innerHTML = '<span>旧版成绩已保留。题目内容或答案已校正，请重新作答。</span>';
       return;
     }
     prevEl.innerHTML = `<span>上次提交 <b>${last.correct} / ${last.total}</b> · 最高 ${pr.practiceBest} · 做过 ${pr.practiceAttempts} 次</span><button type="button" class="btn-ghost" data-act="view-last">查看上次作答</button>`;

@@ -15,8 +15,20 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/d2cb7j-0.html?isFav=0"
+},
+"explanation": "艺术被看作主观的（subjective），与物理学回避内心思想形成对照。enigmatic（难以理解的）不能表达这里的主客观区别。"
 },
 {
 "n": 2,
@@ -26,9 +38,22 @@
 "kind": "tc",
 "blanks": 2,
 "ans": [
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 0
 ]
+},
+"corroboratingSource": "https://grev2.kmf.com/explain/question/22cb8j-0.html?isFav=0"
+},
+"explanation": "以往作品 lampooned（讽刺、丑化）这些历史人物；Mendez 避免 caricature（夸张讽刺式刻画），所以她 deviates from（偏离）这一传统。依次选 deviates from、caricature。"
 },
 {
 "n": 3,
@@ -38,10 +63,24 @@
 "kind": "tc",
 "blanks": 3,
 "ans": [
+2,
+0,
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 0,
 0
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/02cbbj-0.html?isFav=0"
+},
+"explanation": "Yet 转折后说科学家很少声誉受损（suffer reputational losses）。负面描绘归咎于法律过程玷污（tainted）科学；正面描绘把科学看作制衡（a counterweight to）法律不稳定性的力量。"
 },
 {
 "n": 4,
@@ -50,16 +89,27 @@
 ],
 "kind": "mcn",
 "nopt": 3,
-"ans": [],
-"answerPending": true,
-"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"ans": [
+0,
+1
+],
 "legacyAnswer": {
 "kind": "mcn",
 "nopt": 4,
 "ans": [
 3
 ]
+},
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [],
+"answerPending": true
 }
+},
+"explanation": "文章说蓝调超越严格的文化边界，Ellison 的定义只受个人表达能力限制，支持“不限于特定文化传统”；又明确说其定义 privileges the personal，支持“强调个人而非集体历史”。结尾讨论文学作品，并未要求蓝调必须写成文字。"
 },
 {
 "n": 5,
@@ -67,7 +117,17 @@
 "p08.png"
 ],
 "kind": "ss",
+"ansText": "Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.”",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
 "ansText": "待核对（尚未取得原 PDF 的答案表，请按题意自评）"
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/a2bruj-0.html?isFav=0"
+},
+"explanation": "选第 3 句（Ralph Ellison’s definition…）。第 1 句给出常规看法；第 2 句只是概括指出文化边界可被超越；第 3 句才具体给出 Ellison 以个人经历为核心的另一种定义。"
 },
 {
 "n": 6,
@@ -77,9 +137,22 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+4,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 3
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/62e24j-0.html?isFav=0"
+},
+"explanation": "能跨许多领域写作，与局限单一领域的 specialization 相对；lordly 又提示高傲态度。disdain for 与 scorn for 都表示轻视，填入后句意一致。"
 },
 {
 "n": 7,
@@ -90,8 +163,21 @@
 "nopt": 6,
 "ans": [
 2,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
 3
 ]
+},
+"corroboratingSource": "https://bj.xdf.cn/wenzhang/xinwen/18199.html"
+},
+"explanation": "Although…nonetheless 表示让步：承认证据不足，却仍作确定性结论和大范围概括。insufficient 与 meager 都表示证据不足，indirect 只表示间接，并非等义。"
 },
 {
 "n": 8,
@@ -101,9 +187,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+1,
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 5
 ]
+}
+},
+"explanation": "计算机进入汽车和医疗设备后，软件商一概免除后果责任的立场将难以成立、难以辩护。untenable 与 indefensible 构成等义答案。"
 },
 {
 "n": 9,
@@ -113,9 +211,22 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+1,
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 5
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/12cbej-0.html?isFav=0"
+},
+"explanation": "无缝扩建恰好违背文物保护原则：不同时期的界线应清楚可辨。demarcation of 与 lines between 都表达时期之间的分界。"
 },
 {
 "n": 10,
@@ -125,8 +236,20 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index/d1pf4j"
+},
+"explanation": "全文介绍 Jeffrey 对妇女参与废奴运动的研究，并与既有学者的叙述作对照；两处 disputes 展开这种对照。没有介绍对她写作的影响，也没有指出她著作内部自相矛盾。"
 },
 {
 "n": 11,
@@ -136,8 +259,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
+}
+},
+"explanation": "题目问先前 scholars 所举的例子。第 2 句明确提到持续散发反奴隶制请愿书（circulation of petitions）；募捐集市则是后文 Jeffrey 用来反驳边缘化说的例子。"
 },
 {
 "n": 12,
@@ -147,10 +281,22 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "题意与原文逐题推理；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4
 ]
 }
-]
+},
+"explanation": "1840 年代的募捐集市说明，即使运动在 1830 年代末分裂，妇女仍有效参与；这个例子支持 Jeffrey 对“妇女从此被边缘化”的反驳。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-20261016"
 },
 {
 "sec": 4,
