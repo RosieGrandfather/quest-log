@@ -20,6 +20,7 @@ const path=require('path');
    const unit=await(await fetch('/courses/gre-zt/'+entry.file)).json();
    const b=unit.blocks[0];root.innerHTML=qsetHTML(b);wireQset(root,course,unit);
    if(root.querySelectorAll('.qq').length!==7)throw Error(entry.id+' rendering');
+   if(root.querySelector('.qorig, .qimg'))throw Error(entry.id+' unexpected original image');
    if([...root.querySelectorAll('.gq-explain')].some(e=>!e.hidden))throw Error('premature answers');
    for(const [i,q]of b.items.entries()){
     for(const [j,k]of q.ans.entries()){

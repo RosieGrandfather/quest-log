@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync, existsSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import {gradeItem, summarize} from '../js/core/qgrade.js';
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const course = read('../courses/gre-zt/course.json');
 const audit = read('../tools/course/grzt/audit.json');
 
-test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys, controls and original images', () => {
+test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys and text-only controls', () => {
   assert.ok(read('../courses/index.json').courses.some(c => c.id === course.id));
   assert.equal(course.units.length, 50);
   let total = 0;
@@ -23,8 +23,8 @@ test('Zhang Wei first 50 sections preserve sequence, all 350 answer keys, contro
       counts[q.kind] = (counts[q.kind] || 0) + 1;
       assert.equal(q.n, j+1);
       assert.ok(q.txt.stem[0].length > 30);
-      assert.ok(q.imgs.length);
-      for (const img of q.imgs) assert.ok(existsSync(new URL('../'+block.base+img, import.meta.url)));
+      assert.equal(q.imgs, undefined);
+      assert.equal(q.img, undefined);
       assert.equal(q.sourceAnswer, audit.items[i*7+j].sourceAnswer);
       const expected = [...q.sourceAnswer].map((c,k) => c.charCodeAt(0)-65-(q.kind==='tc'?3*k:0));
       assert.deepEqual(q.ans, expected);

@@ -12,7 +12,7 @@
  "blocks": [
   {
    "type": "gre-qset",
-   "base": "courses/gre-zt/img/",
+   "base": "courses/gre-zt/",
    "source": "张巍GRE填空机经2000题 · Test 8 Section 1",
    "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
    "items": [
@@ -35,9 +35,6 @@
      "nopt": 5,
      "ans": [
       1
-     ],
-     "imgs": [
-      "u15-test08-s1-q1-p31.webp"
      ]
     },
     {
@@ -65,9 +62,6 @@
      "ans": [
       0,
       1
-     ],
-     "imgs": [
-      "u15-test08-s1-q2-p31.webp"
      ]
     },
     {
@@ -101,10 +95,6 @@
       0,
       1,
       1
-     ],
-     "imgs": [
-      "u15-test08-s1-q3-p31.webp",
-      "u15-test08-s1-q3-p32.webp"
      ]
     },
     {
@@ -128,9 +118,6 @@
      "ans": [
       0,
       1
-     ],
-     "imgs": [
-      "u15-test08-s1-q4-p32.webp"
      ]
     },
     {
@@ -154,9 +141,6 @@
      "ans": [
       0,
       1
-     ],
-     "imgs": [
-      "u15-test08-s1-q5-p32.webp"
      ]
     },
     {
@@ -180,9 +164,6 @@
      "ans": [
       1,
       5
-     ],
-     "imgs": [
-      "u15-test08-s1-q6-p32.webp"
      ]
     },
     {
@@ -206,9 +187,6 @@
      "ans": [
       2,
       5
-     ],
-     "imgs": [
-      "u15-test08-s1-q7-p32.webp"
      ]
     }
    ]

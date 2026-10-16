@@ -1,5 +1,5 @@
 """Build the first 50 Zhang Wei text-completion sections. Local sources only.
-Run with bundled Python: build.py [--source-dir PATH] [--no-images].
+Run with bundled Python: build.py [--source-dir PATH].
 """
 import argparse
 import hashlib
@@ -9,7 +9,6 @@ import unicodedata
 from pathlib import Path
 
 import pdfplumber
-import pypdfium2 as pdfium
 
 REPO = Path(__file__).resolve().parents[3]
 OUT = REPO / 'courses/gre-zt'
@@ -75,7 +74,6 @@ def extract(pdf):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--source-dir',type=Path,default=Path('C:/projects/learning/GRE prep/张巍GRE/verbal'))
-    ap.add_argument('--no-images',action='store_true')
     args=ap.parse_args()
     pdf=next(args.source_dir.glob('*2000*.pdf'))
     key=args.source_dir/'填空2000答案.txt'
@@ -87,8 +85,6 @@ def main():
             keys[t,int(m[1])]=[x for x in m[2].strip().split('/') if x]
     sections=extract(pdf)
     OUT.mkdir(parents=True,exist_ok=True)
-    (OUT/'img').mkdir(exist_ok=True)
-    renderer=pdfium.PdfDocument(str(pdf))
     units=[]
     audit=[]
     for si,s in enumerate(sections,1):
@@ -113,26 +109,13 @@ def main():
                 assert len(a)==(2 if kind=='se' else 1),(si,q,a)
                 it.update(nopt=n,ans=[LETTERS.index(c) for c in a])
                 it['txt']['opts']=[q['opts'][c] for c in LETTERS[:n]]
-            imgs=[]
-            p0,y0=q['start'];p1,y1=q['end']
-            for pn in range(p0,p1+1):
-                top=y0 if pn==p0 else 48
-                bottom=y1 if pn==p1 else 786
-                if bottom-top<5:continue
-                name=f'{uid}-q{q["n"]}-p{pn+1}.webp'
-                imgs.append(name)
-                if not args.no_images:
-                    pg=renderer[pn]
-                    image=pg.render(scale=1.8).to_pil()
-                    image.crop((round(48*1.8),round(top*1.8),round(553*1.8),round(bottom*1.8))).save(OUT/'img'/name,quality=85)
-                    pg.close()
-            it['imgs']=imgs
+            p0,_=q['start'];p1,_=q['end']
             items.append(it)
             audit.append({'unit':uid,'question':q['n'],'pages':[p0+1,p1+1],'sourceAnswer':a,'options':n})
         unit={'id':uid,'title':title,'en':f'Text Completion — Test {s["test"]}, Section {s["section"]}',
               'minutes':15,'practice':True,'answerFormat':'gre-zt-v1','objectives':[
                   '独立完成7道原题，整节完成后提交。','提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。'],
-              'blocks':[{'type':'gre-qset','base':'courses/gre-zt/img/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
+              'blocks':[{'type':'gre-qset','base':'courses/gre-zt/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
                          'noteTail':'（原题及配套答案，仅供个人学习；暂不附讲解）','items':items}],'references':[]}
         (OUT/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
         units.append({k:unit[k] for k in ['id','title','en','minutes','practice']}|{'file':f'{uid}.json','hasQuiz':False,'difficulty':s['difficulty']})

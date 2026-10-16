@@ -22,7 +22,9 @@ def validate_qset(unit, cdir):
         w = f'{uid} 第 {i} 题'
         kind = it.get('kind'); ans = it.get('ans')
         if kind not in ('qc', 'mc1', 'mcn', 'ne', 'se', 'tc', 'ss'): e.append(f'{w}: kind 不对'); continue
-        for p in (it.get('imgs') or [it.get('img')]): need(p, w)
+        for p in (it.get('imgs') or ([it['img']] if it.get('img') else [])): need(p, w)
+        if not it.get('txt') and not it.get('imgs') and not it.get('img'):
+            e.append(f'{w}: 缺少题目文字或图片')
         if it.get('exp') is not None: need(it.get('exp'), w)
         if it.get('fig'): need(it['fig'], w)
         tx = it.get('txt')

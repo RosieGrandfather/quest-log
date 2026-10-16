@@ -1,0 +1,5357 @@
+{
+  "date": "2026-10-16",
+  "course": "gre-zt",
+  "questions": 350,
+  "supported": 349,
+  "versionDependent": 1,
+  "differentCandidateCount": 0,
+  "answerKeysChanged": 0,
+  "method": "逐题阅读题干及全部选项后推理；非盲审、非ETS官方答案认证。另核对本地TXT映射、PDF文字及选项顺序；疑难题回看原页并查询公开同题版本。",
+  "sourcePDFSHA256": "08af079fff905e997673c6b6037ca9a56d0bc7634cf7b83039ac2d9b9909fb23",
+  "answerTXTSHA256": "aff7ea0ea7137de7c72e2bad88472d0a37e19e6ea6918a343c1147d32f398822",
+  "externalChecks": [
+    {
+      "lesson": 14,
+      "question": 5,
+      "url": "https://gre.kmf.com/explain/index/81w0ok",
+      "observation": "相同题干、不同选项版本；该页选项包含circumscribed/restricted。不能把该版本字母搬入本地版本。"
+    },
+    {
+      "lesson": 14,
+      "question": 5,
+      "url": "https://gre.myprepclub.com/forum/the-book-brings-together-many-valuable-reports-on-conservation-project-30502.html",
+      "observation": "与本地相同的选项版本给BC；论坛标注Official Answer不等于ETS认证。"
+    },
+    {
+      "lesson": 42,
+      "question": 4,
+      "url": "https://cc.xdf.cn/gre/201708/298360750.html",
+      "observation": "公开同题也出现enlivened等不顺措辞，不能据此擅自补写否定。"
+    },
+    {
+      "lesson": 47,
+      "question": 1,
+      "url": "https://gre.kmf.com/explain/index/0cw89k",
+      "observation": "同题句尾同样不顺，页面答案D。"
+    },
+    {
+      "lesson": 2,
+      "question": 5,
+      "url": "https://www.sohu.com/a/291241431_479533",
+      "observation": "相同题文与选项，作者给CD，与本轮brook/tolerate推理相符。"
+    }
+  ],
+  "items": [
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "cosmopolitan与insular构成悖论",
+      "sourcePDFPages": [
+        14
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "氧气可有非生物来源，检测到不代表明确生命迹象",
+      "sourcePDFPages": [
+        14
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BEG",
+      "reviewCandidate": "BEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "毒素来源不明，蛙不自行制造，甲虫被吃下",
+      "sourcePDFPages": [
+        14
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "研究者会屈从偏见，succumb与yield等价",
+      "sourcePDFPages": [
+        14
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "only支持独一无二，singular与unique等价；题首措辞有误",
+      "sourcePDFPages": [
+        14
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "overstatement对应exaggeration与hyperbole",
+      "sourcePDFPages": [
+        14,
+        15
+      ]
+    },
+    {
+      "unit": "u01-test01-s1",
+      "lesson": 1,
+      "test": 1,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "事后证实警告有预见性，prescient与prophetic",
+      "sourcePDFPages": [
+        15
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "闹鬼是超自然现象，对应numinous",
+      "sourcePDFPages": [
+        15
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "只有洞主可分享，说明传说具有专有性质",
+      "sourcePDFPages": [
+        15
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "好声誉和穷尽调查支持不应轻易反驳",
+      "sourcePDFPages": [
+        15
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "AEG",
+      "reviewCandidate": "AEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "竞拍激烈，兴趣拓宽，收藏更全面",
+      "sourcePDFPages": [
+        15,
+        16
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "坚持修改不妥协，brook与tolerate均为容忍",
+      "sourcePDFPages": [
+        16
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "蚂蚁利他互助，对应beneficence与altruism",
+      "sourcePDFPages": [
+        16
+      ]
+    },
+    {
+      "unit": "u02-test01-s2",
+      "lesson": 2,
+      "test": 1,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "准确描绘外界，对应realism与verisimilitude",
+      "sourcePDFPages": [
+        16
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "总体规律与局部不可预测形成对比",
+      "sourcePDFPages": [
+        16
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "复苏不均，一处微弱而另一处强劲",
+      "sourcePDFPages": [
+        16
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BDG",
+      "reviewCandidate": "BDG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "信号丰富造成难题，语境变化又加剧难题",
+      "sourcePDFPages": [
+        16,
+        17
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "急躁表象掩盖耐心，irascibility与exasperation",
+      "sourcePDFPages": [
+        17
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "总追求极致，extremist与zealot",
+      "sourcePDFPages": [
+        17
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "简单行为与旧迷宫复杂性相反",
+      "sourcePDFPages": [
+        17
+      ]
+    },
+    {
+      "unit": "u03-test02-s1",
+      "lesson": 3,
+      "test": 2,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "匿名审稿维护公平与客观",
+      "sourcePDFPages": [
+        17
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "轻视科学甚至炫耀无知，选boast of",
+      "sourcePDFPages": [
+        17,
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "火车能效高但常空驶",
+      "sourcePDFPages": [
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "偏见是局限，本书却客观",
+      "sourcePDFPages": [
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CFI",
+      "reviewCandidate": "CFI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "科学成为褒称，可靠性已确立且结果难质疑",
+      "sourcePDFPages": [
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "只认营养使审美要求显得无根据",
+      "sourcePDFPages": [
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "混合成人儿童视角且无统一逻辑，拼凑之意",
+      "sourcePDFPages": [
+        18
+      ]
+    },
+    {
+      "unit": "u04-test02-s2",
+      "lesson": 4,
+      "test": 2,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "fractiousness反面为随和，affable与easygoing",
+      "sourcePDFPages": [
+        18,
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "脉冲虽轻微却规律，可据以推断行星",
+      "sourcePDFPages": [
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "未必赞成焚烧，但不愿缩小处置选项",
+      "sourcePDFPages": [
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CDI",
+      "reviewCandidate": "CDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "关注丑景仍须记录，不以审美为取舍",
+      "sourcePDFPages": [
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "虽未获投票权，部分其他目标已实现",
+      "sourcePDFPages": [
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "各篇主题不同，heterogeneous与disparate",
+      "sourcePDFPages": [
+        19
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "利益对立，adversarial与antagonistic",
+      "sourcePDFPages": [
+        19,
+        20
+      ]
+    },
+    {
+      "unit": "u05-test03-s1",
+      "lesson": 5,
+      "test": 3,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "两派互有特征，未必截然对立",
+      "sourcePDFPages": [
+        20
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "从富人艺术品收藏转向数据，前者是寻宝",
+      "sourcePDFPages": [
+        20
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "果断领导与前任犹豫形成反差",
+      "sourcePDFPages": [
+        20
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "好坏易褒贬，混合质量更费力，须筛选",
+      "sourcePDFPages": [
+        20
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BFG",
+      "reviewCandidate": "BFG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "清楚文本易理解，歧义提供多种有效解释的吸引力",
+      "sourcePDFPages": [
+        20,
+        21
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "越过边界仍遵从通常物理规律，平常无奇",
+      "sourcePDFPages": [
+        21
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "热容量大减弱温度变化，mutes与attenuates",
+      "sourcePDFPages": [
+        21
+      ]
+    },
+    {
+      "unit": "u06-test03-s2",
+      "lesson": 6,
+      "test": 3,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "truly标出典型菜谱，paradigmatic与archetypal",
+      "sourcePDFPages": [
+        21
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "motley assortment对照monolithic统一整体",
+      "sourcePDFPages": [
+        21
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "幼儿虽不熟练却可爱，快乐能感染他人",
+      "sourcePDFPages": [
+        21
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "主动提问使读者掌控，不再服从作者组织",
+      "sourcePDFPages": [
+        21,
+        22
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "破坏事例多但多数物种影响很小",
+      "sourcePDFPages": [
+        22
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "与天气重击比较，近亲繁殖因素相对不显著",
+      "sourcePDFPages": [
+        22
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "国际中立意味着不因国籍驱逐成员",
+      "sourcePDFPages": [
+        22
+      ]
+    },
+    {
+      "unit": "u07-test04-s1",
+      "lesson": 7,
+      "test": 4,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "DE",
+      "reviewCandidate": "DE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "简单编号掩盖蛋白重要性，belie与mask",
+      "sourcePDFPages": [
+        22
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "可靠资料少且不甚了解，属于enigmatic",
+      "sourcePDFPages": [
+        22,
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "只能以自身时代理解，对应不可通约",
+      "sourcePDFPages": [
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "漫无目的的离题可由缺点变优点",
+      "sourcePDFPages": [
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEG",
+      "reviewCandidate": "CEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "连常见种也受威胁，保护是责任且不可抛弃",
+      "sourcePDFPages": [
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "选择非传统但本人不自认叛逆或特殊",
+      "sourcePDFPages": [
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "尽管重要却少获国际研究关注",
+      "sourcePDFPages": [
+        23
+      ]
+    },
+    {
+      "unit": "u08-test04-s2",
+      "lesson": 8,
+      "test": 4,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "大胆推测可能暂无线索，unfounded与baseless",
+      "sourcePDFPages": [
+        23,
+        24
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "沟通演变为争吵说明缺少和睦",
+      "sourcePDFPages": [
+        24
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "家庭教育不是异类，反而体现主流原则",
+      "sourcePDFPages": [
+        24
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BFH",
+      "reviewCandidate": "BFH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "艰难不可避免，不退缩才能胜利",
+      "sourcePDFPages": [
+        24
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "反射声能在观众区扩散，diffuse与spread",
+      "sourcePDFPages": [
+        24
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "同质作品回报不等，公平观念站不住脚",
+      "sourcePDFPages": [
+        24,
+        25
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "科学术语掩盖决定，让过程不透明",
+      "sourcePDFPages": [
+        25
+      ]
+    },
+    {
+      "unit": "u09-test05-s1",
+      "lesson": 9,
+      "test": 5,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "声称想妥协却未达成，proclaimed与professed",
+      "sourcePDFPages": [
+        25
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "早逝且作品少，生涯短暂",
+      "sourcePDFPages": [
+        25
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不冲动且谨慎，因此暂不表白",
+      "sourcePDFPages": [
+        25
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "由观测外推是优点，未来像现在则是局限",
+      "sourcePDFPages": [
+        25
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEI",
+      "reviewCandidate": "CEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "昂贵且无实用价值才构成炫富论证",
+      "sourcePDFPages": [
+        25,
+        26
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "拒绝创新对应古旧，antediluvian与archaic",
+      "sourcePDFPages": [
+        26
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "精度须足以识别有意义变化",
+      "sourcePDFPages": [
+        26
+      ]
+    },
+    {
+      "unit": "u10-test05-s2",
+      "lesson": 10,
+      "test": 5,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "找出错误帮助发展更好理论",
+      "sourcePDFPages": [
+        26
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "威胁超越全国其余地区，经济已领先他区",
+      "sourcePDFPages": [
+        26
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "每任都承诺整顿，腐败恶名持续",
+      "sourcePDFPages": [
+        26
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "水磨地点受限但收益可靠，投资回报更好",
+      "sourcePDFPages": [
+        26,
+        27
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "庄重初印象与好斗本性形成反差",
+      "sourcePDFPages": [
+        27
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "双面间谍风险更高，precarious与perilous",
+      "sourcePDFPages": [
+        27
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "锻炼延缓衰退，stave off与forestall",
+      "sourcePDFPages": [
+        27
+      ]
+    },
+    {
+      "unit": "u11-test06-s1",
+      "lesson": 11,
+      "test": 6,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "从短暂灵感转为贯穿生活的创造力",
+      "sourcePDFPages": [
+        27
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "与悲观相反，sanguine乐观",
+      "sourcePDFPages": [
+        27,
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "先理论远多于数据，后数据淘汰多数理论",
+      "sourcePDFPages": [
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AFH",
+      "reviewCandidate": "AFH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "发布指南警告困扰发达社会的疾病",
+      "sourcePDFPages": [
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "虽非本质不可信，但依赖推测因而存疑",
+      "sourcePDFPages": [
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "视觉显著掩盖质量占比小",
+      "sourcePDFPages": [
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "相互关联且似有矛盾使材料复杂",
+      "sourcePDFPages": [
+        28
+      ]
+    },
+    {
+      "unit": "u12-test06-s2",
+      "lesson": 12,
+      "test": 6,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "翻译艰深导致读者难以理解",
+      "sourcePDFPages": [
+        28,
+        29
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "最愤怒绰号对应暴躁",
+      "sourcePDFPages": [
+        29
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "博学且当时书籍少，反差加强惊叹",
+      "sourcePDFPages": [
+        29
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CEI",
+      "reviewCandidate": "CEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "提前多年完成令人惊讶，热情使团队振奋",
+      "sourcePDFPages": [
+        29
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "无关信号浪费带宽，irrelevant与extraneous",
+      "sourcePDFPages": [
+        29
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "改造生态会产生意外权衡",
+      "sourcePDFPages": [
+        29,
+        30
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "削薪减福利语境批评企业贪婪",
+      "sourcePDFPages": [
+        30
+      ]
+    },
+    {
+      "unit": "u13-test07-s1",
+      "lesson": 13,
+      "test": 7,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "clarity直接解释limpid与pellucid",
+      "sourcePDFPages": [
+        30
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "从多来源拼凑，pastiche",
+      "sourcePDFPages": [
+        30
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "另一研究相似说明并非反常个例",
+      "sourcePDFPages": [
+        30
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "谨慎者不仓促，暂缓表白",
+      "sourcePDFPages": [
+        30
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "异乡感源于对民主的反感，而非出生地",
+      "sourcePDFPages": [
+        30,
+        31
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "version-dependent-low-confidence",
+      "basis": "本版仅BC能组成关联性的词对；地理样本狭窄更自然应为restricted类，存在不同选项版本，低把握保留",
+      "sourcePDFPages": [
+        31
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "疑问是为何数学魅力不普及，prevalent与widespread",
+      "sourcePDFPages": [
+        31
+      ]
+    },
+    {
+      "unit": "u14-test07-s2",
+      "lesson": 14,
+      "test": 7,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "制度缺陷可能削弱经济表现",
+      "sourcePDFPages": [
+        31
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "逃离片名与拍摄时出走念头相合",
+      "sourcePDFPages": [
+        31
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "少数过苛之处例外，整体仍公允",
+      "sourcePDFPages": [
+        31
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEH",
+      "reviewCandidate": "AEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "体育不损学习，甚至改善成绩",
+      "sourcePDFPages": [
+        31,
+        32
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "营养像肥料促藻类繁殖",
+      "sourcePDFPages": [
+        32
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "社会混乱对照自然秩序与稳定",
+      "sourcePDFPages": [
+        32
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "物种分类困惑对应riddle与conundrum",
+      "sourcePDFPages": [
+        32
+      ]
+    },
+    {
+      "unit": "u15-test08-s1",
+      "lesson": 15,
+      "test": 8,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "从模糊哲学概念变成近可观测对象",
+      "sourcePDFPages": [
+        32
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "赞扬对照批评，animadversion为批评",
+      "sourcePDFPages": [
+        32,
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "由丰富资源变成依赖资源，因贪婪耗竭",
+      "sourcePDFPages": [
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "遗漏重要实验音乐使论述有问题",
+      "sourcePDFPages": [
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "AFI",
+      "reviewCandidate": "AFI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "巨大事件方可检测，效应仍极微小",
+      "sourcePDFPages": [
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不符合预期形象，anomaly与aberration",
+      "sourcePDFPages": [
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "六十年代已如此，因此并非新颖",
+      "sourcePDFPages": [
+        33
+      ]
+    },
+    {
+      "unit": "u16-test08-s2",
+      "lesson": 16,
+      "test": 8,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "DE",
+      "reviewCandidate": "DE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "变亮逆转之前变暗趋势",
+      "sourcePDFPages": [
+        33,
+        34
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "DNA鉴定结束此前猜测",
+      "sourcePDFPages": [
+        34
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "野外找不到祖先，使起源不明显",
+      "sourcePDFPages": [
+        34
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BDH",
+      "reviewCandidate": "BDH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "课题已充分研究，难找到新意",
+      "sourcePDFPages": [
+        34
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "非人化设计拒绝人类中心特征",
+      "sourcePDFPages": [
+        34
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "后续讨论建立其上，bedrock与foundations",
+      "sourcePDFPages": [
+        34,
+        35
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "双面间谍更危险，与第11节重复且答案一致",
+      "sourcePDFPages": [
+        35
+      ]
+    },
+    {
+      "unit": "u17-test09-s1",
+      "lesson": 17,
+      "test": 9,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "纽约接受态度不明朗仍远传西岸，confused与muddled；wary和hostile不等价",
+      "sourcePDFPages": [
+        35
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "复杂不可预测流程使原本分明职责混杂",
+      "sourcePDFPages": [
+        35
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "资料不新但结论创新，不宜说衍生缺新意",
+      "sourcePDFPages": [
+        35
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "少暗中抱怨，多公开对话",
+      "sourcePDFPages": [
+        35
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BEG",
+      "reviewCandidate": "BEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "历史商业化为可供公众消费的产物",
+      "sourcePDFPages": [
+        35,
+        36
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "信息丰富但利用率低",
+      "sourcePDFPages": [
+        36
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "预见性的警告与出人意料形成反差",
+      "sourcePDFPages": [
+        36
+      ]
+    },
+    {
+      "unit": "u18-test09-s2",
+      "lesson": 18,
+      "test": 9,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "蚂蚁分享食物牺牲自身体现利他",
+      "sourcePDFPages": [
+        36
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "独裁预期反面是平等作风",
+      "sourcePDFPages": [
+        36
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "他们值得赞赏，不赞赏就刻薄",
+      "sourcePDFPages": [
+        36,
+        37
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEH",
+      "reviewCandidate": "AEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "复制若致衰退应扩大保护；若繁荣则研究原因",
+      "sourcePDFPages": [
+        37
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "电网遍布对应长期扩张",
+      "sourcePDFPages": [
+        37
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "encomiums是颂扬，对应exalt与valorize",
+      "sourcePDFPages": [
+        37
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不只接受而且喜爱捉弄读者",
+      "sourcePDFPages": [
+        37
+      ]
+    },
+    {
+      "unit": "u19-test10-s1",
+      "lesson": 19,
+      "test": 10,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不贡献理解是缺点，shortcoming与fault",
+      "sourcePDFPages": [
+        37
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "沉着教师与易变学生形成反差",
+      "sourcePDFPages": [
+        38
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "建筑人口越来越多样，旧声誉是同质",
+      "sourcePDFPages": [
+        38
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "虽词源讨论深奥，但结论不深奥",
+      "sourcePDFPages": [
+        38
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "利他差异若为假象、人人自利，会违背日常观察",
+      "sourcePDFPages": [
+        38
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "下跌可能只是回升前暂歇",
+      "sourcePDFPages": [
+        38
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "对专家和普通读者皆使其满意",
+      "sourcePDFPages": [
+        38,
+        39
+      ]
+    },
+    {
+      "unit": "u20-test10-s2",
+      "lesson": 20,
+      "test": 10,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "依赖前人记录，需要精确细致",
+      "sourcePDFPages": [
+        39
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "四维数学少人理解，esoteric",
+      "sourcePDFPages": [
+        39
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "为改革辩护小量不道德权谋",
+      "sourcePDFPages": [
+        39
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "控人口政策虽实施，偏远地区仍增长并威胁虎",
+      "sourcePDFPages": [
+        39
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "全部重要发现均收录，百科全书式且全面",
+      "sourcePDFPages": [
+        39
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "高尚目标不等于从业者无可指责",
+      "sourcePDFPages": [
+        39,
+        40
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "自谦且赞竞争者说明谦逊",
+      "sourcePDFPages": [
+        40
+      ]
+    },
+    {
+      "unit": "u21-test11-s1",
+      "lesson": 21,
+      "test": 11,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "昔日不切实际的理想进入主流后任务完成",
+      "sourcePDFPages": [
+        40
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "新闻照片对应纪实性",
+      "sourcePDFPages": [
+        40
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "任何问题同样热情，对应不加选择",
+      "sourcePDFPages": [
+        40
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不受政府干预，所以自主裁量",
+      "sourcePDFPages": [
+        40,
+        41
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BEH",
+      "reviewCandidate": "BEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "常见理由是实用收益，民主收益少提而应提",
+      "sourcePDFPages": [
+        41
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "科学修正常见，但此观察仍坚实",
+      "sourcePDFPages": [
+        41
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "与掌中隐形阅读器相反，实体书笨重",
+      "sourcePDFPages": [
+        41
+      ]
+    },
+    {
+      "unit": "u22-test11-s2",
+      "lesson": 22,
+      "test": 11,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "趋向可预测事物是偏好，不是摇摆",
+      "sourcePDFPages": [
+        41
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "实际纪律严且强硬，软弱名声虚假",
+      "sourcePDFPages": [
+        41
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "众人着迷，他却贬低，属于唱反调",
+      "sourcePDFPages": [
+        41,
+        42
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "ADG",
+      "reviewCandidate": "ADG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "限制主观性侵入，避免污染研究",
+      "sourcePDFPages": [
+        42
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "难达共识说明与会者不驯或烦躁",
+      "sourcePDFPages": [
+        42
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "交付比想象难，是障碍",
+      "sourcePDFPages": [
+        42
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不拘机械规则意味着灵活适应",
+      "sourcePDFPages": [
+        42
+      ]
+    },
+    {
+      "unit": "u23-test12-s1",
+      "lesson": 23,
+      "test": 12,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "看似荒诞过时却持续流传，persistence与survival",
+      "sourcePDFPages": [
+        42,
+        43
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "有理即可接受，实验只是敷衍",
+      "sourcePDFPages": [
+        43
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "石材再利用遮蔽原用途，分类更难",
+      "sourcePDFPages": [
+        43
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "ADI",
+      "reviewCandidate": "ADI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "选项过量可致瘫痪，限制可成为优点，放弃部分优势换安心",
+      "sourcePDFPages": [
+        43
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "照相丰富艺术，但描摹绕过难度导致呆板",
+      "sourcePDFPages": [
+        43
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "专利本应促进创新",
+      "sourcePDFPages": [
+        43,
+        44
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "成功策略可振奋工运",
+      "sourcePDFPages": [
+        44
+      ]
+    },
+    {
+      "unit": "u24-test12-s2",
+      "lesson": 24,
+      "test": 12,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "鱼叉等工具是实用功能物",
+      "sourcePDFPages": [
+        44
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "新作敢批评与旧传记谄媚对照",
+      "sourcePDFPages": [
+        44
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "概率科学有边界，道德确定性在外",
+      "sourcePDFPages": [
+        44
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEG",
+      "reviewCandidate": "AEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "早期非无联系但较浅，今天不能孤立",
+      "sourcePDFPages": [
+        44
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "经验主义形象与思辨推测形成反差；题干有明显措辞损坏",
+      "sourcePDFPages": [
+        44,
+        45
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "太阳风减弱对应平静",
+      "sourcePDFPages": [
+        45
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "慈善可能引出其他捐赠，与犬儒看法相反",
+      "sourcePDFPages": [
+        45
+      ]
+    },
+    {
+      "unit": "u25-test13-s1",
+      "lesson": 25,
+      "test": 13,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "空中看不出地面所显艺术性，reveal与manifest",
+      "sourcePDFPages": [
+        45
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "新空间提供服务所需条件，wherewithal",
+      "sourcePDFPages": [
+        45
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "各大陆重复演化说明独立起源",
+      "sourcePDFPages": [
+        45,
+        46
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "选择分组评论属解释，也有教育作用",
+      "sourcePDFPages": [
+        46
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CDG",
+      "reviewCandidate": "CDG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "高手精心布局，早先细节后获意义",
+      "sourcePDFPages": [
+        46
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "低等灵长类中是更原始简陋形式",
+      "sourcePDFPages": [
+        46
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "揭开甜美表层露出苦涩，strips away与removes",
+      "sourcePDFPages": [
+        46
+      ]
+    },
+    {
+      "unit": "u26-test13-s2",
+      "lesson": 26,
+      "test": 13,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "风格组织问题使难读，末段改善可读性",
+      "sourcePDFPages": [
+        46
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "并非一致而是多争论",
+      "sourcePDFPages": [
+        47
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "mercurial对应inconstancy善变",
+      "sourcePDFPages": [
+        47
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "演出要求高但非跨媒介陌生，批评者误读",
+      "sourcePDFPages": [
+        47
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "让对方提己方所求，再同意其要求",
+      "sourcePDFPages": [
+        47
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "评论者打瞌睡，somnolent与lethargic",
+      "sourcePDFPages": [
+        47
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "时间管理不能增加一生分钟数",
+      "sourcePDFPages": [
+        47,
+        48
+      ]
+    },
+    {
+      "unit": "u27-test14-s1",
+      "lesson": 27,
+      "test": 14,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "无梯度时新律可由旧律推出，inferable与entailed",
+      "sourcePDFPages": [
+        48
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "quixotic呼应过去不现实，如今不再如此",
+      "sourcePDFPages": [
+        48
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "地方政府可作试验室先行测试",
+      "sourcePDFPages": [
+        48
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "常规油气生成后迁移，页岩气留原地",
+      "sourcePDFPages": [
+        48
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "ADI",
+      "reviewCandidate": "ADI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "Review赚钱却呆板，学识权威但缺生气",
+      "sourcePDFPages": [
+        48,
+        49
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "科学方法绕开偏见，bypass与circumvent",
+      "sourcePDFPages": [
+        49
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "demise提示衰亡，decay与deterioration；transience无对应词",
+      "sourcePDFPages": [
+        49
+      ]
+    },
+    {
+      "unit": "u28-test14-s2",
+      "lesson": 28,
+      "test": 14,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "自由对照束缚压制",
+      "sourcePDFPages": [
+        49
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "克制冷峻遏制煽情潜能",
+      "sourcePDFPages": [
+        49
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "争执不休因为双方都不妥协",
+      "sourcePDFPages": [
+        49
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "ADG",
+      "reviewCandidate": "ADG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "文化可在意识外形成，不需主动参与亦难报告",
+      "sourcePDFPages": [
+        49,
+        50
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "中心控制周边说明等级分层",
+      "sourcePDFPages": [
+        50
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "政策害经济却不可能撤回",
+      "sourcePDFPages": [
+        50
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "声称纪实但实际虚构",
+      "sourcePDFPages": [
+        50
+      ]
+    },
+    {
+      "unit": "u29-test15-s1",
+      "lesson": 29,
+      "test": 15,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "媒体赞誉与员工负评对照",
+      "sourcePDFPages": [
+        50
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "丰富表情对照面无表情",
+      "sourcePDFPages": [
+        50,
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "中国增量放慢且油价拖累需求",
+      "sourcePDFPages": [
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BDG",
+      "reviewCandidate": "BDG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "衰退原因也反常，丑闻损信任，皆增长阻力",
+      "sourcePDFPages": [
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "直觉以为诚实要学，实际上说谎认知更高级并需社交技能",
+      "sourcePDFPages": [
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "久无疗法象征徒劳",
+      "sourcePDFPages": [
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "军装华饰对照其他领袖低调朴素",
+      "sourcePDFPages": [
+        51
+      ]
+    },
+    {
+      "unit": "u30-test15-s2",
+      "lesson": 30,
+      "test": 15,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "保护行星与惯常危险印象相反",
+      "sourcePDFPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "公众无力且认命，少被激励行动",
+      "sourcePDFPages": [
+        52
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "承诺重思但结论熟悉正统",
+      "sourcePDFPages": [
+        52
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "神话颂平等而实践不相称，仍分层",
+      "sourcePDFPages": [
+        52
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "迷惑读者是作者所喜爱的角色",
+      "sourcePDFPages": [
+        52
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "未明说评判，但提供推测",
+      "sourcePDFPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "总量近似而人均差距大",
+      "sourcePDFPages": [
+        53
+      ]
+    },
+    {
+      "unit": "u31-test16-s1",
+      "lesson": 31,
+      "test": 16,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "听众拒新求熟，novel与original",
+      "sourcePDFPages": [
+        53
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "无碎片陨坑，假说未证实",
+      "sourcePDFPages": [
+        53
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "单份备忘难改动机，寄望于此不现实",
+      "sourcePDFPages": [
+        53
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "微不足道碎片变重要中心物；objective措辞异常",
+      "sourcePDFPages": [
+        53
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CDH",
+      "reviewCandidate": "CDH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "同辈互动形成身份，结小团体现群聚",
+      "sourcePDFPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "年代边界争议使概念难把握",
+      "sourcePDFPages": [
+        54
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不认真对待进化逻辑属于滥用",
+      "sourcePDFPages": [
+        54
+      ]
+    },
+    {
+      "unit": "u32-test16-s2",
+      "lesson": 32,
+      "test": 16,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "晋升机会过去受阻，如今见希望",
+      "sourcePDFPages": [
+        54
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "vapid对应jejune空洞",
+      "sourcePDFPages": [
+        54
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "厌谄媚却需服从，故发矛盾信号",
+      "sourcePDFPages": [
+        54,
+        55
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "传说要求1295年前不知面食，早期文献可驳倒",
+      "sourcePDFPages": [
+        55
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "达成共识面对难驯人群",
+      "sourcePDFPages": [
+        55
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "读者寻找谴责会失望，非长篇抨击",
+      "sourcePDFPages": [
+        55
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "好日子仅换短暂缓解党内挑战",
+      "sourcePDFPages": [
+        55
+      ]
+    },
+    {
+      "unit": "u33-test17-s1",
+      "lesson": 33,
+      "test": 17,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不认可跨设计门类界限，视为限制",
+      "sourcePDFPages": [
+        55
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "废料量小但处置问题重大",
+      "sourcePDFPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "症状多样且像别病，诊断靠描述",
+      "sourcePDFPages": [
+        56
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "堵车被反常解释为城市健康而非衰败",
+      "sourcePDFPages": [
+        56
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "ADI",
+      "reviewCandidate": "ADI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "各种疾病疗法被认作有益且获资助",
+      "sourcePDFPages": [
+        56
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "敏感争议话题易激怒他人",
+      "sourcePDFPages": [
+        56
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "海洋理解仍初步零碎",
+      "sourcePDFPages": [
+        56,
+        57
+      ]
+    },
+    {
+      "unit": "u34-test17-s2",
+      "lesson": 34,
+      "test": 17,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "较低灵长类有初级文化语言",
+      "sourcePDFPages": [
+        57
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "古城历史长弥补现代城年轻数据少",
+      "sourcePDFPages": [
+        57
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不应把评论者个人放中心，却流行自白书评",
+      "sourcePDFPages": [
+        57
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BEI",
+      "reviewCandidate": "BEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "生物学家乐于把成功联系社会性合作",
+      "sourcePDFPages": [
+        57
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "先前慷慨捐款未预示此次规模",
+      "sourcePDFPages": [
+        57
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "旧暗冰滑走露出洁净新冰",
+      "sourcePDFPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不笑且阴沉，lugubrious与gloomy",
+      "sourcePDFPages": [
+        58
+      ]
+    },
+    {
+      "unit": "u35-test18-s1",
+      "lesson": 35,
+      "test": 18,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "系统起源时代环境多样，heterogeneity与diversity",
+      "sourcePDFPages": [
+        58
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "研究少样本小，结论仍推测",
+      "sourcePDFPages": [
+        58
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "传闻而非控制研究属于轶事",
+      "sourcePDFPages": [
+        58
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "尖刻讽刺却喜爱参与其描述的难忍世界",
+      "sourcePDFPages": [
+        58
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "ADG",
+      "reviewCandidate": "ADG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "版画较不传统，与旧技有相似，雕刻材料本地产",
+      "sourcePDFPages": [
+        58,
+        59
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "比前代更重妇女权益，champion与defend",
+      "sourcePDFPages": [
+        59
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "盲从过时目标束缚损害自身",
+      "sourcePDFPages": [
+        59
+      ]
+    },
+    {
+      "unit": "u36-test18-s2",
+      "lesson": 36,
+      "test": 18,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "挑衅喜剧与内在温厚对照",
+      "sourcePDFPages": [
+        59
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "灾难片不求写实，批评不可信并不适当",
+      "sourcePDFPages": [
+        59
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "技术不减少推理需要，不可让原始数据取代推理",
+      "sourcePDFPages": [
+        59,
+        60
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BEG",
+      "reviewCandidate": "BEG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "传统以为轮渡减堵减污，该错误观念吸引市长",
+      "sourcePDFPages": [
+        60
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "草药替代疗法绕开主流医疗",
+      "sourcePDFPages": [
+        60
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "一本替多本说明全面",
+      "sourcePDFPages": [
+        60
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "媒体贬低引来公众赞同嘲讽",
+      "sourcePDFPages": [
+        60
+      ]
+    },
+    {
+      "unit": "u37-test19-s1",
+      "lesson": 37,
+      "test": 19,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "多家医院开办体现学科增长",
+      "sourcePDFPages": [
+        60,
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "生物无穷多对应teem with",
+      "sourcePDFPages": [
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "名人已被详审，难寻新资料",
+      "sourcePDFPages": [
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "审视伪科学等思维缺陷，文字具有揭伪性质",
+      "sourcePDFPages": [
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CDH",
+      "reviewCandidate": "CDH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "适应海洋但在岸产仔，多在水中且鳍足陆行笨拙",
+      "sourcePDFPages": [
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "地面才显艺术性，空中无法揭示",
+      "sourcePDFPages": [
+        61
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "nothingness原为模糊哲学概念",
+      "sourcePDFPages": [
+        61,
+        62
+      ]
+    },
+    {
+      "unit": "u38-test19-s2",
+      "lesson": 38,
+      "test": 19,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "进化概念处理不严谨属于滥用",
+      "sourcePDFPages": [
+        62
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不仅有固有理论意义且可实际应用",
+      "sourcePDFPages": [
+        62
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "全部放开市场意味着国家放弃责任",
+      "sourcePDFPages": [
+        62
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "把服从当谄媚是误读，表面顺从掩盖憎恶",
+      "sourcePDFPages": [
+        62
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "忽略可行资源使悲观无根据",
+      "sourcePDFPages": [
+        62,
+        63
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "DE",
+      "reviewCandidate": "DE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "氮不断流失且难补，是顽固难解问题",
+      "sourcePDFPages": [
+        63
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "理论缺点被发现有利改善",
+      "sourcePDFPages": [
+        63
+      ]
+    },
+    {
+      "unit": "u39-test20-s1",
+      "lesson": 39,
+      "test": 20,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "DE",
+      "reviewCandidate": "DE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "年轻女学者增加预示比例改变",
+      "sourcePDFPages": [
+        63
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "与夸大自我相反，拒绝抬高作家角色",
+      "sourcePDFPages": [
+        63
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "A",
+      "reviewCandidate": "A",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "混合体裁说明无视传统界限",
+      "sourcePDFPages": [
+        63
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "为研究侦探小说先辩解，暗示读者分析者有问题",
+      "sourcePDFPages": [
+        63,
+        64
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEI",
+      "reviewCandidate": "CEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "争论山造冷或冷造山，冰雪正反馈可自持续",
+      "sourcePDFPages": [
+        64
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "一公式解释看似不同现象才构成悖论",
+      "sourcePDFPages": [
+        64
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "从严重减少甚至局部灭绝，语义递进",
+      "sourcePDFPages": [
+        64
+      ]
+    },
+    {
+      "unit": "u40-test20-s2",
+      "lesson": 40,
+      "test": 20,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "令人安心的初析若获确认，会减轻担忧",
+      "sourcePDFPages": [
+        64
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "自利动机说明理想化解释不真诚",
+      "sourcePDFPages": [
+        64,
+        65
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "政府干预与工会增强令企业被动",
+      "sourcePDFPages": [
+        65
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CDG",
+      "reviewCandidate": "CDG",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "传记仍赞颂使华盛顿神化，引来揭神话",
+      "sourcePDFPages": [
+        65
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "致病活动触发前无害",
+      "sourcePDFPages": [
+        65
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "陌生寒暗世界却显熟悉",
+      "sourcePDFPages": [
+        65
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "悲观忽视剩余资源而无根据",
+      "sourcePDFPages": [
+        65,
+        66
+      ]
+    },
+    {
+      "unit": "u41-test21-s1",
+      "lesson": 41,
+      "test": 21,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "宗教说教与不只虔敬情绪相照",
+      "sourcePDFPages": [
+        66
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "遍布撞击坑支持过程普遍",
+      "sourcePDFPages": [
+        66
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "AD",
+      "reviewCandidate": "AD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "女性以化名写作也可发声获收入，故赋权",
+      "sourcePDFPages": [
+        66
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BFH",
+      "reviewCandidate": "BFH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "夸大潜在收益募集资金，oversell",
+      "sourcePDFPages": [
+        66
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BEI",
+      "reviewCandidate": "BEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "场地奢华对照苦行般议程，彩色幻灯给感官缓解；enlivened句与此冲突，原PDF措辞问题",
+      "sourcePDFPages": [
+        66,
+        67
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "激烈演说与温和政治形象相反",
+      "sourcePDFPages": [
+        67
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不断重复的叔叔话多",
+      "sourcePDFPages": [
+        67
+      ]
+    },
+    {
+      "unit": "u42-test21-s2",
+      "lesson": 42,
+      "test": 21,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "结果混杂不一致，不足以推广方法",
+      "sourcePDFPages": [
+        67
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "已有当地种群则是扩充而非从零创建",
+      "sourcePDFPages": [
+        67
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AF",
+      "reviewCandidate": "AF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "电脑不擅基础技能反显其非凡",
+      "sourcePDFPages": [
+        67
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BFH",
+      "reviewCandidate": "BFH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "文风鲜明、短篇更佳、长篇难维持",
+      "sourcePDFPages": [
+        67,
+        68
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "外向使建筑师更显眼而非更必要",
+      "sourcePDFPages": [
+        68
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "想象别种现实可能有恢复益处",
+      "sourcePDFPages": [
+        68
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "虽有瑕疵仍未阻止尊重接纳",
+      "sourcePDFPages": [
+        68
+      ]
+    },
+    {
+      "unit": "u43-test22-s1",
+      "lesson": 43,
+      "test": 22,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "只求基本能力，远非完美",
+      "sourcePDFPages": [
+        68
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "节制形象与奢华生活矛盾",
+      "sourcePDFPages": [
+        68,
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "强烈情感对照克制语调",
+      "sourcePDFPages": [
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "小村人口不够盈利，旧剧场难想象而电影院普及",
+      "sourcePDFPages": [
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "柏拉图音乐紧连政治道德，今观觉得荒唐，仍有人认为文化意义深",
+      "sourcePDFPages": [
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "难听声而非旋律，shrieking与caterwauling",
+      "sourcePDFPages": [
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "早期作品预示后期特征",
+      "sourcePDFPages": [
+        69
+      ]
+    },
+    {
+      "unit": "u44-test22-s2",
+      "lesson": 44,
+      "test": 22,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "词义取决语境，术语广泛包容",
+      "sourcePDFPages": [
+        69,
+        70
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "伪造区分掩盖本质连续性",
+      "sourcePDFPages": [
+        70
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "边缘条件差且不稳，丰度较低",
+      "sourcePDFPages": [
+        70
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "BEI",
+      "reviewCandidate": "BEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "初期偏发表支持，扎根后偏挑战既定观念",
+      "sourcePDFPages": [
+        70
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "论证虽美仍可能违背逻辑",
+      "sourcePDFPages": [
+        70
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "证据不足却下确定广泛结论",
+      "sourcePDFPages": [
+        70,
+        71
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "开拓曲目应让不知名作曲家获聆听",
+      "sourcePDFPages": [
+        71
+      ]
+    },
+    {
+      "unit": "u45-test23-s1",
+      "lesson": 45,
+      "test": 23,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "老批评已驳倒仍被重复",
+      "sourcePDFPages": [
+        71
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "专制可由同一时期异议部分平衡",
+      "sourcePDFPages": [
+        71
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "多民族差异使统一写俄罗斯妇女艰难",
+      "sourcePDFPages": [
+        71
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BD",
+      "reviewCandidate": "BD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "已详研旧内容且不探新领域，自无发现",
+      "sourcePDFPages": [
+        71
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BEH",
+      "reviewCandidate": "BEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "按题干经验计算标准，承认为科学并认可其必要特征；连接句措辞不顺",
+      "sourcePDFPages": [
+        71,
+        72
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "风险从不可预测升级至明确舞弊",
+      "sourcePDFPages": [
+        72
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "只在有限批评者中最佳，恭维分量有限",
+      "sourcePDFPages": [
+        72
+      ]
+    },
+    {
+      "unit": "u46-test23-s2",
+      "lesson": 46,
+      "test": 23,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "原来强硬不让步者现在可谈判",
+      "sourcePDFPages": [
+        72
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "拒绝对成功必需的办法不明智；句尾有残缺",
+      "sourcePDFPages": [
+        72
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "论文悲观且认为退化，对照乐观前景",
+      "sourcePDFPages": [
+        72,
+        73
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "CEI",
+      "reviewCandidate": "CEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "长期把制片人当逐利恶棍，书却强调其创造力",
+      "sourcePDFPages": [
+        73
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BC",
+      "reviewCandidate": "BC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "景象具体精确与哲学抽象概括相反",
+      "sourcePDFPages": [
+        73
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "不受读者欢迎却明显影响多领域",
+      "sourcePDFPages": [
+        73
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "失败理论一度捕获注意后消失",
+      "sourcePDFPages": [
+        73
+      ]
+    },
+    {
+      "unit": "u47-test24-s1",
+      "lesson": 47,
+      "test": 24,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "CF",
+      "reviewCandidate": "CF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "贬损迎合公众嘲笑",
+      "sourcePDFPages": [
+        73
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "B",
+      "reviewCandidate": "B",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "激怒反对者会招来严厉对待",
+      "sourcePDFPages": [
+        73,
+        74
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "BF",
+      "reviewCandidate": "BF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "证据环保安全但有人本能不安",
+      "sourcePDFPages": [
+        74
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "避免激进形象故说套话、无冒犯、显调和",
+      "sourcePDFPages": [
+        74
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "BDI",
+      "reviewCandidate": "BDI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "优异建筑反映建筑鉴赏力，预示艺术鉴赏力",
+      "sourcePDFPages": [
+        74
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "CE",
+      "reviewCandidate": "CE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "高尚科学不保证从业者无过错",
+      "sourcePDFPages": [
+        74
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "难闻气味对应malodorous与noisome",
+      "sourcePDFPages": [
+        74,
+        75
+      ]
+    },
+    {
+      "unit": "u48-test24-s2",
+      "lesson": 48,
+      "test": 24,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "令人难忍的尖叫而非唱旋律",
+      "sourcePDFPages": [
+        75
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 1,
+      "sourceAnswer": "C",
+      "reviewCandidate": "C",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "自责不够努力或动机不纯，excoriated",
+      "sourcePDFPages": [
+        75
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 2,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "以国界限学科造成狭隘，全球化提供超越机会",
+      "sourcePDFPages": [
+        75
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 3,
+      "sourceAnswer": "AEI",
+      "reviewCandidate": "AEI",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "初期桥损多非吉兆，但少替代所以留存",
+      "sourcePDFPages": [
+        75
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 4,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "休闲收益更高却商业渔业更显政治重要",
+      "sourcePDFPages": [
+        75
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 5,
+      "sourceAnswer": "AC",
+      "reviewCandidate": "AC",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "收入分成证明金钱动机",
+      "sourcePDFPages": [
+        75,
+        76
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 6,
+      "sourceAnswer": "AB",
+      "reviewCandidate": "AB",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "电影退出日常生活描绘，转交其他媒体",
+      "sourcePDFPages": [
+        76
+      ]
+    },
+    {
+      "unit": "u49-test25-s1",
+      "lesson": 49,
+      "test": 25,
+      "section": 1,
+      "question": 7,
+      "sourceAnswer": "EF",
+      "reviewCandidate": "EF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "推广新人曲目使无名作曲家获聆听",
+      "sourcePDFPages": [
+        76
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 1,
+      "sourceAnswer": "E",
+      "reviewCandidate": "E",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "虚构皇家继承等传奇，concocting",
+      "sourcePDFPages": [
+        76
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 2,
+      "sourceAnswer": "D",
+      "reviewCandidate": "D",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "行动虽相连有时协调，通常仍分散矛盾",
+      "sourcePDFPages": [
+        76
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 3,
+      "sourceAnswer": "CD",
+      "reviewCandidate": "CD",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "声称真实却路线混乱，purports与erratic",
+      "sourcePDFPages": [
+        76,
+        77
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 4,
+      "sourceAnswer": "CEH",
+      "reviewCandidate": "CEH",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "担心小生活琐碎，漫画却让其共鸣有意义",
+      "sourcePDFPages": [
+        77
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 5,
+      "sourceAnswer": "DF",
+      "reviewCandidate": "DF",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "基本能力已经够好，非要求完美",
+      "sourcePDFPages": [
+        77
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 6,
+      "sourceAnswer": "BE",
+      "reviewCandidate": "BE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "旧说危急而新数据侵蚀下降",
+      "sourcePDFPages": [
+        77
+      ]
+    },
+    {
+      "unit": "u50-test25-s2",
+      "lesson": 50,
+      "test": 25,
+      "section": 2,
+      "question": 7,
+      "sourceAnswer": "AE",
+      "reviewCandidate": "AE",
+      "matchesSource": true,
+      "status": "supported",
+      "basis": "表达亲近却维持距离，属于假装的亲近",
+      "sourcePDFPages": [
+        77
+      ]
+    }
+  ]
+}

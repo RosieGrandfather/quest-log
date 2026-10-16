@@ -12,7 +12,7 @@
  "blocks": [
   {
    "type": "gre-qset",
-   "base": "courses/gre-zt/img/",
+   "base": "courses/gre-zt/",
    "source": "张巍GRE填空机经2000题 · Test 1 Section 2",
    "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
    "items": [
@@ -35,9 +35,6 @@
      "nopt": 5,
      "ans": [
       2
-     ],
-     "imgs": [
-      "u02-test01-s2-q1-p15.webp"
      ]
     },
     {
@@ -59,9 +56,6 @@
      "nopt": 5,
      "ans": [
       2
-     ],
-     "imgs": [
-      "u02-test01-s2-q2-p15.webp"
      ]
     },
     {
@@ -89,9 +83,6 @@
      "ans": [
       0,
       2
-     ],
-     "imgs": [
-      "u02-test01-s2-q3-p15.webp"
      ]
     },
     {
@@ -125,10 +116,6 @@
       0,
       1,
       0
-     ],
-     "imgs": [
-      "u02-test01-s2-q4-p15.webp",
-      "u02-test01-s2-q4-p16.webp"
      ]
     },
     {
@@ -152,9 +139,6 @@
      "ans": [
       2,
       3
-     ],
-     "imgs": [
-      "u02-test01-s2-q5-p16.webp"
      ]
     },
     {
@@ -178,9 +162,6 @@
      "ans": [
       0,
       1
-     ],
-     "imgs": [
-      "u02-test01-s2-q6-p16.webp"
      ]
     },
     {
@@ -204,9 +185,6 @@
      "ans": [
       3,
       5
-     ],
-     "imgs": [
-      "u02-test01-s2-q7-p16.webp"
      ]
     }
    ]

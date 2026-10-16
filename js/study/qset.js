@@ -71,7 +71,7 @@ function itemHTML(it, i, b){
   return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
     ${it.txt ? `<div class="qtxt">${textHTML(it, i, english)}</div>
-    <details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : origImgs(it, b)}
+    ${it.img || it.imgs?.length ? `<details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : ''}` : origImgs(it, b)}
     <div class="gq-hint">${english ? englishHint(it) : hintOf(it)}${it.answerPending ? english ? ' · Answer key under review; not scored.' : ' · 原答案待核对，本题暂不计分' : ''}</div>
     ${controlsHTML(it, i, english)}
     <div class="gq-explain" hidden></div>
