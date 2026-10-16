@@ -1,0 +1,216 @@
+{
+ "id": "u38-test19-s2",
+ "title": "Test 19 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 19, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 19 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "In contrast to such sparsely populated terrestrial habitats as desert and tundra, the oceans ____ with a seemingly endless array of creatures."
+      ],
+      "opts": [
+       "teem",
+       "flow",
+       "evolve",
+       "roil",
+       "ebb"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "imgs": [
+      "u38-test19-s2-q1-p61.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Barring the discovery of new letters, hidden diaries, or the like, fresh information about eminent people is hard to find because their lives have been so intensely ____."
+      ],
+      "opts": [
+       "ridiculed",
+       "scrutinized",
+       "admired",
+       "embellished",
+       "underrated"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u38-test19-s2-q2-p61.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Because the book is largely concerned with an examination of various (i)____ often encountered in contemporary thinking, such as an exaggerated appreciation for meaningless coincidence and a credulous accept of pseudoscience, much of the writing has a (ii)____ quality to it. Nevertheless, it avoids the overly earned scolding tone common to many such endeavors."
+      ],
+      "cols": [
+       [
+        "inadequacies",
+        "abstractions",
+        "complexities"
+       ],
+       [
+        "debunking",
+        "speculative",
+        "generalizing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ],
+     "imgs": [
+      "u38-test19-s2-q3-p61.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "Analysis of 47.5-million-year-old fossils from Pakistan has yielded fresh insights into the early ancestors of modern whales. For example, Maiacetus inuus was a land animal (i)____ life in the sea. One Maiacetus innus fossil encased a fetus positioned for a head-first delivery, which is typical of a land mammal and suggests the species gave birth onshore. But it probably spent much of its time (ii)____: its big teeth were suited for catching fish, while its flipper-like feet must have been (iii)____ walking."
+      ],
+      "cols": [
+       [
+        "resistant",
+        "removed from",
+        "adapted to"
+       ],
+       [
+        "in the water",
+        "fleeing from predators",
+        "protecting its young"
+       ],
+       [
+        "incompatible with",
+        "clumsy for",
+        "strengthened by"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ],
+     "imgs": [
+      "u38-test19-s2-q4-p61.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Aerial viewings of the gigantic stone horse attributed to the Native American Quechuan people fail to ____ the considerable artistry required to create the piece: the horse appears crudely constructed unless carefully examined from the ground."
+      ],
+      "opts": [
+       "reveal",
+       "justify",
+       "manifest",
+       "mitigate",
+       "diminish",
+       "undercut"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u38-test19-s2-q5-p61.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The book aims to illuminate how science has changed the meaning of nothingness from ____ philosophical concept to something we can almost put under a microscope."
+      ],
+      "opts": [
+       "a tangible",
+       "a palpable",
+       "a nebulous",
+       "a nettlesome",
+       "an incontrovertible",
+       "a vague"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u38-test19-s2-q6-p61.webp",
+      "u38-test19-s2-q6-p62.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Few ideas are more ____ than the notion that cultures evolve in Darwin fashion;many academics have begun writing about cultural evolution, but few treat the underlying Darwinian logic with the care it deserves."
+      ],
+      "opts": [
+       "abused",
+       "archaic",
+       "misused",
+       "outdated",
+       "divisive",
+       "derivative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u38-test19-s2-q7-p62.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

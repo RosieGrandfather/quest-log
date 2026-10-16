@@ -1,0 +1,219 @@
+{
+ "id": "u37-test19-s1",
+ "title": "Test 19 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 19, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 19 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "To criticize a disaster film for being ____ is a bit silly, since people do not go to disaster movies to see an honest portrayed of reality."
+      ],
+      "opts": [
+       "expensive",
+       "harrowing",
+       "derivative",
+       "convoluted",
+       "implausible"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "imgs": [
+      "u37-test19-s1-q1-p59.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The benefits offered by information technology do not (i)____ the need for individual reasoning; for example, Internet user should not allow the reasoning process to be (ii)____ the mere accumulation raw data."
+      ],
+      "cols": [
+       [
+        "disguise",
+        "signal",
+        "diminish"
+       ],
+       [
+        "preceded by",
+        "supplemented with",
+        "supplanted by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ],
+     "imgs": [
+      "u37-test19-s1-q2-p59.webp",
+      "u37-test19-s1-q2-p60.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BEG",
+     "txt": {
+      "stem": [
+       "For many years, Americans have had a love affair with ferryboats. Ferries are said to relieve our frayed nerves after we’ve stewed in bumper-to-bumper traffic, and conventional wisdom also says ferries (i)____ congestion and air pollution by getting us out of cars. Unfortunately, this (ii)____ notion recently has (iii)____ several West Coast mayors, who have in consequence eagerly pursued the implementation of ferry service in their cities."
+      ],
+      "cols": [
+       [
+        "contribute to",
+        "reduce",
+        "cover up"
+       ],
+       [
+        "provocative",
+        "misguided",
+        "cynical"
+       ],
+       [
+        "captivated",
+        "confused",
+        "outraged"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      0
+     ],
+     "imgs": [
+      "u37-test19-s1-q3-p60.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In ways large and small, millions of people are taking active steps to ____ the medical mainstream, whether by taking herbal remedies for disease or by placing their hopes for a cure in alternative treatment."
+      ],
+      "opts": [
+       "augment",
+       "sidestep",
+       "support",
+       "vilify",
+       "circumvent",
+       "endorse"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u37-test19-s1-q4-p60.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Although its gray text blocks and black-and-white illustrations give it a sober mien, this one-stop resource can take the place of a dozen less ____ texts."
+      ],
+      "opts": [
+       "exhaustive",
+       "interesting",
+       "appealing",
+       "original",
+       "educational",
+       "comprehensive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u37-test19-s1-q5-p60.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The media have constantly disparaged the governor’s competence and have found a public only too eager to applaud their ____."
+      ],
+      "opts": [
+       "assiduousness",
+       "stupefaction",
+       "mockery",
+       "incredulity",
+       "certitude",
+       "derision"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u37-test19-s1-q6-p60.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The ____ of ophthalmology as a field in the United States from 1820 to 1850 is evident in the opening of at least five eye hospitals during this period, offering new venues for ophthalmic treatment and experimentation."
+      ],
+      "opts": [
+       "sophistication",
+       "retrenchment",
+       "burgeoning",
+       "resurgence",
+       "curtailment",
+       "expansion"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u37-test19-s1-q7-p60.webp",
+      "u37-test19-s1-q7-p61.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

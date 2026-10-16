@@ -1,0 +1,218 @@
+{
+ "id": "u33-test17-s1",
+ "title": "Test 17 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 17, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 17 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Many readers today consider the moral sentiments expressed in the ancient writers’ work to be quite vapid, and in the seventeenth century they were similarly regarded as ____."
+      ],
+      "opts": [
+       "jejune",
+       "didactic",
+       "dogmatic",
+       "tendentious",
+       "arcane"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "imgs": [
+      "u33-test17-s1-q1-p54.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Although movie critic Pauline Kael had a distaste for sycophancy, she also had a need for (i)____; as a consequence of these competing feelings, she sent very (ii)____ signals to friends and colleagues."
+      ],
+      "cols": [
+       [
+        "solitude",
+        "obeisance",
+        "clarity"
+       ],
+       [
+        "direct",
+        "subtle",
+        "mixed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u33-test17-s1-q2-p54.webp",
+      "u33-test17-s1-q2-p55.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "One sometimes hears that Marco Polo introduced pasta to the Western world, having encountered it in China. This durable myth, which (i)____ that nothing should have been known of pasta in Italy until 1295, when Marco Polo returned from the Far East, can easily be (ii)____ by pointing out that there are Italian references to pasta that (iii)____."
+      ],
+      "cols": [
+       [
+        "requires",
+        "demonstrates",
+        "symbolizes"
+       ],
+       [
+        "augmented",
+        "debunked",
+        "traced"
+       ],
+       [
+        "praise its virtues",
+        "can be authenticated",
+        "predate that event"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "imgs": [
+      "u33-test17-s1-q3-p55.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Williamson had a fierce commitment to achieving an accord, spending enormous amount of time trying to forge a consensus out of an often ____ assembly."
+      ],
+      "opts": [
+       "apathetic",
+       "fractious",
+       "restive",
+       "cynical",
+       "compliant",
+       "tractable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u33-test17-s1-q4-p55.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Readers looking for another condemnation of private equity firms should look elsewhere, this book is not ____ such firms."
+      ],
+      "opts": [
+       "a rant against",
+       "a diatribe on",
+       "an exculpation",
+       "a disquisition on",
+       "a vindication of",
+       "an argument about"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u33-test17-s1-q5-p55.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "His premiership, seemingly cast-iron year ago, is now so vulnerable that even a good day at the office does no more than buy him a few weeks of ____ from rebels within his own party."
+      ],
+      "opts": [
+       "controversy",
+       "reproach",
+       "respite",
+       "relief",
+       "blame",
+       "deference"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ],
+     "imgs": [
+      "u33-test17-s1-q6-p55.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Even before she went to art school, Veronica found the standard design categories ____: she didn’t understand why designing buildings and designing tables should require different sensibilities."
+      ],
+      "opts": [
+       "provocative",
+       "limiting",
+       "stimulating",
+       "confusing",
+       "confining",
+       "exhilarating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u33-test17-s1-q7-p55.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

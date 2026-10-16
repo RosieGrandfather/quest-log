@@ -1,0 +1,218 @@
+{
+ "id": "u15-test08-s1",
+ "title": "Test 8 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 8, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 8 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The title of her final and unfinished film, Escape, was ____: indeed while shooting it, she was preoccupied with thoughts of desertion."
+      ],
+      "opts": [
+       "quixotic",
+       "apt",
+       "misleading",
+       "inconsequential",
+       "uncharacteristic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u15-test08-s1-q1-p31.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Except for a few passages in the biography in which the subject’s flaws are (i)____, the author’s treatment of her subject is (ii)____."
+      ],
+      "cols": [
+       [
+        "too harshly judged",
+        "analyzed in depth",
+        "frankly acknowledged"
+       ],
+       [
+        "erudite",
+        "judicious",
+        "acrimonious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u15-test08-s1-q2-p31.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEH",
+     "txt": {
+      "stem": [
+       "In a view of 17 studies from 2008, Trudeau and Shephard concluded that reserving up to an hour a day for (i)____ in school curricula does not (ii)____ academic achievement. In fact, they noted that more exercise often (iii)____ school performance, despite the time it took away from reading, writing, and arithmetic."
+      ],
+      "cols": [
+       [
+        "physical activity",
+        "leisure time",
+        "open study"
+       ],
+       [
+        "contribute to",
+        "detract from",
+        "correlate with"
+       ],
+       [
+        "diminished",
+        "augmented",
+        "counteracted"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      1
+     ],
+     "imgs": [
+      "u15-test08-s1-q3-p31.webp",
+      "u15-test08-s1-q3-p32.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "An abundance of nutrient-rich pollution in estuaries causes algae to ____, much as houseplants grow better when their soil contains added fertilizer."
+      ],
+      "opts": [
+       "abound",
+       "proliferate",
+       "stagnate",
+       "coalesce",
+       "collect",
+       "diversify"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u15-test08-s1-q4-p32.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Taking to the mountains to escape the chaos occasioned by the collapse of the ruling dynasty, artists looked to nature for ____ and a serenity not evident in human society."
+      ],
+      "opts": [
+       "an order",
+       "a stability",
+       "a fragility",
+       "a decadence",
+       "an interaction",
+       "a degeneracy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u15-test08-s1-q5-p32.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The Great Lakes wolf is a ____, stumping scientists as to whether it is a subspecies of the gray wolf or a distinct species."
+      ],
+      "opts": [
+       "prototype",
+       "riddle",
+       "paragon",
+       "model",
+       "legend",
+       "conundrum"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ],
+     "imgs": [
+      "u15-test08-s1-q6-p32.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The book aims to illuminate how science has changed the meaning of nothingness from ____ philosophical concept to something we can almost put under a microscope."
+      ],
+      "opts": [
+       "a tangible",
+       "a palpable",
+       "a nebulous",
+       "a nettlesome",
+       "an incontrovertible",
+       "a vague"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u15-test08-s1-q7-p32.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

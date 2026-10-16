@@ -1,0 +1,222 @@
+{
+ "id": "u28-test14-s2",
+ "title": "Test 14 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 14, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 14 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "What once seemed a quixotic vision—the “Subway to the Sea,” connecting Union Station in downtown Los Angeles to the Pacific Ocean in Santa Monica—no longer seems quite so ____."
+      ],
+      "opts": [
+       "impracticable",
+       "prescient",
+       "banal",
+       "viable",
+       "beneficial"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "imgs": [
+      "u28-test14-s2-q1-p48.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In a federally governed country, a regional government can function as a (i)____ for the entire nation—a setting in which new ideas under consideration for national implementation are (ii)____ without having to involve the country as a whole."
+      ],
+      "cols": [
+       [
+        "laboratory",
+        "catalyst",
+        "standard"
+       ],
+       [
+        "dispersed",
+        "undermined",
+        "tried"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u28-test14-s2-q2-p48.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Conventional deposits of oil and gas are actually the final resting place of far-traveled hydrocarbons that were (i)____ deeper source beds of organic-rich rock. By contrast, shale gas (ii)____ its birthplace, remaining in the source bed whose organic matter produced the gas."
+      ],
+      "cols": [
+       [
+        "trapped in",
+        "generated in",
+        "bound for"
+       ],
+       [
+        "never leaves",
+        "swiftly escapes from",
+        "rarely stays in"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ],
+     "imgs": [
+      "u28-test14-s2-q3-p48.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "Unlike most other serious journals, which drain money from their owners, the Review has long been (i)____. But the formula is not without its imperfections, which have grown more pronounced in recent years. The publication has always been erudite and (ii)____ but not always lively and readable. (iii)____, accompanied by a certain aversion to risk taking, has pervaded its pages for a long time."
+      ],
+      "cols": [
+       [
+        "lucrative",
+        "realistic",
+        "unesteemed"
+       ],
+       [
+        "authoritative",
+        "animated",
+        "trendy"
+       ],
+       [
+        "an originality",
+        "an impulsiveness",
+        "a staleness"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ],
+     "imgs": [
+      "u28-test14-s2-q4-p48.webp",
+      "u28-test14-s2-q4-p49.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Flawed as it may be because it is conducted by subjective scientists, science itself has methods that help us ____ our biases and talk about objective reality with some validity."
+      ],
+      "opts": [
+       "bypass",
+       "reduce",
+       "exacerbate",
+       "magnify",
+       "acknowledge",
+       "circumvent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u28-test14-s2-q5-p49.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "In Japanese aesthetics, especially but not only in Noh, beauty contains the idea of ____: beauty must have an air of evanescence, the intimation of its own demise."
+      ],
+      "opts": [
+       "transience",
+       "symmetry",
+       "decay",
+       "simplicity",
+       "balance",
+       "deterioration"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u28-test14-s2-q6-p49.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The uniquely human ability to rethink and revise our social arrangements is a weird blessing, allowing us to create systems that are as likely to ____ us as to liberate us."
+      ],
+      "opts": [
+       "cheer",
+       "shackle",
+       "admonish",
+       "educate",
+       "stifle",
+       "enliven"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u28-test14-s2-q7-p49.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

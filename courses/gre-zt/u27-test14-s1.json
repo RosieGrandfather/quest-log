@@ -1,0 +1,218 @@
+{
+ "id": "u27-test14-s1",
+ "title": "Test 14 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 14, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 14 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Politicians who invoke the founders of the United States in support of their views seem to imply that the founders consistently concurred in their own views when in reality they were a highly ____ group of thinkers."
+      ],
+      "opts": [
+       "erudite",
+       "innovative",
+       "predictable",
+       "contentious",
+       "methodical"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u27-test14-s1-q1-p47.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Although Professor Pearson’s colleagues often complained that he was (i)____, his friends were quick to defend him from this charge of (ii)____."
+      ],
+      "cols": [
+       [
+        "importunate",
+        "garrulous",
+        "mercurial"
+       ],
+       [
+        "inconstancy",
+        "dishonest",
+        "partiality"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ],
+     "imgs": [
+      "u27-test14-s1-q2-p47.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "The experimental theater company’s members know that their performances (i)____ an audience, that they were dense and unpredictable and not always easy to digest. But none of the techniques used would be (ii)____ anyone with an interest in music or films. Indeed, they would seem strange only to people who expected to see traditionally crafted plays. The actors therefore felt that theater critics’ derisive commentary showed only that the critics (iii)____ the company’s work."
+      ],
+      "cols": [
+       [
+        "made demands on",
+        "had to command",
+        "were sure to please"
+       ],
+       [
+        "contemplated by",
+        "alien to",
+        "intuitive for"
+       ],
+       [
+        "lambasted",
+        "exploited",
+        "misunderstood"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "imgs": [
+      "u27-test14-s1-q3-p47.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "A clever form of diplomacy involves subtly inducing the other party to propose your preference so that your ____ their requests appears as the granting of concession."
+      ],
+      "opts": [
+       "accession to",
+       "inattention to",
+       "subversion of",
+       "abnegation of",
+       "repudiation of",
+       "acquiescence to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u27-test14-s1-q4-p47.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Films that critics have slumbered through rarely generate industry excitement, even though the critics’ ____ reception may be less the fault of the movie than of its unfortunate time slot near a fatiguing film festival’s conclusion."
+      ],
+      "opts": [
+       "somnolent",
+       "impartial",
+       "lethargic",
+       "laconic",
+       "befuddled",
+       "evenhanded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u27-test14-s1-q5-p47.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Even the cleverest use of time management techniques is powerless to ____ the sum of minutes in a person’s life (over 52 million, optimistically assuming a life expectancy of 100 years ), so people squeeze as much as they could into each one of them."
+      ],
+      "opts": [
+       "justify",
+       "quantify",
+       "augment",
+       "enrich",
+       "measure",
+       "extend"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u27-test14-s1-q6-p47.webp",
+      "u27-test14-s1-q6-p48.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "In the absence of a surface gradient, the new laws of refraction and reflection are ____ the conventional law, so they represent more of an extension than a complete revolution."
+      ],
+      "opts": [
+       "inferable from",
+       "entailed by",
+       "antithetical to",
+       "coincident with",
+       "antecedent to",
+       "oppositional to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u27-test14-s1-q7-p48.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

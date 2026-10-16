@@ -1,0 +1,218 @@
+{
+ "id": "u11-test06-s1",
+ "title": "Test 6 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 6, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 6 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The province has long claimed to be just another developing region, even as its economy ____ those of other regions and threatens to eclipse the rest of the country combined."
+      ],
+      "opts": [
+       "parallels",
+       "bolsters",
+       "corroborates",
+       "outstrips",
+       "engages"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u11-test06-s1-q1-p26.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "So (i)____ is the reputation of the city’s police force for (ii)____ that whenever a new police chief take office, he or she routinely promises to clean up the force."
+      ],
+      "cols": [
+       [
+        "persistent",
+        "recent",
+        "discouraging"
+       ],
+       [
+        "corruption",
+        "efficiency",
+        "inexperience"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ],
+     "imgs": [
+      "u11-test06-s1-q2-p26.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "In medieval Europe, watermills were more (i)____ than windmills. It is true that windmills could be built virtually anywhere, whereas watermills (ii)____. However, watermills’ greater capacity and reliability provided a better (iii)____ the money required to build the mill."
+      ],
+      "cols": [
+       [
+        "problematic",
+        "profitable",
+        "versatile"
+       ],
+       [
+        "were suitable only for certain locations",
+        "inspired a variety of new technologies",
+        "required a good deal of upkeep"
+       ],
+       [
+        "source of",
+        "adjunct to",
+        "return on"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ],
+     "imgs": [
+      "u11-test06-s1-q3-p26.webp",
+      "u11-test06-s1-q3-p27.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Though Edmurd certainly had a dignified bearing and made a great first impression, those who became acquainted with him soon realized he had an essentially ____ nature."
+      ],
+      "opts": [
+       "pugnacious",
+       "deliberate",
+       "punctilious",
+       "courteous",
+       "complacent",
+       "truculent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u11-test06-s1-q4-p27.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The life of a secret agent is dangerous enough, but the life of a double agent is infinitely more ____: a single slip can send an agent crashing to destruction."
+      ],
+      "opts": [
+       "arduous",
+       "precarious",
+       "clandestine",
+       "perilous",
+       "covert",
+       "exhilarating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u11-test06-s1-q5-p27.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Natural causes nerves to die off and muscles to weaken, but regular exercise of muscle fibers enlarges and can ____ the decline by increasing the strengthen muscle you have left."
+      ],
+      "opts": [
+       "speed up",
+       "stave off",
+       "forestall",
+       "facilitate",
+       "assist",
+       "exploit"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u11-test06-s1-q6-p27.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Creativity is no longer seen as ____ inspiration leading to poem or painting, it has come to be thought of as something permeating the whole of a person’s life."
+      ],
+      "opts": [
+       "a mundane",
+       "a momentary",
+       "an illusory",
+       "an evanescent",
+       "a metaphoric",
+       "a prosaic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u11-test06-s1-q7-p27.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

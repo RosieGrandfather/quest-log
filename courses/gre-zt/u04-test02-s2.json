@@ -1,0 +1,223 @@
+{
+ "id": "u04-test02-s2",
+ "title": "Test 2 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 2, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 2 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Though we live in an era of stunning scientific achievement, many otherwise educated people remain indifferent to or contemptuous of such achievement, even going so far as to ____ their ignorance of basic physics."
+      ],
+      "opts": [
+       "decry",
+       "condone",
+       "remedy",
+       "boast of",
+       "downplay"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u04-test02-s2-q1-p17.webp",
+      "u04-test02-s2-q1-p18.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Although trains may use energy more (i)____ than do automobiles, the latter move only when they contain at least one occupant, whereas railway carriages spend a considerable amount of time running up and down the tracks (ii)____, or nearly so."
+      ],
+      "cols": [
+       [
+        "lavishly",
+        "efficiently",
+        "routinely"
+       ],
+       [
+        "vacant",
+        "unimpeded",
+        "overlooked"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ],
+     "imgs": [
+      "u04-test02-s2-q2-p18.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The great (i)____ of most books that examine the American presidency is their ideological bias, but for most part, this volume on the presidency maintains an impressive degree of (ii)____."
+      ],
+      "cols": [
+       [
+        "contribution",
+        "limitation",
+        "paradox"
+       ],
+       [
+        "certainty",
+        "fluency",
+        "objectivity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u04-test02-s2-q3-p18.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFI",
+     "txt": {
+      "stem": [
+       "Within the culture as a whole, the natural sciences have been so successful that the word “scientific” is often used in (i)____ manner: it is often assumed that to call something “scientific” is to imply that its reliability has been (ii)____ by methods whose results cannot reasonably be (iii)____."
+      ],
+      "cols": [
+       [
+        "an ironic",
+        "a literal",
+        "an honorific"
+       ],
+       [
+        "maligned",
+        "challenged",
+        "established"
+       ],
+       [
+        "exaggerated",
+        "anticipated",
+        "disputed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      2
+     ],
+     "imgs": [
+      "u04-test02-s2-q4-p18.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Since some contemporary Western dieticians believe that the only function of food is to provide nourishment, these dieticians view an emphasis on the aesthetic dimension of the culinary arts as ____."
+      ],
+      "opts": [
+       "unprecedented",
+       "unwarranted",
+       "illuminating",
+       "groundless",
+       "promising",
+       "novel"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u04-test02-s2-q5-p18.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Harper Lee’s narration in To Kill a Mockingbird is ____, mixing an adult’s and a child’s perspective according to no logic other than the immediate exigencies of the plot."
+      ],
+      "opts": [
+       "a paradigm",
+       "a hodgepodge",
+       "a model",
+       "an innovation",
+       "a patchwork",
+       "an embarrassment"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u04-test02-s2-q6-p18.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The employee had a reputation for fractiousness, but his coworkers found him to be, on the contrary, quiet ____."
+      ],
+      "opts": [
+       "insightful",
+       "affable",
+       "sagacious",
+       "capable",
+       "easygoing",
+       "productive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u04-test02-s2-q7-p18.webp",
+      "u04-test02-s2-q7-p19.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

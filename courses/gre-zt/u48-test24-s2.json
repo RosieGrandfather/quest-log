@@ -1,0 +1,229 @@
+{
+ "id": "u48-test24-s2",
+ "title": "Test 24 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 24, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 24 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "With the numerous opponents of the controversial new taxation measure in such a fury, anyone who publicly advocated the measure did not fail to meet with ____ usage."
+      ],
+      "opts": [
+       "politic",
+       "severe",
+       "sober",
+       "respectful",
+       "dejected"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u48-test24-s2-q1-p73.webp",
+      "u48-test24-s2-q1-p74.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Although the vast weight of evidence supports the contention that the products of agricultural biotechnology are environmentally (i)____, many people still find them (ii)____ unsettling."
+      ],
+      "cols": [
+       [
+        "destructive",
+        "sound",
+        "intriguing"
+       ],
+       [
+        "retroactively",
+        "innocuously",
+        "intrinsically"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u48-test24-s2-q2-p74.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The (i)____ nature of the candidate’s comments is calculated. As a long-standing target of critics who regard him as radical, he understands that he needs to be as (ii)____ as possible if he is to overcome those critiques and appear as a (iii)____ leader."
+      ],
+      "cols": [
+       [
+        "opprobrious",
+        "platitudinous",
+        "pugnacious"
+       ],
+       [
+        "innocuous",
+        "truculent",
+        "supercilious"
+       ],
+       [
+        "polarizing",
+        "cautious",
+        "conciliatory"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ],
+     "imgs": [
+      "u48-test24-s2-q3-p74.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The new art museum’s (i)____ building augurs well for that ambitious institution because it speaks of (ii)____ contemporary architecture on the part of the board of directors that may (iii)____ equal astuteness about contemporary art."
+      ],
+      "cols": [
+       [
+        "nondescript",
+        "outstanding",
+        "outdated"
+       ],
+       [
+        "a discernment about",
+        "a hostility toward",
+        "an intoxication by"
+       ],
+       [
+        "conceal",
+        "supplant",
+        "promise"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ],
+     "imgs": [
+      "u48-test24-s2-q4-p74.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Science is arguably a very high-minded pursuit, but that is not to say that all of its practitioners are ____, as numerous articles alleging overly generous pharmaceutical industry payments to medical researchers have tried to show."
+      ],
+      "opts": [
+       "conventional",
+       "clever",
+       "unimpeachable",
+       "ingenious",
+       "blameless",
+       "predictable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ],
+     "imgs": [
+      "u48-test24-s2-q5-p74.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The town’s air was consistently ____: depending on the breeze, one might be greeted with the sour effluvia of twenty breweries, choking fumes from the coal factory, or brackish smells from the nearby river."
+      ],
+      "opts": [
+       "malodorous",
+       "toxic",
+       "redolent",
+       "benign",
+       "noisome",
+       "anodyne"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ],
+     "imgs": [
+      "u48-test24-s2-q6-p74.webp",
+      "u48-test24-s2-q6-p75.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "One of the vocalists who auditioned for a leading part in the local production of Sweeney Todd seemed to prefer ____ to any attempt at producing a melody; a more unpleasant voice was hard to imagine."
+      ],
+      "opts": [
+       "warbling",
+       "imitating",
+       "improvising",
+       "shrieking",
+       "crooning",
+       "caterwauling"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ],
+     "imgs": [
+      "u48-test24-s2-q7-p75.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

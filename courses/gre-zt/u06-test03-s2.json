@@ -1,0 +1,228 @@
+{
+ "id": "u06-test03-s2",
+ "title": "Test 3 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 3, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 3 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "In the last two hundreds years, the practice of archaeology has changed greatly, from digging up ancient artifacts for use by wealthy individuals as art objects to analyzing the detritus of everyday life in the laboratory, and thus from ____ to data collection."
+      ],
+      "opts": [
+       "supposition",
+       "theorizing",
+       "fact-finding",
+       "treasure hunting",
+       "scientific discovery"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u06-test03-s2-q1-p20.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "What they see in Tanaka is the one candidate capable of (i)____ leadership, in direct contrast to Williamson , whose term in office has been marred by (ii)____."
+      ],
+      "cols": [
+       [
+        "compassionate",
+        "decisive",
+        "nepotistic"
+       ],
+       [
+        "grandstanding",
+        "partisanship",
+        "vacillation"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u06-test03-s2-q2-p20.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "Both very good and very bad books are easy to review. Praise and (i)____ come easily. But what of books that contain a muddle of virtues and vices? Here the reviewer’s task is more (ii)____: the author’s useful and thought-provoking observations need to be (iii)____ the useless and tedious."
+      ],
+      "cols": [
+       [
+        "ambivalence",
+        "compliment",
+        "censure"
+       ],
+       [
+        "evident",
+        "demanding",
+        "manageable"
+       ],
+       [
+        "supplanted by",
+        "sifted from",
+        "overshadowed by"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ],
+     "imgs": [
+      "u06-test03-s2-q3-p20.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "Unambiguous texts can allow their readers to (i)____ them quickly, but ambiguous texts can have the attractive (ii)____ of multiple possible interpretations, all of which can be considered equally (iii)____, and none of which is the single true meaning."
+      ],
+      "cols": [
+       [
+        "misunderstand",
+        "comprehend",
+        "complicate"
+       ],
+       [
+        "stigma",
+        "blemish",
+        "allure"
+       ],
+       [
+        "valid",
+        "frank",
+        "inveterate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ],
+     "imgs": [
+      "u06-test03-s2-q4-p20.webp",
+      "u06-test03-s2-q4-p21.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Although extreme and singular events occur in a black hole, its event horizon boundary is ____ space travelers; crossing it would be subject to the same physical laws that apply anywhere else."
+      ],
+      "opts": [
+       "illusory",
+       "obscure",
+       "unremarkable",
+       "immutable",
+       "unchanging",
+       "commonplace"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u06-test03-s2-q5-p21.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The ocean's heat capacity (the amount of heat needed to change its temperature) is far greater than that of dry land and thus ____ the ocean's seasonal temperature changes."
+      ],
+      "opts": [
+       "reflects",
+       "mutes",
+       "alters",
+       "determines",
+       "attenuates",
+       "parallels"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u06-test03-s2-q6-p21.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "In the nineteenth century, the dish known as lobster Newburg was sometimes associated with the culinary accessory known as the chafing dish, but Welsh rarebit was considered the truly ____ chafing dish recipe."
+      ],
+      "opts": [
+       "indigenous",
+       "sumptuous",
+       "ubiquitous",
+       "paradigmatic",
+       "newfangled",
+       "archetypal"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ],
+     "imgs": [
+      "u06-test03-s2-q7-p21.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

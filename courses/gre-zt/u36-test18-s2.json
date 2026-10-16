@@ -1,0 +1,222 @@
+{
+ "id": "u36-test18-s2",
+ "title": "Test 18 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 18, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 18 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Few studies have been published on ground-squirrel dispersal, and most of them have involved very small sample sizes, thus most statement regarding ground-squirrel dispersal must be considered ____."
+      ],
+      "opts": [
+       "invaluable",
+       "unexceptional",
+       "inveterate",
+       "routine",
+       "conjectural"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "imgs": [
+      "u36-test18-s2-q1-p58.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Many of the unusual behaviors attributed to crows—such as drinking coffee or presenting gifts to people who feed them—are based on (i)____ and therefore fall into the category of (ii)____ rather than science."
+      ],
+      "cols": [
+       [
+        "long-term observation",
+        "controlled experiments",
+        "secondhand testimony"
+       ],
+       [
+        "anecdote",
+        "speculation",
+        "hypothesis"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ],
+     "imgs": [
+      "u36-test18-s2-q2-p58.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Despite the scathing precision with which she satirizes the lives of social aspirants and moneyed folk, the writer appears to (i)____ being part of the world she presents as so (ii)____."
+      ],
+      "cols": [
+       [
+        "abhor",
+        "relish",
+        "evoke"
+       ],
+       [
+        "unattainable",
+        "insufferable",
+        "enchanting"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ],
+     "imgs": [
+      "u36-test18-s2-q3-p58.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Inuit print making is less (i)____ than carving in that it does not have substantial historical precedents, although there are (ii)____ incised carvings on bone or antler, facial tattoo marks or inlay skin work on clothing, mitts and footwear. Carving materials such as stone, bone, antler, wood, and ivory were (iii)____, but paper and drawing tools were unknown until introduced by early explorers and missionaries."
+      ],
+      "cols": [
+       [
+        "traditional",
+        "prestigious",
+        "anomalous"
+       ],
+       [
+        "affinities with",
+        "objections to",
+        "regulations about"
+       ],
+       [
+        "available locally",
+        "rarely used",
+        "virtually interchangeable"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ],
+     "imgs": [
+      "u36-test18-s2-q4-p58.webp",
+      "u36-test18-s2-q4-p59.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Compared to their predecessors, who were more nationalist than feminist in political orientation, Roman women activists of the younger generation are more inclined to ____ women’s rights, often creating organizations focused primarily on women’s issues."
+      ],
+      "opts": [
+       "expand",
+       "de-emphasize",
+       "champion",
+       "idealize",
+       "downplay",
+       "defend"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u36-test18-s2-q5-p59.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Individuals, governments, and companies show ample ability to ____ themselves by setting goals based on current conditions and then blindly following them even when those conditions change drastically."
+      ],
+      "opts": [
+       "hamstring",
+       "reinvent",
+       "promote",
+       "revitalize",
+       "impair",
+       "invigorate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ],
+     "imgs": [
+      "u36-test18-s2-q6-p59.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The performer can be ____ in his comedy, but he is fundamentally a bighearted person who displays a core sweetness even at his most manic."
+      ],
+      "opts": [
+       "inflammatory",
+       "pedestrian",
+       "gloomy",
+       "uninspired",
+       "puerile",
+       "provocative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u36-test18-s2-q7-p59.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,216 @@
+{
+ "id": "u20-test10-s2",
+ "title": "Test 10 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 10, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 10 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The students’ ____ natures were in sharp contrast to the imperturbable dispositions of their teacher."
+      ],
+      "opts": [
+       "volatile",
+       "duplicitous",
+       "apathetic",
+       "cunning",
+       "blithe"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "imgs": [
+      "u20-test10-s2-q1-p38.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Despite the neighborhood’s lingering reputation for ____, it has in fact become increasingly varied in its architecture and demographics."
+      ],
+      "opts": [
+       "boisterousness",
+       "unpretentiousness",
+       "idiosyncrasy",
+       "accessibility",
+       "homogeneity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "imgs": [
+      "u20-test10-s2-q2-p38.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "It would be imprecise to characterize her scholarship as (i)____: though her etymological discussion is necessarily esoteric, there is nothing (ii)____ about the conclusions she derives from it."
+      ],
+      "cols": [
+       [
+        "derivative",
+        "arcane",
+        "careless"
+       ],
+       [
+        "obscure",
+        "controversial",
+        "innovative"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ],
+     "imgs": [
+      "u20-test10-s2-q3-p38.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "Common sense tells me some people are more (i)____ than others. The claim that these differences are (ii)____, or that deep down, everybody acts only to further their own interests, (iii)____ our everyday observations and deep-seated human practices of moral evaluation."
+      ],
+      "cols": [
+       [
+        "altruistic",
+        "adaptable",
+        "disciplined"
+       ],
+       [
+        "growing",
+        "illusory",
+        "relevant"
+       ],
+       [
+        "mimics",
+        "explains",
+        "contradicts"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "imgs": [
+      "u20-test10-s2-q4-p38.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "After rising continuously over the summer, commodity prices fell, leaving analyst wondering whether the downward trend is a turning point or merely a ____ before demand picks up in the winter months."
+      ],
+      "opts": [
+       "spike",
+       "upsurge",
+       "harbinger",
+       "portent",
+       "lull",
+       "respite"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ],
+     "imgs": [
+      "u20-test10-s2-q5-p38.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Doris Kearns Goodwin’s elegant, incisive study of Lincoln ____ those whose knowledge of Lincoln is an amalgam of high school history and popular mythology as well as those who are experts."
+      ],
+      "opts": [
+       "gratify",
+       "entice",
+       "inspire",
+       "confuse",
+       "perplex",
+       "please"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u20-test10-s2-q6-p38.webp",
+      "u20-test10-s2-q6-p39.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Explorers could not build each other’s knowledge if they could not trust records of previous explorers; thus exploration depended on the ____ of those who had gone before."
+      ],
+      "opts": [
+       "collegiality",
+       "endurance",
+       "exactitude",
+       "meticulousness",
+       "eminence",
+       "tenacity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ],
+     "imgs": [
+      "u20-test10-s2-q7-p39.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

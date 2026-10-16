@@ -1,0 +1,218 @@
+{
+ "id": "u21-test11-s1",
+ "title": "Test 11 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 11, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 11 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "That Seiberg and Witten lack celebrity can be explained by the ____ nature of their pursuit: the mathematical exploration of four-dimensional space."
+      ],
+      "opts": [
+       "pedestrian",
+       "esoteric",
+       "compelling",
+       "global",
+       "univocal"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u21-test11-s1-q1-p39.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "While acknowledging behaviors the Prime Minster took in order to remain in office were (i)____, some politicians nevertheless believed this small amount of (ii)____ was justified to keep reforming government in office."
+      ],
+      "cols": [
+       [
+        "unethical",
+        "impractical",
+        "quixotic"
+       ],
+       [
+        "skullduggery",
+        "indolence",
+        "incivility"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ],
+     "imgs": [
+      "u21-test11-s1-q2-p39.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "China’s rapidly growing population is the main threat facing large carnivores in the People’s Republic. Increasingly, policies aimed at limiting population growth have been (i)____; nevertheless, the country’s vast size and the isolation of many of its regions mean that human populations in areas where large carnivores still occur (ii)____. This human pressure has (iii)____ the South China tiger."
+      ],
+      "cols": [
+       [
+        "modified",
+        "deemphasized",
+        "implemented"
+       ],
+       [
+        "could start to decline",
+        "can grow unchecked",
+        "have stabilized"
+       ],
+       [
+        "celebrated",
+        "doomed",
+        "bypassed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ],
+     "imgs": [
+      "u21-test11-s1-q3-p39.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Well organized and researched and including all significant discoveries and medical scientists, this history of Western medicine has justly been called ____."
+      ],
+      "opts": [
+       "encyclopedic",
+       "long-winded",
+       "exhaustive",
+       "rambling",
+       "overbearing",
+       "undiscriminating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u21-test11-s1-q4-p39.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Science is arguably a very high-minded pursuit, but that is not to say that all of its practitioners are ____, as numerous articles alleging overly generous pharmaceutical industry payments to medical researchers have tried to show."
+      ],
+      "opts": [
+       "conventional",
+       "clever",
+       "unimpeachable",
+       "ingenious",
+       "blameless",
+       "predictable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ],
+     "imgs": [
+      "u21-test11-s1-q5-p39.webp",
+      "u21-test11-s1-q5-p40.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In a field of egotists, Bloomfield is ____, often praising her competitors and punctuating her correspondence with self-deprecating remarks."
+      ],
+      "opts": [
+       "unassuming",
+       "complimentary",
+       "acerbic",
+       "ingenuous",
+       "cutting",
+       "modest"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ],
+     "imgs": [
+      "u21-test11-s1-q6-p40.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Because its previously ____ beliefs had become core tenets of mainstream politics, the activist group disbanded; with no more skeptics to persuade, its purpose had evaporated."
+      ],
+      "opts": [
+       "arcane",
+       "seditious",
+       "quixotic",
+       "idealistic",
+       "popular",
+       "conventional"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ],
+     "imgs": [
+      "u21-test11-s1-q7-p40.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

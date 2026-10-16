@@ -1,0 +1,229 @@
+{
+ "id": "u30-test15-s2",
+ "title": "Test 15 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 15, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 15 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Unlike some mammals—cows and sheep, for instance—that are notably ____, lions have a wide range of facial expressions."
+      ],
+      "opts": [
+       "tractable",
+       "impassive",
+       "solitary",
+       "social",
+       "sluggish"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u30-test15-s2-q1-p50.webp",
+      "u30-test15-s2-q1-p51.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "World demand for oil had been intensified, but it slackened because China’s surge in oil consumption had (i)____. Moreover, high oil price had themselves started to act as a short-term (ii)____ the global economy, thus further dampening demand."
+      ],
+      "cols": [
+       [
+        "spread",
+        "commenced",
+        "slowed"
+       ],
+       [
+        "spur to",
+        "drag on",
+        "panacea for"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ],
+     "imgs": [
+      "u30-test15-s2-q2-p51.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "The slow pace of job creation was without precedent for the period of recovery from a recession, but the conditions that conspired to cause the recession were also (i)____. The stock market declined sharply, and rampant business investment slumped. Then an ensuing spate of scandals (ii)____ public trust in the way companies were run. And yet, despite these powerful (iii)____ to growth, the recession proved surprisingly mild."
+      ],
+      "cols": [
+       [
+        "heartening",
+        "atypical",
+        "ambiguous"
+       ],
+       [
+        "weakened",
+        "illuminated",
+        "consolidated"
+       ],
+       [
+        "counterforces",
+        "stimulants",
+        "concomitants"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ],
+     "imgs": [
+      "u30-test15-s2-q3-p51.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Given children’s active fantasy lives, one might think of truthfulness as (i)____ virtue in young children, but it turns out that lying is the more (ii)____ skill. A child who is going to lie must recognize the truth, intellectually conceive of an alternate reality, and be able to convincingly sell that new reality to someone else. Therefore, lying (iii)____ cognitive development and social skills in a way that honesty simply does not."
+      ],
+      "cols": [
+       [
+        "an instinctive",
+        "an acquired",
+        "a conscious"
+       ],
+       [
+        "advanced",
+        "practical",
+        "mundane"
+       ],
+       [
+        "undermines",
+        "forgoes",
+        "demands"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ],
+     "imgs": [
+      "u30-test15-s2-q4-p51.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "A cure for the common cold has been so elusive that it has become a modern symbol of ____."
+      ],
+      "opts": [
+       "danger",
+       "futility",
+       "unease",
+       "pointlessness",
+       "sloth",
+       "apathy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u30-test15-s2-q5-p51.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "The dictator’s gleaming military uniform and imperial paraphernalia sharply contrast with the ____ fashion favored by most other contemporary political leaders."
+      ],
+      "opts": [
+       "unostentatious",
+       "modest",
+       "august",
+       "majestic",
+       "formal",
+       "casual"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u30-test15-s2-q6-p51.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "If giant X-ray flares churn circumstellar disks enough to keep newborn planets, such as Earth once was, from spiraling into their suns, it would be an ironic twist on our conception of X-ray flares as ____."
+      ],
+      "opts": [
+       "dangerous",
+       "predictable",
+       "ancient",
+       "ephemeral",
+       "perilous",
+       "foreseeable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ],
+     "imgs": [
+      "u30-test15-s2-q7-p51.webp",
+      "u30-test15-s2-q7-p52.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

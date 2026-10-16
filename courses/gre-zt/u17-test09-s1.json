@@ -1,0 +1,218 @@
+{
+ "id": "u17-test09-s1",
+ "title": "Test 9 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 9, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 9 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The identity of hominid remains found in a cave in the Altai Mountains was ____ until Paabo and his colleagues ended the speculation by showing that DNA sequences indicated the bones belonged to Neanderthals."
+      ],
+      "opts": [
+       "extraneous",
+       "conjectural",
+       "improbable",
+       "demonstrable",
+       "consistent"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u17-test09-s1-q1-p34.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Despite the abundance and importance of maize, its biological origin has been a long-running mystery. The bright yellow, mouth-watering treat does not grow in the wild anywhere on the planet, so its (i)____ is not at all (ii)____."
+      ],
+      "cols": [
+       [
+        "utility",
+        "popularity",
+        "ancestry"
+       ],
+       [
+        "helpful",
+        "important",
+        "obvious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ],
+     "imgs": [
+      "u17-test09-s1-q2-p34.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDH",
+     "txt": {
+      "stem": [
+       "Although Thaler employs an innovative mode of analysis, his study offers yet another examination of quite (i)____ ground—namely, the culture ideology of Norwegian-American preservationist writers in the early twentieth century. The history, literature, and changing internal dynamics of the Norwegian subculture in America constitute a particularly well-studied area. Anyone familiar with the authoritative work of scholars in the field will (ii)____ little in Thaler’s study that is (iii)____."
+      ],
+      "cols": [
+       [
+        "unfamiliar",
+        "well-worked",
+        "fruitful"
+       ],
+       [
+        "find",
+        "understand",
+        "reveal"
+       ],
+       [
+        "accurate",
+        "new",
+        "recognizable"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      1
+     ],
+     "imgs": [
+      "u17-test09-s1-q3-p34.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "All Shaker furniture implies ____ humanism in design: the Shakers made objects that look like objects, following a nonhuman law of design and rejecting the unconscious self-flattery inherent in making anthropomorphic objects."
+      ],
+      "opts": [
+       "a rejection of",
+       "a liberation from",
+       "a belief in",
+       "an affinity for",
+       "an attraction to",
+       "a misunderstanding of"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u17-test09-s1-q4-p34.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The controversial social analysis that Moynihan offered in the 1960s is now generally recognized as having been prescient; in fact, it has been the ____ upon which much of our discussion of social pathology must base."
+      ],
+      "opts": [
+       "concession",
+       "bedrock",
+       "imperative",
+       "compromise",
+       "foundations",
+       "vision"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u17-test09-s1-q5-p34.webp",
+      "u17-test09-s1-q5-p35.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The life of a secret agent is dangerous enough, but the life of a double agent is infinitely more ____: a single slip can send an agent crashing to destruction."
+      ],
+      "opts": [
+       "arduous",
+       "precarious",
+       "clandestine",
+       "perilous",
+       "covert",
+       "exhilarating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u17-test09-s1-q6-p35.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The jazz style called bebop was born and nurtured in New York City, and despite a ____ initial reception, it resonated three thousand miles away on the West Coast."
+      ],
+      "opts": [
+       "wary",
+       "warm",
+       "confused",
+       "muddled",
+       "convivial",
+       "hostile"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ],
+     "imgs": [
+      "u17-test09-s1-q7-p35.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

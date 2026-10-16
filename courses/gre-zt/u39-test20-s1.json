@@ -1,0 +1,218 @@
+{
+ "id": "u39-test20-s1",
+ "title": "Test 20 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 20, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 20 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Scientists have argued not only that the chains of atoms called ladder compounds have ____ theoretical interest but also that studies of such systems can lead to important practical applications."
+      ],
+      "opts": [
+       "limited",
+       "dubious",
+       "superfluous",
+       "unidimensional",
+       "intrinsic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ],
+     "imgs": [
+      "u39-test20-s1-q1-p62.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The building affairs minister rightly recognizes that the current planning system—under which the government controls every aspect of construction—creates disastrous developments, but she is wrong to propose the opposite: the wholesale (i)____ of the building market. Such a complete (ii)____ of responsibility on the part of the state can hardly be in the public’s interest."
+      ],
+      "cols": [
+       [
+        "liberalization",
+        "preservation",
+        "regulation"
+       ],
+       [
+        "abnegation",
+        "recapitulation",
+        "accretion"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ],
+     "imgs": [
+      "u39-test20-s1-q2-p62.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEI",
+     "txt": {
+      "stem": [
+       "Those who took Clark’s old-mannered compliance for obsequiousness (i)____ him: his apparent (ii)____ veiled a fervent (iii)____ of the authority that others exercised over him, one that he occasionally expressed by discreetly sabotaging their most important projects."
+      ],
+      "cols": [
+       [
+        "misconstrued",
+        "condemned",
+        "respected"
+       ],
+       [
+        "cynicism",
+        "acquiescence",
+        "intractability"
+       ],
+       [
+        "veneration",
+        "justification",
+        "detestation"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      2
+     ],
+     "imgs": [
+      "u39-test20-s1-q3-p62.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The initial, widely shared pessimism turned out to be ____, because it ignored the many things that could be done with resources left behind."
+      ],
+      "opts": [
+       "unintelligible",
+       "unfathomable",
+       "unfounded",
+       "unimaginative",
+       "unjustified",
+       "unimportant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ],
+     "imgs": [
+      "u39-test20-s1-q4-p62.webp",
+      "u39-test20-s1-q4-p63.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Historically, the depletion of soil’s nitrogen has been one of the most ____ problems faced by farmers: an essential nutrient, nitrogen is quickly leached from soil, and farmers have struggled to find ways to replenish it."
+      ],
+      "opts": [
+       "capricious",
+       "ubiquitous",
+       "worrisome",
+       "stubborn",
+       "intractable",
+       "unpredictable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ],
+     "imgs": [
+      "u39-test20-s1-q5-p63.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Scientists should hope the faults in their theories will be ____ their peers since the refutation of one hypothesis can free its originator to develop a better one."
+      ],
+      "opts": [
+       "discerned by",
+       "disregarded by",
+       "discovered by",
+       "ignored by",
+       "opaque to",
+       "inspiring to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u39-test20-s1-q6-p63.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Although men still dominate the ranks of full professors in the field of astronomy, the increasing numbers of younger women in the field could ____ a change in its gender mix."
+      ],
+      "opts": [
+       "require",
+       "alleviate",
+       "block",
+       "presage",
+       "portend",
+       "hinder"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ],
+     "imgs": [
+      "u39-test20-s1-q7-p63.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

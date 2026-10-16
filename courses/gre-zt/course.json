@@ -1,0 +1,513 @@
+{
+ "id": "gre-zt",
+ "title": "张巍GRE填空机经：前50个Section",
+ "subtitle": "Test 1–25，每个Section一节，共50节350题。原题与配套答案，完成整节后提交查看对错，暂不附讲解。",
+ "order": 17,
+ "order_note": "选修，GRE填空专项练习",
+ "tier": "elective",
+ "tags": [
+  "GRE"
+ ],
+ "units": [
+  {
+   "id": "u01-test01-s1",
+   "title": "Test 1 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 1, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u01-test01-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u02-test01-s2",
+   "title": "Test 1 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 1, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u02-test01-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u03-test02-s1",
+   "title": "Test 2 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 2, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u03-test02-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u04-test02-s2",
+   "title": "Test 2 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 2, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u04-test02-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u05-test03-s1",
+   "title": "Test 3 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 3, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u05-test03-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u06-test03-s2",
+   "title": "Test 3 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 3, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u06-test03-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u07-test04-s1",
+   "title": "Test 4 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 4, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u07-test04-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u08-test04-s2",
+   "title": "Test 4 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 4, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u08-test04-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u09-test05-s1",
+   "title": "Test 5 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 5, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u09-test05-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u10-test05-s2",
+   "title": "Test 5 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 5, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u10-test05-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u11-test06-s1",
+   "title": "Test 6 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 6, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u11-test06-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u12-test06-s2",
+   "title": "Test 6 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 6, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u12-test06-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u13-test07-s1",
+   "title": "Test 7 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 7, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u13-test07-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u14-test07-s2",
+   "title": "Test 7 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 7, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u14-test07-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u15-test08-s1",
+   "title": "Test 8 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 8, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u15-test08-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u16-test08-s2",
+   "title": "Test 8 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 8, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u16-test08-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u17-test09-s1",
+   "title": "Test 9 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 9, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u17-test09-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u18-test09-s2",
+   "title": "Test 9 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 9, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u18-test09-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u19-test10-s1",
+   "title": "Test 10 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 10, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u19-test10-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u20-test10-s2",
+   "title": "Test 10 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 10, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u20-test10-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u21-test11-s1",
+   "title": "Test 11 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 11, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u21-test11-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u22-test11-s2",
+   "title": "Test 11 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 11, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u22-test11-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u23-test12-s1",
+   "title": "Test 12 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 12, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u23-test12-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u24-test12-s2",
+   "title": "Test 12 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 12, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u24-test12-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u25-test13-s1",
+   "title": "Test 13 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 13, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u25-test13-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u26-test13-s2",
+   "title": "Test 13 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 13, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u26-test13-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u27-test14-s1",
+   "title": "Test 14 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 14, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u27-test14-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u28-test14-s2",
+   "title": "Test 14 · Section 2（easy · 7题）",
+   "en": "Text Completion — Test 14, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u28-test14-s2.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u29-test15-s1",
+   "title": "Test 15 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 15, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u29-test15-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u30-test15-s2",
+   "title": "Test 15 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 15, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u30-test15-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u31-test16-s1",
+   "title": "Test 16 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 16, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u31-test16-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u32-test16-s2",
+   "title": "Test 16 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 16, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u32-test16-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u33-test17-s1",
+   "title": "Test 17 · Section 1（easy · 7题）",
+   "en": "Text Completion — Test 17, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u33-test17-s1.json",
+   "hasQuiz": false,
+   "difficulty": "easy"
+  },
+  {
+   "id": "u34-test17-s2",
+   "title": "Test 17 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 17, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u34-test17-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u35-test18-s1",
+   "title": "Test 18 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 18, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u35-test18-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u36-test18-s2",
+   "title": "Test 18 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 18, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u36-test18-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u37-test19-s1",
+   "title": "Test 19 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 19, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u37-test19-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u38-test19-s2",
+   "title": "Test 19 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 19, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u38-test19-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u39-test20-s1",
+   "title": "Test 20 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 20, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u39-test20-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u40-test20-s2",
+   "title": "Test 20 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 20, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u40-test20-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u41-test21-s1",
+   "title": "Test 21 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 21, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u41-test21-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u42-test21-s2",
+   "title": "Test 21 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 21, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u42-test21-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u43-test22-s1",
+   "title": "Test 22 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 22, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u43-test22-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u44-test22-s2",
+   "title": "Test 22 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 22, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u44-test22-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u45-test23-s1",
+   "title": "Test 23 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 23, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u45-test23-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u46-test23-s2",
+   "title": "Test 23 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 23, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u46-test23-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u47-test24-s1",
+   "title": "Test 24 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 24, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u47-test24-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u48-test24-s2",
+   "title": "Test 24 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 24, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u48-test24-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u49-test25-s1",
+   "title": "Test 25 · Section 1（medium · 7题）",
+   "en": "Text Completion — Test 25, Section 1",
+   "minutes": 15,
+   "practice": true,
+   "file": "u49-test25-s1.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  },
+  {
+   "id": "u50-test25-s2",
+   "title": "Test 25 · Section 2（medium · 7题）",
+   "en": "Text Completion — Test 25, Section 2",
+   "minutes": 15,
+   "practice": true,
+   "file": "u50-test25-s2.json",
+   "hasQuiz": false,
+   "difficulty": "medium"
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+ "id": "u34-test17-s2",
+ "title": "Test 17 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 17, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 17 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Though the volume of radioactive waste produced by nuclear power plants is ____, the problem of how to dispose of that waste is not: rather, it is of major importance."
+      ],
+      "opts": [
+       "unmanageable",
+       "troubling",
+       "significant",
+       "small",
+       "deceptive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u34-test17-s2-q1-p55.webp",
+      "u34-test17-s2-q1-p56.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Since fibromyalgia’s symptoms can be (i)____ and can (ii)____ other disorder, and its diagnosis depends largely on patients’ descriptions rather than blood tests or biopsies, fibromyalgia’s cause and treatment have been the subject of much debate."
+      ],
+      "cols": [
+       [
+        "wide-ranging",
+        "distinctive",
+        "debilitating"
+       ],
+       [
+        "mimic",
+        "illuminate",
+        "preclude"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ],
+     "imgs": [
+      "u34-test17-s2-q2-p56.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Architecture scholar Sandy McCreery recently argued that traffic congestion, far from being a sign of urban (i)____, is a mark of urban (ii)____; congestion promotes contemplation of our surroundings and provides us with a shared experience, thereby fulfilling the essential task of the city."
+      ],
+      "cols": [
+       [
+        "plentitude",
+        "decline",
+        "excitement"
+       ],
+       [
+        "ambition",
+        "privation",
+        "health"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u34-test17-s2-q3-p56.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "For almost two centuries, the German island of Sylt has offered various therapies for every conceivable (i)____ from broken bones to liver complaints. The local mud, saltwater, thermal pools, and spas have been deemed (ii)____ by the German medical system, which (iii)____ some of these treatments. Consequently, the treatments are widely used."
+      ],
+      "cols": [
+       [
+        "malady",
+        "indiscretion",
+        "prognosis"
+       ],
+       [
+        "healthful",
+        "suspect",
+        "innocuous"
+       ],
+       [
+        "doubts",
+        "denies",
+        "funds"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ],
+     "imgs": [
+      "u34-test17-s2-q4-p56.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The author engages this issue from diverse perspectives, supports his arguments with many examples, and manages to avoid antagonizing others in dealing with a very ____ subject."
+      ],
+      "opts": [
+       "contentious",
+       "pedestrian",
+       "controversial",
+       "perplexing",
+       "mundane",
+       "intriguing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u34-test17-s2-q5-p56.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Space is often referred to as the final frontier, as the only realm of which humankind has still to gain substantial understanding, yet the ocean is also another vast area about which our knowledge is ____."
+      ],
+      "opts": [
+       "erroneous",
+       "confusing",
+       "frustrating",
+       "rudimentary",
+       "delusive",
+       "sketchy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ],
+     "imgs": [
+      "u34-test17-s2-q6-p56.webp",
+      "u34-test17-s2-q6-p57.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Culture, like speech, is primarily a human faculty, although both functions may exist in a more ____ form in lesser primates."
+      ],
+      "opts": [
+       "indispensable",
+       "crucial",
+       "primitive",
+       "intelligible",
+       "recognizable",
+       "rudimentary"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u34-test17-s2-q7-p57.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

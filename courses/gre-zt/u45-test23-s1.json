@@ -1,0 +1,218 @@
+{
+ "id": "u45-test23-s1",
+ "title": "Test 23 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 23, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 23 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The paleontologist examined the problem afresh, believing that the accepted classification ____ the essential continuity of the specimens by making specious distinctions among them."
+      ],
+      "opts": [
+       "disproved",
+       "belied",
+       "conflated",
+       "divulged",
+       "relaxed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ],
+     "imgs": [
+      "u45-test23-s1-q1-p70.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Among wide-ranging animal species, populations at the edge of the species’ range are frequently exposed to less (i)____ and more variable conditions than those in other parts on the range. As a result, the animal’s abundance is often (ii)____."
+      ],
+      "cols": [
+       [
+        "erratic",
+        "favorable",
+        "demanding"
+       ],
+       [
+        "lower at the periphery",
+        "unaffected by habitat",
+        "underestimated by researchers"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ],
+     "imgs": [
+      "u45-test23-s1-q2-p70.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BEI",
+     "txt": {
+      "stem": [
+       "When a new scientific model emerges, research studies (i)____ that paradigm tend to dominate in the scientific literature: the process of selecting articles for publication is tilted towards positive results. But once the paradigm (ii)____, the academic incentives shift in the opposite direction: research results are more considered worthy publication when they (iii)____ what has become the established view."
+      ],
+      "cols": [
+       [
+        "tweaking",
+        "affirming",
+        "controverting"
+       ],
+       [
+        "is initially articulated",
+        "has become entrenched",
+        "is about to be attacked"
+       ],
+       [
+        "bolster",
+        "circumvent",
+        "undermine"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      2
+     ],
+     "imgs": [
+      "u45-test23-s1-q3-p70.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "When studying the ancient Greek astronomers, Copernicus realized that despite the intrinsic beauty of many of their arguments, the ancients often made claims that ____ logic."
+      ],
+      "opts": [
+       "refuted",
+       "questioned",
+       "influenced",
+       "swayed",
+       "defied",
+       "disregarded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ],
+     "imgs": [
+      "u45-test23-s1-q4-p70.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Although Wynne claims to recognize that ____ evidence is available to make definitive statement, she offers them nonetheless, arriving at some sweeping generalizations."
+      ],
+      "opts": [
+       "concrete",
+       "finite",
+       "insufficient",
+       "indirect",
+       "conclusive",
+       "meager"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u45-test23-s1-q5-p70.webp",
+      "u45-test23-s1-q5-p71.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "In order to cultivate new repertoire, the music industry is providing a hearing for previously ____ composers."
+      ],
+      "opts": [
+       "idle",
+       "thwarted",
+       "celebrated",
+       "renowned",
+       "anonymous",
+       "obscure"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ],
+     "imgs": [
+      "u45-test23-s1-q6-p71.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Although many skeptics of the scientific theory ____ critiques that have long since been disproved, some of the doubters arguably bring up valid points."
+      ],
+      "opts": [
+       "overlook",
+       "revise",
+       "recycle",
+       "utilize",
+       "neglect",
+       "rehash"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u45-test23-s1-q7-p71.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

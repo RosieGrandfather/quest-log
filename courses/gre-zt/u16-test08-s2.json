@@ -1,0 +1,223 @@
+{
+ "id": "u16-test08-s2",
+ "title": "Test 8 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 8, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 8 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "This is neither praise nor criticism, neither a compliment nor ____, just an observation."
+      ],
+      "opts": [
+       "an exposition",
+       "an elucidation",
+       "an animadversion",
+       "a culmination",
+       "a divination"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ],
+     "imgs": [
+      "u16-test08-s2-q1-p32.webp",
+      "u16-test08-s2-q1-p33.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The history of the region’s natural resources has been one of initial (i)____ followed by (ii)____; as such the region has over time gone from a resource-rich to a resource-dependent economy."
+      ],
+      "cols": [
+       [
+        "disappointment",
+        "abundance",
+        "conservation"
+       ],
+       [
+        "growing interdependence",
+        "draconian regulation",
+        "rapacious depletion"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u16-test08-s2-q2-p33.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Any account of experimental music in the United States that (i)____ the predominantly African American bebop and free jazz movements is (ii)____, since this body of music constitutes what is arguably the most influential African experimental music in the decades following the Second War War."
+      ],
+      "cols": [
+       [
+        "neglects",
+        "exaggerates",
+        "reinterprets"
+       ],
+       [
+        "underappreciated",
+        "problematic",
+        "self-serving"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ],
+     "imgs": [
+      "u16-test08-s2-q3-p33.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFI",
+     "txt": {
+      "stem": [
+       "Gravitational waves—ripples in the geometry of space-time—are analogous to electromagnetic waves. The challenge in trying to observe these waves directly is that they are extremely weak. To make waves large enough to be (i)____, the most (ii)____ events in the universe are required: supernova explosions, the formation of black holes, or the collision of stars. Even so, the effects are (iii)____. The geometry changes so little that a distance of several kilometers changes by less than the diameter of a proton."
+      ],
+      "cols": [
+       [
+        "detectable",
+        "usable",
+        "explicable"
+       ],
+       [
+        "obvious",
+        "subtle",
+        "violent"
+       ],
+       [
+        "masked",
+        "disastrous",
+        "minuscule"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      2
+     ],
+     "imgs": [
+      "u16-test08-s2-q4-p33.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Readers have long considered Lawd Today! , Richard Wright’s first written and last published novel, ____; the novel simply seems inconsistent with the image of what a Wright text should do or be."
+      ],
+      "opts": [
+       "an artifact",
+       "a prototype",
+       "an anomaly",
+       "a mainstay",
+       "an aberration",
+       "a model"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ],
+     "imgs": [
+      "u16-test08-s2-q5-p33.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "It is hardly ____ for today’s film to try to blur the boundaries between the moral and the immoral. Hollywood has been doing that since at least the 1960s."
+      ],
+      "opts": [
+       "entertaining",
+       "original",
+       "novel",
+       "pertinent",
+       "relevant",
+       "insightful"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u16-test08-s2-q6-p33.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Reversing a decade-long trend on global ____, earth’s surface has become brighter since 1990, scientists are reporting."
+      ],
+      "opts": [
+       "warming",
+       "cooling",
+       "diffusing",
+       "dimming",
+       "darkening",
+       "heating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ],
+     "imgs": [
+      "u16-test08-s2-q7-p33.webp",
+      "u16-test08-s2-q7-p34.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

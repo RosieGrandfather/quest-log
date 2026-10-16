@@ -1,0 +1,219 @@
+{
+ "id": "u23-test12-s1",
+ "title": "Test 12 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 12, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 12 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Blake’s reputation for weakness is ____: almost all who have worked with him say he is a disciplined, intellectually formidable, and very tough politician."
+      ],
+      "opts": [
+       "specious",
+       "pervasive",
+       "irreversible",
+       "trivial",
+       "ambivalent"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ],
+     "imgs": [
+      "u23-test12-s1-q1-p41.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Mr. Billington, at times, can be a (i)____. For instance, he deplores the Royal Shakespeare Company’s eight-and-a-half hour version of Nicholas Nickelby, which many found (ii)____."
+      ],
+      "cols": [
+       [
+        "naysayer",
+        "pushover",
+        "braggart"
+       ],
+       [
+        "perplexing",
+        "unpredictable",
+        "absorbing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ],
+     "imgs": [
+      "u23-test12-s1-q2-p41.webp",
+      "u23-test12-s1-q2-p42.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Early practitioners of the natural sciences developed methods to remove distortions caused by either the research environment or the researcher. Such methods, especially with respect to the researcher, were considered to (i)____ those (ii)____ subjectivity whose unbridled expression was thought to (iii)____ research."
+      ],
+      "cols": [
+       [
+        "restrain",
+        "reveal",
+        "disguise"
+       ],
+       [
+        "incursions of",
+        "restrictions on",
+        "acknowledgements of"
+       ],
+       [
+        "corrupt",
+        "justify",
+        "expedite"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ],
+     "imgs": [
+      "u23-test12-s1-q3-p42.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Williamson had a fierce commitment to achieving an accord, spending enormous amount of time trying to forge a consensus out of an often ____ assembly."
+      ],
+      "opts": [
+       "apathetic",
+       "fractious",
+       "restive",
+       "cynical",
+       "compliant",
+       "tractable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ],
+     "imgs": [
+      "u23-test12-s1-q4-p42.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "One ____ is that so far, Web services have turned out to be much harder to deliver than their champions had hoped."
+      ],
+      "opts": [
+       "hope",
+       "snag",
+       "prospect",
+       "hitch",
+       "upshot",
+       "reason"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ],
+     "imgs": [
+      "u23-test12-s1-q5-p42.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Asserting a need to preserve the ____ that became the hallmark of her predecessor’s tenure, the new director of federal monetary policy refused to subscribe to rigid or mechanistic rules in policy making."
+      ],
+      "opts": [
+       "firmness",
+       "adaptability",
+       "unpredictability",
+       "autonomy",
+       "strictness",
+       "flexibility"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ],
+     "imgs": [
+      "u23-test12-s1-q6-p42.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "At first, most of the famous fairy tales seem so implausible and so irrelevant to contemporary life that their ____ is hard to understand."
+      ],
+      "opts": [
+       "universality",
+       "persistence",
+       "appeal",
+       "ephemerality",
+       "survival",
+       "transience"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u23-test12-s1-q7-p42.webp",
+      "u23-test12-s1-q7-p43.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,218 @@
+{
+ "id": "u31-test16-s1",
+ "title": "Test 16 · Section 1（easy · 7题）",
+ "en": "Text Completion — Test 16, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt/img/",
+   "source": "张巍GRE填空机经2000题 · Test 16 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Though humanitarian emergencies are frequent features of television news, such exposure seldom ____ the public, which rather seems resigned to a sense of impotency."
+      ],
+      "opts": [
+       "paralyzes",
+       "demoralizes",
+       "assuages",
+       "galvanizes",
+       "exasperates"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ],
+     "imgs": [
+      "u31-test16-s1-q1-p52.webp"
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Despite the fact that the book promises a complete rethinking of the factors contributing to the conflict, the picture that the book paints is (i)____: in identifying cause, it is more orthodox than (ii)____."
+      ],
+      "cols": [
+       [
+        "obscure",
+        "detailed",
+        "familiar"
+       ],
+       [
+        "restrictive",
+        "revisionist",
+        "enigmatic"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ],
+     "imgs": [
+      "u31-test16-s1-q2-p52.webp"
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Traditional Vietnamese culture has long promoted the idea of gender equality. Founding myths (i)____ the equal division of labor in child care for mothers and fathers. As is often the case, however, theoretical commitments are (ii)____ actual processes. In reality, gender-based (iii)____ persists."
+      ],
+      "cols": [
+       [
+        "obscure",
+        "celebrate",
+        "countermand"
+       ],
+       [
+        "incommensurate with",
+        "surpassed by",
+        "inspired by"
+       ],
+       [
+        "parity",
+        "inclusiveness",
+        "stratification"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ],
+     "imgs": [
+      "u31-test16-s1-q3-p52.webp"
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Not only was this writer content to leave the reading public in the dark, she seems to have ____ the role of trickster, seeding her works with apparent clues that led nowhere."
+      ],
+      "opts": [
+       "rejected",
+       "disdained",
+       "relished",
+       "participated in",
+       "delighted in",
+       "developed"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ],
+     "imgs": [
+      "u31-test16-s1-q4-p52.webp"
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Although the biography never explicitly assesses what role the dynamic between Mr. Merrill’s parents might have played in the development of his personality, the author offers plenty of ____."
+      ],
+      "opts": [
+       "mystification",
+       "elucidation",
+       "speculation",
+       "reflection",
+       "obfuscation",
+       "conjecture"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ],
+     "imgs": [
+      "u31-test16-s1-q5-p52.webp",
+      "u31-test16-s1-q5-p53.webp"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "There are great ____ in countries’ greenhouse gas emissions, especially in per capita terms: while the United States and China are similar in aggregate emissions, United States per capita emissions are a huge multiple of China’s."
+      ],
+      "opts": [
+       "distortions",
+       "disparities",
+       "fluctuations",
+       "advances",
+       "variances",
+       "vacillations"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ],
+     "imgs": [
+      "u31-test16-s1-q6-p53.webp"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "There is frequently a protracted time interval between the introduction of an innovative musical composition and its public acceptance; the concert-going public often spurns the ____ in favor of the familiar for a prolonged period."
+      ],
+      "opts": [
+       "comprehensive",
+       "intricate",
+       "novel",
+       "original",
+       "intelligible",
+       "complex"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ],
+     "imgs": [
+      "u31-test16-s1-q7-p53.webp"
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}
