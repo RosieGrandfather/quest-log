@@ -5,7 +5,7 @@ import { escapeHTML } from '../core/html.js';
 import { QKIND_LABEL, QC_TEXT, isAnswered, gradeItem, summarize, answerText, pickedText, isMulti, isGraded, sentenceChoices } from '../core/qgrade.js';
 import { unitKey } from '../core/study.js';
 import { restorePractice } from '../core/qreview.js';
-import { submitPractice } from '../data/study.js';
+import { savePracticeSubmission } from './practice-save.js';
 import { showToast } from '../ui/common.js';
 
 const L = 'ABCDEFGH';
@@ -132,7 +132,7 @@ function openZoom(src){
   ov.querySelector('.qzoom-x').focus();
 }
 
-export function wireQset(root, course, unit){
+export function wireQset(root, course, unit, onComplete){
   const box = root && root.querySelector('.qset');
   if(!box) return;
   box.addEventListener('click', e=> { const im = e.target.closest && e.target.closest('img.qimg'); if(im) openZoom(im.currentSrc || im.src); });
@@ -272,12 +272,7 @@ export function wireQset(root, course, unit){
     const sum = reveal();
     sumEl.scrollIntoView({behavior:'smooth', block:'start'});
     try{
-      const pr = await submitPractice(T.cols, course, unit, answers.slice(), sum);
-      T.progress[key] = pr; showPrev();
-      showToast(`本套 ${sum.correct} / ${sum.total}（${sum.pct}%）已保存`);
-    }catch(err){
-      console.error(err);
-      showToast('成绩没保存成功：' + (err.message || '请检查网络'));
+      await savePracticeSubmission(sumEl,course,unit,answers.slice(),sum,onComplete,showPrev);
     }finally{ saving = false; submitBtn.disabled = false; }
   }
 

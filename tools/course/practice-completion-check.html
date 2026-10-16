@@ -1,0 +1,53 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="/">
+<title>提交即学完 · 本地检查</title><link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/study.css"><style>body{max-width:960px;margin:24px auto;padding:0 16px}</style></head>
+<body><button id="run" disabled>检查提交即学完</button><p id="status" role="status">加载中</p><main id="view"></main><div id="toast" hidden></div>
+<div class="modal-backdrop" id="celebrateModal" hidden><div class="modal celebrate-modal"><div id="confettiWrap"></div><div id="celebrateText"></div><button id="closeCelebrate">太棒了</button></div></div><div id="quizPrompt" hidden></div>
+<script>
+window.firebaseConfig={};window.marked={parse:s=>s};
+const logs=new Map(),progress=new Map();let failAward=false;
+const reference=(map,id)=>({id,get:async()=>({exists:map.has(id),data:()=>map.get(id)}),set:async v=>map.set(id,{...map.get(id),...v}),map});
+window.firebase={initializeApp(){},auth:()=>({}),firestore:()=>({runTransaction:async fn=>{if(failAward){failAward=false;throw Error('模拟离线');}return fn({get:r=>r.get(),set:(r,v)=>r.map.set(r.id,v)});}})};
+</script>
+<script type="module">
+import{T}from'/js/study/state.js';import{renderRoute}from'/js/study/views.js';import{closeCelebrate}from'/js/ui/common.js';
+const course=await(await fetch('/courses/gre-zt/course.json')).json();
+const unit=await(await fetch('/courses/gre-zt/'+course.units[0].file)).json();
+const cid='qa-practice-completion',key=cid+'__'+unit.id;
+T.courseCache[cid]={...course,id:cid,path:'gre-zt'};T.unitCache[key]=unit;
+T.cols={log:{doc:id=>reference(logs,id),where:()=>({get:async()=>({docs:[...logs.values()].filter(v=>v.category==='study').map(v=>({data:()=>v}))})})},studyProgress:{doc:id=>reference(progress,id)},readPos:{doc:id=>reference(new Map(),id)}};
+const status=document.querySelector('#status');
+const tick=()=>new Promise(r=>setTimeout(r,10));
+async function until(fn){for(let i=0;i<300;i++){if(fn())return;await tick();}throw Error('等待结果超时');}
+function fill(){for(const[i,q]of unit.blocks[0].items.entries())for(const[j,k]of q.ans.entries())document.querySelector(q.kind==='tc'?`#gq-${i} input[name="q${i}_${j}"][value="${k}"]`:`#gq-${i} input[value="${k}"]`).click();}
+function assert(ok,msg){if(!ok)throw Error(msg);}
+document.querySelector('#closeCelebrate').onclick=closeCelebrate;
+location.hash=`#/c/${cid}/u/${unit.id}`;await renderRoute();
+document.querySelector('#run').disabled=false;status.textContent='本地内存检查，不使用真实账号';
+document.querySelector('#run').onclick=async()=>{
+ const btn=document.querySelector('#run');btn.disabled=true;
+ try{
+  logs.clear();progress.clear();T.completed={};T.progress={};await renderRoute();
+  assert(!document.querySelector('#completeBtn'),'仍有第二个学完按钮');
+  assert(!document.body.textContent.includes('看完视频和讲解后点这里'),'仍有底部提示');
+  fill();document.querySelector('.gbar-submit').click();
+  await until(()=>!document.querySelector('#celebrateModal').hidden);
+  assert(document.querySelector('#celebrateText').textContent.includes('本章学完了'),'未弹出完成提示');
+  assert(document.querySelector('#celebrateText').textContent.includes('30'),'未奖励30分');
+  assert(logs.size===1&&[...logs.values()][0].amount===30,'积分记录错误');
+  assert(progress.get(key).practiceAttempts===1&&progress.get(key).completedISO,'未记录完成');
+  assert(document.querySelector('.done-banner'),'未显示完成状态');
+  assert([...document.querySelectorAll('.qgloss')].every(e=>!e.hidden),'未显示中文释义');
+  closeCelebrate();document.querySelector('[data-act="redo"]').click();fill();document.querySelector('.gbar-submit').click();
+  await until(()=>progress.get(key).practiceAttempts===2);await tick();
+  assert(logs.size===1&&document.querySelector('#celebrateModal').hidden,'重做重复奖励');
+  // Score saved, then completion fails: retry must not create another attempt.
+  logs.clear();progress.clear();T.completed={};T.progress={};await renderRoute();failAward=true;fill();document.querySelector('.gbar-submit').click();
+  await until(()=>document.querySelector('.practice-save-error button'));
+  assert(progress.get(key).practiceAttempts===1&&logs.size===0,'失败状态不正确');
+  document.querySelector('.practice-save-error button').click();await until(()=>!document.querySelector('#celebrateModal').hidden);
+  assert(progress.get(key).practiceAttempts===1&&logs.size===1,'重试重复提交或未完成');
+  status.textContent='通过：单一提交入口、成绩与完成同时保存、首次奖励30分并弹窗、重做不重复奖励、中文释义正常、完成失败可重试且不增加作答次数。';
+ }catch(e){status.textContent='失败：'+e.message;console.error(e);}finally{btn.disabled=false;}
+};
+if(new URLSearchParams(location.search).has('run'))document.querySelector('#run').click();
+</script></body></html>

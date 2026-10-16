@@ -12,7 +12,7 @@ import { wireQset } from './qset.js';
 import { wireEssay } from './essay.js';
 import { startResume, stopResume, clearResume } from './resume.js';
 import { escapeHTML } from '../core/html.js';
-import { fmtDateLabel } from '../core/dates.js';
+import { fmtDateLabel, localISO } from '../core/dates.js';
 import { unitKey, scoreQuiz, unitPoints, QUIZ_POINTS, QUIZ_PASS_PCT, DAY_UNITS_TARGET, DAY_UNITS_BONUS } from '../core/study.js';
 import { completeUnit, submitQuiz } from '../data/study.js';
 import { showToast, openCelebrate } from '../ui/common.js';
@@ -196,8 +196,9 @@ async function renderUnit(cid, uid){
     <button class="notes-fab" id="notesFab">📝 笔记</button>`;
   if(!unit.practice) renderMath(view());     // 练习套题是纯英文原文，不做公式排版
   wireVocab(document.querySelector('.lesson'));
-  wirePractice(document.querySelector('.lesson'), course, unit);
-  wireQset(document.querySelector('.lesson'), course, unit);
+  const completePractice = ()=> finishUnit(course, unit);
+  wirePractice(document.querySelector('.lesson'), course, unit, completePractice);
+  wireQset(document.querySelector('.lesson'), course, unit, completePractice);
   wireEssay(document.querySelector('.lesson'), course, unit);
   wireVocabMarks(document.querySelector('.lesson'), course, unit);
   resetPySession();               // 每进一节，变量清空，像新开一个 notebook
@@ -222,6 +223,7 @@ async function renderUnitActions(cid, uid){
   const done = T.completed[key];
   const pr = T.progress[key] || {};
   const hasQuiz = unit.quiz && unit.quiz.questions && unit.quiz.questions.length;
+  const submittedPractice = unit.blocks.some(b=>b.type==='gre-qset' || b.type==='gre-set');
   let quizPart = '';
   if(hasQuiz){
     const status = pr.quizPassed ? `已达标，最高 ${pr.quizBest} 分 ⭐`
@@ -238,8 +240,8 @@ async function renderUnitActions(cid, uid){
   }
   box.innerHTML = done
     ? `<div class="done-banner">✅ 已学完这一节 · ${escapeHTML(fmtDateLabel(done))}</div>${quizPart}`
-    : `<button class="btn-primary btn-complete" id="completeBtn">学完了 ✓ <span class="mono">+${unitPoints(unit)}</span></button>
-       <div class="complete-hint">看完视频和讲解后点这里；只有第一次学完新章节才算今天的有效学习</div>${quizPart}`;
+    : submittedPractice ? quizPart
+    : `<button class="btn-primary btn-complete" id="completeBtn">学完了 ✓ <span class="mono">+${unitPoints(unit)}</span></button>${quizPart}`;
   const btn = $('completeBtn');
   if(btn) btn.addEventListener('click', ()=> onComplete(course, unit, btn));
 }
@@ -247,9 +249,22 @@ async function renderUnitActions(cid, uid){
 async function onComplete(course, unit, btn){
   btn.disabled = true;
   try{
+    await finishUnit(course,unit);
+  }catch(e){
+    console.error(e);
+    showToast('记录失败：' + (e.message || '请重试'));
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+async function finishUnit(course, unit){
     const r = await completeUnit(T.cols, course, unit);
-    if(!r.created){ showToast('这一节之前已经学完过了'); return; }
-    let html = `你太棒了！学完了「${escapeHTML(unit.title)}」🎉<br>已添加 <span class="mono">${unitPoints(unit)}</span> 积分！`;
+    const key=unitKey(course.id,unit.id);
+    T.completed[key] ||= localISO(new Date());
+    if(route.name==='unit' && route.cid===course.id && route.uid===unit.id) await renderUnitActions(course.id,unit.id);
+    if(!r.created){ showToast('提交已保存，这一节已学完'); return; }
+    let html = `本章学完了 🎉<br>「${escapeHTML(unit.title)}」<br>奖励 <span class="mono">${unitPoints(unit)}</span> 积分！`;
     html += `<br><span class="celebrate-sub">🔥 已连续学习 <span class="mono">${r.streak}</span> 天</span>`;
     if(r.todayCount < DAY_UNITS_TARGET){
       html += `<br><span class="celebrate-sub">📚 今天已学完 <span class="mono">${r.todayCount}</span> 节，学满 ${DAY_UNITS_TARGET} 节再得 <span class="mono">${DAY_UNITS_BONUS}</span> 分</span>`;
@@ -260,12 +275,6 @@ async function onComplete(course, unit, btn){
     const hasQuiz = unit.quiz && unit.quiz.questions && unit.quiz.questions.length;
     if(hasQuiz) afterCelebrate = ()=> openQuizPrompt(course, unit);
     openCelebrate(html);
-  }catch(e){
-    console.error(e);
-    showToast('记录失败：' + (e.message || '请重试'));
-  }finally{
-    btn.disabled = false;
-  }
 }
 
 function openQuizPrompt(course, unit){

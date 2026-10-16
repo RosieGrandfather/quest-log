@@ -4,7 +4,7 @@ import { T } from './state.js';
 import { escapeHTML } from '../core/html.js';
 import { KIND_LABEL, DIFF_LABEL, isAnswered, gradeItem, encodeSel, decodeSel, summarize } from '../core/practice.js';
 import { unitKey } from '../core/study.js';
-import { submitPractice } from '../data/study.js';
+import { savePracticeSubmission } from './practice-save.js';
 import { showToast } from '../ui/common.js';
 
 const LETTERS = 'ABCDEFGHIJ';
@@ -69,7 +69,7 @@ const explainHTML = (it, sel, ok)=>{
     <div class="explain"><strong>官方解析（英文原文）</strong>${paras(it.expl)}</div>`;
 };
 
-export function wirePractice(root, course, unit){
+export function wirePractice(root, course, unit, onComplete){
   const box = root && root.querySelector('.gset:not(.qset):not(.aw)');
   if(!box) return;
   const b = unit.blocks.find(x=> x.type === 'gre-set');
@@ -161,12 +161,7 @@ export function wirePractice(root, course, unit){
     const sum = reveal();
     sumEl.scrollIntoView({behavior:'smooth', block:'start'});
     try{
-      const pr = await submitPractice(T.cols, course, unit, sels.map(encodeSel), sum);
-      T.progress[key] = pr; showPrev();
-      showToast(`本套 ${sum.correct} / ${sum.total}（${sum.pct}%）已保存`);
-    }catch(err){
-      console.error(err);
-      showToast('成绩没保存成功：' + (err.message || '请检查网络'));
+      await savePracticeSubmission(sumEl,course,unit,sels.map(encodeSel),sum,onComplete,showPrev);
     }finally{ saving = false; submitBtn.disabled = false; }
   }
 
