@@ -8,6 +8,12 @@ export const isMulti = it => it.kind === 'mcn' || it.kind === 'se';
 export const isGraded = it => it.kind !== 'ss';
 export const QC_TEXT = ['Quantity A 更大', 'Quantity B 更大', '两者相等', '无法确定'];
 
+/* 句子边界由校对过的课程数据提供，避免缩写、引号被自动断句拆错。 */
+export function sentenceChoices(item){
+  const sentences = item.kind === 'ss' && item.txt && item.txt.sentences;
+  return Array.isArray(sentences) && sentences.length > 0 && sentences.every(s=> typeof s === 'string' && s.trim()) ? sentences : [];
+}
+
 const num = s => {
   const t = String(s ?? '').trim().replace(/[,\s%$]/g, '');
   if(!/^[-+]?(\d+\.?\d*|\.\d+)$/.test(t)) return NaN;
@@ -28,7 +34,7 @@ const idx = s => String(s || '').split(',').filter(x=> x !== '').map(Number).sor
 const blanks = (item, a)=> { const p = String(a || '').split(','); return Array.from({length: item.blanks}, (_, i)=> p[i] ?? ''); };
 export const isAnswered = (item, a)=> item.kind === 'ne'
   ? (item.frac ? /^\s*\S+\s*\/\s*\S+\s*$/.test(a || '') : String(a || '').trim() !== '')
-  : item.kind === 'ss' ? String(a || '').trim() !== ''
+  : item.kind === 'ss' ? (sentenceChoices(item).length ? sentenceChoices(item).includes(String(a || '')) : String(a || '').trim() !== '')
   : item.kind === 'tc' ? blanks(item, a).every(x=> x !== '')
   : idx(a).length > 0;
 

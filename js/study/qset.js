@@ -2,7 +2,7 @@
    做完所有题 → 点「提交」→ 才显示每题对错 + 官方解析（截图）+ 本套总结。判分在 js/core/qgrade.js。 */
 import { T } from './state.js';
 import { escapeHTML } from '../core/html.js';
-import { QKIND_LABEL, QC_TEXT, isAnswered, gradeItem, summarize, answerText, pickedText, isMulti, isGraded } from '../core/qgrade.js';
+import { QKIND_LABEL, QC_TEXT, isAnswered, gradeItem, summarize, answerText, pickedText, isMulti, isGraded, sentenceChoices } from '../core/qgrade.js';
 import { unitKey } from '../core/study.js';
 import { submitPractice } from '../data/study.js';
 import { showToast } from '../ui/common.js';
@@ -17,7 +17,7 @@ const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选�
   : it.kind === 'mcn' ? '选出所有正确的选项（可能不止一个）'
   : it.kind === 'se' ? '选两个答案：填进去句子通顺，而且两个句子意思相近（选项自上而下是 A–F）'
   : it.kind === 'tc' ? `${it.blanks} 个空，每个空各选一项（每列自上而下是 A、B、C）`
-  : it.kind === 'ss' ? '在原文里找出符合题意的那一句；下面写它的序号或开头几个词。这类题交卷后对照答案自评，不计入分数'
+  : it.kind === 'ss' ? (sentenceChoices(it).length ? '点击文章中的一句话作答；点击其他句子可更换。交卷后自评，不计入分数' : '在原文里找出符合题意的那一句；下面写它的序号或开头几个词。这类题交卷后对照答案自评，不计入分数')
   : it.frac ? '分数作答：上面填分子，下面填分母' : '在框里填一个数（可以带小数点；逗号、% 不用管）';
 
 function controlsHTML(it, i){
@@ -26,7 +26,7 @@ function controlsHTML(it, i){
       ? `<div class="qne frac"><input type="text" inputmode="numeric" autocomplete="off" data-part="0" aria-label="分子"><span class="qbar"></span><input type="text" inputmode="numeric" autocomplete="off" data-part="1" aria-label="分母"></div>`
       : `<div class="qne"><input type="text" inputmode="decimal" autocomplete="off" aria-label="答案"></div>`;
   }
-  if(it.kind === 'ss') return `<div class="qne ss"><input type="text" autocomplete="off" placeholder="例：第 3 句 / But, in addition…" aria-label="你选的句子"></div>`;
+  if(it.kind === 'ss') return sentenceChoices(it).length ? '' : `<div class="qne ss"><input type="text" autocomplete="off" placeholder="例：第 3 句 / But, in addition…" aria-label="你选的句子"></div>`;
   if(it.kind === 'tc'){
     return `<div class="qtc">${Array.from({length: it.blanks}, (_, j)=>
       `<div class="qblank"><span class="qblank-no">空 ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
@@ -41,6 +41,16 @@ function controlsHTML(it, i){
 
 const origImgs = (it, b)=> (it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('');
 
+function textHTML(it, i){
+  const sentences = sentenceChoices(it);
+  const stem = `<div class="qstemtxt">${paraHTML(it.txt.stem)}</div>`;
+  if(sentences.length){
+    return `${stem}<div class="qpass qsentence-pass"><div class="vp-tag">文章 · 点击一句话作答</div><div class="qsentences" role="radiogroup" aria-label="第 ${it.n} 题：选择文章中的一句话"><p>${sentences.map((s, j)=>
+      `<label class="qsentence"><input type="radio" name="q${i}_sentence" value="${escapeHTML(s)}" aria-label="第 ${j + 1} 句：${escapeHTML(s)}"><span>${tx(s)}</span></label>`).join(' ')}</p></div></div>`;
+  }
+  return `${it.txt.pass ? `<div class="qpass"><div class="vp-tag">文章</div>${paraHTML(it.txt.pass)}</div>` : ''}${stem}`;
+}
+
 function itemHTML(it, i, b){
   let fig = '';
   if(it.fig){
@@ -51,7 +61,7 @@ function itemHTML(it, i, b){
   }
   return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
-    ${it.txt ? `<div class="qtxt">${it.txt.pass ? `<div class="qpass"><div class="vp-tag">文章</div>${paraHTML(it.txt.pass)}</div>` : ''}<div class="qstemtxt">${paraHTML(it.txt.stem)}</div></div>
+    ${it.txt ? `<div class="qtxt">${textHTML(it, i)}</div>
     <details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : origImgs(it, b)}
     <div class="gq-hint">${hintOf(it)}</div>
     ${controlsHTML(it, i)}
@@ -105,7 +115,8 @@ export function wireQset(root, course, unit){
     if(it.kind === 'tc'){
       answers[i] = Array.from({length: it.blanks}, (_, j)=> { const c = sec.querySelector(`input[name="q${i}_${j}"]:checked`); return c ? c.value : ''; }).join(',');
       if(/^,*$/.test(answers[i])) answers[i] = '';
-    } else if(it.kind === 'ss') answers[i] = sec.querySelector('.qne input').value.trim();
+    } else if(it.kind === 'ss') answers[i] = sentenceChoices(it).length
+      ? (sec.querySelector('.qsentence input:checked')?.value || '') : sec.querySelector('.qne input').value.trim();
     else if(it.kind === 'ne'){
       const ins = [...sec.querySelectorAll('.qne input')].map(x=> x.value.trim());
       answers[i] = it.frac ? (ins[0] || ins[1] ? `${ins[0]}/${ins[1]}` : '') : ins[0];
@@ -116,7 +127,10 @@ export function wireQset(root, course, unit){
     if(it.kind === 'tc'){
       const p = a.split(',');
       sec.querySelectorAll('input').forEach(x=>{ const j = Number(x.name.split('_')[1]); x.checked = p[j] === x.value; });
-    } else if(it.kind === 'ss') sec.querySelector('.qne input').value = a;
+    } else if(it.kind === 'ss'){
+      if(sentenceChoices(it).length) sec.querySelectorAll('.qsentence input').forEach(x=>{ x.checked = x.value === a; });
+      else sec.querySelector('.qne input').value = a;
+    }
     else if(it.kind === 'ne'){
       const ins = sec.querySelectorAll('.qne input');
       if(it.frac){ const [p, q] = a.split('/'); ins[0].value = p || ''; ins[1].value = q || ''; } else ins[0].value = a;
@@ -168,7 +182,7 @@ export function wireQset(root, course, unit){
         });
       }
       const ex = sec.querySelector('.gq-explain');
-      ex.innerHTML = `<div class="gq-answer"><span>正确答案：<b>${escapeHTML(answerText(it))}</b></span><span class="${ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
+      ex.innerHTML = `<div class="gq-answer"><span>${it.kind === 'ss' ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${it.kind === 'ss' ? '' : ok ? 'ok' : 'bad'}">你的答案：<b>${escapeHTML(pickedText(it, a))}</b></span></div>
         ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });
@@ -254,7 +268,11 @@ export function wireQset(root, course, unit){
     else if(t.dataset.act === 'view-last'){
       if(revealed) return;
       const last = T.progress[key].practiceLast;
-      answers = items.map((_, i)=> String((last.answers || [])[i] || ''));
+      answers = items.map((it, i)=>{
+        const saved = String((last.answers || [])[i] || '');
+        // 旧版 A–E 下标不能当作改版后所选句子。
+        return sentenceChoices(it).length && !sentenceChoices(it).includes(saved) ? '' : saved;
+      });
       paint(); updateCount(); reveal(); sumEl.scrollIntoView({behavior:'smooth', block:'start'});
     }
     else if(t.dataset.goto !== undefined){

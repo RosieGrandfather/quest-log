@@ -373,6 +373,16 @@
 .qtxt{font-size:15.5px;line-height:1.7;margin:6px 0 8px;}
 .qtxt p{margin:0 0 .7em;}
 .qpass{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 14px 4px;margin-bottom:10px;max-height:340px;overflow:auto;}
+.qsentence-pass{max-height:none;overflow:visible;}
+.qsentence{position:relative;cursor:pointer;}
+.qsentence input{position:absolute;width:1px;height:1px;opacity:0;}
+.qsentence span{border-radius:4px;padding:3px 1px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.qsentence:hover span{background:var(--teal-soft);}
+.qsentence input:checked + span{background:var(--teal-soft);color:var(--teal);box-shadow:0 2px 0 var(--teal);}
+.qsentence input:focus-visible + span{outline:2px solid var(--teal);outline-offset:2px;}
+.qsentence:has(input:disabled){cursor:default;}
+.qsentence:has(input:disabled):hover span{background:transparent;}
+.qsentence:has(input:disabled):hover input:checked + span{background:var(--teal-soft);}
 .qstemtxt{font-weight:500;}
 .qbl{display:inline-block;min-width:3.2em;border-bottom:2px solid var(--ink);margin:0 .15em;vertical-align:baseline;}
 .qorig{margin:4px 0 8px;font-size:13px;}

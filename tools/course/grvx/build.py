@@ -69,7 +69,7 @@ for s in data:
             o['img'] = names[0]
             tx = txts.get(f'{sec["sec"]}-{it["n"]}')
             if tx and tx.get('ok'):
-                o['txt'] = {k: tx[k] for k in ('pass', 'stem', 'opts', 'cols') if tx.get(k)}
+                o['txt'] = {k: tx[k] for k in ('pass', 'stem', 'opts', 'cols', 'sentences') if tx.get(k)}
             if len(names) > 1: o['imgs'] = names
             items.append(o)
         title = f'{s["zh"]} · Verbal {v}（{M} 题）'
@@ -79,7 +79,7 @@ for s in data:
                 '提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题',
                 '这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表']
         if missing: objs.append(f'原 PDF 缺第 {"、".join(map(str, missing))} 题的截图，所以这一节只有 {len(items)} 题')
-        if any(i['kind'] == 'ss' for i in items): objs.append('「选句子」题没法在网页里点选，请写下你选的句子（序号或开头几个词），交卷后对照答案自评，不计入分数')
+        if any(i['kind'] == 'ss' for i in items): objs.append('「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数')
         unit = {'id': uid, 'title': title, 'en': f'Verbal Reasoning — {s["id"]} section {v}', 'minutes': minutes, 'practice': True,
                 'objectives': objs,
                 'blocks': [{'type': 'gre-qset', 'base': 'courses/gre-vx/img/', 'source': f'2025 年 GRE 考场回忆真题（逐鹿留学整理）· {s["zh"]}', 'noteTail': '（考场截屏整理版，仅供个人学习；没有官方解析）', 'items': items}],

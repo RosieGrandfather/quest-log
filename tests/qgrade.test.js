@@ -44,3 +44,17 @@ test('Verbal kinds: se, tc and self-checked ss', ()=>{
   assert.equal(s.total, 2); assert.equal(s.correct, 1); assert.deepEqual(s.wrong, [1]); assert.deepEqual(s.selfCheck, [2]);
   assert.equal(answerText(ss), '第三句话');
 });
+
+test('clickable sentences preserve full text and reject obsolete A–E answers', ()=>{
+  const sentences = ['An author writes.', 'Another author disagrees.'];
+  const item = {kind:'ss', txt:{sentences}, ansText:'待核对'};
+  assert.ok(isAnswered(item, sentences[1]));
+  assert.ok(!isAnswered(item, '4'));
+  assert.ok(!isAnswered(item, ''));
+  assert.ok(!isAnswered(item, 'A sentence not in this passage.'));
+  assert.equal(pickedText(item, sentences[1]), sentences[1]);
+  assert.equal(pickedText(item, '4'), '未作答');
+  const result = summarize([item], [sentences[1]]);
+  assert.equal(result.total, 0);
+  assert.deepEqual(result.selfCheck, [0]);
+});

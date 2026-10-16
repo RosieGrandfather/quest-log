@@ -35,6 +35,12 @@ def validate_qset(unit, cdir):
                 if not isinstance(tx.get('cols'), list) or len(tx['cols']) != it.get('blanks') or any(len(c) != 3 or not all(isinstance(x, str) and x.strip() for x in c) for c in tx['cols']): e.append(f'{w}: txt.cols 不对')
         if kind == 'ss':
             if not str(it.get('ansText', '')).strip(): e.append(f'{w}: 选句子题没有 ansText')
+            if tx and 'sentences' in tx:
+                ss = tx['sentences']
+                if not isinstance(ss, list) or not ss or not all(isinstance(s, str) and s.strip() for s in ss):
+                    e.append(f'{w}: txt.sentences 应为非空句子列表')
+                elif ' '.join(ss) != ' '.join(tx.get('pass') or []):
+                    e.append(f'{w}: 可点选句子与文章内容不一致')
         elif kind == 'tc':
             nb = it.get('blanks')
             if nb not in (2, 3): e.append(f'{w}: 填空数 blanks 应为 2 或 3')
