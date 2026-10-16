@@ -26,6 +26,13 @@
        "counterweight to",
        "ramification of",
        "deviation from"
+      ],
+      "optsZh": [
+       "……的同义词",
+       "……所特有的",
+       "对……的制衡力量",
+       "……的后果或衍生影响",
+       "对……的偏离"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "brilliant theorizing",
         "voluminous reading",
         "careful observation"
+       ]
+      ],
+      "colsZh": [
+       [
+        "经验主义者",
+        "传统主义者",
+        "热衷者"
+       ],
+       [
+        "出色的理论构想",
+        "广泛大量的阅读",
+        "仔细观察"
        ]
       ]
      },
@@ -78,6 +97,18 @@
         "predict fluctuations of",
         "quantify changes in",
         "trigger elevation of"
+       ]
+      ],
+      "colsZh": [
+       [
+        "实际的；实用的",
+        "理论上的",
+        "道德的"
+       ],
+       [
+        "预测……的波动",
+        "量化……的变化",
+        "引发……上升"
        ]
       ]
      },
@@ -111,6 +142,23 @@
         "vicious",
         "innovative"
        ]
+      ],
+      "colsZh": [
+       [
+        "准确的",
+        "方便的",
+        "轻率的，肤浅的"
+       ],
+       [
+        "反复无常的",
+        "深思熟虑的；体贴的",
+        "天才的，聪明的"
+       ],
+       [
+        "普通的",
+        "凶恶的，恶毒的",
+        "创新性的"
+       ]
       ]
      },
      "blanks": 3,
@@ -135,6 +183,14 @@
        "obstinacy",
        "perspicacity",
        "acuity"
+      ],
+      "optsZh": [
+       "瞌睡，嗜睡",
+       "缺乏经验",
+       "倦怠",
+       "固执",
+       "洞察力",
+       "敏锐"
       ]
      },
      "nopt": 6,
@@ -158,6 +214,14 @@
        "address",
        "swindle",
        "defame"
+      ],
+      "optsZh": [
+       "使迷惑；使困惑",
+       "恶意的；诽谤",
+       "诈骗",
+       "处理；针对；讲话",
+       "欺骗，骗取",
+       "贬损，玷污"
       ]
      },
      "nopt": 6,
@@ -181,6 +245,14 @@
        "appreciative of",
        "guided to",
        "buffered against"
+      ],
+      "optsZh": [
+       "因……惊讶的",
+       "与……隔绝；不受……影响",
+       "因……而谦卑或受挫",
+       "欣赏或感激……的",
+       "被引导至……",
+       "对……起缓冲保护作用"
       ]
      },
      "nopt": 6,

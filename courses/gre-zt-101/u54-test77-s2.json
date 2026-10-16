@@ -26,6 +26,13 @@
        "instigation of",
        "endorsement of",
        "leniency toward"
+      ],
+      "optsZh": [
+       "对……的容忍",
+       "对……的厌恶",
+       "对……的煽动或促成",
+       "对……的支持",
+       "对……的宽容"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "neither bookish nor cerebral",
         "a model of delicacy and refinement",
         "both didactic and argumentative"
+       ]
+      ],
+      "colsZh": [
+       [
+        "……的产物",
+        "对……冷漠的",
+        "痴迷于……的"
+       ],
+       [
+        "既不书卷气也不偏重理智",
+        "精巧优雅的典范",
+        "既说教又好争辩的"
        ]
       ]
      },
@@ -78,6 +97,18 @@
         "distinguishable from",
         "related to",
         "influenced by"
+       ]
+      ],
+      "colsZh": [
+       [
+        "稳定的",
+        "有生成能力的",
+        "无意的"
+       ],
+       [
+        "可与……区分的",
+        "与……相关",
+        "受……影响的"
        ]
       ]
      },
@@ -111,6 +142,23 @@
         "predictable",
         "destructive"
        ]
+      ],
+      "colsZh": [
+       [
+        "明显下降了",
+        "稳步增加了",
+        "缓慢稳定下来"
+       ],
+       [
+        "更潮湿的",
+        "更热的",
+        "更干燥的"
+       ],
+       [
+        "好心的；无害的",
+        "可预测的",
+        "破坏性的"
+       ]
       ]
      },
      "blanks": 3,
@@ -135,6 +183,14 @@
        "unobtrusively",
        "discreetly",
        "precisely"
+      ],
+      "optsZh": [
+       "有利地",
+       "不对称地",
+       "不均匀地",
+       "不引人注意地",
+       "谨慎低调地",
+       "精确地"
       ]
      },
      "nopt": 6,
@@ -158,6 +214,14 @@
        "a beautiful",
        "a prudent",
        "a stunning"
+      ],
+      "optsZh": [
+       "阴郁的，生气的",
+       "脾气好、好相处的",
+       "傲慢的，粗暴的",
+       "美丽的",
+       "谨慎的",
+       "令人印象深刻的"
       ]
      },
      "nopt": 6,
@@ -181,6 +245,14 @@
        "moderately",
        "particularly",
        "unnaturally"
+      ],
+      "optsZh": [
+       "异常地",
+       "主要地；占优势地",
+       "极其；非常",
+       "适度地",
+       "特别地",
+       "不自然地"
       ]
      },
      "nopt": 6,

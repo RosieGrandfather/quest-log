@@ -26,6 +26,13 @@
        "auspicious",
        "benign",
        "natural"
+      ],
+      "optsZh": [
+       "繁重的，费力的",
+       "有效果的",
+       "吉兆的，幸运的",
+       "好心的；无害的",
+       "自然的"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "a paucity of interest in",
         "a variety of interpretations of",
         "a consistent distinction between"
+       ]
+      ],
+      "colsZh": [
+       [
+        "清楚地",
+        "以各种方式",
+        "狭窄地；勉强地"
+       ],
+       [
+        "对……兴趣不足",
+        "对……的多种解释",
+        "对……始终如一的区分"
        ]
       ]
      },
@@ -84,6 +103,23 @@
         "leading to irregularities in",
         "causing increasing appropriations to"
        ]
+      ],
+      "colsZh": [
+       [
+        "自愿地",
+        "从不",
+        "轻易地；乐意地"
+       ],
+       [
+        "繁荣的",
+        "反常的",
+        "处于危险之中的"
+       ],
+       [
+        "对……施加巨大压力",
+        "导致……出现不规则现象",
+        "导致向……提供更多拨款"
+       ]
       ]
      },
      "blanks": 3,
@@ -108,6 +144,14 @@
        "minutiae",
        "approximations",
        "particulars"
+      ],
+      "optsZh": [
+       "偏见",
+       "预测；投射",
+       "偏见",
+       "次要的细节，小事",
+       "近似值",
+       "细节"
       ]
      },
      "nopt": 6,
@@ -131,6 +175,14 @@
        "tendentious",
        "surreptitious",
        "acrimonious"
+      ],
+      "optsZh": [
+       "有偏向的",
+       "不精确的",
+       "易怒的；充满怨愤的",
+       "偏袒的，偏向的",
+       "秘密的，鬼鬼祟祟的",
+       "刻薄的"
       ]
      },
      "nopt": 6,
@@ -154,6 +206,14 @@
        "disinclined",
        "loath",
        "keen"
+      ],
+      "optsZh": [
+       "有能力的",
+       "不耐烦的",
+       "注定的",
+       "不愿意的",
+       "不情愿的",
+       "对……感兴趣的"
       ]
      },
      "nopt": 6,
@@ -177,6 +237,14 @@
        "fragment",
        "germ",
        "blueprint"
+      ],
+      "optsZh": [
+       "使陷入困境；一股；方面",
+       "种子；萌芽",
+       "碎片",
+       "片段",
+       "萌芽；起源；病菌",
+       "蓝图"
       ]
      },
      "nopt": 6,

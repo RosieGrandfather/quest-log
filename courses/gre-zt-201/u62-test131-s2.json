@@ -26,6 +26,13 @@
        "translatable",
        "incomprehensible",
        "interconnected"
+      ],
+      "optsZh": [
+       "可以理解的",
+       "有影响力的",
+       "可翻译的",
+       "无法理解的",
+       "相互关联的"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "an admirably comprehensive discussion",
         "a thoroughly outmoded treatment",
         "an almost opaque account"
+       ]
+      ],
+      "colsZh": [
+       [
+        "宏伟壮观的",
+        "具有误导性的",
+        "偶然的"
+       ],
+       [
+        "全面得令人赞赏的讨论",
+        "完全过时的论述",
+        "几乎无法理解的叙述"
        ]
       ]
      },
@@ -83,6 +102,23 @@
         "experimenting with",
         "combing through",
         "venturing beyond"
+       ]
+      ],
+      "colsZh": [
+       [
+        "受惠于……的；感激……的",
+        "批评……的",
+        "在……中独特的"
+       ],
+       [
+        "盲目支持；偏袒",
+        "剽窃",
+        "推测，猜想"
+       ],
+       [
+        "尝试使用……",
+        "仔细搜寻或梳理……",
+        "大胆超出……"
        ]
       ]
      },
@@ -120,6 +156,23 @@
         "revelatory",
         "disappointing"
        ]
+      ],
+      "colsZh": [
+       [
+        "史无前例的",
+        "可预测的",
+        "引起争论的，启发的"
+       ],
+       [
+        "抵抗",
+        "采纳；采用",
+        "避开；有意不采用"
+       ],
+       [
+        "无意义的",
+        "揭示真相的；启发性的",
+        "令人失望的"
+       ]
       ]
      },
      "blanks": 3,
@@ -144,6 +197,14 @@
        "latitude",
        "leeway",
        "curbs"
+      ],
+      "optsZh": [
+       "忠诚；忠实",
+       "限制；克制",
+       "热切；敏锐",
+       "自由度；纬度",
+       "余地；自由活动空间",
+       "限制；约束"
       ]
      },
      "nopt": 6,
@@ -167,6 +228,14 @@
        "exacerbating",
        "underscoring",
        "adjusting"
+      ],
+      "optsZh": [
+       "非常重要的",
+       "连接；弥合",
+       "突出强调",
+       "加剧；使恶化",
+       "强调",
+       "调整"
       ]
      },
      "nopt": 6,
@@ -190,6 +259,14 @@
        "democratic",
        "egalitarian",
        "daunting"
+      ],
+      "optsZh": [
+       "轻描淡写的；低调的",
+       "挑战传统或权威的",
+       "颠覆性的",
+       "民主的",
+       "平等的",
+       "令人畏惧的，望而生怯的"
       ]
      },
      "nopt": 6,

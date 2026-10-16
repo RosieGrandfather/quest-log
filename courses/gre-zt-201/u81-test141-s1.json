@@ -26,6 +26,13 @@
        "hydrologically variable",
        "topographically complex",
        "geographically widespread"
+      ],
+      "optsZh": [
+       "生态上稳定的",
+       "容易获得或接近的",
+       "水文条件多变的",
+       "地形复杂的",
+       "地理分布广泛的"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "beneficial",
         "responsive",
         "transparent"
+       ]
+      ],
+      "colsZh": [
+       [
+        "未能提供……",
+        "试图创造……",
+        "必然会产生……"
+       ],
+       [
+        "有益的",
+        "反应敏锐的；响应的",
+        "透明的"
        ]
       ]
      },
@@ -84,6 +103,23 @@
         "pedantry",
         "veracity"
        ]
+      ],
+      "colsZh": [
+       [
+        "模棱两可",
+        "谎言；虚伪",
+        "偏心；偏袒"
+       ],
+       [
+        "具有误导性的",
+        "可靠的，值得信赖的",
+        "冗长的"
+       ],
+       [
+        "简短",
+        "迂腐；卖弄学问",
+        "诚实"
+       ]
       ]
      },
      "blanks": 3,
@@ -108,6 +144,14 @@
        "a complement to",
        "a foundation of",
        "an antithesis to"
+      ],
+      "optsZh": [
+       "……的主要支柱",
+       "……的先驱或前身",
+       "……的补充",
+       "……的补充或互补物",
+       "……的基础",
+       "与……完全相反的事物"
       ]
      },
      "nopt": 6,
@@ -131,6 +175,14 @@
        "antithetical to",
        "subsidiary to",
        "complimentary to"
+      ],
+      "optsZh": [
+       "与……不同或背离的",
+       "辅助于……的",
+       "与……可互换的",
+       "与……对立的",
+       "从属于……的；辅助性的",
+       "对……表示赞美的"
       ]
      },
      "nopt": 6,
@@ -154,6 +206,14 @@
        "onerous",
        "sufficient",
        "adequate"
+      ],
+      "optsZh": [
+       "繁重的",
+       "少量",
+       "可忽略的，不重要的",
+       "繁重的，费力的",
+       "足够的",
+       "足够的；适当的"
       ]
      },
      "nopt": 6,
@@ -177,6 +237,14 @@
        "ill conceived",
        "sagacious",
        "sanguine"
+      ],
+      "optsZh": [
+       "难以理解的",
+       "被误导的；判断错误的",
+       "有洞察力的",
+       "构想欠周的",
+       "聪明的，睿智的",
+       "乐观的"
       ]
      },
      "nopt": 6,

@@ -5,8 +5,11 @@
 <script>window.firebaseConfig={};window.firebase={initializeApp(){},auth(){return{}},firestore(){return{}}};</script>
 <script type="module">
 import{qsetHTML,wireQset}from'/js/study/qset.js';import{T}from'/js/study/state.js';
-const course=await(await fetch('/courses/gre-zt/course.json')).json();
-const units=await Promise.all(course.units.map(e=>fetch('/courses/gre-zt/'+e.file).then(r=>r.json())));
+const params=new URLSearchParams(location.search),cid=params.get('course')||'gre-zt';
+if(!['gre-zt','gre-zt-101','gre-zt-201'].includes(cid))throw Error('未知课程');
+const course=await(await fetch('/courses/'+cid+'/course.json')).json();
+const units=await Promise.all(course.units.map(e=>fetch('/courses/'+cid+'/'+e.file).then(r=>r.json())));
+const expectedChoices=units.flatMap(u=>u.blocks[0].items).reduce((n,q)=>n+(q.kind==='tc'?q.txt.cols.flat().length:q.txt.opts.length),0);
 const root=document.querySelector('#root'),status=document.querySelector('#status'),select=document.querySelector('#lesson');let writes=0;
 T.cols={studyProgress:{doc:()=>({get:async()=>({data:()=>({})}),set:async()=>{writes++;}})}};
 for(const[i,u]of units.entries()){const o=document.createElement('option');o.value=i;o.textContent=u.title;select.append(o);}
@@ -14,7 +17,8 @@ function show(i,keep=false){if(!keep)T.progress={};const u=units[i];root.innerHT
 function visible(expected){for(const el of root.querySelectorAll('.qgloss'))if((getComputedStyle(el).display!=='none')!==expected)throw Error('释义可见性错误');}
 function fill(u){for(const[i,q]of u.blocks[0].items.entries())for(const[j,k]of q.ans.entries())root.querySelector(q.kind==='tc'?`#gq-${i} input[name="q${i}_${j}"][value="${k}"]`:`#gq-${i} input[value="${k}"]`).click();}
 const tick=()=>new Promise(r=>setTimeout(r,10));
-select.addEventListener('change',()=>{show(Number(select.value));status.textContent='本地预览';});show(0);status.textContent='100节已加载；提交前隐藏释义';
+select.addEventListener('change',()=>{show(Number(select.value));status.textContent='本地预览';});show(0);status.textContent=units.length+'节已加载；提交前隐藏释义';
+document.querySelector('#run').textContent='检查'+units.length+'节释义';
 document.querySelector('#run').addEventListener('click',async()=>{
  const button=document.querySelector('#run');button.disabled=true;writes=0;let count=0,total=0;
  try{
@@ -28,7 +32,7 @@ document.querySelector('#run').addEventListener('click',async()=>{
     count+=labels.length;total++;
    }
    fill(u);root.querySelector('.gbar-submit').click();await tick();visible(true);
-   if(root.querySelectorAll('.qq.right').length!==7)throw Error(u.id+' 判分');
+   if(root.querySelectorAll('.qq.right').length!==u.blocks[0].items.filter(q=>!q.answerPending).length)throw Error(u.id+' 判分');
    if(lesson===0){
     root.querySelector('[data-act="redo"]').click();visible(false);
     root.querySelector('[data-act="view-last"]').click();visible(true);
@@ -40,12 +44,13 @@ document.querySelector('#run').addEventListener('click',async()=>{
     if(root.querySelectorAll('.qq.wrong').length!==7)throw Error('空白提交');
    }
   }
-  if(total!==700||count!==4411||writes!==101)throw Error('总数不符');
+  if(total!==7*units.length||count!==expectedChoices||writes!==units.length+1)throw Error('总数不符');
   // Reopen the final saved submission to exercise automatic restoration too.
-  show(99,true);visible(true);
-  status.textContent=`通过：100节 / ${total}题 / ${count}个选项释义；提交、未作答提交、重做、查看上次作答及自动恢复正常；${writes}次内存保存。`;
+  show(units.length-1,true);visible(true);
+  status.textContent=`通过：${units.length}节 / ${total}题 / ${count}个选项释义；提交、未作答提交、重做、查看上次作答及自动恢复正常；${writes}次内存保存。`;
  }catch(e){status.textContent='失败：'+e.message;console.error(e);}
  finally{button.disabled=false;}
 });
 document.querySelector('#run').disabled=false;
+if(params.has('run'))document.querySelector('#run').click();
 </script></body></html>

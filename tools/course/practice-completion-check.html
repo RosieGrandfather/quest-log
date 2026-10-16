@@ -28,7 +28,7 @@ document.querySelector('#run').onclick=async()=>{
  try{
   logs.clear();progress.clear();T.completed={};T.progress={};await renderRoute();
   assert(!document.querySelector('#completeBtn'),'仍有第二个学完按钮');
-  assert(!document.body.textContent.includes('看完视频和讲解后点这里'),'仍有底部提示');
+  assert(!document.querySelector('#unitActions .complete-hint'),'仍有底部提示');
   fill();document.querySelector('.gbar-submit').click();
   await until(()=>!document.querySelector('#celebrateModal').hidden);
   assert(document.querySelector('#celebrateText').textContent.includes('本章学完了'),'未弹出完成提示');

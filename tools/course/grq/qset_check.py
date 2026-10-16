@@ -4,9 +4,12 @@ import os
 def validate_qset(unit, cdir):
     e = []
     uid = unit.get('id', '?')
-    for k in ('id', 'title', 'en', 'minutes', 'objectives', 'blocks', 'references'):
+    # Practice pages can start directly with questions, without a learning-goals preamble.
+    for k in ('id', 'title', 'en', 'minutes', 'blocks', 'references'):
         if k not in unit: e.append(f'{uid}: 缺少字段 {k}')
     if e: return e
+    if 'objectives' in unit and (not isinstance(unit['objectives'], list) or not all(isinstance(x,str) for x in unit['objectives'])):
+        e.append(f'{uid}: objectives 应为文字列表')
     if unit['minutes'] > 50: e.append(f'{uid}: {unit["minutes"]} 分钟，超过 50')
     blocks = [b for b in unit['blocks'] if b.get('type') == 'gre-qset']
     if len(blocks) != 1: return e + [f'{uid}: 应当有且只有 1 个 gre-qset 块']
@@ -41,6 +44,15 @@ def validate_qset(unit, cdir):
                 if not isinstance(tx.get('opts'), list) or len(tx['opts']) != no or not all(isinstance(x, str) and x.strip() for x in tx['opts']): e.append(f'{w}: txt.opts 数量应为 {no}')
             elif kind == 'tc':
                 if not isinstance(tx.get('cols'), list) or len(tx['cols']) != it.get('blanks') or any(len(c) != 3 or not all(isinstance(x, str) and x.strip() for x in c) for c in tx['cols']): e.append(f'{w}: txt.cols 不对')
+            if isinstance(tx,dict):
+                if 'optsZh' in tx:
+                    zh=tx['optsZh']
+                    if not isinstance(zh,list) or len(zh)!=len(tx.get('opts',[])) or not all(isinstance(x,str) and x.strip() for x in zh):
+                        e.append(f'{w}: txt.optsZh 须与英文选项逐一对应')
+                if 'colsZh' in tx:
+                    zh=tx['colsZh'];cols=tx.get('cols',[])
+                    if not isinstance(zh,list) or len(zh)!=len(cols) or any(not isinstance(c,list) or len(c)!=len(cols[j]) or not all(isinstance(x,str) and x.strip() for x in c) for j,c in enumerate(zh)):
+                        e.append(f'{w}: txt.colsZh 须与每列英文选项逐一对应')
         if kind == 'ss':
             if not str(it.get('ansText', '')).strip(): e.append(f'{w}: 选句子题没有 ansText')
             if tx and 'sentences' in tx:

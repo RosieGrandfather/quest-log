@@ -26,6 +26,13 @@
        "competition",
        "collusion",
        "disaffection"
+      ],
+      "optsZh": [
+       "合作",
+       "分离",
+       "竞争",
+       "串通；共谋",
+       "不满；疏离"
       ]
      },
      "nopt": 5,
@@ -47,6 +54,13 @@
        "extinguish",
        "utilize",
        "criticize"
+      ],
+      "optsZh": [
+       "产生",
+       "穿透；深入理解",
+       "熄灭",
+       "利用",
+       "批评"
       ]
      },
      "nopt": 5,
@@ -72,6 +86,18 @@
         "daring hyperbole",
         "indiscriminate eclecticism",
         "unresolvable ambivalences"
+       ]
+      ],
+      "colsZh": [
+       [
+        "矛盾，悖论",
+        "幽默；迎合",
+        "轻描淡写；保守表述"
+       ],
+       [
+        "大胆的夸张",
+        "不加区分的兼收并蓄",
+        "无法消除的矛盾心态"
        ]
       ]
      },
@@ -105,6 +131,23 @@
         "inhibit",
         "prevent"
        ]
+      ],
+      "colsZh": [
+       [
+        "被误导的；判断错误的",
+        "保守的；低调的；谨慎的",
+        "引人入胜的；有说服力的"
+       ],
+       [
+        "提高；提出",
+        "低估；不予重视",
+        "评估"
+       ],
+       [
+        "增加",
+        "抑制，限制",
+        "防止；阻止"
+       ]
       ]
      },
      "blanks": 3,
@@ -129,6 +172,14 @@
        "rancor",
        "despair",
        "frustration"
+      ],
+      "optsZh": [
+       "尖刻，犀利",
+       "争论",
+       "冷漠；不关心",
+       "憎恨",
+       "绝望",
+       "受挫；沮丧"
       ]
      },
      "nopt": 6,
@@ -152,6 +203,14 @@
        "a self-contained",
        "an uncontrived",
        "an introductory"
+      ],
+      "optsZh": [
+       "独立的",
+       "显著的，惹人注意的",
+       "初步的",
+       "自成一体的",
+       "自然不造作的",
+       "入门性的"
       ]
      },
      "nopt": 6,
@@ -175,6 +234,14 @@
        "persuasive",
        "hyperbolic",
        "deceptive"
+      ],
+      "optsZh": [
+       "被夸大的",
+       "准确的",
+       "真实的",
+       "有说服力的",
+       "夸张的",
+       "欺骗的"
       ]
      },
      "nopt": 6,

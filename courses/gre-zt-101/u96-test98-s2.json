@@ -26,6 +26,13 @@
        "garnered newfound credibility",
        "generated unqualified enthusiasm",
        "gained scant traction"
+      ],
+      "optsZh": [
+       "几乎未受到抵制",
+       "势头增强了",
+       "赢得了新的可信度",
+       "激起了毫无保留的热情",
+       "几乎没有获得支持或进展"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "compensate for",
         "accentuate",
         "allude to"
+       ]
+      ],
+      "colsZh": [
+       [
+        "有趣的；令人发笑的",
+        "刺激；驱使",
+        "无聊的"
+       ],
+       [
+        "弥补；补偿",
+        "强调",
+        "间接提及"
        ]
       ]
      },
@@ -78,6 +97,18 @@
         "enhance",
         "sacrifice",
         "delay"
+       ]
+      ],
+      "colsZh": [
+       [
+        "在……中几乎没有容身之地",
+        "在……中占据主导地位",
+        "在……中失去份额"
+       ],
+       [
+        "增强",
+        "牺牲",
+        "推迟"
        ]
       ]
      },
@@ -111,6 +142,23 @@
         "receives considerable acclaim",
         "invites complex interpretation"
        ]
+      ],
+      "colsZh": [
+       [
+        "欣赏；感激；升值",
+        "区分",
+        "记住"
+       ],
+       [
+        "预料到的；提前采取行动的",
+        "被描绘的；被明确勾勒的",
+        "加剧的；恶化的"
+       ],
+       [
+        "涉及历史事件",
+        "获得相当多的赞誉",
+        "引发复杂的解读"
+       ]
       ]
      },
      "blanks": 3,
@@ -135,6 +183,14 @@
        "unquenchable",
        "subconscious",
        "understandable"
+      ],
+      "optsZh": [
+       "可鄙的；不得体的",
+       "未被承认的；未被意识到的",
+       "合乎逻辑的",
+       "无法满足或抑制的",
+       "潜意识的",
+       "可以理解的"
       ]
      },
      "nopt": 6,
@@ -161,6 +217,14 @@
        "consistency",
        "speculation",
        "terminology"
+      ],
+      "optsZh": [
+       "推测，猜想",
+       "深奥难懂",
+       "不透明，半透明；晦涩，难解",
+       "一致性",
+       "推测；投机",
+       "术语"
       ]
      },
      "nopt": 6,
@@ -184,6 +248,14 @@
        "prosaic",
        "flamboyant",
        "elusive"
+      ],
+      "optsZh": [
+       "无聊的，普通的",
+       "滑的",
+       "不吉利的",
+       "普通寻常的",
+       "引人注意的，酷炫的",
+       "难懂的"
       ]
      },
      "nopt": 6,

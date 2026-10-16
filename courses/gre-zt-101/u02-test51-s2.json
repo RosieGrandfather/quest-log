@@ -26,6 +26,13 @@
        "nostalgia",
        "precedent",
        "triviality"
+      ],
+      "optsZh": [
+       "重要性；意义",
+       "粗鲁；无礼；鲁莽",
+       "怀旧；乡愁",
+       "先例",
+       "不重要，琐碎"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "fully reactivated",
         "further degraded",
         "summarily disregarded"
+       ]
+      ],
+      "colsZh": [
+       [
+        "遭到无法弥补的损害",
+        "暂时被打乱",
+        "得到永久恢复"
+       ],
+       [
+        "完全重新启动",
+        "进一步恶化或退化",
+        "被草率地忽视"
        ]
       ]
      },
@@ -78,6 +97,18 @@
         "averse to scrutinizing",
         "willing to investigate",
         "unable to acknowledge"
+       ]
+      ],
+      "colsZh": [
+       [
+        "异常现象",
+        "发现",
+        "前兆"
+       ],
+       [
+        "不愿仔细审查的",
+        "愿意调查的",
+        "无法承认的"
        ]
       ]
      },
@@ -111,6 +142,23 @@
         "sacrifice credibility",
         "deflate pretension"
        ]
+      ],
+      "colsZh": [
+       [
+        "悲观主义",
+        "教训主义；教训癖",
+        "兼收并蓄；折衷主义"
+       ],
+       [
+        "不予理会",
+        "赞美，支持",
+        "低估"
+       ],
+       [
+        "浪费悬念；破坏悬念效果",
+        "牺牲可信度",
+        "打消自命不凡；戳破矫饰"
+       ]
       ]
      },
      "blanks": 3,
@@ -135,6 +183,14 @@
        "diminish",
        "displace",
        "appreciate"
+      ],
+      "optsZh": [
+       "处理；针对；讲话",
+       "承认；认可；感谢",
+       "免除",
+       "减少",
+       "取代；使移位；驱逐",
+       "欣赏；感激；升值"
       ]
      },
      "nopt": 6,
@@ -158,6 +214,14 @@
        "proclivity",
        "wavering",
        "cowardice"
+      ],
+      "optsZh": [
+       "古怪",
+       "倾向，偏好",
+       "犹豫不决，踌躇",
+       "倾向，偏好",
+       "摇摆不定的",
+       "懦弱"
       ]
      },
      "nopt": 6,
@@ -181,6 +245,14 @@
        "coalesce",
        "collect",
        "diversify"
+      ],
+      "optsZh": [
+       "富于，充满",
+       "快速增长",
+       "停滞",
+       "合并",
+       "收集",
+       "使多样化"
       ]
      },
      "nopt": 6,

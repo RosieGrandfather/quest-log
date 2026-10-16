@@ -26,6 +26,13 @@
        "innovations",
        "demarcations",
        "episodes"
+      ],
+      "optsZh": [
+       "判断；评价",
+       "意识形态；思想体系",
+       "创新",
+       "界限；划分",
+       "事件；片段"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "collectively overthrow",
         "eventually placate",
         "quickly appraise"
+       ]
+      ],
+      "colsZh": [
+       [
+        "生气，不悦",
+        "赎罪",
+        "麻木，迟钝，懒散"
+       ],
+       [
+        "共同推翻",
+        "最终安抚",
+        "迅速评估"
        ]
       ]
      },
@@ -84,6 +103,23 @@
         "expressed the spirit of the time",
         "virtually came to a standstill"
        ]
+      ],
+      "colsZh": [
+       [
+        "逆转；颠倒",
+        "爆炸；激增；推翻",
+        "消失的"
+       ],
+       [
+        "少量",
+        "出处，起源",
+        "迅速增加；扩散"
+       ],
+       [
+        "得到有条不紊的推进",
+        "体现了时代精神",
+        "实际上陷入停滞"
+       ]
       ]
      },
      "blanks": 3,
@@ -108,6 +144,14 @@
        "unprecedented",
        "unexceptional",
        "unparalleled"
+      ],
+      "optsZh": [
+       "无可置疑的",
+       "普通的",
+       "不可否认的",
+       "史无前例的",
+       "普通的",
+       "无与伦比的"
       ]
      },
      "nopt": 6,
@@ -131,6 +175,14 @@
        "a break from",
        "a precursor to",
        "a rebuke to"
+      ],
+      "optsZh": [
+       "……的先驱或前身",
+       "……的解药或对策",
+       "从……中获得的暂时缓解",
+       "与……的决裂；摆脱……",
+       "……的先驱或前身",
+       "对……的指责"
       ]
      },
      "nopt": 6,
@@ -154,6 +206,14 @@
        "neglected",
        "forsaken",
        "eulogized"
+      ],
+      "optsZh": [
+       "受到批评的",
+       "受到名人般追捧的",
+       "被歪曲的；被误述的",
+       "被忽视的",
+       "被抛弃的",
+       "受到颂扬的"
       ]
      },
      "nopt": 6,
@@ -177,6 +237,14 @@
        "dubious",
        "controversial",
        "prominent"
+      ],
+      "optsZh": [
+       "令人羡慕的",
+       "显而易见的",
+       "怀疑；可疑的",
+       "可疑的，不确定的",
+       "有争议的",
+       "著名的"
       ]
      },
      "nopt": 6,

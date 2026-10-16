@@ -26,6 +26,13 @@
        "dogmatic sensibilities",
        "a pragmatic outlook",
        "an egalitarian worldview"
+      ],
+      "optsZh": [
+       "传统道德",
+       "贵族品味",
+       "教条化的思维倾向",
+       "务实的观点",
+       "平等主义的世界观"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "analyzing",
         "extolling",
         "disparaging"
+       ]
+      ],
+      "colsZh": [
+       [
+        "安慰的",
+        "轻视；怠慢",
+        "赞扬"
+       ],
+       [
+        "分析",
+        "赞颂",
+        "贬低"
        ]
       ]
      },
@@ -84,6 +103,23 @@
         "sizable returns",
         "captive markets"
        ]
+      ],
+      "colsZh": [
+       [
+        "令人畏惧的，望而生怯的",
+        "陌生的；外来的",
+        "吸引人的"
+       ],
+       [
+        "可忽略的，不重要的",
+        "反弹；恢复",
+        "尚未开发利用的"
+       ],
+       [
+        "乐观的承诺",
+        "可观的回报",
+        "受控制而缺乏选择的市场"
+       ]
       ]
      },
      "blanks": 3,
@@ -108,6 +144,14 @@
        "a visionary",
        "a trailblazer",
        "a romantic"
+      ],
+      "optsZh": [
+       "提倡打破旧习的人",
+       "离群者；异常值",
+       "理想主义者",
+       "有远见的",
+       "开拓者",
+       "浪漫主义者"
       ]
      },
      "nopt": 6,
@@ -131,6 +175,14 @@
        "unconnected to",
        "mitigated by",
        "commensurate with"
+      ],
+      "optsZh": [
+       "可归因于……的",
+       "由……解释的",
+       "被……加剧的",
+       "与……无关联的",
+       "被……缓解的",
+       "与……相称的"
       ]
      },
      "nopt": 6,
@@ -154,6 +206,14 @@
        "annoying to",
        "unexpected by",
        "unwelcome to"
+      ],
+      "optsZh": [
+       "令……惊讶的",
+       "被……嘲笑的",
+       "被……误解的",
+       "令……烦恼的",
+       "未被……预料到的",
+       "不受……欢迎的"
       ]
      },
      "nopt": 6,
@@ -177,6 +237,14 @@
        "reticent",
        "munificent",
        "inquisitive"
+      ],
+      "optsZh": [
+       "慈善的；宽厚的",
+       "巡游的",
+       "巡游的",
+       "沉默寡言的",
+       "慷慨的",
+       "好奇的"
       ]
      },
      "nopt": 6,

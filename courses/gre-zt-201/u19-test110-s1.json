@@ -26,6 +26,13 @@
        "wariness",
        "determination",
        "incoherency"
+      ],
+      "optsZh": [
+       "难以置信；不合理性",
+       "想象力",
+       "谨慎，小心",
+       "决心；决定",
+       "不连贯；缺乏条理"
       ]
      },
      "nopt": 5,
@@ -51,6 +58,18 @@
         "renowned",
         "appealing",
         "mysterious"
+       ]
+      ],
+      "colsZh": [
+       [
+        "拒绝穿戴",
+        "渴望理解",
+        "无法放弃"
+       ],
+       [
+        "出名的",
+        "吸引人的",
+        "神秘的；难以理解的"
        ]
       ]
      },
@@ -84,6 +103,23 @@
         "an equal number of words",
         "at least one illustration"
        ]
+      ],
+      "colsZh": [
+       [
+        "重复",
+        "揭露；暴露",
+        "避免"
+       ],
+       [
+        "假设",
+        "错误",
+        "妥协；损害"
+       ],
+       [
+        "简短的历史背景",
+        "相同的字数",
+        "至少一幅插图"
+       ]
       ]
      },
      "blanks": 3,
@@ -108,6 +144,14 @@
        "ineffective",
        "unwavering",
        "lopsided"
+      ],
+      "optsZh": [
+       "谨慎的",
+       "有选择性的",
+       "无情的，残忍的",
+       "无效的",
+       "坚定的；不动摇的",
+       "不均衡的"
       ]
      },
      "nopt": 6,
@@ -131,6 +175,14 @@
        "hegemony",
        "heaviness",
        "heterogeneity"
+      ],
+      "optsZh": [
+       "卓越地位",
+       "多才多艺；多用途",
+       "复杂精巧；老练",
+       "霸权，统治权",
+       "沉重",
+       "异质性；多样性"
       ]
      },
      "nopt": 6,
@@ -154,6 +206,14 @@
        "highly exotic",
        "fundamentally miscellaneous",
        "thoroughly eclectic"
+      ],
+      "optsZh": [
+       "精心安排的",
+       "全面得令人印象深刻的",
+       "组织得一丝不苟的",
+       "极具异域色彩的",
+       "本质上杂乱多样的",
+       "完全兼收并蓄的"
       ]
      },
      "nopt": 6,
@@ -177,6 +237,14 @@
        "inborn",
        "automatic",
        "calculated"
+      ],
+      "optsZh": [
+       "异常的",
+       "天生的",
+       "反射性的；自我指涉的",
+       "天生的",
+       "自发的，情不自禁的",
+       "故意的，精打细算的"
       ]
      },
      "nopt": 6,
