@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "关系众多未必能抵御孤独，关键是主观体验。",
      "img": "2025-01-15/5-01.webp",
      "txt": {
       "stem": [
@@ -43,8 +54,20 @@
      "blanks": 2,
      "ans": [
       2,
-      1
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "忽视馆藏导致重复发现，错失利用既有材料的机会。",
      "img": "2025-01-15/5-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "分子马达虽吸引人，本身却无用，其化学原理仍可能价值很高。",
      "img": "2025-01-15/5-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "舞台观众位置可由制作需要决定，空间灵活，并增加演出刺激感。",
      "img": "2025-01-15/5-04.webp",
      "txt": {
       "stem": [
@@ -137,6 +186,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "社团少开大会、少出版并保持传统形象，使自身较少进入官方视野。",
      "img": "2025-01-15/5-05.webp",
      "txt": {
       "pass": [
@@ -163,6 +223,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "三组学者均认可女性社团少受官方注意，对原因的解释不同不构成此点矛盾。",
      "img": "2025-01-15/5-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +258,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "文章讨论剧院包厢同时用于公开展示和私人隐匿的社会意义。",
      "img": "2025-01-15/5-07.webp",
      "txt": {
       "pass": [
@@ -210,6 +294,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "包厢既让人被看见，也能关门拉帘保持隐私；舞台框由镜框式台口形成。",
      "img": "2025-01-15/5-08.webp",
      "txt": {
       "pass": [
@@ -232,6 +328,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "欧洲王室利用狂欢节戴面具的传统，匿名游乐。",
      "img": "2025-01-15/5-09.webp",
      "txt": {
       "pass": [
@@ -254,9 +361,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      1,
-      5
+      0,
+      3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        5
+       ]
+      }
+     },
+     "explanation": "争斗代价不可承受时才建立群体生活；insupportable与untenable切合。",
      "img": "2025-01-15/5-10.webp",
      "txt": {
       "stem": [
@@ -277,9 +396,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      0,
-      3
+      3,
+      5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "有意模糊难解的世界与写实相对。",
      "img": "2025-01-15/5-11.webp",
      "txt": {
       "stem": [
@@ -303,6 +434,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "撞击使挥发物逃逸，可以解释月球水和挥发物匮乏。",
      "img": "2025-01-15/5-12.webp",
      "txt": {
       "stem": [
@@ -325,17 +468,35 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      },
+      "previousChoices": [
+       "The Hittite tablets and the Iliad are not derived from a",
+       "common source that had no basis in historical fact.",
+       "Before the discovery of the tablets, historians had never examined the Iliad.",
+       "Purported works of creative literature should be examined by historians to find out whether they record historical facts.",
+       "A work that does not contain historical facts is a matter for literary discussion."
+      ]
+     },
+     "explanation": "必须排除两份材料共同抄自无历史依据的虚构来源，否则一致不证明真实。",
      "img": "2025-01-15/5-13.webp",
      "txt": {
       "pass": [
        "Some recently discovered Hittite tablets corroborate many of the descriptions of ancient life that appear in the lliad and even list Greek cities that reportedly sent ships to Troy. What this find entails is that the Iliad is not simply creative literature, as is commonly believed, and hence not a matter for literary discussion alone. Rather, it is also history and should be examined by historical science."
       ],
       "stem": [
-       "argument given relies on which of the following as an assumption? The cities and events that were mentioned In the Iliad but not in the tablets are fictitious."
+       "The argument given relies on which of the following as an assumption?"
       ],
       "opts": [
-       "The Hittite tablets and the Iliad are not derived from a",
-       "common source that had no basis in historical fact.",
+       "The cities and events that were mentioned in the Iliad but not in the tablets are fictitious.",
+       "The Hittite tablets and the Iliad are not derived from a common source that had no basis in historical fact.",
        "Before the discovery of the tablets, historians had never examined the Iliad.",
        "Purported works of creative literature should be examined by historians to find out whether they record historical facts.",
        "A work that does not contain historical facts is a matter for literary discussion."
@@ -349,6 +510,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "行为适应及其他寄主可减轻环境变化对同步性的负面影响。",
      "img": "2025-01-15/5-14.webp",
      "txt": {
       "pass": [
@@ -373,6 +545,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "冬蛾幼体与展叶同步影响成功率，直接支持季节性植物生长影响取食生存。",
      "img": "2025-01-15/5-15.webp",
      "txt": {
       "pass": [
@@ -392,5 +575,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

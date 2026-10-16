@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "末日式措辞虽夸张，缺水的核心信息仍正确。",
      "img": "2025-01-01/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "气团碰撞常发生于几乎没有龙卷风的地方，说明解释过于简化。",
      "img": "2025-01-01/2-02.webp",
      "txt": {
       "stem": [
@@ -69,10 +92,23 @@
      "kind": "tc",
      "blanks": 3,
      "ans": [
-      2,
       1,
+      2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "缺少监管却形成相对安全的商业中心，对相信监管促进伦理者构成谜题。",
      "img": "2025-01-01/2-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "若冷却完全抵消吸收的额外辐射，就无法解释冰川退缩。",
      "img": "2025-01-01/2-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "提出温度降水假说、用记录指出局限，再提出黑碳替代解释。",
      "img": "2025-01-01/2-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "似乎将扩大作用，却已开始声望衰退；waning与ebbing等义。",
      "img": "2025-01-01/2-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "养殖放流优点虽常被赞扬，研究却显示危害；extolled与acclaimed等义。",
      "img": "2025-01-01/2-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "可靠来源稀缺使细节无法核实；dearth与paucity等义。",
      "img": "2025-01-01/2-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "反对者认为声乐不足使“最伟大”之说不能成立；precluded与invalidated最切合。",
      "img": "2025-01-01/2-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +350,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "原文说他们继续大量依赖野生植物，意味着此前也如此。",
      "img": "2025-01-01/2-10.webp",
      "txt": {
       "pass": [
@@ -268,6 +385,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "缺少能提高玉米营养的陶器加工条件，支持玉米并非主食的论点。",
      "img": "2025-01-01/2-11.webp",
      "txt": {
       "pass": [
@@ -292,6 +420,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "原文明言陶器制造技术通常与农业相伴。",
      "img": "2025-01-01/2-12.webp",
      "txt": {
       "pass": [
@@ -313,5 +452,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

@@ -11,6 +11,13 @@ import { showToast } from '../ui/common.js';
 const L = 'ABCDEFGH';
 const img = (b, p, w, cls = '')=> `<img class="qimg ${cls}" src="${escapeHTML(b.base + p)}" ${w ? `style="width:${Math.round(w / 2)}px"` : ''} alt="" loading="lazy">`;
 const BLK = ['(i)', '(ii)', '(iii)'];
+const EN_KIND = {mc1:'Multiple Choice — Select One',mcn:'Multiple Choice — Select One or More',se:'Sentence Equivalence',tc:'Text Completion',ss:'Select-in-Passage (self-check; not scored)'};
+const englishHint = it => it.kind === 'tc'
+  ? 'For each blank select one entry from the corresponding column of choices. Fill all blanks in the way that best completes the text.'
+  : it.kind === 'se' ? 'Select the two answer choices that, when used to complete the sentence, fit the meaning of the sentence as a whole and produce completed sentences that are alike in meaning.'
+  : it.kind === 'mcn' ? 'Consider each of the choices separately and select all that apply.'
+  : it.kind === 'ss' ? 'Select a sentence in the passage.'
+  : 'Select one answer choice.';
 const tx = t => escapeHTML(t).replace(/____/g, '<span class="qbl"></span>');
 const paraHTML = arr => (arr || []).map(x=> `<p>${tx(x)}</p>`).join('');
 const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选一项'
@@ -21,7 +28,7 @@ const hintOf = it => it.kind === 'qc' ? '比较 Quantity A 和 Quantity B，选�
   : it.kind === 'ss' ? (sentenceChoices(it).length ? '点击文章中的一句话作答；点击其他句子可更换。交卷后自评，不计入分数' : '在原文里找出符合题意的那一句；下面写它的序号或开头几个词。这类题交卷后对照答案自评，不计入分数')
   : it.frac ? '分数作答：上面填分子，下面填分母' : '在框里填一个数（可以带小数点；逗号、% 不用管）';
 
-function controlsHTML(it, i){
+function controlsHTML(it, i, english = false){
   if(it.kind === 'ne'){
     return it.frac
       ? `<div class="qne frac"><input type="text" inputmode="numeric" autocomplete="off" data-part="0" aria-label="分子"><span class="qbar"></span><input type="text" inputmode="numeric" autocomplete="off" data-part="1" aria-label="分母"></div>`
@@ -30,7 +37,7 @@ function controlsHTML(it, i){
   if(it.kind === 'ss') return sentenceChoices(it).length ? '' : `<div class="qne ss"><input type="text" autocomplete="off" placeholder="例：第 3 句 / But, in addition…" aria-label="你选的句子"></div>`;
   if(it.kind === 'tc'){
     return `<div class="qtc">${Array.from({length: it.blanks}, (_, j)=>
-      `<div class="qblank"><span class="qblank-no">空 ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
+      `<div class="qblank"><span class="qblank-no">${english ? 'Blank' : '空'} ${BLK[j]}</span><div class="qopts tc">${[0, 1, 2].map(k=>
         `<label class="qopt" data-k="${k}" data-b="${j}"><input type="radio" name="q${i}_${j}" value="${k}"><span class="qletter">${L[k]}</span>${it.txt && it.txt.cols ? `<span class="qtext">${tx(it.txt.cols[j][k])}</span>` : ''}<span class="gopt-tag"></span></label>`).join('')}</div></div>`).join('')}</div>`;
   }
   const type = isMulti(it) ? 'checkbox' : 'radio';
@@ -42,17 +49,18 @@ function controlsHTML(it, i){
 
 const origImgs = (it, b)=> (it.imgs || [it.img]).map((p, j)=> `${j ? '<div class="qscroll-tag">↓ 同一题，原文往下滚动后的画面</div>' : ''}${img(b, p, it.w, 'qstem')}`).join('');
 
-function textHTML(it, i){
+function textHTML(it, i, english = false){
   const sentences = sentenceChoices(it);
   const stem = `<div class="qstemtxt">${paraHTML(it.txt.stem)}</div>`;
   if(sentences.length){
-    return `${stem}<div class="qpass qsentence-pass"><div class="vp-tag">文章 · 点击一句话作答</div><div class="qsentences" role="radiogroup" aria-label="第 ${it.n} 题：选择文章中的一句话"><p>${sentences.map((s, j)=>
-      `<label class="qsentence"><input type="radio" name="q${i}_sentence" value="${escapeHTML(s)}" aria-label="第 ${j + 1} 句：${escapeHTML(s)}"><span>${tx(s)}</span></label>`).join(' ')}</p></div></div>`;
+    return `${stem}<div class="qpass qsentence-pass"><div class="vp-tag">${english ? 'Passage · Select a sentence' : '文章 · 点击一句话作答'}</div><div class="qsentences" role="radiogroup" aria-label="${english ? `Question ${it.n}: Select a sentence in the passage` : `第 ${it.n} 题：选择文章中的一句话`}"><p>${sentences.map((s, j)=>
+      `<label class="qsentence"><input type="radio" name="q${i}_sentence" value="${escapeHTML(s)}" aria-label="${english ? `Sentence ${j + 1}: ` : `第 ${j + 1} 句：`}${escapeHTML(s)}"><span>${tx(s)}</span></label>`).join(' ')}</p></div></div>`;
   }
-  return `${it.txt.pass ? `<div class="qpass"><div class="vp-tag">文章</div>${paraHTML(it.txt.pass)}</div>` : ''}${stem}`;
+  return `${it.txt.pass ? `<div class="qpass"><div class="vp-tag">${english ? 'Passage' : '文章'}</div>${paraHTML(it.txt.pass)}</div>` : ''}${stem}`;
 }
 
 function itemHTML(it, i, b){
+  const english = b.base?.startsWith('courses/gre-vx/');
   let fig = '';
   if(it.fig){
     const [a, z] = it.figRange;
@@ -61,11 +69,11 @@ function itemHTML(it, i, b){
       : `<details class="gq-passage gq-again"><summary>再看一遍图表（第 ${a}–${z} 题）</summary>${img(b, it.fig, it.figw)}</details>`;
   }
   return `${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
-    <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
-    ${it.txt ? `<div class="qtxt">${textHTML(it, i)}</div>
+    <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
+    ${it.txt ? `<div class="qtxt">${textHTML(it, i, english)}</div>
     <details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : origImgs(it, b)}
-    <div class="gq-hint">${hintOf(it)}${it.answerPending ? ' · 原答案待核对，本题暂不计分' : ''}</div>
-    ${controlsHTML(it, i)}
+    <div class="gq-hint">${english ? englishHint(it) : hintOf(it)}${it.answerPending ? english ? ' · Answer key under review; not scored.' : ' · 原答案待核对，本题暂不计分' : ''}</div>
+    ${controlsHTML(it, i, english)}
     <div class="gq-explain" hidden></div>
   </section>`;
 }
@@ -152,7 +160,7 @@ export function wireQset(root, course, unit){
     const sec = e.target.closest('.qq'); if(!sec) return;
     if(items[Number(sec.dataset.i)].kind === 'se' && sec.querySelectorAll('input:checked').length > 2){
       e.target.checked = false;
-      showToast('这题请选择两个答案；先取消一个选项再更换');
+      showToast(b.base?.startsWith('courses/gre-vx/') ? 'Select two answer choices. Deselect one before choosing another.' : '这题请选择两个答案；先取消一个选项再更换');
     }
     readOne(Number(sec.dataset.i)); updateCount(); warned = false;
     const w = $('.gset-warn'); if(w) w.remove();

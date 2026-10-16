@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "自信能重塑庞大核心机构，表现惊人的狂妄。",
      "img": "2025-02-s6/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "无人否认任务艰巨，但已知物理并不禁止它。",
      "img": "2025-02-s6/2-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "把作家当道德榜样的崇敬会被私信冲击，作品灵魂与私人自我看似矛盾。",
      "img": "2025-02-s6/2-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "若能力终生不变，能足取食的幼贝成年后应仍有此能力。",
      "img": "2025-02-s6/2-04.webp",
      "txt": {
       "pass": [
@@ -126,6 +173,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "海洋双壳类可从沉积物表面或用足获得食物。",
      "img": "2025-02-s6/2-05.webp",
      "txt": {
       "pass": [
@@ -151,6 +209,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "只述军队行军却少谈总体策略，说明背景交代吝啬不足。",
      "img": "2025-02-s6/2-06.webp",
      "txt": {
       "stem": [
@@ -174,6 +244,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "与封闭环境相反，她用法意两国语言创作翻译，体现世界性。",
      "img": "2025-02-s6/2-07.webp",
      "txt": {
       "stem": [
@@ -197,6 +279,18 @@
       3,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        4
+       ]
+      }
+     },
+     "explanation": "本来被认为排除亲缘的结构特征，经调查却显示共同家族史。",
      "img": "2025-02-s6/2-08.webp",
      "txt": {
       "stem": [
@@ -220,6 +314,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "认为自己理应领先，却不表现维持领先的兴趣和投入。",
      "img": "2025-02-s6/2-09.webp",
      "txt": {
       "stem": [
@@ -242,6 +348,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "惯例是借大幅肖像向公众展示社会地位。",
      "img": "2025-02-s6/2-10.webp",
      "txt": {
       "pass": [
@@ -266,6 +383,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "珍视失散家人可解释他偏爱与家庭亲密相关的微型肖像。",
      "img": "2025-02-s6/2-11.webp",
      "txt": {
       "pass": [
@@ -290,6 +418,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "大幅油画的惯例具体展开了选择微型肖像“不寻常”的判断。",
      "img": "2025-02-s6/2-12.webp",
      "txt": {
       "pass": [
@@ -311,5 +450,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

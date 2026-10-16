@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "蚊子个体脆弱，却能借船远行。",
      "img": "2025-04-s1/5-01.webp",
      "txt": {
       "stem": [
@@ -44,6 +55,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "挑选支持预设结论的证据，说明带有明显偏向。",
      "img": "2025-04-s1/5-02.webp",
      "txt": {
       "stem": [
@@ -67,6 +89,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "漫画被视为幼稚低俗，使爱好者羞愧。",
      "img": "2025-04-s1/5-03.webp",
      "txt": {
       "stem": [
@@ -98,8 +133,21 @@
      "ans": [
       2,
       1,
-      0
+      1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "过去把自传改名当小说，如今反把真正小说当真实自白出售。",
      "img": "2025-04-s1/5-04.webp",
      "txt": {
       "stem": [
@@ -131,6 +179,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "地球地下生命及Europa设想均说明能源不一定来自邻近恒星光照。",
      "img": "2025-04-s1/5-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +212,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "地球地下生命的实证发现支持对Europa生命的推测。",
      "img": "2025-04-s1/5-06.webp",
      "txt": {
       "pass": [
@@ -177,6 +247,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "指出嘻哈批评过度关注反社会歌词，忽略与前辈艺术运动等重要关系。",
      "img": "2025-04-s1/5-07.webp",
      "txt": {
       "pass": [
@@ -201,6 +282,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "严肃嘻哈的社会表达与主流商业追求往往冲突。",
      "img": "2025-04-s1/5-08.webp",
      "txt": {
       "pass": [
@@ -225,20 +317,38 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      },
+      "previousChoices": [
+       "The diatoms in sand layers deposited by tsunamis will typically be more fragmented than those in sand layers deposited by strong storm surges.",
+       "In the region of Lake Tokotan over a period of several centuries, the amount of coastal erosion caused by tsunamis will typically be greater than that caused by storm surges.",
+       "Compared to tsunamis. storm surges vary more from one to another in the currents they generate and change of sea level they cause.",
+       "The influx of water into the lake caused by a tsunami, unlike that caused by a storm surge, need not be confined to the outlet that connects Lake Tokotan to",
+       "the sea."
+      ]
+     },
+     "explanation": "原图选项修复后，海啸可越过沙障，不像风暴潮主要局限狭窄出海口。",
      "img": "2025-04-s1/5-09.webp",
      "txt": {
       "pass": [
        "This passage is adanted from material published in 2002. Three core saimpres taken from different locations on the bed of Lake Tokotan consist mainly of organic-rich clay but also contain two sand layers at a depth indicating deposition in the seventeenth century. The coastal freshwater lake is replenished entirety by rainfall • and surface seenane, and the absence of river inflow eliminates fluvial deposition as a possible origin for the sand layers. The sand layers are thicker on the lake’s seaward side, suggesung landward transport of the sand at the time of its deposition. In these layers the diatoms (algae with glasslike cell walls) are very rare and in a fragmented State, sugaesting their deposition by strong currents. In sum, then, the most probable explanation for the sand layers is that they were deposited either by unusually large storm suryes or else by tsunamis (i.e., tidal waves). It is difficult to distinguish tsunami deposits from siurn-surge deposits. But Lake Tokotan is protected by a sand barrier and connected to the sea by a shallow, narrow outlet, and the velocities of the current through this narrow enirance during a storm surge are unlikely to be strong enough to transport sand and gravel far into the lake. It can be inferred. therefore, that the sand layers were deposited by tsunami waves that overtopped and caused severe erosion of the sand."
       ],
       "stem": [
-       "Regarding the different effects of storm surges and tsunamis, it can be inferred that the author would most likely agree with which of the following? O A tsunami is likely to have more effect on Lake Tokotan than a severe storm surge would, because the velocities of the current in the lake’s outlet to the sea would be greater during a tsunami."
+       "Regarding the different effects of storm surges and tsunamis, it can be inferred that the author would most likely agree with which of the following?"
       ],
       "opts": [
+       "A tsunami is likely to have more effect on Lake Tokotan than a severe storm surge would, because the velocities of the current in the lake’s outlet to the sea would be greater during a tsunami.",
        "The diatoms in sand layers deposited by tsunamis will typically be more fragmented than those in sand layers deposited by strong storm surges.",
        "In the region of Lake Tokotan over a period of several centuries, the amount of coastal erosion caused by tsunamis will typically be greater than that caused by storm surges.",
-       "Compared to tsunamis. storm surges vary more from one to another in the currents they generate and change of sea level they cause.",
-       "The influx of water into the lake caused by a tsunami, unlike that caused by a storm surge, need not be confined to the outlet that connects Lake Tokotan to",
-       "the sea."
+       "Compared to tsunamis, storm surges vary more from one to another in the currents they generate and change of sea level they cause.",
+       "The influx of water into the lake caused by a tsunami, unlike that caused by a storm surge, need not be confined to the outlet that connects Lake Tokotan to the sea."
       ]
      }
     },
@@ -250,6 +360,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "自称讨论温和平静，却充满激烈争论。",
      "img": "2025-04-s1/5-10.webp",
      "txt": {
       "stem": [
@@ -273,6 +395,18 @@
       3,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        4
+       ]
+      }
+     },
+     "explanation": "人人可讲改、无人独占，体现民主和平等。",
      "img": "2025-04-s1/5-11.webp",
      "txt": {
       "stem": [
@@ -296,6 +430,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "数学并不消除或取代观察需求，但可推导无法观察的性质。",
      "img": "2025-04-s1/5-12.webp",
      "txt": {
       "stem": [
@@ -318,6 +464,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "大量别种兽鱼骨而袋鼠骨极少，支持毁地而非捕猎导致灭绝。",
      "img": "2025-04-s1/5-13.webp",
      "txt": {
       "pass": [
@@ -342,6 +499,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "James保留传统情节推进和结局位置，不同于现代主义弱化情节。",
      "img": "2025-04-s1/5-14.webp",
      "txt": {
       "pass": [
@@ -367,6 +535,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "若情节让位意识探索会更明显属现代主义；后期尤其重内在意识。",
      "img": "2025-04-s1/5-15.webp",
      "txt": {
       "pass": [
@@ -386,5 +566,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

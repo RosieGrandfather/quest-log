@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "数生物、列清单而缺少解释，说明是描述性科学。",
      "img": "2025-03-s3/4-01.webp",
      "txt": {
       "stem": [
@@ -44,6 +55,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "读者为思想而读传记，作者却弱化思想，造成自我挫败。",
      "img": "2025-03-s3/4-02.webp",
      "txt": {
       "stem": [
@@ -66,6 +88,18 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "当时寻自然奇景很普遍，冰岛可提供异域极端景观。",
      "img": "2025-03-s3/4-03.webp",
      "txt": {
       "stem": [
@@ -94,6 +128,19 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "棋艺成功不靠模仿人脑；飞行类比有启发性，摆脱熟悉模式才成功。",
      "img": "2025-03-s3/4-04.webp",
      "txt": {
       "stem": [
@@ -125,6 +172,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "依赖大片完整森林者冰期难存活，现存欧洲鸟类通常无此依赖。",
      "img": "2025-03-s3/4-05.webp",
      "txt": {
       "pass": [
@@ -149,6 +207,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "欧洲森林冰期消失，帮助解释现存鸟类能适应碎片森林的特点。",
      "img": "2025-03-s3/4-06.webp",
      "txt": {
       "pass": [
@@ -173,16 +242,34 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "previousChoices": [
+       "system",
+       "discuss two antithetical views of the difficulties faced by Spanish long-distance traders",
+       "reconsider certain assumptions about Spanish long- distance traders and their commercial practices",
+       "examine the reasons why some Spanish merchants who engaged in oceanic commerce succeeded while others failed",
+       "explain why oceanic commerce was so risky for Spanish merchants engaged in long-distance trading"
+      ]
+     },
+     "explanation": "以贸易风险补充旧说，重新考虑西班牙商人经济行为。",
      "img": "2025-03-s3/4-07.webp",
      "txt": {
       "pass": [
        "The large merchants who dominated long-distance trade in the Spanish empire for the better part Of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds. None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but financial ruin could happen overnight."
       ],
       "stem": [
-       "The primary purpose of the passage is to O dismiss a long-standing interpretation of large Spanish merchants and their role in the colonial commercial"
+       "The primary purpose of the passage is to"
       ],
       "opts": [
-       "system",
+       "dismiss a long-standing interpretation of large Spanish merchants and their role in the colonial commercial system",
        "discuss two antithetical views of the difficulties faced by Spanish long-distance traders",
        "reconsider certain assumptions about Spanish long- distance traders and their commercial practices",
        "examine the reasons why some Spanish merchants who engaged in oceanic commerce succeeded while others failed",
@@ -201,6 +288,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "防御策略曾被视作垄断性行为。",
      "img": "2025-03-s3/4-08.webp",
      "txt": {
       "pass": [
@@ -227,6 +325,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "双方均认可商人运用影响力、不竞争做法及部分负面经济结果。",
      "img": "2025-03-s3/4-09.webp",
      "txt": {
       "pass": [
@@ -247,9 +358,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      0,
-      4
+      3,
+      5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        4
+       ]
+      }
+     },
+     "explanation": "新仪器使未预见的意外发现成为可能。",
      "img": "2025-03-s3/4-10.webp",
      "txt": {
       "stem": [
@@ -270,9 +393,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      0,
-      2
+      2,
+      3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "表面简单反衬、掩盖内部复杂技术装置。",
      "img": "2025-03-s3/4-11.webp",
      "txt": {
       "stem": [
@@ -296,6 +431,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "孩子反复选父母不爱读的书，使共同阅读乐趣并非纯然无杂。",
      "img": "2025-03-s3/4-12.webp",
      "txt": {
       "stem": [
@@ -318,6 +465,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "飞机上每片非差评即好评，涵盖所有影片，均落入她不喜欢的类别。",
      "img": "2025-03-s3/4-13.webp",
      "txt": {
       "pass": [
@@ -342,6 +500,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "Sontag自己重实践轻理论，影响哲学家对其早期理论文章的评价。",
      "img": "2025-03-s3/4-14.webp",
      "txt": {
       "pass": [
@@ -364,8 +533,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      3
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "连欣赏她批评实践者也轻视其理论，与哲学家整体冷落相似。",
      "img": "2025-03-s3/4-15.webp",
      "txt": {
       "pass": [
@@ -387,5 +567,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

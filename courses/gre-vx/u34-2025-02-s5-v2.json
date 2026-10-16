@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "适应环境并利用跨学科互动创建生态位，体现机会利用能力。",
      "img": "2025-02-s5/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "辩论充满不诚实，因此难以主张它确实完成提供信息的目的。",
      "img": "2025-02-s5/4-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "精修建筑照去个体化、消除干扰；现实中物体常遮挡，无干扰景象是人为构造。",
      "img": "2025-02-s5/4-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "历史学家避免武断，常给断言加限定，即使资料丰富仍有不确定。",
      "img": "2025-02-s5/4-04.webp",
      "txt": {
       "stem": [
@@ -137,6 +186,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "末句确认持有艺术伴随照料责任这一原则。",
      "img": "2025-02-s5/4-05.webp",
      "txt": {
       "pass": [
@@ -161,6 +221,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "返还非法取得之物，承认合法与非法可区分，从而支持合法持有的主张。",
      "img": "2025-02-s5/4-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +256,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "考虑未利用资源的变化，能解释很多田野结果的表面矛盾。",
      "img": "2025-02-s5/4-07.webp",
      "txt": {
       "pass": [
@@ -209,6 +291,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "不同资源释放机制都能导致资源剩余和入侵，解释不同前提下相同结果。",
      "img": "2025-02-s5/4-08.webp",
      "txt": {
       "pass": [
@@ -233,6 +326,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "物种丰富群落较缺养分、对养分输入敏感，可把Lonsdale发现纳入理论。",
      "img": "2025-02-s5/4-09.webp",
      "txt": {
       "pass": [
@@ -258,6 +362,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "对海洋的认识仍初步、不完整。",
      "img": "2025-02-s5/4-10.webp",
      "txt": {
       "stem": [
@@ -281,6 +397,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "自动驾驶在科幻中很常见，正常得不再显眼。",
      "img": "2025-02-s5/4-11.webp",
      "txt": {
       "stem": [
@@ -304,6 +432,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "巡回报道需不断移动，记者是四处旅行者。",
      "img": "2025-02-s5/4-12.webp",
      "txt": {
       "stem": [
@@ -326,6 +466,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "基因可能重新转入，提出开发者证据未排除的危险可能。",
      "img": "2025-02-s5/4-13.webp",
      "txt": {
       "pass": [
@@ -350,6 +501,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "鲑鱼深处可及早看到船，帮助解释首句难以捕获的现象。",
      "img": "2025-02-s5/4-14.webp",
      "txt": {
       "pass": [
@@ -372,20 +534,37 @@
      "kind": "mcn",
      "nopt": 3,
      "ans": [
-      0
+      0,
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      },
+      "previousChoices": [
+       "Its radius is affected by the amount of light entering the water.",
+       "Its size is not correlated with the size of a viewer’s",
+       "eyes"
+      ]
+     },
+     "explanation": "原图显示浅水视窗较小；半径由深度决定而非眼睛大小。",
      "img": "2025-02-s5/4-15.webp",
      "txt": {
       "pass": [
        "Mark Twain relished the huge cutthroat trout fished from Lake Tahoe but reported them uncommonly difficult to catch. Tahoe’s extraordinary clarity may be one reason: Twain thought it an advantage that he could see the trout but did not realize that they could see him. Light bends when it enters water, rendering floating objects outside a given circle invisible from underwater. The radius of such a circle, known as Snell’s Window, expands with the relative depth of the viewer’s position. The Tahoe cutthroats lived very deep and could have seen Twain’s boat lonq before it came to rest overhead. Moreover, the eyes of trout continue to grow along with their overall body size, and larger eyes, having more cones, provide sharper vision."
       ],
       "stem": [
-       "The passage suggests which of the following about Snell’s Window? C It is smaller for viewers in shallow water."
+       "The passage suggests which of the following about Snell’s Window?"
       ],
       "opts": [
+       "It is smaller for viewers in shallow water.",
        "Its radius is affected by the amount of light entering the water.",
-       "Its size is not correlated with the size of a viewer’s",
-       "eyes"
+       "Its size is not correlated with the size of a viewer’s eyes."
       ]
      }
     }
@@ -393,5 +572,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

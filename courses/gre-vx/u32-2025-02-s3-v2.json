@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "必须通知被告和律师，说明监听并非秘密进行。",
      "img": "2025-02-s3/4-01.webp",
      "txt": {
       "stem": [
@@ -42,8 +53,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      3
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "与黑暗悲怆开场相呼应的配乐应为哀怨回荡的plangent。",
      "img": "2025-02-s3/4-02.webp",
      "txt": {
       "stem": [
@@ -66,6 +88,18 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "某些口味因人而异，但喜甜厌苦具有普遍性。",
      "img": "2025-02-s3/4-03.webp",
      "txt": {
       "stem": [
@@ -94,6 +128,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "不模仿人脑而像机器下棋；飞行类比有启发性，模仿鸟振翅注定失败。",
      "img": "2025-02-s3/4-04.webp",
      "txt": {
       "stem": [
@@ -125,20 +172,38 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      },
+      "previousChoices": [
+       "comprises a small number of works",
+       "view thematic unity as an indispensable attribute of literatures that are justifiably defined as \"national\"",
+       "clann that African countries are too culturally diverse to have national literatures",
+       "define several Afncan literatures as \"national\" even though the works are written in non-indigenous languages",
+       "oo"
+      ]
+     },
+     "explanation": "一些学者以非本土欧洲语言写作的文学为国家文学，正是作者提出的争议。",
      "img": "2025-02-s3/4-05.webp",
      "txt": {
       "pass": [
        "Since the 1970s, there has been a movement in African literary studies toqard the recognition of national literatures rn newly independent African states, such as Cameroon, Senegal, and Benin. But while in some of these national literatures there has undoubtedly emerged a sense of corporate identity, often marked by clear thematic and formal progressions, it remains an incunieevertibe fact that the European languages tn which these literatures are expressed have only an official acceptance: they are neither indigenous to the cultures on which they have been imposed, nor are they national in any real sense of the word. This must limit the claims of any of these literatures to national significance, however abundant the corpus or coherent the internal configurations."
       ],
       "stem": [
-       "The passage suggests that some scholars of African literary studies celebrate African authors for therr fluency in more than one language believe that a literature can have national status even when it"
+       "The passage suggests that some scholars of African literary studies"
       ],
       "opts": [
-       "comprises a small number of works",
-       "view thematic unity as an indispensable attribute of literatures that are justifiably defined as \"national\"",
-       "clann that African countries are too culturally diverse to have national literatures",
-       "define several Afncan literatures as \"national\" even though the works are written in non-indigenous languages",
-       "oo"
+       "celebrate African authors for their fluency in more than one language",
+       "believe that a literature can have national status even when it comprises a small number of works",
+       "view thematic unity as an indispensable attribute of literatures that are justifiably defined as ‘national’",
+       "claim that African countries are too culturally diverse to have national literatures",
+       "define several African literatures as ‘national’ even though the works are written in non-indigenous languages"
       ]
      }
     },
@@ -149,6 +214,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "主题形式的一致发展，是支持其具国家文学身份的潜在理由。",
      "img": "2025-02-s3/4-06.webp",
      "txt": {
       "pass": [
@@ -173,6 +249,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "经济权力伴随政治社会权力。",
      "img": "2025-02-s3/4-07.webp",
      "txt": {
       "pass": [
@@ -197,6 +284,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "工人面对雇主无力，缺少对劳动条件的控制。",
      "img": "2025-02-s3/4-08.webp",
      "txt": {
       "pass": [
@@ -217,22 +315,40 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      2
+      3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "previousChoices": [
+       "tyrannize",
+       "control",
+       "command",
+       "oversee",
+       "oo"
+      ]
+     },
+     "explanation": "修复原图选项顺序后，dominate skyline最接近command。",
      "img": "2025-02-s3/4-09.webp",
      "txt": {
       "pass": [
        "The post-1850 economic boom in the United States had its greatest impact on eastern mill towns, such as Lowell, Massachusetts. Formerly peaceful villages became bustling towns whose factories rose to dominate their skylines. Their populations sometimes tripled in a decade, forcing propertyless workers into overcrowded, dilapidated housing. Their economies came under the domination of industrialists who competed unfairly with one another and were contemptuous of the old ways. These industrialists had economic power and the social and political power that accompanied it; town politicians catered to their interests. Other property owners, especially small-business entrepreneurs and professionals, identified with them and applauded their successes. The factory workers inevitably found themselves alienated from property owners and helpless before their employers. Thus, economic class, social status, and power were inextricably intertwined; control over property and machinery was readily transformed into complete authority."
       ],
       "stem": [
-       "In the context in which it appears, “dominate” most nearly means O dictate"
+       "In the context in which it appears, “dominate” most nearly means"
       ],
       "opts": [
+       "dictate",
        "tyrannize",
        "control",
        "command",
-       "oversee",
-       "oo"
+       "oversee"
       ]
      }
     },
@@ -244,6 +360,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "宏观性质并非结构本身固有，而随条件语境呈现。",
      "img": "2025-02-s3/4-10.webp",
      "txt": {
       "stem": [
@@ -267,6 +395,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "生前名声大，死后暂时过时、不时兴，再被后世重新评价。",
      "img": "2025-02-s3/4-11.webp",
      "txt": {
       "stem": [
@@ -290,6 +430,19 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/question/e2cw7j-0.html?isFav=0"
+     },
+     "explanation": "沉默寡言的领导通常只作简短例行发言。",
      "img": "2025-02-s3/4-12.webp",
      "txt": {
       "stem": [
@@ -312,6 +465,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "若非差评就必是好评，则电影无非两种，而她在飞机上均不喜欢。",
      "img": "2025-02-s3/4-13.webp",
      "txt": {
       "pass": [
@@ -336,20 +500,38 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      },
+      "previousChoices": [
+       "analyze a flaw in a novel approach to a problem",
+       "describe different processes that could have produced the same phenomenon",
+       "e.xplain how a class of data might be useful for answenng a question",
+       "outline a theory that may reconcile conflicting interpretations of a phenomenon",
+       "oo"
+      ]
+     },
+     "explanation": "修复原图选项顺序后，文章介绍一类有助解答撞击时序问题的数据。",
      "img": "2025-02-s3/4-14.webp",
      "txt": {
       "pass": [
        "Scientists have long debated the exact timing of the lunar cataclysm, a period approximately 4 billion years ago when Earth and the Moon were pummeled with asteroids. A clue to this puzzle may come from spherules, millimeter-sized droplets of molten rock formed after an asteroid collides explosively with a planet. Upon impact, the asteroid vaporizes both itself and the target rock, producing a vapor plume that condenses into spherules. These form a layer preserved in rock, whose age can be estimated using radiometric dating. Scientists know of fourteen of these spherule ____ layers scattered across Earth, but none dates to the theorized lunar cataclysm time period. Four layers, however, are from between 3.47 and 3.24 billion years ago, indicating perhaps a slow decline in collisions."
       ],
       "stem": [
-       "The pnmaxy purpose of the passage as to challenge a bastc assumption underlying a theory"
+       "The primary purpose of the passage is to"
       ],
       "opts": [
+       "challenge a basic assumption underlying a theory",
        "analyze a flaw in a novel approach to a problem",
        "describe different processes that could have produced the same phenomenon",
-       "e.xplain how a class of data might be useful for answenng a question",
-       "outline a theory that may reconcile conflicting interpretations of a phenomenon",
-       "oo"
+       "explain how a class of data might be useful for answering a question",
+       "outline a theory that may reconcile conflicting interpretations of a phenomenon"
       ]
      }
     },
@@ -362,6 +544,20 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/index?qid=108601"
+     },
+     "explanation": "旧球粒层可能未发现、已毁坏，或地球当时受撞较少。",
      "img": "2025-02-s3/4-15.webp",
      "txt": {
       "pass": [
@@ -381,5 +577,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

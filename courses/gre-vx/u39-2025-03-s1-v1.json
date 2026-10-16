@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "引力微观最弱，却在大尺度占主导，构成转折。",
      "img": "2025-03-s1/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "实时试验迅速回应偏好，但大量微调不等于有能力作根本转向。",
      "img": "2025-03-s1/2-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "篇幅虽巨却不求全面，主动承认忽略某些作曲家，化解遗漏批评。",
      "img": "2025-03-s1/2-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "若攻击只从群外来，内部成员比任何位置都可受袭时更安全。",
      "img": "2025-03-s1/2-04.webp",
      "txt": {
       "pass": [
@@ -126,6 +173,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "原模型未充分考虑不同捕食关系，均匀攻击假设只适用于某些情况。",
      "img": "2025-03-s1/2-05.webp",
      "txt": {
       "pass": [
@@ -151,6 +209,18 @@
       0,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "母蛇缺水时自身失重更多而胎数不变，显示牺牲自身水分平衡以利后代。",
      "img": "2025-03-s1/2-06.webp",
      "txt": {
       "stem": [
@@ -174,6 +244,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "音乐并非附带次要因素，甚至使复兴成为可能。",
      "img": "2025-03-s1/2-07.webp",
      "txt": {
       "stem": [
@@ -197,6 +279,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "波动源于民调方法误差而非选民反复无常。",
      "img": "2025-03-s1/2-08.webp",
      "txt": {
       "stem": [
@@ -220,6 +314,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "逃罚违规停车手法巧妙但不诚实、不道德。",
      "img": "2025-03-s1/2-09.webp",
      "txt": {
       "stem": [
@@ -242,6 +348,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "解释Coltrane为何罕见地用诗作唱片文字，作为艺术自我界定。",
      "img": "2025-03-s1/2-10.webp",
      "txt": {
       "pass": [
@@ -270,20 +387,38 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      },
+      "previousChoices": [
+       "did not view literary accompaniment as distracting from the music",
+       "viewed cooperating with Spellman as essential to their",
+       "careers",
+       "possessed creative talents not only in music but also poetry",
+       "composed music in a style that was very different from Coltrane’ sin style"
+      ]
+     },
+     "explanation": "原图选项修复后，二人更愿以文字伴随音乐，不像Coltrane担忧语言框定。",
      "img": "2025-03-s1/2-11.webp",
      "txt": {
       "pass": [
        "Although American jazz musician John Coltrane reportedly wrote other poems. the fact that to date only “A Love Supreme” has been made available to the public assures its literary significance: cast in relief as an accompaniment to his best-selling and most celebrated recording, the poem represents the sole authorized and generally accessible discursive component of what would otherwise be a wholly abstract body of creative output. This has had the effect of heightening its perceived significance for interpreting Coltrane• s artistic motivations and his larger spiritual and intellectual interests. The effect seems to have been at least partly by design: by this point in his career, Coltrane was suspicious of any kind of verbal framing for his music, saying he preferred to put out his albums without liner notes and let the music “speak for itself.” He declined, for instance, to be profiled in what became Speliman’s widely discussed 1966 volume of jazz biography as social critique, Four Lives in the Bebop Business. In this respect he contrasted with, for instance, his contemporaries and labelmates Charles Mingus and Archie Shepp, older and younger representatives of the jazz avant-garde. respectively, who were much more apt to frame their music with expository text, and even to integrate the latter into the former. So the inclusion of the poem in the liner notes to A Love Supreme, a suite in four parts for Coltrane’s working quartet, represented a deliberate and conspicuous gesture of artistic self-definition."
       ],
       "stem": [
-       "The passage suggests that Charles Mingus and Archie Shepp differed from Coltrane in that they O collaborated freely with other avant-garde musicians"
+       "The passage suggests that Charles Mingus and Archie Shepp differed from Coltrane in that they"
       ],
       "opts": [
+       "collaborated freely with other avant-garde musicians",
        "did not view literary accompaniment as distracting from the music",
-       "viewed cooperating with Spellman as essential to their",
-       "careers",
-       "possessed creative talents not only in music but also poetry",
-       "composed music in a style that was very different from Coltrane’ sin style"
+       "viewed cooperating with Spellman as essential to their careers",
+       "possessed creative talents not only in music but also in poetry",
+       "composed music in a style that was very different from Coltrane’s in style"
       ]
      }
     },
@@ -294,6 +429,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "有意用诗作提供解释音乐的方向和精神线索。",
      "img": "2025-03-s1/2-12.webp",
      "txt": {
       "pass": [
@@ -315,5 +461,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

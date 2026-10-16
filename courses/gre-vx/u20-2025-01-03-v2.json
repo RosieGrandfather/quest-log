@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "订单和产量信号相反，故数据未明确指向复苏。",
      "img": "2025-01-03/5-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "原栖息草原大多消失，因此现存叉角羚属残存种。",
      "img": "2025-01-03/5-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "亲密关系有益是信条，Martin却不确定，认为甚至不止不合意而是有毒。",
      "img": "2025-01-03/5-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "遵守类型惯例未必失败，杰作也可能正统，违背惯例本身不是优点。",
      "img": "2025-01-03/5-04.webp",
      "txt": {
       "stem": [
@@ -137,6 +186,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "科学测量更精确，因此能发现日常观察未见的现象。",
      "img": "2025-01-03/5-05.webp",
      "txt": {
       "pass": [
@@ -161,6 +221,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "高亮科学方法更谨慎系统，限定开头“与日常推理并无根本不同”的概括。",
      "img": "2025-01-03/5-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +256,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "基督教接纳希腊罗马和日耳曼的文学传统。",
      "img": "2025-01-03/5-07.webp",
      "txt": {
       "pass": [
@@ -209,6 +291,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "原文明说改革前文学varied markedly，即明显多样。",
      "img": "2025-01-03/5-08.webp",
      "txt": {
       "pass": [
@@ -233,6 +326,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "Oddly enough表明作者认为接纳异教传统出乎意料。",
      "img": "2025-01-03/5-09.webp",
      "txt": {
       "pass": [
@@ -258,6 +362,18 @@
       0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "成功靠耐力和不怕枯燥，适合学术日常苦功。",
      "img": "2025-01-03/5-10.webp",
      "txt": {
       "stem": [
@@ -281,6 +397,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "预测充满不确定性，而科学家厌恶不确定性。",
      "img": "2025-01-03/5-11.webp",
      "txt": {
       "stem": [
@@ -304,6 +432,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "童话看似不合时代，长久留存却值得解释。",
      "img": "2025-01-03/5-12.webp",
      "txt": {
       "stem": [
@@ -326,6 +466,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "冰雪天上路车辆少，却有双倍事故，因此每车风险更高于两倍。",
      "img": "2025-01-03/5-13.webp",
      "txt": {
       "pass": [
@@ -350,6 +501,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "呈现抵制政治的美洲起源说和爱尔兰更早实践的竞争观点。",
      "img": "2025-01-03/5-14.webp",
      "txt": {
       "pass": [
@@ -374,6 +536,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "承认其他国家曾零星抵制，为前句的独创论作限定。",
      "img": "2025-01-03/5-15.webp",
      "txt": {
       "pass": [
@@ -395,5 +568,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

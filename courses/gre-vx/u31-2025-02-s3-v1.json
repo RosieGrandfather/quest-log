@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "原 PDF 缺第 5 题的截图，所以这一节只有 11 题"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "虚假区分掩盖连续性，即belied。",
      "img": "2025-02-s3/2-01.webp",
      "txt": {
       "stem": [
@@ -46,6 +57,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "批评某方论证并不等于反对该立场，故不能由分析推知她的立场。",
      "img": "2025-02-s3/2-02.webp",
      "txt": {
       "stem": [
@@ -74,6 +97,19 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "尊崇亲历，诗歌刻意显得实事求是，而非艺术创造。",
      "img": "2025-02-s3/2-03.webp",
      "txt": {
       "stem": [
@@ -105,6 +141,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "学徒经历显示他熟悉且热爱视觉艺术，限定他反对视觉改编的态度。",
      "img": "2025-02-s3/2-04.webp",
      "txt": {
       "pass": [
@@ -130,6 +177,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "电影让出日常生活的表现空间给电视和文学。",
      "img": "2025-02-s3/2-06.webp",
      "txt": {
       "stem": [
@@ -153,6 +212,18 @@
       0,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "古老精湛织染传统达到顶峰，体现纺织品的华美。",
      "img": "2025-02-s3/2-07.webp",
      "txt": {
       "stem": [
@@ -176,6 +247,18 @@
       1,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        5
+       ]
+      }
+     },
+     "explanation": "容忍伪科学看似无害，却可能降低对更危险错觉的防御。",
      "img": "2025-02-s3/2-08.webp",
      "txt": {
       "stem": [
@@ -199,6 +282,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "犬呼气不打断进气嗅闻，信息获取不像人类那样间断。",
      "img": "2025-02-s3/2-09.webp",
      "txt": {
       "stem": [
@@ -221,20 +316,38 @@
      "ans": [
       2
      ],
-     "img": "2025-02-s3/2-10.webp",
-     "txt": {
-      "pass": [
-       "Nineteenth-century historian Jacob Burkhardt's remarkable assertion that ____ stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from lus close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperatra• like Leonardo Brum •s—that women should study the liberal arts as men did With the exception of rhetoric. which \"Iles wholly outside the province of ____ unnouced by Burckhardt because he shared the humamst assumption that women's provmce svas the pavate sphere rather than the public sphere. The relegation of v,xunen to a \"private\" sphere was a complex historical phenotnenon that should be analyzed zn light of other social and econonuc changes occumng dunng the Renaissance. Histonans destrous of understanding women's expenence cannot View the period. as Burckhardt did. through the lens provided by the humanists."
-      ],
-      "stem": [
-       "It can be inferred from the passage that Leonardo Brum most likely belle,ed winch of the following? O The pnvate sphere js supenor to the public sphere."
-      ],
-      "opts": [
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "previousChoices": [
        "Formal education qas unnecessao• for women in Renmssance Italy",
        "Rhetoric is useful primarily in the public sphere rather thon in the pnvate sphere.",
        "Women in Renaissance Italy had less destre to study rhetonc than did men.",
        "Most liberal arts are of httle utility in the public sphere.",
        "oo"
+      ]
+     },
+     "explanation": "原图与第15节同题；修辞主要用于公共领域，而女性被限制于私人领域。",
+     "img": "2025-02-s3/2-10.webp",
+     "txt": {
+      "pass": [
+       "Nineteenth-century historian Jacob Burckhardt’s remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s— that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the ____ province of women” —went unnoticed by Burckhardt because he shared the humanist assumption that women’s province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as Burckhardt did, through the lens provided by the humanists."
+      ],
+      "stem": [
+       "It can be inferred from the passage that Leonardo Bruni most likely believed which of the following?"
+      ],
+      "opts": [
+       "The private sphere is superior to the public sphere.",
+       "Formal education was unnecessary for women in Renaissance Italy.",
+       "Rhetoric is useful primarily in the public sphere rather than in the private sphere.",
+       "Women in Renaissance Italy had less desire to study rhetoric than did men.",
+       "Most liberal arts are of little utility in the public sphere."
       ]
      }
     },
@@ -245,6 +358,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "共享资料中的人文主义假设，反而使Burckhardt忽视不平等证据。",
      "img": "2025-02-s3/2-11.webp",
      "txt": {
       "pass": [
@@ -269,6 +393,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "若Bruni不代表人文主义整体，King的材料就不足以支撑广泛批评。",
      "img": "2025-02-s3/2-12.webp",
      "txt": {
       "pass": [
@@ -290,5 +425,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

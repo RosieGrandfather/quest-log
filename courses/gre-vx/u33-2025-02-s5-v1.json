@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "长期问题却沉迷短期手段，导致赤字恶化。",
      "img": "2025-02-s5/2-01.webp",
      "txt": {
       "stem": [
@@ -46,6 +57,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "蒸发减少使蒙古高原虽少雨，仍逆转周边的干旱趋势。",
      "img": "2025-02-s5/2-02.webp",
      "txt": {
       "stem": [
@@ -74,6 +97,19 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "Williams跨人文学科并强调历史，异于分析哲学的疏离、非历史倾向。",
      "img": "2025-02-s5/2-03.webp",
      "txt": {
       "stem": [
@@ -105,6 +141,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "干旱压制一年生植物，减弱其对灌木幼苗的竞争。",
      "img": "2025-02-s5/2-04.webp",
      "txt": {
       "pass": [
@@ -129,6 +176,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "干旱益处来自减轻竞争，独自种植的幼苗不会由缺水直接获益。",
      "img": "2025-02-s5/2-05.webp",
      "txt": {
       "pass": [
@@ -154,6 +212,18 @@
       0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "大胆脑科学猜想即便看似无根据，也能推动科学。",
      "img": "2025-02-s5/2-06.webp",
      "txt": {
       "stem": [
@@ -177,6 +247,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "在景观中到处可见、广泛分布，才足以成为标志。",
      "img": "2025-02-s5/2-07.webp",
      "txt": {
       "stem": [
@@ -197,9 +279,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      3,
+      0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "幽默之外，对同行评价也尖刻严厉。",
      "img": "2025-02-s5/2-08.webp",
      "txt": {
       "stem": [
@@ -223,6 +317,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "为迎合偏好宏大语言的评论家，作家会回避俗语。",
      "img": "2025-02-s5/2-09.webp",
      "txt": {
       "stem": [
@@ -245,6 +351,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "作者以共同形式要素归类建筑，认可建筑上的凝聚性而不假定功能。",
      "img": "2025-02-s5/2-10.webp",
      "txt": {
       "pass": [
@@ -265,7 +382,16 @@
     {
      "n": 11,
      "kind": "ss",
-     "ansText": "The problem, however, comes not",
+     "ansText": "The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used.",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ansText": "The problem, however, comes not"
+      }
+     },
+     "explanation": "第七句明确反对从名称跳到未经证实的使用功能。",
      "img": "2025-02-s5/2-11.webp",
      "txt": {
       "pass": [
@@ -293,6 +419,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "可以只以Palace作形式类别名称，不接受其王室功能暗示。",
      "img": "2025-02-s5/2-12.webp",
      "txt": {
       "pass": [
@@ -314,5 +451,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

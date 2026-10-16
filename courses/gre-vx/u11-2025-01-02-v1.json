@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "数学知识被认为稳定，因此只在表面上受历史力量影响。",
      "img": "2025-01-02/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "似乎享受争议，而且愈老愈爱科学论战。",
      "img": "2025-01-02/2-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "技巧精湛、构思周密的小说最终却空洞琐碎，浪费读者投入。",
      "img": "2025-01-02/2-03.webp",
      "txt": {
       "stem": [
@@ -104,20 +140,38 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      },
+      "previousChoices": [
+       "suggest a way in which early recording technology influenced the development of jazz",
+       "explain why early jazz recordings were not especially popular with the public",
+       "point to a difficulty in early recording technology that Edison struggled to overcome",
+       "explain why musicians such as Ellington were slow to embrace recording technology",
+       "Se;ect one answer choice."
+      ]
+     },
+     "explanation": "图中高亮三分钟录音限制，说明技术如何促使爵士采用简化结构。",
      "img": "2025-01-02/2-04.webp",
      "txt": {
       "pass": [
        "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin' 5 ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. VVith a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler tunes once they began recording their work."
       ],
       "stem": [
-       "The function of the highlighted sentence is primarily to O identify a common criticism of early recording technology"
+       "The function of the highlighted sentence is primarily to"
       ],
       "opts": [
+       "identify a common criticism of early recording technology",
        "suggest a way in which early recording technology influenced the development of jazz",
        "explain why early jazz recordings were not especially popular with the public",
        "point to a difficulty in early recording technology that Edison struggled to overcome",
-       "explain why musicians such as Ellington were slow to embrace recording technology",
-       "Se;ect one answer choice."
+       "explain why musicians such as Ellington were slow to embrace recording technology"
       ]
      }
     },
@@ -128,6 +182,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "Ellington属于例外，保留较早爵士的复杂结构。",
      "img": "2025-01-02/2-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +218,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "虽着迷偶然性，小说却是理性、精心构造的。",
      "img": "2025-01-02/2-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +253,18 @@
       0,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "医疗信息丰富，却少有患者利用电子沟通。",
      "img": "2025-01-02/2-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +288,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "记录残缺会诱发与证据脱节的大胆猜测。",
      "img": "2025-01-02/2-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +323,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "真实存在的物种也曾被当作传说；fabulous与legendary对应。",
      "img": "2025-01-02/2-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +357,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "贝类不从海水吸收铀，因此不能用铀同位素测定其壳年代。",
      "img": "2025-01-02/2-10.webp",
      "txt": {
       "pass": [
@@ -268,6 +392,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "高亮死亡后氨基酸构型转变，提供可用于测年的自然过程。",
      "img": "2025-01-02/2-11.webp",
      "txt": {
       "pass": [
@@ -292,6 +427,18 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      },
+      "corroboratingSource": "https://gre-sanqian.kmf.com/explain/question/f2bqwj-0.html?isFav=0"
+     },
+     "explanation": "贝壳在阶地沉积中常见，分布广，可为缺少珊瑚的地点提供测年材料。",
      "img": "2025-01-02/2-12.webp",
      "txt": {
       "pass": [
@@ -313,5 +460,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

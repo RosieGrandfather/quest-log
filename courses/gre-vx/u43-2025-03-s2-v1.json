@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "名为跨学科却无真正的学科融合。",
      "img": "2025-03-s2/3-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "她批评理论潮流过度聚焦偏好变量，反而遮蔽复杂环境现实。",
      "img": "2025-03-s2/3-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "非个人化的建筑净照是人为安排，现实视线经常被普通物件干扰。",
      "img": "2025-03-s2/3-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "非裔音乐家强调差异，以反对期刊中的种族色盲观点。",
      "img": "2025-03-s2/3-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "作者承认一些色盲论并非虚情假意，确是真诚相信。",
      "img": "2025-03-s2/3-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       1,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        5
+       ]
+      }
+     },
+     "explanation": "堆肥使用的环境收益可能抵消生产过程的环境代价。",
      "img": "2025-03-s2/3-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       3,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        4
+       ]
+      }
+     },
+     "explanation": "商业画廊认为主题难销售，故忽视、弃置这位艺术家。",
      "img": "2025-03-s2/3-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "希望找到能激励党员踊跃投票的议题。",
      "img": "2025-03-s2/3-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "能量与炽热灵感表明小说充满活力。",
      "img": "2025-03-s2/3-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +350,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "解释为何追求最优者客观成果更好、主观却更不满意的反直觉现象。",
      "img": "2025-03-s2/3-10.webp",
      "txt": {
       "pass": [
@@ -272,6 +389,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "最大化者客观结果更好，因此较少作出客观上差的决定。",
      "img": "2025-03-s2/3-11.webp",
      "txt": {
       "pass": [
@@ -296,6 +424,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "作者将不满追溯到最大化者自身的决策倾向，而不是最终选择客观较差。",
      "img": "2025-03-s2/3-12.webp",
      "txt": {
       "pass": [
@@ -317,5 +456,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

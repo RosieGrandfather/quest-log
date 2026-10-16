@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -21,8 +21,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      4
+      3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "岩石栖地缝隙洞穴多，属于地形结构复杂。",
      "img": "2025-02-s4/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "虽接触艺术文化，却主要对智力艺术不关心，也不书卷气、不重思辨。",
      "img": "2025-02-s4/2-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "刊物盈利、博学权威，却缺乏活力并显陈旧。",
      "img": "2025-02-s4/2-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "承认断代有困难，指出由风格推定传播方向的推理弱点。",
      "img": "2025-02-s4/2-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "沿海以外物件通常被视作同时或派生，而非海湾风格的先驱。",
      "img": "2025-02-s4/2-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "形而上学超出可由实验验证的科学主张范围。",
      "img": "2025-02-s4/2-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "蟑螂并非特别强韧，只是昆虫中的普通水平。",
      "img": "2025-02-s4/2-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "重视礼仪外显德性，使官员过度关注外国使节仪式准确性。",
      "img": "2025-02-s4/2-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "富人耗水、穷人被迫节约凸显贫富鸿沟。",
      "img": "2025-02-s4/2-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +350,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "用神经系统证据评估Manton关于节肢动物起源的解释。",
      "img": "2025-02-s4/2-10.webp",
      "txt": {
       "pass": [
@@ -268,6 +385,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "作者认为昆虫甲壳类复眼同源，Manton认为独立趋同演化。",
      "img": "2025-02-s4/2-11.webp",
      "txt": {
       "pass": [
@@ -292,6 +420,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "趋同演化意味着共同特征并非全来自同一个共同祖先。",
      "img": "2025-02-s4/2-12.webp",
      "txt": {
       "pass": [
@@ -313,5 +452,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

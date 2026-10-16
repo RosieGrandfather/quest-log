@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "发明者保密，所以对望远镜技术细节保持缄默。",
      "img": "2025-01-15/3-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "试图摆脱好斗名声，因此对议员表现出出乎意料的和解态度。",
      "img": "2025-01-15/3-02.webp",
      "txt": {
       "stem": [
@@ -71,8 +94,21 @@
      "ans": [
       2,
       1,
-      0
+      1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "过去的忽视远不及当前的轻蔑，美国艺术仿佛被排除于欧洲叙事之外。",
      "img": "2025-01-15/3-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "陶器资料无法说明所有交换路径，且不能代表其他材料的贸易范围。",
      "img": "2025-01-15/3-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "化学成分分析可确定产地，但不能还原交换次数或路径。",
      "img": "2025-01-15/3-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "女主人公挑战社会规范，重新界定何为惯常、规范的行为。",
      "img": "2025-01-15/3-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "环境变化可能无法察觉，却对物种栖息地影响巨大。",
      "img": "2025-01-15/3-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "海平面上升速率看似微小难察觉，历史作用却并非无关紧要。",
      "img": "2025-01-15/3-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "刻痕究竟偶然、涂画还是交流尚不明确，因此是神秘难解的。",
      "img": "2025-01-15/3-09.webp",
      "txt": {
       "stem": [
@@ -244,13 +350,25 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/question/b2brzj-0.html?isFav=0"
+     },
+     "explanation": "乙烷与甲烷的混合液可产生比纯甲烷海洋低的近地面湿度。",
      "img": "2025-01-15/3-10.webp",
      "txt": {
       "pass": [
-       "methane is converted into heavier hydrocarbons by the Sun's ultraviolet light, all the methane in Titan's atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be continuously feeding methane into Titan's atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan's surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with thane."
+       "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
       ],
       "stem": [
-       "liquid methane on Titan could accoun following?"
+       "According to the passage, a mixture of liquid ethane and liquid methane on Titan could account for which of the following?"
       ],
       "opts": [
        "Differences in the humidity at different levels of Titan's atmosphere",
@@ -268,17 +386,38 @@
      "ans": [
       0
      ],
-     "img": "2025-01-15/3-11.webp",
-     "txt": {
-      "stem": [
-       "disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be ____ O Something other than volcanic emotions wou\\d account continuously feeding methane into Titan's atmosphere. ____ for the amount of methane in Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow ____ CD The rate at which methane is supplied to ____ surface precisely calibrated at a moderate level, either the ____ would be much slower than is generally methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the ____ O Titan's surface temperature would be expected to ____ at surface. However, data indicate that the atmosphere just ____ a slow but steady rate. above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was ____ O The atmosphere near Titan’s surface would have a suggested by Lunine: when sunlight breaks down ____ humidity similar to that of the atmosphere at a grea\\er methane, the main product is ethane. Lunine noted that at ____ distance from the surface."
-      ],
-      "opts": [
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      },
+      "previousChoices": [
        "Titan's surface temperature, ethane is also a liquid. A",
        "iquid mixture of methane and ethane would produce low",
        "umidity. Such an ocean would slowly become richer in",
        "hane while keeping the atmosphere supplied with",
        "?thane."
+      ]
+     },
+     "explanation": "阳光不断把甲烷变为乙烷，因此海洋将逐渐更富含乙烷。",
+     "img": "2025-01-15/3-11.webp",
+     "txt": {
+      "pass": [
+       "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
+      ],
+      "stem": [
+       "The passage suggests that if the explanation suggested by Lunine is correct, then which of the following would be true?"
+      ],
+      "opts": [
+       "Titan would have an ocean on its surface that would contain more ethane in the future than it does at present.",
+       "Something other than volcanic eruptions would account for the amount of methane in Titan’s atmosphere.",
+       "The rate at which methane is supplied to Titan’s surface would be much slower than is generally believed.",
+       "Titan’s surface temperature would be expected to fall at a slow but steady rate.",
+       "The atmosphere near Titan’s surface would have a humidity similar to that of the atmosphere at a greater distance from the surface."
       ]
      }
     },
@@ -287,19 +426,40 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      2
+      3
      ],
-     "img": "2025-01-15/3-12.webp",
-     "txt": {
-      "stem": [
-       "atmosphere should, at the present conversion rate. have ____ how ultraviolet light and methane interact disappeared in a few million years, long ago in Titan's 4.5 billion years of existence. Something must be ____ demonstrate that the large amount of methane in continuously feeding methane into Titan's atmosphere. ____ Titan's atmosphere cannot be ____ if current One possibility is that the methane comes from volcanic ____ estimates of Titan’s surface temperature ate correct eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the ____ O show why a precisely calibrated SUPP\\y rate of methane methane would have run out by now or excess methane ____ from volcanic eruptions is the most plausible would have started to accumulate as a liquid ocean on the ____ explanation for the large amount of methane ____ s surface. However, data indicate that the atmosphere just ____ atmosphere above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was ____ O explain how volcanic eruptions could in fact be the suggested by Lunine: when sunlight breaks down ____ source of the large amount of methane In Titan’s methane, the main product is ethane. Lunine noted that at ____ atmosphere"
-      ],
-      "opts": [
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "previousChoices": [
        "Titan's surface temperature, ethane is also a liquid. A",
        "liquid mixture of methane and ethane would produce low C) explain why the level of humidity produced by a mixture",
        "humidity. Such an ocean would slowly become richer in of ethane and methane is not dependent on s",
        "ethane while keeping the atmosphere supplied with •ur-face temperature",
        "methane."
+      ]
+     },
+     "explanation": "混合海洋解释低湿度，使火山补给甲烷的解释仍可能成立。",
+     "img": "2025-01-15/3-12.webp",
+     "txt": {
+      "pass": [
+       "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
+      ],
+      "stem": [
+       "The author of the passage introduces Lunine’s explanation most likely in order to"
+      ],
+      "opts": [
+       "point out that the proposition that a liquid ocean exists on Titan’s surface is inconsistent with knowledge of how ultraviolet light and methane interact",
+       "demonstrate that the large amount of methane in Titan’s atmosphere cannot be explained if current estimates of Titan’s surface temperature are correct",
+       "show why a precisely calibrated supply rate of methane from volcanic eruptions is the most plausible explanation for the large amount of methane in Titan’s atmosphere",
+       "explain how volcanic eruptions could in fact be the source of the large amount of methane in Titan’s atmosphere",
+       "explain why the level of humidity produced by a mixture of ethane and methane is not dependent on Titan’s surface temperature"
       ]
      }
     }
@@ -307,5 +467,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

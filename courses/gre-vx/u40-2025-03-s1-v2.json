@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "人参与修复，与无人干预的原始荒野观念冲突。",
      "img": "2025-03-s1/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "法院通常贴近民意，担心背离会失去公众支持。",
      "img": "2025-03-s1/4-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "修复总遇反对：观众依恋熟悉外观，学者也可能反对移除后世修补。",
      "img": "2025-03-s1/4-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "框架虽朴素却更引人注目，而这种简洁比明显奢华更难实现。",
      "img": "2025-03-s1/4-04.webp",
      "txt": {
       "stem": [
@@ -138,6 +187,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "生命需液态水；公转引发潮汐摩擦热，使冰下水可存在。",
      "img": "2025-03-s1/4-05.webp",
      "txt": {
       "pass": [
@@ -160,6 +221,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "地球地下生命的实际发现，为Europa生命的推测提供经验基础。",
      "img": "2025-03-s1/4-06.webp",
      "txt": {
       "pass": [
@@ -184,6 +256,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "重新考虑旧解释，补入风险与防御措施的经济合理性。",
      "img": "2025-03-s1/4-07.webp",
      "txt": {
       "pass": [
@@ -212,6 +295,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "史家把一些防御策略视作谋取垄断利润的做法。",
      "img": "2025-03-s1/4-08.webp",
      "txt": {
       "pass": [
@@ -238,6 +332,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "作者承认传统解释并非全错，共享影响力、不竞争与抑制发展等判断。",
      "img": "2025-03-s1/4-09.webp",
      "txt": {
       "pass": [
@@ -261,6 +368,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "新曲目计划让此前无名、鲜为人知的女性作曲家被听见。",
      "img": "2025-03-s1/4-10.webp",
      "txt": {
       "stem": [
@@ -284,6 +403,18 @@
       0,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "竞争团体拒绝合作，以致同类计划争夺经费。",
      "img": "2025-03-s1/4-11.webp",
      "txt": {
       "stem": [
@@ -307,6 +438,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "敲打、叫价、迫人屈从，描绘充满表演性的戏剧化姿态。",
      "img": "2025-03-s1/4-12.webp",
      "txt": {
       "stem": [
@@ -329,6 +472,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "若有目的休闲本身通常不添压力，更能支持其减轻总压力的效用。",
      "img": "2025-03-s1/4-13.webp",
      "txt": {
       "pass": [
@@ -353,6 +507,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "忽视其他独立力量，过度把演奏变化归因于录音一个原因。",
      "img": "2025-03-s1/4-14.webp",
      "txt": {
       "pass": [
@@ -377,6 +542,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "节奏自由曾被滥用，说明部分表现手法有过不当运用。",
      "img": "2025-03-s1/4-15.webp",
      "txt": {
       "pass": [
@@ -398,5 +574,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

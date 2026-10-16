@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "严密逻辑的方法却被批为似是而非，形成讽刺。",
      "img": "2025-01-22/3-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0
+       ]
+      }
+     },
+     "explanation": "坚持与追求新奇看似对立，实际能平衡共存。",
      "img": "2025-01-22/3-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "颠覆传统叙事后来也变得可预测，说明不讲直白故事的方式终究有限。",
      "img": "2025-01-22/3-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "维生素C缺乏导致结缔组织病，说明它维护结缔组织健康。",
      "img": "2025-01-22/3-04.webp",
      "txt": {
       "pass": [
@@ -126,6 +173,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "肉和动物结缔组织含C，长时烹煮破坏C，解释因纽特生食来源。",
      "img": "2025-01-22/3-05.webp",
      "txt": {
       "pass": [
@@ -151,6 +209,18 @@
       3,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        4
+       ]
+      }
+     },
+     "explanation": "以南方特有或典型结构解释运动，会忽略其他地区的传统。",
      "img": "2025-01-22/3-06.webp",
      "txt": {
       "stem": [
@@ -174,6 +244,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "分立器官的词汇不能反映身体交织、整合的整体性质。",
      "img": "2025-01-22/3-07.webp",
      "txt": {
       "stem": [
@@ -197,6 +279,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "提供别处没有的资料，是补充而不是反驳既有信息。",
      "img": "2025-01-22/3-08.webp",
      "txt": {
       "stem": [
@@ -220,6 +314,18 @@
       2,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        4
+       ]
+      }
+     },
+     "explanation": "宣称温和讨论却辩论尖刻恶毒，构成反差。",
      "img": "2025-01-22/3-09.webp",
      "txt": {
       "stem": [
@@ -242,6 +348,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "全文推测鸟喙花纹如何引导幼鸟啄击、诱发喂食。",
      "img": "2025-01-22/3-10.webp",
      "txt": {
       "pass": [
@@ -266,6 +383,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "在特定位置更容易进入亲鸟视野，解释这种花纹安排的好处。",
      "img": "2025-01-22/3-11.webp",
      "txt": {
       "pass": [
@@ -290,6 +418,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "小幼鸟须定点刺激，大幼鸟相对更能通过分散啄击有效乞食。",
      "img": "2025-01-22/3-12.webp",
      "txt": {
       "pass": [
@@ -311,5 +450,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

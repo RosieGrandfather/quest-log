@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "反应慢使地下水比地表水更能抵御短期旱涝变化。",
      "img": "2025-01-07/2-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "读者不只追求准确，还要观点一致，偏向就可能成为产品特征。",
      "img": "2025-01-07/2-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "惯用配乐操纵可预测情绪，采用个人语言则令人发现新维度。",
      "img": "2025-01-07/2-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "Eliot认为专业团体主动制造对外行的不信任，专业化不只由知识增长驱动。",
      "img": "2025-01-07/2-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "通才可能消失促使Eliot创造知识广博的叙述者。",
      "img": "2025-01-07/2-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "Windigo故事最鲜明、突出地呈现孤独危险。",
      "img": "2025-01-07/2-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "问题并非稳定可界定，而是含糊、无定形的。",
      "img": "2025-01-07/2-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "虽被视作特立独行者，仍被认为适任。",
      "img": "2025-01-07/2-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "叙述者公开介入并指导读者，突出其显眼、侵入性存在。",
      "img": "2025-01-07/2-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +350,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "提供了两版年代、差异和叙述方式，未说明如何确定孰先孰后。",
      "img": "2025-01-07/2-10.webp",
      "txt": {
       "pass": [
@@ -268,6 +385,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "原稿只有故事无评论，旨在让故事按自身方式呈现。",
      "img": "2025-01-07/2-11.webp",
      "txt": {
       "pass": [
@@ -292,6 +420,24 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "previousChoices": [
+       "hand over",
+       "nate",
+       "oer",
+       "propose",
+       "suomit"
+      ]
+     },
+     "explanation": "present stories在此即offer、呈现故事。",
      "img": "2025-01-07/2-12.webp",
      "txt": {
       "pass": [
@@ -302,10 +448,10 @@
       ],
       "opts": [
        "hand over",
-       "nate",
-       "oer",
+       "donate",
+       "offer",
        "propose",
-       "suomit"
+       "submit"
       ]
      }
     }
@@ -313,5 +459,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

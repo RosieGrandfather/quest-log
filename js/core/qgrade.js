@@ -67,7 +67,7 @@ export function summarize(items, answers){
 }
 
 const BL = ['(i)', '(ii)', '(iii)'];
-export const answerText = item => item.answerPending ? '待核对（原答案数据与题图不一致）'
+export const answerText = item => item.answerPending ? '待核对（答案尚无可靠定论）'
   : item.kind === 'ne' ? String(item.ans)
   : item.kind === 'ss' ? String(item.ansText || '')
   : item.kind === 'tc' ? item.ans.map((k, i)=> `空${BL[i]} ${'ABCDEFGH'[k]}`).join('　')

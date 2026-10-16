@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "局地短时不可预测，全球尺度却有可靠规律。",
      "img": "2025-03-s5/2-01.webp",
      "txt": {
       "stem": [
@@ -46,6 +57,18 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "似因枯燥名声而尴尬，校长刻意采用随意健谈的风格。",
      "img": "2025-03-s5/2-02.webp",
      "txt": {
       "stem": [
@@ -74,6 +97,19 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "美国艺术被藏到角落，显示当前轻蔑和排除超过过去忽视。",
      "img": "2025-03-s5/2-03.webp",
      "txt": {
       "stem": [
@@ -105,6 +141,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "8470年比典型Clovis时期晚，属于出乎意料的相关材料年代。",
      "img": "2025-03-s5/2-04.webp",
      "txt": {
       "pass": [
@@ -129,6 +176,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "若物件制作很久后才埋入，则物件本身和伴随材料不同龄。",
      "img": "2025-03-s5/2-05.webp",
      "txt": {
       "pass": [
@@ -154,6 +212,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "认为设备即将过时，所以解决兼容问题也引不起兴趣。",
      "img": "2025-03-s5/2-06.webp",
      "txt": {
       "stem": [
@@ -177,6 +247,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "中国文字似独立的本土发展。",
      "img": "2025-03-s5/2-07.webp",
      "txt": {
       "stem": [
@@ -200,6 +282,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "悲剧历史由刺痛尖刻的机智及灼热情感表达。",
      "img": "2025-03-s5/2-08.webp",
      "txt": {
       "stem": [
@@ -223,6 +317,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "既难根除，预先限制高风险引种就是审慎而有远见。",
      "img": "2025-03-s5/2-09.webp",
      "txt": {
       "stem": [
@@ -245,6 +351,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "Wideman提供不经解释中介呈现黑人故事的一般框架，可解释Hurston原意。",
      "img": "2025-03-s5/2-10.webp",
      "txt": {
       "pass": [
@@ -265,7 +382,16 @@
     {
      "n": 11,
      "kind": "ss",
-     "ansText": "第二段第一句话",
+     "ansText": "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales.",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ansText": "第二段第一句话"
+      }
+     },
+     "explanation": "第五句说出版者可能要求不只是故事抄录，解释她后来添加叙述的原因。",
      "img": "2025-03-s5/2-11.webp",
      "txt": {
       "pass": [
@@ -292,6 +418,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "未交代如何建立两版稿件的先后关系。",
      "img": "2025-03-s5/2-12.webp",
      "txt": {
       "pass": [
@@ -313,5 +450,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

@@ -310,8 +310,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+}
+},
+"explanation": "虽然招聘晋升做法已被禁止（proscribed），某些部门仍沿用，构成转折。"
 },
 {
 "n": 2,
@@ -322,8 +333,20 @@
 "blanks": 2,
 "ans": [
 1,
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
 1
 ]
+}
+},
+"explanation": "所谓快感中枢可能误导科学家，让他们误以为理解了快感机制。"
 },
 {
 "n": 3,
@@ -332,9 +355,11 @@
 ],
 "kind": "tc",
 "blanks": 3,
-"ans": [],
-"answerPending": true,
-"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"ans": [
+2,
+0,
+0
+],
 "legacyAnswer": {
 "kind": "tc",
 "blanks": 2,
@@ -342,7 +367,17 @@
 0,
 1
 ]
+},
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [],
+"answerPending": true
 }
+},
+"explanation": "相册被当作客观记录，而人们往往忽略其主动筛选过程。"
 },
 {
 "n": 4,
@@ -352,10 +387,23 @@
 "kind": "tc",
 "blanks": 3,
 "ans": [
+0,
+0,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 2,
 2
 ]
+}
+},
+"explanation": "漫画被看作幼稚、低俗，因此爱好者受到抨击。"
 },
 {
 "n": 5,
@@ -365,8 +413,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4
 ]
+}
+},
+"explanation": "原文明确说部分符号用来表达特定词语。"
 },
 {
 "n": 6,
@@ -376,8 +435,19 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+}
+},
+"explanation": "符号不对应单一语言，因此不同语言使用者可以共用。"
 },
 {
 "n": 7,
@@ -387,8 +457,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+}
+},
+"explanation": "先对照早期壁画运动，再解释其与奇卡诺民权运动的历史联系。"
 },
 {
 "n": 8,
@@ -398,8 +479,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
+}
+},
+"explanation": "艺术家建立文化中心，作为社会政治运动的公共宣传机构。"
 },
 {
 "n": 9,
@@ -409,8 +501,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4
 ]
+}
+},
+"explanation": "首段比较新旧壁画运动，次段交代复兴所处的社会政治环境。"
 },
 {
 "n": 10,
@@ -421,8 +524,20 @@
 "nopt": 6,
 "ans": [
 1,
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
 2
 ]
+}
+},
+"explanation": "当下充满达达主义手法，使展览显得及时、适逢其时。"
 },
 {
 "n": 11,
@@ -433,8 +548,20 @@
 "nopt": 6,
 "ans": [
 1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
 3
 ]
+}
+},
+"explanation": "敌对回应使此前讨好官员的努力归于无效。"
 },
 {
 "n": 12,
@@ -444,9 +571,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+3,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 3
 ]
+}
+},
+"explanation": "与写实相反，世界或凭空构造，或故意模糊难解；后二词形成等义。"
 },
 {
 "n": 13,
@@ -457,7 +596,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "死亡多为成体而病毒更易侵袭幼体，降低病毒解释的可信度。"
 },
 {
 "n": 14,
@@ -467,8 +617,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+}
+},
+"explanation": "没有保留全部组成部分的权威原本，各抄本可能不同时收录两首序诗。"
 },
 {
 "n": 15,
@@ -477,18 +638,29 @@
 ],
 "kind": "mcn",
 "nopt": 3,
-"ans": [],
-"answerPending": true,
-"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"ans": [
+1
+],
 "legacyAnswer": {
 "kind": "mcn",
 "nopt": 5,
 "ans": [
 4
 ]
+},
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [],
+"answerPending": true
 }
+},
+"explanation": "后期抄写整理塑造了今天研究所依据的版本，因而影响学术研究。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -509,7 +681,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "末日式措辞虽夸张，缺水的核心信息仍正确。"
 },
 {
 "n": 2,
@@ -521,7 +704,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "气团碰撞常发生于几乎没有龙卷风的地方，说明解释过于简化。"
 },
 {
 "n": 3,
@@ -531,10 +726,23 @@
 "kind": "tc",
 "blanks": 3,
 "ans": [
+1,
+2,
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 1,
 1
 ]
+}
+},
+"explanation": "缺少监管却形成相对安全的商业中心，对相信监管促进伦理者构成谜题。"
 },
 {
 "n": 4,
@@ -545,7 +753,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "若冷却完全抵消吸收的额外辐射，就无法解释冰川退缩。"
 },
 {
 "n": 5,
@@ -556,7 +775,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "提出温度降水假说、用记录指出局限，再提出黑碳替代解释。"
 },
 {
 "n": 6,
@@ -568,7 +798,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "似乎将扩大作用，却已开始声望衰退；waning与ebbing等义。"
 },
 {
 "n": 7,
@@ -580,7 +822,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "养殖放流优点虽常被赞扬，研究却显示危害；extolled与acclaimed等义。"
 },
 {
 "n": 8,
@@ -592,7 +846,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "可靠来源稀缺使细节无法核实；dearth与paucity等义。"
 },
 {
 "n": 9,
@@ -604,7 +870,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "反对者认为声乐不足使“最伟大”之说不能成立；precluded与invalidated最切合。"
 },
 {
 "n": 10,
@@ -615,7 +893,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "原文说他们继续大量依赖野生植物，意味着此前也如此。"
 },
 {
 "n": 11,
@@ -626,7 +915,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "缺少能提高玉米营养的陶器加工条件，支持玉米并非主食的论点。"
 },
 {
 "n": 12,
@@ -637,9 +937,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "原文明言陶器制造技术通常与农业相伴。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -654,7 +966,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "惯常讥讽尖刻的作者写出始终和蔼的书，才构成惊讶。"
 },
 {
 "n": 2,
@@ -665,7 +988,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "不肯直白表达、耗尽听众耐心，对应浮夸晦涩的fustian。"
 },
 {
 "n": 3,
@@ -677,7 +1011,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "偏远而害羞阻碍研究，只有不自然的圈养条件例外。"
 },
 {
 "n": 4,
@@ -690,7 +1036,20 @@
 1,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1,
+1
 ]
+}
+},
+"explanation": "许多科学家不信宏大的解释，认为原因平常而非意外的日食特有效应。"
 },
 {
 "n": 5,
@@ -701,7 +1060,18 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "作者追溯Derbyshire的论断，认为可能源于Johnson误读Eneström猜想。"
 },
 {
 "n": 6,
@@ -712,7 +1082,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "高亮“比笛卡尔晚近300年”强调解释是后人的推测，而非同期证据。"
 },
 {
 "n": 7,
@@ -723,7 +1104,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "全文讨论史学家对手工物件作为历史资料的不同评价。"
 },
 {
 "n": 8,
@@ -734,7 +1126,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "十九世纪浪漫化的解释框架妨碍理解十八世纪物件原意。"
 },
 {
 "n": 9,
@@ -745,7 +1148,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Ulrich仍使用这些物件，较其他史家更不认为神话足以阻碍利用。"
 },
 {
 "n": 10,
@@ -757,7 +1171,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "无法直接探测而从引力效应推知存在；inferred与surmised等义。"
 },
 {
 "n": 11,
@@ -769,7 +1195,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "虽不可信且不合时宜，童话却长期留存；persistence与survival等义。"
 },
 {
 "n": 12,
@@ -781,7 +1219,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "共事者一致描述他坚强，故软弱名声缺乏根据；specious与unfounded等义。"
 },
 {
 "n": 13,
@@ -792,7 +1242,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "比例由5%升至6%不能保证金额不降，必须假设政府总支出没有明显降低。"
 },
 {
 "n": 14,
@@ -803,7 +1264,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "不适生的密林会增加火灾风险，必须长期管理危险条件。"
 },
 {
 "n": 15,
@@ -814,9 +1286,21 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
 }
-]
+},
+"explanation": "intensive timber production指集中、高强度的木材生产。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -837,7 +1321,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "理论节能却实际更浪费，对应profligate。"
 },
 {
 "n": 2,
@@ -849,7 +1344,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "她从不仓促而始终谨慎，因此暂时克制、不宣告感情。"
 },
 {
 "n": 3,
@@ -862,7 +1369,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "充沛能量贯穿其人格，充满原始生命力并厌恶乏味。"
 },
 {
 "n": 4,
@@ -873,7 +1393,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "提出经济动机这一替代解释，质疑由猎物差异推断能力进步。"
 },
 {
 "n": 5,
@@ -884,7 +1415,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "图中高亮第二句说明前句观察被用来得出的神经变化结论。"
 },
 {
 "n": 6,
@@ -896,7 +1438,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "领主与行政宗教精英组成分层等级结构。"
 },
 {
 "n": 7,
@@ -908,7 +1462,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "考古研究虽偏重城市，仍帮助认识农村；bias与orientation对应研究取向。"
 },
 {
 "n": 8,
@@ -920,7 +1486,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "判断依赖反复无常而非深思熟虑；capricious与cavalier对应草率任性。"
 },
 {
 "n": 9,
@@ -932,7 +1510,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "真实性胜过虚构与人为编造；invention与contrivance等义。"
 },
 {
 "n": 10,
@@ -944,7 +1534,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "大型对撞机的媒体热潮引出公众对所谓纯科学的关注。"
 },
 {
 "n": 11,
@@ -955,7 +1556,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "原文明言技术开发努力也是同一科学事业的一部分。"
 },
 {
 "n": 12,
@@ -966,9 +1578,21 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
 }
-]
+},
+"explanation": "纯科学产生应用确实存在但并非常态，Hawking把特殊情形当成一般规则。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -983,7 +1607,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "与大量发布相反，滴管式发布强调信息吝啬、少量。"
 },
 {
 "n": 2,
@@ -994,7 +1629,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "vapid意为乏味空洞，与jejune对应。"
 },
 {
 "n": 3,
@@ -1007,7 +1653,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "描述适合其他诗人，却不适合并未抨击物质主义、反而拥抱私产的Wilcox。"
 },
 {
 "n": 4,
@@ -1020,7 +1679,20 @@
 1,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+1
 ]
+}
+},
+"explanation": "缺陷繁多且根深蒂固，难以修正，故与其他拙劣书籍一同沉没。"
 },
 {
 "n": 5,
@@ -1031,7 +1703,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "新研究发现模型物种是例外，削弱此前关于两栖动物进食的概括。"
 },
 {
 "n": 6,
@@ -1042,7 +1725,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "unfortunate models指选择不恰当、不合宜的研究模型。"
 },
 {
 "n": 7,
@@ -1053,7 +1747,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "作者用既有印本文献反驳出版传统故事泄露秘密的伦理指控。"
 },
 {
 "n": 8,
@@ -1064,7 +1769,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "甚至逐字采用，强调故事更多取自既有文献而非口述记忆。"
 },
 {
 "n": 9,
@@ -1075,7 +1791,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Silko自称故事源于自己经历的口述传统，表面上支持泄密指控。"
 },
 {
 "n": 10,
@@ -1087,7 +1814,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "多次出现only，强调饮食限制严苛；proscriptive与exacting切合。"
 },
 {
 "n": 11,
@@ -1099,7 +1838,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "总体清楚，少数人的文风却混乱晦涩；muddled与turbid等义。"
 },
 {
 "n": 12,
@@ -1111,7 +1862,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "现代物理前沿研究以该定理为基础、依赖它。"
 },
 {
 "n": 13,
@@ -1122,7 +1885,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "第一处高亮是有待评估的统计证据，第二处是作者认同的证据效力评价。"
 },
 {
 "n": 14,
@@ -1133,7 +1907,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "印刷技术未明显进步，社会制度变化却深刻改变传播。"
 },
 {
 "n": 15,
@@ -1143,10 +1928,23 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
 }
-]
+},
+"explanation": "报纸诞生于手动木制印刷时代，而该技术早已存在。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -1167,7 +1965,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "发明者保密，所以对望远镜技术细节保持缄默。"
 },
 {
 "n": 2,
@@ -1179,7 +1988,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "试图摆脱好斗名声，因此对议员表现出出乎意料的和解态度。"
 },
 {
 "n": 3,
@@ -1191,8 +2012,21 @@
 "ans": [
 2,
 1,
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
 0
 ]
+}
+},
+"explanation": "过去的忽视远不及当前的轻蔑，美国艺术仿佛被排除于欧洲叙事之外。"
 },
 {
 "n": 4,
@@ -1203,7 +2037,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "陶器资料无法说明所有交换路径，且不能代表其他材料的贸易范围。"
 },
 {
 "n": 5,
@@ -1214,7 +2059,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "化学成分分析可确定产地，但不能还原交换次数或路径。"
 },
 {
 "n": 6,
@@ -1226,7 +2082,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "女主人公挑战社会规范，重新界定何为惯常、规范的行为。"
 },
 {
 "n": 7,
@@ -1238,7 +2106,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "环境变化可能无法察觉，却对物种栖息地影响巨大。"
 },
 {
 "n": 8,
@@ -1250,7 +2130,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "海平面上升速率看似微小难察觉，历史作用却并非无关紧要。"
 },
 {
 "n": 9,
@@ -1262,7 +2154,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "刻痕究竟偶然、涂画还是交流尚不明确，因此是神秘难解的。"
 },
 {
 "n": 10,
@@ -1273,7 +2177,19 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/b2brzj-0.html?isFav=0"
+},
+"explanation": "乙烷与甲烷的混合液可产生比纯甲烷海洋低的近地面湿度。"
 },
 {
 "n": 11,
@@ -1284,7 +2200,25 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+},
+"previousChoices": [
+"Titan's surface temperature, ethane is also a liquid. A",
+"iquid mixture of methane and ethane would produce low",
+"umidity. Such an ocean would slowly become richer in",
+"hane while keeping the atmosphere supplied with",
+"?thane."
+]
+},
+"explanation": "阳光不断把甲烷变为乙烷，因此海洋将逐渐更富含乙烷。"
 },
 {
 "n": 12,
@@ -1294,10 +2228,29 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2
 ]
-}
+},
+"previousChoices": [
+"Titan's surface temperature, ethane is also a liquid. A",
+"liquid mixture of methane and ethane would produce low C) explain why the level of humidity produced by a mixture",
+"humidity. Such an ocean would slowly become richer in of ethane and methane is not dependent on s",
+"ethane while keeping the atmosphere supplied with •ur-face temperature",
+"methane."
 ]
+},
+"explanation": "混合海洋解释低湿度，使火山补给甲烷的解释仍可能成立。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -1312,7 +2265,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "关系众多未必能抵御孤独，关键是主观体验。"
 },
 {
 "n": 2,
@@ -1323,8 +2287,20 @@
 "blanks": 2,
 "ans": [
 2,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
 1
 ]
+}
+},
+"explanation": "忽视馆藏导致重复发现，错失利用既有材料的机会。"
 },
 {
 "n": 3,
@@ -1337,7 +2313,20 @@
 2,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+1
 ]
+}
+},
+"explanation": "分子马达虽吸引人，本身却无用，其化学原理仍可能价值很高。"
 },
 {
 "n": 4,
@@ -1350,7 +2339,20 @@
 0,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+2
 ]
+}
+},
+"explanation": "舞台观众位置可由制作需要决定，空间灵活，并增加演出刺激感。"
 },
 {
 "n": 5,
@@ -1361,7 +2363,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "社团少开大会、少出版并保持传统形象，使自身较少进入官方视野。"
 },
 {
 "n": 6,
@@ -1374,7 +2387,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "三组学者均认可女性社团少受官方注意，对原因的解释不同不构成此点矛盾。"
 },
 {
 "n": 7,
@@ -1385,7 +2411,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "文章讨论剧院包厢同时用于公开展示和私人隐匿的社会意义。"
 },
 {
 "n": 8,
@@ -1397,7 +2434,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "包厢既让人被看见，也能关门拉帘保持隐私；舞台框由镜框式台口形成。"
 },
 {
 "n": 9,
@@ -1408,7 +2457,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "欧洲王室利用狂欢节戴面具的传统，匿名游乐。"
 },
 {
 "n": 10,
@@ -1418,9 +2478,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+0,
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 5
 ]
+}
+},
+"explanation": "争斗代价不可承受时才建立群体生活；insupportable与untenable切合。"
 },
 {
 "n": 11,
@@ -1430,9 +2502,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+3,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 3
 ]
+}
+},
+"explanation": "有意模糊难解的世界与写实相对。"
 },
 {
 "n": 12,
@@ -1444,7 +2528,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "撞击使挥发物逃逸，可以解释月球水和挥发物匮乏。"
 },
 {
 "n": 13,
@@ -1455,7 +2551,25 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+},
+"previousChoices": [
+"The Hittite tablets and the Iliad are not derived from a",
+"common source that had no basis in historical fact.",
+"Before the discovery of the tablets, historians had never examined the Iliad.",
+"Purported works of creative literature should be examined by historians to find out whether they record historical facts.",
+"A work that does not contain historical facts is a matter for literary discussion."
+]
+},
+"explanation": "必须排除两份材料共同抄自无历史依据的虚构来源，否则一致不证明真实。"
 },
 {
 "n": 14,
@@ -1466,7 +2580,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "行为适应及其他寄主可减轻环境变化对同步性的负面影响。"
 },
 {
 "n": 15,
@@ -1477,9 +2602,21 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "冬蛾幼体与展叶同步影响成功率，直接支持季节性植物生长影响取食生存。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -1500,7 +2637,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "艺术主观性与物理学回避内心思想相对照。"
 },
 {
 "n": 2,
@@ -1512,7 +2660,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "避免讽刺刻画，就偏离以往讽刺历史人物的传统。"
 },
 {
 "n": 3,
@@ -1525,7 +2685,20 @@
 2,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+0
 ]
+}
+},
+"explanation": "科学少受声誉损失；法律玷污科学；科学制衡法律不稳定性。"
 },
 {
 "n": 4,
@@ -1537,7 +2710,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "Ellison的定义超越文化边界，并优先强调个人经历。"
 },
 {
 "n": 5,
@@ -1545,7 +2730,16 @@
 "p08.png"
 ],
 "kind": "ss",
+"ansText": "Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.”",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "第三句话"
+}
+},
+"explanation": "第三句具体提出Ellison以个人经历为核心的替代定义。"
 },
 {
 "n": 6,
@@ -1557,7 +2751,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "跨领域写作体现对专业化的高傲轻视。"
 },
 {
 "n": 7,
@@ -1569,7 +2775,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "证据不足却仍下定论，需选表示匮乏的等义词。"
 },
 {
 "n": 8,
@@ -1581,7 +2799,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "汽车和医疗软件一概免责将难以成立或辩护。"
 },
 {
 "n": 9,
@@ -1593,7 +2823,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "保护原则要求不同历史时期的分界清晰。"
 },
 {
 "n": 10,
@@ -1604,7 +2846,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "介绍Jeffrey的研究并与先前学者的观点对照。"
 },
 {
 "n": 11,
@@ -1615,7 +2868,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "先前学者强调的是散发反奴隶制请愿书。"
 },
 {
 "n": 12,
@@ -1626,9 +2890,21 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "集市表明妇女仍有效参与，反驳1830年代末边缘化之说。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -1643,7 +2919,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "相关做法虽被禁止，仍在一些部门持续。"
 },
 {
 "n": 2,
@@ -1655,7 +2942,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "误导科学家，使其误以为理解快感机制。"
 },
 {
 "n": 3,
@@ -1668,7 +2967,20 @@
 2,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+0
 ]
+}
+},
+"explanation": "相册被当作客观记录，主动筛选过程却往往被忽略。"
 },
 {
 "n": 4,
@@ -1681,7 +2993,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "漫画被视作幼稚低俗，爱好者因而羞愧。"
 },
 {
 "n": 5,
@@ -1692,7 +3017,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "原文明言部分符号对应特定词语。"
 },
 {
 "n": 6,
@@ -1703,7 +3039,18 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "不对应单一语言使不同语言使用者能够共享符号系统。"
 },
 {
 "n": 7,
@@ -1714,7 +3061,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "对照早期运动，并交代其民权运动背景。"
 },
 {
 "n": 8,
@@ -1725,7 +3083,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "艺术家创立的文化中心支持民权社会政治运动。"
 },
 {
 "n": 9,
@@ -1736,7 +3105,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "首段比较艺术运动，次段交代复兴的同期政治背景。"
 },
 {
 "n": 10,
@@ -1748,7 +3128,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "艺术界遍布达达手法，使展览适逢其时。"
 },
 {
 "n": 11,
@@ -1760,7 +3152,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "敌对回应使先前讨好努力失效。"
 },
 {
 "n": 12,
@@ -1770,9 +3174,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+3,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 3
 ]
+}
+},
+"explanation": "有意模糊难解，与写实相对。"
 },
 {
 "n": 13,
@@ -1783,7 +3199,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "死者多为成体且成体不易感染病毒，支持毒素致死。"
 },
 {
 "n": 14,
@@ -1794,7 +3221,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "各抄本可能未把两首序诗同时收录。"
 },
 {
 "n": 15,
@@ -1805,9 +3243,21 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "抄写者的重组影响今天研究所依据的版本。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -1828,7 +3278,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "数学知识被认为稳定，因此只在表面上受历史力量影响。"
 },
 {
 "n": 2,
@@ -1840,7 +3301,19 @@
 "ans": [
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0
 ]
+}
+},
+"explanation": "似乎享受争议，而且愈老愈爱科学论战。"
 },
 {
 "n": 3,
@@ -1853,7 +3326,20 @@
 2,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+0
 ]
+}
+},
+"explanation": "技巧精湛、构思周密的小说最终却空洞琐碎，浪费读者投入。"
 },
 {
 "n": 4,
@@ -1864,7 +3350,25 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+},
+"previousChoices": [
+"suggest a way in which early recording technology influenced the development of jazz",
+"explain why early jazz recordings were not especially popular with the public",
+"point to a difficulty in early recording technology that Edison struggled to overcome",
+"explain why musicians such as Ellington were slow to embrace recording technology",
+"Se;ect one answer choice."
+]
+},
+"explanation": "图中高亮三分钟录音限制，说明技术如何促使爵士采用简化结构。"
 },
 {
 "n": 5,
@@ -1875,7 +3379,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Ellington属于例外，保留较早爵士的复杂结构。"
 },
 {
 "n": 6,
@@ -1887,7 +3402,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "虽着迷偶然性，小说却是理性、精心构造的。"
 },
 {
 "n": 7,
@@ -1899,7 +3426,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "医疗信息丰富，却少有患者利用电子沟通。"
 },
 {
 "n": 8,
@@ -1911,7 +3450,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "记录残缺会诱发与证据脱节的大胆猜测。"
 },
 {
 "n": 9,
@@ -1923,7 +3474,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "真实存在的物种也曾被当作传说；fabulous与legendary对应。"
 },
 {
 "n": 10,
@@ -1934,7 +3497,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "贝类不从海水吸收铀，因此不能用铀同位素测定其壳年代。"
 },
 {
 "n": 11,
@@ -1945,7 +3519,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "高亮死亡后氨基酸构型转变，提供可用于测年的自然过程。"
 },
 {
 "n": 12,
@@ -1956,9 +3541,22 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+},
+"corroboratingSource": "https://gre-sanqian.kmf.com/explain/question/f2bqwj-0.html?isFav=0"
+},
+"explanation": "贝壳在阶地沉积中常见，分布广，可为缺少珊瑚的地点提供测年材料。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -1973,7 +3571,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "原产当地，故不是外来入侵者。"
 },
 {
 "n": 2,
@@ -1985,7 +3594,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "生产历史被忽略，食物仿佛与生产者脱节；这种无知过去较少影响健康。"
 },
 {
 "n": 3,
@@ -1998,7 +3619,20 @@
 0,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+1
 ]
+}
+},
+"explanation": "成功公司的高管亦有强势个性，内部冲突和市场成功并不互斥。"
 },
 {
 "n": 4,
@@ -2011,7 +3645,20 @@
 2,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+1
 ]
+}
+},
+"explanation": "惯常疯闹的演员这次克制，疯狂精神藏在内敛外表之下。"
 },
 {
 "n": 5,
@@ -2022,7 +3669,25 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+},
+"previousChoices": [
+"advocating a course of action",
+"tracing the evolution of a practice",
+"citing competing views of an issue",
+"chronicling a senes of events",
+"Sekt one answer choice."
+]
+},
+"explanation": "先介绍美洲起源说，再呈现更早爱尔兰实践的竞争观点。"
 },
 {
 "n": 6,
@@ -2033,7 +3698,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Breen承认其他国家有零星抵制，对前一句美国独创论作限定。"
 },
 {
 "n": 7,
@@ -2044,7 +3720,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "研究比较干旱与火灾对不同植被的相对影响。"
 },
 {
 "n": 8,
@@ -2055,7 +3742,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "研究以前后同一地块数据比较为基础，须有灾前资料。"
 },
 {
 "n": 9,
@@ -2066,7 +3764,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "同时受火灾和干旱的林冠树，死亡率并未高于仅受干旱者。"
 },
 {
 "n": 10,
@@ -2078,7 +3787,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "自嘲并称赞竞争者，体现谦逊而非自负。"
 },
 {
 "n": 11,
@@ -2090,7 +3811,19 @@
 "ans": [
 0,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+4
 ]
+}
+},
+"explanation": "真正过程多在地下，因而很难消除表面简单的错觉。"
 },
 {
 "n": 12,
@@ -2102,7 +3835,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "哲学应关联普通生活，反衬现今过于深奥、圈内化。"
 },
 {
 "n": 13,
@@ -2113,7 +3858,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "若很少中途办事，绕行路线更能真正分流市内车辆。"
 },
 {
 "n": 14,
@@ -2124,7 +3880,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "原文承认色盲论未必不真诚，即某些作者确实相信它。"
 },
 {
 "n": 15,
@@ -2135,9 +3902,21 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "权力关系被忽视，解释为何种族色盲概念不足以描述爵士环境。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -2158,7 +3937,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "严密逻辑的方法却被批为似是而非，形成讽刺。"
 },
 {
 "n": 2,
@@ -2170,7 +3960,19 @@
 "ans": [
 2,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0
 ]
+}
+},
+"explanation": "坚持与追求新奇看似对立，实际能平衡共存。"
 },
 {
 "n": 3,
@@ -2183,7 +3985,20 @@
 2,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+0
 ]
+}
+},
+"explanation": "颠覆传统叙事后来也变得可预测，说明不讲直白故事的方式终究有限。"
 },
 {
 "n": 4,
@@ -2194,7 +4009,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "维生素C缺乏导致结缔组织病，说明它维护结缔组织健康。"
 },
 {
 "n": 5,
@@ -2205,7 +4031,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "肉和动物结缔组织含C，长时烹煮破坏C，解释因纽特生食来源。"
 },
 {
 "n": 6,
@@ -2217,7 +4054,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "以南方特有或典型结构解释运动，会忽略其他地区的传统。"
 },
 {
 "n": 7,
@@ -2229,7 +4078,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "分立器官的词汇不能反映身体交织、整合的整体性质。"
 },
 {
 "n": 8,
@@ -2241,7 +4102,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "提供别处没有的资料，是补充而不是反驳既有信息。"
 },
 {
 "n": 9,
@@ -2253,7 +4126,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "宣称温和讨论却辩论尖刻恶毒，构成反差。"
 },
 {
 "n": 10,
@@ -2264,7 +4149,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "全文推测鸟喙花纹如何引导幼鸟啄击、诱发喂食。"
 },
 {
 "n": 11,
@@ -2275,7 +4171,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "在特定位置更容易进入亲鸟视野，解释这种花纹安排的好处。"
 },
 {
 "n": 12,
@@ -2286,9 +4193,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "小幼鸟须定点刺激，大幼鸟相对更能通过分散啄击有效乞食。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -2303,7 +4222,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "原以为全株系统性反应，却发现局部反应，形成对照。"
 },
 {
 "n": 2,
@@ -2314,7 +4244,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "住宅外观虽异，却显露共同设计动机；betray在此为显露。"
 },
 {
 "n": 3,
@@ -2326,7 +4267,19 @@
 "ans": [
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1
 ]
+}
+},
+"explanation": "仅少数有公开记录掩盖了更多谨慎同情者，使总体参与兴趣被低估。"
 },
 {
 "n": 4,
@@ -2339,7 +4292,20 @@
 2,
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
+0
 ]
+}
+},
+"explanation": "不应轻易放弃客观性，但冷静立场有时反而误导、遮蔽事实。"
 },
 {
 "n": 5,
@@ -2350,7 +4316,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "主题态度变化也是现有零散批评尚未解释的现象。"
 },
 {
 "n": 6,
@@ -2361,7 +4338,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "作者接受读者对后期作品更高成就的直觉，认为尚缺连贯解释。"
 },
 {
 "n": 7,
@@ -2372,7 +4360,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "公众更重文明礼貌，明显加剧Nast与出版方的矛盾。"
 },
 {
 "n": 8,
@@ -2383,7 +4382,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "以往作者过度归因政治分歧，未充分考虑社会风尚变化。"
 },
 {
 "n": 9,
@@ -2394,7 +4404,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "先交代名声薪水影响力之大，使其不满更出乎意料。"
 },
 {
 "n": 10,
@@ -2406,7 +4427,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "疯狂投资显示获利面前的热切兴奋会侵蚀诚实。"
 },
 {
 "n": 11,
@@ -2418,7 +4451,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "最高级制造兴奋，编辑也难完全挡住缺乏依据、可疑的断言。"
 },
 {
 "n": 12,
@@ -2430,7 +4475,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "竞争团队拒绝多次合作机会；spurned与rebuffed等义。"
 },
 {
 "n": 13,
@@ -2441,7 +4498,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "若露天葡萄产区已过热，再升温可能减产，直接影响类推是否成立。"
 },
 {
 "n": 14,
@@ -2452,7 +4520,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "先排除遗传和环境等替代解释，再推断社会学习。"
 },
 {
 "n": 15,
@@ -2462,11 +4541,25 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+0,
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 2
 ]
 }
-]
+},
+"explanation": "个体学习与模仿教学相区分，被视作较简单，也可回应环境变化。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -2487,7 +4580,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "不愿受具体承诺约束，故战略计划有意含糊。"
 },
 {
 "n": 2,
@@ -2499,7 +4603,19 @@
 "ans": [
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0
 ]
+}
+},
+"explanation": "甲烷更易起波却观察到平静，才构成惊讶。"
 },
 {
 "n": 3,
@@ -2512,7 +4628,20 @@
 2,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+2
 ]
+}
+},
+"explanation": "评论擅长细节却忽视整体，辞藻华丽但思想贫乏。"
 },
 {
 "n": 4,
@@ -2523,7 +4652,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "先称她先锋而出色，使随后“未成为偶像”出乎意料。"
 },
 {
 "n": 5,
@@ -2534,7 +4674,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "缺少悲剧人生结局，是作者提出的未成为偶像的可能原因之一。"
 },
 {
 "n": 6,
@@ -2546,7 +4697,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "电影让出日常家庭生活的表现空间，留给其他媒介。"
 },
 {
 "n": 7,
@@ -2558,7 +4721,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "指出评论家和公众一致，等于承认其理论存在例外。"
 },
 {
 "n": 8,
@@ -2570,7 +4745,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "原来长期批评，如今却支持，处境反常而新奇。"
 },
 {
 "n": 9,
@@ -2582,7 +4769,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "严控的无生气实验环境不利于笑声出现。"
 },
 {
 "n": 10,
@@ -2593,7 +4792,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "女性属于私人领域、不需修辞，暗含修辞主要服务公共领域。"
 },
 {
 "n": 11,
@@ -2604,7 +4814,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "共享人文主义者的公私划分，使Burckhardt忽视资料中的不平等证据。"
 },
 {
 "n": 12,
@@ -2615,9 +4836,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "若King依赖的不具代表性的Bruni材料，作者对人文主义文本的概括便被削弱。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -2632,7 +4865,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "后面的传记、进步史和追溯诊断都是医生进入医学史领域的活动。"
 },
 {
 "n": 2,
@@ -2644,7 +4888,19 @@
 "ans": [
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0
 ]
+}
+},
+"explanation": "既有文献强调民主中的分裂，Henkins强调共同性，故逆其取向而写。"
 },
 {
 "n": 3,
@@ -2657,7 +4913,20 @@
 1,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+2
 ]
+}
+},
+"explanation": "独立宣言式观点此前早已流行，本人却又深受欧洲影响而附和该潮流。"
 },
 {
 "n": 4,
@@ -2668,9 +4937,22 @@
 "blanks": 3,
 "ans": [
 0,
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
 2,
 2
 ]
+}
+},
+"explanation": "释放的道路容量会被新增驾车吸收；交通通信相互促进而非替代。"
 },
 {
 "n": 5,
@@ -2681,7 +4963,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "保留内容却丢弃纸质原件符合第二派，不符合保存原物的第一派。"
 },
 {
 "n": 6,
@@ -2692,7 +4985,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "overriding obligation意为首要责任。"
 },
 {
 "n": 7,
@@ -2703,7 +5007,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "原文明言经济权力带来社会政治权力。"
 },
 {
 "n": 8,
@@ -2714,7 +5029,18 @@
 "nopt": 3,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "工人面对雇主无能为力，不能控制自身劳动条件。"
 },
 {
 "n": 9,
@@ -2724,8 +5050,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2
 ]
+}
+},
+"explanation": "工厂高耸而俯临、主导天际线；command最符合视觉语境。"
 },
 {
 "n": 10,
@@ -2737,7 +5074,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "传记作者既发现新事实，也分析阐释已知事实。"
 },
 {
 "n": 11,
@@ -2749,7 +5098,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "假说虽常错误，仍含可保留思想，所以并非徒劳无果。"
 },
 {
 "n": 12,
@@ -2761,7 +5122,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "秘密出版传播可以绕开潜在审查者。"
 },
 {
 "n": 13,
@@ -2772,7 +5145,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "净化后仍经污染管道，故无法取代想要无污染水的家庭末端过滤器。"
 },
 {
 "n": 14,
@@ -2783,7 +5167,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "介绍球粒层这种可为撞击时序问题提供线索的数据。"
 },
 {
 "n": 15,
@@ -2796,9 +5191,24 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index?qid=108601"
+},
+"explanation": "旧层未发现、被破坏或地球撞击较少，都可能解释缺少该时段球粒层。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -2819,7 +5229,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "诗浮光掠影、难打动人且不值得再读，体现空洞乏味。"
 },
 {
 "n": 2,
@@ -2831,7 +5252,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "信息技术不减少独立推理需求，不能让数据堆积取代推理。"
 },
 {
 "n": 3,
@@ -2844,7 +5277,20 @@
 1,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+2
 ]
+}
+},
+"explanation": "标题不祥却没有揭丑，反而毫无保留歌功颂德，使批评者失望。"
 },
 {
 "n": 4,
@@ -2855,7 +5301,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "冰川湾地名须问当地家族后人，举例支持地名知识高度地域化。"
 },
 {
 "n": 5,
@@ -2866,7 +5323,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "祖辈故事帮助体验当地景观，故涉及冰川湾的具体地点。"
 },
 {
 "n": 6,
@@ -2878,7 +5346,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "写作理性而精心，与她喜爱偶然性形成反差。"
 },
 {
 "n": 7,
@@ -2890,7 +5370,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "Fort Ancient强调平等，反衬邻居权威带强制性、专横性。"
 },
 {
 "n": 8,
@@ -2902,7 +5394,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "复印使秘密出版、避开审查成为可能。"
 },
 {
 "n": 9,
@@ -2914,7 +5418,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "“沉默阴谋”描述缺漏省略，而非谬误或歪曲。"
 },
 {
 "n": 10,
@@ -2926,7 +5442,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "旧解释未充分考虑远洋贸易的风险和不可预测性。"
 },
 {
 "n": 11,
@@ -2937,7 +5464,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "面对信息不足和风险，商人采取防御策略与减险制度。"
 },
 {
 "n": 12,
@@ -2948,9 +5486,21 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
 }
-]
+},
+"explanation": "双方承认不竞争行为，却对防御制度是否经济合理存在分歧。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -2965,7 +5515,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "个体看似脆弱，却能跨大陆远行。"
 },
 {
 "n": 2,
@@ -2977,7 +5538,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "展示新闻业不端行为，说明博物馆避免一味吹捧。"
 },
 {
 "n": 3,
@@ -2990,7 +5563,20 @@
 0,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+2
 ]
+}
+},
+"explanation": "乐手抱怨可能源于遴选不满，但对候选者能力的批评荒谬。"
 },
 {
 "n": 4,
@@ -3003,7 +5589,20 @@
 0,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+1
 ]
+}
+},
+"explanation": "政府既兴奋又恐惧，态度矛盾；第三空转折到同时存在的担忧。"
 },
 {
 "n": 5,
@@ -3014,7 +5613,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "强调由外来物种竞争造成的灭绝记录出人意料地少。"
 },
 {
 "n": 6,
@@ -3025,7 +5635,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "大量引进且已历400年，说明本有充分机会观察竞争灭绝。"
 },
 {
 "n": 7,
@@ -3036,7 +5657,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "以澳大利亚比较，提出对美洲早期殖民说的反对证据。"
 },
 {
 "n": 8,
@@ -3047,7 +5679,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "更小且条件更差的澳洲仍有遗址，突出美国缺少遗址的疑难。"
 },
 {
 "n": 9,
@@ -3058,7 +5701,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "作者否定海水与沿海滞留等解释，暗示实际殖民晚于25000年前。"
 },
 {
 "n": 10,
@@ -3070,7 +5724,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "每幅画各具特色，却整体一致；homogenous与uniform等义。"
 },
 {
 "n": 11,
@@ -3082,7 +5748,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "超额筹资即资产超过负债。"
 },
 {
 "n": 12,
@@ -3091,10 +5769,22 @@
 ],
 "kind": "se",
 "nopt": 6,
+"ans": [],
+"answerReview": {
+"date": "2026-10-16",
+"status": "pending-verification",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ans": [
 0,
 4
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index/71ncgj"
+},
+"explanation": "脏镜头和帽檐会妨碍识别，但公开同题资料分别给出AE和EF，存在冲突；尚无官方答案页，本题暂不计分，不能把任一组冒充已确认答案。",
+"answerPending": true,
+"answerReviewReason": "脏镜头和帽檐会妨碍识别，但公开同题资料分别给出AE和EF，存在冲突；尚无官方答案页，本题暂不计分，不能把任一组冒充已确认答案。"
 },
 {
 "n": 13,
@@ -3105,7 +5795,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "不阻断前列腺素只排除一种胃不适机制，不排除药物通过其他方式伤胃。"
 },
 {
 "n": 14,
@@ -3116,7 +5817,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "城市人口不能靠生育维持，即出生率低于死亡率。"
 },
 {
 "n": 15,
@@ -3127,9 +5839,22 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index?cid=208292&qid=3264aj"
+},
+"explanation": "小城镇无自然减少，被认为死亡率低于大城市；不能据此排除迁入。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -3150,7 +5875,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "只有狭隘科学史会忽略他们捍卫科学的贡献、视成就微不足道。"
 },
 {
 "n": 2,
@@ -3162,7 +5898,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "讨论词源虽深奥，结论并不晦涩，因此整体不宜称为艰深。"
 },
 {
 "n": 3,
@@ -3175,7 +5923,20 @@
 0,
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+0
 ]
+}
+},
+"explanation": "篇幅珍贵，仍应提示后续影响，否则读者难以了解其后世生命。"
 },
 {
 "n": 4,
@@ -3186,7 +5947,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "三分钟时长限制说明录音技术如何改变爵士结构。"
 },
 {
 "n": 5,
@@ -3197,7 +5969,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Ellington为例外，保留更早爵士作品的复杂结构。"
 },
 {
 "n": 6,
@@ -3209,7 +5992,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "核电看似将兴起，实则声望已衰落。"
 },
 {
 "n": 7,
@@ -3221,7 +6016,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "虽别处早有文字，中国文字似乎独立本土发展。"
 },
 {
 "n": 8,
@@ -3233,7 +6040,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "药物不能代替无麸质饮食，但可缓解误食后的症状。"
 },
 {
 "n": 9,
@@ -3245,7 +6064,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "低俗内容配以高超流畅文字，构成高低混合。"
 },
 {
 "n": 10,
@@ -3256,7 +6087,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "研究寄居蟹较少为人所知的主动食腐作用。"
 },
 {
 "n": 11,
@@ -3267,7 +6109,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "贻贝不能提供适宜住所，吸引力不是壳的庇护价值。"
 },
 {
 "n": 12,
@@ -3278,9 +6131,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "食物线索在短时间内即生效，壳相关线索需要更长时间。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -3295,7 +6160,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "订单和产量信号相反，故数据未明确指向复苏。"
 },
 {
 "n": 2,
@@ -3307,7 +6183,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "原栖息草原大多消失，因此现存叉角羚属残存种。"
 },
 {
 "n": 3,
@@ -3320,7 +6208,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "亲密关系有益是信条，Martin却不确定，认为甚至不止不合意而是有毒。"
 },
 {
 "n": 4,
@@ -3333,7 +6234,20 @@
 2,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
+2
 ]
+}
+},
+"explanation": "遵守类型惯例未必失败，杰作也可能正统，违背惯例本身不是优点。"
 },
 {
 "n": 5,
@@ -3344,7 +6258,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "科学测量更精确，因此能发现日常观察未见的现象。"
 },
 {
 "n": 6,
@@ -3355,7 +6280,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "高亮科学方法更谨慎系统，限定开头“与日常推理并无根本不同”的概括。"
 },
 {
 "n": 7,
@@ -3366,7 +6302,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "基督教接纳希腊罗马和日耳曼的文学传统。"
 },
 {
 "n": 8,
@@ -3377,7 +6324,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "原文明说改革前文学varied markedly，即明显多样。"
 },
 {
 "n": 9,
@@ -3388,7 +6346,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Oddly enough表明作者认为接纳异教传统出乎意料。"
 },
 {
 "n": 10,
@@ -3400,7 +6369,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "成功靠耐力和不怕枯燥，适合学术日常苦功。"
 },
 {
 "n": 11,
@@ -3412,7 +6393,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "预测充满不确定性，而科学家厌恶不确定性。"
 },
 {
 "n": 12,
@@ -3424,7 +6417,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "童话看似不合时代，长久留存却值得解释。"
 },
 {
 "n": 13,
@@ -3435,7 +6440,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "冰雪天上路车辆少，却有双倍事故，因此每车风险更高于两倍。"
 },
 {
 "n": 14,
@@ -3446,7 +6462,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "呈现抵制政治的美洲起源说和爱尔兰更早实践的竞争观点。"
 },
 {
 "n": 15,
@@ -3457,9 +6484,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "承认其他国家曾零星抵制，为前句的独创论作限定。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -3480,7 +6519,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "认为独著比合作更有文化价值，体现个人主义。"
 },
 {
 "n": 2,
@@ -3492,7 +6542,19 @@
 "ans": [
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1
 ]
+}
+},
+"explanation": "许多人仍忠诚，连反对者也不认为混乱时更换领导明智。"
 },
 {
 "n": 3,
@@ -3505,7 +6567,20 @@
 2,
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
+0
 ]
+}
+},
+"explanation": "欣赏技巧需意识到轻松是假象，因此带有悖论。"
 },
 {
 "n": 4,
@@ -3516,7 +6591,18 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "作者把Derbyshire说法追溯到对后世猜想的误读。"
 },
 {
 "n": 5,
@@ -3527,7 +6613,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "近300年的时间距离强调解释属后世推测。"
 },
 {
 "n": 6,
@@ -3539,7 +6636,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "传统抵制游牧，故偏好定居。"
 },
 {
 "n": 7,
@@ -3551,7 +6660,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "网络回应重塑标准，使评论权威流动、不稳定。"
 },
 {
 "n": 8,
@@ -3563,7 +6684,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "满是猜测而非证据，说明指控远非无懈可击。"
 },
 {
 "n": 9,
@@ -3575,7 +6708,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "从复杂多样的数据中提炼、抽取有意义模式。"
 },
 {
 "n": 10,
@@ -3586,7 +6731,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "在不全盘否定旧解释的前提下，重新考虑商人行为的合理性。"
 },
 {
 "n": 11,
@@ -3597,7 +6753,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "防御减险措施被某些史家视作不竞争、垄断行为。"
 },
 {
 "n": 12,
@@ -3610,9 +6777,23 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
 }
-]
+},
+"explanation": "作者承认传统结论并非全错，认可影响力、不竞争及妨碍发展等事实。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -3627,7 +6808,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "科学词语进入通用语往往不快，例子相隔数十年才流行。"
 },
 {
 "n": 2,
@@ -3639,7 +6831,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "被误解为过时遗存，实际却是当代文化身份的一部分。"
 },
 {
 "n": 3,
@@ -3652,7 +6856,20 @@
 0,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+1
 ]
+}
+},
+"explanation": "该艺术中心逆主流，优先挑衅和实验，而非大众娱乐与成熟路线。"
 },
 {
 "n": 4,
@@ -3665,7 +6882,20 @@
 0,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+0
 ]
+}
+},
+"explanation": "制作清晰避免混乱，却过度梳理了原本错综复杂的故事。"
 },
 {
 "n": 5,
@@ -3673,7 +6903,16 @@
 "p47.png"
 ],
 "kind": "ss",
+"ansText": "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "第四句话 But, in addition, although Japanese"
+}
+},
+"explanation": "第四句比较日韩食谱用香料情况，是作者推导抑菌差异的证据。"
 },
 {
 "n": 6,
@@ -3685,7 +6924,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "韩国较多食谱至少用一种香料，暗含日本有些不用；日本总体种类更多。"
 },
 {
 "n": 7,
@@ -3696,7 +6947,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "改革前英国文学虽为基督教，艺术形式却继承异教文化。"
 },
 {
 "n": 8,
@@ -3707,7 +6969,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "最早拉丁文和英文诗歌都使用此前其他文化的文学形式。"
 },
 {
 "n": 9,
@@ -3718,7 +6991,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Oddly enough表明接纳异教文学传统出人意料。"
 },
 {
 "n": 10,
@@ -3730,7 +7014,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "宣称带来灵活，练习者却可能固执教条、墨守成规。"
 },
 {
 "n": 11,
@@ -3742,7 +7038,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "至今未能实现可控聚变，说明努力受阻、遭挫。"
 },
 {
 "n": 12,
@@ -3751,10 +7059,21 @@
 ],
 "kind": "se",
 "nopt": 6,
+"ans": [],
+"answerReview": {
+"date": "2026-10-16",
+"status": "pending-verification",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ans": [
 0,
 3
 ]
+}
+},
+"explanation": "pretext确定切合，但另一项dodge与contrivance在资料中有分歧；原答案AD与独立推理DE不一致，缺少可靠定论，暂不计分。",
+"answerPending": true,
+"answerReviewReason": "pretext确定切合，但另一项dodge与contrivance在资料中有分歧；原答案AD与独立推理DE不一致，缺少可靠定论，暂不计分。"
 },
 {
 "n": 13,
@@ -3765,7 +7084,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "禁捕期死亡未变，有助排除捕虾之外的一般死亡原因。"
 },
 {
 "n": 14,
@@ -3776,7 +7106,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "文章对照消费者抵制起源的竞争观点。"
 },
 {
 "n": 15,
@@ -3787,9 +7128,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "承认别处零星抵制，对美国独创之说作让步限定。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -3810,7 +7163,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "地图再现地形，基于一个事物可作另一个的类比表征。"
 },
 {
 "n": 2,
@@ -3822,7 +7186,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "日记书信夸张欺骗几乎不受惩罚，不能当作平衡反思的天然场所。"
 },
 {
 "n": 3,
@@ -3835,7 +7211,20 @@
 1,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+1
 ]
+}
+},
+"explanation": "将严肃艺术保护于大众文化之外，本身可看作精英主义。"
 },
 {
 "n": 4,
@@ -3846,7 +7235,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "纠正民权运动从毫无前期铺垫中突然出现的误解。"
 },
 {
 "n": 5,
@@ -3857,7 +7257,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "1910至1950年的倡议新闻为后来全国运动打下基础。"
 },
 {
 "n": 6,
@@ -3869,7 +7280,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "中国文字看似独立在本土发展。"
 },
 {
 "n": 7,
@@ -3881,7 +7304,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "书法地位最高，体现崇敬、推崇文字。"
 },
 {
 "n": 8,
@@ -3893,7 +7328,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "虽有破坏例子，多数成功引入物种的影响实际很小。"
 },
 {
 "n": 9,
@@ -3905,7 +7352,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "媒体称赞与员工较不乐观评价形成对照。"
 },
 {
 "n": 10,
@@ -3916,7 +7375,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "先提出野外发现的重要性，再讨论1920年代的研究先驱。"
 },
 {
 "n": 11,
@@ -3927,7 +7397,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "渐进试错与顿悟推理对立，支持反应线索的联结学习解释。"
 },
 {
 "n": 12,
@@ -3938,9 +7419,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "reinvigorated意味着早期探索之后、野外发现之前研究活力较弱。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -3955,7 +7448,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "生物年龄和历时年龄经常不一致，年轻细胞也可能衰老般失常。"
 },
 {
 "n": 2,
@@ -3966,7 +7470,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "诗性语言不易理解，故作品表达间接晦涩。"
 },
 {
 "n": 3,
@@ -3978,7 +7493,19 @@
 "ans": [
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1
 ]
+}
+},
+"explanation": "有研究发现不足，有的发现能力，呈现异质、复杂图景。"
 },
 {
 "n": 4,
@@ -3991,7 +7518,20 @@
 0,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+2
 ]
+}
+},
+"explanation": "风险动态变化，原本可靠的结果不更新就可能误导。"
 },
 {
 "n": 5,
@@ -4002,7 +7542,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "选集遗漏Brontë举例说明女性主义批评自身也可能排斥她。"
 },
 {
 "n": 6,
@@ -4013,7 +7564,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "她的诗不像典型女性诗歌，说明以典型题材为准的选集为何遗漏她。"
 },
 {
 "n": 7,
@@ -4024,7 +7586,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "先提出成本收益标准，再用版权延长政策展示其运用。"
 },
 {
 "n": 8,
@@ -4035,7 +7608,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "向继承人付版税是版权延长使书价偏高的因素之一。"
 },
 {
 "n": 9,
@@ -4046,7 +7630,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "作者认为遥远的继承人收益难以构成创作动机，依赖继承人利益不足以激励作者这一判断。"
 },
 {
 "n": 10,
@@ -4058,7 +7653,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "不确定性令科学家排斥，使气象学处于紧张的知识空间。"
 },
 {
 "n": 11,
@@ -4070,7 +7677,20 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+},
+"corroboratingSource": "https://gre.viplgw.cn/question/10455.html"
+},
+"explanation": "公关以易懂简单替代复杂，制造常识般显然的印象。"
 },
 {
 "n": 12,
@@ -4082,7 +7702,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "循环利用旧主题，即不掩饰挪用、窃取已有素材。"
 },
 {
 "n": 13,
@@ -4093,7 +7725,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "若当地居民仅少数说Torvic，多语言的居民多数不代表Torvic使用者多数。"
 },
 {
 "n": 14,
@@ -4104,7 +7747,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "内部放射性加热也改变彗星，挑战内核仍原始不变的假设。"
 },
 {
 "n": 15,
@@ -4115,10 +7769,23 @@
 "nopt": 3,
 "ans": [
 0,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
 1
 ]
 }
-]
+},
+"explanation": "低温不阻止外来能量改变表面，而表面实验本身未否定内部仍原始。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -4139,7 +7806,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "反应慢使地下水比地表水更能抵御短期旱涝变化。"
 },
 {
 "n": 2,
@@ -4151,7 +7829,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "读者不只追求准确，还要观点一致，偏向就可能成为产品特征。"
 },
 {
 "n": 3,
@@ -4164,7 +7854,20 @@
 1,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1,
+1
 ]
+}
+},
+"explanation": "惯用配乐操纵可预测情绪，采用个人语言则令人发现新维度。"
 },
 {
 "n": 4,
@@ -4175,7 +7878,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Eliot认为专业团体主动制造对外行的不信任，专业化不只由知识增长驱动。"
 },
 {
 "n": 5,
@@ -4186,7 +7900,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "通才可能消失促使Eliot创造知识广博的叙述者。"
 },
 {
 "n": 6,
@@ -4198,7 +7923,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "Windigo故事最鲜明、突出地呈现孤独危险。"
 },
 {
 "n": 7,
@@ -4210,7 +7947,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "问题并非稳定可界定，而是含糊、无定形的。"
 },
 {
 "n": 8,
@@ -4222,7 +7971,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "虽被视作特立独行者，仍被认为适任。"
 },
 {
 "n": 9,
@@ -4234,7 +7995,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "叙述者公开介入并指导读者，突出其显眼、侵入性存在。"
 },
 {
 "n": 10,
@@ -4245,7 +8018,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "提供了两版年代、差异和叙述方式，未说明如何确定孰先孰后。"
 },
 {
 "n": 11,
@@ -4256,7 +8040,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "原稿只有故事无评论，旨在让故事按自身方式呈现。"
 },
 {
 "n": 12,
@@ -4267,9 +8062,28 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+},
+"previousChoices": [
+"hand over",
+"nate",
+"oer",
+"propose",
+"suomit"
+]
+},
+"explanation": "present stories在此即offer、呈现故事。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -4284,7 +8098,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "虽感叹问题影响全民，却实际只帮助自身选民，构成转折。"
 },
 {
 "n": 2,
@@ -4296,7 +8121,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "合作有多种好处，却因机构目标分歧而困难，发表对大学有益却损害企业。"
 },
 {
 "n": 3,
@@ -4309,7 +8146,20 @@
 0,
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+0
 ]
+}
+},
+"explanation": "科学推翻旧见、服从证据，具有颠覆性并威胁各种权威。"
 },
 {
 "n": 4,
@@ -4319,10 +8169,23 @@
 "kind": "tc",
 "blanks": 3,
 "ans": [
+2,
+1,
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 1,
 2
 ]
+}
+},
+"explanation": "武断绝对判断令人愉悦，却仍让人对其绝对化性质心存保留。"
 },
 {
 "n": 5,
@@ -4333,7 +8196,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "排除遗传和环境等其他解释后，才推断社会学习。"
 },
 {
 "n": 6,
@@ -4343,9 +8217,22 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+0,
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 2
 ]
+}
+},
+"explanation": "个体学习非模仿教学，被视为更简单，也可能由环境差异引起。"
 },
 {
 "n": 7,
@@ -4356,7 +8243,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "两人均认为政治广告不能可靠提供理性决策所需的信息。"
 },
 {
 "n": 8,
@@ -4367,7 +8265,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "原图高亮Jamieson末句：广告靠情绪而非实质信息影响选民，反对Nelson的肥皂类比。"
 },
 {
 "n": 9,
@@ -4378,7 +8287,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "若肥皂广告也主要依赖无关效果的意象，Nelson共同传播信息的类比前提被削弱。"
 },
 {
 "n": 10,
@@ -4390,7 +8310,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "连笑容都没有，更不大笑，形容神情悲苦阴郁。"
 },
 {
 "n": 11,
@@ -4402,7 +8334,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "上升速率看似微小不显眼，但历史影响并非微不足道。"
 },
 {
 "n": 12,
@@ -4414,7 +8358,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "前任过简、后任过于冗长，新编辑采取中间路径。"
 },
 {
 "n": 13,
@@ -4425,7 +8381,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "展示所有建筑的照片资料，可避免只保留漂亮建筑造成历史误导。"
 },
 {
 "n": 14,
@@ -4433,7 +8400,16 @@
 "p40.png"
 ],
 "kind": "ss",
+"ansText": "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices"
+}
+},
+"explanation": "第四句食谱比较是推断日韩抑菌差异的直接证据。"
 },
 {
 "n": 15,
@@ -4445,9 +8421,22 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
 }
-]
+},
+"explanation": "日本部分食谱无香料，但总体采用的香料种类更多。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -4468,7 +8457,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "学科建立前细节不为人理解，即opaque to研究者。"
 },
 {
 "n": 2,
@@ -4480,7 +8480,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "声称居中却未实际占据中间立场，温和伪装迅速被抛弃。"
 },
 {
 "n": 3,
@@ -4493,7 +8505,20 @@
 2,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+1
 ]
+}
+},
+"explanation": "宗教文化相互依赖；世俗吸收宗教象征，宗教借用现实世界语境。"
 },
 {
 "n": 4,
@@ -4504,7 +8529,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "他们以“故事其实是诗歌”为价值辩护，依赖欧洲对诗歌的重视。"
 },
 {
 "n": 5,
@@ -4516,7 +8552,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "翻译有开创性贡献，但浪漫化时代背景使某些主张少受质疑。"
 },
 {
 "n": 6,
@@ -4528,7 +8576,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "掌握航海技能的文明即nautical、maritime。"
 },
 {
 "n": 7,
@@ -4540,7 +8600,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "不能由动物互助直接推出人应利他、仁慈。"
 },
 {
 "n": 8,
@@ -4552,7 +8624,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "哲学表达清晰易懂，并不消除问题本身的困难。"
 },
 {
 "n": 9,
@@ -4564,7 +8648,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "起初平凡不起眼的病征，回顾时才显得有意义。"
 },
 {
 "n": 10,
@@ -4575,7 +8671,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "讨论支持及挑战女性工会主流解释的历史证据。"
 },
 {
 "n": 11,
@@ -4586,7 +8693,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "成功采用手工业模式的组织，使产业工会为必要条件的主流观点不够充分。"
 },
 {
 "n": 12,
@@ -4597,9 +8715,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "产业工会吸纳此前因技能、种族或性别而被排斥的工人。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -4614,7 +8744,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "反对声音迅速被总统支持者压制，因此短暂。"
 },
 {
 "n": 2,
@@ -4626,7 +8767,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "植物化石稀缺被用来推测荒芜，但草食恐龙所需食物使其他学者不赞同。"
 },
 {
 "n": 3,
@@ -4639,7 +8792,20 @@
 1,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+0
 ]
+}
+},
+"explanation": "人类语言意义可变且依赖语境，数学陈述则跨越文化历史。"
 },
 {
 "n": 4,
@@ -4652,7 +8818,20 @@
 0,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+0
 ]
+}
+},
+"explanation": "清晰制作消除混乱，却过度整理原本曲折的故事。"
 },
 {
 "n": 5,
@@ -4660,7 +8839,16 @@
 "p32.png"
 ],
 "kind": "ss",
+"ansText": "But, in addition, although Japanese meat-based recipes collectively used more kinds of spices, Korean recipes more frequently called for at least one spice, contained more spices per recipe, and more frequently called for highly inhibitory spices.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "第四句话 But in addition"
+}
+},
+"explanation": "第四句食谱用香料比较提供推论的直接证据。"
 },
 {
 "n": 6,
@@ -4672,7 +8860,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "日本有些肉类食谱无香料，总体却使用更多种香料。"
 },
 {
 "n": 7,
@@ -4683,7 +8883,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "讨论手工物件作为历史资料的用途及不同史家的态度。"
 },
 {
 "n": 8,
@@ -4694,7 +8905,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "十九世纪浪漫化叙事的框架妨碍理解原来用途。"
 },
 {
 "n": 9,
@@ -4705,7 +8927,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Ulrich较其他史家不认为神话妨碍利用旧物，反而感谢保存者。"
 },
 {
 "n": 10,
@@ -4717,7 +8950,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "分子层面争论看似深奥，实际却有科学应用。"
 },
 {
 "n": 11,
@@ -4729,7 +8974,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "童话虽看似不合现实，长期留存却令人难理解。"
 },
 {
 "n": 12,
@@ -4741,7 +8998,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "起义更多基于理性计算而非激情，故理性冷静。"
 },
 {
 "n": 13,
@@ -4752,7 +9021,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "盖篷反使后车更贴近，轮胎飞石危害不会因此显著下降。"
 },
 {
 "n": 14,
@@ -4763,7 +9043,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "商业利用是文化背景改变喜好的例子。"
 },
 {
 "n": 15,
@@ -4775,9 +9066,22 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
 }
-]
+},
+"explanation": "图中花卉厌恶例子既说明内容影响喜好，也说明熟悉不一定增加喜好。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -4798,7 +9102,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "含逾千种物质，说明组成异质、多样。"
 },
 {
 "n": 2,
@@ -4810,7 +9125,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "品牌忠诚度低，顾客可能响应竞争对手营销。"
 },
 {
 "n": 3,
@@ -4823,7 +9150,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "刊物盈利且博学权威，却长期缺少活力、有陈旧感。"
 },
 {
 "n": 4,
@@ -4834,7 +9174,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Spencer派收集资料为理论服务，认为理论对理解行动重要。"
 },
 {
 "n": 5,
@@ -4846,7 +9197,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "Du Bois主张观察实际行动并促进社会进步，而非只建宏大理论。"
 },
 {
 "n": 6,
@@ -4858,7 +9221,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "富营养污染如肥料，使藻类大量生长繁殖。"
 },
 {
 "n": 7,
@@ -4870,7 +9245,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "研究取向虽偏重城市，仍帮助理解乡村。"
 },
 {
 "n": 8,
@@ -4882,7 +9269,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "决策依赖反复无常而非深思，体现任性草率。"
 },
 {
 "n": 9,
@@ -4894,7 +9293,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "邻居的强制专横权威与Fort Ancient的平等对照。"
 },
 {
 "n": 10,
@@ -4906,7 +9317,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "研究寄居蟹较少为人知的食腐生态作用。"
 },
 {
 "n": 11,
@@ -4915,16 +9337,26 @@
 ],
 "kind": "mcn",
 "nopt": 3,
-"ans": [],
-"answerPending": true,
-"answerReviewReason": "题型或选项数已按原图修正，原答案映射需另行核对",
+"ans": [
+1
+],
 "legacyAnswer": {
 "kind": "mc1",
 "nopt": 5,
 "ans": [
 1
 ]
+},
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [],
+"answerPending": true
 }
+},
+"explanation": "贻贝壳不能当住所，其吸引力非庇护价值。"
 },
 {
 "n": 12,
@@ -4935,9 +9367,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "死腹足动物的食物线索先于可用空壳线索显现。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -4952,7 +9396,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "德国订单和产量走势相反，复苏信号并不明确。"
 },
 {
 "n": 2,
@@ -4963,7 +9418,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "人物难解、支线曲折，使观众困惑不知所措。"
 },
 {
 "n": 3,
@@ -4975,7 +9441,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "堆肥促进自然腐败，而填埋压实缺氧会阻碍分解。"
 },
 {
 "n": 4,
@@ -4985,10 +9463,23 @@
 "kind": "tc",
 "blanks": 3,
 "ans": [
+2,
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 1,
 1
 ]
+}
+},
+"explanation": "承认Haussmann贡献，却否认其开创性被说得那么大。"
 },
 {
 "n": 5,
@@ -4999,7 +9490,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "小规模作品便于评论家完整把握，有利死后受到关注；疏离是其原因或表征而非所致。"
 },
 {
 "n": 6,
@@ -5009,8 +9511,20 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index/91h4xj"
+},
+"explanation": "moral in complexion指在性质上带有道德色彩，constitution最接近性质。"
 },
 {
 "n": 7,
@@ -5022,7 +9536,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "禁海未撤而瓷器出口大量增加，说明有非法出口。"
 },
 {
 "n": 8,
@@ -5031,9 +9556,21 @@
 ],
 "kind": "mc1",
 "nopt": 5,
+"ans": [],
+"answerReview": {
+"date": "2026-10-16",
+"status": "pending-verification",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ans": [
 4
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/f21vyj-0.html"
+},
+"explanation": "原答案E与独立推理候选C存在争议；被弹劾不能充分证明完全不属强势官僚，严格执行禁海也不足以唯一推出其思想，暂不计分。",
+"answerPending": true,
+"answerReviewReason": "原答案E与独立推理候选C存在争议；被弹劾不能充分证明完全不属强势官僚，严格执行禁海也不足以唯一推出其思想，暂不计分。"
 },
 {
 "n": 9,
@@ -5044,7 +9581,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "执法官员可能因利益而睁一眼闭一眼，使大规模走私成为可能。"
 },
 {
 "n": 10,
@@ -5056,7 +9604,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "图景越写实却越幻想、虚幻，才构成悖论。"
 },
 {
 "n": 11,
@@ -5066,9 +9626,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+0,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 3
 ]
+}
+},
+"explanation": "若头脑不接纳宣传谎言，它们就会迅速消失。"
 },
 {
 "n": 12,
@@ -5080,7 +9652,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "物理研究受到Noether定理支撑并依赖它。"
 },
 {
 "n": 13,
@@ -5091,7 +9675,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "第一处高亮为培土增产的主结论，第二处根深与树高关系是支持证据。"
 },
 {
 "n": 14,
@@ -5102,7 +9697,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "世纪之交专家主张以道德教育压制嫉妒和贪求。"
 },
 {
 "n": 15,
@@ -5113,9 +9719,21 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "两代专家自身成长时代的消费环境不同，影响其教养建议。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -5136,7 +9754,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "虚假区分掩盖连续性，即belied。"
 },
 {
 "n": 2,
@@ -5148,7 +9777,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "批评某方论证并不等于反对该立场，故不能由分析推知她的立场。"
 },
 {
 "n": 3,
@@ -5161,7 +9802,20 @@
 0,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+1
 ]
+}
+},
+"explanation": "尊崇亲历，诗歌刻意显得实事求是，而非艺术创造。"
 },
 {
 "n": 4,
@@ -5172,7 +9826,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "学徒经历显示他熟悉且热爱视觉艺术，限定他反对视觉改编的态度。"
 },
 {
 "n": 6,
@@ -5184,7 +9849,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "电影让出日常生活的表现空间给电视和文学。"
 },
 {
 "n": 7,
@@ -5196,7 +9873,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "古老精湛织染传统达到顶峰，体现纺织品的华美。"
 },
 {
 "n": 8,
@@ -5208,7 +9897,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "容忍伪科学看似无害，却可能降低对更危险错觉的防御。"
 },
 {
 "n": 9,
@@ -5220,7 +9921,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "犬呼气不打断进气嗅闻，信息获取不像人类那样间断。"
 },
 {
 "n": 10,
@@ -5231,7 +9944,25 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+},
+"previousChoices": [
+"Formal education qas unnecessao• for women in Renmssance Italy",
+"Rhetoric is useful primarily in the public sphere rather thon in the pnvate sphere.",
+"Women in Renaissance Italy had less destre to study rhetonc than did men.",
+"Most liberal arts are of httle utility in the public sphere.",
+"oo"
+]
+},
+"explanation": "原图与第15节同题；修辞主要用于公共领域，而女性被限制于私人领域。"
 },
 {
 "n": 11,
@@ -5242,7 +9973,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "共享资料中的人文主义假设，反而使Burckhardt忽视不平等证据。"
 },
 {
 "n": 12,
@@ -5253,9 +9995,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "若Bruni不代表人文主义整体，King的材料就不足以支撑广泛批评。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -5270,7 +10024,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "必须通知被告和律师，说明监听并非秘密进行。"
 },
 {
 "n": 2,
@@ -5280,8 +10045,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 3
 ]
+}
+},
+"explanation": "与黑暗悲怆开场相呼应的配乐应为哀怨回荡的plangent。"
 },
 {
 "n": 3,
@@ -5293,7 +10069,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "某些口味因人而异，但喜甜厌苦具有普遍性。"
 },
 {
 "n": 4,
@@ -5306,7 +10094,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "不模仿人脑而像机器下棋；飞行类比有启发性，模仿鸟振翅注定失败。"
 },
 {
 "n": 5,
@@ -5317,7 +10118,25 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+},
+"previousChoices": [
+"comprises a small number of works",
+"view thematic unity as an indispensable attribute of literatures that are justifiably defined as \"national\"",
+"clann that African countries are too culturally diverse to have national literatures",
+"define several Afncan literatures as \"national\" even though the works are written in non-indigenous languages",
+"oo"
+]
+},
+"explanation": "一些学者以非本土欧洲语言写作的文学为国家文学，正是作者提出的争议。"
 },
 {
 "n": 6,
@@ -5328,7 +10147,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "主题形式的一致发展，是支持其具国家文学身份的潜在理由。"
 },
 {
 "n": 7,
@@ -5339,7 +10169,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "经济权力伴随政治社会权力。"
 },
 {
 "n": 8,
@@ -5350,7 +10191,18 @@
 "nopt": 3,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "工人面对雇主无力，缺少对劳动条件的控制。"
 },
 {
 "n": 9,
@@ -5360,8 +10212,26 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2
 ]
+},
+"previousChoices": [
+"tyrannize",
+"control",
+"command",
+"oversee",
+"oo"
+]
+},
+"explanation": "修复原图选项顺序后，dominate skyline最接近command。"
 },
 {
 "n": 10,
@@ -5373,7 +10243,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "宏观性质并非结构本身固有，而随条件语境呈现。"
 },
 {
 "n": 11,
@@ -5385,7 +10267,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "生前名声大，死后暂时过时、不时兴，再被后世重新评价。"
 },
 {
 "n": 12,
@@ -5397,7 +10291,20 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/e2cw7j-0.html?isFav=0"
+},
+"explanation": "沉默寡言的领导通常只作简短例行发言。"
 },
 {
 "n": 13,
@@ -5408,7 +10315,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "若非差评就必是好评，则电影无非两种，而她在飞机上均不喜欢。"
 },
 {
 "n": 14,
@@ -5419,7 +10337,25 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+},
+"previousChoices": [
+"analyze a flaw in a novel approach to a problem",
+"describe different processes that could have produced the same phenomenon",
+"e.xplain how a class of data might be useful for answenng a question",
+"outline a theory that may reconcile conflicting interpretations of a phenomenon",
+"oo"
+]
+},
+"explanation": "修复原图选项顺序后，文章介绍一类有助解答撞击时序问题的数据。"
 },
 {
 "n": 15,
@@ -5432,9 +10368,24 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/index?qid=108601"
+},
+"explanation": "旧球粒层可能未发现、已毁坏，或地球当时受撞较少。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -5455,7 +10406,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "长期问题却沉迷短期手段，导致赤字恶化。"
 },
 {
 "n": 2,
@@ -5467,7 +10429,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "蒸发减少使蒙古高原虽少雨，仍逆转周边的干旱趋势。"
 },
 {
 "n": 3,
@@ -5480,7 +10454,20 @@
 1,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+1
 ]
+}
+},
+"explanation": "Williams跨人文学科并强调历史，异于分析哲学的疏离、非历史倾向。"
 },
 {
 "n": 4,
@@ -5491,7 +10478,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "干旱压制一年生植物，减弱其对灌木幼苗的竞争。"
 },
 {
 "n": 5,
@@ -5502,7 +10500,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "干旱益处来自减轻竞争，独自种植的幼苗不会由缺水直接获益。"
 },
 {
 "n": 6,
@@ -5514,7 +10523,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "大胆脑科学猜想即便看似无根据，也能推动科学。"
 },
 {
 "n": 7,
@@ -5526,7 +10547,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "在景观中到处可见、广泛分布，才足以成为标志。"
 },
 {
 "n": 8,
@@ -5536,9 +10569,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+0,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 3,
 5
 ]
+}
+},
+"explanation": "幽默之外，对同行评价也尖刻严厉。"
 },
 {
 "n": 9,
@@ -5550,7 +10595,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "为迎合偏好宏大语言的评论家，作家会回避俗语。"
 },
 {
 "n": 10,
@@ -5561,7 +10618,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "作者以共同形式要素归类建筑，认可建筑上的凝聚性而不假定功能。"
 },
 {
 "n": 11,
@@ -5569,7 +10637,16 @@
 "p11.png"
 ],
 "kind": "ss",
+"ansText": "The problem, however, comes not from the architectural label one applies, but from making unwarranted assumptions about how the Palaces were used.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "The problem, however, comes not"
+}
+},
+"explanation": "第七句明确反对从名称跳到未经证实的使用功能。"
 },
 {
 "n": 12,
@@ -5580,9 +10657,21 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
 }
-]
+},
+"explanation": "可以只以Palace作形式类别名称，不接受其王室功能暗示。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -5597,7 +10686,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "适应环境并利用跨学科互动创建生态位，体现机会利用能力。"
 },
 {
 "n": 2,
@@ -5609,7 +10709,19 @@
 "ans": [
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1
 ]
+}
+},
+"explanation": "辩论充满不诚实，因此难以主张它确实完成提供信息的目的。"
 },
 {
 "n": 3,
@@ -5622,7 +10734,20 @@
 0,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+2
 ]
+}
+},
+"explanation": "精修建筑照去个体化、消除干扰；现实中物体常遮挡，无干扰景象是人为构造。"
 },
 {
 "n": 4,
@@ -5635,7 +10760,20 @@
 2,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+1
 ]
+}
+},
+"explanation": "历史学家避免武断，常给断言加限定，即使资料丰富仍有不确定。"
 },
 {
 "n": 5,
@@ -5646,7 +10784,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "末句确认持有艺术伴随照料责任这一原则。"
 },
 {
 "n": 6,
@@ -5657,7 +10806,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "返还非法取得之物，承认合法与非法可区分，从而支持合法持有的主张。"
 },
 {
 "n": 7,
@@ -5668,7 +10828,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "考虑未利用资源的变化，能解释很多田野结果的表面矛盾。"
 },
 {
 "n": 8,
@@ -5679,7 +10850,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "不同资源释放机制都能导致资源剩余和入侵，解释不同前提下相同结果。"
 },
 {
 "n": 9,
@@ -5690,7 +10872,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "物种丰富群落较缺养分、对养分输入敏感，可把Lonsdale发现纳入理论。"
 },
 {
 "n": 10,
@@ -5702,7 +10895,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "对海洋的认识仍初步、不完整。"
 },
 {
 "n": 11,
@@ -5714,7 +10919,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "自动驾驶在科幻中很常见，正常得不再显眼。"
 },
 {
 "n": 12,
@@ -5726,7 +10943,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "巡回报道需不断移动，记者是四处旅行者。"
 },
 {
 "n": 13,
@@ -5737,7 +10966,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "基因可能重新转入，提出开发者证据未排除的危险可能。"
 },
 {
 "n": 14,
@@ -5748,7 +10988,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "鲑鱼深处可及早看到船，帮助解释首句难以捕获的现象。"
 },
 {
 "n": 15,
@@ -5758,10 +11009,28 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+0,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
-}
+},
+"previousChoices": [
+"Its radius is affected by the amount of light entering the water.",
+"Its size is not correlated with the size of a viewer’s",
+"eyes"
 ]
+},
+"explanation": "原图显示浅水视窗较小；半径由深度决定而非眼睛大小。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -5782,7 +11051,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "自信能重塑庞大核心机构，表现惊人的狂妄。"
 },
 {
 "n": 2,
@@ -5794,7 +11074,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "无人否认任务艰巨，但已知物理并不禁止它。"
 },
 {
 "n": 3,
@@ -5807,7 +11099,20 @@
 2,
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
+0
 ]
+}
+},
+"explanation": "把作家当道德榜样的崇敬会被私信冲击，作品灵魂与私人自我看似矛盾。"
 },
 {
 "n": 4,
@@ -5818,7 +11123,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "若能力终生不变，能足取食的幼贝成年后应仍有此能力。"
 },
 {
 "n": 5,
@@ -5829,7 +11145,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "海洋双壳类可从沉积物表面或用足获得食物。"
 },
 {
 "n": 6,
@@ -5841,7 +11168,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "只述军队行军却少谈总体策略，说明背景交代吝啬不足。"
 },
 {
 "n": 7,
@@ -5853,7 +11192,19 @@
 "ans": [
 1,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+4
 ]
+}
+},
+"explanation": "与封闭环境相反，她用法意两国语言创作翻译，体现世界性。"
 },
 {
 "n": 8,
@@ -5865,7 +11216,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "本来被认为排除亲缘的结构特征，经调查却显示共同家族史。"
 },
 {
 "n": 9,
@@ -5877,7 +11240,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "认为自己理应领先，却不表现维持领先的兴趣和投入。"
 },
 {
 "n": 10,
@@ -5888,7 +11263,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "惯例是借大幅肖像向公众展示社会地位。"
 },
 {
 "n": 11,
@@ -5899,7 +11285,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "珍视失散家人可解释他偏爱与家庭亲密相关的微型肖像。"
 },
 {
 "n": 12,
@@ -5910,9 +11307,21 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
 }
-]
+},
+"explanation": "大幅油画的惯例具体展开了选择微型肖像“不寻常”的判断。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -5927,7 +11336,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "生态修复含人为参与，与未受人类影响的原始荒野观念相对。"
 },
 {
 "n": 2,
@@ -5939,7 +11359,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "过去主动选择记忆、如今数字记录默认保存，平衡被逆转。"
 },
 {
 "n": 3,
@@ -5952,7 +11384,20 @@
 2,
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+1
 ]
+}
+},
+"explanation": "不应把科学视为唯一救赎；科学可抗拒不加批判，人文教育也有益。"
 },
 {
 "n": 4,
@@ -5965,7 +11410,20 @@
 1,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+2
 ]
+}
+},
+"explanation": "讲谎言的书标题本身应查假；误导性标题只有在贬低真实性的书里才相称。"
 },
 {
 "n": 5,
@@ -5976,7 +11434,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "原行星盘相似过程在模型中迅速消失，提供可类推土星环寿命的依据。"
 },
 {
 "n": 6,
@@ -5986,8 +11455,19 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
+}
+},
+"explanation": "环粒子失去的角动量传给卫星，这是相互传递过程。"
 },
 {
 "n": 7,
@@ -5997,8 +11477,20 @@
 "kind": "mcn",
 "nopt": 3,
 "ans": [
+1,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0
 ]
+}
+},
+"explanation": "妇女出行受限影响题材，同时作品反映村民经历观念的多样性。"
 },
 {
 "n": 8,
@@ -6006,7 +11498,16 @@
 "p33.png"
 ],
 "kind": "ss",
+"ansText": "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "第一句话"
+}
+},
+"explanation": "首句对照同质固定的社区描写与女作家对多样村庄的描写。"
 },
 {
 "n": 9,
@@ -6017,7 +11518,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "原文明说Gilligan在另一语境中写作，并非讨论这些村庄素描作者。"
 },
 {
 "n": 10,
@@ -6027,9 +11539,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+0,
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4,
 5
 ]
+}
+},
+"explanation": "选择不寻常古怪，本人却不自视叛逆或特殊。"
 },
 {
 "n": 11,
@@ -6039,9 +11563,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+0,
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1,
 2
 ]
+}
+},
+"explanation": "日心说违背、反驳地球居中的旧信念。"
 },
 {
 "n": 12,
@@ -6051,9 +11587,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+1,
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 5
 ]
+}
+},
+"explanation": "死后暂时过时、不时兴，而后被重新认可。"
 },
 {
 "n": 13,
@@ -6063,8 +11611,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
+}
+},
+"explanation": "疾病可能导致饮食差而非吸收差，提供论证遗漏的第三种因果方向。"
 },
 {
 "n": 14,
@@ -6074,8 +11633,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2
 ]
+}
+},
+"explanation": "解释烹饪为何长期缺乏严肃学术研究。"
 },
 {
 "n": 15,
@@ -6085,10 +11655,22 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
 }
-]
+},
+"explanation": "连女性主义推翻分离领域后偏见仍延续，强调其顽固。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -6108,8 +11690,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4
 ]
+}
+},
+"explanation": "岩石栖地缝隙洞穴多，属于地形结构复杂。"
 },
 {
 "n": 2,
@@ -6121,7 +11714,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "虽接触艺术文化，却主要对智力艺术不关心，也不书卷气、不重思辨。"
 },
 {
 "n": 3,
@@ -6134,7 +11739,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "刊物盈利、博学权威，却缺乏活力并显陈旧。"
 },
 {
 "n": 4,
@@ -6145,7 +11763,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "承认断代有困难，指出由风格推定传播方向的推理弱点。"
 },
 {
 "n": 5,
@@ -6156,7 +11785,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "沿海以外物件通常被视作同时或派生，而非海湾风格的先驱。"
 },
 {
 "n": 6,
@@ -6168,7 +11808,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "形而上学超出可由实验验证的科学主张范围。"
 },
 {
 "n": 7,
@@ -6180,7 +11832,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "蟑螂并非特别强韧，只是昆虫中的普通水平。"
 },
 {
 "n": 8,
@@ -6192,7 +11856,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "重视礼仪外显德性，使官员过度关注外国使节仪式准确性。"
 },
 {
 "n": 9,
@@ -6204,7 +11880,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "富人耗水、穷人被迫节约凸显贫富鸿沟。"
 },
 {
 "n": 10,
@@ -6215,7 +11903,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "用神经系统证据评估Manton关于节肢动物起源的解释。"
 },
 {
 "n": 11,
@@ -6226,7 +11925,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "作者认为昆虫甲壳类复眼同源，Manton认为独立趋同演化。"
 },
 {
 "n": 12,
@@ -6237,9 +11947,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "趋同演化意味着共同特征并非全来自同一个共同祖先。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -6254,7 +11976,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "营养稀缺时有利的嗜糖脂偏好，在丰裕环境变成适应不良。"
 },
 {
 "n": 2,
@@ -6265,7 +11998,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "此前强调父子差异，回忆录却刻意突出亲近。"
 },
 {
 "n": 3,
@@ -6275,9 +12019,21 @@
 "kind": "tc",
 "blanks": 2,
 "ans": [
+0,
+0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 2,
 2
 ]
+}
+},
+"explanation": "并购未能提供惠及消费者的规模效益，甚至可能带来成本不经济。"
 },
 {
 "n": 4,
@@ -6290,7 +12046,20 @@
 2,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+2
 ]
+}
+},
+"explanation": "有人认为年轻人将随年龄买车，Willson认为趋势持久，无车生活会更常见。"
 },
 {
 "n": 5,
@@ -6300,8 +12069,19 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 4
 ]
+}
+},
+"explanation": "后续碰撞是假设事件，用于解释雷达所见细小颗粒。"
 },
 {
 "n": 6,
@@ -6312,7 +12092,19 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+},
+"corroboratingSource": "https://gre.kmf.com/explain/question/d2c5wj-0.html?isFav=0"
+},
+"explanation": "原图高亮未显现；公开同题答案C对应末句以碰撞补充潮汐碎裂理论，属对既有解释的修改。"
 },
 {
 "n": 7,
@@ -6323,7 +12115,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "分别讨论主动动机取向和结构条件取向的差异与局限。"
 },
 {
 "n": 8,
@@ -6331,7 +12134,16 @@
 "p33.png"
 ],
 "kind": "ss",
+"ansText": "However, studies in this tradition empirically ignore that exposure is not completely free of constraints.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "11行 however开头这句"
+}
+},
+"explanation": "第四句指出该取向忽视媒介接触受客观条件约束。"
 },
 {
 "n": 9,
@@ -6342,7 +12154,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "节目选择受结构情境影响，而使用满足取向未充分处理这些因素。"
 },
 {
 "n": 10,
@@ -6354,7 +12177,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "散文笨拙却恰到好处，兼有直白、离奇与幽默。"
 },
 {
 "n": 11,
@@ -6366,7 +12201,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "鄙视核查且不改错，体现轻慢、不认真对待真实性。"
 },
 {
 "n": 12,
@@ -6378,7 +12225,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "月球地质看似狭窄，实际可说明所有类地行星历史。"
 },
 {
 "n": 13,
@@ -6389,7 +12248,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "栽培选择有利薄种皮，古代种皮显著变薄支持已驯化。"
 },
 {
 "n": 14,
@@ -6400,7 +12270,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "这些评论者把非裔文学视为缺少美国文学常见的开放解放性运动。"
 },
 {
 "n": 15,
@@ -6410,10 +12291,22 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 1
 ]
 }
-]
+},
+"explanation": "史诗传奇中recorded的旅程即被叙述、讲述。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -6434,7 +12327,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "引力微观最弱，却在大尺度占主导，构成转折。"
 },
 {
 "n": 2,
@@ -6446,7 +12350,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "实时试验迅速回应偏好，但大量微调不等于有能力作根本转向。"
 },
 {
 "n": 3,
@@ -6459,7 +12375,20 @@
 1,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0,
+2
 ]
+}
+},
+"explanation": "篇幅虽巨却不求全面，主动承认忽略某些作曲家，化解遗漏批评。"
 },
 {
 "n": 4,
@@ -6470,7 +12399,18 @@
 "nopt": 3,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "若攻击只从群外来，内部成员比任何位置都可受袭时更安全。"
 },
 {
 "n": 5,
@@ -6481,7 +12421,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "原模型未充分考虑不同捕食关系，均匀攻击假设只适用于某些情况。"
 },
 {
 "n": 6,
@@ -6493,7 +12444,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "母蛇缺水时自身失重更多而胎数不变，显示牺牲自身水分平衡以利后代。"
 },
 {
 "n": 7,
@@ -6505,7 +12468,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "音乐并非附带次要因素，甚至使复兴成为可能。"
 },
 {
 "n": 8,
@@ -6517,7 +12492,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "波动源于民调方法误差而非选民反复无常。"
 },
 {
 "n": 9,
@@ -6529,7 +12516,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "逃罚违规停车手法巧妙但不诚实、不道德。"
 },
 {
 "n": 10,
@@ -6541,7 +12540,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "解释Coltrane为何罕见地用诗作唱片文字，作为艺术自我界定。"
 },
 {
 "n": 11,
@@ -6552,7 +12562,25 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+},
+"previousChoices": [
+"did not view literary accompaniment as distracting from the music",
+"viewed cooperating with Spellman as essential to their",
+"careers",
+"possessed creative talents not only in music but also poetry",
+"composed music in a style that was very different from Coltrane’ sin style"
+]
+},
+"explanation": "原图选项修复后，二人更愿以文字伴随音乐，不像Coltrane担忧语言框定。"
 },
 {
 "n": 12,
@@ -6563,9 +12591,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "有意用诗作提供解释音乐的方向和精神线索。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -6580,7 +12620,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "人参与修复，与无人干预的原始荒野观念冲突。"
 },
 {
 "n": 2,
@@ -6592,7 +12643,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "法院通常贴近民意，担心背离会失去公众支持。"
 },
 {
 "n": 3,
@@ -6605,7 +12668,20 @@
 2,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+2
 ]
+}
+},
+"explanation": "修复总遇反对：观众依恋熟悉外观，学者也可能反对移除后世修补。"
 },
 {
 "n": 4,
@@ -6618,7 +12694,20 @@
 2,
 0,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+0
 ]
+}
+},
+"explanation": "框架虽朴素却更引人注目，而这种简洁比明显奢华更难实现。"
 },
 {
 "n": 5,
@@ -6630,7 +12719,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "生命需液态水；公转引发潮汐摩擦热，使冰下水可存在。"
 },
 {
 "n": 6,
@@ -6641,7 +12742,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "地球地下生命的实际发现，为Europa生命的推测提供经验基础。"
 },
 {
 "n": 7,
@@ -6653,7 +12765,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "重新考虑旧解释，补入风险与防御措施的经济合理性。"
 },
 {
 "n": 8,
@@ -6664,7 +12787,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "史家把一些防御策略视作谋取垄断利润的做法。"
 },
 {
 "n": 9,
@@ -6677,7 +12811,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "作者承认传统解释并非全错，共享影响力、不竞争与抑制发展等判断。"
 },
 {
 "n": 10,
@@ -6689,7 +12836,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "新曲目计划让此前无名、鲜为人知的女性作曲家被听见。"
 },
 {
 "n": 11,
@@ -6701,7 +12860,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "竞争团体拒绝合作，以致同类计划争夺经费。"
 },
 {
 "n": 12,
@@ -6713,7 +12884,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "敲打、叫价、迫人屈从，描绘充满表演性的戏剧化姿态。"
 },
 {
 "n": 13,
@@ -6724,7 +12907,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "若有目的休闲本身通常不添压力，更能支持其减轻总压力的效用。"
 },
 {
 "n": 14,
@@ -6735,7 +12929,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "忽视其他独立力量，过度把演奏变化归因于录音一个原因。"
 },
 {
 "n": 15,
@@ -6746,9 +12951,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "节奏自由曾被滥用，说明部分表现手法有过不当运用。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -6769,7 +12986,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "一种药同时调节躁狂与抑郁两端，呈现难解释的悖论效果。"
 },
 {
 "n": 2,
@@ -6781,7 +13009,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "小额信贷助长创业崇拜，可能低估大企业和稳定工作的价值。"
 },
 {
 "n": 3,
@@ -6794,7 +13034,20 @@
 2,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+0,
+2
 ]
+}
+},
+"explanation": "重视女性作家结盟，却遭崇尚个体卓异的后世范式边缘化。"
 },
 {
 "n": 4,
@@ -6805,7 +13058,18 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "Derbyshire的说法最终可能源于对Eneström猜想的误读。"
 },
 {
 "n": 5,
@@ -6816,7 +13080,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "几近三世纪的时距提示解释为后世猜测。"
 },
 {
 "n": 6,
@@ -6828,7 +13103,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "虽首次担当主角，精湛表演没有犹豫不定。"
 },
 {
 "n": 7,
@@ -6840,7 +13127,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "史载大港却不见可用港湾，构成谜团。"
 },
 {
 "n": 8,
@@ -6852,7 +13151,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "大众把脑与自我的生物机制等同，故想从脑科学获得自我认识。"
 },
 {
 "n": 9,
@@ -6864,7 +13175,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "敷衍态度与勤奋名声相矛盾。"
 },
 {
 "n": 10,
@@ -6876,7 +13199,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "概述Watson与Kennedy对考古研究忽略女性创新的批判。"
 },
 {
 "n": 11,
@@ -6887,7 +13221,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "争论核心是玉米向北扩散的原因：自主适应还是女性主动培育。"
 },
 {
 "n": 12,
@@ -6898,9 +13243,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "由妇女负责园艺采集推断也负责驯化，依赖两类活动责任相连的假设。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -6915,7 +13272,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "数生物、列清单而缺少解释，说明是描述性科学。"
 },
 {
 "n": 2,
@@ -6926,7 +13294,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "读者为思想而读传记，作者却弱化思想，造成自我挫败。"
 },
 {
 "n": 3,
@@ -6938,7 +13317,19 @@
 "ans": [
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1
 ]
+}
+},
+"explanation": "当时寻自然奇景很普遍，冰岛可提供异域极端景观。"
 },
 {
 "n": 4,
@@ -6951,7 +13342,20 @@
 2,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+1
 ]
+}
+},
+"explanation": "棋艺成功不靠模仿人脑；飞行类比有启发性，摆脱熟悉模式才成功。"
 },
 {
 "n": 5,
@@ -6962,7 +13366,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "依赖大片完整森林者冰期难存活，现存欧洲鸟类通常无此依赖。"
 },
 {
 "n": 6,
@@ -6973,7 +13388,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "欧洲森林冰期消失，帮助解释现存鸟类能适应碎片森林的特点。"
 },
 {
 "n": 7,
@@ -6985,7 +13411,25 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+},
+"previousChoices": [
+"system",
+"discuss two antithetical views of the difficulties faced by Spanish long-distance traders",
+"reconsider certain assumptions about Spanish long- distance traders and their commercial practices",
+"examine the reasons why some Spanish merchants who engaged in oceanic commerce succeeded while others failed",
+"explain why oceanic commerce was so risky for Spanish merchants engaged in long-distance trading"
+]
+},
+"explanation": "以贸易风险补充旧说，重新考虑西班牙商人经济行为。"
 },
 {
 "n": 8,
@@ -6996,7 +13440,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "防御策略曾被视作垄断性行为。"
 },
 {
 "n": 9,
@@ -7009,7 +13464,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "双方均认可商人运用影响力、不竞争做法及部分负面经济结果。"
 },
 {
 "n": 10,
@@ -7019,9 +13487,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+3,
+5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 4
 ]
+}
+},
+"explanation": "新仪器使未预见的意外发现成为可能。"
 },
 {
 "n": 11,
@@ -7031,9 +13511,21 @@
 "kind": "se",
 "nopt": 6,
 "ans": [
+2,
+3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 0,
 2
 ]
+}
+},
+"explanation": "表面简单反衬、掩盖内部复杂技术装置。"
 },
 {
 "n": 12,
@@ -7045,7 +13537,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "孩子反复选父母不爱读的书，使共同阅读乐趣并非纯然无杂。"
 },
 {
 "n": 13,
@@ -7056,7 +13560,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "飞机上每片非差评即好评，涵盖所有影片，均落入她不喜欢的类别。"
 },
 {
 "n": 14,
@@ -7067,7 +13582,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "Sontag自己重实践轻理论，影响哲学家对其早期理论文章的评价。"
 },
 {
 "n": 15,
@@ -7077,10 +13603,22 @@
 "kind": "mc1",
 "nopt": 5,
 "ans": [
+2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
 3
 ]
 }
-]
+},
+"explanation": "连欣赏她批评实践者也轻视其理论，与哲学家整体冷落相似。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -7101,7 +13639,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "名为跨学科却无真正的学科融合。"
 },
 {
 "n": 2,
@@ -7113,7 +13662,19 @@
 "ans": [
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1
 ]
+}
+},
+"explanation": "她批评理论潮流过度聚焦偏好变量，反而遮蔽复杂环境现实。"
 },
 {
 "n": 3,
@@ -7126,7 +13687,20 @@
 0,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+2
 ]
+}
+},
+"explanation": "非个人化的建筑净照是人为安排，现实视线经常被普通物件干扰。"
 },
 {
 "n": 4,
@@ -7137,7 +13711,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "非裔音乐家强调差异，以反对期刊中的种族色盲观点。"
 },
 {
 "n": 5,
@@ -7148,7 +13733,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "作者承认一些色盲论并非虚情假意，确是真诚相信。"
 },
 {
 "n": 6,
@@ -7160,7 +13756,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "堆肥使用的环境收益可能抵消生产过程的环境代价。"
 },
 {
 "n": 7,
@@ -7172,7 +13780,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "商业画廊认为主题难销售，故忽视、弃置这位艺术家。"
 },
 {
 "n": 8,
@@ -7184,7 +13804,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "希望找到能激励党员踊跃投票的议题。"
 },
 {
 "n": 9,
@@ -7196,7 +13828,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "能量与炽热灵感表明小说充满活力。"
 },
 {
 "n": 10,
@@ -7208,7 +13852,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "解释为何追求最优者客观成果更好、主观却更不满意的反直觉现象。"
 },
 {
 "n": 11,
@@ -7219,7 +13874,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "最大化者客观结果更好，因此较少作出客观上差的决定。"
 },
 {
 "n": 12,
@@ -7230,9 +13896,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "作者将不满追溯到最大化者自身的决策倾向，而不是最终选择客观较差。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -7247,7 +13925,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "历时年龄与生物年龄不一致，故细胞年龄难判断。"
 },
 {
 "n": 2,
@@ -7259,7 +13948,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "Parker乐观，与经济系同事的悲观看法形成鲜明对比。"
 },
 {
 "n": 3,
@@ -7272,7 +13973,20 @@
 2,
 2,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+0
 ]
+}
+},
+"explanation": "虽可能有漏检小行星，已知引力已足够解释行星运动，因此漏检总质量不大。"
 },
 {
 "n": 4,
@@ -7285,7 +13999,20 @@
 0,
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2,
+1
 ]
+}
+},
+"explanation": "华丽美化精英肖像招嘲讽，但迎合社会的浮艳趣味，说明画家与环境匹配。"
 },
 {
 "n": 5,
@@ -7297,7 +14024,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "钢琴长期由工匠制作，工业革命前木制框架，金属架引发争议。"
 },
 {
 "n": 6,
@@ -7308,7 +14047,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "担忧金属破坏钢琴的音质、音色。"
 },
 {
 "n": 7,
@@ -7320,7 +14070,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "围绕Toussaint选择微型肖像的意义和可能动机展开。"
 },
 {
 "n": 8,
@@ -7331,7 +14092,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "作者以文化家庭含义解释体裁选择，隐含成本差异不是主要决定因素。"
 },
 {
 "n": 9,
@@ -7342,7 +14114,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "现存证据表明有地位的非裔顾客多选大幅肖像，故显贵微型肖像较少。"
 },
 {
 "n": 10,
@@ -7354,7 +14137,19 @@
 "ans": [
 1,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+5
 ]
+}
+},
+"explanation": "书法地位最高，体现对文字的崇敬推崇。"
 },
 {
 "n": 11,
@@ -7366,7 +14161,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "无法直接探测，只能由引力效应推断暗物质。"
 },
 {
 "n": 12,
@@ -7378,7 +14185,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "阴谋尚未发动却已广为人知，说明有人不谨慎泄露。"
 },
 {
 "n": 13,
@@ -7389,7 +14208,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "遗址有大量其他兽鱼骨却很少袋鼠骨，削弱狩猎灭绝说。"
 },
 {
 "n": 14,
@@ -7401,7 +14231,19 @@
 "ans": [
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+2
 ]
+}
+},
+"explanation": "液态水和公转产生的潮汐热是Europa潜在生命的条件。"
 },
 {
 "n": 15,
@@ -7412,9 +14254,21 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
 }
-]
+},
+"explanation": "地球地下生命这一实际发现，支持对Europa生命的推测。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -7435,7 +14289,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "局地短时不可预测，全球尺度却有可靠规律。"
 },
 {
 "n": 2,
@@ -7447,7 +14312,19 @@
 "ans": [
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+1
 ]
+}
+},
+"explanation": "似因枯燥名声而尴尬，校长刻意采用随意健谈的风格。"
 },
 {
 "n": 3,
@@ -7460,7 +14337,20 @@
 2,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
+1
 ]
+}
+},
+"explanation": "美国艺术被藏到角落，显示当前轻蔑和排除超过过去忽视。"
 },
 {
 "n": 4,
@@ -7471,7 +14361,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "8470年比典型Clovis时期晚，属于出乎意料的相关材料年代。"
 },
 {
 "n": 5,
@@ -7482,7 +14383,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "若物件制作很久后才埋入，则物件本身和伴随材料不同龄。"
 },
 {
 "n": 6,
@@ -7494,7 +14406,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "认为设备即将过时，所以解决兼容问题也引不起兴趣。"
 },
 {
 "n": 7,
@@ -7506,7 +14430,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "中国文字似独立的本土发展。"
 },
 {
 "n": 8,
@@ -7518,7 +14454,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "悲剧历史由刺痛尖刻的机智及灼热情感表达。"
 },
 {
 "n": 9,
@@ -7530,7 +14478,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "既难根除，预先限制高风险引种就是审慎而有远见。"
 },
 {
 "n": 10,
@@ -7541,7 +14501,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "Wideman提供不经解释中介呈现黑人故事的一般框架，可解释Hurston原意。"
 },
 {
 "n": 11,
@@ -7549,7 +14520,16 @@
 "p12.png"
 ],
 "kind": "ss",
+"ansText": "While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales.",
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
 "ansText": "第二段第一句话"
+}
+},
+"explanation": "第五句说出版者可能要求不只是故事抄录，解释她后来添加叙述的原因。"
 },
 {
 "n": 12,
@@ -7560,9 +14540,21 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
 }
-]
+},
+"explanation": "未交代如何建立两版稿件的先后关系。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -7577,7 +14569,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "工业家对总体经济愈乐观，却对自家公司不更乐观，才显得奇怪。"
 },
 {
 "n": 2,
@@ -7589,7 +14592,19 @@
 "ans": [
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1
 ]
+}
+},
+"explanation": "破坏报告一致，因而没有理由怀疑其真实性。"
 },
 {
 "n": 3,
@@ -7601,7 +14616,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "艺术要脱离日常，同时直接处理日常经验，构成悖论。"
 },
 {
 "n": 4,
@@ -7614,7 +14641,20 @@
 0,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+1
 ]
+}
+},
+"explanation": "受诽谤法约束而克制；轶事看似可信，经理人却被不实描写为从不失误。"
 },
 {
 "n": 5,
@@ -7625,7 +14665,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "她担心严格平等会禁止专门保护女性的法规，因此损害女性利益。"
 },
 {
 "n": 6,
@@ -7636,7 +14687,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "修正案支持者与她对当时是否应实行严格法律平等意见相反。"
 },
 {
 "n": 7,
@@ -7647,7 +14709,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "基督教接受希腊罗马及日耳曼的文学传统。"
 },
 {
 "n": 8,
@@ -7658,7 +14731,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "改革前文学在形式上明显多样，而非一致。"
 },
 {
 "n": 9,
@@ -7669,7 +14753,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "Oddly enough提示这种接纳关系出人意料。"
 },
 {
 "n": 10,
@@ -7681,7 +14776,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "时间管理不能增加或延长人生总分钟数。"
 },
 {
 "n": 11,
@@ -7693,7 +14800,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "过长过细的传记令人疲惫、阅读负担沉重。"
 },
 {
 "n": 12,
@@ -7705,7 +14824,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "湖间长距离输水推翻各湖隔绝、彼此分离的旧观念。"
 },
 {
 "n": 13,
@@ -7716,7 +14847,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "温室容易控制高二氧化碳下滋生的害虫，露天缺此保障，类推增产会受阻。"
 },
 {
 "n": 14,
@@ -7727,7 +14869,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "红鲷鱼健康数量的具体问题，把抽象基线难题具体化。"
 },
 {
 "n": 15,
@@ -7738,9 +14891,21 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
 }
-]
+},
+"explanation": "把当前贫乏数量视为正常，会怀疑史料所述极度丰盛。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -7761,7 +14926,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "植被土壤被剥去，暴雨径流无阻，引发山洪。"
 },
 {
 "n": 2,
@@ -7773,7 +14949,19 @@
 "ans": [
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2
 ]
+}
+},
+"explanation": "增设密集红灯并移除便于车流的地下通道，意在劝退驾车。"
 },
 {
 "n": 3,
@@ -7786,7 +14974,20 @@
 0,
 1,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+1
 ]
+}
+},
+"explanation": "电脑提供画家般虚构许可，但摄影虚构从诞生即有，且与个人风格不可分。"
 },
 {
 "n": 4,
@@ -7797,7 +14998,25 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+},
+"previousChoices": [
+"mobility of livestock and extent of land degradation",
+"livestock numbers and availability of food",
+"number of livestock species and variability of grazing",
+"resources",
+"ne answer choice."
+]
+},
+"explanation": "原图选项修复后，平衡模型以牲畜数量与食物供应的关系定义。"
 },
 {
 "n": 5,
@@ -7808,7 +15027,18 @@
 "nopt": 3,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "移动畜群、利用分布不均资源的机会主义策略有助避免土地退化。"
 },
 {
 "n": 6,
@@ -7820,7 +15050,19 @@
 "ans": [
 0,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+3
 ]
+}
+},
+"explanation": "避免夸张，表现审慎、明智。"
 },
 {
 "n": 7,
@@ -7832,7 +15074,19 @@
 "ans": [
 1,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+3
 ]
+}
+},
+"explanation": "清淡玉米粉可缓和、削弱其他食物的强烈味道。"
 },
 {
 "n": 8,
@@ -7844,7 +15098,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "神圣人物也以错误示教，故并非道德完美榜样。"
 },
 {
 "n": 9,
@@ -7856,7 +15122,19 @@
 "ans": [
 0,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1
 ]
+}
+},
+"explanation": "医生难就诊断达成一致，体现意见不合和争执。"
 },
 {
 "n": 10,
@@ -7867,7 +15145,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "介绍鲁迅对木刻的技法及社会功能的看法。"
 },
 {
 "n": 11,
@@ -7878,7 +15167,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "承认技法打动鲁迅，但更看重社会正义功能，给决策因素排序。"
 },
 {
 "n": 12,
@@ -7889,9 +15189,21 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
 }
-]
+},
+"explanation": "传统中国木刻偏装饰，缺少西方木刻所具的社会政治正义目的。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 4,
@@ -7906,7 +15218,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "与monumental呼应，公司政府关系也发生重大深远的变化。"
 },
 {
 "n": 2,
@@ -7918,7 +15241,19 @@
 "ans": [
 1,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1,
+0
 ]
+}
+},
+"explanation": "堆肥加快腐败，压实缺氧的填埋却阻碍分解。"
 },
 {
 "n": 3,
@@ -7931,7 +15266,20 @@
 2,
 2,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+2
 ]
+}
+},
+"explanation": "从起初混乱的人流出现规则通道，越多人加入越自我维持。"
 },
 {
 "n": 4,
@@ -7944,7 +15292,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "漫画被视作幼稚低俗，使爱好者羞愧。"
 },
 {
 "n": 5,
@@ -7955,7 +15316,25 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+},
+"previousChoices": [
+"They have been shaped by humans in various and subtle ways.",
+"Their history of human impact began less than 5,000 years ago.",
+"They have more rock outcrops than does the typical granite landscape.",
+"Their soils have been made difficult to use by human activity.",
+"ne answer choice."
+]
+},
+"explanation": "原图选项修复后，人们误以为地表植被完全自然、少有人工影响。"
 },
 {
 "n": 6,
@@ -7968,7 +15347,20 @@
 0,
 1,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+1,
+2
 ]
+}
+},
+"explanation": "差土壤、泥炭层、岩石露头都营造自然无人干预景观的印象。"
 },
 {
 "n": 7,
@@ -7979,7 +15371,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "DNA分组与寄生演化证据推翻两项既有共识。"
 },
 {
 "n": 8,
@@ -7990,7 +15393,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "由地衣真菌演化出有害寄生菌，反驳互害到互惠单向进步的最后假说。"
 },
 {
 "n": 9,
@@ -8001,7 +15415,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "其祖先与宿主关系有良有恶，部分并非互利共生。"
 },
 {
 "n": 10,
@@ -8013,7 +15438,19 @@
 "ans": [
 2,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+5
 ]
+}
+},
+"explanation": "严肃性不是表面装饰，而与喜剧视野内在相连、不可分割。"
 },
 {
 "n": 11,
@@ -8025,7 +15462,19 @@
 "ans": [
 4,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4,
+5
 ]
+}
+},
+"explanation": "虽长期收集数据，可用资料仍然匮乏。"
 },
 {
 "n": 12,
@@ -8037,7 +15486,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "化学的自然科学地位被看作显然、不言而喻。"
 },
 {
 "n": 13,
@@ -8048,7 +15509,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "有目的休闲本身若通常不产生压力，则更可能减轻总压力风险。"
 },
 {
 "n": 14,
@@ -8059,7 +15531,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "末句用史学将集体成果归于署名者的一般现象解释Franklin独享声誉。"
 },
 {
 "n": 15,
@@ -8070,9 +15553,28 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+},
+"previousChoices": [
+"elaborate on a view of Franklin that the author takes issue with",
+"point to a controversial claim about Franklin’s historical legacy",
+"introduce the question of who Franklin’s main scientific influences were",
+"suggest that Franklin was resistant to collaboration with other scientists",
+"ne answer choice."
+]
+},
+"explanation": "原图选项修复后，引用Emerson展开作者要反对的自力成才形象。"
 }
-]
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 },
@@ -8093,7 +15595,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "树木吸收并长期保留二氧化碳，即固存碳。"
 },
 {
 "n": 2,
@@ -8105,7 +15618,19 @@
 "ans": [
 2,
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1
 ]
+}
+},
+"explanation": "她说话直率朴实，没有参议院演说常见的浮夸装饰。"
 },
 {
 "n": 3,
@@ -8118,7 +15643,20 @@
 2,
 2,
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+2,
+0
 ]
+}
+},
+"explanation": "热衷曝光且不倦自我宣传，使职业生涯更为人知；更赚钱的同业却很隐秘。"
 },
 {
 "n": 4,
@@ -8129,7 +15667,18 @@
 "nopt": 5,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "妻子收入更高仍承担多数家务，说明资源不是唯一决定因素。"
 },
 {
 "n": 5,
@@ -8140,7 +15689,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "按资源论，经济依赖妻子的丈夫权力较小，应承担更多家务。"
 },
 {
 "n": 6,
@@ -8152,7 +15712,19 @@
 "ans": [
 0,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+5
 ]
+}
+},
+"explanation": "自然火在到人之前已存在，因此用炭粒标识到人时间不明智。"
 },
 {
 "n": 7,
@@ -8164,7 +15736,19 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
+}
+},
+"explanation": "若衰老可避免，未来或能延缓老化衰弱。"
 },
 {
 "n": 8,
@@ -8176,7 +15760,19 @@
 "ans": [
 3,
 5
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+5
 ]
+}
+},
+"explanation": "与电影轰动呈现相比，实验看似平凡，却仍有重大结果。"
 },
 {
 "n": 9,
@@ -8188,7 +15784,19 @@
 "ans": [
 2,
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+3
 ]
+}
+},
+"explanation": "组织需要更审慎、有选择的信息管理，而非只扩存储。"
 },
 {
 "n": 10,
@@ -8200,7 +15808,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "爵士例子展示两场运动对欧洲美学规范的根本不同态度。"
 },
 {
 "n": 11,
@@ -8211,7 +15830,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "复兴领导者以欧洲高雅艺术为成就标准，也借欧洲认可证明爵士成熟。"
 },
 {
 "n": 12,
@@ -8222,9 +15852,21 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
 }
-]
+},
+"explanation": "黑色艺术运动认为欧洲规范不宜用于评价黑人历史经验中的爵士。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 },
 {
 "sec": 5,
@@ -8239,7 +15881,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "蚊子个体脆弱，却能借船远行。"
 },
 {
 "n": 2,
@@ -8250,7 +15903,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "挑选支持预设结论的证据，说明带有明显偏向。"
 },
 {
 "n": 3,
@@ -8263,7 +15927,20 @@
 0,
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+0,
+2
 ]
+}
+},
+"explanation": "漫画被视为幼稚低俗，使爱好者羞愧。"
 },
 {
 "n": 4,
@@ -8275,8 +15952,21 @@
 "ans": [
 2,
 1,
+1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+1,
 0
 ]
+}
+},
+"explanation": "过去把自传改名当小说，如今反把真正小说当真实自白出售。"
 },
 {
 "n": 5,
@@ -8287,7 +15977,18 @@
 "nopt": 3,
 "ans": [
 0
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0
 ]
+}
+},
+"explanation": "地球地下生命及Europa设想均说明能源不一定来自邻近恒星光照。"
 },
 {
 "n": 6,
@@ -8298,7 +15999,18 @@
 "nopt": 5,
 "ans": [
 1
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+1
 ]
+}
+},
+"explanation": "地球地下生命的实证发现支持对Europa生命的推测。"
 },
 {
 "n": 7,
@@ -8309,7 +16021,18 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+}
+},
+"explanation": "指出嘻哈批评过度关注反社会歌词，忽略与前辈艺术运动等重要关系。"
 },
 {
 "n": 8,
@@ -8320,7 +16043,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "严肃嘻哈的社会表达与主流商业追求往往冲突。"
 },
 {
 "n": 9,
@@ -8331,7 +16065,25 @@
 "nopt": 5,
 "ans": [
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+4
 ]
+},
+"previousChoices": [
+"The diatoms in sand layers deposited by tsunamis will typically be more fragmented than those in sand layers deposited by strong storm surges.",
+"In the region of Lake Tokotan over a period of several centuries, the amount of coastal erosion caused by tsunamis will typically be greater than that caused by storm surges.",
+"Compared to tsunamis. storm surges vary more from one to another in the currents they generate and change of sea level they cause.",
+"The influx of water into the lake caused by a tsunami, unlike that caused by a storm surge, need not be confined to the outlet that connects Lake Tokotan to",
+"the sea."
+]
+},
+"explanation": "原图选项修复后，海啸可越过沙障，不像风暴潮主要局限狭窄出海口。"
 },
 {
 "n": 10,
@@ -8343,7 +16095,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "自称讨论温和平静，却充满激烈争论。"
 },
 {
 "n": 11,
@@ -8355,7 +16119,19 @@
 "ans": [
 3,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3,
+4
 ]
+}
+},
+"explanation": "人人可讲改、无人独占，体现民主和平等。"
 },
 {
 "n": 12,
@@ -8367,7 +16143,19 @@
 "ans": [
 2,
 4
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2,
+4
 ]
+}
+},
+"explanation": "数学并不消除或取代观察需求，但可推导无法观察的性质。"
 },
 {
 "n": 13,
@@ -8378,7 +16166,18 @@
 "nopt": 5,
 "ans": [
 3
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+3
 ]
+}
+},
+"explanation": "大量别种兽鱼骨而袋鼠骨极少，支持毁地而非捕猎导致灭绝。"
 },
 {
 "n": 14,
@@ -8389,7 +16188,18 @@
 "nopt": 5,
 "ans": [
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+2
 ]
+}
+},
+"explanation": "James保留传统情节推进和结局位置，不同于现代主义弱化情节。"
 },
 {
 "n": 15,
@@ -8401,9 +16211,22 @@
 "ans": [
 0,
 2
+],
+"answerReview": {
+"date": "2026-10-16",
+"status": "independently-reviewed",
+"basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+"previous": {
+"ans": [
+0,
+2
 ]
 }
-]
+},
+"explanation": "若情节让位意识探索会更明显属现代主义；后期尤其重内在意识。"
+}
+],
+"answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
 ]
 }

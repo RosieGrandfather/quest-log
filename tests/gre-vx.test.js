@@ -6,6 +6,30 @@ import {summarize, answerText} from '../js/core/qgrade.js';
 const read = relative => JSON.parse(readFileSync(new URL(relative,import.meta.url),'utf8'));
 const course=read('../courses/gre-vx/course.json');
 
+test('every section has reviewed answer provenance synchronized with the generator',()=>{
+  const source=read('../tools/course/grvx/data.json').flatMap(s=>s.sections);
+  let pending=0,total=0;
+  for(const [idx,entry]of course.units.entries()){
+    const unit=read('../courses/gre-vx/'+entry.file);
+    for(const it of unit.blocks[0].items){
+      total++;
+      assert.ok(it.explanation,entry.id+'/'+it.n+' missing reasoning');
+      assert.ok(it.answerReview?.previous,entry.id+'/'+it.n+' missing original key');
+      const from=source[idx].items.find(q=>q.n===it.n);
+      for(const key of ['ans','ansText','answerPending','answerReviewReason','explanation','answerReview'])
+        assert.deepEqual(it[key],from[key],entry.id+'/'+it.n+': '+key);
+      if(it.answerPending){pending++;assert.equal(it.answerReview.status,'pending-verification');}
+      else if(it.kind==='ss')assert.ok(it.txt.sentences.includes(it.ansText));
+      else{
+        assert.ok(it.ans.length);
+        if(it.kind==='se')assert.equal(it.ans.length,2);
+        if(it.kind==='tc')assert.equal(it.ans.length,it.blanks);
+      }
+    }
+  }
+  assert.equal(total,674);assert.equal(pending,3);
+});
+
 test('first section reviewed words and sentences score correctly, and survive regeneration',()=>{
   const unit=read('../courses/gre-vx/u01-2025-01-14-v1.json');
   const items=unit.blocks[0].items;

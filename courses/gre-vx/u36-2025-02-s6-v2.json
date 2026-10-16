@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "生态修复含人为参与，与未受人类影响的原始荒野观念相对。",
      "img": "2025-02-s6/4-01.webp",
      "txt": {
       "stem": [
@@ -46,6 +57,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "过去主动选择记忆、如今数字记录默认保存，平衡被逆转。",
      "img": "2025-02-s6/4-02.webp",
      "txt": {
       "stem": [
@@ -74,6 +97,19 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "不应把科学视为唯一救赎；科学可抗拒不加批判，人文教育也有益。",
      "img": "2025-02-s6/4-03.webp",
      "txt": {
       "stem": [
@@ -107,6 +143,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "讲谎言的书标题本身应查假；误导性标题只有在贬低真实性的书里才相称。",
      "img": "2025-02-s6/4-04.webp",
      "txt": {
       "stem": [
@@ -138,6 +187,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "原行星盘相似过程在模型中迅速消失，提供可类推土星环寿命的依据。",
      "img": "2025-02-s6/4-05.webp",
      "txt": {
       "pass": [
@@ -160,8 +220,19 @@
      "kind": "mcn",
      "nopt": 3,
      "ans": [
-      0
+      1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "环粒子失去的角动量传给卫星，这是相互传递过程。",
      "img": "2025-02-s6/4-06.webp",
      "txt": {
       "pass": [
@@ -182,8 +253,20 @@
      "kind": "mcn",
      "nopt": 3,
      "ans": [
-      0
+      1,
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "妇女出行受限影响题材，同时作品反映村民经历观念的多样性。",
      "img": "2025-02-s6/4-07.webp",
      "txt": {
       "pass": [
@@ -202,7 +285,16 @@
     {
      "n": 8,
      "kind": "ss",
-     "ansText": "第一句话",
+     "ansText": "Buell’s study of village sketches (a type of fiction popular in the United States in the 1830s and 1840s) provides a valuable summary of sketches that portray the community as homogeneous and fixed, but it ignores those by women writers, which typically depicted the diversity that increasingly characterized actual village communities at that time.",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ansText": "第一句话"
+      }
+     },
+     "explanation": "首句对照同质固定的社区描写与女作家对多样村庄的描写。",
      "img": "2025-02-s6/4-08.webp",
      "txt": {
       "pass": [
@@ -227,6 +319,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "原文明说Gilligan在另一语境中写作，并非讨论这些村庄素描作者。",
      "img": "2025-02-s6/4-09.webp",
      "txt": {
       "pass": [
@@ -249,9 +352,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      4,
-      5
+      0,
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "选择不寻常古怪，本人却不自视叛逆或特殊。",
      "img": "2025-02-s6/4-10.webp",
      "txt": {
       "stem": [
@@ -272,9 +387,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      1,
-      2
+      0,
+      4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "日心说违背、反驳地球居中的旧信念。",
      "img": "2025-02-s6/4-11.webp",
      "txt": {
       "stem": [
@@ -295,9 +422,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      0,
-      5
+      1,
+      4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "死后暂时过时、不时兴，而后被重新认可。",
      "img": "2025-02-s6/4-12.webp",
      "txt": {
       "stem": [
@@ -318,8 +457,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      1
+      0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "疾病可能导致饮食差而非吸收差，提供论证遗漏的第三种因果方向。",
      "img": "2025-02-s6/4-13.webp",
      "txt": {
       "pass": [
@@ -342,8 +492,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      2
+      1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "解释烹饪为何长期缺乏严肃学术研究。",
      "img": "2025-02-s6/4-14.webp",
      "txt": {
       "pass": [
@@ -366,8 +527,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      1
+      4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "连女性主义推翻分离领域后偏见仍延续，强调其顽固。",
      "img": "2025-02-s6/4-15.webp",
      "txt": {
       "pass": [
@@ -389,5 +561,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

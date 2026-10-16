@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "相关做法虽被禁止，仍在一些部门持续。",
      "img": "2025-01-16/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "误导科学家，使其误以为理解快感机制。",
      "img": "2025-01-16/4-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "相册被当作客观记录，主动筛选过程却往往被忽略。",
      "img": "2025-01-16/4-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "漫画被视作幼稚低俗，爱好者因而羞愧。",
      "img": "2025-01-16/4-04.webp",
      "txt": {
       "stem": [
@@ -137,6 +186,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "原文明言部分符号对应特定词语。",
      "img": "2025-01-16/4-05.webp",
      "txt": {
       "pass": [
@@ -161,6 +221,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "不对应单一语言使不同语言使用者能够共享符号系统。",
      "img": "2025-01-16/4-06.webp",
      "txt": {
       "pass": [
@@ -183,6 +254,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "对照早期运动，并交代其民权运动背景。",
      "img": "2025-01-16/4-07.webp",
      "txt": {
       "pass": [
@@ -207,6 +289,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "艺术家创立的文化中心支持民权社会政治运动。",
      "img": "2025-01-16/4-08.webp",
      "txt": {
       "pass": [
@@ -231,6 +324,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "首段比较艺术运动，次段交代复兴的同期政治背景。",
      "img": "2025-01-16/4-09.webp",
      "txt": {
       "pass": [
@@ -256,6 +360,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "艺术界遍布达达手法，使展览适逢其时。",
      "img": "2025-01-16/4-10.webp",
      "txt": {
       "stem": [
@@ -279,6 +395,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "敌对回应使先前讨好努力失效。",
      "img": "2025-01-16/4-11.webp",
      "txt": {
       "stem": [
@@ -299,9 +427,21 @@
      "kind": "se",
      "nopt": 6,
      "ans": [
-      0,
-      3
+      3,
+      5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "有意模糊难解，与写实相对。",
      "img": "2025-01-16/4-12.webp",
      "txt": {
       "stem": [
@@ -324,6 +464,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "死者多为成体且成体不易感染病毒，支持毒素致死。",
      "img": "2025-01-16/4-13.webp",
      "txt": {
       "pass": [
@@ -348,6 +499,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "各抄本可能未把两首序诗同时收录。",
      "img": "2025-01-16/4-14.webp",
      "txt": {
       "pass": [
@@ -372,6 +534,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "抄写者的重组影响今天研究所依据的版本。",
      "img": "2025-01-16/4-15.webp",
      "txt": {
       "pass": [
@@ -391,5 +564,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

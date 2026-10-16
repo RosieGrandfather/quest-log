@@ -1,130 +1,1180 @@
 {
- "u12-2025-01-02-v2/13": {"pass": ["To reduce traffic congestion on Lochley city streets, a new road will be built to bypass the city. The road will offer a faster commute to nearly all people who live in suburbs and now commute via Lochley’s streets to their jobs in other suburbs. Those cars constitute one-quarter of the cars now using Lochley’s streets each weekday. Thus after the bypass road has been built, weekday traffic congestion on Lochley’s streets will be substantially reduced."]},
- "u24-2025-01-06-v2/5": {"pass": ["Critical neglect of Emily Bronté’s poetry is long-standing and once resulted from an idea of Victorian poetry as essentially a male preserve. Feminist critics have challenged this understanding of Victorian poetry, largely by displacing critical approaches that required a particular subject matter or point of view and therefore undervalued women poets whose work did not conform. But feminist critics’ own assumptions about Victorian women’s poetry have also threatened to exclude Emily Bronté. Virginia Blain’s anthology of Victorian women’s poetry is representative, not eccentric, in omitting Bronté. Blain aimed to provide wide-ranging coverage of “the kinds of subjects and poetic treatments most often employed by Victorian women poets,” yet, as Emily’s sister Charlotte said, Emily’s poetry is not “at all like the poetry women generally write.”"]},
- "u38-2025-02-s4-v2/14": {"pass": ["Images of movement are widely identified as signifiers of the special nature of American texts, differing from the journeys recorded in Classical epic and Medieval romance by being open-ended and reflecting—by their repeated appearance in American writing about the frontier, the sea, the river, and the road—the factual mobility and ideological orientation of American culture. Many critics turning to African American fiction have seen it as an exception, however, noting stasis or at least the absence of similarly liberating movement. In advancing the contrary view that flux and ferment characterize African American literature, Robert Butler sees the motif of the journey—oftentimes a metaphorical, inward journey—as crucial to twentieth-century African American fiction."]},
- "u21-2025-01-05-v1/8": {"opts": ["unambitious", "unconvincing", "unassailable", "implausible", "coherent", "airtight"]},
- "u22-2025-01-05-v2/10": {"opts": ["tolerant", "dogmatic", "unpredictable", "rigorous", "orthodox", "accepting"]},
- "u25-2025-01-07-v1/7": {"opts": ["outlandish", "nebulous", "unattainable", "amorphous", "impracticable", "complicated"]},
- "u26-2025-01-07-v2/3": {"cols": [["subversive", "principled", "collaborative"], ["substantiating", "overturning", "identifying"], ["authorities", "skeptics", "methodologies"]]},
- "u31-2025-02-s3-v1/8": {
-  "stem": ["Maintaining a tolerant attitude toward pseudoscience might be considered ____, but it could be argued that such a disposition lowers our defenses against more dangerous delusions that are based on similar confusions and fallacies."],
-  "opts": ["naive", "benign", "broad-minded", "indulgent", "credulous", "innocuous"]
+ "u12-2025-01-02-v2/13": {
+  "pass": [
+   "To reduce traffic congestion on Lochley city streets, a new road will be built to bypass the city. The road will offer a faster commute to nearly all people who live in suburbs and now commute via Lochley’s streets to their jobs in other suburbs. Those cars constitute one-quarter of the cars now using Lochley’s streets each weekday. Thus after the bypass road has been built, weekday traffic congestion on Lochley’s streets will be substantially reduced."
+  ]
  },
- "u33-2025-02-s5-v1/6": {"opts": ["unfounded", "premature", "controversial", "verifiable", "testable", "baseless"]},
- "u36-2025-02-s6-v2/12": {"opts": ["sacrosanct", "outmoded", "overrated", "canonical", "unfashionable", "emblematic"]},
- "u44-2025-03-s2-v2/4": {"cols": [["derision", "clemency", "envy"], ["antipathy", "inconvenience", "appositeness"], ["lack of guile", "willingness to flatter", "appreciation for candor"]]},
- "u09-2025-01-16-v1/3": {"cols": [["play pivotal roles", "come off well", "suffer reputational losses"], ["tainted", "vindicated", "emulated"], ["a counterweight to", "a derivative of", "an exacerbation of"]]},
- "u15-2025-01-23-1-v1/3": {"cols": [["perceptive", "risqué", "shallow"], ["indifferent", "accomplished", "argumentative"], ["complexity", "rigor", "poverty"]]},
- "u15-2025-01-23-1-v1/7": {"opts": ["asserted", "conceded", "acknowledged", "doubted", "pondered", "questioned"]},
- "u19-2025-01-03-v1/3": {"cols": [["at a premium", "hard to fill", "taken for granted"], ["overlooked", "signaled", "prevented"], ["sense of", "devotion to", "aversion to"]]},
- "u19-2025-01-03-v1/8": {"opts": ["diagnose", "extirpate", "allay", "palliate", "ascertain", "undermine"]},
- "u22-2025-01-05-v2/3": {"cols": [["contrarian", "somber", "hidebound"], ["overshadowed by", "preferred to", "supported by"], ["predictable", "experimental", "popular"]]},
- "u22-2025-01-05-v2/4": {"cols": [["confusion at bay", "fidelity in view", "impropriety in check"], ["lucidity", "subtlety", "authenticity"], ["convoluted", "familiar", "facile"]]},
- "u22-2025-01-05-v2/12": {"opts": ["dodge", "prelude", "diversion", "pretext", "contrivance", "distraction"]},
- "u25-2025-01-07-v1/8": {"opts": ["an unknown", "an expert", "a maverick", "a nonconformist", "a dilettante", "an authority"]},
- "u25-2025-01-07-v1/9": {"opts": ["knowing", "obtrusive", "conspicuous", "antiquated", "mysterious", "secretive"]},
- "u26-2025-01-07-v2/2": {"cols": [["costs", "advantages", "intricacies"], ["divergent", "educational", "overambitious"]]},
- "u26-2025-01-07-v2/10": {"opts": ["complaisant", "contemplative", "dolorous", "lugubrious", "pulchritudinous", "obliging"]},
- "u26-2025-01-07-v2/11": {"opts": ["disconcerting", "intractable", "improbable", "imperceptible", "unnerving", "trivial"]},
- "u26-2025-01-07-v2/12": {"opts": ["discriminating", "prolix", "bombastic", "verbose", "cryptic", "inscrutable"]},
- "u31-2025-02-s3-v1/6": {"opts": ["left to", "ceded to", "ascribed to", "attributed to", "substituted for", "replaced with"]},
- "u31-2025-02-s3-v1/7": {"opts": ["splendor", "eccentricity", "diversity", "brilliance", "practicality", "popularity"]},
- "u32-2025-02-s3-v2/4": {"cols": [["aped", "shelved", "subverted"], ["disingenuous", "instructive", "narrow"], ["expected", "likely", "doomed"]]},
- "u35-2025-02-s6-v1/6": {"opts": ["misinformed about", "obsessed with", "frugal with", "preoccupied with", "stinting with", "unscrupulous about"]},
- "u39-2025-03-s1-v1/3": {"cols": [["owing to", "despite", "reflecting"], ["disarms", "attacks", "obscures"], ["extolled", "refuted", "ignored"]]},
- "u41-2025-03-s3-v1/2": {"cols": [["demise", "evolution", "cult"], ["emphasize", "advertise", "underrate"]]},
- "u42-2025-03-s3-v2/3": {"cols": [["rarely articulated", "losing favor", "not uncommon"], ["idyllic", "exotic", "salubrious"]]},
- "u44-2025-03-s2-v2/10": {"opts": ["embellishing", "venerating", "preserving", "studying", "commodifying", "exalting"]},
- "u46-2025-03-s5-v2/4": {"cols": [["restraining", "indulging", "deluding"], ["banal", "plausible", "capricious"], ["sympathize", "blunder", "dissemble"]]},
- "u48-2025-03-s4-v2/11": {"opts": ["surfeit", "wealth", "variety", "diminution", "dearth", "paucity"]},
- "u49-2025-04-s1-v1/2": {"cols": [["gregarious", "opinionated", "plainspoken"], ["fraught", "unadorned", "consistent"]]},
+ "u24-2025-01-06-v2/5": {
+  "pass": [
+   "Critical neglect of Emily Bronté’s poetry is long-standing and once resulted from an idea of Victorian poetry as essentially a male preserve. Feminist critics have challenged this understanding of Victorian poetry, largely by displacing critical approaches that required a particular subject matter or point of view and therefore undervalued women poets whose work did not conform. But feminist critics’ own assumptions about Victorian women’s poetry have also threatened to exclude Emily Bronté. Virginia Blain’s anthology of Victorian women’s poetry is representative, not eccentric, in omitting Bronté. Blain aimed to provide wide-ranging coverage of “the kinds of subjects and poetic treatments most often employed by Victorian women poets,” yet, as Emily’s sister Charlotte said, Emily’s poetry is not “at all like the poetry women generally write.”"
+  ]
+ },
+ "u38-2025-02-s4-v2/14": {
+  "pass": [
+   "Images of movement are widely identified as signifiers of the special nature of American texts, differing from the journeys recorded in Classical epic and Medieval romance by being open-ended and reflecting—by their repeated appearance in American writing about the frontier, the sea, the river, and the road—the factual mobility and ideological orientation of American culture. Many critics turning to African American fiction have seen it as an exception, however, noting stasis or at least the absence of similarly liberating movement. In advancing the contrary view that flux and ferment characterize African American literature, Robert Butler sees the motif of the journey—oftentimes a metaphorical, inward journey—as crucial to twentieth-century African American fiction."
+  ]
+ },
+ "u21-2025-01-05-v1/8": {
+  "opts": [
+   "unambitious",
+   "unconvincing",
+   "unassailable",
+   "implausible",
+   "coherent",
+   "airtight"
+  ]
+ },
+ "u22-2025-01-05-v2/10": {
+  "opts": [
+   "tolerant",
+   "dogmatic",
+   "unpredictable",
+   "rigorous",
+   "orthodox",
+   "accepting"
+  ]
+ },
+ "u25-2025-01-07-v1/7": {
+  "opts": [
+   "outlandish",
+   "nebulous",
+   "unattainable",
+   "amorphous",
+   "impracticable",
+   "complicated"
+  ]
+ },
+ "u26-2025-01-07-v2/3": {
+  "cols": [
+   [
+    "subversive",
+    "principled",
+    "collaborative"
+   ],
+   [
+    "substantiating",
+    "overturning",
+    "identifying"
+   ],
+   [
+    "authorities",
+    "skeptics",
+    "methodologies"
+   ]
+  ]
+ },
+ "u31-2025-02-s3-v1/8": {
+  "stem": [
+   "Maintaining a tolerant attitude toward pseudoscience might be considered ____, but it could be argued that such a disposition lowers our defenses against more dangerous delusions that are based on similar confusions and fallacies."
+  ],
+  "opts": [
+   "naive",
+   "benign",
+   "broad-minded",
+   "indulgent",
+   "credulous",
+   "innocuous"
+  ]
+ },
+ "u33-2025-02-s5-v1/6": {
+  "opts": [
+   "unfounded",
+   "premature",
+   "controversial",
+   "verifiable",
+   "testable",
+   "baseless"
+  ]
+ },
+ "u36-2025-02-s6-v2/12": {
+  "opts": [
+   "sacrosanct",
+   "outmoded",
+   "overrated",
+   "canonical",
+   "unfashionable",
+   "emblematic"
+  ]
+ },
+ "u44-2025-03-s2-v2/4": {
+  "cols": [
+   [
+    "derision",
+    "clemency",
+    "envy"
+   ],
+   [
+    "antipathy",
+    "inconvenience",
+    "appositeness"
+   ],
+   [
+    "lack of guile",
+    "willingness to flatter",
+    "appreciation for candor"
+   ]
+  ]
+ },
+ "u09-2025-01-16-v1/3": {
+  "cols": [
+   [
+    "play pivotal roles",
+    "come off well",
+    "suffer reputational losses"
+   ],
+   [
+    "tainted",
+    "vindicated",
+    "emulated"
+   ],
+   [
+    "a counterweight to",
+    "a derivative of",
+    "an exacerbation of"
+   ]
+  ]
+ },
+ "u15-2025-01-23-1-v1/3": {
+  "cols": [
+   [
+    "perceptive",
+    "risqué",
+    "shallow"
+   ],
+   [
+    "indifferent",
+    "accomplished",
+    "argumentative"
+   ],
+   [
+    "complexity",
+    "rigor",
+    "poverty"
+   ]
+  ]
+ },
+ "u15-2025-01-23-1-v1/7": {
+  "opts": [
+   "asserted",
+   "conceded",
+   "acknowledged",
+   "doubted",
+   "pondered",
+   "questioned"
+  ]
+ },
+ "u19-2025-01-03-v1/3": {
+  "cols": [
+   [
+    "at a premium",
+    "hard to fill",
+    "taken for granted"
+   ],
+   [
+    "overlooked",
+    "signaled",
+    "prevented"
+   ],
+   [
+    "sense of",
+    "devotion to",
+    "aversion to"
+   ]
+  ]
+ },
+ "u19-2025-01-03-v1/8": {
+  "opts": [
+   "diagnose",
+   "extirpate",
+   "allay",
+   "palliate",
+   "ascertain",
+   "undermine"
+  ]
+ },
+ "u22-2025-01-05-v2/3": {
+  "cols": [
+   [
+    "contrarian",
+    "somber",
+    "hidebound"
+   ],
+   [
+    "overshadowed by",
+    "preferred to",
+    "supported by"
+   ],
+   [
+    "predictable",
+    "experimental",
+    "popular"
+   ]
+  ]
+ },
+ "u22-2025-01-05-v2/4": {
+  "cols": [
+   [
+    "confusion at bay",
+    "fidelity in view",
+    "impropriety in check"
+   ],
+   [
+    "lucidity",
+    "subtlety",
+    "authenticity"
+   ],
+   [
+    "convoluted",
+    "familiar",
+    "facile"
+   ]
+  ]
+ },
+ "u22-2025-01-05-v2/12": {
+  "opts": [
+   "dodge",
+   "prelude",
+   "diversion",
+   "pretext",
+   "contrivance",
+   "distraction"
+  ]
+ },
+ "u25-2025-01-07-v1/8": {
+  "opts": [
+   "an unknown",
+   "an expert",
+   "a maverick",
+   "a nonconformist",
+   "a dilettante",
+   "an authority"
+  ]
+ },
+ "u25-2025-01-07-v1/9": {
+  "opts": [
+   "knowing",
+   "obtrusive",
+   "conspicuous",
+   "antiquated",
+   "mysterious",
+   "secretive"
+  ]
+ },
+ "u26-2025-01-07-v2/2": {
+  "cols": [
+   [
+    "costs",
+    "advantages",
+    "intricacies"
+   ],
+   [
+    "divergent",
+    "educational",
+    "overambitious"
+   ]
+  ]
+ },
+ "u26-2025-01-07-v2/10": {
+  "opts": [
+   "complaisant",
+   "contemplative",
+   "dolorous",
+   "lugubrious",
+   "pulchritudinous",
+   "obliging"
+  ]
+ },
+ "u26-2025-01-07-v2/11": {
+  "opts": [
+   "disconcerting",
+   "intractable",
+   "improbable",
+   "imperceptible",
+   "unnerving",
+   "trivial"
+  ]
+ },
+ "u26-2025-01-07-v2/12": {
+  "opts": [
+   "discriminating",
+   "prolix",
+   "bombastic",
+   "verbose",
+   "cryptic",
+   "inscrutable"
+  ]
+ },
+ "u31-2025-02-s3-v1/6": {
+  "opts": [
+   "left to",
+   "ceded to",
+   "ascribed to",
+   "attributed to",
+   "substituted for",
+   "replaced with"
+  ]
+ },
+ "u31-2025-02-s3-v1/7": {
+  "opts": [
+   "splendor",
+   "eccentricity",
+   "diversity",
+   "brilliance",
+   "practicality",
+   "popularity"
+  ]
+ },
+ "u32-2025-02-s3-v2/4": {
+  "cols": [
+   [
+    "aped",
+    "shelved",
+    "subverted"
+   ],
+   [
+    "disingenuous",
+    "instructive",
+    "narrow"
+   ],
+   [
+    "expected",
+    "likely",
+    "doomed"
+   ]
+  ]
+ },
+ "u35-2025-02-s6-v1/6": {
+  "opts": [
+   "misinformed about",
+   "obsessed with",
+   "frugal with",
+   "preoccupied with",
+   "stinting with",
+   "unscrupulous about"
+  ]
+ },
+ "u39-2025-03-s1-v1/3": {
+  "cols": [
+   [
+    "owing to",
+    "despite",
+    "reflecting"
+   ],
+   [
+    "disarms",
+    "attacks",
+    "obscures"
+   ],
+   [
+    "extolled",
+    "refuted",
+    "ignored"
+   ]
+  ]
+ },
+ "u41-2025-03-s3-v1/2": {
+  "cols": [
+   [
+    "demise",
+    "evolution",
+    "cult"
+   ],
+   [
+    "emphasize",
+    "advertise",
+    "underrate"
+   ]
+  ]
+ },
+ "u42-2025-03-s3-v2/3": {
+  "cols": [
+   [
+    "rarely articulated",
+    "losing favor",
+    "not uncommon"
+   ],
+   [
+    "idyllic",
+    "exotic",
+    "salubrious"
+   ]
+  ]
+ },
+ "u44-2025-03-s2-v2/10": {
+  "opts": [
+   "embellishing",
+   "venerating",
+   "preserving",
+   "studying",
+   "commodifying",
+   "exalting"
+  ]
+ },
+ "u46-2025-03-s5-v2/4": {
+  "cols": [
+   [
+    "restraining",
+    "indulging",
+    "deluding"
+   ],
+   [
+    "banal",
+    "plausible",
+    "capricious"
+   ],
+   [
+    "sympathize",
+    "blunder",
+    "dissemble"
+   ]
+  ]
+ },
+ "u48-2025-03-s4-v2/11": {
+  "opts": [
+   "surfeit",
+   "wealth",
+   "variety",
+   "diminution",
+   "dearth",
+   "paucity"
+  ]
+ },
+ "u49-2025-04-s1-v1/2": {
+  "cols": [
+   [
+    "gregarious",
+    "opinionated",
+    "plainspoken"
+   ],
+   [
+    "fraught",
+    "unadorned",
+    "consistent"
+   ]
+  ]
+ },
  "u20-2025-01-03-v2/13": {
-  "stem": ["Which of the following most logically completes the argument?"],
-  "opts": ["cities in northern Senland are notoriously inefficient at clearing residential roads of snow and ice", "people are much less likely to drive when the roads are icy than when the roads are dry", "when the roads are icy, drivers tend to drive at considerably lower speeds than they do when the roads are dry", "even when the roads are icy, most commuters in northern Senland have no choice but to commute by car", "an unusually high proportion of northern Senland’s roads are mountain roads"]
+  "stem": [
+   "Which of the following most logically completes the argument?"
+  ],
+  "opts": [
+   "cities in northern Senland are notoriously inefficient at clearing residential roads of snow and ice",
+   "people are much less likely to drive when the roads are icy than when the roads are dry",
+   "when the roads are icy, drivers tend to drive at considerably lower speeds than they do when the roads are dry",
+   "even when the roads are icy, most commuters in northern Senland have no choice but to commute by car",
+   "an unusually high proportion of northern Senland’s roads are mountain roads"
+  ]
  },
  "u38-2025-02-s4-v2/5": {
-  "stem": ["Based on information in the passage, which of the following best describes the “subsequent collisions”?"],
-  "opts": ["They must be considered highly speculative because evidence that collisions of this kind occur at all is sparse.", "They are hypothetical events that provide a way to account for certain findings from radar observations.", "They most likely occurred immediately following a near collision between Saturn and a satellite.", "They are unlikely to have occurred because the tidal forces that would be necessary to produce them were probably not strong enough to do so.", "They could have been responsible for some of the material in Saturn’s rings but cannot account for the observed presence of other kinds of material in the rings."]
+  "stem": [
+   "Based on information in the passage, which of the following best describes the “subsequent collisions”?"
+  ],
+  "opts": [
+   "They must be considered highly speculative because evidence that collisions of this kind occur at all is sparse.",
+   "They are hypothetical events that provide a way to account for certain findings from radar observations.",
+   "They most likely occurred immediately following a near collision between Saturn and a satellite.",
+   "They are unlikely to have occurred because the tidal forces that would be necessary to produce them were probably not strong enough to do so.",
+   "They could have been responsible for some of the material in Saturn’s rings but cannot account for the observed presence of other kinds of material in the rings."
+  ]
  },
  "u46-2025-03-s5-v2/7": {
-  "stem": ["According to the passage, which of the following describes the treatment of Greco-Roman paganism and Germanic paganism by Latin Christianity?"],
-  "opts": ["Disdainful rejection of many practices of both", "Careful distinction between the traditions of the two", "Acceptance of the literary traditions of both", "Adaptation of classical literary forms and disinterest in Germanic literary traditions", "Translation of classical literature into an artistic medium inherited from Germanic paganism"]
+  "stem": [
+   "According to the passage, which of the following describes the treatment of Greco-Roman paganism and Germanic paganism by Latin Christianity?"
+  ],
+  "opts": [
+   "Disdainful rejection of many practices of both",
+   "Careful distinction between the traditions of the two",
+   "Acceptance of the literary traditions of both",
+   "Adaptation of classical literary forms and disinterest in Germanic literary traditions",
+   "Translation of classical literature into an artistic medium inherited from Germanic paganism"
+  ]
  },
  "u48-2025-03-s4-v2/14": {
-  "stem": ["Which of the following best describes the function of the highlighted sentence?"],
-  "opts": ["It states a viewpoint about Franklin with which the author disagrees.", "It introduces new evidence about Franklin’s role in the collaborative process.", "It explains Franklin’s reputation in terms of a broad scholarly phenomenon.", "It emphasizes the extent to which Franklin relied on others in his workshop.", "It describes Franklin’s approach to writing scientific results."]
+  "stem": [
+   "Which of the following best describes the function of the highlighted sentence?"
+  ],
+  "opts": [
+   "It states a viewpoint about Franklin with which the author disagrees.",
+   "It introduces new evidence about Franklin’s role in the collaborative process.",
+   "It explains Franklin’s reputation in terms of a broad scholarly phenomenon.",
+   "It emphasizes the extent to which Franklin relied on others in his workshop.",
+   "It describes Franklin’s approach to writing scientific results."
+  ]
  },
  "u14-2025-01-22-v2/14": {
-  "stem": ["According to the passage, the occurrence of social learning can be established by"],
-  "opts": ["identifying the presence of a shared variation in behavior", "establishing whether a learned behavior is complex or simple", "examining whether a behavioral difference is maintained over time", "eliminating alternative explanations for a shared behavioral pattern", "comparing behavior learned through teaching with that learned through imitation"]
+  "stem": [
+   "According to the passage, the occurrence of social learning can be established by"
+  ],
+  "opts": [
+   "identifying the presence of a shared variation in behavior",
+   "establishing whether a learned behavior is complex or simple",
+   "examining whether a behavioral difference is maintained over time",
+   "eliminating alternative explanations for a shared behavioral pattern",
+   "comparing behavior learned through teaching with that learned through imitation"
+  ]
  },
  "u33-2025-02-s5-v1/1": {
-  "opts": ["vexation regarding", "addiction to", "aversion to", "wariness of", "demonization of"]
+  "opts": [
+   "vexation regarding",
+   "addiction to",
+   "aversion to",
+   "wariness of",
+   "demonization of"
+  ]
  },
  "u02-2025-01-14-v2/3": {
-  "stem": ["Once photographs depicting important family events such as vacations or weddings are assembled and presented in a family album, the collection of photographs is treated as (i) ____ record of events; but what we (ii) ____ to (iii) ____ is the active selection process that led to the making of the album."],
-  "cols": [["a precious", "a satirical", "an objective"], ["tend", "hesitate", "aspire"], ["overlook", "replicate", "transform"]]
+  "stem": [
+   "Once photographs depicting important family events such as vacations or weddings are assembled and presented in a family album, the collection of photographs is treated as (i) ____ record of events; but what we (ii) ____ to (iii) ____ is the active selection process that led to the making of the album."
+  ],
+  "cols": [
+   [
+    "a precious",
+    "a satirical",
+    "an objective"
+   ],
+   [
+    "tend",
+    "hesitate",
+    "aspire"
+   ],
+   [
+    "overlook",
+    "replicate",
+    "transform"
+   ]
+  ]
  },
  "u06-2025-01-11-v2/4": {
-  "cols": [["felicities", "ineptitudes", "curiosities"], ["thoroughgoing", "innocuous", "delightful"], ["profound", "incompetent", "indispensable"]]
+  "cols": [
+   [
+    "felicities",
+    "ineptitudes",
+    "curiosities"
+   ],
+   [
+    "thoroughgoing",
+    "innocuous",
+    "delightful"
+   ],
+   [
+    "profound",
+    "incompetent",
+    "indispensable"
+   ]
+  ]
  },
- "u06-2025-01-11-v2/10": {"stem": ["Individuals interested in longevity have sought to fine-tune their bodies with all kinds of ____ diets: only raw foods; only plants; only the flesh, fruit, and nuts that prehistoric humans would have hunted and foraged."]},
+ "u06-2025-01-11-v2/10": {
+  "stem": [
+   "Individuals interested in longevity have sought to fine-tune their bodies with all kinds of ____ diets: only raw foods; only plants; only the flesh, fruit, and nuts that prehistoric humans would have hunted and foraged."
+  ]
+ },
  "u08-2025-01-15-v2/8": {
-  "stem": ["According to the passage, the boxes of public opera houses served to"],
-  "opts": ["create privacy for their occupants", "frame the opera’s action for the audience", "advertise the presence of their occupants"]
+  "stem": [
+   "According to the passage, the boxes of public opera houses served to"
+  ],
+  "opts": [
+   "create privacy for their occupants",
+   "frame the opera’s action for the audience",
+   "advertise the presence of their occupants"
+  ]
  },
- "u05-2025-01-11-v1/9": {"stem": ["The reader does well to approach claims in this autobiography with a certain amount of friendly skepticism, but the overall impression it conveys is that veracity wins out over ____." ]},
- "u12-2025-01-02-v2/10": {"stem": ["In a field of egotists, Bloomfield is ____, often praising her competitors and punctuating her correspondence with self-deprecating remarks."]},
- "u45-2025-03-s5-v1/9": {"stem": ["Because it has usually been impossible to eradicate exotic species once they have become established, it is ____ to minimize introductions of species that have substantial probabilities of unwanted impacts."]},
- "u49-2025-04-s1-v1/6": {"stem": ["Researchers’ use of charcoal particles in soil as a marker for human arrival in prehistoric North America is ____: fire was a part of the continent’s natural ecology long before humans appeared."]},
- "u50-2025-04-s1-v2/10": {"stem": ["Because the organization often trumpeted itself as a forum for ____ discussion, visitors were startled by the frequently heated tone of its recent debates."]},
- "u50-2025-04-s1-v2/12": {"stem": ["A priori mathematics, according to Galileo, does not ____ the need for observation, but mathematics does allow us to deduce unobservable properties and thus to penetrate further into the structure of nature than observation does."]},
+ "u05-2025-01-11-v1/9": {
+  "stem": [
+   "The reader does well to approach claims in this autobiography with a certain amount of friendly skepticism, but the overall impression it conveys is that veracity wins out over ____."
+  ]
+ },
+ "u12-2025-01-02-v2/10": {
+  "stem": [
+   "In a field of egotists, Bloomfield is ____, often praising her competitors and punctuating her correspondence with self-deprecating remarks."
+  ]
+ },
+ "u45-2025-03-s5-v1/9": {
+  "stem": [
+   "Because it has usually been impossible to eradicate exotic species once they have become established, it is ____ to minimize introductions of species that have substantial probabilities of unwanted impacts."
+  ]
+ },
+ "u49-2025-04-s1-v1/6": {
+  "stem": [
+   "Researchers’ use of charcoal particles in soil as a marker for human arrival in prehistoric North America is ____: fire was a part of the continent’s natural ecology long before humans appeared."
+  ]
+ },
+ "u50-2025-04-s1-v2/10": {
+  "stem": [
+   "Because the organization often trumpeted itself as a forum for ____ discussion, visitors were startled by the frequently heated tone of its recent debates."
+  ]
+ },
+ "u50-2025-04-s1-v2/12": {
+  "stem": [
+   "A priori mathematics, according to Galileo, does not ____ the need for observation, but mathematics does allow us to deduce unobservable properties and thus to penetrate further into the structure of nature than observation does."
+  ]
+ },
  "u08-2025-01-15-v2/2": {
-  "stem": ["The (i) ____ museums worldwide makes for (ii) ____: by some estimates, 75 percent of species that are “discovered” each year during field expeditions are already part of a museum collection somewhere."],
-  "cols": [["diversity of", "rivalry among", "inattention to"], ["inadequate efforts", "unfounded claims", "lost opportunities"]]
+  "stem": [
+   "The (i) ____ museums worldwide makes for (ii) ____: by some estimates, 75 percent of species that are “discovered” each year during field expeditions are already part of a museum collection somewhere."
+  ],
+  "cols": [
+   [
+    "diversity of",
+    "rivalry among",
+    "inattention to"
+   ],
+   [
+    "inadequate efforts",
+    "unfounded claims",
+    "lost opportunities"
+   ]
+  ]
  },
  "u08-2025-01-15-v2/12": {
-  "stem": ["The hypothesis that the moon formed from a planetary impact could account for the ____ of water and other volatiles on the Moon since such an impact would have caused volatiles to escape into space."],
-  "opts": ["condensation", "paucity", "nullity", "ephemerality", "dearth", "occurrence"]
+  "stem": [
+   "The hypothesis that the moon formed from a planetary impact could account for the ____ of water and other volatiles on the Moon since such an impact would have caused volatiles to escape into space."
+  ],
+  "opts": [
+   "condensation",
+   "paucity",
+   "nullity",
+   "ephemerality",
+   "dearth",
+   "occurrence"
+  ]
  },
  "u12-2025-01-02-v2/4": {
-  "stem": ["His new role gives the normally clownish actor a chance to impress audiences with his (i) ____. He is among the most uninhibited comic performers around, but here he buttons his lip and stares straight ahead. Perhaps without quite knowing it, the audience waits for a wink, a hint that some of the (ii) ____ spirit that animated his previous movies might be lurking inside the (iii) ____ manner he presents in this film."],
-  "cols": [["raillery", "effusiveness", "forbearance"], ["madcap", "lugubrious", "edifying"], ["facetious", "reserved", "beguiling"]]
+  "stem": [
+   "His new role gives the normally clownish actor a chance to impress audiences with his (i) ____. He is among the most uninhibited comic performers around, but here he buttons his lip and stares straight ahead. Perhaps without quite knowing it, the audience waits for a wink, a hint that some of the (ii) ____ spirit that animated his previous movies might be lurking inside the (iii) ____ manner he presents in this film."
+  ],
+  "cols": [
+   [
+    "raillery",
+    "effusiveness",
+    "forbearance"
+   ],
+   [
+    "madcap",
+    "lugubrious",
+    "edifying"
+   ],
+   [
+    "facetious",
+    "reserved",
+    "beguiling"
+   ]
+  ]
  },
  "u31-2025-02-s3-v1/9": {
-  "stem": ["Dogs’ intake of olfactory information is less ____ than that of humans because dogs exhale through the side slits of their nostrils, keeping a continuous flow of inhaled air in their snouts for smelling."],
-  "opts": ["strenuous", "mediated", "punctuated", "indirect", "deliberate", "intermittent"]
+  "stem": [
+   "Dogs’ intake of olfactory information is less ____ than that of humans because dogs exhale through the side slits of their nostrils, keeping a continuous flow of inhaled air in their snouts for smelling."
+  ],
+  "opts": [
+   "strenuous",
+   "mediated",
+   "punctuated",
+   "indirect",
+   "deliberate",
+   "intermittent"
+  ]
  },
  "u42-2025-03-s3-v2/4": {
-  "stem": ["Computers triumphed at chess not by (i) ____ human thought, but by playing like machines. The analogy with flight is (ii) ____: as long as people tried to fly by imitating birds, they were doomed to failure; once they (iii) ____ the paradigm of the familiar, however, they were soon flying much faster than birds."],
-  "cols": [["disregarding", "validating", "aping"], ["deceptive", "unnecessary", "instructive"], ["discovered", "escaped", "understood"]]
+  "stem": [
+   "Computers triumphed at chess not by (i) ____ human thought, but by playing like machines. The analogy with flight is (ii) ____: as long as people tried to fly by imitating birds, they were doomed to failure; once they (iii) ____ the paradigm of the familiar, however, they were soon flying much faster than birds."
+  ],
+  "cols": [
+   [
+    "disregarding",
+    "validating",
+    "aping"
+   ],
+   [
+    "deceptive",
+    "unnecessary",
+    "instructive"
+   ],
+   [
+    "discovered",
+    "escaped",
+    "understood"
+   ]
+  ]
  },
  "u50-2025-04-s1-v2/3": {
-  "stem": ["Until recently superhero comics were seen as irredeemably (i) ____; they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____."],
-  "cols": [["puerile", "innocuous", "facetious"], ["lowbrow", "shrewd", "realistic"], ["heartened", "emulated", "abashed"]]
+  "stem": [
+   "Until recently superhero comics were seen as irredeemably (i) ____; they were widely disparaged for being so (ii) ____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii) ____."
+  ],
+  "cols": [
+   [
+    "puerile",
+    "innocuous",
+    "facetious"
+   ],
+   [
+    "lowbrow",
+    "shrewd",
+    "realistic"
+   ],
+   [
+    "heartened",
+    "emulated",
+    "abashed"
+   ]
+  ]
  },
  "u18-2025-01-24-v2/4": {
-  "stem": ["Governments tend to be (i) ____ the Internet. Most are truly (ii) ____ its phenomenal growth and the opportunities it offers to both business and education. They also sense that any country attempting to hold it back risks looking foolish and technophobic. (iii) ____, they find the Internet’s libertarian culture and contempt for national borders subversive and frankly terrifying."],
-  "cols": [["ambivalent about", "overly optimistic about", "indifferent to"], ["unaware of", "anxious about", "excited by"], ["Moreover", "At the same time", "Consequently"]]
+  "stem": [
+   "Governments tend to be (i) ____ the Internet. Most are truly (ii) ____ its phenomenal growth and the opportunities it offers to both business and education. They also sense that any country attempting to hold it back risks looking foolish and technophobic. (iii) ____, they find the Internet’s libertarian culture and contempt for national borders subversive and frankly terrifying."
+  ],
+  "cols": [
+   [
+    "ambivalent about",
+    "overly optimistic about",
+    "indifferent to"
+   ],
+   [
+    "unaware of",
+    "anxious about",
+    "excited by"
+   ],
+   [
+    "Moreover",
+    "At the same time",
+    "Consequently"
+   ]
+  ]
  },
  "u21-2025-01-05-v1/2": {
-  "stem": ["Many of her followers remain (i) ____ to her, and even those who have rejected her leadership are unconvinced of the (ii) ____ of replacing her during the current turmoil."],
-  "cols": [["opposed", "loyal", "cool"], ["disadvantage", "wisdom", "harm"]]
+  "stem": [
+   "Many of her followers remain (i) ____ to her, and even those who have rejected her leadership are unconvinced of the (ii) ____ of replacing her during the current turmoil."
+  ],
+  "cols": [
+   [
+    "opposed",
+    "loyal",
+    "cool"
+   ],
+   [
+    "disadvantage",
+    "wisdom",
+    "harm"
+   ]
+  ]
  },
  "u31-2025-02-s3-v1/2": {
-  "stem": ["When the columnist wrote about controversial issues, her own position was not always (i) ____ her analysis of the arguments being put forth on either side. If she (ii) ____ the reasoning of proponents of one side, that did not mean that she rejected their position."],
-  "cols": [["immune to", "inferable from", "influenced by"], ["favored", "summarized", "challenged"]]
+  "stem": [
+   "When the columnist wrote about controversial issues, her own position was not always (i) ____ her analysis of the arguments being put forth on either side. If she (ii) ____ the reasoning of proponents of one side, that did not mean that she rejected their position."
+  ],
+  "cols": [
+   [
+    "immune to",
+    "inferable from",
+    "influenced by"
+   ],
+   [
+    "favored",
+    "summarized",
+    "challenged"
+   ]
+  ]
  },
  "u31-2025-02-s3-v1/3": {
-  "stem": ["Poets in the United States usually speak with more (i) ____ for authentic experience than for the imagination. They cultivate strategies to make themselves sound (ii) ____, as if poems were eyewitness accounts and not (iii) ____."],
-  "cols": [["reverence", "disrespect", "ineloquence"], ["visionary", "matter-of-fact", "uninvolved"], ["accurate reportage", "artistic creations", "vivid memories"]]
+  "stem": [
+   "Poets in the United States usually speak with more (i) ____ for authentic experience than for the imagination. They cultivate strategies to make themselves sound (ii) ____, as if poems were eyewitness accounts and not (iii) ____."
+  ],
+  "cols": [
+   [
+    "reverence",
+    "disrespect",
+    "ineloquence"
+   ],
+   [
+    "visionary",
+    "matter-of-fact",
+    "uninvolved"
+   ],
+   [
+    "accurate reportage",
+    "artistic creations",
+    "vivid memories"
+   ]
+  ]
  },
  "u37-2025-02-s4-v1/2": {
-  "stem": ["Though she had some exposure to great art and high culture, it must be said that the ultra-athletic Marion Carstairs remained throughout her life primarily (i) ____ mental and artistic pursuits. She was by nature (ii) ____."],
-  "cols": [["a product of", "indifferent to", "obsessed with"], ["neither bookish nor cerebral", "a model of delicacy and refinement", "both didactic and argumentative"]]
+  "stem": [
+   "Though she had some exposure to great art and high culture, it must be said that the ultra-athletic Marion Carstairs remained throughout her life primarily (i) ____ mental and artistic pursuits. She was by nature (ii) ____."
+  ],
+  "cols": [
+   [
+    "a product of",
+    "indifferent to",
+    "obsessed with"
+   ],
+   [
+    "neither bookish nor cerebral",
+    "a model of delicacy and refinement",
+    "both didactic and argumentative"
+   ]
+  ]
  },
  "u40-2025-03-s1-v2/3": {
-  "stem": ["Thorough cleanings or restorations that try to return much-loved old master paintings to their original condition (i) ____. Quite apart from a reasonable wariness of paint loss, sheer loyalty to the (ii) ____ look of a work, dirt and all, prejudices many. There are also academics who (iii) ____ the removal of retouches and even of overpaintings, holding that even though they may date from years after the original composition, they embody history in themselves."],
-  "cols": [["generally take years to complete", "are increasingly science based", "invariably face opposition"], ["accustomed", "refined", "pristine"], ["argue for", "vacillate about", "militate against"]]
+  "stem": [
+   "Thorough cleanings or restorations that try to return much-loved old master paintings to their original condition (i) ____. Quite apart from a reasonable wariness of paint loss, sheer loyalty to the (ii) ____ look of a work, dirt and all, prejudices many. There are also academics who (iii) ____ the removal of retouches and even of overpaintings, holding that even though they may date from years after the original composition, they embody history in themselves."
+  ],
+  "cols": [
+   [
+    "generally take years to complete",
+    "are increasingly science based",
+    "invariably face opposition"
+   ],
+   [
+    "accustomed",
+    "refined",
+    "pristine"
+   ],
+   [
+    "argue for",
+    "vacillate about",
+    "militate against"
+   ]
+  ]
+ },
+ "u07-2025-01-15-v1/10": {
+  "pass": [
+   "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
+  ],
+  "stem": [
+   "According to the passage, a mixture of liquid ethane and liquid methane on Titan could account for which of the following?"
+  ],
+  "opts": [
+   "Differences in the humidity at different levels of Titan's atmosphere",
+   "An atmospheric humidity just above Titan's surface that is lower than would be expected above a pure methane ocean",
+   "The rate at which liquid methane accumulates on Titan's surface",
+   "The rate at which methane in Titan's atmosphere is converted into heavier hydrocarbons",
+   "The retention of a large amount of methane in Titan's atmosphere through sources of supply unrelated to volcanic eruptions"
+  ]
+ },
+ "u07-2025-01-15-v1/11": {
+  "stem": [
+   "The passage suggests that if the explanation suggested by Lunine is correct, then which of the following would be true?"
+  ],
+  "opts": [
+   "Titan would have an ocean on its surface that would contain more ethane in the future than it does at present.",
+   "Something other than volcanic eruptions would account for the amount of methane in Titan’s atmosphere.",
+   "The rate at which methane is supplied to Titan’s surface would be much slower than is generally believed.",
+   "Titan’s surface temperature would be expected to fall at a slow but steady rate.",
+   "The atmosphere near Titan’s surface would have a humidity similar to that of the atmosphere at a greater distance from the surface."
+  ],
+  "pass": [
+   "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
+  ]
+ },
+ "u07-2025-01-15-v1/12": {
+  "stem": [
+   "The author of the passage introduces Lunine’s explanation most likely in order to"
+  ],
+  "opts": [
+   "point out that the proposition that a liquid ocean exists on Titan’s surface is inconsistent with knowledge of how ultraviolet light and methane interact",
+   "demonstrate that the large amount of methane in Titan’s atmosphere cannot be explained if current estimates of Titan’s surface temperature are correct",
+   "show why a precisely calibrated supply rate of methane from volcanic eruptions is the most plausible explanation for the large amount of methane in Titan’s atmosphere",
+   "explain how volcanic eruptions could in fact be the source of the large amount of methane in Titan’s atmosphere",
+   "explain why the level of humidity produced by a mixture of ethane and methane is not dependent on Titan’s surface temperature"
+  ],
+  "pass": [
+   "The large amount of methane in the atmosphere of Saturn’s giant moon Titan puzzles astronomers. Because methane is converted into heavier hydrocarbons by the Sun’s ultraviolet light, all the methane in Titan’s atmosphere should, at the present conversion rate, have disappeared in a few million years, long ago in Titan’s 4.5 billion years of existence. Something must be continuously feeding methane into Titan’s atmosphere. One possibility is that the methane comes from volcanic eruptions, but unless the supply rate were somehow precisely calibrated at a moderate level, either the methane would have run out by now or excess methane would have started to accumulate as a liquid ocean on the surface. However, data indicate that the atmosphere just above the surface is not humid, as would be expected above a pure methane ocean. A possible explanation was suggested by Lunine: when sunlight breaks down methane, the main product is ethane. Lunine noted that at Titan’s surface temperature, ethane is also a liquid. A liquid mixture of methane and ethane would produce low humidity. Such an ocean would slowly become richer in ethane while keeping the atmosphere supplied with methane."
+  ]
+ },
+ "u08-2025-01-15-v2/13": {
+  "pass": [
+   "Some recently discovered Hittite tablets corroborate many of the descriptions of ancient life that appear in the lliad and even list Greek cities that reportedly sent ships to Troy. What this find entails is that the Iliad is not simply creative literature, as is commonly believed, and hence not a matter for literary discussion alone. Rather, it is also history and should be examined by historical science."
+  ],
+  "stem": [
+   "The argument given relies on which of the following as an assumption?"
+  ],
+  "opts": [
+   "The cities and events that were mentioned in the Iliad but not in the tablets are fictitious.",
+   "The Hittite tablets and the Iliad are not derived from a common source that had no basis in historical fact.",
+   "Before the discovery of the tablets, historians had never examined the Iliad.",
+   "Purported works of creative literature should be examined by historians to find out whether they record historical facts.",
+   "A work that does not contain historical facts is a matter for literary discussion."
+  ]
+ },
+ "u11-2025-01-02-v1/4": {
+  "pass": [
+   "It’s hard to envision jazz flourishing without Thomas Edison’s roughly contemporaneous invention of sound recording technology, which enabled the preservation and dissemination of the genre’s hallmark musical improvisations for the first time in history. But the same technology also significantly altered jazz’s evolution. Before the rise of jazz, African American composers worked extensively with more complex forms. Most of Scott Joplin' 5 ragtime pieces included four sections, each with a distinctive melody and chords, and many early jazz musicians continued in this vein. But early recordings, which limited songs to three minutes, could rarely accommodate such structures and still leave time for improvised solos. VVith a few exceptions, such as Duke Ellington, most jazz musicians embraced simpler tunes once they began recording their work."
+  ],
+  "stem": [
+   "The function of the highlighted sentence is primarily to"
+  ],
+  "opts": [
+   "identify a common criticism of early recording technology",
+   "suggest a way in which early recording technology influenced the development of jazz",
+   "explain why early jazz recordings were not especially popular with the public",
+   "point to a difficulty in early recording technology that Edison struggled to overcome",
+   "explain why musicians such as Ellington were slow to embrace recording technology"
+  ]
+ },
+ "u12-2025-01-02-v2/5": {
+  "pass": [
+   "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
+  ],
+  "stem": [
+   "The passage is primarily concerned with"
+  ],
+  "opts": [
+   "resolving a dispute",
+   "advocating a course of action",
+   "tracing the evolution of a practice",
+   "citing competing views of an issue",
+   "chronicling a series of events"
+  ]
+ },
+ "u22-2025-01-05-v2/7": {
+  "pass": [
+   "The first phase of English literature can be described as ending with the Protestant Reformation, which radically changed English culture. Though the literature produced before the Reformation varied markedly, a consistency is often apparent: it was grounded in the Latin Christianity that dominated Western Europe from the early Middle Ages to the sixteenth century. The Christian Church, however, had taken form in the midst of the powerful pagan cultures of ancient Greece and Rome, and the later Roman and Irish missionaries to England planted the Church in the midst of still another pagan culture, that of the ancient Germanic peoples who inhabited England. Oddly enough, the new religion scorned neither the literary tradition of Greco-Roman paganism nor that of Germanic paganism. Aldhelm, the first English poet who wrote in Latin, and Caedmon, the first to use English, were contemporaries, and each sang the praises of the Christian God in an artistic medium inherited from paganism."
+  ],
+  "stem": [
+   "The main idea of the passage is that"
+  ],
+  "opts": [
+   "pre-Reformation literature in England upheld the tenets of Latin Christianity",
+   "English literature before the Protestant Reformation was greatly influenced by pagan cultures",
+   "religious reform obscured the traces of paganism in English culture after the sixteenth century",
+   "Western culture has been strongly influenced by Greco-Roman and Germanic paganism",
+   "the works of the first English poets, Aldhelm and Caedmon, demonstrate the openness of early English culture to a variety of influences"
+  ]
+ },
+ "u22-2025-01-05-v2/8": {
+  "pass": [
+   "The first phase of English literature can be described as ending with the Protestant Reformation, which radically changed English culture. Though the literature produced before the Reformation varied markedly, a consistency is often apparent: it was grounded in the Latin Christianity that dominated Western Europe from the early Middle Ages to the sixteenth century. The Christian Church, however, had taken form in the midst of the powerful pagan cultures of ancient Greece and Rome, and the later Roman and Irish missionaries to England planted the Church in the midst of still another pagan culture, that of the ancient Germanic peoples who inhabited England. Oddly enough, the new religion scorned neither the literary tradition of Greco-Roman paganism nor that of Germanic paganism. Aldhelm, the first English poet who wrote in Latin, and Caedmon, the first to use English, were contemporaries, and each sang the praises of the Christian God in an artistic medium inherited from paganism."
+  ],
+  "stem": [
+   "It can be inferred from the passage that the earliest English poets wrote poems that made use of"
+  ],
+  "opts": [
+   "literary traditions established by earlier and different cultures",
+   "religious doctrines formulated by pagan cultures",
+   "literary themes popular in Germanic cultures",
+   "iconoclastic ideas of the Protestant Reformation",
+   "documents from the early Middle Ages intended to subvert paganism"
+  ]
+ },
+ "u22-2025-01-05-v2/9": {
+  "pass": [
+   "The first phase of English literature can be described as ending with the Protestant Reformation, which radically changed English culture. Though the literature produced before the Reformation varied markedly, a consistency is often apparent: it was grounded in the Latin Christianity that dominated Western Europe from the early Middle Ages to the sixteenth century. The Christian Church, however, had taken form in the midst of the powerful pagan cultures of ancient Greece and Rome, and the later Roman and Irish missionaries to England planted the Church in the midst of still another pagan culture, that of the ancient Germanic peoples who inhabited England. Oddly enough, the new religion scorned neither the literary tradition of Greco-Roman paganism nor that of Germanic paganism. Aldhelm, the first English poet who wrote in Latin, and Caedmon, the first to use English, were contemporaries, and each sang the praises of the Christian God in an artistic medium inherited from paganism."
+  ],
+  "stem": [
+   "It can be inferred that the author of the passage considers the relationship between Christianity and paganism in England before the Reformation to have been"
+  ],
+  "opts": [
+   "a reciprocally productive one",
+   "a marginally interdependent one",
+   "a mutually proselytizing one",
+   "an unexpected one",
+   "an appropriate one"
+  ]
+ },
+ "u22-2025-01-05-v2/14": {
+  "pass": [
+   "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
+  ],
+  "stem": [
+   "The passage is primarily concerned with"
+  ],
+  "opts": [
+   "resolving a dispute",
+   "advocating a course of action",
+   "CD tracing the evolution of a practice",
+   "citing competing views of an issue",
+   "chronicling a series of events"
+  ]
+ },
+ "u22-2025-01-05-v2/15": {
+  "pass": [
+   "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
+  ],
+  "stem": [
+   "In the context of the passage, the highlighted sentence serves to"
+  ],
+  "opts": [
+   "qualify a point made in the preceding sentence",
+   "correct an erroneous assumption",
+   "provide evidence in support of a perception cited in the opening sentence",
+   "provide a rationale for the view expressed in the following sentence",
+   "establish the popularity of a point of view"
+  ]
+ },
+ "u25-2025-01-07-v1/12": {
+  "pass": [
+   "As it was published in 1935, Mules and Men, Zora Neale Hurston’s landmark collection of folktales, may not have been the book that its author first had in mind. In this anthropological study, Hurston describes in detail the people who tell the stories, often even inserting herself into the storytelling scene. Evidently, however, Hurston had prepared another version, a manuscript that was recently discovered and published after having been forgotten since 1929. This version differs from Mules and Men in that it simply records stories, with no descriptive or interpretive information. While we cannot know for certain why Hurston’s original manuscript went unpublished during her lifetime, it may have been because publishers wanted something more than a transcription of tales. Contemporary novelist and critic John Edgar Wideman has described Black literature as the history of a writing that sought to “escape its frame,” in other words, as the effort of Black writers to present the stories of Black people without having to have a mediating voice to explain the tales to a non-Black audience. In this, Hurston may have been ahead of her time."
+  ],
+  "stem": [
+   "Replacement of the word \"present\" with which of the following results in the least change in meaning for the passage?"
+  ],
+  "opts": [
+   "hand over",
+   "donate",
+   "offer",
+   "propose",
+   "submit"
+  ]
+ },
+ "u31-2025-02-s3-v1/10": {
+  "pass": [
+   "Nineteenth-century historian Jacob Burckhardt’s remarkable assertion that “women stood on a footing of perfect equality with men” in sixteenth-century Italy resulted from his close identification with the early humanists—a small, elite group in Renaissance Italy. Ironically, as Margaret King has shown, humanist texts actually reflect inequalities between men and women; one example is the programs of study recommended for girls. A pedagogic imperative like Leonardo Bruni’s— that women should study the liberal arts as men did with the exception of rhetoric, which “lies wholly outside the ____ province of women” —went unnoticed by Burckhardt because he shared the humanist assumption that women’s province was the private sphere rather than the public sphere. The relegation of women to a “private” sphere was a complex historical phenomenon that should be analyzed in light of other social and economic changes occurring during the Renaissance. Historians desirous of understanding women’s experience cannot view the period, as Burckhardt did, through the lens provided by the humanists."
+  ],
+  "stem": [
+   "It can be inferred from the passage that Leonardo Bruni most likely believed which of the following?"
+  ],
+  "opts": [
+   "The private sphere is superior to the public sphere.",
+   "Formal education was unnecessary for women in Renaissance Italy.",
+   "Rhetoric is useful primarily in the public sphere rather than in the private sphere.",
+   "Women in Renaissance Italy had less desire to study rhetoric than did men.",
+   "Most liberal arts are of little utility in the public sphere."
+  ]
+ },
+ "u32-2025-02-s3-v2/5": {
+  "pass": [
+   "Since the 1970s, there has been a movement in African literary studies toqard the recognition of national literatures rn newly independent African states, such as Cameroon, Senegal, and Benin. But while in some of these national literatures there has undoubtedly emerged a sense of corporate identity, often marked by clear thematic and formal progressions, it remains an incunieevertibe fact that the European languages tn which these literatures are expressed have only an official acceptance: they are neither indigenous to the cultures on which they have been imposed, nor are they national in any real sense of the word. This must limit the claims of any of these literatures to national significance, however abundant the corpus or coherent the internal configurations."
+  ],
+  "stem": [
+   "The passage suggests that some scholars of African literary studies"
+  ],
+  "opts": [
+   "celebrate African authors for their fluency in more than one language",
+   "believe that a literature can have national status even when it comprises a small number of works",
+   "view thematic unity as an indispensable attribute of literatures that are justifiably defined as ‘national’",
+   "claim that African countries are too culturally diverse to have national literatures",
+   "define several African literatures as ‘national’ even though the works are written in non-indigenous languages"
+  ]
+ },
+ "u32-2025-02-s3-v2/9": {
+  "pass": [
+   "The post-1850 economic boom in the United States had its greatest impact on eastern mill towns, such as Lowell, Massachusetts. Formerly peaceful villages became bustling towns whose factories rose to dominate their skylines. Their populations sometimes tripled in a decade, forcing propertyless workers into overcrowded, dilapidated housing. Their economies came under the domination of industrialists who competed unfairly with one another and were contemptuous of the old ways. These industrialists had economic power and the social and political power that accompanied it; town politicians catered to their interests. Other property owners, especially small-business entrepreneurs and professionals, identified with them and applauded their successes. The factory workers inevitably found themselves alienated from property owners and helpless before their employers. Thus, economic class, social status, and power were inextricably intertwined; control over property and machinery was readily transformed into complete authority."
+  ],
+  "stem": [
+   "In the context in which it appears, “dominate” most nearly means"
+  ],
+  "opts": [
+   "dictate",
+   "tyrannize",
+   "control",
+   "command",
+   "oversee"
+  ]
+ },
+ "u32-2025-02-s3-v2/14": {
+  "pass": [
+   "Scientists have long debated the exact timing of the lunar cataclysm, a period approximately 4 billion years ago when Earth and the Moon were pummeled with asteroids. A clue to this puzzle may come from spherules, millimeter-sized droplets of molten rock formed after an asteroid collides explosively with a planet. Upon impact, the asteroid vaporizes both itself and the target rock, producing a vapor plume that condenses into spherules. These form a layer preserved in rock, whose age can be estimated using radiometric dating. Scientists know of fourteen of these spherule ____ layers scattered across Earth, but none dates to the theorized lunar cataclysm time period. Four layers, however, are from between 3.47 and 3.24 billion years ago, indicating perhaps a slow decline in collisions."
+  ],
+  "stem": [
+   "The primary purpose of the passage is to"
+  ],
+  "opts": [
+   "challenge a basic assumption underlying a theory",
+   "analyze a flaw in a novel approach to a problem",
+   "describe different processes that could have produced the same phenomenon",
+   "explain how a class of data might be useful for answering a question",
+   "outline a theory that may reconcile conflicting interpretations of a phenomenon"
+  ]
+ },
+ "u34-2025-02-s5-v2/15": {
+  "pass": [
+   "Mark Twain relished the huge cutthroat trout fished from Lake Tahoe but reported them uncommonly difficult to catch. Tahoe’s extraordinary clarity may be one reason: Twain thought it an advantage that he could see the trout but did not realize that they could see him. Light bends when it enters water, rendering floating objects outside a given circle invisible from underwater. The radius of such a circle, known as Snell’s Window, expands with the relative depth of the viewer’s position. The Tahoe cutthroats lived very deep and could have seen Twain’s boat lonq before it came to rest overhead. Moreover, the eyes of trout continue to grow along with their overall body size, and larger eyes, having more cones, provide sharper vision."
+  ],
+  "stem": [
+   "The passage suggests which of the following about Snell’s Window?"
+  ],
+  "opts": [
+   "It is smaller for viewers in shallow water.",
+   "Its radius is affected by the amount of light entering the water.",
+   "Its size is not correlated with the size of a viewer’s eyes."
+  ]
+ },
+ "u39-2025-03-s1-v1/11": {
+  "pass": [
+   "Although American jazz musician John Coltrane reportedly wrote other poems. the fact that to date only “A Love Supreme” has been made available to the public assures its literary significance: cast in relief as an accompaniment to his best-selling and most celebrated recording, the poem represents the sole authorized and generally accessible discursive component of what would otherwise be a wholly abstract body of creative output. This has had the effect of heightening its perceived significance for interpreting Coltrane• s artistic motivations and his larger spiritual and intellectual interests. The effect seems to have been at least partly by design: by this point in his career, Coltrane was suspicious of any kind of verbal framing for his music, saying he preferred to put out his albums without liner notes and let the music “speak for itself.” He declined, for instance, to be profiled in what became Speliman’s widely discussed 1966 volume of jazz biography as social critique, Four Lives in the Bebop Business. In this respect he contrasted with, for instance, his contemporaries and labelmates Charles Mingus and Archie Shepp, older and younger representatives of the jazz avant-garde. respectively, who were much more apt to frame their music with expository text, and even to integrate the latter into the former. So the inclusion of the poem in the liner notes to A Love Supreme, a suite in four parts for Coltrane’s working quartet, represented a deliberate and conspicuous gesture of artistic self-definition."
+  ],
+  "stem": [
+   "The passage suggests that Charles Mingus and Archie Shepp differed from Coltrane in that they"
+  ],
+  "opts": [
+   "collaborated freely with other avant-garde musicians",
+   "did not view literary accompaniment as distracting from the music",
+   "viewed cooperating with Spellman as essential to their careers",
+   "possessed creative talents not only in music but also in poetry",
+   "composed music in a style that was very different from Coltrane’s in style"
+  ]
+ },
+ "u42-2025-03-s3-v2/7": {
+  "pass": [
+   "The large merchants who dominated long-distance trade in the Spanish empire for the better part Of three centuries have been traditionally depicted by historians as a privileged group that used its political and financial clout to protect its interests while engaging in uncompetitive economic practices, largely to the detriment of Spain and its colonies. This image suggested specifically that the colonial commercial system was irrationally organized, choked Spain’s economic progress, and generated unwarranted monopoly rents [profits], all for the benefit of the privileged traders of the merchant guilds. None of these conclusions are wholly incorrect, but they largely fail to appreciate the unpredictable environment in which these traders engaged. Without having adequately reflected on the role of risk in oceanic commerce, historians have tended to paint an overly one- dimensional portrait of the large merchants and their commercial practices. Long-distance traders responded to conditions of poor information, tremendous uncertainty, and endemic risk by adopting defensive strategies and embracing risk-reducing institutions. Avoiding risk, however, neither meant that the Spanish merchants lacked entrepreneurial spirit nor that they were somehow the precapitalist rentiers that historians sometimes imply. To the contrary, no merchant could operate in the highly risky Atlantic world trade without constantly anticipating and taking active measures to avoid catastrophe. Being successful in early modern, long-distance trade required that merchants act defensively to prevent economic misfortune. Fortunes came gradually to patient and shrewd traders, but financial ruin could happen overnight."
+  ],
+  "stem": [
+   "The primary purpose of the passage is to"
+  ],
+  "opts": [
+   "dismiss a long-standing interpretation of large Spanish merchants and their role in the colonial commercial system",
+   "discuss two antithetical views of the difficulties faced by Spanish long-distance traders",
+   "reconsider certain assumptions about Spanish long- distance traders and their commercial practices",
+   "examine the reasons why some Spanish merchants who engaged in oceanic commerce succeeded while others failed",
+   "explain why oceanic commerce was so risky for Spanish merchants engaged in long-distance trading"
+  ]
+ },
+ "u47-2025-03-s4-v1/4": {
+  "pass": [
+   "Livestock-grazing programs in arid zones that are based on the equilibrium view of rangelands—that grazing-induced land degradation will occur if livestock numbers exceed the availability of food—have failed. Contrary to the equilibrium view, traditional pastoral systems of land use are more appropriate. Such systems involve a high degree of opportunism to cope with unpredictable rainfall and fluctuating food distribution. Livestock mobility relieves areas of concentration and allows herds to exploit unevenly distributed resources. A strategy of managing multiple livestock species allows optimal use of these variable grazing resources. These approaches to land use are similar to those recommended by nonequilibrium models, which assume that plant dynamics in arid zones are influenced more by rainfall than by grazing."
+  ],
+  "stem": [
+   "According to the passage, the equilibrium view of rangelands is defined in terms of the relationship between"
+  ],
+  "opts": [
+   "distribution of rainfall and patterns of grazing",
+   "predictability of rainfall and fluctuations in food distribution",
+   "mobility of livestock and extent of land degradation",
+   "livestock numbers and availability of food",
+   "number of livestock species and variability of grazing resources"
+  ]
+ },
+ "u48-2025-03-s4-v2/5": {
+  "pass": [
+   "Dartmoor and Bodmin Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket peats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human impact."
+  ],
+  "stem": [
+   "It can be inferred that many people assume which of the following about the landscapes of Dartmoor and Bodmin Moor?"
+  ],
+  "opts": [
+   "Their land cover is a completely natural feature.",
+   "They have been shaped by humans in various and subtle ways.",
+   "Their history of human impact began less than 5,000 years ago.",
+   "They have more rock outcrops than does the typical granite landscape.",
+   "Their soils have been made difficult to use by human activity."
+  ]
+ },
+ "u48-2025-03-s4-v2/15": {
+  "pass": [
+   "Benjamin Franklin is portrayed in American history as the quintessential self-made man. In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular credit for collective effort."
+  ],
+  "stem": [
+   "Emerson is mentioned in the passage primarily to"
+  ],
+  "opts": [
+   "identify the origin of a particular understanding of Franklin",
+   "elaborate on a view of Franklin that the author takes issue with",
+   "point to a controversial claim about Franklin’s historical legacy",
+   "introduce the question of who Franklin’s main scientific influences were",
+   "suggest that Franklin was resistant to collaboration with other scientists"
+  ]
+ },
+ "u50-2025-04-s1-v2/9": {
+  "pass": [
+   "This passage is adanted from material published in 2002. Three core saimpres taken from different locations on the bed of Lake Tokotan consist mainly of organic-rich clay but also contain two sand layers at a depth indicating deposition in the seventeenth century. The coastal freshwater lake is replenished entirety by rainfall • and surface seenane, and the absence of river inflow eliminates fluvial deposition as a possible origin for the sand layers. The sand layers are thicker on the lake’s seaward side, suggesung landward transport of the sand at the time of its deposition. In these layers the diatoms (algae with glasslike cell walls) are very rare and in a fragmented State, sugaesting their deposition by strong currents. In sum, then, the most probable explanation for the sand layers is that they were deposited either by unusually large storm suryes or else by tsunamis (i.e., tidal waves). It is difficult to distinguish tsunami deposits from siurn-surge deposits. But Lake Tokotan is protected by a sand barrier and connected to the sea by a shallow, narrow outlet, and the velocities of the current through this narrow enirance during a storm surge are unlikely to be strong enough to transport sand and gravel far into the lake. It can be inferred. therefore, that the sand layers were deposited by tsunami waves that overtopped and caused severe erosion of the sand."
+  ],
+  "stem": [
+   "Regarding the different effects of storm surges and tsunamis, it can be inferred that the author would most likely agree with which of the following?"
+  ],
+  "opts": [
+   "A tsunami is likely to have more effect on Lake Tokotan than a severe storm surge would, because the velocities of the current in the lake’s outlet to the sea would be greater during a tsunami.",
+   "The diatoms in sand layers deposited by tsunamis will typically be more fragmented than those in sand layers deposited by strong storm surges.",
+   "In the region of Lake Tokotan over a period of several centuries, the amount of coastal erosion caused by tsunamis will typically be greater than that caused by storm surges.",
+   "Compared to tsunamis, storm surges vary more from one to another in the currents they generate and change of sea level they cause.",
+   "The influx of water into the lake caused by a tsunami, unlike that caused by a storm surge, need not be confined to the outlet that connects Lake Tokotan to the sea."
+  ]
  }
 }

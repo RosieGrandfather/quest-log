@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "原产当地，故不是外来入侵者。",
      "img": "2025-01-02/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "生产历史被忽略，食物仿佛与生产者脱节；这种无知过去较少影响健康。",
      "img": "2025-01-02/4-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "成功公司的高管亦有强势个性，内部冲突和市场成功并不互斥。",
      "img": "2025-01-02/4-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "惯常疯闹的演员这次克制，疯狂精神藏在内敛外表之下。",
      "img": "2025-01-02/4-04.webp",
      "txt": {
       "stem": [
@@ -137,20 +186,38 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      },
+      "previousChoices": [
+       "advocating a course of action",
+       "tracing the evolution of a practice",
+       "citing competing views of an issue",
+       "chronicling a senes of events",
+       "Sekt one answer choice."
+      ]
+     },
+     "explanation": "先介绍美洲起源说，再呈现更早爱尔兰实践的竞争观点。",
      "img": "2025-01-02/4-05.webp",
      "txt": {
       "pass": [
        "An Irish newspaper editorial encouraging women to participate in the nonimportation movement launched in Ireland in 1779 appears consistent with a perception that the political use of the consumer boycott originated in North America and spread eastwards across the Atlantic to Ireland. This is a view that most historians have concurred with, For example, T. H. Breen argued that the consumer boycott was a_ “brilliantly original American invention.” Breen did acknowledqe that “a few isolated boycotts may have taken place in other countries.” However, Mary O' Dowd argues that from the late seventeenth century, Irish political discourse advocated for the nonconsumption of imported goods and support for home manufactures by women in ways that were strikingly similar to those used later in North America."
       ],
       "stem": [
-       "The passage is primarily concerned with O resolving a dispute"
+       "The passage is primarily concerned with"
       ],
       "opts": [
+       "resolving a dispute",
        "advocating a course of action",
        "tracing the evolution of a practice",
        "citing competing views of an issue",
-       "chronicling a senes of events",
-       "Sekt one answer choice."
+       "chronicling a series of events"
       ]
      }
     },
@@ -161,6 +228,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "Breen承认其他国家有零星抵制，对前一句美国独创论作限定。",
      "img": "2025-01-02/4-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +263,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "研究比较干旱与火灾对不同植被的相对影响。",
      "img": "2025-01-02/4-07.webp",
      "txt": {
       "pass": [
@@ -209,6 +298,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "研究以前后同一地块数据比较为基础，须有灾前资料。",
      "img": "2025-01-02/4-08.webp",
      "txt": {
       "pass": [
@@ -233,6 +333,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "同时受火灾和干旱的林冠树，死亡率并未高于仅受干旱者。",
      "img": "2025-01-02/4-09.webp",
      "txt": {
       "pass": [
@@ -258,6 +369,18 @@
       0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "自嘲并称赞竞争者，体现谦逊而非自负。",
      "img": "2025-01-02/4-10.webp",
      "txt": {
       "stem": [
@@ -281,6 +404,18 @@
       0,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        4
+       ]
+      }
+     },
+     "explanation": "真正过程多在地下，因而很难消除表面简单的错觉。",
      "img": "2025-01-02/4-11.webp",
      "txt": {
       "stem": [
@@ -304,6 +439,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "哲学应关联普通生活，反衬现今过于深奥、圈内化。",
      "img": "2025-01-02/4-12.webp",
      "txt": {
       "stem": [
@@ -326,6 +473,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "若很少中途办事，绕行路线更能真正分流市内车辆。",
      "img": "2025-01-02/4-13.webp",
      "txt": {
       "pass": [
@@ -350,6 +508,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "原文承认色盲论未必不真诚，即某些作者确实相信它。",
      "img": "2025-01-02/4-14.webp",
      "txt": {
       "pass": [
@@ -374,6 +543,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "权力关系被忽视，解释为何种族色盲概念不足以描述爵士环境。",
      "img": "2025-01-02/4-15.webp",
      "txt": {
       "pass": [
@@ -395,5 +575,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

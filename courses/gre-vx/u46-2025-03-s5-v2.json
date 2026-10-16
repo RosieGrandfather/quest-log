@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "工业家对总体经济愈乐观，却对自家公司不更乐观，才显得奇怪。",
      "img": "2025-03-s5/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "破坏报告一致，因而没有理由怀疑其真实性。",
      "img": "2025-03-s5/4-02.webp",
      "txt": {
       "stem": [
@@ -72,6 +95,18 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "艺术要脱离日常，同时直接处理日常经验，构成悖论。",
      "img": "2025-03-s5/4-03.webp",
      "txt": {
       "stem": [
@@ -100,6 +135,19 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "受诽谤法约束而克制；轶事看似可信，经理人却被不实描写为从不失误。",
      "img": "2025-03-s5/4-04.webp",
      "txt": {
       "stem": [
@@ -131,6 +179,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "她担心严格平等会禁止专门保护女性的法规，因此损害女性利益。",
      "img": "2025-03-s5/4-05.webp",
      "txt": {
       "pass": [
@@ -155,6 +214,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "修正案支持者与她对当时是否应实行严格法律平等意见相反。",
      "img": "2025-03-s5/4-06.webp",
      "txt": {
       "pass": [
@@ -179,6 +249,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "基督教接受希腊罗马及日耳曼的文学传统。",
      "img": "2025-03-s5/4-07.webp",
      "txt": {
       "pass": [
@@ -203,6 +284,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "改革前文学在形式上明显多样，而非一致。",
      "img": "2025-03-s5/4-08.webp",
      "txt": {
       "pass": [
@@ -227,6 +319,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "Oddly enough提示这种接纳关系出人意料。",
      "img": "2025-03-s5/4-09.webp",
      "txt": {
       "pass": [
@@ -252,6 +355,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "时间管理不能增加或延长人生总分钟数。",
      "img": "2025-03-s5/4-10.webp",
      "txt": {
       "stem": [
@@ -275,6 +390,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "过长过细的传记令人疲惫、阅读负担沉重。",
      "img": "2025-03-s5/4-11.webp",
      "txt": {
       "stem": [
@@ -298,6 +425,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "湖间长距离输水推翻各湖隔绝、彼此分离的旧观念。",
      "img": "2025-03-s5/4-12.webp",
      "txt": {
       "stem": [
@@ -320,6 +459,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "温室容易控制高二氧化碳下滋生的害虫，露天缺此保障，类推增产会受阻。",
      "img": "2025-03-s5/4-13.webp",
      "txt": {
       "pass": [
@@ -344,6 +494,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "红鲷鱼健康数量的具体问题，把抽象基线难题具体化。",
      "img": "2025-03-s5/4-14.webp",
      "txt": {
       "pass": [
@@ -368,6 +529,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "把当前贫乏数量视为正常，会怀疑史料所述极度丰盛。",
      "img": "2025-03-s5/4-15.webp",
      "txt": {
       "pass": [
@@ -389,5 +561,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

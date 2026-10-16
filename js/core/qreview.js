@@ -23,8 +23,8 @@ export function restorePractice(unit, last){
   const items=unit.blocks.find(b=>b.type==='gre-qset').items;
   const rawAnswers=[], issues=[];
   // text-v2 and its answer-only revision share exactly the same choices.
-  const sameChoices=last.answerFormat===unit.answerFormat ||
-    (unit.answerFormat==='gre-vx-text-v2-answers-20261016' && last.answerFormat==='gre-vx-text-v2');
+  const answerOnlyUpdate=unit.answerFormat?.startsWith('gre-vx-text-v2-answers-') && last.answerFormat==='gre-vx-text-v2';
+  const sameChoices=last.answerFormat===unit.answerFormat || answerOnlyUpdate;
   const answers=items.map((it,i)=>{
     const saved=last.answerItems?.find(q=>q.n===it.n);
     const raw=String(saved?.raw ?? last.answers?.[i] ?? '');
@@ -44,6 +44,15 @@ export function restorePractice(unit, last){
         if(mapped.some(k=>k!=='' && k<0)) return unresolved();
         return mapped.join(',');
       }
+    }
+    // Some formerly broken OCR options were repaired during answer review.
+    // Restore what the learner actually saw, rather than reusing its old index.
+    if(answerOnlyUpdate && it.answerReview?.previousChoices){
+      const previous=it.answerReview.previousChoices;
+      if(!indices(raw))return unresolved();
+      const mapped=parts(raw).map(k=>previous[Number(k)] ? findChoice(it.txt?.opts,previous[Number(k)]) : -1);
+      if(mapped.some(k=>k<0))return unresolved();
+      return mapped.join(',');
     }
     if(unit.answerFormat && !sameChoices) return unresolved();
     if(it.kind==='tc'){

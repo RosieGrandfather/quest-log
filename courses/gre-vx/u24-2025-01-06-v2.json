@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "生物年龄和历时年龄经常不一致，年轻细胞也可能衰老般失常。",
      "img": "2025-01-06/4-01.webp",
      "txt": {
       "stem": [
@@ -44,6 +55,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "诗性语言不易理解，故作品表达间接晦涩。",
      "img": "2025-01-06/4-02.webp",
      "txt": {
       "stem": [
@@ -66,6 +88,18 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "有研究发现不足，有的发现能力，呈现异质、复杂图景。",
      "img": "2025-01-06/4-03.webp",
      "txt": {
       "stem": [
@@ -94,6 +128,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "风险动态变化，原本可靠的结果不更新就可能误导。",
      "img": "2025-01-06/4-04.webp",
      "txt": {
       "stem": [
@@ -125,6 +172,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "选集遗漏Brontë举例说明女性主义批评自身也可能排斥她。",
      "img": "2025-01-06/4-05.webp",
      "txt": {
       "pass": [
@@ -149,6 +207,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "她的诗不像典型女性诗歌，说明以典型题材为准的选集为何遗漏她。",
      "img": "2025-01-06/4-06.webp",
      "txt": {
       "pass": [
@@ -173,6 +242,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "先提出成本收益标准，再用版权延长政策展示其运用。",
      "img": "2025-01-06/4-07.webp",
      "txt": {
       "pass": [
@@ -197,6 +277,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "向继承人付版税是版权延长使书价偏高的因素之一。",
      "img": "2025-01-06/4-08.webp",
      "txt": {
       "pass": [
@@ -221,6 +312,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "作者认为遥远的继承人收益难以构成创作动机，依赖继承人利益不足以激励作者这一判断。",
      "img": "2025-01-06/4-09.webp",
      "txt": {
       "pass": [
@@ -246,6 +348,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "不确定性令科学家排斥，使气象学处于紧张的知识空间。",
      "img": "2025-01-06/4-10.webp",
      "txt": {
       "stem": [
@@ -269,6 +383,19 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      },
+      "corroboratingSource": "https://gre.viplgw.cn/question/10455.html"
+     },
+     "explanation": "公关以易懂简单替代复杂，制造常识般显然的印象。",
      "img": "2025-01-06/4-11.webp",
      "txt": {
       "stem": [
@@ -292,6 +419,18 @@
       0,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        3
+       ]
+      }
+     },
+     "explanation": "循环利用旧主题，即不掩饰挪用、窃取已有素材。",
      "img": "2025-01-06/4-12.webp",
      "txt": {
       "stem": [
@@ -314,6 +453,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "若当地居民仅少数说Torvic，多语言的居民多数不代表Torvic使用者多数。",
      "img": "2025-01-06/4-13.webp",
      "txt": {
       "pass": [
@@ -338,6 +488,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "内部放射性加热也改变彗星，挑战内核仍原始不变的假设。",
      "img": "2025-01-06/4-14.webp",
      "txt": {
       "pass": [
@@ -361,8 +522,20 @@
      "nopt": 3,
      "ans": [
       0,
-      1
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "低温不阻止外来能量改变表面，而表面实验本身未否定内部仍原始。",
      "img": "2025-01-06/4-15.webp",
      "txt": {
       "pass": [
@@ -382,5 +555,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

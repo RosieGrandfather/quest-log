@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "艺术主观性与物理学回避内心思想相对照。",
      "img": "2025-01-16/2-01.webp",
      "txt": {
       "stem": [
@@ -46,6 +57,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "避免讽刺刻画，就偏离以往讽刺历史人物的传统。",
      "img": "2025-01-16/2-02.webp",
      "txt": {
       "stem": [
@@ -74,6 +97,19 @@
       0,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        0
+       ]
+      }
+     },
+     "explanation": "科学少受声誉损失；法律玷污科学；科学制衡法律不稳定性。",
      "img": "2025-01-16/2-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,18 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "Ellison的定义超越文化边界，并优先强调个人经历。",
      "img": "2025-01-16/2-04.webp",
      "txt": {
       "pass": [
@@ -124,7 +172,16 @@
     {
      "n": 5,
      "kind": "ss",
-     "ansText": "第三句话",
+     "ansText": "Ralph Ellison’s definition of the blues suggests an expansive vista, limited only by a speaker’s capacity to lyrically express an “autobiographical chronicle of personal catastrophe.”",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ansText": "第三句话"
+      }
+     },
+     "explanation": "第三句具体提出Ellison以个人经历为核心的替代定义。",
      "img": "2025-01-16/2-05.webp",
      "txt": {
       "pass": [
@@ -150,6 +207,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "跨领域写作体现对专业化的高傲轻视。",
      "img": "2025-01-16/2-06.webp",
      "txt": {
       "stem": [
@@ -173,6 +242,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "证据不足却仍下定论，需选表示匮乏的等义词。",
      "img": "2025-01-16/2-07.webp",
      "txt": {
       "stem": [
@@ -196,6 +277,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "汽车和医疗软件一概免责将难以成立或辩护。",
      "img": "2025-01-16/2-08.webp",
      "txt": {
       "stem": [
@@ -219,6 +312,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "保护原则要求不同历史时期的分界清晰。",
      "img": "2025-01-16/2-09.webp",
      "txt": {
       "stem": [
@@ -241,6 +346,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "介绍Jeffrey的研究并与先前学者的观点对照。",
      "img": "2025-01-16/2-10.webp",
      "txt": {
       "pass": [
@@ -265,6 +381,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "先前学者强调的是散发反奴隶制请愿书。",
      "img": "2025-01-16/2-11.webp",
      "txt": {
       "pass": [
@@ -289,6 +416,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "集市表明妇女仍有效参与，反驳1830年代末边缘化之说。",
      "img": "2025-01-16/2-12.webp",
      "txt": {
       "pass": [
@@ -310,5 +448,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "与大量发布相反，滴管式发布强调信息吝啬、少量。",
      "img": "2025-01-11/5-01.webp",
      "txt": {
       "stem": [
@@ -44,6 +55,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "vapid意为乏味空洞，与jejune对应。",
      "img": "2025-01-11/5-02.webp",
      "txt": {
       "stem": [
@@ -67,6 +89,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "描述适合其他诗人，却不适合并未抨击物质主义、反而拥抱私产的Wilcox。",
      "img": "2025-01-11/5-03.webp",
      "txt": {
       "stem": [
@@ -100,6 +135,19 @@
       0,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0,
+        1
+       ]
+      }
+     },
+     "explanation": "缺陷繁多且根深蒂固，难以修正，故与其他拙劣书籍一同沉没。",
      "img": "2025-01-11/5-04.webp",
      "txt": {
       "stem": [
@@ -131,6 +179,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "新研究发现模型物种是例外，削弱此前关于两栖动物进食的概括。",
      "img": "2025-01-11/5-05.webp",
      "txt": {
       "pass": [
@@ -155,6 +214,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "unfortunate models指选择不恰当、不合宜的研究模型。",
      "img": "2025-01-11/5-06.webp",
      "txt": {
       "pass": [
@@ -179,6 +249,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "作者用既有印本文献反驳出版传统故事泄露秘密的伦理指控。",
      "img": "2025-01-11/5-07.webp",
      "txt": {
       "pass": [
@@ -203,6 +284,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "甚至逐字采用，强调故事更多取自既有文献而非口述记忆。",
      "img": "2025-01-11/5-08.webp",
      "txt": {
       "pass": [
@@ -227,6 +319,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "Silko自称故事源于自己经历的口述传统，表面上支持泄密指控。",
      "img": "2025-01-11/5-09.webp",
      "txt": {
       "pass": [
@@ -252,6 +355,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "多次出现only，强调饮食限制严苛；proscriptive与exacting切合。",
      "img": "2025-01-11/5-10.webp",
      "txt": {
       "stem": [
@@ -275,6 +390,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "总体清楚，少数人的文风却混乱晦涩；muddled与turbid等义。",
      "img": "2025-01-11/5-11.webp",
      "txt": {
       "stem": [
@@ -298,6 +425,18 @@
       1,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        3
+       ]
+      }
+     },
+     "explanation": "现代物理前沿研究以该定理为基础、依赖它。",
      "img": "2025-01-11/5-12.webp",
      "txt": {
       "stem": [
@@ -320,6 +459,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "第一处高亮是有待评估的统计证据，第二处是作者认同的证据效力评价。",
      "img": "2025-01-11/5-13.webp",
      "txt": {
       "pass": [
@@ -344,6 +494,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "印刷技术未明显进步，社会制度变化却深刻改变传播。",
      "img": "2025-01-11/5-14.webp",
      "txt": {
       "pass": [
@@ -366,8 +527,20 @@
      "kind": "mcn",
      "nopt": 3,
      "ans": [
-      1
+      1,
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "报纸诞生于手动木制印刷时代，而该技术早已存在。",
      "img": "2025-01-11/5-15.webp",
      "txt": {
       "pass": [
@@ -387,5 +560,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

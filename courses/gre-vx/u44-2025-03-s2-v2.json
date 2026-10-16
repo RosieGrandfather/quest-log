@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "历时年龄与生物年龄不一致，故细胞年龄难判断。",
      "img": "2025-03-s2/5-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "Parker乐观，与经济系同事的悲观看法形成鲜明对比。",
      "img": "2025-03-s2/5-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2,
+        0
+       ]
+      }
+     },
+     "explanation": "虽可能有漏检小行星，已知引力已足够解释行星运动，因此漏检总质量不大。",
      "img": "2025-03-s2/5-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "华丽美化精英肖像招嘲讽，但迎合社会的浮艳趣味，说明画家与环境匹配。",
      "img": "2025-03-s2/5-04.webp",
      "txt": {
       "stem": [
@@ -138,6 +187,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "钢琴长期由工匠制作，工业革命前木制框架，金属架引发争议。",
      "img": "2025-03-s2/5-05.webp",
      "txt": {
       "pass": [
@@ -160,6 +221,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "担忧金属破坏钢琴的音质、音色。",
      "img": "2025-03-s2/5-06.webp",
      "txt": {
       "pass": [
@@ -184,6 +256,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "围绕Toussaint选择微型肖像的意义和可能动机展开。",
      "img": "2025-03-s2/5-07.webp",
      "txt": {
       "pass": [
@@ -212,6 +295,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "作者以文化家庭含义解释体裁选择，隐含成本差异不是主要决定因素。",
      "img": "2025-03-s2/5-08.webp",
      "txt": {
       "pass": [
@@ -236,6 +330,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "现存证据表明有地位的非裔顾客多选大幅肖像，故显贵微型肖像较少。",
      "img": "2025-03-s2/5-09.webp",
      "txt": {
       "pass": [
@@ -261,6 +366,18 @@
       1,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        5
+       ]
+      }
+     },
+     "explanation": "书法地位最高，体现对文字的崇敬推崇。",
      "img": "2025-03-s2/5-10.webp",
      "txt": {
       "stem": [
@@ -284,6 +401,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "无法直接探测，只能由引力效应推断暗物质。",
      "img": "2025-03-s2/5-11.webp",
      "txt": {
       "stem": [
@@ -307,6 +436,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "阴谋尚未发动却已广为人知，说明有人不谨慎泄露。",
      "img": "2025-03-s2/5-12.webp",
      "txt": {
       "stem": [
@@ -329,6 +470,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "遗址有大量其他兽鱼骨却很少袋鼠骨，削弱狩猎灭绝说。",
      "img": "2025-03-s2/5-13.webp",
      "txt": {
       "pass": [
@@ -354,6 +506,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "液态水和公转产生的潮汐热是Europa潜在生命的条件。",
      "img": "2025-03-s2/5-14.webp",
      "txt": {
       "pass": [
@@ -376,6 +540,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "地球地下生命这一实际发现，支持对Europa生命的推测。",
      "img": "2025-03-s2/5-15.webp",
      "txt": {
       "pass": [
@@ -397,5 +572,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

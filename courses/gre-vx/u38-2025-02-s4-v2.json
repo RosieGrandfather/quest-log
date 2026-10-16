@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表",
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案",
   "「选句子」题：有可点选文章时直接点击句子；否则写下句子序号或开头几个词。交卷后自评，不计入分数"
  ],
  "blocks": [
@@ -24,6 +24,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "营养稀缺时有利的嗜糖脂偏好，在丰裕环境变成适应不良。",
      "img": "2025-02-s4/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "此前强调父子差异，回忆录却刻意突出亲近。",
      "img": "2025-02-s4/4-02.webp",
      "txt": {
       "stem": [
@@ -64,9 +86,21 @@
      "kind": "tc",
      "blanks": 2,
      "ans": [
-      2,
-      2
+      0,
+      0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "并购未能提供惠及消费者的规模效益，甚至可能带来成本不经济。",
      "img": "2025-02-s4/4-03.webp",
      "txt": {
       "stem": [
@@ -95,6 +129,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "有人认为年轻人将随年龄买车，Willson认为趋势持久，无车生活会更常见。",
      "img": "2025-02-s4/4-04.webp",
      "txt": {
       "stem": [
@@ -124,8 +171,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      4
+      1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "后续碰撞是假设事件，用于解释雷达所见细小颗粒。",
      "img": "2025-02-s4/4-05.webp",
      "txt": {
       "pass": [
@@ -150,6 +208,18 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/question/d2c5wj-0.html?isFav=0"
+     },
+     "explanation": "原图高亮未显现；公开同题答案C对应末句以碰撞补充潮汐碎裂理论，属对既有解释的修改。",
      "img": "2025-02-s4/4-06.webp",
      "txt": {
       "pass": [
@@ -174,6 +244,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "分别讨论主动动机取向和结构条件取向的差异与局限。",
      "img": "2025-02-s4/4-07.webp",
      "txt": {
       "pass": [
@@ -194,7 +275,16 @@
     {
      "n": 8,
      "kind": "ss",
-     "ansText": "11行 however开头这句",
+     "ansText": "However, studies in this tradition empirically ignore that exposure is not completely free of constraints.",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ansText": "11行 however开头这句"
+      }
+     },
+     "explanation": "第四句指出该取向忽视媒介接触受客观条件约束。",
      "img": "2025-02-s4/4-08.webp",
      "txt": {
       "pass": [
@@ -221,6 +311,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "节目选择受结构情境影响，而使用满足取向未充分处理这些因素。",
      "img": "2025-02-s4/4-09.webp",
      "txt": {
       "pass": [
@@ -246,6 +347,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "散文笨拙却恰到好处，兼有直白、离奇与幽默。",
      "img": "2025-02-s4/4-10.webp",
      "txt": {
       "stem": [
@@ -269,6 +382,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "鄙视核查且不改错，体现轻慢、不认真对待真实性。",
      "img": "2025-02-s4/4-11.webp",
      "txt": {
       "stem": [
@@ -292,6 +417,18 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "月球地质看似狭窄，实际可说明所有类地行星历史。",
      "img": "2025-02-s4/4-12.webp",
      "txt": {
       "stem": [
@@ -314,6 +451,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "栽培选择有利薄种皮，古代种皮显著变薄支持已驯化。",
      "img": "2025-02-s4/4-13.webp",
      "txt": {
       "pass": [
@@ -338,6 +486,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "这些评论者把非裔文学视为缺少美国文学常见的开放解放性运动。",
      "img": "2025-02-s4/4-14.webp",
      "txt": {
       "pass": [
@@ -360,8 +519,19 @@
      "kind": "mc1",
      "nopt": 5,
      "ans": [
-      1
+      2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "史诗传奇中recorded的旅程即被叙述、讲述。",
      "img": "2025-02-s4/4-15.webp",
      "txt": {
       "pass": [
@@ -383,5 +553,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

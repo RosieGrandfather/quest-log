@@ -65,3 +65,25 @@ test('changed question kinds and missing selected text do not guess a mapping',(
   const unit={answerFormat:'new',blocks:[{type:'gre-qset',items:[{n:1,kind:'se',nopt:6,ans:[1,2],txt:{opts:['a','b','c','d','e','f']}}]}]};
   const r=restorePractice(unit,last);assert.ok(r.issues[0]);assert.equal(r.summary.total,0);
 });
+
+test('answer-only review of later sections restores prior text choices',()=>{
+  const unit=JSON.parse(readFileSync(new URL('../courses/gre-vx/u02-2025-01-14-v2.json',import.meta.url),'utf8'));
+  const answers=unit.blocks[0].items.map(it=>it.kind==='ss'?it.ansText:it.ans.join(','));
+  const r=restorePractice(unit,{answerFormat:'gre-vx-text-v2',answers});
+  assert.equal(r.summary.correct,15);
+  assert.equal(r.issues.some(Boolean),false);
+});
+
+test('legacy OCR option indices restore selected words when the displayed options were shifted',()=>{
+  const unit=JSON.parse(readFileSync(new URL('../courses/gre-vx/u11-2025-01-02-v1.json',import.meta.url),'utf8'));
+  const answers=unit.blocks[0].items.map(()=> '');
+  // The old A displayed the actual B word. Restore that word, not the letter.
+  answers[3]='0';
+  const r=restorePractice(unit,{answerFormat:'gre-vx-text-v2',answers});
+  assert.equal(r.answers[3],'1');
+  assert.equal(r.issues[3],undefined);
+  answers[3]='4'; // obsolete instruction text masquerading as option E
+  const bad=restorePractice(unit,{answerFormat:'gre-vx-text-v2',answers});
+  assert.equal(bad.rawAnswers[3],'4');assert.ok(bad.issues[3]);
+  assert.equal(bad.summary.wrong.includes(3),false);
+});

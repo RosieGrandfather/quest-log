@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "惯常讥讽尖刻的作者写出始终和蔼的书，才构成惊讶。",
      "img": "2025-01-01/4-01.webp",
      "txt": {
       "stem": [
@@ -44,6 +55,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "不肯直白表达、耗尽听众耐心，对应浮夸晦涩的fustian。",
      "img": "2025-01-01/4-02.webp",
      "txt": {
       "stem": [
@@ -66,6 +88,18 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "偏远而害羞阻碍研究，只有不自然的圈养条件例外。",
      "img": "2025-01-01/4-03.webp",
      "txt": {
       "stem": [
@@ -94,6 +128,19 @@
       1,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        1,
+        1
+       ]
+      }
+     },
+     "explanation": "许多科学家不信宏大的解释，认为原因平常而非意外的日食特有效应。",
      "img": "2025-01-01/4-04.webp",
      "txt": {
       "stem": [
@@ -125,6 +172,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "作者追溯Derbyshire的论断，认为可能源于Johnson误读Eneström猜想。",
      "img": "2025-01-01/4-05.webp",
      "txt": {
       "pass": [
@@ -147,6 +205,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "高亮“比笛卡尔晚近300年”强调解释是后人的推测，而非同期证据。",
      "img": "2025-01-01/4-06.webp",
      "txt": {
       "pass": [
@@ -171,6 +240,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "全文讨论史学家对手工物件作为历史资料的不同评价。",
      "img": "2025-01-01/4-07.webp",
      "txt": {
       "pass": [
@@ -195,6 +275,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "十九世纪浪漫化的解释框架妨碍理解十八世纪物件原意。",
      "img": "2025-01-01/4-08.webp",
      "txt": {
       "pass": [
@@ -219,6 +310,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "Ulrich仍使用这些物件，较其他史家更不认为神话足以阻碍利用。",
      "img": "2025-01-01/4-09.webp",
      "txt": {
       "pass": [
@@ -244,6 +346,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "无法直接探测而从引力效应推知存在；inferred与surmised等义。",
      "img": "2025-01-01/4-10.webp",
      "txt": {
       "stem": [
@@ -267,6 +381,18 @@
       1,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        4
+       ]
+      }
+     },
+     "explanation": "虽不可信且不合时宜，童话却长期留存；persistence与survival等义。",
      "img": "2025-01-01/4-11.webp",
      "txt": {
       "stem": [
@@ -290,6 +416,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "共事者一致描述他坚强，故软弱名声缺乏根据；specious与unfounded等义。",
      "img": "2025-01-01/4-12.webp",
      "txt": {
       "stem": [
@@ -312,6 +450,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "比例由5%升至6%不能保证金额不降，必须假设政府总支出没有明显降低。",
      "img": "2025-01-01/4-13.webp",
      "txt": {
       "pass": [
@@ -336,6 +485,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "不适生的密林会增加火灾风险，必须长期管理危险条件。",
      "img": "2025-01-01/4-14.webp",
      "txt": {
       "pass": [
@@ -360,6 +520,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "intensive timber production指集中、高强度的木材生产。",
      "img": "2025-01-01/4-15.webp",
      "txt": {
       "pass": [
@@ -381,5 +552,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

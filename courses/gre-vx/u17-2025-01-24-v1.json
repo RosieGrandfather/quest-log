@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 12 题（建议 18 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "诗浮光掠影、难打动人且不值得再读，体现空洞乏味。",
      "img": "2025-01-24/3-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "信息技术不减少独立推理需求，不能让数据堆积取代推理。",
      "img": "2025-01-24/3-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "标题不祥却没有揭丑，反而毫无保留歌功颂德，使批评者失望。",
      "img": "2025-01-24/3-03.webp",
      "txt": {
       "stem": [
@@ -104,6 +140,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "冰川湾地名须问当地家族后人，举例支持地名知识高度地域化。",
      "img": "2025-01-24/3-04.webp",
      "txt": {
       "pass": [
@@ -128,6 +175,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "祖辈故事帮助体验当地景观，故涉及冰川湾的具体地点。",
      "img": "2025-01-24/3-05.webp",
      "txt": {
       "pass": [
@@ -153,6 +211,18 @@
       2,
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        3
+       ]
+      }
+     },
+     "explanation": "写作理性而精心，与她喜爱偶然性形成反差。",
      "img": "2025-01-24/3-06.webp",
      "txt": {
       "stem": [
@@ -176,6 +246,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "Fort Ancient强调平等，反衬邻居权威带强制性、专横性。",
      "img": "2025-01-24/3-07.webp",
      "txt": {
       "stem": [
@@ -199,6 +281,18 @@
       1,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        5
+       ]
+      }
+     },
+     "explanation": "复印使秘密出版、避开审查成为可能。",
      "img": "2025-01-24/3-08.webp",
      "txt": {
       "stem": [
@@ -222,6 +316,18 @@
       3,
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        4
+       ]
+      }
+     },
+     "explanation": "“沉默阴谋”描述缺漏省略，而非谬误或歪曲。",
      "img": "2025-01-24/3-09.webp",
      "txt": {
       "stem": [
@@ -244,6 +350,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "旧解释未充分考虑远洋贸易的风险和不可预测性。",
      "img": "2025-01-24/3-10.webp",
      "txt": {
       "pass": [
@@ -272,6 +389,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "面对信息不足和风险，商人采取防御策略与减险制度。",
      "img": "2025-01-24/3-11.webp",
      "txt": {
       "pass": [
@@ -296,6 +424,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "双方承认不竞争行为，却对防御制度是否经济合理存在分歧。",
      "img": "2025-01-24/3-12.webp",
      "txt": {
       "pass": [
@@ -317,5 +456,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

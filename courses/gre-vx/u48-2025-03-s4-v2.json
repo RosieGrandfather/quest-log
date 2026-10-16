@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "与monumental呼应，公司政府关系也发生重大深远的变化。",
      "img": "2025-03-s4/4-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        0
+       ]
+      }
+     },
+     "explanation": "堆肥加快腐败，压实缺氧的填埋却阻碍分解。",
      "img": "2025-03-s4/4-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "从起初混乱的人流出现规则通道，越多人加入越自我维持。",
      "img": "2025-03-s4/4-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       0,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        0,
+        2
+       ]
+      }
+     },
+     "explanation": "漫画被视作幼稚低俗，使爱好者羞愧。",
      "img": "2025-03-s4/4-04.webp",
      "txt": {
       "stem": [
@@ -137,20 +186,38 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      },
+      "previousChoices": [
+       "They have been shaped by humans in various and subtle ways.",
+       "Their history of human impact began less than 5,000 years ago.",
+       "They have more rock outcrops than does the typical granite landscape.",
+       "Their soils have been made difficult to use by human activity.",
+       "ne answer choice."
+      ]
+     },
+     "explanation": "原图选项修复后，人们误以为地表植被完全自然、少有人工影响。",
      "img": "2025-03-s4/4-05.webp",
      "txt": {
       "pass": [
        "Dartmoor and Bodmin Moor in southwest England are for many the typical granite landscape: open, treeless, grassy, with abundant rock outcrops including tors (rocky pinnacles) and extensive block and boulder fields. Blanket peats and poor, difficult-to-use soils add to the impression of little human interference. In fact, the granite uplands of southwest England have a long history of human impact, and their present-day landscape contains few natural ingredients other than tors and boulders. The shaping of this land began in Neolithic times, more than 5,000 years ago, but accelerated approximately 4,000 years ago, during the Bronze Age. Neolithic and Bronze Age stone monuments appear to be the main witnesses to human presence, but the land cover is the most impressive legacy of human impact."
       ],
       "stem": [
-       "It can be inferred that many people assume which of the following about the landscapes of Dartmoor and Bodmin Moor? O Their land cover is a completely natural feature."
+       "It can be inferred that many people assume which of the following about the landscapes of Dartmoor and Bodmin Moor?"
       ],
       "opts": [
+       "Their land cover is a completely natural feature.",
        "They have been shaped by humans in various and subtle ways.",
        "Their history of human impact began less than 5,000 years ago.",
        "They have more rock outcrops than does the typical granite landscape.",
-       "Their soils have been made difficult to use by human activity.",
-       "ne answer choice."
+       "Their soils have been made difficult to use by human activity."
       ]
      }
     },
@@ -163,6 +230,19 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "差土壤、泥炭层、岩石露头都营造自然无人干预景观的印象。",
      "img": "2025-03-s4/4-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +265,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "DNA分组与寄生演化证据推翻两项既有共识。",
      "img": "2025-03-s4/4-07.webp",
      "txt": {
       "pass": [
@@ -209,6 +300,17 @@
      "ans": [
       4
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4
+       ]
+      }
+     },
+     "explanation": "由地衣真菌演化出有害寄生菌，反驳互害到互惠单向进步的最后假说。",
      "img": "2025-03-s4/4-08.webp",
      "txt": {
       "pass": [
@@ -233,6 +335,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "其祖先与宿主关系有良有恶，部分并非互利共生。",
      "img": "2025-03-s4/4-09.webp",
      "txt": {
       "pass": [
@@ -258,6 +371,18 @@
       2,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2,
+        5
+       ]
+      }
+     },
+     "explanation": "严肃性不是表面装饰，而与喜剧视野内在相连、不可分割。",
      "img": "2025-03-s4/4-10.webp",
      "txt": {
       "stem": [
@@ -281,6 +406,18 @@
       4,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        4,
+        5
+       ]
+      }
+     },
+     "explanation": "虽长期收集数据，可用资料仍然匮乏。",
      "img": "2025-03-s4/4-11.webp",
      "txt": {
       "stem": [
@@ -304,6 +441,18 @@
       0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "化学的自然科学地位被看作显然、不言而喻。",
      "img": "2025-03-s4/4-12.webp",
      "txt": {
       "stem": [
@@ -326,6 +475,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "有目的休闲本身若通常不产生压力，则更可能减轻总压力风险。",
      "img": "2025-03-s4/4-13.webp",
      "txt": {
       "pass": [
@@ -350,6 +510,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "末句用史学将集体成果归于署名者的一般现象解释Franklin独享声誉。",
      "img": "2025-03-s4/4-14.webp",
      "txt": {
       "pass": [
@@ -374,20 +545,38 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      },
+      "previousChoices": [
+       "elaborate on a view of Franklin that the author takes issue with",
+       "point to a controversial claim about Franklin’s historical legacy",
+       "introduce the question of who Franklin’s main scientific influences were",
+       "suggest that Franklin was resistant to collaboration with other scientists",
+       "ne answer choice."
+      ]
+     },
+     "explanation": "原图选项修复后，引用Emerson展开作者要反对的自力成才形象。",
      "img": "2025-03-s4/4-15.webp",
      "txt": {
       "pass": [
        "Benjamin Franklin is portrayed in American history as the quintessential self-made man. In “Self-Reliance,” Emerson asks, “Where is the master who could have instructed Franklin...?” In fact Franklin took instruction widely, and his scientific work was highly collaborative. Friends in England sent equipment needed for his electrical experiments; others, in Philadelphia, helped him set up his workshop there. Philip Syng constructed a device for generating electrical charges, while Thomas Hopkinson demonstrated the potential of pointed conductors. Franklin, in addition to being the group’s theoretician, wrote and published its results. His fame as an individual researcher is partly a consequence of the shorthand by which, when one person writes about a group’s discoveries, history sometimes grants singular credit for collective effort."
       ],
       "stem": [
-       "Emerson is mentioned in the passage primarily to identify the origin of a particular understanding of Franklin"
+       "Emerson is mentioned in the passage primarily to"
       ],
       "opts": [
+       "identify the origin of a particular understanding of Franklin",
        "elaborate on a view of Franklin that the author takes issue with",
        "point to a controversial claim about Franklin’s historical legacy",
        "introduce the question of who Franklin’s main scientific influences were",
-       "suggest that Franklin was resistant to collaboration with other scientists",
-       "ne answer choice."
+       "suggest that Franklin was resistant to collaboration with other scientists"
       ]
      }
     }
@@ -395,5 +584,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }

@@ -7,7 +7,7 @@
  "objectives": [
   "按真实考试节奏做完 15 题（建议 23 分钟），**全部做完再点提交**（提交前不显示对错）",
   "提交后逐题看对错和正确答案；错题先回原文找依据，再决定是词汇问题还是逻辑问题",
-  "这是考生考后回忆/拍屏整理的版本，没有官方解析；答案取自原整理者的答案表"
+  "这是考生考后回忆/拍屏整理的版本，没有官方解析；本节答案已按题意独立复核，交卷后附中文依据，不代表 ETS 官方答案"
  ],
  "blocks": [
   {
@@ -23,6 +23,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "个体看似脆弱，却能跨大陆远行。",
      "img": "2025-01-24/5-01.webp",
      "txt": {
       "stem": [
@@ -45,6 +56,18 @@
       1,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1,
+        2
+       ]
+      }
+     },
+     "explanation": "展示新闻业不端行为，说明博物馆避免一味吹捧。",
      "img": "2025-01-24/5-02.webp",
      "txt": {
       "stem": [
@@ -73,6 +96,19 @@
       2,
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        2
+       ]
+      }
+     },
+     "explanation": "乐手抱怨可能源于遴选不满，但对候选者能力的批评荒谬。",
      "img": "2025-01-24/5-03.webp",
      "txt": {
       "stem": [
@@ -106,6 +142,19 @@
       2,
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        2,
+        1
+       ]
+      }
+     },
+     "explanation": "政府既兴奋又恐惧，态度矛盾；第三空转折到同时存在的担忧。",
      "img": "2025-01-24/5-04.webp",
      "txt": {
       "stem": [
@@ -137,6 +186,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "强调由外来物种竞争造成的灭绝记录出人意料地少。",
      "img": "2025-01-24/5-05.webp",
      "txt": {
       "pass": [
@@ -161,6 +221,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "大量引进且已历400年，说明本有充分机会观察竞争灭绝。",
      "img": "2025-01-24/5-06.webp",
      "txt": {
       "pass": [
@@ -185,6 +256,17 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      }
+     },
+     "explanation": "以澳大利亚比较，提出对美洲早期殖民说的反对证据。",
      "img": "2025-01-24/5-07.webp",
      "txt": {
       "pass": [
@@ -209,6 +291,17 @@
      "ans": [
       1
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        1
+       ]
+      }
+     },
+     "explanation": "更小且条件更差的澳洲仍有遗址，突出美国缺少遗址的疑难。",
      "img": "2025-01-24/5-08.webp",
      "txt": {
       "pass": [
@@ -233,6 +326,17 @@
      "ans": [
       3
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3
+       ]
+      }
+     },
+     "explanation": "作者否定海水与沿海滞留等解释，暗示实际殖民晚于25000年前。",
      "img": "2025-01-24/5-09.webp",
      "txt": {
       "pass": [
@@ -258,6 +362,18 @@
       3,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        3,
+        5
+       ]
+      }
+     },
+     "explanation": "每幅画各具特色，却整体一致；homogenous与uniform等义。",
      "img": "2025-01-24/5-10.webp",
      "txt": {
       "stem": [
@@ -281,6 +397,18 @@
       0,
       5
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        5
+       ]
+      }
+     },
+     "explanation": "超额筹资即资产超过负债。",
      "img": "2025-01-24/5-11.webp",
      "txt": {
       "stem": [
@@ -300,10 +428,22 @@
      "n": 12,
      "kind": "se",
      "nopt": 6,
-     "ans": [
-      0,
-      4
-     ],
+     "ans": [],
+     "answerPending": true,
+     "answerReviewReason": "脏镜头和帽檐会妨碍识别，但公开同题资料分别给出AE和EF，存在冲突；尚无官方答案页，本题暂不计分，不能把任一组冒充已确认答案。",
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "pending-verification",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0,
+        4
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/index/71ncgj"
+     },
+     "explanation": "脏镜头和帽檐会妨碍识别，但公开同题资料分别给出AE和EF，存在冲突；尚无官方答案页，本题暂不计分，不能把任一组冒充已确认答案。",
      "img": "2025-01-24/5-12.webp",
      "txt": {
       "stem": [
@@ -326,6 +466,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "不阻断前列腺素只排除一种胃不适机制，不排除药物通过其他方式伤胃。",
      "img": "2025-01-24/5-13.webp",
      "txt": {
       "pass": [
@@ -350,6 +501,17 @@
      "ans": [
       2
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        2
+       ]
+      }
+     },
+     "explanation": "城市人口不能靠生育维持，即出生率低于死亡率。",
      "img": "2025-01-24/5-14.webp",
      "txt": {
       "pass": [
@@ -374,6 +536,18 @@
      "ans": [
       0
      ],
+     "answerReview": {
+      "date": "2026-10-16",
+      "status": "independently-reviewed",
+      "basis": "根据题干、选项及原文独立解题；非 ETS 官方答案表",
+      "previous": {
+       "ans": [
+        0
+       ]
+      },
+      "corroboratingSource": "https://gre.kmf.com/explain/index?cid=208292&qid=3264aj"
+     },
+     "explanation": "小城镇无自然减少，被认为死亡率低于大城市；不能据此排除迁入。",
      "img": "2025-01-24/5-15.webp",
      "txt": {
       "pass": [
@@ -393,5 +567,5 @@
   }
  ],
  "references": [],
- "answerFormat": "gre-vx-text-v2"
+ "answerFormat": "gre-vx-text-v2-answers-all-20261016"
 }
