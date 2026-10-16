@@ -30,6 +30,12 @@
      "ant": [
       "validate",
       "uphold"
+     ],
+     "root": "an-(ad-，向) + nul(无) → 使归于无 → 废除",
+     "rel": [
+      "null 无效的",
+      "nullify 使无效",
+      "annihilate 消灭"
      ]
     },
     {
@@ -59,6 +65,13 @@
      ],
      "ant": [
       "successor"
+     ],
+     "root": "pre-(之前) + de-(离开) + cess(走) + -or(人) → 先离开的人 → 前任",
+     "rel": [
+      "process 过程",
+      "recede 后退",
+      "access 通道",
+      "successor 继任者"
      ]
     },
     {
@@ -74,6 +87,11 @@
      "ant": [
       "anxious",
       "concerned"
+     ],
+     "root": "non-(不) + chal(热、在乎) + -ant → 不热心的 → 漫不经心",
+     "rel": [
+      "calorie 卡路里(热量)",
+      "cauldron 大锅"
      ]
     },
     {
@@ -120,6 +138,12 @@
      "ant": [
       "bury",
       "fill in"
+     ],
+     "root": "ex-(出) + cav(洞) + -ate(动词) → 挖出洞来 → 挖掘",
+     "rel": [
+      "cave 洞穴",
+      "cavity 蛀洞",
+      "concave 凹的"
      ]
     },
     {
@@ -135,6 +159,12 @@
      "ant": [
       "reveal",
       "disclose"
+     ],
+     "root": "dis-(分开、不) + sembl(像) → 让人看不出真样 → 掩饰",
+     "rel": [
+      "resemble 相似",
+      "similar 相似的",
+      "simulate 模拟"
      ]
     },
     {
@@ -150,7 +180,8 @@
      "ant": [
       "inclusive",
       "welcoming"
-     ]
+     ],
+     "root": "clique(小圈子) + -ish(……的) → 小圈子的 → 排外的"
     },
     {
      "w": "divert",
@@ -162,7 +193,14 @@
       "deflect",
       "entertain"
      ],
-     "ant": []
+     "ant": [],
+     "root": "di-(dis-，分开) + vert(转) → 转向别处 → 转移",
+     "rel": [
+      "convert 转变",
+      "reverse 反转",
+      "introvert 内向者",
+      "version 版本"
+     ]
     },
     {
      "w": "pedestrian",
@@ -177,6 +215,13 @@
      "ant": [
       "original",
       "inspired"
+     ],
+     "root": "ped(脚) + -estrian → 靠脚走的人 → 行人；引申为步子平常、乏味",
+     "rel": [
+      "pedal 脚踏板",
+      "centipede 蜈蚣",
+      "pedicure 修脚",
+      "expedite 加快"
      ]
     }
    ]
@@ -208,7 +253,8 @@
      "ant": [
       "sheathe",
       "conceal"
-     ]
+     ],
+     "root": "brand(剑，古义) + -ish(动词) → 挥剑 → 挥舞"
     },
     {
      "w": "gigantic",
@@ -223,6 +269,10 @@
      "ant": [
       "tiny",
       "minuscule"
+     ],
+     "root": "gigant(巨人) + -ic(……的) → 巨人般的 → 巨大的",
+     "rel": [
+      "giant 巨人"
      ]
     },
     {
@@ -235,7 +285,14 @@
       "clique",
       "splinter group"
      ],
-     "ant": []
+     "ant": [],
+     "root": "fact(做) + -ion(名词) → 一起做事的一帮人 → 派系",
+     "rel": [
+      "factory 工厂",
+      "manufacture 制造",
+      "fiction 虚构",
+      "effect 效果"
+     ]
     },
     {
      "w": "patchwork",
@@ -249,6 +306,10 @@
      ],
      "ant": [
       "uniformity"
+     ],
+     "root": "patch(补丁) + work(活) → 补丁拼成的东西 → 拼凑物",
+     "rel": [
+      "patch 补丁"
      ]
     },
     {
@@ -264,6 +325,12 @@
      "ant": [
       "friendly",
       "favorable"
+     ],
+     "root": "in-(不) + amic(朋友) + -al(……的) → 不是朋友的 → 有敌意",
+     "rel": [
+      "amicable 友好的",
+      "amity 友谊",
+      "enemy 敌人"
      ]
     }
    ]
@@ -295,6 +362,12 @@
      "ant": [
       "rude",
       "boorish"
+     ],
+     "root": "chival(马，同 cheval) + -rous → 骑马的人(骑士)的 → 有骑士风度",
+     "rel": [
+      "cavalry 骑兵",
+      "cavalier 骑士",
+      "chevalier 骑士(法)"
      ]
     },
     {
@@ -325,6 +398,13 @@
      "ant": [
       "ominous",
       "inauspicious"
+     ],
+     "root": "au(鸟) + spic(看) + -ious → 看鸟飞的方向占卜 → 吉兆",
+     "rel": [
+      "aviary 鸟舍",
+      "aviation 航空",
+      "conspicuous 显眼的",
+      "suspicious 可疑的"
      ]
     },
     {
@@ -340,6 +420,12 @@
      "ant": [
       "profound",
       "thorough"
+     ],
+     "root": "fac(做) + -ile(易于……的) → 容易做的 → 轻易的、肤浅的",
+     "rel": [
+      "facility 设施",
+      "facilitate 使容易",
+      "difficult 困难的(dis- + facil)"
      ]
     },
     {
@@ -355,6 +441,11 @@
      "ant": [
       "apathetic",
       "indifferent"
+     ],
+     "root": "av(渴望) + -id(……的) → 渴望的",
+     "rel": [
+      "avarice 贪婪",
+      "avidity 热切"
      ]
     }
    ]
@@ -386,6 +477,12 @@
      "ant": [
       "energetic",
       "lively"
+     ],
+     "root": "Lethe(希腊神话中的忘川) + arg(工作) + -ic → 像喝了忘川水、不愿做事 → 昏沉没精神",
+     "rel": [
+      "energy 能量(en- + erg)",
+      "ergonomics 人体工学",
+      "allergy 过敏"
      ]
     },
     {
@@ -398,7 +495,12 @@
       "spirit",
       "ideology"
      ],
-     "ant": []
+     "ant": [],
+     "root": "来自希腊语 ethos(习俗、品性) → 群体的精神特质",
+     "rel": [
+      "ethic 伦理",
+      "ethical 道德的"
+     ]
     },
     {
      "w": "vague",
@@ -413,6 +515,12 @@
      "ant": [
       "precise",
       "explicit"
+     ],
+     "root": "vag(游荡) → 飘忽不定 → 模糊",
+     "rel": [
+      "vagabond 流浪汉",
+      "vagrant 流浪者",
+      "extravagant 越界的、奢侈的"
      ]
     },
     {
@@ -440,6 +548,12 @@
      "ant": [
       "arrogant",
       "haughty"
+     ],
+     "root": "hum(土、地面) + -ble(……的) → 贴近地面的 → 谦卑",
+     "rel": [
+      "humus 腐殖土",
+      "humiliate 羞辱",
+      "exhume 挖出(尸体)"
      ]
     }
    ]
@@ -486,6 +600,12 @@
      "ant": [
       "betrayal",
       "disloyalty"
+     ],
+     "root": "al-(ad-，向) + lig(绑) + -iance(名词) → 绑在某人身上 → 效忠",
+     "rel": [
+      "ligament 韧带",
+      "oblige 使负有义务",
+      "religion 宗教(re- + lig)"
      ]
     },
     {
@@ -501,6 +621,12 @@
      "ant": [
       "provincial",
       "parochial"
+     ],
+     "root": "cosmo(宇宙、世界) + polit(城邦、公民) + -an → 世界公民 → 国际化的",
+     "rel": [
+      "cosmos 宇宙",
+      "politics 政治",
+      "metropolis 大都市"
      ]
     },
     {
@@ -513,7 +639,13 @@
       "revoke",
       "rescind"
      ],
-     "ant": []
+     "ant": [],
+     "root": "counter-(反) + mand(命令) → 下达相反的命令 → 撤销",
+     "rel": [
+      "command 命令",
+      "demand 要求",
+      "mandate 授权令"
+     ]
     },
     {
      "w": "promulgate",
@@ -559,6 +691,12 @@
      "ant": [
       "unobtrusive",
       "discreet"
+     ],
+     "root": "ob-(朝着、挡在前) + trus(推) + -ive(……的) → 推到你面前 → 扎眼的",
+     "rel": [
+      "intrude 闯入",
+      "protrude 突出",
+      "extrude 挤出"
      ]
     },
     {
@@ -574,6 +712,12 @@
      "ant": [
       "cosmopolitan",
       "broad-minded"
+     ],
+     "root": "insul(岛) + -ar(……的) → 岛的 → 孤立狭隘的",
+     "rel": [
+      "isolate 孤立",
+      "peninsula 半岛",
+      "insulate 隔绝、绝缘"
      ]
     },
     {
@@ -589,6 +733,13 @@
      "ant": [
       "praise",
       "acclaim"
+     ],
+     "root": "ob-(对着、反) + loqu(说) + -y(名词) → 对着人说(坏话) → 谩骂",
+     "rel": [
+      "eloquent 雄辩的",
+      "loquacious 话多的",
+      "colloquial 口语的",
+      "soliloquy 独白"
      ]
     },
     {
@@ -604,6 +755,12 @@
      "ant": [
       "sincerity",
       "candor"
+     ],
+     "root": "pre-(前) + tens(伸) + -e → 把东西伸到前面摆出来 → 假装",
+     "rel": [
+      "pretend 假装",
+      "tension 张力",
+      "extend 延伸"
      ]
     },
     {
@@ -616,7 +773,12 @@
       "adjust",
       "harmonize"
      ],
-     "ant": []
+     "ant": [],
+     "root": "at-(ad-，向) + tune(音调) → 调到一致 → 使协调",
+     "rel": [
+      "tune 调音",
+      "tuner 调音器"
+     ]
     }
    ]
   },
@@ -647,6 +809,11 @@
      "ant": [
       "calm",
       "serenity"
+     ],
+     "root": "fur(狂怒) + -y(名词) → 暴怒",
+     "rel": [
+      "furious 狂怒的",
+      "infuriate 激怒"
      ]
     },
     {
@@ -662,6 +829,12 @@
      "ant": [
       "mandatory",
       "compulsory"
+     ],
+     "root": "dis-(分开) + cret(筛、区分) + -ion + -ary → 能自己区分判断的 → 可酌情处理",
+     "rel": [
+      "discreet 谨慎的",
+      "discrete 分立的",
+      "secret 秘密(se- 分开 + cret)"
      ]
     },
     {
@@ -677,6 +850,13 @@
      "ant": [
       "quiet",
       "reticent"
+     ],
+     "root": "voc(声音) + fer(带来) + -ous(……的) → 带出声音的 → 大声喧嚷",
+     "rel": [
+      "vocal 声音的",
+      "advocate 倡导者",
+      "revoke 撤销(re- + voc，叫回)",
+      "vocabulary 词汇"
      ]
     },
     {
@@ -692,6 +872,11 @@
      "ant": [
       "exaggerate",
       "overstate"
+     ],
+     "root": "under-(不足) + state(陈述) → 说得比实际少 → 轻描淡写",
+     "rel": [
+      "overstate 夸大",
+      "statement 声明"
      ]
     },
     {
@@ -707,6 +892,13 @@
      "ant": [
       "insult",
       "condemnation"
+     ],
+     "root": "trib(分配、给予) + -ute → 献上、给予 → 贡品、颂词",
+     "rel": [
+      "contribute 贡献",
+      "distribute 分发",
+      "attribute 归因于",
+      "tribe 部落"
      ]
     }
    ]

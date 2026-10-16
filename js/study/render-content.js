@@ -68,6 +68,8 @@ function vocabCard(it){
     <div class="vzh">${escapeHTML(it.zh||'')}</div>
     <div class="ven">${escapeHTML(it.en||'')}</div>
     <div class="vrel">${chips('近','vsyn',it.syn)}${chips('反','vant',it.ant)}</div>
+    ${it.root?`<div class="vroot"><span class="vlabel vrt">拆</span><span class="vroot-txt">${escapeHTML(it.root)}</span></div>`:''}
+    ${it.rel&&it.rel.length?`<div class="vrel">${chips('同根','vcog',it.rel)}</div>`:''}
   </div>`;
 }
 
