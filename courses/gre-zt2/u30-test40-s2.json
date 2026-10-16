@@ -1,0 +1,200 @@
+{
+ "id": "u30-test40-s2",
+ "title": "Test 40 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 40, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 40 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The restaurant often experience a decline in business after holiday seasons, for potential customers attempt to be more ____ to balance out their former celebratory indulgences."
+      ],
+      "opts": [
+       "abstemious",
+       "loyal",
+       "unsophisticated",
+       "blithe",
+       "indolent"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The museum’s compelling new architectural exhibition looks at eleven projects around the world that have had major (i)____ impacts despite modest budgets. It is part of (ii)____ in the museum’s architecture and design department, which in the past has championed architecture’s artistic value over its real-world consequences."
+      ],
+      "cols": [
+       [
+        "social",
+        "aesthetic",
+        "critical"
+       ],
+       [
+        "an emphasis on theory",
+        "a shift in philosophy",
+        "a rejection of pragmatism"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Partly because of Lee’s skill at synthesizing (i)____ trends drawn from many fields of study, her theories appeared to present, with uncanny aptness, ideas already (ii)____ in the minds of her contemporaries."
+      ],
+      "cols": [
+       [
+        "superseded",
+        "irrelevant",
+        "emergent"
+       ],
+       [
+        "discredited",
+        "well established",
+        "half-formulated"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDG",
+     "txt": {
+      "stem": [
+       "The motives of many major investors in Pop Art have arguably been to a large extent, (i)____. These collectors demonstrate and enhance their power over the art market by establishing seemingly arbitrary works of art as priceless. This phenomenon reveals that (ii)____ is not (iii)____ of truth or beauty, but simply a trick of investment capital."
+      ],
+      "cols": [
+       [
+        "visionary",
+        "ambiguous",
+        "self-aggrandizing"
+       ],
+       [
+        "value",
+        "virtuosity",
+        "originality"
+       ],
+       [
+        "a product",
+        "an inversion",
+        "a limitation"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Despite its best efforts to stimulate sales, the bookselling business remains far from ____, for it has high fixed costs in wages and rent, and falling prices make these ever harder to spur."
+      ],
+      "opts": [
+       "effective",
+       "healthy",
+       "innovative",
+       "robust",
+       "stingy",
+       "parsimonious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Every illness is a story, and when Annies began it was characterized by the kinds of ____ details that mean nothing until seen in hindsight."
+      ],
+      "opts": [
+       "salient",
+       "unexceptional",
+       "conspicuous",
+       "suggestive",
+       "abundant",
+       "nondescript"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "People’s decisions about childbearing depend on innumerable personal consideration and societal factors, yet even knowing this, demographers are often ____: their projections of birth rates frequently turn out to be embarrassingly at odds with reality."
+      ],
+      "opts": [
+       "sanguine",
+       "flummoxed",
+       "inconsistent",
+       "overconfident",
+       "heartened",
+       "confounded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

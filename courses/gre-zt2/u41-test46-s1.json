@@ -1,0 +1,196 @@
+{
+ "id": "u41-test46-s1",
+ "title": "Test 46 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 46, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 46 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Because the critic thought that the mark of great literature was grandiosity and elegance not to be found in common speech, writers seeking his approbation ____ the vernacular."
+      ],
+      "opts": [
+       "exploited",
+       "embraced",
+       "misapplied",
+       "considered",
+       "eschewed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Knowing how (i)____ she was at work, her colleagues were surprised at her (ii)____ throughout the dinner."
+      ],
+      "cols": [
+       [
+        "dependable",
+        "diffident",
+        "diligent"
+       ],
+       [
+        "timidity",
+        "assertiveness",
+        "punctiliousness"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AEG",
+     "txt": {
+      "stem": [
+       "Cynics will dismiss the race between Richard and Gorman as two equally dull candidates. However, the notion that the two leaders are (i)____ does not meet them, for they are as different as can be. Richard is (ii)____ and is fastidious of her appearance. So one could hardly accuse her of being either taciturn or (iii)____."
+      ],
+      "cols": [
+       [
+        "interchangeable",
+        "uncritical",
+        "competent"
+       ],
+       [
+        "condescending",
+        "loquacious",
+        "blunted"
+       ],
+       [
+        "unkempt",
+        "reticent",
+        "adherent"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Given that the department director was such a feeble contributor, sitting silently at important policy meetings and usually deferring to low-level aides, it was surprising that he had such a reputation for ____."
+      ],
+      "opts": [
+       "magnanimity",
+       "perspicacity",
+       "impartiality",
+       "detachment",
+       "benevolence",
+       "discernment"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Between the late 1800s and early 1900s, various institutional structures emerged that set researchers in scientific fields apart as a professional class and moderated disputes by ____ some kinds of knowledge as real science."
+      ],
+      "opts": [
+       "differing",
+       "sanctioning",
+       "mischaracterizing",
+       "censuring",
+       "reprehending",
+       "endorsing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In Ramachandran’s opinion, it is perfectly acceptable to propose bold speculations about the brain, even if these speculations seem ____; as Ramachandran frequently remarks, science thrives on risky conjecture."
+      ],
+      "opts": [
+       "unfounded",
+       "premature",
+       "controversial",
+       "verifiable",
+       "testable",
+       "baseless"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Price knew about how to do people favors, sometimes just from kindness, but often out of ____."
+      ],
+      "opts": [
+       "self-interest",
+       "benevolence",
+       "magnanimity",
+       "opportunism",
+       "disinterest",
+       "mercy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

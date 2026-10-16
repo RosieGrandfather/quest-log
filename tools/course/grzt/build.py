@@ -12,7 +12,10 @@ from pathlib import Path
 import pdfplumber
 
 REPO = Path(__file__).resolve().parents[3]
-OUT = REPO / 'courses/gre-zt'
+BATCHES = {
+    1: dict(course='gre-zt', tests=(1, 25), name='前50个Section', audit='audit.json'),
+    2: dict(course='gre-zt2', tests=(26, 50), name='第51–100个Section', audit='audit-2.json'),
+}
 LETTERS = 'ABCDEFGHI'
 
 
@@ -119,9 +122,9 @@ def main():
         unit={'id':uid,'title':title,'en':f'Text Completion — Test {s["test"]}, Section {s["section"]}',
               'minutes':15,'practice':True,'answerFormat':'gre-zt-v1','objectives':[
                   '独立完成7道原题，整节完成后提交。','提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。'],
-              'blocks':[{'type':'gre-qset','base':'courses/gre-zt/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
+              'blocks':[{'type':'gre-qset','base':f'courses/{cid}/','source':f'张巍GRE填空机经2000题 · Test {s["test"]} Section {s["section"]}',
                          'noteTail':'（原题及配套答案，仅供个人学习；暂不附讲解）','items':items}],'references':[]}
-        (OUT/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
+        (out/f'{uid}.json').write_text(json.dumps(unit,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
         units.append({k:unit[k] for k in ['id','title','en','minutes','practice']}|{'file':f'{uid}.json','hasQuiz':False,'difficulty':s['difficulty']})
     course={'id':'gre-zt','title':f'张巍GRE填空机经：前{nsec}个Section','subtitle':f'Test 1–{last}，每个Section一节，共{nsec}节{7*nsec}题。原题与配套答案，完成整节后提交查看对错，暂不附讲解。',
             'order':17,'order_note':'选修，GRE填空专项练习','tier':'elective','tags':['GRE'],'units':units}

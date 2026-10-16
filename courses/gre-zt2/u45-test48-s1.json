@@ -1,0 +1,196 @@
+{
+ "id": "u45-test48-s1",
+ "title": "Test 48 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 48, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 48 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Discussions of impending water shortages are often couched in apocalyptic rhetoric, yet if the language is somewhat ____, the basic message is sound: water is indeed scarce and growing scarcer."
+      ],
+      "opts": [
+       "abstract",
+       "complacent",
+       "ambiguous",
+       "unfamiliar",
+       "overblown"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "He was a leader about whom the country’s people felt (i)____: both (ii)____ and reviling him."
+      ],
+      "cols": [
+       [
+        "ambivalent",
+        "complacent",
+        "indifferent"
+       ],
+       [
+        "ignoring",
+        "understanding",
+        "adulating"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "Women in the mining towns of the American West were strictly stereotyped into neat categories of public and private, good and bad, but the 100 intrepid female prospectors in Zanjani’s book managed to (i)____ those categories. In addition to providing documentation that demolishes the all-male version of prospecting, Zanjani uses the examples of her female loners to (ii)____ some of the (iii)____ generalizations about Euro-American women as uniformly nurturant and sociable pioneers."
+      ],
+      "cols": [
+       [
+        "inhabit",
+        "reveal",
+        "confound"
+       ],
+       [
+        "puncture",
+        "invent",
+        "perpetuate"
+       ],
+       [
+        "accurate",
+        "facile",
+        "unknown"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Miller reminded his clients that labor relationship are inherently ____; the interests of business owners are diametrically opposed to those of employees."
+      ],
+      "opts": [
+       "adversarial",
+       "exploitative",
+       "mercenary",
+       "antagonistic",
+       "variable",
+       "changeable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Even the man was reserved in his speech, he thoroughly understood his mother, which made him far from ____ as people usually thought."
+      ],
+      "opts": [
+       "comprehensive",
+       "ingenuous",
+       "sophisticated",
+       "foolish",
+       "simple",
+       "sententious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Mark Messina’s book The Simple Soybean and Your Health exudes recognition much less unrestrained in the description of the soy's medical efficiency than its versatility, but the author cautions against soy to be a ____."
+      ],
+      "opts": [
+       "cure-all",
+       "solitude",
+       "efficacy",
+       "effectuality",
+       "panacea",
+       "placebo"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Three of the nation’s largest airlines could be operating under bankruptcy protection in coming weeks, analysts say, the latest sign of the industry’s ____ as it lurches through a historic transformation."
+      ],
+      "opts": [
+       "upheaval",
+       "exorbitance",
+       "affluence",
+       "peril",
+       "convulsion",
+       "opulence"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

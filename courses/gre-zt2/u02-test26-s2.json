@@ -1,0 +1,200 @@
+{
+ "id": "u02-test26-s2",
+ "title": "Test 26 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 26, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt2/",
+   "source": "张巍GRE填空机经2000题 · Test 26 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Medieval cathedrals still stand as marvels of architecture, but as far as modern science is concerned, medieval physics and chemistry are simply irrelevant, at best a dead end, at worst the very ____ of what science is supposed to be."
+      ],
+      "opts": [
+       "exemplar",
+       "glorification",
+       "reflection",
+       "dilution",
+       "antithesis"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The author of this political history text shows considerable bias against the political party when assigning credit or blame for its actions: he deems (i)____ what he favors and avoids what he (ii)____."
+      ],
+      "cols": [
+       [
+        "pertinent",
+        "inevitable",
+        "divided"
+       ],
+       [
+        "condemns",
+        "condones",
+        "ignores"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "It would be naïve to treat remarks made in diaries or personal letters as giving especially candid access to historical truth or even as being expressions of the writer’s true state of mind, since the (i)____ for exaggeration and deception in those forms is virtually nonexistent. Diaries and letters are rarely sites for (ii)____."
+      ],
+      "cols": [
+       [
+        "motivation",
+        "penalty",
+        "tendency"
+       ],
+       [
+        "premeditated manipulation",
+        "childish theatrics",
+        "balanced reflection"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "Applications of the Endangered Species Act (ESA) have fared best in contexts in which habitat condition is closely linked to species condition and the cause of habitat degradation is easily identified. The achievements of the ESA in those contexts, however, have (i)____ that other uses of the act can (ii)____ that record even where such favorable conditions do not (iii)____."
+      ],
+      "cols": [
+       [
+        "quelled the conviction",
+        "presaged the uncertainty",
+        "fostered the misconception"
+       ],
+       [
+        "mitigate",
+        "duplicate",
+        "elucidate"
+       ],
+       [
+        "vary",
+        "pertain",
+        "diminish"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "When studying the ancient Greek astronomers, Copernicus realized that despite the intrinsic beauty of many of their arguments, the ancients often made claims that ____ logic."
+      ],
+      "opts": [
+       "refuted",
+       "questioned",
+       "influenced",
+       "swayed",
+       "defied",
+       "disregarded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Films that critics have slumbered through rarely generate industry excitement, even though the critics’ ____ reception may be less the fault of the movie than of its unfortunate time slot near a fatiguing film festival’s conclusion."
+      ],
+      "opts": [
+       "somnolent",
+       "impartial",
+       "lethargic",
+       "laconic",
+       "befuddled",
+       "evenhanded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Even though his opponent is currently trying to portray him as a wild-eyed radical, voters will likely reject this charge because it does not ____ his moderate political record."
+      ],
+      "opts": [
+       "defer to",
+       "conform to",
+       "accede to",
+       "argue with",
+       "meddle with",
+       "square with"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

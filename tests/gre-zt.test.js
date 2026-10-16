@@ -4,8 +4,10 @@ import {readFileSync} from 'node:fs';
 import {gradeItem, summarize} from '../js/core/qgrade.js';
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
-const course = read('../courses/gre-zt/course.json');
-const audit = read('../tools/course/grzt/audit.json');
+const BATCHES = [
+  {id: 'gre-zt', audit: 'audit.json', firstTest: 1, counts: {mc1:60,tc:115,se:175}},
+  {id: 'gre-zt2', audit: 'audit-2.json', firstTest: 26, counts: {mc1:56,tc:119,se:175}},
+];
 
 test('Zhang Wei first 100 sections (Test 1–50) preserve sequence, all 700 answer keys and text-only controls', () => {
   assert.ok(read('../courses/index.json').courses.some(c => c.id === course.id));
@@ -13,9 +15,9 @@ test('Zhang Wei first 100 sections (Test 1–50) preserve sequence, all 700 answ
   let total = 0;
   const counts = {};
   for (const [i, entry] of course.units.entries()) {
-    const unit = read('../courses/gre-zt/' + entry.file);
+    const unit = read(`../courses/${id}/` + entry.file);
     const block = unit.blocks[0];
-    assert.equal(entry.id, `u${String(i+1).padStart(2,'0')}-test${String(Math.floor(i/2)+1).padStart(2,'0')}-s${i%2+1}`);
+    assert.equal(entry.id, `u${String(i+1).padStart(2,'0')}-test${String(Math.floor(i/2)+firstTest).padStart(2,'0')}-s${i%2+1}`);
     assert.equal(block.items.length, 7);
     const answers = [];
     for (const [j, q] of block.items.entries()) {
