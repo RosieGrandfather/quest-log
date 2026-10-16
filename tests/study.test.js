@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreQuiz, studyStreak, streakBonuses, dayUnitsBonus, unitKey } from '../js/core/study.js';
+import { scoreQuiz, unitPoints, studyStreak, streakBonuses, dayUnitsBonus, unitKey } from '../js/core/study.js';
 
 const Q = [{answer:0},{answer:1},{answer:2},{answer:3},{answer:0}];
 
@@ -69,4 +69,22 @@ test('阅读位置：本机和云端取较新的一份', ()=>{
   assert.equal(newerPos(null, a), a);
   assert.equal(newerPos(a, {i:'x'}), a);
   assert.equal(newerPos(null, null), null);
+});
+
+test('学完一节的积分按时长折算：45 分钟 = 100，四舍五入到 10 分，10–100 分', ()=>{
+  const pts = m => unitPoints({minutes:m});
+  assert.equal(pts(45), 100);
+  assert.equal(pts(15), 30);   // 33.3 → 30
+  assert.equal(pts(10), 20);
+  assert.equal(pts(18), 40);
+  assert.equal(pts(20), 40);   // 44.4 → 40
+  assert.equal(pts(23), 50);
+  assert.equal(pts(25), 60);   // 55.6 → 60
+  assert.equal(pts(30), 70);
+  assert.equal(pts(35), 80);
+  assert.equal(pts(40), 90);
+  assert.equal(pts(50), 100);  // 超过 45 分钟封顶 100
+  assert.equal(pts(90), 100);
+  assert.equal(unitPoints({}), 100);        // 没写时长按 45 分钟
+  assert.equal(unitPoints({minutes:2}), 10); // 最少 10 分
 });

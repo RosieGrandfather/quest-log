@@ -3,7 +3,7 @@
 import { awardOnce } from './awards.js';
 import { snapshotAnswers } from '../core/qreview.js';
 import { localISO } from '../core/dates.js';
-import { UNIT_POINTS, QUIZ_POINTS, QUIZ_PASS_PCT, unitKey, studyStreak, streakBonuses, dayUnitsBonus } from '../core/study.js';
+import { unitPoints, QUIZ_POINTS, QUIZ_PASS_PCT, unitKey, studyStreak, streakBonuses, dayUnitsBonus } from '../core/study.js';
 
 /* 首次学完的日期列表（有效学习日） */
 export async function loadStudyDates(cols){
@@ -11,13 +11,13 @@ export async function loadStudyDates(cols){
   return snap.docs.map(d=> d.data().dateISO).filter(Boolean);
 }
 
-/* 学完一节：+100（只一次）。如果这是今天第一节新章节，检查连续学习里程碑。
+/* 学完一节：按时长给分（unitPoints，45 分钟 = 100，只一次）。如果这是今天第一节新章节，检查连续学习里程碑。
    返回 {created, bonuses:[{amount,title}], streak, todayCount}（todayCount = 今天首次学完的章节数） */
 export async function completeUnit(cols, course, unit){
   const today = localISO(new Date());
   const key = unitKey(course.id, unit.id);
   const created = await awardOnce(cols.log, `study-${key}`, {
-    category:'study', label:`学完「${unit.title}」`, amount:UNIT_POINTS, dateISO:today,
+    category:'study', label:`学完「${unit.title}」`, amount:unitPoints(unit), dateISO:today,
     courseId:course.id, unitId:unit.id,
   });
   // 只在第一次学完时记完成日期，重复点不会把日期改掉
