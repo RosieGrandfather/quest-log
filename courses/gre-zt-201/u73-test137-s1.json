@@ -1,0 +1,196 @@
+{
+ "id": "u73-test137-s1",
+ "title": "Test 137 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 137, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 137 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Historians of medicine are resigned to doctors’ ____ medical history: physicians offer hagiographic biographies of obscure nineteenth-century medical figures, triumphalist narratives of medical progress, and retrospective diagnoses of ailments afflicting historical characters."
+      ],
+      "opts": [
+       "clarifications of",
+       "disaffection with",
+       "condescension toward",
+       "incursions into",
+       "indifference to"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Reports of the destruction of island vegetation by human-introduced herbivores, such as goats and rabbits, are so (i)____ that there can be no reason to (ii)____."
+      ],
+      "cols": [
+       [
+        "dire",
+        "prejudicial",
+        "consistent"
+       ],
+       [
+        "trace their provenance",
+        "doubt their veracity",
+        "dispute their ubiquity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "George Eliot's biographer can be highly inventive, but, at the same time, somewhat (i)____ in her approach to Eliot. She will hoist an alluring psychological flag concerning Eliot and then scrupulously take it down again, because the evidence will not serve to (ii)____ it. But she takes it down only after it has taken an entirely (iii)____ flutter in the breeze."
+      ],
+      "cols": [
+       [
+        "sentimental",
+        "irresponsible",
+        "scrupulous"
+       ],
+       [
+        "embroider",
+        "discount",
+        "support"
+       ],
+       [
+        "unwarranted",
+        "accidental",
+        "justified"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The museum’s display of bandolier bags made by Ojibwa artists of the Mille Lacs community reinforces the idea that this community’s culture is ____ one: early twentieth-century bandolier bags are displayed alongside others made recently."
+      ],
+      "opts": [
+       "a historic",
+       "an inventive",
+       "an unfolding",
+       "a living",
+       "a resourceful",
+       "a unique"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "At the core of science fiction is the notion of ____, of asking, \"If this phenomenon continues, where will it lead?\""
+      ],
+      "opts": [
+       "generalization",
+       "extrapolation",
+       "projection",
+       "compensation",
+       "reparation",
+       "theorization"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Certainly, the drive to make safety a corporate priority is ____, but whether it will be enough to create the necessary change in corporate culture is another matter; organizational inertia can be a powerful force."
+      ],
+      "opts": [
+       "revolutionary",
+       "sound",
+       "critical",
+       "prudent",
+       "irresistible",
+       "inexorable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The idea that Antarctica’s subglacial lakes are ____ has changed radically thanks to repeat- pass satellite altimetry technology, which has found evidence of water transfer between lakes at distances of more than 200 kilometers."
+      ],
+      "opts": [
+       "sterile",
+       "barren",
+       "isolated",
+       "discrete",
+       "uniform",
+       "obscure"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

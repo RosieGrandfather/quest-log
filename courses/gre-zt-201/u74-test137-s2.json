@@ -1,0 +1,206 @@
+{
+ "id": "u74-test137-s2",
+ "title": "Test 137 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 137, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 137 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The depletion of soil and trees in southern West Virginia has resulted in frequent flash floods, since when the mountain slopes are ____, storms cause torrents of water to pour down them unimpeded."
+      ],
+      "opts": [
+       "riven",
+       "fecund",
+       "denuded",
+       "withered",
+       "mutable"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The methods for composting organic waste aim to (i) ____ nature’s tendency toward decay — a process unfortunately often (ii) ____ in landfills, where organic materials are packed so tightly that they have little access to the oxygen necessary for decomposition."
+      ],
+      "cols": [
+       [
+        "obviate",
+        "precipitate",
+        "ameliorate"
+       ],
+       [
+        "impeded",
+        "expedited",
+        "manifested"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFI",
+     "txt": {
+      "stem": [
+       "Unlike those glossy Architectural Digest photographs that are deliberately (i) ____ lest they distract from a focus on the building itself, Friedlander’s architectural photography is the product of his insistence that he is an individual looking at buildings and scenes as they actually exist. Friedlander reminds us that everyday objects (ii) ____ or, more exactly, that the unimpeded visual scene of a building without cars or power lines or street signs is a highly (iii) ____ photographic artifact."
+      ],
+      "cols": [
+       [
+        "impersonal",
+        "offhand",
+        "evocative"
+       ],
+       [
+        "are largely inessential",
+        "resist interpretation",
+        "normally interfere"
+       ],
+       [
+        "intriguing",
+        "imprecise",
+        "contrived"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADH",
+     "txt": {
+      "stem": [
+       "Those whose professional lives spanned the rise of the feminist movement from the 1970s onward and who witnessed significant advances in gender equality in the workplace over the intervening four decades will not be (i) ____ Saval’s account of the (ii) ____ female employees. However, the (iii) ____ women advancing in the workplace can seem astonishing to those who did not witness it firsthand."
+      ],
+      "cols": [
+       [
+        "surprised by",
+        "aware of",
+        "impressed by"
+       ],
+       [
+        "growing opportunities",
+        "striking accomplishments",
+        "many tribulations"
+       ],
+       [
+        "resistance to available to",
+        "support for attained by",
+        "indifference to experienced by"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Biographies can be ____ contrivances, often too long and too detailed for their own good."
+      ],
+      "opts": [
+       "subtle",
+       "ingenious",
+       "extravagant",
+       "vain",
+       "wearisome",
+       "onerous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Many types of rocks contain small voids that ____ vibrations: the greater the proportion of a rock’s volume that is void, the more gradually vibrations travel through it."
+      ],
+      "opts": [
+       "amplify",
+       "dampen",
+       "generate",
+       "impede",
+       "produce",
+       "conceal"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Even though it was the soprano’s first major role with the company, there was no ____ in her masterful performance."
+      ],
+      "opts": [
+       "flamboyance",
+       "hesitancy",
+       "tentativeness",
+       "panache",
+       "flaw",
+       "exhibitionism"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

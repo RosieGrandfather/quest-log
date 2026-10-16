@@ -1,0 +1,196 @@
+{
+ "id": "u11-test106-s1",
+ "title": "Test 106 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 106, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 106 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Saturn's rings seem ____, but it now appears that several decades ago, the shape of the innermost rings was altered by a mysterious event that all our telescopes and spacecraft failed to detect."
+      ],
+      "opts": [
+       "immutable",
+       "fragmentary",
+       "luminous",
+       "unique",
+       "concentric"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Rocks of the Morrison Formation in the western United States yield many dinosaur fossils but few plant fossils. This apparent (i)____ of plants leads some scientists to speculate that the region was once mostly barren. But others have (ii)____, noting that the herbivorous dinosaurs there would have needed an abundant food supply."
+      ],
+      "cols": [
+       [
+        "attrition",
+        "dearth",
+        "attenuation"
+       ],
+       [
+        "abdicated",
+        "acceded",
+        "demurred"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The general claim that artists are the preeminent specialists in (i)____ is refuted by the obvious fact that the great mathematical and scientific discoveries of the past and present have been as much the result of (ii)____ thinking as have great (iii)____ discoveries."
+      ],
+      "cols": [
+       [
+        "revelation",
+        "creativity",
+        "symbolization"
+       ],
+       [
+        "original",
+        "anachronistic",
+        "systematic"
+       ],
+       [
+        "historical",
+        "empirical",
+        "artistic"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Much honored for her work in both theater and film, the director was prolific-too much so, according to some critics who thought she sometimes took on projects ____."
+      ],
+      "opts": [
+       "haphazardly",
+       "unprofitably",
+       "indiscriminately",
+       "unflaggingly",
+       "inappropriately",
+       "prematurely"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Some species of the genus Daphnia (commonly known as water fleas) are phenotypically ____, altering their diurnal migration behavior and developing exaggerated morphological defenses in response to predators."
+      ],
+      "opts": [
+       "immutable",
+       "methodical",
+       "determinate",
+       "plastic",
+       "arbitrary",
+       "pliable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Yang Hong’s studies of ancient Chinese tombs transcribe the tombs’ epitaphs and inscriptions, noting whether these texts corroborate available information about the deceased’s life or ancestry or ____ it by presenting biographical material not found elsewhere."
+      ],
+      "opts": [
+       "disseminate",
+       "contradict",
+       "supplement",
+       "obviate",
+       "augment",
+       "promulgate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Wilkinson believes that the subversion of science is widespread, though generally more subtle than the particularly ____ cases he selected to draw attention to his book."
+      ],
+      "opts": [
+       "blatant",
+       "innocuous",
+       "conspicuous",
+       "controversial",
+       "insignificant",
+       "disconcerting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

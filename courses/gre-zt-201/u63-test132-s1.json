@@ -1,0 +1,196 @@
+{
+ "id": "u63-test132-s1",
+ "title": "Test 132 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 132, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 132 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Establishing the exact boundaries of a piece of property can be ____ process; some of the bitterest battles in contemporary society are waged between neighbors fighting over small slivers of land."
+      ],
+      "opts": [
+       "a definitive",
+       "a scrupulous",
+       "an expedient",
+       "a fraught",
+       "a deliberate"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "According to Adriana Craciun, many of the people who fled France because of opposition to the Revolution were (i)____ by loyalty to the deposed royal family: almost a third of those who left France departed (ii)____ the fall of the monarchy, so it is unlikely, claims Craciun, that fealty to the royal family was the decisive factor in their decision."
+      ],
+      "cols": [
+       [
+        "strongly galvanized",
+        "entirely unmoved",
+        "not simply motivated"
+       ],
+       [
+        "after",
+        "during",
+        "before"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEI",
+     "txt": {
+      "stem": [
+       "Lava flows that erupt on Earth’s surface cool rapidly, forming rocks that are very fine grained. But some lava remains in volcanic conduits deep in the ground where it cools slowly, and the slowly growing mineral grains get much bigger than their surface equivalents. Thus, rocks with (i)____ can have (ii)____ textures, depending on how quickly they (iii)____."
+      ],
+      "cols": [
+       [
+        "diverse mineral",
+        "typical surface markings",
+        "identical chemical makeup"
+       ],
+       [
+        "recognizable",
+        "disparate",
+        "unusual"
+       ],
+       [
+        "fracture components",
+        "spread",
+        "congeal"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "With Duncan’s ambitious study, Chesnutt appears finally to have outgrown the ____ treatment he once received from literary historians and critics for whom he typically served as a merely transitional figure in the African American tradition."
+      ],
+      "opts": [
+       "cursory",
+       "jocular",
+       "heartfelt",
+       "didactic",
+       "fervent",
+       "perfunctory"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Despite his secure position as a writer, Samuel Richardson adopted a strangely ____ posture, soliciting advice on early drafts of his second novel from readers familiar with his earlier work."
+      ],
+      "opts": [
+       "complaisant",
+       "quarrelsome",
+       "nonchalant",
+       "deferential",
+       "dispassionate",
+       "perfunctory"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The trilogy balance seriousness with brilliant special effects, a fundamental furious darkness with fast-paced and engaging storytelling, so that the books manage to be simultaneously disturbing and ____."
+      ],
+      "opts": [
+       "intense",
+       "fun",
+       "melodramatic",
+       "gloomy",
+       "entertaining",
+       "somber"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "In our solar system, Earth is the most ____ of the rocky, or terrestrial, planets, so when first searching beyond solar system, scientists were not accustomed to planets of similar composition but many times the mass."
+      ],
+      "opts": [
+       "complex",
+       "temperate",
+       "clement",
+       "sizable",
+       "intricate",
+       "substantial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

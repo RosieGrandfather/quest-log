@@ -21,7 +21,7 @@ keys = {}
 for line in KEY.read_text(encoding='utf-8-sig').splitlines():
     if m := re.match(r'test\s+(\d+)',line,re.I): test = int(m[1])
     elif m := re.match(r'section\s+([12])\s+(.+)',line,re.I):
-        keys[test,int(m[1])] = [a for a in m[2].split('/') if a]
+        keys[test,int(m[1])] = [a for a in m[2].strip().split('/') if a]
 assert len(ROWS) == len(course['units']) == 100
 # Round 2 was blind (answer keys hidden from reviewers); these are the only blind answers that differed.
 # Each was re-read and the source key kept; see docs/GRE_ZT_ANSWER_REVIEW.md.
@@ -70,44 +70,58 @@ report={'date':'2026-10-16','course':'gre-zt','questions':700,'supported':700-lo
 assert report['differentCandidateCount']==0
 print(f'700 reviewed: {700-low} supported, {low} low-confidence; {len(BLIND_DIFF)} blind disagreements in round 2 re-checked; 0 answer keys changed. PDF/TXT/course mappings agree.')
 
-# ---- gre-zt-101 (Test 51-100): blind review, keys hidden from reviewers ----
+# ---- gre-zt-101 / gre-zt-201: blind reviews, keys hidden from reviewers ----
 from build import PENDING
-ROWS101 = HERE.joinpath('reviewed-sections-101.tsv').read_text(encoding='utf-8').splitlines()[1:]
-course101 = json.loads((REPO/'courses/gre-zt-101/course.json').read_text(encoding='utf-8'))
-pdf101 = extract(PDF, (51, 100))
+
+
+def review_blind(cid, tests, tsv, blind_diff, low, out, external):
+    """blind_diff: blind answers that differed from the source key; low: kept but low-confidence."""
+    rows = HERE.joinpath(tsv).read_text(encoding='utf-8').splitlines()[1:]
+    crs = json.loads((REPO/'courses'/cid/'course.json').read_text(encoding='utf-8'))
+    pdf_secs = extract(PDF, tests)
+    n = 2*(tests[1]-tests[0]+1)
+    assert len(rows) == len(crs['units']) == len(pdf_secs) == n
+    items = []
+    for i, (row, entry, pdf_section) in enumerate(zip(rows, crs['units'], pdf_secs), 1):
+        number, candidate_keys, reasons = row.split('\t')
+        candidates, reasons = candidate_keys.split('/'), reasons.split('|')
+        assert int(number)==i and len(candidates)==len(reasons)==7
+        test, section = tests[0]-1+(i+1)//2, (i-1)%2+1
+        unit = json.loads((REPO/'courses'/cid/entry['file']).read_text(encoding='utf-8'))
+        for q, pq, candidate, reason, source in zip(unit['blocks'][0]['items'], pdf_section['items'], candidates, reasons, keys[test, section]):
+            assert q['sourceAnswer']==source
+            assert q['ans']==[LETTERS.index(c)-(3*j if q['kind']=='tc' else 0) for j,c in enumerate(source)]
+            options=q['txt'].get('opts') or sum(q['txt']['cols'],[])
+            assert len(options)==len(pq['opts'])
+            pending=(cid,unit['id'],q['n']) in PENDING
+            assert pending==bool(q.get('answerPending')) and pending==(candidate!=source), (cid,i,q['n'])
+            items.append({'unit':unit['id'],'lesson':i,'test':test,'section':section,'question':q['n'],
+                          'sourceAnswer':source,'blindCandidate':blind_diff.get((i,q['n']),source),'reviewCandidate':candidate,
+                          'matchesSource':source==candidate,
+                          'status':'pending-not-scored' if pending else 'low-confidence' if (i,q['n']) in low else 'supported',
+                          'basis':reason,'sourcePDFPages':list(range(pq['start'][0]+1,pq['end'][0]+2))})
+    assert len(items)==7*n and set(low) <= set(blind_diff)
+    count = lambda st: sum(q['status']==st for q in items)
+    report={'date':'2026-10-16','course':cid,'questions':len(items),'supported':count('supported'),'lowConfidence':count('low-confidence'),
+            'pendingNotScored':count('pending-not-scored'),'blindDisagreements':len(blind_diff),'answerKeysChanged':0,
+            'method':'遮住答案键分批盲做，再与配套答案比对；不一致的题逐题复读并查询公开同题版本。判定配套答案不可靠的题保留原答案，但标为待核对、不计分。非ETS官方答案认证。',
+            'sourcePDFSHA256':hashlib.sha256(PDF.read_bytes()).hexdigest(),'answerTXTSHA256':hashlib.sha256(KEY.read_bytes()).hexdigest(),
+            'externalChecks':external,'items':items}
+    (REPO/'docs'/out).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(f"{cid}: {len(items)} reviewed: {report['supported']} supported, {report['lowConfidence']} low-confidence, {report['pendingNotScored']} not scored; {len(blind_diff)} blind disagreements re-checked; 0 answer keys changed.")
+
+
 # Blind answers that differed from the source key (partial answers where a reviewer skipped the last blank included).
-BLIND_DIFF_101 = {(16,4):'CFG',(22,2):'CD',(25,4):'AD',(31,7):'BE',(41,4):'EF',(52,3):'BD',(54,7):'BE',(58,4):'CE',(63,5):'CF',
-                  (67,3):'CF',(75,3):'ADG',(75,6):'DE',(76,4):'BDI',(79,3):'CDH',(80,4):'BDH',(80,5):'CF',(83,6):'CF',(89,3):'CD',
-                  (95,6):'DE',(96,5):'BE'}
-LOW101 = {(25,4),(31,7),(41,4),(54,7),(75,6),(76,4),(79,3),(80,4),(80,5),(95,6)}
-assert len(ROWS101) == len(course101['units']) == len(pdf101) == 100
-audit101 = []
-for i, (row, entry, pdf_section) in enumerate(zip(ROWS101, course101['units'], pdf101), 1):
-    number, candidate_keys, reasons = row.split('\t')
-    candidates, reasons = candidate_keys.split('/'), reasons.split('|')
-    assert int(number)==i and len(candidates)==len(reasons)==7
-    test, section = 50+(i+1)//2, (i-1)%2+1
-    unit = json.loads((REPO/'courses/gre-zt-101'/entry['file']).read_text(encoding='utf-8'))
-    for q, pq, candidate, reason, source in zip(unit['blocks'][0]['items'], pdf_section['items'], candidates, reasons, keys[test, section]):
-        assert q['sourceAnswer']==source
-        assert q['ans']==[LETTERS.index(c)-(3*j if q['kind']=='tc' else 0) for j,c in enumerate(source)]
-        options=q['txt'].get('opts') or sum(q['txt']['cols'],[])
-        assert len(options)==len(pq['opts'])
-        pending=(course101['id'],unit['id'],q['n']) in PENDING
-        assert pending==bool(q.get('answerPending')) and pending==(candidate!=source)
-        audit101.append({'unit':unit['id'],'lesson':i,'test':test,'section':section,'question':q['n'],
-                         'sourceAnswer':source,'blindCandidate':BLIND_DIFF_101.get((i,q['n']),source),'reviewCandidate':candidate,
-                         'matchesSource':source==candidate,
-                         'status':'pending-not-scored' if pending else 'low-confidence' if (i,q['n']) in LOW101 else 'supported',
-                         'basis':reason,'sourcePDFPages':list(range(pq['start'][0]+1,pq['end'][0]+2))})
-assert len(audit101)==700
-count = lambda s: sum(q['status']==s for q in audit101)
-report101={'date':'2026-10-16','course':'gre-zt-101','questions':700,'supported':count('supported'),'lowConfidence':count('low-confidence'),
-           'pendingNotScored':count('pending-not-scored'),'blindDisagreements':len(BLIND_DIFF_101),'answerKeysChanged':0,
-           'method':'遮住答案键分10批盲做700题，再与配套答案比对；不一致的题逐题复读并查询公开同题版本。1题判定配套答案不可靠，保留原答案但标为待核对、不计分。非ETS官方答案认证。',
-           'sourcePDFSHA256':hashlib.sha256(PDF.read_bytes()).hexdigest(),'answerTXTSHA256':hashlib.sha256(KEY.read_bytes()).hexdigest(),
-           'externalChecks':[
-               {'lesson':41,'question':4,'url':'https://gre.kmf.com/explain/index?qid=71ncgj&cid=239319','observation':'公开题库对本题有AE和EF两种答案，不能据此确定；保留AE，低把握。'}],
-           'items':audit101}
-(REPO/'docs/GRE_ZT101_ANSWER_AUDIT.json').write_text(json.dumps(report101,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print(f"gre-zt-101: 700 reviewed: {report101['supported']} supported, {report101['lowConfidence']} low-confidence, {report101['pendingNotScored']} not scored; {len(BLIND_DIFF_101)} blind disagreements re-checked; 0 answer keys changed.")
+review_blind('gre-zt-101', (51, 100), 'reviewed-sections-101.tsv',
+    {(16,4):'CFG',(22,2):'CD',(25,4):'AD',(31,7):'BE',(41,4):'EF',(52,3):'BD',(54,7):'BE',(58,4):'CE',(63,5):'CF',
+     (67,3):'CF',(75,3):'ADG',(75,6):'DE',(76,4):'BDI',(79,3):'CDH',(80,4):'BDH',(80,5):'CF',(83,6):'CF',(89,3):'CD',
+     (95,6):'DE',(96,5):'BE'},
+    {(25,4),(31,7),(41,4),(54,7),(75,6),(76,4),(79,3),(80,4),(80,5),(95,6)},
+    'GRE_ZT101_ANSWER_AUDIT.json',
+    [{'lesson':41,'question':4,'url':'https://gre.kmf.com/explain/index?qid=71ncgj&cid=239319','observation':'公开题库对本题有AE和EF两种答案，不能据此确定；保留AE，低把握。'}])
+review_blind('gre-zt-201', (101, 143), 'reviewed-sections-201.tsv',
+    {(4,3):'BF',(4,4):'BDI',(6,5):'DE',(7,2):'CE',(8,1):'D',(19,3):'CEH',(21,7):'AD',(22,3):'BF',(26,5):'AC',(27,5):'CD',
+     (35,4):'BE',(47,5):'AB',(54,5):'CD',(60,4):'ADI',(62,3):'BFI',(73,3):'CFG',(74,4):'AFG',(86,3):'CDG'},
+    {(6,5),(7,2),(19,3),(21,7),(22,3),(27,5),(35,4),(47,5),(54,5),(74,4)},
+    'GRE_ZT201_ANSWER_AUDIT.json',
+    [{'lesson':62,'question':3,'url':'https://gre.viplgw.cn/question/9657.html','observation':'公开题库同题给CFI，与配套答案相同，但后一句的例子表明Penrose在批评他人，故仍判定配套答案不可靠，暂不计分。'}])

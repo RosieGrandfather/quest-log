@@ -1,0 +1,203 @@
+{
+ "id": "u60-test130-s2",
+ "title": "Test 130 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 130, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 130 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The prime minister’s reputation for ____ was sullied when it was revealed that he had known of fraudulent activities taking place in the country’s banking system but failed to report them."
+      ],
+      "opts": [
+       "solicitude",
+       "impassivity",
+       "probity",
+       "diplomacy",
+       "forbearance"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "All countries have obvious incentives to learn from policy mistakes, but when a nation becomes (i)____, it may be (ii)____ to recognize and quickly correct errors. When it comes to learning the right lessons, nothing fails like prior success."
+      ],
+      "cols": [
+       [
+        "ambitious",
+        "powerful",
+        "diverse"
+       ],
+       [
+        "required",
+        "unable",
+        "willing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Because human emotions are behavioral complexes, they presumably took a very long time to develop. Therefore, a complete lack of any (i)____ human emotions in ancestral species is (ii)____."
+      ],
+      "cols": [
+       [
+        "alternatives to",
+        "antecedents of",
+        "understanding of"
+       ],
+       [
+        "unquestionable",
+        "reassuring",
+        "improbable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "Recent research shows that although the overall parental involvement in education (i)____ during adolescence, the (ii)____ the nature and frequency of parents’ involvement and adolescent educational outcomes are no longer (iii)____: for some types of parental involvement, declines are appropriate, whereas increases may, in fact, have deleterious effects."
+      ],
+      "cols": [
+       [
+        "begins to wane",
+        "continues to matter",
+        "fails to improve"
+       ],
+       [
+        "links between",
+        "conditions for",
+        "problems with"
+       ],
+       [
+        "satisfactory",
+        "negligible",
+        "straightforward"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ],
+     "answerPending": true,
+     "answerReviewReason": "校对认为配套答案不可靠",
+     "explanation": "配套答案为 空(i) B continues to matter、空(ii) A links between、空(iii) A satisfactory。冒号后说某些参与的减少是恰当的、增加反而可能有害，对应“整体参与在青春期开始减少，但参与与学业结果之间的关系不再简单”，更合理的是 空(i) A begins to wane、空(ii) A links between、空(iii) C straightforward。"
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The government has been able to ____ the country’s most serious social, economic and political problems, but these problems remain and may be getting worse."
+      ],
+      "opts": [
+       "redress",
+       "sidestep",
+       "champion",
+       "dodge",
+       "remedy",
+       "investigate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Despite the rather ____ conditions required for its preservation, the evidence for glaciation during the late Proterozoic is found on every continent, suggesting that ice sheets were present throughout the globe."
+      ],
+      "opts": [
+       "unusual",
+       "hostile",
+       "drastic",
+       "stringent",
+       "exacting",
+       "complex"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The movie’s ponderousness is ____ by the gripping performance turned in by the lead actor."
+      ],
+      "opts": [
+       "heightened",
+       "exacerbated",
+       "mitigated",
+       "belied",
+       "relieved",
+       "symbolized"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

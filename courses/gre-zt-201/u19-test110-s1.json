@@ -1,0 +1,196 @@
+{
+ "id": "u19-test110-s1",
+ "title": "Test 110 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 110, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 110 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The watchword in astronomy is ____: all claims must be examined critically in the light of current knowledge, and one's mind should never be closed to the possibility that a theory could be wrong."
+      ],
+      "opts": [
+       "implausibility",
+       "imagination",
+       "wariness",
+       "determination",
+       "incoherency"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Lohr’s (i)____ the trappings of literary celebrity creates a Romantic aura for him: by distancing himself from all public discourse about himself or his work, Lohr becomes an even greater, albeit more (ii)____, celebrity than most authors manage in all their interviews and memoirs."
+      ],
+      "cols": [
+       [
+        "refusal to wear",
+        "eagerness to understand",
+        "inability to renounce"
+       ],
+       [
+        "renowned",
+        "appealing",
+        "mysterious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "The latest encyclopedia (i)____ the (ii)____ made by many other books on how things work —giving (iii)____ for every device, no matter how complicated—by taking just as long as is needed to explain things."
+      ],
+      "cols": [
+       [
+        "repeats",
+        "exposes",
+        "avoids"
+       ],
+       [
+        "assumption",
+        "mistake",
+        "compromise"
+       ],
+       [
+        "a brief historical background",
+        "an equal number of words",
+        "at least one illustration"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "In the early-twentieth-century United States, the enforcement of the “separate but equal”doctrine in the treatment of African Americans was ____: much attention was paid to separation but scant to equality."
+      ],
+      "opts": [
+       "meticulous",
+       "selective",
+       "ruthless",
+       "ineffective",
+       "unwavering",
+       "lopsided"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Unlike French cuisine, which works as a conversation among regional variations but recognizes the ____ of Parisian cuisine, Italian cuisine affirms a system based on the sum of equally regarded local cuisines."
+      ],
+      "opts": [
+       "preeminence",
+       "versatility",
+       "sophistication",
+       "hegemony",
+       "heaviness",
+       "heterogeneity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Early natural history collections in eighteenth-century Europe were ____: a bear's tooth might sit incongruously alongside a piece of silverwork or, in the menagerie, a South American capybara might be housed next to an African baboon."
+      ],
+      "opts": [
+       "painstakingly arranged",
+       "impressively comprehensive",
+       "meticulously organized",
+       "highly exotic",
+       "fundamentally miscellaneous",
+       "thoroughly eclectic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The early stages of being trained to ride a motorcycle are all about developing muscle memory, repeating combinations of hand-foot movements until they are ____ and precise."
+      ],
+      "opts": [
+       "aberrant",
+       "innate",
+       "reflexive",
+       "inborn",
+       "automatic",
+       "calculated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

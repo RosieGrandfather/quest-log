@@ -1,0 +1,196 @@
+{
+ "id": "u81-test141-s1",
+ "title": "Test 141 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 141, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 141 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "One of the reasons why so many rodent species live in rocky habitat is because it is ____: it contains plenty of crevices and cavities in which animals can nest, seek shelter, and find shade."
+      ],
+      "opts": [
+       "ecologically stable",
+       "readily accessible",
+       "hydrologically variable",
+       "topographically complex",
+       "geographically widespread"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Most of the bank-efficiency literature suggests that bank mergers culminating in larger, more complex organizations (i) ____ significant economies of scale or scope that are (ii) ____ to consumers. Indeed, some of this literature suggests diseconomies, which would lead to higher loan rates or lower deposit rates for consumers."
+      ],
+      "cols": [
+       [
+        "fail to provide",
+        "seek to create",
+        "cannot but generate"
+       ],
+       [
+        "beneficial",
+        "responsive",
+        "transparent"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "When reviewing a book that advertises lying as its subject, the critic has a duty to screen the title for possible (i)____, and it is therefore necessary to report that The Concise Book of Lying is not concise. If the book were making a case for deception, the mismatch might not matter : a (ii) ____ title might suit a book designed to disabuse us of our respect for (iii)____. But the book is not an apology for lying; it is on the side of truth."
+      ],
+      "cols": [
+       [
+        "ambiguity",
+        "mendacity",
+        "partiality"
+       ],
+       [
+        "misleading",
+        "dependable",
+        "verbose"
+       ],
+       [
+        "brevity",
+        "pedantry",
+        "veracity"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "So effective are inhaled steroids at staving off asthma attacks that doctors now regard them as ____ therapy."
+      ],
+      "opts": [
+       "a mainstay of",
+       "a precursor to",
+       "a supplement to",
+       "a complement to",
+       "a foundation of",
+       "an antithesis to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Interest in the recovery of lost works by Brazilian women writers is growing as scholars increasingly recognize writing by Brazilian women as inherently worth study, not as ____ writing by Brazilian men."
+      ],
+      "opts": [
+       "divergent from",
+       "ancillary to",
+       "interchangeable with",
+       "antithetical to",
+       "subsidiary to",
+       "complimentary to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The sum of money needed to pay for the additional vaccines may not sound ____, but for developing countries even a small increase in the healthcare budget may prove a very big drain on resources."
+      ],
+      "opts": [
+       "burdensome",
+       "paltry",
+       "negligible",
+       "onerous",
+       "sufficient",
+       "adequate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "In contrast to today, when many readers consider the moral sentiments expressed in the ancient writer's work to be quite sophomoric, in the writer's own time, these sentiments were regarded as remarkably ____."
+      ],
+      "opts": [
+       "abstruse",
+       "misguided",
+       "insightful",
+       "ill conceived",
+       "sagacious",
+       "sanguine"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

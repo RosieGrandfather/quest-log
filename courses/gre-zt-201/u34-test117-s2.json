@@ -1,0 +1,194 @@
+{
+ "id": "u34-test117-s2",
+ "title": "Test 117 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 117, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 117 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Drug companies rarely pursue new pharmacotherapies for rare disease because of the high failure rates and the cost of research, which make the companies’ chances of recovering their investments ____."
+      ],
+      "opts": [
+       "tenable",
+       "dubious",
+       "invaluable",
+       "sanguine",
+       "expensive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The watchword in astronomy is ____: all claims must be examined critically in the light of current knowledge, and one’s mind should never be closed to the possibility that a theory could be wrong."
+      ],
+      "opts": [
+       "implausibility",
+       "imagination",
+       "wariness",
+       "determination",
+       "incoherency"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Meegan Garber argues that the typical suburban lawn, which was originally designed to (i)____ homes even as it enforced the distance between them, may be considered (ii)____ domestic space: the whole neighborhood is invested in the appearance of each neighbor's yard."
+      ],
+      "cols": [
+       [
+        "beautify",
+        "connect",
+        "circumscribe"
+       ],
+       [
+        "utilitarian",
+        "common",
+        "contested"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "Victories in intellectual battles in the human sciences are rarely (i)____. While factionalism may persist, (ii)____ also tend to occur, as reigning paradigms selectively (iii)____ those revisionist contributions that offer greater analytical comprehension or enrich our range of empirical reference."
+      ],
+      "cols": [
+       [
+        "total",
+        "acknowledged",
+        "benign"
+       ],
+       [
+        "betrayals",
+        "distortions",
+        "accommodations"
+       ],
+       [
+        "incorporate",
+        "expunge",
+        "misrepresent"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The North Atlantic Oscillation is seesaw of atmospheric pressure between a persistent high over Portugal’s Azores islands and an equally ____ low over Iceland."
+      ],
+      "opts": [
+       "enduring",
+       "delimited",
+       "abiding",
+       "variable",
+       "anemic",
+       "bounded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Even though some governments are now expressing alarm over their nations’ ____ birth rates, the planetary threat of human overpopulation has not ceased to concern many scientists and environmentalists."
+      ],
+      "opts": [
+       "fluctuating",
+       "incommensurate",
+       "burgeoning",
+       "flagging",
+       "thriving",
+       "languishing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "At every turn in her novels, Patricia Highsmith eschews simple distinctions between good and evil, right and wrong, choosing instead to examine how ____ such distinctions can be."
+      ],
+      "opts": [
+       "plastic",
+       "palpable",
+       "parochial",
+       "arbitrary",
+       "concrete",
+       "malleable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

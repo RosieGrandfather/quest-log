@@ -1,0 +1,196 @@
+{
+ "id": "u61-test131-s1",
+ "title": "Test 131 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 131, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 131 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Unlike the introductions to many other biographies, this one is not ____; in fact, it would be a stretch to call it evenhanded."
+      ],
+      "opts": [
+       "evaluative",
+       "contrived",
+       "concise",
+       "laudatory",
+       "formal"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "No one (i)____ that building a ship powered by black holes or dark matter would be a formidable task. Yet remarkably there seems to be nothing in our present understanding of physics that (ii)____ our doing so."
+      ],
+      "cols": [
+       [
+        "believes",
+        "admits",
+        "disputes"
+       ],
+       [
+        "anticipates",
+        "necessitates",
+        "precludes"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "The main (i)____ for pianists playing the keyboard works of Couperin lies in the effusion of embellishments, which are much easier to toss off without overemphasis, let alone (ii)____, on the harpsichord than on the piano. Yet pianist Angela Hewitt’s handling of all those fleeting lilts and curlicues is a model of (iii)____. As a result, little nothings like “Le Petit-Rien” are sheer rippling delights."
+      ],
+      "cols": [
+       [
+        "difficulty",
+        "attraction",
+        "unknown"
+       ],
+       [
+        "ungainliness",
+        "elegance",
+        "mastery"
+       ],
+       [
+        "fierce intensity",
+        "economy and languor",
+        "lightness and elegance"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Koizumi’s decision to stake his political career on postal reform was less ____ than it might sound because the postal system could pass along trillions of yen to government financial institutions, benefiting him politically."
+      ],
+      "opts": [
+       "quixotic",
+       "impractical",
+       "calculating",
+       "shrewd",
+       "impulsive",
+       "maladroit"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Researchers who study pollinator behavior are increasingly interested in multicomponent floral signals, but they often focus on how individual components are learned by pollinators rather than on the benefit of signal ____ per se."
+      ],
+      "opts": [
+       "complexity",
+       "stability",
+       "magnitude",
+       "intensity",
+       "variation",
+       "intricacy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "In her novel, the sea is ____ symbol: to the narrator, it clearly represents everything that is destructive in nature, but at other times it seems to stand for everything in nature that is serenely beautiful."
+      ],
+      "opts": [
+       "an unorthodox",
+       "an equivocal",
+       "an unconventional",
+       "a comprehensive",
+       "an elusive",
+       "an ambiguous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Frequently blamed for making ____ coverage decisions, insurance companies are eager to avoid additional bad press."
+      ],
+      "opts": [
+       "heartless",
+       "unfair",
+       "parsimonious",
+       "callous",
+       "definitive",
+       "conclusive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

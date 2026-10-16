@@ -1,0 +1,196 @@
+{
+ "id": "u69-test135-s1",
+ "title": "Test 135 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 135, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 135 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The professor explained that in order to make a complex phenomenon more ____, economists often reduce it to an abstract problem."
+      ],
+      "opts": [
+       "tractable",
+       "contemporary",
+       "momentous",
+       "tenebrous",
+       "substantive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The great divide between science and the humanities appeared during the last decades of the nineteenth century: before then, most people had seen those realms of human thoughts as (i)____. It would therefore be (ii)____ us to study early or mid-nineteenth-century science as something completely separates from the art of the time."
+      ],
+      "cols": [
+       [
+        "recondite",
+        "overlapping",
+        "inapposite"
+       ],
+       [
+        "prescient of",
+        "uncharacteristic of",
+        "anachronistic for"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "Despite its title and the recipes it provides, the main purpose of The Insect Cookbook is not (i)____. Instead, the book seeks to (ii)____ of entomophagy, i.e. the consumption of insects as food: it is composed of interviews with chefs, farmers, politicians, and United Nations figures, all of whom attempt to (iii)____ the custom of eating insects."
+      ],
+      "cols": [
+       [
+        "scientific",
+        "culinary",
+        "educational"
+       ],
+       [
+        "explore the history",
+        "condemn the practice",
+        "proselytize on behalf"
+       ],
+       [
+        "promote",
+        "discredit",
+        "reform"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "According to Waters, Cheryl Fish’s otherwise brilliant analysis of Mary Seacole is ____ by a postmodern penchant for inventive jargon and fuzzy metaphysics."
+      ],
+      "opts": [
+       "negated",
+       "marred",
+       "dominated",
+       "caricatured",
+       "forestalled",
+       "tainted"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "By avoiding hyperbole in her definitive account of one of the most influential but controversial banks of the modern era, Hurst show herself to be a ____ author."
+      ],
+      "opts": [
+       "judicious",
+       "brilliant",
+       "compelling",
+       "sensible",
+       "sympathetic",
+       "solicitous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "In stark contrast to her earlier plays, which are noisily crammed with monologues and overlapping dialogue, Caryl Churchill’s later theatrical works are notably ____."
+      ],
+      "opts": [
+       "laconic",
+       "inventive",
+       "cogent",
+       "resourceful",
+       "spare",
+       "bland"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Attempts to restore carnivores to ecosystems from which they were eliminated have become ____: indeed, many species are even being introduced into areas where they did not previously roam."
+      ],
+      "opts": [
+       "expensive",
+       "controversial",
+       "contentious",
+       "commonplace",
+       "effective",
+       "widespread"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

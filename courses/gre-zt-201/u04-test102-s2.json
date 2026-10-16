@@ -1,0 +1,200 @@
+{
+ "id": "u04-test102-s2",
+ "title": "Test 102 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 102, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 102 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "While many books have emphasized the differences between Delaney and his father—and his need to differentiate himself from his father—Delaney takes pains in this memoir to ____ his closeness with his dad."
+      ],
+      "opts": [
+       "underscore",
+       "question",
+       "repudiate",
+       "sidestep",
+       "trivialize"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "While catalogs of record labels that specialize in Native American music are useful indices of Native American consumers' preferences, their (i)____ are also (ii)____: some genres of Native American music have been deemed inappropriate to record because of their special cultural significance."
+      ],
+      "cols": [
+       [
+        "strategies",
+        "omissions",
+        "inconsistencies"
+       ],
+       [
+        "telling",
+        "misleading",
+        "surprising"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Readers had little reason to (i)____ what proved to be the rather uncanny (ii)____ of Kaja Silverman’s and Bell Hooks’s polemics, given the two authors’ contrary methodologies, interests, and audiences."
+      ],
+      "cols": [
+       [
+        "distinguish",
+        "anticipate",
+        "dispute"
+       ],
+       [
+        "convergence",
+        "timeliness",
+        "dissonance"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "Paleoclimatic records recovered from land, the ocean, and glacial ice (i) ____a (ii) ____ global climate over much of the last glacial cycle. Indeed, in many locations in the Northern Hemisphere, changes in climate spanning almost the full range of glacial to interglacial conditions were so (iii) ____ that the transition between climate states occurred in decades or less."
+      ],
+      "cols": [
+       [
+        "exaggerate",
+        "confirm",
+        "redefine"
+       ],
+       [
+        "potent driver of",
+        "simple fact about",
+        "lack of stability in"
+       ],
+       [
+        "abrupt",
+        "unpredictable",
+        "enduring"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "While some naive investors have been convinced by proponents of the merger that the two companies are natural partners, experienced analysts are less ____."
+      ],
+      "opts": [
+       "optimistic",
+       "credulous",
+       "reliable",
+       "gullible",
+       "skeptical",
+       "dismissive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The orthodox approach to legal decision making tends to be backward looking, asking which decision would have the better legal ____."
+      ],
+      "opts": [
+       "outcome",
+       "lineage",
+       "consequence",
+       "corollary",
+       "standing",
+       "pedigree"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "While some commentators see space tourism as being ____, Alice Gorman suggests that we should see a future that includes space tourism as simply one possible future among many."
+      ],
+      "opts": [
+       "implausible",
+       "inconsequential",
+       "ineluctable",
+       "inevitable",
+       "impressive",
+       "intriguing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

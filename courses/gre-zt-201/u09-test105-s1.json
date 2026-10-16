@@ -1,0 +1,196 @@
+{
+ "id": "u09-test105-s1",
+ "title": "Test 105 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 105, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 105 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The fact that there are so many varieties of youthful dissent indicates that there is considerably less ____ to this counterculture than has been suggested."
+      ],
+      "opts": [
+       "hypocrisy",
+       "relevance",
+       "spontaneity",
+       "degeneracy",
+       "coherence"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Discovering that cooler stars, which constitute three-quarters of our galaxy, can also be surrounded by habitable zones warm enough to harbor liquid water and, potentially, microbes and bacteria, has (i)____ the (ii)____ the search for extraterrestrial life."
+      ],
+      "cols": [
+       [
+        "assuaged",
+        "expanded",
+        "jeopardized"
+       ],
+       [
+        "target territory in",
+        "popular discomfort with",
+        "primary motivation for"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "The unattractive hyena is unjustly (i)____. It was long believed that when bob lions and hyenas were present at a kill, the latter invariably stole from the former, but this notion proved to be (ii)____: we now know that the lion is just as (iii)____ the hard-won prey of the hyena."
+      ],
+      "cols": [
+       [
+        "maligned",
+        "imperiled",
+        "forgotten"
+       ],
+       [
+        "divisive",
+        "convoluted",
+        "untrue"
+       ],
+       [
+        "apt to pilfer",
+        "capable of overtaking",
+        "likely to become"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Since responsibility for content is often ____ in multiauthor papers, it is easy to suppose that such papers may contain more instances of questionable academic practices than do papers by a single author."
+      ],
+      "opts": [
+       "ignored",
+       "diluted",
+       "disputed",
+       "weakened",
+       "highlighted",
+       "foregrounded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "When Kim Dae Jung was decisively elected South Korea’s president in December 1997, he was considered something of ____, but nevertheless the right man for the time and the job."
+      ],
+      "opts": [
+       "an unknown",
+       "an expert",
+       "a maverick",
+       "a nonconformist",
+       "a dilettante",
+       "an authority"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The author argued that the industrial agricultural system that prevails in the United States is unsustainable and, therefore, anything that ____ it should be questioned."
+      ],
+      "opts": [
+       "streamlines",
+       "reinforces",
+       "encumbers",
+       "buttresses",
+       "endangers",
+       "hampers"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Whereas the original editor had sacrificed clarity for brevity and her successor had been too ____, the new editor took an intermediate approach, explicit as to the purport of each document and not too ambitious in detail."
+      ],
+      "opts": [
+       "discriminating",
+       "prolix",
+       "bombastic",
+       "verbose",
+       "cryptic",
+       "inscrutable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

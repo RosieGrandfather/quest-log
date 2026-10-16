@@ -1,0 +1,194 @@
+{
+ "id": "u70-test135-s2",
+ "title": "Test 135 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 135, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 135 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The film portrays a political period that was bitterly divisive but does so in such ____ way that the narrative never becomes polemical."
+      ],
+      "opts": [
+       "a timely",
+       "an involved",
+       "a maladroit",
+       "a nuanced",
+       "an impassioned"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Because we participate in the dynamics of ecosystems as we restore them, restoration practice is in essence antithetical to the idea of a ____ wilderness."
+      ],
+      "opts": [
+       "managed",
+       "developing",
+       "rehabilitated",
+       "pristine",
+       "degraded"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Maddox presents a more (i)____ view of Franklin than the stereotyped rendering of her as the martyr whose data was stolen. By focus substantial attention on Franklin’s achievements working on the molecular structure of coal and on virus research, Maddox (ii)____ reducing Franklin’s legacy to her involvement in the (admittedly central) scientific story of DNA."
+      ],
+      "cols": [
+       [
+        "conventional",
+        "facile",
+        "complex"
+       ],
+       [
+        "resists",
+        "deplores",
+        "invites"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "At 79, Wirtz remains charmingly and frustratingly (i)____, giving only the briefest and most (ii)____ of answers to questions about his work as a landscape architect. His son Peter, who is as (iii)____ as his father is reticent, claims that the elder Wirtz, being a “natural talent,” does not always articulate what makes him do things."
+      ],
+      "cols": [
+       [
+        "elusive",
+        "subtle",
+        "sophisticated"
+       ],
+       [
+        "penetrating",
+        "explicit",
+        "general"
+       ],
+       [
+        "literal",
+        "voluble",
+        "tractable"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Recent advances in the study of desert vanish have been a boon to geologists, allowing them to date surface feature and establish regional climate histories in ____ detail."
+      ],
+      "opts": [
+       "novel",
+       "realistic",
+       "unprecedented",
+       "superfluous",
+       "extraneous",
+       "surprising"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Traditionally, doctors have measured consciousness by getting response from patients, asking questions like, “Can you hear me?”—an approach that is ____ for people who are conscious but unable to respond."
+      ],
+      "opts": [
+       "fanciful",
+       "imprecise",
+       "vague",
+       "illicit",
+       "inadequate",
+       "ineffective"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The essayist was known to suffer fools impatiently, but admittedly her vast intellect made that ____ largely justified."
+      ],
+      "opts": [
+       "hauteur",
+       "diffidence",
+       "irritability",
+       "imperturbability",
+       "superciliousness",
+       "timorousness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

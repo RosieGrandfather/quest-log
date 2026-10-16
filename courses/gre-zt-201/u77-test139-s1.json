@@ -1,0 +1,196 @@
+{
+ "id": "u77-test139-s1",
+ "title": "Test 139 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 139, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 139 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Readers are interested in Marx’s life because of his ideas, but Sperber’s book downplays his ideas to make room for his life, illustrating why intellectual biography can sometimes be a curiously ____ genre."
+      ],
+      "opts": [
+       "self-reflexive",
+       "self-glorifying",
+       "self-defeating",
+       "self-propagating",
+       "self-absorbed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Testing alternate versions of web pages in real time can make Internet-based companies (i) ____ some user preferences, but that does not necessarily make those companies (ii) ____, as 10,000 ongoing tweaks to the company web site do not add up to a fundamental change of direction when one is needed."
+      ],
+      "cols": [
+       [
+        "severely constrained by",
+        "rapidly responsive to",
+        "surprisingly indifferent to"
+       ],
+       [
+        "irresolute",
+        "transparent",
+        "agile"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "Why Zona Gale—a Pulitzer Prize-winning writer whose novels were both a critical and popular success—has fallen so far out of the literary canon is the fascinating subject of Deborah Lindsay Williams’ recent book. Williams concludes that Gale’s embrace of literary (i)____ accounts for her eventual decline in reputation. Gale sought professional affiliation with other women writers of many stripes, and Williams contends that she has therefore been (ii)____ by a later literary paradigm that favors (iii)____ as a marker of artistic prowess."
+      ],
+      "cols": [
+       [
+        "fame",
+        "conservatism",
+        "sisterhood"
+       ],
+       [
+        "marginalized",
+        "studied",
+        "overrated"
+       ],
+       [
+        "sociological accuracy",
+        "bold risk-taking",
+        "individual exceptionalism"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "We might be much closer to building the next generation of observatories if competing groups of astronomers had not ____ repeated chances to collaborate; instead, three separate projects with common goals are fighting one another for funding."
+      ],
+      "opts": [
+       "spurned",
+       "avoided",
+       "sabotaged",
+       "rebuffed",
+       "initiated",
+       "commenced"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Software makers typically write licensing agreements disclaiming responsibility for any negative consequences of using their products, but as computers become integrated into everything from cars to medical devices, that stance will become ____."
+      ],
+      "opts": [
+       "ambiguous",
+       "untenable",
+       "disfavored",
+       "indefensible",
+       "unwarranted",
+       "gratuitous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Those familiar with the insular conditions that once prevailed in Russia may be surprised by the ____ of eighteenth-century Russian composer Natalia Kurakina, who translated novels from French into Italian and composed songs in both languages."
+      ],
+      "opts": [
+       "versatility",
+       "worldliness",
+       "dedication",
+       "ingenuity",
+       "cosmopolitanism",
+       "industriousness"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Like his fellow ____ covering the campaign tour, who rarely had the luxury of spending more than one night in one place, Tony had his bags packed well before the evening fund-raiser."
+      ],
+      "opts": [
+       "roisterers",
+       "itinerants",
+       "peripatetics",
+       "carousers",
+       "oracles",
+       "inquisitors"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u71-test136-s1",
+ "title": "Test 136 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 136, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 136 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The museum exhibit perplexing mixed significant cultural artifacts with gaudy trinkets, leading one critic to suggest that the exhibit’s curator could not distinguish the important pieces from those that were ____."
+      ],
+      "opts": [
+       "representative",
+       "illustrious",
+       "repugnant",
+       "inscrutable",
+       "meretricious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "It was (i)____ the candidate’s insistence that there will be completely disclosure that she (ii)____ probing questions from reporters."
+      ],
+      "cols": [
+       [
+        "contrary to",
+        "illustrative of",
+        "peripheral to"
+       ],
+       [
+        "misunderstand",
+        "welcomed",
+        "analyzed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Critics of the company’s senior management will be (i)____ by Han’s careful and meticulous account of its actions. Despite the book’s (ii)____ title, the author has no designs on scandal; in fact, if anything, her account tends toward (iii)____, applauding the company’s all-conquering success without reservation."
+      ],
+      "cols": [
+       [
+        "emboldened",
+        "disappointed",
+        "charmed"
+       ],
+       [
+        "ominous",
+        "fawning",
+        "insipid"
+       ],
+       [
+        "cynicism",
+        "pretentiousness",
+        "hagiography"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The scholars’ hypothesis challenges the scope of human psychological and behavioral universal, but does not dispense with them entirely: the team remains confident that displays of pride, for instance, are ____."
+      ],
+      "opts": [
+       "inherited",
+       "pernicious",
+       "ubiquitous",
+       "symptomatic",
+       "detrimental",
+       "omnipresent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "As some primate experts have argued, the finding that related species have similar social structures, presumably as a result of shared genes inherited from a common ancestor, ____ nongenetic explanations of social behavior."
+      ],
+      "opts": [
+       "revitalizes",
+       "anticipates",
+       "undermines",
+       "challenges",
+       "predicts",
+       "eludes"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "While spectroscopy may be an obscure tool, there is nothing correspondingly ____ about claims concerning its importance: it proved that the rest of the universe is built form the same kinds of atoms as we are."
+      ],
+      "opts": [
+       "banal",
+       "arcane",
+       "esoteric",
+       "prosaic",
+       "equivocal",
+       "self-evident"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The legislators didn’t merely sell out to business; they retreated to ____ style of governing whereby the interest group that is currently lobbying the hardest on an issue determines the party’s position."
+      ],
+      "opts": [
+       "a reckless",
+       "a rigid",
+       "a craven",
+       "an unyielding",
+       "an arrogant",
+       "a cowardly"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

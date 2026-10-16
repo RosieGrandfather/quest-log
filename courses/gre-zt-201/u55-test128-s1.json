@@ -1,0 +1,196 @@
+{
+ "id": "u55-test128-s1",
+ "title": "Test 128 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 128, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 128 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Once the disk of material around a star is gas-depleted, dust is removed efficiently by the stellar radiation field and wind; any observed dust in a gas-depleted disk must, therefore, have been produced ____."
+      ],
+      "opts": [
+       "gradually",
+       "rapidly",
+       "recently",
+       "vestigially",
+       "intermittently"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Business leaders who prefer centralized, pyramidal managerial structures to diversity and competition tend to (i)____ dissent in the decision-making process. But this insistence on (ii)____ can be dangerous in that it deprives decision makers of a full range of alternatives."
+      ],
+      "cols": [
+       [
+        "foster",
+        "deprecate",
+        "overrate"
+       ],
+       [
+        "spontaneity",
+        "unanimity",
+        "ambiguity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "The fantastic conceit of the film’s plot is that global warming (i)____ global freezing. After a chunk of Antarctic ice the size of Rhode Island suddenly melts, most of what follows—an instant ice age, for example—is impossible as science but not as metaphor. The data from the Greenland ice sheet show that, over the past hundred thousand years, temperatures have often (ii)____— so often that it is our own relatively static experience of climate that should now be seen as (iii)____."
+      ],
+      "cols": [
+       [
+        "succeeds",
+        "inhibits",
+        "produces"
+       ],
+       [
+        "swung wildly",
+        "changed gradually",
+        "seemed unvarying"
+       ],
+       [
+        "humdrum",
+        "exceptional",
+        "authentic"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "While the kitchen may be free of the toxins polluting the outdoors, certain cooking implements, when heated at high temperatures, can release ____ vapors."
+      ],
+      "opts": [
+       "rancid",
+       "noxious",
+       "evanescent",
+       "targeted",
+       "unorthodox",
+       "dangerous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "To any observer, ancient or ____, the night sky appears as a hemisphere resting on the horizon."
+      ],
+      "opts": [
+       "antiquated",
+       "perceptive",
+       "modern",
+       "astute",
+       "contemporary",
+       "archaic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Anthropologists contend that the ancient Mesopotamians switched from grain production to barley after excessive irrigation and salt accumulation made the soil ____ grains."
+      ],
+      "opts": [
+       "indifferent to",
+       "inhospitable to",
+       "unsuitable for",
+       "acrimonious to",
+       "benignant to",
+       "inured to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Researchers interested in the nature versus nurture debate use identical twins who were separated at birth to explore which personality characteristics are ____ and which arise through experience."
+      ],
+      "opts": [
+       "intractable",
+       "nascent",
+       "erudite",
+       "innate",
+       "predilection",
+       "inborn"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

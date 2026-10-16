@@ -1,0 +1,196 @@
+{
+ "id": "u53-test127-s1",
+ "title": "Test 127 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 127, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 127 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "The publication of books in the vernacular in fifteenth-century England laid the foundation for a literary language that survives relatively unchanged and thus gives English literature a greater ____ than many other national literatures."
+      ],
+      "opts": [
+       "sophistication",
+       "diversity",
+       "specificity",
+       "flair",
+       "continuity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "At first glance, each of the stories in the anthology seemed (i)____; upon closer inspection of their protagonists, implied morals, and fantasy elements, however, subtle similarities among the stories emerged to (ii)____ this initial observation."
+      ],
+      "cols": [
+       [
+        "compelling",
+        "implausible",
+        "idiosyncratic"
+       ],
+       [
+        "impugn",
+        "bolster",
+        "explain"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "If companies were taxed based on the amount of their atmospheric emissions of pollutants, they could make their own decisions about how to alter their operations. Firms could compare the cost of paying taxes with the cost of preventing the emissions in the first place and would, in most cases, do a bit of both. Firms that can reduce pollution (i)____ would reduce it quite (ii)____, while those that can only do so at great cost would (iii)____."
+      ],
+      "cols": [
+       [
+        "cheaply",
+        "materially",
+        "rapidly"
+       ],
+       [
+        "gradually",
+        "prudently",
+        "substantially"
+       ],
+       [
+        "curtail less",
+        "gain advantages",
+        "anticipate losses"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "For a long time, painter V. S. Gaitonde's reputation, which barely existed in the West, ____ in his native India, partly because his abstract style was viewed as culturally irrelevant, even un- Indian."
+      ],
+      "opts": [
+       "flagged",
+       "endured",
+       "languished",
+       "burgeoned",
+       "persevered",
+       "metamorphosed"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Millville has its share of suburban eyesores—cement-block strip malls, rows of fast-food restaurants, and ____ split-level homes marching up hillsides denuded of trees."
+      ],
+      "opts": [
+       "magnificent",
+       "superlative",
+       "abysmal",
+       "banal",
+       "lackluster",
+       "diminutive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Her poetry was marked by a tension between modernity and traditionalism: she adhered to classical modes of expression while deriving inspiration from ____ social themes."
+      ],
+      "opts": [
+       "difficult",
+       "contemporary",
+       "challenging",
+       "topical",
+       "conventional",
+       "controversial"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Tycho Brahe had assigned Kepler the task of deriving parameters for the model of Mars, a particularly ____ problem, which had stymied others because the large eccentricity of Mars exposed the inadequacies of the model itself."
+      ],
+      "opts": [
+       "novel",
+       "recalcitrant",
+       "intractable",
+       "crucial",
+       "profound",
+       "treacherous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

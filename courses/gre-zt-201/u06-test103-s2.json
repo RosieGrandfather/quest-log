@@ -1,0 +1,194 @@
+{
+ "id": "u06-test103-s2",
+ "title": "Test 103 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 103, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 103 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "It can be extremely difficult to uncover direct evidence of conspiracies, given that such activities are by their very nature ____."
+      ],
+      "opts": [
+       "interminable",
+       "laborious",
+       "provocative",
+       "illicit",
+       "surreptitious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "For the early years of the twentieth century, ecology remained essentially a ____ science: ecologists went into the field, counted plants and animals, made lists, and that was pretty much that."
+      ],
+      "opts": [
+       "lay",
+       "resilient",
+       "descriptive",
+       "theoretical",
+       "pragmatic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Although the first exoplanet discovered was found to be orbiting too close to its star to support life, scientists quickly discovered exoplanets in more (i)____ orbits, making the detection of potentially habitable exoplanets seem (ii)____."
+      ],
+      "cols": [
+       [
+        "compressed",
+        "clement",
+        "superfluous"
+       ],
+       [
+        "likely",
+        "unfeasible",
+        "irregular"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "Documenting the lives of African Americans before Emancipation is (i)____ undertaking even when printed accounts are (ii)____, they are often (iii)____ and details printed as fact may be merely speculative."
+      ],
+      "cols": [
+       [
+        "an urgent",
+        "a collaborative",
+        "a difficult"
+       ],
+       [
+        "contested",
+        "illegible",
+        "available"
+       ],
+       [
+        "contradictory",
+        "disheartening",
+        "revealing"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The film's pat and occasionally preposterous story is really just a ____, a serviceable scaffolding for a handful of expert, satisfying individual performances."
+      ],
+      "opts": [
+       "dodge",
+       "prelude",
+       "diversion",
+       "pretext",
+       "contrivance",
+       "distraction"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The author engages the subject from diverse perspectives, supports his argument well with many examples, and manages to avoid antagonizing others in dealing with a very ____ subject."
+      ],
+      "opts": [
+       "contentious",
+       "pedestrian",
+       "controversial",
+       "perplexing",
+       "mundane",
+       "intriguing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Because video game users control their character’s actions, the distinction between media user and character is not as ____ in video games as it is in traditional media, where audience members simply witness characters’ actions."
+      ],
+      "opts": [
+       "fluid",
+       "salient",
+       "fraught",
+       "elusive",
+       "palpable",
+       "charged"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -124,3 +124,49 @@
 - `tools/course/grzt/review_answers.py`：同时核对两门课的记录、本地TXT、PDF与课程JSON；不会修改答案。
 - 不计分的题在 `tools/course/grzt/build.py` 的 `PENDING` 里登记，重新生成课程时会保留。
 
+# 第四轮：`gre-zt-201` 第1–86节（Test 101–143）
+
+## 结论
+
+602题都没有改答案键。盲做结果与配套答案一致的有584题；18题不一致，逐题复读后：
+
+- 4题配套答案有依据，盲做时读错：4.Q3、4.Q4、26.Q5、73.Q3。
+- 10题两种答案都说得通，保留配套答案并照常计分，标为低把握：6.Q5、7.Q2、19.Q3、21.Q7、22.Q3、27.Q5、35.Q4、47.Q5、54.Q5、74.Q4。
+- 4题判定配套答案与题干逻辑矛盾：8.Q1、60.Q4、62.Q3、86.Q3。原答案仍保留在数据里，但课程中显示为「待核对，不计分」，交卷后附说明。
+
+方法与第三轮相同：遮住答案分9批盲做，不一致的题逐题复读，并尝试查找公开的同题版本。本批同样大多找不到可核对的公开版本。
+
+## 不计分的4题
+
+| 课节 / 题号 | 配套答案 | 更合理的答案 | 理由 |
+|---|---|---|---|
+| 8.Q1 | C anthropocentrism | D cosmology | 把耶路撒冷放在地图中心，反映的是以宗教为核心的世界观，与“以人为中心”无关 |
+| 60.Q4 | B/D/G | A/D/I | 冒号后说某些参与的减少是恰当的、增加可能有害，对应“参与在青春期减少，但与学业结果的关系不再简单” |
+| 62.Q3 | C/F/I | B/F/I | 后一句的例子是 Penrose 指责暴胀宇宙学缺乏证据却被当作定论，说明他在批评别人超出数据作推测。[雷哥GRE的同题页](https://gre.viplgw.cn/question/9657.html)也给CFI，但看起来是照抄同一份答案，不足以推翻上下文 |
+| 86.Q3 | C/E/H | C/D/G | 闪烁其词甚至说谎，表现应是糟糕（badly），让选民有理由拒绝（reject）她；配套答案的 convincingly / champion 与前文相反 |
+
+## 低把握保留的10题
+
+| 课节 / 题号 | 配套答案 | 盲做 | 说明 |
+|---|---|---|---|
+| 6.Q5 | AD | DE | pretext 可配 dodge 或 contrivance |
+| 7.Q2 | AE | CE | 与 glowing 对照，frank 比 valedictory 更直接，但 valedictory 也能读通 |
+| 19.Q3 | CFH | CEH | 第二空 compromise 与 mistake 都说得通 |
+| 21.Q7 | BE | AD | 策展人传达部落信息，mediator/translator 也贴合 |
+| 22.Q3 | AF | BF | 第一空 unbridled ambition 与 unfettered originality 都能读通 |
+| 27.Q5 | AF | CD | 支持许多不受欢迎的事业，controversial/polarizing 也贴合 |
+| 35.Q4 | DF | BE | 新产品的好处“模糊无形”或“有风险/投机”都说得通 |
+| 47.Q5 | CF | AB | 把她排除在外“多余”或“不明智”都说得通 |
+| 54.Q5 | CF | CD | preponderance 可配 majority 或 plethora |
+| 74.Q4 | ADH | AFG | 第三空选项文字本身混乱（PDF问题） |
+
+## 原PDF本身的问题（本批）
+
+建课时已在 `build.py` 修正：Test 130以后标题格式变化；vitamin C. 被误认作选项；选项「E shortage」漏句点；CO₂ 下标错位；「(i))」多括号；最后一题选项混入全书结尾说明。只记录、未改写的：74.Q4 第三空选项文字混乱（如“resistance to available to”）。
+
+## 可复查记录
+
+- `tools/course/grzt/reviewed-sections-201.tsv`：86节602题的定稿候选及逐题理由。
+- `docs/GRE_ZT201_ANSWER_AUDIT.json`：602题的来源答案、盲做答案、定稿候选、状态、理由和PDF页码。
+- 不计分的题登记在 `tools/course/grzt/build.py` 的 `PENDING`，`review_answers.py` 会核对三门课的全部记录。
+

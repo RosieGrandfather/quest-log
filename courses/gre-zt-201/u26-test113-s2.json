@@ -1,0 +1,194 @@
+{
+ "id": "u26-test113-s2",
+ "title": "Test 113 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 113, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 113 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Twentieth-century tussles in cosmology illustrate the ____ of science, for they highlight both the human drive to explore nature and the limits that our minds inevitably impose on our understanding."
+      ],
+      "opts": [
+       "objective methodologies",
+       "theoretical evolution",
+       "cooperative nature",
+       "psychological aspects",
+       "serendipitous discoveries"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Biologists traditionally thought that restricted gene flow was ____ the development of adaptations in a population, but empirical evidence shows that adaptation can be maintained despite very high levels of gene flow."
+      ],
+      "opts": [
+       "an impediment to",
+       "a consequence of",
+       "a harbinger of",
+       "a requisite of",
+       "an aberration in"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Although the university president can deploy considerable (i)____, and her emotional reticence never seems rude, one nevertheless cannot help being aware of the (ii)____ behind the affable public persona."
+      ],
+      "cols": [
+       [
+        "cunning",
+        "charm",
+        "erudition"
+       ],
+       [
+        "reserve",
+        "acumen",
+        "sagacity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AEH",
+     "txt": {
+      "stem": [
+       "For years, wine writers have (i)____ the public’s (ii)____ the manifest charms of sherry. Why doesn't everyone love sherry, they asked, celebrating it as the most (iii)____ wine in the world."
+      ],
+      "cols": [
+       [
+        "lamented",
+        "ignored",
+        "exacerbated"
+       ],
+       [
+        "devotion to",
+        "indifference to",
+        "curiosity about"
+       ],
+       [
+        "fashionable",
+        "underappreciated",
+        "notorious"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Pop music continually recycles itself, building new hits around familiar themes, and successful new acts often do not even bother to disguise their ____."
+      ],
+      "opts": [
+       "appropriations",
+       "innovations",
+       "influences",
+       "pilferage",
+       "originality",
+       "complicity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "To accommodate the ____ nature of clouds, pioneering meteorologist Luke Howard added compound nomenclature to his cloud classification system as a way of marking the regular transitions that occur among the three main cloud types."
+      ],
+      "opts": [
+       "unusual",
+       "essential",
+       "solitary",
+       "unstable",
+       "dynamic",
+       "scattered"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Audiences in Edo, Japan, knew that no work appearing on the Kabuki stage was ever ____: if a Kabuki play outlived its first production, it would inevitably be reworked in subsequent performances."
+      ],
+      "opts": [
+       "revised",
+       "singular",
+       "original",
+       "fixed",
+       "final",
+       "recorded"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

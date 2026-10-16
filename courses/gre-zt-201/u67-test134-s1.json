@@ -1,0 +1,196 @@
+{
+ "id": "u67-test134-s1",
+ "title": "Test 134 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 134, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 134 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Given the extraordinary ____ of its arguments, it is surprising that the central thesis of the book can be stated so simply."
+      ],
+      "opts": [
+       "nuance",
+       "insensitivity",
+       "lucidity",
+       "spuriousness",
+       "rationality"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "There has been a noticeable reversal from the time when (i)____ was accepted as the essential characteristic of genuine science: now the role of (ii)____ in scientific research is generating a great deal of interest."
+      ],
+      "cols": [
+       [
+        "disciplinary specialization",
+        "long apprenticeship",
+        "dispassionate inquiry"
+       ],
+       [
+        "speculation",
+        "emotion",
+        "technology"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Japan’s first university was more (i)____ than its Chinese counterparts in the same era, since the Chinese Tang system was highly (ii)____. However, this changed over time. As Japanese court office became increasingly hereditary, the examination system, by which students from wide range of social classes were admitted into the universities, (iii)____."
+      ],
+      "cols": [
+       [
+        "prestige",
+        "egalitarian",
+        "profitable"
+       ],
+       [
+        "aristocratic",
+        "reputable",
+        "unsystematic"
+       ],
+       [
+        "became widely utilized",
+        "advantaged the proletariat",
+        "atrophied into insignificance"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Pre-Columbian peoples had a significant impact on Amazonian forest diversity; at least 8,000 years ago, they mush have begun domesticating plants recently found to be ____ around sites once occupied by humans."
+      ],
+      "opts": [
+       "hybridized",
+       "abundant",
+       "uncommon",
+       "preserved",
+       "harvested",
+       "dominant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "It is often taken for granted by scholars that Emily Dickinson is ____ poet: her poems have a peculiar quality that makes understanding seem beyond the reader’s ken."
+      ],
+      "opts": [
+       "a melancholy",
+       "an unusual",
+       "a pensive",
+       "a difficult",
+       "a whimsical",
+       "an enigmatic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "For every ____ reader of Vestiges there were many more who became vocal critics, and the book aroused heated opposition from a broad range of British society."
+      ],
+      "opts": [
+       "outspoken",
+       "meticulous",
+       "sympathetic",
+       "well-disposed",
+       "unenthusiastic",
+       "candid"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Unsurprisingly, the novelist’s new work has been without its critics, drawing particularly attention from those who have ____ the vapidity of other novels of the same genre in a number of acerbic reviews."
+      ],
+      "opts": [
+       "reprehended",
+       "questioned",
+       "ignored",
+       "overlooked",
+       "decried",
+       "relished"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

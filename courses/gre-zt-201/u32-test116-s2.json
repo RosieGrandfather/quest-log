@@ -1,0 +1,200 @@
+{
+ "id": "u32-test116-s2",
+ "title": "Test 116 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 116, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 116 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "The United States Constitution was intended to be adaptable to the demands of the various crises of human affairs, and judicial reinterpretation is the necessary means by which this ____ is preserved."
+      ],
+      "opts": [
+       "flexibility",
+       "reiteration",
+       "misapprehension",
+       "paradox",
+       "contingency"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The idea that arguments based on probability are deployed only by (i)____ persons is (ii)____ even among scientists. Perhaps such an evaluation has partly to do with the origins of the subject in the mathematics of gambling games, not generally regarded as pastimes for people of good character."
+      ],
+      "cols": [
+       [
+        "exacting",
+        "disreputable",
+        "prominent"
+       ],
+       [
+        "widespread",
+        "controversial",
+        "deplored"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Because the currents that flow back and forth between the Galapagos Islands and the Ecuadoran mainland create connections, the evolutionary (i)____ of the sea creatures in the two areas, compared with that of the land dwellers, has been (ii)____."
+      ],
+      "cols": [
+       [
+        "association",
+        "sophistication",
+        "separateness"
+       ],
+       [
+        "disguised",
+        "derailed",
+        "diminished"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEG",
+     "txt": {
+      "stem": [
+       "Books that diagnose problems in democratic governance usually conclude with suggestions for procedural change. By contrast, the authors of this new study have, in their previous studies, always stuck closely to the data in their work, (i)____ to propose measures that might (ii)____ the circumstances they document. In this new study, however, in a break from their usual (iii)____, they conclude by outlining some possible reforms."
+      ],
+      "cols": [
+       [
+        "creating incentives",
+        "forgoing opportunities",
+        "anticipating reasons"
+       ],
+       [
+        "verify",
+        "ameliorate",
+        "exacerbate"
+       ],
+       [
+        "reticence",
+        "assiduity",
+        "tendentiousness"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Even the most skeptical readers could hardly deny that the novelist' s best books are remarkably ____: they thrum with energy, imagination, and something resembling white-hot inspiration."
+      ],
+      "opts": [
+       "inventive",
+       "engaging",
+       "spirited",
+       "compassionate",
+       "vigorous",
+       "warmhearted"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The ____ list of interviewees included everyone from an oceanographer to a microbiologist, to a filmmaker."
+      ],
+      "opts": [
+       "profligate",
+       "sweeping",
+       "circumscribed",
+       "elite",
+       "comprehensive",
+       "meager"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Because Latin American colonial societies were fundamentally organized along hierarchical bases, the spatial arrangement of the cities and towns was also ____ ranking."
+      ],
+      "opts": [
+       "subordinate to",
+       "imbued with",
+       "equated with",
+       "permeated by",
+       "compromised by",
+       "constrained by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

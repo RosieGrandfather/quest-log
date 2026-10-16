@@ -7,7 +7,7 @@
   "pendingNotScored": 1,
   "blindDisagreements": 20,
   "answerKeysChanged": 0,
-  "method": "遮住答案键分10批盲做700题，再与配套答案比对；不一致的题逐题复读并查询公开同题版本。1题判定配套答案不可靠，保留原答案但标为待核对、不计分。非ETS官方答案认证。",
+  "method": "遮住答案键分批盲做，再与配套答案比对；不一致的题逐题复读并查询公开同题版本。判定配套答案不可靠的题保留原答案，但标为待核对、不计分。非ETS官方答案认证。",
   "sourcePDFSHA256": "08af079fff905e997673c6b6037ca9a56d0bc7634cf7b83039ac2d9b9909fb23",
   "answerTXTSHA256": "aff7ea0ea7137de7c72e2bad88472d0a37e19e6ea6918a343c1147d32f398822",
   "externalChecks": [

@@ -1,0 +1,196 @@
+{
+ "id": "u23-test112-s1",
+ "title": "Test 112 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 112, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 112 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Since the fundamental frequency of an object's vibration is determined by its size and shape, a sequence of sounds having ____ pitch is perceived to have been produced by a single object."
+      ],
+      "opts": [
+       "discernible",
+       "predictable",
+       "unusual",
+       "identical",
+       "melodious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The notion that scientists consider the work they do to be (i)____ contradicts popular stereotypes that depict the work of scientists (and the scientists themselves) as being formal and rigid, following lockstep procedures in which the (ii)____ elements of researchers’ personalities fail to enter their labors."
+      ],
+      "cols": [
+       [
+        "socially useful",
+        "emotionally satisfying",
+        "intellectually demanding"
+       ],
+       [
+        "affective",
+        "cognitive",
+        "conjectural"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "A certain (i)____ governs the way most of us think about routines. A routine is sometimes conceived as constraining—a self-made prison of inflexible habits that prevent people from changing their lives. But routine is also seen as (ii)____: activities that become routine (iii)____, allowing us to expend energy on other things."
+      ],
+      "cols": [
+       [
+        "pessimism",
+        "misunderstanding",
+        "polarity"
+       ],
+       [
+        "liberating",
+        "alterable",
+        "unintentional"
+       ],
+       [
+        "are often tedious",
+        "demand less attention",
+        "encourage personal discipline"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "One of the features of spoken discourse is that a speaker need not be maximally ____: if an interlocutor is confused, he or she can interrupt and ask for clarification."
+      ],
+      "opts": [
+       "honest",
+       "forthcoming",
+       "courteous",
+       "meticulous",
+       "explicit",
+       "unambiguous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Enlightened thinkers in late-eighteenth-century Europe broadly endorsed the concept of progress, yet theories of progress were usually ____ a strong streak of pessimism, a sense of the challenges inherent in the human condition."
+      ],
+      "opts": [
+       "rooted in",
+       "requisite for",
+       "essential for",
+       "contradicted by",
+       "tempered by",
+       "moderated by"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Voltaire's spirit was one of tolerant cosmopolitanism, even though he didn’t have the ____ to see that one challenge for such a spirit would be whether it was able to endure those who had no wish to be cosmopolitan."
+      ],
+      "opts": [
+       "hubris",
+       "generosity",
+       "ambition",
+       "awareness",
+       "arrogance",
+       "insight"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Islands harbor a disproportionate amount of Earth’s biodiversity and are characterized by the presence of a great number of ____ plant and animal species; these species are often in danger of extinction by invasive predators."
+      ],
+      "opts": [
+       "transplanted",
+       "indigenous",
+       "adaptable",
+       "protean",
+       "endemic",
+       "anomalous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u45-test123-s1",
+ "title": "Test 123 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 123, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 123 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "There is a rather ____ reason for astronomers’ sudden interest in comets: most other bodies in the solar system have been explored already."
+      ],
+      "opts": [
+       "pedantic",
+       "prosaic",
+       "controversial",
+       "untenable",
+       "mysterious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Insects are often (i)____ as the world's most versatile and (ii)____ flying machines. Yet they shouldn't even be able to get off the ground, at least not according to a straightforward interpretation of the laws of aerodynamics."
+      ],
+      "cols": [
+       [
+        "ridiculed",
+        "overlooked",
+        "touted"
+       ],
+       [
+        "contrived",
+        "atypical",
+        "maneuverable"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "Predators try to (i)____ their ultimate energy intake by (ii)____ the effort they expend searching for and handling prey relative to the energy the prey provides. Thus, a particular kind of prey would be (iii)____ to a predator's diet only if it is worth the predator's time and energy—that is, if it increases the animal's overall energy profit during foraging."
+      ],
+      "cols": [
+       [
+        "stabilize",
+        "gauge",
+        "maximize"
+       ],
+       [
+        "deferring",
+        "intensifying",
+        "reducing"
+       ],
+       [
+        "deleterious",
+        "added",
+        "unique"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The term \"borderline, coined in the 1930s to describe a psychiatric condition straddling the boundary between two other diagnoses, remained ____ until John Gunderson enumerated six identifying characteristics of the condition in the 1970s."
+      ],
+      "opts": [
+       "equivocal",
+       "stigmatized",
+       "impracticable",
+       "incontrovertible",
+       "anomalous",
+       "nebulous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In this otherwise ____ study, the internal tensions resulting from the increasing integration of the United States with the world economy are simply mentioned rather than analyzed."
+      ],
+      "opts": [
+       "tedious",
+       "thorough",
+       "biased",
+       "exhaustive",
+       "superficial",
+       "shallow"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Although Ralph Ellison's Invisible Man has been heavily praised for over 50 years by a wide variety of critics and scholars, there have been ____ from the outset concerning the novel’s political vision."
+      ],
+      "opts": [
+       "rebukes",
+       "doubts",
+       "conjectures",
+       "speculations",
+       "reservations",
+       "accolades"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Egler's prediction in 1947 that the introduction of mangrove trees to the Hawaiian lslands would cause sweeping ecological change was ____: extensive mangrove forests have come to displace many preexisting plant communities."
+      ],
+      "opts": [
+       "accurate",
+       "premature",
+       "prescient",
+       "foresighted",
+       "optimistic",
+       "precipitate"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

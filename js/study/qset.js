@@ -72,7 +72,7 @@ function itemHTML(it, i, b){
     <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
     ${it.txt ? `<div class="qtxt">${textHTML(it, i, english)}</div>
     ${it.img || it.imgs?.length ? `<details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : ''}` : origImgs(it, b)}
-    <div class="gq-hint">${english ? englishHint(it) : hintOf(it)}${it.answerPending ? english ? ' · Answer key under review; not scored.' : ' · 原答案待核对，本题暂不计分' : ''}</div>
+    <div class="gq-hint">${english ? englishHint(it) : hintOf(it)}</div>
     ${controlsHTML(it, i, english)}
     <div class="gq-explain" hidden></div>
   </section>`;
@@ -180,7 +180,7 @@ export function wireQset(root, course, unit){
       if(scored){
         sec.classList.add(ok ? 'right' : 'wrong');
         sec.querySelector('.gq-verdict').textContent = ok ? '✓ 答对' : blank ? '✗ 没作答' : '✗ 答错';
-      } else sec.querySelector('.gq-verdict').textContent = unresolved ? '旧作答待对应，不计分' : it.answerPending ? '答案待核对，不计分' : '对照答案自评';
+      } else sec.querySelector('.gq-verdict').textContent = unresolved ? '旧作答待对应，不计分' : it.answerPending ? '此题不计分' : '对照答案自评';
       if(scored && it.kind === 'tc'){
         const got = a.split(',');
         sec.querySelectorAll('.qopt').forEach(lab=>{
@@ -199,9 +199,10 @@ export function wireQset(root, course, unit){
         });
       }
       const ex = sec.querySelector('.gq-explain');
-      ex.innerHTML = `<div class="gq-answer"><span>${!scored ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span><span class="${!scored ? '' : ok ? 'ok' : 'bad'}">${unresolved ? '上次保存的原始作答' : '你的答案'}：<b>${escapeHTML(unresolved ? review.rawAnswers[i] : pickedText(it, a))}</b></span></div>
+      // 不计分的题：做题时不提示；交卷后只在右上角写一次「此题不计分」，下面只给理由，不再列参考答案
+      ex.innerHTML = `<div class="gq-answer">${it.answerPending ? '' : `<span>${!scored ? '参考答案' : '正确答案'}：<b>${escapeHTML(answerText(it))}</b></span>`}<span class="${!scored ? '' : ok ? 'ok' : 'bad'}">${unresolved ? '上次保存的原始作答' : '你的答案'}：<b>${escapeHTML(unresolved ? review.rawAnswers[i] : pickedText(it, a))}</b></span></div>
         ${unresolved ? `<p>${escapeHTML(unresolved)}</p>` : ''}
-        ${it.explanation ? `<div class="explain"><strong>${it.answerPending ? '答案核对说明（暂不计分）' : '答案解析（独立复核）'}</strong><p>${escapeHTML(it.explanation)}</p></div>` : ''}
+        ${it.explanation ? `<div class="explain"><strong>${it.answerPending ? '理由' : '答案解析（独立复核）'}</strong><p>${escapeHTML(it.explanation)}</p></div>` : ''}
         ${it.exp ? `<div class="explain"><strong>官方解析（英文原文截图）</strong>${img(b, it.exp, it.ew, 'qexp')}</div>` : ''}`;
       ex.hidden = false;
     });

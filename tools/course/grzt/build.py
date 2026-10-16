@@ -16,14 +16,25 @@ REPO = Path(__file__).resolve().parents[3]
 COURSES = {
     'gre-zt': dict(tests=(1, 50), audit='audit.json'),
     'gre-zt-101': dict(tests=(51, 100), audit='audit-101.json'),
+    'gre-zt-201': dict(tests=(101, 143), audit='audit-201.json'),  # Test 143 is the last in the book
 }
 LETTERS = 'ABCDEFGHI'
 # Blanks the PDF itself prints without underscores
-STEM_FIXES = [('as if it were a Gothic or', 'as if it were a ____ Gothic or')]
-# Answer keys the review found unreliable: shown as "待核对，不计分" with a note; the source key is kept in sourceAnswer/ans.
+# PDF lines with a broken option label, fixed before parsing
+LINE_FIXES = [('E shortage', 'E. shortage')]  # whole-line match
+STEM_FIXES = [('as if it were a Gothic or', 'as if it were a ____ Gothic or'),
+              # CO2 subscripts the PDF text layer drops onto a later line
+              ('anthropogenic CO , thereby', 'anthropogenic CO₂, thereby'), ('However, the 2 (i)', 'However, the (i)'),
+              ('net source of CO , thereby', 'net source of CO₂, thereby'), ('feedback loop. 2', 'feedback loop.')]
+# Answer keys the review found unreliable: after submit the page shows "此题不计分" once plus this note as the reason; the source key is kept in sourceAnswer/ans.
+# Notes name multi-blank answers per blank as shown on screen (空(ii) A), not with the PDF's D-I letters.
 # See docs/GRE_ZT_ANSWER_REVIEW.md.
 PENDING = {
-    ('gre-zt-101', 'u96-test98-s2', 5): '配套答案为 C/F（logical / understandable）。冒号后说她打心底认定自己是在为更大的事业付出，说明她并不承认、也意识不到自己的权力欲，更合理的是 B/E（unacknowledged / subconscious）。本题暂不计分。',
+    ('gre-zt-101', 'u96-test98-s2', 5): '配套答案为 C/F（logical / understandable）。冒号后说她打心底认定自己是在为更大的事业付出，说明她并不承认、也意识不到自己的权力欲，更合理的是 B/E（unacknowledged / subconscious）。',
+    ('gre-zt-201', 'u08-test104-s2', 1): '配套答案为 C（anthropocentrism，人类中心主义）。把圣城耶路撒冷放在地图中心，反映的是当时以宗教为核心的世界观，与“以人为中心”无关，更合理的是 D（cosmology）。',
+    ('gre-zt-201', 'u60-test130-s2', 4): '配套答案为 空(i) B continues to matter、空(ii) A links between、空(iii) A satisfactory。冒号后说某些参与的减少是恰当的、增加反而可能有害，对应“整体参与在青春期开始减少，但参与与学业结果之间的关系不再简单”，更合理的是 空(i) A begins to wane、空(ii) A links between、空(iii) C straightforward。',
+    ('gre-zt-201', 'u62-test131-s2', 3): '配套答案为 空(i) C singular among、空(ii) C conjecture、空(iii) C venturing beyond，部分题库网站也这样给。但后一句举的例子是 Penrose 认为暴胀宇宙学“缺乏证据却被当成定论”，说明他是在批评别的理论物理学家超出数据作推测，空(i) 更合理的是 B critical of，其余两空不变。',
+    ('gre-zt-201', 'u86-test143-s2', 3): '配套答案为 空(i) C mendacious、空(ii) B convincingly、空(iii) B champion。前半句说她闪烁其词甚至说谎，后面“不论是否认同她的观点”都应让选民有理由拒绝她，更合理的是 空(i) C mendacious、空(ii) A badly、空(iii) A reject。',
 }
 
 
@@ -49,10 +60,11 @@ def extract(pdf, tests=(1, 25)):
             for ws in lines:
                 ws.sort(key=lambda w:w['x0'])
                 text = clean(' '.join(w['text'] for w in ws))
+                for old,new in LINE_FIXES: text=new if text==old else text
                 y = min(w['top'] for w in ws)
                 if text.startswith('微信公众号') or re.match(r'^第\s*\d+\s*[页⻚]', text):
                     continue
-                head = re.match(r'test\s*(\d+)\s*section\s*([12])\s*[(（]\s*(easy|medium|hard)', text, re.I)
+                head = re.match(r'test\s*(\d+)\s*section\s*([12])\s*[(（]?\s*(easy|medium|hard)', text, re.I)  # from Test 130 on: no parentheses
                 if head:
                     if question: question['end']=[pi,y-3]
                     if int(head[1])>tests[1]:
@@ -71,6 +83,8 @@ def extract(pdf, tests=(1, 25)):
                 if not question['opts']:  # option A glued to the stem's last sentence: "reality.A. ubiquitous"
                     text=re.sub(r'(?<=[a-z][.?!])A\s*[.．]\s+',' A. ',text)
                 opts=list(re.finditer(r'(?<!\S)([A-I])\s*[.．]\s*',text))
+                if opts and not question['opts'] and opts[0][1]!='A':  # e.g. "vitamin" / "C." -- still the stem
+                    opts=[]
                 if opts:
                     pre=text[:opts[0].start()].strip()  # stem tail sharing a line with option A
                     if pre:
@@ -87,6 +101,9 @@ def extract(pdf, tests=(1, 25)):
                 else:
                     last=next(reversed(question['opts']))
                     question['opts'][last]+=' '+text
+    if sections and sections[-1]['test']==tests[1]:  # the book ends with this Test
+        if question: question['end']=[len(doc.pages)-1,780]
+        return [s for s in sections if s['test']>=tests[0]]
     raise RuntimeError(f'Did not find end of Test {tests[1]}')
 
 
@@ -129,9 +146,10 @@ def build(cid,pdf,key,keys):
             assert n in (5,6,9),(si,q)
             stem=clean(' '.join(q['stem']))
             for old,new in STEM_FIXES: stem=stem.replace(old,new)
+            stem=re.sub(r'\((i{1,3})\)\)',r'(\1)',stem)  # "(i))_____" doubled bracket
             stem=re.sub(r'\((I{1,3})\)',lambda m:m[0].lower(),stem)
             stem=re.sub(r'\((i{1,3})\)(?!\s*_)',lambda m:m[0]+'____',stem)  # "(ii) across" -> "(ii)____ across"
-            q['opts']={k:clean(v) for k,v in q['opts'].items()}
+            q['opts']={k:re.sub(r'\s*答案获取方式.*$','',clean(v)) for k,v in q['opts'].items()}  # book's closing note after the last option
             kind='tc' if n==9 or (n==6 and '(ii)' in stem) else 'se' if n==6 else 'mc1'
             it={'n':q['n'],'kind':kind,'sourceAnswer':a,'txt':{'stem':[re.sub(r'_{3,}','____',stem)]}}
             if kind=='tc':

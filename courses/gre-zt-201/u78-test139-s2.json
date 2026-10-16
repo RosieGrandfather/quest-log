@@ -1,0 +1,206 @@
+{
+ "id": "u78-test139-s2",
+ "title": "Test 139 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 139, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 139 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Even though the survey course was designated as interdisciplinary, it involved no real ____ of subject matter."
+      ],
+      "opts": [
+       "distillation",
+       "explication",
+       "encapsulation",
+       "fusion",
+       "dilution"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Although all of the major characters in Mendez’ play are historical figures who have been lampooned in many previous works, she (i)____ this tradition in her avoidance of (ii)____."
+      ],
+      "cols": [
+       [
+        "relies on",
+        "deviates from",
+        "defers to"
+       ],
+       [
+        "ceremony",
+        "verisimilitude",
+        "caricature"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "Although it is quite probable that many small asteroids in the solar system’s asteroid belt have (i)____, the total mass of these objects cannot be (ii)____, since the combined gravitational pull of all known asteroids is (iii)____ to fully account for the asteroid belt’s effect on the motion of nearby planets such as Mars."
+      ],
+      "cols": [
+       [
+        "similar structures",
+        "formed by accretion",
+        "escaped detection"
+       ],
+       [
+        "diminishing",
+        "estimated",
+        "substantial"
+       ],
+       [
+        "sufficient",
+        "unlikely",
+        "required"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "Taruskin’s history of Western music, (i)____ its remarkable length, makes no claims to comprehensiveness. Taruskin is punctilious, and justifiably proud, in emphasizing that his book is a work of history, not a survey of the repertory. In fact, he (ii)____ criticism on grounds of omission by cheerfully admitting he has (iii)____ such side-branch composers as Vaughan Williams, who maintained the British symphonic tradition into the mid-twentieth century."
+      ],
+      "cols": [
+       [
+        "owing to",
+        "despite",
+        "reflecting"
+       ],
+       [
+        "disarms",
+        "attacks",
+        "obscures"
+       ],
+       [
+        "extolled",
+        "refuted",
+        "ignored"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Theses defended by contemporary philosophers under the banner of metaphysics typically ____ the claims of science; that is, they cannot be borne out by experiment as the claims of science are expected to be."
+      ],
+      "opts": [
+       "derive from",
+       "originate in",
+       "contravene",
+       "challenge",
+       "transcend",
+       "go beyond"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "In medieval China, the Confucian emphasis on rites as an outward manifestation of virtue explains Chinese bureaucrats’ ____ the accurate performance of tributary rituals by foreigners at the imperial court."
+      ],
+      "opts": [
+       "ambivalence toward",
+       "preoccupation with",
+       "proficiency with",
+       "obsession with",
+       "regard for",
+       "anticipation of"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "The journalist seems to have ____ attitude about truth and falsehood, as exhibited, for example, in a disdain for fact-checking and a repeated failure to correct errors in articles once they are pointed out."
+      ],
+      "opts": [
+       "a self-righteous",
+       "a capricious",
+       "an impulsive",
+       "an unethical",
+       "a cavalier",
+       "a dismissive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

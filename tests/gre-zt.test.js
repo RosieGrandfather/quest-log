@@ -5,17 +5,19 @@ import {gradeItem, summarize} from '../js/core/qgrade.js';
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const COURSES = [
-  {id: 'gre-zt', audit: 'audit.json', firstTest: 1, counts: {mc1:116,tc:234,se:350}, pending: []},
+  {id: 'gre-zt', audit: 'audit.json', firstTest: 1, lastTest: 50, counts: {mc1:116,tc:234,se:350}, pending: []},
   // 校对认为配套答案不可靠的题：保留原答案，但标为待核对、不计分，并附说明
-  {id: 'gre-zt-101', audit: 'audit-101.json', firstTest: 51, counts: {mc1:109,tc:241,se:350}, pending: ['u96-test98-s2#5']},
+  {id: 'gre-zt-101', audit: 'audit-101.json', firstTest: 51, lastTest: 100, counts: {mc1:109,tc:241,se:350}, pending: ['u96-test98-s2#5']},
+  {id: 'gre-zt-201', audit: 'audit-201.json', firstTest: 101, lastTest: 143, counts: {mc1:104,tc:197,se:301}, pending: ['u08-test104-s2#1','u60-test130-s2#4','u62-test131-s2#3','u86-test143-s2#3']},
 ];
 
-for (const {id, audit: auditFile, firstTest, counts: expectedCounts, pending} of COURSES)
-test(`Zhang Wei ${id} (Test ${firstTest}–${firstTest+49}) preserves sequence, all 700 answer keys and text-only controls`, () => {
+for (const {id, audit: auditFile, firstTest, lastTest, counts: expectedCounts, pending} of COURSES)
+test(`Zhang Wei ${id} (Test ${firstTest}–${lastTest}) preserves sequence, every answer key and text-only controls`, () => {
+  const sections = 2*(lastTest-firstTest+1);
   const course = read(`../courses/${id}/course.json`);
   const audit = read('../tools/course/grzt/' + auditFile);
   assert.ok(read('../courses/index.json').courses.some(c => c.id === course.id));
-  assert.equal(course.units.length, 100);
+  assert.equal(course.units.length, sections);
   let total = 0, pendingSeen = 0;
   const counts = {};
   for (const [i, entry] of course.units.entries()) {
@@ -46,7 +48,10 @@ test(`Zhang Wei ${id} (Test ${firstTest}–${firstTest+49}) preserves sequence, 
       answers.push(expected.join(','));
       if (pending.includes(`${entry.id}#${q.n}`)) {
         assert.equal(q.answerPending, true);
-        assert.ok(q.explanation.includes([...q.sourceAnswer].join('/')), 'note names the source key');
+        // the note names the source key in the letters shown on screen: 空(ii) A for multi-blank, plain letters otherwise
+        const shown = q.kind==='tc' ? q.ans.map((k,j)=>`空(${'i'.repeat(j+1)}) ${'ABC'[k]}`) : [[...q.sourceAnswer].join('/')];
+        assert.ok(shown.every(t=>q.explanation.includes(t)), 'note names the source key as shown on screen');
+        if (q.kind==='tc') assert.ok(!/[D-I]\/|\/[D-I]/.test(q.explanation), 'no PDF-wide D–I letters in a multi-blank note');
         pendingSeen++;
         continue;
       }
@@ -58,7 +63,7 @@ test(`Zhang Wei ${id} (Test ${firstTest}–${firstTest+49}) preserves sequence, 
     const s = summarize(block.items,answers);
     assert.equal(s.correct, s.total);
   }
-  assert.equal(total,700);
+  assert.equal(total, 7*sections);
   assert.equal(pendingSeen, pending.length);
   assert.deepEqual(counts,expectedCounts);
 });

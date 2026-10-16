@@ -1,0 +1,196 @@
+{
+ "id": "u59-test130-s1",
+ "title": "Test 130 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 130, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 130 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Although among currently available models Mestel’s provides the most ____ account of how white dwarfs evolve, it captures the essentials of the physics of white dwarf evolution."
+      ],
+      "opts": [
+       "cited",
+       "realistic",
+       "corroborated",
+       "simplified",
+       "comprehensive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "As an intellectual trying to navigate the world of politics, Madison’s problem was not, as some claimed, that he was too (i)____ to respond to shifting political realities; indeed, he was intellectually quite (ii)____, adapting to the demands of the moment."
+      ],
+      "cols": [
+       [
+        "impulsive",
+        "doctrinaire",
+        "ambivalent"
+       ],
+       [
+        "agile",
+        "austere",
+        "engaged"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "A film adaptation so (i)____ can make the original novel seem (ii)____. Who hasn’t thought, “I've seen the movie, why read the book?” But where the film of Empire of the Sun is generally faithful to its source, the novel offers less high drama but a more (iii)____ view of the protagonist’s growth and confusion."
+      ],
+      "cols": [
+       [
+        "satisfying",
+        "drastic",
+        "pretentious"
+       ],
+       [
+        "pedestrian",
+        "exhilarating",
+        "redundant"
+       ],
+       [
+        "multifaceted",
+        "conventional",
+        "sensational"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Evidence of the human brain’s ____ abounds: violinists, for example, tend to have larger cortical areas devoted to processing signals from their fingering hands than do non-violinists."
+      ],
+      "opts": [
+       "synchronicity",
+       "flexibility",
+       "complexity",
+       "malleability",
+       "vulnerability",
+       "sensitivity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Vast, complex, and deeply entrenched, the administrative apparatus that answered to Egypt’s Queen Cleopatra was ____ instrument with which to govern."
+      ],
+      "opts": [
+       "an antiquated",
+       "an efficient",
+       "a modest",
+       "a simple",
+       "an unwieldy",
+       "a cumbersome"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "With poetry seemingly forever composing its own ____, and the novel apparently writing its last chapter, science fiction writers are now similarly concerned that they face a future in which their writing could, ironically, be a thing of the past."
+      ],
+      "opts": [
+       "saga",
+       "chronicle",
+       "critique",
+       "inaugural",
+       "elegy",
+       "requiem"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "In mid-nineteenth-century Paris, some independent women survived economically by running small dressmaking businesses, though the displacement of custom-made clothing by factory-made garments ____ these needleworkers’ economic opportunities."
+      ],
+      "opts": [
+       "confounded",
+       "curtailed",
+       "diminished",
+       "augmented",
+       "destroyed",
+       "disguised"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

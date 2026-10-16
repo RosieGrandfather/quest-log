@@ -1,0 +1,200 @@
+{
+ "id": "u48-test124-s2",
+ "title": "Test 124 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 124, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 124 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Because they were traditionally ____, Jain monks in sixteenth-century India particularly valued special dispensations from the royal court granting them freedom of movement."
+      ],
+      "opts": [
+       "erudite",
+       "ascetic",
+       "apolitical",
+       "peripatetic",
+       "solitary"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Though extremely secretive about her own plans, she allowed her associates no such (i)____ and was constantly (ii)____ information about what they intended to do next."
+      ],
+      "cols": [
+       [
+        "reticence",
+        "introspection",
+        "mendaciousness"
+       ],
+       [
+        "distorting",
+        "ignoring",
+        "requesting"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Svitlana Mayboroda's recent work, though (i)____ pure mathematics, is already being (ii)____ by physicists, distinguishing it from most mathematical advances, for which the development of any practical use is long delayed."
+      ],
+      "cols": [
+       [
+        "largely irrelevant to",
+        "familiar to scholars of",
+        "in the realm of"
+       ],
+       [
+        "applied",
+        "overlooked",
+        "questioned"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDI",
+     "txt": {
+      "stem": [
+       "The author of this (i)____ memoir is notable for an unmitigated (ii)____ that is matched only by an utter lack of self-awareness. Although that combination of personality traits is not uncommon, it is rare for a book that is so transparently an exercise in (iii)____ to have the exact opposite of its intended effect."
+      ],
+      "cols": [
+       [
+        "self-critical",
+        "self-serving",
+        "self-effacing"
+       ],
+       [
+        "self-regard",
+        "self-abnegation",
+        "self-consciousness"
+       ],
+       [
+        "self-examination",
+        "self-incrimination",
+        "self-aggrandizement"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Singer Nina Simone in many ways defied categorization, with her artist ____ evident in her early pieces that drew on disparate musical genres, including musical theater, blues, and jazz standards."
+      ],
+      "opts": [
+       "inventiveness",
+       "diligence",
+       "hybridity",
+       "assiduity",
+       "eclecticism",
+       "acumen"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "In the past, the exploitation of various categories of natural resources was done ____, but because of the hugely expanded scale of today's economy, exploitation of all the resources in many countries now occurs simultaneously."
+      ],
+      "opts": [
+       "fruitfully",
+       "rapidly",
+       "hastily",
+       "benignly",
+       "sequentially",
+       "successively"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Though mathematics is ____, like language, it has its roots in the mud of everyday embodied experience; one such root is counting."
+      ],
+      "opts": [
+       "essential",
+       "indispensable",
+       "abstract",
+       "theoretical",
+       "prescriptive",
+       "functional"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

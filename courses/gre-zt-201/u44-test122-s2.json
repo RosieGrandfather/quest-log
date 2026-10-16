@@ -1,0 +1,200 @@
+{
+ "id": "u44-test122-s2",
+ "title": "Test 122 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 122, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 122 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Action cinema has a reputation for giving spectators all action and no plot, and that reputation for narrative ____ seems to have gained further traction with the increasingly ubiquitous use of digital effects."
+      ],
+      "opts": [
+       "paucity",
+       "homogeneity",
+       "diffuseness",
+       "predictability",
+       "convolution"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Ethical theorists often assume that the verb \"ought\" means roughly \"has an obligation.” This assumption, however, is (i)____ the (ii)____ of \"ought\" sentences in English: the word is used in too many ways to admit a single definition."
+      ],
+      "cols": [
+       [
+        "belied by",
+        "predicated on",
+        "consequential for"
+       ],
+       [
+        "diversity",
+        "importance",
+        "conspicuousness"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Literary salons and coffeehouses (i)____ the class-based systems of social hierarchies prevalent at the time. Meritocratic appreciation of wit and brilliance, wherever it might issue, replaced (ii)____ to established power."
+      ],
+      "cols": [
+       [
+        "reaffirmed",
+        "broke down",
+        "anticipated"
+       ],
+       [
+        "indifference",
+        "deference",
+        "affronts"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BDH",
+     "txt": {
+      "stem": [
+       "One of the great misconceptions regarding Earth is that it is (i)____. This is true only if your sense of connection depends on large chunks of physical matter moving from place to place. The dust and rocks that rain down from space are indeed (ii)____, even if some of the larger rocks are occasionally a (iii)____. Matter trickles in, trickles out. But matter is not everything: an unending spate of pure luminous energy pours down on Earth in a 170,000-trillion-watt torrent."
+      ],
+      "cols": [
+       [
+        "fragile",
+        "isolated",
+        "fixed"
+       ],
+       [
+        "negligible",
+        "terrifying",
+        "fascinating"
+       ],
+       [
+        "source of contention",
+        "cause for concern",
+        "boon to researchers"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Earth may be considered a more ____ version of the other terrestrial planets:because Earth has developed and maintained plate tectonics over eons, its surface, unlike the other planets’ surfaces, has continued to change."
+      ],
+      "opts": [
+       "treacherous",
+       "rugged",
+       "unsettled",
+       "weathered",
+       "intricate",
+       "inconstant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Although she is widely portrayed as being rather ____, Carson’s letters to publishers reveal her complete confidence in her skills as a writer and naturalist along with her willingness to promote herself and her abilities."
+      ],
+      "opts": [
+       "shy",
+       "diffident",
+       "pedantic",
+       "loquacious",
+       "capricious",
+       "whimsical"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Some researchers argue that archaeological evidence is too ____: depending on the background theory archaeologists bring to bear, they may interpret the significance of the unearthed artifacts as evidence very differently."
+      ],
+      "opts": [
+       "incomplete",
+       "inaccessible",
+       "indeterminate",
+       "controversial",
+       "uncertain",
+       "fragmentary"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

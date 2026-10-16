@@ -1,0 +1,196 @@
+{
+ "id": "u49-test125-s1",
+ "title": "Test 125 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 125, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 125 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Because the instructions they have been given are exhaustive and unequivocal, employees are now working without ____."
+      ],
+      "opts": [
+       "recompense",
+       "discretion",
+       "monotony",
+       "certitude",
+       "limitation"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "In aging bees, cognitive decline is (i)____ under certain social conditions--for example, when the colony divides by swarming or when foragers or young nurse bees are removed from the colony. Each of these circumstances causes older bees to become cognitively (ii)____, while juvenile bees, by contrast, exhibit a faster age-related cognitive decline."
+      ],
+      "cols": [
+       [
+        "common",
+        "reversed",
+        "dangerous"
+       ],
+       [
+        "overactive",
+        "younger",
+        "sluggish"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "Among the rising generation of concert pianists, a (i)____ approach to performance is sadly (ii)____. Too often, young pianists have acquired such an approach from their teachers, the very people who should be pointing out that the flailing arm, the contorted brow, the bulging eye, and the balletic upper torso are (iii)____ work in a business best devoted to doing the most with the least."
+      ],
+      "cols": [
+       [
+        "histrionic",
+        "stately",
+        "languid"
+       ],
+       [
+        "passé",
+        "endangered",
+        "pervasive"
+       ],
+       [
+        "extraneous",
+        "respected",
+        "stylish"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "The ____ diction of the short Somali poetry form known as balwo was well suited for political purposes: invective could easily be hidden in an apparent love poem."
+      ],
+      "opts": [
+       "cryptic",
+       "enigmatic",
+       "romantic",
+       "iconoclastic",
+       "irreverent",
+       "nuanced"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Scientists studying the stresses and strains accumulated in the Earth's crust have found that it is surprisingly easy to ____ earthquakes, even in regions that historically have been seismically silent or nearly so."
+      ],
+      "opts": [
+       "detect",
+       "trigger",
+       "ignore",
+       "cause",
+       "disregard",
+       "predict"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The high seriousness of St. Aubyn’s novel is not at all superficial; in fact, it is ____ the novel’s ferociously comic vision."
+      ],
+      "opts": [
+       "redolent of",
+       "reminiscent of",
+       "intrinsic to",
+       "inimical to",
+       "antagonistic to",
+       "inextricable from"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Surprisingly, although the textbooks are filled with pages of vocabulary and unnecessary detail, their treatment of some fundamentally important concepts is ____."
+      ],
+      "opts": [
+       "prolix",
+       "piecemeal",
+       "verbose",
+       "fragmentary",
+       "abstruse",
+       "succinct"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

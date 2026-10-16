@@ -1,0 +1,196 @@
+{
+ "id": "u41-test121-s1",
+ "title": "Test 121 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 121, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 121 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "Woody plant responses to herbivory were always thought to be ____; however, some scientists have reported localized responses to herbivory in certain woody plants."
+      ],
+      "opts": [
+       "timely",
+       "marginal",
+       "unpredictable",
+       "adequate",
+       "systemic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Confidence in the nation's finances, barely nailed together by international financial institutions a few weeks ago, is still such a (i)____ structure that the slightest disturbance could set it (ii)____."
+      ],
+      "cols": [
+       [
+        "ramshackle",
+        "labyrinthine",
+        "rigid"
+       ],
+       [
+        "quivering",
+        "ablaze",
+        "right"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "The antiestablishment comedy of the early 1960s developed in reaction to an age that was more (i)____, a time when standing on a stage to make fun of a political leader or government official was a (ii)____ act. In those days, the laughter of the audience was something for politicians to be afraid of, because it signaled a (iii)____ in the public attitude toward the whole political class. Today, every politician is a target of satire and comedy, and laughter has become a reflexive, tired reaction to situations too depressing to evaluate clearly."
+      ],
+      "cols": [
+       [
+        "humane",
+        "austere",
+        "deferential"
+       ],
+       [
+        "radical",
+        "placatory",
+        "prophetic"
+       ],
+       [
+        "developing moderation",
+        "profound shift",
+        "diminished resolve"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "The ear is much more ____ than the eye: only the ear can tell a source that oscillates 30 times a second from one that oscillates 60 times a second."
+      ],
+      "opts": [
+       "stable",
+       "efficient",
+       "durable",
+       "discerning",
+       "accurate",
+       "tenacious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Cash crops require committed, systematic cultivation; rubber tapping, on the other hand, is much more of ____ enterprise: it is largely a matter of stumbling upon a rubber plant that is ready for harvesting."
+      ],
+      "opts": [
+       "a lucrative",
+       "a contingent",
+       "an arduous",
+       "a conventional",
+       "a profitable",
+       "an uncertain"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Like its protagonists, who are caught up in a historical moment that ____ the possibility of self-fulfillment, the novel Ready to Burst by Haitian writer Franketienne moves in disorienting circles, never progressing or achieving closure."
+      ],
+      "opts": [
+       "celebrates",
+       "downplays",
+       "precludes",
+       "romanticizes",
+       "elevates",
+       "frustrates"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "There are many contemporary composers who receive coveted commissions, only to see their creations ____ after one performance."
+      ],
+      "opts": [
+       "dismantled",
+       "redrafted",
+       "plundered",
+       "pilloried",
+       "discarded",
+       "shelved"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

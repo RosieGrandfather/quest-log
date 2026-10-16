@@ -1,0 +1,196 @@
+{
+ "id": "u03-test102-s1",
+ "title": "Test 102 · Section 1（hard · 7题）",
+ "en": "Text Completion — Test 102, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 102 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The development of junior high schools in American education was motivated by ____ rather than by pedagogical validity: these schools provided an efficient and inexpensive way to eliminate overcrowding in the high schools."
+      ],
+      "opts": [
+       "idealism",
+       "reform",
+       "expediency",
+       "privilege",
+       "tradition"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Although Kito Hiroshi's portrait of Edo Japan as (i)____ is certainly (ii)____, the fundamental factors of population stability and resource renewal generally did favor social maintenance and even economic growth."
+      ],
+      "cols": [
+       [
+        "outwardly aggressive",
+        "perfectly harmonious",
+        "slowly developing"
+       ],
+       [
+        "derivative",
+        "positive",
+        "overdrawn"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEI",
+     "txt": {
+      "stem": [
+       "When learners are engaged in mathematical problem-solving, their activity does not have from the outset the structure of what will be considered a mathematical proof. Instead, a tangle of intuitions, know-how, factual knowledge, and a variety of other mental constructs allows learners to entertain choices and make decisions. Nonetheless, (i)____ such mental activity (ii)____ is (iii)____: in many situations this process works, although it can prove to be wrong as a result of overgeneralizations."
+      ],
+      "cols": [
+       [
+        "concealing",
+        "adapting",
+        "describing"
+       ],
+       [
+        "from scrutiny",
+        "as confused",
+        "to the task"
+       ],
+       [
+        "uncommon",
+        "unintentional",
+        "uncharitable"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The automation of many of the functions performed at the factory, although initially inspiring ____ in many of the company’s employees, has had none of the deleterious effects forecast either within and beyond the organization."
+      ],
+      "opts": [
+       "trepidation",
+       "avidity",
+       "diligence",
+       "pathos",
+       "apprehension",
+       "enterprise"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The Federal Reserve Bank is one of the most ____ institutions in the United States, yet many are not aware of the important operations and activities it has carried out during its lifetime."
+      ],
+      "opts": [
+       "distinguished",
+       "secretive",
+       "consequential",
+       "indispensable",
+       "misunderstood",
+       "mysterious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Building the first United States transcontinental phone line required fundamental innovations: for example, engineers created an amplifier for the electric signals to prevent them from ____ after a few miles."
+      ],
+      "opts": [
+       "propagating",
+       "attenuating",
+       "dissipating",
+       "iterating",
+       "deviating",
+       "broadcasting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Cole' s novel is as close to a diary as a novel can get, encompassing reflection, autobiography, stasis, and repetition, a daunting task even many accomplished novelists would ____, which, wonderfully, Cole does not do."
+      ],
+      "opts": [
+       "sidestep",
+       "attempt",
+       "hazard",
+       "botch",
+       "complicate",
+       "fumble"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

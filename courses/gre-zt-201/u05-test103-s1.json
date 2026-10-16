@@ -1,0 +1,196 @@
+{
+ "id": "u05-test103-s1",
+ "title": "Test 103 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 103, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 103 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The ability of the Grand Banks cod fishery to sustain intensive cod harvesting for many years gave it a reputation for ____ that deceived even scientifically sophisticated observers."
+      ],
+      "opts": [
+       "hazardousness",
+       "insurmountability",
+       "unpredictability",
+       "inexhaustibility",
+       "inscrutability"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The title of Lee’s 1964 textbook, A History of For Eastern Art, might seem to imply that the entire subject could be encapsulated in a single work. In fact, the treatment of art across Asian cultures and over millennia could never (i)____ if it also aspired to be (ii)____."
+      ],
+      "cols": [
+       [
+        "avoid anachronism",
+        "achieve coherence",
+        "justify digressions"
+       ],
+       [
+        "accessible",
+        "comprehensive",
+        "groundbreaking"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "The (i)____ in local coverage of a rabies outbreak in colonial Hanoi may be startling today, but it cannot be attributed solely to the (ii)____ of the era's journalists. Rather, before the advent of modern public health systems, (iii)____ the unpleasantness of the disease and its treatment was seen as a way to, ensure that the public remained vigilant against possible sources of contagion."
+      ],
+      "cols": [
+       [
+        "reliance on polite",
+        "deference to medical",
+        "degree of gruesome detail"
+       ],
+       [
+        "sycophancy",
+        "squeamishness",
+        "sensationalism"
+       ],
+       [
+        "underscoring euphemisms",
+        "minimizing experts",
+        "demystifying"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Sweet's illustrations are playfully ____: the eye hops sparrowlike from leaf to leaf, uncertain where to settle."
+      ],
+      "opts": [
+       "daunting",
+       "distracting",
+       "integrated",
+       "educational",
+       "diverting",
+       "Informative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Archer is surprisingly ____ in failing to see her subjects’ self-reported life histories for what they really are: the kinds of stories that pretty much all twenty-somethings tell."
+      ],
+      "opts": [
+       "obstinate",
+       "credulous",
+       "arbitrary",
+       "cautious",
+       "unprincipled",
+       "trusting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "That she was unaffected by the ____ of the feudal past was evident in the style in which she wrote of it, a style completely devoid of nostalgia."
+      ],
+      "opts": [
+       "allure",
+       "cruelty",
+       "prestige",
+       "barbarity",
+       "remnants",
+       "magic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The World Health Organization has recommended that countries use artemisinin-based combination therapies to treat malaria patients, as continued use of artemisinin monotherapies could ____ the efficacy of artemisinin, the most successful antimalarial drug available."
+      ],
+      "opts": [
+       "negate",
+       "mask",
+       "reduce",
+       "conceal",
+       "attenuate",
+       "misrepresent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

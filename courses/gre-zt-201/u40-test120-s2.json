@@ -1,0 +1,200 @@
+{
+ "id": "u40-test120-s2",
+ "title": "Test 120 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 120, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 120 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "If dark energy is an energy field, it would not be ____: it might once have been stronger or weaker than it is nowand could have affected the universe differently at different times."
+      ],
+      "opts": [
+       "boundless",
+       "directional",
+       "invariant",
+       "dynamic",
+       "pervasive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "George Eliot's novels were calculated to inspire sympathy in the reader for characters from a broad range of social classes, but her design was not (i)____: Eliot hoped her fiction would have a (ii)____ effect, spurting readers to show charity for those oppressed by the economic inequalities of her age."
+      ],
+      "cols": [
+       [
+        "always obvious",
+        "without complications",
+        "exclusively affective"
+       ],
+       [
+        "pacifying",
+        "consoling",
+        "galvanizing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The Cassini spacecraft initially found the bodies of liquid methane on Saturn's moon Titan to be very (i)____, a surprising result since the reduced surface tension and viscosity of liquid methane, as compared to water on Earth, should make it (ii)____ waves."
+      ],
+      "cols": [
+       [
+        "calm",
+        "deep",
+        "dense"
+       ],
+       [
+        "easier to excite",
+        "more difficult to measure",
+        "more likely to distort"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Aiken’s (i)____ regarding his own intellectual abilities—he has repeatedly attributed his academic success to luck and hard work rather than innate acuity—may have (ii)____. If he feels he is surrounded by economists more (iii)____ than he is, he may let their assertions, even the dubious ones, stand without challenge."
+      ],
+      "cols": [
+       [
+        "modesty",
+        "temerity",
+        "chagrin"
+       ],
+       [
+        "led him astray",
+        "bolstered his success",
+        "embarrassed his admirers"
+       ],
+       [
+        "brilliant",
+        "determined",
+        "boastful"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Although streams of solar particles cause beautiful auroras —the northern and southern lights— sometimes their consequences are less ____: their electromagnetic effects, for instance, can overload power grids and damage orbiting satellites."
+      ],
+      "opts": [
+       "spectacular",
+       "significant",
+       "benign",
+       "consequential",
+       "innocuous",
+       "palpable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The so-called \"sensation novel, popular in mid-nineteenth-century Britain, was dismissed by some as ____ form of fiction, partly because these spine-tingling novels often appeared as serials in cheap, disposable periodicals."
+      ],
+      "opts": [
+       "an engrossing",
+       "an ephemeral",
+       "a macabre",
+       "a transitory",
+       "a captivating",
+       "a debased"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Hamlin Garland has tried to appeal to a wider audience by moving away from the gritty realism of his early writings, which often advanced populist political causes, and toward ____ mainstream fiction."
+      ],
+      "opts": [
+       "demanding",
+       "topical",
+       "anodyne",
+       "toothless",
+       "derivative",
+       "challenging"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

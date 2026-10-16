@@ -1,0 +1,196 @@
+{
+ "id": "u79-test140-s1",
+ "title": "Test 140 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 140, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 140 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "Identifying the age of a human cell is tricky because of frequent ____ its biological and chronological ages: a cell that has existed for a relatively short time could function erratically, as if elderly."
+      ],
+      "opts": [
+       "disagreement over",
+       "correlation between",
+       "underestimation of",
+       "misalignment of",
+       "inattention to"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "For millennia, remembering was hard and costly, and people had to choose deliberately what should be remembered, allowing most things to be forgotten. The digital age has brought about an (i) ____ of the balance of remembering and forgetting. Committing information to digital memory has become (ii) ____."
+      ],
+      "cols": [
+       [
+        "attenuation",
+        "inversion",
+        "extension"
+       ],
+       [
+        "the default",
+        "a burden",
+        "an excuse"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "Thorough cleanings or restorations that try to return much-loved old master paintings to their original condition (i) ____. Quite apart from a reasonable wariness of paint loss, sheer loyalty to the (ii) ____ look of a work, dirt and all, prejudices many. There are also academics who (iii) ____ the removal of retouches and even of overpaintings, holding that even though they may date from years after the original composition, they embody history in themselves."
+      ],
+      "cols": [
+       [
+        "generally take years to",
+        "are increasingly science",
+        "invariably face opposition"
+       ],
+       [
+        "accustomed",
+        "refined",
+        "pristine"
+       ],
+       [
+        "argue for complete",
+        "vacillate about based",
+        "militate against"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "While lunar geology may appear to be a relatively ____ area of planetary science, it is important to realize that the Moon’s surface and interior retain records that shed light on the histories of all terrestrial planets."
+      ],
+      "opts": [
+       "parochial",
+       "insignificant",
+       "narrow",
+       "new",
+       "straightforward",
+       "novel"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Maintaining a tolerant attitude toward pseudoscience might be considered ____, but it could be argued that such a disposition lowers our defenses against more dangerous delusions that are based on similar confusions and fallacies."
+      ],
+      "opts": [
+       "naïve",
+       "benign",
+       "broad-minded",
+       "indulgent",
+       "credulous",
+       "innocuous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "At public appearances the leader was remarkably taciturn, typically making ____ observations before turning the floor over to a colleague."
+      ],
+      "opts": [
+       "trite",
+       "insightful",
+       "inflammatory",
+       "shrewd",
+       "perfunctory",
+       "brief"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "The rate of sediment deposition may be ____ desertification in Central Asia: data from a Tajik site show the rate to have increased during Pleistocene glacial periods as aridity increased."
+      ],
+      "opts": [
+       "a restraint on",
+       "a gauge of",
+       "an indicator of",
+       "a factor in",
+       "a hedge against",
+       "a consequence of"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

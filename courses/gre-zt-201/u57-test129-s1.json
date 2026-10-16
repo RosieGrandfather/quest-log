@@ -1,0 +1,196 @@
+{
+ "id": "u57-test129-s1",
+ "title": "Test 129 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 129, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 129 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The results of the latest survey being ____, earlier results gave researchers little relevant experience for the new data’s interpretation."
+      ],
+      "opts": [
+       "superfluous",
+       "inconsequential",
+       "tedious",
+       "unexampled",
+       "familiar"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "All of these writers rely on (i)____ and (ii)____ to make their argument: they take a single idea and illustrate it with endless, rather overblown examples while avoiding any genuinely nuanced analysis."
+      ],
+      "cols": [
+       [
+        "fabrication",
+        "equivocation",
+        "simplification"
+       ],
+       [
+        "exaggeration",
+        "speculation",
+        "prevarication"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADG",
+     "txt": {
+      "stem": [
+       "Glaeser condemn the “agrarian utopianism” of those who (i)____ rural life and (ii)____ the environmental (iii)____ of certain big cities, chiefly less driving and the greater energy efficiency of heating the multifamily structures that characterize many urban settings."
+      ],
+      "cols": [
+       [
+        "sentimentalize",
+        "satirize",
+        "marginalize"
+       ],
+       [
+        "fail to appreciate",
+        "rush to extol",
+        "refuse to disparage"
+       ],
+       [
+        "virtues",
+        "risks",
+        "compromises"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Retrofitted with stabilizing devices, some of which ____ its aesthetics, the bridge has been reopened, no longer prone to excessive swaying but not quite the breathtaking structure it originally was."
+      ],
+      "opts": [
+       "impair",
+       "resist",
+       "improve",
+       "enhance",
+       "restore",
+       "compromise"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Mr. Hirsch says he will aim to preserve the foundation’s support of ____ thinkers, individuals who are going against the trends in a field or an acknowledged set of opinions."
+      ],
+      "opts": [
+       "iconoclastic",
+       "integrative",
+       "doctrinaire",
+       "heterodox",
+       "dogmatic",
+       "synthesizing"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In France cultural subsidies are ____: producers of just about any film can get an advance from the government against box-office receipts, even though most such loans are never fully repaid."
+      ],
+      "opts": [
+       "ubiquitous",
+       "invaluable",
+       "sporadic",
+       "scanty",
+       "questionable",
+       "omnipresent"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "Although it is loathsome to some people, slang often expresses ideas with great directness, avoiding the ____ of more refined language."
+      ],
+      "opts": [
+       "circumlocution",
+       "syntax",
+       "ornateness",
+       "obfuscation",
+       "periphrasis",
+       "opprobrium"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

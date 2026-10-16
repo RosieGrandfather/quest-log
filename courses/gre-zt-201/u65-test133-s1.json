@@ -1,0 +1,196 @@
+{
+ "id": "u65-test133-s1",
+ "title": "Test 133 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 133, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 133 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Even though no other species in the Rana genus of frogs exhibits such ____ habits, once crawfish frogs have finally been located, they are relatively easy to film."
+      ],
+      "opts": [
+       "furtive",
+       "rigid",
+       "aggressive",
+       "eccentric",
+       "complex"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Carmen de Burgos’ work was mass-produced popular fiction, and its (i)____ nature allowed it to be (ii)____ by critics until the 1970s, when feminist scholars began to reevaluate the merit of her texts and recognize her contributions to early-twentieth-century Spanish culture."
+      ],
+      "cols": [
+       [
+        "disposable",
+        "innovative",
+        "realistic"
+       ],
+       [
+        "dismissed",
+        "debated",
+        "overesteemed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "Among chess aficionados, there have been many doomsday scenarios about people (i)____ the game as a result of the superiority of computer chess programs over human players, Others have replied to this with variations on the theme of how we still hold footraces despite cars going much faster, but this analogy is (ii)____ since cars do not help humans run faster while chess computers undoubtedly have an effect on the (iii)____ of human chess."
+      ],
+      "cols": [
+       [
+        "losing interest in",
+        "redoubling their efforts at",
+        "struggling to master"
+       ],
+       [
+        "ineluctable",
+        "transparent",
+        "spurious"
+       ],
+       [
+        "popularity",
+        "quality",
+        "accessibility"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "There are too many characters, too many subplots, and no one clearly defined protagonist, making for ____ story."
+      ],
+      "opts": [
+       "an unfocused",
+       "a maudlin",
+       "a superficial",
+       "a sentimental",
+       "a complicated",
+       "a diffuse"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The ____ of cosmic rays remains mysterious because their paths are bent by the galaxy's magnetic field-meaning that the directions they come from do not point to whatever created them."
+      ],
+      "opts": [
+       "structure",
+       "origin",
+       "velocity",
+       "production",
+       "provenance",
+       "speed"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "While many of Florence Price’s art songs suffer from an excess of emotionality, “To my Little Son” actually demonstrates some ____, which makes the song more approachable and ultimately more moving."
+      ],
+      "opts": [
+       "self-assurance",
+       "spunk",
+       "intelligence",
+       "restraint",
+       "confidence",
+       "moderation"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The author’s approach to her subject is less ____ than that of some of her predecessors in the field, though here and there she cautiously takes a stand on a potentially divisive issue."
+      ],
+      "opts": [
+       "propitious",
+       "auspicious",
+       "portentous",
+       "contentious",
+       "pretentious",
+       "tendentious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

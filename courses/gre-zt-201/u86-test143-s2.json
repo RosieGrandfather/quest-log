@@ -1,0 +1,209 @@
+{
+ "id": "u86-test143-s2",
+ "title": "Test 143 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 143, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 143 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Other company insiders have recently offered testimony that ____ several of the more lurid anecdotes found in Belmer’s account, though that testimony hardly minimizes the company’s culture of malfeasance and mismanagement."
+      ],
+      "opts": [
+       "tempers",
+       "corroborates",
+       "outdoes",
+       "exploits",
+       "foreshadows"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Cells (i) ____ glucose if they are (ii) ____ it, but conversely they destroy glucose-creating enzymes upon return to glucose-replete conditions."
+      ],
+      "cols": [
+       [
+        "detect",
+        "redirect",
+        "synthesize"
+       ],
+       [
+        "supplied with",
+        "deprived of",
+        "signaled by"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEH",
+     "txt": {
+      "stem": [
+       "Often evasive and at times even (i) ____, the gubernatorial candidate came off (ii) ____ at her press conference today in ways that should give voters cause to (iii) ____ her, regardless of whether they agree with the substance of her views."
+      ],
+      "cols": [
+       [
+        "humorous",
+        "blunt",
+        "mendacious"
+       ],
+       [
+        "badly",
+        "convincingly",
+        "unexceptionally"
+       ],
+       [
+        "reject",
+        "champion",
+        "emulate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      1
+     ],
+     "answerPending": true,
+     "answerReviewReason": "校对认为配套答案不可靠",
+     "explanation": "配套答案为 空(i) C mendacious、空(ii) B convincingly、空(iii) B champion。前半句说她闪烁其词甚至说谎，后面“不论是否认同她的观点”都应让选民有理由拒绝她，更合理的是 空(i) C mendacious、空(ii) A badly、空(iii) A reject。"
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "A prospective reader may well wonder whether the book would not be better classified as a somewhat unorthodox biography, but the author stands firm on its status as a work of fiction. She has drawn inspiration from the facts, the author tells us, but has (i) ____ them, editing and rearranging events. Also, she has felt free to (ii) ____ what her characters were feeling and what was going on in their minds—to invent, within the limits of plausibility, what could not be (iii) ____."
+      ],
+      "cols": [
+       [
+        "reshaped",
+        "expunged",
+        "verified"
+       ],
+       [
+        "ignore",
+        "deny",
+        "imagine"
+       ],
+       [
+        "believed",
+        "ascertained",
+        "described"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "One of the reporter’s central themes is that health care concerns were a secondary consideration to the reformers in their drive to limit if not completely ____ the consumption of cigarettes."
+      ],
+      "opts": [
+       "indulge",
+       "proscribe",
+       "damage",
+       "spurn",
+       "disallow",
+       "impair"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Because the fundamental nature of language is so intangible, because there is no agreed-upon way to determine its existence, it is easy to dismiss new evidence of ostensible animal language as inadequate—quite ____, but insufficient."
+      ],
+      "opts": [
+       "equivocal",
+       "intriguing",
+       "controvertible",
+       "provocative",
+       "viable",
+       "dubitable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Whether the film is ____ adaptation of the legend is debatable: the author of the screenplay claims that it was based on the original tale, but admits taking some interpretive license with the story."
+      ],
+      "opts": [
+       "an inspired",
+       "a rigorous",
+       "an unsentimental",
+       "a successful",
+       "a sober",
+       "a faithful"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

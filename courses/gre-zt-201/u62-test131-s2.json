@@ -1,0 +1,209 @@
+{
+ "id": "u62-test131-s2",
+ "title": "Test 131 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 131, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 131 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The standard wisdom now is that sciences undergo periodic ruptures so thorough that the generations of scientists on either side of the break express themselves in mutually ____ languages."
+      ],
+      "opts": [
+       "intelligible",
+       "influential",
+       "translatable",
+       "incomprehensible",
+       "interconnected"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The title of Felsenstein’s book-Inferring Phylogenies-is positively (i)____. The volume achieves so much more than simply presenting methods for inferring phylogenies, being, in fact, (ii)____ of how to analyze evolutionary data from a phylogenetic perspective."
+      ],
+      "cols": [
+       [
+        "grandiose",
+        "misleading",
+        "fortuitous"
+       ],
+       [
+        "an admirably comprehensive discussion",
+        "a thoroughly outmoded treatment",
+        "an almost opaque account"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CFI",
+     "txt": {
+      "stem": [
+       "Penrose is (i)____ theoretical physicists for engaging in (ii)____ by (iii)____ what is implied by the known data. One of his favorite examples is inflationary cosmology, which, according to him, is treated as an established theory despite a lack of evidence."
+      ],
+      "cols": [
+       [
+        "indebted to",
+        "critical of",
+        "singular among"
+       ],
+       [
+        "partisanship",
+        "plagiarism",
+        "conjecture"
+       ],
+       [
+        "experimenting with",
+        "combing through",
+        "venturing beyond"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      2
+     ],
+     "answerPending": true,
+     "answerReviewReason": "校对认为配套答案不可靠",
+     "explanation": "配套答案为 空(i) C singular among、空(ii) C conjecture、空(iii) C venturing beyond，部分题库网站也这样给。但后一句举的例子是 Penrose 认为暴胀宇宙学“缺乏证据却被当成定论”，说明他是在批评别的理论物理学家超出数据作推测，空(i) 更合理的是 B critical of，其余两空不变。"
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEH",
+     "txt": {
+      "stem": [
+       "Most movie sound tracks lean so heavily on a few preprocessed musical devices—those swells of strings and cymbals designed to manipulate our emotions in (i)____ ways-that when a composer (ii)____ a more personal language, the effect is (iii)____: an entire dimension of the film experience is liberated from cliché."
+      ],
+      "cols": [
+       [
+        "unprecedented",
+        "predictable",
+        "provocative"
+       ],
+       [
+        "resists",
+        "adopts",
+        "eschews"
+       ],
+       [
+        "meaningless",
+        "revelatory",
+        "disappointing"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "A number of recent pieces of instrumental music are linked by a common feature: the considerable ____ left to the individual performer in the way he or she chooses to play the work."
+      ],
+      "opts": [
+       "fidelity",
+       "restraints",
+       "keenness",
+       "latitude",
+       "leeway",
+       "curbs"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The fierce drought that is gripping the area-and imminent rationing and steep water price increases-is ____ the area’s deep economic divide, as wealthy communities guzzle water while poorer communities nearby conserve by necessity."
+      ],
+      "opts": [
+       "defining",
+       "bridging",
+       "highlighting",
+       "exacerbating",
+       "underscoring",
+       "adjusting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Wilson sees the ideas that he presents in his new book as being notably ____, but his critics, by contrast, claim that they are actually rather conventional."
+      ],
+      "opts": [
+       "understated",
+       "iconoclastic",
+       "subversive",
+       "democratic",
+       "egalitarian",
+       "daunting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

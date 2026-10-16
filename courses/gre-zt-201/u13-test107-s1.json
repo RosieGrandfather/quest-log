@@ -1,0 +1,196 @@
+{
+ "id": "u13-test107-s1",
+ "title": "Test 107 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 107, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 107 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Dr. Jack Kevorkian became a subject of controversy in the 1990s by assisting terminally ill people to commit suicide in contravention of Michigan statutes’ ____ such actions."
+      ],
+      "opts": [
+       "justifying",
+       "proscribing",
+       "presaging",
+       "abjuring",
+       "substantiating"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "In China, beginning in the 1920s, the field of geography was (i)____ discourse, alive to indigenous Chinese traditions even as it (ii)____ key elements of Western scientific geography."
+      ],
+      "cols": [
+       [
+        "an arcane",
+        "a hybrid",
+        "a subjective"
+       ],
+       [
+        "ignored",
+        "questioned",
+        "absorbed"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFI",
+     "txt": {
+      "stem": [
+       "The current organization of agricultural production is certainly not (i)____ addressing the problem of world hunger. Much of the corn and soy grown in the world feeds cattle, pigs and chickens being raised for meat. This despite the (ii)____ that is (iii)____ such a process: two to five times more grain is required to produce the same number of calories in meat as can be obtained through the direct consumption of grain."
+      ],
+      "cols": [
+       [
+        "responsible for",
+        "optimal for",
+        "incapable of"
+       ],
+       [
+        "pragmatism",
+        "fecundity",
+        "inefficiency"
+       ],
+       [
+        "discouraged by",
+        "regulated by",
+        "inherent in"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "He opens in a style that is notably contentious for a scientific paper, ____ previous works that, in his dim view, have too quickly drawn analogies between human thought and animal thought."
+      ],
+      "opts": [
+       "ignoring",
+       "cataloging",
+       "espousing",
+       "endorsing",
+       "disparaging",
+       "belittling"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Claire Tomalin’ s biography of Dickens offers a seamless application of \"the life” to\"the art\" -and what ____ balancing act it is, in which, just barely, Dickens' art is not lost amid a smothering welter of facts."
+      ],
+      "opts": [
+       "a perilous",
+       "a daring",
+       "an inadequate",
+       "a successful",
+       "an insufficient",
+       "an unconventional"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "One of the incongruities of modern industry, according to Reck and Graedel, is that we manufacture modern products with the most sophisticated technologies available yet generally adopt relatively ____ approaches to recycling them."
+      ],
+      "opts": [
+       "economical",
+       "basic",
+       "crude",
+       "conventional",
+       "inefficient",
+       "inexpensive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The actor was quick to warn new members of the cast that the director's cherubic countenance belied ____ temperament."
+      ],
+      "opts": [
+       "a deceitful",
+       "a choleric",
+       "a morose",
+       "an imperious",
+       "a vengeful",
+       "an irascible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,206 @@
+{
+ "id": "u80-test140-s2",
+ "title": "Test 140 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 140, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 140 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Adapting to its changing environment and building its own ecological niche in interactions with other disciplines, the scientific discipline of ecology can be seen as highly ____."
+      ],
+      "opts": [
+       "anarchic",
+       "cerebral",
+       "opportunistic",
+       "speculative",
+       "competitive"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Political debates supposedly exist to inform viewers, who watch them with open minds to learn about the candidates and decide how to vote. Of course, given the (i) ____ that routinely permeates most debates, it is hard to (ii) ____ that they fulfill their purpose."
+      ],
+      "cols": [
+       [
+        "heated discussion",
+        "ideological division",
+        "notorious disingenuousness"
+       ],
+       [
+        "deny",
+        "maintain",
+        "complain"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "The guarantee of academic freedom to professors is intended to encourage intellectual independence. But so long as faculty members receive training in a specific academic discipline and are appointed to positions defined by discipline, and so long as colleges and universities are organized by departments that (i)____ long-standing disciplinary traditions, academic freedom will also (ii)____ unique discipline-specific expectations. Yet the right to (iii)____ disciplinary paradigms is also fundamental to academic freedom."
+      ],
+      "cols": [
+       [
+        "flout",
+        "inherit",
+        "reinvent"
+       ],
+       [
+        "tend to embody",
+        "fail to communicate",
+        "begin to transcend"
+       ],
+       [
+        "resist",
+        "delineate",
+        "perpetuate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDG",
+     "txt": {
+      "stem": [
+       "Eventually, the framed painting looked as Easton had hoped it would, the frame offering a subtle rebuke to some of the more ostentatious baroque confections on display. Easton believed that it was more (i) ____ than any other frame in the exhibition, despite its (ii) ____ quality. That apparent simplicity, however, was so much more difficult to realize than something more obviously (iii) ____."
+      ],
+      "cols": [
+       [
+        "nondescript",
+        "ornate",
+        "striking"
+       ],
+       [
+        "unassuming",
+        "inexpensive",
+        "representative"
+       ],
+       [
+        "sumptuous",
+        "fashionable",
+        "outmoded"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "The action in Zadie Smith's novel On Beauty is mediated by an unabashedly ____ narrator who does not hesitate to inform us, as one upon a time the narrators of novels were wont to do, how we behave in general and how society usually works."
+      ],
+      "opts": [
+       "knowing",
+       "obtrusive",
+       "conspicuous",
+       "antiquated",
+       "mysterious",
+       "secretive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "The second group of volunteer excavators was far more ____ than the first, and consequently the obstructing material was removed much more rapidly during the second shift."
+      ],
+      "opts": [
+       "diligent",
+       "incapacitated",
+       "experienced",
+       "punctual",
+       "debilitated",
+       "industrious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Tender yet never ____ the memoir engages the reader without resorting to clichés."
+      ],
+      "opts": [
+       "saccharine",
+       "unsentimental",
+       "cloying",
+       "long-winded",
+       "pragmatic",
+       "affecting"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,194 @@
+{
+ "id": "u18-test109-s2",
+ "title": "Test 109 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 109, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 109 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Ronald Ferguson, whose work is widely admired by policy makers, has never been profiled by the news media, perhaps because his views are ____ and therefore difficult to capture in a sound bite."
+      ],
+      "opts": [
+       "nuanced",
+       "controversial",
+       "empirical",
+       "influential",
+       "unorthodox"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Mathematical knowledge has long been regarded as being essentially stable and hence rooted in a world of ideas only superficially ____ to historical forces."
+      ],
+      "opts": [
+       "indifferent",
+       "superior",
+       "susceptible",
+       "extraneous",
+       "oblivious"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Xie proposes that sleep achieves its restorative function by switching the brain into a state that facilitates the clearance of waste products resulting from neural activity during wakefulness, indeed, the very (i)____ of such waste products in the waking brain may (ii)____ the switch to sleep state."
+      ],
+      "cols": [
+       [
+        "utilization",
+        "accumulation",
+        "analysis"
+       ],
+       [
+        "delay",
+        "succeed",
+        "trigger"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEG",
+     "txt": {
+      "stem": [
+       "Books about humor are rarely funny. Their goal, after all, is to (i)____ the workings of that which we find comic, not to (ii)____ laughter, and understanding why jokes are funny is not in itself (iii)____."
+      ],
+      "cols": [
+       [
+        "celebrate",
+        "analyze",
+        "improve"
+       ],
+       [
+        "explain",
+        "occasion",
+        "recall"
+       ],
+       [
+        "amusing",
+        "helpful",
+        "admirable"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Although technically their members were hunter-gatherers, many early Native California communities exhibited traits more typically associated with well-developed agrarian societies and, therefore, are often presented in the ethnographic literature as ____."
+      ],
+      "opts": [
+       "archaic",
+       "pragmatic",
+       "anomalous",
+       "exemplary",
+       "exceptional",
+       "utilitarian"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The vast majority of universities in the United States promote themselves as institutions of free speech and thought, construing censorship as ____ their search for knowledge."
+      ],
+      "opts": [
+       "subordinate to",
+       "obviated by",
+       "secondary to",
+       "antipathetic to",
+       "conducive to",
+       "inconsistent with"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Louise Gluck has lone been a poet of ____ ideals; only in her later work does she veer toward a partial accommodation to human weakness and imperfection."
+      ],
+      "opts": [
+       "admirable",
+       "nontraditional",
+       "uncompromising",
+       "unorthodox",
+       "absolute",
+       "lofty"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

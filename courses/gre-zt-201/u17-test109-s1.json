@@ -1,0 +1,196 @@
+{
+ "id": "u17-test109-s1",
+ "title": "Test 109 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 109, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 109 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "The research institute publishes new material on its Web site well in advance of its appearance in print; inevitably, there is a lot of dross, but fortunately, much of the material is both ____ and free."
+      ],
+      "opts": [
+       "speculative",
+       "specious",
+       "copious",
+       "valuable",
+       "perplexing"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "At first glance, each of the stories in the anthology seemed (i)____, upon closer inspection of their protagonists, implied morals, and fantasy elements, however, subtle similarities among the stories emerged to (ii)____ this initial observation."
+      ],
+      "cols": [
+       [
+        "compelling",
+        "implausible",
+        "idiosyncratic"
+       ],
+       [
+        "impugn",
+        "bolster",
+        "explain"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BDG",
+     "txt": {
+      "stem": [
+       "During Nigeria's colonial period, the country’s Igbo societies had (i)____ sense of gender distinctions, but the idea of a strict division of labor along gender lines (ii)____. Indeed, the social roles of women and men were quite (iii)____, based on what people did rather than on existential categories like gender."
+      ],
+      "cols": [
+       [
+        "an elastic",
+        "a well-developed",
+        "a diminishing"
+       ],
+       [
+        "did not exist",
+        "was emerging",
+        "hardly changed"
+       ],
+       [
+        "fluid",
+        "dissimilar",
+        "traditional"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Once deemed too ____ the big bang model of the birth of the universe has turned out to be one of the most robust scientific theories, with experimental verification going back billions of years."
+      ],
+      "opts": [
+       "daring",
+       "complex",
+       "intractable",
+       "audacious",
+       "ambiguous",
+       "unpopular"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Gaige accomplishes a surprising feat: modeling her novel on one of the most ____ narratives in all of literature, she creates a remarkably understated tale."
+      ],
+      "opts": [
+       "sensational",
+       "revered",
+       "extravagant",
+       "imitated",
+       "suspenseful",
+       "chilling"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "When discussing the United States Army's 1876 campaign against the Sioux, Powers is occasionally ____ context: he describes General Crook's march to the Battle of the Rosebud but neglects to mention how it fit into the army's overall strategy."
+      ],
+      "opts": [
+       "misinformed about",
+       "obsessed with",
+       "frugal with",
+       "preoccupied with",
+       "stinting with",
+       "unscrupulous about"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Judge Jones brought some welcome levity to the often tense, though sometimes ____, proceedings."
+      ],
+      "opts": [
+       "humorous",
+       "tedious",
+       "stressful",
+       "inconsequential",
+       "fraught",
+       "tiresome"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,200 @@
+{
+ "id": "u16-test108-s2",
+ "title": "Test 108 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 108, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 108 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "As British biochemist Joseph Needham became immersed in the study of China's history, he began to envision science as ____ endeavor, noting that \"the peoples of the whole world have all made their contributions.\""
+      ],
+      "opts": [
+       "an ecumenical",
+       "a competitive",
+       "a redemptive",
+       "a misunderstood",
+       "an underappreciated"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "During the decade 2000-2010 in the United States, the increase in self-employed Hispanic entrepreneurs (i)____ the increase in Hispanic workers overall. Historically, Hispanics have been (ii)____ in the self-employment sector, so this change reduced the amount by which the Hispanic self-employment rate trailed the overall self-employment rate."
+      ],
+      "cols": [
+       [
+        "catalyzed",
+        "tracked",
+        "exceeded"
+       ],
+       [
+        "underrepresented",
+        "undercompensated",
+        "underappreciated"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "Unlike, say, locusts, which simply raze entire fields, stinkbugs wreak their havoc (i)____. The injury they do to corn, for instance, is (ii)____ the ear is husked, at which point certain kernels- the ones into which a stinkbug stuck its pointy mouth-will reveal themselves to be sunken and brown."
+      ],
+      "cols": [
+       [
+        "periodically",
+        "insidiously",
+        "instantaneously"
+       ],
+       [
+        "invisible until",
+        "ameliorated when",
+        "apparent before"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDI",
+     "txt": {
+      "stem": [
+       "The traditional set of nine planets could have been retained by defining a planet as any object that has the unique combination of characteristics of any one of the nine objects that were considered planets in the late twentieth century. That definition would not be (i)____; that is, it does not contradict the evidence. Its (ii)____, however, renders it less (iii)____ than definitions based on astronomical criteria, such as orbit, size, and gravitation."
+      ],
+      "cols": [
+       [
+        "paradoxical",
+        "subjective",
+        "false"
+       ],
+       [
+        "arbitrariness",
+        "inconsistency",
+        "generality"
+       ],
+       [
+        "expedient",
+        "stable",
+        "defensible"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Despite its stellar performances, the film is ____: it seems mysteriously incomplete in essential ways, yet feels repetitive at the same time."
+      ],
+      "opts": [
+       "wanting",
+       "dull",
+       "offensive",
+       "curious",
+       "distasteful",
+       "peculiar"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "It’s when his technique is ____ rather than when he’s trying his hardest to impress that Murakami’s spell as a novelist is most persuasive."
+      ],
+      "opts": [
+       "unconventional",
+       "inconspicuous",
+       "low-key",
+       "polished",
+       "clever",
+       "unorthodox"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Katherine’s disobedient behavior earned her a ____ from her parents."
+      ],
+      "opts": [
+       "eulogy",
+       "rebuke",
+       "panegyric",
+       "mockery",
+       "commendation",
+       "reproof"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

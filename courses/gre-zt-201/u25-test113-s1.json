@@ -1,0 +1,196 @@
+{
+ "id": "u25-test113-s1",
+ "title": "Test 113 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 113, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 113 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "The philosophy of Zhuangzi, because it implied a spiritual elite who could transcend the bonds of the world and wander in a realm beyond life and death, appealed to a society dominated by ____."
+      ],
+      "opts": [
+       "conventional morality",
+       "aristocratic tastes",
+       "dogmatic sensibilities",
+       "a pragmatic outlook",
+       "an egalitarian worldview"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "When Marx wrote, “the philosophers have only interpreted the world in various ways; the point, however, is to change it,” he was not only (i)____ philosophers. He was (ii)____ interpretation itself, as if thinking were an idle affairs compared with action, where real people make their mark on the world."
+      ],
+      "cols": [
+       [
+        "consoling",
+        "slighting",
+        "praising"
+       ],
+       [
+        "analyzing",
+        "extolling",
+        "disparaging"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CDG",
+     "txt": {
+      "stem": [
+       "Why investors found Internet companies so (i)____ in the early to mid-1990s is a mystery: the market for online advertising at the time was(ii)____, and while Internet start-ups were everywhere, most were offering (iii)____ rather than real services, and none were making any money."
+      ],
+      "cols": [
+       [
+        "daunting",
+        "alien",
+        "appealing"
+       ],
+       [
+        "negligible",
+        "rebounding",
+        "untapped"
+       ],
+       [
+        "optimistic promises",
+        "sizable returns",
+        "captive markets"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "Throughout her life, Suzanne Césaire remained ____, articulating a greater awareness of the complexity of Caribbean identity than most of her peers had, with a focus on multicultural influences that anticipated later theorists’ concerns."
+      ],
+      "opts": [
+       "an iconoclast",
+       "an outlier",
+       "an idealist",
+       "a visionary",
+       "a trailblazer",
+       "a romantic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AB",
+     "txt": {
+      "stem": [
+       "Certainly, the system of peer review of academic articles submitted for publication has intrinsic biases, some of them ____ factors like the homogeneity of the research community."
+      ],
+      "opts": [
+       "attributable to",
+       "explained by",
+       "exacerbated by",
+       "unconnected to",
+       "mitigated by",
+       "commensurate with"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Beavers can modify the landscape in dramatic ways that are often____ humans, which is why media reports tend to emphasize what nuisances beavers are."
+      ],
+      "opts": [
+       "surprising to",
+       "derided by",
+       "misunderstood by",
+       "annoying to",
+       "unexpected by",
+       "unwelcome to"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "One can expect that future generations will steadily become less ____ as new technologies enable the substitution of online activities for social, work-and shopping-related travel."
+      ],
+      "opts": [
+       "charitable",
+       "itinerant",
+       "peripatetic",
+       "reticent",
+       "munificent",
+       "inquisitive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

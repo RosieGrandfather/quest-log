@@ -1,0 +1,196 @@
+{
+ "id": "u37-test119-s1",
+ "title": "Test 119 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 119, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 119 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "If we admire Winslow Homer as he wished to be admired, for his avoidance of claptrap and sentimentality, we may fear that Wood has done him a disservice by introducing ____ note into his discussion of the painter."
+      ],
+      "opts": [
+       "an acerbic",
+       "a supercilious",
+       "an austere",
+       "a maudlin",
+       "an ironic"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "For many who are not philosophers. the word \"metaphysics\" still retains connotations of (i)____, so that many hard scientists still use the term as a byword for (ii)____ thinking."
+      ],
+      "cols": [
+       [
+        "impenetrability",
+        "amorphousness",
+        "sterility"
+       ],
+       [
+        "innovative",
+        "imprecise",
+        "simplistic"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CEG",
+     "txt": {
+      "stem": [
+       "According to linguists and cognitive scientists, the human mind specializes in producing analogies. Part of the reason cognitive scientists believe analogy is a (i)____ cognitive process is that drawing analogies requires some sort of similarity mapping of one concept onto another, and similarity mapping is a component of the inductive thinking we depend on. Another argument for the (ii)____ of analogical reasoning in human reasoning is that metaphors, which are linguistically embedded analogies, are (iii)____ language."
+      ],
+      "cols": [
+       [
+        "creative",
+        "distinctive",
+        "fundamental"
+       ],
+       [
+        "versatility",
+        "centrality",
+        "difficulty"
+       ],
+       [
+        "pervasive in",
+        "expressed in",
+        "embellishments of"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      1,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "In Roth' s fiction, politics is an element that doesn't naturally occur in ____ form but is always getting confused and mixed up with shame and anger, baseball and sex."
+      ],
+      "opts": [
+       "an unalloyed",
+       "an unbiased",
+       "an uncontroversial",
+       "an objective",
+       "a neat",
+       "a tendentious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "For many centuries, bearing life’s risks was supposed to be part of the human condition, and so any strategy for evading those risks was considered ____ of the natural order of things."
+      ],
+      "opts": [
+       "a rejection",
+       "a subversion",
+       "a violation",
+       "an overcoming",
+       "an improvement",
+       "an amelioration"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "One of the virtues of the essay collection is that it presents ____ views side by side, showing a wide range of thought and highlighting the contentious nature of many of the arguments within the discipline."
+      ],
+      "opts": [
+       "dissonant",
+       "congenial",
+       "incongruent",
+       "inconstant",
+       "authoritative",
+       "whimsical"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "For many readers, dissatisfaction with the book’s contents will be ____ by the author’s tone, which is decidedly immodest—though it might be said in his defense that given his professional success, he has much to be immodest about."
+      ],
+      "opts": [
+       "aggravated",
+       "mitigated",
+       "exacerbated",
+       "leavened",
+       "confirmed",
+       "contravened"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

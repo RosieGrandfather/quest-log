@@ -1,0 +1,194 @@
+{
+ "id": "u30-test115-s2",
+ "title": "Test 115 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 115, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 115 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "The organization’s parlous fiscal condition led its members to expect that their plans for expansion would be ____."
+      ],
+      "opts": [
+       "justified",
+       "abetted",
+       "thwarted",
+       "countenanced",
+       "implicated"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "This artistic and literary movement reflected a widespread nihilistic protest against every aspect of Western culture and thus ____ the particular aesthetic values of that culture."
+      ],
+      "opts": [
+       "exemplified",
+       "revivified",
+       "recapitulated",
+       "superseded",
+       "repudiated"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "She may have been (i)____ when she was finance minister, fighting deficits, but now as prime minister she is marked by her (ii)____."
+      ],
+      "cols": [
+       [
+        "collaborative",
+        "austere",
+        "resourceful"
+       ],
+       [
+        "discretion",
+        "largesse",
+        "platitudes"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BEI",
+     "txt": {
+      "stem": [
+       "Some recent research shows that people tend to (i)____ advice from (ii)____ source, even to the point that we are willing to forgive an adviser's poor track record. This can drive those offering advice to (iii)____ and bodes ill for advisers who try to be honest about gaps in their knowledge."
+      ],
+      "cols": [
+       [
+        "expect",
+        "trust",
+        "disregard"
+       ],
+       [
+        "an unfamiliar",
+        "a confident",
+        "a candid"
+       ],
+       [
+        "check their facts",
+        "disclaim their expertise",
+        "exaggerate their certainty"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      1,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BD",
+     "txt": {
+      "stem": [
+       "The fact that no single Cantonese dictionary is seen as ____ is one of the main reasons why most Hong Kong authors do not depend on formal reference tools when writing in Cantonese."
+      ],
+      "opts": [
+       "dependable",
+       "authoritative",
+       "meticulous",
+       "definitive",
+       "topical",
+       "comprehensive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Because connections made of the material are ____ to fail at high temperatures, it is particularly suited for sacrificial thermal cutoff switches; it is, of course, unsuited to applications where heat durability is needed."
+      ],
+      "opts": [
+       "unlikely",
+       "disinclined",
+       "apt",
+       "sure",
+       "bound",
+       "liable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "On close reading, the poem comes across as ____, devoid of any real interest or substance."
+      ],
+      "opts": [
+       "vapid",
+       "curious",
+       "insipid",
+       "allusive",
+       "singular",
+       "problematic"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

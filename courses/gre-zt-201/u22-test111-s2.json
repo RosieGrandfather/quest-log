@@ -1,0 +1,194 @@
+{
+ "id": "u22-test111-s2",
+ "title": "Test 111 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 111, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 111 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "For Confucius, names had ____ contents, no matter how time marched on and the affairs of the world changed, the proper names of things absolutely could not vary."
+      ],
+      "opts": [
+       "largely transparent",
+       "uniquely adaptive",
+       "eternally stable",
+       "dangerously slippery",
+       "increasingly conventional"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Astronomy dominated ancient science partly because it was ____ in a way that the physics and biology of the time were not: even in prehistory, people probably used the apparent motion of the Sun, for example, as a crude clock, calendar, and compass."
+      ],
+      "opts": [
+       "precise",
+       "exciting",
+       "practical",
+       "lucrative",
+       "provocative"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "An architect of Koolhaas’ (i)____ might plausibly prefer designing on paper to building in concrete. Remaining within the realm of his own imagination, he need not worry about pesky clients who can dilute a project into mediocrity. But in fact, what Koolhaas enjoys most is the opportunity to engage with a client. When asked if he would consider designing a house for himself, he replied that the idea bored him, that it would feel too (ii)____. For him, the whole point of architecture is the encounter with the other."
+      ],
+      "cols": [
+       [
+        "unbridled ambition",
+        "unfettered originality",
+        "unalloyed pragmatism"
+       ],
+       [
+        "sybaritic",
+        "altruistic",
+        "solipsistic"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "Belief in the harmful effects of the drug has all the hallmarks of a viewpoint that is not (i)____ even though the notion that the drug has negative consequences has been (ii)____ multiple epidemiological studies over the past decade. Yet the true believers have (iii)____, critiquing each new study that challenges their views and continuing to lean on supporting research that was retracted long ago."
+      ],
+      "cols": [
+       [
+        "amenable to refutation",
+        "driven by self-interest",
+        "capable of propagation"
+       ],
+       [
+        "refined by",
+        "cited by",
+        "upended by"
+       ],
+       [
+        "persisted",
+        "splintered",
+        "capitulated"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "She criticizes the view that American democracy is ____, its strings pulled not by voters but by a power elite or ruling class."
+      ],
+      "opts": [
+       "a sham",
+       "an irrelevance",
+       "a charade",
+       "a success",
+       "an achievement",
+       "an enigma"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Until fairly recently, hitchhiking was not an uncommon practice in the United States, but today's motorists are likely to see the occasional hitchhiker as ____, thinking “l didn’t know people still did that!”"
+      ],
+      "opts": [
+       "a parvenu",
+       "an adventurer",
+       "an anachronism",
+       "a daredevil",
+       "a throwback",
+       "an upstart"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "Legal scholars envision environmental politics as the pursuit of opposing and ____ interests and therefore likely to lead to confrontation rather than compromise."
+      ],
+      "opts": [
+       "selfish",
+       "fixed",
+       "immutable",
+       "competing",
+       "irrational",
+       "innocuous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,196 @@
+{
+ "id": "u75-test138-s1",
+ "title": "Test 138 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 138, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 138 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Monumental changes taking place in the structures of world business match some equally ____ changes taking place in the relations of international companies to the governments with which they deal."
+      ],
+      "opts": [
+       "ill-advised",
+       "magnanimous",
+       "portentous",
+       "discreet",
+       "overblown"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "The idea of traveling in order to find natural extremes and wonders was (i) ____ in eighteenth- and nineteenth-century Europe, and many European travelers of the period were drawn to Iceland and other North Atlantic countries as places where they might find these (ii) ____ landscapes."
+      ],
+      "cols": [
+       [
+        "rarely articulated",
+        "losing favor",
+        "not uncommon"
+       ],
+       [
+        "idyllic",
+        "exotic",
+        "salubrious"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "ADI",
+     "txt": {
+      "stem": [
+       "Until recently superhero comics were seen as irredeemably (i)____ ; they were widely disparaged for being so (ii)____ in conception and execution, and anyone who was a fan was given plenty of reasons to be (iii)____."
+      ],
+      "cols": [
+       [
+        "puerile",
+        "innocuous",
+        "facetious"
+       ],
+       [
+        "lowbrow",
+        "shrewd",
+        "realistic"
+       ],
+       [
+        "heartened",
+        "emulated",
+        "abashed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "His lackadaisical approach to this project belies his well-known reputation for ____."
+      ],
+      "opts": [
+       "skill",
+       "assiduousness",
+       "industry",
+       "intelligence",
+       "facility",
+       "innovation"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The most interesting discoveries in astronomy are often the things researchers could never have anticipated; new instruments enable scientists to make such ____ discoveries, which can then take years to understand."
+      ],
+      "opts": [
+       "inscrutable",
+       "quotidian",
+       "provocative",
+       "fortuitous",
+       "inexplicable",
+       "serendipitous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "The simplicity of Ann Hamilton’s sculpture, a single drop of water snaking its way down a vast white wall, ____ the elaborate technical apparatus hidden beneath its surface."
+      ],
+      "opts": [
+       "minimized",
+       "undermined",
+       "belied",
+       "contradicted",
+       "conjured",
+       "evoked"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Critics of compost production often do not fully consider the potential environmental benefits of compost use—benefits that might ____ the energy consumption, gaseous emissions, and other negative environmental effects attributable to compost production."
+      ],
+      "opts": [
+       "trigger",
+       "offset",
+       "intensify",
+       "exacerbate",
+       "eliminate",
+       "counterbalance"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

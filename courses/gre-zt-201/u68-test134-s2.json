@@ -1,0 +1,194 @@
+{
+ "id": "u68-test134-s2",
+ "title": "Test 134 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 134, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 134 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Some people might object to pairing art and physics, since art is considered to be relatively ____ and physics, until recently, scrupulously avoided any mention of the inner thoughts that related to the outer world."
+      ],
+      "opts": [
+       "accessible",
+       "subjective",
+       "enigmatic",
+       "detached",
+       "conceptual"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "Carter is a difficult figure to see in the true proportion—his reputation has been stretched to the point of ____, as he is put forward as the prime example of a tyrannical CEO."
+      ],
+      "opts": [
+       "caricature",
+       "beatification",
+       "verisimilitude",
+       "obscurity",
+       "self-contradiction"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "My (i)____ Hansen’s life-size sculpture for real people was memorable precisely because the work did (ii)____ such a complete—if brief—deception, one that is exceptional in my experience as a viewer of representational art."
+      ],
+      "cols": [
+       [
+        "adapting",
+        "producing",
+        "mistaking"
+       ],
+       [
+        "hinder",
+        "effect",
+        "confound"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CDH",
+     "txt": {
+      "stem": [
+       "Most artists maintain an attitude of (i)____ toward their own work. They know, better than any critic would know, how their art (ii)____ their ambitions. The artist would demand admirer, “Do you really think this is the best I am capable of?” Henri Cartier-Bresson’s dismissal of his work in photography, however, is (iii)____: it seems almost contempt, or even hatred, not just for his achievement but for the medium itself."
+      ],
+      "cols": [
+       [
+        "extraordinary hubris",
+        "irremediable disdain",
+        "healthy disrespect"
+       ],
+       [
+        "fall far short of",
+        "eventually transcends",
+        "subtly realizes"
+       ],
+       [
+        "entirely comprehensible",
+        "at another level altogether",
+        "at odds with his achievement"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Proponents of xeriscaping, a method of landscaping designed to minimize irrigation, point out that grass planted in desert locations has ____ effect on the environment, sapping water that is valuable and already scarce."
+      ],
+      "opts": [
+       "a benign",
+       "a pernicious",
+       "a superficial",
+       "a trivial",
+       "an inevitable",
+       "a deleterious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Encompassing more than petty disagreements over order in the author list, arguments about attribution in science speak to ____ issues—for example, where do new ideas come from, and what constitutes a new idea?"
+      ],
+      "opts": [
+       "contemporary",
+       "profound",
+       "practical",
+       "topical",
+       "controversial",
+       "weighty"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Her success is not ____, for she writes clearly about complicated subjects and provides lucid explanations and penetrating insights."
+      ],
+      "opts": [
+       "undeniable",
+       "undeserved",
+       "unanticipated",
+       "unparalleled",
+       "unsurpassed",
+       "unexpected"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

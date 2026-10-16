@@ -1,0 +1,196 @@
+{
+ "id": "u35-test118-s1",
+ "title": "Test 118 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 118, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 118 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Accustomed to the author's ponderous prose, readers will likely be startled by the ____ that characterizes his new work."
+      ],
+      "opts": [
+       "prolixity",
+       "jocularity",
+       "abstruseness",
+       "predictability",
+       "pessimism"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The psychologist's new findings present the discipline with a (i)____: although her results pose a problem for the standard theory, the alternative theories she proposes are (ii)____."
+      ],
+      "cols": [
+       [
+        "predicament",
+        "paradigm",
+        "prototype"
+       ],
+       [
+        "unconvincing",
+        "persuasive",
+        "versatile"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFI",
+     "txt": {
+      "stem": [
+       "Maupassant's own writings were often notable for their (i)____, so there is something ironic in the publication of such a (ii)____ new work devoted to his life: a densely packed compendium of detail about Maupassant's own forty-two-year existence, Johnston's 1,336-page biography is anything but (iii)____."
+      ],
+      "cols": [
+       [
+        "inventiveness",
+        "concision",
+        "ambition"
+       ],
+       [
+        "rancorous",
+        "groundbreaking",
+        "sprawling"
+       ],
+       [
+        "celebratory",
+        "original",
+        "economical"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Executives of successful companies frequently fail to exploit innovative new products because often they see only the difficulties and not the benefits of shifting financial and human resources from their profitable ongoing concern to something ____."
+      ],
+      "opts": [
+       "impractical",
+       "risky",
+       "earthshaking",
+       "vague",
+       "speculative",
+       "intangible"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "Stannard may be hoping to resurrect Spark's literary reputation with this book, given its ____ praise for her creative talents."
+      ],
+      "opts": [
+       "unctuous",
+       "genuine",
+       "grudging",
+       "reluctant",
+       "unstinting",
+       "generous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The tools of science are so specialized that we accept them as a kind of ____ machinery for producing knowledge: we know that they work, but cannot explain why."
+      ],
+      "opts": [
+       "occult",
+       "efficacious",
+       "potent",
+       "arcane",
+       "impersonal",
+       "reliable"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "The pupil had a reputation for obduracy, but the teacher found her to be, on the contrary, quite ____."
+      ],
+      "opts": [
+       "zealous",
+       "truculent",
+       "bellicose",
+       "tractable",
+       "efficient",
+       "complaisant"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

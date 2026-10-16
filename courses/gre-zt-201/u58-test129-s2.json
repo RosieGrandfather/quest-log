@@ -1,0 +1,194 @@
+{
+ "id": "u58-test129-s2",
+ "title": "Test 129 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 129, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 129 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "As tough as it looks, the Chihuahuan Dersert is a ____ place: although few humans have been here, their footsteps have fallen heavily in the desert."
+      ],
+      "opts": [
+       "forbidding",
+       "fragile",
+       "secluded",
+       "beguiling",
+       "hallowed"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "In general, the relationship between neural activity and behavioral output is ____: multiple behaviors can be associated with activation of the same neurons and multiple neurons can trigger the same behavior."
+      ],
+      "opts": [
+       "deterministic",
+       "hardwired",
+       "random",
+       "complicated",
+       "cumulative"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "The philosopher held that art must perform a paradoxical task, simultaneously extricating itself from the (i)____ even while (ii)____ the realities of ordinary experience."
+      ],
+      "cols": [
+       [
+        "impersonal",
+        "prescriptive",
+        "quotidian"
+       ],
+       [
+        "largely transcending",
+        "casually dismissing",
+        "forthrightly addressing"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFH",
+     "txt": {
+      "stem": [
+       "When we forgive a person, we (i)____ our (ii)____ his or her transgression but (iii)____ certain punitive responses that we would ordinarily be justified in taking on the basis of that person’s objectionable conduct."
+      ],
+      "cols": [
+       [
+        "relinquish",
+        "regret",
+        "retain"
+       ],
+       [
+        "leniency toward",
+        "uncertainty about",
+        "condemnation of"
+       ],
+       [
+        "disguise",
+        "forgo",
+        "initiate"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The ____ of the Foundation novels by the noted science-fiction writer Isaac Asimov is that historians and psychologists succeed in finding laws that can successfully predict—based on collective human behavior—the broad outlines of future events."
+      ],
+      "opts": [
+       "premise",
+       "verisimilitude",
+       "postulate",
+       "paradox",
+       "incongruity",
+       "implication"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "What is remarkable about The Feminine Mystique is that it can seem, alternately, so antique and so ____, a reminder of what has changed and what has not."
+      ],
+      "opts": [
+       "fresh",
+       "obsolete",
+       "scholarly",
+       "learned",
+       "obvious",
+       "germane"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "Jane Austen belonged to the social class about which she mainly wrote, and although her novels offer abundant satire, one never has the sense that she viewed the basic elements of this social sphere as ____."
+      ],
+      "opts": [
+       "laudable",
+       "unfathomable",
+       "ignoble",
+       "reprehensible",
+       "inviolable",
+       "praiseworthy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

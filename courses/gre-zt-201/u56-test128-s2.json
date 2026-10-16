@@ -1,0 +1,200 @@
+{
+ "id": "u56-test128-s2",
+ "title": "Test 128 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 128, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 128 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Heresy and schism are not restricted to the theologians: science also has its share of fields that are ____ sectarianism."
+      ],
+      "opts": [
+       "resistant to",
+       "riven by",
+       "unified by",
+       "buttressed by",
+       "free of"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "Icelanders sometimes claim that everyone in Iceland is a writer. Sure, it’s (i)____ and as such is out of character for a literary tradition long characterized by (ii)____. Still, approximately a thousand books are published each year in Iceland for a population of about 290, 000: one book per 290 persons."
+      ],
+      "cols": [
+       [
+        "hyperbole",
+        "sarcasm",
+        "clarification"
+       ],
+       [
+        "understatement",
+        "intensity",
+        "diversity"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "CD",
+     "txt": {
+      "stem": [
+       "As an essayist, Reed is an equal-opportunity combatant who pulls no punches. One strength in his approach is that this (i)____ can be disarmingly refreshing. On the downside, however, Reed sometimes surrenders too quickly to his more (ii)____ impulses."
+      ],
+      "cols": [
+       [
+        "coy self-deprecation",
+        "colloquial informality",
+        "aggressive frankness"
+       ],
+       [
+        "polemical",
+        "ingratiating",
+        "analytical"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      2,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "BFG",
+     "txt": {
+      "stem": [
+       "Describing cosmopolitanism and provincialism as (i)____ concepts misses part of their relationship. They are actually (ii)____, both in the strictly semiotic sense that the idea of cosmopolitanism is (iii)____ unless we can oppose it to something like provincialism and in a more practical sense: much of cosmopolitanism involves recombining elements of provincial cultures."
+      ],
+      "cols": [
+       [
+        "empirical",
+        "antithetical",
+        "evolving"
+       ],
+       [
+        "entirely abstract",
+        "largely interchangeable",
+        "mutually constitutive"
+       ],
+       [
+        "meaningless",
+        "autonomous",
+        "transparent"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "The eccentric Canadian Prime Minister, Mackenzie King, often used stances to contact his dead pet dog for advice; despite this ____ behavior, the public had so much confidence in his ability as a leader that he was in power for 22 years."
+      ],
+      "opts": [
+       "capricious",
+       "lackluster",
+       "poised",
+       "unconventional",
+       "repulsive",
+       "decorous"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "The circulation of the blood makes human adaptability to the ____ conditions of life, such as fluctuating atmospheric pressure, level of physical activity, and diet, possible."
+      ],
+      "opts": [
+       "inveterate",
+       "dynamic",
+       "timorous",
+       "cowed",
+       "turgid",
+       "oscillating"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "A particular bacterium that has never encountered a particular virus will usually succumb to it, a ____ that may, surprisingly, be beneficial to the colony in which the bacterium lives."
+      ],
+      "opts": [
+       "susceptibility",
+       "theory",
+       "characteristic",
+       "juxtaposition",
+       "collision",
+       "hypothesis"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

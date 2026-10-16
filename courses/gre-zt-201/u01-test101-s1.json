@@ -1,0 +1,196 @@
+{
+ "id": "u01-test101-s1",
+ "title": "Test 101 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 101, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 101 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "A",
+     "txt": {
+      "stem": [
+       "It ought to be surprising that the bank falsified the numbers on its accounts; it is truly shocking that such ____ was documented, in black and white, and that regulators found it and did nothing about it."
+      ],
+      "opts": [
+       "chicanery",
+       "raillery",
+       "enmity",
+       "sagacity",
+       "probity"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      0
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BF",
+     "txt": {
+      "stem": [
+       "Because scientific breakthroughs tend to occur when a prevailing theory's predictions start to fail, scientists sometimes find it (i)____ when a theory persists—as the standard model of particle physics has done—in making (ii)____ predictions."
+      ],
+      "cols": [
+       [
+        "productive",
+        "frustrating",
+        "surprising"
+       ],
+       [
+        "bold",
+        "abstract",
+        "correct"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "BFH",
+     "txt": {
+      "stem": [
+       "The chocolate company's scientists hoped that once they had (i)____ the chemical makeup of cocoa beans, the knowledge would enable them to produce (ii)____ the beans' taste, which could then be used to (iii)____ future failures in the cocoa bean supply."
+      ],
+      "cols": [
+       [
+        "altered",
+        "unlocked",
+        "activated"
+       ],
+       [
+        "subtle transformations in",
+        "accurate descriptions of",
+        "a synthetic replication of"
+       ],
+       [
+        "prevent",
+        "mitigate",
+        "restrict"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      1,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "CF",
+     "txt": {
+      "stem": [
+       "Although Harman has not produced ____ biography of Robert Louis Stevenson, her understanding of what it takes to write a book enables her to account for Stevenson’s delirious sprints toward and away from publication."
+      ],
+      "opts": [
+       "a controversial",
+       "a flawed",
+       "a definitive",
+       "an idiosyncratic",
+       "an unsound",
+       "an authoritative"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      5
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "CE",
+     "txt": {
+      "stem": [
+       "Despite the ____ amount of high-quality data on the issue of underrepresentation of women professors in math-intensive fields, particularly in upper-level positions, myths and misunderstandings prevail."
+      ],
+      "opts": [
+       "appropriate",
+       "suspicious",
+       "significant",
+       "overwhelming",
+       "substantial",
+       "dubious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      2,
+      4
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DE",
+     "txt": {
+      "stem": [
+       "An academic with a questionable record in either teaching, administration, or research may still be well regarded at many schools, but simultaneous failure in all three areas normally results in ____ by superiors."
+      ],
+      "opts": [
+       "exculpation",
+       "dismissal",
+       "impeachment",
+       "disapprobation",
+       "censure",
+       "acquittal"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The sleight of hand of architects whose ambition is to add subtly and seamlessly to early twentieth-century Beaux Arts buildings contradicts a first principle of historic preservation; the ____ historical periods should be clear."
+      ],
+      "opts": [
+       "changes within",
+       "demarcation of",
+       "essence of",
+       "continuation of",
+       "lines between",
+       "explication of"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

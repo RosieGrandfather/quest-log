@@ -1,0 +1,196 @@
+{
+ "id": "u85-test143-s1",
+ "title": "Test 143 · Section 1（medium · 7题）",
+ "en": "Text Completion — Test 143, Section 1",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 143 Section 1",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Rather than use the traditional therapy, the physician employed unorthodox treatments ____ by her more conventional colleagues."
+      ],
+      "opts": [
+       "engendered",
+       "repudiated",
+       "developed",
+       "espoused",
+       "adopted"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "Science is so good at what it does that many people feel a (i) ____ to apply it to social and political issues, yet experience shows that science may add little to or even (ii) ____ social and political questions."
+      ],
+      "cols": [
+       [
+        "provocation",
+        "temptation",
+        "reluctance"
+       ],
+       [
+        "augur",
+        "occlude",
+        "abet"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      1,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AFH",
+     "txt": {
+      "stem": [
+       "The rural Renaissance villas were working buildings. The agricultural world they served is now gone. To see it you therefore have to (i) ____ it, but that can be aided by the nineteenth-century photographs taken just before the agricultural revolution destroyed the old order. Not that those photographs themselves are always completely(ii) ____: Virginia creeper growing up a Renaissance villa is a botanical anachronism and also (iii) ____ piece of planting (rats climb up the creepers and get at the grain stored in the attic)."
+      ],
+      "cols": [
+       [
+        "imagine",
+        "improvise",
+        "visit"
+       ],
+       [
+        "exhaustive",
+        "undamaged",
+        "germane"
+       ],
+       [
+        "an ornamental",
+        "a foolish",
+        "an imitative"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "The climate researchers’ ____ method of presentation caused a stir among those who felt that scientific papers should be dispassionate in their delivery of evidence."
+      ],
+      "opts": [
+       "prejudicial",
+       "slapdash",
+       "tendentious",
+       "perfunctory",
+       "meticulous",
+       "incohesive"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "Astute and incisive, the essayist’s work was nevertheless civil and polite: the essayist either had no gift of ____ or else never felt any."
+      ],
+      "opts": [
+       "vitriol",
+       "clairvoyance",
+       "theatricality",
+       "prescience",
+       "mimicry",
+       "obloquy"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "The idea that Jim was ____, that he loved fighting for the sake of fighting, was a mistake; in reality he was a kind and gentle person."
+      ],
+      "opts": [
+       "truculent",
+       "audacious",
+       "brazen",
+       "obtuse",
+       "pugnacious",
+       "disobedient"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "James Baldwin (1924-1987) recognized that American writers, who are inescapably products of American politics, do not ____ the terms of the national conversation, but he emphasized their capacity to reshape the language in which it occurs."
+      ],
+      "opts": [
+       "ordain",
+       "transcend",
+       "disseminate",
+       "rectify",
+       "dictate",
+       "amend"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

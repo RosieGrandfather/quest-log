@@ -1,0 +1,200 @@
+{
+ "id": "u64-test132-s2",
+ "title": "Test 132 · Section 2（hard · 7题）",
+ "en": "Text Completion — Test 132, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 132 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "B",
+     "txt": {
+      "stem": [
+       "Throughout his book, Venter savors his reputation as ____, believing himself righteous and embattled, as when his choices to sequence genome fragments and to patent expressed sequence tags provoked outrage among fellow scientists."
+      ],
+      "opts": [
+       "a tactician",
+       "an iconoclast",
+       "an opportunist",
+       "a clairvoyant",
+       "a dilettante"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      1
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "tc",
+     "sourceAnswer": "AE",
+     "txt": {
+      "stem": [
+       "When in 1980 the father and son pair of Luis and Walter Alvarez and their colleagues linked the end-Cretaceous mass extinction to a catastrophic extraterrestrial impact, they were met with skepticism by most paleontologists, which was (i)____ given that geological training since the mid-1800s had emphasized the primacy of (ii)____."
+      ],
+      "cols": [
+       [
+        "unsurprising",
+        "unwarranted",
+        "prescient"
+       ],
+       [
+        "discernible causes",
+        "gradual processes",
+        "reversible changes"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "When an ideologue of one persuasion reverses course and embraces the views of erstwhile opponents, those whose views the convert adopts may feel vindicated. Still, one wants a person making a political about-face to (i)____ of his or her previous allegiances: a reversal without a (ii)____ is less than satisfying."
+      ],
+      "cols": [
+       [
+        "acknowledge the erroneousness",
+        "rationalize the value",
+        "downplay the importance"
+       ],
+       [
+        "recantation",
+        "reconciliation",
+        "recapitulation"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "AFG",
+     "txt": {
+      "stem": [
+       "The student who will benefit most from this biography of Mark Twain is the one who wishes to study the phenomenon of the author as (i)____. It clearly shows that Twain, contemptuous as he may have been of the acquisitive society in which he lived, was ever (ii)____ money, but that his (iii)____ was almost inversely proportionate to his avarice. Usually a man with a keen eye for fraud and imposture, he was easily lured to invest in numerous improbable schemes."
+      ],
+      "cols": [
+       [
+        "speculator",
+        "moralist",
+        "visionary"
+       ],
+       [
+        "disdainful of",
+        "lucky with",
+        "ravenous for"
+       ],
+       [
+        "acumen",
+        "enthusiasm",
+        "voracity"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      0,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "World music once represented the timeless and the ____, but now bands across the globe mix rock, dance music, and hip-hop with the sounds of their own cultures, creating new hybrids that are hard to resist."
+      ],
+      "opts": [
+       "untranslatable",
+       "superior",
+       "inclusive",
+       "unalloyed",
+       "unrivaled",
+       "unadulterated"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Scientists have recently confirmed that Mercury possesses a lot of ice, ____ discovery for a place that ranks among the hottest in the solar system."
+      ],
+      "opts": [
+       "a controversial",
+       "a stunning",
+       "a doubtful",
+       "a counterintuitive",
+       "a dubious",
+       "an unexpected"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "During the fifteenth century, the aspects of the mathematical science were usually singled out as ____: their preparatory value for the study of philosophy, their practical advantage for the community, and their antiquity."
+      ],
+      "opts": [
+       "estimable",
+       "superlative",
+       "inflated",
+       "praiseworthy",
+       "unique",
+       "adventitious"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

@@ -1,0 +1,194 @@
+{
+ "id": "u42-test121-s2",
+ "title": "Test 121 · Section 2（easy · 7题）",
+ "en": "Text Completion — Test 121, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 121 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "D",
+     "txt": {
+      "stem": [
+       "An apparent paradox led the scientists to pursue their present line of research: they were struck by the fact that physical phenomena that are ____ in form can be described by a single mathematical formula."
+      ],
+      "opts": [
+       "interchangeable",
+       "rudimentary",
+       "irreducible",
+       "heterogeneous",
+       "rare"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      3
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "In recent years, the country's farmers have been extremely ____, contributing a major portion of the disturbances and protests against government policies."
+      ],
+      "opts": [
+       "discerning",
+       "tractable",
+       "restive",
+       "mercurial",
+       "circumspect"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AF",
+     "txt": {
+      "stem": [
+       "In the end, this odd, beautiful movie is emotionally remote and more (i)____ than satisfying: a (ii)____ film about catastrophe, made at a time when some of us might prefer an attempt at explanation."
+      ],
+      "cols": [
+       [
+        "suggestive",
+        "gratifying",
+        "instructive"
+       ],
+       [
+        "notably insightful",
+        "viscerally immediate",
+        "coolly enigmatic"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFG",
+     "txt": {
+      "stem": [
+       "Pine stumps have been found in discrete layers in peat deposits throughout western Europe and thus represent brief but distinct episodes of bog colonization by pine. Their occurrence implies conditions on the bog surface suitable for colonization, followed by inhospitable conditions for trees that nevertheless facilitated preservation of stumps. Thus, the (i)____ of pine stumps can (ii)____ climate change, by(iii)____ the inference that bog surfaces had dried sufficiently to allow colonization and then became too wet to support the trees."
+      ],
+      "cols": [
+       [
+        "loss",
+        "resilience",
+        "presence"
+       ],
+       [
+        "proceed undeterred by",
+        "vary independently of",
+        "function as a proxy for"
+       ],
+       [
+        "supporting",
+        "repudiating",
+        "articulating"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      0
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "BC",
+     "txt": {
+      "stem": [
+       "He is most frugal in matters of business, but in his private life he reveals a streak of ____."
+      ],
+      "opts": [
+       "parsimony",
+       "profligacy",
+       "immoderation",
+       "deceit",
+       "dissimulation",
+       "indolence"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      2
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "EF",
+     "txt": {
+      "stem": [
+       "People may be generally aware that media technologies employ toxic substances but maybe startled by the ____ of the environmental harms involved: humans, animals, vegetation, soil, air, and water are all affected."
+      ],
+      "opts": [
+       "noxiousness",
+       "permanence",
+       "heterogeneity",
+       "amplitude",
+       "pervasiveness",
+       "ubiquity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      4,
+      5
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "Atmospheric geoengineering, such as whitening clouds to cool Earth by reflecting more sunlight, is not an alternative to reducing carbon emissions, but it might ____ the beneficial effects of such a reduction."
+      ],
+      "opts": [
+       "anticipate",
+       "forestall",
+       "engender",
+       "reinforce",
+       "duplicate",
+       "complement"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}

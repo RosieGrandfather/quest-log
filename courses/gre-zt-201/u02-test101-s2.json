@@ -1,0 +1,194 @@
+{
+ "id": "u02-test101-s2",
+ "title": "Test 101 · Section 2（medium · 7题）",
+ "en": "Text Completion — Test 101, Section 2",
+ "minutes": 15,
+ "practice": true,
+ "answerFormat": "gre-zt-v1",
+ "objectives": [
+  "独立完成7道原题，整节完成后提交。",
+  "提交后核对答案；答案按配套《填空2000答案》记录，本课程暂不附讲解。"
+ ],
+ "blocks": [
+  {
+   "type": "gre-qset",
+   "base": "courses/gre-zt-201/",
+   "source": "张巍GRE填空机经2000题 · Test 101 Section 2",
+   "noteTail": "（原题及配套答案，仅供个人学习；暂不附讲解）",
+   "items": [
+    {
+     "n": 1,
+     "kind": "mc1",
+     "sourceAnswer": "C",
+     "txt": {
+      "stem": [
+       "Dialogue exchanges indicating deep-seated rivalries among the characters abound in the novel, but they are almost always associated with ____ events—everyday commercial transactions, for instance, or the preparation of an evening meal."
+      ],
+      "opts": [
+       "intimate",
+       "sporadic",
+       "quotidian",
+       "contentious",
+       "revelatory"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      2
+     ]
+    },
+    {
+     "n": 2,
+     "kind": "mc1",
+     "sourceAnswer": "E",
+     "txt": {
+      "stem": [
+       "In considering human behavior, theoreticians tend to emphasize cognition in spite of the fact that psychological research suggests the ____ of affect: it suggests that our behavior derives above all from fast, automated emotional judgements."
+      ],
+      "opts": [
+       "inefficacy",
+       "elusiveness",
+       "spontaneity",
+       "irrationality",
+       "primacy"
+      ]
+     },
+     "nopt": 5,
+     "ans": [
+      4
+     ]
+    },
+    {
+     "n": 3,
+     "kind": "tc",
+     "sourceAnswer": "AD",
+     "txt": {
+      "stem": [
+       "It is possible that the earliest terrestrial plants were (i)____ natural enemies, such as herbivores. By the mid-Carboniferous period, however, there was abundant evidence-in the form of fossil leaves with signs of bite marks—that plants were (ii)____ animal attack."
+      ],
+      "cols": [
+       [
+        "free from",
+        "influenced by",
+        "overwhelmed by"
+       ],
+       [
+        "experiencing",
+        "avoiding",
+        "exploiting"
+       ]
+      ]
+     },
+     "blanks": 2,
+     "ans": [
+      0,
+      0
+     ]
+    },
+    {
+     "n": 4,
+     "kind": "tc",
+     "sourceAnswer": "CFI",
+     "txt": {
+      "stem": [
+       "It appears that the terrestrial biosphere has been absorbing a significant fraction of anthropogenic CO₂, thereby slowing down the rate of global climate change. However, the (i)____ of this (ii)____ is not (iii)____: if pushed too far, the biosphere might become a net source of CO₂, thereby accelerating climate change and causing a positive feedback loop."
+      ],
+      "cols": [
+       [
+        "complexity",
+        "actuality",
+        "continuation"
+       ],
+       [
+        "additional information",
+        "formidable challenge",
+        "compensatory mechanism"
+       ],
+       [
+        "imminent",
+        "surprising",
+        "guaranteed"
+       ]
+      ]
+     },
+     "blanks": 3,
+     "ans": [
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "n": 5,
+     "kind": "se",
+     "sourceAnswer": "DF",
+     "txt": {
+      "stem": [
+       "One early sign of this new thirst for ____ is the fact that eight members of the committee on professional conduct have already recused themselves in the name of unbiased justice."
+      ],
+      "opts": [
+       "enlightenment",
+       "exactitude",
+       "knowledge",
+       "probity",
+       "pugnacity",
+       "integrity"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      3,
+      5
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "se",
+     "sourceAnswer": "AC",
+     "txt": {
+      "stem": [
+       "Recent advances in the study of desert varnish have been a boon to geologists, allowing them to date surface features and establish regional climate histories in ____ detail."
+      ],
+      "opts": [
+       "novel",
+       "realistic",
+       "unprecedented",
+       "superfluous",
+       "extraneous",
+       "surprising"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      0,
+      2
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "se",
+     "sourceAnswer": "BE",
+     "txt": {
+      "stem": [
+       "The breathless pace of the Broadway adaptation of Alice Walker’s The Color Purple was ____, given the adaptation's determination to cram in so many of the incidents that appear in the original source."
+      ],
+      "opts": [
+       "unremarkable",
+       "inevitable",
+       "surprising",
+       "excessive",
+       "unavoidable",
+       "unexpected"
+      ]
+     },
+     "nopt": 6,
+     "ans": [
+      1,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "references": []
+}
