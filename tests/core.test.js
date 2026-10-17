@@ -56,16 +56,26 @@ test('computeStats：只有兑换的日子不算连续', ()=>{
 });
 
 test('等级：门槛边界', ()=>{
-  assert.deepEqual(levelInfo(0), {name:'新手上路', sub:'Lv.1', curMin:0, nextMin:800});
-  assert.equal(levelInfo(799).sub, 'Lv.1');
-  assert.equal(levelInfo(800).sub, 'Lv.2');
-  assert.equal(levelInfo(15199).sub, 'Lv.19');
+  assert.deepEqual(levelInfo(0), {name:'新手上路', sub:'Lv.1', curMin:0, nextMin:1600});
+  assert.equal(levelInfo(1599).sub, 'Lv.1');
+  assert.equal(levelInfo(1600).sub, 'Lv.2');
+  assert.equal(levelInfo(167199).sub, 'Lv.19');
 });
-test('等级：超过最后一级每 800 分再升一级', ()=>{
-  assert.equal(levelInfo(15200).sub, 'Lv.20');
-  assert.deepEqual(levelInfo(16000), {name:'传奇远征者', sub:'Lv.21', curMin:16000, nextMin:16800});
+test('等级：超过最后一个称号仍按递增门槛升级', ()=>{
+  assert.equal(levelInfo(167200).sub, 'Lv.20');
+  assert.deepEqual(levelInfo(184000), {name:'传奇远征者', sub:'Lv.21', curMin:184000, nextMin:201600});
 });
 
 test('escapeHTML', ()=>{
   assert.equal(escapeHTML(`<b>"a"&'b'</b>`), '&lt;b&gt;&quot;a&quot;&amp;&#39;b&#39;&lt;/b&gt;');
+});
+
+test('等级：4030 XP 刚进入第三级，后续台阶持续增大', ()=>{
+  assert.deepEqual(levelInfo(4030), {name:'小试牛刀', sub:'Lv.3', curMin:4000, nextMin:7200});
+  for(let index=1; index<=100; index++){
+    const threshold = 400*index*(index+3);
+    assert.equal(levelInfo(threshold-1).sub, `Lv.${index}`);
+    assert.equal(levelInfo(threshold).sub, `Lv.${index+1}`);
+    assert.equal(levelInfo(threshold).nextMin-threshold, 1600+index*800);
+  }
 });
