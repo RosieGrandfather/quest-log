@@ -138,6 +138,7 @@
 - **连续写日记有隐藏的小惊喜**（页面上不提前显示，到了才弹出）：第 3 天 +5、7 天 +15、14 天 +20、21 天 +30、30 天 +50、50 天 +50、66 天 +66、100 天 +100、200 天 +100、365 天 +200（`JOURNAL_STREAK_BONUS`，第一个月额外共 120）。在当天第一次拿到 +5 时计算，`log` 里 `journalstreak-日期-天数`（category `journalstreak`，小标签「日记连续」），同一天不会重复发，断签后重新连到同一天数会再发。要改金额只改 `js/core/journal.js` 里那张表
 - 日记正文只存在 `users/{uid}/journal/{YYYY-MM-DD}`（`dateISO`、`sections`：`body`/`mood`/`study`/`work`/`free` 五块、`text`：把有内容的块拼成一份方便搜索、`createdAt`、`updatedAt`；老版本只有整段 `text` 的文档读出来归到「想说的」，`entryFromDoc`），不会进 `log`，`log` 里只有一条「写日记 +5」；安全规则对整个 `users/{uid}/**` 已经是只有本人能读写，不用改规则
 - 日记页打开时同样会发每日签到奖励
+- **每日弹窗**：页面右上角「💌 每日弹窗」，写一段自己想每天看到的话（提醒、目标、鼓励都行，最多 2000 字，保留换行）。之后**每次打开日记页**（登录后）都会先弹出来，点「知道了」关掉，点「编辑」修改；清空保存就不再弹出。只有一份、不分日期，不加分。存在 `users/{uid}/meta/journalNote`（`text`、`updatedAt`，`loadJournalNote` / `saveJournalNote`）；编辑时点遮罩或按 Esc 不会关闭，避免没保存的字丢掉
 
 ### 6. 学习区（`study.html`）
 独立页面，只放学习内容。学完 / 测验达标 / 连续学习的积分自动写进同一个 `log`，回主页面积分、历史、🔥 连续打卡都会更新。
@@ -181,6 +182,7 @@
 - `users/{uid}/studyProgress/{课程}__{章节}`：测验成绩。`quizAttempts`、`quizBest`、`quizPassed`、`lastAttempt`（`answers` 数组、`score`、`ts`）、首次学完时的 `completedISO`。**「是否学完」以 log 里有没有 `study-…` 记录为准**
 - `users/{uid}/studyNotes/{课程}__{章节}`：笔记 `text`、`updatedAt`
 - `users/{uid}/vocabMarks/{课程}__{章节}`：词汇课每个词的「会 / 不会」，`marks`（`{词:'know'|'unknown'|''}`）、`updatedAt`；以后可按 `unknown` 汇总成「不会的词」表
+- `users/{uid}/meta/journalNote`：日记页的每日弹窗，`text`（自己写的那段话，空串 = 不弹）、`updatedAt`
 - `users/{uid}/journal/{YYYY-MM-DD}`：日记，`dateISO`、`sections`（五块）、`text`（拼起来的一份）、`createdAt`、`updatedAt`（有内容时 `log` 里另有 `journal-日期`，+5 分）
 - `users/{uid}/meta/app`：`schemaVersion`（当前为 2）、`migratedAt`。`ensureUserData()` 看到版本已是最新就什么都不做
 

@@ -20,6 +20,7 @@ export function userCols(uid){
     tasks: u.collection('tasks'),
     sections: u.collection('sections'),
     meta: u.collection('meta').doc('app'),
+    journalNote: u.collection('meta').doc('journalNote'), // 日记页的「每日弹窗」：自己写的一段话，每次打开日记弹出
     studyProgress: u.collection('studyProgress'),   // 文档 ID = unitKey(courseId, unitId)
     readPos: u.collection('readPos'),               // 每节课读到哪儿（跨设备同步），文档 ID 同上
     studyNotes: u.collection('studyNotes'),         // 同上，每节一篇笔记

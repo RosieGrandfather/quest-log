@@ -36,3 +36,8 @@
 .j-day:not(:disabled):not(.blank):hover{background:var(--surface);}
 .j-day.active:hover{background:var(--accent-soft);}
 .j-cal-hint{font-size:12px;color:var(--ink-faint);margin-top:8px;text-align:center;}
+/* 每日弹窗：自己写的一段话，每次打开日记弹出 */
+.j-note-btn{padding:6px 12px;font-size:13px;}
+.j-note-text{white-space:pre-wrap;word-break:break-word;font-size:16px;line-height:1.8;color:var(--ink);background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;max-height:55vh;overflow-y:auto;}
+.j-note-modal textarea{width:100%;min-height:9em;resize:vertical;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit;font-size:15.5px;line-height:1.7;color:var(--ink);}
+.j-note-modal textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}

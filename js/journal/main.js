@@ -1,10 +1,11 @@
-/* 日记页入口：每天一页（身体 / 心情 / 学习 / 工作 / 想说的 五块），自动保存，今天记录就 +5 分 */
+/* 日记页入口：每天一页（身体 / 心情 / 学习 / 工作 / 想说的 五块），自动保存，今天记录就 +5 分。
+   另有「每日弹窗」：自己写的一段话，每次打开日记页弹出来（空着就不弹），点「💌 每日弹窗」查看或修改 */
 import { auth, signInWithGoogle, userCols } from '../firebase.js';
 import { ensureDailyLoginBonus, resetDailyBonus } from '../data/dailyBonus.js';
-import { loadJournalDay, loadJournalMonth, saveJournalDay } from '../data/journal.js';
-import { showToast, openCelebrate, closeCelebrate } from '../ui/common.js';
+import { loadJournalDay, loadJournalMonth, saveJournalDay, loadJournalNote, saveJournalNote } from '../data/journal.js';
+import { showToast, openCelebrate, closeCelebrate, closeOnBackdrop } from '../ui/common.js';
 import { localISO, fmtDateLabel } from '../core/dates.js';
-import { JOURNAL_POINTS, JOURNAL_SECTIONS, PLACEHOLDER, emptyEntry, entryHasContent, entryCharCount, journalStreak, weekdayLabel, monthGrid, shiftMonth } from '../core/journal.js';
+import { JOURNAL_POINTS, JOURNAL_SECTIONS, PLACEHOLDER, shouldShowNote, emptyEntry, entryHasContent, entryCharCount, journalStreak, weekdayLabel, monthGrid, shiftMonth } from '../core/journal.js';
 
 const $ = id => document.getElementById(id);
 const today = () => localISO(new Date());
@@ -18,6 +19,7 @@ const J = {
   month: null,           // 日历正在看的月份
   awardedDates: [],      // 已拿到 +5 的日期（来自 log）
   dirty: false, timer: null, saving: null, unsub: null,
+  note: '', noteLoaded: false,  // 每日弹窗的那段话；noteLoaded = 已从数据库读到
 };
 
 const setStatus = s => { $('jStatus').textContent = s; };
@@ -137,6 +139,30 @@ async function checkNewDay(){
   if(wasToday){ await showMonth(t.slice(0,7)); await openDay(t); } else { renderPageHead(); renderCalendar(); }
 }
 
+/* ---- 每日弹窗 ---- */
+function noteMode(edit){
+  $('noteView').hidden = edit; $('noteEditWrap').hidden = !edit;
+  $('noteError').textContent = '';
+  if(edit){ const t = $('noteInput'); t.value = J.note; t.focus(); }
+}
+function openNote(edit){
+  $('noteText').textContent = J.note;
+  $('noteModal').hidden = false;
+  noteMode(edit || !shouldShowNote(J.note));
+}
+function closeNote(){ $('noteModal').hidden = true; }
+const noteEditing = () => !$('noteModal').hidden && !$('noteEditWrap').hidden;
+
+/* 打开日记页（登录后）读一次，有内容就弹出来 */
+async function loadNote(cols){
+  try{
+    const text = await loadJournalNote(cols);
+    if(J.cols !== cols) return;
+    J.note = text; J.noteLoaded = true;
+    if(shouldShowNote(text)) openNote(false);
+  }catch(e){ console.error('load journal note failed', e); }
+}
+
 function checkDailyBonus(){
   if(!J.cols) return;
   ensureDailyLoginBonus(J.cols.log, pts=> showToast(`今日上线 +${pts} 积分 ✨`));
@@ -145,6 +171,7 @@ function checkDailyBonus(){
 async function start(){
   J.lastToday = today();
   renderHeader();
+  loadNote(J.cols);
   J.unsub = J.cols.log.where('category','==','journal').onSnapshot(snap=>{
     J.awardedDates = snap.docs.map(d=> d.data().dateISO).filter(Boolean);
     renderHeader(); if(J.viewDate) renderPageHead();
@@ -176,6 +203,27 @@ $('jCal').addEventListener('click', e=>{
 $('calPrev').addEventListener('click', ()=> showMonth(shiftMonth(J.month, -1)));
 $('calNext').addEventListener('click', ()=>{ if(J.month < today().slice(0,7)) showMonth(shiftMonth(J.month, 1)); });
 $('closeCelebrate').addEventListener('click', closeCelebrate);
+$('noteBtn').addEventListener('click', ()=>{
+  if(!J.noteLoaded){ showToast('弹窗内容还在读取，稍等一下'); return; }
+  openNote(false);
+});
+$('noteEdit').addEventListener('click', ()=> noteMode(true));
+$('noteClose').addEventListener('click', closeNote);
+$('noteCancel').addEventListener('click', ()=>{ if(shouldShowNote(J.note)) noteMode(false); else closeNote(); });
+$('noteSave').addEventListener('click', async ()=>{
+  const btn = $('noteSave');
+  btn.disabled = true; $('noteError').textContent = '';
+  try{
+    J.note = await saveJournalNote(J.cols, $('noteInput').value);
+    $('noteText').textContent = J.note;
+    if(shouldShowNote(J.note)){ noteMode(false); showToast('已保存，以后每次打开日记都会弹出 💌'); }
+    else { closeNote(); showToast('已清空，以后不再弹出'); }
+  }catch(e){ $('noteError').textContent = '保存失败，请重试'; console.error('save journal note failed', e); }
+  btn.disabled = false;
+});
+/* 正在编辑时点外面不关，免得没保存的字丢了 */
+closeOnBackdrop('noteModal', ()=>{ if(!noteEditing()) closeNote(); });
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && !$('noteModal').hidden && !noteEditing()) closeNote(); });
 $('backToday').addEventListener('click', async ()=>{ toggleCal(false); await showMonth(today().slice(0,7)); openDay(today()); });
 document.addEventListener('visibilitychange', ()=>{
   if(document.hidden) flush(); else { checkDailyBonus(); checkNewDay(); }
@@ -188,12 +236,13 @@ buildFields();
 auth.onAuthStateChanged(user=>{
   if(J.unsub){ J.unsub(); J.unsub = null; }
   if(user){
-    Object.assign(J, {uid:user.uid, cols:userCols(user.uid), viewDate:null, days:{}, loaded:new Set(), month:null, awardedDates:[], dirty:false});
+    Object.assign(J, {uid:user.uid, cols:userCols(user.uid), viewDate:null, days:{}, loaded:new Set(), month:null, awardedDates:[], dirty:false, note:'', noteLoaded:false});
     $('gate').hidden = true; $('journalRoot').hidden = false;
     checkDailyBonus();
     start();
   } else {
-    Object.assign(J, {uid:null, cols:null, viewDate:null, days:{}, loaded:new Set(), month:null, awardedDates:[], dirty:false});
+    Object.assign(J, {uid:null, cols:null, viewDate:null, days:{}, loaded:new Set(), month:null, awardedDates:[], dirty:false, note:'', noteLoaded:false});
+    closeNote();
     resetDailyBonus();
     $('gate').hidden = false; $('journalRoot').hidden = true;
   }

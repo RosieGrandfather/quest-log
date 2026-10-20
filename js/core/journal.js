@@ -59,6 +59,10 @@ export function previewText(text, max = 40){
   return line.length > max ? line.slice(0, max) + '…' : line;
 }
 
+/* 每日弹窗：自己写的一段话，存在 meta/journalNote 的 text 里；没有或只有空白就不弹 */
+export const noteFromDoc = data => (data && typeof data.text === 'string') ? data.text : '';
+export const shouldShowNote = text => hasContent(text);
+
 /* 输入框里的提示语：每天一样 */
 export const PLACEHOLDER = "What's on your mind today?";
 

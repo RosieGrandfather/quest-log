@@ -66,3 +66,13 @@ test('entryText 只拼有内容的块；entryCharCount 不算空白', ()=>{
   assert.equal(entryText({...emptyEntry(), body:' 跑步 ', free:'累'}), '【身体】跑步\n【想说的】累');
   assert.equal(entryCharCount({...emptyEntry(), body:'跑 步', mood:'好'}), 3);
 });
+
+test('每日弹窗：读文档里的 text，空白不弹', async ()=>{
+  const { noteFromDoc, shouldShowNote } = await import('../js/core/journal.js');
+  assert.equal(noteFromDoc(null), '');
+  assert.equal(noteFromDoc({}), '');
+  assert.equal(noteFromDoc({text:'加油\n慢慢来'}), '加油\n慢慢来');
+  assert.equal(shouldShowNote(''), false);
+  assert.equal(shouldShowNote('  \n '), false);
+  assert.equal(shouldShowNote('加油'), true);
+});

@@ -2,7 +2,7 @@
    页面不会提前建空文档：第一次有内容保存时才创建。
    日记正文（sections：body/mood/study/work/free 五块，text 是拼起来的一份）只放在 users/{uid}/journal 里，不进 log；log 里只有一条「写日记 +5」。 */
 import { awardOnce } from './awards.js';
-import { JOURNAL_POINTS, entryFromDoc, entryHasContent, entryText, journalStreak, journalStreakBonus } from '../core/journal.js';
+import { JOURNAL_POINTS, noteFromDoc, entryFromDoc, entryHasContent, entryText, journalStreak, journalStreakBonus } from '../core/journal.js';
 
 export async function loadJournalDay(cols, dateISO){
   const snap = await cols.journal.doc(dateISO).get();
@@ -43,4 +43,15 @@ export async function saveJournalDay(cols, dateISO, entry, todayISO){
     }
   }
   return out;
+}
+
+/* 每日弹窗的那段话（一份，不分日期）。保存时去掉首尾空白，清空就存空串 = 以后不弹 */
+export async function loadJournalNote(cols){
+  const snap = await cols.journalNote.get();
+  return noteFromDoc(snap.exists ? snap.data() : null);
+}
+export async function saveJournalNote(cols, text){
+  const clean = (text || '').trim();
+  await cols.journalNote.set({text:clean, updatedAt:Date.now()});
+  return clean;
 }

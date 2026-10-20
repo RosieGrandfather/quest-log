@@ -43,6 +43,7 @@
         </div>
         <div class="j-head-btns">
           <button class="btn-ghost j-today" id="backToday" hidden>回到今天</button>
+          <button class="btn-ghost j-note-btn" id="noteBtn">💌 每日弹窗</button>
           <button class="btn-ghost j-hist" id="histBtn" aria-expanded="false">🗓 历史记录</button>
         </div>
       </div>
@@ -64,6 +65,28 @@
         <span id="jStatus"></span>
       </div>
     </section>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="noteModal" hidden>
+  <div class="modal j-note-modal" role="dialog" aria-labelledby="noteTitle">
+    <h3 id="noteTitle">💌 每日弹窗</h3>
+    <div id="noteView">
+      <div class="j-note-text" id="noteText"></div>
+      <div class="modal-actions">
+        <button class="btn-ghost" id="noteEdit">编辑</button>
+        <button class="btn-primary" id="noteClose">知道了</button>
+      </div>
+    </div>
+    <div id="noteEditWrap" hidden>
+      <label for="noteInput">写下每次打开日记都想看到的话（清空就不再弹出）</label>
+      <textarea id="noteInput" rows="6" maxlength="2000"></textarea>
+      <div class="form-error" id="noteError"></div>
+      <div class="modal-actions">
+        <button class="btn-ghost" id="noteCancel">取消</button>
+        <button class="btn-primary" id="noteSave">保存</button>
+      </div>
+    </div>
   </div>
 </div>
 
