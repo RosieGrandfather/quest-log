@@ -1,0 +1,71 @@
+/* 电子上香：香炉 + 三炷香（--p = 烧掉的比例 0~1）+ 电子木鱼 */
+.in-altar,.in-fish-wrap,.in-history{margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow);}
+
+.in-scene{position:relative;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  background:radial-gradient(ellipse at 50% 100%,var(--accent-soft) 0%,transparent 70%);border-radius:14px;overflow:hidden;}
+.in-sticks{--p:1;display:flex;gap:22px;align-items:flex-end;height:150px;margin-bottom:-8px;position:relative;z-index:1;}
+.in-stick{position:relative;width:5px;height:150px;display:flex;flex-direction:column;justify-content:flex-end;}
+.in-stick:nth-child(2){height:158px;}
+/* 香身：上半截是香（红褐色），下半截是竹签；烧掉的部分从上往下缩 */
+.in-body{position:relative;width:100%;height:calc(100% - (100% - 46px) * var(--p));border-radius:2px 2px 0 0;
+  background:linear-gradient(to bottom,#9A3B2A 0,#9A3B2A calc(100% - 46px),#D8B884 calc(100% - 46px));}
+.in-sticks.done .in-body{background:#D8B884;height:46px;}
+/* 火头 */
+.lit .in-body::before{content:"";position:absolute;top:-3px;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;
+  background:#FF7A2E;box-shadow:0 0 6px 2px rgba(255,122,46,0.75),0 0 14px 4px rgba(255,170,60,0.35);animation:ember 1.6s ease-in-out infinite;}
+@keyframes ember{50%{opacity:0.7;transform:scale(0.85);}}
+/* 烟 */
+.in-smoke{position:absolute;left:50%;bottom:100%;width:0;height:0;display:none;}
+.lit .in-smoke{display:block;bottom:calc((100% - 46px) * (1 - var(--p)) + 46px);}
+.in-smoke span{position:absolute;bottom:0;left:-6px;width:12px;height:12px;border-radius:50%;
+  background:var(--ink-faint);opacity:0;filter:blur(3px);animation:smoke 4.2s ease-out infinite;}
+.in-smoke span:nth-child(2){animation-delay:1.4s;}
+.in-smoke span:nth-child(3){animation-delay:2.8s;}
+@keyframes smoke{
+  0%{opacity:0;transform:translate(0,0) scale(0.5);}
+  15%{opacity:0.45;}
+  60%{transform:translate(10px,-70px) scale(1.6);}
+  100%{opacity:0;transform:translate(-6px,-120px) scale(2.4);}
+}
+@media (prefers-reduced-motion:reduce){ .in-smoke span,.lit .in-body::before{animation:none;} .in-smoke span{opacity:0.25;} }
+
+.in-burner{position:relative;z-index:2;width:180px;display:flex;flex-direction:column;align-items:center;}
+.in-burner-rim{width:180px;height:16px;border-radius:50%;background:#6B5428;box-shadow:inset 0 3px 0 #8E7236;}
+.in-burner-bowl{width:160px;height:62px;margin-top:-8px;border-radius:0 0 80px 80px/0 0 56px 56px;
+  background:linear-gradient(160deg,#C9A24E 0%,#9C7A30 55%,#6B5428 100%);display:flex;align-items:center;justify-content:center;}
+.in-burner-bowl span{font-size:24px;font-weight:800;color:#5A3A0E;opacity:0.75;}
+.in-burner-feet{display:flex;justify-content:space-between;width:120px;margin-top:-4px;}
+.in-burner-feet i{display:block;width:14px;height:14px;border-radius:0 0 6px 6px;background:#6B5428;}
+
+.in-timer{text-align:center;font-size:13px;color:var(--ink-faint);margin:10px 0 4px;min-height:1.4em;}
+.in-wish label{display:block;font-size:13px;font-weight:800;color:var(--ink-soft);margin:8px 0 4px;}
+.in-wish input{width:100%;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit;font-size:15.5px;color:var(--ink);}
+.in-wish input:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.in-presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.in-preset{border:1px solid var(--border);background:var(--surface-2);color:var(--ink-soft);border-radius:999px;padding:4px 11px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;}
+.in-preset:hover{color:var(--ink);border-color:var(--accent);}
+.in-light{width:100%;margin-top:14px;font-size:16px;}
+.in-light:disabled{opacity:0.55;cursor:default;}
+
+.in-fish-wrap{position:relative;text-align:center;overflow:hidden;}
+.in-fish-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;text-align:left;}
+.in-fish-title{font-weight:800;font-size:15px;}
+.in-fish-count{font-size:13px;color:var(--ink-faint);}
+.in-fish-count b{color:var(--accent-ink);font-size:15px;}
+.in-fish{margin:14px auto 4px;display:block;width:140px;border:none;background:none;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.in-fish svg{width:100%;display:block;transition:transform 0.08s;}
+.in-fish.hit svg{transform:scale(0.92) rotate(-3deg);}
+.fish-shell{fill:#9C5B2E;stroke:#6E3B18;stroke-width:3;}
+.fish-slot{fill:#4A2610;}
+.fish-eye{fill:#4A2610;}
+.in-floats{position:absolute;inset:0;pointer-events:none;}
+.in-float{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-weight:800;font-size:15px;color:var(--accent);white-space:nowrap;animation:floatUp 0.9s ease-out forwards;}
+@keyframes floatUp{to{opacity:0;transform:translate(-50%,-60px);}}
+
+.in-history-title{font-weight:800;font-size:15px;margin-bottom:6px;}
+.in-wishes{list-style:none;margin:0;padding:0;}
+.in-wishes li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--border);font-size:14.5px;}
+.in-wishes li:first-child{border-top:none;}
+.in-wishes .when{flex:none;font-size:12px;color:var(--ink-faint);}
+.in-wishes .empty{color:var(--ink-faint);font-size:13px;justify-content:center;}
+.in-foot{font-size:12px;color:var(--ink-faint);margin-top:8px;text-align:right;}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>上香 · 远征日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/study.css">
+<link rel="stylesheet" href="css/incense.css">
+</head>
+<body>
+
+<div class="app study-app">
+  <div class="gate" id="gate">
+    <h1>上香</h1>
+    <p>登录后上香、许愿、敲木鱼，记录手机电脑自动同步。</p>
+    <button class="btn-google" id="signInBtn">用 Google 账号登录</button>
+    <div class="gate-note" id="gateNote"></div>
+  </div>
+
+  <div id="incenseRoot" hidden>
+    <div class="study-topbar">
+      <a class="back-home" href="index.html">← 返回远征日志</a>
+      <a class="study-home-link" href="journal.html">📔 日记</a>
+    </div>
+    <header class="study-hero">
+      <div>
+        <div class="eyebrow">电子上香</div>
+        <div class="today-status" id="todayStatus"></div>
+      </div>
+      <div class="streak"><span class="flame">🙏</span>连续上香&nbsp;<span class="mono" id="streakNum">0</span>&nbsp;天</div>
+    </header>
+
+    <section class="in-altar">
+      <div class="in-scene" id="scene">
+        <div class="in-sticks" id="sticks">
+          <div class="in-stick"><div class="in-smoke"><span></span><span></span><span></span></div><div class="in-body"></div></div>
+          <div class="in-stick"><div class="in-smoke"><span></span><span></span><span></span></div><div class="in-body"></div></div>
+          <div class="in-stick"><div class="in-smoke"><span></span><span></span><span></span></div><div class="in-body"></div></div>
+        </div>
+        <div class="in-burner" aria-hidden="true">
+          <div class="in-burner-rim"></div>
+          <div class="in-burner-bowl"><span>福</span></div>
+          <div class="in-burner-feet"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="in-timer" id="timer"></div>
+
+      <div class="in-wish">
+        <label for="wishInput">许个愿（可以不写）</label>
+        <input id="wishInput" maxlength="60" placeholder="比如：GRE 考到 330" autocomplete="off">
+        <div class="in-presets" id="presets"></div>
+      </div>
+      <button class="btn-primary in-light" id="lightBtn">🔥 上香</button>
+    </section>
+
+    <section class="in-fish-wrap">
+      <div class="in-fish-head">
+        <div class="in-fish-title">电子木鱼</div>
+        <div class="in-fish-count">今日功德 <b class="mono" id="meritToday">0</b> · 累计 <span class="mono" id="meritTotal">0</span></div>
+      </div>
+      <button class="in-fish" id="fishBtn" aria-label="敲木鱼">
+        <svg viewBox="0 0 120 90" aria-hidden="true">
+          <ellipse cx="60" cy="52" rx="50" ry="34" class="fish-shell"/>
+          <ellipse cx="60" cy="56" rx="38" ry="8" class="fish-slot"/>
+          <circle cx="34" cy="40" r="5" class="fish-eye"/>
+        </svg>
+      </button>
+      <div class="in-floats" id="floats"></div>
+    </section>
+
+    <section class="in-history">
+      <div class="in-history-title">最近的心愿</div>
+      <ul class="in-wishes" id="wishList"></ul>
+      <div class="in-foot">累计上香 <span class="mono" id="sticksTotal">0</span> 次</div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="js/incense/main.js"></script>
+</body>
+</html>

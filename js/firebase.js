@@ -27,5 +27,7 @@ export function userCols(uid){
     vocabMarks: u.collection('vocabMarks'),         // 词汇课每个词「会 / 不会」的标记，每节一篇文档，文档 ID 同上
     journal: u.collection('journal'),               // 日记，文档 ID = 日期 YYYY-MM-DD
     projects: u.collection('projects'),             // 城邦地图的项目，每个项目一篇文档，步骤放在文档里的 steps 数组
+    incense: u.collection('incense'),               // 电子烧香，文档 ID = 日期 YYYY-MM-DD
+    incenseMeta: u.collection('meta').doc('incense'), // 烧香 / 木鱼的累计数
   };
 }
