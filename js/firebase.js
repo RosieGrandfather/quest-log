@@ -29,5 +29,6 @@ export function userCols(uid){
     projects: u.collection('projects'),             // 城邦地图的项目，每个项目一篇文档，步骤放在文档里的 steps 数组
     incense: u.collection('incense'),               // 电子烧香，文档 ID = 日期 YYYY-MM-DD
     incenseMeta: u.collection('meta').doc('incense'), // 烧香 / 木鱼的累计数
+    niuma: u.collection('niuma').doc('settings'),   // 牛马鼓励器：上下班时间、午休、月薪、请假日期（真钱，和积分分开）
   };
 }

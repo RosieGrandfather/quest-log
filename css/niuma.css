@@ -1,0 +1,115 @@
+/* 牛马鼓励器：小奶牛猫绕圈追鱼 + 今日已赚 */
+.nm-settings-link{background:none;border:none;color:var(--ink-soft);font:inherit;font-weight:600;cursor:pointer;padding:0;}
+.nm-settings-link:hover{color:var(--ink);}
+.nm-phase{font-family:'Barlow Condensed';font-weight:700;font-size:22px;color:var(--ink);}
+.nm-card{margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow);}
+.nm-countdown{text-align:center;font-size:14px;color:var(--ink-soft);min-height:1.4em;}
+.nm-countdown b{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;}
+
+/* 舞台：一圈跑道，进度弧 = 今日工时进度 */
+.nm-stage{position:relative;width:min(300px,100%);aspect-ratio:1;margin:8px auto 4px;
+  --cat-ink:#1E1E22;--cat-white:#FBFAF7;--cat-line:#2A2A30;}
+.nm-track{position:absolute;inset:0;width:100%;height:100%;}
+.nm-track-bg{fill:none;stroke:var(--surface-2);stroke-width:14;}
+.nm-track-done{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:round;transform:rotate(-90deg);transform-origin:130px 130px;transition:stroke-dasharray 0.6s;}
+
+/* 猫的配色 */
+.nm-white{fill:var(--cat-white);}
+.nm-black{fill:var(--cat-ink);}
+.nm-outline{fill:none;stroke:var(--cat-line);stroke-width:2.5;}
+.nm-white-o{fill:var(--cat-white);stroke:var(--cat-line);stroke-width:2.5;}
+.nm-leg rect{fill:var(--cat-ink);}
+.nm-leg rect.nm-white-o{fill:var(--cat-white);}
+.nm-head circle:not(.nm-white-o){fill:var(--cat-ink);}
+.nm-eye-dot{fill:#FBFAF7;}
+.nm-nose{fill:#F09AA6;}
+.nm-mouth,.nm-eye-line{fill:none;stroke:var(--cat-line);stroke-width:2;stroke-linecap:round;}
+.nm-eye-line-w{stroke:#FBFAF7;}
+.nm-tail{fill:none;stroke:var(--cat-ink);stroke-width:8;stroke-linecap:round;}
+.nm-stick{stroke:#8A5A2B;stroke-width:3;stroke-linecap:round;}
+.nm-string{stroke:var(--ink-faint);stroke-width:1.2;}
+.nm-fish path{fill:#4E9BD1;}
+.nm-fish-eye{fill:#12202B;}
+
+/* 上班：转圈跑。猫放在跑道顶上，整块绕中心顺时针转 */
+.nm-rotor{position:absolute;inset:0;display:none;animation:nm-orbit 14s linear infinite;}
+.nm-runner{position:absolute;left:50%;top:-6%;width:50%;transform:translateX(-50%);overflow:visible;}
+[data-cat="run"] .nm-rotor{display:block;}
+@keyframes nm-orbit{to{transform:rotate(360deg);}}
+.nm-leg{transform-box:fill-box;transform-origin:50% 10%;}
+[data-cat="run"] .nm-leg-f1,[data-cat="run"] .nm-leg-b2{animation:nm-step 0.42s ease-in-out infinite alternate;}
+[data-cat="run"] .nm-leg-f2,[data-cat="run"] .nm-leg-b1{animation:nm-step 0.42s ease-in-out infinite alternate-reverse;}
+@keyframes nm-step{from{transform:rotate(28deg);}to{transform:rotate(-28deg);}}
+[data-cat="run"] .nm-runner .nm-head{animation:nm-bob 0.42s ease-in-out infinite alternate;}
+@keyframes nm-bob{to{transform:translateY(2px);}}
+.nm-dangle{transform-origin:186px 14px;}
+[data-cat="run"] .nm-dangle{animation:nm-swing 0.84s ease-in-out infinite alternate;}
+@keyframes nm-swing{from{transform:rotate(-12deg);}to{transform:rotate(12deg);}}
+
+/* 其他时候：揣手趴在跑道中间 */
+.nm-loaf-wrap{position:absolute;left:50%;top:50%;width:58%;transform:translate(-50%,-46%);}
+[data-cat="run"] .nm-loaf-wrap{display:none;}
+.nm-loaf{width:100%;display:block;overflow:visible;}
+.nm-eyes-shut,.nm-zzz,.nm-bones,.nm-yarn{display:none;}
+[data-cat="sleep"] .nm-eyes-open,[data-pose="nap"] .nm-eyes-open{display:none;}
+[data-cat="sleep"] .nm-eyes-shut,[data-pose="nap"] .nm-eyes-shut{display:inline;}
+[data-cat="sleep"] .nm-zzz,[data-pose="nap"] .nm-zzz{display:block;}
+[data-cat="done"] .nm-bones{display:block;}
+[data-pose="play"] .nm-yarn{display:block;}
+
+/* 睡觉：慢慢呼吸 */
+[data-cat="sleep"] .nm-loaf,[data-pose="nap"] .nm-loaf{animation:nm-breathe 3.6s ease-in-out infinite;transform-origin:50% 100%;}
+@keyframes nm-breathe{50%{transform:scaleY(1.035) scaleX(0.99);}}
+.nm-zzz{position:absolute;left:40%;top:-4%;font-family:'Barlow Condensed';font-weight:700;color:var(--ink-soft);}
+.nm-zzz span{position:absolute;opacity:0;animation:nm-z 3.6s ease-out infinite;}
+.nm-zzz span:nth-child(1){font-size:16px;}
+.nm-zzz span:nth-child(2){font-size:21px;animation-delay:1.2s;}
+.nm-zzz span:nth-child(3){font-size:27px;animation-delay:2.4s;}
+@keyframes nm-z{0%{opacity:0;transform:translate(0,0);}20%{opacity:0.9;}100%{opacity:0;transform:translate(-18px,-34px);}}
+
+/* 收工：揣手坐着，旁边一副鱼骨头 */
+.nm-bones{position:absolute;left:6%;bottom:-16%;width:22%;}
+.nm-bones path{fill:none;stroke:var(--ink-faint);stroke-width:2.4;stroke-linecap:round;}
+.nm-bones circle{fill:none;stroke:var(--ink-faint);stroke-width:2.4;}
+[data-cat="done"] .nm-tail-loaf{animation:nm-flick 2.6s ease-in-out infinite;}
+
+/* 周末：随机在玩毛线 / 打盹之间切换，偶尔甩尾巴、动耳朵 */
+.nm-yarn{position:absolute;left:6%;bottom:-18%;width:16%;}
+.nm-yarn circle{fill:#D9667E;}
+.nm-yarn path{fill:none;stroke:#A9435A;stroke-width:1.8;}
+[data-pose="play"] .nm-yarn{animation:nm-roll 2.4s ease-in-out infinite;}
+@keyframes nm-roll{0%,100%{transform:translateX(0) rotate(0);}50%{transform:translateX(-26px) rotate(-200deg);}}
+[data-pose="play"] .nm-paw{animation:nm-bat 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:100% 50%;}
+@keyframes nm-bat{0%,100%{transform:translateX(0);}40%{transform:translateX(-12px) rotate(-10deg);}60%{transform:translateX(-4px);}}
+[data-pose="play"] .nm-loaf-head{animation:nm-look 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 90%;}
+@keyframes nm-look{0%,100%{transform:rotate(0);}50%{transform:rotate(-8deg);}}
+.nm-tail-loaf{transform-box:fill-box;transform-origin:0% 100%;}
+.twitch .nm-tail-loaf{animation:nm-flick 0.9s ease-in-out 2;}
+.twitch .nm-loaf-head{animation:nm-ear 0.5s ease-in-out 2;transform-box:fill-box;transform-origin:50% 90%;}
+@keyframes nm-flick{50%{transform:rotate(-18deg);}}
+@keyframes nm-ear{50%{transform:rotate(4deg);}}
+
+@media (prefers-reduced-motion:reduce){
+  .nm-rotor,.nm-leg,.nm-head,.nm-dangle,.nm-loaf,.nm-zzz span,.nm-yarn,.nm-paw,.nm-tail-loaf{animation:none!important;}
+  .nm-zzz span{opacity:0.6;}
+}
+
+/* 钱 */
+.nm-earned-label{text-align:center;font-size:13px;color:var(--ink-faint);margin-top:6px;}
+.nm-earned{text-align:center;font-size:clamp(34px,10vw,46px);font-weight:600;color:var(--danger);letter-spacing:-0.5px;line-height:1.15;}
+.nm-progress{margin-top:16px;}
+.nm-progress-head{font-size:14px;}
+.nm-progress-sub{font-size:12.5px;color:var(--ink-faint);margin:2px 0 6px;}
+.nm-bar{height:8px;border-radius:999px;background:var(--surface-2);overflow:hidden;}
+.nm-bar-fill{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width 0.6s;}
+.nm-month{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);font-weight:700;font-size:14px;}
+.nm-month b{font-size:20px;color:var(--danger);}
+.nm-month-sub{font-size:12px;color:var(--ink-faint);margin-top:2px;}
+.nm-leave{width:100%;margin-top:14px;}
+
+.nm-modal-note{font-size:12.5px;color:var(--ink-faint);margin:-6px 0 12px;line-height:1.5;}
+.nm-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;}
+.nm-grid label{margin-top:12px!important;}
+.nm-grid > div:nth-child(-n+2) label{margin-top:0!important;}
+.modal .nm-grid + label{margin-top:12px;}
+.nm-track-done.zero{opacity:0;}
