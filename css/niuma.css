@@ -25,11 +25,11 @@
 .nm-eye-line-w{stroke:#FBFAF7;}
 .nm-tail{fill:none;stroke:var(--cat-ink);stroke-width:8;stroke-linecap:round;}
 
-/* 上班：小奶牛猫追鱼的 GIF，放在跑道中间的白色圆里 */
-.nm-runner-disc{position:absolute;inset:9.5%;border-radius:50%;background:#fff;overflow:hidden;display:none;
+/* 上班：小奶牛猫追鱼的 GIF，放在跑道中间的圆里（底色和图片背景一致） */
+.nm-runner-disc{position:absolute;inset:9.5%;border-radius:50%;background:#EEE4E2;overflow:hidden;display:none;
   align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.04);}
 [data-cat="run"] .nm-runner-disc{display:flex;}
-.nm-runner-gif{width:94%;max-width:none;display:block;transform:translateY(-3%);}
+.nm-runner-gif{width:88%;max-width:none;display:block;transform:translate(-1%,-2%);}
 
 /* 其他时候：揣手趴在跑道中间 */
 .nm-loaf-wrap{position:absolute;left:50%;top:50%;width:58%;transform:translate(-50%,-46%);}
