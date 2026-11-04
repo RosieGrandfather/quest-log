@@ -25,11 +25,17 @@
 .nm-eye-line-w{stroke:#FBFAF7;}
 .nm-tail{fill:none;stroke:var(--cat-ink);stroke-width:8;stroke-linecap:round;}
 
-/* 上班：小奶牛猫追鱼的 GIF，放在跑道中间的圆里（底色和图片背景一致） */
+/* 跑道中间的圆：按状态只显示一张 GIF（底色和图片背景一致）
+   上班 = 追鱼，睡觉 / 周末打盹 = 睡觉，下班 = 发癫飞奔 */
 .nm-runner-disc{position:absolute;inset:9.5%;border-radius:50%;background:#EEE4E2;overflow:hidden;display:none;
   align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.04);}
-[data-cat="run"] .nm-runner-disc{display:flex;}
-.nm-runner-gif{width:88%;max-width:none;display:block;transform:translate(-1%,-2%);}
+[data-cat="run"] .nm-runner-disc,[data-cat="sleep"] .nm-runner-disc,[data-pose="nap"] .nm-runner-disc,[data-cat="done"] .nm-runner-disc{display:flex;}
+.nm-runner-gif{display:none;max-width:none;}
+[data-cat="run"] .nm-gif-run{display:block;width:88%;transform:translate(-1%,-2%);}
+[data-cat="sleep"] .nm-gif-sleep,[data-pose="nap"] .nm-gif-sleep{display:block;width:92%;transform:translateY(-1%);}
+[data-cat="done"] .nm-gif-done{display:block;width:94%;transform:translateY(-2%);}
+/* 用 GIF 的状态，原来画的趴猫藏起来 */
+[data-cat="sleep"] .nm-loaf-wrap,[data-pose="nap"] .nm-loaf-wrap,[data-cat="done"] .nm-loaf-wrap{display:none;}
 
 /* 其他时候：揣手趴在跑道中间 */
 .nm-loaf-wrap{position:absolute;left:50%;top:50%;width:58%;transform:translate(-50%,-46%);}
