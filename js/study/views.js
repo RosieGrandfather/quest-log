@@ -7,6 +7,7 @@ import { enhanceCode, resetPySession } from './runner.js';
 import { openNotes } from './notes.js';
 import { wireVocabMarks } from './vocab-marks.js';
 import { hasVocabExport, vocabExportHTML, wireVocabExport } from './vocab-export.js';
+import { hasMistakeExport, mistakeExportHTML, wireMistakeExport } from './mistake-export.js';
 import { wirePractice } from './practice.js';
 import { wireQset } from './qset.js';
 import { wireEssay } from './essay.js';
@@ -157,6 +158,7 @@ async function renderCourse(cid){
     <div class="reward-bar" style="margin-top:12px"><div class="reward-bar-fill small" style="width:${p.pct}%"></div></div>
     <div class="course-meta mono">已学 ${p.done} / ${p.total} 节</div>
     ${hasVocabExport(course) ? vocabExportHTML() : ''}
+    ${hasMistakeExport(course) ? mistakeExportHTML() : ''}
     <div class="unit-list">${course.units.map((u, i)=>{
       const done = !!T.completed[unitKey(cid, u.id)];
       const cls = !u.file ? 'soon' : done ? 'done' : 'todo';
@@ -170,6 +172,7 @@ async function renderCourse(cid){
       return u.file ? `<a class="unit-row ${cls}" href="${unitHash(cid, u.id)}">${inner}</a>` : `<div class="unit-row ${cls}">${inner}</div>`;
     }).join('')}</div>`;
   if(hasVocabExport(course)) wireVocabExport(view(), course);
+  if(hasMistakeExport(course)) wireMistakeExport(view(), course);
 }
 
 /* ---------- 学习页 ---------- */
