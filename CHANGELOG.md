@@ -1,5 +1,12 @@
 # 改动日志 (Changelog)
 
+## 2026-11-06 — 练习题每题可标记「复查」，和错题一起导出
+- 所有练习题（gre-qset：张巍填空 / 阅读 / 数学、真题回忆、官方 Quant；gre-set：官方 Verbal 12 套）每题右上角新增「☆ 复查」按钮，点一下变成「★ 已标记」，再点取消。做题中、交卷后、查看上次作答时都能点；重做本套不会清掉标记。
+- 课程页「错题本」导出时，标记过的题即使答对也一起导出；还没提交的小节里标记的题也会导出（你的答案显示「还没提交」）。每题标题后写状态：答错 / 没作答 / 标记复查 · 答对 / 标记复查 · 答错 / 标记复查 · 还没提交；开头一句汇总「错题 X 道，标记复查 Y 道（其中答对 Z 道）」。
+- 数据：存在同一份 `studyProgress/{unitKey}` 文档的 `reviewMarks`（题号字符串 → true / false，取消时写 false 不删除；gre-set 题号从 1 开始），安全规则不用改。保存失败时按钮恢复原状并提示重试。
+- 新增 `js/study/review-flag.js`；修改 `js/data/study.js`（`saveReviewMark`）、`js/study/qset.js`、`js/study/practice.js`、`js/core/mistakes.js`（`marks` 参数、`statusText`、`tallyText`）、`js/study/mistake-export.js`、`css/study.css`、`tests/mistakes.test.js`。
+- 验证：126 项 Node 测试通过（新增 3 项）；本地浏览器用内存版假 Firebase 检查了张巍填空节（交卷后显示）和官方 12 套（未提交）里按钮的显示、点击写入和课程页汇总。没有登录实测写 Firestore。未提交、推送或发布。
+
 ## 2026-11-06 — 练习课课程页新增错题本导出
 - 所有练习课（张巍填空 / 阅读 / 数学、真题回忆 gre-vx / gre-qx、官方 gre-vr / gre-q 等，课节带 `practice: true`）的课程页顶部新增「错题本」：点「本课错题」或「所有练习课」，汇总做过的小节里答错和没答的题，可「复制 Markdown」或「下载 Markdown」（文件名如 `gre-zt-错题本-2026-11-06.md`）。
 - 按每节**最近一次提交**（`studyProgress.practiceLast`）统计；重做一节会用新的作答覆盖。选句子自评题、答案待核对的不计分题不算错题。旧作答选项对不上时沿用 `restorePractice` 的处理（该题不计入）。

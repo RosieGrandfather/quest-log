@@ -1,8 +1,8 @@
-/* 练习课课程页上的「错题本」：读每节最近一次提交（studyProgress.practiceLast），汇总答错 / 没答的题，可复制或下载 Markdown。
-   不另存数据。判错逻辑在 core/mistakes.js。 */
+/* 练习课课程页上的「错题本」：读每节最近一次提交（studyProgress.practiceLast）和「复查」标记（studyProgress.reviewMarks），
+   汇总答错 / 没答的题和标了复查的题，可复制或下载 Markdown。判错逻辑在 core/mistakes.js。 */
 import { T } from './state.js';
 import { loadCourse, loadUnit } from './content.js';
-import { unitMistakes, countByKind, toMarkdown } from '../core/mistakes.js';
+import { unitMistakes, countByKind, toMarkdown, statusText, tallyText } from '../core/mistakes.js';
 import { escapeHTML } from '../core/html.js';
 import { showToast } from '../ui/common.js';
 
@@ -13,7 +13,7 @@ export const mistakeExportHTML = () => `
     <div class="vx-head">
       <div>
         <div class="vx-title">错题本</div>
-        <div class="vx-sub">汇总做过的小节里答错和没答的题（按每节最近一次提交），可复制或下载</div>
+        <div class="vx-sub">汇总答错、没答和标了「复查」的题（按每节最近一次提交），可复制或下载</div>
       </div>
       <div class="vx-actions" style="margin:0">
         <button type="button" class="btn-ghost" data-scope="course">本课错题</button>
@@ -30,13 +30,15 @@ function download(name, text, type){
   setTimeout(()=> URL.revokeObjectURL(url), 1000);
 }
 
-/* 有提交记录的小节：[{courseId, unitId}]，按课程、小节原顺序 */
+const hasData = p => !!p && (!!p.practiceLast || Object.values(p.reviewMarks || {}).includes(true));
+
+/* 有提交记录或复查标记的小节：[{course, meta}]，按课程、小节原顺序 */
 async function submittedUnits(courseIds){
   const out = [];
   for(const cid of courseIds){
     const course = await loadCourse(cid);
     course.units.forEach(u=>{
-      if(u.practice && u.file && T.progress[`${cid}__${u.id}`]?.practiceLast) out.push({course, meta:u});
+      if(u.practice && u.file && hasData(T.progress[`${cid}__${u.id}`])) out.push({course, meta:u});
     });
   }
   return out;
@@ -44,12 +46,13 @@ async function submittedUnits(courseIds){
 
 async function collect(scope, course){
   let ids = [course.id];
-  if(scope === 'all') ids = [...new Set(Object.entries(T.progress).filter(([, p])=> p?.practiceLast).map(([, p])=> p.courseId).filter(Boolean))];
+  if(scope === 'all') ids = [...new Set(Object.entries(T.progress).filter(([, p])=> hasData(p)).map(([, p])=> p.courseId).filter(Boolean))];
   const list = await submittedUnits(ids);
   const rows = [];
   for(const {course:c, meta} of list){
     const {unit} = await loadUnit(c.id, meta.id);
-    rows.push(...unitMistakes({courseId:c.id, courseTitle:c.title, unitTitle:meta.title}, unit, T.progress[`${c.id}__${meta.id}`].practiceLast));
+    const pr = T.progress[`${c.id}__${meta.id}`];
+    rows.push(...unitMistakes({courseId:c.id, courseTitle:c.title, unitTitle:meta.title}, unit, pr.practiceLast, pr.reviewMarks));
   }
   return {rows, nDone:list.length};
 }
@@ -64,27 +67,27 @@ export function wireMistakeExport(root, course){
     btn.disabled = true; btn.textContent = '读取中…'; body.innerHTML = '';
     try{
       const {rows, nDone} = await collect(scope, course);
-      if(!nDone){ body.innerHTML = '<div class="vx-empty">还没有提交过的小节。</div>'; return; }
-      if(!rows.length){ body.innerHTML = `<div class="vx-empty">做过的 ${nDone} 节里没有错题。</div>`; return; }
+      if(!nDone){ body.innerHTML = '<div class="vx-empty">还没有提交过或标记过的小节。</div>'; return; }
+      if(!rows.length){ body.innerHTML = `<div class="vx-empty">做过的 ${nDone} 节里没有错题，也没有标记复查的题。</div>`; return; }
       const now = new Date(), stamp = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
       const title = scope === 'all' ? 'GRE 错题本（所有练习课）' : `GRE 错题本：${course.title}`;
       const md = toMarkdown(rows, {title, date:stamp});
       body.innerHTML = `
-        <div class="vx-count">共 <b class="mono">${rows.length}</b> 道错题，来自做过的 ${nDone} 节；${countByKind(rows).map(([k,n])=> `${escapeHTML(k)} ${n}`).join('，')}</div>
+        <div class="vx-count">共 <b class="mono">${rows.length}</b> 道题，来自 ${nDone} 节：${escapeHTML(tallyText(rows))}；按题型 ${countByKind(rows).map(([k,n])=> `${escapeHTML(k)} ${n}`).join('，')}</div>
         <div class="vx-actions">
           <button type="button" class="btn-ghost" data-act="copy">复制 Markdown</button>
           <button type="button" class="btn-ghost" data-act="md">下载 Markdown</button>
         </div>
         <div class="vx-list">${rows.map(r=>`
           <div class="vx-row"><span class="vx-w">第 ${r.n} 题</span>
-            <span class="vx-pos">${escapeHTML(r.kind)}</span>
+            <span class="vx-pos">${escapeHTML(r.kind)} · ${escapeHTML(statusText(r))}</span>
             <span class="vx-zh">你的：${escapeHTML(r.picked)} → 正确：${escapeHTML(r.correct)}</span>
             <span class="vx-u">${escapeHTML(scope === 'all' ? `${r.courseTitle} · ${r.unitTitle}` : r.unitTitle)}</span></div>`).join('')}</div>`;
       body.querySelector('.vx-actions').addEventListener('click', async ev=>{
         const act = ev.target.closest('button')?.dataset.act;
         if(act === 'md') download(`${scope === 'all' ? 'GRE-错题本' : `${course.id}-错题本`}-${stamp}.md`, md, 'text/markdown;charset=utf-8');
         else if(act === 'copy'){
-          try{ await navigator.clipboard.writeText(md); showToast(`已复制 ${rows.length} 道错题`); }
+          try{ await navigator.clipboard.writeText(md); showToast(`已复制 ${rows.length} 道题`); }
           catch(err){ console.error('copy failed', err); showToast('复制失败，请改用下载'); }
         }
       });

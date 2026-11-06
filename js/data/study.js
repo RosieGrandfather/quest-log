@@ -104,6 +104,12 @@ export function saveVocabMark(cols, course, unit, word, value){
     {courseId:course.id, unitId:unit.id, marks:{[word]:value}, updatedAt:Date.now()}, {merge:true});
 }
 
+/* 练习题「标记复查」：存在同一份 studyProgress 文档的 reviewMarks（题号 → true / false），和错题一起导出 */
+export function saveReviewMark(cols, course, unit, n, on){
+  return cols.studyProgress.doc(unitKey(course.id, unit.id)).set(
+    {courseId:course.id, unitId:unit.id, reviewMarks:{[String(n)]:!!on}}, {merge:true});
+}
+
 /* 官方练习套题交卷：只记成绩和这次的作答（每题一个字符串，见 core/practice.js），不发积分。返回合并后的进度文档 */
 export async function submitPractice(cols, course, unit, answers, sum){
   const key = unitKey(course.id, unit.id);

@@ -7,6 +7,7 @@ import { unitKey } from '../core/study.js';
 import { restorePractice } from '../core/qreview.js';
 import { savePracticeSubmission } from './practice-save.js';
 import { showToast } from '../ui/common.js';
+import { flagHTML, wireFlags } from './review-flag.js';
 
 const L = 'ABCDEFGH';
 const img = (b, p, w, cls = '')=> `<img class="qimg ${cls}" src="${escapeHTML(b.base + p)}" ${w ? `style="width:${Math.round(w / 2)}px"` : ''} alt="" loading="lazy">`;
@@ -94,7 +95,7 @@ function itemHTML(it, i, b){
       : `<details class="gq-passage gq-again"><summary>再看一遍图表（第 ${a}–${z} 题）</summary>${img(b, it.fig, it.figw)}</details>`;
   }
   return `${reading}${fig}<section class="gq qq" id="gq-${i}" data-i="${i}">
-    <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
+    <div class="gq-head"><span class="q-no">${it.n}</span><span class="gq-kind">${english ? EN_KIND[it.kind] : QKIND_LABEL[it.kind]}</span><span class="gq-verdict"></span>${flagHTML(it.n)}</div>
     ${it.txt ? `<div class="qtxt">${textHTML(it, i, english)}</div>
     ${it.img || it.imgs?.length ? `<details class="qorig"><summary>看原图（文字有出入时对照）</summary>${origImgs(it, b)}</details>` : ''}` : origImgs(it, b)}
     <div class="gq-hint">${english ? englishHint(it) : hintOf(it)}</div>
@@ -327,6 +328,7 @@ export function wireQset(root, course, unit, onComplete){
     }
   });
 
+  wireFlags(box, course, unit);
   box._refreshPrev = ()=>{ if(!revealed){ showPrev(); if(!started) restoreLast(); } };
   updateCount(); showPrev(); restoreLast();
 }

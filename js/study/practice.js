@@ -6,6 +6,7 @@ import { KIND_LABEL, DIFF_LABEL, isAnswered, gradeItem, encodeSel, decodeSel, su
 import { unitKey } from '../core/study.js';
 import { savePracticeSubmission } from './practice-save.js';
 import { showToast } from '../ui/common.js';
+import { flagHTML, wireFlags } from './review-flag.js';
 
 const LETTERS = 'ABCDEFGHIJ';
 const paras = (text, cls = '')=> String(text || '').split(/\n\s*\n/).filter(s=> s.trim()).map(p=> `<p${cls ? ` class="${cls}"` : ''}>${escapeHTML(p.trim())}</p>`).join('');
@@ -39,7 +40,7 @@ function itemHTML(it, i, b, spans){
     </div>`;
   }).join('');
   return `${passage}<section class="gq" id="gq-${i}" data-i="${i}">
-    <div class="gq-head"><span class="q-no">${i + 1}</span><span class="gq-kind">${KIND_LABEL[it.kind]}</span><span class="gq-verdict"></span></div>
+    <div class="gq-head"><span class="q-no">${i + 1}</span><span class="gq-kind">${KIND_LABEL[it.kind]}</span><span class="gq-verdict"></span>${flagHTML(i + 1)}</div>
     <div class="gq-stem">${stemHTML(it.stem)}</div>
     <div class="gq-hint">${hintOf(it)}</div>
     <div class="gq-groups${it.groups.length > 1 ? ' multi' : ''}">${groups}</div>
@@ -190,6 +191,7 @@ export function wirePractice(root, course, unit, onComplete){
     prevEl.innerHTML = `<span>上次提交 <b>${last.correct} / ${last.total}</b> · 最高 ${pr.practiceBest} · 做过 ${pr.practiceAttempts} 次</span><button type="button" class="btn-ghost" data-act="view-last">查看上次作答</button>`;
   }
 
+  wireFlags(box, course, unit);
   box.addEventListener('click', e=>{
     const t = e.target.closest && e.target.closest('button');
     if(!t) return;

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { unitMistakes, countByKind, toMarkdown } from '../js/core/mistakes.js';
+import { unitMistakes, countByKind, toMarkdown, statusText, tallyText } from '../js/core/mistakes.js';
 import { encodeSel } from '../js/core/practice.js';
 
 const load = p => JSON.parse(readFileSync(new URL(`../courses/${p}`, import.meta.url), 'utf8'));
@@ -43,7 +43,7 @@ test('张巍阅读：错题带文章，同一篇文章在 Markdown 里只出现�
   assert.ok(rows[0].passage.text.length > 100);
   const md = toMarkdown(rows, {title:'t', date:'2026-11-06'});
   assert.equal(md.split('#### Passage').length - 1, 1);
-  assert.ok(md.includes('共 2 道错题，来自 1 节'));
+  assert.ok(md.includes('共 2 道题，来自 1 节：错题 2 道，标记复查 0 道'));
 });
 
 test('官方 Verbal 12 套（gre-set）：按组判错，多空题分空显示', ()=>{
@@ -66,4 +66,34 @@ test('官方 Verbal 12 套（gre-set）：按组判错，多空题分空显示',
 
 test('按题型统计', ()=>{
   assert.deepEqual(countByKind([{kind:'a'},{kind:'b'},{kind:'b'}]), [['b',2],['a',1]]);
+});
+
+test('标记复查：答对的题也导出，状态写清楚；取消标记（false）不导出', ()=>{
+  const unit = load('gre-zt/u01-test01-s1.json');
+  const items = unit.blocks.find(b=> b.type === 'gre-qset').items;
+  const answers = items.map(right);
+  answers[0] = String((items[0].ans[0] + 1) % 5);
+  const last = {answers, answerFormat:unit.answerFormat};
+  const rows = unitMistakes(ctx('gre-zt','T1S1'), unit, last, {'1':true, '3':true, '4':false});
+  assert.deepEqual(rows.map(r=> r.n), [1, 3]);
+  assert.equal(statusText(rows[0]), '标记复查 · 答错');
+  assert.equal(statusText(rows[1]), '标记复查 · 答对');
+  assert.equal(tallyText(rows), '错题 1 道，标记复查 2 道（其中答对 1 道）');
+  assert.ok(toMarkdown(rows).includes('### 第 3 题 · 多空填空 · 标记复查 · 答对'));
+});
+
+test('还没提交但标了复查：只导出标记的题，没有错题', ()=>{
+  const unit = load('gre-zt/u01-test01-s1.json');
+  const rows = unitMistakes(ctx('gre-zt','T1S1'), unit, null, {'2':true});
+  assert.deepEqual(rows.map(r=> r.n), [2]);
+  assert.equal(rows[0].picked, '还没提交');
+  assert.equal(statusText(rows[0]), '标记复查 · 还没提交');
+});
+
+test('官方 12 套也支持标记复查（题号从 1 开始）', ()=>{
+  const unit = load('gre-vr/u04-tc-easy.json');
+  const items = unit.blocks.find(b=> b.type === 'gre-set').items;
+  const answers = items.map(it=> encodeSel(it.groups.map(g=> g.correct)));
+  const rows = unitMistakes(ctx('gre-vr','x'), unit, {answers}, {'2':true});
+  assert.deepEqual(rows.map(r=> [r.n, r.wrong, r.flagged]), [[2, false, true]]);
 });

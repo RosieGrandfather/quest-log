@@ -426,3 +426,7 @@
 
 /* 练习课课程页：错题本（js/study/mistake-export.js），沿用上面的 .vx 样式 */
 #mistakeExport .vx-head{flex-wrap:wrap;}
+/* 练习题「复查」标记（js/study/review-flag.js） */
+.gq-flag{flex:none;font-size:12px;font-weight:700;color:var(--ink-faint);background:transparent;border:1px dashed var(--border);border-radius:999px;padding:2px 10px;cursor:pointer;line-height:1.6;}
+.gq-flag:hover{color:var(--ink);border-color:var(--ink-faint);}
+.gq-flag.on{color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);}
